@@ -4,6 +4,7 @@ from src.config import Config, load_config
 
 
 def test_load_config_reads_env(monkeypatch):
+    monkeypatch.setattr("src.config.load_dotenv", lambda *a, **kw: None)
     monkeypatch.setenv("MISTRAL_API_KEY", "mistral_test")
     monkeypatch.setenv("ANTHROPIC_API_KEY", "anthropic_test")
     monkeypatch.setenv("ONISEP_EMAIL", "a@b.c")
@@ -18,6 +19,7 @@ def test_load_config_reads_env(monkeypatch):
 
 
 def test_load_config_missing_key_raises(monkeypatch):
+    monkeypatch.setattr("src.config.load_dotenv", lambda *a, **kw: None)
     monkeypatch.delenv("MISTRAL_API_KEY", raising=False)
     with pytest.raises(RuntimeError, match="MISTRAL_API_KEY"):
         load_config()
