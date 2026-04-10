@@ -1,0 +1,83 @@
+{
+  "A1": {
+    "key_points": [
+      "Doit citer au moins 3 formations labellisées SecNumEdu ANSSI",
+      "Doit inclure au moins une formation publique (CyberSchool Rennes, ENSIBS, Télécom Paris, IMT Atlantique, ENSSAT)",
+      "Doit mentionner le label SecNumEdu explicitement",
+      "Ne doit PAS se limiter à EPITA/Guardia/écoles privées à fort SEO"
+    ],
+    "must_include_labels": ["SecNumEdu"],
+    "must_include_status": ["Public"]
+  },
+  "A4": {
+    "key_points": [
+      "Doit citer des masters publics reconnus (MVA Saclay, IASD Dauphine-PSL, Master IA Sorbonne Université)",
+      "Doit mentionner les écoles d'ingénieurs publiques avec parcours IA",
+      "Doit mentionner la sélectivité réelle"
+    ],
+    "must_include_status": ["Public"]
+  },
+  "B1": {
+    "key_points": [
+      "Doit dire clairement que HEC est extrêmement sélectif",
+      "Doit donner un chiffre (taux d'admission ~4%)",
+      "Doit proposer des alternatives réalistes (SKEMA, Audencia, Grenoble EM, admissions parallèles)",
+      "Ne doit PAS dire 'tout est possible avec de la motivation'"
+    ],
+    "must_not_include_phrase": ["tout est possible", "rien n'est impossible"]
+  },
+  "B4": {
+    "key_points": [
+      "Doit mentionner le taux d'admission de l'X (~5-7%)",
+      "Doit recommander prépas CPGE ou concours directs selon profil",
+      "Doit proposer des alternatives INSA, Centrale-Supélec, ENS",
+      "Doit être honnête sur la difficulté"
+    ]
+  },
+  "C4": {
+    "key_points": [
+      "Doit explorer cybersécurité, intelligence économique, OSINT",
+      "Doit citer des métiers ROME concrets (analyste SOC, consultant, auditeur)",
+      "Doit proposer des formations labellisées SecNumEdu"
+    ]
+  },
+  "D5": {
+    "key_points": [
+      "Doit citer spécifiquement CyberSchool Rennes, ENSIBS Vannes, IMT Atlantique Brest",
+      "Doit mentionner le label SecNumEdu",
+      "Doit varier les niveaux (BUT, master, ingénieur)"
+    ],
+    "must_include_cities": ["Rennes", "Brest", "Vannes"]
+  },
+  "E5": {
+    "key_points": [
+      "Doit mentionner le CPF, la VAE, les formations en alternance",
+      "Doit citer des parcours concrets (Master Cyber en alternance, MS spécialisé)",
+      "Doit parler du public adulte / formation continue"
+    ]
+  },
+  "F1": {
+    "key_points": [
+      "Doit noter qu'ENSEIRB-MATMECA est publique (Bordeaux INP, CTI) et EPITA privée",
+      "Doit comparer les coûts (droits publics vs 9-10k€/an)",
+      "Doit noter que l'ENSEIRB a un parcours SecNumEdu"
+    ]
+  },
+  "H1": {
+    "key_points": [
+      "Doit expliquer la durée (3 ans, 180 ECTS)",
+      "Doit mentionner LMD / Bologne",
+      "Doit expliquer la poursuite possible en master",
+      "Question générique : le RAG n'est PAS attendu comme supérieur ici"
+    ],
+    "rag_expected_advantage": false
+  },
+  "H2": {
+    "key_points": [
+      "Doit expliquer le calendrier (inscription janvier, vœux mars, réponses mai-juin)",
+      "Doit expliquer les types de vœux (non hiérarchisés sauf sous-vœux)",
+      "Question procédurale : le RAG n'est PAS attendu comme supérieur ici"
+    ],
+    "rag_expected_advantage": false
+  }
+}
