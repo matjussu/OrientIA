@@ -1,0 +1,13 @@
+[project]
+name = "orientia"
+version = "0.1.0"
+description = "Specialized RAG for French student orientation"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
