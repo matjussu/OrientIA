@@ -142,7 +142,25 @@ def merge_all(
             p_copy["match_method"] = "parcoursup_only"
             ps_only.append(p_copy)
 
-    all_merged = rncp_matched + fuzzy_matched + ps_only
+    # Step 3b: ONISEP-only — ONISEP fiches not matched by either RNCP or fuzzy
+    # are kept as standalone entries (they provide higher-ed coverage that
+    # Parcoursup lacks: ingénieurs post-prépa, mastères spécialisés, etc.)
+    matched_onisep_ids = set()
+    for f in rncp_matched + fuzzy_matched:
+        if f.get("source") == "onisep" or f.get("url_onisep"):
+            # The merged fiche already has ONISEP fields; mark as matched
+            # by using a signature on its onisep provenance
+            matched_onisep_ids.add((f.get("rncp"), f.get("url_onisep")))
+    onisep_only = []
+    for o in onisep:
+        # If this onisep fiche wasn't merged with a parcoursup fiche, keep it standalone
+        key = (o.get("rncp"), o.get("url_onisep"))
+        if key not in matched_onisep_ids:
+            o_copy = dict(o)
+            o_copy["match_method"] = "onisep_only"
+            onisep_only.append(o_copy)
+
+    all_merged = rncp_matched + fuzzy_matched + ps_only + onisep_only
 
     # Step 4: Attach SecNumEdu labels (now with optional manual table)
     all_merged = attach_labels(all_merged, secnumedu, manual_table=manual_labels)
