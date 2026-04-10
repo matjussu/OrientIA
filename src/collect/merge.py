@@ -1,0 +1,104 @@
+from rapidfuzz import fuzz
+from src.collect.normalize import normalize_name, normalize_city
+
+
+def merge_by_rncp(parcoursup: list[dict], onisep: list[dict]) -> list[dict]:
+    onisep_by_rncp = {f["rncp"]: f for f in onisep if f.get("rncp")}
+    merged = []
+    for ps in parcoursup:
+        rncp = ps.get("rncp")
+        if rncp and rncp in onisep_by_rncp:
+            merged_fiche = {**onisep_by_rncp[rncp], **ps}
+            merged_fiche["match_method"] = "rncp"
+            merged.append(merged_fiche)
+    return merged
+
+
+def _signature(fiche: dict) -> str:
+    return f"{normalize_name(fiche.get('nom',''))} {normalize_name(fiche.get('etablissement',''))} {normalize_city(fiche.get('ville',''))}"
+
+
+def fuzzy_match_fiches(
+    parcoursup: list[dict],
+    onisep: list[dict],
+    threshold: int = 85,
+) -> list[dict]:
+    onisep_sigs = [(f, _signature(f)) for f in onisep]
+    merged = []
+    for ps in parcoursup:
+        ps_sig = _signature(ps)
+        best_score = 0
+        best_onisep = None
+        for onisep_fiche, on_sig in onisep_sigs:
+            score = fuzz.token_set_ratio(ps_sig, on_sig)
+            if score > best_score:
+                best_score = score
+                best_onisep = onisep_fiche
+        if best_onisep and best_score >= threshold:
+            merged_fiche = {**best_onisep, **ps}
+            merged_fiche["match_method"] = f"fuzzy_{best_score}"
+            merged.append(merged_fiche)
+    return merged
+
+
+def attach_labels(fiches: list[dict], secnumedu: list[dict]) -> list[dict]:
+    sec_sigs = [(f, _signature(f)) for f in secnumedu]
+    for f in fiches:
+        f_sig = _signature(f)
+        existing_labels = list(f.get("labels", []))
+        for sec, sec_sig in sec_sigs:
+            score = fuzz.token_set_ratio(f_sig, sec_sig)
+            if score >= 85:
+                for label in sec.get("labels", []):
+                    if label not in existing_labels:
+                        existing_labels.append(label)
+                break
+        f["labels"] = existing_labels
+    return fiches
+
+
+def merge_all(
+    parcoursup: list[dict],
+    onisep: list[dict],
+    secnumedu: list[dict],
+    fuzzy_threshold: int = 85,
+) -> list[dict]:
+    # Step 1: RNCP matching
+    rncp_matched = merge_by_rncp(parcoursup, onisep)
+    matched_rncps = {f.get("rncp") for f in rncp_matched if f.get("rncp")}
+
+    # Step 2: Fuzzy matching on parcoursup orphans against onisep orphans
+    ps_orphans = [p for p in parcoursup
+                  if not p.get("rncp") or p.get("rncp") not in matched_rncps]
+    onisep_orphans = [o for o in onisep
+                      if not o.get("rncp") or o.get("rncp") not in matched_rncps]
+    fuzzy_matched = fuzzy_match_fiches(ps_orphans, onisep_orphans, fuzzy_threshold)
+
+    # Step 3: Parcoursup-only (kept even without ONISEP enrichment —
+    # taux d'accès is the most critical field and we don't want to lose it)
+    fuzzy_matched_sigs = {_signature(f) for f in fuzzy_matched}
+    ps_only = []
+    for p in ps_orphans:
+        if _signature(p) not in fuzzy_matched_sigs:
+            p_copy = dict(p)
+            p_copy["match_method"] = "parcoursup_only"
+            ps_only.append(p_copy)
+
+    all_merged = rncp_matched + fuzzy_matched + ps_only
+
+    # Step 4: Attach SecNumEdu labels
+    all_merged = attach_labels(all_merged, secnumedu)
+
+    # Step 5: Infer statut from establishment name when missing
+    for f in all_merged:
+        if not f.get("statut"):
+            est = normalize_name(f.get("etablissement", ""))
+            if any(pub in est for pub in ["universite", "ecole normale", "institut national",
+                                           "ecole nationale", "insa", "ens", "cnam",
+                                           "imt", "telecom paris", "polytechnique"]):
+                f["statut"] = "Public"
+            else:
+                f["statut"] = "Inconnu"
+        f.setdefault("labels", [])
+
+    return all_merged
