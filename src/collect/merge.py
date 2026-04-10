@@ -1,5 +1,6 @@
 from rapidfuzz import fuzz
 from src.collect.normalize import normalize_name, normalize_city
+from src.collect.niveau import infer_niveau
 
 
 def merge_by_rncp(parcoursup: list[dict], onisep: list[dict]) -> list[dict]:
@@ -41,18 +42,26 @@ def fuzzy_match_fiches(
     return merged
 
 
-def attach_labels(fiches: list[dict], secnumedu: list[dict]) -> list[dict]:
+def attach_labels(
+    fiches: list[dict],
+    secnumedu: list[dict],
+    manual_table: list[dict] | None = None,
+) -> list[dict]:
     """Attach SecNumEdu (and other) labels from the reference list to merged fiches.
 
-    Uses a two-stage matcher:
+    Uses a three-stage matcher:
     1. Full-signature fuzzy match (name + etab + ville) at threshold 85 —
        catches cases where formation names align between sources.
     2. Establishment-only fuzzy match at threshold 85 — fallback for cases
        where formation names differ but establishment names overlap
        (e.g., Parcoursup "EFREI Bordeaux" vs SecNumEdu "EFREI").
+    3. Manual table lookup — looks up each fiche's normalized establishment
+       against a cross-reference table using substring containment.
+       An entry with empty labels is "explicitly unlabeled" — useful for
+       benchmark contrast (private schools without SecNumEdu/CTI labels).
 
-    The fallback only fires on fiches in domains where the label list is
-    relevant (currently: "cyber" for SecNumEdu). This prevents spurious
+    The Stage 2 fallback only fires on fiches in domains where the label list
+    is relevant (currently: "cyber" for SecNumEdu). This prevents spurious
     attachments on unrelated domains.
     """
     sec_sigs = [(s, _signature(s)) for s in secnumedu]
@@ -83,6 +92,24 @@ def attach_labels(fiches: list[dict], secnumedu: list[dict]) -> list[dict]:
                                 existing_labels.append(label)
                         break
 
+        # Stage 3: manual table (if provided)
+        # Looks up each fiche against an external cross-reference table.
+        # An entry with empty labels is "explicitly unlabeled" — useful for
+        # benchmark contrast (private schools without SecNumEdu/CTI labels).
+        if manual_table is not None:
+            f_etab_norm = normalize_name(f.get("etablissement", ""))
+            if f_etab_norm:
+                for entry in manual_table:
+                    ref = entry.get("etab_normalized", "")
+                    if not ref:
+                        continue
+                    # Match if manual ref is substring of fiche etab (most specific) or vice versa
+                    if ref in f_etab_norm or f_etab_norm in ref:
+                        for label in entry.get("labels", []):
+                            if label not in existing_labels:
+                                existing_labels.append(label)
+                        break  # first match wins
+
         f["labels"] = existing_labels
     return fiches
 
@@ -91,6 +118,7 @@ def merge_all(
     parcoursup: list[dict],
     onisep: list[dict],
     secnumedu: list[dict],
+    manual_labels: list[dict] | None = None,
     fuzzy_threshold: int = 85,
 ) -> list[dict]:
     # Step 1: RNCP matching
@@ -116,8 +144,8 @@ def merge_all(
 
     all_merged = rncp_matched + fuzzy_matched + ps_only
 
-    # Step 4: Attach SecNumEdu labels
-    all_merged = attach_labels(all_merged, secnumedu)
+    # Step 4: Attach SecNumEdu labels (now with optional manual table)
+    all_merged = attach_labels(all_merged, secnumedu, manual_table=manual_labels)
 
     # Step 5: Infer statut from establishment name when missing
     for f in all_merged:
@@ -130,5 +158,7 @@ def merge_all(
             else:
                 f["statut"] = "Inconnu"
         f.setdefault("labels", [])
+        if not f.get("niveau"):
+            f["niveau"] = infer_niveau(f.get("nom", ""))
 
     return all_merged

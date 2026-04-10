@@ -16,6 +16,7 @@ from src.collect.secnumedu import load_secnumedu
 from src.collect.merge import merge_all
 
 
+
 def _load_onisep_if_available(path: str | Path) -> list[dict]:
     p = Path(path)
     if not p.exists():
@@ -33,11 +34,20 @@ def main():
     onisep_fiches = _load_onisep_if_available("data/raw/onisep_formations.json")
     secnumedu_fiches = load_secnumedu("data/raw/secnumedu.json")
 
+    # NEW: load manual labels table
+    manual_labels_path = Path("data/manual_labels.json")
+    if manual_labels_path.exists():
+        manual_data = json.loads(manual_labels_path.read_text(encoding="utf-8"))
+        manual_labels = manual_data.get("entries", [])
+    else:
+        manual_labels = []
+    print(f"Manual labels:   {len(manual_labels)}")
+
     print(f"Parcoursup input: {len(parcoursup_fiches)}")
     print(f"ONISEP input:     {len(onisep_fiches)}")
     print(f"SecNumEdu input:  {len(secnumedu_fiches)}")
 
-    merged = merge_all(parcoursup_fiches, onisep_fiches, secnumedu_fiches)
+    merged = merge_all(parcoursup_fiches, onisep_fiches, secnumedu_fiches, manual_labels=manual_labels)
     print(f"Merged output:    {len(merged)}")
 
     method_counts = Counter(f.get("match_method", "unknown") for f in merged)
@@ -50,6 +60,15 @@ def main():
 
     statut_counts = Counter(f.get("statut") for f in merged)
     print(f"Statut breakdown: {dict(statut_counts)}")
+
+    niveau_counts = Counter(f.get("niveau") for f in merged)
+    print(f"Niveau breakdown: {dict(niveau_counts)}")
+
+    label_counts = Counter()
+    for f in merged:
+        for l in (f.get("labels") or []):
+            label_counts[l] += 1
+    print(f"Label breakdown:  {dict(label_counts)}")
 
     out_path = Path("data/processed/formations.json")
     out_path.parent.mkdir(parents=True, exist_ok=True)

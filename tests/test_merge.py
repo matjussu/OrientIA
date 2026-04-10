@@ -80,3 +80,44 @@ def test_attach_labels_fallback_only_fires_for_cyber_domain():
     result = attach_labels(fiches, secnumedu)
     assert "SecNumEdu" not in (result[0]["labels"] or []), \
         "SecNumEdu label should not be attached to data_ia domain via the cyber-only fallback"
+
+
+def test_attach_labels_manual_table_labels_known_school():
+    from src.collect.merge import attach_labels
+    fiches = [
+        {"nom": "Ingénieur Cybersécurité", "etablissement": "ENSIBS",
+         "ville": "Vannes", "domaine": "cyber", "labels": []},
+    ]
+    manual = [{"etab_normalized": "ensibs", "labels": ["SecNumEdu", "CTI"]}]
+    result = attach_labels(fiches, [], manual_table=manual)
+    assert "SecNumEdu" in result[0]["labels"]
+    assert "CTI" in result[0]["labels"]
+
+
+def test_attach_labels_manual_table_explicitly_blocks_unlabeled_school():
+    from src.collect.merge import attach_labels
+    fiches = [
+        {"nom": "Master Cyber", "etablissement": "EPITA Paris",
+         "ville": "Paris", "domaine": "cyber", "labels": []},
+    ]
+    manual = [{"etab_normalized": "epita", "labels": []}]
+    # Empty secnumedu list so stages 1/2 can't fire
+    result = attach_labels(fiches, [], manual_table=manual)
+    assert result[0]["labels"] == []  # Correctly no label attached
+
+
+def test_attach_labels_manual_table_substring_match_both_ways():
+    from src.collect.merge import attach_labels
+    # Fiche etab is longer than manual entry ("telecom paris" in "telecom paris institut")
+    fiches1 = [{"nom": "MS Cyber", "etablissement": "Télécom Paris Institut",
+                "ville": "Palaiseau", "domaine": "cyber", "labels": []}]
+    manual = [{"etab_normalized": "telecom paris", "labels": ["SecNumEdu"]}]
+    result = attach_labels(fiches1, [], manual_table=manual)
+    assert "SecNumEdu" in result[0]["labels"]
+
+    # Fiche etab is shorter than manual entry ("efrei" in "efrei paris")
+    fiches2 = [{"nom": "Bachelor", "etablissement": "EFREI",
+                "ville": "Villejuif", "domaine": "cyber", "labels": []}]
+    manual2 = [{"etab_normalized": "efrei paris pantheon", "labels": ["SecNumEdu"]}]
+    result2 = attach_labels(fiches2, [], manual_table=manual2)
+    assert "SecNumEdu" in result2[0]["labels"]

@@ -1,5 +1,6 @@
 from pathlib import Path
 import pandas as pd
+from src.collect.niveau import infer_niveau
 
 
 DOMAIN_KEYWORDS = {
@@ -65,9 +66,10 @@ def _infer_statut(contrat: str) -> str:
 
 
 def extract_fiche(row: pd.Series) -> dict:
+    nom = str(row.get(FORMATION_COLUMN, "")).strip()
     return {
         "source": "parcoursup",
-        "nom": str(row.get(FORMATION_COLUMN, "")).strip(),
+        "nom": nom,
         "etablissement": str(row.get(ETABLISSEMENT_COLUMN, "")).strip(),
         "ville": str(row.get(VILLE_COLUMN, "")).strip(),
         "region": str(row.get(REGION_COLUMN, "")).strip() or None,
@@ -75,6 +77,7 @@ def extract_fiche(row: pd.Series) -> dict:
         "taux_acces_parcoursup_2025": _safe_float(row.get(TAUX_ACCES_COLUMN)),
         "nombre_places": _safe_int(row.get(PLACES_COLUMN)),
         "statut": _infer_statut(row.get(CONTRAT_COLUMN, "")),
+        "niveau": infer_niveau(nom),
     }
 
 

@@ -1,0 +1,31 @@
+{
+  "description": "Manual cross-reference table for SecNumEdu and CTI labels. Controls label attachment in src.collect.merge.attach_labels. Each entry maps a normalized establishment fragment to its labels. Empty labels list means explicitly unlabeled (used for benchmark contrast — prevents the fuzzy matcher from spuriously labeling these schools). Normalization uses src.collect.normalize.normalize_name.",
+  "version": "1.0",
+  "entries": [
+    {"etab_normalized": "ensibs", "labels": ["SecNumEdu", "CTI"]},
+    {"etab_normalized": "ecole nationale superieure ingenieurs bretagne sud", "labels": ["SecNumEdu", "CTI"]},
+    {"etab_normalized": "telecom paris", "labels": ["SecNumEdu", "CTI", "Grade Master"]},
+    {"etab_normalized": "imt atlantique", "labels": ["SecNumEdu", "CTI", "Grade Master"]},
+    {"etab_normalized": "telecom sudparis", "labels": ["SecNumEdu", "CTI"]},
+    {"etab_normalized": "eurecom", "labels": ["SecNumEdu", "CTI"]},
+    {"etab_normalized": "enseirb matmeca", "labels": ["SecNumEdu", "CTI"]},
+    {"etab_normalized": "enssat", "labels": ["SecNumEdu", "CTI"]},
+    {"etab_normalized": "insa centre val loire", "labels": ["SecNumEdu", "CTI"]},
+    {"etab_normalized": "insa lyon", "labels": ["CTI", "Grade Master"]},
+    {"etab_normalized": "insa rennes", "labels": ["CTI", "Grade Master"]},
+    {"etab_normalized": "universite rennes cyberschool", "labels": ["SecNumEdu"]},
+    {"etab_normalized": "universite rennes", "labels": ["SecNumEdu"]},
+    {"etab_normalized": "universite limoges cryptis", "labels": ["SecNumEdu"]},
+    {"etab_normalized": "universite limoges", "labels": ["SecNumEdu"]},
+    {"etab_normalized": "efrei", "labels": ["SecNumEdu", "CTI"]},
+    {"etab_normalized": "esilv", "labels": ["CTI"]},
+    {"etab_normalized": "esiea", "labels": ["CTI"]},
+    {"etab_normalized": "isep", "labels": ["CTI"]},
+    {"etab_normalized": "polytech nantes", "labels": ["CTI"]},
+    {"etab_normalized": "epita", "labels": []},
+    {"etab_normalized": "epitech", "labels": []},
+    {"etab_normalized": "guardia", "labels": []},
+    {"etab_normalized": "ionis school", "labels": []},
+    {"etab_normalized": "ecole 42", "labels": []}
+  ]
+}
