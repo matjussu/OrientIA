@@ -39,3 +39,44 @@ def test_merge_all_attaches_secnumedu_labels():
     merged = merge_all(parcoursup, onisep, secnumedu)
     assert len(merged) == 1
     assert "SecNumEdu" in merged[0]["labels"]
+
+
+def test_attach_labels_establishment_only_fallback():
+    # Different formation names but same establishment — the new fallback should catch it
+    from src.collect.merge import attach_labels
+    fiches = [
+        {"nom": "BUT Informatique parcours cyber",
+         "etablissement": "EFREI Bordeaux",
+         "ville": "Bordeaux",
+         "domaine": "cyber",
+         "labels": []},
+    ]
+    secnumedu = [
+        {"nom": "Bachelor Cybersécurité EFREI",
+         "etablissement": "EFREI",
+         "ville": "",
+         "labels": ["SecNumEdu"]},
+    ]
+    result = attach_labels(fiches, secnumedu)
+    assert "SecNumEdu" in result[0]["labels"], \
+        f"expected SecNumEdu label via establishment fallback, got {result[0]['labels']}"
+
+
+def test_attach_labels_fallback_only_fires_for_cyber_domain():
+    from src.collect.merge import attach_labels
+    fiches = [
+        {"nom": "Master IA",
+         "etablissement": "EFREI",
+         "ville": "Paris",
+         "domaine": "data_ia",  # NOT cyber
+         "labels": []},
+    ]
+    secnumedu = [
+        {"nom": "Bachelor EFREI",
+         "etablissement": "EFREI",
+         "ville": "",
+         "labels": ["SecNumEdu"]},
+    ]
+    result = attach_labels(fiches, secnumedu)
+    assert "SecNumEdu" not in (result[0]["labels"] or []), \
+        "SecNumEdu label should not be attached to data_ia domain via the cyber-only fallback"

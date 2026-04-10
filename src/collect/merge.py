@@ -42,17 +42,47 @@ def fuzzy_match_fiches(
 
 
 def attach_labels(fiches: list[dict], secnumedu: list[dict]) -> list[dict]:
-    sec_sigs = [(f, _signature(f)) for f in secnumedu]
+    """Attach SecNumEdu (and other) labels from the reference list to merged fiches.
+
+    Uses a two-stage matcher:
+    1. Full-signature fuzzy match (name + etab + ville) at threshold 85 —
+       catches cases where formation names align between sources.
+    2. Establishment-only fuzzy match at threshold 85 — fallback for cases
+       where formation names differ but establishment names overlap
+       (e.g., Parcoursup "EFREI Bordeaux" vs SecNumEdu "EFREI").
+
+    The fallback only fires on fiches in domains where the label list is
+    relevant (currently: "cyber" for SecNumEdu). This prevents spurious
+    attachments on unrelated domains.
+    """
+    sec_sigs = [(s, _signature(s)) for s in secnumedu]
+    sec_etabs = [(s, normalize_name(s.get("etablissement", ""))) for s in secnumedu]
+
     for f in fiches:
         f_sig = _signature(f)
         existing_labels = list(f.get("labels", []))
+        matched = False
+
+        # Stage 1: full signature match
         for sec, sec_sig in sec_sigs:
-            score = fuzz.token_set_ratio(f_sig, sec_sig)
-            if score >= 85:
+            if fuzz.token_set_ratio(f_sig, sec_sig) >= 85:
                 for label in sec.get("labels", []):
                     if label not in existing_labels:
                         existing_labels.append(label)
+                matched = True
                 break
+
+        # Stage 2: establishment-only fallback (cyber domain only for SecNumEdu)
+        if not matched and f.get("domaine") == "cyber":
+            f_etab = normalize_name(f.get("etablissement", ""))
+            if f_etab:
+                for sec, sec_etab in sec_etabs:
+                    if sec_etab and fuzz.token_set_ratio(f_etab, sec_etab) >= 85:
+                        for label in sec.get("labels", []):
+                            if label not in existing_labels:
+                                existing_labels.append(label)
+                        break
+
         f["labels"] = existing_labels
     return fiches
 
