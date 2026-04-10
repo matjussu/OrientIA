@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Secrets
+.env
+*.key
+
+# Data (big files)
+data/raw/
+data/embeddings/*.index
+results/raw_responses/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Zone identifiers (WSL artifacts)
+*:Zone.Identifier
+*:mshield
