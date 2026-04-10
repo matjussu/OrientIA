@@ -12,6 +12,11 @@ class RerankConfig:
     # Intentionally kept below label boosts so they don't dominate.
     level_boost_bac5: float = 1.15
     level_boost_bac3: float = 1.05
+    # Named-establishment boost — mild preference for fiches whose establishment
+    # field is populated (vs ONISEP generic diploma types with empty etab).
+    # Helps surface EFREI, ENSIBS, CentraleSupélec, etc. alongside the generic
+    # ANSSI titles in questions like "meilleures formations en cybersécurité".
+    etab_named_boost: float = 1.1
 
     def as_dict(self) -> dict:
         return {
@@ -21,6 +26,7 @@ class RerankConfig:
             "public_boost": self.public_boost,
             "level_boost_bac5": self.level_boost_bac5,
             "level_boost_bac3": self.level_boost_bac3,
+            "etab_named_boost": self.etab_named_boost,
         }
 
 
@@ -48,6 +54,10 @@ def rerank(results: list[dict], config: RerankConfig) -> list[dict]:
         elif niveau == "bac+3":
             score *= config.level_boost_bac3
         # bac+2 and None get no boost (implicit 1.0 multiplier)
+
+        # Stage C: named-establishment boost (mild)
+        if (fiche.get("etablissement") or "").strip():
+            score *= config.etab_named_boost
 
         new = dict(r)
         new["score"] = score

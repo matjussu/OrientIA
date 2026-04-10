@@ -123,3 +123,62 @@ def test_rerank_config_as_dict_exports_all_fields():
     assert "public_boost" in d
     assert "level_boost_bac5" in d
     assert "level_boost_bac3" in d
+    assert "etab_named_boost" in d
+
+
+def test_rerank_etab_named_boost_lifts_named_over_empty():
+    """Fiches with a populated etablissement rank above fiches with the
+    same base score but empty etab (generic ONISEP diploma types)."""
+    results = [
+        {"fiche": {"labels": [], "statut": "Inconnu", "niveau": "bac+5",
+                   "etablissement": ""},
+         "score": 0.50, "base_score": 0.50},
+        {"fiche": {"labels": [], "statut": "Inconnu", "niveau": "bac+5",
+                   "etablissement": "EFREI Paris"},
+         "score": 0.50, "base_score": 0.50},
+    ]
+    cfg = RerankConfig(
+        secnumedu_boost=1.0, cti_boost=1.0, public_boost=1.0,
+        level_boost_bac5=1.0, level_boost_bac3=1.0,
+        etab_named_boost=1.1,
+    )
+    reranked = rerank(results, cfg)
+    assert reranked[0]["fiche"]["etablissement"] == "EFREI Paris"
+
+
+def test_rerank_etab_named_boost_does_not_dominate_labels():
+    """A labeled generic diploma must still beat an unlabeled named school.
+    Default etab_named (1.1) < default secnumedu (1.5)."""
+    results = [
+        {"fiche": {"labels": ["SecNumEdu"], "statut": "Inconnu", "niveau": "bac+5",
+                   "etablissement": ""},
+         "score": 0.50, "base_score": 0.50},
+        {"fiche": {"labels": [], "statut": "Inconnu", "niveau": "bac+5",
+                   "etablissement": "EPITA"},
+         "score": 0.50, "base_score": 0.50},
+    ]
+    cfg = RerankConfig()  # defaults: secnumedu=1.5, etab_named=1.1
+    reranked = rerank(results, cfg)
+    # 0.5 * 1.5 * 1.15 = 0.8625 (labeled generic)
+    # 0.5 * 1.1 * 1.15 = 0.63375 (unlabeled EPITA)
+    assert "SecNumEdu" in reranked[0]["fiche"]["labels"]
+
+
+def test_rerank_etab_named_boost_ignores_empty_string_and_whitespace():
+    """Empty string and whitespace-only etablissement don't trigger the boost."""
+    results = [
+        {"fiche": {"labels": [], "statut": "Inconnu", "niveau": None,
+                   "etablissement": ""},
+         "score": 0.50, "base_score": 0.50},
+        {"fiche": {"labels": [], "statut": "Inconnu", "niveau": None,
+                   "etablissement": "   "},
+         "score": 0.50, "base_score": 0.50},
+    ]
+    cfg = RerankConfig(
+        secnumedu_boost=1.0, cti_boost=1.0, public_boost=1.0,
+        level_boost_bac5=1.0, level_boost_bac3=1.0,
+        etab_named_boost=1.5,
+    )
+    reranked = rerank(results, cfg)
+    assert reranked[0]["score"] == 0.50
+    assert reranked[1]["score"] == 0.50
