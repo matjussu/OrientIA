@@ -92,10 +92,12 @@ def attach_labels(
                                 existing_labels.append(label)
                         break
 
-        # Stage 3: manual table (if provided)
-        # Looks up each fiche against an external cross-reference table.
-        # An entry with empty labels is "explicitly unlabeled" — useful for
-        # benchmark contrast (private schools without SecNumEdu/CTI labels).
+        # Stage 3: manual table (AUTHORITATIVE — overrides earlier stages).
+        # When a fiche's establishment matches a manual entry, the manual
+        # labels REPLACE any labels attached by Stages 1/2. This makes the
+        # manual table a correction layer: entries with empty labels act as
+        # a blocklist (e.g., EPITA/Guardia/Epitech are explicitly unlabeled
+        # for benchmark contrast even if fuzzy matching would have labeled them).
         if manual_table is not None:
             f_etab_norm = normalize_name(f.get("etablissement", ""))
             if f_etab_norm:
@@ -103,12 +105,9 @@ def attach_labels(
                     ref = entry.get("etab_normalized", "")
                     if not ref:
                         continue
-                    # Match if manual ref is substring of fiche etab (most specific) or vice versa
                     if ref in f_etab_norm or f_etab_norm in ref:
-                        for label in entry.get("labels", []):
-                            if label not in existing_labels:
-                                existing_labels.append(label)
-                        break  # first match wins
+                        existing_labels = list(entry.get("labels", []))
+                        break
 
         f["labels"] = existing_labels
     return fiches

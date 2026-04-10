@@ -106,6 +106,48 @@ def test_attach_labels_manual_table_explicitly_blocks_unlabeled_school():
     assert result[0]["labels"] == []  # Correctly no label attached
 
 
+def test_attach_labels_manual_table_overrides_earlier_stages():
+    """Manual table must override labels from Stages 1/2.
+
+    Before this fix, Stage 3 only appended to existing_labels, so a fuzzy
+    match in Stage 1 could attach SecNumEdu to an EPITA fiche and Stage 3's
+    blocklist entry wouldn't remove it.
+    """
+    from src.collect.merge import attach_labels
+    fiches = [
+        {"nom": "bachelor cybersecurite epita",
+         "etablissement": "EPITA",
+         "ville": "Paris", "domaine": "cyber", "labels": []},
+    ]
+    # Non-empty SecNumEdu list with a near-identical entry — will match Stage 1
+    secnumedu = [
+        {"nom": "bachelor cybersecurite epita",
+         "etablissement": "EPITA",
+         "ville": "Paris",
+         "labels": ["SecNumEdu"]},
+    ]
+    manual = [{"etab_normalized": "epita", "labels": []}]
+    result = attach_labels(fiches, secnumedu, manual_table=manual)
+    assert result[0]["labels"] == [], \
+        f"EPITA manual blocklist didn't override Stage 1 match: got {result[0]['labels']}"
+
+
+def test_attach_labels_manual_table_replaces_not_appends():
+    """Manual-table labels REPLACE prior labels (they don't merge)."""
+    from src.collect.merge import attach_labels
+    fiches = [
+        {"nom": "bachelor cybersecurite efrei",
+         "etablissement": "EFREI Bordeaux",
+         "ville": "Bordeaux", "domaine": "cyber", "labels": ["SomeStaleLabel"]},
+    ]
+    manual = [{"etab_normalized": "efrei", "labels": ["SecNumEdu", "CTI"]}]
+    result = attach_labels(fiches, [], manual_table=manual)
+    # Final labels must be exactly what the manual table says (order-insensitive),
+    # not the union of stale + manual labels
+    assert set(result[0]["labels"]) == {"SecNumEdu", "CTI"}
+    assert "SomeStaleLabel" not in result[0]["labels"]
+
+
 def test_attach_labels_manual_table_substring_match_both_ways():
     from src.collect.merge import attach_labels
     # Fiche etab is longer than manual entry ("telecom paris" in "telecom paris institut")
