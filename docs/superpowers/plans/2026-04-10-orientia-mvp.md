@@ -418,7 +418,7 @@ Expected: `mistral: XXXXXXXX ...`
 
 ```bash
 python -c "
-from mistralai import Mistral
+from mistralai.client import Mistral
 from src.config import load_config
 c = load_config()
 client = Mistral(api_key=c.mistral_api_key)
@@ -1684,7 +1684,7 @@ pytest tests/test_embeddings.py -v
 
 Create `src/rag/embeddings.py`:
 ```python
-from mistralai import Mistral
+from mistralai.client import Mistral
 
 
 EMBED_MODEL = "mistral-embed"
@@ -1820,7 +1820,7 @@ Create `src/rag/build_real_index.py`:
 import json
 from pathlib import Path
 import numpy as np
-from mistralai import Mistral
+from mistralai.client import Mistral
 from src.config import load_config
 from src.rag.embeddings import fiche_to_text, embed_texts_batched
 from src.rag.index import build_index, save_index
@@ -1912,7 +1912,7 @@ Create `src/rag/retriever.py`:
 ```python
 import numpy as np
 import faiss
-from mistralai import Mistral
+from mistralai.client import Mistral
 from src.rag.embeddings import embed_texts
 
 
@@ -2121,7 +2121,7 @@ pytest tests/test_generator.py -v
 
 Create `src/rag/generator.py`:
 ```python
-from mistralai import Mistral
+from mistralai.client import Mistral
 from src.prompt.system import SYSTEM_PROMPT, build_user_prompt
 
 
@@ -2234,7 +2234,7 @@ pytest tests/test_pipeline.py -v
 Create `src/rag/pipeline.py`:
 ```python
 import numpy as np
-from mistralai import Mistral
+from mistralai.client import Mistral
 from src.rag.embeddings import fiche_to_text, embed_texts_batched
 from src.rag.index import build_index
 from src.rag.retriever import retrieve_top_k
@@ -2284,7 +2284,7 @@ Create `src/rag/cli.py`:
 import json
 import sys
 from pathlib import Path
-from mistralai import Mistral
+from mistralai.client import Mistral
 from src.config import load_config
 from src.rag.pipeline import OrientIAPipeline
 
@@ -2416,7 +2416,7 @@ Create `src/eval/systems.py`:
 import json
 from pathlib import Path
 from abc import ABC, abstractmethod
-from mistralai import Mistral
+from mistralai.client import Mistral
 from src.prompt.system import SYSTEM_PROMPT
 from src.rag.pipeline import OrientIAPipeline
 
@@ -2607,7 +2607,7 @@ Create `src/eval/run_real.py`:
 ```python
 import json
 from pathlib import Path
-from mistralai import Mistral
+from mistralai.client import Mistral
 from src.config import load_config
 from src.rag.pipeline import OrientIAPipeline
 from src.eval.systems import OurRagSystem, MistralRawSystem, ChatGPTRecordedSystem
@@ -3101,7 +3101,7 @@ Create `src/eval/grid_search.py`:
 ```python
 import json
 from pathlib import Path
-from mistralai import Mistral
+from mistralai.client import Mistral
 from anthropic import Anthropic
 from src.config import load_config
 from src.rag.reranker import RerankConfig
@@ -3255,7 +3255,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from mistralai import Mistral
+from mistralai.client import Mistral
 from src.config import load_config
 from src.rag.pipeline import OrientIAPipeline
 
