@@ -117,7 +117,7 @@ OrientIA/
 
 - [ ] **Step 1: Initialize git and add remote**
 
-The GitHub repo already exists at https://github.com/matjussu/OrientAI.git (note: **OrientAI**, not OrientIA — local folder naming mismatch is intentional and harmless).
+The GitHub repo already exists at https://github.com/matjussu/OrientIA.git (private repo).
 
 Run:
 ```bash
@@ -125,7 +125,7 @@ cd /home/matteo_linux/projets/OrientIA
 git init -b main
 git config user.name "Matjussu"
 git config user.email "matteolepietre@gmail.com"
-git remote add origin https://github.com/matjussu/OrientAI.git
+git remote add origin https://github.com/matjussu/OrientIA.git
 ```
 Expected: `Initialized empty Git repository in .../OrientIA/.git/`
 
@@ -3723,7 +3723,7 @@ The remote was added in Task 0.1, so just push accumulated work:
 ```bash
 git push origin main
 ```
-Expected: repo at https://github.com/matjussu/OrientAI updated with full history.
+Expected: private repo at https://github.com/matjussu/OrientIA updated with full history.
 
 - [ ] **Step 5: Tag v1.0**
 
