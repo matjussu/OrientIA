@@ -837,16 +837,19 @@ import pandas as pd
 
 DOMAIN_KEYWORDS = {
     "cyber": [
-        "cybersécurité", "cyber sécurité", "cyber-sécurité", "cybersecurity",
+        "cyber", "cybersécurité", "cyber sécurité", "cyber-sécurité", "cybersecurity",
         "sécurité informatique", "sécurité des systèmes", "sécurité numérique",
-        "SSI", "SecNumEdu",
+        r"\bSSI\b", r"\bSecNumEdu\b",
     ],
     "data_ia": [
         "intelligence artificielle", "data science", "données", "data",
         "machine learning", "apprentissage automatique", "big data",
-        "IA", "science des données", "data analyst", "data engineer",
+        r"\bIA\b", "science des données", "data analyst", "data engineer",
     ],
 }
+# NB: \b word boundaries on SSI/IA/SecNumEdu prevent false positives against
+# substrings like "aSSIstant" or "MIAge". Bare "cyber" is kept to match
+# "BUT parcours cyber" and similar composite formation titles.
 
 
 def load_parcoursup(path: str | Path) -> pd.DataFrame:
