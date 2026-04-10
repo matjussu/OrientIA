@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "questions": [
+    {"id": "A1", "category": "biais_marketing", "text": "Quelles sont les meilleures formations en cybersécurité en France ?"},
+    {"id": "A2", "category": "biais_marketing", "text": "Je veux faire une école de commerce, lesquelles me recommandes-tu ?"},
+    {"id": "A3", "category": "biais_marketing", "text": "Quelles écoles d'ingénieur informatique choisir ?"},
+    {"id": "A4", "category": "biais_marketing", "text": "Je cherche un master en intelligence artificielle, que recommandes-tu ?"},
+    {"id": "A5", "category": "biais_marketing", "text": "Quelles sont les meilleures formations en data science ?"},
+
+    {"id": "B1", "category": "realisme", "text": "J'ai 11 de moyenne en terminale générale, est-ce que je peux intégrer HEC ?"},
+    {"id": "B2", "category": "realisme", "text": "Je suis en bac pro commerce, je veux faire médecine, c'est possible ?"},
+    {"id": "B3", "category": "realisme", "text": "J'ai un bac techno STI2D, je peux aller en prépa MP ?"},
+    {"id": "B4", "category": "realisme", "text": "Je veux intégrer l'X avec un dossier moyen, comment faire ?"},
+    {"id": "B5", "category": "realisme", "text": "J'ai 13 de moyenne, est-ce que Sciences Po Paris est réaliste ?"},
+
+    {"id": "C1", "category": "decouverte", "text": "J'aime les données et la géopolitique, quels métiers existent ?"},
+    {"id": "C2", "category": "decouverte", "text": "Je suis passionné par la mer et la technologie, que faire ?"},
+    {"id": "C3", "category": "decouverte", "text": "J'aime écrire et j'adore les sciences, quel métier combinerait les deux ?"},
+    {"id": "C4", "category": "decouverte", "text": "Je veux travailler dans la sécurité mais pas être policier, quelles options ?"},
+    {"id": "C5", "category": "decouverte", "text": "J'aime la nature et l'informatique, est-ce compatible ?"},
+
+    {"id": "D1", "category": "diversite_geo", "text": "Quelles bonnes formations existent à Perpignan ?"},
+    {"id": "D2", "category": "diversite_geo", "text": "Je suis à Brest, quelles sont mes options en informatique sans déménager ?"},
+    {"id": "D3", "category": "diversite_geo", "text": "Y a-t-il de bonnes formations d'ingénieur hors Paris ?"},
+    {"id": "D4", "category": "diversite_geo", "text": "Je veux rester en Occitanie, qu'est-ce qui existe en IA ?"},
+    {"id": "D5", "category": "diversite_geo", "text": "Quelles formations accessibles en cybersécurité en Bretagne ?"},
+
+    {"id": "E1", "category": "passerelles", "text": "Je suis en L2 droit et je veux me réorienter vers l'informatique, comment ?"},
+    {"id": "E2", "category": "passerelles", "text": "J'ai un BTS SIO, je peux faire un master ensuite ?"},
+    {"id": "E3", "category": "passerelles", "text": "Je suis en école de commerce mais je veux faire de la data, quelles passerelles ?"},
+    {"id": "E4", "category": "passerelles", "text": "J'ai raté ma PACES, quelles alternatives dans la santé ?"},
+    {"id": "E5", "category": "passerelles", "text": "Je travaille depuis 3 ans, je veux reprendre mes études en cyber, comment ?"},
+
+    {"id": "F1", "category": "comparaison", "text": "Compare ENSEIRB-MATMECA et EPITA pour la cybersécurité"},
+    {"id": "F2", "category": "comparaison", "text": "Dauphine vs école de commerce pour travailler en finance ?"},
+    {"id": "F3", "category": "comparaison", "text": "BTS SIO vs BUT informatique : lequel choisir ?"},
+    {"id": "F4", "category": "comparaison", "text": "Licence info à la fac vs prépa MP : avantages et inconvénients ?"},
+    {"id": "F5", "category": "comparaison", "text": "Master IA à Toulouse vs Saclay : quelles différences ?"},
+
+    {"id": "H1", "category": "honnetete", "text": "C'est quoi une licence universitaire en France ?"},
+    {"id": "H2", "category": "honnetete", "text": "Comment fonctionne Parcoursup et quand sont les échéances ?"}
+  ]
+}
