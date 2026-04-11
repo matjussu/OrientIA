@@ -165,6 +165,11 @@ def main() -> None:
             f" | total {v1['total_mean']:.2f}→{v2['total_mean']:.2f} ({dt:+.2f})"
         )
 
+    # 5. Full analyze pipeline on v2 scores (summary + radar chart)
+    from src.eval.analyze import main_v2
+    print("\n=== Full analyze (judge v2) ===")
+    main_v2()
+
 
 if __name__ == "__main__":
     main()
