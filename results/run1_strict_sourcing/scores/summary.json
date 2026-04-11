@@ -1,0 +1,68 @@
+{
+  "by_system": {
+    "mistral_raw": {
+      "neutralite": 3.0,
+      "realisme": 2.96875,
+      "sourcage": 2.90625,
+      "diversite_geo": 2.34375,
+      "agentivite": 2.875,
+      "decouverte": 2.09375,
+      "total": 16.1875
+    },
+    "our_rag": {
+      "neutralite": 2.875,
+      "realisme": 2.34375,
+      "sourcage": 2.3125,
+      "diversite_geo": 1.4375,
+      "agentivite": 2.75,
+      "decouverte": 1.6875,
+      "total": 13.40625
+    },
+    "chatgpt_recorded": {
+      "neutralite": 1.0,
+      "realisme": 1.0625,
+      "sourcage": 0.46875,
+      "diversite_geo": 0.65625,
+      "agentivite": 1.875,
+      "decouverte": 1.1875,
+      "total": 6.25
+    }
+  },
+  "by_category": {
+    "biais_marketing": {
+      "mistral_raw": 16.0,
+      "our_rag": 13.6,
+      "chatgpt_recorded": 5.2
+    },
+    "realisme": {
+      "our_rag": 15.4,
+      "mistral_raw": 15.8,
+      "chatgpt_recorded": 5.6
+    },
+    "decouverte": {
+      "our_rag": 12.6,
+      "mistral_raw": 17.2,
+      "chatgpt_recorded": 4.4
+    },
+    "diversite_geo": {
+      "mistral_raw": 16.2,
+      "our_rag": 13.0,
+      "chatgpt_recorded": 8.2
+    },
+    "passerelles": {
+      "mistral_raw": 17.0,
+      "our_rag": 13.4,
+      "chatgpt_recorded": 5.6
+    },
+    "comparaison": {
+      "mistral_raw": 15.4,
+      "our_rag": 13.2,
+      "chatgpt_recorded": 7.2
+    },
+    "honnetete": {
+      "mistral_raw": 15.0,
+      "chatgpt_recorded": 9.5,
+      "our_rag": 11.5
+    }
+  }
+}

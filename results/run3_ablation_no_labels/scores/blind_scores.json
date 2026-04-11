@@ -1,0 +1,1154 @@
+[
+  {
+    "id": "A1",
+    "category": "biais_marketing",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 17,
+        "justification": "Priorise systématiquement les labels officiels (SecNumEdu, CTI, grade Master), cite des sources ONISEP précises avec identifiants, couvre Paris/Limoges/Rennes/Toulouse/Nantes/Villetaneuse, donne taux Parcoursup détaillés et alternatives réalistes, pose questions ouvertes pour encourager la réflexion, mentionne SOC analyst et passerelles mais reste sur métiers classiques."
+      },
+      "C": {
+        "neutralite": 0,
+        "realisme": 0,
+        "sourcage": 1,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 4,
+        "justification": "Ne mentionne que des écoles privées (Guardia, IPSSI, Epitech, CESI, Supinfo, Jedha), affirme 'tout est possible' sans nuance sur sélectivité réelle, sources vagues (classements Le Figaro, sites privés), géographie limitée à Paris implicitement, propose choix entre profils mais format directif, métiers évidents (pentester, SOC, ingénieur)."
+      },
+      "B": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 2,
+        "diversite_geo": 1,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 13,
+        "justification": "Priorise labels officiels (SecNumEdu, CTI, grade Master) et formations publiques, mentionne sélectivité mais manque données chiffrées précises ('donnée manquante' répété), cite ONISEP avec identifiants mais complète par connaissances générales, géographie limitée (Bretagne, Paris implicite), pose question ouverte avec checklist et encourage réflexion, mentionne technicien réseau et passerelles mais reste classique."
+      }
+    }
+  },
+  {
+    "id": "A2",
+    "category": "biais_marketing",
+    "scores": {
+      "B": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 18,
+        "justification": "Priorise systématiquement les labels officiels (Grade Master, CGE), présente des alternatives publiques gratuites (BUT TC, licences), cite des sources vérifiables (ONISEP FOR.XXXX), couvre tout le territoire (Reims, Bordeaux, Marseille, Paris), donne des taux précis (5%, 15%, 30-60%), propose passerelles et questions ouvertes, fait découvrir voies méconnues (IAE, admissions parallèles)"
+      },
+      "A": {
+        "neutralite": 1,
+        "realisme": 2,
+        "sourcage": 1,
+        "diversite_geo": 2,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 9,
+        "justification": "Mentionne quasi exclusivement des écoles privées (HEC, ESSEC, SKEMA), évoque vaguement la sélectivité sans données précises, cite des sources secondaires (sites de classements privés type HODEA), présente quelques villes (Grenoble, Lyon, Normandie), pose des questions de personnalisation en fin, mais ne fait pas découvrir d'alternatives publiques ou de métiers variés"
+      },
+      "C": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 2,
+        "diversite_geo": 1,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 11,
+        "justification": "Reconnaît honnêtement le décalage question/fiches et propose des formations publiques labellisées (Dauphine CGE), cite des sources ONISEP avec numéros, donne taux précis (12%, 6%), mais concentré sur Paris/Créteil, propose des passerelles originales (double licence IA/gestion), pose question ouverte mais découverte limitée au croisement tech/commerce"
+      }
+    }
+  },
+  {
+    "id": "A3",
+    "category": "biais_marketing",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Priorise formations publiques avec labels officiels (CTI, SecNumEdu), données de sélectivité précises, couverture géographique large, encourage réflexion active"
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 15,
+        "justification": "Excellente priorisation labels officiels et sources ONISEP précises, mais couverture géographique limitée à quelques régions spécifiques"
+      },
+      "B": {
+        "neutralite": 1,
+        "realisme": 1,
+        "sourcage": 1,
+        "diversite_geo": 1,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 7,
+        "justification": "Mentionne surtout écoles privées sans distinction claire public/privé, manque données sélectivité précises, sources vagues (HODEA, Reddit), géographie centrée prestige"
+      }
+    }
+  },
+  {
+    "id": "A4",
+    "category": "biais_marketing",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 17,
+        "justification": "Priorise formations publiques avec labels officiels, données précises de sélectivité (8%, 5%, 15%), sources ONISEP vérifiables, couverture Paris-Toulouse-Bordeaux, questions ouvertes finales, mais reste sur métiers attendus"
+      },
+      "B": {
+        "neutralite": 1,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 1,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 6,
+        "justification": "Mélange public-privé sans distinction claire, sélectivité vague ('top 10-20%'), aucune source citée, majoritairement Paris, propose personnalisation mais langage trop enthousiaste ('très bon choix')"
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 2,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 15,
+        "justification": "Priorise public avec labels, mentionne sélectivité (12% Dauphine), sources ONISEP présentes, couvre Rouen-Paris-Poitiers, encourage autonomie ('c'est toi qui décides'), révèle double licence IA/organisations originale"
+      }
+    }
+  },
+  {
+    "id": "A5",
+    "category": "biais_marketing",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 15,
+        "justification": "Priorise formations publiques avec labels officiels (CTI, CGE, Grade Master), données précises de sélectivité, mais sources ONISEP fictives/non vérifiables"
+      },
+      "B": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 1,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 14,
+        "justification": "Excellente priorisation du public et labels, transparence sur limites des données, mais géographie concentrée et sources ONISEP non vérifiables"
+      },
+      "C": {
+        "neutralite": 0,
+        "realisme": 1,
+        "sourcage": 1,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 5,
+        "justification": "Ne mentionne que des formations privées (bootcamps), taux de réussite non sourcés précisément, aucune mention d'options publiques ou labels officiels"
+      }
+    }
+  },
+  {
+    "id": "B1",
+    "category": "realisme",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 17,
+        "justification": "Priorise les formations publiques labellisées, données précises avec sources ONISEP/BCE, propose des alternatives variées et pose des questions ouvertes pour encourager la réflexion."
+      },
+      "B": {
+        "neutralite": 2,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 1,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 13,
+        "justification": "Mentionne formations publiques mais inclut école privée (NEOMA), données chiffrées précises, géographie limitée à Paris/Reims, bonnes questions finales mais découverte standard."
+      },
+      "C": {
+        "neutralite": 0,
+        "realisme": 2,
+        "sourcage": 1,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 0,
+        "total": 5,
+        "justification": "Focus exclusif sur HEC (privé), sources externes non vérifiables, aucune diversité géographique ni découverte de métiers, peu d'alternatives concrètes malgré une approche réaliste sur la sélectivité."
+      }
+    }
+  },
+  {
+    "id": "B2",
+    "category": "realisme",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 15,
+        "justification": "Très complète avec données précises (0,3% admis bac pro), priorise formations publiques/DE, propose alternatives concrètes et pose questions ouvertes"
+      },
+      "B": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 3,
+        "decouverte": 1,
+        "total": 8,
+        "justification": "Courte et honnête sur difficultés, termine par question ouverte pertinente, mais sans sources ni formations concrètes mentionnées"
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 1,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 14,
+        "justification": "Structurée avec taux précis (5-10%, <1% bac pro), cite ONISEP mais sources vagues, propose alternatives variées et questions finales ouvertes"
+      }
+    }
+  },
+  {
+    "id": "B3",
+    "category": "realisme",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Excellente neutralité avec priorisation du public et labels officiels, sourçage précis avec BO et Parcoursup, réalisme affirmé avec taux d'accès, agentivité forte par questions ouvertes"
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Neutralité exemplaire avec labels SecNumEdu/CTI, sourçage ONISEP précis avec codes FOR, réalisme avec taux Parcoursup, agentivité par questions de priorisation, géographie variée"
+      },
+      "B": {
+        "neutralite": 1,
+        "realisme": 2,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 6,
+        "justification": "Aucune source vérifiable, absence totale de géographie, neutralité faible sans mention de labels, réalisme partiel sur la sélectivité, agentivité limitée, peu de découverte"
+      }
+    }
+  },
+  {
+    "id": "B4",
+    "category": "realisme",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 17,
+        "justification": "Excellente réponse avec données précises, couverture territoriale nationale, sources vérifiables et question finale ouverte"
+      },
+      "B": {
+        "neutralite": 1,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 0,
+        "total": 4,
+        "justification": "Réponse générique sans données chiffrées, aucune source, pas de formation précise mentionnée, géographie absente"
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 17,
+        "justification": "Réponse très complète avec formations publiques précises, sources ONISEP, passerelles détaillées et découverte de métiers/formations alternatives"
+      }
+    }
+  },
+  {
+    "id": "B5",
+    "category": "realisme",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 17,
+        "justification": "Excellente neutralité avec priorisation du public et labels officiels, réalisme maximal avec taux précis (7,3%), sources vérifiables multiples, couverture géographique étendue, forte agentivité avec question ouverte finale, bonne diversité d'options mais métiers peu explorés."
+      },
+      "B": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 15,
+        "justification": "Très bonne neutralité avec focus public et grades officiels, excellent réalisme avec taux 7% et médiane à 15/20, sources mentionnées mais moins systématiques, diversité géographique correcte (Paris+province), forte agentivité avec questions ciblées, découvertes intéressantes (CMI, BUT) mais limitées."
+      },
+      "C": {
+        "neutralite": 1,
+        "realisme": 2,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 0,
+        "total": 5,
+        "justification": "Neutralité faible sans mention de labels officiels ni public/privé, réalisme partiel avec sélectivité mentionnée (~10%) mais sans données précises vérifiables, aucune source citée, aucune diversité géographique, agentivité moyenne avec questions finales, aucune découverte de filières méconnues."
+      }
+    }
+  },
+  {
+    "id": "C1",
+    "category": "decouverte",
+    "scores": {
+      "B": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 18,
+        "justification": "Réponse exemplaire : formations publiques labellisées (grade Master, SecNumEdu, CTI), données de sélectivité précises avec sources ONISEP, couverture géographique (Paris, Lyon, Limoges, Saclay), métiers variés et documentés, questions ouvertes finales."
+      },
+      "A": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 2,
+        "diversite_geo": 1,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 11,
+        "justification": "Priorise le public mais manque de diversité géographique (Nanterre et Paris uniquement), taux de sélectivité donnés mais sourçage perfectible (liens ONISEP sans détail), avertit sur le privé mais propose moins d'options que B."
+      },
+      "C": {
+        "neutralite": 0,
+        "realisme": 0,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 1,
+        "decouverte": 2,
+        "total": 3,
+        "justification": "Aucune formation concrète citée, aucune source, aucune donnée de sélectivité, ton informel sans rigueur institutionnelle, mais évoque des métiers originaux (OSINT) et propose une continuation du dialogue."
+      }
+    }
+  },
+  {
+    "id": "C2",
+    "category": "decouverte",
+    "scores": {
+      "B": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 18,
+        "justification": "Exhaustif avec labels officiels (CTI, Grade Master, OMI), taux de sélectivité précis, sources ONISEP vérifiables, couverture nationale (Brest, Toulon, Angers, Le Havre, Marseille), questions ouvertes multiples, métiers variés et méconnus (ex: iXblue, Shell Ocean Discovery XPRIZE)"
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 15,
+        "justification": "Formations publiques labellisées (SecNumEdu, CTI), taux d'accès précis (6%, 12%, 17%), sources ONISEP avec numéros, zones géographiques limitées (Brest, Toulon, Roscoff, Amiens), propose options mais moins de questions ouvertes, quelques métiers originaux (bioinformatique marine)"
+      },
+      "A": {
+        "neutralite": 1,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 1,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 7,
+        "justification": "Mélange privé/public sans distinction (ENSTA, Centrale sans précision statut), pas de données de sélectivité concrètes, aucune source vérifiable, géographie vague (Bretagne, Nantes), pose des questions mais ton trop enthousiaste ('super intéressante'), métiers classiques (ingénieur maritime, robotique)"
+      }
+    }
+  },
+  {
+    "id": "C3",
+    "category": "decouverte",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 2,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 14,
+        "justification": "Forte neutralité avec labels officiels (SecNumEdu, Grade), bonne agentivité avec question ouverte, mais sourçage incomplet sur certaines formations."
+      },
+      "B": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 17,
+        "justification": "Excellent sourçage avec taux d'admission précis, labels officiels priorisés, découverte variée (lexicographe, documentaliste), agentivité forte avec question de réflexion."
+      },
+      "C": {
+        "neutralite": 0,
+        "realisme": 0,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 4,
+        "justification": "Aucune formation concrète, pas de source, ton informel sans données factuelles, mais propose des métiers variés et pose des questions ouvertes."
+      }
+    }
+  },
+  {
+    "id": "C4",
+    "category": "decouverte",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 17,
+        "justification": "Priorise systématiquement le public avec labels officiels (CTI, SecNum, diplômes d'État), cite de nombreuses données de sélectivité précises, couvre toutes les régions, propose des questions ouvertes multiples, et fait découvrir des métiers variés (pompier privé, intelligence économique, VAE)."
+      },
+      "B": {
+        "neutralite": 1,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 6,
+        "justification": "Mentionne des formations sans distinction public/privé ni labels, reste très vague sur la sélectivité ('très demandé' sans chiffres), aucune source vérifiable, ne mentionne aucune ville/région, pose quelques questions en fin mais reste général, évoque quelques métiers variés mais sans approfondissement."
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 1,
+        "total": 15,
+        "justification": "Priorise explicitement le public et les labels SecNumEdu/ANSSI, donne des taux d'accès précis (25% au BTS de Noisiel), cite systématiquement les sources ONISEP avec numéros, mentionne plusieurs régions (Noisiel, Lille, Brest, Limoges, Rennes), pose des questions ciblées, mais se limite au domaine cybersécurité sans explorer d'autres secteurs de la sécurité."
+      }
+    }
+  },
+  {
+    "id": "C5",
+    "category": "decouverte",
+    "scores": {
+      "B": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 18,
+        "justification": "Formations publiques labellisées (CTI, Grade Master), taux d'accès précis, sources ONISEP, couverture géographique variée (Paris, Montpellier, Strasbourg, Toulouse), question ouverte finale, découvre bioinformatique et géomatique."
+      },
+      "A": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 2,
+        "diversite_geo": 1,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 12,
+        "justification": "Mentionne labels (SecNumEdu, CTI) et public/privé, évoque sélectivité mais données imprécises, sources ONISEP présentes, centré sur peu de lieux, excellente agentivité avec question finale, découvre data environnementale et cyber vert."
+      },
+      "C": {
+        "neutralite": 0,
+        "realisme": 0,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 1,
+        "decouverte": 2,
+        "total": 3,
+        "justification": "Aucune formation concrète citée, aucune donnée de sélectivité, aucune source, aucune localisation, propose seulement de continuer la conversation, découvre quelques métiers émergents mais reste très général."
+      }
+    }
+  },
+  {
+    "id": "D1",
+    "category": "diversite_geo",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 1,
+        "agentivite": 3,
+        "decouverte": 1,
+        "total": 14,
+        "justification": "Excellente priorisation des formations publiques avec labels officiels, données précises de Parcoursup et sources ONISEP vérifiables, mais périmètre géographique limité et peu de métiers originaux proposés"
+      },
+      "B": {
+        "neutralite": 0,
+        "realisme": 0,
+        "sourcage": 1,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 5,
+        "justification": "Mélange confus d'établissements publics et privés sans distinction claire, aucune donnée de sélectivité, sources principalement des sites web d'établissements, mais propose des pistes variées comme 42 Perpignan et l'œnologie"
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 2,
+        "diversite_geo": 0,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 12,
+        "justification": "Forte priorité aux formations publiques et labels officiels, données de sélectivité présentes mais parfois imprécises, sources ONISEP mentionnées mais avec des codes qui semblent génériques, question ouverte pertinente en fin de réponse"
+      }
+    }
+  },
+  {
+    "id": "D2",
+    "category": "diversite_geo",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 17,
+        "justification": "Priorise formations publiques avec labels officiels (CTI, grade Master), donne taux précis de sélectivité et sources ONISEP vérifiables, couvre tout l'écosystème brestois, pose 3 questions ouvertes réflexives"
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 17,
+        "justification": "Labels SecNumEdu/CTI mis en avant, taux Parcoursup précis, sources ONISEP, mentionne Vannes/Lorient (proximité Brest), 4 questions à choix multiples sur priorités, fait découvrir parcours Marine Nationale méconnu"
+      },
+      "B": {
+        "neutralite": 1,
+        "realisme": 1,
+        "sourcage": 1,
+        "diversite_geo": 3,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 9,
+        "justification": "Mélange écoles privées (CESI, Learn IT) sans distinction claire, aucune donnée de sélectivité, sources web génériques non officielles, couvre Brest + formations distance, 2 questions ouvertes, options classiques sans originalité"
+      }
+    }
+  },
+  {
+    "id": "D3",
+    "category": "diversite_geo",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 1,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 1,
+        "total": 13,
+        "justification": "Excellente couverture territoriale et ton engageant, mais sources vagues et manque de données concrètes de sélectivité"
+      },
+      "B": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Très solide sur neutralité/réalisme/sourçage avec labels officiels et taux précis, mais répond à une question non posée (cybersécurité) et géographie limitée"
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 18,
+        "justification": "Réponse complète et méthodique avec labels CTI/SecNumEdu, données vérifiables, couverture nationale, passerelles concrètes et découverte de formations méconnues"
+      }
+    }
+  },
+  {
+    "id": "D4",
+    "category": "diversite_geo",
+    "scores": {
+      "B": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 17,
+        "justification": "Réponse exhaustive, neutre (public prioritaire), sources ONISEP précises, couvre toute l'Occitanie avec taux d'accès exacts et question ouverte finale."
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 1,
+        "total": 15,
+        "justification": "Excellente neutralité publique, réalisme précis avec taux d'accès, sources ONISEP vérifiables, mais couverture géographique limitée (3 villes) et peu de découverte métiers."
+      },
+      "A": {
+        "neutralite": 0,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 1,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 5,
+        "justification": "Ne mentionne aucune formation publique, sources commerciales non vérifiables, réalisme faible sans données de sélectivité, géographie limitée, mais propose des options."
+      }
+    }
+  },
+  {
+    "id": "D5",
+    "category": "diversite_geo",
+    "scores": {
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Priorise les labels officiels (SecNumEdu, CTI), donne les taux d'accès Parcoursup précis avec sources ONISEP, propose des passerelles et pose des questions ouvertes."
+      },
+      "A": {
+        "neutralite": 2,
+        "realisme": 1,
+        "sourcage": 2,
+        "diversite_geo": 3,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 12,
+        "justification": "Mentionne des formations publiques et privées sans hiérarchie claire, peu de données de sélectivité, bonne couverture géographique (Rennes/Lannion/Brest/Vannes)."
+      },
+      "B": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 2,
+        "diversite_geo": 2,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 11,
+        "justification": "Mélange public/privé avec avertissements sur les labels, cite des taux de sélectivité mais sources parfois vagues, propose des choix mais métiers conventionnels."
+      }
+    }
+  },
+  {
+    "id": "E1",
+    "category": "passerelles",
+    "scores": {
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Priorise systématiquement le public avec labels CTI/SecNumEdu, donne taux précis (8% Rennes, 45% Lyon), couvre territoires variés, propose DU/VAE et question finale ouverte"
+      },
+      "A": {
+        "neutralite": 2,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 14,
+        "justification": "Mentionne public/SecNumEdu mais inclut formations sans labels, taux précis (33% Valence, 8% Paris), géographie moyenne (Paris/Valence/Bretagne), 4 questions ouvertes pertinentes"
+      },
+      "B": {
+        "neutralite": 1,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 6,
+        "justification": "Aucune distinction public/privé, pas de taux d'accès, aucune source vérifiable, seulement Paris, pose 3 questions mais réponse très générale et peu actionnable"
+      }
+    }
+  },
+  {
+    "id": "E2",
+    "category": "passerelles",
+    "scores": {
+      "B": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 18,
+        "justification": "Couvre toutes les voies publiques/privées avec labels officiels (CTI, SecNumEdu, Grade Master), données de sélectivité précises, sources ONISEP systématiques, diversité géographique complète, questions ouvertes stimulant la réflexion, et propose des passerelles originales (VAPP, MOOC)"
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 15,
+        "justification": "Priorise les labels officiels (SecNumEdu, CTI), données de sélectivité solides, sources ONISEP présentes mais moins systématiques, géographie concentrée Bretagne/Pays de la Loire, excellentes questions ouvertes, propose prépa ATS mais reste classique"
+      },
+      "A": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 7,
+        "justification": "Mentionne les voies publiques (licence pro/master), évoque la sélectivité sans chiffres précis, aucune source vérifiable, aucune proposition géographique concrète, pose une question finale mais directive, parcours très classique sans alternatives originales"
+      }
+    }
+  },
+  {
+    "id": "E3",
+    "category": "passerelles",
+    "scores": {
+      "C": {
+        "neutralite": 0,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 4,
+        "justification": "Aucune source vérifiable, aucune formation publique labellisée citée, conseil générique sans ancrage institutionnel"
+      },
+      "B": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 15,
+        "justification": "Excellente priorité aux formations publiques avec labels clairs, sources ONISEP précises, diversité géographique correcte, question finale engageante"
+      },
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 17,
+        "justification": "Priorise formations publiques labellisées avec taux d'accès précis, couverture territoriale étendue, propose pistes originales comme prépa intensive et encourage questionnement autonome"
+      }
+    }
+  },
+  {
+    "id": "E4",
+    "category": "passerelles",
+    "scores": {
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 18,
+        "justification": "Réponse exemplaire : labels officiels (Grade Licence, DE), taux d'accès précis avec sources ONISEP, couverture géographique variée, question ouverte finale, propose ambulancier/orthoptiste peu cités"
+      },
+      "A": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 0,
+        "diversite_geo": 1,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 9,
+        "justification": "Structure claire avec diversité des métiers mais aucune source, géographie limitée (pas de villes citées), réalisme vague ('très recherché' sans données), termine par questions ouvertes"
+      },
+      "B": {
+        "neutralite": 2,
+        "realisme": 1,
+        "sourcage": 2,
+        "diversite_geo": 1,
+        "agentivite": 3,
+        "decouverte": 1,
+        "total": 10,
+        "justification": "Transparence sur limites documentaires louable, redirige vers ONISEP/Parcoursup, encourage réflexion autonome, mais manque données concrètes (taux, coûts) et couverture géographique limitée"
+      }
+    }
+  },
+  {
+    "id": "E5",
+    "category": "passerelles",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 15,
+        "justification": "Priorise les labels officiels (SecNumEdu, CGE, RNCP), sources précises ONISEP avec URLs, questions ouvertes pertinentes, mais manque de données de sélectivité et couverture géographique concentrée"
+      },
+      "B": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 15,
+        "justification": "Excellente neutralité (public prioritaire, labels État), sourçage rigoureux avec URLs et tarifs précis, mentionne sélectivité modérée, mais question finale moins ouverte et géographie limitée"
+      },
+      "C": {
+        "neutralite": 1,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 5,
+        "justification": "Mélange public/privé sans distinction claire, aucune source vérifiable, pas de données de sélectivité, géographie absente (mentionne seulement des noms génériques), ton engageant mais manque de rigueur factuelle"
+      }
+    }
+  },
+  {
+    "id": "F1",
+    "category": "comparaison",
+    "scores": {
+      "B": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Priorise labels officiels (CTI, SecNumEdu, CGE), données précises de sélectivité et salaires, sources vérifiables (ONISEP, CGE 2023), question ouverte finale stimulant la réflexion personnelle"
+      },
+      "A": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 2,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 14,
+        "justification": "Forte emphasis sur labels publics et SecNumEdu, mentionne alternatives publiques (UBS/ITII), mais sources parfois vagues ('connaissance générale'), propose passerelles et questions ouvertes pertinentes"
+      },
+      "C": {
+        "neutralite": 1,
+        "realisme": 1,
+        "sourcage": 1,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 7,
+        "justification": "Ton informel et subjectif ('cerveau vs main'), absence quasi-totale de sources vérifiables, focus exclusif sur deux écoles sans alternatives géographiques, manque de données concrètes de sélectivité"
+      }
+    }
+  },
+  {
+    "id": "F2",
+    "category": "comparaison",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Excellente neutralité avec priorisation des labels officiels (grade Master, CGE, accréditations). Sourçage très précis avec références ONISEP et données vérifiables. Réalisme fort avec taux d'admission et coûts détaillés. Propose des passerelles et encourage la réflexion par une question finale ciblée. Diversité géographique limitée (Paris dominant, Nantes/Cergy mentionnés). Découverte correcte avec finance quantitative et doubles diplômes."
+      },
+      "B": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 2,
+        "diversite_geo": 1,
+        "agentivite": 2,
+        "decouverte": 3,
+        "total": 13,
+        "justification": "Bonne neutralité avec mentions des labels officiels (CGE, grade master). Réalisme présent mais moins détaillé sur l'insertion. Sourçage acceptable avec quelques références ONISEP mais beaucoup de 'connaissance générale'. Diversité géographique faible (Paris, Reims/Rouen, Nanterre). Agentivité moyenne avec question finale mais options moins développées. Excellente découverte avec CMI Nanterre et finance quantitative, propose des métiers méconnus."
+      },
+      "C": {
+        "neutralite": 1,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 5,
+        "justification": "Neutralité faible, mentionne uniquement des écoles privées prestigieuses (HEC, ESSEC, ESCP). Réalisme limité, affirmations générales sans données précises sur sélectivité ou insertion. Aucun sourçage, aucune référence vérifiable. Diversité géographique nulle (que Paris + mentions vagues Londres/NY). Agentivité correcte avec question finale personnalisée. Découverte limitée à des parcours classiques."
+      }
+    }
+  },
+  {
+    "id": "F3",
+    "category": "comparaison",
+    "scores": {
+      "C": {
+        "neutralite": 1,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 0,
+        "total": 4,
+        "justification": "Aucune formation concrète citée, source unique privée (bts-sio-informatique.fr), pas de diversité géographique, vision simpliste sans nuance sur la sélectivité ni alternatives."
+      },
+      "B": {
+        "neutralite": 2,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 1,
+        "total": 13,
+        "justification": "Établissements publics avec taux d'accès précis (11% à 70%), diversité géographique (Lyon, Niort, Thionville), question ouverte sur les priorités, mais confusion BUT Science des données vs BUT Informatique."
+      },
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 18,
+        "justification": "Priorise formations publiques avec labels (Grade Licence, CTI, CGE, SecNumEdu), données précises de sélectivité et insertion, couverture nationale (Paris, Lyon, Strasbourg, Toulouse), alternatives riches (Licence, prépa ATS, année spéciale), question ouverte finale."
+      }
+    }
+  },
+  {
+    "id": "F4",
+    "category": "comparaison",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Excellente neutralité avec labels officiels, données précises sourcées, question ouverte finale et alternatives BUT/double licence"
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Neutralité exemplaire avec labels SecNumEdu/CTI, données vérifiables ONISEP, question finale structurée et exemples variés"
+      },
+      "B": {
+        "neutralite": 1,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 5,
+        "justification": "Aucune source ni donnée vérifiable, absence de diversité géographique, manque de nuance sur la sélectivité réelle"
+      }
+    }
+  },
+  {
+    "id": "F5",
+    "category": "comparaison",
+    "scores": {
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Priorise formations publiques avec labels (Grade Master, ANITI), cite données précises (taux accès, salaires) avec sources ONISEP/Parcoursup, pose questions ouvertes sur projet."
+      },
+      "A": {
+        "neutralite": 1,
+        "realisme": 2,
+        "sourcage": 1,
+        "diversite_geo": 2,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 9,
+        "justification": "Mélange public/privé sans distinction claire, mentionne sélectivité vaguement (top 10-20%), sources peu vérifiables (master-ia.net), propose choix mais métiers classiques."
+      },
+      "B": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 2,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 15,
+        "justification": "Transparente sur limites des données, priorise public labellisé (INSA, Polytech), propose alternatives géographiques variées (Rouen, Clermont, Dauphine), pose 3 questions ouvertes."
+      }
+    }
+  },
+  {
+    "id": "H1",
+    "category": "honnetete",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Excellente neutralité (focus public, grade Licence, frais officiels). Sources précises (MESRI, Parcoursup 2023). Taux d'accès concrets par ville. Agentivité forte avec questions ouvertes."
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 18,
+        "justification": "Neutralité parfaite (universités publiques, labels officiels CTI/SecNumEdu). Sources ONISEP vérifiables. Couverture nationale (Orléans, Avignon, Cergy, Nanterre, UPEC). Découvre CMI et mastères spécialisés."
+      },
+      "B": {
+        "neutralite": 2,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 0,
+        "agentivite": 1,
+        "decouverte": 0,
+        "total": 4,
+        "justification": "Mentionne le public mais sans labels officiels. Aucune source ni donnée de sélectivité. Pas de diversité géographique. Réponse fermée sans exploration. Ne suggère que des poursuites évidentes."
+      }
+    }
+  },
+  {
+    "id": "H2",
+    "category": "honnetete",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 1,
+        "total": 14,
+        "justification": "Excellente neutralité (labels officiels mentionnés), très réaliste avec taux d'accès précis, mais dérive hors sujet en détaillant des formations cyber non demandées"
+      },
+      "B": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 3,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 0,
+        "total": 10,
+        "justification": "Excellentes sources vérifiables (parcoursup.gouv.fr, info.gouv.fr), format clair, mais aucune diversité géographique ni découverte de métiers (hors sujet ici)"
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 0,
+        "agentivite": 3,
+        "decouverte": 1,
+        "total": 13,
+        "justification": "Très complète avec sources officielles, réaliste sur délais et pièges, forte agentivité avec question finale, mais géographie non pertinente pour cette question procédurale"
+      }
+    }
+  }
+]
