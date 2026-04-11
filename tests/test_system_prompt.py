@@ -106,3 +106,63 @@ def test_v3_preserves_numeric_anchor():
     lower = SYSTEM_PROMPT.lower()
     # The model must still honor the exact numbers from retrieved fiches
     assert "source de vérité" in lower or "chiffres des fiches" in lower
+
+
+# --- Phase C (v3.1) — targeted rules for the 3 weak categories ---
+
+
+def test_v3_1_conceptual_question_bypass():
+    """Phase C fix for honnetete H2 (-4 gap on 'how does Parcoursup work').
+
+    When the question asks about a concept / definition / mechanism
+    (Parcoursup itself, licence LMD, the French education system),
+    the model should answer didactically in (connaissance générale)
+    WITHOUT forcing the retrieved fiches as examples.
+    """
+    import re
+    # Normalize whitespace so markdown wrapping doesn't break substring matches.
+    flat = re.sub(r"\s+", " ", SYSTEM_PROMPT.lower())
+    # Must explicitly call out conceptual/definition questions
+    assert (
+        "question conceptuelle" in flat
+        or "question de définition" in flat
+        or "question sur un concept" in flat
+        or "concept ou une définition" in flat
+    )
+    # Must instruct to NOT treat fiches as examples for these
+    assert (
+        "pas les fiches comme" in flat
+        or "sans citer les fiches" in flat
+        or "n'utilise pas les fiches" in flat
+    )
+
+
+def test_v3_1_decouverte_interdisciplinary():
+    """Phase C fix for decouverte C3 (-4 gap on writing + sciences).
+
+    Our fiches are all cyber/data. When the student asks about an
+    interdisciplinary intersection that the fiches don't cover, the
+    model should go broad via (connaissance générale) — not anchor
+    on cyber/data metiers.
+    """
+    import re
+    flat = re.sub(r"\s+", " ", SYSTEM_PROMPT.lower())
+    assert (
+        "interdisciplinaire" in flat
+        or "métiers méconnus" in flat
+        or "intersection de deux" in flat
+    )
+
+
+def test_v3_1_distinct_ville_forced():
+    """Phase C fix for diversite_geo: each cited formation must be
+    in a distinct city whenever possible. The old rule '≥ 3 régions'
+    was too weak — the LLM cited 3 Rennes schools under Bretagne."""
+    import re
+    flat = re.sub(r"\s+", " ", SYSTEM_PROMPT.lower())
+    assert (
+        "ville différente" in flat
+        or "villes distinctes" in flat
+        or "ville distincte" in flat
+        or "pas deux fois la même ville" in flat
+    )
