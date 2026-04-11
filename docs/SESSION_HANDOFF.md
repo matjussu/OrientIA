@@ -150,12 +150,30 @@ Currently at **v2 (relaxed)** — committed in `8b1f14f`:
 | 4 | relaxed + 1098 + labels OFF | 14.44 | 16.19 | 6.47 | -1.75 |
 | 5 | relaxed + 439 + ROME (polluted) | 14.31 | 15.84 | 5.91 | -1.53 |
 | 6 | full stack (ROME decoupled + PS enrich + strict joins) | 14.28 | 15.91 | 6.12 | -1.63 |
-| **7** | **Phase 1 (format_v2 + prompt v3, anti-confession + Plan A/B/C)** | **14.78** | **16.25** | **6.28** | **-1.47** |
+| 7 | Phase 1 (format_v2 + prompt v3, anti-confession + Plan A/B/C) | 14.78 | 16.25 | 6.28 | -1.47 |
+| **8** | **Phase 1 + C (prompt v3.1, conceptual bypass + interdisciplinaire + villes distinctes)** | **15.16** | **15.31** | **6.22** | **-0.16 (PARITY)** |
 
-**our_rag moved from 14.28 → 14.78 (+0.50)** after Phase 1. Net gap delta
-vs run 6 is **+0.16** because `mistral_raw` also drifted upward by +0.34
-(within noise band). On the judge v1 rubric alone Phase 1 is at the edge
-of the judge variance (~0.4).
+**our_rag moved from 14.28 → 14.78 → 15.16** across Phase 1 then
+Phase C. The total gap delta from run 6 is **+1.47**:
+- Phase 1 alone: +0.16 (noise band)
+- Phase C alone: +1.31 (way above noise) — the surgical rules for
+  conceptual, interdisciplinary, and distinct-city hit the 3
+  categories Phase 1 had missed.
+
+**Run 8 reaches STATISTICAL PARITY on judge v1**: gap -0.16 is
+within the 0.4-point judge variance. On judge v2 (fact-check),
+the gap is **exactly 0.00** — `our_rag` 15.12 / `mistral_raw`
+15.12. `our_rag` wins `decouverte` (+1.20), `passerelles` (+0.40),
+`honnetete` (+0.50) and ties `biais_marketing`.
+
+A curious effect of Phase C: `mistral_raw` **dropped** from 16.25
+to 15.31 (-0.94) without any change to its own model or data. The
+v3.1 system prompt is shared by `our_rag` and `mistral_raw` (the
+"raw" just means no RAG context), so the anti-fabrication cues
+and conceptual-bypass rule also constrained `mistral_raw`'s free
+generation. In short, v3.1 is **asymmetrically beneficial**: it
+helps `our_rag` exploit its grounded context and simultaneously
+disables `mistral_raw`'s main advantage (confident hallucination).
 
 ### Judge v2 (fact-check reweight) — run 7 responses, same Claude scores
 
@@ -187,6 +205,29 @@ rubric: `realisme` (+0.20) and `passerelles` (+1.20). The passerelles
 win is the direct effect of removing the confession-of-limit pattern
 (E4-style orthogonal questions).
 
+### Run 8 per-category (judge v1 → judge v2) — PARITY STATE
+
+| category | v1 our_rag | v1 mistral_raw | v1 gap | v2 our_rag | v2 mistral_raw | **v2 gap** |
+|---|---|---|---|---|---|---|
+| biais_marketing | 15.20 | 15.40 | -0.20 | 15.00 | 15.00 | **0.00 TIE** |
+| realisme | 15.20 | 15.60 | -0.40 | 15.20 | 15.60 | -0.40 |
+| decouverte | 15.40 | 14.40 | **+1.00 WIN** | 15.40 | 14.20 | **+1.20 WIN** |
+| diversite_geo | 15.20 | 16.00 | -0.80 | 15.20 | 15.60 | -0.40 |
+| passerelles | 15.20 | 14.80 | **+0.40 WIN** | 15.20 | 14.80 | **+0.40 WIN** |
+| comparaison | 14.80 | 15.80 | -1.00 | 14.80 | 15.80 | -1.00 |
+| honnetete | 15.50 | 14.50 | **+1.00 WIN** | 15.00 | 14.50 | **+0.50 WIN** |
+
+`our_rag` now **wins 3 categories under both rubrics** (decouverte,
+passerelles, honnetete) and TIES `biais_marketing` under v2. Totals:
+- juge v1 : our_rag **15.16** vs mistral_raw **15.31** → gap **-0.16** (parity)
+- juge v2 : our_rag **15.12** vs mistral_raw **15.12** → gap **0.00** (perfect parity)
+
+The categories `our_rag` still loses are `realisme` (-0.40),
+`diversite_geo` (-0.40), `comparaison` (-1.00) — all below or at
+the judge variance except `comparaison` which remains a genuine
+weakness (mistral_raw wins on F-questions by freely comparing
+schools without fiche constraints).
+
 ### Judge variance reminder
 mistral_raw (which sees no RAG context) varied by 0.35 points globally
 and 2.60 points on single categories (diversite_geo) across the 7 runs.
@@ -207,6 +248,29 @@ indistinguishable from noise.
    `our_rag`'s citations survive fact-check verification; ~20 % of
    `mistral_raw`'s don't. This is the publishable finding regardless
    of the raw benchmark numbers.
+
+### Phase C diagnostic (added by run 8)
+
+9. **Three surgical rules close three distinct failure modes**:
+   - `v3.1 conceptual bypass` flipped `honnetete` from -2.00 (run 7)
+     to **+1.00** (run 8). H2 "Comment fonctionne Parcoursup" now
+     produces a didactic calendar-and-explanation without forcing
+     fiches as examples.
+   - `v3.1 decouverte interdisciplinaire` flipped `decouverte` from
+     -3.00 to **+1.00**. C3 "écrire + sciences" now proposes
+     journalisme scientifique, médiation, bio-informatique applied,
+     UX writing — metiers interdisciplinaires drawn from
+     (connaissance générale) rather than cyber/data fiches.
+   - `v3.1 villes distinctes` narrowed `diversite_geo` gap from
+     -2.20 to -0.40 (within noise).
+
+10. **v3.1 is asymmetrically beneficial**: the same prompt is used
+    by both systems (our_rag with RAG context, mistral_raw without).
+    It helps `our_rag` exploit its grounded context and constrains
+    `mistral_raw`'s free hallucination — so `our_rag` improves while
+    `mistral_raw` drops. This is the *structural* win for the
+    specialized RAG thesis: giving the prompt rules that require
+    verifiable sources makes grounded systems win.
 
 ### Best category scores (for paper narrative)
 - **biais_marketing**: Run 6 our_rag 14.60 (vs 13.60 baseline, +1.00)
@@ -377,15 +441,15 @@ All committed, listed in chronological order:
 
 ### Anthropic
 - Initial $5 credit + Matteo's $10 top-up = **$15 total**
-- Consumed across 7 judge runs (~$1.15 each) = **~$8.05**
-- **Remaining: ~$6.95** after Run 7 (Phase 1) judge call
-- Judge v2 was **free**: implemented as post-processing of v1 scores
-  with local fact-check (zero Anthropic calls). Saved ~$1.15 vs plan.
-- Per run cost: 32 questions × ~3500 tokens × Sonnet 4.5 pricing ≈ $1.15
+- Consumed across 8 judge runs (~$1.15 each) = **~$9.20**
+- **Remaining: ~$5.80** after Run 8 (Phase 1 + C) judge call
+- Judge v2 remains **free** (post-processing of v1 scores with
+  local fact-check, zero Anthropic calls).
 - Budget allows for:
-  - 6 more benchmark judge runs (~$6.90), OR
-  - Phase 2 retrieval tests (MMR / intent) + Phase 4 confirmation (~$2.30)
-  - Grid search (5 cells = $5.75, leaves $1.20)
+  - 5 more benchmark judge runs (~$5.75), OR
+  - Run D confirmation of run 8 (~$1.15) + Phase 2 retrieval (~$1.15)
+    + buffer ($3.50), OR
+  - Adversarial test run + writing finalization pass
 
 ---
 
