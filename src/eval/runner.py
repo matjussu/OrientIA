@@ -1,5 +1,6 @@
 import json
 import random
+import re
 import time
 from pathlib import Path
 
@@ -38,9 +39,20 @@ def _call_with_retry(fn, *args, max_retries: int = 5, **kwargs):
             is_transient_network = any(
                 kw in exc_name for kw in ("Timeout", "Connect", "Read", "Network", "Remote")
             )
-            is_5xx = "503" in msg or "502" in msg or "504" in msg or "500" in msg
+            # Any 5xx (500-599) — includes Cloudflare 520/521/522/523/524/525/526/527
+            # which regularly bubble up through api.mistral.ai's proxy.
+            is_5xx = bool(re.search(r"\b5\d{2}\b", msg))
+            # Cloudflare pages sometimes show up as HTML instead of status codes,
+            # with phrases like "Web server returned an unknown error".
+            is_cloudflare_html = (
+                "cloudflare" in msg.lower()
+                or "web server is returning" in msg.lower()
+                or "web server returned" in msg.lower()
+            )
 
-            is_retriable = is_rate_limit or is_transient_network or is_5xx
+            is_retriable = (
+                is_rate_limit or is_transient_network or is_5xx or is_cloudflare_html
+            )
 
             if not is_retriable or attempt == max_retries:
                 raise
