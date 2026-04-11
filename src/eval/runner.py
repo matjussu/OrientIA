@@ -7,13 +7,18 @@ from pathlib import Path
 BLIND_LABELS = ["A", "B", "C"]
 
 
-def _call_with_retry(fn, *args, max_retries: int = 4, base_delay: float = 2.0, **kwargs):
+def _call_with_retry(fn, *args, max_retries: int = 5, **kwargs):
     """Call `fn(*args, **kwargs)` with exponential backoff on transient errors.
 
-    Mistral and Anthropic API calls occasionally hit ReadTimeout or transient
-    5xx errors when the model is cold-starting or under load. Retry with
-    2s / 4s / 8s / 16s delays before giving up. The ChatGPTRecordedSystem
-    doesn't hit network so this is effectively a no-op for it.
+    Handles three classes of transient failure:
+    - Timeouts / connection resets (2s base delay)
+    - 5xx server errors (2s base delay)
+    - 429 rate limit / capacity exceeded (15s base delay — free tier
+      recoveries take longer than transient network blips)
+
+    Non-transient exceptions (auth, KeyError, ValueError) bubble up
+    immediately. The ChatGPTRecordedSystem is file-local so this is
+    effectively a no-op for it.
     """
     last_exc = None
     for attempt in range(max_retries + 1):
@@ -22,15 +27,28 @@ def _call_with_retry(fn, *args, max_retries: int = 4, base_delay: float = 2.0, *
         except Exception as exc:
             last_exc = exc
             exc_name = type(exc).__name__
-            # Only retry on transient network / timeout / 5xx errors.
-            # Other exceptions (auth, KeyError, ValueError) bubble up immediately.
-            is_transient = any(
+            msg = str(exc)
+
+            is_rate_limit = (
+                "429" in msg
+                or "rate limit" in msg.lower()
+                or "capacity" in msg.lower()
+                or "RateLimit" in exc_name
+            )
+            is_transient_network = any(
                 kw in exc_name for kw in ("Timeout", "Connect", "Read", "Network", "Remote")
-            ) or "503" in str(exc) or "502" in str(exc) or "504" in str(exc)
-            if not is_transient or attempt == max_retries:
+            )
+            is_5xx = "503" in msg or "502" in msg or "504" in msg or "500" in msg
+
+            is_retriable = is_rate_limit or is_transient_network or is_5xx
+
+            if not is_retriable or attempt == max_retries:
                 raise
+
+            base_delay = 15.0 if is_rate_limit else 2.0
             delay = base_delay * (2 ** attempt)
-            print(f"  [retry {attempt+1}/{max_retries}] {exc_name}: {exc}. Waiting {delay}s...")
+            kind = "rate-limit" if is_rate_limit else "transient"
+            print(f"  [retry {attempt+1}/{max_retries}] {kind} {exc_name}: {msg[:120]}. Waiting {delay:.0f}s...")
             time.sleep(delay)
     raise last_exc
 
