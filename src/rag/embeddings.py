@@ -25,6 +25,18 @@ def fiche_to_text(fiche: dict) -> str:
         parts.append(f"Places : {fiche['nombre_places']}")
     if fiche.get("domaine"):
         parts.append(f"Domaine : {fiche['domaine']}")
+    if fiche.get("departement"):
+        parts.append(f"Département : {fiche['departement']}")
+    # Include the formation detail (description) — a rich text signal
+    # for retrieval specificity (distinguishes similar BTS by parcours).
+    detail = (fiche.get("detail") or "").strip()
+    if detail:
+        parts.append(f"Détail : {detail[:200]}")
+    # NOTE: debouches (ROME) and profil_admis are intentionally NOT included
+    # here. The ROME debouches are shared across all fiches of the same
+    # domain (embedding pollution). The profil_admis mentions/bac-types are
+    # structured numeric data better served in the generator context where
+    # the LLM can reason about them, not in the retrieval embedding.
     return " | ".join(parts)
 
 

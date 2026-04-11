@@ -23,14 +23,37 @@ def fuzzy_match_fiches(
     parcoursup: list[dict],
     onisep: list[dict],
     threshold: int = 85,
+    min_tokens: int = 4,
+    require_onisep_etab: bool = True,
 ) -> list[dict]:
-    onisep_sigs = [(f, _signature(f)) for f in onisep]
+    """Fuzzy match parcoursup fiches to onisep fiches with precision guards.
+
+    Two anti-spurious-match filters were added after run 4 revealed 280+
+    fuzzy_100.0 matches where the signatures were too short or generic:
+
+    1. `min_tokens` : require the PARCOURSUP signature to have at least N
+       tokens. Short signatures like "master ia" match many things at 100%
+       and pollute the merge with noise.
+    2. `require_onisep_etab` : only consider onisep candidates that have a
+       populated etablissement field. Matching a parcoursup fiche against
+       an onisep fiche with empty etab gives a spurious 100% match on the
+       formation name alone, losing the geographic discrimination.
+    """
+    # Pre-filter onisep candidates by etab populated (if required)
+    if require_onisep_etab:
+        candidates = [(f, _signature(f)) for f in onisep if (f.get("etablissement") or "").strip()]
+    else:
+        candidates = [(f, _signature(f)) for f in onisep]
+
     merged = []
     for ps in parcoursup:
         ps_sig = _signature(ps)
+        # Skip too-short signatures (high false-positive risk)
+        if len(ps_sig.split()) < min_tokens:
+            continue
         best_score = 0
         best_onisep = None
-        for onisep_fiche, on_sig in onisep_sigs:
+        for onisep_fiche, on_sig in candidates:
             score = fuzz.token_set_ratio(ps_sig, on_sig)
             if score > best_score:
                 best_score = score

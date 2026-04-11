@@ -26,6 +26,26 @@ TAUX_ACCES_COLUMN = "taux_acces_ens"
 PLACES_COLUMN = "capa_fin"
 CONTRAT_COLUMN = "contrat_etab"
 REGION_COLUMN = "region_etab_aff"
+DEPARTEMENT_COLUMN = "dep_lib"
+DETAIL_COLUMN = "detail_forma"
+
+# Mention-level breakdown of admitted candidates (useful for realism scoring)
+PCT_TB_COLUMN = "pct_tb"               # % admis avec mention Très Bien
+PCT_B_COLUMN = "pct_b"                 # % admis avec mention Bien
+PCT_AB_COLUMN = "pct_ab"               # % admis avec mention Assez Bien
+PCT_SANSMENTION_COLUMN = "pct_sansmention"
+
+# Bac-type breakdown of admitted candidates (profile signal)
+PCT_BG_COLUMN = "pct_bg"               # % admis bac général
+PCT_BT_COLUMN = "pct_bt"               # % admis bac techno
+PCT_BP_COLUMN = "pct_bp"               # % admis bac pro
+
+# Access share by bac type (realism: can someone from bac techno get in?)
+PART_ACCES_GEN_COLUMN = "part_acces_gen"
+PART_ACCES_TEC_COLUMN = "part_acces_tec"
+PART_ACCES_PRO_COLUMN = "part_acces_pro"
+
+PCT_BOURS_COLUMN = "pct_bours"         # % boursiers (social mix)
 
 
 def load_parcoursup(path: str | Path) -> pd.DataFrame:
@@ -73,11 +93,33 @@ def extract_fiche(row: pd.Series) -> dict:
         "etablissement": str(row.get(ETABLISSEMENT_COLUMN, "")).strip(),
         "ville": str(row.get(VILLE_COLUMN, "")).strip(),
         "region": str(row.get(REGION_COLUMN, "")).strip() or None,
+        "departement": str(row.get(DEPARTEMENT_COLUMN, "")).strip() or None,
         "rncp": None,
         "taux_acces_parcoursup_2025": _safe_float(row.get(TAUX_ACCES_COLUMN)),
         "nombre_places": _safe_int(row.get(PLACES_COLUMN)),
         "statut": _infer_statut(row.get(CONTRAT_COLUMN, "")),
         "niveau": infer_niveau(nom),
+        # Enriched fields for realism & discovery scoring
+        "detail": str(row.get(DETAIL_COLUMN, "")).strip() or None,
+        "profil_admis": {
+            "mentions_pct": {
+                "tb": _safe_float(row.get(PCT_TB_COLUMN)),
+                "b": _safe_float(row.get(PCT_B_COLUMN)),
+                "ab": _safe_float(row.get(PCT_AB_COLUMN)),
+                "sans": _safe_float(row.get(PCT_SANSMENTION_COLUMN)),
+            },
+            "bac_type_pct": {
+                "general": _safe_float(row.get(PCT_BG_COLUMN)),
+                "techno": _safe_float(row.get(PCT_BT_COLUMN)),
+                "pro": _safe_float(row.get(PCT_BP_COLUMN)),
+            },
+            "acces_pct": {
+                "general": _safe_float(row.get(PART_ACCES_GEN_COLUMN)),
+                "techno": _safe_float(row.get(PART_ACCES_TEC_COLUMN)),
+                "pro": _safe_float(row.get(PART_ACCES_PRO_COLUMN)),
+            },
+            "boursiers_pct": _safe_float(row.get(PCT_BOURS_COLUMN)),
+        },
     }
 
 
