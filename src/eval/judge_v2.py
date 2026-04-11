@@ -32,13 +32,18 @@ def reweight_v1_scores(v1: dict, fact_check_ratio: float) -> dict:
 
     The v1 input dict is not mutated. The returned dict has:
       * all 6 criteria (neutralite, realisme, sourcage, diversite_geo,
-        agentivite, decouverte)
+        agentivite, decouverte) — missing criteria default to 0 to stay
+        robust against Claude occasionally dropping a field in its JSON
       * total recomputed from the new values
       * a new `fact_check_ratio` field recording the applied weight
       * `justification` preserved from v1
     """
     out = dict(v1)
-    new_sourcage = round(v1["sourcage"] * fact_check_ratio)
+    # Default any missing criteria to 0 so the total recomputation is safe
+    for c in _CRITERIA:
+        out.setdefault(c, 0)
+    sourcage_v1 = v1.get("sourcage", 0)
+    new_sourcage = round(sourcage_v1 * fact_check_ratio)
     out["sourcage"] = max(0, min(3, new_sourcage))
     out["total"] = sum(out[c] for c in _CRITERIA)
     out["fact_check_ratio"] = fact_check_ratio

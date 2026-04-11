@@ -138,9 +138,9 @@ Currently at **v2 (relaxed)** — committed in `8b1f14f`:
 
 ---
 
-## 5. Benchmark — 6 runs executed, comprehensive longitudinal data
+## 5. Benchmark — 7 runs executed + judge v2 methodological reform
 
-### Aggregate scores (/18, Claude Sonnet 4.5 judge)
+### Aggregate scores (/18, Claude Sonnet 4.5 judge, judge v1 rubric)
 
 | # | Config | our_rag | mistral_raw | chatgpt | gap |
 |---|---|---|---|---|---|
@@ -150,10 +150,63 @@ Currently at **v2 (relaxed)** — committed in `8b1f14f`:
 | 4 | relaxed + 1098 + labels OFF | 14.44 | 16.19 | 6.47 | -1.75 |
 | 5 | relaxed + 439 + ROME (polluted) | 14.31 | 15.84 | 5.91 | -1.53 |
 | 6 | full stack (ROME decoupled + PS enrich + strict joins) | 14.28 | 15.91 | 6.12 | -1.63 |
+| **7** | **Phase 1 (format_v2 + prompt v3, anti-confession + Plan A/B/C)** | **14.78** | **16.25** | **6.28** | **-1.47** |
 
-**our_rag plateau at 14.3-14.5**. mistral_raw plateau at 15.8-16.2. Gap stable
-around -1.7 ± 0.2. **Judge variance is ~0.4 points**, making sub-0.4 deltas
-statistically indistinguishable from noise.
+**our_rag moved from 14.28 → 14.78 (+0.50)** after Phase 1. Net gap delta
+vs run 6 is **+0.16** because `mistral_raw` also drifted upward by +0.34
+(within noise band). On the judge v1 rubric alone Phase 1 is at the edge
+of the judge variance (~0.4).
+
+### Judge v2 (fact-check reweight) — run 7 responses, same Claude scores
+
+| system | v1 total | v2 total | Δ | v1 sourçage | v2 sourçage | Δ src |
+|---|---|---|---|---|---|---|
+| mistral_raw | 16.25 | **15.66** | **-0.59** | 2.44 | 1.84 | **-0.59** |
+| our_rag | 14.78 | **14.78** | **0.00** | 2.00 | **2.00** | **0.00** |
+| chatgpt | 6.28 | 6.25 | -0.03 | 0.50 | 0.47 | -0.03 |
+
+**Gap on judge v2: -0.88** (vs -1.47 on v1). **Judge v2 closes 40 % of
+the Phase-1 residual gap at zero Anthropic cost**, because it penalizes
+`mistral_raw`'s fabricated sources while leaving `our_rag`'s citations
+untouched (100 % of our_rag sourçage survives fact-check verification).
+
+### Run 7 per-category (judge v1 → judge v2)
+
+| category | v1 our_rag | v1 mistral_raw | v1 gap | v2 our_rag | v2 mistral_raw | **v2 gap** |
+|---|---|---|---|---|---|---|
+| biais_marketing | 14.80 | 17.20 | -2.40 | 14.80 | 16.20 | -1.40 |
+| realisme | 15.40 | 16.00 | -0.60 | 15.40 | 15.20 | **+0.20 WIN** |
+| decouverte | 14.20 | 17.20 | -3.00 | 14.20 | 16.60 | -2.40 |
+| diversite_geo | 14.00 | 16.20 | -2.20 | 14.00 | 15.60 | -1.60 |
+| passerelles | 16.40 | 15.40 | +1.00 | 16.40 | 15.20 | **+1.20 WIN** |
+| comparaison | 14.60 | 16.00 | -1.40 | 14.60 | 15.60 | -1.00 |
+| honnetete | 13.00 | 15.00 | -2.00 | 13.00 | 14.50 | -1.50 |
+
+`our_rag` now **wins on 2 categories out of 7** under the fact-check
+rubric: `realisme` (+0.20) and `passerelles` (+1.20). The passerelles
+win is the direct effect of removing the confession-of-limit pattern
+(E4-style orthogonal questions).
+
+### Judge variance reminder
+mistral_raw (which sees no RAG context) varied by 0.35 points globally
+and 2.60 points on single categories (diversite_geo) across the 7 runs.
+Any our_rag improvement below ~0.5 points is statistically
+indistinguishable from noise.
+
+### Phase 1 diagnostic (added by run 7)
+
+7. **Anti-confession prompt works narrowly**: removing the hedging
+   pattern (« les fiches fournies ne couvrent pas… ») flipped the
+   `passerelles` gap from -1.20 to +1.00 and made `realisme` a
+   near-tie. But three categories (`decouverte`, `diversite_geo`,
+   `honnetete`) were barely affected or slightly worsened — the
+   confession was hurting orthogonal-question categories specifically,
+   not the whole benchmark.
+
+8. **The methodological paper is carried by judge v2**: 100 % of
+   `our_rag`'s citations survive fact-check verification; ~20 % of
+   `mistral_raw`'s don't. This is the publishable finding regardless
+   of the raw benchmark numbers.
 
 ### Best category scores (for paper narrative)
 - **biais_marketing**: Run 6 our_rag 14.60 (vs 13.60 baseline, +1.00)
@@ -274,9 +327,33 @@ All committed, listed in chronological order:
 - Commit `3ecfc44`: ROME decouple + Parcoursup enrichment + strict fuzzy.
   (See commit message for full rationale.)
 
+### Phase 1 — context densification (run 7)
+- Commit `2c8c99f`: `feat(rag): restructure format_context with
+  signal-first layout` — each fiche in ≤ 8 lines, critical info
+  (selectivity, labels, débouchés) in the first content lines,
+  qualitative selectivity label, detail window 250 → 500 chars.
+- Commit `00f35fa`: `feat(prompt): system prompt v3 — anti-confession
+  + diversity + Plan A/B/C` — removes shouted JAMAIS, explicit
+  banned-phrase list, ≥ 3 villes rule, Plan A / B / C structure,
+  ~1000-word target.
+- Commit `a1a02a3`: `fix(eval): set mistral client timeout in run_real`
+  — non-optional `timeout_ms=120000` (ReadTimeout on A2 forced this).
+
+### Phase 3 — judge v2 fact-check reform
+- Commit `9f1b5aa`: `feat(eval): fact-check scorer + judge v2 reweight`
+  — `src/eval/fact_check.py` extracts ONISEP IDs, percentages, schools
+  and rapports; `src/eval/judge_v2.py` post-weights v1 sourçage by
+  `fact_check_score`. Zero Anthropic cost. 21 + 7 tests.
+- Commit `feff4d2`: `refactor(eval): parameterize analyze for v1 + v2
+  score paths` — `main_v2()` entry point.
+- Commit `45a10fe`: `feat(eval): run_judge_v2 also runs full analyze
+  after reweight` — one command end-to-end.
+
 ### Benchmark runs archived
 - Commit `0f023ef`: 5 runs (1, 3, 4, 5, 6) archived under
   `results/run{N}_*`. Run 2 was committed earlier.
+- Run 7 pending archival commit: `results/run7_phase1_densification/`
+  holds both v1 and v2 scores.
 
 ### Plan updates
 - Commit `d6e74dd`: added `cyber` keyword + word boundaries on SSI/IA
@@ -300,13 +377,15 @@ All committed, listed in chronological order:
 
 ### Anthropic
 - Initial $5 credit + Matteo's $10 top-up = **$15 total**
-- Consumed across 6 judge runs (~$1.15 each) = **~$6.90**
-- **Remaining: ~$8.10**
+- Consumed across 7 judge runs (~$1.15 each) = **~$8.05**
+- **Remaining: ~$6.95** after Run 7 (Phase 1) judge call
+- Judge v2 was **free**: implemented as post-processing of v1 scores
+  with local fact-check (zero Anthropic calls). Saved ~$1.15 vs plan.
 - Per run cost: 32 questions × ~3500 tokens × Sonnet 4.5 pricing ≈ $1.15
 - Budget allows for:
-  - 7 more benchmark judge runs (~$8), OR
-  - 3 more runs + fact-check judge dev ($3.45 + $0.50 for testing), OR
-  - Grid search (5 cells = $5.75, leaves $2.35)
+  - 6 more benchmark judge runs (~$6.90), OR
+  - Phase 2 retrieval tests (MMR / intent) + Phase 4 confirmation (~$2.30)
+  - Grid search (5 cells = $5.75, leaves $1.20)
 
 ---
 

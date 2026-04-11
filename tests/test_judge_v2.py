@@ -73,6 +73,21 @@ def test_reweight_records_fact_check_ratio():
     assert abs(v2["fact_check_ratio"] - 0.42) < 1e-6
 
 
+def test_reweight_tolerates_missing_criterion():
+    """Claude occasionally drops a criterion in its JSON output
+    (observed: F1/C missing diversite_geo in Run 7). reweight must
+    still compute a total without raising KeyError."""
+    v1 = {
+        "neutralite": 3, "realisme": 3, "sourcage": 3,
+        "agentivite": 3, "decouverte": 3, "total": 15,
+        "justification": "missing diversite_geo on purpose",
+    }
+    v2 = reweight_v1_scores(v1, fact_check_ratio=1.0)
+    # diversite_geo defaulted to 0, total = 3+3+3+0+3+3 = 15
+    assert v2["diversite_geo"] == 0
+    assert v2["total"] == 15
+
+
 def test_apply_fact_check_to_blind_full_flow():
     """Integration: given blind scores + answers + retrieved_by_qid + dataset,
     produces a new list of blind scores with sourçage reweighted per system."""
