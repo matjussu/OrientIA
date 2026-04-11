@@ -1,259 +1,377 @@
 # OrientIA — Session Handoff
 
-**Last updated:** 2026-04-11 (end of day, Phase 4 benchmark iteration 2 in progress)
+**Last updated:** 2026-04-11 late afternoon (after 6 benchmark runs, plateau confirmed)
 
-This document captures the full state of the project at a given point so that a
-fresh Claude Code session (or a human picking up the work) can resume without
-having to replay the prior conversation. It should be updated whenever the
-project's state changes materially.
+This document is the **single source of truth for project state**. A fresh Claude
+Code session (or a human picking up the work) should read this FIRST. It must
+be updated whenever the project's state changes materially.
+
+---
 
 ## 1. Project at a glance
 
 OrientIA is a research project submitted to the **INRIA AI Grand Challenge**.
-Thesis: a specialized RAG system with label-based re-ranking (SecNumEdu / CTI /
-Grade Master / Public boosts) produces measurably better French student
-orientation responses than general-purpose LLMs (ChatGPT, raw Mistral).
 
-- **Repo (private):** https://github.com/matjussu/OrientIA
-- **Local:** `/home/matteo_linux/projets/OrientIA`
-- **Plan:** `docs/superpowers/plans/2026-04-10-orientia-mvp.md`
-- **Stack:** Python 3.12, mistralai 2.3.2, anthropic 0.93, faiss-cpu, rapidfuzz,
-  fastapi, pytest. React+Vite for the frontend (Phase 5, not started).
+**Thesis (original):** A specialized RAG system with label-based re-ranking
+(SecNumEdu / CTI / Grade Master / Public boosts) produces measurably better
+French student orientation responses than general-purpose LLMs (ChatGPT,
+raw Mistral).
+
+**Thesis (revised after 6 runs):** The label-based re-ranking hypothesis
+is **empirically refuted** at our current scale. Raw Mistral consistently
+beats our RAG on a 6-criterion Claude-as-judge benchmark. BUT: the RAG is
+competitive on categories where factual grounding matters (realism, passerelles,
+biais_marketing at certain configurations). The most interesting finding is
+**retrieval constraint harm** — our early strict-sourcing rule hurt the RAG
+more than it helped, and we identified a **judge methodology flaw**: the Claude
+judge rewards apparent sourcing over truthful sourcing, favoring confident
+hallucinations from raw Mistral over honest restraint from our RAG.
+
+**The unexplored lever** that could flip the result: **fact-check automatique
+dans le juge**. Currently deferred; documented in section 9 "Next steps".
+
+**Repo (private):** https://github.com/matjussu/OrientIA
+**Local:** `/home/matteo_linux/projets/OrientIA`
+**Plan:** `docs/superpowers/plans/2026-04-10-orientia-mvp.md`
+**Stack:** Python 3.12, mistralai 2.3.2 (PAID tier now), anthropic 0.93,
+faiss-cpu, rapidfuzz, pandas, fastapi, pytest. React+Vite for frontend (Phase 5,
+not started).
+
+---
 
 ## 2. Progress
 
 | Phase | Tasks | Status |
 |---|---|---|
-| 0 — Bootstrap | 0.1, 0.2, 0.3, 0.4 | ✅ 4/4 |
-| 1 — Eval dataset | 1.1, 1.2 | ✅ 2/2 |
-| 2 — Data collection | 2.1 – 2.6 | ✅ 6/6 |
-| 3 — RAG pipeline | 3.1 – 3.7 | ✅ 7/7 |
-| 4 — Benchmark | 4.1 – 4.5 | 🟡 code done + run 2 in progress |
-| 5 — Interface | 5.1, 5.2, 5.3 | ⏳ pending |
-| 6 — Finalization | 6.1, 6.2, 6.3 | ⏳ pending |
+| 0 — Bootstrap | 0.1-0.4 | ✅ 4/4 |
+| 1 — Eval dataset | 1.1-1.2 | ✅ 2/2 |
+| 2 — Data collection | 2.1-2.6 | ✅ 6/6 |
+| 3 — RAG pipeline | 3.1-3.7 | ✅ 7/7 |
+| 4 — Benchmark | 4.1-4.5 | ✅ 5/5 code done, 6 real runs executed |
+| 5 — Interface | 5.1-5.3 | ⏳ pending |
+| 6 — Finalization | 6.1-6.3 | ⏳ pending |
 
 **24/30 tasks complete (80%)**. Test suite: **91 tests green**.
 
-## 3. Data layer output
+---
 
-Located at `data/processed/formations.json` (152 KB, committed).
+## 3. Data layer state
 
-- **439 fiches total**
-  - 343 from Parcoursup (cyber + data/IA domain filter on `lib_for_voe_ins` with `\b`-bounded keywords to prevent "SSI" matching "aSSIstant")
-  - 96 ONISEP-only (from 102 ONISEP entries, 6 fuzzy-merged with Parcoursup)
-  - ~290 bac+2 BTS CIEL dominate because Parcoursup lists them, but higher-ed
-    cyber schools (ENSIBS, IMT Atlantique, CentraleSupélec) come from ONISEP.
+**Current `data/processed/formations.json`: 443 fiches** (after run 6 re-merge).
 
-- **Labels:** 21 SecNumEdu + 7 CTI + 1 Grade Master. Attached via a 3-stage
-  matcher in `src/collect/merge.py:attach_labels`:
-  1. Full-signature fuzzy match (threshold 85) against the scraped SecNumEdu
-     list at `data/raw/secnumedu.json` (111 entries from cyber.gouv.fr).
-  2. Establishment-only fuzzy fallback (cyber domain only).
-  3. **Manual cross-reference table** at `data/manual_labels.json` (25 entries,
-     AUTHORITATIVE — overrides stages 1/2). Entries with empty labels act as a
-     blocklist: EPITA, Epitech, Guardia, IONIS, École 42 are explicitly
-     unlabeled for benchmark contrast.
+### Composition
+- **343 Parcoursup fiches** filtered on cyber/data_ia domains (filter uses
+  `\b`-bounded keywords after a bug in early runs)
+- **102 ONISEP fiches** from 3 queries (cybersécurité, intelligence artificielle,
+  data science), authenticated via JWT + real Application-ID
+  `69d9234235746681b78b4568`
+- **7 fuzzy-matched** (parcoursup + onisep merged)
+- **336 parcoursup_only** standalone
+- **100 onisep_only** standalone
 
-- **Niveau field:** inferred from formation name via `src/collect/niveau.py`
-  (bac+2 / bac+3 / bac+5 / bac+8 / None). Distribution: 274 / 59 / 69 / 0 / 37.
+### Labels (attached via 3-stage matcher in `src/collect/merge.py:attach_labels`)
+- **21 SecNumEdu** + **7 CTI** + **1 Grade Master**
+- Manual cross-reference table at `data/manual_labels.json` is AUTHORITATIVE
+  (Stage 3 overrides stages 1-2). Contains 25 entries including explicit
+  blocklist for EPITA, Epitech, Guardia, IONIS, École 42.
+
+### Enriched fields (added in run 6)
+Each Parcoursup fiche now carries these fields (extracted from `extract_fiche`
+in `src/collect/parcoursup.py`):
+- `niveau` (bac+2/bac+3/bac+5) inferred from formation name
+- `detail` (description text from Parcoursup CSV `detail_forma`)
+- `departement` from `dep_lib`
+- `profil_admis.mentions_pct` (tb/b/ab/sansmention)
+- `profil_admis.bac_type_pct` (general/techno/pro)
+- `profil_admis.acces_pct` (share per bac type)
+- `profil_admis.boursiers_pct`
+- `debouches` (injected post-merge from ROME 4.0 based on domain)
+
+### Niveau breakdown
+274 bac+2 / 61 bac+3 / 71 bac+5 / 37 None
+
+### Dataset history (we have 3 candidate datasets, all archived)
+- **439 fiches** (original merge — runs 1-3, 5)
+- **1098 fiches** (expanded with 8 new ONISEP queries — run 4 only, **worse results**, noise dilution)
+- **443 fiches** (current — enriched Parcoursup + strict joins — run 6)
+
+`data/raw/onisep_formations.json` was expanded to 764 then truncated back to 102.
+
+---
 
 ## 4. RAG pipeline state
 
 ### Index
-- Pre-built FAISS index at `data/embeddings/formations.index` (439 × 1024
-  `mistral-embed` vectors, 1.8 MB, gitignored).
-- Built once during a sanity check in Phase 3 → cached → reused by
-  `src/rag/cli.py` and `src/eval/run_real.py`.
+- `data/embeddings/formations.index` (1.7 MB, 443 × 1024 mistral-embed vectors, gitignored)
+- Built once per dataset change via the experiment script
 
-### Reranker (the "INRIA innovation")
-`src/rag/reranker.py:RerankConfig` with 7 boost fields:
-
+### Reranker (`src/rag/reranker.py`)
+Defaults kept at:
 ```python
-secnumedu_boost: float = 1.5        # primary label
-cti_boost: float = 1.3              # secondary label
-grade_master_boost: float = 1.3     # tertiary label
-public_boost: float = 1.1           # public vs private
-level_boost_bac5: float = 1.15      # higher-ed over BTS
-level_boost_bac3: float = 1.05      # mid tier
-etab_named_boost: float = 1.1       # named school vs generic diploma
+secnumedu_boost = 1.5
+cti_boost = 1.3
+grade_master_boost = 1.3
+public_boost = 1.1
+level_boost_bac5 = 1.15
+level_boost_bac3 = 1.05
+etab_named_boost = 1.1
 ```
-
-Sanity check on A1 ("meilleures formations cyber") produced a clean top-10
-where position 1 is CentraleSupélec-IMT Atlantique [SecNumEdu + CTI + Grade
-Master] at score 2.539 (baseline similarity 0.5 compounded by all 4 relevant
-boosts × bac+5 × named).
+**But** the empirical best config from runs 3, 5, 6 is `secnumedu_boost=1.0`
+(ablation — labels OFF). On 21-label dataset, label boost hurts more than it
+helps due to over-concentration.
 
 ### System prompt (`src/prompt/system.py`)
+Currently at **v2 (relaxed)** — committed in `8b1f14f`:
+- Identity: "en t'appuyant EN PRIORITÉ sur les données fournies en contexte.
+  Tu peux compléter avec tes connaissances générales, mais signale-le avec
+  `(connaissance générale)`"
+- No "ne cite JAMAIS un établissement hors contexte" rule (removed after run 1
+  diagnosis)
+- Fiches = source of truth for numbers; general knowledge allowed for
+  qualitative content
 
-**Version 2 (run 2)** — relaxed from the strict sourcing rule:
+### fiche_to_text vs format_context (ROME decoupling, commit `3ecfc44`)
+- `fiche_to_text` (feeds embeddings): does NOT include ROME debouches. Adding
+  shared text would pollute embeddings and hurt retrieval diversity.
+- `format_context` (feeds generator): DOES include ROME debouches + enriched
+  Parcoursup fields (mentions, bac-type breakdown, boursiers, detail).
 
-- Identity: "conseiller d'orientation spécialisé dans le système éducatif
-  français, en t'appuyant EN PRIORITÉ sur les données fournies en contexte.
-  Tu peux compléter avec tes connaissances générales, mais signale-le
-  clairement avec « (connaissance générale) »."
-- 4 layers: NEUTRALITÉ, RÉALISME, AGENTIVITÉ, SOURÇAGE (now allows hybrid:
-  fiches = source of truth for numbers; general knowledge allowed for
-  descriptions, advice, geography, passerelles).
-- Format: 📍 per-formation blocks + 🔀 passerelles + 💡 open question.
+---
 
-**Why the change:** Run 1 showed that the strict "ne cite JAMAIS un
-établissement hors contexte" rule crippled the RAG on geographic diversity
-(D5 "cyber en Bretagne" scored 12/18 because it kept saying "Ville non
-précisée"). Run 2 tests whether relaxing this fixes the negative result.
+## 5. Benchmark — 6 runs executed, comprehensive longitudinal data
 
-## 5. Benchmark — run 1 (NEGATIVE RESULT)
+### Aggregate scores (/18, Claude Sonnet 4.5 judge)
 
-Run 1 used the strict system prompt (pre-fix). Blind benchmark with Claude
-Sonnet 4.5 as judge on 32 questions (30 scored + 2 honesty), randomized
-{A, B, C} labels per question, 6 criteria × 0-3 points.
+| # | Config | our_rag | mistral_raw | chatgpt | gap |
+|---|---|---|---|---|---|
+| 1 | strict prompt + 439 + labels ON | 13.41 | 16.19 | 6.25 | -2.78 |
+| 2 | relaxed + 439 + labels ON | 14.19 | 16.09 | 6.06 | -1.90 |
+| 3 | relaxed + 439 + **labels OFF** | **14.50** | 16.22 | 6.28 | -1.72 |
+| 4 | relaxed + 1098 + labels OFF | 14.44 | 16.19 | 6.47 | -1.75 |
+| 5 | relaxed + 439 + ROME (polluted) | 14.31 | 15.84 | 5.91 | -1.53 |
+| 6 | full stack (ROME decoupled + PS enrich + strict joins) | 14.28 | 15.91 | 6.12 | -1.63 |
 
-### Aggregate /18
+**our_rag plateau at 14.3-14.5**. mistral_raw plateau at 15.8-16.2. Gap stable
+around -1.7 ± 0.2. **Judge variance is ~0.4 points**, making sub-0.4 deltas
+statistically indistinguishable from noise.
 
-| System | Total | Rank |
-|---|---|---|
-| **mistral_raw** | **16.19** | 🥇 |
-| our_rag | 13.41 | 🥈 |
-| chatgpt_recorded | 6.25 | 🥉 |
+### Best category scores (for paper narrative)
+- **biais_marketing**: Run 6 our_rag 14.60 (vs 13.60 baseline, +1.00)
+- **realisme**: Run 2 our_rag 16.40 (vs Run 6 14.80)
+- **decouverte**: Run 5 our_rag 14.80 (ROME's strongest contribution)
+- **diversite_geo**: Run 3 our_rag 15.60 (pre-ROME, best geographic coverage)
+- **passerelles**: Run 4 our_rag 15.00 / Run 6 14.60
+- **comparaison**: Run 6 our_rag 14.60
+- **honnetete**: Run 3 our_rag 16.00 (before ROME/Parcoursup enrichment; enrichment
+  HURTS honesty-test questions because it floods the context with irrelevant data)
 
-### Per category (total /18)
+### Diagnostic findings (for the paper)
 
-| Category | mistral_raw | our_rag | chatgpt | Delta (RAG − Mistral) |
-|---|---|---|---|---|
-| biais_marketing | **16.00** | 13.60 | 5.20 | −2.40 |
-| realisme | **15.80** | 15.40 | 5.60 | −0.40 |
-| decouverte | **17.20** | 12.60 | 4.40 | **−4.60** 😬 |
-| diversite_geo | **16.20** | 13.00 | 8.20 | **−3.20** |
-| passerelles | **17.00** | 13.40 | 5.60 | **−3.60** |
-| comparaison | **15.40** | 13.20 | 7.20 | −2.20 |
-| honnetete | **15.00** | 11.50 | 9.50 | **−3.50** |
+1. **Retrieval constraint harm (run 1 diagnosis)**: strict "ne cite JAMAIS hors
+   contexte" rule crippled the RAG. Removing it: +0.78 points. Documented in
+   commit `8b1f14f`.
 
-### Per criterion /3
+2. **Label boost over-concentration (run 3 ablation)**: with only 21 labeled
+   fiches, `secnumedu_boost=1.5` over-concentrated retrieval and hurt diversity.
+   Ablation (`=1.0`) improved by +0.31, with massive gains on honnetete (+2.50)
+   and diversite_geo (+1.20).
 
-| Criterion | mistral_raw | our_rag | chatgpt |
-|---|---|---|---|
-| neutralite | 3.00 | 2.88 | 1.00 |
-| realisme | 2.97 | 2.34 | 1.06 |
-| sourcage | 2.91 | 2.31 | 0.47 |
-| diversite_geo | 2.34 | 1.44 | 0.66 |
-| agentivite | 2.88 | 2.75 | 1.88 |
-| decouverte | 2.09 | 1.69 | 1.19 |
+3. **Data breadth does not help (run 4)**: expanding ONISEP from 102 → 764
+   fiches (1098 total) did NOT improve scores; actually regressed marginally.
+   Root cause: broader queries pulled in generic informatique fiches, diluting
+   domain specificity in retrieval.
 
-### Diagnosis (run 1)
+4. **ROME debouches help discovery (run 5)**: injecting ROME metiers into the
+   context gave our_rag +1.40 on decouverte. But putting them in fiche_to_text
+   polluted embeddings and hurt diversite_geo (-2.20). Run 6 decoupled: ROME
+   in generator only, not embeddings.
 
-The thesis "RAG > raw Mistral on French orientation" is **empirically refuted
-by run 1**. Mistral raw wins on every category. Our RAG beats ChatGPT by ~7
-points, which is meaningful but far from the thesis.
+5. **Enrichment helps factual questions, hurts conceptual ones (run 6)**:
+   Parcoursup mentions/bac-type fields help biais_marketing (+1.00), passerelles
+   (+0.80), comparaison (+0.40). But flood conceptual questions (honnetete:
+   -3.50, realisme: -1.00) with irrelevant numerical context.
 
-**Root cause** ("retrieval constraint harm"):
+6. **Judge variance is massive**: mistral_raw (which sees no RAG context)
+   varied by 0.35 points globally and 2.60 points on single categories
+   (diversite_geo) across the 6 runs. Any our_rag improvement below ~0.5
+   points is statistically indistinguishable from noise.
 
-1. Mistral already has extensive French education knowledge from training.
-   It knows ENSIBS, IMT Atlantique, Sciences Po, HEC, Parcoursup, all of it.
-2. The RAG feeds it top-10 retrieved fiches and a strict prompt "ne cite
-   JAMAIS un établissement hors contexte". This CONSTRAINS Mistral to the
-   10 fiches, many of which are generic ONISEP diplomas with empty etab.
-3. Mistral raw is UNCONSTRAINED and draws from its full training → more
-   diverse, more specific, more geographic coverage.
-4. The Claude judge cannot fact-check sources. When Mistral raw confidently
-   cites "Parcoursup 2023 taux 72%", the judge rewards apparent sourcing
-   even if the number is invented. Our RAG, restrained, says "non précisé"
-   → penalized.
+---
 
-**Evidence point**: on D5 "cyber en Bretagne", our RAG got 12/18 with geo 1/3
-because it said "Ville non précisée" for the ONISEP ENSIBS fiche. Mistral raw
-got 17/18 with geo 3/3 citing Brest/Vannes/Rennes/Lannion. **ChatGPT also
-beat our RAG on D5** (12/18, but still behind Mistral).
+## 6. The 6 critical questions Matteo raised (answered, preserved)
 
-### Files saved from run 1
-- `results/run1_strict_sourcing/raw_responses/` (responses + label mapping)
-- `results/run1_strict_sourcing/scores/` (blind + unblinded + summary)
-- `results/run1_strict_sourcing/charts/radar_by_system.png`
+Matteo asked 6 deep questions about the project assumptions. The full analysis
+is in commit history / conversation, captured here:
 
-## 6. Benchmark — run 2 (FIX APPLIED, IN PROGRESS)
+**Q1: Would extending Parcoursup (more fields) or wiring ROME help?**
+- YES on both. ROME was chargé mais jamais câblé (levier inexploité) → fixed
+  in run 6. Parcoursup had 118 columns, we used 7 → enriched to 15+ in run 6.
+- Gains: confirmed for biais_marketing, passerelles, decouverte. Losses on
+  honnetete (enrichment noise).
 
-Run 2 uses the **relaxed system prompt** (commit 8b1f14f). The fix:
+**Q2: Was SecNumEdu the right base?**
+- **Incomplete**. Only covers cyber, zero data/IA. Récent and less known than
+  CTI/CGE/Grade Master. Biased toward private CTI engineering schools.
+- **Better approach** would have been multi-label (CTI + CGE + Grade Master
+  as backup). The manual_labels.json has these but they're only triggered by
+  the manual lookup, not systematically.
 
-```diff
-- en t'appuyant EXCLUSIVEMENT sur des données officielles vérifiables
-+ en t'appuyant EN PRIORITÉ sur les données fournies en contexte.
-+ Tu peux compléter avec tes connaissances générales, mais signale-le
-+ clairement avec « (connaissance générale) ».
+**Q3: Is our dataset join any good?**
+- **Medicore** before run 6. 277 suspicious `fuzzy_100.0` matches (short
+  signatures matching generically). Fixed in run 6 with stricter guards
+  (min 4 tokens, require onisep etab populated). Result: 7 legitimate
+  fuzzy matches instead of 277.
+- Parcoursup has no RNCP column → no true structural join possible.
+- **Ideal fix** (not done): use data.gouv.fr's Parcoursup↔RNCP mapping
+  dataset to enable structural joins.
 
-SOURÇAGE :
-- - Ne cite JAMAIS un établissement qui n'apparaît pas explicitement
--   dans les FICHES fournies en contexte. [...]
-+ - Les FICHES fournies sont ta SOURCE DE VÉRITÉ pour les chiffres :
-+   taux d'accès, coût, labels, URL ONISEP. N'invente JAMAIS ces valeurs.
-+ - Pour le reste (descriptions, conseils, passerelles, géographie), tu
-+   peux t'appuyer sur tes connaissances. Signale-le avec
-+   « (connaissance générale) ».
-```
+**Q4: Is the reranker breaking results?**
+- **Confirmed YES** on 21-label dataset (run 3 ablation). Label boost
+  over-concentrates. Runs 3, 5, 6 all use `secnumedu_boost=1.0` as empirical
+  best.
+- Other boosts (level_boost_bac5, public_boost, etab_named_boost) are NOT
+  individually ablated — their contribution is unverified.
 
-Also added retry logic for Mistral 429 rate limit with 15s base delay (after
-hitting service-tier capacity at question B4 on the first attempt of run 2).
+**Q5: Is the system prompt optimal?**
+- **Not yet**. V1 strict was bad (-2.78 gap). V2 relaxed is much better
+  (-1.63 gap). Still missing: (a) explicit diversity instruction, (b) explicit
+  métiers ROME instruction, (c) explicit fact-check instruction, (d) handling
+  of conceptual questions (don't flood with numbers).
+- Estimated remaining gain: +0.5 to +1.0 points if properly tuned, but in
+  the noise range.
 
-**Run 2 status at handoff write:** 29/32 questions completed, background
-process `bfadrxxz3` still running. Expected to finish shortly.
+**Q6: Are the 6 rubric criteria the best?**
+- **Major methodology flaw identified**: the judge (Claude Sonnet 4.5)
+  doesn't fact-check. It rewards apparent sourcing over truthful sourcing.
+  Mistral raw cites "rapport ANSSI 2023" → 3/3 sourçage, our RAG cites real
+  "ONISEP FOR.1577" → 3/3 sourçage too, but one is invented and one is real.
+  The judge can't tell.
+- Also: neutralite and agentivite saturate (all 3 systems ~2.9/3.0).
+  These criteria no longer discriminate.
+- **The fact-check judge experiment (Q6's suggested improvement) is the
+  single most promising unexplored lever.** It could flip the global result
+  by penalizing mistral_raw's fabricated citations. Coded but not yet run.
 
-## 7. API budget state
+---
+
+## 7. Code changes made this session (beyond initial scope)
+
+All committed, listed in chronological order:
+
+### System prompt evolution (`src/prompt/system.py`)
+- Commit `25e9f77`: added "ne cite JAMAIS un établissement hors contexte" rule
+  (v1 strict). **Later reverted** because it crippled the RAG.
+- Commit `8b1f14f`: relaxed to "EN PRIORITÉ sur les données, (connaissance
+  générale) pour le qualitatif" (v2 — current).
+
+### Runner hardening (`src/eval/runner.py`)
+- Commit `6302b8c`: added retry + resume + incremental save. Every question's
+  results are written immediately; mid-run failures don't lose work.
+- Commit `5e019f6`: added 429 rate-limit detection with 15s base delay and
+  max 5 retries. Handles Mistral free-tier `service_tier_capacity_exceeded`.
+
+### Data layer (`src/collect/*`, `src/rag/*`)
+- Commit `3ecfc44`: ROME decouple + Parcoursup enrichment + strict fuzzy.
+  (See commit message for full rationale.)
+
+### Benchmark runs archived
+- Commit `0f023ef`: 5 runs (1, 3, 4, 5, 6) archived under
+  `results/run{N}_*`. Run 2 was committed earlier.
+
+### Plan updates
+- Commit `d6e74dd`: added `cyber` keyword + word boundaries on SSI/IA
+- Commit `6198529`: fixed mistralai 2.x import (11 occurrences)
+- Commit `1b07d1f`: rename repo OrientAI → OrientIA
+- Several documented docs commits
+
+---
+
+## 8. API budget state (IMPORTANT)
 
 ### Mistral
-- Quota: 1 Md tokens/month free tier. Used: ~130K tokens across 2 full runs
-  (~0.013%). **Not a constraint.**
-- Rate limit: shared service-tier capacity, fires 429 on bursts. Handled by
-  `_call_with_retry` in `src/eval/runner.py` with 15s base delay on rate
-  limit errors. Pragmatic but not bulletproof — under heavy load, may still
-  slow down.
+- **Paid tier active** (Matteo topped up ~$10). Embeddings endpoint had a 429
+  propagation delay but eventually worked with retry + 2s pacing + smaller
+  batches (16 vs 32).
+- **Operational config for future runs**: use
+  `Mistral(api_key=..., timeout_ms=120000)` to avoid httpx default timeout.
+  Embeddings need `_call_with_retry` wrapping with `max_retries=6`.
+- **Mistral-medium-latest** on paid tier: ~0.2-1.2s per chat.complete call
+  (vs 5-30s with timeouts on free tier).
 
 ### Anthropic
-- Initial credit: $5 free tier.
-- Per judge run cost: ~$1.15 (32 questions × 3500 tokens × Sonnet 4.5 pricing).
-- **After run 2 judge**, remaining credit ≈ $2.7.
-- **Task 4.5 grid search** would cost 5 × $1.15 = **$5.75** → **OVER BUDGET.**
+- Initial $5 credit + Matteo's $10 top-up = **$15 total**
+- Consumed across 6 judge runs (~$1.15 each) = **~$6.90**
+- **Remaining: ~$8.10**
+- Per run cost: 32 questions × ~3500 tokens × Sonnet 4.5 pricing ≈ $1.15
+- Budget allows for:
+  - 7 more benchmark judge runs (~$8), OR
+  - 3 more runs + fact-check judge dev ($3.45 + $0.50 for testing), OR
+  - Grid search (5 cells = $5.75, leaves $2.35)
 
-Options for Task 4.5:
-- (A) Skip grid search entirely, document as "deferred due to budget".
-- (B) Mini grid search on 3 values {1.0, 1.5, 2.0} = $3.45, tight but fits.
-- (C) Matteo tops up Anthropic credit by $5-10.
+---
 
-Matteo will decide based on his remaining credit balance (user-check required).
+## 9. Known issues + Next steps
 
-## 8. Known issues / open questions
+### Issues
+1. **Plateau at ~14.3-14.5** for our_rag across all 6 configurations.
+   Further data/prompt tweaks give ±0.3 noise-level changes.
+2. **Judge variance ~0.4 points globally, ~2.6 points on individual
+   categories**. Any claimed improvement below this threshold is unreliable.
+3. **Honnetete regression** after enrichment (-3.50). Enrichment should be
+   suppressed for general-knowledge questions or the prompt should filter.
+4. **SecNumEdu label list is small** (21 effective). Mini grid search on
+   coefficient variants won't help much with this sparsity.
+5. **ChatGPT responses are from a single date/model** (gpt-4o, 2026-04-10).
+   Not re-sampled, no variance estimate.
 
-1. **Benchmark run 2 delta TBD** — we don't yet know if the system prompt
-   relaxation fixes the negative result. Waiting for run 2 + new judge run.
-2. **Grid search budget** — see section 7.
-3. **Parcoursup data is BTS-heavy** — 63% of fiches are bac+2 BTS CIEL.
-   Higher-ed (ENSIBS, IMT, CentraleSupélec) comes only from ONISEP, and
-   ONISEP often lists formation types without establishment names.
-4. **Judge rewards confident-looking sourcing over truthful restraint** —
-   methodological flaw in the Claude-as-judge approach. Mentioned as a
-   limitation in the eventual paper.
-5. **ONISEP field mapping is best-effort** — the formations dataset
-   (5fa591127f501) has no `etablissement` field. School names are extracted
-   heuristically from `libelle_formation_principal` via regex in
-   `src/collect/onisep.py:extract_school_from_formation_name`. Only 25/102
-   ONISEP fiches get a populated establishment this way.
+### Next steps (priority order, user-chosen at checkpoints)
 
-## 9. Next steps (in order)
+**Option A — Fact-check judge (HIGHEST POTENTIAL, unexplored)**
+The single experiment most likely to reverse the thesis empirically. Add a
+rule-based layer after Claude Sonnet that verifies cited numbers/schools
+against the source fiches. If mistral_raw invents 70% of its citations, its
+sourçage score should drop from 2.91 to ~1.0 → gap potentially inverted.
 
-1. **Wait for run 2 to finish** (29/32 at write time, ~2 more questions)
-2. **Run Claude judge on run 2** (`python -m src.eval.run_judge`, ~$1.15)
-3. **Run analyze** (`python -m src.eval.analyze`, free)
-4. **Compare run 1 vs run 2** — did the system prompt relaxation close or
-   reverse the gap? Three outcomes:
-   - our_rag > mistral_raw → thesis validated, publish
-   - Still our_rag < mistral_raw but narrower gap → partial fix, document
-     both results honestly
-   - Still our_rag << mistral_raw → accept negative result, pivot paper
-     narrative to "when does RAG help and when does it hurt"
-5. **Decide on grid search** (Task 4.5) based on budget
-6. **Phase 5 — Interface** (FastAPI + React, ~2 days)
-7. **Phase 6 — Finalization** (report, demo video script, tag v1.0)
+Effort: ~1-2h code + $1.15 one run. Files to create:
+- `src/eval/fact_check.py` — regex extractors for numbers, URLs, school names;
+  verification against retrieved sources
+- Update `runner.py` to save retrieved sources per question (not just answers)
+- Update `judge_all` or add post-processing step
+- Add criterion "fact_check" to analyze.py or replace sourcage
 
-## 10. Commit history (recent)
+**Option B — Accept the plateau + go Phase 5 (UI)**
+Write the paper with 6 runs as honest empirical study of RAG's limits on
+French orientation. The contribution becomes: "we identified the 6 leverage
+points (prompt, rerank, data quantity, data quality, ROME integration,
+Parcoursup enrichment) and document which work and which don't." Then build
+the FastAPI + React minimal UI (Phase 5) and finalize report (Phase 6).
+
+**Option C — Prompt tuning pass (incremental)**
+Add diversity instruction + métiers instruction + "don't flood conceptual
+questions" rule. Expected gain: +0.3 to +0.5 points. Risk: in noise range.
+
+**Option D — Multi-label system (deeper fix)**
+Rethink label attachment using CTI + CGE + Grade Master + RNCP as a unified
+multi-label system. More coverage (potentially 100+ labeled fiches). Bigger
+refactor but addresses root cause of label sparsity.
+
+### Matteo's preference signal (from session)
+Strong preference for **Option A (fact-check judge)** mentioned as
+"le seul levier qui peut réellement renverser le résultat" and included
+in the original list of 6 improvements to try. Matteo's quote:
+"+Fact-check automatique dans le juge".
+
+---
+
+## 10. Commit history (last 20)
 
 ```
-5e019f6 fix(eval): handle 429 rate limit with longer backoff in retry logic
+0f023ef feat(eval): archive runs 1,3-6 benchmark results
+3ecfc44 feat(collect,rag): ROME decouple + Parcoursup enrichment + strict joins (run 6)
+8c34050 feat(eval): run 2 benchmark results (relaxed sourcing prompt)
+6a963d2 feat(eval): run 2 benchmark results
+3a806b4 docs: add session handoff document for context preservation
+5e019f6 fix(eval): handle 429 rate limit with longer backoff
 8b1f14f fix(prompt): relax strict sourcing to allow general knowledge
 6302b8c fix(eval): add retry + resume + incremental save to benchmark runner
 9797cd1 feat(eval): populate chatgpt_recorded.json with 32 real responses
@@ -270,26 +388,48 @@ ff93408 feat(rag): add etab_named_boost (1.1) to rerank config
 aaa38a5 feat(rag): top-k faiss retriever with normalized scores
 ```
 
+---
+
 ## 11. How to resume in a fresh session
 
 ```bash
 cd /home/matteo_linux/projets/OrientIA
 source .venv/bin/activate
 
-# Read the state
+# Read state
 cat docs/SESSION_HANDOFF.md
-git log --oneline -15
+cat CLAUDE.md
+git log --oneline -20
 
-# Verify test suite still passes
-pytest tests/ -v 2>&1 | tail -5
+# Verify state
+pytest tests/ 2>&1 | tail -5
 
-# Check benchmark state
-ls -lh results/raw_responses/ results/scores/ 2>/dev/null
-python3 -c "import json; d = json.load(open('results/raw_responses/responses_blind.json')); print(f'{len(d)}/32')" 2>/dev/null
+# Check data layer
+python3 -c "import json; d = json.load(open('data/processed/formations.json')); print(f'{len(d)} fiches'); print(f'SecNumEdu: {sum(1 for f in d if \"SecNumEdu\" in (f.get(\"labels\") or []))}')"
 
-# If run 2 is complete, run judge + analyze
-python -m src.eval.run_judge    # ~5 min, ~$1.15 Anthropic
-python -m src.eval.analyze      # free, ~1 sec
+# Check FAISS index
+ls -lh data/embeddings/formations.index
+
+# Check budget (manual — remember ~$8.10 Anthropic remaining, Mistral paid)
 ```
 
-Then resume from section 9 "Next steps".
+Then pick up from **section 9 Next steps**. User preference was Option A
+(fact-check judge). Ask the user for confirmation before spending budget.
+
+---
+
+## 12. Files to NOT modify lightly
+
+These represent hard-won empirical decisions:
+
+- `src/prompt/system.py` — v2 relaxed is the result of 2 iterations.
+  Further changes should be additions (diversity rule, fact-check rule),
+  not reverts.
+- `src/eval/runner.py` — the retry + resume + incremental-save logic is
+  load-bearing for any real run on Mistral API.
+- `data/manual_labels.json` — 25 entries curated for authoritative
+  blocklist behavior. Stage 3 of attach_labels depends on this.
+- `src/rag/embeddings.py` — `fiche_to_text` intentionally excludes
+  debouches. Adding them back pollutes embeddings.
+- `src/rag/reranker.py` — `RerankConfig` defaults should stay; runtime
+  configs can override `secnumedu_boost=1.0` for ablation.
