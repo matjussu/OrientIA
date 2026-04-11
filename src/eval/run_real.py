@@ -42,7 +42,12 @@ def main():
     _validate_chatgpt_stub(CHATGPT_PATH)
 
     cfg = load_config()
-    client = Mistral(api_key=cfg.mistral_api_key)
+    # timeout_ms=120000 is load-bearing: the httpx default (5s) trips on
+    # mistral-medium-latest answers that routinely take 15-30s on dense
+    # contexts, and the _call_with_retry loop in runner.py can only handle
+    # rate limits / transient network errors if the request actually
+    # returns rather than hanging the client. Do not remove.
+    client = Mistral(api_key=cfg.mistral_api_key, timeout_ms=120000)
 
     fiches = json.loads(Path(FICHES_PATH).read_text(encoding="utf-8"))
     pipeline = OrientIAPipeline(client, fiches)
