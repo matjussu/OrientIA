@@ -87,14 +87,23 @@ def plot_radar(aggregated: dict, output_path: str | Path) -> None:
     plt.close()
 
 
-def main():
-    """CLI entry point — runs the full pipeline:
-    load blind scores + mapping → unblind → aggregate → save summary + radar."""
-    blind_scores_path = Path("results/scores/blind_scores.json")
-    mapping_path = Path("results/raw_responses/label_mapping.json")
+def run_analysis(
+    blind_scores_path: str | Path,
+    mapping_path: str | Path,
+    unblinded_out: str | Path,
+    summary_out: str | Path,
+    radar_out: str | Path,
+    title_suffix: str = "",
+) -> dict:
+    """Run the full unblind → aggregate → save pipeline on one set of blind
+    scores. Returns the {by_system, by_category} dict for the caller.
 
+    Reusable for v1 and v2 scores. The v2 call passes different paths.
+    """
+    blind_scores_path = Path(blind_scores_path)
+    mapping_path = Path(mapping_path)
     if not blind_scores_path.exists():
-        raise RuntimeError(f"{blind_scores_path} not found — run `python -m src.eval.run_judge` first")
+        raise RuntimeError(f"{blind_scores_path} not found")
     if not mapping_path.exists():
         raise RuntimeError(f"{mapping_path} not found — run `python -m src.eval.run_real` first")
 
@@ -105,27 +114,58 @@ def main():
     by_system = aggregate_by_system(unblinded)
     by_category = aggregate_by_category(unblinded)
 
-    Path("results/scores/unblinded.json").write_text(
+    Path(unblinded_out).parent.mkdir(parents=True, exist_ok=True)
+    Path(unblinded_out).write_text(
         json.dumps(unblinded, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    Path("results/scores/summary.json").write_text(
-        json.dumps({"by_system": by_system, "by_category": by_category}, ensure_ascii=False, indent=2),
-        encoding="utf-8"
+    Path(summary_out).parent.mkdir(parents=True, exist_ok=True)
+    Path(summary_out).write_text(
+        json.dumps(
+            {"by_system": by_system, "by_category": by_category},
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
     )
 
-    plot_radar(by_system, "results/charts/radar_by_system.png")
+    plot_radar(by_system, radar_out)
 
-    print("=== Résultats par système ===")
+    tag = f" {title_suffix}" if title_suffix else ""
+    print(f"=== Résultats par système{tag} ===")
     for sys_name, scores in by_system.items():
         print(f"\n{sys_name}:")
         for crit in CRITERIA + ["total"]:
             print(f"  {crit:20s} : {scores.get(crit, 0):.2f}")
 
-    print("\n=== Résultats par catégorie (total moyen) ===")
+    print(f"\n=== Résultats par catégorie (total moyen){tag} ===")
     for cat, sys_scores in by_category.items():
         print(f"\n{cat}:")
         for sys_name, avg in sys_scores.items():
             print(f"  {sys_name:20s} : {avg:.2f}/18")
+
+    return {"by_system": by_system, "by_category": by_category}
+
+
+def main():
+    run_analysis(
+        blind_scores_path="results/scores/blind_scores.json",
+        mapping_path="results/raw_responses/label_mapping.json",
+        unblinded_out="results/scores/unblinded.json",
+        summary_out="results/scores/summary.json",
+        radar_out="results/charts/radar_by_system.png",
+    )
+
+
+def main_v2():
+    """Analyze judge v2 scores (fact-check reweighted)."""
+    run_analysis(
+        blind_scores_path="results/scores/blind_scores_v2.json",
+        mapping_path="results/raw_responses/label_mapping.json",
+        unblinded_out="results/scores/unblinded_v2.json",
+        summary_out="results/scores/summary_v2.json",
+        radar_out="results/charts/radar_by_system_v2.png",
+        title_suffix="(judge v2 fact-check)",
+    )
 
 
 if __name__ == "__main__":
