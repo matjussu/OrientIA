@@ -18,12 +18,15 @@ Outputs:
     results/raw_responses/retrieved_by_qid.json
 """
 import json
+import time
 from pathlib import Path
 
+from anthropic import Anthropic
 from mistralai.client import Mistral
 
 from src.config import load_config
 from src.eval.judge_v2 import apply_fact_check_to_blind
+from src.eval.fact_check_claude import claude_fact_check_score
 from src.rag.pipeline import OrientIAPipeline
 from src.rag.retriever import retrieve_top_k
 from src.rag.reranker import rerank
@@ -112,14 +115,74 @@ def main() -> None:
     responses = json.loads(Path(RESPONSES_PATH).read_text(encoding="utf-8"))
     mapping = json.loads(Path(MAPPING_PATH).read_text(encoding="utf-8"))
 
-    # 3. Apply fact-check reweight
-    print(f"Reweighting {len(blind_v1)} questions with fact-check...")
+    # 3. Build the Claude-backed scorer. Claude Haiku 4.5 handles the
+    #    semantic verifications the regex version can't:
+    #    - real schools outside the fiches (INSA Lyon, etc.)
+    #    - fabricated reports (rapport ANSSI 2023) → contradicted
+    #    - entity/number consistency (the 47% at Rennes case)
+    #
+    #    Cost: ~$1.25 for 96 answers (32q × 3 systems) at Haiku 4.5
+    #    pricing. Retry logic handles transient Anthropic errors in the
+    #    batch (rate limit / 5xx) without losing partial progress.
+    anthropic = Anthropic(api_key=cfg.anthropic_api_key)
+
+    _scorer_cache: dict[tuple[str, int], float] = {}
+
+    def _claude_scorer_with_retry(
+        answer: str, retrieved: list[dict], _dataset: list[dict]
+    ) -> float:
+        # Cache by (answer hash, retrieved count) — reweighting on the same
+        # run_judge_v2 invocation might call the same (qid, label) twice;
+        # caching avoids paying twice.
+        cache_key = (answer[:200], len(retrieved))
+        if cache_key in _scorer_cache:
+            return _scorer_cache[cache_key]
+
+        last_exc = None
+        for attempt in range(6):
+            try:
+                score = claude_fact_check_score(
+                    anthropic, answer, retrieved=retrieved
+                )
+                _scorer_cache[cache_key] = score
+                return score
+            except Exception as exc:
+                last_exc = exc
+                msg = str(exc)
+                is_rate_limit = (
+                    "429" in msg
+                    or "rate_limit" in msg.lower()
+                    or "overloaded" in msg.lower()
+                )
+                is_5xx = any(f" {c} " in f" {msg} " for c in ("500", "502", "503", "504"))
+                is_transient = is_rate_limit or is_5xx or "timeout" in msg.lower()
+                if not is_transient or attempt == 5:
+                    print(
+                        f"  fact-check error (final): {type(exc).__name__}: {msg[:200]}"
+                    )
+                    # Default to 1.0 (neutral) rather than crash — one bad
+                    # answer shouldn't kill the whole run.
+                    _scorer_cache[cache_key] = 1.0
+                    return 1.0
+                delay = (15.0 if is_rate_limit else 2.0) * (2 ** attempt)
+                print(
+                    f"  fact-check retry {attempt+1}/5 in {delay:.0f}s "
+                    f"({type(exc).__name__})"
+                )
+                time.sleep(delay)
+        if last_exc is not None:
+            raise last_exc
+        return 1.0  # unreachable
+
+    # 3. Apply fact-check reweight using the Claude-backed scorer
+    print(f"Reweighting {len(blind_v1)} questions with Claude Haiku fact-check...")
     blind_v2 = apply_fact_check_to_blind(
         blind_v1=blind_v1,
         responses_blind=responses,
         label_mapping=mapping,
         retrieved_by_qid=retrieved_by_qid,
         dataset=fiches,
+        scorer=_claude_scorer_with_retry,
     )
 
     Path(V2_OUT_PATH).parent.mkdir(parents=True, exist_ok=True)

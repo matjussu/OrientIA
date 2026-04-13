@@ -13,8 +13,9 @@ comparison.
 from __future__ import annotations
 
 from copy import deepcopy
+from typing import Callable
 
-from src.eval.fact_check import fact_check_score
+from src.eval.fact_check import fact_check_score as _regex_score
 
 
 _CRITERIA = [
@@ -50,6 +51,14 @@ def reweight_v1_scores(v1: dict, fact_check_ratio: float) -> dict:
     return out
 
 
+Scorer = Callable[[str, list[dict], list[dict]], float]
+
+
+def _default_scorer(answer: str, retrieved: list[dict], dataset: list[dict]) -> float:
+    """Fallback scorer: the original regex-based fact_check.fact_check_score."""
+    return _regex_score(answer, retrieved=retrieved, dataset=dataset)
+
+
 def apply_fact_check_to_blind(
     *,
     blind_v1: list[dict],
@@ -57,6 +66,7 @@ def apply_fact_check_to_blind(
     label_mapping: dict,
     retrieved_by_qid: dict,
     dataset: list[dict],
+    scorer: Scorer | None = None,
 ) -> list[dict]:
     """Recompute blind scores with the fact-check reweight per system.
 
@@ -72,11 +82,16 @@ def apply_fact_check_to_blind(
       dataset — the full list of fiches, used as fallback ground truth
                 so that mistral_raw still gets credit for correctly
                 naming schools that exist in the dataset.
+      scorer — callable(answer, retrieved, dataset) -> float in [0, 1]
+                for the fact-check ratio. Defaults to the regex scorer;
+                pass a Claude-backed closure to use Claude Haiku instead.
 
     Returns:
       A new list of blind scores with the same structure as blind_v1,
       plus `fact_check_ratio` per label.
     """
+    if scorer is None:
+        scorer = _default_scorer
     answers_by_qid = {e["id"]: e["answers"] for e in responses_blind}
     out: list[dict] = []
     for entry in blind_v1:
@@ -90,9 +105,7 @@ def apply_fact_check_to_blind(
             retrieved = (
                 retrieved_by_qid.get(qid, []) if sys_name == "our_rag" else []
             )
-            ratio = fact_check_score(
-                ans, retrieved=retrieved, dataset=dataset
-            )
+            ratio = scorer(ans, retrieved, dataset)
             new_scores[label] = reweight_v1_scores(v1, fact_check_ratio=ratio)
         out.append(
             {
