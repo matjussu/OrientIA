@@ -166,3 +166,28 @@ def test_v3_1_distinct_ville_forced():
         or "ville distincte" in flat
         or "pas deux fois la même ville" in flat
     )
+
+
+def test_v3_2_comparison_table_forced():
+    """Phase E.2 fix for comparaison gap (-1.40 across run 8 and run 9).
+
+    F-category questions ("Compare ENSEIRB-MATMECA et EPITA", "Dauphine
+    vs école de commerce", "BTS SIO vs BUT info") need a clear side-by-side
+    structured comparison. our_rag was dropping into Plan A/B/C instead
+    of comparing the two named entities head-to-head.
+    """
+    import re
+    flat = re.sub(r"\s+", " ", SYSTEM_PROMPT.lower())
+    # Must mention comparison questions specifically
+    assert (
+        "question de comparaison" in flat
+        or "question comparative" in flat
+        or "comparaison directe" in flat
+        or "compare x et y" in flat
+    )
+    # Must instruct a table / side-by-side structure
+    assert (
+        "tableau" in flat
+        or "côte à côte" in flat
+        or "côte-à-côte" in flat
+    )

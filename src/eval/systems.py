@@ -2,8 +2,36 @@ import json
 from pathlib import Path
 from abc import ABC, abstractmethod
 from mistralai.client import Mistral
-from src.prompt.system import SYSTEM_PROMPT
 from src.rag.pipeline import OrientIAPipeline
+
+
+# A minimal neutral prompt for the mistral_raw baseline.
+#
+# Rationale (Phase E.1 asymmetry fix):
+# Until Run 9 the baseline shared the optimized SYSTEM_PROMPT (src/prompt/
+# system.py v3.1) with our_rag. That prompt carries our custom rules
+# (anti-confession, forced Plan A/B/C, distinct cities, interdisciplinary
+# bypass, fact-check markers, comparison tables), all of which were
+# designed to maximise our_rag's performance under the rubric. Giving
+# the same rules to mistral_raw cripples its free generation mode and
+# inflates our advantage artificially — effectively training on the test.
+#
+# For a fair baseline we give mistral_raw the kind of prompt a generic
+# orientation chatbot would ship with: it describes the task and asks
+# for precise, useful answers, but imposes no custom rules that
+# happen to align with our evaluation rubric.
+NEUTRAL_MISTRAL_PROMPT = """Tu es un conseiller d'orientation pour les lycéens et étudiants en France.
+
+Réponds aux questions des étudiants de façon claire et détaillée, en
+t'appuyant sur tes connaissances du système éducatif français
+(Parcoursup, licences, masters, grandes écoles, BTS, BUT, écoles
+d'ingénieurs, formations professionnelles, etc.).
+
+Quand tu proposes des formations ou des métiers, donne des informations
+utiles pour décider : noms précis d'établissements, villes, types de
+diplômes, niveaux d'accès, débouchés. Garde un ton bienveillant et
+professionnel.
+"""
 
 
 class System(ABC):
@@ -27,11 +55,14 @@ class OurRagSystem(System):
 
 
 class MistralRawSystem(System):
-    """Ablation baseline: same Mistral model, same system prompt, NO RAG context.
+    """Fair baseline: same Mistral model, **neutral** generic-assistant prompt,
+    NO RAG context.
 
-    This isolates the effect of retrieval+reranking. If OurRagSystem scores
-    higher than MistralRawSystem, the delta is attributable to the RAG
-    pipeline (data + retrieval + reranking), not the model or the prompt.
+    This isolates the effect of the full our_rag stack (optimized prompt +
+    retrieval + reranking). If OurRagSystem scores higher than
+    MistralRawSystem, the delta is attributable to our optimizations, not
+    to mistral_raw being handicapped by a prompt it wasn't supposed to
+    optimize for.
     """
     name = "mistral_raw"
 
@@ -44,7 +75,7 @@ class MistralRawSystem(System):
             model=self.model,
             temperature=0.3,
             messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "system", "content": NEUTRAL_MISTRAL_PROMPT},
                 {"role": "user", "content": question},
             ],
         )

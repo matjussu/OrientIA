@@ -37,7 +37,20 @@ def test_chatgpt_recorded_skips_metadata_key():
         system.answer("_metadata", "ignored")
 
 
-def test_mistral_raw_uses_same_system_prompt_but_no_context():
+def test_mistral_raw_uses_neutral_prompt_not_optimized_system_prompt():
+    """Phase E.1 — fair-baseline fix.
+
+    Before E.1, MistralRawSystem shared the *optimized* SYSTEM_PROMPT
+    with our_rag, which imposes anti-confession / Plan A/B/C /
+    distinct-cities / fact-check rules. This crippled mistral_raw's
+    free generation and structurally biased the comparison in our
+    favor. For a legitimate baseline, mistral_raw must use a neutral
+    prompt that describes the task but imposes no custom scoring
+    rules.
+    """
+    from src.eval.systems import NEUTRAL_MISTRAL_PROMPT
+    from src.prompt.system import SYSTEM_PROMPT
+
     mock_client = MagicMock()
     mock_response = MagicMock()
     mock_response.choices = [MagicMock(message=MagicMock(content="raw answer"))]
@@ -48,10 +61,32 @@ def test_mistral_raw_uses_same_system_prompt_but_no_context():
     assert answer == "raw answer"
     messages = mock_client.chat.complete.call_args.kwargs["messages"]
     assert messages[0]["role"] == "system"
+    # The baseline uses the neutral prompt, not the optimized v3.x prompt.
+    assert messages[0]["content"] == NEUTRAL_MISTRAL_PROMPT
+    assert messages[0]["content"] != SYSTEM_PROMPT
+    # The user message carries the question and has no FICHE context
+    # (the whole point of the ablation is to isolate the effect of RAG).
     assert "Quelles formations cyber" in messages[1]["content"]
-    # CRITICAL: the raw Mistral system must NOT receive any FICHE context
-    # (the whole point of the ablation is to isolate the effect of the RAG)
     assert "FICHE" not in messages[1]["content"]
+
+
+def test_neutral_mistral_prompt_is_minimal_and_free_of_custom_rules():
+    """The neutral prompt describes the task but does NOT impose
+    any of the v3.x optimizations (anti-confession, Plan A/B/C,
+    distinct cities, fact-check, interdisciplinary). It should be
+    what a generic orientation chatbot would ship with.
+    """
+    from src.eval.systems import NEUTRAL_MISTRAL_PROMPT
+    # Must identify the assistant role
+    assert "orientation" in NEUTRAL_MISTRAL_PROMPT.lower()
+    # Must NOT carry any v3.x custom rules
+    low = NEUTRAL_MISTRAL_PROMPT.lower()
+    assert "plan a" not in low
+    assert "anti-confession" not in low
+    assert "connaissance générale" not in low  # v3.x-specific marker
+    assert "villes distinctes" not in low
+    assert "secnumedu" not in low  # label bias
+    assert "interdisciplinaire" not in low
 
 
 def test_our_rag_uses_pipeline():
