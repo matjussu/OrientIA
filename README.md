@@ -39,15 +39,49 @@ To ensure the LLM (Mistral Medium) adheres to guidance ethics, the prompt is str
 
 ## Evaluation Framework: LLM-as-a-Judge
 
-To validate the system, a double-blind benchmark was conducted using 32 specialized queries, comparing OrientIA against raw Mistral and GPT-4.
+OrientIA is evaluated on a double-blind benchmark of **100 questions**
+(32 development questions + 68 hold-out test questions), split across
+7 categories + 10 adversarial + 8 cross-domain. A 7-system ablation
+matrix compares OrientIA against fair Mistral / OpenAI / Anthropic
+baselines.
 
 ### Methodology
-* **Juge Model:** Claude 3.5 (Anthropic) was selected as the evaluator to eliminate "self-preference bias" (where a model favors its own generation style).
-* **Scoring:** Each response is rated from 0 to 3 across six dimensions: Institutional Neutrality, Realism, Sourcing, Geographic Diversity, Agency, and Discovery.
-* **Randomization:** System identities were masked and randomized per query to ensure objective judging.
+* **Judge Model:** Claude Sonnet 4.5 (Anthropic). Run F / G add
+  GPT-4o as a second judge and Claude Haiku as a fact-check layer
+  to cross-validate the primary judge.
+* **Scoring:** Each response is rated from 0 to 3 across six
+  dimensions: Institutional Neutrality, Realism, Sourcing, Geographic
+  Diversity, Agency, and Discovery (max 18/18).
+* **Randomization:** System identities are masked and randomized
+  per query (N-system blinding up to N=7).
+* **Statistical rigour:** 3 runs per configuration with variance bars
+  (IC95%), paired t-tests, Cohen's d, and inter-judge agreement
+  (Cohen's κ, Krippendorff's α).
 
-### Honesty Check (H1/H2)
-The benchmark includes procedural questions where RAG offers no inherent advantage. Similar performance across all systems on these questions serves as a control to prove the validity of the specialized scoring on complex queries.
+### Baseline Matrix (7 systems)
+The scientific ablation isolates the contribution of retrieval vs
+prompt engineering :
+
+1. `our_rag` — v3.2 prompt + RAG (full stack)
+2. `mistral_neutral` — naïve baseline
+3. `mistral_v3_2_no_rag` — **isolates the RAG contribution** alone
+4. `gpt4o_neutral` / 5. `gpt4o_v3_2_no_rag` — OpenAI cross-vendor
+6. `claude_neutral` / 7. `claude_v3_2_no_rag` — Anthropic cross-vendor
+
+### Adversarial + Cross-Domain Tests
+* 10 adversarial questions with fake schools, fake reports, and fake
+  towns stress-test the honesty of each system. The `honesty_rate`
+  metric measures % of answers that refuse to fabricate.
+* 8 cross-domain questions (droit, médecine, architecture, journalisme)
+  test generalisation outside the cyber/data training domain.
+
+### Methodological Finding (publishable)
+The project uncovered a structural bias in naïve LLM-as-judge
+pipelines: the judge rewards *apparent* sourcing (confident citation
+of any institution) over *true* sourcing (citations verifiable against
+the underlying knowledge base). OrientIA's fact-check layer (Claude
+Haiku) penalises fabricated citations, which converts a previously-
+neutral gap into a substantial win for the grounded RAG.
 
 ---
 
@@ -64,11 +98,32 @@ The benchmark includes procedural questions where RAG offers no inherent advanta
 
 ---
 
+## Current Status
+
+Active Phase F — a 3-week academic-grade upgrade sprint (2026-04-13
+onward). The 32-question PoC benchmark has been expanded to 100
+questions with a proper dev / test split (32 / 68) to eliminate the
+train-equals-test objection. The 7-system baseline matrix is ready;
+Runs F and G will produce the variance-bar publication numbers. See
+[`docs/SESSION_HANDOFF.md`](docs/SESSION_HANDOFF.md) for the detailed
+project state, run history (10 runs executed), and the working plan.
+
 ## Limitations and Ethics
 
-* **Scope:** Currently optimized for the Cyber and Data/AI sectors; scaling to the full 14,000+ program catalog is ongoing.
-* **Transparency:** All data used is public, official, and free. No illegal scraping or paid APIs were utilized in the construction of the knowledge base.
-* **Open Science:** This project advocates for "Architectural Sovereignty"—the idea that national data and specific logic layers are more important for public service than the underlying model size.
+* **Scope:** Currently optimised for the Cyber and Data/AI sectors;
+  scaling to the full 14,000+ program catalogue is ongoing. The
+  cross-domain test (8 questions outside the training domain) is
+  deliberately included to measure graceful fall-back behaviour.
+* **Statistical caveats:** Historical runs (6-10) reported scores
+  without variance bars. Phase F introduces 3-runs-per-config +
+  IC95% to address this.
+* **Transparency:** All data used is public, official, and free.
+  No illegal scraping or paid APIs were utilised in the construction
+  of the knowledge base.
+* **Open Science:** This project advocates for "Architectural
+  Sovereignty"—the idea that national data and specific logic layers
+  are more important for public service than the underlying model
+  size.
 
 ---
 
