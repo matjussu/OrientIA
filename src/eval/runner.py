@@ -7,6 +7,22 @@ from pathlib import Path
 
 
 BLIND_LABELS = ["A", "B", "C"]
+"""Legacy 3-label list, kept for backward compatibility with Run 6-10
+archives. Phase F+ generalises to N labels via blind_labels(n)."""
+
+
+def blind_labels(n: int) -> list[str]:
+    """Return the N blinding labels used by run_benchmark.
+
+    Run F's 7-system matrix uses N=7 → ["A", "B", "C", "D", "E", "F", "G"].
+    The judge prompt is generalised similarly so each label receives an
+    independent score.
+    """
+    if n < 1:
+        raise ValueError("Need at least 1 system to label")
+    if n > 26:
+        raise ValueError(f"Only 26 single-letter labels available, got {n}")
+    return [chr(ord("A") + i) for i in range(n)]
 
 
 def _call_with_retry(fn, *args, max_retries: int = 5, **kwargs):
@@ -93,7 +109,14 @@ def run_benchmark(
     rng = random.Random(seed)
 
     system_names = list(systems.keys())
-    assert len(system_names) == 3, f"Expected exactly 3 systems, got {len(system_names)}"
+    n_systems = len(system_names)
+    # Phase F.2 — at least 2 systems required (a single system has no
+    # comparison value); Phase F itself uses N=7. The previous "==3"
+    # invariant is relaxed to accommodate the 7-system matrix.
+    assert n_systems >= 2, (
+        f"Need at least 2 systems for a comparison benchmark, got {n_systems}"
+    )
+    labels = blind_labels(n_systems)
 
     # Resume support: load any previously-saved partial state
     responses_path = output_dir / "responses_blind.json"
@@ -118,7 +141,7 @@ def run_benchmark(
         if q["id"] in done_ids:
             continue
 
-        mapping = dict(zip(BLIND_LABELS, shuffled))
+        mapping = dict(zip(labels, shuffled))
         label_mapping[q["id"]] = mapping
 
         print(f"  {q['id']} [{q['category']}]: running 3 systems in parallel...")

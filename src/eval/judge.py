@@ -5,9 +5,9 @@ from anthropic import Anthropic
 
 JUDGE_PROMPT = """Tu es un évaluateur expert en orientation scolaire française.
 
-On te donne une question d'un étudiant et TROIS réponses anonymisées (A, B, C) produites par trois systèmes IA différents.
+On te donne une question d'un étudiant et N réponses anonymisées (étiquetées A, B, C, ...) produites par N systèmes IA différents. Le nombre N varie selon le benchmark — il peut être 3 (Run 6-10) ou 7 (Run F+).
 
-RÈGLE D'OR : les labels A, B, C sont anonymisés et randomisés par question. Tu NE DOIS PAS deviner ni essayer d'identifier quel système a produit quelle réponse. Évalue uniquement le contenu, pas ton intuition sur l'origine.
+RÈGLE D'OR : les étiquettes (A, B, ..., G) sont anonymisées et randomisées par question. Tu NE DOIS PAS deviner ni essayer d'identifier quel système a produit quelle réponse. Évalue uniquement le contenu, pas ton intuition sur l'origine.
 
 Évalue chaque réponse indépendamment sur les 6 critères suivants, chacun noté de 0 à 3.
 
@@ -51,18 +51,12 @@ CRITÈRES :
 
 IMPORTANT :
 - Évalue uniquement la réponse fournie, pas tes propres connaissances.
-- Sois objectif et cohérent entre les évaluations.
+- Sois objectif et cohérent entre les évaluations — un score 3 doit signifier la même chose pour toutes les réponses.
 - Présente les scores du plus élevé au plus bas dans chaque rubrique pour réduire le rubric order bias.
 
-Réponds UNIQUEMENT au format JSON valide, sans texte autour, exactement cette structure :
+Format de sortie : un objet JSON avec UNE entrée par étiquette présente dans le message utilisateur. Chaque entrée a la même structure : {"neutralite": X, "realisme": X, "sourcage": X, "diversite_geo": X, "agentivite": X, "decouverte": X, "total": X, "justification": "phrase courte"} où X est un entier 0-3 et total = somme des 6 critères (max 18).
 
-{
-  "A": {"neutralite": X, "realisme": X, "sourcage": X, "diversite_geo": X, "agentivite": X, "decouverte": X, "total": X, "justification": "phrase courte"},
-  "B": {"neutralite": X, "realisme": X, "sourcage": X, "diversite_geo": X, "agentivite": X, "decouverte": X, "total": X, "justification": "phrase courte"},
-  "C": {"neutralite": X, "realisme": X, "sourcage": X, "diversite_geo": X, "agentivite": X, "decouverte": X, "total": X, "justification": "phrase courte"}
-}
-
-Où X est un entier entre 0 et 3 pour les critères, et total = somme des 6 critères (max 18).
+Le message utilisateur précisera les étiquettes attendues et fournira un exemple exact de structure JSON. Réponds UNIQUEMENT en JSON valide, sans texte autour.
 """
 
 
@@ -76,26 +70,53 @@ def _extract_json(text: str) -> dict:
     return json.loads(match.group(0))
 
 
+def _build_user_content(question: str, answers: dict[str, str]) -> str:
+    """Assemble the user-side message containing the question and the
+    N answer blocks plus the exact JSON template the judge must emit.
+
+    Generic over N: works for the historical N=3 (Run 6-10) and the
+    N=7 setup of Run F's full baseline matrix.
+    """
+    labels = sorted(answers.keys())
+    answer_blocks = "\n\n".join(
+        f"RÉPONSE {label} :\n{answers[label]}" for label in labels
+    )
+    json_entries = ",\n  ".join(
+        f'"{label}": {{"neutralite": X, "realisme": X, "sourcage": X, '
+        f'"diversite_geo": X, "agentivite": X, "decouverte": X, '
+        f'"total": X, "justification": "phrase courte"}}'
+        for label in labels
+    )
+    json_template = "{\n  " + json_entries + "\n}"
+    return (
+        f"Question de l'étudiant : {question}\n\n"
+        f"{answer_blocks}\n\n"
+        f"Étiquettes à noter : {', '.join(labels)}\n"
+        f"Réponds avec exactement cette structure JSON "
+        f"(garde les mêmes clés, remplace X par les scores) :\n"
+        f"{json_template}\n"
+    )
+
+
+def _max_tokens_for_n(n: int) -> int:
+    """Scale max_tokens with the number of answers so a 7-system call
+    doesn't get truncated mid-JSON. Each entry needs ~250 tokens
+    (6 score fields + total + justification + JSON formatting)."""
+    return max(2000, 250 + 280 * n)
+
+
 def judge_question(
     client: Anthropic,
     question: str,
     answers: dict[str, str],
     model: str = "claude-sonnet-4-5",
 ) -> dict:
-    user_content = f"""Question de l'étudiant : {question}
-
-RÉPONSE A :
-{answers['A']}
-
-RÉPONSE B :
-{answers['B']}
-
-RÉPONSE C :
-{answers['C']}
-"""
+    """Score N answers in a single judge call. Generic over the number
+    of labels (works for 3 in Run 6-10, 7 in Run F+)."""
+    user_content = _build_user_content(question, answers)
     response = client.messages.create(
         model=model,
-        max_tokens=2000,
+        max_tokens=_max_tokens_for_n(len(answers)),
         system=JUDGE_PROMPT,
         messages=[{"role": "user", "content": user_content}],
     )
