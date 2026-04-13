@@ -10,6 +10,9 @@ class Config:
     onisep_email: str
     onisep_password: str
     onisep_app_id: str
+    # Optional: only required for Phase F (7-system benchmark with OpenAI).
+    # Empty string when not configured — callers must check before use.
+    openai_api_key: str = ""
 
 
 def _require(key: str) -> str:
@@ -17,6 +20,10 @@ def _require(key: str) -> str:
     if not value:
         raise RuntimeError(f"Missing required environment variable: {key}")
     return value
+
+
+def _optional(key: str) -> str:
+    return os.environ.get(key, "")
 
 
 def load_config() -> Config:
@@ -27,4 +34,5 @@ def load_config() -> Config:
         onisep_email=_require("ONISEP_EMAIL"),
         onisep_password=_require("ONISEP_PASSWORD"),
         onisep_app_id=_require("ONISEP_APP_ID"),
+        openai_api_key=_optional("OPENAI_API_KEY"),
     )

@@ -112,3 +112,142 @@ def test_systems_have_name_attribute():
         json.dump({"_metadata": {}}, f)
         path = f.name
     assert ChatGPTRecordedSystem(path).name == "chatgpt_recorded"
+
+
+# --- Phase F.2 — 7-system baseline matrix ---
+
+
+def test_mistral_with_custom_prompt_uses_supplied_prompt():
+    """Phase F.2 — `mistral_v3_2_no_rag` baseline: same model as our_rag
+    (mistral-medium-latest) but receives our optimized v3.2 prompt
+    WITHOUT the RAG context. Isolates the contribution of retrieval
+    on top of the prompt engineering."""
+    from src.eval.systems import MistralWithCustomPromptSystem
+
+    mock_client = MagicMock()
+    mock_response = MagicMock()
+    mock_response.choices = [MagicMock(message=MagicMock(content="ans"))]
+    mock_client.chat.complete.return_value = mock_response
+
+    custom_prompt = "Tu es un conseiller spécialisé. Plan A/B/C obligatoire."
+    sys = MistralWithCustomPromptSystem(
+        client=mock_client,
+        system_prompt=custom_prompt,
+        name="mistral_v3_2_no_rag",
+    )
+    assert sys.name == "mistral_v3_2_no_rag"
+    assert sys.answer("Q1", "test ?") == "ans"
+    msgs = mock_client.chat.complete.call_args.kwargs["messages"]
+    assert msgs[0]["role"] == "system"
+    assert msgs[0]["content"] == custom_prompt
+    assert msgs[1]["role"] == "user"
+    assert msgs[1]["content"] == "test ?"
+    # No RAG context in the user message
+    assert "FICHE" not in msgs[1]["content"]
+
+
+def test_openai_baseline_uses_chat_completions():
+    """OpenAI GPT-4o baseline. Wraps openai.OpenAI client."""
+    from src.eval.systems import OpenAIBaseline
+
+    mock_client = MagicMock()
+    # OpenAI v1 SDK shape: client.chat.completions.create(...).choices[0].message.content
+    mock_resp = MagicMock()
+    mock_resp.choices = [MagicMock(message=MagicMock(content="gpt answer"))]
+    mock_client.chat.completions.create.return_value = mock_resp
+
+    sys = OpenAIBaseline(
+        client=mock_client,
+        model="gpt-4o",
+        system_prompt="generic prompt",
+        name="gpt4o_neutral",
+    )
+    assert sys.name == "gpt4o_neutral"
+    assert sys.answer("Q1", "Question test ?") == "gpt answer"
+
+    call = mock_client.chat.completions.create.call_args
+    assert call.kwargs.get("model") == "gpt-4o"
+    msgs = call.kwargs["messages"]
+    assert msgs[0]["role"] == "system"
+    assert msgs[0]["content"] == "generic prompt"
+    assert msgs[1]["role"] == "user"
+    assert "Question test" in msgs[1]["content"]
+
+
+def test_openai_baseline_default_temperature_matches_others():
+    """All systems use temperature=0.3 for fair comparison (same as
+    MistralRawSystem and OurRagSystem.generate)."""
+    from src.eval.systems import OpenAIBaseline
+
+    mock_client = MagicMock()
+    mock_resp = MagicMock()
+    mock_resp.choices = [MagicMock(message=MagicMock(content="x"))]
+    mock_client.chat.completions.create.return_value = mock_resp
+
+    OpenAIBaseline(
+        client=mock_client, model="gpt-4o",
+        system_prompt="p", name="gpt4o_neutral",
+    ).answer("Q", "q")
+    assert mock_client.chat.completions.create.call_args.kwargs["temperature"] == 0.3
+
+
+def test_claude_baseline_uses_messages_create():
+    """Claude Sonnet baseline. Wraps anthropic.Anthropic client.messages.create."""
+    from src.eval.systems import ClaudeBaseline
+
+    mock_client = MagicMock()
+    # anthropic shape: client.messages.create(...).content[0].text
+    mock_resp = MagicMock()
+    mock_resp.content = [MagicMock(text="claude answer")]
+    mock_client.messages.create.return_value = mock_resp
+
+    sys = ClaudeBaseline(
+        client=mock_client,
+        model="claude-sonnet-4-5",
+        system_prompt="generic prompt",
+        name="claude_neutral",
+    )
+    assert sys.name == "claude_neutral"
+    assert sys.answer("Q1", "Question test ?") == "claude answer"
+
+    call = mock_client.messages.create.call_args
+    assert call.kwargs.get("model") == "claude-sonnet-4-5"
+    assert call.kwargs.get("system") == "generic prompt"
+    msgs = call.kwargs["messages"]
+    assert msgs[0]["role"] == "user"
+    assert "Question test" in msgs[0]["content"]
+
+
+def test_all_baselines_share_identical_answer_signature():
+    """The benchmark runner calls system.answer(qid, text) generically.
+    All 7 systems must accept this signature and return a string."""
+    from src.eval.systems import (
+        MistralWithCustomPromptSystem,
+        OpenAIBaseline,
+        ClaudeBaseline,
+    )
+
+    # Set up minimal mocks for all 3 new system classes
+    mock_mistral = MagicMock()
+    mock_mistral.chat.complete.return_value = MagicMock(
+        choices=[MagicMock(message=MagicMock(content="m"))]
+    )
+    mock_openai = MagicMock()
+    mock_openai.chat.completions.create.return_value = MagicMock(
+        choices=[MagicMock(message=MagicMock(content="o"))]
+    )
+    mock_claude = MagicMock()
+    mock_claude.messages.create.return_value = MagicMock(
+        content=[MagicMock(text="c")]
+    )
+
+    systems = [
+        MistralWithCustomPromptSystem(mock_mistral, "p", "test_mistral"),
+        OpenAIBaseline(mock_openai, "gpt-4o", "p", "test_openai"),
+        ClaudeBaseline(mock_claude, "claude-sonnet-4-5", "p", "test_claude"),
+    ]
+    for s in systems:
+        # Same signature: answer(qid, question) -> str
+        result = s.answer("Q1", "anything ?")
+        assert isinstance(result, str)
+        assert result  # non-empty
