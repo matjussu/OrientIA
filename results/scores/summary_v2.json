@@ -1,68 +1,68 @@
 {
   "by_system": {
     "mistral_raw": {
-      "neutralite": 2.8125,
-      "realisme": 2.875,
-      "sourcage": 1.84375,
-      "diversite_geo": 2.5,
-      "agentivite": 2.875,
-      "decouverte": 2.4375,
-      "total": 15.34375
+      "neutralite": 2.09375,
+      "realisme": 1.9375,
+      "sourcage": 1.21875,
+      "diversite_geo": 2.1875,
+      "agentivite": 1.875,
+      "decouverte": 1.96875,
+      "total": 11.28125
     },
     "our_rag": {
-      "neutralite": 2.875,
-      "realisme": 2.78125,
-      "sourcage": 2.25,
-      "diversite_geo": 2.40625,
-      "agentivite": 2.875,
-      "decouverte": 2.53125,
-      "total": 15.71875
+      "neutralite": 3.0,
+      "realisme": 2.9375,
+      "sourcage": 2.5,
+      "diversite_geo": 2.5625,
+      "agentivite": 2.96875,
+      "decouverte": 2.625,
+      "total": 16.59375
     },
     "chatgpt_recorded": {
-      "neutralite": 0.96875,
-      "realisme": 1.15625,
-      "sourcage": 0.5,
+      "neutralite": 1.34375,
+      "realisme": 1.46875,
+      "sourcage": 0.625,
       "diversite_geo": 0.4375,
-      "agentivite": 1.875,
-      "decouverte": 0.9375,
-      "total": 5.875
+      "agentivite": 2.1875,
+      "decouverte": 1.0625,
+      "total": 7.125
     }
   },
   "by_category": {
     "biais_marketing": {
-      "mistral_raw": 15.8,
-      "our_rag": 15.8,
-      "chatgpt_recorded": 4.4
+      "mistral_raw": 10.4,
+      "our_rag": 17.4,
+      "chatgpt_recorded": 7.2
     },
     "realisme": {
-      "our_rag": 15.8,
-      "chatgpt_recorded": 6.6,
-      "mistral_raw": 15.6
+      "our_rag": 17.2,
+      "mistral_raw": 11.6,
+      "chatgpt_recorded": 7.0
     },
     "decouverte": {
-      "our_rag": 16.4,
-      "mistral_raw": 14.4,
-      "chatgpt_recorded": 4.6
+      "our_rag": 17.0,
+      "mistral_raw": 11.0,
+      "chatgpt_recorded": 5.2
     },
     "diversite_geo": {
-      "mistral_raw": 15.0,
-      "our_rag": 15.6,
-      "chatgpt_recorded": 7.8
+      "our_rag": 16.4,
+      "chatgpt_recorded": 8.4,
+      "mistral_raw": 11.8
     },
     "passerelles": {
-      "our_rag": 16.2,
-      "chatgpt_recorded": 5.2,
-      "mistral_raw": 15.6
+      "our_rag": 16.4,
+      "chatgpt_recorded": 7.2,
+      "mistral_raw": 10.8
     },
     "comparaison": {
-      "our_rag": 14.6,
-      "mistral_raw": 16.0,
-      "chatgpt_recorded": 5.8
+      "our_rag": 15.6,
+      "mistral_raw": 12.0,
+      "chatgpt_recorded": 8.0
     },
     "honnetete": {
-      "mistral_raw": 14.5,
-      "chatgpt_recorded": 8.0,
-      "our_rag": 15.5
+      "mistral_raw": 11.5,
+      "our_rag": 15.5,
+      "chatgpt_recorded": 6.5
     }
   }
 }
