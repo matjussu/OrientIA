@@ -5,6 +5,7 @@ from src.rag.embeddings import fiche_to_text, embed_texts_batched
 from src.rag.index import build_index, save_index, load_index
 from src.rag.retriever import retrieve_top_k
 from src.rag.reranker import RerankConfig, rerank
+from src.rag.mmr import mmr_select, DEFAULT_LAMBDA
 from src.rag.generator import generate
 
 
@@ -15,11 +16,15 @@ class OrientIAPipeline:
         fiches: list[dict],
         rerank_config: RerankConfig | None = None,
         model: str = "mistral-medium-latest",
+        use_mmr: bool = False,
+        mmr_lambda: float = DEFAULT_LAMBDA,
     ):
         self.client = client
         self.fiches = fiches
         self.rerank_config = rerank_config or RerankConfig()
         self.model = model
+        self.use_mmr = use_mmr
+        self.mmr_lambda = mmr_lambda
         self.index: faiss.IndexFlatL2 | None = None
 
     def build_index(self) -> None:
@@ -46,6 +51,9 @@ class OrientIAPipeline:
             raise RuntimeError("Pipeline not built — call build_index() or load_index_from() first.")
         retrieved = retrieve_top_k(self.client, self.index, self.fiches, question, k=k)
         reranked = rerank(retrieved, self.rerank_config)
-        top = reranked[:top_k_sources]
+        if self.use_mmr:
+            top = mmr_select(reranked, k=top_k_sources, lambda_=self.mmr_lambda)
+        else:
+            top = reranked[:top_k_sources]
         answer_text = generate(self.client, top, question, model=self.model)
         return answer_text, top
