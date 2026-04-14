@@ -144,12 +144,11 @@ def run_benchmark(
         mapping = dict(zip(labels, shuffled))
         label_mapping[q["id"]] = mapping
 
-        print(f"  {q['id']} [{q['category']}]: running 3 systems in parallel...")
-        # Parallelize the 3 system calls per question via a thread pool.
-        # ChatGPTRecordedSystem is file-local (instant), MistralRawSystem +
-        # OurRagSystem each hit the Mistral API — running them concurrently
-        # collapses question wall-time from ~3 × API_latency to ~1 × API_latency.
-        # max_workers=3 is safe on Mistral paid tier (no bursting beyond 3 RPS).
+        print(f"  {q['id']} [{q['category']}]: running {len(systems)} systems in parallel...")
+        # Parallelize the N system calls per question via a thread pool.
+        # Each system hits its own provider (Mistral / OpenAI / Anthropic),
+        # so concurrency collapses question wall-time from N × API_latency
+        # to ~1 × API_latency. max_workers scales with the system count.
         answers = {}
 
         def _answer_one(label_sys: tuple[str, str]) -> tuple[str, str]:
@@ -158,7 +157,7 @@ def run_benchmark(
                 systems[sys_name].answer, q["id"], q["text"]
             )
 
-        with ThreadPoolExecutor(max_workers=3) as pool:
+        with ThreadPoolExecutor(max_workers=len(systems)) as pool:
             for label, text in pool.map(_answer_one, mapping.items()):
                 answers[label] = text
 
