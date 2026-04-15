@@ -75,9 +75,13 @@ def make_seven_systems(
     anthropic_client = Anthropic(api_key=cfg.anthropic_api_key, timeout=120.0)
     openai_client = OpenAI(api_key=cfg.openai_api_key, timeout=120.0)
 
-    # Build our_rag pipeline
+    # Build our_rag pipeline with Phase F.3 method extensions enabled:
+    #   - use_mmr=True       → diversifies top-k against near-duplicates
+    #   - use_intent=True    → per-question top_k and λ via classify_intent
     fiches = json.loads(Path(FICHES_PATH).read_text(encoding="utf-8"))
-    pipeline = OrientIAPipeline(mistral_client, fiches)
+    pipeline = OrientIAPipeline(
+        mistral_client, fiches, use_mmr=True, use_intent=True,
+    )
     if Path(INDEX_PATH).exists():
         print(f"Loading cached FAISS index from {INDEX_PATH}...")
         pipeline.load_index_from(INDEX_PATH)
