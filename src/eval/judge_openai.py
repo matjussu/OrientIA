@@ -24,8 +24,14 @@ def judge_question_openai(
     question: str,
     answers: dict[str, str],
     model: str = DEFAULT_OPENAI_JUDGE_MODEL,
+    rate_limiter=None,
 ) -> dict:
-    """Score N answers in a single GPT-4o call. Generic over N."""
+    """Score N answers in a single GPT-4o call. Generic over N.
+
+    rate_limiter: optional RateLimiter — caller passes one to keep
+    judge calls under the OpenAI tier-1 RPM cap (15 for gpt-4o)."""
+    if rate_limiter is not None:
+        rate_limiter.acquire()
     user_content = _build_user_content(question, answers)
     response = client.chat.completions.create(
         model=model,
@@ -43,6 +49,7 @@ def judge_all_openai(
     client,
     responses_blind: list[dict],
     model: str = DEFAULT_OPENAI_JUDGE_MODEL,
+    rate_limiter=None,
 ) -> list[dict]:
     """Iterate over the blinded responses and produce one score dict
     per question. Mirrors judge.judge_all() exactly so downstream
@@ -50,7 +57,8 @@ def judge_all_openai(
     all_scores = []
     for entry in responses_blind:
         scores = judge_question_openai(
-            client, entry["text"], entry["answers"], model=model
+            client, entry["text"], entry["answers"], model=model,
+            rate_limiter=rate_limiter,
         )
         all_scores.append({
             "id": entry["id"],

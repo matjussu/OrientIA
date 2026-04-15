@@ -166,13 +166,17 @@ class OpenAIBaseline(System):
         model: str,
         system_prompt: str,
         name: str,
+        rate_limiter=None,
     ):
         self.client = client
         self.model = model
         self.system_prompt = system_prompt
         self.name = name
+        self.rate_limiter = rate_limiter
 
     def answer(self, qid: str, question: str) -> str:
+        if self.rate_limiter is not None:
+            self.rate_limiter.acquire()
         response = self.client.chat.completions.create(
             model=self.model,
             temperature=0.3,

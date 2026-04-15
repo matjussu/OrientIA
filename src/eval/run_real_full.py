@@ -34,6 +34,7 @@ from anthropic import Anthropic
 from mistralai.client import Mistral
 
 from src.config import load_config
+from src.eval.rate_limit import RateLimiter
 from src.eval.systems import (
     OurRagSystem,
     MistralWithCustomPromptSystem,
@@ -41,6 +42,14 @@ from src.eval.systems import (
     ClaudeBaseline,
     NEUTRAL_MISTRAL_PROMPT,
 )
+
+
+# OpenAI tier-1 caps gpt-4o at 15 RPM. We share a single limiter across
+# all OpenAI-bound systems so the *total* outbound rate stays under 12
+# RPM (5s min interval), well below the cap. Mistral and Anthropic
+# paid tiers don't need throttling at our volume.
+OPENAI_RPM = 12
+_openai_limiter = RateLimiter(max_per_minute=OPENAI_RPM)
 from src.prompt.system import SYSTEM_PROMPT  # = v3.2 (current)
 from src.eval.runner import run_benchmark
 from src.rag.pipeline import OrientIAPipeline
@@ -109,12 +118,14 @@ def make_seven_systems(
             model="gpt-4o",
             system_prompt=NEUTRAL_MISTRAL_PROMPT,
             name="gpt4o_neutral",
+            rate_limiter=_openai_limiter,
         ),
         "gpt4o_v3_2_no_rag": OpenAIBaseline(
             client=openai_client,
             model="gpt-4o",
             system_prompt=SYSTEM_PROMPT,
             name="gpt4o_v3_2_no_rag",
+            rate_limiter=_openai_limiter,
         ),
         "claude_neutral": ClaudeBaseline(
             client=anthropic_client,

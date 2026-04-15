@@ -26,6 +26,11 @@ from anthropic import Anthropic
 from src.config import load_config
 from src.eval.judge import judge_all
 from src.eval.judge_openai import judge_all_openai
+from src.eval.rate_limit import RateLimiter
+
+
+# Same RPM cap as run_real_full so a tier-1 OpenAI key never sees a 429.
+OPENAI_JUDGE_RPM = 12
 
 
 DEFAULT_RESPONSES = "results/raw_responses_F/responses_blind.json"
@@ -44,9 +49,10 @@ def _run_claude(responses: list[dict], out_path: Path, api_key: str) -> None:
 
 def _run_gpt4o(responses: list[dict], out_path: Path, api_key: str) -> None:
     from openai import OpenAI
-    print(f"  GPT-4o: judging {len(responses)} questions...")
+    print(f"  GPT-4o: judging {len(responses)} questions (≤{OPENAI_JUDGE_RPM} RPM)...")
     client = OpenAI(api_key=api_key, timeout=120.0)
-    scores = judge_all_openai(client, responses)
+    limiter = RateLimiter(max_per_minute=OPENAI_JUDGE_RPM)
+    scores = judge_all_openai(client, responses, rate_limiter=limiter)
     out_path.write_text(
         json.dumps(scores, ensure_ascii=False, indent=2), encoding="utf-8"
     )
