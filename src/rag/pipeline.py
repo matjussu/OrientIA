@@ -6,6 +6,7 @@ from src.rag.index import build_index, save_index, load_index
 from src.rag.retriever import retrieve_top_k
 from src.rag.reranker import RerankConfig, rerank
 from src.rag.mmr import mmr_select, DEFAULT_LAMBDA
+from src.rag.intent import classify_intent, intent_to_config
 from src.rag.generator import generate
 
 
@@ -18,6 +19,7 @@ class OrientIAPipeline:
         model: str = "mistral-medium-latest",
         use_mmr: bool = False,
         mmr_lambda: float = DEFAULT_LAMBDA,
+        use_intent: bool = False,
     ):
         self.client = client
         self.fiches = fiches
@@ -25,6 +27,7 @@ class OrientIAPipeline:
         self.model = model
         self.use_mmr = use_mmr
         self.mmr_lambda = mmr_lambda
+        self.use_intent = use_intent
         self.index: faiss.IndexFlatL2 | None = None
 
     def build_index(self) -> None:
@@ -49,11 +52,18 @@ class OrientIAPipeline:
     ) -> tuple[str, list[dict]]:
         if self.index is None:
             raise RuntimeError("Pipeline not built — call build_index() or load_index_from() first.")
+        effective_top_k = top_k_sources
+        effective_lambda = self.mmr_lambda
+        if self.use_intent:
+            cfg = intent_to_config(classify_intent(question))
+            effective_top_k = cfg.top_k_sources
+            effective_lambda = cfg.mmr_lambda
+
         retrieved = retrieve_top_k(self.client, self.index, self.fiches, question, k=k)
         reranked = rerank(retrieved, self.rerank_config)
         if self.use_mmr:
-            top = mmr_select(reranked, k=top_k_sources, lambda_=self.mmr_lambda)
+            top = mmr_select(reranked, k=effective_top_k, lambda_=effective_lambda)
         else:
-            top = reranked[:top_k_sources]
+            top = reranked[:effective_top_k]
         answer_text = generate(self.client, top, question, model=self.model)
         return answer_text, top

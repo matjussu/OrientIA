@@ -84,6 +84,38 @@ def test_pipeline_mmr_enabled_reorders_near_duplicates():
     )
 
 
+def test_pipeline_intent_routing_uses_intent_config():
+    """Phase F.3.b — when use_intent=True, the pipeline classifies
+    the question and overrides top_k_sources + mmr_lambda with the
+    intent-specific config. A geographic question should request
+    the wider top_k (12) instead of the default 10."""
+    fiches = [
+        {"nom": f"Formation {i}", "etablissement": f"Etab{i}", "ville": "X",
+         "statut": "Privé", "labels": []}
+        for i in range(15)
+    ]
+    mock_client = MagicMock()
+    emb_data = [MagicMock(embedding=[float(i % 5), float(i // 5), 0.0])
+                for i in range(15)]
+    emb_response = MagicMock(); emb_response.data = emb_data
+    q_response = MagicMock(); q_response.data = [MagicMock(embedding=[1.0, 0.0, 0.0])]
+    mock_client.embeddings.create.side_effect = [emb_response, q_response]
+    chat_response = MagicMock()
+    chat_response.choices = [MagicMock(message=MagicMock(content="ok"))]
+    mock_client.chat.complete.return_value = chat_response
+
+    pipeline = OrientIAPipeline(
+        mock_client, fiches, rerank_config=RerankConfig(),
+        use_mmr=True, use_intent=True,
+    )
+    pipeline.build_index()
+    # Geographic intent: config = top_k_sources=12, mmr_lambda=0.4
+    _, sources = pipeline.answer("Formations en Bretagne ?", k=15)
+    assert len(sources) == 12, (
+        f"Geographic intent should yield 12 sources, got {len(sources)}"
+    )
+
+
 def test_pipeline_mmr_disabled_by_default_preserves_ranking():
     """When use_mmr is not set, the pipeline must behave exactly as
     before (pure rerank) — backward compatibility for existing runs."""
