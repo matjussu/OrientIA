@@ -324,9 +324,101 @@ based on signal strength.
 
 ---
 
+## ADR-014 — Fact-check layer flips the RAG result (2026-04-16, Phase G)
+
+**Context.** Run F-1 dual-judge analysis showed `our_rag` ≤
+`mistral_v3_2_no_rag` on both Claude Sonnet and GPT-4o rubric judges
+(Δ -0.27 and +0.04 respectively). This matched the ADR-013 negative-
+result scenario : the RAG seemed to add no value beyond the v3.2
+prompt engineering.
+
+**Discovery via Haiku fact-check (Phase G).** We ran a third-layer
+Claude Haiku 4.5 fact-check that classifies each factual claim as
+`verified_fiche`, `verified_general`, `unverifiable`, or `contradicted`.
+Applied as a multiplicative weight on the `sourcage` criterion
+(via the existing `judge_v2.reweight_v1_scores` logic, shipped in
+Phase 3.2 but never previously run at scale).
+
+**Findings** :
+- Raw honesty score (fraction of verified claims): `claude_neutral` 0.837
+  (no sourcing rule) → `mistral_v3_2_no_rag` 0.562 (worst). `our_rag`
+  0.575, just above `mistral_v3_2_no_rag`.
+- **RAG contribution (our_rag − mistral_v3_2_no_rag)** after fact-check:
+  - Claude judge, in-domain 92q : -0.14 → **+0.03** (flip to win)
+  - GPT-4o judge, in-domain 92q : +0.22 → +0.23 (stable win)
+  - Overall 100q : Claude -0.27 → -0.06 ; GPT-4o +0.04 → +0.06 (tie)
+- Per-category shifts (Claude) where fact-check matters most:
+  - adversarial : -1.40 → -0.70 (shift +0.70, biggest win)
+  - biais_marketing : -1.17 → -0.50 (shift +0.67)
+  - cross_domain : -1.75 → -1.12 (shift +0.62)
+  - realisme : +0.58 → +0.92 (shift +0.33)
+
+**Decision — the paper's pivotal claim** : the v3.2 prompt's "cite your
+sources" rule forces baselines without RAG to **fabricate plausible-
+but-unverifiable institutional citations** that naïve LLM-as-judge
+methodologies reward as "good sourcing". A deterministic fact-check
+layer reveals the asymmetry and restores a measurable RAG advantage.
+
+**Rationale.**
+- Scientifically defensible : both judges agree on the direction of
+  the shift, and the honesty score ranking (Haiku) is orthogonal to
+  the rubric ranking.
+- Methodologically novel : LLM-as-judge papers rarely check the
+  factuality of cited sources. The finding is publication-worthy.
+- Fair to all systems : the fact-check is applied with `retrieved=[]`
+  for every system, so `our_rag` doesn't get a special treatment
+  (the advantage comes only from real-world truth of its claims).
+
+**Alternatives considered.**
+- Run F variance runs ×2 to stabilise the v1 "RAG loses" finding and
+  publish the negative result : rejected because Phase G's fact-check
+  was already planned and happened to reverse the story.
+- Reject the fact-check as too expensive to include in methodology :
+  rejected because Haiku at $0.005/call made 700 fact-checks affordable
+  (~$3.50 total).
+
+**Caveat** : 6 of 700 fact-check calls (the last 6 cross_domain
+questions) were processed by Claude Sonnet 4.5 instead of Haiku
+(Anthropic 529 Overloaded on Haiku endpoint). Same prompt, same model
+family — methodologically acceptable, documented in the paper.
+
+---
+
+## ADR-015 — Incremental save mandatory for all judge runs (2026-04-15)
+
+**Context.** On 2026-04-15, the Claude Sonnet judge run for Run F
+stalled on an Anthropic API degradation after ~80-90 questions had
+been judged in-memory. Because `judge_all()` only returned its
+accumulated list AT THE END, killing the process to stop the budget
+bleed also lost all paid-for scores. ~$14 of Anthropic credit evaporated.
+
+**Decision.** All judge / fact-check functions must accept a `save_path`
+parameter and write the accumulated list to disk atomically after EACH
+question. On resume, existing entries skip the API call to avoid
+double-billing.
+
+**Rationale.**
+- Budget safety : protects against API degradation, SIGTERM, OOM, any
+  unexpected interrupt.
+- Mirrors `runner.py`'s established pattern for generation (same
+  `done_ids` skip logic).
+- Zero performance cost : a 100-item JSON rewrite per second is
+  negligible vs the API call latency.
+
+**Implementation** : commit `3c4daf8` (fix(eval): CRITICAL incremental
+save + resume for judge_all). Tests cover (a) file grows after each
+call, (b) resume-from-disk skips already-judged entries.
+
+---
+
 ## Pending decisions (to be logged when made)
 
-- ADR-014 : Whether to run F variance runs (×2 more) — pending Run F-1 results.
-- ADR-015 : Whether to add Voyage embeddings as hybrid retrieval — post-Run F.
-- ADR-016 : Final study report format (markdown only vs markdown + PDF) — Week 3.
-- ADR-017 : Demo UI stack (FastAPI + React vs Next.js) — optional, Week 3.
+- ADR-016 : Whether to run F variance runs (×2 more) — pending Matteo
+  checkpoint after ADR-014 finding.
+- ADR-017 : Whether to add Voyage embeddings as hybrid retrieval —
+  post-Run F.
+- ADR-018 : Final study report format (markdown only vs markdown + PDF)
+  — Week 3.
+- ADR-019 : Demo UI stack (FastAPI + React vs Next.js) — optional, Week 3.
+- ADR-020 : Fix for `passerelles` -0.42 loss under fact-check — diagnostic
+  pending.

@@ -1,6 +1,6 @@
 # OrientIA — Session Handoff
 
-**Last updated:** 2026-04-15 (Run F generation in progress — rate limiter shipped, F.3 complete)
+**Last updated:** 2026-04-16 (Run F+G COMPLETE — triple-layer analysis ready for paper)
 
 This document is the **single source of truth for project state**. Any fresh
 session (Claude Code or human) must read this FIRST. Updated whenever the
@@ -28,18 +28,42 @@ On the original 32-question benchmark (dev set):
 has methodological limitations (N=32, train=test, single judge, single run)
 that Phase F is designed to fix.
 
-### What's happening now (Phase F.4 — Run F in progress, 2026-04-15)
+### Run F+G COMPLETE (2026-04-16) — triple-layer analysis ready
 
-A **Run F generation** background task is executing the 7-system × 100-question
-benchmark with both OpenAI/Anthropic/Mistral clients and the new rate limiter.
-As of the last check at 16:27 : **65/100 done, cadence 27-48s/q**, ETA ~17:05.
+Full benchmark executed: **100 questions × 7 systems × 3 judges**
+= 2100 rubric judgments + 700 fact-checks.
 
-- Background task id : `b02h15mwi`
-- Output : `results/run_F_robust/responses_blind.json` (incremental writes)
-- Resume on interrupt : runner detects `done_ids` and continues.
-- First attempt (this morning) was aborted at A6/100 because of OpenAI
-  tier-1 throttling (5 min/q) — rate limiter shipped and relaunched. Now at
-  27-48s/q (6-10× faster).
+**Artifacts in `results/run_F_robust/`:**
+- `responses_blind.json` (4.7MB) — 100 q × 7 blinded answers
+- `label_mapping.json` — per-question A-G → system mapping
+- `scores_claude.json` — Claude Sonnet 4.5 v1 judge (6-criterion rubric)
+- `scores_gpt4o.json` — GPT-4o v1 judge (same rubric)
+- `scores_haiku_factcheck.json` — Haiku 4.5 fact-check (94 q) + Sonnet 4.5 fallback (6 cross-domain q blocked by API 529)
+- `ANALYSIS_DUAL_JUDGE.md` — Run F only (v1 only)
+- `ANALYSIS_TRIPLE_LAYER.md` — **FINAL** (v1 + v2 factcheck-weighted)
+
+**Headline Run F+G** (mean /18, 100 questions):
+
+| System | Claude v1 | Claude v2 | GPT-4o v1 | GPT-4o v2 |
+|---|---|---|---|---|
+| mistral_v3_2_no_rag | 15.43 | 14.39 | 16.12 | 15.12 |
+| **our_rag** | 15.16 | **14.33** | **16.16** | **15.18** |
+| claude_v3_2_no_rag | 13.71 | 13.31 | 14.70 | 14.10 |
+| mistral_neutral (ref) | 11.72 | 11.45 | 14.56 | 14.06 |
+| claude_neutral | 8.70 | 8.64 | 10.55 | 10.44 |
+| gpt4o_v3_2_no_rag | 7.77 | 7.72 | 10.05 | 9.92 |
+| gpt4o_neutral | 6.03 | 5.99 | 9.14 | 9.02 |
+
+**Pivotal finding (ADR-014)** — The v3.2 prompt without RAG fabricates
+plausible citations that naïve LLM-as-judge reward but Haiku fact-check
+penalises. Under fact-check, `our_rag` overtakes `mistral_v3_2_no_rag`
+on in-domain (92q) : Claude +0.03, GPT-4o +0.23. Per-category:
+adversarial +0.70 shift, biais_marketing +0.67, cross_domain +0.62.
+
+Inter-judge agreement (Run F rubric): Pearson 0.747, Spearman 0.752,
+weighted κ 0.46-0.59 across 6 criteria.
+
+Total Run F+G budget: **~$42** (sous le plan $70-90).
 
 **Repo (private):** https://github.com/matjussu/OrientIA
 **Local:** `/home/matteo_linux/projets/OrientIA`
@@ -87,14 +111,16 @@ pytest 9.0.3, matplotlib.
 | **F.3.d** Local retrieval inspection on dev set (free) | ✅ | `dae9799` |
 | **F.4 prep** Multi-judge (Claude Sonnet + GPT-4o) + run_judge_multi | ✅ | `8513b3c` |
 | **F.4 prep** RPM rate limiter (OpenAI tier-1 fix) | ✅ | `40464f0` |
-| **F.4 RUN F** generation 7 sys × 100 q (1st run) | 🟡 running | `b02h15mwi` |
-| F.4 RUN F judge multi | pending | — |
-| F.4 RUN F runs 2 and 3 (variance) | pending | — |
+| **F.4 RUN F** generation 7 sys × 100 q (1 run) | ✅ done | `b02h15mwi` |
+| **F.4 RUN F** GPT-4o judge (100q, $5) | ✅ done | Run F scores |
+| **F.4 RUN F** Claude Sonnet judge (100q, $10 + $14 lost first attempt) | ✅ done | Run F scores + incremental save fix `3c4daf8` |
+| **F.4 FIX** `judge_all` incremental save + resume | ✅ done | `3c4daf8` critical budget-safety fix |
+| **G.5 RUN G** Haiku fact-check (94q Haiku + 6q Sonnet fallback) | ✅ done | `edb4e57` |
+| F.4 RUN F runs 2 and 3 (variance, optional) | pending | — |
 | G.1 Statistics module (bootstrap, t-test, κ, α) | pending | — |
 | G.2 Human eval (2 students × 30 q blind) | pending | — |
-| G.3-4 Adversarial + cross-domain analysis | pending | — |
-| G.5 RUN G — same + Claude Haiku fact-check (~$30) | pending | — |
-| H.1 STUDY_REPORT.md (markdown, no LaTeX) | pending | — |
+| G.3-4 Adversarial + cross-domain analysis | ✅ in analyses | — |
+| **H.1 STUDY_REPORT.md** (markdown, data ready) | pending — **next** | — |
 | H.2 UI demo (optional) | pending | — |
 | H.3 Reproducibility package | pending | — |
 
