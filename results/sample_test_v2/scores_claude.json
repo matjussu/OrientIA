@@ -1,0 +1,382 @@
+[
+  {
+    "id": "A1",
+    "category": "biais_marketing",
+    "scores": {
+      "A": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 1,
+        "diversite_geo": 3,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 12,
+        "justification": "Très complète avec diversité géographique excellente, mais sources vagues et mélange public-privé sans priorisation claire des labels"
+      },
+      "B": {
+        "neutralite": 1,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 2,
+        "agentivite": 1,
+        "decouverte": 1,
+        "total": 6,
+        "justification": "Mélange public-privé indifférencié, aucune source vérifiable, pas de données de sélectivité, peu d'engagement de l'étudiant"
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 1,
+        "diversite_geo": 1,
+        "agentivite": 3,
+        "decouverte": 1,
+        "total": 11,
+        "justification": "Priorise formations publiques et labels officiels, structure Plan A/B/C excellente avec question finale, mais sources insuffisantes et géographie limitée"
+      },
+      "D": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 17,
+        "justification": "Excellence sur tous critères: labels ANSSI/CTI systématiques, taux Parcoursup précis, sources ONISEP vérifiables, couverture territoriale large, structure interactive"
+      },
+      "E": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Labels SecNumEdu priorisés, taux Parcoursup détaillés avec sources ONISEP, structure Plan A/B/C engageante, diversité géographique correcte"
+      },
+      "F": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 2,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 13,
+        "justification": "Bonne structure interactive avec question finale, mention labels ANSSI/CTI, mais mélange public-privé et sources partielles (ONISEP sans codes précis)"
+      },
+      "G": {
+        "neutralite": 2,
+        "realisme": 1,
+        "sourcage": 1,
+        "diversite_geo": 2,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 9,
+        "justification": "Mentionne label ANSSI mais mélange écoles privées, pas de données sélectivité précises, sources absentes, question finale présente mais peu ciblée"
+      }
+    }
+  },
+  {
+    "id": "A2",
+    "category": "biais_marketing",
+    "scores": {
+      "A": {
+        "neutralite": 0,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 2,
+        "agentivite": 1,
+        "decouverte": 0,
+        "total": 4,
+        "justification": "Liste uniquement des écoles privées sans labels officiels, vague sur la sélectivité, aucune source, peu d'agentivité"
+      },
+      "B": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 0,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 12,
+        "justification": "Mentionne IAE public et labels (grade Master), données de sélectivité présentes, couverture géographique étendue, forte agentivité avec questions ouvertes"
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Priorise labels officiels (CGE, grade Master), données précises de sélectivité, mentionne sources (CGE 2024, ONISEP), diversité géographique, questions finales engageantes"
+      },
+      "D": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 0,
+        "diversite_geo": 1,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 8,
+        "justification": "Mentionne IAE public et grade Master, données de sélectivité présentes mais vagues, aucune source précise, peu de diversité géographique"
+      },
+      "E": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 17,
+        "justification": "Excellente priorisation labels officiels (CGE, accréditations), données de sélectivité précises, sources institutionnelles citées, couverture nationale, forte agentivité, propose alternatives originales"
+      },
+      "F": {
+        "neutralite": 0,
+        "realisme": 0,
+        "sourcage": 0,
+        "diversite_geo": 2,
+        "agentivite": 1,
+        "decouverte": 0,
+        "total": 3,
+        "justification": "Uniquement écoles privées prestigieuses, aucune donnée de sélectivité précise, aucune source, agentivité limitée, pas d'alternatives publiques"
+      },
+      "G": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 1,
+        "diversite_geo": 3,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 12,
+        "justification": "Mentionne labels officiels et alternatives publiques (BTS, IAE), données de sélectivité et salaires, sources vagues, bonne diversité, agentivité moyenne avec questions finales"
+      }
+    }
+  },
+  {
+    "id": "A3",
+    "category": "biais_marketing",
+    "scores": {
+      "A": {
+        "neutralite": 1,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 1,
+        "agentivite": 1,
+        "decouverte": 1,
+        "total": 5,
+        "justification": "Mélange public/privé sans labels, peu de données chiffrées, suggestions classiques"
+      },
+      "B": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 17,
+        "justification": "Labels CTI/SecNumEdu priorisés, taux Parcoursup précis, plans A/B/C avec passerelles, couverture territoriale, question finale ouverte"
+      },
+      "C": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 1,
+        "diversite_geo": 2,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 10,
+        "justification": "Quelques écoles publiques CTI, sélectivité mentionnée vaguement, sources générales, question finale"
+      },
+      "D": {
+        "neutralite": 1,
+        "realisme": 2,
+        "sourcage": 2,
+        "diversite_geo": 2,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 11,
+        "justification": "Mélange public/privé, données de salaires et classements, sources nommées mais non vérifiables, plusieurs villes, tableaux comparatifs"
+      },
+      "E": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 0,
+        "diversite_geo": 1,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 8,
+        "justification": "Écoles publiques et privées sans distinction claire, sélectivité générale, aucune source, principalement Île-de-France, question finale"
+      },
+      "F": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 18,
+        "justification": "Labels officiels priorisés, taux Parcoursup précis avec sources ONISEP, plans A/B/C détaillés, couverture nationale, question réflexive finale, parcours alternatifs originaux"
+      },
+      "G": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Priorise labels CTI/SecNumEdu, taux précis avec sources ONISEP, plans structurés avec passerelles, région Grand-Ouest surtout, question finale engageante"
+      }
+    }
+  },
+  {
+    "id": "A4",
+    "category": "biais_marketing",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 17,
+        "justification": "Excellente structure avec labels officiels, données précises (taux d'accès Parcoursup), couverture géographique équilibrée et forte agentivité via question finale personnalisée"
+      },
+      "B": {
+        "neutralite": 2,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 2,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 8,
+        "justification": "Mentionne formations publiques mais sans labels précis, sélectivité vague sans données chiffrées, aucune source vérifiable, propose des questions d'affinage"
+      },
+      "C": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Priorise grade master et labels CTI/CGE, données de sélectivité précises, sources partielles (FOR codes + connaissance générale), excellente couverture territoriale et agentivité via question ciblée"
+      },
+      "D": {
+        "neutralite": 2,
+        "realisme": 0,
+        "sourcage": 0,
+        "diversite_geo": 2,
+        "agentivite": 1,
+        "decouverte": 1,
+        "total": 6,
+        "justification": "Mentionne formations publiques mais manque labels officiels, aucune donnée de sélectivité ni source, présentation descriptive sans nuance réaliste"
+      },
+      "E": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Priorise grade master avec taux d'accès précis et codes FOR Parcoursup, bonne diversité géographique, forte agentivité avec question finale, structure Plan A/B/C claire"
+      },
+      "F": {
+        "neutralite": 1,
+        "realisme": 2,
+        "sourcage": 1,
+        "diversite_geo": 1,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 9,
+        "justification": "Mélange public/privé sans priorisation claire des labels officiels, mentionne quelques données de sélectivité mais sources vagues, centré sur Paris/Saclay, propose questions d'affinage"
+      },
+      "G": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 0,
+        "diversite_geo": 2,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 9,
+        "justification": "Structure Plan A/B/C présente, mentionne formations publiques mais labels incomplets, estimations de sélectivité sans sources précises, question finale ouverte"
+      }
+    }
+  },
+  {
+    "id": "A5",
+    "category": "biais_marketing",
+    "scores": {
+      "A": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 3,
+        "total": 17,
+        "justification": "Priorise formations publiques avec labels officiels, données de sélectivité précises, couverture géographique variée, encourage réflexion et propose passerelles originales"
+      },
+      "B": {
+        "neutralite": 2,
+        "realisme": 1,
+        "sourcage": 0,
+        "diversite_geo": 1,
+        "agentivite": 1,
+        "decouverte": 1,
+        "total": 6,
+        "justification": "Mélange public/privé sans distinction claire, sélectivité vague, aucune source vérifiable, focus parisien dominant, réponse directive peu interactive"
+      },
+      "C": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 1,
+        "diversite_geo": 2,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 10,
+        "justification": "Mentionne formations publiques mais sans labels précis, cite données salariales, sources vagues, couverture géographique correcte, pose question finale"
+      },
+      "D": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 2,
+        "diversite_geo": 3,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 13,
+        "justification": "Équilibre public/privé, mentionne sélectivité et taux d'insertion, cite ONISEP/Parcoursup, excellente diversité régionale, propose options mais format dense"
+      },
+      "E": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Priorise labels CTI/CGE/Grade Master, données précises avec sources ONISEP, question finale engageante, bonne diversité mais Poitiers/Paris dominants"
+      },
+      "F": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 3,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 17,
+        "justification": "Labels officiels systématiques, taux d'accès détaillés avec sources, couverture nationale et internationale, question structurée pour affiner, passerelles détaillées"
+      },
+      "G": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 1,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 1,
+        "total": 11,
+        "justification": "Formations publiques privilégiées, sélectivité estimée de façon générale, sources vagues, géographie correcte (Lille/Paris/Nantes), excellente question finale ouverte"
+      }
+    }
+  }
+]

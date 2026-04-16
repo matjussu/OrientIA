@@ -40,10 +40,10 @@ DEFAULT_OUT_DIR = "results/raw_responses_F"
 def _run_claude(responses: list[dict], out_path: Path, api_key: str) -> None:
     print(f"  Claude Sonnet 4.5: judging {len(responses)} questions...")
     client = Anthropic(api_key=api_key, timeout=120.0)
-    scores = judge_all(client, responses)
-    out_path.write_text(
-        json.dumps(scores, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    # save_path enables incremental save + resume : if the process is
+    # killed mid-run (API degradation, budget concern), already-paid-for
+    # scores are preserved and re-running picks up exactly where it left off.
+    judge_all(client, responses, save_path=out_path)
     print(f"  → wrote {out_path}")
 
 
@@ -52,10 +52,7 @@ def _run_gpt4o(responses: list[dict], out_path: Path, api_key: str) -> None:
     print(f"  GPT-4o: judging {len(responses)} questions (≤{OPENAI_JUDGE_RPM} RPM)...")
     client = OpenAI(api_key=api_key, timeout=120.0)
     limiter = RateLimiter(max_per_minute=OPENAI_JUDGE_RPM)
-    scores = judge_all_openai(client, responses, rate_limiter=limiter)
-    out_path.write_text(
-        json.dumps(scores, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    judge_all_openai(client, responses, rate_limiter=limiter, save_path=out_path)
     print(f"  → wrote {out_path}")
 
 

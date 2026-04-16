@@ -8,6 +8,9 @@ measurement of judge variance, not prompt variance.
 """
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
 from src.eval.judge import (
     JUDGE_PROMPT,
     _build_user_content,
@@ -50,12 +53,34 @@ def judge_all_openai(
     responses_blind: list[dict],
     model: str = DEFAULT_OPENAI_JUDGE_MODEL,
     rate_limiter=None,
+    save_path: str | Path | None = None,
 ) -> list[dict]:
     """Iterate over the blinded responses and produce one score dict
     per question. Mirrors judge.judge_all() exactly so downstream
-    aggregation code is judge-agnostic."""
-    all_scores = []
+    aggregation code is judge-agnostic.
+
+    If save_path is given, the full accumulated list is atomically
+    rewritten after EACH question so killing the process mid-run
+    never loses already-paid-for scores. Also enables resume : if
+    save_path exists, its entries skip the judge call.
+    """
+    done_ids: set[str] = set()
+    all_scores: list[dict] = []
+    if save_path is not None:
+        save_path = Path(save_path)
+        if save_path.exists():
+            try:
+                existing = json.loads(save_path.read_text(encoding="utf-8"))
+                if isinstance(existing, list):
+                    all_scores = existing
+                    done_ids = {e["id"] for e in existing}
+                    print(f"  Resuming: {len(done_ids)} already judged, skipping them.")
+            except Exception as exc:
+                print(f"  (could not parse existing {save_path}: {exc} — starting fresh)")
+
     for entry in responses_blind:
+        if entry["id"] in done_ids:
+            continue
         scores = judge_question_openai(
             client, entry["text"], entry["answers"], model=model,
             rate_limiter=rate_limiter,
@@ -65,4 +90,10 @@ def judge_all_openai(
             "category": entry["category"],
             "scores": scores,
         })
+        if save_path is not None:
+            save_path.parent.mkdir(parents=True, exist_ok=True)
+            save_path.write_text(
+                json.dumps(all_scores, ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
     return all_scores
