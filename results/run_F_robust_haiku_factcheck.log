@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/matteo_linux/projets/OrientIA/src/eval/run_haiku_factcheck.py", line 128, in <module>
+    main()
+  File "/home/matteo_linux/projets/OrientIA/src/eval/run_haiku_factcheck.py", line 123, in main
+    run_haiku_factcheck(client, responses, save_path=Path(args.out))
+  File "/home/matteo_linux/projets/OrientIA/src/eval/run_haiku_factcheck.py", line 84, in run_haiku_factcheck
+    claims = claude_fact_check(client, answer, retrieved=[], model=model)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/matteo_linux/projets/OrientIA/src/eval/fact_check_claude.py", line 175, in claude_fact_check
+    response = client.messages.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/matteo_linux/projets/OrientIA/.venv/lib/python3.12/site-packages/anthropic/_utils/_utils.py", line 282, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/matteo_linux/projets/OrientIA/.venv/lib/python3.12/site-packages/anthropic/resources/messages/messages.py", line 996, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/matteo_linux/projets/OrientIA/.venv/lib/python3.12/site-packages/anthropic/_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/matteo_linux/projets/OrientIA/.venv/lib/python3.12/site-packages/anthropic/_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic._exceptions.OverloadedError: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011Ca7aYoBsjKF8aFDwK42qc'}
+Fact-checking 100 questions × 7 labels = 700 calls
+Estimated Haiku cost : ~$3.50
+  Resuming: 14 (id, label) pairs already done.
