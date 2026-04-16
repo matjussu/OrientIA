@@ -106,6 +106,9 @@ def main() -> None:
     parser.add_argument("--out", default=DEFAULT_OUT)
     parser.add_argument("--sample", type=int, default=0,
                         help="If > 0, only fact-check the first N questions.")
+    parser.add_argument("--model", default="claude-haiku-4-5-20251001",
+                        help="Override the fact-check model (e.g. claude-sonnet-4-5 "
+                             "if Haiku API is overloaded).")
     args = parser.parse_args()
 
     cfg = load_config()
@@ -117,10 +120,13 @@ def main() -> None:
     n_labels = len(responses[0]["answers"]) if responses else 0
     n_calls = len(responses) * n_labels
     print(f"Fact-checking {len(responses)} questions × {n_labels} labels = {n_calls} calls")
-    print(f"Estimated Haiku cost : ~${n_calls * 0.005:.2f}")
+    print(f"Model: {args.model}")
+    # Rough cost : Haiku ~$0.005/call, Sonnet ~$0.021/call.
+    cost_per_call = 0.021 if "sonnet" in args.model else 0.005
+    print(f"Estimated cost : ~${n_calls * cost_per_call:.2f}")
 
     client = Anthropic(api_key=cfg.anthropic_api_key, timeout=120.0)
-    run_haiku_factcheck(client, responses, save_path=Path(args.out))
+    run_haiku_factcheck(client, responses, save_path=Path(args.out), model=args.model)
     print(f"Done. Saved to {args.out}")
 
 
