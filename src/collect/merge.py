@@ -123,7 +123,14 @@ def attach_labels(
         # manual table a correction layer: entries with empty labels act as
         # a blocklist (e.g., EPITA/Guardia/Epitech are explicitly unlabeled
         # for benchmark contrast even if fuzzy matching would have labeled them).
-        if manual_table is not None:
+        #
+        # DOMAIN FILTER (Vague santé fix) : the current manual table is all
+        # cyber-focused (SecNumEdu, CTI, CGE, Grade Master). Applying its
+        # labels to any fiche of a listed establishment wrongly labelled
+        # PASS/Licence santé fiches at Université de Limoges etc. as
+        # SecNumEdu. We now only apply the manual table to fiches in the
+        # tech domains (cyber, data_ia) where those labels are relevant.
+        if manual_table is not None and f.get("domaine") in ("cyber", "data_ia"):
             f_etab_norm = normalize_name(f.get("etablissement", ""))
             if f_etab_norm:
                 for entry in manual_table:
