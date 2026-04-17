@@ -15,6 +15,36 @@ DOMAIN_KEYWORDS = {
         "machine learning", "apprentissage automatique", "big data",
         r"\bIA\b", "science des données", "data analyst", "data engineer",
     ],
+    # Vague santé — filières médicales et paramédicales
+    # Mots-clés choisis pour capturer les formations santé spécifiques sans
+    # faux positifs trop larges. "Santé" seul pourrait capturer "santé
+    # environnementale" ou "santé publique" en fac de sciences — volontaire
+    # (ces parcours sont légitimement dans le scope orientation lycéen).
+    "sante": [
+        # Études médicales (PASS / L.AS / médecine / maïeutique / dentaire / pharmacie)
+        r"\bPASS\b", r"\bL\.?\s?AS\b",
+        "médecine", "médical", "médicale",
+        "maïeutique", "sage-femme", "sage femme",
+        "odontologie", "dentaire",
+        "pharmacie", "pharmac", "pharmaceutique",
+        # Paramédical & soins
+        "infirmier", "infirmière", r"\bIFSI\b", r"\bIFPS\b",
+        "aide-soignant", "aide soignant",
+        "kinésithér", r"\bkiné\b", r"\bDEMK\b",
+        "ergothérap",
+        "orthophon", "orthoptie", "orthopt",
+        "psychomotricien", "psychomotricité",
+        "audioprothèse", "audiologie",
+        "opticien", "optique-lunetterie", "optométrie",
+        "podolog", "pédicurie",
+        "diététique", "diététicien", "nutrition",
+        r"manipulateur\s+(?:en\s+|d['']\s*)?radio", "imagerie médicale",
+        "puéricult",
+        # Autres métiers santé & paramed
+        "ostéopath",
+        "santé publique",
+        "biologie médicale", "laboratoire médical",
+    ],
 }
 
 # Resolved column names from the real Parcoursup 2025 export
@@ -192,10 +222,20 @@ def extract_fiche(row: pd.Series) -> dict:
 def collect_parcoursup_fiches(path: str | Path) -> list[dict]:
     df = load_parcoursup(path)
     all_fiches = []
-    for domain in ("cyber", "data_ia"):
+    # Domain extraction order matters: cyber/data_ia checked first, then
+    # santé. If a fiche matches multiple domains, first-wins (e.g. a cyber
+    # fiche mentioning "santé numérique" stays under 'cyber'). De-dup by
+    # cod_aff_form since the same row could match multiple keyword lists.
+    seen_codes: set[str] = set()
+    for domain in ("cyber", "data_ia", "sante"):
         filtered = filter_domain(df, domain, FORMATION_COLUMN)
         for _, row in filtered.iterrows():
             fiche = extract_fiche(row)
+            cod = fiche.get("cod_aff_form")
+            if cod and cod in seen_codes:
+                continue
+            if cod:
+                seen_codes.add(cod)
             fiche["domaine"] = domain
             all_fiches.append(fiche)
     return all_fiches

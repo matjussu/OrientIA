@@ -148,6 +148,33 @@ def test_attach_labels_manual_table_replaces_not_appends():
     assert "SomeStaleLabel" not in result[0]["labels"]
 
 
+def test_attach_labels_manual_table_ignores_non_tech_domains():
+    """Vague santé fix : the manual_labels.json is all cyber-oriented
+    (SecNumEdu, CTI, CGE, Grade Master). It must NOT leak to santé
+    or other non-tech domains just because the establishment is shared
+    (e.g., Université de Limoges hosts both cyber AND PASS santé —
+    the cyber label entry must only apply to the cyber fiche)."""
+    from src.collect.merge import attach_labels
+    fiches = [
+        {"nom": "Licence PASS",
+         "etablissement": "Université de Limoges",
+         "ville": "Limoges", "domaine": "sante", "labels": []},
+        {"nom": "Master Cybersécurité",
+         "etablissement": "Université de Limoges",
+         "ville": "Limoges", "domaine": "cyber", "labels": []},
+    ]
+    # etab_normalized must match the output of normalize_name (stopwords removed)
+    manual = [
+        {"etab_normalized": "universite limoges", "labels": ["SecNumEdu", "CTI"]}
+    ]
+    result = attach_labels(fiches, [], manual_table=manual)
+    # The santé fiche must NOT receive SecNumEdu
+    assert result[0]["domaine"] == "sante"
+    assert "SecNumEdu" not in (result[0]["labels"] or [])
+    # The cyber fiche correctly receives the manual labels
+    assert "SecNumEdu" in result[1]["labels"]
+
+
 def test_attach_labels_manual_table_substring_match_both_ways():
     from src.collect.merge import attach_labels
     # Fiche etab is longer than manual entry ("telecom paris" in "telecom paris institut")
