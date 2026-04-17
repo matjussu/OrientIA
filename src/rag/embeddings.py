@@ -27,16 +27,35 @@ def fiche_to_text(fiche: dict) -> str:
         parts.append(f"Domaine : {fiche['domaine']}")
     if fiche.get("departement"):
         parts.append(f"Département : {fiche['departement']}")
-    # Include the formation detail (description) — a rich text signal
-    # for retrieval specificity (distinguishes similar BTS by parcours).
+    # Vague B.3 — detail window expanded 200 → 800 chars.
+    # The diagnostic of Vague B.1 showed Parcoursup-rich fiches losing to
+    # ONISEP-only fiches at retrieval because ONISEP names are narrative
+    # while Parcoursup fiches had little semantic body beyond the name.
+    # The extended detail carries specialisation, parcours, stages info —
+    # all semantic signals that improve ranking on "formations cyber",
+    # "data science", "réseaux" type queries without polluting with numbers.
     detail = (fiche.get("detail") or "").strip()
     if detail:
-        parts.append(f"Détail : {detail[:200]}")
-    # NOTE: debouches (ROME) and profil_admis are intentionally NOT included
-    # here. The ROME debouches are shared across all fiches of the same
-    # domain (embedding pollution). The profil_admis mentions/bac-types are
-    # structured numeric data better served in the generator context where
-    # the LLM can reason about them, not in the retrieval embedding.
+        parts.append(f"Détail : {detail[:800]}")
+    # Vague B.3 — ROME job titles injected (libellés only, not codes).
+    # The rationale from the old NOTE ("ROME pollutes since shared across
+    # domain") is only partially true: within a domain, specific ROME
+    # appellations (RSSI vs Data Scientist vs Architecte sécurité) DO
+    # carry discriminating semantic signal that helps match queries
+    # like "je veux être RSSI" or "devenir data scientist" to the right
+    # formations. We inject libellés only (no codes, no percentages) to
+    # keep the embedding narrative-dense without polluting it with
+    # structured data that belongs in the generator context.
+    debouches = fiche.get("debouches") or []
+    if debouches:
+        libelles = [d.get("libelle", "").strip()
+                    for d in debouches if d.get("libelle")]
+        if libelles:
+            parts.append(f"Métiers possibles : {', '.join(libelles)}")
+    # NOTE: profil_admis (mentions %, bac-types %, femmes %, etc.) is
+    # intentionally NOT included here — structured numeric data belongs
+    # in the generator context where the LLM can reason on numbers, not
+    # in retrieval embeddings where numbers pollute similarity.
     return " | ".join(parts)
 
 
