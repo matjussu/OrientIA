@@ -15,6 +15,7 @@ from src.collect.parcoursup import collect_parcoursup_fiches
 from src.collect.secnumedu import load_secnumedu
 from src.collect.merge import merge_all, attach_debouches, attach_metadata
 from src.collect.trends import attach_trends
+from src.collect.insersup import attach_insertion
 
 
 
@@ -69,6 +70,12 @@ def main():
     with_trend = sum(1 for f in merged if f.get("trends"))
     print(f"With historique:  {with_hist}")
     print(f"With trends:      {with_trend}")
+
+    # Vague D — InserSup insertion pro (joined by cod_uai, discipline preferred,
+    # then type_diplome aggregate fallback). Graceful no-op if CSV missing.
+    merged = attach_insertion(merged, "data/raw/insersup.csv")
+    with_insertion = sum(1 for f in merged if f.get("insertion"))
+    print(f"With insertion:   {with_insertion}")
 
     method_counts = Counter(f.get("match_method", "unknown") for f in merged)
     print(f"Match methods:    {dict(method_counts)}")

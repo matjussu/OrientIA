@@ -21,6 +21,7 @@ DOMAIN_KEYWORDS = {
 # (inspected by controller on 2026-04-10; Parcoursup open data has no RNCP column)
 FORMATION_COLUMN = "lib_for_voe_ins"
 ETABLISSEMENT_COLUMN = "g_ea_lib_vx"
+COD_UAI_COLUMN = "cod_uai"  # official MEN establishment id (joins InserSup etc.)
 VILLE_COLUMN = "ville_etab"
 TAUX_ACCES_COLUMN = "taux_acces_ens"
 PLACES_COLUMN = "capa_fin"
@@ -124,6 +125,7 @@ def _clean_str(val) -> str | None:
 def extract_fiche(row: pd.Series) -> dict:
     nom = _clean_str(row.get(FORMATION_COLUMN)) or ""
     cod_aff_form = _clean_str(row.get(COD_AFF_FORM_COLUMN))
+    cod_uai = _clean_str(row.get(COD_UAI_COLUMN))
     lien_psup = _clean_str(row.get(LIEN_FORM_PSUP_COLUMN))
     taux_acces = _safe_float(row.get(TAUX_ACCES_COLUMN))
     nombre_places = _safe_int(row.get(PLACES_COLUMN))
@@ -136,6 +138,9 @@ def extract_fiche(row: pd.Series) -> dict:
         "region": _clean_str(row.get(REGION_COLUMN)),
         "departement": _clean_str(row.get(DEPARTEMENT_COLUMN)),
         "rncp": None,
+        # Official MEN id of the establishment — join key for InserSup + other
+        # open-data datasets (ESR effectifs, insertion pro, etc.)
+        "cod_uai": cod_uai,
         # Vague A — unique Parcoursup id + official link (for citation)
         "cod_aff_form": cod_aff_form,
         "lien_form_psup": lien_psup,

@@ -37,6 +37,7 @@ def _vague_a_row() -> pd.Series:
     return pd.Series({
         "lib_for_voe_ins": "Master Cybersécurité",
         "g_ea_lib_vx": "Université de Rennes",
+        "cod_uai": "0351842X",
         "ville_etab": "Rennes",
         "region_etab_aff": "Bretagne",
         "dep_lib": "Ille-et-Vilaine",
@@ -65,6 +66,14 @@ def test_extract_fiche_vague_a_includes_cod_aff_form():
     fiche = extract_fiche(_vague_a_row())
     assert fiche["cod_aff_form"] == "42156"
     assert "parcoursup.fr" in fiche["lien_form_psup"]
+
+
+def test_extract_fiche_includes_cod_uai_for_insersup_join():
+    """cod_uai is the official MEN establishment id — required to join
+    with InserSup (insertion pro) and other ESR open-data datasets.
+    Missing it silently means 0 InserSup matches."""
+    fiche = extract_fiche(_vague_a_row())
+    assert fiche["cod_uai"] == "0351842X"
 
 
 def test_extract_fiche_vague_a_admission_block_structured():
