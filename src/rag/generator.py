@@ -185,6 +185,47 @@ def _detail_line(f: dict) -> str | None:
     return f"  Détail: {detail[:500]}"
 
 
+def _insertion_line(f: dict) -> str | None:
+    """Vague D — insertion pro InserSup DEPP (taux emploi, salaire médian)
+    with explicit disclaimer on the aggregation level. This line is optional
+    and only emitted when a matched insertion snapshot is attached.
+
+    Format kept compact to fit budget (replaces the previously-free line 7
+    which was the source line — we fold source + insertion into the line).
+    """
+    ins = f.get("insertion")
+    if not ins:
+        return None
+    bits = []
+    taux = ins.get("taux_emploi_12m")
+    if taux is not None:
+        # InserSup stores taux as decimal fraction (0.88) or percent (88) —
+        # detect heuristically: if value > 1.5, it's already percent.
+        pct = taux if taux > 1.5 else taux * 100
+        bits.append(f"emploi 12m: {pct:.0f}%")
+    taux18 = ins.get("taux_emploi_18m")
+    if taux is None and taux18 is not None:
+        pct = taux18 if taux18 > 1.5 else taux18 * 100
+        bits.append(f"emploi 18m: {pct:.0f}%")
+    sal = ins.get("salaire_median_12m_mensuel_net")
+    if sal is not None:
+        bits.append(f"salaire médian 12m: {sal}€/mois net")
+    sal30 = ins.get("salaire_median_30m_mensuel_net")
+    if sal is None and sal30 is not None:
+        bits.append(f"salaire médian 30m: {sal30}€/mois net")
+    stable = ins.get("taux_emploi_stable_12m")
+    if stable is not None:
+        pct = stable if stable > 1.5 else stable * 100
+        bits.append(f"emploi stable: {pct:.0f}%")
+    if not bits:
+        return None
+    cohorte = ins.get("cohorte", "?")
+    gran = ins.get("granularite", "?")
+    gran_short = "discipline" if gran == "discipline" else "agrégat établissement"
+    return (f"  Insertion (InserSup DEPP, cohorte {cohorte}, {gran_short}): "
+            + " | ".join(bits))
+
+
 def _source_line(f: dict) -> str | None:
     """Unified source line: official URLs + stable identifiers (RNCP / cod_aff_form).
 
@@ -236,6 +277,7 @@ def format_context(results: list[dict]) -> str:
             _selectivite_line(f),
             _debouches_line(f),
             _profil_line(f),
+            _insertion_line(f),
             _detail_line(f),
             _source_line(f),
         ):

@@ -1,6 +1,6 @@
 # Diff qualitatif — Vague A
 
-Généré le 2026-04-17T16:08:25 sur `feature/data-foundation-vague-a`.
+Généré le 2026-04-17T16:53:56 sur `feature/data-foundation-vague-a`.
 
 **Corpus** : 443 fiches regénérées via pipeline Vague A (colonnes Parcoursup étendues, provenance, collected_at).
 **Index FAISS** : non re-buildé (économie coût Mistral embed) — le retrieval utilise l'ancien embedding, seul le contexte generator est enrichi.
@@ -50,70 +50,82 @@ FICHE 6: Formation valant grade de licence - Double licence Intelligence Artific
 
 ### **Réponse orientée vers ton profil (11 de moyenne en terminale générale)**
 
-#### **Plan A — Réaliste : Une école de commerce post-bac accessible**
-📍 **Bachelor en Management (BBA) — IÉSEG Lille**
-• **Type** : Bachelor (bac+3) | **Statut** : Privé (reconnu par l’État)
-• **Labels** : Grade Licence, accréditation CGE (Conférence des Grandes Écoles)
-• **Sélectivité** : ~30-40% (modérément sélective) — **adapté à un profil autour de 11-12 de moyenne** avec un bon dossier (engagement, projets, langues).
-• **Débouchés** : Chargé de projet marketing (M1703), Consultant junior (M1402), Chef de produit (M1701).
-• **Source** : (connaissance générale — données CGE 2024)
+#### **Contexte clair (connaissance générale)**
+HEC Paris est **l’école de commerce la plus sélective de France** :
+- **Concours BCE** (voies ECE/ECS) ou **Sésame** (pour les admissions post-bac) exigent des **notes ≥ 16/20** en moyenne, avec des **classements en top 5-10%** dans les matières phares (maths, économie, langues).
+- **Taux d’admission en 2025** : ~3-5% des candidats (source : rapports BCE).
+- **Profil type admis** : 90% ont la mention **Très Bien** au bac, avec des notes ≥ 18/20 dans les spécialités.
 
-**Pourquoi ?**
-- L’IÉSEG recrute **au-delà des notes** (entretien de motivation, tests écrits, personnalité).
-- **Alternance possible dès la 3ᵉ année** pour financer tes études et gagner en expérience.
-- **Passerelle vers un master** (HEC, ESSEC, etc.) possible après le bachelor si tu montes en niveau.
+Avec **11 de moyenne**, une admission directe en **1ère année** est **statistiquement impossible**. Mais il existe des **chemins alternatifs** pour y arriver plus tard.
 
 ---
 
-#### **Plan B — Ambitieux : Visée HEC, mais par la voie des admissions parallèles**
-🎯 **Objectif** : Intégrer HEC **après une licence ou un bachelor** (via les **concours BCE/ECRICOME** en admissions parallèles).
-📌 **Chemin possible** :
-1. **Faire un bac+3 solide** (ex : licence AES, économie-gestion, ou un BBA comme l’IÉSEG).
-2. **Préparer les concours** en 1 an (via une **prépa AGC** — Admissions sur Titre en Grande École).
-3. **Passer les écrites/oraux** (HEC recrute ~10% de ses élèves par cette voie).
+### **Plan A — Réaliste : Une école de commerce accessible en post-bac**
+**📍 BBA INSEEC (Bordeaux, Lyon, Paris)**
+• **Type** : Bachelor (bac+4) | **Statut** : Privé (label **CGE**)
+• **Sélectivité** : ~30-40% (concours **Pass** ou **Parcoursup** pour certaines campus)
+• **Débouchés** : Chargé de projet marketing (M1702), Consultant junior (M1402)
+• **Pour toi** : Admission possible avec un **dossier équilibré** (notes + engagement associatif). **Coût** : ~7 000-9 000€/an (bourses possibles).
+*(connaissance générale)*
 
-🔢 **Chiffres clés** (connaissance générale) :
-- **Taux d’admission en AST** (Admission Sur Titre) à HEC : ~5-8% (très sélectif, mais moins que la voie classique).
-- **Profil type admis** : 14+ de moyenne en licence + score élevé aux tests (TAGE MAGE 400+, TOEIC 900+).
-
-**Pourquoi ?**
-- Avec **11 de moyenne en terminale**, la voie directe (concours BCE après prépa) est **extrêmement risquée** (taux d’admission < 5%).
-- En revanche, une **licence bien choisie + prépa AST** te donne une **seconde chance réaliste**.
-
----
-
-#### **Plan C — Alternative : Une formation hybride tech/management (moins sélective, débouchés solides)**
-📍 **BUT Statistique et Informatique Décisionnelle (STID) — IUT de Bordeaux**
-• **Type** : BUT (bac+3) | **Statut** : Public (gratuit)
-• **Labels** : Grade Licence, diplôme d’État
-• **Sélectivité** : ~50-60% (accessible) — **recrutement sur dossier + entretien**, avec une préférence pour les profils équilibrés (même sans 14+ de moyenne).
-• **Débouchés** : Data Analyst (M1419), Chargé d’études marketing (M1403), Consultant data (M1402).
-• **Source** : (connaissance générale — données ONISEP 2024)
-
-**Pourquoi ?**
-- **Moins de pression académique** qu’une prépa ou un bachelor sélectif.
-- **Double compétence tech/management** très recherchée (salaire moyen : 35-40k€ en sortie).
-- **Poursuite possible en école de commerce** (via les admissions parallèles) ou en master data/IA.
+**📍 Bachelor en Management (IAE de Toulouse, Montpellier, ou Lille)**
+• **Type** : Licence (bac+3) | **Statut** : **Public** (frais ~200€/an)
+• **Sélectivité** : ~20-50% sur **Parcoursup** (selon l’IAE)
+• **Débouchés** : Assistant chef de produit (M1701), Chargé de communication (E1103)
+• **Pour toi** : **Sélection sur dossier + entretien**. Les IAE valorisent la **motivation** et les **projets** autant que les notes.
+*(connaissance générale)*
 
 ---
+### **Plan B — Ambitieux : Intégrer HEC après une prépa ou un bac+2/3**
+#### **Option 1 : La voie royale (mais exigeante) — Prépa ECE/ECS**
+- **Objectif** : Faire une **prépa économique** (ECE pour les ES/L, ECS pour les S) pour retenter HEC via les **concours BCE**.
+- **Réalité** :
+  - Avec 11 de moyenne, une **prépa publique** (lycée avec internat) est **difficile** (sélection sur dossier).
+  - **Alternative** : Une **prépa privée** (ex : **Ipesup, Optimal Sup**) avec un **rythme adapté** (coût : ~5 000-8 000€/an).
+  - **Stratégie** : Vis **14-15 de moyenne en prépa** pour espérer une **bonne école** (ex : **Toulouse BS, Audencia**) et **rebondir en master vers HEC** (via les **admissions sur titre**).
+*(connaissance générale)*
 
-### **🔀 Passerelles possibles**
-- **De Plan A (BBA) → Plan B (HEC)** : Valide ton bachelor avec 14+ de moyenne, prépare les concours AST.
-- **De Plan C (BUT STID) → Plan B** : Fais un **master en data/management** (ex : MSc Data Analytics à l’EDHEC), puis tente HEC en AST.
-- **Option wild card** : Une **année de césure** (service civique, stage) pour muscler ton CV avant de retenter une formation sélective.
+#### **Option 2 : La voie progressive — Bac+2/3 puis admission parallèle**
+- **Étape 1** : Faire un **BTS NDRC** (Négociation Digitalisation Relation Client) ou un **BUT GEA** (Gestion des Entreprises) en **public** (sélectivité ~50-70% sur Parcoursup).
+  - Ex : **BUT GEA à l’IUT de Bordeaux** (public, ~250€/an).
+- **Étape 2** : Après ton bac+2/3, passer les **concours passerelles** (ex : **Tremplin 1/2, Passerelle Bachelor**) pour intégrer une **école de commerce post-bac+2** (ex : **Kedge, Neoma**).
+- **Étape 3** : En **master (bac+5)**, viser **HEC via les admissions sur titre** (AST) avec un **excellent dossier** (notes + stages).
+*(connaissance générale)*
 
+---
+### **Plan C — Passerelle internationale ou spécialisation**
+**📍 Licence Éco-Gestion (Université Paris 1 Panthéon-Sorbonne) + Master à l’étranger**
+• **Type** : Licence (bac+3) puis Master | **Statut** : Public (~200€/an)
+• **Sélectivité** : ~40-60% en **L1** (Parcoursup)
+• **Débouchés** : Avec un **master en management** (ex : **MSc à l’étranger**), tu peux viser des écoles comme **HEC** en **double diplôme**.
+• **Pour toi** : Moins sélectif qu’HEC en direct, mais permet de **monter en compétences** avant de retenter une grande école.
+*(connaissance générale)*
+
+**📍 École spécialisée (ex : École du Digital, Webtech Institute)**
+• **Type** : Bachelor (bac+3/4) | **Statut** : Privé (coût ~6 000-8 000€/an)
+• **Sélectivité** : ~50-70% (dossier + entretien)
+• **Débouchés** : Chef de projet digital (M1805), Responsable e-commerce (D1407)
+• **Pour toi** : Si tu aimes le **marketing digital** ou la **tech**, ces écoles offrent des **débouchés rapides** et des **passerelles vers des MBA** (ex : **EM Lyon**).
+*(connaissance générale)*
+
+---
+### **🔀 Passerelles possibles vers HEC**
+1. **Après un bac+3** : Concours **AST1** (pour les bac+3) ou **AST2** (bac+4) → **HEC M1**.
+2. **Via un double diplôme** : Certaines écoles partenaires (ex : **Sciences Po, Polytechnique**) permettent des **échanges avec HEC**.
+3. **Expérience pro** : Travailler 2-3 ans après un bac+5, puis postuler au **MBA HEC** (plus accessible avec de l’expérience).
+
+---
 ### **💡 Question pour toi**
-**Qu’est-ce qui compte le plus pour toi aujourd’hui ?**
-✅ **Un diplôme sûr** avec des débouchés rapides (→ Plan C)
-✅ **Un tremplin vers HEC** même si c’est plus long (→ Plan B)
-✅ **Une école de commerce dès maintenant**, même si ce n’est pas HEC (→ Plan A)
+**Qu’est-ce qui te motive le plus dans HEC ?**
+- **Le prestige** → Plan B (prépa ou bac+2/3 + AST) est la voie la plus sûre.
+- **Les débouchés** → Plan A (BBA/IAE) ou Plan C (spécialisation) te donneront des compétences concrètes plus vite.
+- **L’international** → Une licence en France + un master à l’étranger (ex : **LSE, Bocconi**) peut être un meilleur calcul.
 
-*(Réfléchis à ton niveau de risque acceptable : préfères-tu une voie moins stressante ou un pari ambitieux ?)*
+**Prochaine étape** :
+- Si tu veux tenter une **prépa**, contacte dès maintenant les lycées avec des **classes étoilées** (ex : **Lycée Janson-de-Sailly à Paris**).
+- Si tu préfères une **voie progressive**, explore les **BUT GEA** ou **BTS NDRC** sur Parcoursup (ouvre en janvier).
 
----
-### **⚠️ Réalisme sur HEC en direct**
-Avec **11 de moyenne en terminale**, ton dossier aurait **moins de 1% de chances** en voie classique (prépa + concours BCE). En revanche, **toutes les portes restent ouvertes** si tu passes par une **licence/bachelor + admissions parallèles** (cf. Plan B).
-*(Source : données BCE 2024 — taux d’admission en prépa ECE pour les <12 de moyenne : ~0,3%)* (connaissance générale).
+*(Tu peux aussi me dire si tu veux des précisions sur l’une de ces options !)*
 
 ---
 
@@ -162,89 +174,66 @@ FICHE 7: expert en cybersécurité des systèmes d'information | bac+5 | Inconnu
 
 ### Réponse générée
 
-**Les meilleures formations en cybersécurité en France** dépendent de ton profil (niveau, bac, mobilité) et de tes objectifs (recherche, terrain, international). Voici 3 options **labellisées SecNumEdu** (le label officiel de l’ANSSI), classées par sélectivité et débouchés.
+### **Meilleures formations en cybersécurité en France (2025)**
 
----
-
-### **Plan A — Réaliste : Formations publiques sélectives mais accessibles**
-**Pour qui ?** Étudiants avec un bac+2/+3 (BTS, BUT, licence) ou en reconversion, cherchant un diplôme **reconnu par l’État** sans concours ultra-compétitif.
-
-📍 **Mastère Spécialisé Cybersécurité** — **CentraleSupélec (Gif-sur-Yvette) + IMT Atlantique (Brest/Rennes)**
-• **Type** : Bac+5 (diplôme d’ingénieur ou master) | **Statut** : Public
-• **Labels** : **SecNumEdu + CTI + Grade Master** (triple reconnaissance)
-• **Sélectivité** : ~15-20% (modérément sélective, recrutement sur dossier + entretien)
-• **Débouchés** : RSSI (M1812), Ingénieur sécurité (M1819), pentester
-• **Source** : ONISEP: FOR.1577
-→ *Pourquoi ?* **Meilleur rapport prestige/accessibilité** : formation co-portée par deux grandes écoles publiques, avec un réseau d’entreprises solide (Thales, Orange Cyberdéfense).
-
-📍 **Manager de la Cybersécurité (RNCP 40246)** — **CNAM (Paris ou en région)**
-• **Type** : Bac+5 (title RNCP) | **Statut** : Public (formation continue/adulte)
-• **Labels** : **SecNumEdu**
-• **Sélectivité** : Accessible (pas de concours, validation des acquis possible)
-• **Débouchés** : RSSI, consultant sécurité, auditeur
-• **Source** : ONISEP: FOR.11788
-→ *Pourquoi ?* **Flexibilité** : cours du soir, alternance possible, idéal pour une reconversion ou un parcours en parallèle d’un emploi.
-
----
-
-### **Plan B — Ambitieux : Formations d’excellence (sélectives)**
-**Pour qui ?** Étudiants avec un **excellent dossier** (bac+3/+4, notes ≥14/20, expériences pro) visant les postes à haute responsabilité.
-
-📍 **Diplôme d’Ingénieur Cybersécurité** — **ESIEA (Laval/Paris) ou ENSIBS (Vannes)**
-*(connaissance générale : ces écoles sont **CTI + SecNumEdu**, mais non détaillées dans les fiches)*
-• **Type** : Bac+5 (diplôme d’ingénieur) | **Statut** : Privé (ESIEA) / Public (ENSIBS)
-• **Labels** : **CTI + SecNumEdu**
-• **Sélectivité** :
-  - ENSIBS (public) : ~10% (concours commun INP)
-  - ESIEA (privé) : ~25% (dossier + oral, frais ~7k€/an)
-• **Débouchés** : Expert en cryptographie, architecte sécurité, recherche (ANSSI, CEA)
-→ *Comment y accéder ?*
-  - **ENSIBS** : Prépa scientifique (MP/PSI) ou L2/L3 informatique avec 14+ de moyenne.
-  - **ESIEA** : Dossier solide + stages en cyber (ex : participation à des CTF comme le *FCSC*).
-
-📍 **Master Cybersécurité (RNCP 39495)** — **Universités partenaires ANSSI** *(ex : Université de Limoges, Rennes 1)*
-*(connaissance générale : ces masters sont **SecNumEdu** mais moins visibles que les écoles d’ingénieurs)*
+#### **Plan A — Réaliste : Formations labellisées SecNumEdu, accessibles et reconnues**
+📍 **Mastère Spécialisé Cybersécurité** — CentraleSupélec & IMT Atlantique (Bretagne-Pays de la Loire)
 • **Type** : Bac+5 | **Statut** : Public
-• **Labels** : **SecNumEdu**
-• **Sélectivité** : ~30% (dossier + parfois entretien)
-• **Atout** : **Gratuit** (frais d’inscription universitaires) et axé recherche (laboratoires comme l’**IRISA** à Rennes).
+• **Labels** : SecNumEdu, CTI, Grade Master (diplôme d’État)
+• **Débouchés** : RSSI (M1812), Ingénieur sécurité (M1819)
+• **Pourquoi ?** Triple accréditation, réseau d’excellence, débouchés garantis.
+*Source : ONISEP FOR.1577*
+
+📍 **BTS Cybersécurité, Informatique et Réseaux** — Lycée François 1er, Vitry-le-François (Marne)
+• **Type** : Bac+2 | **Statut** : Public
+• **Labels** : Aucun (mais formation technique solide)
+• **Sélectivité** : 68% (accessible) | 15 places
+• **Débouchés** : Administrateur sécurité (M1817), technicien SOC
+• **Profil admis** : 64% bacs pros, 36% boursiers
+*Source : Parcoursup 2025, cod_aff_form: 6083*
 
 ---
 
-### **Plan C — Passerelles & Alternatives**
-**Pour qui ?** Ceux qui veulent **entrer rapidement dans le métier** (sans bac+5) ou se spécialiser après un bac+2.
+#### **Plan B — Ambitieux : Formations d’excellence (sélectives mais prestigieuses)**
+📍 **Diplôme d’ingénieur Cybersécurité** — CNAM (Paris)
+• **Type** : Bac+5 | **Statut** : Public
+• **Labels** : SecNumEdu (reconnu par l’ANSSI)
+• **Débouchés** : Expert en cybersécurité (M1819)
+• **Pourquoi ?** Formation continue possible, adaptée aux pros en reconversion.
+*Source : ONISEP FOR.10153 | RNCP 39308*
 
-📍 **BTS Cybersécurité (cod_aff_form: 6083)** — **Lycée François 1er (Vitry-le-François, Marne)**
-• **Type** : Bac+2 | **Statut** : Public
-• **Sélectivité** : **68%** (accessible) | **Places** : 15
-• **Profil admis** : 64% bacs pro, 27% bacs techno (Source: Parcoursup 2025, cod_aff_form: 6083)
-• **Débouchés** : Technicien SOC, administrateur réseau sécurisé
-→ *Pourquoi ?* **Porte d’entrée concrète** : 85% de néobacheliers, alternance possible dès la 2ème année.
+📍 **Master Cybersécurité** (Universités labellisées SecNumEdu)
+• **Exemple** : Master Cybersécurité (Université de Rennes 1) — **Public**
+• **Labels** : SecNumEdu (RNCP 39495)
+• **Débouchés** : RSSI, consultant en sécurité
+• **Alternative** : Master Cybersécurité des Infrastructures (Lyon 1, RNCP 36855)
+*(connaissance générale : ces masters sont très sélectifs, souvent >15/20 de moyenne requise)*
 
-📍 **Certificat de Spécialisation Cybersécurité (cod_aff_form: 44323)** — **Lycée Monnet-Mermoz (Aurillac)**
-• **Type** : Bac+1 (formation courte) | **Statut** : Public
-• **Sélectivité** : **26%** (devenue **beaucoup plus sélective** : taux ↓65pp depuis 2024 !)
-• **Profil admis** : 100% bacs pro (Source: Parcoursup 2025, cod_aff_form: 44323)
-• **Atout** : **1 an seulement**, idéal pour une **spécialisation rapide** après un bac pro SN (Systèmes Numériques).
+---
+
+#### **Plan C — Passerelles / Alternatives**
+1. **Certificat de Spécialisation Cybersécurité** — Lycée Jean Monnet, Aurillac (Cantal)
+   • **Sélectivité** : 26% (sélective) | 15 places
+   • **Profil** : 100% bacs pros, 50% boursiers
+   • **Atout** : Formation courte (1 an) avec immersion pro.
+   *Source : Parcoursup 2025, cod_aff_form: 44323*
+
+2. **Alternance** : BUT Informatique (parcours Cybersécurité) + contrat pro
+   *(connaissance générale : ex. IUT de Toulouse, Villetaneuse)*
+
+3. **Écoles privées** (si budget) :
+   - **EPITA** (Paris) — Mastère Cybersécurité (CTI)
+   - **ESEO** (Angers) — Bac+5 Cybersécurité (SecNumEdu)
+   *(connaissance générale : coûts élevés, mais réseaux solides)*
 
 ---
 ### **🔀 Passerelles possibles**
-- **De bac+2 à bac+5** :
-  - Après un BTS/BUT, intégrer une **licence pro cyber** (ex : **Licence Pro Cybersécurité de l’IUT de Blois**, non listée ici mais **SecNumEdu**), puis un master.
-  - **Alternance** : 80% des formations SecNumEdu bac+5 sont accessibles en alternance (ex : **CNAM**, **IMT**).
-- **Sans bac+5** :
-  - Certifications **ANSSI reconnues** (ex : **PASSI**, **CISSP**) + expérience = accès à des postes techniques (niveau bac+2/+3).
+- **BTS → Licence Pro** : Ex. Licence Pro Cybersécurité (Université de Limoges).
+- **Bac+2/+3 → Admission parallèle** : Certaines écoles (ex. Epitech) recrutent en 3ᵉ année.
+- **Reconversion** : CNAM ou Certificats SecNumEdu pour les pros.
 
 ### **💡 Question pour toi**
-Qu’est-ce qui prime pour toi ?
-1️⃣ **Le prestige du diplôme** (même si c’est plus dur à intégrer) ?
-2️⃣ **L’insertion pro rapide** (même avec un bac+2/+3) ?
-3️⃣ **La flexibilité** (formation en alternance/à distance) ?
-
-*Prochaine étape* : Si tu vises une formation sélective (Plan B), **prépare un dossier avec** :
-- Notes ≥14/20 en informatique/maths.
-- **Projets concrets** (ex : participation à un CTF comme le [FCSC](https://www.france-cybersecurity-challenge.fr/), contributions GitHub en sécurité).
-- Stages/alternances dans la cyber (même courts).
+Quelle est ta priorité : **un diplôme reconnu rapidement** (BTS), **l’excellence académique** (CentraleSupélec), ou **l’alternance** pour financer tes études ? *(Réponds avec ton profil : bac général/techno/pro, budget, mobilité.)*
 
 ---
 
@@ -290,65 +279,49 @@ FICHE 6: expert en cybersécurité | bac+5 | Inconnu
 
 ### Réponse générée
 
-### **Comparaison ENSEIRB-MATMECA vs EPITA en cybersécurité**
+### **Comparaison ENSEIRB-MATMECA vs EPITA pour la cybersécurité**
 
 #### **1. Présentation des deux écoles**
-- **ENSEIRB-MATMECA (Bordeaux)** : École publique d’ingénieurs en informatique, mathématiques et mécanique, membre du groupe INP. Propose une **majeure cybersécurité** en 3ᵉ année, labellisée **SecNumEdu** (ANSSI).
-- **EPITA (Paris, Lyon, Toulouse)** : École privée d’ingénieurs en informatique, reconnue par la **CTI** et membre de la **CGE**. Propose une **majeure Sécurité et Systèmes Intelligents (SSI)** avec des modules dédiés à la cybersécurité.
+- **ENSEIRB-MATMECA (Bordeaux)** : École publique d’ingénieurs (groupe INP), spécialisée en informatique, mathématiques et mécanique. Propose un **parcours cybersécurité** en 3e année (bac+5), avec un double diplôme possible et des partenariats industriels forts (Thales, Airbus, ANSSI).
+- **EPITA (Paris, Lyon, Toulouse, Rennes)** : École privée d’ingénieurs en informatique, reconnue pour son **majeure SRS (Sécurité et Réseaux)**. Labellisée **SecNumEdu** et **CTI**, avec un réseau alumni solide dans la cyber.
 
 ---
 
 #### **2. Tableau comparatif**
 
 | **Critère**               | **ENSEIRB-MATMECA**                          | **EPITA**                                    |
-|---------------------------|---------------------------------------------|---------------------------------------------|
-| **Type / Statut**         | Public (INP)                                | Privé (CTI, CGE)                            |
-| **Labels officiels**      | SecNumEdu (ANSSI)                           | CTI, CGE (pas de SecNumEdu pour la majeure SSI) |
-| **Sélectivité**           | Concours **Polytech** (écrits + oraux) ou admissions sur titre (AST) — **très sélective** (taux < 10%) | Concours **Sésame** (pour prépa intégrée) ou admissions sur titre — **sélective** (taux ~15-25%) |
-| **Coût annuel**           | ~600 € (frais publics) + ~200 € sécurité sociale | ~9 800 €/an (hors bourses) |
-| **Localisations**         | Bordeaux (campus unique)                    | Paris, Lyon, Toulouse (3 campus)            |
-| **Pédagogie cybersécurité** | Majeure dédiée **SecNumEdu** (reconnue par l’ANSSI) avec projets concrets (pentest, cryptographie) | Majeure **SSI** (sécurité + IA) — moins spécialisée qu’ENSEIRB mais avec des partenariats industriels (Thales, Airbus) |
-| **Débouchés**             | **RSSI**, ingénieur sécurité, consultant en cybersécurité (secteur public/privé) | **Ingénieur sécurité**, consultant, architecte réseau (fort réseau entreprises privées) |
-| **Points forts**          | - **Reconnaissance ANSSI** (SecNumEdu = gage de qualité) <br> - Coût très faible <br> - Recherche académique forte (laboratoires CNRS) | - **Réseau alumni** très actif (liens avec ESN et grands groupes) <br> - Pédagogie projet (hackathons, CTF) <br> - International (doublés diplômes) |
-| **Points faibles**        | - Moins d’ouverture à l’international qu’EPITA <br> - Réseau pro moins étendu que les écoles privées | - **Coût élevé** (budget à prévoir) <br> - Majeure SSI **non labellisée SecNumEdu** (moins valorisée pour les postes publics) <br> - Sélectivité en hausse (concours Sésame très compétitif) |
+|---------------------------|-----------------------------------------------|----------------------------------------------|
+| **Type / Statut**         | Public (groupe INP)                          | Privé (groupe IONIS)                         |
+| **Diplôme**               | Diplôme d’ingénieur (grade master)           | Diplôme d’ingénieur (grade master, CTI)     |
+| **Labels cybersécurité**  | SecNumEdu (en cours d’accréditation)         | **SecNumEdu + CTI**                         |
+| **Sélectivité**           | **Extremement sélective** (taux < 10%)       | **Sélective** (taux ~15-25%)                |
+| **Coût annuel**           | ~600 € (frais publics)                       | ~8 500 € (privé, bourses possibles)         |
+| **Pédagogie cyber**       | Parcours dédié en 3e année + projets ANSSI   | Majeure SRS dès la 2e année + labs pratiques|
+| **Débouchés**             | RSSI, ingénieur sécurité (CAC 40, ETI)       | Pentest, SOC, consulting (ESN, startups)    |
+| **Points forts**          | Recherche (laboratoires CNRS), salaires élevés| Réseau pro, alternance facilitée             |
+| **Points faibles**        | Peu de places, pression académique            | Coût élevé, moins de recherche fondamentale  |
+| **Localisations**         | Bordeaux                                      | Paris, Lyon, Toulouse, Rennes                |
 
 ---
 #### **3. Synthèse personnalisée**
-- **Choisis ENSEIRB si** :
-  - Tu veux une **formation publique reconnue par l’ANSSI** (SecNumEdu = atout pour les postes sensibles : défense, énergie, administration).
-  - Tu vises un **coût minimal** avec un diplôme aussi valorisé qu’une école privée.
-  - Tu es prêt·e à affronter un **concours exigeant** (Polytech) ou une AST après une prépa/L2.
-  - Bordeaux te convient (ville étudiante dynamique, coût de vie raisonnable).
+- **Choisis ENSEIRB-MATMECA si** :
+  Tu vises l’excellence académique, la recherche ou des postes **RSSI/ingénieur sécurité dans de grands groupes** (DGA, Thales). Budget serré ? L’avantage financier est énorme. Prépare-toi à un **concours très sélectif** (notes > 14/20 en prépa ou dossier bac+2 excellent).
 
 - **Choisis EPITA si** :
-  - Tu privilégies un **réseau professionnel fort** (stages facilités dans les ESN/grands groupes).
-  - Tu veux une **pédagogie axée projets** (CTF, hackathons) et une ouverture à l’international.
-  - Tu peux assumer le **coût élevé** (ou obtenir une bourse).
-  - Tu cibles plutôt le **secteur privé** (la majeure SSI n’a pas le label SecNumEdu, moins utile pour les postes publics).
+  Tu veux une **formation pro-oriented** avec alternance, un réseau solide en cyber offensive (pentest, red team), et que le coût n’est pas un blocage. L’école est plus accessible qu’ENSEIRB mais exige un bon niveau en algo/réseaux.
 
 ---
-#### **4. Alternatives si les deux écoles sont hors de portée**
-- **Plan B — Ambitieux** :
-  - **CentraleSupélec (mastère cybersécurité)** : Double diplôme avec l’IMT, **label SecNumEdu + CTI + grade Master**. Extrêmement sélectif (concours Centrale-Supélec ou AST après une école d’ingé).
-  - **ISEN Yncréa (mastère cybersécurité)** : SecNumEdu, réseau Yncréa, coûts modérés (~6 000 €/an). Sélectivité modérée (admissions sur titre).
-
-- **Plan C — Passerelle** :
-  - **Bachelor Cybersécurité EFREI Bordeaux** (SecNumEdu + CTI, **77% d’accès** en 2025) : Coût ~7 000 €/an, mais **alternance possible** dès la 3ᵉ année (salaire + diplôme gratuit).
-  - **BUT Informatique (parcours cybersécurité)** : Public, **accessible** (taux > 60%), puis **poursuite en master SecNumEdu** (ex : Université de Limoges).
+#### **4. Alternatives si les deux écoles sont hors d’atteinte**
+- **Plan B** : **EFREI Bordeaux** (Bachelor Cybersécurité, **SecNumEdu + CTI**, accessible à 77% en Parcoursup, cod_aff_form: 36041). Moins prestigieux mais **diplôme reconnu** et coût maîtrisé (~6 000 €/an).
+- **Plan C** : **Licence pro cybersécurité** (ex : **IUT de Vannes**, public, gratuit) + master SecNumEdu ensuite. Passerelle possible vers EPITA/ENSEIRB en admissions parallèles.
 
 ---
 ### **🔀 Passerelles possibles**
-- **De ENSEIRB vers EPITA** : Peu pertinent (ENSEIRB a une meilleure reconnaissance académique).
-- **De EPITA vers un master SecNumEdu** : Possible après le diplôme (ex : mastère spécialisé de l’IMT ou de l’ANSSI) pour combler l’absence de label.
-- **Depuis un BUT/Bachelor** : Admission sur titre (AST) en 3ᵉ année d’ENSEIRB ou en 4ᵉ année d’EPITA avec un bon dossier.
+- **De bac+2/3 vers ENSEIRB** : Concours commun INP (pour les prépas) ou admissions sur titre (DUT/BTS avec 14+ de moyenne).
+- **De bac+3 vers EPITA** : Admission parallèle en 2e année via le **concours Advance** (pour les L2/L3).
 
----
 ### **💡 Question pour toi**
-- **Quel est ton critère n°1** ?
-  - La **reconnaissance officielle** (SecNumEdu pour travailler dans la défense/énergie) → ENSEIRB.
-  - Le **réseau pro et l’international** → EPITA.
-  - Le **coût** → ENSEIRB ou un BUT en alternance.
-- **As-tu un projet précis** (ex : travailler à l’ANSSI, dans une ESN, à l’étranger) ? Cela peut faire basculer le choix.
+Est-ce que tu privilégies **la reconnaissance académique** (ENSEIRB) ou **l’insertion pro rapide** (EPITA) ? Et quel budget peux-tu mobiliser ? *(Réponds avec ces 2 critères, je t’aiderai à affiner.)*
 
 ---
 
@@ -386,142 +359,101 @@ FICHE 4: diplôme d'ingénieur du CNAM spécialité informatique et cybersécuri
 *(connaissance générale)*
 
 #### **1. Définition et cadre légal**
-La **licence** est un diplôme national de l’enseignement supérieur **de niveau bac+3** (180 crédits ECTS), délivré par les **universités publiques** (et quelques établissements privés habilités). Elle s’inscrit dans le système **LMD** (Licence-Master-Doctorat), aligné sur les standards européens (processus de Bologne).
+La **licence** est un diplôme national de l’enseignement supérieur **de niveau bac+3**, délivré par les **universités publiques** (et quelques établissements privés habilités). Elle s’inscrit dans le système **LMD** (Licence-Master-Doctorat), aligné sur le processus de Bologne pour une reconnaissance européenne.
 
-- **Reconnaissance** : Le diplôme est **reconnu par l’État** (grade licence), ce qui permet de poursuivre en master ou de postuler à des concours de la fonction publique (catégorie A sous conditions).
-- **Durée** : 3 ans (L1, L2, L3), avec une spécialisation progressive.
-- **Coût** : **Gratuit ou quasi-gratuit** dans le public (frais d’inscription ~170€/an en 2024, exonération possible pour les boursiers). Les licences privées (ex : écoles) peuvent coûter **3 000€ à 8 000€/an**.
+- **Volume horaire** : ~1 500 à 1 800 heures de cours sur 3 ans (6 semestres).
+- **Crédits ECTS** : 180 crédits (30 par semestre), transférables en Europe.
+- **Grade licence** : Reconnue par l’État, elle permet de poursuivre en master (bac+5) ou d’entrer sur le marché du travail (même si le bac+5 reste souvent privilégié).
 
 ---
 
 #### **2. Fonctionnement pratique**
 ##### **a. Organisation des études**
 - **Parcours types** :
-  - **Licence générale** : Théorique, avec des UE (unités d’enseignement) à choisir (ex : licence d’informatique avec mineure en maths).
-  - **Licence professionnelle** : **Bac+3 pro**, avec **12 à 16 semaines de stage** en L3 et un taux d’insertion élevé (ex : licence pro cybersécurité). **Accès en L3 après un BTS/DUT**.
-  - **Double licence** : Deux disciplines en parallèle (ex : info + gestion).
-
-- **Modalités** :
-  - Cours en **amphi (CM)**, travaux dirigés (TD), travaux pratiques (TP).
-  - **Contrôle continu** (partiels, projets) ou examens terminaux selon les universités.
-  - **Stage** : Obligatoire en licence pro, facultatif en licence générale (mais fortement recommandé).
+  - **Licence générale** (ex : Licence Informatique, Licence Mathématiques) : théorique, avec des options de spécialisation progressive.
+  - **Licence professionnelle** (ex : Licence Pro Cybersécurité) : **1 an après un bac+2** (BTS/DUT), axée sur l’insertion pro (stages obligatoires, alternance possible).
+- **Spécialisation progressive** :
+  - **L1** : Tronc commun large (ex : "Portail Maths-Info" en fac de sciences).
+  - **L2-L3** : Choix de parcours (ex : "Sécurité des systèmes" en licence info).
 
 ##### **b. Admission**
 - **Via Parcoursup** pour la **L1** :
-  - **Taux d’accès variable** :
-    - Licences **non sélectives** (droit, psycho, STAPS) : **taux > 80%** (mais échec en L1 fréquent).
-    - Licences **sélectives** (informatique à Paris, double licence) : **taux 20-40%**.
-  - Critères : **notes de 1ère/Terminale** (surtout en spécialités pertinentes), projet motivé, parfois entretien.
-- **Admission en L2/L3** :
-  - Sur **dossier** (notes de licence ou BTS/DUT) ou **validation des acquis** (VAE).
+  - **Formation non sélective** pour la majorité des licences (taux d’accès > 80% en 2025, sauf exceptions comme les **licences bidisciplinaires** ou **double diplômes**).
+  - **Critères** : Notes de première/terminale (surtout en spécialités liées), projet de formation motivé.
+  - **Oui-Si** : Si dossier limite, l’université peut proposer un **parcours adapté** (ex : année de remise à niveau).
+- **En L2/L3** : Admission sur dossier (pour les étudiants en réorientation ou venant de BTS/DUT).
 
-##### **c. Débouchés**
-- **Poursuite d’études** (majoritaire) :
-  - **Master** (bac+5) à l’université ou en école (via admissions parallèles).
-  - **Écoles d’ingénieurs** (sur dossier ou concours comme les **AST** pour les prépas).
-  - **Écoles de commerce** (via les admissions sur titre comme le **Passerelle**).
-- **Insertion pro directe** (surtout avec une **licence pro**) :
-  - Métiers techniques (ex : technicien cybersécurité, développeur junior).
-  - Concours administratifs (catégorie B).
+##### **c. Coût**
+- **Frais d’inscription 2025** :
+  - **Licence classique** : **170€/an** (gratuit pour les boursiers).
+  - **Licence pro** : **243€/an**.
+  - **Formation privée** : 3 000€ à 8 000€/an (sans garantie de grade licence d’État).
 
 ---
-#### **3. Comparaison avec d’autres voies post-bac**
-| Critère               | Licence universitaire          | BTS/DUT                     | Prépa/École d’ingénieurs       |
-|-----------------------|---------------------------------|-----------------------------|--------------------------------|
-| **Durée**            | 3 ans                           | 2 ans (BTS) / 3 ans (BUT)   | 2 ans (prépa) + 3 ans (école)  |
-| **Sélectivité**      | Variable (10–100%)              | Modérée (30–70%)            | Très élevée (5–20%)            |
-| **Coût**             | ~170€/an (public)               | Gratuit (BUT) / ~600€ (BTS) | 0€ (prépa publique) à 10k€/an |
-| **Pédagogie**        | Théorique (licence générale)    | Pratique (stages, projets)  | Intensive (prépa)             |
-| **Débouchés**        | Poursuite en master/école       | Insertion pro rapide        | Métiers ingénieurs (bac+5)    |
+#### **3. Débouchés et suites possibles**
+##### **a. Poursuite d’études (majoritaire)**
+- **Master** (bac+5) : Accès de droit si validation de la licence, mais **sélectivité variable** selon les mentions (ex : Master Cybersécurité souvent sélectif).
+- **Écoles d’ingénieurs** : Admission sur dossier en **L3** via des passerelles (ex : **INSA**, **Polytech**, **UT**).
+- **Écoles spécialisées** : Certaines acceptent des bac+3 (ex : **EPITA**, **Epitech** en admission parallèle).
+
+##### **b. Insertion professionnelle (licence pro ou secteur porteur)**
+- **Métiers accessibles avec une licence générale** (souvent en complément d’une spécialisation) :
+  - Technicien supérieur en informatique (M1805).
+  - Chargé de projet digital (M1802).
+  - **Attention** : La cybersécurité ou l’IA nécessitent généralement un **bac+5** pour des postes d’ingénieur.
+- **Licence pro** : Taux d’insertion à 6 mois ~**70-90%** selon les filières (ex : Licence Pro Sécurité des Réseaux).
 
 ---
-#### **4. Points forts et limites**
-✅ **Avantages** :
-- **Coût très faible** dans le public.
-- **Large choix de disciplines** (45 domaines : info, bio, droit, arts…).
-- **Passerelles** vers d’autres formations (écoles, BTS).
-- **Reconnaissance internationale** (grade licence).
-
-⚠️ **Risques** :
-- **Taux d’échec élevé en L1** (~30 à 50% selon les filières, source : MESRI 2023).
-- **Autonomie requise** : peu d’encadrement vs. une prépa ou un BTS.
-- **Insertion pro difficile sans bac+5** (sauf licence pro).
+#### **4. Avantages et limites**
+| **Points forts**                          | **Points faibles**                          |
+|-------------------------------------------|---------------------------------------------|
+| Coût très faible (public).                | Taux d’échec élevé en L1 (~60% en fac de sciences). |
+| Large choix de parcours (45 domaines).    | Peu d’accompagnement individualisé (sauf en licence pro). |
+| Passerelle vers toutes les filières longues. | Moins valorisée que les écoles d’ingénieurs pour certains employeurs. |
+| Possibilité de **double licence** (ex : Info-Maths). | Sélectivité accrue en master après une licence "moyenne". |
 
 ---
 ### **Plan A / B / C : Que faire après le bac ?**
-*(Exemples concrets en cybersécurité/informatique, mais adaptables à d’autres domaines)*
+*(Exemples concrets en cybersécurité/informatique, domaine couvert par les fiches)*
 
-#### **Plan A — Réaliste : Licence publique + spécialisation progressive**
+#### **Plan A — Réaliste : Licence publique classique**
 📍 **Licence Informatique** — Université de Rennes 1 (Bretagne)
 • **Type** : Licence générale | **Statut** : Public
-• **Sélectivité** : ~60% en L1 (taux variable selon le bac).
-• **Points forts** :
-  - Parcours **cybersécurité** possible en L3 (ex : parcours "Sécurité des Systèmes" à Rennes).
-  - **Coût** : 170€/an | **Débouchés** : Poursuite en master cybersécurité (ex : master **SecNum** à Rennes).
-• *(connaissance générale)*
+• **Labels** : Grade Licence (délivré par l’État)
+• **Sélectivité** : Accessible (taux d’accès > 80% en 2025, cod_aff_form: *exemple*).
+• **Débouchés** : Poursuite en master cybersécurité (ex : **Master SIF** à Rennes) ou école d’ingénieurs (via admissions parallèles).
+• **Pourquoi ?** : Idéal pour explorer l’informatique avant de se spécialiser. Coût minimal.
 
-🔀 **Passerelles** :
-- Après L2 : Réorientation vers un **BUT Informatique** (ex : IUT de Vannes) ou une **licence pro** (ex : licence pro cybersécurité à Lorient).
-- Après L3 : Admission en **école d’ingénieurs** (via AST) ou master.
-
----
-
-#### **Plan B — Ambitieux : Double licence ou prépa pour viser une école**
-📍 **Double licence Maths-Info** — Université Paris Cité
+#### **Plan B — Ambitieux : Double licence ou parcours sélectif**
+📍 **Double licence Mathématiques-Informatique** — Université Paris Cité
 • **Type** : Licence bidisciplinaire | **Statut** : Public
-• **Sélectivité** : ~20% (dossier exigeant : mentions Bien/Très Bien en maths et NSI).
-• **Points forts** :
-  - **Accès facilité** aux masters sélectifs (ex : **Mastère Cybersécurité de CentraleSupélec**).
-  - **Profil hybride** recherché en data science/cyber.
-• *(connaissance générale)*
+• **Labels** : Grade Licence
+• **Sélectivité** : Modérément sélective (taux ~40-60%, dossier exigeant en maths).
+• **Débouchés** : Accès facilité aux **masters élitistes** (ex : **Mastère Spé CentraleSupélec**, cf. FICHE 1) ou aux écoles d’ingénieurs (Polytechnique via université).
+• **Pourquoi ?** : Profile très compétitif pour la cybersécurité (maths + info = atout pour la cryptographie).
 
-📍 **CPGE (Prépa MPSI/MP)** — Lycée Chateaubriand (Rennes)
-• **Type** : Classe préparatoire | **Statut** : Public
-• **Sélectivité** : ~15% (notes de 1ère/Terminale en maths/physique).
-• **Points forts** :
-  - Voie royale pour intégrer une **école d’ingénieurs** (ex : **IMT Atlantique**, **CentraleSupélec**) avec leur **mastère cybersécurité labellisé SecNumEdu**.
-• *(connaissance générale)*
-
----
-#### **Plan C — Alternatif : BTS/DUT pour une insertion rapide ou une réorientation**
-📍 **BTS SIO option Cybersécurité** — Lycée Bréquigny (Rennes)
-• **Type** : BTS | **Statut** : Public
-• **Sélectivité** : ~70% (accessible avec un bac général/techno).
-• **Points forts** :
-  - **Diplôme pro en 2 ans** avec **10 semaines de stage/an**.
-  - **Poursuite possible** en licence pro ou école (ex : **ENSSAT** à Lannion).
-• *(connaissance générale)*
-
-📍 **BUT Informatique parcours Cybersécurité** — IUT de Vannes
-• **Type** : BUT (bac+3) | **Statut** : Public
-• **Sélectivité** : ~50% (dossier + parfois entretien).
-• **Points forts** :
-  - **Diplôme grade licence** avec **600h de projets** et stages.
-  - **Taux d’insertion** : ~90% à 6 mois (source : enquêtes DUT 2023).
-• *(connaissance générale)*
+#### **Plan C — Alternatif : Licence pro en 1 an après un BTS/DUT**
+📍 **Licence Pro Sécurité des Réseaux et Systèmes** — IUT de Vannes (Bretagne)
+• **Type** : Licence pro | **Statut** : Public
+• **Labels** : Grade Licence
+• **Sélectivité** : Accessible après un BTS SIO ou DUT Informatique (taux ~70%).
+• **Débouchés** : **Administrateur sécurité (M1817)** en entreprise ou poursuite en master pro.
+• **Pourquoi ?** : Formation **courte, professionnelle et peu chère**, avec un taux d’insertion élevé.
 
 ---
-### **🔀 Passerelles possibles entre ces voies**
-- **Licence → École d’ingénieurs** : Via les **admissions sur titre (AST)** en L3 (ex : concours **CastiNG** pour le réseau **Polytech**).
-- **BTS/DUT → Licence** : **Équivalences** pour entrer directement en L3 (ex : BTS SIO → licence pro cyber).
-- **Prépa → Université** : Possible après une **1ère année de prépa** (via Parcoursup en L2).
+### **🔀 Passerelles possibles**
+- **De licence vers école d’ingénieurs** : Via les **admissions parallèles** (ex : concours **Polytech** en L3, **INSA** en L2).
+- **De BTS/DUT vers licence pro** : **Presque automatique** si bonne moyenne (ex : BTS SIO → Licence Pro Cybersécurité).
+- **De licence générale vers licence pro** : Possible en **L3** (ex : après une L2 Info).
 
----
 ### **💡 Question pour toi**
-Tu hésites entre une voie **théorique** (licence/prépa) ou **pratique** (BTS/BUT) ?
-- Si tu aimes **les maths et vises un bac+5**, une **double licence** ou une **prépa** peut ouvrir les portes des meilleures écoles.
-- Si tu préfères **l’opérationnel et une insertion rapide**, un **BTS SIO** ou **BUT Informatique** est plus adapté.
-- Si tu veux **garder des options ouvertes**, une **licence générale** avec des stages est un bon compromis.
+Tu hésites entre une **formation longue (licence + master)** pour viser un poste d’ingénieur, ou une **voie courte (licence pro/BTS)** pour entrer vite dans le monde du travail ?
+→ **Qu’est-ce qui compte le plus pour toi aujourd’hui** :
+- **La sécurité financière** (coût, salaires rapides) ?
+- **La flexibilité** (possibilité de changer de voie) ?
+- **Le prestige** (diplôme d’école d’ingénieurs) ?
 
-**Prochaine étape** :
-- Consulte les **taux d’accès Parcoursup 2025** pour les formations qui t’intéressent (disponibles sur [Parcoursup.fr](https://www.parcoursup.fr) à partir de janvier).
-- Si tu vises une licence sélective (ex : double licence), prépare un **dossier avec des notes solides en spécialités pertinentes** (NSI, maths, physique).
-
----
-### **Ressources utiles**
-- **Simulateur de vœux Parcoursup** : [MonMaster.gouv.fr](https://www.monmaster.gouv.fr) (pour les masters).
-- **Fiches métiers cybersécurité** : [ANSSI](https://www.ssi.gouv.fr) (pour explorer les débouchés).
-- **Onisep** : [Fiches licences par domaine](https://www.onisep.fr).
+*(Réponds avec 1-2 mots, je te proposerai un plan d’action précis !)*
 
 ---
 
@@ -566,75 +498,76 @@ FICHE 6: BTS - Production - Cybersécurité, Informatique et réseaux, ELectroni
 
 ### Réponse générée
 
-Voici une réponse adaptée à ta situation de réorientation depuis une L2 droit vers l’informatique, avec des options concrètes et des passerelles réalistes :
+### **Réorientation de L2 Droit vers l’informatique : 3 plans concrets**
+
+Tu veux passer du droit à l’informatique : c’est un virage ambitieux mais **totalement réalisable**, surtout si tu cibles des formations adaptées aux profils en réorientation. Voici 3 options classées par faisabilité, avec des passerelles pour monter en compétences progressivement.
 
 ---
 
-### **Plan A — Réaliste : BTS ou Certificat de Spécialisation en cybersécurité (bac+2/3)**
-**Pourquoi ?** Ces formations courtes (1 à 2 ans) sont accessibles sans prérequis techniques forts et permettent une insertion rapide ou une poursuite d’études.
+#### **🔹 Plan A — Réaliste : BTS ou Certificat en cybersécurité (bac+2, accessible)**
+**Pourquoi ?** Ces formations **courtes (1-2 ans)** acceptent des profils variés (y compris des étudiants en réorientation) et mènent à des métiers porteurs. Elles te permettront de **valider un premier diplôme technique** avant de viser un bac+5.
 
-📍 **BTS CIEL Option B (Électronique et réseaux)** — Lycée Jean de Lattre de Tassigny, **La Roche-sur-Yon**
-• Type : BTS (bac+2) | Statut : Public
-• Labels : Aucun label officiel (mais formation reconnue par l’Éducation nationale)
-• Sélectivité : **67%** (accessible) — 15 places pour 138 vœux (Source: Parcoursup 2025, cod_aff_form: 10548)
-• Débouchés : Administrateur sécurité (M1817), technicien réseaux
-• **Atout** : 50% des admis viennent de bac pro → adapté aux profils en reconversion.
+1. **📍 BTS CIEL Option B (Électronique et réseaux) — Lycée Jean de Lattre de Tassigny, La Roche-sur-Yon (Vendée)**
+   • **Type** : BTS (bac+2) | **Statut** : Public
+   • **Labels** : Aucun label officiel (mais formation reconnue par l’Éducation nationale)
+   • **Sélectivité** : **67%** (Accessible) | **15 places** (Source: Parcoursup 2025, cod_aff_form: 10548)
+   • **Profil admis** : 50% de bacs pro, 25% de bacs techno — **idéal pour une réorientation** (peu de concurrence des bacs généraux).
+   • **Débouchés** : Administrateur sécurité (M1817), technicien réseaux.
+   • **Atout** : **Peu sélectif** et **gratuite** (lycée public). Possibilité de continuer en licence pro ou école d’ingé après.
 
-📍 **Certificat de Spécialisation Cybersécurité** — Lycée Jean-Baptiste Clément, **Sedan (Ardennes)**
-• Type : Certificat (bac+1/2) | Statut : Public
-• Labels : Aucun
-• Sélectivité : **51%** (accessible) — 6 places, vœux en hausse (+26%) (Source: Parcoursup 2025, cod_aff_form: 44430)
-• Débouchés : Technicien cybersécurité, support IT
-• **Atout** : 100% des admis sont boursiers → bon filet social.
-
----
-### **Plan B — Ambitieux : École d’ingénieur en cybersécurité (bac+5)**
-**Pourquoi ?** Si tu vises un poste d’ingénieur (RSSI, expert), une école labellisée **SecNumEdu** (reconnue par l’ANSSI) est idéale. Mais la sélectivité est forte : il faut préparer un **DUT/BUT informatique** ou une **licence info** en parallèle pour candidater en admissions parallèles.
-
-📍 **Diplôme d’ingénieur Cybersécurité** — **ENSIBS (Vannes, Bretagne)**
-• Type : Diplôme d’ingénieur (bac+5) | Statut : Public
-• Labels : **SecNumEdu + CTI** (grade master)
-• Sélectivité : Non précisée (mais les écoles d’ingénieur post-prépa ont un taux <10%)
-• Débouchés : Ingénieur sécurité (M1819), RSSI (M1812)
-• **Chemin possible** :
-  1. Faire un **BUT Informatique** (1 an) pour acquérir les bases (algèbre, programmation).
-  2. Postuler en **admission parallèle** (L3 ou M1) à l’ENSIBS via leur concours.
-  *(connaissance générale : les écoles comme ENSIBS recrutent 10-20% de leurs élèves en admissions parallèles)*
+2. **📍 Certificat de Spécialisation Cybersécurité — Lycée Louis Armand, Paris 15e**
+   • **Type** : Certificat (1 an) | **Statut** : Public
+   • **Labels** : Aucun label officiel
+   • **Sélectivité** : **34%** (Sélective) | **15 places** (Source: Parcoursup 2025, cod_aff_form: 42710)
+   • **Profil admis** : 83% de bacs pro — **très adapté aux reconversions** (peu de théorique, beaucoup de pratique).
+   • **Débouchés** : Technicien cybersécurité, support sécurité.
+   • **Atout** : **Formation ultra-courte** (1 an) pour un premier emploi ou une poursuite en BTS.
 
 ---
-### **Plan C — Passerelle : Licence Informatique + Spécialisation progressive**
-**Pourquoi ?** Moins sélective qu’une école d’ingénieur, une licence te permet de monter en compétences tout en gardant des portes ouvertes (master, alternance).
+#### **🔹 Plan B — Ambitieux : École d’ingénieur en cybersécurité (bac+5, sélective)**
+**Pourquoi ?** Si tu vises un **diplôme d’ingénieur** (salaire et débouchés élevés), il faudra **repasser par une prépa ou une licence informatique** d’abord. Voici la voie la plus directe :
 
-📍 **Licence Informatique** — **Université de ton académie** (ex : **Lyon 1**, **Bordeaux**, **Strasbourg**)
-• Type : Licence (bac+3) | Statut : Public
-• Labels : Grade licence (diplôme d’État)
-• Sélectivité : **~70-80%** (accessible) en L2/L3 après une réorientation
-• Débouchés : Développeur, administrateur systèmes (puis spécialisation en master)
-• **Atout** :
-  - **Parcoursup** : Les licences acceptent souvent les réorientés de droit (même sans bases en info).
-  - **Alternance** : Possible en L3 pour financer tes études.
-  *(connaissance générale : les universités proposent des "parcours renforcés" pour les non-scientifiques, ex : L2 "Informatique pour tous" à Paris-Nanterre)*
-
----
-### 🔀 **Passerelles possibles entre ces plans**
-- **BTS → Licence** : Après un BTS CIEL, tu peux intégrer une **L3 informatique** (ex : université de Nantes).
-- **Licence → École d’ingénieur** : Avec une L3 info, candidate aux **admissions parallèles** des écoles comme le **CNAM** (formation continue, labellisée SecNumEdu).
-- **Alternance** : Les **Certificats de Spécialisation** (ex : Sedan) sont compatibles avec des contrats pro.
+1. **📍 Diplôme d’ingénieur ENSIBS (Cybersécurité) — Université de Bretagne-Sud, Vannes**
+   • **Type** : Diplôme d’ingénieur (bac+5) | **Statut** : Public
+   • **Labels** : **SecNumEdu (ANSSI) + CTI** (reconnaissance maximale)
+   • **Sélectivité** : **Très sélective** (concours sur dossier + entretien) — **pas de données Parcoursup** (recrutement post-prépa ou L3).
+   • **Débouchés** : Ingénieur sécurité (M1819), RSSI (M1812), salaire moyen **40-50k€/an**.
+   • **Chemin pour y arriver** :
+     - **Étape 1** : Faire une **licence informatique** (1 an en L3 après ta L2 droit, via **Parcoursup en 2025**).
+     - **Étape 2** : Postuler en **école d’ingé** (ENSIB, CNAM, etc.) via les **admissions parallèles** (concours comme **Avenir+** ou **e3a**).
+   • **Alternative** : Le **CNAM** (formation en alternance) propose aussi ce diplôme avec un recrutement plus souple pour les adultes en reconversion.
 
 ---
-### 💡 **Question pour toi**
+#### **🔹 Plan C — Passerelle : Licence pro ou alternance (bac+3, flexible)**
+**Pourquoi ?** Si tu veux **un diplôme rapidement tout en travaillant**, l’alternance ou une licence pro est idéale. Moins théorique qu’une école d’ingé, mais avec une **insertion pro immédiate**.
+
+1. **(Connaissance générale) 📍 Licence Pro Métiers de l’informatique : Cybersécurité — Université de Lorraine, Nancy**
+   - **Type** : Licence pro (bac+3) | **Statut** : Public
+   - **Labels** : Aucun (mais formation reconnue par les entreprises locales).
+   - **Sélectivité** : **Modérée** (~50% d’admis, souvent des profils en réorientation).
+   - **Débouchés** : Administrateur sécurité junior, analyste SOC.
+   - **Atout** : **100% en alternance** possible → salaire + expérience pro.
+
+2. **(Connaissance générale) 📍 Bachelor Cybersécurité en alternance — École 42 ou EPSI (campus à Lyon, Toulouse, etc.)**
+   - **Type** : Bachelor (bac+3) | **Statut** : Privé (mais **gratuit en alternance**).
+   - **Labels** : Aucun (mais 42 a une forte reconnaissance employeurs).
+   - **Sélectivité** : **Peu sélective** (pas de diplôme requis, sélection sur motivation et tests pratiques).
+   - **Débouchés** : Pentester junior, analyste cybersécurité.
+
+---
+### **🔀 Passerelles possibles entre ces plans**
+- **BTS → Licence pro** : Après un BTS CIEL, tu peux continuer en licence pro cybersécurité (ex : à **Nancy** ou **Rennes**).
+- **Licence pro → École d’ingé** : Certaines écoles (comme le **CNAM**) acceptent les licences pro pour entrer en cycle ingénieur.
+- **Alternance → CDI** : Un contrat d’alternance en cybersécurité mène souvent à une **embauche directe** (secteur en pénurie).
+
+---
+### **💡 Question pour toi**
 Quelle est ta priorité absolue ?
-✅ **Un diplôme rapide** pour travailler dès bac+2/3 → **Plan A** (BTS/Certificat).
-✅ **Un poste d’ingénieur/expert** à terme → **Plan B** (préparer un BUT + école).
-✅ **Garder des options ouvertes** (recherche, enseignement, etc.) → **Plan C** (licence).
+✅ **Un diplôme rapide** (1-2 ans) pour travailler vite → **Plan A (BTS/Certificat)**.
+✅ **Un haut salaire et un titre prestigieux** → **Plan B (école d’ingé, mais prévoir 3-4 ans)**.
+✅ **Gagner de l’argent tout en étudiant** → **Plan C (alternance)**.
 
----
-### **Prochaine étape concrète**
-1. **Si tu choisis le Plan A** : Postule **dès maintenant** sur Parcoursup aux BTS/Certificats (les places partent vite).
-2. **Si tu vises le Plan B** : Inscris-toi en **BUT Informatique** (rentrée 2025) + prépare-toi aux tests techniques (ex : algorithmique sur [France-IOI](https://www.france-ioi.org/)).
-3. **Pour le Plan C** : Contacte le **SCUIO** (service d’orientation) de ton université actuelle pour un **parcours personnalisé** en L2/L3 info.
-
-*(connaissance générale : Les réorientés en info ont souvent un avantage en gestion de projet et rédaction — des compétences rares chez les informaticiens !)*
+*(Connaissance générale) : Le secteur de la cybersécurité recrute massivement en France (30 000 postes non pourvus en 2025, source ANSSI). Avec un BTS ou une licence pro, tu peux prétendre à des salaires de **25-35k€/an** en début de carrière.*
 
 ---
 
@@ -672,82 +605,56 @@ FICHE 4: Certificat de Spécialisation - Cybersécurité — Lycée professionne
 
 ### Réponse générée
 
-Voici les formations **à Perpignan et ses alentours** (Occitanie) qui correspondent à tes critères, classées par pertinence et accessibilité :
+Voici les formations **à Perpignan et ses alentours** (Occitanie) qui correspondent aux fiches disponibles, avec des options réalistes et des alternatives proches géographiquement :
 
 ---
 
-### **Plan A — Réaliste & Local**
-**📍 BUT Science des données** — IUT de Perpignan (site de Carcassonne), **Carcassonne** (30 min de Perpignan)
-• **Type** : Bachelor Universitaire de Technologie (BUT) | **Statut** : Public
+### **Plan A — Réaliste (accessible et local)**
+📍 **BUT Science des données** — IUT de Perpignan (site de Carcassonne), **Carcassonne** (à 1h de Perpignan)
+• **Type** : BUT (bac+3) | **Statut** : Public
 • **Labels** : Grade Licence (reconnu par l'État)
-• **Sélectivité** : 76% (accessible, mais **devenue plus sélective** : taux ↓12pp depuis 2023)
-  *Profil admis* : 83% bac général (33% avec mention AB), 17% bac techno.
-• **Débouchés** : Data scientist (M1405), Data analyst (M1419), Chief Data Officer.
-• **Source** : Parcoursup 2025, `cod_aff_form: 2469`
+• **Sélectivité** : 76% (accessible) — **33% des admis ont AB** (Source: Parcoursup 2025, cod_aff_form: 2469)
+• **Débouchés** : Data analyst (M1419), data scientist (M1405)
+• **Pour toi si** : Tu veux un diplôme **long (3 ans)** avec une insertion pro solide, et que tu as un bac général/techno (même sans mention TB).
 
-**Pourquoi ?**
-- **Seule formation bac+3 publique** dans un rayon de 100 km autour de Perpignan avec un **grade Licence** (diplôme reconnu pour poursuivre en master).
-- **Taux d’accès élevé** (76%) mais **attention** : la formation gagne en popularité (+59% de vœux depuis 2023).
-- **Mixité des profils** : adaptée si tu as un bac général ou techno (peu de bacs pro admis).
-
----
-
-**📍 BTS Cybersécurité, Informatique et Réseaux (Option A)** — Lycée Pablo Picasso, **Perpignan**
-• **Type** : BTS | **Statut** : Public
+📍 **BTS Cybersécurité, Informatique et réseaux (Option A)** — Lycée Pablo Picasso, **Perpignan**
+• **Type** : BTS (bac+2) | **Statut** : Public
 • **Labels** : Aucun label spécifique (mais diplôme d'État)
-• **Sélectivité** : 47% (modérément sélective), **attrait en baisse** (-39% de vœux depuis 2023).
-  *Profil admis* : 50% bac techno, 44% bac pro (seulement 6% bac général).
-• **Débouchés** : Administrateur sécurité (M1817), Ingénieur sécurité (M1819).
-• **Source** : Parcoursup 2025, `cod_aff_form: 7856`
-
-**Pourquoi ?**
-- **Formation 100% locale** (pas de déménagement).
-- **Peu de concurrence** : le nombre de vœux baisse depuis 2023.
-- **Idéal si tu as un bac techno/pro** (peu adapté aux bacs généraux).
+• **Sélectivité** : 47% (modérément sélective) — **50% des admis viennent d’un bac techno/pro** (Source: Parcoursup 2025, cod_aff_form: 7856)
+• **Débouchés** : Administrateur sécurité (M1817), technicien réseaux
+• **Pour toi si** : Tu préfères un **diplôme court (2 ans)** et que tu es à l’aise avec la pratique technique.
 
 ---
-
 ### **Plan B — Ambitieux (sélectif mais proche)**
-**📍 BTS Cybersécurité (Option A) — Lycée Jean Mermoz, Montpellier** (1h30 de Perpignan)
+📍 **BTS Cybersécurité (Option A) — Lycée Jean Mermoz, Montpellier** (à 1h30 de Perpignan)
 • **Type** : BTS | **Statut** : Public
-• **Labels** : Aucun label (mais **réputation forte** en cybersécurité).
-• **Sélectivité** : 14% (très sélective), **en hausse** (taux ↓12pp depuis 2023).
-  *Profil admis* : 18% mention TB, 29% B (bacs généraux/techno performants).
-• **Débouchés** : RSSI (M1812), Ingénieur sécurité.
-• **Source** : Parcoursup 2025, `cod_aff_form: 4499`
-
-**Pourquoi ?**
-- **L’un des meilleurs BTS cybersécurité** de la région (classé parmi les plus demandés).
-- **Exigeant** : nécessite un **dossier solide** (notes ≥ 14/20 en maths/info).
-- **Alternative** : Si tu vises ce BTS, poste aussi le **BTS du Lycée Picasso à Perpignan** (Plan A) en vœu de secours.
+• **Labels** : Aucun, mais **très réputé en Occitanie**
+• **Sélectivité** : 14% (très sélective) — **18% des admis ont TB** (Source: Parcoursup 2025, cod_aff_form: 4499)
+• **Débouchés** : Ingénieur sécurité (M1819) après poursuite d’études
+• **Pour toi si** : Tu as un **bon dossier (notes ≥ 14/20)** et que tu vises une école d’ingé après le BTS.
 
 ---
+### **Plan C — Passerelle / Alternative**
+1. **Certificat de Spécialisation Cybersécurité** (Lycée Ampère, Marseille) :
+   - **Pour qui** ? Si tu as déjà un **bac pro** ou que tu veux une formation **ultra-pro (1 an)**.
+   - **Sélectivité** : 57% (accessible) — **86% des admis viennent de bac pro** (Source: Parcoursup 2025, cod_aff_form: 44314).
 
-### **Plan C — Passerelle ou alternative**
-1. **Certificat de Spécialisation Cybersécurité** (Lycée Ampère, Marseille)
-   - **Public cible** : Titulaires d’un bac pro/techno (86% des admis).
-   - **Sélectivité** : 57% (accessible), mais **en forte hausse** (taux ↓35pp en 1 an !).
-   - **Source** : `cod_aff_form: 44314`
-   - *Pour toi si* : Tu veux une **formation courte (1 an)** après un bac pro/techno, avec un focus pratique.
-
-2. **(Connaissance générale) Licence Informatique — Université de Perpignan**
-   - **Parcours** : Licence mention Informatique (parcours **Sécurité des Systèmes** en L3).
-   - **Sélectivité** : ~60-70% (accessible, mais vérifie les attendus sur [leur site](https://www.univ-perp.fr)).
-   - *Pour toi si* : Tu préfères **l’université** et une approche plus théorique avant de te spécialiser.
+2. **BUT Science des données à Valbonne (Nice)** :
+   - **Pour qui** ? Si tu es prêt·e à **déménager** pour un BUT plus sélectif (43%) avec **36% de femmes** (rare en tech !).
+   - **Source** : cod_aff_form: 2327.
 
 ---
-
-### **🔀 Passerelles possibles**
-- **De BTS vers BUT** : Après un BTS Cybersécurité (Lycée Picasso), tu peux candidater en **2ème année de BUT Science des données** (Carcassonne) via **Parcoursup en admission parallèle**.
-- **De BUT vers Master** : Le BUT de Carcassonne permet de viser des **masters en data science** (ex : Master Cybersécurité à Montpellier ou Toulouse).
-
-### **💡 Question pour toi**
-- **Préfères-tu une formation courte (BTS) pour entrer vite dans le monde du travail, ou un diplôme bac+3 (BUT) pour avoir plus d’options plus tard ?**
-- **Es-tu mobile** (Montpellier/Carcassonne) ou veux-tu **rester à Perpignan** ?
+### 🔀 **Passerelles possibles**
+- **De BTS vers BUT** : Après un BTS à Perpignan, tu peux candidater en **2ème année de BUT** (via Parcoursup ou admissions parallèles).
+- **De BUT vers école d’ingé** : Le BUT Science des données permet de viser des **écoles comme Polytech ou l’INSA** en cycle ingénieur.
 
 ---
-**Prochaine étape** :
-- Si tu vises le **BTS Jean Mermoz (Montpellier)**, prépare un **dossier ultra-solide** (notes, projets perso en cyber).
-- Si tu veux **rester local**, mise sur le **BUT Carcassonne** (vœu 1) + **BTS Picasso** (vœu 2).
+### 💡 **Question pour toi**
+Préfères-tu :
+✅ **Un diplôme long (3 ans) avec plus de théorie** (BUT) ?
+✅ **Un diplôme court (2 ans) pour entrer vite dans le monde pro** (BTS) ?
+✅ **Une formation très sélective pour viser haut** (Montpellier) ?
+
+*(Réponds avec ton choix, et je peux t’aider à affiner les vœux Parcoursup !)*
 
 ---

@@ -84,12 +84,15 @@ def test_format_context_debouches_limited_to_three():
 
 
 def test_format_context_emits_at_most_eight_lines_per_fiche():
-    """Phase 1.2: 1 header + up to 7 content lines = 8 lines max."""
+    """Post Vague D: the original 8-line budget (1 header + 7 content) was
+    expanded by one slot for the InserSup insertion line. Fiches without
+    insertion must remain ≤ 8 lines. Fiches WITH insertion may go to 9."""
     results = [{"fiche": _full_fiche(), "score": 0.9}]
     ctx = format_context(results)
     non_empty = [l for l in ctx.split("\n") if l.strip()]
+    # Base fiche has no insertion → still ≤ 8 lines
     assert len(non_empty) <= 8, (
-        f"Expected ≤ 8 lines per fiche, got {len(non_empty)}: {non_empty}"
+        f"Expected ≤ 8 lines per fiche (no insertion), got {len(non_empty)}"
     )
 
 
@@ -328,3 +331,84 @@ def test_vague_c_budget_preserved_at_eight_lines():
     ctx = format_context(results)
     non_empty = [l for l in ctx.split("\n") if l.strip()]
     assert len(non_empty) <= 8
+
+
+# === Vague D — insertion pro line (optional, emits when matched) ===
+
+
+def _vague_d_fiche_with_insertion() -> dict:
+    base = _vague_a_fiche()
+    base["insertion"] = {
+        "taux_emploi_12m": 0.88,
+        "taux_emploi_18m": 0.91,
+        "taux_emploi_stable_12m": 0.72,
+        "salaire_median_12m_mensuel_net": 2500,
+        "salaire_median_30m_mensuel_net": 3200,
+        "nombre_sortants": 80,
+        "cohorte": "2022",
+        "granularite": "discipline",
+        "disclaimer": "Chiffres d'insertion calculés sur tous les diplômés INFORMATIQUE...",
+        "source": "InserSup DEPP",
+        "source_url": "https://www.data.gouv.fr/datasets/...",
+    }
+    return base
+
+
+def test_vague_d_insertion_line_emitted_when_present():
+    results = [{"fiche": _vague_d_fiche_with_insertion(), "score": 0.9}]
+    ctx = format_context(results)
+    ins_line = next(l for l in ctx.split("\n") if "Insertion" in l)
+    assert "88%" in ins_line or "88 %" in ins_line  # taux_emploi_12m
+    assert "2500" in ins_line  # salaire médian
+    assert "2022" in ins_line  # cohorte
+
+
+def test_vague_d_insertion_line_absent_when_no_insertion():
+    fiche = _vague_a_fiche()  # no insertion key
+    ctx = format_context([{"fiche": fiche, "score": 0.9}])
+    assert "Insertion" not in ctx
+
+
+def test_vague_d_insertion_line_includes_granularite_disclaimer():
+    """Granularity (discipline vs aggregate) must be visible — honest scope."""
+    fiche = _vague_d_fiche_with_insertion()
+    fiche["insertion"]["granularite"] = "type_diplome_agrege"
+    ctx = format_context([{"fiche": fiche, "score": 0.9}])
+    ins_line = next(l for l in ctx.split("\n") if "Insertion" in l)
+    assert "agrégat" in ins_line.lower() or "agregat" in ins_line.lower()
+
+
+def test_vague_d_handles_percent_already_stored():
+    """Some InserSup values may come pre-multiplied as percents (88.0 not 0.88).
+    The generator must detect and avoid double-multiplying."""
+    fiche = _vague_d_fiche_with_insertion()
+    fiche["insertion"]["taux_emploi_12m"] = 88.0  # stored as percent already
+    ctx = format_context([{"fiche": fiche, "score": 0.9}])
+    ins_line = next(l for l in ctx.split("\n") if "Insertion" in l)
+    # Should show "88%", NOT "8800%"
+    assert "88%" in ins_line or "88 %" in ins_line
+    assert "8800" not in ins_line
+
+
+def test_vague_d_skips_nd_values_gracefully():
+    """When taux_emploi_12m is None (nd) but salaire is available, show salaire only."""
+    fiche = _vague_d_fiche_with_insertion()
+    fiche["insertion"]["taux_emploi_12m"] = None
+    fiche["insertion"]["taux_emploi_18m"] = None
+    fiche["insertion"]["taux_emploi_stable_12m"] = None
+    # Salaire remains
+    ctx = format_context([{"fiche": fiche, "score": 0.9}])
+    ins_line = next(l for l in ctx.split("\n") if "Insertion" in l)
+    assert "2500" in ins_line
+    # Should NOT show "emploi: None%" or similar
+    assert "None" not in ins_line
+
+
+def test_vague_d_budget_allows_nine_lines_with_insertion():
+    """When insertion is present, the budget becomes ≤9 lines per fiche
+    (1 header + 8 content with insertion as the new slot). Without insertion,
+    stays at ≤8. This is the documented expansion of the format."""
+    results = [{"fiche": _vague_d_fiche_with_insertion(), "score": 0.9}]
+    ctx = format_context(results)
+    non_empty = [l for l in ctx.split("\n") if l.strip()]
+    assert len(non_empty) <= 9
