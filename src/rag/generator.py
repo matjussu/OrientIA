@@ -47,9 +47,15 @@ def _labels_line(f: dict) -> str | None:
 
 
 def _selectivite_line(f: dict) -> str | None:
-    taux = f.get("taux_acces_parcoursup_2025")
-    places = f.get("nombre_places")
-    if taux is None and places is None:
+    # Prefer structured admission block (Vague A), fallback to legacy flat fields
+    adm = f.get("admission") or {}
+    taux = adm.get("taux_acces") if adm else f.get("taux_acces_parcoursup_2025")
+    places = adm.get("places") if adm else f.get("nombre_places")
+    volumes = adm.get("volumes") or {}
+    voeux_totaux = volumes.get("voeux_totaux")
+    internat = adm.get("internat_disponible")
+
+    if taux is None and places is None and voeux_totaux is None:
         return None
     qual = selectivite_qualitative(taux)
     if taux is not None:
@@ -58,6 +64,12 @@ def _selectivite_line(f: dict) -> str | None:
         body = f"Parcoursup 2025: non renseignée"
     if places is not None:
         body = f"{body} | Places: {places}"
+    if voeux_totaux is not None:
+        body = f"{body} | Vœux formulés: {voeux_totaux}"
+    if internat is True:
+        body = f"{body} | Internat: oui"
+    elif internat is False:
+        body = f"{body} | Internat: non"
     return f"  Sélectivité {body}"
 
 
@@ -81,6 +93,8 @@ def _profil_line(f: dict) -> str | None:
     mentions = profil.get("mentions_pct") or {}
     bac_types = profil.get("bac_type_pct") or {}
     boursiers = profil.get("boursiers_pct")
+    femmes = profil.get("femmes_pct")
+    neobac = profil.get("neobacheliers_pct")
 
     bits = []
     m_bits = []
@@ -92,10 +106,23 @@ def _profil_line(f: dict) -> str | None:
         m_bits.append(f"AB {mentions['ab']:.0f}%")
     if m_bits:
         bits.append(", ".join(m_bits))
-    if bac_types.get("general") is not None:
-        bits.append(f"Bac général {bac_types['general']:.0f}%")
+
+    # Full bac-type split (Vague A: previously only "general" was exposed)
+    bac_bits = []
+    for key, label in (("general", "général"), ("techno", "techno"), ("pro", "pro")):
+        val = bac_types.get(key)
+        if val is not None:
+            bac_bits.append(f"{label} {val:.0f}%")
+    if bac_bits:
+        bits.append(f"Bac {', '.join(bac_bits)}")
+
     if boursiers is not None:
         bits.append(f"Boursiers {boursiers:.0f}%")
+    if femmes is not None:
+        bits.append(f"Femmes {femmes:.0f}%")
+    if neobac is not None:
+        bits.append(f"Néobacheliers {neobac:.0f}%")
+
     if not bits:
         return None
     return f"  Profil admis: {' | '.join(bits)}"
@@ -109,10 +136,33 @@ def _detail_line(f: dict) -> str | None:
 
 
 def _source_line(f: dict) -> str | None:
-    url = (f.get("url_onisep") or "").strip()
-    if not url:
+    """Unified source line: official URLs + stable identifiers (RNCP / cod_aff_form).
+
+    Kept to a single line to preserve the ≤8-lines-per-fiche budget. The LLM uses
+    these ids to cite in ##begin_quote## format (see src/prompt/system.py).
+    Priority: Parcoursup URL > ONISEP URL (both shown when distinct).
+    """
+    psup = (f.get("lien_form_psup") or "").strip()
+    onisep = (f.get("url_onisep") or "").strip()
+    rncp = f.get("rncp")
+    cod_aff = f.get("cod_aff_form")
+
+    url_bits: list[str] = []
+    if psup:
+        url_bits.append(f"Parcoursup: {psup}")
+    if onisep and onisep != psup:
+        url_bits.append(f"ONISEP: {onisep}")
+
+    id_bits: list[str] = []
+    if isinstance(rncp, str) and rncp.strip():
+        id_bits.append(f"RNCP {rncp.strip()}")
+    if isinstance(cod_aff, str) and cod_aff.strip():
+        id_bits.append(f"cod_aff_form {cod_aff.strip()}")
+
+    if not url_bits and not id_bits:
         return None
-    return f"  Source: {url}"
+    all_bits = url_bits + id_bits
+    return f"  Source officielle: {' | '.join(all_bits)}"
 
 
 def format_context(results: list[dict]) -> str:

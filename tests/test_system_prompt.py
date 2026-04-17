@@ -191,3 +191,46 @@ def test_v3_2_comparison_table_forced():
         or "côte à côte" in flat
         or "côte-à-côte" in flat
     )
+
+
+# === Vague A — structured citation format (stable for RAFT) ===
+
+
+def test_vague_a_citation_format_documented():
+    """Vague A adds a stable delimited citation format (##begin_quote##...)
+    for factual chiffred claims. This format will be reused verbatim in
+    RAFT training examples — any rename breaks the fine-tuned model."""
+    assert "##begin_quote##" in SYSTEM_PROMPT
+    assert "##end_quote##" in SYSTEM_PROMPT
+
+
+def test_vague_a_no_oracle_refusal_documented():
+    """Companion to ##begin_quote##: when a chiffred fact is absent from
+    fiches, the model uses ##no_oracle##...##end_no_oracle## as a targeted
+    exception to ANTI-CONFESSION (only for chiffred gaps, not qualitative)."""
+    assert "##no_oracle##" in SYSTEM_PROMPT
+    assert "##end_no_oracle##" in SYSTEM_PROMPT
+
+
+def test_vague_a_citation_identifiers_listed():
+    """The prompt must document which stable ids to cite (RNCP,
+    cod_aff_form, FOR.XXXXX) so the LLM knows what goes in the
+    (Source: ..., id_type: id_value) suffix."""
+    assert "RNCP" in SYSTEM_PROMPT
+    assert "cod_aff_form" in SYSTEM_PROMPT
+    assert "FOR." in SYSTEM_PROMPT
+
+
+def test_vague_a_no_oracle_does_not_violate_anti_confession():
+    """The ##no_oracle## addition must cohabit with ANTI-CONFESSION without
+    contradicting it: explicit carve-out (only for chiffred gaps, never
+    opening the response, never qualitative)."""
+    # The prompt must explicitly flag ##no_oracle## as an exception
+    # rather than a general license to confess.
+    lower = SYSTEM_PROMPT.lower()
+    assert "exception" in lower, (
+        "The prompt must mark ##no_oracle## as a targeted exception, "
+        "not a general refusal pattern"
+    )
+    # ANTI-CONFESSION must still be present (no regression)
+    assert "ANTI-CONFESSION" in SYSTEM_PROMPT

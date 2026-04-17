@@ -47,6 +47,17 @@ PART_ACCES_PRO_COLUMN = "part_acces_pro"
 
 PCT_BOURS_COLUMN = "pct_bours"         # % boursiers (social mix)
 
+# Vague A — extensions (data foundation)
+COD_AFF_FORM_COLUMN = "cod_aff_form"       # unique Parcoursup id per formation×etab
+LIEN_FORM_PSUP_COLUMN = "lien_form_psup"   # official Parcoursup URL
+VOE_TOT_COLUMN = "voe_tot"                 # total voeux formulés
+NB_VOE_PP_COLUMN = "nb_voe_pp"             # voeux phase principale
+NB_CLA_PP_COLUMN = "nb_cla_pp"             # classes phase principale (ranked)
+ACC_INTERNAT_COLUMN = "acc_internat"       # count of internat accepted — 0 or NaN = pas d'internat
+PCT_F_COLUMN = "pct_f"                     # % women admitted
+PCT_NEOBAC_COLUMN = "pct_neobac"           # % néobacheliers admitted
+PCT_ACA_ORIG_IDF_COLUMN = "pct_aca_orig_idf"   # % admis originaires IDF
+
 
 def load_parcoursup(path: str | Path) -> pd.DataFrame:
     return pd.read_csv(Path(path), sep=";", encoding="utf-8", low_memory=False)
@@ -85,22 +96,68 @@ def _infer_statut(contrat: str) -> str:
     return "Inconnu"
 
 
+def _internat_disponible(row: pd.Series) -> bool | None:
+    """Return True if at least one candidate was accepted with internat, False if
+    explicitly 0, None if not renseigné. Source: acc_internat (count, not %).
+    """
+    val = _safe_int(row.get(ACC_INTERNAT_COLUMN))
+    if val is None:
+        return None
+    return val > 0
+
+
+def _clean_str(val) -> str | None:
+    """Normalize a pandas-read field: '', 'nan', NaN → None; else stripped str.
+
+    pandas returns NaN for missing CSV cells, which str() turns into 'nan'
+    (the literal three-letter string). That leaks into the generator context
+    as 'Détail: nan'. This helper neutralises the leak.
+    """
+    if val is None:
+        return None
+    s = str(val).strip()
+    if not s or s.lower() == "nan":
+        return None
+    return s
+
+
 def extract_fiche(row: pd.Series) -> dict:
-    nom = str(row.get(FORMATION_COLUMN, "")).strip()
+    nom = _clean_str(row.get(FORMATION_COLUMN)) or ""
+    cod_aff_form = _clean_str(row.get(COD_AFF_FORM_COLUMN))
+    lien_psup = _clean_str(row.get(LIEN_FORM_PSUP_COLUMN))
+    taux_acces = _safe_float(row.get(TAUX_ACCES_COLUMN))
+    nombre_places = _safe_int(row.get(PLACES_COLUMN))
+
     return {
         "source": "parcoursup",
         "nom": nom,
-        "etablissement": str(row.get(ETABLISSEMENT_COLUMN, "")).strip(),
-        "ville": str(row.get(VILLE_COLUMN, "")).strip(),
-        "region": str(row.get(REGION_COLUMN, "")).strip() or None,
-        "departement": str(row.get(DEPARTEMENT_COLUMN, "")).strip() or None,
+        "etablissement": _clean_str(row.get(ETABLISSEMENT_COLUMN)) or "",
+        "ville": _clean_str(row.get(VILLE_COLUMN)) or "",
+        "region": _clean_str(row.get(REGION_COLUMN)),
+        "departement": _clean_str(row.get(DEPARTEMENT_COLUMN)),
         "rncp": None,
-        "taux_acces_parcoursup_2025": _safe_float(row.get(TAUX_ACCES_COLUMN)),
-        "nombre_places": _safe_int(row.get(PLACES_COLUMN)),
+        # Vague A — unique Parcoursup id + official link (for citation)
+        "cod_aff_form": cod_aff_form,
+        "lien_form_psup": lien_psup,
+        # Legacy fields kept for backward compat (index FAISS + tests existants)
+        "taux_acces_parcoursup_2025": taux_acces,
+        "nombre_places": nombre_places,
         "statut": _infer_statut(row.get(CONTRAT_COLUMN, "")),
         "niveau": infer_niveau(nom),
         # Enriched fields for realism & discovery scoring
-        "detail": str(row.get(DETAIL_COLUMN, "")).strip() or None,
+        "detail": _clean_str(row.get(DETAIL_COLUMN)),
+        # Vague A — structured admission block (taux/places + volumes + internat)
+        "admission": {
+            "session": 2025,
+            "taux_acces": taux_acces,
+            "places": nombre_places,
+            "volumes": {
+                "voeux_totaux": _safe_int(row.get(VOE_TOT_COLUMN)),
+                "voeux_phase_principale": _safe_int(row.get(NB_VOE_PP_COLUMN)),
+                "classes_phase_principale": _safe_int(row.get(NB_CLA_PP_COLUMN)),
+            },
+            "internat_disponible": _internat_disponible(row),
+        },
         "profil_admis": {
             "mentions_pct": {
                 "tb": _safe_float(row.get(PCT_TB_COLUMN)),
@@ -119,6 +176,10 @@ def extract_fiche(row: pd.Series) -> dict:
                 "pro": _safe_float(row.get(PART_ACCES_PRO_COLUMN)),
             },
             "boursiers_pct": _safe_float(row.get(PCT_BOURS_COLUMN)),
+            # Vague A — diversité démographique + origine géographique
+            "femmes_pct": _safe_float(row.get(PCT_F_COLUMN)),
+            "neobacheliers_pct": _safe_float(row.get(PCT_NEOBAC_COLUMN)),
+            "origine_academique_idf_pct": _safe_float(row.get(PCT_ACA_ORIG_IDF_COLUMN)),
         },
     }
 

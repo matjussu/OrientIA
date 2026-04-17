@@ -1,6 +1,8 @@
+from datetime import date
 from rapidfuzz import fuzz
 from src.collect.normalize import normalize_name, normalize_city
 from src.collect.niveau import infer_niveau
+from src.collect.rome import get_debouches_for_domain
 
 
 def merge_by_rncp(parcoursup: list[dict], onisep: list[dict]) -> list[dict]:
@@ -202,3 +204,110 @@ def merge_all(
             f["niveau"] = infer_niveau(f.get("nom", ""))
 
     return all_merged
+
+
+# === Vague A — post-merge enrichment: debouches + provenance + fraîcheur ===
+
+
+def attach_debouches(fiches: list[dict]) -> list[dict]:
+    """Attach ROME 4.0 debouches to each fiche based on its `domaine`.
+
+    Uses the canonical `get_debouches_for_domain()` mapping (src/collect/rome.py)
+    which is verified against ROME 4.0 open data. Fiches without a known
+    domaine keep their existing `debouches` (if any) or get an empty list.
+
+    Before Vague A this step was done out-of-pipeline (one-off script).
+    Now integrated so `run_merge.py` produces a fully-populated JSON from
+    scratch, reproducibly.
+    """
+    for f in fiches:
+        domaine = f.get("domaine")
+        if not domaine:
+            f.setdefault("debouches", [])
+            continue
+        # Don't clobber existing debouches if already populated (tests/fixtures)
+        if f.get("debouches"):
+            continue
+        try:
+            f["debouches"] = get_debouches_for_domain(domaine)
+        except KeyError:
+            # Unknown domain (e.g., future domain not yet in _DOMAIN_CODES) — keep empty
+            f["debouches"] = []
+    return fiches
+
+
+def attach_metadata(
+    fiches: list[dict],
+    collection_date: str | None = None,
+) -> list[dict]:
+    """Attach Vague A provenance + collected_at metadata per fiche.
+
+    - `provenance`: map of enriched-field → source name (for LLM citations
+      and future conflict resolution when multiple sources disagree).
+    - `collected_at`: map of source → ISO date (makes freshness first-class).
+    - `merge_confidence`: confidence per source merge (1.0 for RNCP match,
+      fuzzy score for fuzzy, null for unmatched).
+
+    Called post-merge, post-attach_labels, post-attach_debouches.
+    """
+    today = collection_date or date.today().isoformat()
+
+    for f in fiches:
+        mm = f.get("match_method", "")
+        # Infer which sources contributed this fiche
+        sources_present = set()
+        if f.get("cod_aff_form") or f.get("taux_acces_parcoursup_2025") is not None:
+            sources_present.add("parcoursup")
+        if f.get("url_onisep") or mm in ("rncp", "onisep_only") or mm.startswith("fuzzy"):
+            sources_present.add("onisep")
+        if f.get("debouches"):
+            sources_present.add("rome")
+
+        # Provenance per enriched field
+        provenance = {}
+        if f.get("admission") or f.get("taux_acces_parcoursup_2025") is not None:
+            provenance["admission"] = "parcoursup_2025"
+        if f.get("profil_admis"):
+            provenance["profil_admis"] = "parcoursup_2025"
+        if f.get("debouches"):
+            provenance["debouches"] = "rome_4_0"
+        if f.get("type_diplome") or f.get("duree"):
+            provenance["type_diplome"] = "onisep"
+        if f.get("labels"):
+            # labels come from SecNumEdu scrape + manual_labels.json overlay
+            provenance["labels"] = "secnumedu+manual"
+
+        f["provenance"] = provenance
+
+        # collected_at per source
+        collected = {}
+        if "parcoursup" in sources_present:
+            collected["parcoursup"] = today
+        if "onisep" in sources_present:
+            collected["onisep"] = today
+        if "rome" in sources_present:
+            collected["rome"] = today
+        f["collected_at"] = collected
+
+        # merge_confidence per source
+        confidence = {}
+        if "parcoursup" in sources_present:
+            confidence["parcoursup"] = 1.0
+        if "onisep" in sources_present:
+            if mm == "rncp":
+                confidence["onisep"] = 1.0
+            elif mm.startswith("fuzzy_"):
+                try:
+                    score = float(mm.split("_", 1)[1]) / 100.0
+                    confidence["onisep"] = round(score, 2)
+                except (ValueError, IndexError):
+                    confidence["onisep"] = 0.85
+            elif mm == "onisep_only":
+                confidence["onisep"] = 1.0  # ONISEP-native, no merge loss
+            elif mm == "parcoursup_only":
+                confidence["onisep"] = None  # not matched
+        if f.get("labels"):
+            confidence["labels"] = 1.0
+        f["merge_confidence"] = confidence
+
+    return fiches

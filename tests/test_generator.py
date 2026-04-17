@@ -154,3 +154,102 @@ def test_generate_calls_mistral_with_system_and_user_prompts():
     assert messages[0]["role"] == "system"
     assert messages[1]["role"] == "user"
     assert "question?" in messages[1]["content"]
+
+
+# === Vague A — enriched generator context ===
+
+def _vague_a_fiche() -> dict:
+    """Fiche with Vague A structured admission block + extended demographics."""
+    return {
+        "nom": "Master Cybersécurité",
+        "etablissement": "Université de Rennes",
+        "ville": "Rennes",
+        "departement": "Ille-et-Vilaine",
+        "statut": "Public",
+        "niveau": "bac+5",
+        "labels": ["SecNumEdu"],
+        "rncp": "37989",
+        "cod_aff_form": "42156",
+        "lien_form_psup": "https://www.parcoursup.fr/formation/42156",
+        "url_onisep": "https://onisep.fr/FOR.9891",
+        "admission": {
+            "session": 2025,
+            "taux_acces": 18.0,
+            "places": 24,
+            "volumes": {
+                "voeux_totaux": 1250,
+                "voeux_phase_principale": 800,
+                "classes_phase_principale": 600,
+            },
+            "internat_disponible": True,
+        },
+        "profil_admis": {
+            "mentions_pct": {"tb": 45.0, "b": 30.0, "ab": 20.0, "sans": 5.0},
+            "bac_type_pct": {"general": 80.0, "techno": 15.0, "pro": 5.0},
+            "boursiers_pct": 20.0,
+            "femmes_pct": 24.0,
+            "neobacheliers_pct": 85.0,
+        },
+        "debouches": [{"libelle": "RSSI", "code_rome": "M1812"}],
+    }
+
+
+def test_vague_a_selectivite_includes_volumes_and_internat():
+    """New admission.volumes + internat are surfaced to the LLM."""
+    results = [{"fiche": _vague_a_fiche(), "score": 0.9}]
+    ctx = format_context(results)
+    sel_line = next(l for l in ctx.split("\n") if "Sélectivité" in l)
+    assert "1250" in sel_line, "voeux_totaux must appear"
+    assert "Internat: oui" in sel_line
+
+
+def test_vague_a_selectivite_falls_back_to_legacy_when_no_admission_block():
+    """Backward compat: fiches without admission.* still work via legacy flat fields."""
+    legacy = {
+        "nom": "M", "etablissement": "E", "ville": "V", "statut": "Public",
+        "labels": [],
+        "taux_acces_parcoursup_2025": 42.0,
+        "nombre_places": 30,
+    }
+    ctx = format_context([{"fiche": legacy, "score": 0.5}])
+    assert "42" in ctx
+    assert "Places: 30" in ctx
+
+
+def test_vague_a_profil_shows_full_bac_type_split():
+    """All 3 bac types (général/techno/pro) are surfaced, not just général."""
+    results = [{"fiche": _vague_a_fiche(), "score": 0.9}]
+    ctx = format_context(results)
+    profil_line = next(l for l in ctx.split("\n") if "Profil admis" in l)
+    assert "général 80%" in profil_line
+    assert "techno 15%" in profil_line
+    assert "pro 5%" in profil_line
+
+
+def test_vague_a_profil_includes_diversity_demographics():
+    results = [{"fiche": _vague_a_fiche(), "score": 0.9}]
+    ctx = format_context(results)
+    profil_line = next(l for l in ctx.split("\n") if "Profil admis" in l)
+    assert "Femmes 24%" in profil_line
+    assert "Néobacheliers 85%" in profil_line
+
+
+def test_vague_a_source_line_includes_parcoursup_url_and_identifiers():
+    """Parcoursup URL + RNCP + cod_aff_form all appear in one source line."""
+    results = [{"fiche": _vague_a_fiche(), "score": 0.9}]
+    ctx = format_context(results)
+    src_line = next(l for l in ctx.split("\n") if "Source officielle" in l)
+    assert "parcoursup.fr/formation/42156" in src_line
+    assert "ONISEP" in src_line and "FOR.9891" in src_line
+    assert "RNCP 37989" in src_line
+    assert "cod_aff_form 42156" in src_line
+
+
+def test_vague_a_budget_still_eight_lines_per_fiche():
+    """Despite richer content, still ≤8 lines per fiche (contract from Phase 1.2)."""
+    results = [{"fiche": _vague_a_fiche(), "score": 0.9}]
+    ctx = format_context(results)
+    non_empty = [l for l in ctx.split("\n") if l.strip()]
+    assert len(non_empty) <= 8, (
+        f"Vague A must preserve ≤8-lines budget, got {len(non_empty)}: {non_empty}"
+    )
