@@ -253,3 +253,78 @@ def test_vague_a_budget_still_eight_lines_per_fiche():
     assert len(non_empty) <= 8, (
         f"Vague A must preserve ≤8-lines budget, got {len(non_empty)}: {non_empty}"
     )
+
+
+# === Vague C — trends folded into selectivity line ===
+
+
+def _vague_c_fiche_with_trends() -> dict:
+    """Fiche with historical trends (taux down, voeux up) — signals a
+    formation becoming more selective and more popular 2023→2025."""
+    base = _vague_a_fiche()
+    base["trends"] = {
+        "taux_acces": {
+            "direction": "down", "delta_pp": -23.0,
+            "start_year": 2023, "end_year": 2025,
+            "start_value": 68.0, "end_value": 45.0,
+            "interpretation": "taux d'accès en baisse 2023→2025 (68% → 45%) : formation devenue plus sélective",
+        },
+        "places": {
+            "direction": "stable", "delta": 2,
+            "start_year": 2023, "end_year": 2025,
+            "start_value": 24, "end_value": 26,
+            "interpretation": None,
+        },
+        "voeux": {
+            "direction": "up", "delta": 300,
+            "start_year": 2023, "end_year": 2025,
+            "start_value": 500, "end_value": 800,
+            "interpretation": "popularité en hausse 2023→2025 (500 → 800 vœux) : attrait renforcé",
+        },
+    }
+    return base
+
+
+def test_vague_c_selectivity_line_includes_trend_when_significant():
+    results = [{"fiche": _vague_c_fiche_with_trends(), "score": 0.9}]
+    ctx = format_context(results)
+    sel_line = next(l for l in ctx.split("\n") if "Sélectivité" in l)
+    assert "Tendance" in sel_line
+    # Taux drop surfaced
+    assert "↓23pp" in sel_line
+    assert "plus sélective" in sel_line
+    # Voeux growth surfaced
+    assert "vœux" in sel_line and "+60%" in sel_line
+    # Stable places NOT mentioned (direction=stable)
+    assert "places ↑" not in sel_line
+    assert "places ↓" not in sel_line
+
+
+def test_vague_c_no_trend_suffix_when_all_stable():
+    f = _vague_a_fiche()
+    f["trends"] = {
+        "taux_acces": {"direction": "stable", "delta_pp": 2.0,
+                       "start_year": 2023, "end_year": 2025,
+                       "start_value": 50.0, "end_value": 52.0,
+                       "interpretation": "taux stable"},
+    }
+    ctx = format_context([{"fiche": f, "score": 0.9}])
+    sel_line = next(l for l in ctx.split("\n") if "Sélectivité" in l)
+    assert "Tendance" not in sel_line
+
+
+def test_vague_c_no_trend_suffix_when_trends_missing():
+    """Fiche without trends field — no regression, no trend suffix."""
+    f = _vague_a_fiche()
+    # explicitly no "trends" key
+    ctx = format_context([{"fiche": f, "score": 0.9}])
+    sel_line = next(l for l in ctx.split("\n") if "Sélectivité" in l)
+    assert "Tendance" not in sel_line
+
+
+def test_vague_c_budget_preserved_at_eight_lines():
+    """Trends folded INTO selectivity line — ≤8-line budget preserved."""
+    results = [{"fiche": _vague_c_fiche_with_trends(), "score": 0.9}]
+    ctx = format_context(results)
+    non_empty = [l for l in ctx.split("\n") if l.strip()]
+    assert len(non_empty) <= 8

@@ -70,7 +70,57 @@ def _selectivite_line(f: dict) -> str | None:
         body = f"{body} | Internat: oui"
     elif internat is False:
         body = f"{body} | Internat: non"
+    # Vague C — trend summary: significant direction changes 2023→2025 folded
+    # into the selectivity line to preserve the ≤8-lines-per-fiche budget.
+    trend_suffix = _trend_suffix(f.get("trends") or {})
+    if trend_suffix:
+        body = f"{body} | {trend_suffix}"
     return f"  Sélectivité {body}"
+
+
+def _trend_suffix(trends: dict) -> str | None:
+    """Compact trend string for the selectivity line. Emits only meaningful
+    directions (stable/None skipped). Example output:
+      'Tendance 2023→2025 : taux ↓23pp (plus sélective), vœux ↑38% (attrait +)'
+    """
+    if not trends:
+        return None
+    bits: list[str] = []
+    # Taux d'accès direction
+    taux = trends.get("taux_acces") or {}
+    if taux.get("direction") in ("up", "down"):
+        arrow = "↓" if taux["direction"] == "down" else "↑"
+        delta = abs(taux.get("delta_pp") or 0)
+        label = "plus sélective" if taux["direction"] == "down" else "plus accessible"
+        bits.append(f"taux {arrow}{delta:g}pp ({label})")
+    # Places direction — only if significant
+    places = trends.get("places") or {}
+    if places.get("direction") in ("up", "down"):
+        arrow = "↑" if places["direction"] == "up" else "↓"
+        delta = abs(places.get("delta") or 0)
+        bits.append(f"places {arrow}{delta}")
+    # Vœux direction (popularité)
+    voeux = trends.get("voeux") or {}
+    if voeux.get("direction") in ("up", "down"):
+        arrow = "↑" if voeux["direction"] == "up" else "↓"
+        start = voeux.get("start_value") or 1
+        delta = voeux.get("delta") or 0
+        pct = round(delta / start * 100)
+        label = "attrait +" if voeux["direction"] == "up" else "attrait -"
+        bits.append(f"vœux {arrow}{pct:+d}% ({label})")
+    if not bits:
+        return None
+    # Infer year range from whichever trend is present
+    years_seen = set()
+    for t in (taux, places, voeux):
+        if t.get("start_year"):
+            years_seen.add(t["start_year"])
+            years_seen.add(t["end_year"])
+    if years_seen:
+        yr = f"{min(years_seen)}→{max(years_seen)}"
+    else:
+        yr = "historique"
+    return f"Tendance {yr} : " + ", ".join(bits)
 
 
 def _debouches_line(f: dict) -> str | None:
