@@ -14,6 +14,7 @@ from collections import Counter
 from src.collect.parcoursup import collect_parcoursup_fiches
 from src.collect.secnumedu import load_secnumedu
 from src.collect.merge import merge_all, attach_debouches, attach_metadata
+from src.collect.trends import attach_trends
 
 
 
@@ -56,6 +57,18 @@ def main():
     merged = attach_metadata(merged)
     with_debouches = sum(1 for f in merged if f.get("debouches"))
     print(f"With debouches:   {with_debouches}")
+
+    # Vague C — historical trends (2023/2024/2025) joined by cod_aff_form.
+    # Gracefully skipped if historical CSVs are missing.
+    merged = attach_trends(merged, {
+        2023: "data/raw/parcoursup_2023.csv",
+        2024: "data/raw/parcoursup_2024.csv",
+        2025: "data/raw/parcoursup_2025.csv",
+    })
+    with_hist = sum(1 for f in merged if (f.get("admission") or {}).get("historique"))
+    with_trend = sum(1 for f in merged if f.get("trends"))
+    print(f"With historique:  {with_hist}")
+    print(f"With trends:      {with_trend}")
 
     method_counts = Counter(f.get("match_method", "unknown") for f in merged)
     print(f"Match methods:    {dict(method_counts)}")
