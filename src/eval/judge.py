@@ -1,5 +1,6 @@
 import json
 import re
+from pathlib import Path
 from anthropic import Anthropic
 
 
@@ -128,13 +129,42 @@ def judge_all(
     client: Anthropic,
     responses_blind: list[dict],
     model: str = "claude-sonnet-4-5",
+    save_path: str | Path | None = None,
 ) -> list[dict]:
-    all_scores = []
+    """Judge all blinded responses sequentially.
+
+    If save_path is given, the full accumulated list is atomically
+    rewritten after EACH question — so that killing the process
+    mid-run never loses already-paid-for scores. Also enables resume :
+    if save_path exists, its entries skip the judge call.
+    """
+    done_ids: set[str] = set()
+    all_scores: list[dict] = []
+    if save_path is not None:
+        save_path = Path(save_path)
+        if save_path.exists():
+            try:
+                existing = json.loads(save_path.read_text(encoding="utf-8"))
+                if isinstance(existing, list):
+                    all_scores = existing
+                    done_ids = {e["id"] for e in existing}
+                    print(f"  Resuming: {len(done_ids)} already judged, skipping them.")
+            except Exception as exc:
+                print(f"  (could not parse existing {save_path}: {exc} — starting fresh)")
+
     for entry in responses_blind:
+        if entry["id"] in done_ids:
+            continue
         scores = judge_question(client, entry["text"], entry["answers"], model=model)
         all_scores.append({
             "id": entry["id"],
             "category": entry["category"],
             "scores": scores,
         })
+        if save_path is not None:
+            save_path.parent.mkdir(parents=True, exist_ok=True)
+            save_path.write_text(
+                json.dumps(all_scores, ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
     return all_scores

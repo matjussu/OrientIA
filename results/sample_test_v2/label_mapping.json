@@ -1,0 +1,47 @@
+{
+  "A1": {
+    "A": "mistral_neutral",
+    "B": "gpt4o_neutral",
+    "C": "gpt4o_v3_2_no_rag",
+    "D": "mistral_v3_2_no_rag",
+    "E": "claude_v3_2_no_rag",
+    "F": "our_rag",
+    "G": "claude_neutral"
+  },
+  "A2": {
+    "A": "gpt4o_neutral",
+    "B": "claude_v3_2_no_rag",
+    "C": "mistral_v3_2_no_rag",
+    "D": "gpt4o_v3_2_no_rag",
+    "E": "our_rag",
+    "F": "claude_neutral",
+    "G": "mistral_neutral"
+  },
+  "A3": {
+    "A": "gpt4o_neutral",
+    "B": "mistral_v3_2_no_rag",
+    "C": "gpt4o_v3_2_no_rag",
+    "D": "mistral_neutral",
+    "E": "claude_neutral",
+    "F": "claude_v3_2_no_rag",
+    "G": "our_rag"
+  },
+  "A4": {
+    "A": "mistral_v3_2_no_rag",
+    "B": "claude_neutral",
+    "C": "our_rag",
+    "D": "gpt4o_neutral",
+    "E": "claude_v3_2_no_rag",
+    "F": "mistral_neutral",
+    "G": "gpt4o_v3_2_no_rag"
+  },
+  "A5": {
+    "A": "claude_v3_2_no_rag",
+    "B": "gpt4o_neutral",
+    "C": "claude_neutral",
+    "D": "mistral_neutral",
+    "E": "our_rag",
+    "F": "mistral_v3_2_no_rag",
+    "G": "gpt4o_v3_2_no_rag"
+  }
+}

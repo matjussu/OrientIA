@@ -13,7 +13,7 @@ from pathlib import Path
 from collections import Counter
 from src.collect.parcoursup import collect_parcoursup_fiches
 from src.collect.secnumedu import load_secnumedu
-from src.collect.merge import merge_all
+from src.collect.merge import merge_all, attach_debouches, attach_metadata
 
 
 
@@ -49,6 +49,13 @@ def main():
 
     merged = merge_all(parcoursup_fiches, onisep_fiches, secnumedu_fiches, manual_labels=manual_labels)
     print(f"Merged output:    {len(merged)}")
+
+    # Vague A — post-merge enrichment pipeline (integrated in-repo,
+    # was previously an out-of-pipeline one-off)
+    merged = attach_debouches(merged)
+    merged = attach_metadata(merged)
+    with_debouches = sum(1 for f in merged if f.get("debouches"))
+    print(f"With debouches:   {with_debouches}")
 
     method_counts = Counter(f.get("match_method", "unknown") for f in merged)
     print(f"Match methods:    {dict(method_counts)}")

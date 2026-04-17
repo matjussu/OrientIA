@@ -21,5 +21,11 @@ def retrieve_top_k(
             continue
         dist = float(distances[0][rank])
         score = 1.0 / (1.0 + dist)
-        results.append({"fiche": fiches[idx], "score": score, "base_score": score})
+        embedding = index.reconstruct(int(idx))
+        results.append({
+            "fiche": fiches[idx],
+            "score": score,
+            "base_score": score,
+            "embedding": np.asarray(embedding, dtype="float32"),
+        })
     return results

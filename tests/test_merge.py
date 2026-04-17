@@ -163,3 +163,93 @@ def test_attach_labels_manual_table_substring_match_both_ways():
     manual2 = [{"etab_normalized": "efrei paris pantheon", "labels": ["SecNumEdu"]}]
     result2 = attach_labels(fiches2, [], manual_table=manual2)
     assert "SecNumEdu" in result2[0]["labels"]
+
+
+# === Vague A — attach_debouches + attach_metadata integration in pipeline ===
+
+
+def test_attach_debouches_injects_rome_codes_per_domain():
+    from src.collect.merge import attach_debouches
+    fiches = [
+        {"nom": "Master Cyber", "domaine": "cyber"},
+        {"nom": "Master IA", "domaine": "data_ia"},
+    ]
+    enriched = attach_debouches(fiches)
+    cyber = enriched[0]["debouches"]
+    data = enriched[1]["debouches"]
+    assert len(cyber) == 9, f"cyber domain should have 9 ROME codes, got {len(cyber)}"
+    assert len(data) == 6, f"data_ia domain should have 6 ROME codes, got {len(data)}"
+    assert all("code_rome" in d and "libelle" in d for d in cyber)
+    # Sanity: known cyber RSSI code must be present
+    assert any(d["code_rome"] == "M1812" for d in cyber)
+
+
+def test_attach_debouches_does_not_clobber_existing():
+    from src.collect.merge import attach_debouches
+    preset = [{"code_rome": "X9999", "libelle": "custom"}]
+    fiches = [{"nom": "x", "domaine": "cyber", "debouches": preset}]
+    enriched = attach_debouches(fiches)
+    assert enriched[0]["debouches"] == preset, \
+        "attach_debouches must not overwrite pre-existing debouches"
+
+
+def test_attach_debouches_empty_for_missing_domain():
+    from src.collect.merge import attach_debouches
+    fiches = [{"nom": "Unclassified"}]
+    enriched = attach_debouches(fiches)
+    assert enriched[0]["debouches"] == []
+
+
+def test_attach_metadata_populates_provenance_and_dates():
+    from src.collect.merge import attach_metadata
+    fiches = [{
+        "nom": "M", "domaine": "cyber",
+        "cod_aff_form": "42",
+        "taux_acces_parcoursup_2025": 18.0,
+        "url_onisep": "http://x", "type_diplome": "master",
+        "labels": ["SecNumEdu"],
+        "admission": {"session": 2025},
+        "profil_admis": {"mentions_pct": {"tb": 45.0}},
+        "debouches": [{"code_rome": "M1812", "libelle": "RSSI"}],
+        "match_method": "rncp",
+    }]
+    enriched = attach_metadata(fiches, collection_date="2026-04-17")
+    f = enriched[0]
+    # provenance: maps each enriched field to its origin
+    assert f["provenance"]["admission"] == "parcoursup_2025"
+    assert f["provenance"]["profil_admis"] == "parcoursup_2025"
+    assert f["provenance"]["debouches"] == "rome_4_0"
+    assert f["provenance"]["type_diplome"] == "onisep"
+    assert f["provenance"]["labels"] == "secnumedu+manual"
+    # collected_at: date per source
+    assert f["collected_at"]["parcoursup"] == "2026-04-17"
+    assert f["collected_at"]["onisep"] == "2026-04-17"
+    assert f["collected_at"]["rome"] == "2026-04-17"
+    # merge_confidence: 1.0 for RNCP match
+    assert f["merge_confidence"]["parcoursup"] == 1.0
+    assert f["merge_confidence"]["onisep"] == 1.0
+
+
+def test_attach_metadata_fuzzy_confidence_reflects_score():
+    from src.collect.merge import attach_metadata
+    fiches = [{
+        "nom": "M", "domaine": "cyber",
+        "url_onisep": "http://x",
+        "taux_acces_parcoursup_2025": 30.0,
+        "match_method": "fuzzy_87.5",
+    }]
+    enriched = attach_metadata(fiches, collection_date="2026-04-17")
+    assert enriched[0]["merge_confidence"]["onisep"] == 0.88  # round(0.875, 2)
+
+
+def test_attach_metadata_parcoursup_only_marks_onisep_null():
+    from src.collect.merge import attach_metadata
+    fiches = [{
+        "nom": "M", "domaine": "cyber",
+        "taux_acces_parcoursup_2025": 30.0,
+        "match_method": "parcoursup_only",
+    }]
+    enriched = attach_metadata(fiches, collection_date="2026-04-17")
+    # parcoursup_only = ONISEP was not joined; confidence.onisep must be null (=None)
+    assert enriched[0]["merge_confidence"]["parcoursup"] == 1.0
+    assert enriched[0]["merge_confidence"].get("onisep") is None

@@ -182,3 +182,117 @@ def test_rerank_etab_named_boost_ignores_empty_string_and_whitespace():
     reranked = rerank(results, cfg)
     assert reranked[0]["score"] == 0.50
     assert reranked[1]["score"] == 0.50
+
+
+# === Vague B — Parcoursup-rich boost (Stage D) ===
+
+
+def _rich_fiche() -> dict:
+    """A Parcoursup-rich fiche: has cod_aff_form + populated profil_admis."""
+    return {
+        "labels": [], "statut": "Inconnu", "niveau": "bac+3",
+        "etablissement": "Lycée X", "cod_aff_form": "42156",
+        "profil_admis": {
+            "bac_type_pct": {"general": 80.0, "techno": 15.0, "pro": 5.0},
+        },
+    }
+
+
+def _onisep_only_fiche() -> dict:
+    """An ONISEP-only fiche: no cod_aff_form, no admission data."""
+    return {
+        "labels": [], "statut": "Inconnu", "niveau": "bac+3",
+        "etablissement": "Lycée X",
+        "rncp": "37989",
+    }
+
+
+def test_rerank_parcoursup_rich_lifts_over_onisep_only():
+    """A Parcoursup-rich fiche must rank above an ONISEP-only fiche at
+    equal base score — this is the key Vague B move to surface fiches
+    with real chiffres instead of generic diploma types."""
+    results = [
+        {"fiche": _onisep_only_fiche(), "score": 0.50, "base_score": 0.50},
+        {"fiche": _rich_fiche(), "score": 0.50, "base_score": 0.50},
+    ]
+    cfg = RerankConfig(
+        secnumedu_boost=1.0, cti_boost=1.0, public_boost=1.0,
+        level_boost_bac5=1.0, level_boost_bac3=1.0,
+        etab_named_boost=1.0,
+        parcoursup_rich_boost=1.2,
+    )
+    reranked = rerank(results, cfg)
+    assert reranked[0]["fiche"].get("cod_aff_form") == "42156", \
+        "Parcoursup-rich fiche must rank above ONISEP-only at equal base score"
+
+
+def test_rerank_parcoursup_rich_requires_non_zero_profil():
+    """cod_aff_form alone isn't enough — profil_admis must have at least one
+    non-zero bac-type percentage (else all zero means data-poor and the
+    boost would mislead the retrieval)."""
+    zero_profil = {
+        "labels": [], "statut": "Inconnu", "niveau": "bac+3",
+        "etablissement": "Lycée X", "cod_aff_form": "42156",
+        "profil_admis": {
+            "bac_type_pct": {"general": 0.0, "techno": 0.0, "pro": 0.0},
+        },
+    }
+    results = [{"fiche": zero_profil, "score": 0.50, "base_score": 0.50}]
+    cfg = RerankConfig(
+        secnumedu_boost=1.0, cti_boost=1.0, public_boost=1.0,
+        level_boost_bac5=1.0, level_boost_bac3=1.0,
+        etab_named_boost=1.0,
+        parcoursup_rich_boost=1.2,
+    )
+    reranked = rerank(results, cfg)
+    assert reranked[0]["score"] == 0.50, \
+        "zero profil_admis should not trigger parcoursup_rich boost"
+
+
+def test_rerank_parcoursup_rich_does_not_dominate_secnumedu():
+    """SecNumEdu (default 1.5) must still dominate parcoursup_rich (default 1.2)
+    — the INRIA label thesis is preserved."""
+    rich = _rich_fiche()
+    secnumedu_but_poor = {
+        "labels": ["SecNumEdu"], "statut": "Inconnu", "niveau": "bac+3",
+        "etablissement": "Lycée X",
+        "rncp": "37989",  # ONISEP-only, no cod_aff_form
+    }
+    results = [
+        {"fiche": rich, "score": 0.50, "base_score": 0.50},
+        {"fiche": secnumedu_but_poor, "score": 0.50, "base_score": 0.50},
+    ]
+    cfg = RerankConfig()  # defaults: secnumedu=1.5, parcoursup_rich=1.2, etab=1.1
+    reranked = rerank(results, cfg)
+    # 0.5 * 1.5 * 1.1 * 1.05 = 0.866 (secnumedu + etab + bac+3)
+    # 0.5 * 1.2 * 1.1 * 1.05 = 0.693 (rich + etab + bac+3)
+    assert "SecNumEdu" in reranked[0]["fiche"]["labels"], \
+        "SecNumEdu boost must still dominate parcoursup_rich (INRIA thesis preserved)"
+
+
+def test_rerank_config_as_dict_includes_parcoursup_rich():
+    cfg = RerankConfig()
+    d = cfg.as_dict()
+    assert "parcoursup_rich_boost" in d
+    assert d["parcoursup_rich_boost"] == 1.2  # default
+
+
+def test_rerank_parcoursup_rich_ignored_when_cod_aff_form_missing():
+    """Even with populated profil_admis, no cod_aff_form = no boost
+    (cod_aff_form is the citation anchor the LLM needs)."""
+    fiche_no_code = {
+        "labels": [], "statut": "Inconnu", "niveau": "bac+3",
+        "etablissement": "Lycée X",
+        "profil_admis": {
+            "bac_type_pct": {"general": 80.0, "techno": 15.0, "pro": 5.0},
+        },
+    }
+    results = [{"fiche": fiche_no_code, "score": 0.50, "base_score": 0.50}]
+    cfg = RerankConfig(
+        secnumedu_boost=1.0, cti_boost=1.0, public_boost=1.0,
+        level_boost_bac5=1.0, level_boost_bac3=1.0,
+        etab_named_boost=1.0,
+        parcoursup_rich_boost=1.2,
+    )
+    reranked = rerank(results, cfg)
+    assert reranked[0]["score"] == 0.50

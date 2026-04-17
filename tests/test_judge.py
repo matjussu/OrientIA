@@ -113,6 +113,77 @@ def test_judge_all_iterates_responses():
     assert mock_client.messages.create.call_count == 2
 
 
+def test_judge_all_saves_incrementally_after_each_question(tmp_path):
+    """CRITICAL (incident 2026-04-15): if save_path is given, the file
+    must be fully rewritten after EACH question — so killing the
+    process mid-run never loses already-paid-for scores."""
+    mock_client = MagicMock()
+    mock_response = MagicMock()
+    mock_response.content = [MagicMock(text=json.dumps({
+        "A": {"neutralite": 1, "realisme": 1, "sourcage": 1, "diversite_geo": 1,
+              "agentivite": 1, "decouverte": 1, "total": 6, "justification": ""},
+        "B": {"neutralite": 2, "realisme": 2, "sourcage": 2, "diversite_geo": 2,
+              "agentivite": 2, "decouverte": 2, "total": 12, "justification": ""},
+        "C": {"neutralite": 3, "realisme": 3, "sourcage": 3, "diversite_geo": 3,
+              "agentivite": 3, "decouverte": 3, "total": 18, "justification": ""},
+    }))]
+
+    save_path = tmp_path / "scores.json"
+    file_states = []
+
+    def capture_then_respond(*args, **kwargs):
+        # Snapshot the file state BEFORE this call is processed.
+        if save_path.exists():
+            file_states.append(len(json.loads(save_path.read_text(encoding="utf-8"))))
+        else:
+            file_states.append(0)
+        return mock_response
+    mock_client.messages.create.side_effect = capture_then_respond
+
+    responses_blind = [
+        {"id": f"Q{i}", "category": "x", "text": f"q{i}",
+         "answers": {"A": "x", "B": "y", "C": "z"}}
+        for i in range(3)
+    ]
+    judge_all(mock_client, responses_blind, save_path=save_path)
+
+    # After all 3 questions, the file holds all 3 entries.
+    final = json.loads(save_path.read_text(encoding="utf-8"))
+    assert len(final) == 3
+    # Snapshots were 0, 1, 2 — proving the file grew after each call.
+    assert file_states == [0, 1, 2]
+
+
+def test_judge_all_resumes_from_existing_save(tmp_path):
+    """If save_path already contains scores for some IDs, those are
+    kept and the judge call is NOT made for them — protects budget."""
+    save_path = tmp_path / "scores.json"
+    save_path.write_text(json.dumps([{
+        "id": "Q0", "category": "x",
+        "scores": {"A": {"total": 99}},
+    }]), encoding="utf-8")
+
+    mock_client = MagicMock()
+    mock_response = MagicMock()
+    mock_response.content = [MagicMock(text=json.dumps({
+        "A": {"neutralite": 1, "realisme": 1, "sourcage": 1, "diversite_geo": 1,
+              "agentivite": 1, "decouverte": 1, "total": 6, "justification": ""},
+    }))]
+    mock_client.messages.create.return_value = mock_response
+
+    responses_blind = [
+        {"id": "Q0", "category": "x", "text": "q0", "answers": {"A": "x"}},
+        {"id": "Q1", "category": "x", "text": "q1", "answers": {"A": "y"}},
+    ]
+    results = judge_all(mock_client, responses_blind, save_path=save_path)
+
+    assert len(results) == 2
+    # Q0 preserved from disk, not re-judged.
+    assert results[0]["scores"]["A"]["total"] == 99
+    # Only ONE judge call issued (Q1 only) — Q0 skipped.
+    assert mock_client.messages.create.call_count == 1
+
+
 # --- Phase F.2 — judge generalization for N answers (Run F: N=7) ---
 
 
