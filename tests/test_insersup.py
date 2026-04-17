@@ -282,3 +282,117 @@ def test_attach_insertion_skips_rows_with_all_nd_metrics(tmp_path):
     idx = load_insersup_aggregated(csv_path)
     # The licence_pro 'nd' row should NOT be in idx
     assert ("0640251A", "licence_pro", "INFORMATIQUE") not in idx
+
+
+# === Statistical representativeness filter (quality-gaps fix) ===
+
+
+def test_sample_tier_classification():
+    from src.collect.insersup import _sample_size_tier
+    assert _sample_size_tier(None) == "unknown"
+    assert _sample_size_tier(500) == "large"
+    assert _sample_size_tier(100) == "large"  # boundary
+    assert _sample_size_tier(99) == "medium"
+    assert _sample_size_tier(30) == "medium"  # boundary
+    assert _sample_size_tier(29) == "small"
+    assert _sample_size_tier(20) == "small"  # boundary
+    assert _sample_size_tier(15) == "small"
+
+
+def test_attach_insertion_skips_cohortes_below_min_sortants(tmp_path):
+    """Cohortes with < 20 sortants are statistically too weak — skip them
+    rather than cite misleading numbers."""
+    csv_path = tmp_path / "insersup.csv"
+    # Build a CSV with a very small cohorte (15 sortants)
+    headers = [
+        "Code UAI de l'établissement", "type_diplome", "Libellé du diplôme",
+        "Genre", "Nationalité", "Régime d'inscription", "Promotion",
+        "Nombre de sortants",
+        "12-Taux d'emploi - 12 mois après le diplôme",
+        "12-Taux de sortants en emploi stable - 12 mois après le diplôme",
+        "12-Salaire mensuel net médian en équivalent temps plein - 12 mois après le diplôme",
+        "18-Taux d'emploi - 18 mois après le diplôme",
+        "30-Salaire mensuel net médian en équivalent temps plein - 30 mois après le diplôme",
+    ]
+    rows = [
+        ["0640251A", "master_LMD", "INFORMATIQUE", "ensemble", "ensemble",
+         "ensemble", "2022", "15", "0.95", "0.80", "3000", "0.96", "3500"],
+    ]
+    with open(csv_path, "w", encoding="utf-8") as f:
+        import csv as _csv
+        w = _csv.writer(f, delimiter=";")
+        w.writerow(headers)
+        w.writerows(rows)
+
+    fiches = [{"cod_uai": "0640251A", "domaine": "cyber",
+               "niveau": "bac+5", "type_diplome": "Master LMD"}]
+    result = attach_insertion(fiches, csv_path)
+    # 15 sortants < 20 → pas d'insertion attachée malgré les chiffres séduisants
+    assert "insertion" not in result[0]
+
+
+def test_attach_insertion_tags_sample_tier_and_includes_in_disclaimer(tmp_path):
+    """Medium/small sample tiers must be labeled in the insertion dict
+    and mentioned in the disclaimer."""
+    csv_path = tmp_path / "insersup.csv"
+    headers = [
+        "Code UAI de l'établissement", "type_diplome", "Libellé du diplôme",
+        "Genre", "Nationalité", "Régime d'inscription", "Promotion",
+        "Nombre de sortants",
+        "12-Taux d'emploi - 12 mois après le diplôme",
+        "12-Taux de sortants en emploi stable - 12 mois après le diplôme",
+        "12-Salaire mensuel net médian en équivalent temps plein - 12 mois après le diplôme",
+        "18-Taux d'emploi - 18 mois après le diplôme",
+        "30-Salaire mensuel net médian en équivalent temps plein - 30 mois après le diplôme",
+    ]
+    # Medium sample (50 sortants)
+    rows = [
+        ["0640251A", "master_LMD", "INFORMATIQUE", "ensemble", "ensemble",
+         "ensemble", "2022", "50", "0.90", "0.75", "2500", "0.92", "2800"],
+    ]
+    with open(csv_path, "w", encoding="utf-8") as f:
+        import csv as _csv
+        w = _csv.writer(f, delimiter=";")
+        w.writerow(headers)
+        w.writerows(rows)
+
+    fiches = [{"cod_uai": "0640251A", "etablissement": "Uni Pau",
+               "domaine": "cyber", "niveau": "bac+5", "type_diplome": "Master LMD"}]
+    result = attach_insertion(fiches, csv_path)
+    ins = result[0]["insertion"]
+    assert ins["sample_size_tier"] == "medium"
+    # Medium tier mentions the sample size
+    assert "50 diplômés" in ins["disclaimer"]
+
+
+def test_attach_insertion_large_sample_no_warning(tmp_path):
+    """Large samples (≥100) produce no sample size warning in disclaimer."""
+    csv_path = tmp_path / "insersup.csv"
+    headers = [
+        "Code UAI de l'établissement", "type_diplome", "Libellé du diplôme",
+        "Genre", "Nationalité", "Régime d'inscription", "Promotion",
+        "Nombre de sortants",
+        "12-Taux d'emploi - 12 mois après le diplôme",
+        "12-Taux de sortants en emploi stable - 12 mois après le diplôme",
+        "12-Salaire mensuel net médian en équivalent temps plein - 12 mois après le diplôme",
+        "18-Taux d'emploi - 18 mois après le diplôme",
+        "30-Salaire mensuel net médian en équivalent temps plein - 30 mois après le diplôme",
+    ]
+    rows = [
+        ["0640251A", "master_LMD", "INFORMATIQUE", "ensemble", "ensemble",
+         "ensemble", "2022", "500", "0.90", "0.75", "2500", "0.92", "2800"],
+    ]
+    with open(csv_path, "w", encoding="utf-8") as f:
+        import csv as _csv
+        w = _csv.writer(f, delimiter=";")
+        w.writerow(headers)
+        w.writerows(rows)
+
+    fiches = [{"cod_uai": "0640251A", "etablissement": "Uni X",
+               "domaine": "cyber", "niveau": "bac+5", "type_diplome": "Master LMD"}]
+    result = attach_insertion(fiches, csv_path)
+    ins = result[0]["insertion"]
+    assert ins["sample_size_tier"] == "large"
+    # No sample-size warning for large samples
+    assert "échantillon" not in ins["disclaimer"].lower()
+    assert "500 diplômés" not in ins["disclaimer"]

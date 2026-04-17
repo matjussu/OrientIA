@@ -186,12 +186,10 @@ def _detail_line(f: dict) -> str | None:
 
 
 def _insertion_line(f: dict) -> str | None:
-    """Vague D — insertion pro InserSup DEPP (taux emploi, salaire médian)
-    with explicit disclaimer on the aggregation level. This line is optional
-    and only emitted when a matched insertion snapshot is attached.
-
-    Format kept compact to fit budget (replaces the previously-free line 7
-    which was the source line — we fold source + insertion into the line).
+    """Insertion pro InserSup DEPP with EXPLICIT warnings on aggregation +
+    sample size. Visibility-first: "⚠ AGRÉGAT ÉTABLISSEMENT" or
+    "N=NN DIPLÔMÉS" in capitals so the LLM (and indirectly the reader) sees
+    them more than the mere disclaimer text.
     """
     ins = f.get("insertion")
     if not ins:
@@ -199,8 +197,6 @@ def _insertion_line(f: dict) -> str | None:
     bits = []
     taux = ins.get("taux_emploi_12m")
     if taux is not None:
-        # InserSup stores taux as decimal fraction (0.88) or percent (88) —
-        # detect heuristically: if value > 1.5, it's already percent.
         pct = taux if taux > 1.5 else taux * 100
         bits.append(f"emploi 12m: {pct:.0f}%")
     taux18 = ins.get("taux_emploi_18m")
@@ -219,10 +215,22 @@ def _insertion_line(f: dict) -> str | None:
         bits.append(f"emploi stable: {pct:.0f}%")
     if not bits:
         return None
+
     cohorte = ins.get("cohorte", "?")
     gran = ins.get("granularite", "?")
-    gran_short = "discipline" if gran == "discipline" else "agrégat établissement"
-    return (f"  Insertion (InserSup DEPP, cohorte {cohorte}, {gran_short}): "
+    sample_tier = ins.get("sample_size_tier", "unknown")
+    n_sortants = ins.get("nombre_sortants")
+
+    # Visibility markers — format "[SCOPE, SAMPLE]" prepended for LLM clarity
+    scope_tag = "discipline" if gran == "discipline" else "⚠AGRÉGAT-ÉTAB"
+    sample_tag = ""
+    if sample_tier == "small" and n_sortants is not None:
+        sample_tag = f", ⚠N={n_sortants}-marge-large"
+    elif sample_tier == "medium" and n_sortants is not None:
+        sample_tag = f", N={n_sortants}"
+    # Large samples (≥100) are not tagged — trust the number
+
+    return (f"  Insertion [InserSup DEPP {cohorte}, {scope_tag}{sample_tag}]: "
             + " | ".join(bits))
 
 

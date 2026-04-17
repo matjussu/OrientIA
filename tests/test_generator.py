@@ -412,3 +412,59 @@ def test_vague_d_budget_allows_nine_lines_with_insertion():
     ctx = format_context(results)
     non_empty = [l for l in ctx.split("\n") if l.strip()]
     assert len(non_empty) <= 9
+
+
+# === Visibility markers for aggregate + small-sample insertion ===
+
+
+def test_insertion_aggregate_has_visibility_warning():
+    """Aggregate-level insertion MUST display a visible ⚠AGRÉGAT marker
+    so the LLM (and indirectly the reader) treats the number with caution."""
+    f = _vague_d_fiche_with_insertion()
+    f["insertion"]["granularite"] = "type_diplome_agrege"
+    ctx = format_context([{"fiche": f, "score": 0.9}])
+    ins_line = next(l for l in ctx.split("\n") if "Insertion" in l)
+    assert "⚠" in ins_line and "AGRÉGAT" in ins_line
+
+
+def test_insertion_discipline_has_no_aggregate_warning():
+    """Discipline-level is the clean case — no ⚠ marker."""
+    f = _vague_d_fiche_with_insertion()
+    f["insertion"]["granularite"] = "discipline"
+    ctx = format_context([{"fiche": f, "score": 0.9}])
+    ins_line = next(l for l in ctx.split("\n") if "Insertion" in l)
+    assert "AGRÉGAT" not in ins_line
+    assert "discipline" in ins_line
+
+
+def test_insertion_small_sample_tagged():
+    """Small sample (20-29) must surface N=NN-marge-large visibly."""
+    f = _vague_d_fiche_with_insertion()
+    f["insertion"]["sample_size_tier"] = "small"
+    f["insertion"]["nombre_sortants"] = 25
+    ctx = format_context([{"fiche": f, "score": 0.9}])
+    ins_line = next(l for l in ctx.split("\n") if "Insertion" in l)
+    assert "N=25" in ins_line
+    assert "marge-large" in ins_line
+
+
+def test_insertion_medium_sample_tagged_without_warning():
+    """Medium sample (30-99) shows N=NN without the 'marge-large' alarmist tag."""
+    f = _vague_d_fiche_with_insertion()
+    f["insertion"]["sample_size_tier"] = "medium"
+    f["insertion"]["nombre_sortants"] = 50
+    ctx = format_context([{"fiche": f, "score": 0.9}])
+    ins_line = next(l for l in ctx.split("\n") if "Insertion" in l)
+    assert "N=50" in ins_line
+    assert "marge-large" not in ins_line
+
+
+def test_insertion_large_sample_no_extra_tag():
+    """Large sample (≥100) displays no sample tag at all — trust the number."""
+    f = _vague_d_fiche_with_insertion()
+    f["insertion"]["sample_size_tier"] = "large"
+    f["insertion"]["nombre_sortants"] = 500
+    ctx = format_context([{"fiche": f, "score": 0.9}])
+    ins_line = next(l for l in ctx.split("\n") if "Insertion" in l)
+    assert "N=500" not in ins_line  # no tag needed
+    assert "marge" not in ins_line

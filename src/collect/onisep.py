@@ -94,8 +94,54 @@ def _map_onisep_niveau(niveau_sortie: str | None) -> str | None:
 # Main collector
 # ---------------------------------------------------------------------------
 
+_DOMAIN_QUERIES = [
+    # cyber
+    ("cyber", "cybersécurité"),
+    # data / IA
+    ("data_ia", "intelligence artificielle"),
+    ("data_ia", "data science"),
+    # santé — added in quality-gaps fix. Multi-query because ONISEP doesn't
+    # expose a single "health" category; each query returns at most ~500 results.
+    ("sante", "médecine"),
+    ("sante", "pharmacie"),
+    ("sante", "maïeutique"),
+    ("sante", "infirmier"),
+    ("sante", "kinésithérapie"),
+    ("sante", "orthophonie"),
+    ("sante", "ergothérapie"),
+    ("sante", "podologie"),
+    ("sante", "imagerie médicale"),
+    ("sante", "audioprothèse"),
+    ("sante", "orthoptie"),
+    ("sante", "psychomotricité"),
+]
+
+
+def _normalize_record(r: dict, domain: str) -> dict | None:
+    """Shared normalization between authenticated and public fetchers."""
+    nom = r.get("libelle_formation_principal", "").strip()
+    if not nom:
+        return None
+    etab = extract_school_from_formation_name(nom) or ""
+    return {
+        "source": "onisep",
+        "domaine": domain,
+        "nom": nom,
+        "etablissement": etab,
+        "ville": "",  # ONISEP formations-dataset has no city field
+        "rncp": r.get("code_rncp") or None,
+        "url_onisep": r.get("url_et_id_onisep") or None,
+        "type_diplome": r.get("libelle_type_formation") or None,
+        "duree": r.get("duree") or None,
+        "tutelle": r.get("tutelle") or None,
+        "niveau": _map_onisep_niveau(r.get("niveau_de_sortie_indicatif")),
+        "statut": None,  # to be inferred from tutelle or establishment later
+    }
+
+
 def collect_onisep_fiches(email: str, password: str, app_id: str) -> list[dict]:
-    """Fetch and normalize ONISEP formations for OrientIA's two domains.
+    """Fetch and normalize ONISEP formations for OrientIA's three domains
+    (cyber, data_ia, sante) via the authenticated endpoint.
 
     ONISEP returns formation-type records (not per-school instances), so
     etablissement is extracted heuristically from the formation name.
@@ -107,34 +153,47 @@ def collect_onisep_fiches(email: str, password: str, app_id: str) -> list[dict]:
     fiches = []
     seen_signatures = set()
 
-    for domain, query in [
-        ("cyber", "cybersécurité"),
-        ("data_ia", "intelligence artificielle"),
-        ("data_ia", "data science"),
-    ]:
+    for domain, query in _DOMAIN_QUERIES:
         results = fetch_formations(token, app_id, query, size=500)
         for r in results:
-            nom = r.get("libelle_formation_principal", "").strip()
-            if not nom:
+            norm = _normalize_record(r, domain)
+            if norm is None:
                 continue
-            etab = extract_school_from_formation_name(nom) or ""
-            sig = (nom, etab)
+            sig = (norm["nom"], norm["etablissement"])
             if sig in seen_signatures:
                 continue
             seen_signatures.add(sig)
+            fiches.append(norm)
+    return fiches
 
-            fiches.append({
-                "source": "onisep",
-                "domaine": domain,
-                "nom": nom,
-                "etablissement": etab,
-                "ville": "",  # ONISEP formations-dataset has no city field
-                "rncp": r.get("code_rncp") or None,
-                "url_onisep": r.get("url_et_id_onisep") or None,
-                "type_diplome": r.get("libelle_type_formation") or None,
-                "duree": r.get("duree") or None,
-                "tutelle": r.get("tutelle") or None,
-                "niveau": _map_onisep_niveau(r.get("niveau_de_sortie_indicatif")),
-                "statut": None,  # to be inferred from tutelle or establishment later
-            })
+
+def collect_onisep_fiches_public(delay_s: float = 3.0) -> list[dict]:
+    """Fetch all three domains via the public endpoint (no authentication).
+
+    Fallback path when credentials aren't available. The public endpoint
+    has the same schema but is rate-limited (429 after ~5 fast queries).
+    `delay_s` controls inter-query pacing — 3s works empirically.
+    """
+    import time
+    fiches = []
+    seen_signatures = set()
+    for i, (domain, query) in enumerate(_DOMAIN_QUERIES):
+        if i > 0:
+            time.sleep(delay_s)
+        try:
+            results = _fetch_formations_public(query, size=500)
+        except Exception as e:
+            # One failed query shouldn't kill the whole collection
+            print(f"[onisep] public fetch failed for {domain}/{query}: {e}")
+            continue
+        for r in results:
+            norm = _normalize_record(r, domain)
+            if norm is None:
+                continue
+            sig = (norm["nom"], norm["etablissement"])
+            if sig in seen_signatures:
+                continue
+            seen_signatures.add(sig)
+            fiches.append(norm)
+        print(f"[onisep] {domain}/{query}: {len(results)} fetched, running total={len(fiches)}")
     return fiches

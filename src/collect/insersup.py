@@ -34,6 +34,34 @@ from pathlib import Path
 from typing import Iterable
 
 
+# === Statistical representativeness thresholds (quality-gaps fix) ===
+#
+# InserSup cohortes with very few graduates produce noisy statistics that
+# must not be cited as if they had the same weight as a 500-graduate
+# aggregate. A lycéen reads "85%" the same whether it's on 30 or 500
+# people, but margin of error is completely different.
+#
+# Policy:
+#   ≥ 100 sortants : "large"  — no warning, standard citation
+#   30-99 sortants : "medium" — cite with sample size visible
+#   20-29 sortants : "small"  — cite with explicit prudence
+#   < 20 sortants  : skip     — too few to be statistically meaningful
+MIN_SORTANTS_TO_ATTACH = 20
+SAMPLE_TIER_LARGE = 100
+SAMPLE_TIER_MEDIUM = 30
+
+
+def _sample_size_tier(n: int | None) -> str:
+    """Classify a cohorte size into a robustness tier."""
+    if n is None:
+        return "unknown"
+    if n >= SAMPLE_TIER_LARGE:
+        return "large"
+    if n >= SAMPLE_TIER_MEDIUM:
+        return "medium"
+    return "small"
+
+
 # Mapping Parcoursup type_diplome → InserSup type_diplome normalisé
 # (col 85 "type_diplome" en minuscules avec underscores)
 PARCOURSUP_TO_INSERSUP_TYPE = {
@@ -241,20 +269,39 @@ def _match_fiche_to_insersup(
     return None, None
 
 
-def _build_disclaimer(fiche: dict, granularite: str) -> str:
-    """Human-readable disclaimer on what the insertion numbers cover."""
+def _build_disclaimer(
+    fiche: dict,
+    granularite: str,
+    sample_tier: str = "unknown",
+    n_sortants: int | None = None,
+) -> str:
+    """Human-readable disclaimer on what the insertion numbers cover.
+
+    Includes sample size warning for medium/small cohortes so the lycéen
+    understands the statistical robustness (or lack thereof).
+    """
     etab = fiche.get("etablissement", "l'établissement")
     domaine = fiche.get("domaine")
     if granularite == "discipline":
         discipline = DOMAINE_TO_DISCIPLINE.get(domaine, "la discipline")
-        return (f"Chiffres d'insertion calculés sur tous les diplômés "
+        base = (f"Chiffres d'insertion calculés sur tous les diplômés "
                 f"{discipline} de {etab} (discipline agrégée, pas spécifique "
                 f"à cette formation).")
-    # type_diplome_agrege
-    ps_type = fiche.get("type_diplome", "diplôme")
-    return (f"Chiffres d'insertion calculés sur TOUS les {ps_type}s de "
-            f"{etab} confondus (agrégat établissement, pas spécifique à "
-            f"cette formation ni à sa discipline).")
+    else:
+        # type_diplome_agrege
+        ps_type = fiche.get("type_diplome", "diplôme")
+        base = (f"Chiffres d'insertion calculés sur TOUS les {ps_type}s de "
+                f"{etab} confondus (agrégat établissement, pas spécifique à "
+                f"cette formation ni à sa discipline).")
+
+    # Append sample size caveat
+    if sample_tier == "small" and n_sortants is not None:
+        base += (f" Attention : échantillon limité ({n_sortants} diplômés) — "
+                 f"ces chiffres ont une marge d'erreur plus large que pour "
+                 f"les grandes promos.")
+    elif sample_tier == "medium" and n_sortants is not None:
+        base += f" Échantillon modéré ({n_sortants} diplômés)."
+    return base
 
 
 def attach_insertion(
@@ -263,7 +310,9 @@ def attach_insertion(
 ) -> list[dict]:
     """Attach insersup snapshots to fiches via UAI matching.
 
-    Adds `insertion` dict to each matched fiche with granularite + disclaimer.
+    Adds `insertion` dict to each matched fiche with granularite + disclaimer +
+    sample_size_tier. Fiches with cohortes < MIN_SORTANTS_TO_ATTACH are
+    skipped entirely (statistically insufficient to cite honestly).
     Graceful no-op if CSV is missing.
     """
     p = Path(csv_path)
@@ -276,10 +325,17 @@ def attach_insertion(
         snapshot, granularite = _match_fiche_to_insersup(fiche, idx)
         if snapshot is None:
             continue
+        # Statistical representativeness filter — skip small cohortes rather
+        # than cite misleading numbers.
+        n_sortants = snapshot.get("nombre_sortants")
+        if n_sortants is not None and n_sortants < MIN_SORTANTS_TO_ATTACH:
+            continue
+        sample_tier = _sample_size_tier(n_sortants)
         fiche["insertion"] = {
             **snapshot,
             "granularite": granularite,
-            "disclaimer": _build_disclaimer(fiche, granularite),
+            "sample_size_tier": sample_tier,
+            "disclaimer": _build_disclaimer(fiche, granularite, sample_tier, n_sortants),
             "source": "InserSup DEPP",
             "source_url": "https://www.data.gouv.fr/datasets/insertion-professionnelle-des-diplomes-des-etablissements-denseignement-superieur-dispositif-insersup",
         }
