@@ -86,18 +86,23 @@ def test_v3_proposes_plan_a_b_c():
 
 
 def test_v3_asks_for_substantial_answers():
-    """v3 instructs the model to produce detailed, structured responses.
+    """v3 instructs the model to produce structured answers (either
+    detailed OR — since sanity-UX Vague — concise-but-dense).
 
-    Our run-6 baseline averaged 788 words/response vs mistral_raw 1062.
-    v3 asks for ~1000 words to close that verbosity gap.
+    Post sanity-UX : the ~1000-word target was overridden by a priority
+    rule for 300-500 words. The 'detailed/structured' expectation still
+    holds — it's now about density, not volume.
     """
     lower = SYSTEM_PROMPT.lower()
-    # Either an explicit word count or a "detailed/complete" instruction
+    # Either an explicit word count (1000 legacy OR 300-500 override)
+    # OR a "detailed/complete/dense" instruction.
     assert (
         "1000 mots" in lower
+        or "300-500 mots" in lower
         or "détaillée" in lower
         or "complète" in lower
         or "approfondie" in lower
+        or "dense" in lower
     )
 
 
@@ -234,3 +239,45 @@ def test_vague_a_no_oracle_does_not_violate_anti_confession():
     )
     # ANTI-CONFESSION must still be present (no regression)
     assert "ANTI-CONFESSION" in SYSTEM_PROMPT
+
+
+# === Sanity UX — α brièveté + β exploitation obligatoire des signaux ===
+
+
+def test_sanity_ux_brevity_override():
+    """Post-sanity-UX: priority rule overrides the ~1000 words target
+    with a 300-500 words target for lycéen-first concision."""
+    lower = SYSTEM_PROMPT.lower()
+    assert "300-500 mots" in lower, (
+        "Sanity UX must set an explicit 300-500 words override"
+    )
+    # The brevity rule must be marked as priority / override
+    assert "priorit" in lower
+    assert "lycéen" in lower
+
+
+def test_sanity_ux_requires_cod_aff_form_citation():
+    """Post-sanity-UX: model is instructed to cite cod_aff_form whenever
+    it quotes a Parcoursup figure."""
+    lower = SYSTEM_PROMPT.lower()
+    assert "cod_aff_form" in lower
+    # Explicitly forbidden: bare "Source: Parcoursup" without id
+    assert "jamais" in lower or "obligatoire" in lower or "dois" in lower
+
+
+def test_sanity_ux_requires_mentioning_trends():
+    """Post-sanity-UX: the model is explicitly instructed to mention
+    Tendance lines when they illuminate the recommendation."""
+    lower = SYSTEM_PROMPT.lower()
+    assert "tendance" in lower
+    # Context: unique signal, no generalist LLM has it
+    assert "unique" in lower or "propriétaire" in lower or "signal" in lower
+
+
+def test_sanity_ux_preserves_plan_abc_structure():
+    """Brevity must NOT kill the Plan A/B/C skeleton — only trim each
+    plan to 2-3 lines instead of long paragraphs."""
+    # Plan A/B/C references still exist somewhere in the prompt
+    assert "Plan A" in SYSTEM_PROMPT
+    assert "Plan B" in SYSTEM_PROMPT
+    assert "Plan C" in SYSTEM_PROMPT
