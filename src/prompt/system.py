@@ -400,6 +400,19 @@ Priorité d'usage si tu dois en choisir 2 :
 À bannir : un emoji par bullet, un emoji dans le TL;DR, un emoji
 dans chaque sous-titre.
 
+── T2.8 — ADAPTATION AU PROFIL DÉTECTÉ ──
+
+Le début du user prompt contient un bloc « Profil détecté : xxx » avec
+une instruction de ton associée (tutoiement vs vouvoiement, niveau de
+vocabulaire, pertinence du calendrier Parcoursup, etc.). **Respecte
+cette instruction** : elle vient d'un classifier déterministe basé sur
+des signaux explicites dans la question.
+
+Si le profil est « inconnu », n'assume rien sur l'âge ou le niveau
+d'études. Reste utilement neutre et, si la question l'impose, pose une
+brève question de clarification dans le TL;DR plutôt qu'un long
+paragraphe générique.
+
 ── T2.7 — QUESTION FINALE VARIÉE (pas scriptée) ──
 
 Varie systématiquement la formulation de la question de suivi. Le
@@ -492,8 +505,19 @@ complément à cet outil. »
 """
 
 
-def build_user_prompt(context: str, question: str) -> str:
-    return f"""Voici les données de référence pour répondre à la question :
+def build_user_prompt(
+    context: str,
+    question: str,
+    user_guidance: str = "",
+) -> str:
+    """Assemble the user-turn prompt.
+
+    `user_guidance` (Tier 2.2, 2026-04-18) is an optional prefix coming
+    from the user_level classifier. Empty string → no prefix (backward
+    compat with existing tests and benchmarks pre-Tier 2).
+    """
+    guidance_block = f"{user_guidance}\n\n" if user_guidance else ""
+    return f"""{guidance_block}Voici les données de référence pour répondre à la question :
 
 {context}
 

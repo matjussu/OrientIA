@@ -1,5 +1,6 @@
 from mistralai.client import Mistral
 from src.prompt.system import SYSTEM_PROMPT, build_user_prompt
+from src.rag.user_level import classify_user_level, level_to_guidance
 
 
 def selectivite_qualitative(taux: float | None) -> str:
@@ -289,9 +290,21 @@ def generate(
     question: str,
     model: str = "mistral-medium-latest",
     temperature: float = 0.3,
+    inject_user_level: bool = True,
 ) -> str:
+    """Generate an answer via Mistral.
+
+    `inject_user_level` (Tier 2.2, 2026-04-18) adds a "Profil détecté"
+    guidance prefix derived from rule-based classification of the
+    question. Disable only for A/B comparisons of the feature itself
+    in benchmark harnesses — production should keep it on.
+    """
     context = format_context(retrieved)
-    user_prompt = build_user_prompt(context, question)
+    user_guidance = ""
+    if inject_user_level:
+        level = classify_user_level(question)
+        user_guidance = level_to_guidance(level).tone_instruction
+    user_prompt = build_user_prompt(context, question, user_guidance=user_guidance)
     response = client.chat.complete(
         model=model,
         temperature=temperature,
