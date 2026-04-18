@@ -1,5 +1,6 @@
 from mistralai.client import Mistral
 from src.prompt.system import SYSTEM_PROMPT, build_user_prompt
+from src.rag.intent import classify_intent, intent_to_format_guidance
 from src.rag.user_level import classify_user_level, level_to_guidance
 
 
@@ -300,10 +301,13 @@ def generate(
     in benchmark harnesses — production should keep it on.
     """
     context = format_context(retrieved)
-    user_guidance = ""
+    guidance_parts: list[str] = []
     if inject_user_level:
         level = classify_user_level(question)
-        user_guidance = level_to_guidance(level).tone_instruction
+        guidance_parts.append(level_to_guidance(level).tone_instruction)
+        intent = classify_intent(question)
+        guidance_parts.append(intent_to_format_guidance(intent))
+    user_guidance = "\n\n".join(guidance_parts)
     user_prompt = build_user_prompt(context, question, user_guidance=user_guidance)
     response = client.chat.complete(
         model=model,

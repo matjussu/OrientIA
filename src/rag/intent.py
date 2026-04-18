@@ -176,3 +176,59 @@ def intent_to_config(intent: str) -> IntentConfig:
     """Map an intent class to its retrieval strategy. Unknown intents
     fall back to INTENT_GENERAL so callers never crash on typos."""
     return _CONFIGS.get(intent, _CONFIGS[INTENT_GENERAL])
+
+
+# --- Tier 2.3 : format guidance injected into the user prompt ---
+
+_FORMAT_GUIDANCE: dict[str, str] = {
+    INTENT_COMPARAISON: (
+        "Type de question détecté : comparaison. Utilise obligatoirement "
+        "un tableau côte-à-côte pour contraster les options, pas un "
+        "Plan A/B/C. Termine par une synthèse de 2-3 lignes qui oriente "
+        "selon le profil."
+    ),
+    INTENT_CONCEPTUAL: (
+        "Type de question détecté : conceptuelle / définitionnelle. "
+        "Réponds de façon didactique et concise (100-200 mots). Pas de "
+        "Plan A/B/C, pas de fiches comme exemples — explique le concept, "
+        "son fonctionnement, et les cas typiques."
+    ),
+    INTENT_DECOUVERTE: (
+        "Type de question détecté : découverte / exploration. Les fiches "
+        "couvrent cyber / data / santé — si la question sort de ces "
+        "domaines, sors du corpus et propose en (connaissance générale) "
+        "des métiers interdisciplinaires ou au-delà du périmètre actuel. "
+        "Ne restreins pas la réponse aux seules fiches disponibles."
+    ),
+    INTENT_REALISME: (
+        "Type de question détecté : réalisme / faisabilité. Sois direct "
+        "et cash sur la faisabilité du projet. Appuie-toi sur les taux, "
+        "les chiffres, les profils admis. Si l'objectif n'est pas réaliste, "
+        "dis-le d'abord, puis propose des alternatives chiffrées."
+    ),
+    INTENT_GEOGRAPHIC: (
+        "Type de question détecté : géographique. Privilégie la proximité "
+        "demandée, mais cite au moins 3 villes distinctes si la question "
+        "laisse du jeu. Mentionne les distances ou temps de transport "
+        "quand pertinent."
+    ),
+    INTENT_PASSERELLES: (
+        "Type de question détecté : passerelles / réorientation. Décris "
+        "les chemins intermédiaires étape par étape (Étape 1 → Étape 2 → "
+        "Étape 3). Inclus admissions parallèles, VAE/VAP, validation "
+        "d'acquis, calendriers clés."
+    ),
+    INTENT_GENERAL: (
+        "Type de question détecté : générale. Structure en Plan A/B/C "
+        "condensé (1-2 lignes par plan). Termine par une section "
+        "« Attention aux pièges » (1-3 puces)."
+    ),
+}
+
+
+def intent_to_format_guidance(intent: str) -> str:
+    """Map an intent class to a format hint injected into the user
+    prompt. The rules themselves are in SYSTEM_PROMPT — this classifier
+    only tells the LLM which rule applies. Unknown intents fall back
+    to INTENT_GENERAL."""
+    return _FORMAT_GUIDANCE.get(intent, _FORMAT_GUIDANCE[INTENT_GENERAL])
