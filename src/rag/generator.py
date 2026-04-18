@@ -227,33 +227,29 @@ def _insertion_line(f: dict) -> str | None:
 
 
 def _source_line(f: dict) -> str | None:
-    """Unified source line: official URLs + stable identifiers (RNCP / cod_aff_form).
+    """Tier 0 fix (2026-04-18 user feedback) : produce an LLM-facing line
+    that nudges toward clickable markdown links and away from raw admin
+    codes in the output.
 
-    Kept to a single line to preserve the ≤8-lines-per-fiche budget. The LLM uses
-    these ids to cite in ##begin_quote## format (see src/prompt/system.py).
-    Priority: Parcoursup URL > ONISEP URL (both shown when distinct).
+    The system prompt tells the LLM explicitly NOT to cite cod_aff_form /
+    RNCP / FOR.xxx in cleartext — instead use the URLs from this line as
+    markdown links `[fiche officielle Parcoursup](URL)`. The codes remain
+    available in the context for the LLM's internal reasoning (knowing
+    which fiche is which), but the user-visible output stays clean.
     """
     psup = (f.get("lien_form_psup") or "").strip()
     onisep = (f.get("url_onisep") or "").strip()
-    rncp = f.get("rncp")
-    cod_aff = f.get("cod_aff_form")
 
-    url_bits: list[str] = []
+    parts: list[str] = []
     if psup:
-        url_bits.append(f"Parcoursup: {psup}")
+        parts.append(f"Parcoursup officiel = {psup}")
     if onisep and onisep != psup:
-        url_bits.append(f"ONISEP: {onisep}")
+        parts.append(f"ONISEP officiel = {onisep}")
 
-    id_bits: list[str] = []
-    if isinstance(rncp, str) and rncp.strip():
-        id_bits.append(f"RNCP {rncp.strip()}")
-    if isinstance(cod_aff, str) and cod_aff.strip():
-        id_bits.append(f"cod_aff_form {cod_aff.strip()}")
-
-    if not url_bits and not id_bits:
+    if not parts:
         return None
-    all_bits = url_bits + id_bits
-    return f"  Source officielle: {' | '.join(all_bits)}"
+    return (f"  Sources à citer en liens markdown cliquables "
+            f"(pas d'ID brut dans la réponse) : {' | '.join(parts)}")
 
 
 def format_context(results: list[dict]) -> str:

@@ -281,3 +281,51 @@ def test_sanity_ux_preserves_plan_abc_structure():
     assert "Plan A" in SYSTEM_PROMPT
     assert "Plan B" in SYSTEM_PROMPT
     assert "Plan C" in SYSTEM_PROMPT
+
+
+# === Tier 0 — règles dures post-user-feedback 2026-04-18 ===
+
+
+def test_tier0_bans_femmes_as_positive_argument():
+    """Tier 0 : le % de femmes ne doit JAMAIS être argument positif/négatif."""
+    lower = SYSTEM_PROMPT.lower()
+    # Le prompt doit contenir une interdiction explicite des formulations
+    assert ("environnement solidaire" in lower
+            or "environnement adapté" in lower
+            or "environnement accessible" in lower), (
+        "Le prompt doit citer explicitement les formulations interdites"
+    )
+
+
+def test_tier0_bans_admin_codes_in_output():
+    """Tier 0 : cod_aff_form / RNCP / FOR.xxx ne doivent pas apparaître en
+    clair dans la réponse LLM. Le prompt doit l'interdire explicitement."""
+    lower = SYSTEM_PROMPT.lower()
+    assert "cod_aff_form" in lower
+    assert "codes administratifs" in lower or "pas apparaître" in lower
+    # Le prompt recommande l'alternative : liens markdown cliquables
+    assert "cliquable" in lower and "parcoursup" in lower
+
+
+def test_tier0_anti_hallucination_list():
+    """Les 6 erreurs factuelles identifiées par les testeurs doivent être
+    explicitement listées comme interdites."""
+    assert "MBA HEC" in SYSTEM_PROMPT
+    assert "École 42" in SYSTEM_PROMPT or "42" in SYSTEM_PROMPT
+    assert "VAP" in SYSTEM_PROMPT  # passerelle infirmier→kiné
+    # Prépa médecine "2x"
+    lower = SYSTEM_PROMPT.lower()
+    assert "marketing" in lower or "auto-déclaré" in lower
+
+
+def test_tier0_allows_realistic_refusal_over_template():
+    """Le LLM doit pouvoir refuser un Plan A artificiel quand le profil
+    ne le permet pas (ex : 11/20 visant HEC)."""
+    lower = SYSTEM_PROMPT.lower()
+    assert "fabrique pas" in lower or "pas réaliste" in lower
+
+
+def test_tier0_includes_human_referral():
+    """Renvoi humain (SCUIO / CIO / Psy-EN) doit être obligatoire."""
+    lower = SYSTEM_PROMPT.lower()
+    assert "psy-en" in lower or "scuio" in lower or "cio" in lower

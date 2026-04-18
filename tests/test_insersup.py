@@ -9,11 +9,15 @@ from src.collect.insersup import (
     _pick_freshest,
     _match_fiche_to_insersup,
     _build_disclaimer,
+    _sum_emploi_components,
     attach_insertion,
     load_insersup_aggregated,
-    COL_UAI, COL_TYPE, COL_LIBELLE, COL_GENRE, COL_NAT, COL_REGIME,
+    COL_UAI, COL_TYPE, COL_LIBELLE, COL_GENRE, COL_NAT, COL_REGIME, COL_OBTENTION,
     COL_PROMO, COL_SORTANTS, COL_TAUX_EMPLOI_12M, COL_TAUX_EMPLOI_STABLE_12M,
     COL_SALAIRE_MEDIAN_12M, COL_TAUX_EMPLOI_18M, COL_SALAIRE_MEDIAN_30M,
+    COL_TAUX_EMPLOI_SAL_FR_12M, COL_TAUX_EMPLOI_NON_SAL_12M,
+    COL_TAUX_EMPLOI_ETRANGER_12M, COL_TAUX_EMPLOI_SAL_FR_18M,
+    COL_TAUX_EMPLOI_NON_SAL_18M, COL_TAUX_EMPLOI_ETRANGER_18M,
 )
 
 
@@ -203,24 +207,51 @@ def test_attach_insertion_graceful_when_csv_missing(tmp_path):
 
 
 def _build_minimal_csv(path: Path) -> None:
-    """Write a fake InserSup CSV with headers + 2 rows that match the schema."""
+    """Write a fake InserSup CSV with headers + rows matching the new schema.
+
+    Tier 0 fix : includes Obtention du diplôme filter column AND the 3 sub-
+    components of taux d'emploi 12m/18m needed for the sum fix.
+    """
     headers = [
         COL_UAI, COL_TYPE, COL_LIBELLE, COL_GENRE, COL_NAT, COL_REGIME,
-        COL_PROMO, COL_SORTANTS, COL_TAUX_EMPLOI_12M,
+        COL_OBTENTION, COL_PROMO, COL_SORTANTS,
+        COL_TAUX_EMPLOI_SAL_FR_12M, COL_TAUX_EMPLOI_NON_SAL_12M,
+        COL_TAUX_EMPLOI_ETRANGER_12M,
         COL_TAUX_EMPLOI_STABLE_12M, COL_SALAIRE_MEDIAN_12M,
-        COL_TAUX_EMPLOI_18M, COL_SALAIRE_MEDIAN_30M,
+        COL_TAUX_EMPLOI_SAL_FR_18M, COL_TAUX_EMPLOI_NON_SAL_18M,
+        COL_TAUX_EMPLOI_ETRANGER_18M, COL_SALAIRE_MEDIAN_30M,
     ]
     rows = [
+        # Discipline-level row : sal_fr=0.90 + non_sal=0.02 = 0.92 total 12m
+        # (uses 0.90+0.02 to avoid IEEE754 drift in tests)
         ["0640251A", "master_LMD", "INFORMATIQUE", "ensemble", "ensemble",
-         "ensemble", "2022", "80", "0.92", "0.72", "2500", "0.94", "3200"],
+         "ensemble", "ensemble", "2022", "80",
+         "0.90", "0.02", "nd",
+         "0.72", "2500",
+         "0.92", "0.02", "nd", "3200"],
+        # Aggregate-level row : sal_fr=0.80 + non_sal=0.05 = 0.85 total 12m
         ["0640251A", "master_LMD", "Tout Master LMD", "ensemble", "ensemble",
-         "ensemble", "2022", "450", "0.85", "0.65", "2000", "0.87", "2500"],
+         "ensemble", "ensemble", "2022", "450",
+         "0.80", "0.05", "nd",
+         "0.65", "2000",
+         "0.82", "0.05", "nd", "2500"],
         # Filtered out (Genre=femme)
         ["0640251A", "master_LMD", "INFORMATIQUE", "femme", "ensemble",
-         "ensemble", "2022", "20", "0.95", "0.75", "2450", "0.96", "3150"],
+         "ensemble", "ensemble", "2022", "20",
+         "0.93", "0.02", "nd", "0.75", "2450",
+         "0.94", "0.02", "nd", "3150"],
+        # Filtered out (Obtention diplome = 'diplômé' not 'ensemble')
+        # Tier 0 : cette ligne ne doit JAMAIS être prise par le pipeline,
+        # même si elle a les meilleurs chiffres.
+        ["0640251A", "master_LMD", "INFORMATIQUE", "ensemble", "ensemble",
+         "ensemble", "diplômé", "2022", "75",
+         "0.95", "0.02", "nd", "0.77", "2520",
+         "0.96", "0.02", "nd", "3220"],
         # Filtered out (all metrics 'nd')
         ["0640251A", "licence_pro", "INFORMATIQUE", "ensemble", "ensemble",
-         "ensemble", "2022", "30", "nd", "nd", "nd", "nd", "nd"],
+         "ensemble", "ensemble", "2022", "30",
+         "nd", "nd", "nd", "nd", "nd",
+         "nd", "nd", "nd", "nd"],
     ]
     with open(path, "w", encoding="utf-8") as f:
         import csv as _csv
@@ -282,3 +313,80 @@ def test_attach_insertion_skips_rows_with_all_nd_metrics(tmp_path):
     idx = load_insersup_aggregated(csv_path)
     # The licence_pro 'nd' row should NOT be in idx
     assert ("0640251A", "licence_pro", "INFORMATIQUE") not in idx
+
+
+# === Tier 0 fix (spot-check 2026-04-18) — obtention_diplome + sum components ===
+
+
+def test_sum_emploi_components_handles_null_aggregate(tmp_path):
+    """Tier 0 fix BUG #2 : la colonne agrégée `12-Taux d'emploi` est null
+    dans le dataset 2025_S2. _sum_emploi_components doit additionner
+    sal_fr + non_sal + etranger."""
+    row = {
+        COL_TAUX_EMPLOI_12M: "",  # aggregate null
+        COL_TAUX_EMPLOI_SAL_FR_12M: "0.80",
+        COL_TAUX_EMPLOI_NON_SAL_12M: "0.05",
+        COL_TAUX_EMPLOI_ETRANGER_12M: "nd",  # étranger souvent null
+    }
+    # 0.80 + 0.05 = 0.85 (on ignore l'étranger si nd, pas de faux zéro)
+    result = _sum_emploi_components(row, 12)
+    assert result == pytest_approx(0.85)
+
+
+def test_sum_emploi_components_uses_aggregate_when_filled():
+    """Si la colonne agrégée EST remplie (dataset futur), on la prend en
+    priorité au lieu de sommer les composantes."""
+    row = {
+        COL_TAUX_EMPLOI_12M: "0.88",
+        COL_TAUX_EMPLOI_SAL_FR_12M: "0.80",  # différent
+        COL_TAUX_EMPLOI_NON_SAL_12M: "0.05",
+        COL_TAUX_EMPLOI_ETRANGER_12M: "0.02",
+    }
+    assert _sum_emploi_components(row, 12) == 0.88
+
+
+def test_sum_emploi_components_all_null_returns_none():
+    """Si toutes les composantes sont null ET l'agrégat est null → None."""
+    row = {
+        COL_TAUX_EMPLOI_12M: "",
+        COL_TAUX_EMPLOI_SAL_FR_12M: "nd",
+        COL_TAUX_EMPLOI_NON_SAL_12M: "nd",
+        COL_TAUX_EMPLOI_ETRANGER_12M: "nd",
+    }
+    assert _sum_emploi_components(row, 12) is None
+
+
+def test_obtention_diplome_filter_forces_ensemble(tmp_path):
+    """Tier 0 fix BUG #1 : seules les lignes avec obtention_diplome=ensemble
+    sont indexées. Même si une ligne obtention_diplome=diplômé a de meilleurs
+    chiffres (cf CSV minimal : 0.95 vs 0.92 en 'ensemble'), elle est ignorée."""
+    csv_path = tmp_path / "insersup.csv"
+    _build_minimal_csv(csv_path)
+    idx = load_insersup_aggregated(csv_path)
+    # Le row 'diplômé' existe dans le CSV avec taux=0.95 (sal_fr)+0.02(non_sal)=0.97
+    # Mais il doit être filtré. On doit avoir UNIQUEMENT la valeur 'ensemble'.
+    snaps = idx[("0640251A", "master_LMD", "INFORMATIQUE")]
+    assert len(snaps) == 1  # pas 2 (diplômé filtré)
+    # Valeur = somme 'ensemble' = 0.90 + 0.02 = 0.92
+    assert snaps[0]["taux_emploi_12m"] == pytest_approx(0.92)
+
+
+def test_snapshot_from_row_uses_sum_of_components_in_full_pipeline(tmp_path):
+    """End-to-end : une fiche matchée voit bien taux_emploi_12m = somme,
+    et pas 'nd' ou None malgré la colonne agrégée vide."""
+    csv_path = tmp_path / "insersup.csv"
+    _build_minimal_csv(csv_path)
+    fiches = [{"cod_uai": "0640251A", "etablissement": "Uni X",
+               "domaine": "cyber", "niveau": "bac+5", "type_diplome": "Master LMD"}]
+    result = attach_insertion(fiches, csv_path)
+    ins = result[0]["insertion"]
+    # 0.90 + 0.02 = 0.92 (discipline-level row, 'ensemble')
+    assert ins["taux_emploi_12m"] == pytest_approx(0.92)
+
+
+# Helper import pour les approx
+def pytest_approx(expected, tol=1e-6):
+    """Local approx helper — avoids adding a pytest dependency for the
+    comparison helper when pytest is already available."""
+    import pytest as _pytest
+    return _pytest.approx(expected, abs=tol)
