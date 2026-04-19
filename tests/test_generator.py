@@ -237,15 +237,24 @@ def test_vague_a_profil_includes_diversity_demographics():
     assert "Néobacheliers 85%" in profil_line
 
 
-def test_vague_a_source_line_includes_parcoursup_url_and_identifiers():
-    """Parcoursup URL + RNCP + cod_aff_form all appear in one source line."""
+def test_vague_a_source_line_exposes_urls_only_no_raw_codes():
+    """Tier 0 fix (post-user-feedback 2026-04-18) : la source line expose
+    les URLs comme instructions au LLM pour produire des liens markdown
+    cliquables — MAIS ne contient plus les codes bruts RNCP / cod_aff_form
+    (polluent la lecture utilisateur selon les 4 testeurs). Les URLs sont
+    toujours présentes pour que le LLM puisse les transformer en liens."""
     results = [{"fiche": _vague_a_fiche(), "score": 0.9}]
     ctx = format_context(results)
-    src_line = next(l for l in ctx.split("\n") if "Source officielle" in l)
+    src_line = next(l for l in ctx.split("\n") if "Sources" in l and "Parcoursup" in l)
+    # URL Parcoursup toujours exposée (pour le LLM, à transformer en lien)
     assert "parcoursup.fr/formation/42156" in src_line
-    assert "ONISEP" in src_line and "FOR.9891" in src_line
-    assert "RNCP 37989" in src_line
-    assert "cod_aff_form 42156" in src_line
+    # URL ONISEP idem
+    assert "onisep.fr" in src_line and "FOR.9891" in src_line
+    # Instruction au LLM : liens markdown cliquables, pas d'ID brut
+    assert "liens markdown" in src_line.lower() or "cliquable" in src_line.lower()
+    # Les codes bruts ne sont PAS dans la ligne source
+    assert "RNCP 37989" not in src_line
+    assert "cod_aff_form 42156" not in src_line
 
 
 def test_vague_a_budget_still_eight_lines_per_fiche():

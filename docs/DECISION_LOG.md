@@ -422,3 +422,229 @@ call, (b) resume-from-disk skips already-judged entries.
 - ADR-019 : Demo UI stack (FastAPI + React vs Next.js) — optional, Week 3.
 - ADR-020 : Fix for `passerelles` -0.42 loss under fact-check — diagnostic
   pending.
+
+---
+
+## ADR-021 — Repivot stratégique : système qui gagne > paper qui démontre (2026-04-17)
+
+**Context** : Run F+G (16 avril 2026) a révélé que le RAG ne contribuait
+rien à la rubric nue (-0.27 vs prompt seul). L'hypothèse initiale
+"démontrer l'efficacité du RAG re-ranking" n'est pas tenable.
+
+**Decision** : pivot. La cible devient "construire un système d'orientation
+qui bat ChatGPT / Claude / Mistral chat sur l'accompagnement des lycéens
+et étudiants français", pas "publier un negative result honnête sur le
+RAG". Validé par Matteo le 2026-04-17.
+
+**Rationale** :
+- Le concours INRIA est jugé sur la qualité du système, pas du paper
+- Un système qui donne les chiffres Parcoursup 2025 + tendances + profils
+  admis bat un LLM généraliste même sans preuve statistique de contribution RAG
+- On peut toujours publier honnêtement les résultats après coup
+
+**Impact** : préserve ADR-001 à ADR-020. Les 4 axes data foundation,
+agentic, RAFT, UX s'ajoutent, ne remplacent pas.
+
+---
+
+## ADR-022 — Format de citation structurée stable pour futur RAFT (2026-04-17)
+
+**Context** : tout RAG souffre du "LLM paraphrase sans citer". Sans format
+stable, impossible de mesurer précision des attributions ou faire du
+fine-tuning RAFT (exige format explicite).
+
+**Decision** : figer un format `##begin_quote## ... ##end_quote##` dans
+system.py à partir de Vague A. Ne plus le changer avant RAFT éventuel.
+
+**Rationale** : Mistral medium ne l'adopte pas spontanément (3/6 → 0/6
+sur les itérations), MAIS le format reste utilisé verbatim dans les
+exemples RAFT futurs → cohérence train/prod critique. Le LLM utilise
+l'esprit (cod_aff_form inline) plutôt que la forme exacte → acceptable.
+
+---
+
+## ADR-023 — Sanity UX α (brièveté) + β (exploitation signaux) (2026-04-17)
+
+**Context** : post-Vague A/B/C, diagnostic diff qualitatif : LLM produit
+~10 000 caractères par réponse en utilisant peu les signaux Vague A
+(cod_aff_form, trends). Pattern convergent sur 3 itérations.
+
+**Decision** : addition stricte au system prompt d'une section "RÈGLES
+PRIORITAIRES UTILISATEUR FINAL LYCÉEN" qui :
+- α : override ~1000 mots → **300-500 mots**, Plan A/B/C préservé 2-3 lignes max
+- β : force citation cod_aff_form quand Parcoursup cité, mention trends
+  quand présentes
+
+**Résultat mesuré** : longueur 1421 → 661 mots (-54%), B3/B5 améliorés,
+B6 citation precision 1.00 maintenu, cod_aff_form cités 0 → 10 sur 6 réponses.
+
+**Limitation révélée 2026-04-18** : 300-500 mots reste trop long pour les
+4 testeurs unanimes. Tier 2 ramènera à 150-300 mots.
+
+---
+
+## ADR-024 — Extension domaine santé + quality data gaps (2026-04-17)
+
+**Context** : corpus restreint à cyber + data_ia → non représentatif de
+l'orientation des lycéens français (santé = 2e flux). Matteo confirme
+extension santé comme preuve de généralisation.
+
+**Decisions** :
+1. DOMAIN_KEYWORDS santé (25 mots-clés : PASS, L.AS, médecine, kiné, IFSI,
+   pharmacie, orthophon, infirmier, ergothérap, etc.)
+2. 10 codes ROME J1xxx pour santé
+3. Bug fix manual_labels leak : Stage 3 restreint à cyber/data_ia (les PASS
+   santé de Limoges/Rennes héritaient erronément de SecNumEdu)
+4. Seuil statistique MIN_SORTANTS=20 + sample_size_tier (PR #7, non mergée)
+5. Visibilité ⚠AGRÉGAT dans generator (PR #7, non mergée)
+6. infer_niveau étendu aux D.E santé (PR #7, non mergée)
+
+**Effet cumulé** : 443 → 1424 fiches (+221%), 9 → 194 matches InserSup.
+
+---
+
+## ADR-025 — Tier 0 corrections critiques post-user-feedback (2026-04-18)
+
+**Context** : spot-check Matteo + 4 tests utilisateurs (lycéen, étudiante,
+M1, parent DRH, conseiller d'orientation pro) ont identifié 9
+convergences absolues cross-profils, dont 3 critiques (bugs InserSup,
+discriminations sexistes, codes admin visibles) et 6 erreurs factuelles
+récurrentes.
+
+**Decisions** (PR #8) :
+
+1. **Bug InserSup taux emploi null** : `_sum_emploi_components` additionne
+   les 3 composantes (sal_fr + non_sal + etranger). La colonne agrégée
+   est null dans le dataset 2025_S2.
+2. **Bug InserSup obtention_diplome non-déterministe** : filtre explicite
+   `obtention_diplome="ensemble"` — vue publique MESR par défaut, inclut
+   les non-diplômés (pertinent pour orientation).
+3. **Fusion cohortes par métrique** : `_pick_merged` remplace
+   `_pick_freshest` — pour chaque métrique, prend la valeur non-null de
+   la cohorte la plus fraîche. `cohortes_used` exposé pour audit.
+4. **Règles dures anti-discriminations** : le % de femmes n'est JAMAIS
+   un argument positif/négatif. Formulations "100% de femmes →
+   environnement solidaire/adapté/accessible" explicitement interdites.
+5. **Anti-hallucinations** : 6 erreurs factuelles identifiées listées
+   comme interdictions explicites dans system prompt :
+   - MBA HEC "plus accessible avec expérience" → faux (5-8 ans + GMAT 700 + 80k€)
+   - École 42 "gratuite en alternance" → gratuite tout court
+   - Passerelle VAP Infirmier → Kiné → quasi-impossible en 22 ans pratique
+   - Prépas privées médecine "2x chances" → marketing, biais de sélection
+   - CentraleSupélec en "Plan A" → post-prépa très sélective
+   - "X pour les Nuls" pour concours <20% → conseil catastrophique
+6. **"Fabrique pas un Plan A artificiel"** : règle autorisant le LLM
+   à dire honnêtement "ta voie directe n'est pas réaliste" quand le
+   profil est incompatible (ex : 11/20 visant HEC).
+7. **Masquage codes admin dans sortie** : `_source_line` expose URLs
+   comme instructions LLM pour liens markdown cliquables
+   `[fiche Parcoursup](URL)`. System prompt interdit citer
+   cod_aff_form/RNCP/FOR.xxx en clair.
+8. **Renvoi humain systématique** : rappel SCUIO/CIO/Psy-EN obligatoire
+   (demande unanime Catherine + Dominique).
+
+**Effets mesurés** :
+- Taux emploi 12m : 0/194 → **194/194** (100% des fiches insertion)
+- Taux ET salaire 12m combinés : 9/194 → **189/194** (97.4%)
+- Validation end-to-end : question EFREI produit
+  `[fiche Parcoursup EFREI Paris](URL)` au lieu de `cod_aff_form: 36040`
+
+**Tests** : 343 → 348 verts, +5 Tier 0, zéro régression.
+
+---
+
+## ADR-026 — Règle absolue : spot-check manuel obligatoire avant merge source data (2026-04-18)
+
+**Context** : l'audit automatique d'InserSup a validé les salaires (corrects)
+et déclaré "0 outlier" — mais a **raté** que le taux d'emploi était null
+partout sur 194 fiches. Parce qu'il ne comparait pas avec la donnée
+officielle disponible, seulement avec ses propres seuils de sanité.
+
+**Decision** : gravée comme **règle absolue du projet**.
+
+> Ne jamais merger une nouvelle source data externe sans spot-check manuel
+> de 3-5 échantillons vs source officielle.
+
+**Rationale** :
+- L'audit automatique peut valider la cohérence interne mais ne peut pas
+  détecter les erreurs de parsing / de colonne (on ne compare pas avec ce
+  qu'on ne sait pas regarder)
+- Le coût humain est faible (~30 minutes pour 5 échantillons)
+- Le coût d'une erreur data sur un outil conseil aux mineurs est
+  disproportionné (cf règle "zéro tolérance" de Matteo)
+- Sans ce spot-check, on aurait livré InserSup avec taux d'emploi null
+  partout — catastrophe silencieuse
+
+**Alternatives rejetées** :
+- Confiance à 100% dans l'audit automatique → échec empirique démontré
+- Tests utilisateurs comme garde-fou unique → arrive trop tard dans le
+  cycle, chers à organiser
+
+**Implications** : règle applicable à ONISEP API live, France Compétences
+RNCP, classements externes, toute source future. Le script d'audit
+automatique reste utile pour détecter les outliers, mais ne remplace
+JAMAIS le spot-check manuel.
+
+---
+
+## ADR-027 — Plan de travail Tier 0 → 4 post-user-feedback (2026-04-18)
+
+**Context** : feedback utilisateurs 2026-04-18 révèle plus de dette
+utilisateur que prévu. Hiérarchisation nécessaire pour ne pas tout
+faire en même temps.
+
+**Decision** : plan en 4 tiers de priorité décroissante.
+
+- **Tier 0** (PR #8, fait) : bugs InserSup + anti-discriminations +
+  masquage codes + anti-hallucinations + renvoi humain
+- **Tier 1** (à faire) : anti-hallucination approfondie (scorer
+  automatique des 6 erreurs identifiées), détection programmée des
+  patterns interdits dans les sorties
+- **Tier 2** (à faire, prochain gros chantier) : pyramide inversée
+  (TL;DR 3 lignes → chiffres → détail), brièveté **150-300 mots** (vs
+  300-500 du sanity UX qui reste trop long), détection niveau utilisateur
+  (terminale/L2/M1/reconversion), format adapté par type de question
+  (conceptuelle vs comparaison vs choix vs hors-corpus)
+- **Tier 3** : ⚠Attention aux pièges généralisés, mode exploration
+  préalable (questionnement Socratic avant recommandation, aligne avec
+  question participant INRIA sur pensée critique), témoignages étudiants
+  (dataset à construire), coût total études, disclaimer permanent
+- **Tier 4** : trancher positionnement α (Parcoursup-only) vs β (élargi
+  carrière 20-30 ans, gap marché identifié par Thomas 23)
+
+**Critère de succès Tier 2** : refaire tester par les 4 mêmes profils.
+Si Léo passe "décroche au milieu" → "lu en entier", Sarah cesse de se
+sentir infantilisée, Catherine cesse de relever des erreurs graves,
+Dominique recommanderait à un élève seul → on est sur la bonne voie.
+
+---
+
+## ADR-028 — Fermeture PRs redondantes après Tier 0 (2026-04-18)
+
+**Context** : 3 PRs ouvertes à clarifier :
+
+- PR #7 `feature/fix-data-quality-gaps` — niveau D.E. santé +
+  MIN_SORTANTS=20 + visibilité ⚠AGRÉGAT. Utile mais dépassée par Tier 0
+  (qui a changé la forme du disclaimer et le schéma de cohortes).
+- PR `docs/session-2026-04-17-continuity` — SESSION_HANDOFF §13 + 4 ADRs.
+  Superseded par §13+14 consolidés dans PR #8.
+- PR #8 `fix/tier0-critical-user-feedback` — Tier 0 critique, en attente
+  validation Matteo.
+
+**Decision** :
+
+- **Merger PR #8** (Tier 0) après spot-check passé par Matteo
+- **Fermer PR #7** et re-faire seulement les fixes encore pertinents
+  dans Tier 2 :
+  - niveau D.E. santé → garder (utile au reranker)
+  - MIN_SORTANTS=20 → évaluer si nécessaire après fix taux emploi
+    (maintenant qu'on a vraiment 194 fiches insertion, filter agressif
+    pourrait être contre-productif)
+  - visibilité ⚠AGRÉGAT → déjà fait différemment dans Tier 0
+- **Fermer branche docs/session-2026-04-17-continuity** — redondante
+  avec la doc commit de PR #8
+
+**Rationale** : chaîne de PRs non-mergées crée de la confusion et de la
+dette mentale. Un seul merge propre (Tier 0 + doc complète) remet le
+projet sur des rails clairs.
+

@@ -468,3 +468,175 @@ Phase F run : `results/run_F_robust/` (active).
 - If ablation proves RAG contribution significant → go to G.1 stats module.
 - If our_rag ≤ mistral_v3_2_no_rag → honest publication that all gain
   came from the prompt.
+
+---
+
+## 13. Session 2026-04-17 — Vagues A/B/C/D + santé + quality + métriques (7 PRs)
+
+Session marathon. Main est aujourd'hui substantiellement au-delà du baseline
+Run F+G documenté ci-dessus.
+
+### 13.1 PRs mergées sur main
+
+| PR | Contribution |
+|---|---|
+| #1 `feature/data-foundation-vague-a` | Parcoursup richness expose (cod_aff_form, volumes, diversité) + format citation ##begin_quote## + provenance/fraîcheur |
+| #2 `feature/vague-c-historical-trends` | Trends 2023→2025 via cod_aff_form (1267 fiches avec trends après santé) |
+| #3 `feature/sanity-ux-alpha-beta` | Brièveté 300-500 mots + exploitation obligatoire signaux |
+| #4 `feature/vague-d-insersup-insertion` | InserSup DEPP (bug cod_uai manquant de Vague A corrigé) |
+| #5 `feature/deterministic-metrics-b3-b5-b6` | B3/B5/B6 déterministes + longitudinal |
+| #6 `feature/extension-domaine-sante` | 3e domaine santé (x3 corpus, x22 insertion) + bug fix manual_labels leak |
+
+### 13.2 État corpus fin session 17 avril
+
+| Métrique | Début session | Fin session |
+|---|---|---|
+| Total fiches | 443 | **1424** (+221%) |
+| Domaines actifs | 2 (cyber + data_ia) | **3** (+ santé) |
+| Avec insertion InserSup | 0 (bug cod_uai) | **194** |
+| Avec trends historiques | 0 | **1267** |
+| Tests verts | 231 | **343** |
+
+### 13.3 Infrastructure scripts ajoutés
+
+- `scripts/download_parcoursup_history.sh`, `download_insersup.sh`
+- `scripts/rebuild_faiss_index.py`
+- `scripts/insersup_audit.py`, `sante_audit.py`
+- `scripts/vague_a_diff_qualitatif.py`, `sante_diff_qualitatif.py`
+- `scripts/metrics_longitudinal.py`
+- `scripts/prepare_user_test_pack.py` — pack test user + spot-check
+- `scripts/collect_onisep_public.py` — ONISEP endpoint public (rate-limited)
+
+### 13.4 Leçons apprises session 17
+
+- **LLM Mistral paraphrase plutôt que cite** sans instruction explicite
+  ou fine-tuning. Observation stable sur 3 itérations. RAFT reste la
+  solution technique finale.
+- **Retrieval + generator doivent être enrichis ensemble**. Enrichir
+  Vague A seule (generator) = gain 1/6 questions. Enrichir Vague A+B
+  (generator + embedding + reranker) = gain 5/6.
+- **Coût re-embed FAISS négligeable** (~$0.01-0.03). Re-embed librement
+  à chaque changement fiche_to_text.
+- **Data quality gaps silencieux** sans audit automatique post-merge.
+- **Volume data seul n'est pas le levier** — data mieux injectée +
+  prompt renforcé + UX ciblée. Le plus gros gain UX (-54% longueur)
+  est venu d'une modif prompt, pas d'ajout data.
+
+---
+
+## 14. Session 2026-04-18 — Spot-check + 4 user tests + Tier 0 critique
+
+**TOURNANT MAJEUR DU PROJET.** Premier vrai feedback humain obtenu.
+Révèle les vraies zones de friction utilisateur. Tier 0 de corrections
+critiques livré dans la foulée.
+
+### 14.1 Spot-check manuel InserSup — GATE NON PASSÉ
+
+Matteo a vérifié 5 échantillons vs source officielle ESR — résultat :
+**3 bugs structurels** identifiés.
+
+1. **Bug #2 (critique)** : `taux_emploi_12m = nd` sur 5/5 échantillons.
+   Cause : on lisait `12-Taux d'emploi` qui est null dans dataset 2025_S2.
+   La donnée existe mais éclatée en 3 composantes (sal_fr + non_sal +
+   etranger).
+2. **Bug #1 (sérieux)** : `obtention_diplome` non-déterministe. 3/5 en
+   "ensemble", 2/5 en "diplômé" — incohérence silencieuse (salaires
+   proches, nb_sortants diffère : Lille 976 vs 1612).
+3. **Bug #3 (mineur)** : taxonomie "discipline" vs "diplome" confuse.
+
+Salaires et nb_sortants étaient **corrects** (5/5). La fondation data
+tient, le bug est dans le dernier kilomètre de parsing.
+
+### 14.2 4 tests utilisateurs — feedback d'une qualité rare
+
+Matteo a recruté 4 profils hétérogènes :
+- **Léo 17** lycéen terminale Maths+NSI
+- **Sarah 20** L2 Éco-Gestion Paris 1 en réorientation
+- **Thomas 23** M1 Info Dauphine, projection pro
+- **Catherine 52** parent DRH, mère de terminale
+- **Dominique 48** conseiller d'orientation Psy-EN, 22 ans métier
+
+Feedbacks dans `results/user_test/*.md`.
+
+### 14.3 9 convergences absolues cross-profils
+
+1. **TROP LONG** — unanime. Le 300-500 mots sanity UX **reste trop long**.
+   Nouvelle cible : **150-300 mots** pyramide inversée.
+2. **Codes admin visibles = bruit** — cod_aff_form/RNCP/M1817/FOR.xxx
+3. **"100% femmes → environnement adapté"** = SEXISME explicite par 4/4
+4. **Template Plan A/B/C infantilise** post-terminale
+5. **`(connaissance générale)` crée défiance**
+6. **Pas de questionnement du projet** (Dominique)
+7. **Pas de signal d'alerte "évite ça"**
+8. **Format Q8 "12 en PASS" = étalon unanime**
+9. **6 erreurs factuelles récurrentes** — toutes hallucinations LLM,
+   PAS bugs data : MBA HEC "plus accessible avec expérience", École 42
+   "gratuite en alternance", VAP Infirmier→Kiné "possible", prépas
+   médecine "2x chances", CentraleSupélec en "Plan A", "Orthophonie
+   pour les Nuls" pour concours <15%
+
+### 14.4 PR #8 — Tier 0 corrections critiques (7 fix)
+
+1. Bug InserSup #2 : somme 3 composantes taux emploi
+2. Bug InserSup #1 : filtre `obtention_diplome="ensemble"` explicite
+3. Fusion cohortes par métrique (`_pick_merged` + `cohortes_used`)
+4. Règles dures anti-discriminations dans system prompt
+5. Anti-hallucinations : 6 erreurs listées interdites + règle "Fabrique
+   pas un Plan A artificiel"
+6. Masquage codes admin : `_source_line` expose URLs pour liens markdown,
+   system prompt interdit codes en clair
+7. Renvoi humain systématique SCUIO/CIO/Psy-EN
+
+**Effets mesurés** :
+- Taux emploi 12m : 0/194 → **194/194** fiches
+- Taux ET salaire combinés : 9/194 → **189/194** (97.4%)
+- Validation end-to-end : question EFREI produit maintenant
+  `[fiche Parcoursup EFREI Paris](https://...)` au lieu de
+  `cod_aff_form: 36040` brut
+
+Tests : 343 → **348 verts** (+5 Tier 0), zéro régression.
+
+### 14.5 PRs en attente
+
+- **PR #7** (`feature/fix-data-quality-gaps`) — niveau D.E. santé +
+  MIN_SORTANTS=20 + visibilité ⚠AGRÉGAT. **Dépassée par Tier 0.** À
+  fermer, les fixes niveau D.E. + MIN_SORTANTS à re-faire en Tier 2
+  si toujours pertinents après merge Tier 0.
+- **PR #8** — Tier 0 critique, CLEAN + MERGEABLE, en attente validation
+  Matteo.
+- **Branche `docs/session-2026-04-17-continuity`** — superseded par ce
+  §13+14 consolidé. À fermer sans merger.
+
+### 14.6 RÈGLE ABSOLUE gravée
+
+**Ne jamais merger une nouvelle source data externe sans spot-check
+manuel de 3-5 échantillons vs source officielle.**
+
+L'audit automatique a validé les salaires (corrects) et déclaré "0
+outlier" — mais a **raté** que le taux d'emploi était null partout, car
+il ne comparait pas avec la donnée officielle disponible. Le spot-check
+manuel par un humain est le seul garde-fou efficace. Cette règle prévaut
+sur toute contrainte temporelle.
+
+### 14.7 Plan Tier 1-4 pour la suite
+
+| Tier | Nature | Impact attendu |
+|---|---|---|
+| **Tier 0** ✅ | Bugs InserSup + sexisme + codes masqués | Base correcte + règles non-négociables |
+| **Tier 1** | Anti-hallucination approfondie (scorer automatique) | Détection automatisée hallucinations |
+| **Tier 2** | Pyramide inversée + brièveté 150-300 mots + détection niveau user + format par type question | **Gros gain UX** (plainte #1 unanime) |
+| **Tier 3** | ⚠Attention aux pièges généralisés + mode exploration préalable (Socratic) + témoignages + coût total + disclaimer permanent | Adresse vision Dominique "questionnement du projet" |
+| **Tier 4** | Trancher positionnement α (Parcoursup-only) vs β (carrière adulte) | Décision stratégique Matteo |
+
+**Tier 2** = prochain gros chantier après merge Tier 0.
+
+### 14.8 Critères de succès Tier 2
+
+Refaire tester par les **4 mêmes profils** avec les 10 mêmes questions.
+Réussite si :
+- Léo 17 passe de "je décroche à la moitié" à "lu en entier"
+- Sarah 20 cesse de se sentir infantilisée par le template A/B/C
+- Catherine 52 cesse de relever des erreurs factuelles graves
+- Dominique 48 recommanderait l'outil à un élève seul
+
+Si 4/4, preuve qu'on est sur la bonne voie. Pas avant.

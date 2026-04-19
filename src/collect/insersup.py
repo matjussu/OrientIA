@@ -79,13 +79,59 @@ COL_LIBELLE = "Libellé du diplôme"
 COL_GENRE = "Genre"
 COL_NAT = "Nationalité"
 COL_REGIME = "Régime d'inscription"
+# Tier 0 fix (spot-check Matteo 2026-04-18) : forcer obtention_diplome=ensemble
+# — évite le bug de non-déterminisme où le pipeline prenait parfois "diplômé"
+# parfois "ensemble" selon l'ordre de retour de l'API. "ensemble" est la vue
+# publique de référence MESR et inclut les non-diplômés pertinents pour un
+# outil d'orientation (le lycéen veut savoir le taux d'emploi réel, pas celui
+# des admis jusqu'au bout).
+COL_OBTENTION = "Obtention du diplôme"
 COL_PROMO = "Promotion"
 COL_SORTANTS = "Nombre de sortants"
+# Tier 0 fix (spot-check Matteo 2026-04-18) : la colonne agrégée
+# "12-Taux d'emploi - 12 mois après le diplôme" est null dans le dataset
+# 2025_S2. Il faut calculer taux_emploi_12m comme somme des 3 composantes :
+# salarié_France + non_salarié + étranger. Idem pour 18m.
 COL_TAUX_EMPLOI_12M = "12-Taux d'emploi - 12 mois après le diplôme"
+COL_TAUX_EMPLOI_SAL_FR_12M = "12-Taux d'emploi salarié en France - 12 mois après le diplôme"
+COL_TAUX_EMPLOI_NON_SAL_12M = "12-Taux de sortants en emploi non salarié - 12 mois après le diplôme"
+COL_TAUX_EMPLOI_ETRANGER_12M = "12-Taux de sortants en emploi à l'étranger - 12 mois après le diplôme"
 COL_TAUX_EMPLOI_STABLE_12M = "12-Taux de sortants en emploi stable - 12 mois après le diplôme"
 COL_SALAIRE_MEDIAN_12M = "12-Salaire mensuel net médian en équivalent temps plein - 12 mois après le diplôme"
 COL_TAUX_EMPLOI_18M = "18-Taux d'emploi - 18 mois après le diplôme"
+COL_TAUX_EMPLOI_SAL_FR_18M = "18-Taux d'emploi salarié en France - 18 mois après le diplôme"
+COL_TAUX_EMPLOI_NON_SAL_18M = "18-Taux de sortants en emploi non salarié - 18 mois après le diplôme"
+COL_TAUX_EMPLOI_ETRANGER_18M = "18-Taux de sortants en emploi à l'étranger - 18 mois après le diplôme"
 COL_SALAIRE_MEDIAN_30M = "30-Salaire mensuel net médian en équivalent temps plein - 30 mois après le diplôme"
+
+
+def _sum_emploi_components(row: dict, month: int) -> float | None:
+    """Tier 0 fix (spot-check 2026-04-18) : compute taux d'emploi total
+    as sum of salarié_France + non_salarié + étranger components.
+
+    The aggregate column `tx_sortants_en_emploi_N` is null in the 2025_S2
+    dataset, so we must sum the 3 sub-components. Returns None when all
+    three are null ('nd' / empty).
+    """
+    if month == 12:
+        cols = (COL_TAUX_EMPLOI_SAL_FR_12M, COL_TAUX_EMPLOI_NON_SAL_12M,
+                COL_TAUX_EMPLOI_ETRANGER_12M)
+    elif month == 18:
+        cols = (COL_TAUX_EMPLOI_SAL_FR_18M, COL_TAUX_EMPLOI_NON_SAL_18M,
+                COL_TAUX_EMPLOI_ETRANGER_18M)
+    else:
+        raise ValueError(f"Unsupported month {month}, expected 12 or 18")
+    components = [_safe_float(row.get(c)) for c in cols]
+    # Fallback : si la colonne agrégée est remplie (rare mais possible), on la prend
+    agg_col = COL_TAUX_EMPLOI_12M if month == 12 else COL_TAUX_EMPLOI_18M
+    agg = _safe_float(row.get(agg_col))
+    if agg is not None:
+        return agg
+    # Sinon somme des composantes non-null ; None si toutes null
+    non_null = [c for c in components if c is not None]
+    if not non_null:
+        return None
+    return sum(non_null)
 
 
 def _safe_float(val) -> float | None:
@@ -111,12 +157,17 @@ def _safe_int(val) -> int | None:
 
 
 def _snapshot_from_row(row: dict) -> dict:
-    """Extract the metrics subset from a single aggregated row."""
+    """Extract the metrics subset from a single aggregated row.
+
+    Tier 0 fix : taux d'emploi total = somme des 3 composantes (sal_fr +
+    non_sal + étranger). Le champ agrégé `12-Taux d'emploi` est null dans
+    le dataset 2025_S2.
+    """
     return {
-        "taux_emploi_12m": _safe_float(row.get(COL_TAUX_EMPLOI_12M)),
+        "taux_emploi_12m": _sum_emploi_components(row, 12),
         "taux_emploi_stable_12m": _safe_float(row.get(COL_TAUX_EMPLOI_STABLE_12M)),
         "salaire_median_12m_mensuel_net": _safe_int(row.get(COL_SALAIRE_MEDIAN_12M)),
-        "taux_emploi_18m": _safe_float(row.get(COL_TAUX_EMPLOI_18M)),
+        "taux_emploi_18m": _sum_emploi_components(row, 18),
         "salaire_median_30m_mensuel_net": _safe_int(row.get(COL_SALAIRE_MEDIAN_30M)),
         "nombre_sortants": _safe_int(row.get(COL_SORTANTS)),
         "cohorte": (row.get(COL_PROMO) or "").strip() or None,
@@ -149,9 +200,14 @@ def load_insersup_aggregated(
     with open(csv_path, encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter=";")
         for row in reader:
+            # Tier 0 fix : filtre déterministe sur les 4 dimensions, dont
+            # obtention_diplome="ensemble" (vue publique MESR par défaut).
+            # Avant ce fix, le pipeline prenait parfois "diplômé" parfois
+            # "ensemble" selon l'ordre de retour → incohérence des chiffres.
             if (row.get(COL_GENRE) != "ensemble"
                     or row.get(COL_NAT) != "ensemble"
-                    or row.get(COL_REGIME) != "ensemble"):
+                    or row.get(COL_REGIME) != "ensemble"
+                    or row.get(COL_OBTENTION) != "ensemble"):
                 continue
             uai = (row.get(COL_UAI) or "").strip()
             if not uai:
@@ -165,31 +221,66 @@ def load_insersup_aggregated(
     return idx
 
 
-def _pick_freshest(snapshots: list[dict]) -> dict | None:
-    """Pick the snapshot with the most recent promo year. Prefers single-year
-    promos (e.g. '2024') over bi-annual aggregates ('2023,2024'). Returns None
-    if empty list.
+def _cohorte_sort_key(cohorte: str | None) -> tuple:
+    """Sort key for cohortes — higher values = more recent.
+    Single-year promos (e.g. '2024') beat bi-annual aggregates ('2023,2024')
+    at same peak year.
+    """
+    c = cohorte or "0"
+    if "," in c:
+        try:
+            last = int(c.split(",")[-1])
+        except ValueError:
+            return (0, 0)
+        return (last, 0)
+    try:
+        return (int(c), 1)
+    except ValueError:
+        return (0, 0)
 
-    Sort key: (peak_year, is_single_year). With reverse=True, both higher
-    peak_year and is_single_year=1 win → single-year '2024' beats bi-annual
-    '2023,2024' at the same peak year.
+
+_METRIC_KEYS = (
+    "taux_emploi_12m",
+    "taux_emploi_stable_12m",
+    "salaire_median_12m_mensuel_net",
+    "taux_emploi_18m",
+    "salaire_median_30m_mensuel_net",
+)
+
+
+def _pick_freshest(snapshots: list[dict]) -> dict | None:
+    """Merge snapshots across cohortes : for each metric, take the FRESHEST
+    non-null value. The resulting snapshot uses the cohorte of the most
+    recent snap as reference, and exposes `cohortes_used` for transparency.
+
+    Tier 0 fix (2026-04-18) : InserSup publishes metrics progressively
+    (2024 cohorte has taux_emploi_12m but not salaire_12m yet, while 2022
+    has everything). Picking ONLY the freshest cohorte = losing salary data
+    on recent promos. Merging avoids that blind spot.
     """
     if not snapshots:
         return None
-    def sort_key(s):
-        c = s.get("cohorte") or "0"
-        if "," in c:
-            # Bi-annual '2023,2024' — peak year is the latest
-            try:
-                last = int(c.split(",")[-1])
-            except ValueError:
-                return (0, 0)
-            return (last, 0)  # bi-annual tied-loser at same peak year
-        try:
-            return (int(c), 1)  # single-year wins ties
-        except ValueError:
-            return (0, 0)
-    return sorted(snapshots, key=sort_key, reverse=True)[0]
+    # Sort by freshness descending
+    sorted_snaps = sorted(snapshots, key=lambda s: _cohorte_sort_key(s.get("cohorte")),
+                          reverse=True)
+
+    # Base = most recent snap (for cohorte field + nombre_sortants)
+    merged = dict(sorted_snaps[0])
+    # cohortes_used tracks which cohorte provided each metric
+    cohortes_used: dict[str, str] = {}
+    for key in _METRIC_KEYS:
+        if merged.get(key) is not None:
+            cohortes_used[key] = merged.get("cohorte") or "?"
+            continue
+        # Try older snaps for a non-null value
+        for snap in sorted_snaps[1:]:
+            val = snap.get(key)
+            if val is not None:
+                merged[key] = val
+                cohortes_used[key] = snap.get("cohorte") or "?"
+                break
+    merged["cohortes_used"] = cohortes_used
+    return merged
 
 
 def _match_fiche_to_insersup(
