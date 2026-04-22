@@ -8,6 +8,7 @@ from src.rag.reranker import RerankConfig, rerank
 from src.rag.mmr import mmr_select, DEFAULT_LAMBDA
 from src.rag.intent import classify_intent, intent_to_config
 from src.rag.generator import generate
+from src.validator import Validator, ValidatorResult
 
 
 class OrientIAPipeline:
@@ -20,6 +21,7 @@ class OrientIAPipeline:
         use_mmr: bool = False,
         mmr_lambda: float = DEFAULT_LAMBDA,
         use_intent: bool = False,
+        validator: Validator | None = None,
     ):
         self.client = client
         self.fiches = fiches
@@ -29,6 +31,11 @@ class OrientIAPipeline:
         self.mmr_lambda = mmr_lambda
         self.use_intent = use_intent
         self.index: faiss.IndexFlatL2 | None = None
+        # Validator v1 — optionnel, opt-in. Si fourni, .answer() le lance après
+        # generate() et stocke le résultat dans .last_validation (backward-compat
+        # — la signature de .answer() n'est PAS modifiée).
+        self.validator = validator
+        self.last_validation: ValidatorResult | None = None
 
     def build_index(self) -> None:
         texts = [fiche_to_text(f) for f in self.fiches]
@@ -66,4 +73,8 @@ class OrientIAPipeline:
         else:
             top = reranked[:effective_top_k]
         answer_text = generate(self.client, top, question, model=self.model)
+        # Validator v1 (opt-in) : append en sortie generator (cf Ordre B
+        # 2026-04-22). Pas de re-prompt ni de blocage en v1, juste détection.
+        if self.validator is not None:
+            self.last_validation = self.validator.validate(answer_text)
         return answer_text, top
