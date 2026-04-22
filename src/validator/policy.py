@@ -39,23 +39,50 @@ class PolicyResult:
     blocked_categories: list[str] = field(default_factory=list)
 
 
+_MAX_FOOTER_ITEMS = 2
+
+
 def _format_warn_footer(
     violations: list[Violation],
     corpus_warnings: list[CorpusWarning],
     layer3_warnings: list[Layer3Warning] | None = None,
 ) -> str:
-    """Footer avertissement pour la policy β Warn (non-bloquantes)."""
-    lines = ["", "---", "⚠️ **Points à vérifier dans ma réponse** :"]
+    """Footer β Warn v3 (polish) : top 2 warnings max, priorité ordering.
+
+    V2 listait tous les warnings → juges LLM pénalisaient la verbosité.
+    V3 (Ordre 2026-04-22-1308) : top 2 items max avec priorité
+    WARN rules > corpus_warnings > layer3_warnings. Au-delà, suffix
+    "⚠️ N autres points à vérifier (masqués pour lisibilité)" sans les
+    détailler. Le safety détection reste intact côté back-end — seul
+    l'affichage UX est polish.
+    """
+    # Collecte tous les items dans l'ordre de priorité
+    items: list[str] = []
     for v in violations:
-        lines.append(f"- {v.message}")
+        items.append(f"- {v.message}")
     for w in corpus_warnings:
-        lines.append(
+        items.append(
             f"- Affirmation non vérifiable dans notre corpus : *{w.claim}*. "
             f"Plus proche dans la base : {w.closest_match}."
         )
     if layer3_warnings:
         for lw in layer3_warnings:
-            lines.append(f"- *{lw.claim}* — {lw.reason}")
+            items.append(f"- *{lw.claim}* — {lw.reason}")
+
+    # Top 2 + suffix si overflow
+    visible = items[:_MAX_FOOTER_ITEMS]
+    hidden_count = max(0, len(items) - _MAX_FOOTER_ITEMS)
+
+    lines = ["", "---", "⚠️ **Points à vérifier dans ma réponse** :"]
+    lines.extend(visible)
+    if hidden_count > 0:
+        lines.append(
+            f"- *(+ {hidden_count} autre"
+            f"{'s' if hidden_count > 1 else ''} point"
+            f"{'s' if hidden_count > 1 else ''} détecté"
+            f"{'s' if hidden_count > 1 else ''} et masqué"
+            f"{'s' if hidden_count > 1 else ''} pour lisibilité)*"
+        )
     lines.append("")
     lines.append(
         "Ces points sont des patterns que nous surveillons. Vérifie "
