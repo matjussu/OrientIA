@@ -31,10 +31,24 @@ def _load_onisep_if_available(path: str | Path) -> list[dict]:
         return []
 
 
+def _load_secnumedu_if_available(path: str | Path) -> list[dict]:
+    """Cohérent avec `_load_onisep_if_available` — graceful no-op si fichier
+    absent (workflow GHA D7 : fixture committée mais defensive si supprimée)."""
+    p = Path(path)
+    if not p.exists():
+        print(f"SecNumEdu data not found at {p}, proceeding with empty list")
+        return []
+    try:
+        return load_secnumedu(p)
+    except (OSError, ValueError) as e:
+        print(f"Failed to load SecNumEdu data from {p}: {e}; proceeding with empty list")
+        return []
+
+
 def main():
     parcoursup_fiches = collect_parcoursup_fiches("data/raw/parcoursup_2025.csv")
     onisep_fiches = _load_onisep_if_available("data/raw/onisep_formations.json")
-    secnumedu_fiches = load_secnumedu("data/raw/secnumedu.json")
+    secnumedu_fiches = _load_secnumedu_if_available("data/raw/secnumedu.json")
 
     # NEW: load manual labels table
     manual_labels_path = Path("data/manual_labels.json")
