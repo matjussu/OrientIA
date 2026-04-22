@@ -80,36 +80,50 @@ def _selectivite_line(f: dict) -> str | None:
     return f"  Sélectivité {body}"
 
 
+_TREND_TAUX_MIN_PP = 5      # Task B : ±5pp minimum pour trend actionable
+_TREND_VOEUX_MIN_PCT = 15   # Task B : ±15% minimum de vœux
+_TREND_PLACES_MIN = 10      # Task B : ±10 places minimum
+
+
 def _trend_suffix(trends: dict) -> str | None:
-    """Compact trend string for the selectivity line. Emits only meaningful
-    directions (stable/None skipped). Example output:
+    """Compact trend string for the selectivity line. Emits only
+    SIGNIFICANT directions (task B, 2026-04-19) — seuils minimaux
+    pour éviter les trends décoratives que les 5 testeurs v2 ont
+    jugées bruit ou anxiogènes.
+
+    Seuils : taux ≥5pp, vœux ≥15%, places ≥10. En-deçà → omis.
+
+    Exemple output :
       'Tendance 2023→2025 : taux ↓23pp (plus sélective), vœux ↑38% (attrait +)'
     """
     if not trends:
         return None
     bits: list[str] = []
-    # Taux d'accès direction
+    # Taux d'accès direction — significance threshold 5pp
     taux = trends.get("taux_acces") or {}
     if taux.get("direction") in ("up", "down"):
-        arrow = "↓" if taux["direction"] == "down" else "↑"
         delta = abs(taux.get("delta_pp") or 0)
-        label = "plus sélective" if taux["direction"] == "down" else "plus accessible"
-        bits.append(f"taux {arrow}{delta:g}pp ({label})")
-    # Places direction — only if significant
+        if delta >= _TREND_TAUX_MIN_PP:
+            arrow = "↓" if taux["direction"] == "down" else "↑"
+            label = "plus sélective" if taux["direction"] == "down" else "plus accessible"
+            bits.append(f"taux {arrow}{delta:g}pp ({label})")
+    # Places direction — significance threshold 10 places
     places = trends.get("places") or {}
     if places.get("direction") in ("up", "down"):
-        arrow = "↑" if places["direction"] == "up" else "↓"
         delta = abs(places.get("delta") or 0)
-        bits.append(f"places {arrow}{delta}")
-    # Vœux direction (popularité)
+        if delta >= _TREND_PLACES_MIN:
+            arrow = "↑" if places["direction"] == "up" else "↓"
+            bits.append(f"places {arrow}{delta}")
+    # Vœux direction (popularité) — significance threshold 15%
     voeux = trends.get("voeux") or {}
     if voeux.get("direction") in ("up", "down"):
-        arrow = "↑" if voeux["direction"] == "up" else "↓"
         start = voeux.get("start_value") or 1
         delta = voeux.get("delta") or 0
         pct = round(delta / start * 100)
-        label = "attrait +" if voeux["direction"] == "up" else "attrait -"
-        bits.append(f"vœux {arrow}{pct:+d}% ({label})")
+        if abs(pct) >= _TREND_VOEUX_MIN_PCT:
+            arrow = "↑" if voeux["direction"] == "up" else "↓"
+            label = "attrait +" if voeux["direction"] == "up" else "attrait -"
+            bits.append(f"vœux {arrow}{pct:+d}% ({label})")
     if not bits:
         return None
     # Infer year range from whichever trend is present
@@ -126,15 +140,21 @@ def _trend_suffix(trends: dict) -> str | None:
 
 
 def _debouches_line(f: dict) -> str | None:
+    """Tier 0 extended (2026-04-19 task B) : masque les codes ROME
+    du texte exposé au LLM. Le libellé suffit pour la génération ;
+    le code ROME reste disponible dans le dict fiche pour le retrieval
+    interne mais n'apparaît plus en clair dans le contexte LLM
+    (même rationale que cod_aff_form / RNCP / FOR.xxx du Tier 0)."""
     debouches = f.get("debouches") or []
     if not debouches:
         return None
     top = debouches[:3]
     parts = [
-        f"{d.get('libelle', '')} ({d.get('code_rome', '')})"
+        d.get("libelle", "").strip()
         for d in top
         if d.get("libelle")
     ]
+    parts = [p for p in parts if p]
     if not parts:
         return None
     return f"  Débouchés métiers: {', '.join(parts)}"

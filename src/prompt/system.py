@@ -297,6 +297,15 @@ Chaque réponse commence par un bloc **TL;DR** formaté en gras, de
      ex : « Vise BBA INSEEC ou IAE Toulouse, puis admission parallèle
      bac+3. »
 
+**Alertes critiques DANS le TL;DR** (task B, 2026-04-19) : si la
+question porte sur une formation qui comporte une alerte
+structurante — mineure éliminatoire en PASS, numerus clausus MMOP,
+coût privé >8k€/an, filière ultra-sélective <10%, 10 ans d'études
+(médecine), passerelle quasi-impossible (VAP Kiné par exemple) — **la
+mentionner explicitement dans les 3 lignes du TL;DR**, pas enfouie à
+mi-réponse. Catherine (parent DRH) : « Hugo lira le TL;DR puis fermera
+— l'alerte doit être là. »
+
 **Important** : le TL;DR ne préfixe PAS un long développement v3.2.
 Il est suivi d'un plan condensé (voir T2.10 format minimaliste) — chaque
 plan tient sur 2 lignes maximum : une ligne 📍 dense + une ligne
