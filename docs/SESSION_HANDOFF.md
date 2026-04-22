@@ -640,3 +640,201 @@ Réussite si :
 - Dominique 48 recommanderait l'outil à un élève seul
 
 Si 4/4, preuve qu'on est sur la bonne voie. Pas avant.
+
+---
+
+## 15. Session 2026-04-19 — Tier 2 mergé + α + POC Mistral + task B + D3a
+
+**SESSION DENSE (J+0 du plan 2 semaines agentic).** 6 chantiers livrés
+en une journée, consolidation documentation, pivot stratégique RAFT →
+Axe 2 agentic.
+
+### 15.1 Merges main
+
+| PR | Status | Contenu |
+|---|---|---|
+| #8 `fix/tier0-critical-user-feedback` | ✅ mergée 2026-04-19 16:27 | Tier 0 : bugs InserSup + anti-discrim + anti-halluc + codes masqués + renvoi humain |
+| #9 `feature/tier2-ux-pyramide-brievete` | ✅ mergée 2026-04-19 | Tier 2 : 5 sous-chantiers T2.1-T2.5, 78 nouveaux tests |
+
+### 15.2 5 user tests v2 (pack Tier 2) — verdicts
+
+5 profils ont audité `results/user_test_v2/answers_to_show.md` + commentaires
+dans `results/user_test_v2/test_orientia_5_profils.md`.
+
+**Convergences positives** :
+- TL;DR unanime utile (seul format que Léo lit systématiquement)
+- Attention aux pièges appréciée par les 5 (Léo : "faut le mettre partout")
+- Tableau comparaison (Q3, Q9) lisible par les 5
+- Renvoi Psy-EN/CIO/SCUIO = meilleure pratique déontologique (Dominique)
+- Liens Parcoursup cliquables = différenciateur clé vs ChatGPT
+
+**Convergences négatives** :
+- **3/5 profils : "non recommandable pour mineur en autonomie"**
+  (Léo en partie, Catherine DRH, Dominique Psy-EN pro)
+- Cause : ~7 hallucinations factuelles distinctes relevées (ECN→EDN,
+  bac S supprimé, distances, VAE/VAP, CS Cybersécurité, coûts privés,
+  Tremplin→HEC, formations inventées)
+- Malgré -40% word count, "encore trop long" (tous les 5)
+- Plan A/B/C encore mécanique sur Q2 ranking et Q7 découverte
+- Trends 100% jugés décoratifs ou anxiogènes
+
+### 15.3 α Restricted LLM — preuve empirique du plafond (ADR-030)
+
+Branche `feature/alpha-restricted-llm`. α remplace ANTI-CONFESSION par
+liste blanche + abstention structurée + renvoi autorisé.
+
+Pack `results/user_test_alpha/` comparé au v2 :
+
+| Hallucination | v2 | v2-α | Verdict |
+|---|---|---|---|
+| ECN comme nom actuel | 1/10 | 1/10 | inchangé |
+| Bac S cité comme actuel | 3/10 | 3/10 | inchangé |
+| Licence Humanités Ortho inventée | 1/10 | 1/10 | inchangé |
+| Périgueux 3h30 | 1/10 | 0/10 | corrigé |
+| Pattern refus explicite | 0/10 | 0/10 | Mistral ne l'adopte pas |
+
+**Preuve empirique** : le prompt-engineering seul n'est PAS suffisant.
+C'est une limite architecturale Mistral medium, pas un défaut prompt.
+Justifie le pivot agentic/RAFT. α reste sur branche non-mergée comme
+filet non-régressif (PR #10 non ouverte, décision reportée).
+
+### 15.4 POC H Mistral Large tool-use (ADR-032)
+
+Gate J+3 lancé, 5 questions représentatives :
+
+- 5/5 succès technique (schémas respectés, params valides)
+- Latence moyenne 16.9s (marginal vs gate 15s, acceptable UX orientation)
+- Conceptuelle Q5 : 0 tool call, 1 iteration = Mistral distingue bien
+
+**Verdict PASS**. Mistral Large orchestrator **validé pour Axe 2 S2**.
+Narrative souveraineté française préservée.
+
+### 15.5 Task B — 3 fixes UX indépendants LLM (ADR-033)
+
+Sur `feature/axe2-agentic-prep` (branche S2 prep) :
+
+1. `_debouches_line` : codes ROME (M1812/M1819) retirés du texte LLM
+2. `_trend_suffix` : seuils significance (5pp/15%/10 places) — omission
+   en-deçà
+3. Prompt T2.2 : alertes critiques obligatoires dans TL;DR (Catherine :
+   "Hugo lira le TL;DR puis fermera")
+
+### 15.6 D3a ROME 4.0 offline (ADR-034)
+
+Exploitation du zip `rome_4_0.zip` v460 déjà téléchargé. Nouveau module
+`src/collect/rome.py` avec fonctions mémoïsées : `get_rome_info`,
+`list_all_rome_codes`, helpers bool-safe `is_emploi_cadre` /
+`is_transition_numerique`.
+
+D3b (salaire médian + tension marché) reportée à signup France Travail API.
+
+### 15.7 Pivot stratégique α + RAFT → α + Axe 2 agentic (ADR-031)
+
+Plan initial 2 semaines (α + RAFT) remplacé par (α + Axe 2 agentic).
+Raisons :
+- Critère Matteo élargi "études + pro" rend Thomas/Sarah dans cible
+- Agentic adresse 5/6 verdicts users, RAFT adresse 1/6
+- Évite gate R7 RAFT 30-40% échec
+- Tools (ROME, InserJeunes, coûts) réduisent structurellement la surface
+  hallucination
+
+RAFT reste en réserve S3+ optionnel.
+
+### 15.8 Branches état fin session 2026-04-19
+
+| Branche | Status | Contenu |
+|---|---|---|
+| `main` | ✅ | Tier 0 + Tier 2 mergés |
+| `feature/tier2-ux-pyramide-brievete` | mergée PR #9 | |
+| `feature/alpha-restricted-llm` | non-mergée | α pour éventuel merge filet |
+| `feature/axe2-agentic-prep` | active | POC + task B (3 fixes) + D3a, 430 verts |
+
+### 15.9 Bench E bloqué
+
+Lancement bench formel 100q post-Tier 2 a échoué : **Anthropic credits
+à zéro**. Dernières transactions Run F+G (2026-04-16) ont épuisé la
+balance. 3 options :
+1. Recharger Anthropic $30-40 → bench 7-systèmes + 3 juges complet
+2. Bench mini 5-systèmes (Mistral + OpenAI seuls) ~$12, 1 juge GPT-4o
+3. Report bench, continuer sans baseline mesurée
+
+Décision Matteo en attente 2026-04-22.
+
+### 15.10 Tests
+
+**430 verts** sur feature/axe2-agentic-prep (vs 348 au début de la session).
+
+- Tier 0 (28 tests, préservés)
+- Tier 2 (78 nouveaux, cf test_system_prompt_tier2.py, test_user_level.py,
+  test_intent_format.py)
+- α (20 nouveaux sur branche alpha uniquement)
+- ROME offline D3a (4 nouveaux)
+
+### 15.11 Coûts API session 2026-04-19
+
+| Item | Coût |
+|---|---|
+| Pack v2 Tier 2 régénération (10q × Mistral) | ~$0.30 |
+| Pack v2-α régénération (10q × Mistral) | ~$0.30 |
+| POC H Mistral tool-use (5q × Mistral Large) | ~$0.40 |
+| **Total session** | **~$1.00** |
+
+Plus bench E tentative (coût zéro, crash avant API call Anthropic).
+
+---
+
+## 16. État 2026-04-22 — continuation sprint 2 semaines
+
+**Jour calendaire** : J+3 du sprint 2 semaines (démarré 2026-04-19).
+
+### 16.1 En cours / pending
+
+- **D5 InserJeunes BTS** (task 9, in_progress) : chantier data 4-6h.
+  Fixe le flag Catherine/Dominique sur absence insertion BTS.
+  InserJeunes = équivalent InserSup pour BTS/bac pro/CAP.
+- **Bench E baseline** : attente décision Matteo sur recharge Anthropic
+  vs bench mini vs report.
+- **F baselines Playwright** : attente disponibilité Matteo (Claude Max
+  requis pour automation chatgpt/claude/mistral web UI).
+- **Gate J+6 re-test α** (2026-04-25 calendaire) : re-tester α+Tier 2
+  sur Léo/Catherine/Sarah pour voir si verdict "non recommandable"
+  bouge. Si oui → agentic optionnel. Si non → agentic confirmé S2.
+
+### 16.2 Branches actives
+
+- `feature/axe2-agentic-prep` (origin à jour au 2026-04-19) : **branche
+  de continuation pour S1 + S2**. Tous les chantiers data (D3, D5) et
+  agentic (A1-A9) viendront ici.
+- `feature/alpha-restricted-llm` : filet, décision merge reportée.
+
+### 16.3 Prochaine action au réveil
+
+1. Matteo décide sur bench E (1/2/3)
+2. Claudette continue D5 InserJeunes BTS
+3. Gate J+6 à organiser côté humain
+4. Si bench E débloqué → lancement en background pendant D5
+
+### 16.4 Ordering Axe 2 S2 (J+8-14 calendaires, 2026-04-27 → 2026-05-02)
+
+Prérequis data en S1 : D3a fait, D3b attend clé France Travail,
+D4 labels pending, D5 InserJeunes BTS in progress.
+
+STRATEGIE §5 Axe 2 A1-A9 :
+- A1 interfaces tools Pydantic
+- A2 ProfileClarifier agent
+- A3 Decomposer agent
+- A4 3 tools core (search_formations, get_debouches, get_insertion_stats)
+- A5 Composer agent (system prompt v4 = v3.2 + Tier 2)
+- A6 Validator agent (citation precision programmatique)
+- A7 orchestration Mistral Large (validé POC H)
+- A8 tests intégration 10-15 questions
+- A9 bench `our_rag_v3_agentic` vs baselines
+
+### 16.5 Documentation à jour au 2026-04-22
+
+- `docs/SESSION_HANDOFF.md` (ce document) — §15+16 ajoutés
+- `docs/DECISION_LOG.md` — ADR-029 à ADR-034 ajoutés
+- `docs/STRATEGIE_VISION_2026-04-16.md` — référence stable, non modifiée
+- Memory `state_projet_fin_session_2026-04-22.md` (à écrire)
+- Memory `tier2_delivery_2026-04-18.md` — marqué comme historique,
+  Tier 2 désormais mergé
