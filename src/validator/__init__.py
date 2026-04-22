@@ -27,6 +27,7 @@ from src.validator.corpus_check import (
     check_claims_in_corpus,
 )
 from src.validator.validator import Validator, ValidatorResult
+from src.validator.policy import Policy, PolicyResult, apply_policy
 
 __all__ = [
     "Validator",
@@ -40,4 +41,7 @@ __all__ = [
     "extract_claims",
     "check_formation_exists",
     "check_claims_in_corpus",
+    "Policy",
+    "PolicyResult",
+    "apply_policy",
 ]
