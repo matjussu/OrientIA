@@ -8,7 +8,7 @@ from src.rag.reranker import RerankConfig, rerank
 from src.rag.mmr import mmr_select, DEFAULT_LAMBDA
 from src.rag.intent import classify_intent, intent_to_config
 from src.rag.generator import generate
-from src.validator import Validator, ValidatorResult
+from src.validator import Validator, ValidatorResult, PolicyResult, apply_policy
 
 
 class OrientIAPipeline:
@@ -36,6 +36,10 @@ class OrientIAPipeline:
         # — la signature de .answer() n'est PAS modifiée).
         self.validator = validator
         self.last_validation: ValidatorResult | None = None
+        # UX Policy (Gate J+6) — hybride α+β. Appliquée automatiquement quand
+        # un validator est fourni. `last_policy_result` expose le verdict +
+        # la réponse finale (peut avoir remplacé l'answer si Policy.BLOCK).
+        self.last_policy_result: PolicyResult | None = None
 
     def build_index(self) -> None:
         texts = [fiche_to_text(f) for f in self.fiches]
@@ -73,8 +77,14 @@ class OrientIAPipeline:
         else:
             top = reranked[:effective_top_k]
         answer_text = generate(self.client, top, question, model=self.model)
-        # Validator v1 (opt-in) : append en sortie generator (cf Ordre B
-        # 2026-04-22). Pas de re-prompt ni de blocage en v1, juste détection.
+        # Validator v1 + UX Policy (Gate J+6) : si un validator est fourni,
+        # on valide puis on applique la policy hybride α+β. La signature
+        # .answer() reste (answer, top) pour backward-compat, mais l'answer
+        # retourné EST l'answer post-policy (remplacé en cas de Block).
+        # Accès à la validation brute via .last_validation, policy via
+        # .last_policy_result.
         if self.validator is not None:
             self.last_validation = self.validator.validate(answer_text)
+            self.last_policy_result = apply_policy(answer_text, self.last_validation)
+            answer_text = self.last_policy_result.final_answer
         return answer_text, top

@@ -140,10 +140,16 @@ def test_pipeline_opt_in_validator_sets_last_validation(mini_corpus, monkeypatch
     p.index = "mocked-non-none-sentinel"
 
     answer_text, top = p.answer("question test")
-    assert answer_text == "Tu passeras les ECN en 6e année."
+    # Avec Validator + Policy wiring (Gate J+6), l'answer final peut être
+    # un refus si Block déclenché. La validation brute reste accessible.
     assert p.last_validation is not None
     assert p.last_validation.flagged
     assert any(viol.rule_id == "ECN_renamed_to_EDN" for viol in p.last_validation.rule_violations)
+    # Policy doit avoir bloqué (ECN est une BLOCKING rule)
+    assert p.last_policy_result is not None
+    assert p.last_policy_result.policy.value == "block"
+    # Refus structuré dans answer_text (plus le texte original)
+    assert "ONISEP" in answer_text
 
 
 def test_pipeline_without_validator_keeps_last_validation_none(mini_corpus, monkeypatch):
