@@ -959,3 +959,102 @@ en D3b post-signup France Travail.
   effort élevé, qualité incertaine.
 
 ---
+
+## ADR-035 — Validator programmatique pré-livraison + cron refresh débloquent S2 (2026-04-22)
+
+**Context** : revue stratégique 2026-04-22 a établi 3 constats convergents :
+
+1. **Verdict empirique user_test_v2** : 3/5 profils jugent l'outil "non
+   recommandable pour mineur en autonomie" à cause de 7+ hallucinations
+   factuelles distinctes.
+2. **α a empiriquement prouvé** (ADR-030) que le prompt-engineering seul
+   ne corrige pas ces hallucinations sur Mistral medium (pattern de refus
+   explicite 0/10 occurrences malgré liste blanche stricte).
+3. **Le corpus reste figé** depuis avril 2026, alors que l'argument
+   souverain "données fraîches vs LLM avec cutoff" est central. Aucun
+   refresh automatique en place.
+
+Ces 3 constats imposaient une priorité avant toute extension (D5 BTS,
+Axe 2 agentic, RAFT) : **stabiliser la vérité avant de grandir le
+système**.
+
+**Decision** : sprint S1 (2026-04-22 matin) livre 3 chantiers P0 en
+parallèle :
+
+1. **Validator programmatique déterministe v1** (PR #15 mergée, SHA
+   `6afcacc`) — module `src/validator/` 3 couches :
+   - **Couche 1 rules** : 11 règles regex couvrant les 6 anti-hallucinations
+     Tier 0 (ADR-025) + nomenclatures dates/diplômes + concours HEC
+     whitelist + voies impossibles + marketing trompeur + invention
+     notable.
+   - **Couche 2 corpus-check** : extracteur 'formation à établissement'
+     + similarité composite 85% nom / 15% etab + seuil 0.55.
+   - **Couche 3 fallback LLM souverain (Mistral Small)** : reportée v2 —
+     les couches 1+2 catchent déjà 100% des cas tier 0 testés.
+   - Wiring opt-in `OrientIAPipeline(..., validator=...)` backward-compat.
+
+2. **D7 cron refresh mensuel** (PR #14 mergée, SHA `d72676d`) — workflow
+   `.github/workflows/data-refresh-monthly.yml` cron `0 3 1 * *` +
+   workflow_dispatch manuel. Refresh Parcoursup historique + current +
+   InserSup. Drift detection >10%, PR auto si changement, issue auto si
+   fail.
+
+3. **Cleanup repo + documentation** (PR #13 + cette PR) — split de
+   `feature/axe2-agentic-prep` palimpseste en 4 PRs, consolidation docs
+   (CLAUDE.md projet, STRATEGIE_VISION_2026-04-16, packs user_test v1+v2,
+   gitignore élargi, ADR-029→034 mergés).
+
+**Rationale** :
+
+- **Le Validator est une garantie programmatique, pas une espérance prompt.**
+  Détecte ≠ bloque en v1 (UX ne change pas), mais expose `pipeline.last_validation`
+  pour observabilité runtime. Phase suivante : Validator devient bloquant en
+  pré-livraison (re-prompt si flagged) après gate J+6.
+- **Le cron refresh active enfin l'argument différenciateur** vs LLMs
+  cutoff janvier 2026. Sans refresh, dans 3 mois Parcoursup 2026-2027
+  serait sorti et notre corpus 2024-2025 serait obsolète — l'avantage
+  structurel s'évapore.
+- **Le cleanup permet le démarrage S2 propre** : branche `axe2/pydantic-profileclarifier`
+  ouverte propre depuis main, vs un palimpseste de 5 commits hétérogènes.
+
+**Effets mesurés** :
+
+- Validator catche 2/10 questions du pack v2 réel (Q7 ECN x3 +
+  Q10 Licence Humanités-Orthophonie inventée), honesty score moyen 0.94,
+  latence <1ms par answer (cible 400ms largement tenue).
+- Workflow D7 actif, premier tick cron 2026-05-01 03:00 UTC, smoke test
+  manuel possible via `gh workflow run`.
+- 53 nouveaux tests validator + 449 tests offline globaux verts → zéro
+  régression sur les 8 PRs créées + mergées.
+
+**Alternatives rejetées** :
+
+- **D5 BTS / Axe 2 / RAFT en priorité** : étend un système qui ment encore
+  ~30% pour les mineurs. ROI négatif tant que la cause racine n'est pas
+  attaquée.
+- **Validator avec couche 3 LLM dès v1** : aurait été plus complet mais
+  aurait étendu le scope au-delà de la fenêtre 8-12h. Les couches 1+2
+  catchent déjà tous les cas Tier 0 du pack v2.
+- **Cron refresh en S2 (reporté)** : gap structurel laissé ouvert pendant
+  encore 1-2 sprints. Coût opportunité élevé pour un effort 4-6h.
+
+**Suite (post-cleanup, S2)** :
+
+- **Gate J+6 (2026-04-25)** : re-test profils avec Validator activé.
+  Si verdict bouge à 4-5/5 → reporter Axe 2 agentic, focus data D2/D4.
+  Si verdict stagne → Axe 2 confirmé.
+- **Validator couche 3** : Mistral Small souverain en fallback (v2,
+  post-gate J+6).
+- **D5 BTS + D2 ONISEP live + D4 labels** : enrichissement corpus pour
+  étendre la précision du Validator corpus-check.
+
+**Références** :
+
+- Ordres Jarvis 2026-04-22-0902 (split, validator, cron) + 2026-04-22-1016
+  (cleanup pre-S2)
+- Reco stratégique 2026-04-22 0832 : "arrêter d'empiler avant d'avoir un
+  Validator programmatique déterministe"
+- STRATEGIE_VISION §5 Axe 1 D7 (cron) + §3 Diagnostic d'expert (couche
+  rules vs prompt)
+
+---
