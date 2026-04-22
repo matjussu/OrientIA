@@ -13,8 +13,11 @@ venv/
 
 # Data (big files)
 data/raw/
-data/embeddings/*.index
+data/embeddings/*
 results/raw_responses/
+
+# Runtime logs
+logs/
 
 # Node
 frontend/node_modules/
