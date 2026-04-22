@@ -1,5 +1,80 @@
+from __future__ import annotations
+
+import csv
+import io
+import zipfile
+from functools import lru_cache
 from pathlib import Path
+
 import pandas as pd
+
+
+# --- D3 extension (2026-04-19) : accès enrichi au référentiel ROME 4.0 ---
+# Le zip téléchargé contient 30 CSV. On expose ici un accès mémoïsé
+# à unix_referentiel_code_rome_v460_utf8.csv pour enrichir les fiches
+# avec : libellé officiel, transition éco/num/démo, emploi cadre/réglementé,
+# hiérarchie (code_rome_parent). Pas besoin d'API live pour ces champs.
+
+ROME_ZIP_PATH = Path("data/raw/rome_4_0.zip")
+_REF_CSV_NAME = "unix_referentiel_code_rome_v460_utf8.csv"
+
+
+@lru_cache(maxsize=1)
+def _load_rome_ref_from_zip() -> dict[str, dict]:
+    """Parse unix_referentiel_code_rome CSV depuis le zip ROME 4.0.
+    Mémoïsé — charge une seule fois par process."""
+    ref: dict[str, dict] = {}
+    if not ROME_ZIP_PATH.exists():
+        return ref
+    with zipfile.ZipFile(ROME_ZIP_PATH) as z:
+        with z.open(_REF_CSV_NAME) as f:
+            text = f.read().decode("utf-8")
+    reader = csv.DictReader(io.StringIO(text))
+    for row in reader:
+        code = row.get("code_rome", "").strip()
+        if not code:
+            continue
+        ref[code] = {
+            "code_rome": code,
+            "libelle": row.get("libelle_rome", "").strip(),
+            "transition_eco_label": row.get("transition_eco", "").strip(),
+            "transition_num": row.get("transition_num", "").strip() == "Y",
+            "transition_demo": row.get("transition_demo", "").strip() == "Y",
+            "emploi_reglemente": row.get("emploi_reglemente", "").strip() == "Y",
+            "emploi_cadre": row.get("emploi_cadre", "").strip() == "Y",
+            "code_rome_parent": row.get("code_rome_parent", "").strip(),
+        }
+    return ref
+
+
+def get_rome_info(code_rome: str) -> dict | None:
+    """Retourne les infos référentielles pour un code ROME 4.0, ou None.
+
+    Champs retournés : libelle, transition_eco_label (texte),
+    transition_num (bool), transition_demo (bool), emploi_reglemente
+    (bool), emploi_cadre (bool), code_rome_parent."""
+    if not code_rome:
+        return None
+    ref = _load_rome_ref_from_zip()
+    return ref.get(code_rome.strip())
+
+
+def list_all_rome_codes() -> list[str]:
+    """Liste tous les codes ROME du référentiel v460 (~1584 codes)."""
+    return list(_load_rome_ref_from_zip().keys())
+
+
+def is_emploi_cadre(code_rome: str) -> bool:
+    info = get_rome_info(code_rome)
+    return bool(info and info.get("emploi_cadre"))
+
+
+def is_transition_numerique(code_rome: str) -> bool:
+    info = get_rome_info(code_rome)
+    return bool(info and info.get("transition_num"))
+
+
+# --- Anciennes fonctions (stables, alimentent les tests existants) ---
 
 
 # ROME 4.0 codes relevant to OrientIA's two domains.

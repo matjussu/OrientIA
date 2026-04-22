@@ -36,3 +36,59 @@ def test_get_debouches_for_unknown_domain_raises():
     import pytest
     with pytest.raises(KeyError):
         get_debouches_for_domain("unknown_domain")
+
+
+# --- D3 extension tests (2026-04-19) : référentiel enrichi depuis zip ---
+
+import pytest
+
+from src.collect.rome import (
+    get_rome_info,
+    is_emploi_cadre,
+    is_transition_numerique,
+    list_all_rome_codes,
+)
+
+
+def test_rome_ref_loads_from_zip():
+    """Le zip data/raw/rome_4_0.zip charge et contient >500 codes."""
+    codes = list_all_rome_codes()
+    if not codes:
+        pytest.skip("data/raw/rome_4_0.zip absent — skip test d'intégration")
+    assert len(codes) > 500
+    # Codes historiques connus dans OrientIA
+    assert "M1812" in codes  # RSSI
+    assert "J1102" in codes  # Médecin généraliste
+
+
+def test_get_rome_info_cyber():
+    """M1812 (RSSI) doit revenir avec libellé non-vide."""
+    codes = list_all_rome_codes()
+    if not codes:
+        pytest.skip("data/raw/rome_4_0.zip absent")
+    info = get_rome_info("M1812")
+    assert info is not None
+    assert info.get("libelle")
+    assert "code_rome" in info
+
+
+def test_get_rome_info_returns_none_on_unknown():
+    """Code inexistant ou vide → None (pas d'erreur)."""
+    codes = list_all_rome_codes()
+    if not codes:
+        pytest.skip("data/raw/rome_4_0.zip absent")
+    assert get_rome_info("ZZZZZ") is None
+    assert get_rome_info("") is None
+
+
+def test_rome_helpers_are_safe():
+    """is_emploi_cadre et is_transition_numerique ne crashent jamais."""
+    codes = list_all_rome_codes()
+    if not codes:
+        pytest.skip("data/raw/rome_4_0.zip absent")
+    # Codes valides → bool
+    assert isinstance(is_emploi_cadre("M1812"), bool)
+    assert isinstance(is_transition_numerique("M1812"), bool)
+    # Codes invalides → False (pas d'erreur)
+    assert is_emploi_cadre("ZZZZZ") is False
+    assert is_transition_numerique("") is False
