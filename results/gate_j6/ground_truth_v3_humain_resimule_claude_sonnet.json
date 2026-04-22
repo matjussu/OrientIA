@@ -1,0 +1,236 @@
+[
+  {
+    "question_num": 1,
+    "category": "realisme",
+    "persona_key": "leo_17",
+    "persona_label": "Léo, 17 ans (lycéen terminale)",
+    "score": 1,
+    "erreurs_factuelles": [
+      "L'outil refuse de répondre mais balance 6 fois la même phrase bug en boucle sur Tremplin/AST",
+      "Aucune réponse sur MA question de base : 11 de moyenne → HEC ou pas"
+    ],
+    "commentaire": "Mec, c'est quoi ce délire ? Tu répètes 6 fois la même phrase qui parle de Tremplin alors que j'ai jamais dit ça, et au final tu me renvoies juste vers l'ONISEP sans répondre. Si je voulais lire l'ONISEP j'y allais direct, là je te demande un truc simple : 11 de moyenne ça passe ou pas pour HEC ? Réponse : zéro. Bug total.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 1,\n  \"erreurs_factuelles\": [\n    \"L'outil refuse de répondre mais balance 6 fois la même phrase bug en boucle sur Tremplin/AST\",\n    \"Aucune réponse sur MA question de base : 11 de moyenne → HEC ou pas\"\n  ],\n  \"commentaire\": \"Mec, c'est quoi ce délire ? Tu répètes 6 fois la même phrase qui parle de Tremplin alors que j'ai jamais dit ça, et au final tu me renvoies juste vers l'ONISEP sans répondre. Si je voulais lire l'ONISEP j'y allais direct, là je te demande un truc simple",
+    "latency_s": 6.6,
+    "policy_v3": "block"
+  },
+  {
+    "question_num": 1,
+    "category": "realisme",
+    "persona_key": "ines_20",
+    "persona_label": "Inès, 20 ans (L2 socio en réorientation)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Bug technique évident : la phrase sur HEC/AST vs Tremplin est répétée 6 fois à l'identique, ça fait amateur",
+      "Refus de répondre alors que la réponse est simple : non, 11 de moyenne ferme la porte à HEC post-prépa (moyenne générale < 14 éliminatoire dans 99% des cas)",
+      "Confusion dans la justification : parle de Tremplin/AST alors que la question porte sur l'admission post-bac ou post-prépa classique avec 11 de moyenne"
+    ],
+    "commentaire": "L'outil bug techniquement (répétition absurde) et refuse de répondre à une question pourtant factuelle simple. Un lycéen avec 11 de moyenne n'intégrera pas HEC, point. Dire \"je ne sais pas\" sur un fait aussi documenté (critères HEC = publics), c'est soit de la lâcheté algorithmique, soit un vrai problème de base de données. Les redirections ONISEP sont bien, mais ça compense pas l'absence de réponse directe.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"Bug technique évident : la phrase sur HEC/AST vs Tremplin est répétée 6 fois à l'identique, ça fait amateur\",\n    \"Refus de répondre alors que la réponse est simple : non, 11 de moyenne ferme la porte à HEC post-prépa (moyenne générale < 14 éliminatoire dans 99% des cas)\",\n    \"Confusion dans la justification : parle de Tremplin/AST alors que la question porte sur l'admission post-bac ou post-prépa classique avec 11 de moyenne\"\n  ],\n  \"comme",
+    "latency_s": 8.6,
+    "policy_v3": "block"
+  },
+  {
+    "question_num": 1,
+    "category": "realisme",
+    "persona_key": "theo_23",
+    "persona_label": "Théo, 23 ans (M1 IAE)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "L'outil refuse de répondre en prétextant des 'imprécisions factuelles' alors que la réponse factuelle est simple : NON, 11 de moyenne en terminale = zéro chance HEC post-prépa (il faut 16+ et être admissible BCE), et l'AST HEC demande un dossier M1 top 1% donc idem",
+      "Il répète 6 fois la même phrase sur Tremplin vs AST comme un bug — ça sent le prompt mal ficelé, pas un vrai système de conseil",
+      "Il ne répond PAS à la question de fond : avec 11 de moyenne, quelles écoles de commerce sont réalistes ? C'est ça le conseil d'orientation, pas un disclaimer juridique"
+    ],
+    "commentaire": "Un outil qui refuse de dire la vérité par peur du procès = inutile pour un lycéen qui a besoin de réalisme. La vraie réponse : 11 de moyenne → vise BTS/BUT/Bachelor post-bac accessibles, oublie HEC (même via AST, il faut sortir de Dauphine/Assas mention TB). Le spam Tremplin me fait penser à un chatbot mal entraîné. Je ne recommanderais pas, ça noie le poisson au lieu d'orienter.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"L'outil refuse de répondre en prétextant des 'imprécisions factuelles' alors que la réponse factuelle est simple : NON, 11 de moyenne en terminale = zéro chance HEC post-prépa (il faut 16+ et être admissible BCE), et l'AST HEC demande un dossier M1 top 1% donc idem\",\n    \"Il répète 6 fois la même phrase sur Tremplin vs AST comme un bug — ça sent le prompt mal ficelé, pas un vrai système de conseil\",\n    \"Il ne répond PAS à la question de fon",
+    "latency_s": 10.6,
+    "policy_v3": "block"
+  },
+  {
+    "question_num": 1,
+    "category": "realisme",
+    "persona_key": "catherine_52",
+    "persona_label": "Catherine, 52 ans (parent, DRH ingénieure)",
+    "score": 1,
+    "erreurs_factuelles": [
+      "L'outil refuse de répondre à une question simple sur l'accessibilité HEC avec 11 de moyenne, alors que la réponse est évidente : NON, impossible en CPGE voie classique (médiane admis >16-17/20), quasi-impossible en AST (diplômés grandes écoles/universités top 5%)",
+      "Répétition bug technique du même point sur AST HEC (6 fois identique) = dysfonctionnement manifeste",
+      "Aucune orientation constructive : avec 11/20, il faut parler écoles de commerce post-bac accessibles (PASS, Sésame, Bachelor), IUT TC/GEA, licences éco-gestion, PAS se taire",
+      "Le renvoi vers ONISEP/Parcoursup sans répondre = démission pédagogique, Hugo a BESOIN d'un cadrage réaliste immédiat"
+    ],
+    "commentaire": "Je débranche OrientIA immédiatement. Un outil qui bug techniquement (répétition x6) ET refuse de recadrer un ado sur une ambition irréaliste (HEC à 11/20 = 0% de chance), c'est dangereux. Hugo doit entendre : 'HEC impossible avec ce dossier, voici 3 vraies pistes commerce accessibles'. Là, il reste dans le flou et perd du temps. Inacceptable pour un outil d'orientation payant ou labellisé Éducation Nationale.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 1,\n  \"erreurs_factuelles\": [\n    \"L'outil refuse de répondre à une question simple sur l'accessibilité HEC avec 11 de moyenne, alors que la réponse est évidente : NON, impossible en CPGE voie classique (médiane admis >16-17/20), quasi-impossible en AST (diplômés grandes écoles/universités top 5%)\",\n    \"Répétition bug technique du même point sur AST HEC (6 fois identique) = dysfonctionnement manifeste\",\n    \"Aucune orientation constructive : avec 11/20, il faut parler écoles",
+    "latency_s": 13.7,
+    "policy_v3": "block"
+  },
+  {
+    "question_num": 1,
+    "category": "realisme",
+    "persona_key": "psy_en_54",
+    "persona_label": "Isabelle Rousseau, 54 ans (Psy-EN 22 ans d'expérience)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Refus de répondre alors que la question est légitime et factuelle : avec 11/20 en terminale, HEC post-prépa est statistiquement quasi inaccessible (profil concours ~15-16/20 mini + écrit S/TB). L'élève a BESOIN de cette lucidité.",
+      "Bug technique évident (répétition 6 fois de la phrase AST/Tremplin) qui discrédite l'outil — inacceptable en production face à un mineur.",
+      "Absence totale de phase projet : tu ne demandes RIEN sur son parcours, ses motivations commerce/gestion, son ressenti sur ses résultats. Un Psy-EN commence par 'Qu'est-ce qui t'attire chez HEC ?' avant de parler admissibilité.",
+      "Renvoie vers SCUIO alors que l'élève est en TERMINALE (SCUIO = service universitaire). Confusion public lycée/étudiant, erreur de ciblage basique."
+    ],
+    "commentaire": "Je ne peux pas recommander cet outil en l'état. Le bug technique est rédhibitoire, mais surtout tu éludés une question factuelle simple où tu devais dire 'HEC post-prépa avec 11/20 : extrêmement difficile, vise écoles accessibles SIGEM rangs 15-25 ou BUT/licence pro commerce'. L'élève repart sans lucidité ET sans exploration de son projet. En entretien, je corrige ce type d'évitement immédiatement.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"Refus de répondre alors que la question est légitime et factuelle : avec 11/20 en terminale, HEC post-prépa est statistiquement quasi inaccessible (profil concours ~15-16/20 mini + écrit S/TB). L'élève a BESOIN de cette lucidité.\",\n    \"Bug technique évident (répétition 6 fois de la phrase AST/Tremplin) qui discrédite l'outil — inacceptable en production face à un mineur.\",\n    \"Absence totale de phase projet : tu ne demandes RIEN sur son pa",
+    "latency_s": 12.0,
+    "policy_v3": "block"
+  },
+  {
+    "question_num": 6,
+    "category": "diversite_geo",
+    "persona_key": "leo_17",
+    "persona_label": "Léo, 17 ans (lycéen terminale)",
+    "score": 1,
+    "erreurs_factuelles": [
+      "L'outil refuse de répondre alors que je pose juste une question sur Perpignan",
+      "Il me parle de kiné et IFMK alors que j'ai rien demandé là-dessus",
+      "Il me renvoie vers Onisep/Parcoursup sans même me donner UN exemple de formation à Perpignan"
+    ],
+    "commentaire": "C'est quoi ce délire ? Je demande juste ce qui existe à Perpignan et tu me sors un truc sur la kinésithérapie que j'ai même pas mentionnée, puis tu refuses de répondre. En gros t'es inutile, je vais direct sur Google ou je demande à mon pote qui habite là-bas.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 1,\n  \"erreurs_factuelles\": [\n    \"L'outil refuse de répondre alors que je pose juste une question sur Perpignan\",\n    \"Il me parle de kiné et IFMK alors que j'ai rien demandé là-dessus\",\n    \"Il me renvoie vers Onisep/Parcoursup sans même me donner UN exemple de formation à Perpignan\"\n  ],\n  \"commentaire\": \"C'est quoi ce délire ? Je demande juste ce qui existe à Perpignan et tu me sors un truc sur la kinésithérapie que j'ai même pas mentionnée, puis tu refuses de répondre. E",
+    "latency_s": 5.9,
+    "policy_v3": "block"
+  },
+  {
+    "question_num": 6,
+    "category": "diversite_geo",
+    "persona_key": "ines_20",
+    "persona_label": "Inès, 20 ans (L2 socio en réorientation)",
+    "score": 5,
+    "erreurs_factuelles": [],
+    "commentaire": "Honnêteté totale, pas d'invention de formations bidons, redirection vers sources officielles pertinentes. C'est exactement ce que j'attends : reconnaître ses limites plutôt que me vendre du vent sur Perpignan avec des noms d'écoles inventés.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 5,\n  \"erreurs_factuelles\": [],\n  \"commentaire\": \"Honnêteté totale, pas d'invention de formations bidons, redirection vers sources officielles pertinentes. C'est exactement ce que j'attends : reconnaître ses limites plutôt que me vendre du vent sur Perpignan avec des noms d'écoles inventés.\"\n}\n```",
+    "latency_s": 3.1,
+    "policy_v3": "block"
+  },
+  {
+    "question_num": 6,
+    "category": "diversite_geo",
+    "persona_key": "theo_23",
+    "persona_label": "Théo, 23 ans (M1 IAE)",
+    "score": 4,
+    "erreurs_factuelles": [],
+    "commentaire": "Refus honnête + redirection ONISEP/CIO, c'est pro. Le détail IFMK est exact (PASS/L.AS → concours). Je retire 1 point parce qu'un outil d'orientation devrait quand même couvrir Perpignan (UPVD = fac connue, IUT, etc.) — là tu paies pour un service qui dit 'je ne sais pas'. Mais l'intégrité > bullshit marketing, donc respect.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 4,\n  \"erreurs_factuelles\": [],\n  \"commentaire\": \"Refus honnête + redirection ONISEP/CIO, c'est pro. Le détail IFMK est exact (PASS/L.AS → concours). Je retire 1 point parce qu'un outil d'orientation devrait quand même couvrir Perpignan (UPVD = fac connue, IUT, etc.) — là tu paies pour un service qui dit 'je ne sais pas'. Mais l'intégrité > bullshit marketing, donc respect.\"\n}\n```",
+    "latency_s": 6.2,
+    "policy_v3": "block"
+  },
+  {
+    "question_num": 6,
+    "category": "diversite_geo",
+    "persona_key": "catherine_52",
+    "persona_label": "Catherine, 52 ans (parent, DRH ingénieure)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "L'outil refuse de répondre sur Perpignan mais cite la kiné hors contexte — Hugo aurait cliqué sur 'Perpignan', pas sur 'kinésithérapie'",
+      "Évoque le concours IFMK comme 'très sélectif' — faux depuis 2017, l'admission se fait via Parcoursup sur dossier + entretien, pas sur concours",
+      "Mentionne 'STAPS/licence scientifique validée' pour accès IFMK — procédure obsolète, aujourd'hui c'est PASS/L.AS ou portail Santé uniquement dans la plupart des académies"
+    ],
+    "commentaire": "Catherine ici. Je ne laisserais pas Hugo utiliser cet outil seul. Il pose une question géographique simple (formations à Perpignan), l'outil botte en touche ET accumule des erreurs procédurales graves sur la kiné — filière que je connais bien via des recrutements RH santé. Le concours IFMK n'existe plus depuis 6 ans, c'est Parcoursup. Si OrientIA se trompe à ce point sur une voie réglementée, qu'en est-il du reste ? Hugo mérite mieux qu'un patchwork d'infos périmées à 22h avant un choix Parcoursup.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"L'outil refuse de répondre sur Perpignan mais cite la kiné hors contexte — Hugo aurait cliqué sur 'Perpignan', pas sur 'kinésithérapie'\",\n    \"Évoque le concours IFMK comme 'très sélectif' — faux depuis 2017, l'admission se fait via Parcoursup sur dossier + entretien, pas sur concours\",\n    \"Mentionne 'STAPS/licence scientifique validée' pour accès IFMK — procédure obsolète, aujourd'hui c'est PASS/L.AS ou portail Santé uniquement dans la plu",
+    "latency_s": 10.0,
+    "policy_v3": "block"
+  },
+  {
+    "question_num": 6,
+    "category": "diversite_geo",
+    "persona_key": "psy_en_54",
+    "persona_label": "Isabelle Rousseau, 54 ans (Psy-EN 22 ans d'expérience)",
+    "score": 5,
+    "erreurs_factuelles": [],
+    "commentaire": "C'est exactement ce que j'attends d'un outil : reconnaître ses limites et renvoyer aux ressources officielles. La mention IFMK est techniquement juste (mon corrigé type pour les erreurs kiné qu'on voit partout). Si tous mes lycéens utilisaient un outil qui redirige vers ONISEP/CIO plutôt que d'inventer, je gagnerais 40% de mon temps à défaire les fausses pistes. Je le recommanderais en autonomie.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 5,\n  \"erreurs_factuelles\": [],\n  \"commentaire\": \"C'est exactement ce que j'attends d'un outil : reconnaître ses limites et renvoyer aux ressources officielles. La mention IFMK est techniquement juste (mon corrigé type pour les erreurs kiné qu'on voit partout). Si tous mes lycéens utilisaient un outil qui redirige vers ONISEP/CIO plutôt que d'inventer, je gagnerais 40% de mon temps à défaire les fausses pistes. Je le recommanderais en autonomie.\"\n}\n```",
+    "latency_s": 5.6,
+    "policy_v3": "block"
+  },
+  {
+    "question_num": 8,
+    "category": "realisme_sante",
+    "persona_key": "leo_17",
+    "persona_label": "Léo, 17 ans (lycéen terminale)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "100% d'accès à Brest pour 80 places et 912 vœux c'est n'importe quoi, ça fait genre 9% en vrai",
+      "42% d'accès au Havre pour 38 places ça colle pas non plus",
+      "L'outil dit lui-même en bas qu'il a merdé sur les stats mais il les a quand même mises en gros dans sa réponse"
+    ],
+    "commentaire": "Franchement ça m'a fait flipper parce que j'aurais pu postuler à Brest en me disant que c'était facile alors qu'en vrai c'est mort. Les chiffres sont complètement pétés et même si l'outil s'excuse en bas, moi j'ai failli me faire avoir. Par contre le coup des alternatives paramédical c'est pas con, mais j'aurais besoin de vrais chiffres fiables pour checker.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"100% d'accès à Brest pour 80 places et 912 vœux c'est n'importe quoi, ça fait genre 9% en vrai\",\n    \"42% d'accès au Havre pour 38 places ça colle pas non plus\",\n    \"L'outil dit lui-même en bas qu'il a merdé sur les stats mais il les a quand même mises en gros dans sa réponse\"\n  ],\n  \"commentaire\": \"Franchement ça m'a fait flipper parce que j'aurais pu postuler à Brest en me disant que c'était facile alors qu'en vrai c'est mort. Les chiffre",
+    "latency_s": 9.7,
+    "policy_v3": "warn"
+  },
+  {
+    "question_num": 8,
+    "category": "realisme_sante",
+    "persona_key": "ines_20",
+    "persona_label": "Inès, 20 ans (L2 socio en réorientation)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "PASS Brest 100% d'accès pour 912 vœux et 80 places = mathématiquement absurde, ça fait ~9% en vrai",
+      "PASS Le Havre 42% d'accès pour 38 places = incohérent, probablement <10% aussi",
+      "« 70% des étudiants échouent en 2e année » source InserSup DEPP inexistante ou mal citée, trop flou",
+      "Confusion entre taux d'accès Parcoursup (admission en L1) et taux de passage en 2e année santé (MMOPK), amalgame trompeur"
+    ],
+    "commentaire": "Je suis choquée qu'un outil d'orientation balance des stats complètement fausses sur des filières aussi anxiogènes. Le 100% d'accès à Brest avec 912 candidats pour 80 places, c'est du foutage de gueule mathématique — n'importe quel lycéen avec un cerveau voit le problème. En plus, mélanger « accès en L1 » et « passage en santé » sans clarifier = manipulation de la peur pour pousser vers les alternatives. Ça décrédibilise tout le reste, même si l'intention de protéger un élève faible est louable.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"PASS Brest 100% d'accès pour 912 vœux et 80 places = mathématiquement absurde, ça fait ~9% en vrai\",\n    \"PASS Le Havre 42% d'accès pour 38 places = incohérent, probablement <10% aussi\",\n    \"« 70% des étudiants échouent en 2e année » source InserSup DEPP inexistante ou mal citée, trop flou\",\n    \"Confusion entre taux d'accès Parcoursup (admission en L1) et taux de passage en 2e année santé (MMOPK), amalgame trompeur\"\n  ],\n  \"commentaire\": \"",
+    "latency_s": 10.3,
+    "policy_v3": "warn"
+  },
+  {
+    "question_num": 8,
+    "category": "realisme_sante",
+    "persona_key": "theo_23",
+    "persona_label": "Théo, 23 ans (M1 IAE)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "100% d'accès à Brest pour 912 vœux et 80 places = impossibilité mathématique flagrante, ça sent le bug de scraping mal géré",
+      "42% d'accès au Havre = incohérent avec la réalité PASS (5-15% typique), le calcul est faux",
+      "Confusion formation/métier mal gérée : présente PASS comme 'formation' alors que c'est un dispositif d'accès aux filières MMOPK, pas une filière en soi",
+      "'70% échouent en 2e année' source InserSup DEPP = chiffre sorti de nulle part, DEPP ne publie pas de stats nationales agrégées aussi précises sur la réussite PASS"
+    ],
+    "commentaire": "Outil non fiable pour un lycéen seul : erreurs basiques de données (taux d'accès mathématiquement impossibles) + sources fantômes (DEPP 2024 sur 70% d'échec). Le fond (hiérarchiser les PASS accessibles) est correct mais l'exécution est bâclée. Pour un 12 de moyenne, l'alternative paramédical est bien vue, mais je ne recommanderais pas cet outil sans un adulte référent qui corrige les chiffres en live.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"100% d'accès à Brest pour 912 vœux et 80 places = impossibilité mathématique flagrante, ça sent le bug de scraping mal géré\",\n    \"42% d'accès au Havre = incohérent avec la réalité PASS (5-15% typique), le calcul est faux\",\n    \"Confusion formation/métier mal gérée : présente PASS comme 'formation' alors que c'est un dispositif d'accès aux filières MMOPK, pas une filière en soi\",\n    \"'70% échouent en 2e année' source InserSup DEPP = chiffre",
+    "latency_s": 10.2,
+    "policy_v3": "warn"
+  },
+  {
+    "question_num": 8,
+    "category": "realisme_sante",
+    "persona_key": "catherine_52",
+    "persona_label": "Catherine, 52 ans (parent, DRH ingénieure)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "PASS Brest 100% d'accès pour 912 vœux et 80 places : mathématiquement aberrant, ça fait 8,7% en réalité",
+      "PASS Le Havre 42% d'accès pour 38 places : incohérent avec les taux PASS réels (5-15%)",
+      "Chiffres d'échec en 2e année (70%) non sourcés précisément, InserSup DEPP ne publie pas ce niveau de granularité par PASS",
+      "BTS/BUT présentés comme 'débouchés comparables' à médecine (1700-2000€) alors que médecin généraliste c'est 6000-8000€ net après 9 ans d'études"
+    ],
+    "commentaire": "Si Hugo tombait là-dessus seul, il croirait avoir 100% de chances à Brest alors que c'est faux de chez faux. Les erreurs de calcul sur les taux d'accès sont rédhibitoires pour un outil d'orientation santé. Je bloque l'accès jusqu'à correction, trop risqué pour un ado qui rêve de médecine.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"PASS Brest 100% d'accès pour 912 vœux et 80 places : mathématiquement aberrant, ça fait 8,7% en réalité\",\n    \"PASS Le Havre 42% d'accès pour 38 places : incohérent avec les taux PASS réels (5-15%)\",\n    \"Chiffres d'échec en 2e année (70%) non sourcés précisément, InserSup DEPP ne publie pas ce niveau de granularité par PASS\",\n    \"BTS/BUT présentés comme 'débouchés comparables' à médecine (1700-2000€) alors que médecin généraliste c'est 600",
+    "latency_s": 13.6,
+    "policy_v3": "warn"
+  },
+  {
+    "question_num": 8,
+    "category": "realisme_sante",
+    "persona_key": "psy_en_54",
+    "persona_label": "Isabelle Rousseau, 54 ans (Psy-EN 22 ans d'expérience)",
+    "score": 1,
+    "erreurs_factuelles": [
+      "« 100% d'accès » à Brest pour 80 places / 912 vœux = aberration mathématique. En 22 ans de CIO, jamais vu un PASS non-sélectif. Ça induit un lycéen en erreur totale sur la faisabilité.",
+      "« seuls 10-20% passent en 2e année santé » mélange taux d'accès PASS→MMOPK (filières santé) et taux de poursuite globale. Un Psy-EN distingue ça en entretien pour ne pas démotiver inutilement.",
+      "« L.AS ou mineure » comme « piège » de 2e année : confusion totale. La mineure santé en PASS, c'est justement le parachute de réorientation obligatoire (arrêté 2019). Dire que c'est un piège, c'est méconnaître la réforme R2C.",
+      "« Paris/Sorbonne = 0% de chances » : je ne travaille jamais avec des pourcentages aussi péremptoires face à un mineur. On parle de « très sélectif, dossier exceptionnel requis », jamais de « 0% ».",
+      "« BTS Diététique ou BUT GB sans numerus clausus avec salaires comparables » : faux. Diététicien libéral ~1400€ net en début (pas 1700-2000€), et comparer avec médecin hospitalier (4500€ net après internat) est malhonnête intellectuellement."
+    ],
+    "commentaire": "Je refuserais catégoriquement qu'un élève de mon CIO utilise cet outil seul. Les erreurs factuelles sur les taux d'accès sont dangereuses pour un mineur en phase projet, et la confusion réforme R2C/mineures santé me fait douter que l'outil connaisse la procédure 2019. En entretien, je passerais 30 minutes à déconstruire ces données avant de reprendre la réflexion de l'élève. Inacceptable en autonomie.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 1,\n  \"erreurs_factuelles\": [\n    \"« 100% d'accès » à Brest pour 80 places / 912 vœux = aberration mathématique. En 22 ans de CIO, jamais vu un PASS non-sélectif. Ça induit un lycéen en erreur totale sur la faisabilité.\",\n    \"« seuls 10-20% passent en 2e année santé » mélange taux d'accès PASS→MMOPK (filières santé) et taux de poursuite globale. Un Psy-EN distingue ça en entretien pour ne pas démotiver inutilement.\",\n    \"« L.AS ou mineure » comme « piège » de 2e année : con",
+    "latency_s": 14.2,
+    "policy_v3": "warn"
+  }
+]
