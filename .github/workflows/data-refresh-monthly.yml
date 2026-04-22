@@ -77,16 +77,23 @@ jobs:
           rm -f data/raw/parcoursup_2023.csv data/raw/parcoursup_2024.csv
           bash scripts/download_parcoursup_history.sh
 
-      - name: Force-refresh Parcoursup current year (2025)
+      - name: Force-refresh Parcoursup courant (latest complete session)
         run: |
           mkdir -p data/raw
           rm -f data/raw/parcoursup_2025.csv
-          # URL cohérente avec download_parcoursup_history.sh (dataset fr-esr-parcoursup_YYYY)
+          # Convention Opendatasoft Parcoursup :
+          #   - `fr-esr-parcoursup` (sans suffix) = dataset COURANT = dernière
+          #     session complète (= 2024-2025 actuellement, MAJ 2026-03-09).
+          #   - `fr-esr-parcoursup_2023`, `_2024` = archives figées (toujours dispo).
+          # Quand session 2026 se terminera (~sept 2026), ce dataset basculera
+          # automatiquement vers 2026 et le 2025 sera probablement archivé en
+          # `fr-esr-parcoursup_2025`. Aucun changement workflow nécessaire tant
+          # qu'on veut "dernière session complète".
           curl -sSL --fail \
             -o data/raw/parcoursup_2025.csv \
-            "https://data.enseignementsup-recherche.gouv.fr/api/explore/v2.1/catalog/datasets/fr-esr-parcoursup_2025/exports/csv?delimiter=%3B"
+            "https://data.enseignementsup-recherche.gouv.fr/api/explore/v2.1/catalog/datasets/fr-esr-parcoursup/exports/csv?delimiter=%3B"
           size=$(wc -c < data/raw/parcoursup_2025.csv)
-          echo "Parcoursup 2025 téléchargé : $size bytes"
+          echo "Parcoursup courant téléchargé : $size bytes (sauvegardé sous parcoursup_2025.csv pour cohérence pipeline)"
 
       - name: Force-refresh InserSup DEPP (~570 MB)
         run: |
