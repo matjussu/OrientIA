@@ -169,13 +169,16 @@ def _profil_line(f: dict) -> str | None:
     neobac = profil.get("neobacheliers_pct")
 
     bits = []
+    # V2 data cleanup (ADR-036) : préfixer "mention" explicitement pour
+    # éviter que Mistral Medium confonde "B 42%" avec "série bac B 42%"
+    # (cf bug détecté dans Q8 Gate J+6, ground truth humain 2026-04-22).
     m_bits = []
     if mentions.get("tb") is not None:
-        m_bits.append(f"TB {mentions['tb']:.0f}%")
+        m_bits.append(f"mention TB {mentions['tb']:.0f}%")
     if mentions.get("b") is not None:
-        m_bits.append(f"B {mentions['b']:.0f}%")
+        m_bits.append(f"mention B {mentions['b']:.0f}%")
     if mentions.get("ab") is not None:
-        m_bits.append(f"AB {mentions['ab']:.0f}%")
+        m_bits.append(f"mention AB {mentions['ab']:.0f}%")
     if m_bits:
         bits.append(", ".join(m_bits))
 

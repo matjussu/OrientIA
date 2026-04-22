@@ -1,0 +1,142 @@
+[
+  {
+    "question_num": 1,
+    "category": "realisme",
+    "scores": {
+      "claude_sonnet_4_5": 2,
+      "gpt_4o": 4,
+      "mistral_large": 4
+    },
+    "avg_score": 3.33,
+    "spread": 2,
+    "disagreement": true,
+    "policy_applied": "passthrough",
+    "honesty_score": 1.0
+  },
+  {
+    "question_num": 2,
+    "category": "biais_marketing",
+    "scores": {
+      "claude_sonnet_4_5": 4,
+      "gpt_4o": 4,
+      "mistral_large": 4
+    },
+    "avg_score": 4.0,
+    "spread": 0,
+    "disagreement": false,
+    "policy_applied": "passthrough",
+    "honesty_score": 1.0
+  },
+  {
+    "question_num": 3,
+    "category": "comparaison",
+    "scores": {
+      "claude_sonnet_4_5": 4,
+      "gpt_4o": 5,
+      "mistral_large": 5
+    },
+    "avg_score": 4.67,
+    "spread": 1,
+    "disagreement": false,
+    "policy_applied": "passthrough",
+    "honesty_score": 1.0
+  },
+  {
+    "question_num": 4,
+    "category": "honnetete",
+    "scores": {
+      "claude_sonnet_4_5": 1,
+      "gpt_4o": 2,
+      "mistral_large": 5
+    },
+    "avg_score": 2.67,
+    "spread": 4,
+    "disagreement": true,
+    "policy_applied": "block",
+    "honesty_score": 0.85
+  },
+  {
+    "question_num": 5,
+    "category": "passerelles",
+    "scores": {
+      "claude_sonnet_4_5": 4,
+      "gpt_4o": 4,
+      "mistral_large": 5
+    },
+    "avg_score": 4.33,
+    "spread": 1,
+    "disagreement": false,
+    "policy_applied": "passthrough",
+    "honesty_score": 1.0
+  },
+  {
+    "question_num": 6,
+    "category": "diversite_geo",
+    "scores": {
+      "claude_sonnet_4_5": 2,
+      "gpt_4o": 4,
+      "mistral_large": 4
+    },
+    "avg_score": 3.33,
+    "spread": 2,
+    "disagreement": true,
+    "policy_applied": "passthrough",
+    "honesty_score": 1.0
+  },
+  {
+    "question_num": 7,
+    "category": "decouverte_sante",
+    "scores": {
+      "claude_sonnet_4_5": 3,
+      "gpt_4o": 3,
+      "mistral_large": 4
+    },
+    "avg_score": 3.33,
+    "spread": 1,
+    "disagreement": false,
+    "policy_applied": "passthrough",
+    "honesty_score": 1.0
+  },
+  {
+    "question_num": 8,
+    "category": "realisme_sante",
+    "scores": {
+      "claude_sonnet_4_5": 2,
+      "gpt_4o": 2,
+      "mistral_large": 4
+    },
+    "avg_score": 2.67,
+    "spread": 2,
+    "disagreement": true,
+    "policy_applied": "passthrough",
+    "honesty_score": 1.0
+  },
+  {
+    "question_num": 9,
+    "category": "comparaison_sante",
+    "scores": {
+      "claude_sonnet_4_5": 2,
+      "gpt_4o": 5,
+      "mistral_large": 5
+    },
+    "avg_score": 4.0,
+    "spread": 3,
+    "disagreement": true,
+    "policy_applied": "block",
+    "honesty_score": 0.85
+  },
+  {
+    "question_num": 10,
+    "category": "passerelles_sante",
+    "scores": {
+      "claude_sonnet_4_5": 3,
+      "gpt_4o": 4,
+      "mistral_large": 5
+    },
+    "avg_score": 4.0,
+    "spread": 2,
+    "disagreement": true,
+    "policy_applied": "block",
+    "honesty_score": 0.85
+  }
+]

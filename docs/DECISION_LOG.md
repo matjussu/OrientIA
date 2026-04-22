@@ -1058,3 +1058,61 @@ parallèle :
   rules vs prompt)
 
 ---
+
+## ADR-036 — Enrichissements UX Psy-EN reportés S2 post-Validator v2 validé (2026-04-22)
+
+**Context** : la Psy-EN 54 (22 ans d'expérience, panel ground truth v3 du
+2026-04-22) a identifié 3 enrichissements UX orthogonaux aux 4 règles dures
+V2 :
+
+1. **Couche "phase projet"** : un mineur en autonomie gagne à ce que l'outil
+   commence par 2-3 questions de clarification (où en es-tu dans ta
+   réflexion ? pourquoi cette formation ?) avant de donner des recos, plutôt
+   que de foncer sur un "Plan A/B/C". C'est le volet `ProfileClarifier` de
+   STRATEGIE §5 Axe 2 mais avec une déontologie métier Psy-EN plus marquée.
+2. **Couche métier** : distinguer clairement "formation" vs "métier"
+   dans les réponses (même le M1 Théo a mentionné que l'outil mélange les
+   deux). Implique un tool `get_metier_fiche(rome_code)` explicite côté
+   agentic, au-delà du libellé ROME brut actuel.
+3. **Pré-filtrage public par situation** : un lycéen terminale, un étudiant
+   en réorientation, un parent et un Psy-EN n'ont pas les mêmes besoins.
+   Le `user_level classifier` (Tier 2.2) existe mais n'est pas encore
+   branché sur l'UI/composer pour moduler le registre et le niveau de
+   détail.
+
+**Decision** : **reporter ces 3 enrichissements en S2**, **après** validation
+V2 (règles dures + couche 3 LLM + re-benchmark) + verdict Gate J+6 final.
+Matteo priorise le "no-harm pour mineur en autonomie" avant l'ergonomie.
+
+**Rationale** :
+
+- Ces 3 enrichissements sont de l'**UX/agentic** (Axe 2 STRATEGIE), pas du
+  safety factual (ce que V2 fait). Sans le safety, l'UX ne sert à rien.
+- Les 4 erreurs disqualifiantes (HEC AST, redoublement PASS, séries bac
+  obsolètes, kiné IFMK) doivent être éradiquées en priorité P0. C'est le
+  scope V2.
+- Une fois V2 validé, ces 3 enrichissements s'intègrent naturellement dans
+  les agents Axe 2 (`ProfileClarifier` → phase projet, `Composer` → couche
+  métier, `DecisionHelper` → pré-filtrage public).
+
+**Conséquences** :
+
+- S2 ne commence PAS par Axe 2 A1-A9 classiques mais par V2 debug/re-bench.
+- Les agents Axe 2 (A1-A9) intégreront ces 3 enrichissements dans leurs
+  system prompts et tool contracts.
+- `docs/STRATEGIE_VISION_2026-04-16.md` §5 Axe 2 à enrichir en S2 avec ces
+  3 éléments.
+
+**Alternatives rejetées** :
+
+- Implémenter ces 3 enrichissements en V2 : scope explose, 2 semaines au
+  lieu de 1. V2 doit rester focus safety factual.
+- Ne pas les tracer du tout : risque de les oublier en S2. D'où cet ADR.
+
+**Références** :
+
+- Panel ground truth v3 du 2026-04-22 (5 profils × 3 Q hard)
+- Ordre Jarvis 2026-04-22-1230 (V2 dispatch)
+- STRATEGIE_VISION §5 Axe 2 (agentic)
+
+---

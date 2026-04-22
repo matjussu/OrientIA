@@ -421,3 +421,23 @@ def test_vague_d_budget_allows_nine_lines_with_insertion():
     ctx = format_context(results)
     non_empty = [l for l in ctx.split("\n") if l.strip()]
     assert len(non_empty) <= 9
+
+
+def test_v2_profil_line_prefixes_mentions_with_word_mention():
+    """V2 data cleanup (ADR-036) : les mentions TB/B/AB sont préfixées
+    'mention' dans le contexte pour éviter que le LLM Mistral Medium ne
+    confonde 'B 42%' (mention Bien) avec 'série bac B' (supprimée 1995).
+
+    Bug root cause identifié dans Q8 Gate J+6 ground truth humain 2026-04-22."""
+    results = [{"fiche": _vague_a_fiche(), "score": 0.9}]
+    ctx = format_context(results)
+    profil_line = next(l for l in ctx.split("\n") if "Profil admis" in l)
+    # Préfixe "mention" présent sur les 3 niveaux
+    assert "mention TB" in profil_line
+    assert "mention B" in profil_line
+    assert "mention AB" in profil_line
+    # Les anciens formats sans préfixe (risque confusion) sont absents —
+    # on vérifie via une heuristique : "TB X%" seul ne doit plus apparaître
+    # séparé d'un préfixe "mention" (sinon le bug est réintroduit)
+    # Safety : on cherche " TB 45%" (avec espace devant) sans "mention" juste avant
+    assert ", TB " not in profil_line, "mention TB doit toujours avoir préfixe 'mention'"
