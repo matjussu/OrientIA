@@ -8,7 +8,13 @@ from src.rag.reranker import RerankConfig, rerank
 from src.rag.mmr import mmr_select, DEFAULT_LAMBDA
 from src.rag.intent import classify_intent, intent_to_config
 from src.rag.generator import generate
-from src.validator import Validator, ValidatorResult, PolicyResult, apply_policy
+from src.validator import (
+    Validator,
+    ValidatorResult,
+    PolicyResult,
+    apply_policy,
+    append_phase_projet,
+)
 
 
 class OrientIAPipeline:
@@ -87,4 +93,7 @@ class OrientIAPipeline:
             self.last_validation = self.validator.validate(answer_text)
             self.last_policy_result = apply_policy(answer_text, self.last_validation)
             answer_text = self.last_policy_result.final_answer
+            # V4 phase projet minimal : append 3 Q réflexion + redirect CIO
+            # si la question touche un enjeu fort (HEC/PASS/kiné/etc.).
+            answer_text, _ = append_phase_projet(answer_text, question)
         return answer_text, top

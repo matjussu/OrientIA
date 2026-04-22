@@ -63,13 +63,13 @@ GOLDEN_BLOCKING_CASES = [
     pytest.param(
         "Tremplin_to_HEC",
         "Après ton bac+3, tu peux passer le concours Tremplin pour HEC.",
-        "tremplin_not_HEC",
+        "HEC_not_via_Tremplin_or_Passerelle",
         id="Tremplin_attribué_HEC",
     ),
     pytest.param(
         "Passerelle_to_HEC",
         "Le concours Passerelle est une bonne option pour intégrer HEC en 2 ans.",
-        "passerelle_not_HEC",
+        "HEC_not_via_Tremplin_or_Passerelle",
         id="Passerelle_attribuée_HEC",
     ),
     pytest.param(

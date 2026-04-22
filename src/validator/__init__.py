@@ -29,6 +29,8 @@ from src.validator.corpus_check import (
 from src.validator.validator import Validator, ValidatorResult
 from src.validator.policy import Policy, PolicyResult, apply_policy
 from src.validator.layer3 import Layer3Validator, Layer3Warning
+from src.validator.presence import PresenceWarning, check_presence, PRESENCE_RULES
+from src.validator.phase_projet import append_phase_projet, detect_high_stakes_topic
 
 __all__ = [
     "Validator",
@@ -47,4 +49,9 @@ __all__ = [
     "apply_policy",
     "Layer3Validator",
     "Layer3Warning",
+    "PresenceWarning",
+    "check_presence",
+    "PRESENCE_RULES",
+    "append_phase_projet",
+    "detect_high_stakes_topic",
 ]
