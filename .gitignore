@@ -12,7 +12,15 @@ venv/
 *.key
 
 # Data (big files)
-data/raw/
+# Note : pattern `data/raw/*` (et non `data/raw/`) pour permettre les
+# exceptions ci-dessous — limitation git : un dir exclu interdit toute
+# ré-inclusion de fichiers à l'intérieur.
+data/raw/*
+# Exceptions : fixtures statiques nécessaires au workflow GHA D7
+# (run_merge.py les lit, sinon il crash). Petits (~70 KB combinés).
+# Refresh via ordres S2 D2 (ONISEP API live) + D4 (SecNumEdu scraper).
+!data/raw/secnumedu.json
+!data/raw/onisep_formations.json
 data/embeddings/*
 results/raw_responses/
 
