@@ -648,3 +648,314 @@ Dominique recommanderait à un élève seul → on est sur la bonne voie.
 dette mentale. Un seul merge propre (Tier 0 + doc complète) remet le
 projet sur des rails clairs.
 
+---
+
+## ADR-029 — Tier 2 UX livré et mergé (2026-04-19)
+
+**Context** : après Tier 0 mergé sur main (PR #8, 2026-04-19), le plan
+Tier 1-4 (ADR-027) positionnait Tier 2 comme prochain gros chantier.
+Cible : adresser la plainte unanime #1 des 5 user tests (TROP LONG)
+avec pyramide inversée, brièveté 150-300 mots, détection niveau user,
+format par type de question.
+
+**Decision** (PR #9 mergée sur main le 2026-04-19) : livraison de
+5 sous-chantiers modulaires Tier 2.1 → 2.5.
+
+### Sous-chantiers livrés
+
+**Tier 2.1 — Pyramide inversée + brièveté** (`src/prompt/system.py`) :
+ajout du bloc "RÈGLES TIER 2" avec 12 sous-règles T2.1-T2.12. Sections
+obsolètes marquées explicitement (α 300-500 et FORMAT DE SORTIE v3.2
+remplacés, non plus appliqués).
+
+**Tier 2.2 — Détection niveau user** (`src/rag/user_level.py`, nouveau) :
+classifier heuristique regex mappant les questions vers 5 classes
+(terminale / licence / master / reconversion / inconnu). Ordre de
+priorité : reconversion (âge/carrière) > master (M1/M2/bac+4-5) >
+licence (L1-L3/BTS/BUT) > terminale (terminale/lycéen/17 ans) > inconnu.
+La guidance associée est injectée dans le user prompt via
+`build_user_prompt(user_guidance=...)`.
+
+**Tier 2.3 — Format par type de question** (`src/rag/intent.py`
+enrichi) : nouvelle fonction `intent_to_format_guidance` qui mappe
+les 7 intents existants vers des hints de format (comparaison→tableau,
+conceptual→didactique, decouverte→hors corpus, etc.). Réutilise
+le classifier `classify_intent` sans duplication.
+
+**Tier 2.4 — Attention aux pièges** : règle T2.4 impose section
+"⚠ Attention aux pièges" systématique sur choix/comparaison, avec
+exclusion explicite pour questions conceptuelles.
+
+**Tier 2.5 — Pack user test v2** (`results/user_test_v2/`, nouveau) :
+re-génération des 10 mêmes questions post-Tier 2 pour comparer. 5
+profils (Léo 17, Sarah 20, Thomas 23, Catherine 52, Dominique 48
+Psy-EN pro 22 ans) ont fait leur audit.
+
+### Résultats mesurables v1 → v2
+
+| Métrique | v1 (2026-04-17) | v2 (2026-04-19) | Δ |
+|---|---|---|---|
+| Mean word count | 801 | 484 | **-40%** |
+| Median | 828 | 448 | -46% |
+| Max | 1258 | 649 | -48% |
+| TL;DR présent | 0/10 | 10/10 | +100% |
+| Attention aux pièges | 1/10 | 9/10 | +80% |
+| Q4 conceptual sans Plan A/B/C | non | oui | format-par-intent OK |
+| Sexism violations | 0/10 | 0/10 | Tier 0 tient |
+| Admin codes en clair | 0/10 | 0/10 | Tier 0 tient |
+
+### Verdict utilisateurs v2
+
+Primitives validées unanimement : TL;DR, Attention aux pièges, tableau
+comparaison (Q3, Q9), renvoi Psy-EN/CIO/SCUIO, liens Parcoursup. Q8
+PASS 12 de moyenne = gabarit consensus 5/5.
+
+Mais **3/5 profils maintiennent "non recommandable pour mineur en
+autonomie"** à cause de 7+ hallucinations factuelles distinctes
+identifiées en "(connaissance générale)" :
+- ECN confondu avec EDN (réforme R2C 2023)
+- Bac S cité comme bac actuel (supprimé 2021)
+- Distances géographiques inventées (Périgueux-Perpignan 3h30 → réel 5-6h)
+- VAE confondue avec VAP
+- Certificat de Spécialisation présenté comme standalone
+- Coûts écoles privées sous-estimés 20-40%
+- Concours Tremplin/Passerelle attribués à HEC à tort
+- Formations inventées (Licence Humanités-Parcours Orthophonie)
+
+**Tests** : 348 → **426 verts** (+78 Tier 2). Tier 0 intégralement
+préservé.
+
+**Rationale** : -40% word count est un gain structurel mesuré, pas
+un gain cosmétique. Mais les hallucinations factuelles nécessitent
+un pivot architectural (α restricted LLM testé, puis agentic ou
+RAFT — cf ADR-030 et ADR-031).
+
+---
+
+## ADR-030 — α Restricted LLM : preuve empirique du plafond prompt-engineering (2026-04-19)
+
+**Context** : 5 user tests v2 ont identifié ~7 hallucinations
+factuelles distinctes en "(connaissance générale)". Cause racine
+hypothétique : ANTI-CONFESSION (fix Phase 1 Run 7) force le LLM
+à compenser les trous du corpus par des inventions plausibles.
+Hypothèse α : remplacer cette stratégie par une discipline
+d'abstention structurée résout les hallucinations.
+
+**Decision** : implémenter α sur branche `feature/alpha-restricted-llm`
+avec protocole baseline + regression (expert recommendation 2026-04-19).
+Ajout de 4 règles :
+- α.1 Liste blanche explicite des connaissances stables autorisées
+  (cadre LMD, calendrier Parcoursup, rôles Psy-EN/SCUIO/CIO, bac et
+  mentions, labels officiels, EDN remplace ECN depuis 2023, VAE/VAP
+  distincts, voies d'accès HEC)
+- α.2 Abstention structurée pour tout hors liste blanche et hors corpus
+  (distances, coûts, noms formations, taux, calendriers spécifiques)
+- α.3 Override ciblé d'ANTI-CONFESSION pour questions entièrement
+  hors-scope (aveu d'ignorance autorisé et souhaité)
+- α.4 Renvoi explicite autorisé (modifie "ne redirige jamais")
+
+**Résultats empiriques v2 → v2-α (pack re-généré)** :
+
+| Hallucination | v2 | v2-α | Delta |
+|---|---|---|---|
+| ECN comme nom actuel | 1/10 | 1/10 | = |
+| Bac S cité comme actuel | 3/10 | 3/10 | = |
+| Licence Humanités Ortho inventée | 1/10 | 1/10 | = |
+| Périgueux 3h30 | 1/10 | 0/10 | ↓ |
+| Pattern "Je n'ai pas de source vérifiée" | 0/10 | 0/10 | = |
+
+Word count : 484 → 474 (neutre). Tier 0 + Tier 2 préservés.
+
+**Verdict** : α a **préservé** l'existant et corrigé 1 cas mineur
+(Périgueux), mais **n'a PAS fait bouger** Mistral medium sur les
+hallucinations principales. Le LLM **n'adopte pas** le pattern de
+refus explicite "Je n'ai pas de source vérifiée" (0/10 occurrences).
+
+**Rationale** : **preuve empirique que le prompt-engineering seul
+n'est pas suffisant pour résoudre les hallucinations factuelles sur
+Mistral medium**. C'est une limite architecturale du modèle
+sous-jacent, pas un défaut de prompt. Cette donnée est importante
+pour le paper INRIA : elle justifie empiriquement le pivot vers
+une approche architecturale (Axe 2 agentic ou Axe 3 RAFT).
+
+**Status** : α **mergeable comme filet non-régressif** (0 régression
+Tier 0/Tier 2, 1 petite victoire). PR #10 pas encore ouverte, décision
+reportée — le gain marginal ne justifie pas à ce stade l'empilement
+dans main. Si Axe 2 agentic est livré sans α, α peut rester en branche.
+
+**Alternatives rejetées** :
+- Itérer α 2-3 fois avec prompts encore plus agressifs → pattern
+  "empile des fixes" que l'expert a identifié comme anti-pattern.
+  Plafond Mistral medium probablement indépassable par prompt.
+
+---
+
+## ADR-031 — Pivot Axe 2 agentic remplace RAFT dans sprint 2 semaines (2026-04-19)
+
+**Context** : plan initial 2 semaines α + β (RAFT) selon expert
+recommendation. Mais critère Matteo élargi "outil qui bat ChatGPT
+mesurablement ET aide les jeunes pour études + monde pro" change
+la priorisation. Thomas (M1 fintech) et Sarah (L2 réorientation)
+sont **dans la cible**, pas hors-cible.
+
+**Decision** : remplacer "α + RAFT 2 semaines" par "α + Axe 2 agentic
+prototype 2 semaines". RAFT reste en réserve S3+ (optionnel si
+agentic insuffisant).
+
+### Pourquoi agentic plutôt que RAFT sur tes critères
+
+| Critique user v2 | RAFT | Agentic |
+|---|---|---|
+| Phase exploratoire manquante (Dominique déontologique) | Non | Oui (ProfileClarifier A2) |
+| "Il me connaît pas et il répond" (Léo) | Non | Oui |
+| "Pose une question avant" (Sarah) | Non | Oui |
+| "Formation pas métier" (Thomas, critère élargi) | Non | Oui (tools ROME/InserJeunes) |
+| "Coûts cumulés" (Catherine) | Non | Oui (tool dédié trivial) |
+| Hallucinations factuelles | Oui (gate R7 à 30-40% échec) | Partiel (Validator A6) |
+
+Agentic adresse **5/6 verdicts users**. RAFT adresse surtout le 6e.
+
+### Risques nommés
+
+1. **Dépendance Axe 1 étendu** : sans data pro (ROME, InserJeunes, APEC),
+   les tools get_debouches/get_insertion_stats sont vides = agents creux.
+   **D3+D4+D5 prérequis dur en S1** (plus "opportuniste").
+2. **Souveraineté partielle** : orchestrateur Claude Sonnet → Mistral
+   Large (cf ADR-032 POC validé).
+3. **Latence multi-call** : 3-5 tools par question = 10-15s. Acceptable
+   pour orientation (pas chat temps réel).
+4. **Debug plus complexe** : fallback single-shot pipeline si agent échoue.
+
+### Ce qui se conserve
+
+**Tier 2 n'est PAS jeté.** Le Composer agent hérite du prompt v3.2 +
+Tier 2 (TL;DR, Attention aux pièges, format par intent). Les gains
+mesurés -40% longueur sont préservés dans le Composer.
+
+**Alternatives rejetées** :
+- RAFT seul (plan initial) : gate R7 30-40% risque d'échec, 2 semaines
+  dataset curation, narrative forte mais coût élevé si échec.
+- α seul : α a échoué empiriquement (ADR-030), insuffisant.
+- α + RAFT + agentic parallèle : trop de fronts ouverts, palimpseste.
+
+---
+
+## ADR-032 — Mistral Large orchestrator validé (POC H, 2026-04-19)
+
+**Context** : Axe 2 agentic exige un orchestrateur tool-use. STRATEGIE
+§5 Axe 2 prévoyait Phase 1 Claude Sonnet pour prototypage rapide,
+Phase 2 Mistral Large pour souveraineté. Matteo a refusé Claude
+Sonnet même en Phase 1 (ADR-001 Mistral souveraineté).
+
+**Decision** : Mistral Large (`mistral-large-latest`) comme orchestrateur
+direct. POC H lancé 2026-04-19 pour valider empiriquement avant
+investissement S2.
+
+### Résultats POC H (5 questions représentatives)
+
+| Question | Tool calls | Iterations | Latence | Succès |
+|---|---|---|---|---|
+| ranking_cyber | 2 | 2 | 15.0s | ✓ |
+| realisme_sante | 1 | 2 | 10.9s | ✓ |
+| debouches | 3 | 2 | 18.5s | ✓ |
+| comparaison | 2 | 2 | 20.6s | ✓ |
+| conceptuelle | 0 | 1 | 19.7s | ✓ |
+
+- **5/5 succès** (schémas respectés, params valides, pas d'hallucination param)
+- **Latence moyenne 16.9s** (légèrement au-dessus du gate arbitraire 15s)
+- **Conceptuelle Q5 sans tool call** → 1 iteration, Mistral distingue
+  correctement quand les tools ne sont pas nécessaires
+- Réponses cohérentes, intégration propre des tool results
+
+**Verdict** : gate technique **PASS**. Latence 17s acceptable pour UX
+orientation (pas chat temps réel). Optimisations futures possibles
+(parallélisation tool calls, cache LRU, Composer hors loop).
+
+**Decision finale** : Mistral Large orchestrator **validé pour Axe 2
+S2**. Narrative souveraineté française préservée. Composer agent final
+reste Mistral Medium.
+
+**Alternatives de secours si POC échoue** (non utilisées) :
+- Mistral Medium + ReAct from-scratch (plus fragile, debuggable)
+- Claude Sonnet temporaire + Composer Mistral (perd partie narrative)
+
+Fichiers : `experiments/poc_mistral_toolcall.py`,
+`experiments/poc_mistral_toolcall_results.json`.
+
+---
+
+## ADR-033 — Task B fixes UX indépendants LLM (2026-04-19)
+
+**Context** : 5 user tests v2 ont identifié 3 défauts UX qui ne sont
+pas architecturaux mais trivialement corrigeables côté code/prompt.
+
+**Decisions** (3 fixes sur branche `feature/axe2-agentic-prep`) :
+
+1. **Masquage codes ROME** (`src/rag/generator.py:_debouches_line`) :
+   les codes ROME (M1812, M1819, J1102) sont retirés du texte exposé
+   au LLM. Rationale identique au Tier 0 masquage cod_aff_form/RNCP/
+   FOR.xxx : Léo et Dominique ont signalé "artefacts techniques sortis
+   du RAG qui n'ont rien à faire devant un lycéen". Le code ROME reste
+   dans le dict fiche pour le retrieval interne.
+
+2. **Seuils de significance trends** (`src/rag/generator.py:_trend_suffix`) :
+   ajout de seuils minimums (5pp taux, 15% vœux, 10 places). Les
+   changements en-deçà sont omis. 5 testeurs v2 ont unanimement jugé
+   les trends "décoratives ou anxiogènes" sans seuil d'actionabilité.
+   On coupe le bruit à la source data plutôt qu'attendre que le LLM
+   filtre (il ne filtre pas).
+
+3. **Alertes critiques dans TL;DR** (`src/prompt/system.py` T2.2
+   renforcée) : règle "Si la question porte sur une formation avec
+   alerte structurante (mineure éliminatoire PASS, numerus clausus,
+   coût privé >8k€, filière <10%, 10 ans d'études, VAP quasi-
+   impossible), la mentionner explicitement dans les 3 lignes TL;DR".
+   Catherine : "Hugo lira le TL;DR puis fermera — l'alerte doit être là".
+
+**Rationale** : ces fixes adressent 3 symptômes mais ne touchent
+pas à la cause racine (hallucinations factuelles, cf ADR-030). Ils
+sont additifs et non-régressifs, mergeables sans risque.
+
+**Tests** : 426 → 426 verts (pas de régression, fixes affectent
+comportement LLM mais pas assertions tests).
+
+---
+
+## ADR-034 — D3a ROME 4.0 référentiel offline (partie 1/2) (2026-04-19)
+
+**Context** : STRATEGIE §5 Axe 1 D3 prévoit intégration ROME 4.0 France
+Travail API live (salaire médian + tension marché). Le zip `rome_4_0.zip`
+(ROME 4.0 v460) était déjà téléchargé dans `data/raw/` (avril 2026
+release, 30 CSV, ~1584 codes). Permet d'exploiter partiellement sans
+signup API.
+
+**Decision** : implémenter la partie offline (D3a) immédiatement.
+Partie API live (D3b, salaire + tension) reportée à quand signup
+France Travail aura lieu.
+
+### D3a livré (`src/collect/rome.py` enrichi)
+
+Nouvelles fonctions mémoïsées `lru_cache` :
+- `get_rome_info(code_rome)` : libellé, transition_eco/num/demo,
+  emploi_reglemente, emploi_cadre, code_rome_parent
+- `list_all_rome_codes()` : ~1584 codes v460
+- `is_emploi_cadre(code)`, `is_transition_numerique(code)` : helpers bool-safe
+
+Compatible avec `RELEVANT_ROME_CODES` hardcodés existants (les 4 tests
+initiaux de `test_rome.py` passent toujours).
+
+### Utilité pour Axe 2
+
+Le tool `get_debouches(code_rome)` pourra démarrer en S2 avec libellé
++ flags cadre/numérique/transition. Salaire + tension marché viendront
+en D3b post-signup France Travail.
+
+**Tests** : 426 → 430 verts (+4 tests rome offline).
+
+**Alternatives rejetées** :
+- Attendre signup France Travail pour tout faire en une fois → bloque
+  Axe 2 S2 sur un paramètre externe. D3a est utile seul.
+- Scraper les données salaire depuis fiches ROME web → violation ToS,
+  effort élevé, qualité incertaine.
+
+---
