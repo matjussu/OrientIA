@@ -149,6 +149,100 @@ RULES: list[dict] = [
             "Orthophonie passe par le concours CEO après bac (5 ans)."
         ),
     },
+    # ========================================================================
+    # RÈGLES V2 — identifiées par le panel humain ground truth 2026-04-22
+    # (5 profils × 3 Q du pack Gate J+6, 4 erreurs disqualifiantes ADR-036)
+    # ========================================================================
+    {
+        # V2.1 — HEC se recrute via son propre concours AST (Admission sur Titres),
+        # pas via Tremplin (→ Audencia/Kedge/SKEMA/EM Normandie/etc.) ni Passerelle
+        # (→ ESC Clermont/ESSCA/IESEG/EM Strasbourg). Source : site HEC Paris +
+        # Psy-EN 22 ans exp. Cf ADR-036.
+        "id": "HEC_not_via_Tremplin_or_Passerelle",
+        "category": "concours_whitelist",
+        "severity": Severity.BLOCKING,
+        "pattern": (
+            r"(?:\bHEC\b[\s\S]{0,250}?\b(?:Tremplin|Passerelle)\b"
+            r"|\b(?:Tremplin|Passerelle)\b[\s\S]{0,250}?\bHEC\b)"
+        ),
+        "message": (
+            "HEC Paris recrute via son concours propre AST (Admission sur Titres), "
+            "PAS via Tremplin (→ Audencia/Kedge/SKEMA) ni Passerelle (→ ESC Clermont/ESSCA/IESEG)."
+        ),
+        "except_context": (
+            r"(?:pas\s+via\s+(?:Tremplin|Passerelle)"
+            r"|(?:non|ni)\s+(?:par|via)\s+(?:Tremplin|Passerelle)"
+            r"|AST\s*\(?Admission\s+sur\s+Titres"
+            r"|concours\s+propre)"
+        ),
+    },
+    {
+        # V2.2 — En PASS, le redoublement est INTERDIT depuis l'arrêté du
+        # 4 novembre 2019 (réforme PACES → PASS/L.AS). Une seule chance. Si
+        # 60 ECTS validés sans passage MMOP → bascule L.AS ou L2 sur équivalence.
+        # Dire "redoublement rare" est trompeur. Cf ADR-036.
+        "id": "PASS_no_redoublement",
+        "category": "voies_impossibles",
+        "severity": Severity.BLOCKING,
+        "pattern": (
+            r"(?:redoublement\s+(?:en\s+)?PASS[\s\S]{0,40}?\brare\b"
+            r"|\bPASS\b[\s\S]{0,40}?redoublement\s+(?:est|reste)?\s*rare"
+            r"|redoubler\s+(?:en\s+|la\s+)?(?:PASS|première\s+année\s+de\s+PASS)"
+            r"|(?:deuxième|seconde)\s+chance\s+(?:en\s+)?PASS"
+            r"|PASS[\s\S]{0,40}?(?:deuxième|seconde)\s+chance)"
+        ),
+        "message": (
+            "Le redoublement en PASS est INTERDIT (arrêté 4 nov 2019, réforme PACES → PASS/L.AS). "
+            "Une seule chance. Échec → bascule L.AS ou L2 sur équivalence."
+        ),
+        "except_context": (
+            r"(?:interdit|une\s+seule\s+chance|arrêté\s+(?:du\s+)?\d|"
+            r"sans\s+seconde\s+tentative|pas\s+autorisé)"
+        ),
+    },
+    {
+        # V2.3 — Séries bac A/B/C/D supprimées en 1995 (réforme Chevènement).
+        # Séries ES/S/L supprimées en 2021 (réforme Blanquer, bac S déjà couvert
+        # par `bac_S_abolished` V1). Source : réforme Chevènement 1992-1995.
+        # Root cause du bug "bac B" dans nos réponses : confusion LLM entre
+        # "mention Bien" (B 42%) et "série B" — fixé aussi côté data cleanup
+        # dans src/rag/generator.py:_profil_line (cf commit dédié).
+        "id": "bac_series_ABCD_abolished",
+        "category": "terminology_date",
+        "severity": Severity.BLOCKING,
+        "pattern": r"\b(?:bac|série|filière|terminale)s?\s+[ABCD]\b",
+        "message": (
+            "Les séries bac A/B/C/D ont été supprimées en 1995 (réforme Chevènement). "
+            "Aujourd'hui : bac général avec spécialités, bac techno, bac pro."
+        ),
+        "except_context": (
+            r"(?:ancien|avant\s+199[0-5]|jusqu'?en\s+199[0-4]|historique|"
+            r"réforme\s+Chevènement|ancienne?\s+série)"
+        ),
+    },
+    {
+        # V2.4 — DE kinésithérapie s'obtient en IFMK (Institut de Formation en
+        # Masso-Kinésithérapie), pas via licence universitaire directe. Accès
+        # IFMK : PASS/L.AS/STAPS/licence scientifique VALIDÉE + concours interne
+        # très sélectif (~3% d'accès national). Cf ADR-036 + site ONISEP/IFMK.
+        "id": "kine_via_IFMK_not_licence",
+        "category": "voies_impossibles",
+        "severity": Severity.BLOCKING,
+        "pattern": (
+            r"(?:"
+            r"[Ll]icence[^.\n]{0,60}\(\s*option\s+[Kk]in[eé]sith[eé]rapie"
+            r"|STAPS[^.\n]{0,60}\(\s*parcours\s+[Kk]in[eé]sith[eé]rapie"
+            r"|[Ll]icence[^.\n]{0,60}(?:menant|direct)[^.\n]{0,40}DE[^.\n]{0,20}kin[eé]"
+            r"|STAPS\s+parcours\s+[Kk]in[eé]sith[eé]rapie"
+            r")"
+        ),
+        "message": (
+            "Le DE de kinésithérapeute s'obtient via un IFMK (Institut de Formation en "
+            "Masso-Kinésithérapie), pas via une licence universitaire directe. Accès IFMK "
+            "sur concours très sélectif après PASS/L.AS/STAPS/licence scientifique validée."
+        ),
+        "except_context": r"(?:via\s+(?:un\s+)?IFMK|concours\s+IFMK|DE\s+via\s+IFMK)",
+    },
 ]
 
 

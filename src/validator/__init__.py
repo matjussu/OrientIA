@@ -28,6 +28,7 @@ from src.validator.corpus_check import (
 )
 from src.validator.validator import Validator, ValidatorResult
 from src.validator.policy import Policy, PolicyResult, apply_policy
+from src.validator.layer3 import Layer3Validator, Layer3Warning
 
 __all__ = [
     "Validator",
@@ -44,4 +45,6 @@ __all__ = [
     "Policy",
     "PolicyResult",
     "apply_policy",
+    "Layer3Validator",
+    "Layer3Warning",
 ]

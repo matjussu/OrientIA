@@ -21,6 +21,7 @@ from enum import Enum
 
 from src.validator.rules import Severity, Violation
 from src.validator.corpus_check import CorpusWarning
+from src.validator.layer3 import Layer3Warning
 from src.validator.validator import ValidatorResult
 
 
@@ -41,6 +42,7 @@ class PolicyResult:
 def _format_warn_footer(
     violations: list[Violation],
     corpus_warnings: list[CorpusWarning],
+    layer3_warnings: list[Layer3Warning] | None = None,
 ) -> str:
     """Footer avertissement pour la policy β Warn (non-bloquantes)."""
     lines = ["", "---", "⚠️ **Points à vérifier dans ma réponse** :"]
@@ -51,6 +53,9 @@ def _format_warn_footer(
             f"- Affirmation non vérifiable dans notre corpus : *{w.claim}*. "
             f"Plus proche dans la base : {w.closest_match}."
         )
+    if layer3_warnings:
+        for lw in layer3_warnings:
+            lines.append(f"- *{lw.claim}* — {lw.reason}")
     lines.append("")
     lines.append(
         "Ces points sont des patterns que nous surveillons. Vérifie "
@@ -119,6 +124,7 @@ def apply_policy(
     has_blocking = any(v.severity == Severity.BLOCKING for v in validation.rule_violations)
     has_corpus = len(validation.corpus_warnings) > 0
     has_warn = any(v.severity == Severity.WARNING for v in validation.rule_violations)
+    has_layer3 = len(validation.layer3_warnings) > 0
 
     if has_blocking or has_corpus:
         refusal, categories = _format_block_refusal(
@@ -133,14 +139,21 @@ def apply_policy(
             blocked_categories=categories,
         )
 
-    if has_warn:
+    if has_warn or has_layer3:
         footer = _format_warn_footer(
-            validation.rule_violations, validation.corpus_warnings
+            validation.rule_violations,
+            validation.corpus_warnings,
+            validation.layer3_warnings,
         )
+        warn_messages = [
+            v.message for v in validation.rule_violations
+            if v.severity == Severity.WARNING
+        ]
+        warn_messages.extend(f"[layer3] {lw.claim}" for lw in validation.layer3_warnings)
         return PolicyResult(
             final_answer=answer.rstrip() + "\n" + footer,
             policy=Policy.WARN,
-            warnings=[v.message for v in validation.rule_violations if v.severity == Severity.WARNING],
+            warnings=warn_messages,
         )
 
     return PolicyResult(
