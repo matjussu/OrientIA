@@ -1,0 +1,223 @@
+# Monthly Data Refresh — Ordre C (STRATEGIE_VISION §5 Axe 1 D7)
+#
+# Wrappe les scripts `scripts/download_*.sh` existants + `src.collect.run_merge`
+# pour rafraîchir les sources data stables chaque 1er du mois (03:00 UTC).
+#
+# Scope v1 (voir ADR-034 + ordre 2026-04-22-0902-claudette-data-d7-cron-refresh) :
+#   - Parcoursup historique (2023 + 2024) via script existant
+#   - Parcoursup current (2025) via curl inline (cohérent avec pattern du script)
+#   - InserSup DEPP (~570 MB) via script existant
+#   - Rebuild `data/processed/formations.json` via `python -m src.collect.run_merge`
+#   - PR auto si changement, issue auto si fail
+#
+# Hors scope v1 (ordres S2 séparés) :
+#   - ONISEP API live (D2)
+#   - ROME API France Travail OAuth (D3b — salaire + tension marché)
+#   - Labels CTI / CGE / Grade Master (D4)
+#   - Rebuild FAISS embeddings (coût Mistral ~$5-10, manuel via workflow_dispatch)
+#
+# Secrets requis :
+#   - MISTRAL_API_KEY : uniquement pour rebuild FAISS manuel (workflow_dispatch).
+#     Pas nécessaire pour le cron mensuel qui ne rebuild pas FAISS.
+
+name: Monthly Data Refresh
+
+on:
+  schedule:
+    # 03:00 UTC le 1er de chaque mois (évite pic trafic + traînée TZ EU)
+    - cron: '0 3 1 * *'
+  workflow_dispatch:
+    inputs:
+      force_rebuild_faiss:
+        description: 'Rebuild FAISS embeddings (coût Mistral ~$5-10)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.lock
+
+      - name: Count fiches before refresh
+        id: before
+        run: |
+          if [ -f data/processed/formations.json ]; then
+            count=$(python -c "import json; print(len(json.load(open('data/processed/formations.json'))))")
+          else
+            count=0
+          fi
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          echo "Fiches avant refresh : $count"
+
+      - name: Force-refresh Parcoursup historique (2023 + 2024)
+        run: |
+          rm -f data/raw/parcoursup_2023.csv data/raw/parcoursup_2024.csv
+          bash scripts/download_parcoursup_history.sh
+
+      - name: Force-refresh Parcoursup current year (2025)
+        run: |
+          mkdir -p data/raw
+          rm -f data/raw/parcoursup_2025.csv
+          # URL cohérente avec download_parcoursup_history.sh (dataset fr-esr-parcoursup_YYYY)
+          curl -sSL --fail \
+            -o data/raw/parcoursup_2025.csv \
+            "https://data.enseignementsup-recherche.gouv.fr/api/explore/v2.1/catalog/datasets/fr-esr-parcoursup_2025/exports/csv?delimiter=%3B"
+          size=$(wc -c < data/raw/parcoursup_2025.csv)
+          echo "Parcoursup 2025 téléchargé : $size bytes"
+
+      - name: Force-refresh InserSup DEPP (~570 MB)
+        run: |
+          rm -f data/raw/insersup.csv
+          bash scripts/download_insersup.sh
+
+      - name: ROME 4.0 zip refresh (best-effort — déféré v2)
+        continue-on-error: true
+        run: |
+          # TODO v2 : confirmer URL officielle France Travail ROME 4.0 ZIP
+          # (dataset data.gouv.fr "repertoire-operationnel-des-metiers...").
+          # En attendant, on conserve le zip v460 déjà présent dans data/raw/.
+          # L'API live France Travail (salaire + tension) est en ordre S2 séparé (D3b).
+          if [ -f data/raw/rome_4_0.zip ]; then
+            echo "ROME zip existant préservé : $(wc -c < data/raw/rome_4_0.zip) bytes"
+          else
+            echo "::warning::ROME zip absent — à refresh manuellement v2"
+          fi
+
+      - name: Rebuild formations.json via run_merge
+        run: python -m src.collect.run_merge
+
+      - name: Count fiches after refresh + drift detection
+        id: after
+        run: |
+          after=$(python -c "import json; print(len(json.load(open('data/processed/formations.json'))))")
+          before="${{ steps.before.outputs.count }}"
+          echo "count=$after" >> "$GITHUB_OUTPUT"
+          echo "Fiches après refresh : $after (avant : $before)"
+          if [ "$before" -gt 0 ]; then
+            drift=$(python -c "print(round(abs($after - $before) / max($before, 1) * 100, 2))")
+            echo "drift=$drift" >> "$GITHUB_OUTPUT"
+            echo "Drift : ${drift}%"
+            is_high=$(python -c "print(1 if float('$drift') > 10.0 else 0)")
+            if [ "$is_high" = "1" ]; then
+              echo "::warning::Drift important détecté (${drift}% > seuil 10%) — investigation recommandée avant merge"
+            fi
+          else
+            echo "drift=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Rebuild FAISS embeddings (sur workflow_dispatch uniquement)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.force_rebuild_faiss == 'true'
+        env:
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+        run: |
+          if [ -z "$MISTRAL_API_KEY" ]; then
+            echo "::error::Secret MISTRAL_API_KEY manquant — rebuild FAISS impossible"
+            exit 1
+          fi
+          python -m src.rag.embeddings
+
+      - name: Detect data changes
+        id: diff
+        run: |
+          if git diff --quiet -- data/processed/formations.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Aucun changement dans formations.json"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            stats=$(git diff --numstat -- data/processed/formations.json | awk '{printf "+%s / -%s lignes", $1, $2}')
+            echo "stats=$stats" >> "$GITHUB_OUTPUT"
+            echo "Changement détecté : $stats"
+          fi
+
+      - name: Open Pull Request with refresh
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: data/auto-refresh-${{ github.run_number }}
+          title: "data(refresh): monthly auto-refresh ${{ github.run_number }}"
+          body: |
+            ## Refresh mensuel automatique
+
+            Généré par `.github/workflows/data-refresh-monthly.yml`
+            (trigger : **${{ github.event_name }}**, run #${{ github.run_number }}).
+
+            ### Drift
+            - **Fiches avant** : ${{ steps.before.outputs.count }}
+            - **Fiches après** : ${{ steps.after.outputs.count }}
+            - **Drift** : ${{ steps.after.outputs.drift }}%
+            - **Diff** : ${{ steps.diff.outputs.stats }}
+
+            ### Sources actualisées
+            - `data/raw/parcoursup_2023.csv`, `parcoursup_2024.csv`, `parcoursup_2025.csv`
+            - `data/raw/insersup.csv`
+            - `data/raw/rome_4_0.zip` : préservé (refresh déféré v2, cf ordre S2 D3b)
+
+            ### Check-list avant merge
+
+            - [ ] Drift **< 10%** OU drift élevé justifié par événement connu (nouvelle session Parcoursup, etc.)
+            - [ ] **Spot-check manuel 3-5 fiches** vs source officielle (règle ADR-026 non-négociable)
+            - [ ] Si `trends` ou `insertion` ont bougé > 10% sur certaines fiches : investigation ciblée
+            - [ ] Post-merge : relancer `python -m src.rag.embeddings` en local OU via workflow_dispatch avec `force_rebuild_faiss=true` (coût ~$5-10 Mistral)
+
+            ---
+
+            *Workflow Ordre C — STRATEGIE_VISION §5 Axe 1 D7.*
+          commit-message: |
+            data(refresh): monthly auto-refresh run ${{ github.run_number }}
+
+            Drift ${{ steps.after.outputs.drift }}%
+            Fiches ${{ steps.before.outputs.count }} → ${{ steps.after.outputs.count }}
+          delete-branch: true
+          labels: |
+            data-refresh
+            auto
+
+      - name: Open issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `Monthly data refresh FAILED (run #${context.runNumber})`;
+            const body = [
+              `Le workflow **data-refresh-monthly** a échoué.`,
+              ``,
+              `- **Run** : ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              `- **Commit** : ${context.sha}`,
+              `- **Trigger** : ${context.eventName}`,
+              ``,
+              `### Actions`,
+              ``,
+              `- [ ] Inspecter les logs du run (lien ci-dessus)`,
+              `- [ ] Vérifier URLs sources (data.enseignementsup-recherche.gouv.fr, data.gouv.fr)`,
+              `- [ ] Si erreur transitoire (5xx, timeout) : relancer via workflow_dispatch`,
+              `- [ ] Si erreur persistante : fixer le workflow ou les scripts download_*.sh`,
+              ``,
+              `*Auto-créé par \`.github/workflows/data-refresh-monthly.yml\` (Ordre C).*`,
+            ].join('\n');
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['data-refresh', 'bug', 'ci']
+            });
