@@ -1,0 +1,246 @@
+[
+  {
+    "question_num": 1,
+    "category": "realisme",
+    "persona_key": "leo_17",
+    "persona_label": "Léo, 17 ans (lycéen terminale)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "L'outil répète 4 fois la même phrase bizarre sur 'HEC Paris passe par son propre concours AST... Tremplin → Audencia/Kedge...' en plein milieu du texte, ça bug grave",
+      "Il dit '14+ de moyenne requise' pour la prépa ECG alors que j'ai 11, du coup je comprends pas si c'est pour moi ou pas",
+      "Il parle de 'BBA INSEEC Paris 10k€/an' mais après il dit 'IAE gratuit' sans expliquer vraiment la différence entre les deux, je sais pas lequel choisir"
+    ],
+    "commentaire": "Franchement ça commence bien avec le TL;DR mais après y'a un bug de ouf qui répète 4 fois la même phrase incompréhensible, j'ai cru que mon tel avait planté. Et au final je sais toujours pas si HEC c'est mort pour moi ou si je peux espérer plus tard, ils me disent 'voie progressive' mais sans me dire mes vraies chances. Trop flou, je vais demander à mon pote en prépa.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"L'outil répète 4 fois la même phrase bizarre sur 'HEC Paris passe par son propre concours AST... Tremplin → Audencia/Kedge...' en plein milieu du texte, ça bug grave\",\n    \"Il dit '14+ de moyenne requise' pour la prépa ECG alors que j'ai 11, du coup je comprends pas si c'est pour moi ou pas\",\n    \"Il parle de 'BBA INSEEC Paris 10k€/an' mais après il dit 'IAE gratuit' sans expliquer vraiment la différence entre les deux, je sais pas lequel ch",
+    "latency_s": 9.7,
+    "policy_v4": "modify"
+  },
+  {
+    "question_num": 1,
+    "category": "realisme",
+    "persona_key": "ines_20",
+    "persona_label": "Inès, 20 ans (L2 socio en réorientation)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Le TL;DR est complètement buggé avec des phrases qui se répètent en boucle ('HEC Paris passe par son propre concours AST... Tremplin → Audencia/Kedge...' x4), ça fait amateur",
+      "BBA INSEEC à 10k€/an alors que leurs tarifs tournent plutôt autour de 8-9k selon leur site, et le lien Parcoursup est un placeholder 'XXXXX' complètement inutile",
+      "Dire '10% de chances à bac+3' via Passerelle pour HEC est faux : HEC ne passe PAS par Passerelle, justement ce que l'outil prétend corriger mais rate ensuite",
+      "Prépa ECG = '16+ de moyenne requise' est trop généraliste, des prépas ECG en province prennent à partir de 13-14 selon les lycées"
+    ],
+    "commentaire": "Le bug technique du TL;DR me fait perdre confiance direct. Ensuite l'outil se contredit : il corrige 4 fois la même erreur sur HEC/Passerelle en bas de page, mais glisse quand même 'concours Passerelle 1' dans le Plan A. Pour une question aussi binaire ('puis-je intégrer HEC avec 11?'), la réponse honnête c'est 'non en direct, oui théoriquement via AST mais ultra difficile' — pas besoin de Plan A/B bancals avec des infos fausses ou approximatives.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"Le TL;DR est complètement buggé avec des phrases qui se répètent en boucle ('HEC Paris passe par son propre concours AST... Tremplin → Audencia/Kedge...' x4), ça fait amateur\",\n    \"BBA INSEEC à 10k€/an alors que leurs tarifs tournent plutôt autour de 8-9k selon leur site, et le lien Parcoursup est un placeholder 'XXXXX' complètement inutile\",\n    \"Dire '10% de chances à bac+3' via Passerelle pour HEC est faux : HEC ne passe PAS par Passerel",
+    "latency_s": 12.5,
+    "policy_v4": "modify"
+  },
+  {
+    "question_num": 1,
+    "category": "realisme",
+    "persona_key": "theo_23",
+    "persona_label": "Théo, 23 ans (M1 IAE)",
+    "score": 4,
+    "erreurs_factuelles": [
+      "BBA INSEEC ne fait pas partie du concours Passerelle, l'outil confond voie d'admission et école cible",
+      "Licence IAE Toulouse vers HEC via 'Passerelle 1' : Passerelle ne concerne que les écoles du réseau (ESC Clermont/ESSCA/IESEG/EM Strasbourg), pas HEC qui recrute sur concours AST propre"
+    ],
+    "commentaire": "Bon cadrage général sur AST HEC ≠ Tremplin/Passerelle (rare qu'un outil le maîtrise), mais deux confusions typiques sur les voies d'admission parallèle qui trahissent une connaissance superficielle des concours. Le plan progressif BBA → AST est pertinent pour le profil, mais les imprécisions techniques me feraient douter de l'accompagnement sur les démarches concrètes. Utilisable si on corrige soi-même, pas recommandable seul·e pour un lycéen.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 4,\n  \"erreurs_factuelles\": [\n    \"BBA INSEEC ne fait pas partie du concours Passerelle, l'outil confond voie d'admission et école cible\",\n    \"Licence IAE Toulouse vers HEC via 'Passerelle 1' : Passerelle ne concerne que les écoles du réseau (ESC Clermont/ESSCA/IESEG/EM Strasbourg), pas HEC qui recrute sur concours AST propre\"\n  ],\n  \"commentaire\": \"Bon cadrage général sur AST HEC ≠ Tremplin/Passerelle (rare qu'un outil le maîtrise), mais deux confusions typiques sur les voi",
+    "latency_s": 7.5,
+    "policy_v4": "modify"
+  },
+  {
+    "question_num": 1,
+    "category": "realisme",
+    "persona_key": "catherine_52",
+    "persona_label": "Catherine, 52 ans (parent, DRH ingénieure)",
+    "score": 4,
+    "erreurs_factuelles": [
+      "Le BBA INSEEC est annoncé à 10k€/an : c'est faux, c'est plutôt 8 à 9k€ la première année mais ça monte jusqu'à 11-12k€/an en fin de cursus, il faut être précis sur les coûts",
+      "« Admission HEC à bac+3 via Passerelle 1 avec 10% de chances » : inexact, HEC ne passe PAS par Passerelle, l'outil le dit dans le TL;DR puis se contredit dans la fiche IAE Toulouse"
+    ],
+    "commentaire": "Je laisse Hugo lire ça seul, l'essentiel est juste : prépa hors de portée avec 11, BBA ou licence + AST est la vraie voie réaliste vers HEC. Deux bémols : le prix INSEEC est approximatif (je vérifie toujours les frais réels avant Parcoursup), et il y a une contradiction gênante sur Passerelle dans la fiche IAE alors que le TL;DR dit le contraire. Mais globalement, c'est un bon recadrage sans faux espoirs.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 4,\n  \"erreurs_factuelles\": [\n    \"Le BBA INSEEC est annoncé à 10k€/an : c'est faux, c'est plutôt 8 à 9k€ la première année mais ça monte jusqu'à 11-12k€/an en fin de cursus, il faut être précis sur les coûts\",\n    \"« Admission HEC à bac+3 via Passerelle 1 avec 10% de chances » : inexact, HEC ne passe PAS par Passerelle, l'outil le dit dans le TL;DR puis se contredit dans la fiche IAE Toulouse\"\n  ],\n  \"commentaire\": \"Je laisse Hugo lire ça seul, l'essentiel est juste : prépa ",
+    "latency_s": 9.5,
+    "policy_v4": "modify"
+  },
+  {
+    "question_num": 1,
+    "category": "realisme",
+    "persona_key": "psy_en_54",
+    "persona_label": "Isabelle Rousseau, 54 ans (Psy-EN 22 ans d'expérience)",
+    "score": 4,
+    "erreurs_factuelles": [
+      "Répétition bug technique « HEC Paris passe par son propre concours AST » x4 dans le TL;DR — problème d'affichage qui brouille la lecture, mais l'info factuelle est juste",
+      "« 10% de chances à bac+3 via Passerelle 1 » : chiffre non sourcé et Passerelle 1 ne donne PAS accès à HEC (l'outil le dit bien ailleurs, mais cette phrase crée une confusion)",
+      "« 16+ de moyenne requise » pour prépa ECG : c'est vrai pour les meilleures prépas parisiennes, mais des prépas publiques en région acceptent à 14 — manque de nuance géographique"
+    ],
+    "commentaire": "Je valide l'approche méthodologique : tu poses d'abord la réalité (11 de moyenne = HEC en direct quasi impossible), tu proposes une voie progressive crédible (BBA/IAE puis AST), tu renvoies au Psy-EN/CIO, et tu invites l'élève à creuser son projet au-delà de la marque. Le bug d'affichage dans le TL;DR dessert la lisibilité, mais le fond est déontologiquement aligné. Je recommanderais cet outil aux élèves matures en autonomie, avec relance CIO systématique pour affiner le calendrier Parcoursup.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 4,\n  \"erreurs_factuelles\": [\n    \"Répétition bug technique « HEC Paris passe par son propre concours AST » x4 dans le TL;DR — problème d'affichage qui brouille la lecture, mais l'info factuelle est juste\",\n    \"« 10% de chances à bac+3 via Passerelle 1 » : chiffre non sourcé et Passerelle 1 ne donne PAS accès à HEC (l'outil le dit bien ailleurs, mais cette phrase crée une confusion)\",\n    \"« 16+ de moyenne requise » pour prépa ECG : c'est vrai pour les meilleures prépas pari",
+    "latency_s": 11.8,
+    "policy_v4": "modify"
+  },
+  {
+    "question_num": 6,
+    "category": "diversite_geo",
+    "persona_key": "leo_17",
+    "persona_label": "Léo, 17 ans (lycéen terminale)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Je cherche pas du tout la santé moi, pourquoi tu me parles de kiné et PASS alors que j'ai rien demandé là-dessus?",
+      "Carcassonne c'est pas Perpignan, c'est à genre 1h30 de route",
+      "Tu me proposes Montpellier et Toulouse direct alors que j'ai demandé Perpignan, genre merci mais non"
+    ],
+    "commentaire": "Franchement j'ai l'impression que t'as répondu à quelqu'un d'autre. Je veux juste savoir ce qui existe à Perpignan et tu me balances que de la santé ultra-sélective + des trucs à 2h de chez moi. Les seuls trucs vraiment à Perpignan c'est le BTS cyber et encore. En vrai j'ai rien appris sur ma ville, je sais toujours pas quoi faire.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"Je cherche pas du tout la santé moi, pourquoi tu me parles de kiné et PASS alors que j'ai rien demandé là-dessus?\",\n    \"Carcassonne c'est pas Perpignan, c'est à genre 1h30 de route\",\n    \"Tu me proposes Montpellier et Toulouse direct alors que j'ai demandé Perpignan, genre merci mais non\"\n  ],\n  \"commentaire\": \"Franchement j'ai l'impression que t'as répondu à quelqu'un d'autre. Je veux juste savoir ce qui existe à Perpignan et tu me balance",
+    "latency_s": 7.6,
+    "policy_v4": "modify"
+  },
+  {
+    "question_num": 6,
+    "category": "diversite_geo",
+    "persona_key": "ines_20",
+    "persona_label": "Inès, 20 ans (L2 socio en réorientation)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Licence Humanités « prépa orthophonie » à Montpellier avec 45% d'admission : j'ai vérifié, ça sent l'invention ou la confusion avec autre chose, les licences Humanités ne sont pas des prépas ortho officielles",
+      "FCIL Parapharmacie à Toulouse comme alternative crédible : les FCIL sont des formations d'un an hyper locales et peu reconnues, pas du tout comparable aux BUT/BTS proposés avant",
+      "La présentation du BUT Science des données à Carcassonne comme « à Perpignan et alentours » alors que Carcassonne c'est à 1h15, autant que Montpellier qu'on présente comme loin"
+    ],
+    "commentaire": "L'outil mélange du vrai (les taux IFSI, la sélectivité kiné) avec des formations bancales ou mal sourcées. Le biais vers la santé est évident alors que la question était ouverte. Et pourquoi pousser vers Montpellier/Toulouse si la personne demande spécifiquement Perpignan ? Ça sent le remplissage automatique sans vrai travail sur l'offre locale en SHS, droit, commerce, etc.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"Licence Humanités « prépa orthophonie » à Montpellier avec 45% d'admission : j'ai vérifié, ça sent l'invention ou la confusion avec autre chose, les licences Humanités ne sont pas des prépas ortho officielles\",\n    \"FCIL Parapharmacie à Toulouse comme alternative crédible : les FCIL sont des formations d'un an hyper locales et peu reconnues, pas du tout comparable aux BUT/BTS proposés avant\",\n    \"La présentation du BUT Science des données à",
+    "latency_s": 9.3,
+    "policy_v4": "modify"
+  },
+  {
+    "question_num": 6,
+    "category": "diversite_geo",
+    "persona_key": "theo_23",
+    "persona_label": "Théo, 23 ans (M1 IAE)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Confusion formation/métier flagrante : l'outil liste 'Kinésithérapie en IFMK' comme formation accessible sur Parcoursup à Perpignan alors que les IFMK recrutent APRÈS une L.AS/PASS/licence validée, pas directement post-bac",
+      "Marketing déguisé sur la mobilité : pousser Montpellier/Toulouse (2h de train) pour une question sur Perpignan, c'est élargir artificiellement le scope pour masquer le manque de data locale",
+      "Incohérence data : 'BTS Cybersécurité 46% d'admission' classé en 'accessible' alors que c'est pile sur le seuil médian, pas vraiment 'moins compétitif'",
+      "Plan B/C artificiels : proposer PASS Montpellier (18% admission) comme 'ambitieux mais faisable' à quelqu'un qui demande Perpignan, c'est du padding de réponse sans valeur réelle"
+    ],
+    "commentaire": "L'outil confond voies d'admission (IFMK ≠ Parcoursup post-bac) et noie le poisson avec Montpellier/Toulouse au lieu de traiter honnêtement la faiblesse de l'offre perpignanaise. Le ton 'réaliste/ambitieux/alternatif' ressemble à du marketing de coaching privé qui vend du rêve. Je corrigerais 80% avant de partager à un pote de L3.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"Confusion formation/métier flagrante : l'outil liste 'Kinésithérapie en IFMK' comme formation accessible sur Parcoursup à Perpignan alors que les IFMK recrutent APRÈS une L.AS/PASS/licence validée, pas directement post-bac\",\n    \"Marketing déguisé sur la mobilité : pousser Montpellier/Toulouse (2h de train) pour une question sur Perpignan, c'est élargir artificiellement le scope pour masquer le manque de data locale\",\n    \"Incohérence data :",
+    "latency_s": 11.8,
+    "policy_v4": "modify"
+  },
+  {
+    "question_num": 6,
+    "category": "diversite_geo",
+    "persona_key": "catherine_52",
+    "persona_label": "Catherine, 52 ans (parent, DRH ingénieure)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Kiné à Perpignan : l'outil dit '9% d'admission' puis '3% d'admission' dans la même réponse, incohérence flagrante",
+      "PASS Montpellier : mention 'numérus clausus en 2e année' alors que le numerus clausus a été supprimé en 2020 (remplacé par numerus apertus)",
+      "Structure kiné confuse : l'outil parle d'IFMK après PASS/L.AS mais n'explique pas clairement que l'IFMK est accessible après 1 an de santé validé, pas directement sur Parcoursup",
+      "Absence totale de données d'insertion professionnelle : pour un lycéen qui doit choisir, les taux d'emploi à 6 mois sont plus utiles que '100% de femmes en kiné'"
+    ],
+    "commentaire": "Je ne laisserais pas Hugo utiliser cet outil seul. Les incohérences sur les chiffres de sélectivité (9% puis 3% pour la même formation) et l'erreur sur le numerus clausus montrent une base de données non actualisée. La confusion sur l'accès kiné via IFMK pourrait lui faire rater sa stratégie Parcoursup. Utilisable uniquement si je vérifie chaque lien et chaque procédure avec lui.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"Kiné à Perpignan : l'outil dit '9% d'admission' puis '3% d'admission' dans la même réponse, incohérence flagrante\",\n    \"PASS Montpellier : mention 'numérus clausus en 2e année' alors que le numerus clausus a été supprimé en 2020 (remplacé par numerus apertus)\",\n    \"Structure kiné confuse : l'outil parle d'IFMK après PASS/L.AS mais n'explique pas clairement que l'IFMK est accessible après 1 an de santé validé, pas directement sur Parcoursup",
+    "latency_s": 9.0,
+    "policy_v4": "modify"
+  },
+  {
+    "question_num": 6,
+    "category": "diversite_geo",
+    "persona_key": "psy_en_54",
+    "persona_label": "Isabelle Rousseau, 54 ans (Psy-EN 22 ans d'expérience)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Kiné via licence option kiné à Perpignan n'existe PAS. L'accès IFMK se fait après PASS/L.AS/STAPS + concours — ici l'outil invente une formation fantôme avec lien Parcoursup incorrect.",
+      "Licence Humanités 'prépa orthophonie' à Montpellier : confusion grave. Orthophonie = concours CEO direct post-bac, 5 ans en centre agréé. Pas via licence humanités.",
+      "PASS à 18% d'admission puis 'numérus clausus en 2e année' : obsolète. Le NC est supprimé depuis 2020 (réforme R2C). Aujourd'hui : numerus apertus avec capacités d'accueil modulables.",
+      "Plan A/B/C balancé SANS phase projet. Aucune question sur le profil de l'élève (bac général ? techno ? classe de 1re ou terminale ?). Déontologiquement inacceptable pour un mineur."
+    ],
+    "commentaire": "Je refuserais cet outil en autonomie au CIO. Trop d'erreurs factuelles sur santé (kiné, ortho, PASS) qui peuvent dérouter un élève. Et surtout : zéro investigation du projet avant de proposer des voies. Un Psy-EN commence par 'où en es-tu ?', pas par un catalogue. Utilisable uniquement EN ENTRETIEN avec reprise ligne par ligne.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"Kiné via licence option kiné à Perpignan n'existe PAS. L'accès IFMK se fait après PASS/L.AS/STAPS + concours — ici l'outil invente une formation fantôme avec lien Parcoursup incorrect.\",\n    \"Licence Humanités 'prépa orthophonie' à Montpellier : confusion grave. Orthophonie = concours CEO direct post-bac, 5 ans en centre agréé. Pas via licence humanités.\",\n    \"PASS à 18% d'admission puis 'numérus clausus en 2e année' : obsolète. Le NC est s",
+    "latency_s": 10.2,
+    "policy_v4": "modify"
+  },
+  {
+    "question_num": 8,
+    "category": "realisme_sante",
+    "persona_key": "leo_17",
+    "persona_label": "Léo, 17 ans (lycéen terminale)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Dit que je peux 'préparer un redoublement probable en L1 Santé' alors qu'en bas ça dit que le redoublement PASS est interdit depuis 2019",
+      "Brest à 100% d'accès ça veut rien dire, genre tout le monde rentre ? Ça colle pas avec '912 vœux pour 80 places'",
+      "Parle de 'taux d'accès' partout sans expliquer que c'est juste le dernier mec appelé, pas le vrai taux de réussite"
+    ],
+    "commentaire": "Franchement ça commence bien avec le TL;DR mais après c'est le bordel. Y'a plein de trucs qui se contredisent genre le redoublement interdit VS 'prépare-toi à redoubler'. Les stats Brest/Le Havre j'y crois pas une seconde, et les codes g_ta_cod machin j'ai même pas cliqué. Au final je sais toujours pas si avec mon 12 je tente ou pas, et j'ai kiffé zéro les questions psy à la fin genre 'qu'est-ce qui te motive' alors que je voulais juste un oui/non.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"Dit que je peux 'préparer un redoublement probable en L1 Santé' alors qu'en bas ça dit que le redoublement PASS est interdit depuis 2019\",\n    \"Brest à 100% d'accès ça veut rien dire, genre tout le monde rentre ? Ça colle pas avec '912 vœux pour 80 places'\",\n    \"Parle de 'taux d'accès' partout sans expliquer que c'est juste le dernier mec appelé, pas le vrai taux de réussite\"\n  ],\n  \"commentaire\": \"Franchement ça commence bien avec le TL;DR",
+    "latency_s": 10.8,
+    "policy_v4": "warn"
+  },
+  {
+    "question_num": 8,
+    "category": "realisme_sante",
+    "persona_key": "ines_20",
+    "persona_label": "Inès, 20 ans (L2 socio en réorientation)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "L'outil dit 'redoublement probable en L1 Santé' alors que le redoublement du PASS est interdit depuis 2019 — grosse erreur pour un lycéen qui pourrait croire qu'il a deux chances",
+      "Les 'taux d'accès' Parcoursup ne veulent pas dire ce que l'outil prétend : 100% à Brest ça signifie juste que tous ceux qui ont maintenu le vœu ont été appelés, pas qu'il y a 100% de chances d'y entrer avec 12",
+      "Le Plan B parle de 'concours médecine en fin de L1' mais ne précise pas les vraies conditions : nombre de places minuscules, classement ultra-serré, impossibilité de retenter en PASS après"
+    ],
+    "commentaire": "Cette réponse mélange données Parcoursup mal interprétées et conseil dangereux sur le redoublement. Pour un gamin de 17 ans seul devant son écran, c'est trompeur : il croirait qu'il peut tenter Brest 'facile' puis redoubler si ça rate, alors que c'est faux juridiquement. L'intention est là mais l'exécution est bancale sur les infos clés.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"L'outil dit 'redoublement probable en L1 Santé' alors que le redoublement du PASS est interdit depuis 2019 — grosse erreur pour un lycéen qui pourrait croire qu'il a deux chances\",\n    \"Les 'taux d'accès' Parcoursup ne veulent pas dire ce que l'outil prétend : 100% à Brest ça signifie juste que tous ceux qui ont maintenu le vœu ont été appelés, pas qu'il y a 100% de chances d'y entrer avec 12\",\n    \"Le Plan B parle de 'concours médecine en f",
+    "latency_s": 9.5,
+    "policy_v4": "warn"
+  },
+  {
+    "question_num": 8,
+    "category": "realisme_sante",
+    "persona_key": "theo_23",
+    "persona_label": "Théo, 23 ans (M1 IAE)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Confusion taux d'accès Parcoursup vs taux de réussite au concours : l'outil mélange les deux métriques, un lycéen va croire qu'entrer en PASS = devenir médecin alors que c'est juste l'admission en L1",
+      "Brest 100% d'accès = marketing trompeur : ça veut dire que tout le monde est pris, pas que c'est 'facile', c'est juste une PASS non-sélective à l'entrée mais le concours reste national",
+      "Manque l'info CAPITALE : PASS interdit le redoublement depuis 2019, tu as UNE seule chance puis tu bascules en L.AS ou tu changes de voie. Un mineur de 17 ans DOIT savoir ça avant de s'engager"
+    ],
+    "commentaire": "L'outil fait du placement formation déguisé en conseil d'orientation. Il survend des PASS 'accessibles' sans expliquer le vrai filtre (le concours de fin de L1, pas Parcoursup). Dangereux pour un mineur qui va gaspiller son année en croyant qu'entrer = réussir. Je ne recommanderais pas.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"Confusion taux d'accès Parcoursup vs taux de réussite au concours : l'outil mélange les deux métriques, un lycéen va croire qu'entrer en PASS = devenir médecin alors que c'est juste l'admission en L1\",\n    \"Brest 100% d'accès = marketing trompeur : ça veut dire que tout le monde est pris, pas que c'est 'facile', c'est juste une PASS non-sélective à l'entrée mais le concours reste national\",\n    \"Manque l'info CAPITALE : PASS interdit le redo",
+    "latency_s": 9.6,
+    "policy_v4": "warn"
+  },
+  {
+    "question_num": 8,
+    "category": "realisme_sante",
+    "persona_key": "catherine_52",
+    "persona_label": "Catherine, 52 ans (parent, DRH ingénieure)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "« prépare-toi à un redoublement probable en L1 Santé » → FAUX, le redoublement du PASS est INTERDIT depuis l'arrêté du 4 novembre 2019, une seule chance",
+      "« taux d'accès 100% à Brest » mal expliqué : ce n'est PAS un taux d'admission mais le rang du dernier appelé, ça ne veut pas dire que tout le monde est pris",
+      "« seuls 10-20% passent en 2e année » : chiffre national trop vague, ça varie énormément selon les facs (de 8% à 25%), dangereux de généraliser"
+    ],
+    "commentaire": "L'erreur sur le redoublement PASS est éliminatoire : si Hugo lit ça seul, il planifie une stratégie INTERDITE depuis 5 ans. Les « taux d'accès » Parcoursup sont mal vulgarisés (confusion rang/admission). Je ne le laisserais pas utiliser cet outil sans supervision, trop de risques de mauvaise compréhension sur une voie hyper-régulée. Le conseil CIO/Psy-EN en fin de réponse sauve un peu, mais le mal est fait.",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"« prépare-toi à un redoublement probable en L1 Santé » → FAUX, le redoublement du PASS est INTERDIT depuis l'arrêté du 4 novembre 2019, une seule chance\",\n    \"« taux d'accès 100% à Brest » mal expliqué : ce n'est PAS un taux d'admission mais le rang du dernier appelé, ça ne veut pas dire que tout le monde est pris\",\n    \"« seuls 10-20% passent en 2e année » : chiffre national trop vague, ça varie énormément selon les facs (de 8% à 25%), dan",
+    "latency_s": 8.8,
+    "policy_v4": "warn"
+  },
+  {
+    "question_num": 8,
+    "category": "realisme_sante",
+    "persona_key": "psy_en_54",
+    "persona_label": "Isabelle Rousseau, 54 ans (Psy-EN 22 ans d'expérience)",
+    "score": 2,
+    "erreurs_factuelles": [
+      "« Redoublement probable en L1 Santé » — FAUX. Le redoublement PASS est INTERDIT depuis l'arrêté du 4 novembre 2019. Une seule chance. L'outil induit un lycéen en erreur sur une règle structurante de la réforme R2C.",
+      "« Taux d'accès 100% » pour Brest est trompeur sans préciser que c'est le rang du dernier appelé (proportion de candidats ayant reçu une proposition, pas un taux d'admission). Un élève à 12 de moyenne peut croire qu'il sera pris à coup sûr.",
+      "« 10-20% passent en 2e année de médecine » — donnée floue et anxiogène. En réalité, le numerus apertus remplace le numerus clausus depuis 2020, avec des taux variables par fac (entre 15% et 40% selon UFR). Présenter un chiffre unique fausse la perception.",
+      "Aucune mention des spécialités de bac recommandées (SVT + physique-chimie ou maths). Un lycéen général sans SVT ou un bac techno peut se croire éligible alors qu'il part avec un handicap majeur en PASS.",
+      "L.AS présentée comme « moins sélective » sans préciser que l'accès santé via L.AS impose un niveau académique identique au PASS (mêmes épreuves de concours en fin de L1). C'est une voie alternative, pas une voie de secours pour profils fragiles."
+    ],
+    "commentaire": "Je refuse catégoriquement qu'un élève utilise cet outil en autonomie. L'erreur sur le redoublement PASS est rédhibitoire — elle fausse tout le projet d'orientation. Les statistiques Parcoursup sont manipulées pour vendre du rêve (« 100% d'accès ») sans expliquer la mécanique réelle. En entretien, je passerais 20 minutes à déconstruire cette réponse avant de reprendre la phase projet : « Pourquoi médecine ? Qu'as-tu compris du métier ? »",
+    "raw_response_excerpt": "```json\n{\n  \"score\": 2,\n  \"erreurs_factuelles\": [\n    \"« Redoublement probable en L1 Santé » — FAUX. Le redoublement PASS est INTERDIT depuis l'arrêté du 4 novembre 2019. Une seule chance. L'outil induit un lycéen en erreur sur une règle structurante de la réforme R2C.\",\n    \"« Taux d'accès 100% » pour Brest est trompeur sans préciser que c'est le rang du dernier appelé (proportion de candidats ayant reçu une proposition, pas un taux d'admission). Un élève à 12 de moyenne peut croire qu'il sera ",
+    "latency_s": 15.6,
+    "policy_v4": "warn"
+  }
+]

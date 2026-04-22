@@ -75,22 +75,24 @@ def test_VAE_VAP_confusion_warns():
 
 
 def test_Tremplin_to_HEC_is_blocking():
+    """V4 : règle unifiée HEC_not_via_Tremplin_or_Passerelle (V2.1) — V1 retirée."""
     txt = "Après ton bac+3 tu peux passer le concours Tremplin vers HEC."
     violations = apply_rules(txt)
-    assert any(v.rule_id == "tremplin_not_HEC" for v in violations)
+    assert any(v.rule_id == "HEC_not_via_Tremplin_or_Passerelle" for v in violations)
 
 
 def test_Passerelle_to_HEC_is_blocking():
+    """V4 : règle unifiée HEC_not_via_Tremplin_or_Passerelle."""
     txt = "Le concours Passerelle est une bonne option pour HEC."
     violations = apply_rules(txt)
-    assert any(v.rule_id == "passerelle_not_HEC" for v in violations)
+    assert any(v.rule_id == "HEC_not_via_Tremplin_or_Passerelle" for v in violations)
 
 
 def test_Tremplin_to_Audencia_is_allowed():
-    """Tremplin vers Audencia est un vrai parcours — ne pas flagger."""
+    """Tremplin vers Audencia est un vrai parcours — ne pas flagger (V2.1 neither)."""
     txt = "Tu peux viser Audencia via le concours Tremplin en bac+2."
     violations = apply_rules(txt)
-    assert not any(v.rule_id == "tremplin_not_HEC" for v in violations)
+    assert not any(v.rule_id == "HEC_not_via_Tremplin_or_Passerelle" for v in violations)
 
 
 # --- Voies impossibles ---
