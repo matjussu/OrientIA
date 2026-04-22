@@ -71,6 +71,9 @@ jobs:
 
       - name: Force-refresh Parcoursup historique (2023 + 2024)
         run: |
+          # data/raw/ est gitignored, le dossier vide n'est pas tracké
+          # → mkdir nécessaire avant que le script tente d'écrire (issue #16)
+          mkdir -p data/raw
           rm -f data/raw/parcoursup_2023.csv data/raw/parcoursup_2024.csv
           bash scripts/download_parcoursup_history.sh
 

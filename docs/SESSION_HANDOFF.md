@@ -838,3 +838,109 @@ STRATEGIE §5 Axe 2 A1-A9 :
 - Memory `state_projet_fin_session_2026-04-22.md` (à écrire)
 - Memory `tier2_delivery_2026-04-18.md` — marqué comme historique,
   Tier 2 désormais mergé
+
+---
+
+## 17. Sprint S1 livré (matin 2026-04-22) — État pré-Gate J+6
+
+**Sprint S1 bouclé en 3h** (boot 0815 → cleanup 1100 CEST). 3 ordres P0
+livrés en parallèle après revue stratégique poussée par Matteo (4 questions
+de fond + arbitrage validé), 5 PRs créées, 4 mergées, 1 ouverte pour S2.
+
+### 17.1 Timeline ordres dispatchés Jarvis → Claudette
+
+| Heure | Ordre | Status | PR |
+|---|---|---|---|
+| 0815 | `claudette-orientia-audit-reprise` (read-only) | ✅ done | — (synthèse peer) |
+| 0832 | `claudette-orientia-strategic-review` (Q1-Q4) | ✅ done | — (review peer) |
+| 0847 | `claudette-orientia-q3-souverainete-raft-plan` | ✅ done | — (plan peer) |
+| 0902 | `claudette-split-branche-docs-consolidation` | ✅ done | #10, #11, #12, #13 |
+| 0902 | `claudette-data-d7-cron-refresh` | ✅ done | #14 |
+| 0902 | `claudette-validator-v1-rules-corpus` | ✅ done | #15 |
+| 1016 | `claudette-orientia-cleanup-pre-s2` | ✅ done | (this PR) |
+
+### 17.2 PRs et SHAs main
+
+| # | Titre | SHA merge | Status |
+|---|---|---|---|
+| #10 | data/s1-rome-bts-insersup (D3a ROME) | `7e85967` | ✅ merged |
+| #11 | ux/task-b-fixes (masquage codes ROME + seuils trends + alertes TL;DR) | `cfd62e0` | ✅ merged |
+| #12 | axe2/pydantic-profileclarifier (POC Mistral tool-use) | — | 🟡 open S2 |
+| #13 | docs-consolidation-2026-04-22 (CLAUDE.md + STRATEGIE_VISION + packs) | `f6445c8` | ✅ merged |
+| #14 | feat(ci): D7 monthly data-refresh workflow | `d72676d` | ✅ merged |
+| #15 | feat(validator): v1 déterministe (rules + corpus-check) | `6afcacc` | ✅ merged |
+
+### 17.3 Validator v1 — métriques empiriques pack v2
+
+```
+Honesty score moyen      : 0.94
+Questions flaggées       : 2/10 (20%)
+Q7 médecine  : 3 violations BLOCKING ECN_renamed_to_EDN (honesty 0.55)
+Q10 ortho    : 1 violation BLOCKING licence_humanites_orthophonie_invented (honesty 0.85)
+Latence par answer       : <1ms (cible 400ms largement tenue)
+```
+
+Validator catche programmatiquement les 2 hallucinations user_test_v2
+les plus ré-citées par 3/5 profils (Léo, Catherine, Dominique). Wiring
+opt-in dans `OrientIAPipeline(..., validator=...)` accessible via
+`pipeline.last_validation`.
+
+### 17.4 Workflow D7 cron actif
+
+`.github/workflows/data-refresh-monthly.yml` — premier tick **2026-05-01
+03:00 UTC**. Trigger manuel possible via `gh workflow run
+data-refresh-monthly.yml`. PR auto si drift, issue auto si fail.
+
+Smoke test post-merge déclenché côté Jarvis le 2026-04-22 ~10:11 CEST.
+
+### 17.5 Tests + couverture
+
+- **Avant S1 (main d72676d antérieur cleanup)** : 430 tests verts (hors
+  API-heavy)
+- **Après S1 (main 6afcacc)** : 449 tests offline + 53 validator nouveaux
+  (test_rules 21 + test_corpus_check 10 + test_validator_integration 9 +
+  test_golden_hallucinations 13) = **502 tests verts**, zéro régression.
+
+### 17.6 Cleanup post-S1 (cette PR)
+
+- Branches obsolètes supprimées : `feature/axe2-agentic-prep` (palimpseste
+  splitté), `feature/vague-{a,b,c,d}-*`, `feature/sanity-ux-alpha-beta`,
+  `feature/extension-domaine-sante`, `feature/deterministic-metrics-b3-b5-b6`,
+  `feature/data-foundation-vague-a`, `feature/tier2-ux-pyramide-brievete`,
+  `fix/tier0-critical-user-feedback`, `docs/session-2026-04-17-continuity`
+- `feature/alpha-restricted-llm` **conservée** (filet ADR-030, décision
+  merge encore reportée)
+- **PR #7 fermée** (ADR-028 confirmé) — fixes pertinents redirigés vers
+  D2/D3b/D4 S2
+
+### 17.7 Prochaine étape : Gate J+6 (2026-04-25)
+
+Re-test des 5 profils user_test sur pack v3 (à générer post-Validator).
+Critères de basculement S2 :
+
+- **Si verdict 4-5/5 "recommandable"** → branche A : data-focused (D2 ONISEP
+  live, D4 labels CTI/CGE, D3b ROME API). Reporter Axe 2 agentic.
+- **Si verdict reste 3/5** → branche B : Axe 2 agentic justifié, kickoff
+  A1-A9 sur `axe2/pydantic-profileclarifier` (PR #12 déjà ouverte).
+
+Décision Matteo bench E (recharge Anthropic / mini OpenAI / report)
+toujours en attente — bloqueur P1 sur mesurabilité Validator + Tier 2.
+
+### 17.8 Carry-over hors scope S1
+
+Items signalés mais non traités, à dispatcher S2 :
+
+- D5 InserJeunes BTS (4-6h, élargit corpus BTS pour insertion)
+- D2 ONISEP API live (6-8h, débloque enrichissement 75.8% fiches)
+- D4 CTI/CGE/Grade Master labels (4-6h, comble couverture 5.2% → 60%)
+- D3b ROME API France Travail (signup OAuth + branchement salaire/tension)
+- Validator couche 3 fallback LLM Mistral Small souverain (post-gate J+6)
+- Bench E baseline post-Tier 2 + Validator (selon décision Matteo)
+- Baselines naturels Playwright (chatgpt/claude/mistral web UI)
+
+### 17.9 Documentation à jour au 2026-04-22 11h CEST
+
+- `docs/SESSION_HANDOFF.md` (ce document) — §17 ajouté
+- `docs/DECISION_LOG.md` — ADR-035 ajouté (post-cleanup)
+- `docs/STRATEGIE_VISION_2026-04-16.md` — référence stable
+- `CLAUDE.md` projet — mergé via PR #13, reflète repivot + pattern merge-approval
