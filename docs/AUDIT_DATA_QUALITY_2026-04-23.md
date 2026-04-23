@@ -9,12 +9,13 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 - **rncp_certifications.json** : 6,590 fiches ✅
 - ℹ️  **onisep_metiers.json** (metiers) : 1,518 entrées
 - **onisep_formations_extended.json** : 4,775 fiches ⚠️ 15 doublons
+- **lba_formations.json** : 6,646 fiches ✅
 - ❌ **cereq_insertion_stats.json** : absent (ingestion pas faite localement)
 - ❌ **insee_salaires_pcs_age.json** : absent (ingestion pas faite localement)
 - **parcoursup_extended.json** : 9,212 fiches ✅
 - **formations.json** : 1,424 fiches ⚠️ 1424 manques critiques
 
-**Total fiches auditées** : 38,258
+**Total fiches auditées** : 44,904
 
 ---
 
@@ -64,6 +65,18 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 - `taux_admission` hors bornes [0,1] : 0
 - Top 5 doublons : `[{'sig': 'data engineer||', 'count': 2}, {'sig': 'office manager||', 'count': 2}, {'sig': 'diplôme supérieur en management||', 'count': 2}, {'sig': 'responsable commerce retail||', 'count': 2}, {'sig': "diplôme d'études supérieures spécialisées en management international||", 'count': 2}]`
 
+### `lba_formations.json`
+
+- Total : 6,646
+- Distribution par phase : `{'reorientation': 6646}`
+- Distribution par niveau : `{'cap-bep': 263, 'bac': 1279, 'bac+5': 1806, 'bac+3': 1300, 'bac+2': 1998}`
+- Top 5 domaines : `{'eco_gestion': 2330, 'lettres_arts': 787, 'sport': 746, 'sante': 689, 'sciences_fondamentales': 640}`
+- Sources : `{'labonnealternance': 6646}`
+- Manques critiques : `{}`
+- Valeurs suspectes par champ : `{}`
+- Doublons (signatures identiques) : 0
+- `taux_admission` hors bornes [0,1] : 0
+
 ### `parcoursup_extended.json`
 
 - Total : 9,212
@@ -92,8 +105,9 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 
 ## Répartition phase cumulée (vs ADR-039 cible 33/33/34)
 
-- `master` : 20,567 (55.8%) — cible 33%
-- `initial` : 16,267 (44.2%) — cible 33%
+- `master` : 20,567 (47.3%) — cible 33%
+- `initial` : 16,267 (37.4%) — cible 33%
+- `reorientation` : 6,646 (15.3%) — cible 33%
 
 Si un phase dépasse 40% ou tombe sous 25% → signal de déséquilibre, action S+2 (up-sample ou down-sample).
 
