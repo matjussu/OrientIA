@@ -1116,3 +1116,84 @@ Matteo priorise le "no-harm pour mineur en autonomie" avant l'ergonomie.
 - STRATEGIE_VISION §5 Axe 2 (agentic)
 
 ---
+
+## ADR-037 — Rééquilibrage T2.4 « Attention aux pièges » — hypothèse réfutée (2026-04-22)
+
+**Context** : après V4 γ Modify, Matteo a identifié que le system prompt
+imposait systématiquement 3 pièges (T2.4 : "section concise « ⚠ Attention
+aux pièges » (maximum 3 puces) qui pointe un biais marketing + un piège
+géographique + un faux-ami"). Cette injonction produisait du bruit visuel
+et contribuait au verdict Claude Sonnet persona 2/5 médiane sur les 3 Q
+hard Gate J+6 (feedback Léo « l'outil me parle comme à un enfant »).
+
+**Decision** : rééquilibrer conservativement T2.4 :
+- « section systématique 3 puces » → « 1 piège critique max en 1 phrase,
+  2 si vraiment nécessaire, pas de section artificielle »
+- Interdit sur question conceptuelle pure (ex : « c'est quoi une licence ? »)
+- Ne PAS imposer les 3 catégories (marketing + géo + faux-ami) — elles
+  n'existent pas toujours
+- Les règles Tier 0 (anti-discrimination, 6 anti-hallucinations listées)
+  restent inchangées — elles filtrent la sortie via le Validator, pas
+  besoin de les répéter en warnings prompt
+
+Fichiers modifiés : `src/prompt/system.py` T2.4 + T2.9 + exemple dans prompt.
+
+**Résultat empirique — hypothèse RÉFUTÉE** :
+
+| Métrique | V4 original | V4.1 rebalance | Δ |
+|---|---|---|---|
+| Claude persona médiane globale | 2/5 | **2/5** | stable |
+| Moyenne globale | 2.40/5 | **2.00/5** | **−0.40 régression** |
+| Q1 HEC médiane | 4 | **2** | **−2** |
+| Q6 Perpignan médiane | 2 | 2 | stable |
+| Q8 PASS médiane | 2 | 2 | stable |
+
+Tests : **177/177 verts** Tier 0 + Tier 2 + validator + pipeline. Zéro
+régression safety.
+
+**Cause racine identifiée (via commentaires Psy-EN verbatim)** :
+
+Le rééquilibrage prompt ne suffit PAS car le plateau 2/5 a des causes
+plus profondes :
+
+1. **Bug γ Modify V4** : multiple violations de la même règle produisent
+   N remplacements → répétitions textuelles dans la sortie (« HEC Paris
+   passe par AST » collé 3 fois dans Q1). Fix prévu V4.2 : dédupliquer
+   sur `replacement_text`.
+2. **Règles V2 variance-dépendantes** : la règle V2.4 kiné IFMK match sur
+   certaines regen Mistral Medium mais pas d'autres — même question, deux
+   runs différents → deux outputs différents → catch aléatoire.
+3. **Phase projet ne se déclenche pas** malgré triggers présents — bug
+   possible dans `already_has_project_prompts` (false positive).
+4. **PresenceRule flag mais Mistral n'injecte pas** en regen — migration
+   Presence → Modify (injection automatique phrases obligatoires)
+   devient P0 V5.
+
+**Conclusion stratégique** :
+
+Le prompt verbeux était un facteur UX aggravant **mais pas la cause
+première** du plateau. La vraie cause est la **qualité de génération**
+Mistral Medium qui produit toujours le même type d'erreurs factuelles,
+que les règles/presence/prompt compensent partiellement mais ne soignent
+pas à la source.
+
+Implications pour la roadmap :
+- L'orientation **agentic multi-step (Axe 2 STRATEGIE §5)** reste
+  justifiée — l'agent décompose + appelle des tools factuels, le LLM
+  devient synthétiseur sur données vs générateur from-scratch.
+- **RAFT** pourrait compléter post-INRIA si self-hosted disponible.
+- La consolidation **data seule** (D2+D4+D3b) est nécessaire mais
+  insuffisante pour passer 2/5.
+
+**Alternatives rejetées** :
+- Ne pas toucher au prompt : garderait le bruit visuel confirmé par Léo
+- Ajuster plus agressivement (ex : supprimer Plan A/B/C) : risque de
+  casser la structure qui a des gains empiriques (Tier 2 mergé PR #9)
+
+**Références** :
+- Ordre Jarvis 2026-04-22-1834 (prompt rebalance + avis global)
+- Ground truth v3 + v4 + v4.1 Claude Sonnet persona (15 evals chaque)
+- Commentaires verbatim Psy-EN dans `results/gate_j6/ground_truth_v4_rebalance_resimule.json`
+- Rapport `results/gate_j6/report_v4_prompt_rebalance.md`
+
+---
