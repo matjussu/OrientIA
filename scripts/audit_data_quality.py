@@ -34,6 +34,7 @@ EXPECTED_SOURCES = {
     "monmaster_formations.json": {"type": "fiches", "phase_default": "master"},
     "rncp_certifications.json": {"type": "fiches", "phase_default": None},  # inféré niveau_eu
     "onisep_metiers.json": {"type": "metiers", "phase_default": None},
+    "onisep_formations_extended.json": {"type": "fiches", "phase_default": None},  # D2 ext
     "cereq_insertion_stats.json": {"type": "stats", "phase_default": None},
     "insee_salaires_pcs_age.json": {"type": "stats", "phase_default": None},
     "parcoursup_extended.json": {"type": "fiches", "phase_default": None},

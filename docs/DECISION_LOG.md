@@ -1682,3 +1682,129 @@ Champs **reportés S+2** (effort marginal, pas bloquant) :
    benchmark sur corpus étendu.
 
 ---
+
+## ADR-042 — 3 APIs France Travail complémentaires (Anotéa + Marché du travail + Accès à l'emploi) (2026-04-23) [DRAFT]
+
+**Statut** : DRAFT — analyse terminée, priorisation P1 établie (S+2). Bascule
+ACCEPTED par API individuelle après première ingestion opérationnelle.
+
+**Context** :
+
+Les credentials FT reçus 2026-04-23 12:12 activent **7 APIs** :
+- ROME 4.0 Métiers / Fiches / Compétences / Contextes (1 RPS × 4) — **utilisées**
+- **Anotéa v1** (8 RPS) — NON utilisée
+- **Marché du travail v1** (10 RPS) — NON utilisée
+- **Accès à l'emploi demandeurs d'emploi v1** (10 RPS) — NON utilisée
+
+Matteo (via Jarvis 2026-04-23 12:22) demande : *"Sur les 7 APIs FT, on les utilise toutes ?"*
+
+3 sub-agents Explore dispatchés en parallèle. Synthèse :
+
+### Anotéa v1 — Avis étudiants post-formation
+
+- **URL** : `https://anotea.francetravail.fr/api/v1/` — auth **HMAC-SHA256** custom
+  (pas OAuth2), module dédié requis
+- **Volume** : ~200k avis modérés, ~10k organismes, ~5% formations FR couvertes
+  (seuil publication = 5 avis min)
+- **Schéma clé** : `numero` action, `organisme_formateur.siret`, `formacodes`,
+  `certifications` (RNCP), `notes.global + criteres`, `avis.texte` (modéré),
+  `lieu.code_postal`
+- **Join OrientIA** : SIRET + RNCP → 40-60% couverture estimée (Anotéa cible
+  formations FT/CPF, pas BTS/BUT publics systématiques)
+- **Utilité** : (a) faible / (b) **forte** (cœur = alternance, VAE, formation
+  continue, demandeurs emploi) / (c) moyenne
+- **Effort** : 20-25h
+
+### Marché du travail v1 — Tension offres/demandes
+
+- **URL** : `https://api.francetravail.io/partenaire/marche-travail/v1/` — OAuth2
+  mêmes credentials (scope `api_marche-travailv1` à activer côté app FT)
+- **Volume** : 1 584 ROME × géo (région/dept/bassin emploi) × trimestriel,
+  12 mois glissants, rate limit 10 RPS
+- **Schéma** : offres_actives, demandeurs, embauches, **tension_ratio** (Dares),
+  difficultes_recrutement. **Pas de salaires** (DARES séparé).
+- **Redondance** : complémentaire BMO (annuel/intentions) / INSEE (PCS national) /
+  Céreq (cohorte 3 ans)
+- **Utilité** : (a) afficher tension ROME / (b) scorer formations /
+  (c) **critique** "où exercer ce métier"
+- **Effort** : 7-10 jours (1-2 sprints)
+
+### Accès à l'emploi demandeurs v1 — Taux retour emploi
+
+- **URL** : `https://api.francetravail.io/partenaire/acces-emploi/v1/` — OAuth2
+  (scope `api_acces-a-l-emploi-...` à activer)
+- **Volume** : ~1.2M demandeurs/trim, seuils anonymisation (n≥30-50/segment),
+  trimestriel, historique multi-années, rate limit 10 RPS
+- **Schéma** : taux_acces_emploi_6m (%), code_rome, catégorie (A/B), territoire,
+  effectif_base, duree_emploi_accede, type_contrat, âge (16-25 / 25-50 / 50+)
+- **Redondance** : complémentaire Céreq (cohorte jeunes diplômés) + MESR (UFR)
+- **Utilité** : (a) débouchés régionaux / (b) enrichissement fiches /
+  (c) **cible primaire** benchmark insertion jeunes
+- **Effort** : 3-4 jours
+
+**Decision** :
+
+Les 3 APIs classées **P1 (haute priorité S+2)** — aucune en P0 immédiat,
+aucune SKIP. **Complémentaires entre elles + zéro duplication** avec sources
+déjà scopées (ADR-039 / ADR-040).
+
+**Ordonnancement S+2** (plus rentable → moins) :
+1. **Marché du travail** (7-10j) — OAuth2 FT déjà en place, match ROME trivial,
+   active l'argument "données fraîches" ADR-039, phase (c) majeur
+2. **Accès à l'emploi** (3-4j) — même stack OAuth2, taux retour 6m vs Céreq 3 ans
+   = complémentaire temporel
+3. **Anotéa** (20-25h) — auth HMAC distinct, couverture partielle, à garder
+   pour phase (b) RAG Mentor "vraie vie" quand socle stabilisé
+
+**Rationale** :
+
+- Matteo a activé 7 APIs sans coût : autant les exploiter si valeur ajoutée
+  positive. L'analyse confirme **non-redondance + forte utilité phase (c)**
+  débouchés pro (cahier charges Mentor + ADR-040).
+- **Pas P0 aujourd'hui** : (1) socle data actuel massif (38k+ fiches post-S+1),
+  (2) priorité immédiate = D6 re-index FAISS + bench S+2 pour mesurer l'existant
+  avant d'empiler, (3) les 3 APIs apportent de la **profondeur** (enrichissement
+  par fiche), pas de la largeur (pas de nouvelles fiches) — bénéfice mesurable
+  au bench uniquement.
+- **Ordre stack-efficient** : MT + Accès Emploi = même auth OAuth2 (contexte
+  mental unifié), Anotéa séparé.
+
+**Alternatives rejetées** :
+
+1. **Ingérer les 3 en P0 maintenant** : scope explose S+1, risque rate limit
+   cross-APIs, pas de time pour bench.
+2. **Skip Anotéa définitivement** : valeur "vraie vie" (commentaires modérés)
+   unique côté sources FR. Skip = regret long-terme.
+3. **Faire MT seulement + skip les 2 autres** : Accès Emploi complète MT sur
+   la dimension "après formation" (MT = marché actuel, AE = trajectoire 6m).
+4. **Ingérer sans analyse** : risque duplication cachée (ex. BMO vs MT).
+
+**Effets attendus S+2** :
+
+- Enrichissement par fiche : `{tension_marche, taux_retour_emploi, avis_moyens?}`.
+- Gain au benchmark sur catégorie "insertion pro" (prompts débouchés × région).
+- Argument ADR-039 "données fraîches" enfin branché (MT trimestriel vs INSEE
+  annuel).
+
+**Scopes OAuth2 à activer côté app France Travail** (côté Matteo, 2 min) :
+- `api_marche-travailv1`
+- `api_acces-a-l-emploi-des-demandeurs-d-emploiv1`
+- (Anotéa = HMAC, pas un scope OAuth2)
+
+**Références** :
+
+- Ordre Jarvis 2026-04-23-1222 + 1223 directive analyse 3 APIs FT inutilisées
+- 3 rapports sub-agents Explore parallèles
+- ADR-039 scope élargi / ADR-040 débouchés pro / ADR-041 Parcoursup extended
+
+**Suite (S+2)** :
+
+1. Matteo active scopes MT + Accès Emploi côté dashboard app FT (2 min).
+2. `src/collect/ft_marche_travail.py` (7-10j) — pattern OAuth2 `rome_api.py` réutilisé.
+3. `src/collect/ft_acces_emploi.py` (3-4j) — même pattern.
+4. `src/collect/ft_anotea.py` (20-25h) — HMAC custom, module dédié.
+5. `merge.py:attach_market_indicators()` : enrichissement fiche-par-fiche.
+6. Bench S+2 pour mesurer gain RAG phase (c).
+7. Bascule DRAFT → ACCEPTED par API après ingestion validée.
+
+---

@@ -34,10 +34,16 @@ from src.eval.rate_limit import RateLimiter
 
 
 BASE_URL = "https://api.apprentissage.beta.gouv.fr"
-FORMATIONS_ENDPOINT = f"{BASE_URL}/api/v1/formations"
-JOBS_ENDPOINT = f"{BASE_URL}/api/v1/jobs"
+# URLs correctes validées live (swagger `api.apprentissage.beta.gouv.fr/api/documentation/json`, 2026-04-23).
+# Structure : `/api/{resource}/v1/search` (pas `/api/v1/{resource}`).
+FORMATIONS_ENDPOINT = f"{BASE_URL}/api/formation/v1/search"
+FORMATION_BY_ID_ENDPOINT = f"{BASE_URL}/api/formation/v1"
+JOBS_ENDPOINT = f"{BASE_URL}/api/job/v1/search"
+JOBS_EXPORT_ENDPOINT = f"{BASE_URL}/api/job/v1/export"
+CERTIFICATIONS_ENDPOINT = f"{BASE_URL}/api/certification/v1"
 
-# 5-20 req/s selon endpoint — on reste safe à 120 RPM (2 RPS).
+# Rate limit non-documenté mais typiquement 5-20 req/s pour beta.gouv.fr.
+# 120 RPM (2 RPS) = safe margin.
 DEFAULT_RPM = 120
 
 

@@ -8,12 +8,13 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 - **monmaster_formations.json** : 16,257 fiches ⚠️ 7304 doublons, 6 taux hors bornes
 - **rncp_certifications.json** : 6,590 fiches ✅
 - ℹ️  **onisep_metiers.json** (metiers) : 1,518 entrées
+- **onisep_formations_extended.json** : 4,775 fiches ⚠️ 15 doublons
 - ❌ **cereq_insertion_stats.json** : absent (ingestion pas faite localement)
 - ❌ **insee_salaires_pcs_age.json** : absent (ingestion pas faite localement)
 - **parcoursup_extended.json** : 9,212 fiches ✅
 - **formations.json** : 1,424 fiches ⚠️ 1424 manques critiques
 
-**Total fiches auditées** : 33,483
+**Total fiches auditées** : 38,258
 
 ---
 
@@ -50,6 +51,19 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 - Entrées : 1,518
 - Sample keys : `['source', 'type', 'libelle', 'codes_rome', 'rome_link', 'url_onisep', 'gfe', 'domaine', 'sous_domaine', 'publication']`
 
+### `onisep_formations_extended.json`
+
+- Total : 4,775
+- Distribution par phase : `{'initial': 2984, 'master': 1791}`
+- Distribution par niveau : `{'bac+3': 1033, 'bac+5': 1789, 'bac+2': 653, 'bac+8': 2}`
+- Top 5 domaines : `{'eco_gestion': 1181, 'lettres_arts': 746, 'ingenierie_industrielle': 599, 'sciences_fondamentales': 548, 'sport': 408}`
+- Sources : `{'onisep': 4775}`
+- Manques critiques : `{}`
+- Valeurs suspectes par champ : `{}`
+- Doublons (signatures identiques) : 15
+- `taux_admission` hors bornes [0,1] : 0
+- Top 5 doublons : `[{'sig': 'data engineer||', 'count': 2}, {'sig': 'office manager||', 'count': 2}, {'sig': 'diplôme supérieur en management||', 'count': 2}, {'sig': 'responsable commerce retail||', 'count': 2}, {'sig': "diplôme d'études supérieures spécialisées en management international||", 'count': 2}]`
+
 ### `parcoursup_extended.json`
 
 - Total : 9,212
@@ -78,8 +92,8 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 
 ## Répartition phase cumulée (vs ADR-039 cible 33/33/34)
 
-- `master` : 18,776 (58.6%) — cible 33%
-- `initial` : 13,283 (41.4%) — cible 33%
+- `master` : 20,567 (55.8%) — cible 33%
+- `initial` : 16,267 (44.2%) — cible 33%
 
 Si un phase dépasse 40% ou tombe sous 25% → signal de déséquilibre, action S+2 (up-sample ou down-sample).
 
