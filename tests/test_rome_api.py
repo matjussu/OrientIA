@@ -174,6 +174,8 @@ def test_rate_limiter_is_acquired_per_call(monkeypatch):
 
 
 def test_default_rpm_is_conservative():
-    # On reste bien en-dessous du cap France Travail (5 RPS = 300 RPM)
-    assert DEFAULT_RPM <= 300
-    assert DEFAULT_RPM >= 60  # pas trop timide non plus
+    # France Travail ROME 4.0 = 1 RPS officiel = 60 RPM cap.
+    # DEFAULT_RPM doit être <= 60 pour respecter le cap, mais >= 30 pour
+    # rester productif (éviter rate limiter trop timide).
+    assert DEFAULT_RPM <= 60, f"DEFAULT_RPM={DEFAULT_RPM} dépasse cap ROME 4.0 = 60 RPM"
+    assert DEFAULT_RPM >= 30, f"DEFAULT_RPM={DEFAULT_RPM} trop timide (cap 60 RPM, marge >50%)"
