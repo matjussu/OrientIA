@@ -36,6 +36,8 @@ def test_search_formations_calls_endpoint(monkeypatch):
     monkeypatch.setenv("LBA_API_TOKEN", "test-tok")
     session = MagicMock()
     resp = MagicMock()
+    # Format réel LBA : {"data": [...], "pagination": {...}}
+    # On accepte aussi le format legacy {"formations": [...]} pour compat.
     resp.json.return_value = {"formations": [{"id": "f1", "intitule": "BTS CG"}]}
     resp.raise_for_status = MagicMock()
     session.get.return_value = resp
@@ -44,7 +46,9 @@ def test_search_formations_calls_endpoint(monkeypatch):
     assert len(out) == 1
     assert out[0]["id"] == "f1"
     call = session.get.call_args
-    assert "formations" in call[0][0]
+    # URL corrigée post-swagger : /api/formation/v1/search (singular resource)
+    assert "formation" in call[0][0]
+    assert "/v1/search" in call[0][0]
     assert call[1]["params"]["rome"] == "M1203"
     assert call[1]["params"]["departement"] == "75"
 
