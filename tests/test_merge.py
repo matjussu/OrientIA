@@ -280,3 +280,188 @@ def test_attach_metadata_parcoursup_only_marks_onisep_null():
     # parcoursup_only = ONISEP was not joined; confidence.onisep must be null (=None)
     assert enriched[0]["merge_confidence"]["parcoursup"] == 1.0
     assert enriched[0]["merge_confidence"].get("onisep") is None
+
+
+# === Tests merge_all_extended — ADR-039 scope élargi ===
+
+
+def test_monmaster_to_fiche_preserves_phase_and_schema():
+    from src.collect.merge import monmaster_to_fiche
+
+    mm = {
+        "source": "monmaster",
+        "phase": "master",
+        "nom": "Master Informatique — Data Science",
+        "etablissement": "Université X",
+        "ville": "Paris",
+        "niveau": "bac+5",
+        "discipline": "Sciences économiques, gestion",
+        "mention": "INFORMATIQUE",
+    }
+    fiche = monmaster_to_fiche(mm)
+    assert fiche["phase"] == "master"
+    assert fiche["niveau"] == "bac+5"
+    assert fiche["match_method"] == "monmaster_only"
+    assert fiche["domaine"] == "eco_gestion"
+    assert fiche["statut"] == "Public"
+    assert fiche["labels"] == []
+
+
+def test_monmaster_to_fiche_infers_data_ia_from_informatique_discipline():
+    from src.collect.merge import monmaster_to_fiche
+    mm = {
+        "phase": "master",
+        "nom": "Master X",
+        "discipline": "Informatique scientifique",
+    }
+    assert monmaster_to_fiche(mm)["domaine"] == "data_ia"
+
+
+def test_monmaster_to_fiche_fallback_domaine_autre():
+    from src.collect.merge import monmaster_to_fiche
+    assert monmaster_to_fiche({"discipline": "Exotique rare"})["domaine"] == "autre"
+
+
+def test_rncp_to_fiche_maps_intitule_to_nom():
+    from src.collect.merge import rncp_to_fiche
+    certif = {
+        "source": "rncp",
+        "phase": "initial",
+        "intitule": "Analyste cybersécurité",
+        "numero_fiche": "RNCP35521",
+        "niveau": "bac+3",
+        "niveau_eu": "NIV6",
+        "abrege_type": "TP",
+        "abrege_intitule": "Titre professionnel",
+        "actif": True,
+        "voies_acces": ["Apprentissage", "VAE"],
+        "codes_rome": [{"code": "M1844", "libelle": "Analyste cybersécurité"}],
+        "codes_nsf": [{"code": "326", "libelle": "Informatique"}],
+        "certificateurs": [{"siret": "123", "nom": "Ministère du Travail"}],
+    }
+    fiche = rncp_to_fiche(certif)
+    assert fiche["nom"] == "Analyste cybersécurité"
+    assert fiche["rncp"] == "RNCP35521"
+    assert fiche["etablissement"] == "Ministère du Travail"
+    assert fiche["ville"] == ""
+    assert fiche["niveau"] == "bac+3"
+    assert fiche["domaine"] == "data_ia"  # NSF 326 = informatique
+    assert fiche["statut"] == "Certificat RNCP"
+    assert "Apprentissage" in fiche["voies_acces"]
+
+
+def test_rncp_to_fiche_handles_no_certificateurs():
+    from src.collect.merge import rncp_to_fiche
+    certif = {"intitule": "X", "numero_fiche": "RNCP1", "certificateurs": []}
+    fiche = rncp_to_fiche(certif)
+    assert fiche["etablissement"] == ""
+    assert fiche["domaine"] == "autre"
+
+
+def test_rncp_to_fiche_infers_domaine_sante_from_rome_j():
+    from src.collect.merge import rncp_to_fiche
+    certif = {
+        "intitule": "Aide-soignant",
+        "numero_fiche": "RNCP100",
+        "codes_rome": [{"code": "J1501", "libelle": "IDE"}],
+    }
+    assert rncp_to_fiche(certif)["domaine"] == "sante"
+
+
+def test_attach_cereq_insertion_enriches_matching_fiches():
+    from src.collect.merge import attach_cereq_insertion
+    fiches = [
+        {"niveau": "bac+5", "domaine": "Informatique"},
+        {"niveau": "bac+3", "domaine": "Droit"},
+    ]
+    cereq = [
+        {
+            "niveau": "bac+5", "domaine": "Informatique", "cohorte": "Generation 2017",
+            "taux_emploi_3ans": 0.92, "salaire_median_embauche": 2450,
+        },
+    ]
+    enriched = attach_cereq_insertion(fiches, cereq)
+    assert enriched[0]["insertion_pro"]["taux_emploi_3ans"] == 0.92
+    assert enriched[0]["insertion_pro"]["salaire_median_embauche"] == 2450
+    # Pas de match pour la 2ème fiche
+    assert "insertion_pro" not in enriched[1]
+
+
+def test_attach_cereq_insertion_no_op_if_empty():
+    from src.collect.merge import attach_cereq_insertion
+    fiches = [{"niveau": "bac+5", "domaine": "Informatique"}]
+    assert attach_cereq_insertion(fiches, None) == fiches
+    assert attach_cereq_insertion(fiches, []) == fiches
+
+
+def test_merge_all_extended_backward_compat_without_new_sources():
+    """Sans monmaster/rncp/cereq, le résultat doit être identique à merge_all()."""
+    from src.collect.merge import merge_all_extended, merge_all
+    parcoursup = [{"nom": "M IA", "rncp": "1", "domaine": "cyber"}]
+    onisep = [{"nom": "M IA", "rncp": "1", "domaine": "cyber"}]
+    legacy = merge_all(parcoursup, onisep, secnumedu=[])
+    extended = merge_all_extended(parcoursup, onisep, secnumedu=[])
+    # Tous les champs legacy doivent être présents à l'identique
+    assert len(extended) == len(legacy)
+    for le, ex in zip(legacy, extended):
+        assert le.get("rncp") == ex.get("rncp")
+        assert le.get("nom") == ex.get("nom")
+
+
+def test_merge_all_extended_adds_monmaster_fiches():
+    from src.collect.merge import merge_all_extended
+    mm = [{
+        "source": "monmaster", "phase": "master", "nom": "Master X",
+        "etablissement": "Univ Y", "ville": "Lyon", "niveau": "bac+5",
+        "discipline": "Droit",
+    }]
+    out = merge_all_extended([], [], secnumedu=[], monmaster=mm)
+    mm_fiches = [f for f in out if f.get("source") == "monmaster"]
+    assert len(mm_fiches) == 1
+    assert mm_fiches[0]["phase"] == "master"
+    assert mm_fiches[0]["domaine"] == "droit"
+
+
+def test_merge_all_extended_adds_rncp_certifs():
+    from src.collect.merge import merge_all_extended
+    rncp = [{
+        "intitule": "Assistant comptable", "numero_fiche": "RNCP200",
+        "niveau": "bac+2", "niveau_eu": "NIV5", "phase": "initial",
+        "codes_rome": [{"code": "M1203"}],
+        "codes_nsf": [{"code": "314t"}],  # Comptabilité
+        "certificateurs": [],
+    }]
+    out = merge_all_extended([], [], secnumedu=[], rncp=rncp)
+    rncp_fiches = [f for f in out if f.get("source") == "rncp"]
+    assert len(rncp_fiches) == 1
+    assert rncp_fiches[0]["nom"] == "Assistant comptable"
+    assert rncp_fiches[0]["phase"] == "initial"
+
+
+def test_merge_all_extended_cereq_enrichment_applied_across_sources():
+    from src.collect.merge import merge_all_extended
+    mm = [{
+        "source": "monmaster", "phase": "master", "niveau": "bac+5",
+        "discipline": "Sciences économiques, gestion", "nom": "M",
+    }]
+    cereq = [{
+        "niveau": "bac+5", "domaine": "eco_gestion", "cohorte": "Generation 2017",
+        "taux_emploi_3ans": 0.88,
+    }]
+    out = merge_all_extended([], [], secnumedu=[], monmaster=mm, cereq=cereq)
+    # La fiche MonMaster doit être enrichie Céreq par niveau+domaine
+    mm_fiche = next(f for f in out if f.get("source") == "monmaster")
+    assert mm_fiche.get("insertion_pro", {}).get("taux_emploi_3ans") == 0.88
+
+
+def test_merge_all_extended_phase_default_for_legacy_parcoursup():
+    """Parcoursup legacy (sans phase explicite) → phase inférée."""
+    from src.collect.merge import merge_all_extended
+    parcoursup = [
+        {"nom": "BTS X", "niveau": "bac+2", "domaine": "cyber"},
+        {"nom": "M5 IA", "niveau": "bac+5", "domaine": "cyber"},
+    ]
+    out = merge_all_extended(parcoursup, [], secnumedu=[])
+    by_nom = {f["nom"]: f for f in out}
+    assert by_nom["BTS X"]["phase"] == "initial"
+    assert by_nom["M5 IA"]["phase"] == "master"
