@@ -1808,3 +1808,188 @@ déjà scopées (ADR-039 / ADR-040).
 7. Bascule DRAFT → ACCEPTED par API après ingestion validée.
 
 ---
+
+## ADR-043 — Catalogue France Travail exhaustif — gap analysis + 3 APIs P0 additionnelles (2026-04-23) [DRAFT]
+
+**Statut** : DRAFT — analyse exhaustive catalogue ~30 APIs FT vs 8 activées
+Matteo. 3 nouvelles APIs P0 recommandées pour activation S+1/S+2. Bascule
+ACCEPTED par API individuelle après activation + ingestion.
+
+**Context** :
+
+Après réception credentials FT 2026-04-23 12:12, Matteo a activé
+progressivement. État actuel de sa liste d'APIs activées (8 au total, 2026-04-23 15:55) :
+
+1. Anotéa v1 (8 RPS) — avis post-formation
+2. **Sortants de formation et accès à l'emploi v1** (10 RPS) — **NOUVELLE** vs liste 12:12
+3. Marché du travail v1 (10 RPS)
+4. Accès à l'emploi des demandeurs d'emploi v1 (10 RPS)
+5-8. ROME 4.0 × 4 (Métiers / Fiches / Compétences / Contextes, 1 RPS chacune)
+
+Matteo demande via Jarvis (15:59) :
+> *"Est-ce qu'il en manque ? Lesquelles on ne va pas exploiter ?"*
+
+Sub-agent Explore dispatché pour inventaire catalogue `francetravail.io/data/api/`
+(~30 APIs + endpoints FT Connect + Open Formation ecosystem).
+
+### Focus confirmé — Sortants de formation et accès à l'emploi v1
+
+**Hypothèse vérifiée (confirmée par sub-agent)** : **complémentarité claire**
+avec "Accès à l'emploi demandeurs d'emploi v1" (déjà analysée ADR-042).
+
+| Critère | Sortants de formation v1 | Accès emploi demandeurs v1 |
+|---|---|---|
+| Population | Cohorte spécifique post-formation (dernier trimestre) | TOUS demandeurs emploi enregistrés |
+| Horizon | 6 mois post-sortie formation | 6 mois post-inscription DE |
+| Granularité | ROME × bassin emploi × niveau formation | ROME × bassin × catégorie A/B |
+| Usage OrientIA | Phase (c) insertion jeunes diplômés, bridge direct Céreq | Phase (c) benchmark tous profils marché |
+
+**Conclusion** : **les 2 sont à exploiter**, synergie (pas redondance).
+"Sortants de formation" = insertion post-formation ciblée, très utile pour
+RAG "combien de gens en dev s'insèrent après cette formation ?". À activer
+**P0** au même titre que les 2 autres ADR-042 (Marché du travail + Accès emploi).
+
+### Gap analysis — 3 APIs P0 additionnelles recommandées
+
+Parmi ~20 APIs non-activées, 3 sont **P0 S+1-S+2** pour OrientIA :
+
+**1. Open Formation** (api.gouv.fr / francetravail.io)
+- Catalogue officiel formations FT + partenaires + RNCP
+- **Fit OrientIA** : indispensable phase master, complément natif de notre
+  `onisep_formations_extended` (ONISEP) + `parcoursup_extended` (Parcoursup).
+  Apporte couverture partenaires FT absente de ces 2 sources.
+- **Effort** : léger (catalogue statique + géo), ~1-2j
+- **Verdict** : **ACTIVER P0 S+1**
+
+**2. Offres d'emploi France Travail** (10 RPS)
+- Annonces temps réel FT + partenaires, ~20k+ offres actives
+- **Fit** : phase master (découverte emploi après diplôme), phase c
+  (contexte marché concret par ROME × région). Pattern identique à
+  `/api/job/v1/search` LBA alternance mais scope emploi classique.
+- **Effort** : moyen (20k+ offres, streaming via pagination), ~2-3j
+- **Verdict** : **ACTIVER P0 S+1**
+
+**3. ROMEO (IA Compétences)** (francetravail.io/romeo-2)
+- API IA qui matche texte libre (ex: "je veux travailler dans la tech")
+  → codes ROME pertinents + compétences associées
+- **Fit** : transversal critique pour RAG OrientIA. Input utilisateur
+  flou → matching métier/formation structuré. Remplace les heuristiques
+  keywords `DOMAIN_KEYWORDS` actuels par de la sémantique officielle FT.
+- **Effort** : moyen (API IA, intégration RAG), ~2-3j
+- **Verdict** : **ACTIVER P1 S+2**
+
+### APIs P1 — nice-to-have S+2
+
+- **Informations emploi dans un territoire** (10 RPS) : population + dynamisme
+  IA par bassin emploi. Utile phase master "contexte local", mais couvert
+  partiellement par Marché du travail + INSEE. **P1 évaluer S+2**.
+- **Événements France Travail** (10 RPS) : forums/salons/speed-dating
+  régionaux. Utile engagement direct étudiant, pas critique RAG. **P1 S+2**.
+
+### APIs à SKIP définitivement (raisons documentées)
+
+1. **Statut demandeur emploi** (API Particulier, restreinte) : vérifie
+   inscription DE individuelle. OrientIA cible 17-25 ans, pas focus sur
+   registration DE. Hors scope.
+2. **Liste des paiements (indemnités)** (API Particulier, restreinte) :
+   historique allocations DE. **Sensible (financier personnel)**, hors
+   scope OrientIA, refus sur data protection.
+3. **France Travail Connect (full suite)** : OAuth2 FranceConnect user-profile,
+   write-access. Restreint, implique intégration compte utilisateur. **Future
+   si MVP OrientIA grandit**, skip pour deadline INRIA.
+4. **APIs Formation Partenaires (ICO / AIS / AES)** : restreinte aux
+   organismes de formation officiels. Matteo n'est pas organisme, hors scope.
+5. **Référentiel agences France Travail** (10 RPS) : adresses / horaires
+   agences FT physiques. Nice-to-have uniquement si feature "trouver mon
+   agence locale", pas critique RAG OrientIA. **Skip pour INRIA**.
+
+### Reco globale sur les 8 APIs activées par Matteo
+
+| API activée | Verdict OrientIA |
+|---|---|
+| ROME 4.0 × 4 (Métiers/Fiches/Compétences/Contextes) | ✅ **EXPLOITER** (ingestion live faite 2026-04-23) |
+| Anotéa v1 | ⏸️ **SCAFFOLD S+2, ingestion post-INRIA** (auth HMAC custom + couverture 40-60%) |
+| Marché du travail v1 | ✅ **EXPLOITER P1 S+2** (ADR-042) |
+| Accès à l'emploi demandeurs d'emploi v1 | ✅ **EXPLOITER P1 S+2** (ADR-042) |
+| Sortants de formation et accès à l'emploi v1 | ✅ **EXPLOITER P1 S+2** (NOUVELLE, complète Accès emploi) |
+
+**Aucune API activée ne sera skippée.** Les 8 sont utiles, la priorité
+change selon phase (ROME 4.0 exploitée immédiatement, 3 APIs stats P1 S+2,
+Anotéa post-INRIA).
+
+**Decision** :
+
+1. **Confirmer les 5 APIs non-activées mais utiles** (Open Formation +
+   Offres d'emploi + ROMEO + Informations territoire + Événements) en
+   **P0 (3 premières) / P1 (2 suivantes)**. Matteo activera selon priorité.
+2. **Skipper définitivement** les 5 APIs hors scope (Statut DE, Paiements,
+   FT Connect full, APIs orga formation, Référentiel agences).
+3. **Sortants de formation v1** (nouvelle) : exploiter au même titre que
+   Marché du travail + Accès emploi (P1 S+2), complémentaire direct Céreq.
+
+**Alternatives rejetées** :
+
+1. **Activer toutes les APIs disponibles (~30)** : scope explose, scope
+   créep vs deadline INRIA, risque congestion rate limits cross-APIs.
+2. **Skip Open Formation (redondant avec ONISEP/Parcoursup)** : faux —
+   Open Formation couvre les partenaires FT (CFA, organismes continus)
+   qui ne sont PAS dans ONISEP formations classiques ni Parcoursup. Gap réel.
+3. **Activer Anotéa en P0 maintenant** : non — auth HMAC custom = stack
+   différente OAuth2, 20-25h effort, couverture 40-60% seulement.
+   Post-INRIA mieux.
+
+**Nuance technique "Anotéa reporté parce que compliqué ?"** (question
+Matteo transmise Jarvis) :
+
+3 raisons combinées :
+1. **Auth différente** (HMAC-SHA256 vs OAuth2 pour toutes les autres APIs FT) →
+   module dédié + complexité cross-client.
+2. **Effort 20-25h** vs 3-10j pour Marché du travail / Accès emploi / Sortants.
+3. **Couverture partielle scope OrientIA** (~40-60%) alors que les 3 autres
+   P1 couvrent 100% ROME × régions.
+
+Anotéa est **utile** (avis qualitatifs modérés), pas **critique INRIA**. Le
+reporter post-INRIA = maximiser effort S+2 sur ingestion Marché travail +
+Accès emploi + Sortants formation qui apportent plus de valeur par heure.
+
+**Effets attendus S+1-S+2** :
+
+- **S+1 (reste de journée ~23/04 + 24-25/04)** : activation Open Formation
+  + Offres d'emploi FT (3 min Matteo dashboard + 3-5j dev ingestion).
+- **S+2** : activation ROMEO + scopes FT Marché travail + Accès emploi +
+  Sortants formation. Ingestion 4 APIs complémentaires (10-14j cumul).
+- **Post-INRIA** : Anotéa + Informations territoire + Événements si bande
+  passante + valeur ajoutée mesurée.
+
+**Scopes OAuth2 à activer côté app France Travail** (côté Matteo, 2-3 min) :
+
+Pour les APIs à activer P0-P1 S+1-S+2 :
+- `api_offresdemploi-v2` (offres d'emploi)
+- `api_marche-travailv1` (déjà noté ADR-042)
+- `api_acces-a-l-emploi-des-demandeurs-d-emploiv1` (déjà noté ADR-042)
+- `api_sortants-formation-acces-emploiv1` (nouvelle, non dans ADR-042)
+- `api_romeov2` ou équivalent (ROMEO)
+- Open Formation : via portail api.gouv.fr (peut être OAuth2 séparé)
+
+**Références** :
+
+- Ordre Jarvis 2026-04-23-1559 addendum catalogue FT + question Sortants
+- Rapport sub-agent Explore catalogue exhaustif francetravail.io
+- ADR-042 (3 APIs FT inutilisées — complété par cet ADR sur Sortants + APIs
+  additionnelles non-activées)
+- ADR-039 scope élargi (3 phases target)
+
+**Suite (S+1 → S+2)** :
+
+1. Matteo active scopes Open Formation + Offres emploi FT (2 min).
+2. S+1 fin : `src/collect/ft_open_formation.py` + `src/collect/ft_offres_emploi.py`
+   (2-3j chacun).
+3. S+2 : activation scopes ROMEO + Marché travail + Accès emploi + Sortants.
+4. S+2 : `src/collect/ft_marche_travail.py` + `ft_acces_emploi.py` +
+   `ft_sortants_formation.py` + `ft_romeo.py` (10-14j cumul).
+5. Post-INRIA : Anotéa (`src/collect/ft_anotea.py`, HMAC custom) + Événements
+   + Informations territoire.
+6. Bascule ADR-043 DRAFT → ACCEPTED par API après activation + ingestion validée.
+
+---
+
