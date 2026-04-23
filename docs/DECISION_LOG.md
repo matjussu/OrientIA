@@ -1186,3 +1186,231 @@ prompt compensent partiellement mais ne soignent pas à la source.
 - Rapport `results/gate_j6/report_v4_prompt_rebalance.md`
 
 ---
+
+## ADR-038 — Ingestion ROME 4.0 via API live France Travail (2026-04-23) [DRAFT]
+
+**Statut** : DRAFT — scaffold client livré (`src/collect/rome_api.py`, tests mockés),
+en attente credentials Matteo pour activation. Bascule DRAFT → ACCEPTED quand
+la première ingestion réelle tourne et enrichit `formations.json`.
+
+**Context** :
+
+`src/collect/rome.py` (D3a, ADR-034) fournit un référentiel ROME 4.0 offline
+depuis le zip `data/raw/rome_4_0.zip` (release v460 avril 2025). Il couvre les
+libellés, la hiérarchie et les flags transition_eco/num/demo, emploi_cadre,
+emploi_reglemente. C'est suffisant pour enrichir les fiches déjà matchées sur
+un code ROME hard-codé (`RELEVANT_ROME_CODES` : 9 cyber + 6 data_ia + 10 santé).
+
+**Limites du ZIP offline** :
+- Pas de tension marché par métier / région (donnée critique pour accompagnement
+  insertion pro phase c du scope élargi 17-25 ans — cf ordre Jarvis 2026-04-23-0843).
+- Pas de salaire médian actualisé post-release.
+- Pas de matching full-text automatisé — les 25 codes sont hard-codés, ne
+  scalent pas au scope élargi (master / alternance / autres domaines).
+- Pas de rafraîchissement mensuel sans re-téléchargement manuel du zip.
+
+**Decision** :
+
+Ajouter un **client API live** `src/collect/rome_api.py` complémentaire
+(pas substitut) au ZIP offline, basé sur l'OAuth2 client_credentials flow
+France Travail et exposant 3 endpoints initiaux :
+
+1. `get_metier(code_rome)` — libellé + granularité officielle à jour.
+2. `search_metiers(query)` — matching full-text sur libellés (remplace à terme
+   la table hard-codée `RELEVANT_ROME_CODES` quand on étend le scope).
+3. `get_fiche_metier(code_rome)` — fiche détaillée (activités, compétences,
+   salaires, tension marché) — **c'est là que l'API live bat le ZIP**.
+
+Scopes cochés sur l'app France Travail : `api_rome-metiersv1` +
+`api_rome-fiches-metiersv1` + `nomenclatureRome`.
+
+Rate limit : 180 RPM par défaut (cap France Travail ~300 RPM = 5 RPS, marge 40%).
+Retry exponentiel sur 429/5xx/timeouts, token auto-refresh 20 min.
+
+Sans credentials `FT_CLIENT_ID`/`FT_CLIENT_SECRET` dans `.env`, toute méthode
+lève `RomeApiCredentialsMissing` avec un message pointant `docs/TODO_MATTEO_APIS.md`.
+Pas de mode dégradé silencieux — explicit is better than implicit.
+
+**Rationale** :
+
+- **L'argument « données fraîches » de STRATEGIE §1.3 + §3 Cause #4 s'active
+  structurellement ici**. Sans API live, on reste figés sur le snapshot
+  d'avril 2025 et on perd l'avantage différenciateur vs LLMs natifs (cutoff
+  janvier 2026).
+- **Extension scope 17-25 ans 3 phases** (ordre Jarvis 2026-04-23-0843)
+  demande de matcher automatiquement débouchés vs métiers pour les formations
+  master / réorientation / alternance à venir en S+1 (D8 MonMaster + D9 RNCP).
+  `search_metiers` API > table hard-codée.
+- **Cohabitation claire avec `rome.py`** : le ZIP offline reste utile pour
+  les enrichissements statiques (hiérarchie, flags, fallback si API down).
+  `rome_api.py` = source de vérité pour données dynamiques (tension, salaires).
+- **Pattern OAuth2 robuste** : token auto-refresh, RateLimiter réutilisé
+  (`src/eval/rate_limit.py`), retry aligné `src/eval/runner.py:_call_with_retry`.
+
+**Alternatives rejetées** :
+
+1. **Re-télécharger le ZIP tous les mois manuellement** : pas de tension/salaires
+   dans le zip, et le cron D7 (ADR-035) gère déjà Parcoursup/ONISEP/InserSup —
+   pas de raison d'exclure ROME live.
+2. **Utiliser uniquement l'API (remplacer `rome.py`)** : perd la résilience
+   offline + la mémoïsation `lru_cache` qui sert 30+ tests sans latence réseau.
+3. **Scraper les fiches ROME sur travail-emploi.gouv.fr** : violation ToS +
+   fragile + l'API officielle existe et est gratuite.
+4. **Attendre S+2 pour ingérer ROME live** : bloque matching débouchés pour
+   scope élargi qui démarre S+1 (D8 + D9).
+
+**Effets attendus** (à mesurer quand credentials arrivent) :
+
+- Couverture débouchés ROME par fiche : `RELEVANT_ROME_CODES` = 25 codes
+  hard-codés → matching API pour 100+ formations du scope élargi.
+- Ajout champs `salaire_median`, `tension_marche`, `competences_clefs` sur
+  les fiches enrichies (non-présents dans le zip offline).
+- Métrique STRATEGIE §5 Axe 1 : passer de 0% à 80%+ débouchés discriminants.
+- Zéro régression sur tests existants `tests/test_rome.py` (15 tests ZIP) —
+  `rome_api.py` est un module séparé, `rome.py` n'est pas touché.
+
+**Références** :
+
+- STRATEGIE_VISION_2026-04-16.md §5 Axe 1 D3 (ROME 4.0 France Travail API)
+- Ordre Jarvis 2026-04-23-0843 amendement (scope élargi 17-25 ans 3 phases)
+- ADR-034 (D3a ROME 4.0 ZIP offline — complémentaire)
+- ADR-035 (cron refresh D7 — futur intégration D7 → rome_api pour rafraîchissement)
+- docs/TODO_MATTEO_APIS.md (signup francetravail.io)
+
+**Suite (post-credentials)** :
+
+1. Activation client + première ingestion sur 10 fiches cyber (dev sanity).
+2. Benchmark retrieval dev set 32q : comparer `our_rag_v1` vs `our_rag_v2_data_rome_live`.
+3. Extension scope S+1 D8 + D9 : matching master + alternance via `search_metiers`.
+4. Intégration cron D7 mensuel : refresh `data/processed/rome_live_cache.json`.
+5. Passage ADR-038 DRAFT → ACCEPTED avec métriques mesurées.
+
+---
+
+## ADR-039 — Scope élargi 17-25 ans 3 phases égales (2026-04-23) [DRAFT]
+
+**Statut** : DRAFT — cadrage stratégique acté 2026-04-23 par Matteo via
+ordre Jarvis 2026-04-23-0843 + amendement. Bascule DRAFT → ACCEPTED après
+première ingestion corpus élargi (D8 + D9) et validation métrique de
+répartition 3 phases.
+
+**Context** :
+
+Jusqu'à Run F+G (2026-04-16), OrientIA était optimisé pour un **profil
+étudiant implicite** : lycéen terminale ou post-bac jeune, phase (a)
+"choix d'étude initial", secteurs cyber/data_ia/santé. Le corpus (443
+fiches, 343 Parcoursup + 102 ONISEP) reflète ce biais historique.
+
+**Dérive identifiée par Matteo** (2026-04-23 06:43Z) : « tu as tendance
+à sur-pondérer le segment mineur [= lycéens post-Parcoursup] ». Constat
+empirique croisé avec :
+- Table `_DOMAIN_CODES` dans `src/collect/rome.py` = cyber + data_ia + santé uniquement
+- 71 fiches bac+5 sur 443 total = **16% master** vs 62% bac+2 (274)
+- Zéro fiche alternance native, zéro fiche RNCP réorientation
+- `SYSTEM_PROMPT` v3.2 mentionne "lycéens" 12+ fois, "master" 2 fois, "réorientation" 0
+- Exemples STRATEGIE_VISION §5 Axe 2 citent systématiquement "bac techno mention bien"
+
+**Decision** :
+
+Le périmètre OrientIA couvre désormais les 3 phases en **parts égales
+(33/33/34)** pour la cible 17-25 ans :
+
+1. **Phase (a) Choix d'étude initial** — lycéens terminale, Parcoursup,
+   post-bac immédiat (BUT/BTS/Licence/CPGE/Prépa).
+2. **Phase (b) Réorientation** — étudiants L1/L2 en décrochage, passerelles
+   intra/inter universités, alternance (bascule salarié), bascule filière.
+3. **Phase (c) Master + insertion pro** — M1/M2, spécialisation, premier
+   emploi, reconversion jeune pro (<25 ans).
+
+Cette répartition 33/33/34 doit être mesurable et imposée à chaque couche
+du système :
+
+| Couche | Métrique cible |
+|---|---|
+| Corpus `data/processed/formations.json` | ≥25% fiches par phase après S+1 D8+D9 |
+| Dataset RAFT fine-tuning | 33/33/34 strict par phase (S+3 R1-R3) |
+| Benchmark B1 étendu (100q) | 33 phase a + 33 phase b + 34 phase c (S+1-S+2) |
+| ProfileClarifier agent | 1ère sortie = phase détectée + score confiance (S+2 A2) |
+| UX home page | 3 CTA équi-poids distincts (S+4) |
+| Exemples docs/démo | rotation équilibrée (éditorial S+4) |
+
+**Nouvelles sources data ajoutées** (ordre Jarvis 0843, 8-9 sources
+confirmées) :
+- **D8 MonMaster** (`data.gouv.fr/fr/datasets/monmaster-...`) — couvre phase (c)
+- **D8bis Data ESR** (`data.esr.gouv.fr`) — enquêtes insertion MESR
+- **D9 France Compétences RNCP** (`francecompetences.fr`) — phases (b) + (c)
+- **D10 La Bonne Alternance** (`api.labonnealternance.apprentissage.beta.gouv.fr`) — phase (b)
+- **D11 Céreq Enquêtes Génération** (RAG pack séparé) — phase (c)
+- **D12 France Travail BMO** (Besoins en Main d'Œuvre, `francetravail.io`) — phase (c)
+
+**Rationale** :
+
+- **Deadline INRIA 25/05/2026 (J-32 au 23/04)** : le jury va tester
+  directement l'IA. Un système qui échoue sur 66% des profils (phases b
+  et c) = démo catastrophique, même si phase (a) est parfaite.
+- **Tuteur INRIA** a explicitement demandé (via Matteo) : pouvoir
+  accompagner un étudiant en réorientation ou un M1 en fin de cursus,
+  pas uniquement un lycéen. Le cahier des charges format "Le Mentor"
+  (empathie objective + transparence statut IA + mode Boussole) vaut
+  pour les 3 phases, pas juste les mineurs.
+- **Anti-drift self-flag obligatoire** : Matteo a noté que Claudette /
+  prompts / examples ont un biais documenté pro-mineur. La métrique
+  33/33/34 à chaque couche est la **seule** garantie programmatique
+  contre la régression.
+- **Cohabitation avec STRATEGIE_VISION_2026-04-16** : cet ADR étend et
+  renforce STRATEGIE §5 Axe 1 (Data) en précisant le périmètre scope.
+  STRATEGIE §5 reste la vision, §6 Axe 4 UX doit refléter les 3 CTA.
+  Pas de conflit de décision, seulement un raffinement de scope.
+
+**Alternatives rejetées** :
+
+1. **Rester sur scope cyber/data_ia/santé post-bac** : garde un système
+   simple mais échoue sur démo INRIA pour 66% des profils = inacceptable
+   vu la deadline.
+2. **Scope 3 phases mais ratio libre (pas de contrainte 33/33/34)** :
+   le biais historique re-prend le dessus silencieusement (chemin de
+   moindre résistance = lycéens post-bac déjà codés).
+3. **Pondération par popularité réelle** (ex : 50% post-bac, 30% master,
+   20% réorientation reflétant volume étudiant FR) : ignore la demande
+   explicite Matteo. À reconsidérer **après** démo INRIA si usage réel
+   oblige à re-pondérer.
+4. **Reporter la décision post-INRIA** : trop tard, le plan 4 sem S+1-S+4
+   doit être structuré autour de ce scope dès maintenant.
+
+**Effets attendus et métriques** :
+
+- Corpus fin S+1 : 33% post-bac + 33% master + 34% alternance/réorientation
+  (cible ±5 pts par phase).
+- Benchmark 100q reshuffle S+2 : 33/33/34 par phase, hold-out 68q recréé propre.
+- Honesty score Haiku `our_rag_v4_raft` sur phases (b) et (c) : ≥ 0.70
+  (baseline à mesurer post-ingestion).
+- Démo INRIA 25/05 : scénario scripté 6 questions (2 par phase) validé par
+  Matteo en pré-démo.
+
+**Risques et mitigations** :
+
+| Risque | Probabilité | Mitigation |
+|---|---|---|
+| Ingestion D8 MonMaster bloquée (API fermée ou schéma non-match) | Moyenne | POC feasibility 23/04 (item 3 plan jour) avant commitment S+1 |
+| Dataset RAFT 33/33/34 difficile à générer pour phase (c) insertion pro | Moyenne | Options α Opus + γ forums + β synthétique combinées (STRATEGIE §5 Axe 3) |
+| Test set 68q existant (cyber/data) devient obsolète pour benchmark élargi | Haute | Recréer hold-out 68q propre sur nouveau scope (B1 étendu S+2) |
+| Claudette continue à biaiser vers mineur malgré la règle | Moyenne | Self-check anti-drift dans chaque livraison + vigilance explicite Matteo |
+
+**Références** :
+
+- Ordre Jarvis 2026-04-23-0843 + amendement (source of truth scope élargi)
+- STRATEGIE_VISION_2026-04-16.md §5 Axe 1-2-4 (architecture V2 — étendue par cet ADR)
+- Cahier des charges format "Le Mentor" (Snack/Bite/Meal + Règle 3 + Boussole + mémoire session + CTA)
+- Memory Claudette `project_orientia_scope_v2.md` (anchor sessions futures)
+- ADR-038 (rome_api.py — complément scope élargi via `search_metiers`)
+
+**Suite (S+1 → S+4)** :
+
+1. Item 3 plan jour 23/04 : POC ingestion MonMaster + RNCP (feasibility avant commitment).
+2. S+1 D8 + D9 + D10 : ingestion master + alternance + RNCP (cible +150 fiches hors cyber/data/santé).
+3. S+2 B1 : recréation benchmark 100q (33/33/34) + hold-out 68q.
+4. S+2 A2 : ProfileClarifier détecte phase.
+5. S+4 U-home : 3 CTA équi-poids sur page d'accueil site.
+6. Passage ADR-039 DRAFT → ACCEPTED après métrique corpus 25/25/25 atteinte.
+
+---
