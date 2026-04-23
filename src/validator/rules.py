@@ -68,26 +68,12 @@ RULES: list[dict] = [
         ),
     },
     # === Concours HEC whitelist (ADR-025 anti-halluc #7) ===
-    {
-        "id": "tremplin_not_HEC",
-        "category": "concours_whitelist",
-        "severity": Severity.BLOCKING,
-        "pattern": r"(?:concours\s+)?Tremplin\b[^.\n]{0,80}?(?:pour|vers|à|d'accès\s+à)\s+(?:[\wÀ-ÿ']+\s+){0,3}HEC\b",
-        "message": (
-            "Le concours Tremplin mène à Audencia/ESC Dijon/Rennes, PAS à HEC. "
-            "HEC admissions parallèles = AST (bac+3/4), pas Tremplin."
-        ),
-    },
-    {
-        "id": "passerelle_not_HEC",
-        "category": "concours_whitelist",
-        "severity": Severity.BLOCKING,
-        "pattern": r"(?:concours\s+)?Passerelle\b[^.\n]{0,80}?(?:pour|vers|à|d'accès\s+à)\s+(?:[\wÀ-ÿ']+\s+){0,3}HEC\b",
-        "message": (
-            "Le concours Passerelle mène à ESC autres que HEC (Audencia, EM Lyon, etc.). "
-            "HEC admissions parallèles = AST uniquement."
-        ),
-    },
+    # NOTE V4 : les règles V1 `tremplin_not_HEC` et `passerelle_not_HEC` ont
+    # été retirées car supersedées par V2.1 `HEC_not_via_Tremplin_or_Passerelle`
+    # qui couvre les 2 patterns avec replacement_text pour γ Modify. Cette
+    # consolidation évite le double-firing qui bloquait le γ Modify (une règle
+    # V1 sans replacement + une V2 avec replacement → fallback Block indésiré).
+
     # === Voies impossibles (ADR-025 anti-halluc #3) ===
     {
         "id": "VAP_infirmier_kine",
@@ -175,6 +161,12 @@ RULES: list[dict] = [
             r"|AST\s*\(?Admission\s+sur\s+Titres"
             r"|concours\s+propre)"
         ),
+        "replacement_text": (
+            "HEC Paris passe par son propre concours AST (Admission sur Titres, bac+3/4), "
+            "pas par Tremplin ni Passerelle. Tremplin → Audencia/Kedge/SKEMA/EM Normandie, "
+            "Passerelle → ESC Clermont/ESSCA/IESEG/EM Strasbourg."
+        ),
+        "source": "Site HEC Paris + Psy-EN 22 ans d'expérience (ADR-036)",
     },
     {
         # V2.2 — En PASS, le redoublement est INTERDIT depuis l'arrêté du
@@ -199,6 +191,11 @@ RULES: list[dict] = [
             r"(?:interdit|une\s+seule\s+chance|arrêté\s+(?:du\s+)?\d|"
             r"sans\s+seconde\s+tentative|pas\s+autorisé)"
         ),
+        "replacement_text": (
+            "le redoublement en PASS est interdit (arrêté du 4 novembre 2019, réforme PACES → PASS/L.AS). "
+            "Une seule chance. Si 60 ECTS validés sans passage MMOP → bascule automatique L.AS ou L2 sur équivalence."
+        ),
+        "source": "Arrêté du 4 novembre 2019 (JORF) — réforme PACES → PASS/L.AS",
     },
     {
         # V2.3 — Séries bac A/B/C/D supprimées en 1995 (réforme Chevènement).
@@ -219,6 +216,10 @@ RULES: list[dict] = [
             r"(?:ancien|avant\s+199[0-5]|jusqu'?en\s+199[0-4]|historique|"
             r"réforme\s+Chevènement|ancienne?\s+série)"
         ),
+        "replacement_text": (
+            "bac général (spécialités Maths/PC/SVT/SES selon profil)"
+        ),
+        "source": "Réforme Chevènement 1992-1995 — séries A/B/C/D → nouveau bac général/techno/pro",
     },
     {
         # V2.4 — DE kinésithérapie s'obtient en IFMK (Institut de Formation en
@@ -242,6 +243,12 @@ RULES: list[dict] = [
             "sur concours très sélectif après PASS/L.AS/STAPS/licence scientifique validée."
         ),
         "except_context": r"(?:via\s+(?:un\s+)?IFMK|concours\s+IFMK|DE\s+via\s+IFMK)",
+        "replacement_text": (
+            "Kinésithérapie en IFMK (Institut de Formation en Masso-Kinésithérapie) "
+            "accessible après PASS/L.AS/STAPS/licence scientifique validée + concours "
+            "interne très sélectif (~3% d'accès national)"
+        ),
+        "source": "Site ONISEP + Ordre des Kinésithérapeutes + réforme PACES 2019",
     },
 ]
 

@@ -944,3 +944,98 @@ Items signalés mais non traités, à dispatcher S2 :
 - `docs/DECISION_LOG.md` — ADR-035 ajouté (post-cleanup)
 - `docs/STRATEGIE_VISION_2026-04-16.md` — référence stable
 - `CLAUDE.md` projet — mergé via PR #13, reflète repivot + pattern merge-approval
+
+---
+
+## 18. Sprint V2→V3→V4→V4.1 Gate J+6 (après-midi + soirée 2026-04-22)
+
+**Journée dense — 6 versions Validator livrées en 10h.** Le but : passer
+le verdict humain de 3/5 baseline à ≥4/5 pour déploiement beta mineur
+autonome. **Résultat : médiane 2/5 persistante, plateau identifié.**
+
+### 18.1 Timeline ordres dispatchés Jarvis → Claudette (après S1 matin)
+
+| Heure | Ordre | Status | PR |
+|---|---|---|---|
+| 1119 | `gate-j6-preparation` (UX Policy α+β + triple-judge + rapport) | ✅ done | #23 |
+| 1230 | `validator-v2-rules-dures-psy-en` | ✅ done | #24 ✅ mergé |
+| 1308 | `validator-v3-footer-polish` | ✅ done | #25 ✅ mergé |
+| 1335 | `v3-resimu-humaine-claude-sonnet-persona` | ✅ done | #26 |
+| 1751 | `validator-v4-gamma-modify-plus-enrichissements` | ✅ done | #27 |
+| 1834 | `system-prompt-rééquilibrage-plus-avis-global` | ✅ done | #28 |
+| 2333 | `avis-sur-5-axes-matteo-plus-plan-4-semaines-inria` | ✅ done | peer (consultatif) |
+
+### 18.2 Versions Validator — chronologie
+
+- **V1** (matin, PR #15 mergé) : rules + corpus_check, 53 tests, honesty 0.94
+- **V2** (midi, PR #24 mergé) : +4 règles dures Psy-EN (HEC AST, PASS redoublement, séries bac ABCD, kiné IFMK) + couche 3 Mistral Small souverain + data cleanup "mention B"
+- **V3** (après-midi, PR #25 mergé) : polish footer β Warn top 2 max + priority ordering
+- **V4** (soir, PR #27) : γ Modify refus chirurgical + PresenceRule 4 topics + phase projet minimal
+- **V4.1** (soirée, PR #28) : rebalance T2.4 prompt « Attention aux pièges »
+
+### 18.3 Métriques triple-judge + Claude Sonnet persona
+
+| Métrique | V1 | V2 | V3 | V4 | V4.1 |
+|---|---|---|---|---|---|
+| Triple-judge moyen | 3.63 | 3.23 | 3.26 | n/a | n/a |
+| Claude persona 3 Q hard médiane | — | — | 2 | **2** | **2** |
+| Claude persona moyenne | — | — | 2.27 | 2.40 | **2.00** |
+| Tests | 53 | 129 | 107 post | 190 | 177 post |
+
+**Verdict humain terrain Matteo** (ground truth v3 simulé) : 2/5 médiane
+sur 3 Q hard, cohérent avec Claude Sonnet persona.
+
+### 18.4 Cause racine plateau 2/5 (identifiée ADR-037)
+
+Le rééquilibrage prompt V4.1 a **RÉFUTÉ l'hypothèse** "verbosité footer =
+cause plateau". Causes plus profondes identifiées via commentaires Psy-EN
+verbatim :
+
+1. **Bug γ Modify** : multiple violations même règle → N remplacements
+   → répétitions textuelles (V4.2 fix prévu)
+2. **Règles V2 variance-dépendantes** : match sur certaines regen Mistral
+   pas d'autres
+3. **Phase projet bug** : trigger présent mais `already_has_project_prompts`
+   false positive
+4. **PresenceRule flag mais Mistral n'injecte pas** → migration
+   Presence → Modify P0 V5
+5. **Cause racine fondamentale** : Mistral Medium génération reste
+   fragile, les couches aval compensent mais ne soignent pas à la source
+
+### 18.5 PRs Gate J+6 (fin sprint)
+
+| # | Titre | Status | Action cleanup |
+|---|---|---|---|
+| #12 | axe2/pydantic-profileclarifier | ouverte | **Garder ouverte S2** (prep agentic) |
+| #23 | Gate J+6 UX Policy α+β | ouverte | **Fermer, superseded par #28** (cherry-picks cumulés) |
+| #26 | V3 persona re-simu | ouverte | **Fermer, superseded par #28** (cherry-picks cumulés) |
+| #27 | V4 γ Modify | ouverte | **Fermer, superseded par #28** (cherry-picks cumulés) |
+| **#28** | V4.1 prompt rebalance | **à merger** | **Merger (contient #23+#26+#27 via cherry-picks)** |
+
+### 18.6 Avis global Claudette + plan convergé 4 semaines INRIA
+
+Livrés en peer message consultatif (ordre 1834 + 2333). Points clés :
+
+- **Cap INRIA "battre IAs génériques"** maintenu par Matteo malgré mon
+  doute sur feasabilité à 4/5. Argumentaire recommandé : **rigueur
+  méthodologique + souveraineté + safety-first filet** plutôt que
+  "génération meilleure".
+- **Plan convergé 4 semaines** (S+1 à S+4, deadline ~25/05) :
+  - S+1 : D2 ONISEP API live + V4.2 fixes techniques + D4 labels
+  - S+2 : Refonte style réponses (registre conversationnel — unlock
+    possible, **prioritaire sur data selon Claudette**)
+  - S+3 : Agentic A1-A4 (ProfileClarifier absorbe phase projet Psy-EN)
+  - S+4 : A5-A6 + UI démo Astro minimale (Matteo contributor) + A8-A9
+    bench final + soumission
+- **Items reportés post-INRIA** : RAFT self-hosted, UI production beta,
+  coûts privés database, geocoding distance, expansion corpus 7 domaines
+
+### 18.7 État git fin de sprint (2026-04-23 matin)
+
+À documenter après cleanup PRs (pending).
+
+### 18.8 Pause explicite
+
+Matteo n'est pas convaincu par le plan convergé de la veille. Il demande
+**pause + cleanup + reprise demain**. Pas de discussion du plan ce soir
+(2026-04-22 nuit) ni demain matin. Reprise calme sur fresh eyes.

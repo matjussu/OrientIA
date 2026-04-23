@@ -19,7 +19,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from enum import Enum
 
-from src.validator.rules import Severity, Violation
+from src.validator.rules import Severity, Violation, RULES
 from src.validator.corpus_check import CorpusWarning
 from src.validator.layer3 import Layer3Warning
 from src.validator.validator import ValidatorResult
@@ -28,7 +28,13 @@ from src.validator.validator import ValidatorResult
 class Policy(str, Enum):
     PASSTHROUGH = "passthrough"
     WARN = "warn"
+    MODIFY = "modify"   # V4 γ Modify — reformule la phrase fautive
     BLOCK = "block"
+
+
+def _rule_replacement_lookup() -> dict[str, dict]:
+    """Map rule_id → rule dict (avec replacement_text + source si présents)."""
+    return {r["id"]: r for r in RULES}
 
 
 @dataclass
@@ -46,20 +52,21 @@ def _format_warn_footer(
     violations: list[Violation],
     corpus_warnings: list[CorpusWarning],
     layer3_warnings: list[Layer3Warning] | None = None,
+    presence_warnings: list | None = None,
 ) -> str:
     """Footer β Warn v3 (polish) : top 2 warnings max, priorité ordering.
 
-    V2 listait tous les warnings → juges LLM pénalisaient la verbosité.
-    V3 (Ordre 2026-04-22-1308) : top 2 items max avec priorité
-    WARN rules > corpus_warnings > layer3_warnings. Au-delà, suffix
-    "⚠️ N autres points à vérifier (masqués pour lisibilité)" sans les
-    détailler. Le safety détection reste intact côté back-end — seul
-    l'affichage UX est polish.
+    V4 ajoute presence_warnings dans l'ordering (entre WARN rules et layer3).
+    V3 polish : top 2 items max avec priorité rules > presence > corpus > layer3.
+    Au-delà, suffix "⚠️ N autres points à vérifier (masqués)".
     """
-    # Collecte tous les items dans l'ordre de priorité
+    # Collecte tous les items dans l'ordre de priorité (V4: presence avant corpus)
     items: list[str] = []
     for v in violations:
         items.append(f"- {v.message}")
+    if presence_warnings:
+        for pw in presence_warnings:
+            items.append(f"- {pw.missing_pattern_label} — {pw.message}")
     for w in corpus_warnings:
         items.append(
             f"- Affirmation non vérifiable dans notre corpus : *{w.claim}*. "
@@ -135,30 +142,83 @@ def _format_block_refusal(
     return "\n".join(body), categories
 
 
+def _apply_gamma_modify(
+    answer: str,
+    blocking_violations: list[Violation],
+) -> tuple[str, list[str], int]:
+    """V4 γ Modify : remplace `matched_text` de chaque violation BLOCKING
+    par son `replacement_text` (si défini dans la règle). Retourne
+    (answer_modifié, sources_list, nb_modifs).
+
+    Remplacement littéral (pas regex) → sûr contre les artefacts. Les
+    règles sans `replacement_text` forcent un fallback vers Block côté
+    caller.
+    """
+    lookup = _rule_replacement_lookup()
+    modified = answer
+    sources: list[str] = []
+    count = 0
+    for v in blocking_violations:
+        rule = lookup.get(v.rule_id, {})
+        replacement = rule.get("replacement_text")
+        if not replacement:
+            continue  # règle sans replacement → caller fera Block
+        # Remplacement littéral (le matched_text est exact car vient du regex match)
+        if v.matched_text and v.matched_text in modified:
+            modified = modified.replace(v.matched_text, replacement, 1)
+            count += 1
+            src = rule.get("source", "source non-documentée")
+            sources.append(f"[{v.rule_id}] {src}")
+    return modified, sources, count
+
+
+def _format_modify_footer(sources: list[str], count: int) -> str:
+    """Footer traçabilité V4 γ Modify."""
+    s_word = "source" if len(sources) == 1 else "sources"
+    m_word = "modification" if count == 1 else "modifications"
+    lines = [
+        "",
+        "---",
+        f"⚠️ **{count} {m_word} de sécurité** appliquée{'s' if count > 1 else ''} à ma réponse pour corriger des imprécisions factuelles. "
+        f"{s_word.capitalize()} :",
+    ]
+    for s in sources:
+        lines.append(f"- {s}")
+    lines.append("")
+    lines.append(
+        "Vérifie directement sur [ONISEP](https://www.onisep.fr) ou [Parcoursup]"
+        "(https://www.parcoursup.fr) avant toute décision."
+    )
+    return "\n".join(lines)
+
+
 def apply_policy(
     answer: str,
     validation: ValidatorResult,
 ) -> PolicyResult:
-    """Applique la policy hybride α+β sur l'answer selon ValidatorResult.
+    """Applique la policy V4 hybride γ Modify + α Block + β Warn.
 
-    Ordre de décision :
-    1. BLOCKING rule ou corpus_warning → Block (α)
-    2. Seulement WARN rule → Warn (β)
-    3. Aucune violation → passthrough
+    Priority ordering (V4) :
+    1. **corpus_warning** → Block (α) — formation inventée, on ne peut pas corriger
+    2. **BLOCKING rule AVEC replacement_text** → **Modify (γ)** — remplacement chirurgical
+    3. **BLOCKING rule SANS replacement_text** → Block (α) fallback
+    4. **WARN rule ou layer3** → Warn (β) avec footer top 2
+    5. **Aucune violation** → passthrough
 
     Backward-safe : answer vide ou validation sans violation → passthrough.
     """
-    has_blocking = any(v.severity == Severity.BLOCKING for v in validation.rule_violations)
+    blocking = [v for v in validation.rule_violations if v.severity == Severity.BLOCKING]
     has_corpus = len(validation.corpus_warnings) > 0
     has_warn = any(v.severity == Severity.WARNING for v in validation.rule_violations)
     has_layer3 = len(validation.layer3_warnings) > 0
 
-    if has_blocking or has_corpus:
+    # (1) Block si corpus_warning (on ne peut pas corriger une formation inventée)
+    if has_corpus:
         refusal, categories = _format_block_refusal(
             validation.rule_violations, validation.corpus_warnings
         )
-        warnings_list = [v.message for v in validation.rule_violations if v.severity == Severity.BLOCKING]
-        warnings_list.extend([f"[corpus] {w.claim}" for w in validation.corpus_warnings])
+        warnings_list = [v.message for v in blocking]
+        warnings_list.extend(f"[corpus] {w.claim}" for w in validation.corpus_warnings)
         return PolicyResult(
             final_answer=refusal,
             policy=Policy.BLOCK,
@@ -166,16 +226,49 @@ def apply_policy(
             blocked_categories=categories,
         )
 
-    if has_warn or has_layer3:
+    # (2) + (3) BLOCKING rules : γ Modify si toutes ont replacement_text, sinon Block
+    if blocking:
+        lookup = _rule_replacement_lookup()
+        all_have_replacement = all(
+            lookup.get(v.rule_id, {}).get("replacement_text") for v in blocking
+        )
+        if all_have_replacement:
+            modified_text, sources, count = _apply_gamma_modify(answer, blocking)
+            if count > 0:
+                footer = _format_modify_footer(sources, count)
+                # Ajout layer3/WARN dans le footer modify aussi si présents
+                combined = modified_text.rstrip() + "\n" + footer
+                return PolicyResult(
+                    final_answer=combined,
+                    policy=Policy.MODIFY,
+                    warnings=[f"[modify] {v.rule_id}: {v.matched_text!r}" for v in blocking],
+                    blocked_categories=sorted({v.category for v in blocking}),
+                )
+        # Fallback Block (rule sans replacement OU replacement n'a rien matché)
+        refusal, categories = _format_block_refusal(
+            validation.rule_violations, validation.corpus_warnings
+        )
+        return PolicyResult(
+            final_answer=refusal,
+            policy=Policy.BLOCK,
+            warnings=[v.message for v in blocking],
+            blocked_categories=categories,
+        )
+
+    # (4) WARN ou layer3 ou presence (V4)
+    has_presence = len(validation.presence_warnings) > 0
+    if has_warn or has_layer3 or has_presence:
         footer = _format_warn_footer(
             validation.rule_violations,
             validation.corpus_warnings,
             validation.layer3_warnings,
+            validation.presence_warnings,
         )
         warn_messages = [
             v.message for v in validation.rule_violations
             if v.severity == Severity.WARNING
         ]
+        warn_messages.extend(f"[presence] {pw.topic}" for pw in validation.presence_warnings)
         warn_messages.extend(f"[layer3] {lw.claim}" for lw in validation.layer3_warnings)
         return PolicyResult(
             final_answer=answer.rstrip() + "\n" + footer,
@@ -183,6 +276,7 @@ def apply_policy(
             warnings=warn_messages,
         )
 
+    # (5) Passthrough
     return PolicyResult(
         final_answer=answer,
         policy=Policy.PASSTHROUGH,

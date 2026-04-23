@@ -10,6 +10,7 @@ from dataclasses import dataclass, field
 from src.validator.rules import Severity, Violation, apply_rules
 from src.validator.corpus_check import CorpusWarning, check_claims_in_corpus
 from src.validator.layer3 import Layer3Validator, Layer3Warning
+from src.validator.presence import PresenceWarning, check_presence
 
 
 @dataclass
@@ -18,6 +19,7 @@ class ValidatorResult:
     rule_violations: list[Violation] = field(default_factory=list)
     corpus_warnings: list[CorpusWarning] = field(default_factory=list)
     layer3_warnings: list[Layer3Warning] = field(default_factory=list)
+    presence_warnings: list[PresenceWarning] = field(default_factory=list)
     flagged: bool = False  # True si >= 1 violation BLOCKING ou corpus_warning
 
     def summary(self) -> str:
@@ -84,9 +86,11 @@ class Validator:
         layer3_warnings: list[Layer3Warning] = []
         if self.layer3 is not None:
             layer3_warnings = self.layer3.check(answer)
+        # V4 : règles de PRÉSENCE — flag si topic sans info obligatoire
+        presence_warnings = check_presence(answer)
 
         honesty_score = self._compute_honesty(
-            rule_violations, corpus_warnings, layer3_warnings
+            rule_violations, corpus_warnings, layer3_warnings, presence_warnings
         )
         flagged = (
             any(v.severity == Severity.BLOCKING for v in rule_violations)
@@ -101,6 +105,7 @@ class Validator:
             rule_violations=rule_violations,
             corpus_warnings=corpus_warnings,
             layer3_warnings=layer3_warnings,
+            presence_warnings=presence_warnings,
             flagged=flagged,
         )
 
@@ -109,6 +114,7 @@ class Validator:
         violations: list[Violation],
         corpus_warnings: list[CorpusWarning],
         layer3_warnings: list[Layer3Warning] | None = None,
+        presence_warnings: list[PresenceWarning] | None = None,
     ) -> float:
         score = 1.0
         for v in violations:
@@ -116,4 +122,6 @@ class Validator:
         score -= _CORPUS_PENALTY * len(corpus_warnings)
         if layer3_warnings:
             score -= _LAYER3_PENALTY * len(layer3_warnings)
+        if presence_warnings:
+            score -= 0.05 * len(presence_warnings)
         return max(0.0, min(1.0, score))

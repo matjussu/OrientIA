@@ -216,3 +216,75 @@ class TestV3FooterPolish:
         assert exposed <= 2
         # Suffix mentionne les masqués
         assert "3" in result.final_answer  # 5 - 2 = 3 masqués
+
+
+# =========================================================================
+# V4 γ Modify — chirurgical replacement, pas de refus total
+# =========================================================================
+
+
+class TestV4GammaModify:
+    """V4 (ordre 2026-04-22-1751) : BLOCKING rules AVEC replacement_text
+    → remplacement chirurgical du segment fautif, pas refus total.
+
+    Priority V4 : corpus_warning → Block / BLOCKING+replacement → Modify /
+    BLOCKING sans replacement → Block fallback."""
+
+    @pytest.fixture
+    def mini_corpus_v4(self) -> list[dict]:
+        return [{"nom": "PASS", "etablissement": "Université Lyon 1"}]
+
+    def test_V2_4_kine_licence_option_triggers_modify_not_block(self, mini_corpus_v4):
+        """Q6 pattern 'Licence option Kinésithérapie' DOIT produire une
+        réponse modifiée (γ Modify) avec reformulation IFMK, pas refus total."""
+        v = Validator(fiches=mini_corpus_v4)
+        answer = (
+            "Pour devenir kiné, tu peux viser la Licence Sciences de la vie "
+            "(option Kinésithérapie) à Perpignan."
+        )
+        result = apply_policy(answer, v.validate(answer))
+        assert result.policy == Policy.MODIFY
+        # La reformulation IFMK est présente
+        assert "IFMK" in result.final_answer
+        # Le matched_text fautif est remplacé (l'expression exacte qui matchait)
+        # doit être absente — vérifie que "(option Kinésithérapie)" littéral n'est plus là
+        assert "option Kinésithérapie" not in result.final_answer
+        # Footer traçabilité
+        assert "modification de sécurité" in result.final_answer.lower() or "modifications de sécurité" in result.final_answer.lower()
+
+    def test_V2_1_HEC_Tremplin_triggers_modify(self, mini_corpus_v4):
+        v = Validator(fiches=mini_corpus_v4)
+        answer = "Tu peux tenter le concours Tremplin à bac+3 pour intégrer HEC."
+        result = apply_policy(answer, v.validate(answer))
+        assert result.policy == Policy.MODIFY
+        # Reformulation AST + Audencia/Kedge
+        assert "AST" in result.final_answer
+        assert "Audencia" in result.final_answer or "Kedge" in result.final_answer
+
+    def test_V2_2_PASS_redoublement_triggers_modify(self, mini_corpus_v4):
+        v = Validator(fiches=mini_corpus_v4)
+        answer = "Si ça ne marche pas, tu peux redoubler PASS l'année suivante."
+        result = apply_policy(answer, v.validate(answer))
+        assert result.policy == Policy.MODIFY
+        assert "interdit" in result.final_answer.lower()
+        assert "2019" in result.final_answer
+
+    def test_V1_ECN_rule_without_replacement_falls_back_to_block(self, mini_corpus_v4):
+        """Les règles V1 (ECN, bac S v1) n'ont pas de replacement_text
+        → Policy γ ne peut pas Modify, fallback Block."""
+        v = Validator(fiches=mini_corpus_v4)
+        answer = "Tu passeras les ECN en 6e année."
+        result = apply_policy(answer, v.validate(answer))
+        # V1 ECN pas de replacement → fallback Block
+        assert result.policy == Policy.BLOCK
+
+    def test_corpus_warning_still_blocks_cannot_modify(self, mini_corpus_v4):
+        """Une formation inventée (corpus_warning) ne peut pas être modifiée
+        → Block maintenu."""
+        v = Validator(fiches=mini_corpus_v4)
+        answer = (
+            "Tu peux faire la Licence Imaginaire-Parcours X à l'Université de Nulle-Part."
+        )
+        result = apply_policy(answer, v.validate(answer))
+        # Corpus warning → Block, jamais Modify
+        assert result.policy == Policy.BLOCK

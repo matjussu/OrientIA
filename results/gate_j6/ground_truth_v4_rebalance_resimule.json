@@ -1,0 +1,195 @@
+[
+  {
+    "question_num": 1,
+    "persona_key": "leo_17",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Le texte se répète 3 fois avec 'HEC Paris passe par son propre concours AST... Tremplin → Audencia/Kedge/SKEMA' collé n'importe où, ça fait buggé",
+      "Prépa Henri IV avec 11 de moyenne ?? Même en rêve c'est mort, pourquoi me proposer ça",
+      "Les 3 modifications de sécurité à la fin parlent toutes 3 fois de la même source [HEC_not_via_Tremplin_or_Passerelle], ça sent le copier-coller raté"
+    ],
+    "commentaire": "Franchement ça part en vrille. Le début répond cash (non HEC direct avec 11) mais après ça bug grave avec du texte dupliqué partout, genre un copier-coller qui s'est mal passé. Et me proposer Henri IV alors que j'ai 11... c'est se foutre de ma gueule ou quoi ? J'ai l'impression que l'outil a planté en pleine réponse.",
+    "latency_s": 8.6
+  },
+  {
+    "question_num": 1,
+    "persona_key": "ines_20",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Répétition obsessionnelle 'HEC Paris passe par son propre concours AST (Admission sur Titres, bac+3/4), pas par Tremplin ni Passerelle. Tremplin → Audencia/Kedge/SKEMA/EM Normandie, Passerelle → ESC Clermont/ESSCA/IESEG/EM Strasbourg' incrustée en plein milieu des descriptions de formations, créant un texte illisible",
+      "BBA INSEEC à 10k€/an alors que le budget mentionné est 6k€ max — pourquoi le proposer en Plan A 'réaliste' ?",
+      "Prépa Henri IV pour quelqu'un à 11 de moyenne ? Même en 'ambitieux', c'est pas sérieux — faut 17+ juste pour être convoqué",
+      "Le TL;DR dit '10% des places réservées' puis s'arrête net, phrase tronquée",
+      "Les 3 modifications de sécurité affichent le MÊME code source [HEC_not_via_Tremplin_or_Passerelle] trois fois — bug évident du système"
+    ],
+    "commentaire": "Techniquement le conseil AST est juste, mais le texte est cassé par un copier-coller raté qui pollue tout. Pire : on me propose du hors-budget en premier plan et Henri IV en étant réaliste sur mes 11 de moyenne. L'outil a visiblement patché un bug sans relire.",
+    "latency_s": 11.1
+  },
+  {
+    "question_num": 1,
+    "persona_key": "theo_23",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Répétition hallucinée 'HEC Paris passe par son propre concours AST (Admission sur Titres, bac+3/4), pas par Tremplin ni Passerelle. Tremplin → Audencia/Kedge/SKEMA/EM Normandie, Passerelle → ESC Clermont/ESSCA/IESEG/EM Strasbourg.' qui pollue toute la réponse - bug technique évident",
+      "BBA INSEEC à 10k€/an présenté comme 'accessible avec 11 de moyenne' sans mentionner le ROI catastrophique : 40k€ de prêt pour un grade Licence alors qu'une licence IAE publique gratuite offre les mêmes débouchés AST",
+      "Prépa Henri IV suggérée à quelqu'un avec 11 de moyenne en Terminale - déconnexion totale du réel, même avec '16+ requis' c'est irresponsable de le lister comme option"
+    ],
+    "commentaire": "Bug technique massif qui rend la réponse illisible + conseil financier dangereux sur le BBA INSEEC. La seule info utile (AST HEC ≠ Tremplin/Passerelle) est noyée dans une répétition glitchée. Un lycéen de 17 ans ne peut pas identifier ce dysfonctionnement et risque de prendre au sérieux Henri IV ou de s'endetter 40k€ pour un BBA low-tier. Dangereux sans supervision.",
+    "latency_s": 10.1
+  },
+  {
+    "question_num": 1,
+    "persona_key": "catherine_52",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Répétition aberrante 'HEC Paris passe par son propre concours AST' collée 3 fois dans le texte, dont au milieu de phrases sur Tremplin/Passerelle → bug technique visible, perte totale de cohérence",
+      "Prépa ECG au Lycée Henri IV présentée comme 'envisageable' avec 11 de moyenne en terminale puis 14-15 → irréaliste, Henri IV recrute dossiers 16+, la nuance province ne sauve pas l'incohérence",
+      "Aucun chiffre factuel sur le concours AST HEC (taux d'admission ~2-3%, prérequis académique Master/Grande École) → un ado de 17 ans croira que c'est une voie 'progressive' alors que c'est ultra-sélectif"
+    ],
+    "commentaire": "Je ne laisserais pas Hugo lire ça seul : le bug de répétition casse la crédibilité, et surtout l'outil sous-estime la violence du concours AST HEC (2% d'admis, profils Top 5 écoles). Avec 11 de moyenne, la vraie question c'est 'pourquoi HEC ?' pas 'comment y aller'. Un Psy-EN poserait d'abord ça. Je valide l'idée BBA/licence mais pas la présentation édulcorée de la suite.",
+    "latency_s": 11.4
+  },
+  {
+    "question_num": 1,
+    "persona_key": "psy_en_54",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Texte illisible avec répétitions parasites (« HEC Paris passe par son propre concours AST... » collé 3 fois dans les fiches). Bug technique rédhibitoire pour un élève seul.",
+      "IAE Toulouse présenté comme tremplin HEC : faux. Les AST HEC viennent massivement de Paris-Dauphine, Sciences Po, ENS, universités top 20 mondiales — pas d'IAE de province. Créer un faux espoir à un élève à 11 de moyenne.",
+      "Prépa ECG Henri IV suggérée à un élève à 11/20 : déconnexion totale du réel. Henri IV recrute à 17+. Même « en province », aucune prépa viable sous 14 de moyenne soutenue.",
+      "« 10% des places réservées » (Tremplin/Passerelle) : phrase tronquée, incompréhensible. Réservées à quoi ? Pour qui ?",
+      "BBA INSEEC à 10k€/an pour un élève manifestement en recherche d'accessibilité : orientation budgétaire jamais questionnée. Je demande TOUJOURS la capacité financière familiale avant de citer du privé."
+    ],
+    "commentaire": "Je ne peux pas laisser un élève utiliser ça seul. Les bugs textuels + le Plan B Henri IV pour 11 de moyenne + l'absence totale de phase diagnostic (« pourquoi HEC ? ») font de cette réponse un accident pédagogique. En entretien, je devrais déconstruire ces faux espoirs avant de rebâtir un projet réaliste. Dangereux en autonomie.",
+    "latency_s": 12.3
+  },
+  {
+    "question_num": 6,
+    "persona_key": "leo_17",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Me parle de Carcassonne et Montpellier alors que j'ai demandé Perpignan",
+      "Me balance des formations santé ultra sélectives sans savoir si ça m'intéresse",
+      "Plein de pourcentages chelou genre '3% d'admission' qui me font flipper sans contexte",
+      "Parle de PASS mais dit pas qu'on peut pas redoubler (wtf si je rate?)"
+    ],
+    "commentaire": "Franchement c'est le bordel. Je demande Perpignan, on me sort Montpellier et Carcassonne à 1h30. Les formations santé ultra sélectives genre kiné à 3%, ça sert à rien si c'est pas mon délire. Et tous ces chiffres sans savoir mes notes ou ce que je veux faire, ça me stress plus qu'autre chose. En plus le truc du PASS sans dire qu'on peut pas redoubler, c'est grave comme info manquante.",
+    "latency_s": 8.1
+  },
+  {
+    "question_num": 6,
+    "persona_key": "ines_20",
+    "score": 2,
+    "erreurs_factuelles": [
+      "PASS : pas de mention du redoublement interdit (arrêté 2019), info cruciale pour ne pas perdre un an",
+      "Kiné : parle de 'Licence Sciences de la vie option Kiné' sans expliquer le vrai parcours IFMK post-PASS/LAS",
+      "FCIL Vendeurs en parapharmacie présentée comme 'métiers paramédicaux' →vendeur ≠ paramédical, c'est du commerce",
+      "Plan C suggère Quimper pour la diététique alors que la question porte sur Perpignan, incohérence géographique totale"
+    ],
+    "commentaire": "La structure Plan A/B/C m'infantilise déjà, mais surtout : trop d'approximations dangereuses sur les formations santé. Un lycéen qui lit ça peut croire qu'il peut redoubler PASS ou que la parapharmacie = paramédical. Le biais vers la santé ultra-sélective sans vraiment creuser les alternatives locales me gêne. Utile pour découvrir des pistes, mais pas assez fiable en autonomie.",
+    "latency_s": 8.8
+  },
+  {
+    "question_num": 6,
+    "persona_key": "theo_23",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Confusion formation/métier typique : une 'Licence Sciences de la vie option Kinésithérapie' n'existe pas en tant que diplôme kiné. Pour être kiné, il faut faire PASS/LAS → IFMK (Institut de Formation en Masso-Kinésithérapie) en 4 ans. Cette erreur est dangereuse pour un lycéen.",
+      "La FCIL 'Vendeurs en parapharmacie' présentée comme 'métier paramédical' : c'est du commerce en officine, pas de la santé. Un M1 marketing repère cette tentative de faire passer une formation courte pour une passerelle santé.",
+      "Le ton 'ultra-sélective presque impossible' sur la kiné sans expliquer le parcours réel (PASS/LAS obligatoire, puis concours IFMK) = flou qui masque le manque de maîtrise du sujet santé."
+    ],
+    "commentaire": "Réponse qui mélange vraies données Parcoursup et approximations dangereuses. La confusion PASS → kiné sans mentionner l'IFMK, c'est une erreur de débutant en conseil d'orientation. La FCIL parapharmacie vendue comme 'santé' sent le remplissage de base de données. Pour un lycéen seul face à ces infos, c'est un piège : il croira qu'une licence SdV = kiné. Je mettrais 1/5 si l'outil n'avait pas au moins sourcé les taux Parcoursup.",
+    "latency_s": 11.7
+  },
+  {
+    "question_num": 6,
+    "persona_key": "catherine_52",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Kiné : l'outil confond accès L.AS/PASS à Perpignan avec l'admission en IFMK (qui passe par concours après L1, arrêté 2015). Hugo risque de croire qu'il entre directement en kiné via Parcoursup.",
+      "PASS : omission critique du non-redoublement (arrêté 2019) → si Hugo échoue, il perd un an sans le savoir. Inacceptable.",
+      "Orthophonie : pas de mention du concours CEO (Certificat d'Études d'Orthophoniste), accès réglementé, pas juste une 'formation sélective'."
+    ],
+    "commentaire": "Je ne laisserais pas Hugo utiliser cet outil seul à 22h pour préparer ses vœux santé. Les confusions PASS/IFMK et l'absence d'avertissement redoublement sont des pièges réglementaires que je repère car je lis les textes avec lui. Le reste (data, cyber) est correct mais pollué par ces erreurs rédhibitoires. RDV obligatoire avec la Psy-EN avant toute validation de vœux.",
+    "latency_s": 10.9
+  },
+  {
+    "question_num": 6,
+    "persona_key": "psy_en_54",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Licence Sciences de la vie - option Kinésithérapie n'existe PAS. L'accès kiné se fait via PASS/L.AS puis concours IFMK. Aucune licence ne délivre un accès direct kiné. Invention dangereuse.",
+      "PASS à 18% d'admission présenté comme 'ambitieux' sans préciser l'INTERDICTION de redoublement (arrêté 4 novembre 2019). Un lycéen doit savoir qu'il joue sa carte en une fois.",
+      "Série bac A/B/C/D n'existe plus depuis 1995 (réforme Chevènement). Mentions 'bac général/techno' floues sans contextualiser les spécialités pertinentes pour ces filières.",
+      "Aucune phase projet : l'outil balance un 'Plan A/B/C' sans demander 'Qu'est-ce qui t'attire dans la santé/data/cyber ?'. Je commence TOUJOURS par 'Où en es-tu de ta réflexion ?'.",
+      "FCIL Vendeurs en parapharmacie présentée comme 'santé sans numerus clausus' — c'est du COMMERCE, pas un métier paramédical. Confusion métier/formation."
+    ],
+    "commentaire": "Cette réponse est dangereuse pour un mineur en autonomie. L'invention d'une 'licence option kiné' et l'omission du redoublement PASS interdit relèvent de la désinformation. En CIO, je demanderais son retrait immédiat. Aucune phase projet, aucune pédagogie du parcours.",
+    "latency_s": 12.4
+  },
+  {
+    "question_num": 8,
+    "persona_key": "leo_17",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Mélange PASS/PACES sans expliquer clairement (je sais même pas si c'est la même chose)",
+      "Dit que 100% d'accès à Brest mais 912 vœux pour 80 places ??? ça colle pas du tout",
+      "Parle de 'numérus clausus' sans dire que ça existe plus depuis 2020 (mon pote qui veut faire médecine m'a expliqué que c'est 'numerus apertus' maintenant)",
+      "Propose des écoles au hasard (Strasbourg, Bordeaux) alors que je suis pas dit où j'habite"
+    ],
+    "commentaire": "Franchement ça me stresse plus qu'autre chose. Les stats se contredisent (100% d'accès mais genre 10 fois plus de candidats que de places??), je comprends pas la différence entre tous les trucs (PASS/PACES/LAS/mineure), et en vrai ça répond pas : avec 12 est-ce que JE peux y aller ou pas ? En plus ça balance des villes random sans savoir où j'habite, et le truc du redoublement interdit c'est hyper important mais c'est juste mentionné en warning en bas. Trop flou pour que je décide tout seul.",
+    "latency_s": 11.0
+  },
+  {
+    "question_num": 8,
+    "persona_key": "ines_20",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Le taux de 5-10% d'accès en 2e année médecine est faux : c'est plutôt 15-20% nationalement selon les facs (chiffres ministère 2023)",
+      "IFSI ne passe plus par concours depuis 2019, c'est sur dossier Parcoursup maintenant",
+      "La L2/L3 Accès Santé n'existe pas sous ce nom : c'est LAS (Licence Accès Santé), pas une passerelle après BTS/BUT",
+      "100% d'accès à Brest sonne louche - soit bug Parcoursup soit donnée obsolète, à vérifier avant de recommander"
+    ],
+    "commentaire": "Trop d'approximations factuelles pour conseiller ça à un·e lycéen·ne seul·e. Le ton infantilisant 'Plan A/B/C' + erreurs sur IFSI et LAS me font flipper sur la fiabilité globale. Les liens Parcoursup sont ok mais les stats bidonnées sapent la confiance.",
+    "latency_s": 8.6
+  },
+  {
+    "question_num": 8,
+    "persona_key": "theo_23",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Le Plan B recommande Cours Thalès pour 'booster tes chances' en PASS — c'est du placement produit déguisé, exactement ce qu'on apprend à repérer en M1 marketing. Aucune source indépendante ne prouve l'efficacité de ces prépas privées à 3000€.",
+      "La réponse confond formation et métier : elle liste des BTS/BUT comme 'alternatives' sans expliquer que ce sont des MÉTIERS différents (technicien labo ≠ médecin). Un lycéen de 17 ans ne fait pas cette distinction seul.",
+      "Les stats '5-10% passent en 2e année' sont correctes mais la réponse oublie de dire que PASS = ONE SHOT (pas de redoublement, arrêté 2019). Pour un mineur avec 12 de moyenne, c'est criminel de ne pas le dire clairement dès le TL;DR."
+    ],
+    "commentaire": "Dangereux pour un lycéen en autonomie. Le placement produit Cours Thalès me confirme que c'est du marketing d'orientation, pas du conseil. Et surtout : ne pas marteler l'interdiction de redoublement PASS dès la ligne 2 quand tu parles à quelqu'un avec 12 de moyenne, c'est de la non-assistance à personne en danger scolaire. Je mettrais jamais ma petite sœur devant cet outil.",
+    "latency_s": 11.3
+  },
+  {
+    "question_num": 8,
+    "persona_key": "catherine_52",
+    "score": 2,
+    "erreurs_factuelles": [
+      "PASS interdit de redoublement depuis 2019 (arrêté du 4 novembre) : non mentionné alors que c'est CRUCIAL pour un ado qui s'engage",
+      "Kiné : dit 'passerelles possibles en écoles de kiné' mais omet qu'il faut passer par PASS/L.AS ou IFMK avec sélection drastique, pas juste 'admission parallèle'",
+      "IFSI 'concours après bac' : FAUX depuis 2019, l'entrée se fait via Parcoursup sur dossier, plus de concours",
+      "Numéros de téléphone/stages pré-rentrée Cours Thalès : lien commercial non contextualisé, je n'aime pas qu'on oriente mon fils vers du payant sans alternative gratuite (SCUIO fait aussi des pré-rentrées)"
+    ],
+    "commentaire": "Je ne laisserais PAS Hugo utiliser ça seul à 22h. Trois erreurs procédurales majeures (redoublement PASS, IFSI, kiné) qui pourraient le faire se tromper de stratégie Parcoursup. En tant que DRH, je repère aussi le biais 'prépa privée = obligatoire' sans mentionner les tutorats gratuits des facs. On irait ensemble au CIO avant de suivre ces conseils.",
+    "latency_s": 10.9
+  },
+  {
+    "question_num": 8,
+    "persona_key": "psy_en_54",
+    "score": 2,
+    "erreurs_factuelles": [
+      "Confusion PASS/numérus clausus : parle de '5-10% qui passent en 2e année' alors que depuis R2C 2023 le numérus clausus n'existe plus (remplacé par numerus apertus). Les taux d'admission varient selon facultés et filières MMOPK, pas un chiffre unique national.",
+      "Redoublement PASS non mentionné : ABSENCE CRITIQUE de l'information obligatoire 'pas de redoublement possible en PASS' (arrêté 4 novembre 2019). Pour un lycéen à 12 de moyenne qui prendrait ce risque sans le savoir, c'est déontologiquement inacceptable.",
+      "Kiné via STAPS mineure : présente 'STAPS pour devenir kiné' comme parcours direct alors qu'il faut STAPS validée (L1 minimum) + concours IFMK ultra-sélectif. Passage sous silence du goulot d'étranglement IFMK.",
+      "Annales PACES obsolètes : renvoie vers remede.org pour s'entraîner sur annales PACES alors que PACES n'existe plus depuis 2020 (remplacé par PASS/L.AS). Les QCM ont changé de format avec la réforme.",
+      "'Prépa privée obligatoire' implicite : suggère stage Cours Thalès comme nécessaire pour Marseille, créant anxiété financière alors qu'en entretien je commencerais par 'de quelles ressources disposes-tu ? As-tu besoin d'un job étudiant ?' avant de recommander un coût supplémentaire."
+    ],
+    "commentaire": "Cet outil balance trois plans A/B/C sans jamais demander 'pourquoi médecine ?'. En 22 ans, j'ai vu trop d'élèves à 12 se brûler en PASS parce qu'on ne leur a pas posé la question du projet. L'absence de mention du non-redoublement PASS est une faute déontologique rédhibitoire pour un usage autonome. Je le classerais 'outil-béquille sous supervision adulte uniquement'.",
+    "latency_s": 14.2
+  }
+]
