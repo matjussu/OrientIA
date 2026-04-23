@@ -1004,38 +1004,17 @@ verbatim :
 
 ### 18.5 PRs Gate J+6 (fin sprint)
 
-| # | Titre | Status | Action cleanup |
-|---|---|---|---|
-| #12 | axe2/pydantic-profileclarifier | ouverte | **Garder ouverte S2** (prep agentic) |
-| #23 | Gate J+6 UX Policy α+β | ouverte | **Fermer, superseded par #28** (cherry-picks cumulés) |
-| #26 | V3 persona re-simu | ouverte | **Fermer, superseded par #28** (cherry-picks cumulés) |
-| #27 | V4 γ Modify | ouverte | **Fermer, superseded par #28** (cherry-picks cumulés) |
-| **#28** | V4.1 prompt rebalance | **à merger** | **Merger (contient #23+#26+#27 via cherry-picks)** |
+| # | Titre | Action cleanup |
+|---|---|---|
+| #12 | axe2/pydantic-profileclarifier | Garder ouverte (POC Mistral Large tool-use ADR-032, non intégré à main) |
+| #23 | Gate J+6 UX Policy α+β | Fermée superseded par #28 (cherry-picks cumulés) |
+| #26 | V3 persona re-simu | Fermée superseded par #28 (cherry-picks cumulés) |
+| #27 | V4 γ Modify | Fermée superseded par #28 (cherry-picks cumulés) |
+| **#28** | V4.1 prompt rebalance + ADR-037 + §18 | Mergée sur main |
 
-### 18.6 Avis global Claudette + plan convergé 4 semaines INRIA
+### 18.6 État git fin de sprint (2026-04-23 matin)
 
-Livrés en peer message consultatif (ordre 1834 + 2333). Points clés :
-
-- **Cap INRIA "battre IAs génériques"** maintenu par Matteo malgré mon
-  doute sur feasabilité à 4/5. Argumentaire recommandé : **rigueur
-  méthodologique + souveraineté + safety-first filet** plutôt que
-  "génération meilleure".
-- **Plan convergé 4 semaines** (S+1 à S+4, deadline ~25/05) :
-  - S+1 : D2 ONISEP API live + V4.2 fixes techniques + D4 labels
-  - S+2 : Refonte style réponses (registre conversationnel — unlock
-    possible, **prioritaire sur data selon Claudette**)
-  - S+3 : Agentic A1-A4 (ProfileClarifier absorbe phase projet Psy-EN)
-  - S+4 : A5-A6 + UI démo Astro minimale (Matteo contributor) + A8-A9
-    bench final + soumission
-- **Items reportés post-INRIA** : RAFT self-hosted, UI production beta,
-  coûts privés database, geocoding distance, expansion corpus 7 domaines
-
-### 18.7 État git fin de sprint (2026-04-23 matin)
-
-À documenter après cleanup PRs (pending).
-
-### 18.8 Pause explicite
-
-Matteo n'est pas convaincu par le plan convergé de la veille. Il demande
-**pause + cleanup + reprise demain**. Pas de discussion du plan ce soir
-(2026-04-22 nuit) ni demain matin. Reprise calme sur fresh eyes.
+Main à jour avec toutes les livraisons V1→V4.1. Une PR ouverte (#12)
+contient le POC Mistral Large tool-use non intégré à main. Filets locaux
+(branche `feature/alpha-restricted-llm`) conservés comme documenté
+ADR-030.
