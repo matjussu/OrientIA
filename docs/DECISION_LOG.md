@@ -1414,3 +1414,116 @@ confirmées) :
 6. Passage ADR-039 DRAFT → ACCEPTED après métrique corpus 25/25/25 atteinte.
 
 ---
+
+## ADR-040 — Dimension débouchés professionnels détaillés (2026-04-23) [DRAFT]
+
+**Statut** : DRAFT — dimension ajoutée en cours de session 2026-04-23 par
+Matteo (via Jarvis, 10h31 CEST). Bascule ACCEPTED après définition des
+sources + plan d'ingestion opérationnel S+2.
+
+**Context** :
+
+ADR-039 scope élargi 17-25 ans 3 phases identifie les sources data pour
+couvrir les formations (MonMaster, RNCP, Bonne Alternance, Parcoursup,
+ONISEP). Mais la question "quels débouchés pour un lycéen/étudiant/jeune
+diplômé" demande bien plus que le nom d'une fiche formation :
+
+> « Il ne faut pas oublier la partie professionnel avec débouché, salaire
+> entrée 5ans 10ans etc… + description des postes, journée types etc. »
+> — Matteo, 2026-04-23 10h31
+
+Sources déjà scopées dans ADR-039 couvrent **partiellement** :
+- MESR insertion (Data ESR) : taux d'insertion + % CDI + salaire médian
+  d'embauche, mais pas 5 ans / 10 ans.
+- France Travail BMO (via `rome_api.py` scaffold) : besoins en main
+  d'œuvre par secteur, mais pas trajectoires individuelles.
+- Céreq Enquêtes Génération : insertion 3 + 6 ans, granularité grosse (par
+  niveau × secteur), pas de salaire par métier.
+
+**Trous identifiés** :
+1. Pas de **salaire par métier après 5 ans / 10 ans d'expérience**.
+2. Pas de **description journée type** d'un poste (ce qu'on fait concrètement).
+3. Pas de **grille trajectoire carrière** (junior → confirmé → senior →
+   management / expert / reconversion).
+
+**Decision** :
+
+Ajouter une **5e catégorie de sources data** (complémentaire aux 4 axes de
+STRATEGIE_VISION §5) orientée "métiers & carrière" :
+
+| Source | Couverture | Coût | Priorité |
+|---|---|---|---|
+| **APEC** (`apec.fr/observatoire`) | Cadres : salaires junior / 3 ans / 5 ans / 10 ans par métier, secteur, région | Dataset téléchargeable gratuit + rapports annuels PDF | **P0 S+2** |
+| **INSEE** (`insee.fr/fr/statistiques`) | Statistiques emploi par métier PCS / ROME (effectifs, salaires moyens par tranche d'âge), Pyramide des âges par secteur | Open data Etalab 2.0, CSV bulk + API | **P0 S+2** |
+| **ONISEP fiches métiers** (`onisep.fr/ressources/univers-metier`) | Description métier + journée type + qualités attendues + études recommandées + salaires début / progression | API ONISEP dataset `5fa591127f502` (métiers, distinct du dataset formations) | **P0 S+2** |
+| France Travail BMO (déjà scopé D3) | Tension marché + projets recrutement par métier × région | Via ROME API (rome_api.py) | P1 S+2 |
+| LinkedIn Economic Graph (`economicgraph.linkedin.com`) | Trajectoires carrière réelles (anonymes), skills qui progressent | API payante, restrictions légales | **SKIP** |
+| Glassdoor / Indeed | Salaires + journées types crowdsourcés | Scraping anti-ToS | **SKIP** (ToS interdisent scraping massif) |
+
+**Rationale** :
+
+- **L'argument "Mentor" du cahier des charges format** (ordre Jarvis
+  2026-04-23-0843 §Cahier des charges) demande de traduire les fiches
+  techniques en "vraie vie" : % TP vs amphi, type de stages, journées
+  types. Sans sources "métiers & carrière", OrientIA reste au niveau
+  "ChatGPT peut aussi dire ça" sur les aspects carrière.
+- **APEC spécifiquement** est la source de vérité française pour salaires
+  cadres par ancienneté, non accessible aux LLM généralistes (rapports
+  PDF non-ingérés dans les corpus training).
+- **ONISEP fiches métiers** a déjà été cité dans STRATEGIE §5 Axe 1 D2
+  mais comme "formations" — la partie "métiers" de leur catalogue est
+  distincte et riche en descriptions.
+- **INSEE** apporte une vision macro-statistique nationale (combien de
+  data engineers en France à 30 ans ? Quel salaire médian après 5 ans ?)
+  qui ancre les conseils dans des chiffres vérifiables.
+
+**Alternatives rejetées** :
+
+1. **Se contenter des sources scopées ADR-039** (MESR + Céreq + BMO) :
+   couvre insertion à 3-6 ans mais pas trajectoires 5/10 ans + pas de
+   descriptions journées types. Gap UX Mentor majeur.
+2. **Scraping Glassdoor / Indeed** : violation ToS, risque blocage IP +
+   légal. Données crowdsourcées ≠ vérifiées de toute façon.
+3. **Partenariat APEC / LinkedIn direct** : hors scope projet étudiant
+   (INRIA AI Grand Challenge), pas de temps pour négocier.
+4. **Ignorer la dimension trajectoire carrière** : inacceptable vu la
+   demande explicite Matteo et le positionnement "bat ChatGPT sur
+   l'accompagnement orientation".
+
+**Plan d'ingestion S+2 (référence, pas engagement hard)** :
+
+| Sprint | Action | Effort estimé | Coût |
+|---|---|---|---|
+| **S+2 début** | D12 ONISEP métiers API | 4-6h | $0 |
+| **S+2 mid** | D13 APEC rapports & datasets | 6-8h (PDF parsing possible) | $0 |
+| **S+2 fin** | D14 INSEE statistiques emploi | 4-6h | $0 |
+| S+3 | Enrichissement fiches OrientIA : chaque fiche pointe vers 2-3 métiers cibles avec trajectoire + salaire + journée type | 6-8h | $0 |
+
+**Métriques cibles** :
+- Chaque fiche formation enrichie avec ≥2 métiers cibles ROME + description
+  courte + salaire début / 5 ans / 10 ans
+- Retrieval "journée type data scientist" retourne contenu ONISEP riche
+  (pas juste "voir fiche métier")
+- Benchmark ajout catégorie "trajectoire carrière" (5-10 questions type
+  "ce métier à 30 ans ça donne quoi ?")
+
+**Références** :
+
+- Ordre Jarvis 2026-04-23-1031 (directive Matteo section 2C "débouchés
+  professionnels détaillés")
+- STRATEGIE_VISION §5 Axe 1 (architecture data foundation — cet ADR étend)
+- ADR-039 (scope élargi — cet ADR complète la dimension carrière)
+- Cahier des charges format Mentor (ordre 0843 §Richesse / Contextualisation
+  → "Vraie vie" : traduire fiches techniques)
+
+**Suite** :
+
+1. S+2 début : prioriser D12 ONISEP métiers (API déjà connue, aligne avec
+   code `src/collect/onisep.py` existant).
+2. Découpler APEC en download rapports annuels (2026 déjà publié en
+   janvier) → parsing PDF (attendu modérément complexe — tables structurées).
+3. INSEE via API + CSV bulk (pattern identique à MonMaster Opendatasoft).
+4. Bascule ADR-040 DRAFT → ACCEPTED après première ingestion ONISEP
+   métiers opérationnelle.
+
+---
