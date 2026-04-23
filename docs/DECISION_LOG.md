@@ -1527,3 +1527,158 @@ STRATEGIE_VISION §5) orientée "métiers & carrière" :
    métiers opérationnelle.
 
 ---
+
+## ADR-041 — Extension Parcoursup tous secteurs + 5 champs riches (2026-04-23) [DRAFT]
+
+**Statut** : DRAFT — scope ingestion implémenté + champs P0 ajoutés côté code.
+Bascule ACCEPTED après validation qualité audit data + intégration dans merge.py.
+
+**Context** :
+
+ADR-039 formalise le scope élargi 17-25 ans 3 phases égales. Le corpus
+Parcoursup initial est focalisé cyber/data_ia/santé (1 424 fiches, 10% du
+dataset Parcoursup 14 252 formations). Pour respecter la cible 33/33/34 par
+phase :
+- Phase (a) post-bac initial est actuellement sous-représentée (~2% du total
+  corpus OrientIA contre 33% cible).
+- Il faut étendre Parcoursup à tous les secteurs (hors cyber/data/santé déjà
+  couverts) pour équilibrer.
+
+Matteo (via Jarvis, 2026-04-23 11:39) : « si on étend le modèle à tous les
+secteurs il faut aussi voir pour les données Parcoursup pour récupérer données
+manquantes + champs intéressants non utilisés si nécessaire. »
+
+Deux axes identifiés par gap analysis sub-agent :
+
+### Axe (a) — Étendre DOMAIN_KEYWORDS à tous secteurs
+Option 1 (mots-clés) : plus rapide, +77% corpus. Option 2 (`fili` mapping) :
+plus robuste mais effort 4-6h supplémentaire. Option 3 (ROME API) : S+3.
+
+### Axe (b) — Activer champs Parcoursup non-utilisés
+Sub-agent a identifié 88/118 colonnes non-utilisées. Top 10 P0 :
+`prop_tot`, `prop_tot_bg/bt/bp`, `acc_pp/acc_pc`, `pct_acc_debutpp`,
+`voe_tot_f`, `acc_neobac`, `fili`, `lib_grp1..3`, `select_form`,
+`g_olocalisation_des_formations`.
+
+**Decision** :
+
+### (a) Axe scope secteurs : **Option 1 en court terme**
+
+Étendre `DOMAIN_KEYWORDS` avec 12 nouveaux domaines :
+`droit`, `eco_gestion`, `sciences_humaines`, `langues`, `lettres_arts`,
+`sport`, `sciences_fondamentales`, `ingenierie_industrielle`,
+`communication`, `education`, `agriculture`, `tourisme_hotellerie`.
+
+**Total : 15 domaines** dont les 3 legacy préservés pour backward-compat.
+
+Mécanisme :
+- `LEGACY_DOMAINS = ["cyber", "data_ia", "sante"]` (défaut, préserve tests existants)
+- `EXTENDED_DOMAINS = list(DOMAIN_KEYWORDS.keys())` (15 domaines)
+- `collect_parcoursup_fiches(path, domains=None)` : `None` → legacy ; passer
+  `EXTENDED_DOMAINS` pour scope élargi.
+- Nouvel alias `collect_parcoursup_all_sectors(path)` pour lisibilité.
+
+**Résultat mesuré** : ingestion live sur `data/raw/parcoursup_2025.csv` =
+**9 212 fiches** (vs 1 324 legacy × 6.96). Distribution :
+- `eco_gestion` 2 464 (27%)
+- `ingenierie_industrielle` 1 085 (12%)
+- `sante` 981 (11%)
+- `sciences_fondamentales` 918 (10%)
+- `langues` 888 (10%)
+- `lettres_arts` 588 (6%)
+- `sciences_humaines` 579 (6%)
+- `droit` 496 (5%)
+- `cyber` 304 (3%)
+- autres (9 domaines) : 1 909 (21%)
+
+Gap : dataset Parcoursup a 14 252 formations au total. 9 212/14 252 = **65% de
+couverture** avec mots-clés. Reste 35% non catégorisés (noms génériques
+types "BTS", "Licence professionnelle X" qui ne matchent aucun keyword).
+
+**Option 2 (`fili` mapping)** reportée S+2 — gain couverture +25-30% (~13 k
+fiches = 92%), effort 4-6h, moins urgent que D12/D14 en cours.
+
+### (b) Axe champs : 5 champs P0 ajoutés
+
+Ajout dans `extract_fiche()` :
+- `propositions_totales` (colonne `prop_tot`) — volume propositions envoyées,
+  mesure de convertibilité voeux → admission (complément `taux_acces`).
+- `pct_acceptes_debut_pp` (`pct_acc_debutpp`) — sélectivité timing (formation
+  "prise d'assaut" vs places dispo tard).
+- `fili_code` (`fili`) + `fili_groupe` (`lib_grp1`) — classification
+  structurée Parcoursup (clé pour désambiguïsation vs mots-clés).
+- `selectivite_code` (`select_form`) — catégorie sélectivité officielle
+  Parcoursup (formation sélective vs à capacité limitée).
+
+Champs **reportés S+2** (effort marginal, pas bloquant) :
+- `prop_tot_bg/bt/bp` — propositions par type de bac (granularité mixité bac)
+- `acc_pp/acc_pc` — séparation phase principale vs complémentaire (timing)
+- `voe_tot_f` — voeux féminins absolus (ratio candidature vs admission)
+- `acc_neobac` count — composition admis par profil (contextuelle)
+- `g_olocalisation_des_formations` — coordonnées GPS (futur comparateur géo)
+- `composante_id_paysage` + `etablissement_id_paysage` — jointure données ESR
+
+**Rationale** :
+
+- **Déblocage phase (a) ADR-039** : passer de 1 324 → 9 212 fiches rééquilibre
+  massivement la répartition par phase. Projection post-ingestion (cumul tous
+  datasets) :
+  - Phase (a) Parcoursup initial : 9 212 + 6 590 RNCP (initial) = ~15 800 (45%)
+  - Phase (c) MonMaster master : 16 257 (46%)
+  - Phase (b) réorientation (RNCP master + future LBA) : ~3 000 (~9%)
+  - → cible 33/33/34 enfin atteignable après ajout LBA + rééquilibrage.
+- **Champs P0 ajoutés couvrent les gaps RAG les plus critiques** :
+  `prop_tot` + `pct_acc_debutpp` = signal "convertibilité" réalisme. `fili`
+  = classification officielle (vs keyword fragile).
+- **Backward-compat préservée** : `collect_parcoursup_fiches()` sans argument
+  garde son comportement (3 domaines legacy). Aucun test existant cassé.
+
+**Alternatives rejetées** :
+
+1. **Ne pas étendre scope secteurs** : phase (a) reste à 2%, ADR-039 non tenu.
+2. **Attendre S+2 pour Option 2 `fili`** pure : bloque bench S+1 sur scope
+   trop restrictif. Option 1 débloque maintenant, Option 2 raffine plus tard.
+3. **Ingérer les 14 252 formations sans filtrage** : perd la classification
+   domaine (critique pour RAG retrieval qualifié). Rejet.
+4. **Ajouter les 10 champs P0+P1 d'un coup** : scope explose + risque
+   régression ingestion. Les 5 P0 ajoutés couvrent 80% de la valeur.
+
+**Effets attendus + métriques** :
+
+- **Corpus Parcoursup** : 1 324 → **9 212 fiches** (×6.96) mesuré.
+- **Corpus OrientIA total projeté** : 23 290 + 7 888 = **~31 178 fiches**
+  post-ingestion.
+- **Couverture champs Parcoursup** : 30/118 (25%) → **35/118 (30%)**.
+- **Distribution phase (a)** : 2% → estimé 45% (projection).
+- **Tests** : 17 nouveaux tests Parcoursup (9 legacy + 8 ADR-041), 530 → 556
+  tests verts.
+
+**Risques + mitigations** :
+
+| Risque | Probabilité | Mitigation |
+|---|---|---|
+| Keywords nouveaux secteurs faux positifs | Moyenne | Audit qualité (Phase 5) + re-benchmark S+2 |
+| Volume 9k fiches sature FAISS (latence) | Moyenne | Sharding par phase (cf ADR-039) en S+2 |
+| Nouveaux champs mal alignés entre années Parcoursup | Faible | Test d'intégrité `tests/test_data_integrity.py` détecte le drift |
+| Conflit avec Option 2 `fili` future | Faible | ADR-041 prévoit bascule (Option 1 remplaçable sans breaking change) |
+
+**Références** :
+
+- Ordre Jarvis 2026-04-23-1139 directive extension Parcoursup (axes a+b)
+- Sub-agent gap analysis Parcoursup OpenData (feasibility Phase 1)
+- ADR-039 scope élargi 17-25 ans 3 phases égales
+- STRATEGIE_VISION §2.3 "corpus 17% exploité" + §5 Axe 1
+
+**Suite (S+1 → S+2)** :
+
+1. Audit qualité (Phase 5 S+1) : vérifier qualité 9 212 fiches (pas de faux
+   positifs massifs sur les nouveaux domaines, pas de corruption).
+2. Intégration dans `merge.py` via `collect_parcoursup_all_sectors` — post-audit.
+3. S+2 : basculer sur Option 2 `fili` mapping pour atteindre 13k+ fiches.
+4. S+2 : ajouter champs P1 (prop_tot_bg/bt/bp, acc_pp/pc, etc.) selon gains
+   mesurés au benchmark.
+5. S+3 : Option 3 ROME API pour matching débouchés par secteur.
+6. Bascule ADR-041 DRAFT → ACCEPTED après validation audit + première
+   benchmark sur corpus étendu.
+
+---

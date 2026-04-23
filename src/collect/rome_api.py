@@ -35,17 +35,25 @@ OAUTH_TOKEN_URL = (
     "https://entreprise.francetravail.fr/connexion/oauth2/"
     "access_token?realm=%2Fpartenaire"
 )
-METIERS_BASE_URL = "https://api.francetravail.io/partenaire/rome-metiers/v1/metiers"
+METIERS_BASE_URL = "https://api.francetravail.io/partenaire/rome-metiers/v1/metiers/metier"
 FICHES_METIERS_BASE_URL = (
-    "https://api.francetravail.io/partenaire/rome-fiches-metiers/v1/fiches-rome"
+    "https://api.francetravail.io/partenaire/rome-fiches-metiers/v1/fiches-rome/fiche-metier"
 )
 
-# Scopes : cf dashboard france-travail.io > "app" > scopes à cocher
-ROME_SCOPES = "api_rome-metiersv1 api_rome-fiches-metiersv1 nomenclatureRome"
+# Scopes ROME 4.0 corrects (activés côté app par Jarvis 2026-04-23-1212).
+# Les 4 APIs ROME 4.0 : Métiers + Fiches métiers + Compétences + Contextes.
+ROME_SCOPES = (
+    "api_rome-metiersv1 api_rome-fiches-metiersv1 "
+    "api_rome-competencesv1 api_rome-contextes-travailv1 "
+    "nomenclatureRome"
+)
 
-# Rate limit par défaut — France Travail : 5 req/s par app sur ROME 4.0.
-# On prend une marge de sécurité à 3 RPS = 180 RPM.
-DEFAULT_RPM = 180
+# Rate limit par défaut — France Travail ROME 4.0 = 1 RPS officiel.
+# 50 RPM = ~0.83 RPS : marge 17% sous le cap pour absorber les bursts
+# sans se faire rate-limit par le proxy France Travail.
+# Si on passe aux APIs Anotéa (8 RPS) ou Marché du travail (10 RPS),
+# override via `RomeApiClient(rpm=480)` ou `rpm=600`.
+DEFAULT_RPM = 50
 
 
 # --- Exceptions ---

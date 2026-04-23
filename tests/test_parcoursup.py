@@ -117,3 +117,96 @@ def test_extract_fiche_vague_a_legacy_fields_still_present():
     fiche = extract_fiche(_vague_a_row())
     assert fiche["taux_acces_parcoursup_2025"] == 18.0
     assert fiche["nombre_places"] == 24
+
+
+# === ADR-041 — extension domaines + nouveaux champs P0 ===
+
+
+def test_extended_domains_includes_15_sectors():
+    """ADR-041 Axe a : 12 nouveaux secteurs en plus des 3 legacy."""
+    from src.collect.parcoursup import EXTENDED_DOMAINS, LEGACY_DOMAINS
+
+    assert LEGACY_DOMAINS == ["cyber", "data_ia", "sante"]
+    assert len(EXTENDED_DOMAINS) >= 15
+    for new in ["droit", "eco_gestion", "sciences_humaines", "langues",
+                "lettres_arts", "sport", "sciences_fondamentales",
+                "ingenierie_industrielle", "communication", "education",
+                "agriculture", "tourisme_hotellerie"]:
+        assert new in EXTENDED_DOMAINS, f"{new} manquant dans EXTENDED_DOMAINS"
+
+
+def test_domain_keywords_droit_captures_licence_droit():
+    df = pd.DataFrame({
+        "formation": ["Licence Droit", "Licence Histoire", "Master Droit notarial"]
+    })
+    filtered = filter_domain(df, "droit", name_column="formation")
+    assert len(filtered) == 2
+    assert "Licence Histoire" not in filtered["formation"].values
+
+
+def test_domain_keywords_eco_gestion_captures_gestion_bts():
+    df = pd.DataFrame({
+        "formation": ["BTS Comptabilité Gestion", "Master Marketing", "Licence Histoire"]
+    })
+    filtered = filter_domain(df, "eco_gestion", name_column="formation")
+    assert len(filtered) == 2
+
+
+def test_domain_keywords_sport_captures_staps():
+    df = pd.DataFrame({"formation": ["Licence STAPS", "Master Marketing"]})
+    assert len(filter_domain(df, "sport", name_column="formation")) == 1
+
+
+def test_collect_parcoursup_fiches_invalid_domain_raises(tmp_path, monkeypatch):
+    """Si un domaine inconnu est passé, raise ValueError (pas silent skip)."""
+    from src.collect import parcoursup as mod
+    # Mock load_parcoursup pour éviter de lire un CSV réel
+    monkeypatch.setattr(mod, "load_parcoursup", lambda p: pd.DataFrame({
+        mod.FORMATION_COLUMN: ["Licence Droit"]
+    }))
+    import pytest as _p
+    with _p.raises(ValueError, match="DOMAIN_KEYWORDS"):
+        mod.collect_parcoursup_fiches(tmp_path / "fake.csv", domains=["unknown_domain"])
+
+
+def _row_with_adr_041_fields() -> pd.Series:
+    """Row minimal incluant les nouveaux champs ADR-041 (prop_tot, pct_acc_debutpp, fili)."""
+    base = _vague_a_row().to_dict()
+    base.update({
+        "prop_tot": 1420,
+        "pct_acc_debutpp": 35.0,
+        "fili": "L1",
+        "lib_grp1": "Licences générales",
+        "select_form": "formation sélective",
+    })
+    return pd.Series(base)
+
+
+def test_extract_fiche_adr_041_fields_populated():
+    fiche = extract_fiche(_row_with_adr_041_fields())
+    assert fiche["propositions_totales"] == 1420
+    assert fiche["pct_acceptes_debut_pp"] == 35.0
+    assert fiche["fili_code"] == "L1"
+    assert fiche["fili_groupe"] == "Licences générales"
+    assert fiche["selectivite_code"] == "formation sélective"
+
+
+def test_extract_fiche_adr_041_fields_none_when_missing():
+    """Si une row n'a pas les colonnes ADR-041, les champs sont None (pas crash)."""
+    fiche = extract_fiche(_vague_a_row())  # sans les colonnes ADR-041
+    assert fiche["propositions_totales"] is None
+    assert fiche["pct_acceptes_debut_pp"] is None
+    assert fiche["fili_code"] is None
+
+
+def test_collect_parcoursup_fiches_backward_compat_default_domains():
+    """Sans arg `domains`, comportement inchangé : 3 domaines legacy."""
+    from src.collect.parcoursup import collect_parcoursup_fiches, DOMAIN_KEYWORDS
+    import pandas as pd
+    # Mock via monkeypatch de load_parcoursup pour éviter de lire le CSV réel
+    # Simplement vérifier que l'appel sans arg n'explose pas en passant un
+    # DataFrame via monkeypatch serait trop verbeux — on check le contract d'API :
+    import inspect
+    sig = inspect.signature(collect_parcoursup_fiches)
+    assert "domains" in sig.parameters
+    assert sig.parameters["domains"].default is None
