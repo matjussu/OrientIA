@@ -20,7 +20,10 @@ from src.collect.ft_base import FranceTravailClient
 
 class OffresEmploiClient(FranceTravailClient):
     API_NAME = "offres-emploi"
-    SCOPE = "api_offresdemploi-v2"
+    # Nom de scope compacté (pas de tiret "-v2") — confirmé par probe OAuth2
+    # 2026-04-24 + doc publique France Travail. Le nom `api_offresdemploi-v2`
+    # (avec tiret) retourne invalid_scope.
+    SCOPE = "api_offresdemploiv2"
     BASE_URL = "https://api.francetravail.io/partenaire/offresdemploi/v2"
     DEFAULT_RPM = 500
 

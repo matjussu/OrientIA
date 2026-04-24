@@ -137,7 +137,9 @@ def test_normalize_taux_acces_schema():
 
 
 def test_offres_emploi_scope():
-    assert OffresEmploiClient.SCOPE == "api_offresdemploi-v2"
+    # Nom compacté (pas de tiret) confirmé par probe OAuth2 2026-04-24.
+    # Le nom avec tiret `api_offresdemploi-v2` retourne invalid_scope.
+    assert OffresEmploiClient.SCOPE == "api_offresdemploiv2"
     assert OffresEmploiClient.BASE_URL.endswith("/offresdemploi/v2")
 
 

@@ -22,7 +22,11 @@ from src.collect.ft_base import FranceTravailClient
 
 class AccesEmploiClient(FranceTravailClient):
     API_NAME = "acces-emploi"
-    SCOPE = "api_acces-a-lemploi-des-demandeurs-demploiv1"  # À CONFIRMER
+    # Nom testé 2026-04-24 : invalid_scope. 3 variantes testées (avec tirets,
+    # compacté api_accesalemploiv1, compacté long) toutes invalid → probable
+    # habilitation partenariat FT requise (pas juste case à cocher) — action
+    # Matteo dashboard partenaires.
+    SCOPE = "api_acces-a-lemploi-des-demandeurs-demploiv1"  # habilitation pending
     BASE_URL = (
         "https://api.francetravail.io/partenaire/acces-a-l-emploi-des-demandeurs-d-emploi/v1"
     )
