@@ -1993,3 +1993,93 @@ Pour les APIs à activer P0-P1 S+1-S+2 :
 
 ---
 
+## ADR-044 — MonMaster : dédup par IFC en conservant la session la plus récente (2026-04-24) [DRAFT]
+
+### Context
+
+L'audit `docs/AUDIT_DATA_QUALITY_2026-04-23.md` a flaggé 7 304 doublons sur
+le corpus `monmaster_formations.json` (16 257 fiches, soit ~45%). Verdict
+NO-GO pour le re-index FAISS D6 tant que non-traité.
+
+Investigation 2026-04-24 : les "doublons" sont en réalité des paires
+(IFC, session) distinctes. L'API MonMaster expose 2 snapshots annuels
+par formation — sessions 2024 + 2025 — avec des stats de candidature
+différentes (`n_can_pp`, `n_accept_total`, `taux_admission`). Exemple :
+
+| idx | IFC | session | n_can_pp | n_accept_total |
+|---|---|---|---|---|
+| 1    | 0900820SRD2N | 2024 | 49 | — |
+| 1720 | 0900820SRD2N | 2025 | 91 | — |
+
+Ce ne sont pas des doublons produits par l'ingestion — c'est la forme
+brute de l'export MonMaster. Deux traitements possibles :
+
+- **(A)** Étendre `_signature()` d'audit à `ifc+session` et conserver
+  les 2 snapshots comme données légitimes (série temporelle possible
+  pour analyse évolution du taux d'admission).
+- **(B)** Dédupliquer dans `normalize_all` en ne gardant que la session
+  la plus récente — corpus réel passe à 8 953 formations uniques.
+
+### Decision
+
+**Option B** : dédup par `ifc` en conservant la session la plus récente
+(`dedupe_keep_latest_session` dans `src/collect/monmaster.py`).
+
+### Rationale
+
+1. **Principes directeurs projet** (CLAUDE.md §6) : "Données fraîches
+   > figées". L'utilité RAG d'un lycéen·ne / réorientant·e qui consulte
+   OrientIA en 2026 est la cohorte candidate 2025, pas la 2024.
+2. **Anti-pollution retrieval** : garder les 2 sessions dilue le signal
+   dans FAISS. Deux chunks quasi-identiques qui concurrencent les
+   résultats top-k sans valeur ajoutée sur une requête d'orientation.
+3. **Bénéfice coût embeddings** : 16 257 → 8 953 = -45% sur le budget
+   Mistral embed pour D6 (~-$2 à -$5 sur un re-index complet).
+4. **Pas de perte d'info critique** : les stats d'une seule session
+   (la plus récente) sont suffisantes pour les questions d'orientation.
+   Le raw complet reste disponible dans `data/raw/` si un besoin
+   d'analyse longitudinale apparaît plus tard (nouvel ADR).
+
+### Alternatives considérées
+
+- **(A) Multi-session préservé** : garde la série temporelle mais
+  dilue le retrieval et double le coût d'embeddings. Pas d'usage
+  immédiat (aucune question eval_set ne référence une comparaison
+  inter-année). Rejeté : sur-stocker sans use case concret.
+- **(C) Fusion des 2 sessions** (agrégat pondéré) : complique la
+  sémantique des chiffres (un taux d'admission moyenné sur 2 ans perd
+  son interprétabilité). Rejeté comme trop exotique pour un gain
+  marginal.
+- **(D) Session latest via max()** au lieu d'ordre d'apparition :
+  ancré sur le comparateur de sessions. Retenu de facto : la
+  comparaison `_session_sort_key` joue ce rôle en interne, en
+  conservant l'ordre global pour stabilité des diffs git.
+
+### Consequences
+
+- `data/processed/monmaster_formations.json` : 16 257 → 8 953 fiches
+  (nouveau comptage au prochain run d'ingestion ou via script one-off
+  `scripts/rebuild_monmaster_processed.py`).
+- Audit 2026-04-24 post-fix : 0 doublon MonMaster (déjà confirmé en
+  pré-ingestion via ADR-044 + fix signature ADR non-numérotée).
+- Tests : 9 nouveaux dans `tests/test_monmaster_dedup.py` (dédup +
+  clamp taux_admission à [0,1]).
+- D6 FAISS peut être relancé dès Phase 2 finale + data fresh tirée.
+
+### Rollback
+
+Si un use case d'analyse longitudinale MonMaster émerge, rollback =
+ré-ingérer avec `normalize_all` sans appel à `dedupe_keep_latest_session`.
+Les deux sessions reviendront naturellement puisqu'elles sont toujours
+exposées par l'API MonMaster. Le raw n'est jamais perdu.
+
+### Liens
+
+- Incident découverte : investigation Claudette 2026-04-24 matin
+- Audit associé : `docs/AUDIT_DATA_QUALITY_2026-04-24.md`
+- Tests : `tests/test_monmaster_dedup.py`
+- Se substitue à la remédiation flaggée dans
+  `docs/AUDIT_DATA_QUALITY_2026-04-23.md` (faux positif expliqué ici).
+
+---
+

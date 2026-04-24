@@ -5,7 +5,7 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 
 ## Résumé global
 
-- **monmaster_formations.json** : 16,257 fiches ⚠️ 6 taux hors bornes
+- **monmaster_formations.json** : 8,953 fiches ✅
 - **rncp_certifications.json** : 6,590 fiches ✅
 - ℹ️  **onisep_metiers.json** (metiers) : 1,518 entrées
 - **onisep_formations_extended.json** : 4,775 fiches ✅
@@ -15,7 +15,7 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 - **parcoursup_extended.json** : 9,212 fiches ✅
 - **formations.json** : 1,424 fiches ⚠️ 1424 manques critiques
 
-**Total fiches auditées** : 44,904
+**Total fiches auditées** : 37,600
 
 ---
 
@@ -23,15 +23,15 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 
 ### `monmaster_formations.json`
 
-- Total : 16,257
-- Distribution par phase : `{'master': 16257}`
-- Distribution par niveau : `{'bac+5': 16257}`
+- Total : 8,953
+- Distribution par phase : `{'master': 8953}`
+- Distribution par niveau : `{'bac+5': 8953}`
 - Top 5 domaines : `{}`
-- Sources : `{'monmaster': 16257}`
+- Sources : `{'monmaster': 8953}`
 - Manques critiques : `{}`
 - Valeurs suspectes par champ : `{}`
 - Doublons (signatures identiques) : 0
-- `taux_admission` hors bornes [0,1] : 6
+- `taux_admission` hors bornes [0,1] : 0
 
 ### `rncp_certifications.json`
 
@@ -103,9 +103,9 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 
 ## Répartition phase cumulée (vs ADR-039 cible 33/33/34)
 
-- `master` : 20,567 (47.3%) — cible 33%
-- `initial` : 16,267 (37.4%) — cible 33%
-- `reorientation` : 6,646 (15.3%) — cible 33%
+- `initial` : 16,267 (45.0%) — cible 33%
+- `master` : 13,263 (36.7%) — cible 33%
+- `reorientation` : 6,646 (18.4%) — cible 33%
 
 Si un phase dépasse 40% ou tombe sous 25% → signal de déséquilibre, action S+2 (up-sample ou down-sample).
 
