@@ -500,6 +500,34 @@ def rncp_to_fiche(certif: dict) -> dict:
     return fiche
 
 
+def _cereq_stats_flat(entry: dict) -> dict:
+    """Normalise une entrée Céreq vers les stats clés exposées sur fiches.
+
+    Supporte 2 schémas :
+    - CSV legacy : champs plats `taux_emploi_3ans`, `taux_emploi_6ans`,
+      `taux_cdi`, `salaire_median_embauche` à la racine
+    - XLSX OpenData (2026-04-24+) : champs sous `horizon_3ans` +
+      `horizon_6ans` avec `taux_emploi`, `taux_edi` (CDI),
+      `revenu_travail` (€ mensuel)
+
+    Retourne toujours un dict au schéma unifié pour la fiche.
+    """
+    h3 = entry.get("horizon_3ans") or {}
+    h6 = entry.get("horizon_6ans") or {}
+    return {
+        "taux_emploi_3ans": entry.get("taux_emploi_3ans")
+            or (h3.get("taux_emploi") / 100.0 if isinstance(h3.get("taux_emploi"), (int, float)) else None),
+        "taux_emploi_6ans": entry.get("taux_emploi_6ans")
+            or (h6.get("taux_emploi") / 100.0 if isinstance(h6.get("taux_emploi"), (int, float)) else None),
+        "taux_cdi": entry.get("taux_cdi")
+            or (h3.get("taux_edi") / 100.0 if isinstance(h3.get("taux_edi"), (int, float)) else None),
+        "salaire_median_embauche": entry.get("salaire_median_embauche")
+            or h3.get("revenu_travail"),
+        "source": "cereq",
+        "cohorte": entry.get("cohorte"),
+    }
+
+
 def attach_cereq_insertion(
     fiches: list[dict], cereq_entries: list[dict] | None
 ) -> list[dict]:
@@ -511,29 +539,40 @@ def attach_cereq_insertion(
     stats). Utile pour réponses RAG "x% d'insertion à 3 ans pour les masters
     en informatique" sans inventer.
 
-    Sans aucun CSV Céreq parsé → no-op (scaffold-ready).
+    Stratégie d'indexation :
+    1. D'abord match exact `(niveau, domaine)` si domaine Céreq renseigné
+    2. Fallback match `(niveau, None)` si la fiche a un niveau mais pas de
+       domaine Céreq correspondant (stats "Ensemble" du niveau)
+
+    Sans aucune entrée Céreq parsée → no-op.
     """
     if not cereq_entries:
         return fiches
-    # Index Céreq par (niveau, domaine)
-    index: dict[tuple, dict] = {}
+    # Index Céreq : 2 niveaux de granularité
+    index_niveau_domaine: dict[tuple, dict] = {}
+    index_niveau_seul: dict[str, dict] = {}
     for entry in cereq_entries:
-        key = (entry.get("niveau"), (entry.get("domaine") or "").lower())
-        if key not in index or index[key].get("cohorte", "") < entry.get("cohorte", ""):
-            index[key] = entry
+        niveau = entry.get("niveau")
+        if not niveau:
+            continue
+        domaine = (entry.get("domaine") or "").lower() or None
+        cohorte = entry.get("cohorte") or ""
+        if domaine:
+            key = (niveau, domaine)
+            if key not in index_niveau_domaine or index_niveau_domaine[key].get("cohorte", "") < cohorte:
+                index_niveau_domaine[key] = entry
+        else:
+            if niveau not in index_niveau_seul or index_niveau_seul[niveau].get("cohorte", "") < cohorte:
+                index_niveau_seul[niveau] = entry
 
     for f in fiches:
-        key = (f.get("niveau"), (f.get("domaine") or "").lower())
-        stats = index.get(key)
+        niveau = f.get("niveau")
+        if not niveau:
+            continue
+        domaine = (f.get("domaine") or "").lower()
+        stats = index_niveau_domaine.get((niveau, domaine)) or index_niveau_seul.get(niveau)
         if stats:
-            f["insertion_pro"] = {
-                "taux_emploi_3ans": stats.get("taux_emploi_3ans"),
-                "taux_emploi_6ans": stats.get("taux_emploi_6ans"),
-                "taux_cdi": stats.get("taux_cdi"),
-                "salaire_median_embauche": stats.get("salaire_median_embauche"),
-                "source": "cereq",
-                "cohorte": stats.get("cohorte"),
-            }
+            f["insertion_pro"] = _cereq_stats_flat(stats)
     return fiches
 
 
@@ -544,47 +583,64 @@ def merge_all_extended(
     monmaster: list[dict] | None = None,
     rncp: list[dict] | None = None,
     cereq: list[dict] | None = None,
+    parcoursup_extended: list[dict] | None = None,
+    onisep_extended: list[dict] | None = None,
+    lba: list[dict] | None = None,
     manual_labels: list[dict] | None = None,
     fuzzy_threshold: int = 85,
 ) -> list[dict]:
-    """Pipeline étendu : intègre MonMaster + RNCP + Céreq en plus du pipeline
-    legacy (Parcoursup + ONISEP + SecNumEdu).
+    """Pipeline étendu : intègre l'ensemble des corpus scope élargi en plus
+    du pipeline legacy (Parcoursup CSV + ONISEP JSON + SecNumEdu).
 
-    Backward-compat : si `monmaster`, `rncp` ou `cereq` sont None/vides, le
-    comportement reste identique à `merge_all()` existant (pas de side-effect
-    sur les tests de régression existants).
+    Sources ajoutées au fil du scope élargi ADR-039 :
+    - `monmaster` (ex sessions 2024/2025 dédupliquées ADR-044)
+    - `rncp` (certifications RNCP avec ROMEs + NSF)
+    - `parcoursup_extended` (scrape étendu ~9k fiches, pré-normalisé)
+    - `onisep_extended` (ONISEP formations étendues ~4.7k, pré-normalisé)
+    - `lba` (La Bonne Alternance ~6.6k, phase réorientation)
+    - `cereq` (stats insertion agrégées par niveau × domaine, enrichissement)
 
-    Respect ADR-039 scope élargi : chaque fiche issue des nouvelles sources
-    porte un `phase` explicite (master / initial / reorientation) pour
-    faciliter la répartition 33/33/34.
+    Backward-compat : tous les nouveaux params sont optionnels, par défaut
+    None → comportement identique à la version pré-scope-élargi quand non
+    fournis. Les sources pré-normalisées (`*_extended`, `lba`, `monmaster`)
+    sont appendées telles quelles (les audits les ont validées sans
+    doublons internes, cf docs/AUDIT_DATA_QUALITY_2026-04-24.md).
+
+    Respect ADR-039 : chaque fiche porte un `phase` explicite (master /
+    initial / reorientation) pour la répartition 33/33/34.
     """
-    # Étape 1 : pipeline legacy (Parcoursup + ONISEP + SecNumEdu + labels + debouches + metadata)
+    # Étape 1 : pipeline legacy (fuzzy merger Parcoursup CSV × ONISEP JSON)
     legacy = merge_all(parcoursup, onisep, secnumedu, manual_labels, fuzzy_threshold)
 
-    # Étape 2 : append MonMaster (si présent)
+    # Étape 2 : adapteurs pour sources nécessitant une normalisation
     mm_fiches = [monmaster_to_fiche(r) for r in (monmaster or [])]
-
-    # Étape 3 : append RNCP (si présent)
     rncp_fiches = [rncp_to_fiche(c) for c in (rncp or [])]
 
-    # Étape 4 : merge global
-    all_fiches = legacy + mm_fiches + rncp_fiches
+    # Étape 3 : sources déjà normalisées (schéma fiche → append direct)
+    pe_fiches = list(parcoursup_extended or [])
+    oe_fiches = list(onisep_extended or [])
+    lba_fiches = list(lba or [])
 
-    # Étape 5 : attach_debouches ROME (pour les fiches qui n'ont pas encore
-    # de débouchés — ex MonMaster ne les a pas nativement)
+    # Étape 4 : concat global — ordre = priorité retrieval implicite
+    all_fiches = (
+        legacy + pe_fiches + oe_fiches + mm_fiches + rncp_fiches + lba_fiches
+    )
+
+    # Étape 5 : attach_debouches ROME (pour fiches sans debouches — MonMaster
+    # et RNCP n'en ont pas nativement, LBA partiel)
     all_fiches = attach_debouches(all_fiches)
 
-    # Étape 6 : attach_metadata pour les nouveaux ajouts (MonMaster + RNCP
-    # manquent provenance / collected_at / merge_confidence après étape 2-3)
+    # Étape 6 : attach_metadata pour les nouveaux ajouts sans provenance
     all_fiches = attach_metadata(all_fiches)
 
-    # Étape 7 : enrichissement Céreq (late-stage, indicatif par niveau+domaine)
+    # Étape 7 : enrichissement Céreq par (niveau, domaine) avec fallback
+    # (niveau seul) — indicatif, cf `attach_cereq_insertion`
     all_fiches = attach_cereq_insertion(all_fiches, cereq)
 
-    # Étape 8 : assurer phase par défaut si absente (rétrocompat Parcoursup)
+    # Étape 8 : assurer phase par défaut si absente (rétrocompat fiches Parcoursup
+    # pré-ADR-039 sans phase explicite)
     for f in all_fiches:
         if not f.get("phase"):
-            # Parcoursup legacy = majoritairement phase (a) post-bac initial
             niveau = f.get("niveau") or ""
             f["phase"] = "master" if niveau in ("bac+5", "bac+8") else "initial"
 

@@ -55,23 +55,34 @@ def _signature(fiche: dict[str, Any]) -> str:
 
     Inclut l'identifiant unique source quand dispo pour éviter les faux
     doublons :
-    - MonMaster : `ifc` (identifiant formation-établissement unique), nested
-      dans `id_mon_master.ifc`
-    - RNCP : `numero_fiche` distingue les certifs (pas juste l'intitulé)
+    - MonMaster : `ifc` + `session` (même formation sur 2 années de campagne
+      = 2 snapshots stats distincts, PAS un doublon)
+    - RNCP : `numero_fiche` distingue les certifs
     - Parcoursup : `cod_aff_form` distingue formation × établissement
     - LBA : `id_lba`
+    - ONISEP : slug `FOR.XXX` extrait de `url_onisep` (le libellé seul
+      confond plusieurs formations différentes ex. "data engineer")
     """
     # Identifiants top-level prioritaires
     for id_key in ("cod_aff_form", "numero_fiche", "id_lba"):
         id_val = fiche.get(id_key)
         if id_val:
             return f"id:{id_key}={id_val}"
-    # Identifiants nested MonMaster (id_mon_master.ifc)
+    # Identifiants nested MonMaster (id_mon_master.ifc + session)
     id_mm = fiche.get("id_mon_master") or {}
     if isinstance(id_mm, dict):
         ifc = id_mm.get("ifc") or id_mm.get("inmp")
         if ifc:
-            return f"id:mm_ifc={ifc}"
+            session = id_mm.get("session") or ""
+            return f"id:mm_ifc={ifc};session={session}"
+    # ONISEP : slug depuis url_onisep (la fiche n'a pas d'ID stable au niveau top)
+    if (fiche.get("source") or "").lower() == "onisep":
+        url = fiche.get("url_onisep") or ""
+        # Pattern : .../slug/FOR.XXX(?)...
+        if "/slug/" in url:
+            slug = url.rsplit("/slug/", 1)[-1].split("?")[0].split("/")[0]
+            if slug:
+                return f"id:onisep_slug={slug}"
     # Fallback : nom + etablissement + ville
     nom = (fiche.get("nom") or fiche.get("intitule") or fiche.get("libelle") or "").strip().lower()
     etab = (fiche.get("etablissement") or "").strip().lower()

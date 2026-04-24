@@ -152,14 +152,21 @@ def _parse_ville(lieux: str) -> str:
 def _compute_taux_admission(record: dict[str, Any]) -> Optional[float]:
     """Calcule le taux d'admission = n_accept_total / n_can_pp (procedure principale).
 
-    None si numérateur ou dénominateur manquant/zéro. On n'arrondit pas —
-    le consommateur décide du formatage.
+    None si numérateur ou dénominateur manquant/zéro.
+
+    Clampé à [0, 1] : certains records MonMaster sources ont
+    `n_accept_total > n_can_pp` (procédure complémentaire ajoutant des
+    acceptés hors liste principale — cf 6 cas "LANGUES LITTERATURES"
+    identifiés dans l'audit 2026-04-23). On plafonne pour garder la
+    sémantique "proba d'admission d'un candidat PP" dans [0, 1]. Les
+    champs bruts `n_candidats_pp` / `n_acceptes_total` restent exposés
+    dans la fiche pour un recalcul alternatif si besoin.
     """
     n_can = record.get("n_can_pp") or 0
     n_accept = record.get("n_accept_total") or 0
     if n_can <= 0:
         return None
-    return n_accept / n_can
+    return min(1.0, n_accept / n_can)
 
 
 def _extract_profil_admis_stats(record: dict[str, Any]) -> dict[str, Any]:
@@ -229,6 +236,49 @@ def normalize_all(raw_records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [normalize_record(r) for r in raw_records]
 
 
+def _session_sort_key(fiche: dict[str, Any]) -> str:
+    """Clé de tri : chaîne session (lex ok car années à 4 chiffres).
+
+    Retourne chaîne vide si session absente → trié avant toute valeur
+    présente. `_dedupe_keep_latest_session` préfère session non-vide.
+    """
+    id_mm = fiche.get("id_mon_master") or {}
+    return str(id_mm.get("session") or "")
+
+
+def dedupe_keep_latest_session(
+    fiches: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Dédoublonne par `id_mon_master.ifc` en conservant la session la plus
+    récente (ADR-044).
+
+    Pourquoi : l'API MonMaster expose 2 snapshots annuels par formation
+    (sessions 2024 + 2025 en avril 2026). Pour le RAG c'est la dernière
+    année qui compte (fraîcheur données > série temporelle). Un ADR
+    séparé (ADR-044) capture ce choix.
+
+    Conserve l'ordre de première apparition pour stabilité des diffs.
+    """
+    latest: dict[str, dict[str, Any]] = {}
+    order: list[str] = []
+    for fiche in fiches:
+        id_mm = fiche.get("id_mon_master") or {}
+        ifc = id_mm.get("ifc")
+        if not ifc:
+            # Pas d'IFC → clé unique de fallback, pas de dédup possible
+            key = f"_no_ifc_{id(fiche)}"
+            latest[key] = fiche
+            order.append(key)
+            continue
+        if ifc not in latest:
+            order.append(ifc)
+            latest[ifc] = fiche
+        else:
+            if _session_sort_key(fiche) > _session_sort_key(latest[ifc]):
+                latest[ifc] = fiche
+    return [latest[k] for k in order]
+
+
 def save_processed(
     normalized: list[dict[str, Any]], path: Path = PROCESSED_PATH
 ) -> Path:
@@ -265,6 +315,14 @@ def collect_monmaster_fiches(
         path = save_raw_records(raw)
         print(f"  [monmaster] {len(raw)} records raw sauvés → {path}")
     normalized = normalize_all(raw)
+    before_dedup = len(normalized)
+    normalized = dedupe_keep_latest_session(normalized)
+    removed = before_dedup - len(normalized)
+    if removed:
+        print(
+            f"  [monmaster] dedup ADR-044 : {removed} snapshots antérieurs "
+            f"écartés ({before_dedup} → {len(normalized)})"
+        )
     if save_normalized:
         path = save_processed(normalized)
         print(f"  [monmaster] {len(normalized)} fiches normalisées → {path}")
