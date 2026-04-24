@@ -24,12 +24,15 @@ data/raw/*
 data/embeddings/*
 results/raw_responses/
 
-# Data processed volumineux (GitHub soft limit 50 MB).
-# Régénérable via `python -m src.collect.inserjeunes`. Pattern ADR-046
-# pending pour formaliser gitignore + CI regenerate de TOUS les processed
-# files (dont formations.json 81 MB, insersup_insertion 48 MB encore
-# tracked pour ne pas casser les branches existantes).
+# Data processed volumineux (ADR-046) — générés par les pipelines
+# d'ingestion et le merger v2. Régénérables via
+# `python scripts/regenerate_processed.py` (pattern idempotent).
+#
+# Critère : fichier > 50 MB OU produit de re-build trivial (moins de 2 min
+# d'API call). Ces fichiers sont des artefacts de build, pas des sources.
+data/processed/formations.json
 data/processed/inserjeunes_lycee_pro.json
+data/processed/insersup_insertion.json
 
 # Runtime logs
 logs/
