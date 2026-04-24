@@ -13,9 +13,9 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 - ℹ️  **cereq_insertion_stats.json** (stats) : 43 entrées
 - ❌ **insee_salaires_pcs_age.json** : absent (ingestion pas faite localement)
 - **parcoursup_extended.json** : 9,212 fiches ✅
-- **formations.json** : 1,424 fiches ✅
+- **formations.json** : 37,600 fiches ⚠️ 1567 doublons
 
-**Total fiches auditées** : 37,600
+**Total fiches auditées** : 73,776
 
 ---
 
@@ -95,23 +95,24 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 
 ### `formations.json`
 
-- Total : 1,424
-- Distribution par phase : `{'initial': 1352, 'master': 72}`
-- Distribution par niveau : `{'bac+3': 407, 'bac+2': 385, 'bac+5': 72}`
-- Top 5 domaines : `{'sante': 981, 'cyber': 352, 'data_ia': 91}`
-- Sources : `{'parcoursup': 1324, 'onisep': 100}`
+- Total : 37,600
+- Distribution par phase : `{'initial': 17619, 'master': 13335, 'reorientation': 6646}`
+- Distribution par niveau : `{'bac+3': 8279, 'bac+2': 6339, 'bac+5': 15138, 'bac+8': 3, 'bac': 2055, 'cap-bep': 890}`
+- Top 5 domaines : `{'eco_gestion': 7968, 'sciences_humaines': 4341, 'ingenierie_industrielle': 4263, 'sciences_fondamentales': 4053, 'sante': 3011}`
+- Sources : `{'parcoursup': 10536, 'onisep': 4875, 'monmaster': 8953, 'rncp': 6590, 'labonnealternance': 6646}`
 - Manques critiques : `{}`
 - Valeurs suspectes par champ : `{}`
-- Doublons (signatures identiques) : 0
+- Doublons (signatures identiques) : 1567
 - `taux_admission` hors bornes [0,1] : 0
+- Top 5 doublons : `[{'sig': "programme grande ecole|ministere de l'enseignement superieur et de la recherche|", 'count': 4}, {'sig': "boulanger|ministere de l'education nationale et de la jeunesse|", 'count': 4}, {'sig': "diplôme supérieur en marketing, commerce et gestion|ministere de l'enseignement superieur et de la recherche|", 'count': 4}, {'sig': "maçon|ministere de l'education nationale et de la jeunesse|", 'count': 3}, {'sig': "couvreur|ministere de l'education nationale et de la jeunesse|", 'count': 3}]`
 
 ---
 
 ## Répartition phase cumulée (vs ADR-039 cible 33/33/34)
 
-- `initial` : 17,619 (46.9%) — cible 33%
-- `master` : 13,335 (35.5%) — cible 33%
-- `reorientation` : 6,646 (17.7%) — cible 33%
+- `initial` : 33,886 (45.9%) — cible 33%
+- `master` : 26,598 (36.1%) — cible 33%
+- `reorientation` : 13,292 (18.0%) — cible 33%
 
 Si un phase dépasse 40% ou tombe sous 25% → signal de déséquilibre, action S+2 (up-sample ou down-sample).
 
