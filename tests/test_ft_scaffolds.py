@@ -137,9 +137,12 @@ def test_normalize_taux_acces_schema():
 
 
 def test_offres_emploi_scope():
-    # Nom compacté (pas de tiret) confirmé par probe OAuth2 2026-04-24.
-    # Le nom avec tiret `api_offresdemploi-v2` retourne invalid_scope.
-    assert OffresEmploiClient.SCOPE == "api_offresdemploiv2"
+    # Combo 2 scopes requis pour Offres emploi v2 :
+    # - api_offresdemploiv2 (accès API)
+    # - o2dsoffre (accès data offres)
+    # Séparés par espace dans requête token OAuth2.
+    assert "api_offresdemploiv2" in OffresEmploiClient.SCOPE
+    assert "o2dsoffre" in OffresEmploiClient.SCOPE
     assert OffresEmploiClient.BASE_URL.endswith("/offresdemploi/v2")
 
 
