@@ -99,12 +99,16 @@ def main() -> int:
     rncp = _load_json_if_available(DATA_PROCESSED / "rncp_certifications.json", "rncp")
     lba = _load_json_if_available(DATA_PROCESSED / "lba_formations.json", "lba")
     cereq = _load_json_if_available(DATA_PROCESSED / "cereq_insertion_stats.json", "cereq")
+    inserjeunes_cfa = _load_json_if_available(
+        DATA_PROCESSED / "inserjeunes_cfa.json", "inserjeunes_cfa"
+    )
     print(f"  parcoursup_ext  : {len(parcoursup_ext)}")
     print(f"  onisep_ext      : {len(onisep_ext)}")
     print(f"  monmaster       : {len(monmaster)}")
     print(f"  rncp            : {len(rncp)}")
     print(f"  lba             : {len(lba)}")
     print(f"  cereq stats     : {len(cereq)}")
+    print(f"  inserjeunes_cfa : {len(inserjeunes_cfa)}")
 
     # Manual labels (si présent)
     manual_labels: list[dict[str, Any]] = []
@@ -127,6 +131,7 @@ def main() -> int:
         parcoursup_extended=parcoursup_ext,
         onisep_extended=onisep_ext,
         lba=lba,
+        inserjeunes_cfa=inserjeunes_cfa,
         manual_labels=manual_labels,
     )
     print(f"  merged total    : {len(merged)} fiches")
