@@ -327,10 +327,14 @@ def collect_cereq_stats(
     for p in unique_xlsxs:
         all_entries.extend(parse_cereq_xlsx(p))
 
-    # CSVs legacy (fallback)
+    # CSVs legacy (fallback) — cherche dans raw_dir ET RAW_DIR_CSV
     if not all_entries:
-        csvs = sorted(RAW_DIR_CSV.glob("*.csv")) if RAW_DIR_CSV.exists() else []
-        for p in csvs:
+        csv_candidates: list[Path] = []
+        if raw_dir.exists():
+            csv_candidates.extend(sorted(raw_dir.glob("*.csv")))
+        if RAW_DIR_CSV.exists() and RAW_DIR_CSV != raw_dir:
+            csv_candidates.extend(sorted(RAW_DIR_CSV.glob("*.csv")))
+        for p in csv_candidates:
             all_entries.extend(parse_chiffres_cles_csv(p))
 
     if not all_entries:
