@@ -10,7 +10,7 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 - ℹ️  **onisep_metiers.json** (metiers) : 1,518 entrées
 - **onisep_formations_extended.json** : 4,775 fiches ✅
 - **lba_formations.json** : 6,646 fiches ✅
-- ❌ **cereq_insertion_stats.json** : absent (ingestion pas faite localement)
+- ℹ️  **cereq_insertion_stats.json** (stats) : 43 entrées
 - ❌ **insee_salaires_pcs_age.json** : absent (ingestion pas faite localement)
 - **parcoursup_extended.json** : 9,212 fiches ✅
 - **formations.json** : 1,424 fiches ✅
@@ -74,6 +74,12 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 - Valeurs suspectes par champ : `{}`
 - Doublons (signatures identiques) : 0
 - `taux_admission` hors bornes [0,1] : 0
+
+### `cereq_insertion_stats.json`
+
+- Type : `stats`
+- Entrées : 43
+- Sample keys : `['source', 'cohorte', 'code', 'libelle_menu', 'libelle_complet', 'niveau', 'domaine', 'horizon_3ans', 'horizon_6ans']`
 
 ### `parcoursup_extended.json`
 
