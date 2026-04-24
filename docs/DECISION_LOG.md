@@ -2083,3 +2083,103 @@ exposées par l'API MonMaster. Le raw n'est jamais perdu.
 
 ---
 
+## ADR-046 — Gitignore processed files volumineux + regenerate idempotent (2026-04-24) [DRAFT]
+
+### Context
+
+Le pipeline v2 (ADR-039 scope élargi + PR #38) produit un
+`data/processed/formations.json` de **81 MB** (37 600 fiches). Les
+ingestions InserSup et Inserjeunes ajoutent respectivement
+**48 MB** et **94 MB** sur leurs fichiers processed individuels. Ces
+3 artefacts dépassent ou approchent le soft limit GitHub 50 MB,
+déclenchant un warning `GH001: Large files detected` sur chaque push
+et alourdissant le `git clone` sans valeur ajoutée (ce sont des
+produits déterministes des ingestions, pas des sources).
+
+Tension observée : la PR #42 Inserjeunes a gitignoré
+`inserjeunes_lycee_pro.json` (94 MB) au cas par cas pour ne pas
+bloquer le push. Sans formalisation, chaque nouvelle ingestion
+volumineuse va répéter ce patch ad-hoc.
+
+### Decision
+
+Gitignorer les fichiers processed lourds (**> 50 MB** OU
+**re-buildables en < 2 min d'API call**), et fournir un **pipeline
+idempotent unique** (`scripts/regenerate_processed.py`) qui re-génère
+tous les fichiers depuis zéro.
+
+**Fichiers gitignorés par cet ADR** (au 2026-04-24) :
+- `data/processed/formations.json` (81 MB, produit merge_all_extended)
+- `data/processed/inserjeunes_lycee_pro.json` (94 MB, produit par
+  `src.collect.inserjeunes`)
+- `data/processed/insersup_insertion.json` (48 MB, produit par
+  `src.collect.insersup_api`)
+
+**Fichiers gardés tracked** (< 15 MB, valeur snapshot importante) :
+- `monmaster_formations.json` (10 MB), `parcoursup_extended.json` (14 MB),
+  `rncp_certifications.json` (10 MB), `onisep_*`, `lba_*`, `cereq_*`,
+  `inserjeunes_cfa.json`, `ip_doc_doctorat.json`.
+
+### Rationale
+
+1. **Le code est la source de vérité, pas l'artefact** : les pipelines
+   d'ingestion + le merger v2 sont déterministes. Quiconque clone le
+   repo peut reconstituer l'état corpus via
+   `python scripts/regenerate_processed.py`.
+2. **Coût git réduit** : -223 MB sur le repo (cumul des 3 fichiers).
+   `git clone` passe de ~230 MB à ~7 MB de data processed.
+3. **Warnings GitHub éliminés** : plus de `GH001` sur les pushes futurs.
+4. **Pattern CI-friendly** : le script `regenerate_processed.py` peut
+   être câblé dans un GitHub Actions workflow nightly ou
+   pre-release pour rafraîchir les snapshots si on les expose via
+   des artifacts (hors scope cet ADR — follow-up S+1 si besoin).
+5. **Critère explicite** (> 50 MB OU < 2 min build) évite les
+   décisions ad-hoc. Les fichiers < 15 MB restent tracked pour garder
+   le `git clone` immédiatement utilisable par les devs.
+
+### Alternatives considérées
+
+- **(A) Git LFS** : migration lourde (réécriture d'historique + tous
+  les contributeurs doivent activer git-lfs). Non-rentable vs
+  gitignore + regenerate tant qu'on reste à < 5 fichiers concernés.
+- **(B) Tout committer (statu quo)** : warnings GitHub + risque d'être
+  forcé sur LFS par GitHub à 100 MB hard limit. Reporte le problème.
+- **(C) Script sans gitignore** : contradictoire, on veut justement
+  réduire le poids git.
+- **(D) Gitignore de tous les processed** : cassant pour le pipeline
+  FAISS qui lit `formations.json` directement. Trade-off : on garde
+  les fichiers < 15 MB tracked pour que le code marche out-of-the-box
+  après un clone, et on regenerate les gros.
+
+### Consequences
+
+**Breaking change** pour les workflows qui clonent le repo ET attendent
+`formations.json` présent. Mitigation :
+1. `scripts/regenerate_processed.py` exécutable en 1 commande (~90s
+   total API + merge selon sources dispo).
+2. Documentation explicite dans CLAUDE.md + README (à suivre) : "après
+   clone, run `python scripts/regenerate_processed.py` avant usage RAG".
+3. CI GHA workflow à ajouter S+1 pour que les snapshots soient
+   disponibles en artifact si besoin.
+
+**Non-breaking** : la plupart des tests pytest n'ont pas besoin de ces
+fichiers (ils mockent les API ou utilisent des fixtures tmp_path).
+Seuls les pipelines intégrés (RAG FAISS, benchmark) dépendent de
+`formations.json` — eux nécessitent un regenerate local.
+
+### Rollback
+
+Revert simple possible : remettre les fichiers en tracking via
+`git add -f data/processed/<file>.json` + retirer les entrées
+correspondantes du `.gitignore`. Aucun historique perdu côté code.
+
+### Liens
+
+- Script : `scripts/regenerate_processed.py` (ADR-046)
+- Gitignore : voir `.gitignore` lignes "Data processed volumineux"
+- Précurseur partiel : PR #42 Inserjeunes (gitignore one-off du
+  lycee_pro.json)
+- Warning déclencheur : push PR #38 `GH001: formations.json is 81.19 MB`
+
+---
+
