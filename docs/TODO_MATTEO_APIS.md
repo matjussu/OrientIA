@@ -1,210 +1,225 @@
-# TODO Matteo — Signups APIs externes (Sprint 1 Axe 1 data foundation)
+# TODO Matteo — Actions APIs & Data sources OrientIA
 
-**Contexte** : checklist signups data sources pour OrientIA. Mis à jour au fur
-et à mesure des activations. ✅ = activé + testé OK, ⏳ = en attente action
-Matteo, 📋 = manual download requis.
-
-**État au 2026-04-23 12:24** : **France Travail ROME 4.0 + ONISEP activés**
-et opérationnels. La Bonne Alternance en attente habilitation. Céreq en
-attente download manuel. 2 nouveaux scopes FT recommandés pour S+2 (Marché du
-travail + Accès emploi demandeurs).
+**Dernière MAJ** : 2026-04-23 17:15 CEST
+**Objectif** : tout ce que Matteo doit faire côté APIs + downloads externes pour que Claudette puisse continuer les ingestions en autonomie.
 
 ---
 
-## 1. ✅ France Travail API — ROME 4.0 + scopes S+2 (ADR-042)
+## 📊 État actuel du corpus OrientIA
 
-**Statut** : ✅ **ACTIVÉ 2026-04-23** pour les 4 APIs ROME 4.0. Credentials
-testés OK :
-- OAuth2 token ✓
-- GET `/v1/metiers/metier` → 1 584 métiers ingérés
-- Ingestion fiches détaillées en cours (background)
+| Métrique | Valeur |
+|---|---|
+| Total fiches formations ingérées | **44 904** |
+| Sources actives | Parcoursup extended + MonMaster + RNCP + ONISEP (métiers+formations ext) + LBA alternance |
+| PRs mergées cette session | 7 (#30-36) |
+| Phase répartition (ADR-039 cible 33/33/34) | Initial ~35% / Master ~50% / Reorientation 14.8% |
+| APIs France Travail activées (8) | ROME 4.0 × 4 (utilisées) / Anotéa / Marché travail / Sortants formation / Accès emploi demandeurs |
+| Scopes OAuth2 cochés dans app OrientIA | 5 (ROME 4.0 × 4 + nomenclatureRome) — **4-5 à ajouter** (cf §1 ci-dessous) |
 
-### Scopes actuellement activés (4 APIs ROME 4.0)
+---
 
-- ✅ `api_rome-metiersv1` — Référentiel des métiers
-- ✅ `api_rome-fiches-metiersv1` — Fiches métiers détaillées
-- ✅ `api_rome-competencesv1` — Compétences par métier
-- ✅ `api_rome-contextes-travailv1` — Contextes de travail
-- ✅ `nomenclatureRome` — Métadonnées nomenclature
+## 🎯 Actions à faire (priorisées par impact OrientIA)
 
-### ⚠️ Scopes S+2 à activer (ADR-042, cf DECISION_LOG)
+### §1 — 🔴 PRIORITÉ P0 — Cocher 4 scopes OAuth2 dans l'app OrientIA (France Travail)
 
-**2 min côté Matteo dans le dashboard app France Travail** (pour débloquer
-les 3 APIs complémentaires analysées P1) :
+**Durée** : 3-5 minutes devant l'interface dashboard FT.
+**Débloque** : 3 ingestions live S+2 (Marché du travail + Sortants formation + Accès emploi + Offres d'emploi) pour **+8-12 jours de travail data**.
 
-- ⏳ `api_marche-travailv1` (tension marché par ROME × région, rate 10 RPS)
-- ⏳ `api_acces-a-l-emploi-des-demandeurs-d-emploiv1` (taux retour emploi 6m,
-  rate 10 RPS)
-- (Anotéa v1 = auth HMAC-SHA256 custom, pas un scope OAuth2 — procédure dédiée
-  si on l'active — plus tard S+2/S+3)
+**Problème détecté ce soir** : les APIs sont **activées dans ton listing général** (8 APIs dans ton espace dev), MAIS les **scopes OAuth2** correspondants ne sont **pas cochés dans la config de ton app spécifique "OrientIA"**. Résultat : le token OAuth2 ne donne accès qu'aux 4 ROME 4.0 + nomenclature, pas aux autres.
 
 **Procédure** :
-1. Aller sur https://francetravail.io → dashboard → ton app OrientIA
-2. "Ajouter des habilitations" / "Gérer les scopes"
-3. Cocher les 2 scopes ci-dessus
-4. Soumettre. Activation immédiate (pas de review 24-48h pour des scopes
-   additionnels sur app existante).
-5. Ping Jarvis : "scopes MT + Accès Emploi activés" → Claudette code les 2
-   modules S+2 (~10-14j cumul).
 
-### Rate limits officiels (important pour tuning)
+1. Aller sur https://francetravail.io/dashboard (ou équivalent "Mon espace développeur")
+2. Sélectionner ton app **OrientIA** (celle qui a `FT_CLIENT_ID` commençant par `PAR_orientiaassistantorie_...`)
+3. Onglet / Section "**Habilitations**" ou "**Scopes**" ou "**APIs activées pour cette app**"
+4. Tu verras une liste des APIs disponibles + checkboxes à cocher. Cocher **les 4 scopes suivants** :
 
-- ROME 4.0 (4 APIs) : **1 RPS** = 60 RPM → DEFAULT_RPM=50 dans `rome_api.py`
-  (marge 17%)
-- Anotéa v1 : 8 RPS
-- Marché du travail v1 : 10 RPS
-- Accès à l'emploi demandeurs v1 : 10 RPS
+   - [ ] **`api_marchedutravailv1`** — Marché du travail v1 (tension marché)
+   - [ ] **`api_sortants-formation-acces-a-lemploiv1`** — Sortants de formation v1 (insertion post-formation)
+   - [ ] **`api_acces-a-lemploi-des-demandeurs-demploiv1`** — Accès à l'emploi demandeurs v1 (taux retour emploi)
+   - [ ] **`api_offresdemploi-v2`** — Offres d'emploi France Travail v2 (annonces temps réel)
 
-### Notes
-- Le flow OAuth2 `client_credentials` régénère le token à chaque expiration
-  (~20 min) automatiquement.
-- Credentials stockés dans `.env` local uniquement (jamais committed, cf
-  `.gitignore`).
-- **Reco sécu post-usage** : revoke + regenerate `FT_CLIENT_SECRET` post-
-  stabilisation projet (secret était exposé Telegram historique).
+   ⚠️ **Noms exacts à confirmer** : le dashboard FT expose les scopes dans un dropdown avec leur nom officiel. Si les noms ci-dessus ne matchent pas exactement ce que tu vois, choisir ceux qui correspondent au libellé humain (ex "Marché du travail v1", "Sortants de formation et accès à l'emploi v1", etc.).
+
+5. **Sauvegarder/Soumettre**. Activation **immédiate** pour une app existante (pas de review 24-48h).
+6. Ping Jarvis sur Telegram : "scopes cochés" → Claudette pourra lancer les 4 ingestions demain.
+
+**Tests empiriques ce soir** : j'ai testé les 6 variants de nom possibles via OAuth2, tous retournent `HTTP 400 invalid_scope`. La liste ci-dessus est basée sur les conventions FT, mais **l'UI dashboard fait foi** pour le nom exact.
+
+**Scaffold côté code** : les 5 modules (4 FT + ROMEO) sont déjà prêts dans ce commit, 20 tests mockés verts. Ingestion live lance-t-elle au premier `gh pr merge` de la PR associée + scopes activés.
 
 ---
 
-## 2. ✅ ONISEP OpenData API — formations scope étendu
+### §2 — 🟡 PRIORITÉ P1 — Activer ROMEO (IA Compétences — scope ou portail séparé)
 
-**Statut** : ✅ **ACTIVÉ 2026-04-23**. Credentials testés OK :
-- `authenticate(email, password)` → token JWT ✓
-- `fetch_formations(token, app_id, "cybersécurité", size=5)` → 5 résultats
-  avec champs riches (code_nsf, code_rncp, duree, niveau, sigle_formation, etc.)
-- **Ingestion D2 extended lancée 2026-04-23** : 15 domaines OrientIA → **4 775 fiches
-  uniques** ingérées dans `data/processed/onisep_formations_extended.json`
-  (module `src/collect/onisep_formations_extended.py`)
-- Distribution : eco_gestion 25% / lettres_arts 16% / ingenierie 13% /
-  sciences fond 11% / sport 9% / droit 8% / communication 7% / 7 autres
-- Phases : initial 62% (2 984) / master 38% (1 791)
+**Durée** : 5-10 minutes (procédure à vérifier).
+**Débloque** : `ProfileClarifier` agent S+2 Axe 2 (matching texte libre utilisateur → codes ROME + compétences).
+**Valeur** : **critique pour Sprint 2** — sans ROMEO on reste sur `DOMAIN_KEYWORDS` regex custom fragile vs matching sémantique officiel FT.
 
-### Notes
-- Credentials dans `.env` local : `ONISEP_EMAIL` / `ONISEP_PASSWORD` /
-  `ONISEP_APP_ID` / `ONISEP_USERNAME`
-- Le code `src/collect/onisep.py` + `src/collect/onisep_formations_extended.py`
-  sont opérationnels.
-- ONISEP expose aussi un endpoint public sans auth (`_fetch_formations_public`)
-  mais limité ~500 résultats par query et pas de champs enrichis.
-- **Reco sécu post-usage** : changer `ONISEP_PASSWORD` post-stabilisation (secret
-  était exposé Telegram historique).
+**Procédure (à confirmer)** :
+
+**Option A** : ROMEO est un scope OAuth2 classique à cocher dans la même app OrientIA :
+- [ ] `api_romeov2` (ou `api_romeo-v2`) — à vérifier via dropdown dashboard
+
+**Option B** : ROMEO passe par un portail / URL dédié :
+- URL candidate : https://francetravail.io/data/api/romeo-2
+- Peut nécessiter un **2nd signup** distinct (ou juste coché dans même app).
+
+→ Si Matteo ne trouve pas le scope dans le dropdown de §1, tester Option B. Sinon toutes les deux = OK.
 
 ---
 
-## 3. ⏳ La Bonne Alternance — api.apprentissage.beta.gouv.fr (D10)
+### §3 — 🟢 PRIORITÉ P1-P2 — Downloads manuels data externes (3 sources)
 
-**Statut** : ⏳ **EN ATTENTE** — scaffold code prêt (`src/collect/labonnealternance.py`,
-9 tests mockés verts). Activation dès que token Bearer arrive dans `.env`.
+Ces 3 sources ne sont **pas** accessibles via API live. Matteo doit télécharger les fichiers et les placer dans des dossiers locaux.
 
-**Durée estimée** : 5 min signup + ~48h habilitation côté data.gouv.fr.
+#### §3.A — 📋 Céreq Enquêtes Génération (~15 min)
 
-**Utilité** : formations en alternance (~26 k) + offres apprentissage actives
-(~225 k) pour combler la **phase (b) réorientation/alternance à 0%** dans la
-répartition actuelle du corpus (ADR-039 cible 33/33/34).
+**Utilité** : taux insertion + salaire médian + % CDI par niveau diplôme × secteur pour phase (c).
 
-### Procédure signup complète (7 étapes)
-
-1. **Aller sur** https://api.apprentissage.beta.gouv.fr/compte (portail dev
-   officiel, pas api.gouv.fr)
-2. **S'inscrire** avec email `matteolepietre@gmail.com` (cohérence avec FT + ONISEP)
-3. **Valider l'email** de confirmation
-4. **Se connecter** → profil dev
-5. **Demander un token d'accès** aux APIs :
-   - `/api/v1/formations` (formations alternance référencées)
-   - `/api/v1/jobs` (offres emploi alternance temps quasi-réel)
-   - Procédure beta.gouv standard = **habilitation "légère" sous ~24-48h** ouvrés
-6. **Recevoir le token par email** (une fois habilitation validée)
-7. **Ajouter dans `~/projets/OrientIA/.env`** :
-   ```bash
-   LBA_API_TOKEN=<ton_token_bearer>
-   ```
-8. **Ping Jarvis** : "token La Bonne Alternance OK" → Claudette active D10
-   instantanément (code déjà là).
-
-### Contact support
-
-En cas de blocage habilitation : `labonnealternance@apprentissage.beta.gouv.fr`
-(équipe beta.gouv apprentissage).
-
-### Notes
-- Licence Open Licence 2.0 (Etalab) — usage non-commercial OK pour OrientIA
-  INRIA public.
-- Pas de rate limit hostile (5-20 RPS selon endpoint). Client `labonnealternance.py`
-  utilise RateLimiter 120 RPM (2 RPS) safe.
-- La ressource "formations alternance" est quasi-stable (refresh mensuel), les
-  offres jobs sont quasi temps-réel (refresh daily).
-
----
-
-## 4. 📋 Céreq Enquêtes Génération — download manuel CSVs (D11)
-
-**Statut** : 📋 **MANUEL** — parser scaffold prêt (`src/collect/cereq.py`, 13
-tests), attend les CSVs téléchargés localement.
-
-**Durée estimée** : 10 min download + copie fichiers locaux.
-
-**Utilité** : taux d'insertion + salaire médian + % CDI par niveau diplôme ×
-secteur pour enrichir les fiches OrientIA (phase c insertion pro).
-
-### Procédure download
+**Procédure** :
 
 1. Aller sur https://www.cereq.fr/datavisualisation/insertion-professionnelle-des-jeunes/les-chiffres-cles-par-diplome
-2. Télécharger les CSVs disponibles (boutons "Télécharger" / "Exporter" sur
-   chaque dashboard — typiquement 1 CSV par niveau (BTS / Licence / Master) et
-   par cohorte (Génération 2017 / 2021))
-3. Copier les fichiers dans `~/projets/OrientIA/data/raw/cereq/` en nommant
-   `cereq_<dashboard>_<cohorte>.csv` (ex : `cereq_chiffres_cles_gen2017.csv`,
-   `cereq_salaires_master_gen2021.csv`)
-4. Ping Jarvis : "CSVs Céreq disponibles" → Claudette parse automatiquement
-   via `python -m src.collect.cereq`
+2. Télécharger les CSVs disponibles (boutons "Télécharger" / "Exporter" sur chaque dashboard — typiquement 1 CSV par niveau diplôme et par cohorte)
+3. Copier les fichiers dans `~/projets/OrientIA/data/raw/cereq/` en les nommant :
+   - `cereq_chiffres_cles_gen2017.csv`
+   - `cereq_chiffres_cles_gen2020.csv` (si dispo)
+   - `cereq_salaires_master_gen2017.csv` (etc.)
+4. Ping Jarvis : "CSVs Céreq dispos" → Claudette lance `python -m src.collect.cereq` instant.
 
-### Notes
-- Céreq ne publie pas d'API bulk-download standardisée — download manuel requis.
-- Fallback si portail a changé : rapports PDF agrégés sur https://www.cereq.fr/publications
-  (scraping au coup par coup, moins pratique).
-- Le parser est permissif sur delimiters (`;` FR / `,` EN) et noms de colonnes
-  (essaie plusieurs variantes).
-- Future enquête Génération 2021 (collecte 2024, publication fin 2024/début 2025)
-  = à re-télécharger quand elle sort pour rafraîchir les stats.
+**Parser** : `src/collect/cereq.py` déjà prêt (scaffold PR #32 mergée), permissif sur delimiters FR/EN et noms colonnes variants.
+
+#### §3.B — 📋 INSEE Base Tous Salariés 2023 (~10-15 min + bandwidth)
+
+**Utilité** : salaires par PCS × âge pour phase (c) "combien gagne-t-on après X années dans ce métier".
+
+**Procédure** :
+
+1. Aller sur https://www.insee.fr/fr/statistiques/8730395 (Base Tous Salariés 2023)
+2. Télécharger le fichier **"salariés" format CSV** (~100-500 MB).
+   - Alternative format Parquet si plus pratique bandwidth.
+3. Placer dans `~/projets/OrientIA/data/raw/insee/bts_2023_salaries.csv`
+4. Ping Jarvis : "CSV INSEE dispo" → Claudette lance `python -m src.collect.insee_emploi` (agrégation pandas ~30s-2min).
+
+**Output attendu** : `data/processed/insee_salaires_pcs_age.json` (stats agrégées par PCS × tranche âge).
+
+**Alternative moins lourde** : si le CSV complet est trop gros, chercher un dataset pré-agrégé sur data.gouv.fr (mot-clé "salaires PCS 2020 tranche age") — peut être 5-20 MB au lieu de 500 MB, même usage final.
+
+#### §3.C — 📋 APEC rapports Observatoire (~15-30 min)
+
+**Utilité** : salaires cadres par ancienneté 1/3/5/10 ans pour phase (c) "trajectoire carrière".
+
+**Procédure** :
+
+1. Aller sur https://corporate.apec.fr/home/nos-etudes-et-analyses.html (ou équivalent "Observatoire")
+2. Filtrer par "Rémunérations" / "Salaires cadres" / "Études salaires"
+3. Télécharger les 5-10 **rapports PDF** les plus récents (idéalement les éditions 2024-2025) couvrant :
+   - Salaires cadres IT / numérique (pour phase c tech)
+   - Salaires cadres Finance / Gestion
+   - Salaires cadres Santé / Sciences
+   - "Les jeunes diplômés" (édition annuelle — critique pour 17-25)
+4. Placer dans `~/projets/OrientIA/data/raw/apec/` avec noms lisibles :
+   - `apec_salaires_it_2025.pdf`
+   - `apec_jeunes_diplomes_2025.pdf`
+   - ... etc.
+5. Ping Jarvis : "PDFs APEC dispos" → Claudette lance le parser PDF (à développer S+2, effort estimé 3-5j).
+
+⚠️ **Note effort Claudette** : le parsing APEC PDF est plus risqué (structure non-homogène potentielle), 3-5 jours d'implémentation vs 0.5-1j pour CSVs. OK pour S+2 mais pas critique si le temps manque INRIA.
 
 ---
 
-## 5. (Optionnel, décision S+2) Reddit OAuth — RAFT dataset génération γ
+### §4 — ⚪ OPTIONNEL — 2 signups additionnels si Matteo veut étendre encore
 
-**Durée estimée** : 3-5 min signup, activation immédiate.
+#### §4.A — ⚪ Open Formation (api.gouv.fr, P1-P2)
 
-**Utilité** : pour scraper r/Parcoursup + r/EtudesSuperieures + r/AskFrance
-afin de compléter 200-300 questions étudiants réels pour le dataset
-fine-tuning RAFT (S+3 Axe 3).
+**Durée** : ~10 min signup + ~24-48h habilitation.
+**Utilité** : catalogue formations FT + partenaires + RNCP (complément LBA + ONISEP).
+**Mon avis** : **skippable** tant qu'on n'a pas mesuré le gap vs ONISEP extended. ADR-043 le classait P0 mais Matteo a choisi de ne pas l'inclure dans son ordre — OK, on peut rester comme ça.
 
-**Quand décider** : fin S+2. Claudette démarre d'abord le scraping 100%
-autonome (forums ONISEP + Parcoursup public + StackExchange + HackerNews).
-Si volume final ≥ 200 questions propres, Reddit devient optionnel. Sinon,
-Matteo fait les 5 min de signup pour compléter à 350-450 questions.
+**Si tu changes d'avis, procédure** :
+1. https://api.gouv.fr/les-api/api-open-formation (ou portail FT pour la version open)
+2. Signup avec email pro, demande d'habilitation
+3. Token dans `.env` : `OPEN_FORMATION_API_KEY=...` (à définir post-procedure)
 
-### Étapes (si on va Reddit)
+#### §4.B — ⚪ Reddit OAuth (décision S+2)
 
-1. https://www.reddit.com/prefs/apps → "create another app..."
-2. Type : `script`
-3. Name : `OrientIA-research`
-4. Redirect URI : `http://localhost:8080` (pas utilisé en script mode)
-5. Récupérer `client_id` (sous le nom de l'app) + `client_secret`
-6. Ajouter dans `.env` :
-   ```bash
-   REDDIT_CLIENT_ID=<id>
-   REDDIT_CLIENT_SECRET=<secret>
-   REDDIT_USER_AGENT=OrientIA-research by /u/<ton-username>
-   ```
+**Durée** : ~5 min.
+**Utilité** : dataset RAFT S+3 (scraping r/Parcoursup + r/EtudesSuperieures).
+**Reste en décision S+2** selon volume scraping autonome (forums ONISEP + Parcoursup public + StackExchange + HackerNews).
 
 ---
 
-## Check avant de commit `.env`
+## ⏱️ Récapitulatif temps estimé Matteo
+
+| Action | Durée | Priorité | Débloque |
+|---|---|---|---|
+| §1 Scopes dashboard FT (4 scopes) | 3-5 min | **🔴 P0** | 3-4 ingestions FT live |
+| §2 ROMEO (scope ou portail) | 5-10 min | 🟡 P1 | ProfileClarifier agent S+2 |
+| §3.A Céreq CSVs | 15 min | 🟢 P1 | Insertion 3 ans post-diplôme |
+| §3.B INSEE BTS | 10-15 min + bandwidth | 🟢 P1 | Salaires par PCS × âge |
+| §3.C APEC PDFs | 15-30 min | 🟢 P2 | Salaires cadres 1/3/5/10 ans |
+| §4.A Open Formation (optionnel) | 10 min + 48h | ⚪ P2 | Catalogue FT + partenaires |
+| §4.B Reddit (optionnel S+2) | 5 min | ⚪ P3 | Dataset RAFT γ |
+
+**Total critique (P0 + P1)** : **~35-45 min** étalable sur plusieurs sessions.
+**Total maximal avec optionnels** : ~1h + temps bandwidth downloads.
+
+---
+
+## 🔐 Checks sécurité systématiques
+
+Après chaque copie de credentials dans `.env` :
 
 ```bash
-# Ne JAMAIS commit .env (il est déjà dans .gitignore, vérifier)
-grep -l ".env" .gitignore || echo "⚠️ .env pas dans .gitignore — AJOUTER"
+cd ~/projets/OrientIA
+# Vérif que .env est bien dans .gitignore
+grep -c "^\.env$" .gitignore   # doit retourner 1
+
+# Vérif que .env n'est pas tracké
+git ls-files | grep "^\.env$"  # doit être vide
+
+# Verif .env.example ne contient QUE des placeholders
+grep -v "your_\|_here" .env.example | grep "^[A-Z].*="  # doit être vide
 ```
+
+**Reco post-stabilisation projet** : revoke + regenerate tous les secrets (FT, ONISEP, LBA) car ils ont été exposés Telegram historique pendant cette session.
 
 ---
 
-*Créé 2026-04-23 — Claudette scaffold S+1 (Ordre Jarvis 2026-04-23-0843,
-amendment GO A+B). Mis à jour à chaque nouveau signup requis.*
+## 📁 État des modules code côté Claudette
+
+| Source | Module | Statut | Tests |
+|---|---|---|---|
+| Parcoursup extended | `src/collect/parcoursup.py` | ✅ Ingesté 9 212 fiches | ✅ |
+| MonMaster | `src/collect/monmaster.py` | ✅ Ingesté 16 257 fiches | ✅ |
+| RNCP France Compétences | `src/collect/rncp.py` | ✅ Ingesté 6 590 certifs | ✅ |
+| ONISEP formations extended | `src/collect/onisep_formations_extended.py` | ✅ Ingesté 4 775 fiches | ✅ |
+| ONISEP métiers (D12) | `src/collect/onisep_metiers.py` | ✅ Ingesté 1 518 métiers | ✅ |
+| ROME 4.0 (API live) | `src/collect/rome_api.py` | ✅ Ingesté 1 584 métiers + 1 584 fiches détaillées | ✅ |
+| La Bonne Alternance | `src/collect/labonnealternance.py` + `scripts/ingest_lba.py` | ✅ Ingesté 6 646 formations | ✅ |
+| Céreq | `src/collect/cereq.py` | ⏳ Parser prêt, attend CSVs (§3.A) | ✅ |
+| INSEE BTS | `src/collect/insee_emploi.py` | ⏳ Scaffold prêt, attend CSV (§3.B) | ✅ |
+| **Marché du travail v1** | `src/collect/ft_marche_travail.py` | ⏳ Scaffold prêt, attend scope (§1) | ✅ |
+| **Sortants formation v1** | `src/collect/ft_sortants_formation.py` | ⏳ Scaffold prêt, attend scope (§1) | ✅ |
+| **Accès emploi demandeurs v1** | `src/collect/ft_acces_emploi.py` | ⏳ Scaffold prêt, attend scope (§1) | ✅ |
+| **Offres d'emploi v2** | `src/collect/ft_offres_emploi.py` | ⏳ Scaffold prêt, attend scope (§1) | ✅ |
+| **ROMEO** | `src/collect/romeo.py` | ⏳ Scaffold prêt, attend scope ou portail (§2) | ✅ |
+| APEC PDFs | (à développer S+2) | 🟠 Scaffold à venir S+2 | — |
+| Scraping forums | `src/collect/scrape_forums_public.py` | 🟠 Scaffold à venir S+2 | — |
+
+---
+
+## 🎯 Prochaine étape post-§1 + §2
+
+Une fois les scopes cochés (§1) :
+- Claudette lance **4 ingestions live en parallèle** (Marché travail + Sortants formation + Accès emploi + Offres emploi) via sub-agents
+- ETA cumul avec parallélisation : **4-6 jours**
+- Gain RAG OrientIA : enrichissement par fiche avec tension marché + taux retour emploi + salaires + offres live par ROME × région
+
+Une fois Céreq/INSEE/APEC téléchargés (§3) :
+- Parsing + enrichissement fiches via `attach_cereq_insertion()` (Céreq) et nouvelles fonctions (INSEE/APEC)
+- Phase (c) "débouchés professionnels détaillés" (ADR-040) enfin complet.
+
+---
+
+*Fichier généré / mis à jour par Claudette à la demande de Matteo (ordre Jarvis 2026-04-23-1710). Review recommandé à chaque fin de session pour garder le TODO à jour.*
