@@ -20,7 +20,15 @@ from src.collect.ft_base import FranceTravailClient
 
 class OffresEmploiClient(FranceTravailClient):
     API_NAME = "offres-emploi"
-    SCOPE = "api_offresdemploi-v2"
+    # Offres d'emploi v2 nécessite 2 scopes OAuth2 combinés :
+    # - `api_offresdemploiv2` : accès à l'API
+    # - `o2dsoffre` : accès aux ressources offres (data scope)
+    # Séparés par espace dans la requête token OAuth2 (standard).
+    # Découverte par probe 2026-04-24 : scope unique → 403 sur /offres/search ;
+    # combo 2 scopes → token + endpoint OK (si habilitation accordée).
+    # Le nom `api_offresdemploi-v2` (avec tiret) retourne invalid_scope
+    # (documenté par la recherche web Jarvis + confirmé par probe).
+    SCOPE = "api_offresdemploiv2 o2dsoffre"
     BASE_URL = "https://api.francetravail.io/partenaire/offresdemploi/v2"
     DEFAULT_RPM = 500
 

@@ -23,7 +23,10 @@ from src.collect.ft_base import FranceTravailClient
 
 class MarcheTravailClient(FranceTravailClient):
     API_NAME = "marche-travail"
-    SCOPE = "api_marchedutravailv1"  # À CONFIRMER via dropdown dashboard FT
+    # Nom testé 2026-04-24 : invalid_scope. Variante api_marchetravailv1 aussi
+    # invalid → probable habilitation partenariat FT requise (pas juste case
+    # à cocher) — action Matteo dashboard partenaires.
+    SCOPE = "api_marchedutravailv1"  # habilitation pending
     BASE_URL = "https://api.francetravail.io/partenaire/marche-du-travail/v1"
     DEFAULT_RPM = 500  # 10 RPS officiel = 600 RPM, marge 17%
 

@@ -23,7 +23,11 @@ from src.collect.ft_base import FranceTravailClient
 
 class SortantsFormationClient(FranceTravailClient):
     API_NAME = "sortants-formation"
-    SCOPE = "api_sortants-formation-acces-emploiv1"  # À CONFIRMER
+    # Nom testé 2026-04-24 : invalid_scope. Variante compactée
+    # api_sortantsformationaccesemploiv1 également invalid → probable
+    # habilitation partenariat FT requise (pas juste case à cocher) — action
+    # Matteo dashboard partenaires.
+    SCOPE = "api_sortants-formation-acces-emploiv1"  # habilitation pending
     BASE_URL = (
         "https://api.francetravail.io/partenaire/sortants-formation-acces-emploi/v1"
     )
