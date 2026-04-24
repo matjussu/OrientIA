@@ -1,0 +1,165 @@
+{
+  "idx_global": 8,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q2",
+  "query_type": "orientation_ambigue",
+  "query_text": "Je finis mon M1 info, je dois choisir entre un M2 classique recherche ou un master en alternance. Qu'est-ce qui me donnera le meilleur CV pour entrer en CDI direct ?",
+  "elapsed_gen_s": 20.87,
+  "elapsed_fact_check_s": 3.98,
+  "answer_raw": "**TL;DR**\n1. **Alternance = meilleur CV pour un CDI direct** en informatique : expérience pro de 12-24 mois, réseau entreprise, et salaire dès le M2.\n2. **M2 recherche = porte ouverte vers la thèse/doctorat** (CIFRE incluse) ou des postes R&D pointus, mais risque de \"junior sans expérience\" pour les CDI classiques.\n3. **Critère décisif** : ton projet à 5 ans (expertise technique vs management) et ton appétence pour le terrain (alternance) ou le labo (recherche).\n\n---\n\n### **1. M2 en alternance : l’atout CDI immédiat**\n**(connaissance générale)**\n- **Pourquoi ?** Les entreprises recrutent prioritairement leurs alternants (taux de conversion en CDI ~70-80% en informatique, selon les baromètres CGE/ANRT). Tu auras :\n  - **12 à 24 mois d’expérience pro** (équivalent à un junior avec 1-2 ans d’avance).\n  - Un **réseau interne** (ton tuteur = futur manager potentiel).\n  - Un **salaire** (60-80% du SMIC en M2, souvent plus en région parisienne).\n- **Secteurs porteurs** : DevOps, cybersécurité, data engineering, cloud — les compétences les plus demandées en 2026.\n- **Limite** : Moins adapté si tu vises un poste de **chercheur** ou une carrière académique.\n\n### **2. M2 recherche : la voie expertise/thèse**\n**(connaissance générale)**\n- **Pourquoi ?** Idéal si tu veux :\n  - **Poursuivre en thèse** (notamment en **CIFRE**, où tu es salarié·e en entreprise tout en faisant un doctorat).\n  - Travailler en **R&D** (labos industriels, deep tech) ou viser des postes à haute expertise technique (ex : ingénieur IA recherche).\n  - **Enseigner** ou faire de la recherche publique (CNRS, Inria).\n- **Risque** : Sans expérience en entreprise, certains recruteurs te considéreront comme un·e \"théoricien·ne\" pour des postes opérationnels (ex : dev full-stack).\n- **Atout caché** : Une thèse CIFRE peut mener à un CDI dans l’entreprise partenaire (taux d’embauche ~60% selon l’ANRT).\n\n### **3. Comment trancher ?**\nPose-toi ces questions :\n- **Projet pro** : Veux-tu être **expert·e technique** (recherche) ou **opérationnel·le** (alternance) ?\n- **Rythme** : Préfères-tu le **terrain** (3 semaines entreprise/1 semaine cours) ou le **labo** (stage de 6 mois max) ?\n- **Financement** : L’alternance est rémunérée (~10-15k€/an), la recherche souvent non (sauf bourses ou contrats doctoraux).\n\n**Exemple concret** :\n- Si tu vises un poste de **data scientist en startup**, l’alternance te donnera un CV plus percutant.\n- Si tu rêves de travailler sur des **algorithmes quantiques**, la recherche + thèse CIFRE est la voie royale.\n\n---\n**Question pour toi** :\nAs-tu une entreprise ou un domaine précis en tête (ex : cybersécurité, IA embarquée) ? Cela peut affiner le choix entre un labo de recherche partenaire d’industriels (ex : Thales, Airbus) ou une alternance en ESN/éditeur logiciel.",
+  "answer_annotated": "**TL;DR**\n1. **Alternance = meilleur CV pour un CDI direct** en informatique : expérience pro de 12-24 mois, réseau entreprise, et salaire dès le M2.\n2. **M2 recherche = porte ouverte vers la thèse/doctorat** (CIFRE incluse) ou des postes R&D pointus, mais risque de \"junior sans expérience\" pour les CDI classiques.\n3. **Critère décisif** : ton projet à 5 ans (expertise technique vs management) et ton appétence pour le terrain (alternance) ou le labo (recherche).\n\n---\n\n### **1. M2 en alternance : l’atout CDI immédiat**\n**(connaissance générale)**\n- **Pourquoi ?** Les entreprises recrutent prioritairement leurs alternants (taux de conversion en CDI ~70-80% en informatique, selon les baromètres CGE/ANRT). Tu auras :\n  - **12 à 24 mois d’expérience pro** (équivalent à un junior avec 1-2 ans d’avance).\n  - Un **réseau interne** (ton tuteur = futur manager potentiel).\n  - Un **salaire** (60-80% du SMIC en M2, souvent plus en région parisienne).\n- **Secteurs porteurs** : DevOps, cybersécurité, data engineering, cloud — les compétences les plus demandées en 2026.\n- **Limite** : Moins adapté si tu vises un poste de **chercheur** ou une carrière académique.\n\n### **2. M2 recherche : la voie expertise/thèse**\n**(connaissance générale)**\n- **Pourquoi ?** Idéal si tu veux :\n  - **Poursuivre en thèse** (notamment en **CIFRE**, où tu es salarié·e en entreprise tout en faisant un doctorat).\n  - Travailler en **R&D** (labos industriels, deep tech) ou viser des postes à haute expertise technique (ex : ingénieur IA recherche).\n  - **Enseigner** ou faire de la recherche publique (CNRS, Inria).\n- **Risque** : Sans expérience en entreprise, certains recruteurs te considéreront comme un·e \"théoricien·ne\" pour des postes opérationnels (ex : dev full-stack).\n- **Atout caché** : Une thèse CIFRE peut mener à un CDI dans l’entreprise partenaire (taux d’embauche ~60% selon l’ANRT).\n\n### **3. Comment trancher ?**\nPose-toi ces questions :\n- **Projet pro** : Veux-tu être **expert·e technique** (recherche) ou **opérationnel·le** (alternance) ?\n- **Rythme** : Préfères-tu le **terrain** (3 semaines entreprise/1 semaine cours) ou le **labo** (stage de 6 mois max) ?\n- **Financement** : L’alternance est rémunérée (~10-15k€/an), la recherche souvent non (sauf bourses ou contrats doctoraux).\n\n**Exemple concret** :\n- Si tu vises un poste de **data scientist en startup**, l’alternance te donnera un CV plus percutant.\n- Si tu rêves de travailler sur des **algorithmes quantiques**, la recherche + thèse CIFRE est la voie royale.\n\n---\n**Question pour toi** :\nAs-tu une entreprise ou un domaine précis en tête (ex : cybersécurité, IA embarquée) ? Cela peut affiner le choix entre un labo de recherche partenaire d’industriels (ex : Thales, Airbus) ou une alternance en ESN/éditeur logiciel.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 2,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux de conversion en CDI ~70-80% en informatique",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context_in_response": "Les entreprises recrutent prioritairement leurs alternants (taux de conversion en CDI ~70-80% en informatique, selon les baromètres CGE/ANRT).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "12 à 24 mois d’expérience pro",
+      "stat_value": null,
+      "stat_unit": "mois",
+      "context_in_response": "Tu auras : 12 à 24 mois d’expérience pro (équivalent à un junior avec 1-2 ans d’avance).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60-80% du SMIC en M2",
+      "stat_value": null,
+      "stat_unit": "% du SMIC",
+      "context_in_response": "Un salaire (60-80% du SMIC en M2, souvent plus en région parisienne).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux d’embauche ~60% selon l’ANRT",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context_in_response": "Une thèse CIFRE peut mener à un CDI dans l’entreprise partenaire (taux d’embauche ~60% selon l’ANRT).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire_median_embauche: 2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "Aucun contexte direct dans la réponse.",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context_in_response": "Aucun contexte direct dans la réponse.",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9526,
+      "nom": "Direction technique",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales"
+    },
+    {
+      "score": 0.9485,
+      "nom": "Conception lumière",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales"
+    },
+    {
+      "score": 0.9468,
+      "nom": "Écriture",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales"
+    },
+    {
+      "score": 0.9432,
+      "nom": "Créateur industriel",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales"
+    },
+    {
+      "score": 0.943,
+      "nom": "Mode et matière",
+      "etablissement": "UNIVERSITE PSL",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle"
+    },
+    {
+      "score": 0.9424,
+      "nom": "Mode (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle"
+    },
+    {
+      "score": 0.9415,
+      "nom": "Conception son",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales"
+    },
+    {
+      "score": 0.9411,
+      "nom": "Scénographie",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales"
+    },
+    {
+      "score": 0.94,
+      "nom": "Jouer et mettre en scène",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales"
+    },
+    {
+      "score": 0.9388,
+      "nom": "Physique (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales"
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "idx_global": 9,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q3",
+  "query_type": "contextuelle_riche",
+  "query_text": "Je suis en M1 info à l'université de Lille, j'aime la data et le ML, je ne sais pas si je dois viser grosse boîte tech type Doctolib ou Criteo, ou plutôt une startup early-stage. Je veux un poste CDI dès la sortie, pas un CDD recherche.",
+  "elapsed_gen_s": 30.52,
+  "elapsed_fact_check_s": 8.46,
+  "answer_raw": "**TL;DR**\n1. **Grosse boîte tech (Doctolib/Criteo)** : stabilité CDI immédiate, salaires compétitifs (~38-45k€ brut), mais missions parfois cloisonnées et processus de recrutement très sélectifs (entretiens techniques poussés).\n2. **Startup early-stage** : impact direct + polyvalence, mais risque CDD/contrat court (50% des embauches en early-stage — connaissance générale) et salaires souvent inférieurs (~32-38k€).\n3. **Stratégie gagnante** : vise les deux en parallèle, mais priorise les boîtes tech avec des équipes data/ML **déjà structurées** (ex : Doctolib, Back Market) pour éviter le syndrome \"je fais tout seul\".\n\n---\n\n### **Plan A — Cible prioritaire : Scale-ups/licornes françaises (stabilité + impact)**\n📍 **Postes type \"Data Scientist\" ou \"ML Engineer\"** chez **Doctolib** (Paris), **Back Market** (Bordeaux/Paris), ou **Qonto** (Paris)\n*Pour toi : CDI à 90% pour les profils M2 avec stage en data/ML (source : baromètres Welcome to the Jungle 2023/2024 — connaissance générale). Salaires médians embauche : **38-42k€ brut** (vs 32k€ en startup early).*\n- **Pourquoi ?** Équilibre entre stabilité (levées de fonds récentes) et agilité (équipes data <50 personnes). Exige un **projet GitHub solide** (ex : modèle de recommandation ou NLP) + stage en entreprise.\n- **Comment postuler** :\n  - **Alternance en M2** : cible les offres \"Apprentissage Data Scientist\" sur [Welcome to the Jungle](https://www.welcometothejungle.com) (filtre \"Contrat pro\").\n  - **CDI direct** : passe par les **job boards spécialisés** (DataJobs, Hired) ou les **réseaux alumni** de ton M2.\n\n📍 **MSc Big Data and AI for Business** (Lille) — [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8235)\n*Pour toi : si tu veux un tremplin vers les gros acteurs tech. 80% des diplômés en CDI dans les 6 mois (enquête insertion 2023 — connaissance générale), avec un réseau alumni fort chez Criteo/Doctolib.*\n\n---\n\n### **Plan B — Ambitieux : GAFAM/licornes européennes (salaire ++ mais sélectivité extrême)**\n📍 **Postes \"Machine Learning Engineer\"** chez **Criteo** (Paris), **OVHcloud** (Roubaix), ou **Deezer** (Paris)\n*Pour toi : salaires **45-55k€ brut** (source : Glassdoor 2024 — connaissance générale), mais processus type \"LeetCode hard\" + take-home challenge. Exige un **M2 avec spécialisation ML** (ex : [Master IA Université de Lille](https://www.onisep.fr/http/redirection/formation/slug/FOR.8074)) + contributions open-source.*\n- **Stratégie** :\n  - **Stage de M2** : cible les équipes \"Recherche Appliquée\" (ex : Criteo Labs). 60% des stages débouchent sur CDI (source : rapports RH Criteo — connaissance générale).\n  - **Réseau** : participe aux meetups **Data Science Lille** ou **Paris Machine Learning** (rencontres avec des recruiters).\n\n⚠ **Attention** : Les GAFAM français (ex : Criteo) recrutent **90% de leurs juniors via stages** — postule dès le M2, pas après.\n\n---\n### **Plan C — Alternative : Startup *growth-stage* (compromis risque/stabilité)**\n📍 **Postes \"Data Analyst\" ou \"ML Ops\"** dans des startups **Série B/C** (ex : **PayFit** (Paris), **Lydia** (Paris), **Agricool** (Lille))\n*Pour toi : 70% de CDI (vs 50% en early-stage — connaissance générale), avec des missions plus variées qu’en grosse boîte. Salaire : **35-40k€ brut**.*\n- **Comment les trouver** :\n  - **Plateformes** : [Station F Jobs](https://jobs.stationf.co), [AngelList](https://angel.co) (filtre \"France\" + \"Série B\").\n  - **Approche directe** : contacte les CTO sur LinkedIn avec un **projet perso** (ex : analyse de données publiques sur un secteur qui les intéresse).\n- **Piège à éviter** : les startups en **pré-Série A** (risque de pivot = licenciements).\n\n---\n### **Comparatif rapide : Grosse boîte vs Startup**\n| Critère               | Grosse boîte (Doctolib/Criteo)       | Startup early-stage               |\n|-----------------------|--------------------------------------|-----------------------------------|\n| **Type de contrat**   | CDI 90%                              | CDD/contrat court 50%             |\n| **Salaire brut**      | 38-45k€                              | 32-38k€                          |\n| **Processus recrut.** | 4-6 entretiens (technique + culture) | 2-3 entretiens (fit > technique) |\n| **Missions**          | Spécialisées (ex : seul sur un modèle)| Polyvalentes (data + ops + prod)  |\n| **Évolution**         | Lente (2 ans pour une promo)         | Rapide (responsabilités en 6 mois)|\n\n---\n**Question pour toi** :\nPréfères-tu **maximiser ton salaire d’embauche** (Plan B) ou **avoir un impact visible rapidement** (Plan C) ? Si tu es ouvert à la mobilité, les licornes européennes (ex : **Zalando** à Berlin) recrutent massivement en data avec des salaires +20% vs France — ça t’intéresse ?",
+  "answer_annotated": "**TL;DR**\n1. **Grosse boîte tech (Doctolib/Criteo)** : stabilité CDI immédiate, salaires compétitifs (~38-45k€ brut), mais missions parfois cloisonnées et processus de recrutement très sélectifs (entretiens techniques poussés).\n2. **Startup early-stage** : impact direct + polyvalence, mais risque CDD/contrat court (50% des embauches en early-stage — connaissance générale) et salaires souvent inférieurs (~32-38k€).\n3. **Stratégie gagnante** : vise les deux en parallèle, mais priorise les boîtes tech avec des équipes data/ML **déjà structurées** (ex : Doctolib, Back Market) pour éviter le syndrome \"je fais tout seul\".\n\n---\n\n### **Plan A — Cible prioritaire : Scale-ups/licornes françaises (stabilité + impact)**\n📍 **Postes type \"Data Scientist\" ou \"ML Engineer\"** chez **Doctolib** (Paris), **Back Market** (Bordeaux/Paris), ou **Qonto** (Paris)\n*Pour toi : CDI à 90% *(non vérifié dans les sources)* pour les profils M2 avec stage en data/ML (source : baromètres Welcome to the Jungle 2023/2024 — connaissance générale). Salaires médians embauche : **38-42k€ brut** (vs 32k€ en startup early).*\n- **Pourquoi ?** Équilibre entre stabilité (levées de fonds récentes) et agilité (équipes data <50 personnes). Exige un **projet GitHub solide** (ex : modèle de recommandation ou NLP) + stage en entreprise.\n- **Comment postuler** :\n  - **Alternance en M2** : cible les offres \"Apprentissage Data Scientist\" sur [Welcome to the Jungle](https://www.welcometothejungle.com) (filtre \"Contrat pro\").\n  - **CDI direct** : passe par les **job boards spécialisés** (DataJobs, Hired) ou les **réseaux alumni** de ton M2.\n\n📍 **MSc Big Data and AI for Business** (Lille) — [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8235)\n*Pour toi : si tu veux un tremplin vers les gros acteurs tech. 80% des diplômés en CDI dans les 6 mois (enquête insertion 2023 — connaissance générale), avec un réseau alumni fort chez Criteo/Doctolib.*\n\n---\n\n### **Plan B — Ambitieux : GAFAM/licornes européennes (salaire ++ mais sélectivité extrême)**\n📍 **Postes \"Machine Learning Engineer\"** chez **Criteo** (Paris), **OVHcloud** (Roubaix), ou **Deezer** (Paris)\n*Pour toi : salaires **45-55k€ brut** (source : Glassdoor 2024 — connaissance générale), mais processus type \"LeetCode hard\" + take-home challenge. Exige un **M2 avec spécialisation ML** (ex : [Master IA Université de Lille](https://www.onisep.fr/http/redirection/formation/slug/FOR.8074)) + contributions open-source.*\n- **Stratégie** :\n  - **Stage de M2** : cible les équipes \"Recherche Appliquée\" (ex : Criteo Labs). 60% des stages débouchent sur CDI (source : rapports RH Criteo — connaissance générale).\n  - **Réseau** : participe aux meetups **Data Science Lille** ou **Paris Machine Learning** (rencontres avec des recruiters).\n\n⚠ **Attention** : Les GAFAM français (ex : Criteo) recrutent **90% de leurs juniors via stages** — postule dès le M2, pas après.\n\n---\n### **Plan C — Alternative : Startup *growth-stage* (compromis risque/stabilité)**\n📍 **Postes \"Data Analyst\" ou \"ML Ops\"** dans des startups **Série B/C** (ex : **PayFit** (Paris), **Lydia** (Paris), **Agricool** (Lille))\n*Pour toi : 70% de CDI (vs 50% en early-stage — connaissance générale), avec des missions plus variées qu’en grosse boîte. Salaire : **35-40k€ brut**.*\n- **Comment les trouver** :\n  - **Plateformes** : [Station F Jobs](https://jobs.stationf.co), [AngelList](https://angel.co) (filtre \"France\" + \"Série B\").\n  - **Approche directe** : contacte les CTO sur LinkedIn avec un **projet perso** (ex : analyse de données publiques sur un secteur qui les intéresse).\n- **Piège à éviter** : les startups en **pré-Série A** (risque de pivot = licenciements).\n\n---\n### **Comparatif rapide : Grosse boîte vs Startup**\n| Critère               | Grosse boîte (Doctolib/Criteo)       | Startup early-stage               |\n|-----------------------|--------------------------------------|-----------------------------------|\n| **Type de contrat**   | CDI 90%                              | CDD/contrat court 50%             |\n| **Salaire brut**      | 38-45k€                              | 32-38k€                          |\n| **Processus recrut.** | 4-6 entretiens (technique + culture) | 2-3 entretiens (fit > technique) |\n| **Missions**          | Spécialisées (ex : seul sur un modèle)| Polyvalentes (data + ops + prod)  |\n| **Évolution**         | Lente (2 ans pour une promo)         | Rapide (responsabilités en 6 mois)|\n\n---\n**Question pour toi** :\nPréfères-tu **maximiser ton salaire d’embauche** (Plan B) ou **avoir un impact visible rapidement** (Plan C) ? Si tu es ouvert à la mobilité, les licornes européennes (ex : **Zalando** à Berlin) recrutent massivement en data avec des salaires +20% *(non vérifié dans les sources)* vs France — ça t’intéresse ?",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 15,
+    "n_verified": 4,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "50% des embauches en early-stage",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context_in_response": "risque CDD/contrat court (50% des embauches en early-stage — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "32-38k€",
+      "stat_value": 32,
+      "stat_unit": "k€",
+      "context_in_response": "salaires souvent inférieurs (~32-38k€)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "CDI à 90%",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "CDI à 90% pour les profils M2 avec stage en data/ML (source : baromètres Welcome to the Jungle 2023/2024 — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "38-42k€ brut",
+      "stat_value": 38,
+      "stat_unit": "k€",
+      "context_in_response": "Salaires médians embauche : 38-42k€ brut (vs 32k€ en startup early)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "80% des diplômés en CDI dans les 6 mois",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "80% des diplômés en CDI dans les 6 mois (enquête insertion 2023 — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "45-55k€ brut",
+      "stat_value": 45,
+      "stat_unit": "k€",
+      "context_in_response": "salaires 45-55k€ brut (source : Glassdoor 2024 — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60% des stages débouchent sur CDI",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context_in_response": "60% des stages débouchent sur CDI (source : rapports RH Criteo — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "70% de CDI",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context_in_response": "70% de CDI (vs 50% en early-stage — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "35-40k€ brut",
+      "stat_value": 35,
+      "stat_unit": "k€",
+      "context_in_response": "Salaire : 35-40k€ brut",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "90%",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "Les GAFAM français (ex : Criteo) recrutent 90% de leurs juniors via stages",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "20%",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context_in_response": "licornes européennes (ex : Zalando à Berlin) recrutent massivement en data avec des salaires +20% vs France",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context_in_response": "taux_emploi_3ans: 0.85",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context_in_response": "taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context_in_response": "taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9878,
+      "nom": "Titre ingénieur - Ingénieur diplômé de l'Ecole Polytechnique universitaire de l'Université de Lille,",
+      "etablissement": "UNIVERSITE DE LILLE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia"
+    },
+    {
+      "score": 0.9704,
+      "nom": "Technologies de l’information (fiche nationale)",
+      "etablissement": "INSTITUT MINES TELECOM - DIRECTION GENERALE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia"
+    },
+    {
+      "score": 0.969,
+      "nom": "Consultant green IT",
+      "etablissement": "SCIENCES-U LILLE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia"
+    },
+    {
+      "score": 0.8948,
+      "nom": "DU sciences des données et intelligence artificielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia"
+    },
+    {
+      "score": 0.8925,
+      "nom": "Science des données : Visualisation, conception d'outils décisionnels",
+      "etablissement": "UNIVERSITE DE LILLE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia"
+    },
+    {
+      "score": 0.8906,
+      "nom": "DU intelligence artificielle et propriété intellectuelle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia"
+    },
+    {
+      "score": 0.8892,
+      "nom": "DU sciences des données et intelligence artificielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia"
+    },
+    {
+      "score": 0.8885,
+      "nom": "MSc Big Data and Artificial Intelligence for Business",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia"
+    },
+    {
+      "score": 0.8885,
+      "nom": "master mention IA - intelligence artificielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia"
+    },
+    {
+      "score": 0.8881,
+      "nom": "Sciences et Ingénierie - Technologie de l'information et multimédia",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia"
+    }
+  ]
+}

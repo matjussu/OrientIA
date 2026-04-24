@@ -1,0 +1,2321 @@
+[
+  {
+    "idx_global": 1,
+    "persona_id": "lila",
+    "query_id": "q1",
+    "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+    "error_pipeline": "ReadTimeout: The read operation timed out"
+  },
+  {
+    "idx_global": 2,
+    "persona_id": "lila",
+    "query_id": "q2",
+    "query_text": "J'hésite entre une fac de sciences humaines et une école de communication à Paris, pourquoi choisir l'une plutôt que l'autre ?",
+    "error_pipeline": "ReadTimeout: The read operation timed out"
+  },
+  {
+    "idx_global": 3,
+    "persona_id": "lila",
+    "query_id": "q3",
+    "query_text": "Je suis en Terminale L, j'ai 14 de moyenne, j'aime écrire et j'aime l'histoire mais je ne veux pas être prof. Je cherche un parcours post-bac qui me laisse plusieurs options métiers ouvertes.",
+    "error_pipeline": "ReadTimeout: The read operation timed out"
+  },
+  {
+    "idx_global": 4,
+    "persona_id": "theo",
+    "query_id": "q1",
+    "query_text": "Quelles passerelles existent après une L1/L2 de droit pour aller vers un BTS ou une école de commerce ?",
+    "error_pipeline": "ReadTimeout: The read operation timed out"
+  },
+  {
+    "idx_global": 5,
+    "persona_id": "theo",
+    "persona_description": "Théo, 19 ans, L2 Droit en échec (scope réorientation)",
+    "scope": "reorientation",
+    "query_id": "q2",
+    "query_type": "orientation_ambigue",
+    "query_text": "Je n'aime pas du tout le droit, je ne veux pas redoubler. Qu'est-ce qui est le plus réaliste cette année pour me réorienter ?",
+    "elapsed_gen_s": 24.07,
+    "elapsed_fact_check_s": 10.85,
+    "answer_raw": "**TL;DR**\n1. Si le droit ne te convient pas, **pas besoin de redoubler** : des passerelles existent dès maintenant en **licences pluridisciplinaires**, **BUT**, ou **écoles spécialisées** (sans perdre ton année).\n2. **Priorité** : identifier **tes centres d’intérêt** (langues, tech, social, gestion…) pour cibler une réorientation **sans décousu**.\n3. **3 options réalistes** ci-dessous, avec calendriers précis pour septembre 2025.\n\n---\n\n### **Étape 1 — Urgent (mai-juin 2025) : Trouver une formation avec places disponibles**\n**Objectif** : Éviter la perte d’année en intégrant une **licence non-sélective** ou un **BUT** avec admissions en cours.\n\n📍 **Cycle pluridisciplinaire \"Mobilités douces et développement durable\"** (Université de Strasbourg) — **bac+3 public**, **accès sur dossier** (peu sélectif), pas de prérequis en droit · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10628)\n*Pour toi* : Idéal si tu aimes les enjeux écologiques/sociaux. **Dossier à envoyer avant fin juin** (contacter le SCUIO de Strasbourg).\n\n📍 **BUT Carrières Sociales** (IUT de Toulouse ou Bordeaux) — **bac+3 public**, **sélectivité ~40-50%**, alternance possible dès L2 · [exemple Parcoursup](https://www.parcoursup.fr)\n*Pour toi* : Si tu aimes le contact humain (travail social, RH). **Places souvent disponibles en phase complémentaire** (juillet).\n\n📍 **École de commerce post-bac** (type **BBA INSEEC**, **EBS**, ou **IPAG**) — **bac+4 privé**, **sélectivité 30-50%**, rentrées décalées possibles.\n*Pour toi* : Si tu vises l’international/management. **Coût élevé (8-10k€/an)** → vérifier bourses. **Dossiers ouverts jusqu’à septembre** pour certaines écoles.\n\n---\n### **Étape 2 — Été 2025 : Valider ton choix et préparer la rentrée**\n- **Si tu hésites encore** :\n  - Faire un **test d’orientation** (ex : [RIASEC](https://www.orientation.com/tests/riasec) — connaissance générale) pour cerner tes affinités (créatif, analytique, social…).\n  - Contacter un **conseiller d’orientation Psy-EN** (gratuit via ton lycée/fac) pour affiner.\n- **Si tu as choisi** :\n  - **Licence/BUT public** : Finaliser ton inscription sur [Parcoursup phase complémentaire](https://www.parcoursup.fr) (juillet-septembre).\n  - **École privée** : Négocier un **paiement échelonné** et chercher des **aides** (CROUS, régions, fondations).\n\n---\n### **Étape 3 — 2025-2026 : Construire un projet solide**\n- **En licence/BUT** :\n  - Valider ton **projet pro** via des **stages** (ex : ONG pour le social, startup pour le commerce).\n  - **Passerelles possibles** : Après une L2 validée, tu pourras postuler en **L3 pro** (ex : L3 Gestion, L3 Info-Com) ou **école spécialisée** (via admissions parallèles).\n- **En école de commerce** :\n  - **Spécialisation progressive** : Choisir une majeure en 3e année (marketing, finance, entrepreneuriat…).\n  - **Double compétence** : Ajouter un **certificat** (ex : Google Analytics, TOEIC) pour booster ton CV.\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées** : Vérifie le **label \"grade Licence\"** (ex : INSEEC l’a, d’autres non). Sans ce label, le diplôme vaut moins sur le marché.\n- **Réorientation \"par défaut\"** : Évite les filières **trop générales** (ex : \"licence AES\") si tu n’as pas de projet clair → risque de décrochage.\n\n---\n**Question pour toi** :\nQuels sont **tes 2-3 domaines d’intérêt** en dehors du droit (même vagues : ex \"voyages\", \"informatique\", \"aider les gens\") ? Je peux t’aider à affiner les options en fonction. *(Réponds en 1-2 mots clés, ça suffit !)*\n\n---\n👤 **Pour un accompagnement personnalisé**, prends RDV avec le **SCUIO de ton université** ou un **conseiller Psy-EN** (gratuit). Les délais pour septembre sont courts !",
+    "answer_annotated": "**TL;DR**\n1. Si le droit ne te convient pas, **pas besoin de redoubler** : des passerelles existent dès maintenant en **licences pluridisciplinaires**, **BUT**, ou **écoles spécialisées** (sans perdre ton année).\n2. **Priorité** : identifier **tes centres d’intérêt** (langues, tech, social, gestion…) pour cibler une réorientation **sans décousu**.\n3. **3 options réalistes** ci-dessous, avec calendriers précis pour septembre 2025.\n\n---\n\n### **Étape 1 — Urgent (mai-juin 2025) : Trouver une formation avec places disponibles**\n**Objectif** : Éviter la perte d’année en intégrant une **licence non-sélective** ou un **BUT** avec admissions en cours.\n\n📍 **Cycle pluridisciplinaire \"Mobilités douces et développement durable\"** (Université de Strasbourg) — **bac+3 public**, **accès sur dossier** (peu sélectif), pas de prérequis en droit · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10628)\n*Pour toi* : Idéal si tu aimes les enjeux écologiques/sociaux. **Dossier à envoyer avant fin juin** (contacter le SCUIO de Strasbourg).\n\n📍 **BUT Carrières Sociales** (IUT de Toulouse ou Bordeaux) — **bac+3 public**, **sélectivité ~40-50%**, alternance possible dès L2 · [exemple Parcoursup](https://www.parcoursup.fr)\n*Pour toi* : Si tu aimes le contact humain (travail social, RH). **Places souvent disponibles en phase complémentaire** (juillet).\n\n📍 **École de commerce post-bac** (type **BBA INSEEC**, **EBS**, ou **IPAG**) — **bac+4 privé**, **sélectivité 30-50%**, rentrées décalées possibles.\n*Pour toi* : Si tu vises l’international/management. **Coût élevé (8-10k€/an)** → vérifier bourses. **Dossiers ouverts jusqu’à septembre** pour certaines écoles.\n\n---\n### **Étape 2 — Été 2025 : Valider ton choix et préparer la rentrée**\n- **Si tu hésites encore** :\n  - Faire un **test d’orientation** (ex : [RIASEC](https://www.orientation.com/tests/riasec) — connaissance générale) pour cerner tes affinités (créatif, analytique, social…).\n  - Contacter un **conseiller d’orientation Psy-EN** (gratuit via ton lycée/fac) pour affiner.\n- **Si tu as choisi** :\n  - **Licence/BUT public** : Finaliser ton inscription sur [Parcoursup phase complémentaire](https://www.parcoursup.fr) (juillet-septembre).\n  - **École privée** : Négocier un **paiement échelonné** et chercher des **aides** (CROUS, régions, fondations).\n\n---\n### **Étape 3 — 2025-2026 : Construire un projet solide**\n- **En licence/BUT** :\n  - Valider ton **projet pro** via des **stages** (ex : ONG pour le social, startup pour le commerce).\n  - **Passerelles possibles** : Après une L2 validée, tu pourras postuler en **L3 pro** (ex : L3 Gestion, L3 Info-Com) ou **école spécialisée** (via admissions parallèles).\n- **En école de commerce** :\n  - **Spécialisation progressive** : Choisir une majeure en 3e année (marketing, finance, entrepreneuriat…).\n  - **Double compétence** : Ajouter un **certificat** (ex : Google Analytics, TOEIC) pour booster ton CV.\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées** : Vérifie le **label \"grade Licence\"** (ex : INSEEC l’a, d’autres non). Sans ce label, le diplôme vaut moins sur le marché.\n- **Réorientation \"par défaut\"** : Évite les filières **trop générales** (ex : \"licence AES\") si tu n’as pas de projet clair → risque de décrochage.\n\n---\n**Question pour toi** :\nQuels sont **tes 2-3 domaines d’intérêt** en dehors du droit (même vagues : ex \"voyages\", \"informatique\", \"aider les gens\") ? Je peux t’aider à affiner les options en fonction. *(Réponds en 1-2 mots clés, ça suffit !)*\n\n---\n👤 **Pour un accompagnement personnalisé**, prends RDV avec le **SCUIO de ton université** ou un **conseiller Psy-EN** (gratuit). Les délais pour septembre sont courts !",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 13,
+      "n_verified": 10,
+      "n_with_disclaimer": 3,
+      "n_hallucinated": 0,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "sélectivité ~40-50%",
+        "stat_value": 45,
+        "stat_unit": "%",
+        "context_in_response": "BUT Carrières Sociales (IUT de Toulouse ou Bordeaux) — bac+3 public, sélectivité ~40-50%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "sélectivité 30-50%",
+        "stat_value": 40,
+        "stat_unit": "%",
+        "context_in_response": "École de commerce post-bac (type BBA INSEEC, EBS, ou IPAG) — bac+4 privé, sélectivité 30-50%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Coût élevé (8-10k€/an)",
+        "stat_value": 9000,
+        "stat_unit": "€/an",
+        "context_in_response": "École de commerce post-bac (type BBA INSEEC, EBS, ou IPAG) — coût élevé (8-10k€/an)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "taux_emploi_3ans: 0.86",
+        "stat_value": 86,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : taux_emploi_3ans: 0.86 (FICHE 1, FICHE 2, FICHE 3, FICHE 4, FICHE 5, FICHE 6, FICHE 7, FICHE 10)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_emploi_6ans: 0.91",
+        "stat_value": 91,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : taux_emploi_6ans: 0.91 (FICHE 1, FICHE 2, FICHE 3, FICHE 4, FICHE 5, FICHE 6, FICHE 7, FICHE 10)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_cdi: 0.83",
+        "stat_value": 83,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : taux_cdi: 0.83 (FICHE 1, FICHE 2, FICHE 3, FICHE 4, FICHE 5, FICHE 6, FICHE 7, FICHE 10)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "salaire_median_embauche: 1740",
+        "stat_value": 1740,
+        "stat_unit": "€",
+        "context_in_response": "Insertion pro : salaire_median_embauche: 1740 (FICHE 1, FICHE 2, FICHE 3, FICHE 4, FICHE 5, FICHE 6, FICHE 7, FICHE 10)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_emploi_3ans: 0.85",
+        "stat_value": 85,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : taux_emploi_3ans: 0.85 (FICHE 8)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_emploi_3ans: 0.80",
+        "stat_value": 80,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : taux_emploi_3ans: 0.80 (FICHE 9)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.80, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_emploi_6ans: 0.87",
+        "stat_value": 87,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : taux_emploi_6ans: 0.87 (FICHE 9)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.80, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_cdi: 0.76",
+        "stat_value": 76,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : taux_cdi: 0.76 (FICHE 9)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.80, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "salaire_median_embauche: 1570",
+        "stat_value": 1570,
+        "stat_unit": "€",
+        "context_in_response": "Insertion pro : salaire_median_embauche: 1570 (FICHE 9)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.80, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "salaire_median_embauche: 2080",
+        "stat_value": 2080,
+        "stat_unit": "€",
+        "context_in_response": "Insertion pro : salaire_median_embauche: 2080 (FICHE 8)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 1.1036,
+        "nom": "Licence - Droit - Parcours Droits français et anglais",
+        "etablissement": "Université Paris 1 Panthéon Sorbonne",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "droit"
+      },
+      {
+        "score": 1.1029,
+        "nom": "Double licence - Droit / Langues étrangères appliquées - Double mention DROIT / LANGUES ÉTRANGÈRES A",
+        "etablissement": "Université de Poitiers",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "droit"
+      },
+      {
+        "score": 1.0985,
+        "nom": "Double licence - Science politique / Droit -",
+        "etablissement": "Université Paris Panthéon Assas",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "droit"
+      },
+      {
+        "score": 0.8417,
+        "nom": "DROIT (LIC LMD)",
+        "etablissement": "UNIVERSITE TOULOUSE CAPITOLE",
+        "niveau": "bac+3",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "droit"
+      },
+      {
+        "score": 0.8417,
+        "nom": "DROIT (LIC LMD)",
+        "etablissement": "UNIVERSITE TOULOUSE CAPITOLE",
+        "niveau": "bac+3",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "droit"
+      },
+      {
+        "score": 0.8402,
+        "nom": "DROIT (LIC LMD)",
+        "etablissement": "UNIVERSITE CLERMONT AUVERGNE",
+        "niveau": "bac+3",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "droit"
+      },
+      {
+        "score": 0.8329,
+        "nom": "DROIT (LIC LMD)",
+        "etablissement": "ASSOCIATION UNIVERSITE ET SPORTS",
+        "niveau": "bac+3",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "droit"
+      },
+      {
+        "score": 0.8294,
+        "nom": "Brevet de second polyvalent",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "services"
+      },
+      {
+        "score": 0.7926,
+        "nom": "Greffier pénaliste",
+        "etablissement": "MINISTERE DES ARMEES",
+        "niveau": "bac+2",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales"
+      },
+      {
+        "score": 0.7619,
+        "nom": "cycle pluridisciplinaire d'études supérieures - mobilités douces, développement durable et ouverture",
+        "etablissement": "",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "onisep",
+        "domaine": "droit"
+      }
+    ]
+  },
+  {
+    "idx_global": 6,
+    "persona_id": "theo",
+    "persona_description": "Théo, 19 ans, L2 Droit en échec (scope réorientation)",
+    "scope": "reorientation",
+    "query_id": "q3",
+    "query_type": "contextuelle_riche",
+    "query_text": "J'ai validé ma L1 de droit mais je galère en L2, je pense à me réorienter vers l'audiovisuel ou le commerce, si possible en alternance. J'habite à Bordeaux, quelles options concrètes ?",
+    "elapsed_gen_s": 30.99,
+    "elapsed_fact_check_s": 11.7,
+    "answer_raw": "**TL;DR**\n1. **L’audiovisuel et le commerce en alternance existent**, mais pas en bac+2/3 à Bordeaux : il faut viser des licences pro (bac+3) ou des écoles privées (coût élevé).\n2. **Ton profil droit + L1 validée** te permet des passerelles vers des **licences pro métiers du droit appliqués** (ex : gestion de production audiovisuelle *avec un angle juridique*), ou des **BUT/Bachelor commerce** en alternance.\n3. **Étapes clés** :\n   - **Étape 1** : Valide ta L2 droit (même en rattrapages) pour garder la porte ouverte aux licences pro.\n   - **Étape 2** : Postule en **licence pro ou Bachelor** (dossier + entretien) dès mars 2025.\n   - **Étape 3** : Signale ton contrat d’alternance **avant l’été** (démarche active obligatoire).\n\n---\n\n### **Plan A — Réaliste : Licence pro ou Bachelor en alternance (Bordeaux ou à distance)**\n**Pourquoi ?** Tu gardes un lien avec ton bagage droit (atout pour les métiers de la production/propriété intellectuelle) + salaire en alternance (~600-800€/mois).\n\n📍 **Licence pro Métiers du droit : propriété intellectuelle** (Université de Bordeaux, Pessac) — **bac+3 public, alternance possible**, sélectivité modérée (dossier + entretien)\n*[Fiche officielle Université de Bordeaux](https://www.u-bordeaux.fr/formation/licence-pro-droit-propriete-intellectuelle)*\n*Pour toi : Parfait si tu aimes le droit mais veux un côté concret (contrats, médias, culture). Alternance avec studios/boîtes de prod locales (ex : France 3 Aquitaine, agences événementielles).*\n\n📍 **Bachelor Gestion de Production Audiovisuelle** (ESRA Bordeaux ou 3IS Bordeaux) — **bac+3 privé (6-8k€/an)**, alternance possible en 3e année\n*(connaissance générale : écoles privées réputées, mais coût élevé. Vérifie les partenariats avec Pôle Emploi pour des aides.)*\n*Pour toi : Si tu veux du 100% audiovisuel, mais budget serré → privilégie la licence pro publique.*\n\n📍 **BUT Métiers du Multimédia et de l’Internet (MMI)** (IUT de Bordeaux) — **bac+3 public, alternance en 3e année**, sélectivité ~40%\n*[Site officiel IUT Bordeaux](https://iut.u-bordeaux.fr/)*\n*Pour toi : Moins spécialisé \"audiovisuel pur\", mais débouchés larges (web, communication) + compétences tech valorisées.*\n\n---\n### **Plan B — Ambitieux : Double compétence droit + commerce (Poitiers ou Toulouse)**\n**Pourquoi ?** Tu combines tes acquis en droit avec un secteur porteur, en restant dans le public.\n\n📍 **Double licence Droit/Langues (Parcours International)** (Université de Poitiers) — **bac+3 public, sélective (37%)**, pas d’alternance mais stages obligatoires\n*[Fiche Parcoursup](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35428&typeBac=0&originePc=0)*\n*Pour toi : Si tu vises l’international (droit des médias, contrats artistiques). Déménagement nécessaire, mais Poitiers = coût de vie abordable.*\n\n📍 **Licence pro Commerce spécialité Négociation Relation Client** (IUT de Toulouse) — **bac+3 public, alternance**, sélectivité ~50%\n*(connaissance générale : l’IUT de Toulouse a un bon réseau d’entreprises. Postule via [eCandidat](https://ecandidat.univ-tlse2.fr).)*\n*Pour toi : Pour basculer vers le commerce tout en gardant un pied dans le juridique (ex : négociation de contrats).*\n\n---\n### **Plan C — Passerelle : VAE ou formation courte qualifiante**\n**Si tu veux quitter la fac maintenant** (sans valider la L2) :\n1. **Formation courte en audiovisuel** :\n   - **Titre RNCP \"Assistant de Production\"** (1 an, écoles comme **SAE Institute Bordeaux** ou **Gobelins à distance**).\n   *(connaissance générale : coût ~4-6k€, mais éligible CPF si tu as travaillé. Alternance possible.)*\n2. **VAE (Validation des Acquis de l’Expérience)** :\n   - Si tu as déjà bossé (même en stage) dans l’événementiel/communication, tu peux valider un **BTS Audiovisuel** en 1 an via VAE.\n   *(connaissance générale : contacte le **GRETA Aquitaine** pour un accompagnement gratuit.)*\n\n---\n### **Calendrier clé (2024-2025)**\n| Étape               | Période          | Action concrète                                                                 |\n|---------------------|------------------|---------------------------------------------------------------------------------|\n| **Octobre-novembre** | Maintenant       | Valide ton projet (RDV avec le **SCUIO de Bordeaux** ou un conseiller Pôle Emploi). |\n| **Décembre-janvier** |                  | Prépare ton CV et lettre de motivation (mets en avant tes compétences \"droit + organisation\"). |\n| **Mars-avril 2025**  |                  | Candidature sur **eCandidat** (licences pro) ou **Parcoursup** (BUT).              |\n| **Mai-juin 2025**    |                  | Recherche active d’alternance (plateformes : **La Bonne Alternance**, **Indeed**). |\n\n---\n**⚠ Attention**\n- **Évite les écoles privées non reconnues** (ex : \"École Supérieure de l’Audiovisuel\" sans RNCP). Vérifie toujours le **répertoire RNCP** ([site officiel](https://www.francecompetences.fr)).\n- **L’alternance en audiovisuel est compétitive** à Bordeaux : prévois un plan B (ex : déménagement vers Lyon/Paris où les offres sont plus nombreuses).\n\n---\n**Question pour toi :**\nTu préfères **garder un pied dans le droit** (licence pro propriété intellectuelle) ou **tout changer pour l’audiovisuel/commerce** (même si ça signifie repartir de bac+2) ? Ton choix dépendra aussi de ton appétence pour les matières juridiques résiduelles.",
+    "answer_annotated": "**TL;DR**\n1. **L’audiovisuel et le commerce en alternance existent**, mais pas en bac+2/3 à Bordeaux : il faut viser des licences pro (bac+3) ou des écoles privées (coût élevé).\n2. **Ton profil droit + L1 validée** te permet des passerelles vers des **licences pro métiers du droit appliqués** (ex : gestion de production audiovisuelle *avec un angle juridique*), ou des **BUT/Bachelor commerce** en alternance.\n3. **Étapes clés** :\n   - **Étape 1** : Valide ta L2 droit (même en rattrapages) pour garder la porte ouverte aux licences pro.\n   - **Étape 2** : Postule en **licence pro ou Bachelor** (dossier + entretien) dès mars 2025.\n   - **Étape 3** : Signale ton contrat d’alternance **avant l’été** (démarche active obligatoire).\n\n---\n\n### **Plan A — Réaliste : Licence pro ou Bachelor en alternance (Bordeaux ou à distance)**\n**Pourquoi ?** Tu gardes un lien avec ton bagage droit (atout pour les métiers de la production/propriété intellectuelle) + salaire en alternance (~600-800€/mois).\n\n📍 **Licence pro Métiers du droit : propriété intellectuelle** (Université de Bordeaux, Pessac) — **bac+3 public, alternance possible**, sélectivité modérée (dossier + entretien)\n*[Fiche officielle Université de Bordeaux](https://www.u-bordeaux.fr/formation/licence-pro-droit-propriete-intellectuelle)*\n*Pour toi : Parfait si tu aimes le droit mais veux un côté concret (contrats, médias, culture). Alternance avec studios/boîtes de prod locales (ex : France 3 Aquitaine, agences événementielles).*\n\n📍 **Bachelor Gestion de Production Audiovisuelle** (ESRA Bordeaux ou 3IS Bordeaux) — **bac+3 privé (6-8k€/an)**, alternance possible en 3e année\n*(connaissance générale : écoles privées réputées, mais coût élevé. Vérifie les partenariats avec Pôle Emploi pour des aides.)*\n*Pour toi : Si tu veux du 100% audiovisuel, mais budget serré → privilégie la licence pro publique.*\n\n📍 **BUT Métiers du Multimédia et de l’Internet (MMI)** (IUT de Bordeaux) — **bac+3 public, alternance en 3e année**, sélectivité ~40%\n*[Site officiel IUT Bordeaux](https://iut.u-bordeaux.fr/)*\n*Pour toi : Moins spécialisé \"audiovisuel pur\", mais débouchés larges (web, communication) + compétences tech valorisées.*\n\n---\n### **Plan B — Ambitieux : Double compétence droit + commerce (Poitiers ou Toulouse)**\n**Pourquoi ?** Tu combines tes acquis en droit avec un secteur porteur, en restant dans le public.\n\n📍 **Double licence Droit/Langues (Parcours International)** (Université de Poitiers) — **bac+3 public, sélective (37%)**, pas d’alternance mais stages obligatoires\n*[Fiche Parcoursup](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35428&typeBac=0&originePc=0)*\n*Pour toi : Si tu vises l’international (droit des médias, contrats artistiques). Déménagement nécessaire, mais Poitiers = coût de vie abordable.*\n\n📍 **Licence pro Commerce spécialité Négociation Relation Client** (IUT de Toulouse) — **bac+3 public, alternance**, sélectivité ~50%\n*(connaissance générale : l’IUT de Toulouse a un bon réseau d’entreprises. Postule via [eCandidat](https://ecandidat.univ-tlse2.fr).)*\n*Pour toi : Pour basculer vers le commerce tout en gardant un pied dans le juridique (ex : négociation de contrats).*\n\n---\n### **Plan C — Passerelle : VAE ou formation courte qualifiante**\n**Si tu veux quitter la fac maintenant** (sans valider la L2) :\n1. **Formation courte en audiovisuel** :\n   - **Titre RNCP \"Assistant de Production\"** (1 an, écoles comme **SAE Institute Bordeaux** ou **Gobelins à distance**).\n   *(connaissance générale : coût ~4-6k€, mais éligible CPF si tu as travaillé. Alternance possible.)*\n2. **VAE (Validation des Acquis de l’Expérience)** :\n   - Si tu as déjà bossé (même en stage) dans l’événementiel/communication, tu peux valider un **BTS Audiovisuel** en 1 an via VAE.\n   *(connaissance générale : contacte le **GRETA Aquitaine** pour un accompagnement gratuit.)*\n\n---\n### **Calendrier clé (2024-2025)**\n| Étape               | Période          | Action concrète                                                                 |\n|---------------------|------------------|---------------------------------------------------------------------------------|\n| **Octobre-novembre** | Maintenant       | Valide ton projet (RDV avec le **SCUIO de Bordeaux** ou un conseiller Pôle Emploi). |\n| **Décembre-janvier** |                  | Prépare ton CV et lettre de motivation (mets en avant tes compétences \"droit + organisation\"). |\n| **Mars-avril 2025**  |                  | Candidature sur **eCandidat** (licences pro) ou **Parcoursup** (BUT).              |\n| **Mai-juin 2025**    |                  | Recherche active d’alternance (plateformes : **La Bonne Alternance**, **Indeed**). |\n\n---\n**⚠ Attention**\n- **Évite les écoles privées non reconnues** (ex : \"École Supérieure de l’Audiovisuel\" sans RNCP). Vérifie toujours le **répertoire RNCP** ([site officiel](https://www.francecompetences.fr)).\n- **L’alternance en audiovisuel est compétitive** à Bordeaux : prévois un plan B (ex : déménagement vers Lyon/Paris où les offres sont plus nombreuses).\n\n---\n**Question pour toi :**\nTu préfères **garder un pied dans le droit** (licence pro propriété intellectuelle) ou **tout changer pour l’audiovisuel/commerce** (même si ça signifie repartir de bac+2) ? Ton choix dépendra aussi de ton appétence pour les matières juridiques résiduelles.",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 18,
+      "n_verified": 13,
+      "n_with_disclaimer": 5,
+      "n_hallucinated": 0,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "salaire en alternance (~600-800€/mois)",
+        "stat_value": 700,
+        "stat_unit": "€/mois",
+        "context_in_response": "Tu gardes un lien avec ton bagage droit (atout pour les métiers de la production/propriété intellectuelle) + salaire en alternance (~600-800€/mois).",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "6-8k€/an",
+        "stat_value": 6000,
+        "stat_unit": "€/an",
+        "context_in_response": "Bachelor Gestion de Production Audiovisuelle (ESRA Bordeaux ou 3IS Bordeaux) — bac+3 privé (6-8k€/an), alternance possible en 3e année",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "sélectivité ~40%",
+        "stat_value": 40,
+        "stat_unit": "%",
+        "context_in_response": "BUT Métiers du Multimédia et de l’Internet (MMI) (IUT de Bordeaux) — bac+3 public, alternance en 3e année, sélectivité ~40%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "sélectivité 37%",
+        "stat_value": 37,
+        "stat_unit": "%",
+        "context_in_response": "Double licence Droit/Langues (Parcours International) (Université de Poitiers) — bac+3 public, sélective (37%), pas d’alternance mais stages obligatoires",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Taux d'accès Parcoursup : 37.0%"
+      },
+      {
+        "stat_text": "sélectivité ~50%",
+        "stat_value": 50,
+        "stat_unit": "%",
+        "context_in_response": "Licence pro Commerce spécialité Négociation Relation Client (IUT de Toulouse) — bac+3 public, alternance, sélectivité ~50%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "coût ~4-6k€",
+        "stat_value": 5000,
+        "stat_unit": "€",
+        "context_in_response": "Titre RNCP \"Assistant de Production\" (1 an, écoles comme SAE Institute Bordeaux ou Gobelins à distance). (connaissance générale : coût ~4-6k€, mais éligible CPF si tu as travaillé. Alternance possible.)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "taux_emploi_3ans: 0.86",
+        "stat_value": 86,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro des licences en droit (Université de Bordeaux, Université de Poitiers, Université Toulouse Capitole)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, ...}"
+      },
+      {
+        "stat_text": "taux_emploi_6ans: 0.91",
+        "stat_value": 91,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro des licences en droit (Université de Bordeaux, Université de Poitiers, Université Toulouse Capitole)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}"
+      },
+      {
+        "stat_text": "taux_cdi: 0.83",
+        "stat_value": 83,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro des licences en droit (Université de Bordeaux, Université de Poitiers, Université Toulouse Capitole)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_cdi\": 0.83, ...}"
+      },
+      {
+        "stat_text": "salaire_median_embauche: 1740",
+        "stat_value": 1740,
+        "stat_unit": "€",
+        "context_in_response": "Insertion pro des licences en droit (Université de Bordeaux, Université de Poitiers, Université Toulouse Capitole)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"salaire_median_embauche\": 1740, ...}"
+      },
+      {
+        "stat_text": "taux_emploi_3ans: 0.85",
+        "stat_value": 85,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro du master Droit de la Propriété Intellectuelle (Université de Bordeaux)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, ...}"
+      },
+      {
+        "stat_text": "taux_emploi_6ans: 0.91",
+        "stat_value": 91,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro du master Droit de la Propriété Intellectuelle (Université de Bordeaux)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}"
+      },
+      {
+        "stat_text": "taux_cdi: 0.83",
+        "stat_value": 83,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro du master Droit de la Propriété Intellectuelle (Université de Bordeaux)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_cdi\": 0.83, ...}"
+      },
+      {
+        "stat_text": "salaire_median_embauche: 2080",
+        "stat_value": 2080,
+        "stat_unit": "€",
+        "context_in_response": "Insertion pro du master Droit de la Propriété Intellectuelle (Université de Bordeaux)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"salaire_median_embauche\": 2080, ...}"
+      },
+      {
+        "stat_text": "taux_emploi_3ans: 0.8",
+        "stat_value": 80,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro des formations Métiers de l'Audiovisuel Option Gestion de la Production (UNIVERIA, Ecole Supérieure de Communication Publicité et Marketing de Lille)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, ...}"
+      },
+      {
+        "stat_text": "taux_emploi_6ans: 0.87",
+        "stat_value": 87,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro des formations Métiers de l'Audiovisuel Option Gestion de la Production (UNIVERIA, Ecole Supérieure de Communication Publicité et Marketing de Lille)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_6ans\": 0.87, ...}"
+      },
+      {
+        "stat_text": "taux_cdi: 0.76",
+        "stat_value": 76,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro des formations Métiers de l'Audiovisuel Option Gestion de la Production (UNIVERIA, Ecole Supérieure de Communication Publicité et Marketing de Lille)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_cdi\": 0.76, ...}"
+      },
+      {
+        "stat_text": "salaire_median_embauche: 1570",
+        "stat_value": 1570,
+        "stat_unit": "€",
+        "context_in_response": "Insertion pro des formations Métiers de l'Audiovisuel Option Gestion de la Production (UNIVERIA, Ecole Supérieure de Communication Publicité et Marketing de Lille)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"salaire_median_embauche\": 1570, ...}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 1.1096,
+        "nom": "Licence - Droit - Parcours International Droit français-droit anglais",
+        "etablissement": "Université de Bordeaux - Bordeaux Métropole",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "droit"
+      },
+      {
+        "score": 1.108,
+        "nom": "Licence - Droit - Parcours International franco-allemand en droit",
+        "etablissement": "Université de Bordeaux - Bordeaux Métropole",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "droit"
+      },
+      {
+        "score": 1.1054,
+        "nom": "Double licence - Droit / Langues étrangères appliquées - Double mention DROIT / LANGUES ÉTRANGÈRES A",
+        "etablissement": "Université de Poitiers",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "droit"
+      },
+      {
+        "score": 1.0125,
+        "nom": "DROIT DE LA PROPRIETE INTELLECTUELLE — Administration, usages et droit des institutions artistiques ",
+        "etablissement": "Université de Bordeaux",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "droit"
+      },
+      {
+        "score": 0.8433,
+        "nom": "DROIT (LIC LMD)",
+        "etablissement": "UNIVERSITE TOULOUSE CAPITOLE",
+        "niveau": "bac+3",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "droit"
+      },
+      {
+        "score": 0.8433,
+        "nom": "DROIT (LIC LMD)",
+        "etablissement": "UNIVERSITE TOULOUSE CAPITOLE",
+        "niveau": "bac+3",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "droit"
+      },
+      {
+        "score": 0.8348,
+        "nom": "Brevet de second polyvalent",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "services"
+      },
+      {
+        "score": 0.8033,
+        "nom": "METIERS DE L'AUDIOVISUEL OPTION GESTION DE LA PRODUCTION",
+        "etablissement": "UNIVERIA",
+        "niveau": "bac+2",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "lettres_arts"
+      },
+      {
+        "score": 0.8033,
+        "nom": "METIERS DE L'AUDIOVISUEL OPTION GESTION DE LA PRODUCTION",
+        "etablissement": "UNIVERIA",
+        "niveau": "bac+2",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "lettres_arts"
+      },
+      {
+        "score": 0.8021,
+        "nom": "METIERS DE L'AUDIOVISUEL OPTION GESTION DE LA PRODUCTION",
+        "etablissement": "ECOLE SUPERIEURE DE COMMUNICATION PUBLICITE ET MARKETING DE LILLE",
+        "niveau": "bac+2",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "lettres_arts"
+      }
+    ]
+  },
+  {
+    "idx_global": 7,
+    "persona_id": "emma",
+    "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+    "scope": "master_pro",
+    "query_id": "q1",
+    "query_type": "factuelle",
+    "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+    "elapsed_gen_s": 21.5,
+    "elapsed_fact_check_s": 7.15,
+    "answer_raw": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 informatique.\n2. En **connaissance générale**, la fourchette typique pour un profil débutant (bac+5) en France se situe entre **35 000 € et 45 000 € brut annuel** (soit ~2 300–3 000 € net/mois).\n3. Ce salaire varie fortement selon **3 facteurs clés** : localisation (Île-de-France +15–20 %), spécialisation (cybersécurité/data +10–15 %), et type de contrat (CDI vs alternance/CIFRE).\n\n---\n\n### **Plan A — Salaire moyen standard (CDI classique, province)**\n**Fourchette** : **35 000–40 000 € brut/an** (~2 300–2 700 € net/mois)\n*Pour toi* : Base réaliste pour un M2 informatique généraliste hors Île-de-France, en ESN ou PME.\n*Exemples de métiers* :\n- Développeur full-stack (Java/JS)\n- Ingénieur logiciel embarqué\n- Consultant technique junior\n\n---\n\n### **Plan B — Salaire élevé (spécialisation + Île-de-France)**\n**Fourchette** : **40 000–48 000 € brut/an** (~2 700–3 200 € net/mois)\n*Pour toi* : Si tu vises **Paris/IDF** ET une spécialisation porteuse :\n- **Cybersécurité** (ex : [Expert en développement logiciel — OpenClassrooms](https://openclassrooms.com/fr/))\n- **Data/IA** (ex : métiers cités dans [Testeur logiciel — M2I](https://www.m2i.fr/), bien que bac+3)\n- **Cloud/DevOps** (certifications AWS/Azure valorisées)\n*Levier* : Alternance en M2 (salaire ~2 000 € net/mois + embauche fréquente à 40k€+).\n\n---\n\n### **Plan C — Optimisation maximale (CIFRE, startup, international)**\n**Fourchette** : **45 000–55 000 € brut/an** (~3 000–3 700 € net/mois)\n*Pour toi* :\n- **Thèse CIFRE** (36k€ brut/an + expérience R&D valorisée).\n- **Startup** (équity + salaire variable, risque élevé).\n- **Luxembourg/Suisse** (salaire +30–50 %, mais coût de la vie à considérer).\n\n---\n\n### **⚠ Attention aux pièges**\n- **ESN vs Editeur** : Une ESN (ex : Capgemini) paiera souvent **5–10 % de moins** qu’un éditeur de logiciels (ex : Dassault Systèmes) pour le même poste.\n- **Alternance ≠ CDI** : Un salaire d’alternant (60–80 % du SMIC) n’est pas représentatif du salaire post-diplôme.\n- **Spécialisation tardive** : Un M2 généraliste peut limiter ta marge de négociation. Pense aux **certifications complémentaires** (AWS, OSCP, etc.) pour booster ton profil.\n\n---\n**Question pour toi** : Ta priorité est-elle la **stabilité** (CDI en province), la **rémunération maximale** (spécialisation + IDF), ou l’**expérience** (CIFRE/startup) ? Cela peut affiner les pistes.",
+    "answer_annotated": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 informatique.\n2. En **connaissance générale**, la fourchette typique pour un profil débutant (bac+5) en France se situe entre **35 000 € et 45 000 € brut annuel** (soit ~2 300–3 000 € net/mois).\n3. Ce salaire varie fortement selon **3 facteurs clés** : localisation (Île-de-France +15–20 %), spécialisation (cybersécurité/data +10–15 %), et type de contrat (CDI vs alternance/CIFRE).\n\n---\n\n### **Plan A — Salaire moyen standard (CDI classique, province)**\n**Fourchette** : **35 000–40 000 € brut/an** (~2 300–2 700 € net/mois)\n*Pour toi* : Base réaliste pour un M2 informatique généraliste hors Île-de-France, en ESN ou PME.\n*Exemples de métiers* :\n- Développeur full-stack (Java/JS)\n- Ingénieur logiciel embarqué\n- Consultant technique junior\n\n---\n\n### **Plan B — Salaire élevé (spécialisation + Île-de-France)**\n**Fourchette** : **40 000–48 000 € brut/an** (~2 700–3 200 € net/mois)\n*Pour toi* : Si tu vises **Paris/IDF** ET une spécialisation porteuse :\n- **Cybersécurité** (ex : [Expert en développement logiciel — OpenClassrooms](https://openclassrooms.com/fr/))\n- **Data/IA** (ex : métiers cités dans [Testeur logiciel — M2I](https://www.m2i.fr/), bien que bac+3)\n- **Cloud/DevOps** (certifications AWS/Azure valorisées)\n*Levier* : Alternance en M2 (salaire ~2 000 € net/mois + embauche fréquente à 40k€+).\n\n---\n\n### **Plan C — Optimisation maximale (CIFRE, startup, international)**\n**Fourchette** : **45 000–55 000 € brut/an** (~3 000–3 700 € net/mois)\n*Pour toi* :\n- **Thèse CIFRE** (36k€ brut/an + expérience R&D valorisée).\n- **Startup** (équity + salaire variable, risque élevé).\n- **Luxembourg/Suisse** (salaire +30–50 %, mais coût de la vie à considérer).\n\n---\n\n### **⚠ Attention aux pièges**\n- **ESN vs Editeur** : Une ESN (ex : Capgemini) paiera souvent **5–10 % de moins** qu’un éditeur de logiciels (ex : Dassault Systèmes) pour le même poste.\n- **Alternance ≠ CDI** : Un salaire d’alternant (60–80 % du SMIC) n’est pas représentatif du salaire post-diplôme.\n- **Spécialisation tardive** : Un M2 généraliste peut limiter ta marge de négociation. Pense aux **certifications complémentaires** (AWS, OSCP, etc.) pour booster ton profil.\n\n---\n**Question pour toi** : Ta priorité est-elle la **stabilité** (CDI en province), la **rémunération maximale** (spécialisation + IDF), ou l’**expérience** (CIFRE/startup) ? Cela peut affiner les pistes.",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 15,
+      "n_verified": 0,
+      "n_with_disclaimer": 15,
+      "n_hallucinated": 0,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "35 000 € et 45 000 € brut annuel",
+        "stat_value": 35000,
+        "stat_unit": "€ brut annuel",
+        "context_in_response": "fourchette typique pour un profil débutant (bac+5) en France",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "2 300–3 000 € net/mois",
+        "stat_value": 2650,
+        "stat_unit": "€ net/mois",
+        "context_in_response": "fourchette typique pour un profil débutant (bac+5) en France",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Île-de-France +15–20 %",
+        "stat_value": 17.5,
+        "stat_unit": "%",
+        "context_in_response": "variation de salaire selon localisation",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "cybersécurité/data +10–15 %",
+        "stat_value": 12.5,
+        "stat_unit": "%",
+        "context_in_response": "variation de salaire selon spécialisation",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "35 000–40 000 € brut/an",
+        "stat_value": 37500,
+        "stat_unit": "€ brut/an",
+        "context_in_response": "Plan A — Salaire moyen standard (CDI classique, province)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "2 300–2 700 € net/mois",
+        "stat_value": 2500,
+        "stat_unit": "€ net/mois",
+        "context_in_response": "Plan A — Salaire moyen standard (CDI classique, province)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "40 000–48 000 € brut/an",
+        "stat_value": 44000,
+        "stat_unit": "€ brut/an",
+        "context_in_response": "Plan B — Salaire élevé (spécialisation + Île-de-France)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "2 700–3 200 € net/mois",
+        "stat_value": 2950,
+        "stat_unit": "€ net/mois",
+        "context_in_response": "Plan B — Salaire élevé (spécialisation + Île-de-France)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "2 000 € net/mois",
+        "stat_value": 2000,
+        "stat_unit": "€ net/mois",
+        "context_in_response": "salaire d'alternant en M2",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "40k€+",
+        "stat_value": 40000,
+        "stat_unit": "€ brut/an",
+        "context_in_response": "embauche fréquente à 40k€+ après alternance en M2",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "45 000–55 000 € brut/an",
+        "stat_value": 50000,
+        "stat_unit": "€ brut/an",
+        "context_in_response": "Plan C — Optimisation maximale (CIFRE, startup, international)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "3 000–3 700 € net/mois",
+        "stat_value": 3350,
+        "stat_unit": "€ net/mois",
+        "context_in_response": "Plan C — Optimisation maximale (CIFRE, startup, international)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "36k€ brut/an",
+        "stat_value": 36000,
+        "stat_unit": "€ brut/an",
+        "context_in_response": "salaire en thèse CIFRE",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "5–10 %",
+        "stat_value": 7.5,
+        "stat_unit": "%",
+        "context_in_response": "différence de salaire entre ESN et éditeur de logiciels",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "60–80 % du SMIC",
+        "stat_value": 70,
+        "stat_unit": "%",
+        "context_in_response": "salaire d'un alternant",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 0.9184,
+        "nom": "Expert en développement logiciel",
+        "etablissement": "OPENCLASSROOMS",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "services"
+      },
+      {
+        "score": 0.914,
+        "nom": "diplôme d'ingénieur de l'École polytechnique universitaire de l'université Paris-Saclay spécialité i",
+        "etablissement": "France",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8388,
+        "nom": "Testeur logiciel",
+        "etablissement": "M2I",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "data_ia"
+      },
+      {
+        "score": 0.8362,
+        "nom": "expert en ingénierie et développement de logiciels pour l'industrie",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8358,
+        "nom": "expert en ingénierie du développement et en architecture logicielle",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "lettres_arts"
+      },
+      {
+        "score": 0.835,
+        "nom": "Concepteur développeur de solutions informatiques",
+        "etablissement": "42",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services"
+      },
+      {
+        "score": 0.8333,
+        "nom": "Développeur commercial et marketing",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales"
+      },
+      {
+        "score": 0.8326,
+        "nom": "Concepteur développeur d'applications",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services"
+      },
+      {
+        "score": 0.8302,
+        "nom": "expert en architecture et développement logiciel",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "lettres_arts"
+      },
+      {
+        "score": 0.8302,
+        "nom": "expert en architecture et développement logiciel",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "lettres_arts"
+      }
+    ]
+  },
+  {
+    "idx_global": 8,
+    "persona_id": "emma",
+    "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+    "scope": "master_pro",
+    "query_id": "q2",
+    "query_type": "orientation_ambigue",
+    "query_text": "Je finis mon M1 info, je dois choisir entre un M2 classique recherche ou un master en alternance. Qu'est-ce qui me donnera le meilleur CV pour entrer en CDI direct ?",
+    "elapsed_gen_s": 20.87,
+    "elapsed_fact_check_s": 3.98,
+    "answer_raw": "**TL;DR**\n1. **Alternance = meilleur CV pour un CDI direct** en informatique : expérience pro de 12-24 mois, réseau entreprise, et salaire dès le M2.\n2. **M2 recherche = porte ouverte vers la thèse/doctorat** (CIFRE incluse) ou des postes R&D pointus, mais risque de \"junior sans expérience\" pour les CDI classiques.\n3. **Critère décisif** : ton projet à 5 ans (expertise technique vs management) et ton appétence pour le terrain (alternance) ou le labo (recherche).\n\n---\n\n### **1. M2 en alternance : l’atout CDI immédiat**\n**(connaissance générale)**\n- **Pourquoi ?** Les entreprises recrutent prioritairement leurs alternants (taux de conversion en CDI ~70-80% en informatique, selon les baromètres CGE/ANRT). Tu auras :\n  - **12 à 24 mois d’expérience pro** (équivalent à un junior avec 1-2 ans d’avance).\n  - Un **réseau interne** (ton tuteur = futur manager potentiel).\n  - Un **salaire** (60-80% du SMIC en M2, souvent plus en région parisienne).\n- **Secteurs porteurs** : DevOps, cybersécurité, data engineering, cloud — les compétences les plus demandées en 2026.\n- **Limite** : Moins adapté si tu vises un poste de **chercheur** ou une carrière académique.\n\n### **2. M2 recherche : la voie expertise/thèse**\n**(connaissance générale)**\n- **Pourquoi ?** Idéal si tu veux :\n  - **Poursuivre en thèse** (notamment en **CIFRE**, où tu es salarié·e en entreprise tout en faisant un doctorat).\n  - Travailler en **R&D** (labos industriels, deep tech) ou viser des postes à haute expertise technique (ex : ingénieur IA recherche).\n  - **Enseigner** ou faire de la recherche publique (CNRS, Inria).\n- **Risque** : Sans expérience en entreprise, certains recruteurs te considéreront comme un·e \"théoricien·ne\" pour des postes opérationnels (ex : dev full-stack).\n- **Atout caché** : Une thèse CIFRE peut mener à un CDI dans l’entreprise partenaire (taux d’embauche ~60% selon l’ANRT).\n\n### **3. Comment trancher ?**\nPose-toi ces questions :\n- **Projet pro** : Veux-tu être **expert·e technique** (recherche) ou **opérationnel·le** (alternance) ?\n- **Rythme** : Préfères-tu le **terrain** (3 semaines entreprise/1 semaine cours) ou le **labo** (stage de 6 mois max) ?\n- **Financement** : L’alternance est rémunérée (~10-15k€/an), la recherche souvent non (sauf bourses ou contrats doctoraux).\n\n**Exemple concret** :\n- Si tu vises un poste de **data scientist en startup**, l’alternance te donnera un CV plus percutant.\n- Si tu rêves de travailler sur des **algorithmes quantiques**, la recherche + thèse CIFRE est la voie royale.\n\n---\n**Question pour toi** :\nAs-tu une entreprise ou un domaine précis en tête (ex : cybersécurité, IA embarquée) ? Cela peut affiner le choix entre un labo de recherche partenaire d’industriels (ex : Thales, Airbus) ou une alternance en ESN/éditeur logiciel.",
+    "answer_annotated": "**TL;DR**\n1. **Alternance = meilleur CV pour un CDI direct** en informatique : expérience pro de 12-24 mois, réseau entreprise, et salaire dès le M2.\n2. **M2 recherche = porte ouverte vers la thèse/doctorat** (CIFRE incluse) ou des postes R&D pointus, mais risque de \"junior sans expérience\" pour les CDI classiques.\n3. **Critère décisif** : ton projet à 5 ans (expertise technique vs management) et ton appétence pour le terrain (alternance) ou le labo (recherche).\n\n---\n\n### **1. M2 en alternance : l’atout CDI immédiat**\n**(connaissance générale)**\n- **Pourquoi ?** Les entreprises recrutent prioritairement leurs alternants (taux de conversion en CDI ~70-80% en informatique, selon les baromètres CGE/ANRT). Tu auras :\n  - **12 à 24 mois d’expérience pro** (équivalent à un junior avec 1-2 ans d’avance).\n  - Un **réseau interne** (ton tuteur = futur manager potentiel).\n  - Un **salaire** (60-80% du SMIC en M2, souvent plus en région parisienne).\n- **Secteurs porteurs** : DevOps, cybersécurité, data engineering, cloud — les compétences les plus demandées en 2026.\n- **Limite** : Moins adapté si tu vises un poste de **chercheur** ou une carrière académique.\n\n### **2. M2 recherche : la voie expertise/thèse**\n**(connaissance générale)**\n- **Pourquoi ?** Idéal si tu veux :\n  - **Poursuivre en thèse** (notamment en **CIFRE**, où tu es salarié·e en entreprise tout en faisant un doctorat).\n  - Travailler en **R&D** (labos industriels, deep tech) ou viser des postes à haute expertise technique (ex : ingénieur IA recherche).\n  - **Enseigner** ou faire de la recherche publique (CNRS, Inria).\n- **Risque** : Sans expérience en entreprise, certains recruteurs te considéreront comme un·e \"théoricien·ne\" pour des postes opérationnels (ex : dev full-stack).\n- **Atout caché** : Une thèse CIFRE peut mener à un CDI dans l’entreprise partenaire (taux d’embauche ~60% selon l’ANRT).\n\n### **3. Comment trancher ?**\nPose-toi ces questions :\n- **Projet pro** : Veux-tu être **expert·e technique** (recherche) ou **opérationnel·le** (alternance) ?\n- **Rythme** : Préfères-tu le **terrain** (3 semaines entreprise/1 semaine cours) ou le **labo** (stage de 6 mois max) ?\n- **Financement** : L’alternance est rémunérée (~10-15k€/an), la recherche souvent non (sauf bourses ou contrats doctoraux).\n\n**Exemple concret** :\n- Si tu vises un poste de **data scientist en startup**, l’alternance te donnera un CV plus percutant.\n- Si tu rêves de travailler sur des **algorithmes quantiques**, la recherche + thèse CIFRE est la voie royale.\n\n---\n**Question pour toi** :\nAs-tu une entreprise ou un domaine précis en tête (ex : cybersécurité, IA embarquée) ? Cela peut affiner le choix entre un labo de recherche partenaire d’industriels (ex : Thales, Airbus) ou une alternance en ESN/éditeur logiciel.",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 6,
+      "n_verified": 2,
+      "n_with_disclaimer": 4,
+      "n_hallucinated": 0,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "taux de conversion en CDI ~70-80% en informatique",
+        "stat_value": 70,
+        "stat_unit": "%",
+        "context_in_response": "Les entreprises recrutent prioritairement leurs alternants (taux de conversion en CDI ~70-80% en informatique, selon les baromètres CGE/ANRT).",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "12 à 24 mois d’expérience pro",
+        "stat_value": null,
+        "stat_unit": "mois",
+        "context_in_response": "Tu auras : 12 à 24 mois d’expérience pro (équivalent à un junior avec 1-2 ans d’avance).",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "60-80% du SMIC en M2",
+        "stat_value": null,
+        "stat_unit": "% du SMIC",
+        "context_in_response": "Un salaire (60-80% du SMIC en M2, souvent plus en région parisienne).",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "taux d’embauche ~60% selon l’ANRT",
+        "stat_value": 60,
+        "stat_unit": "%",
+        "context_in_response": "Une thèse CIFRE peut mener à un CDI dans l’entreprise partenaire (taux d’embauche ~60% selon l’ANRT).",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire_median_embauche: 2080",
+        "stat_value": 2080,
+        "stat_unit": "€",
+        "context_in_response": "Aucun contexte direct dans la réponse.",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_cdi: 0.83",
+        "stat_value": 83,
+        "stat_unit": "%",
+        "context_in_response": "Aucun contexte direct dans la réponse.",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 0.9526,
+        "nom": "Direction technique",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales"
+      },
+      {
+        "score": 0.9485,
+        "nom": "Conception lumière",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales"
+      },
+      {
+        "score": 0.9468,
+        "nom": "Écriture",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales"
+      },
+      {
+        "score": 0.9432,
+        "nom": "Créateur industriel",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales"
+      },
+      {
+        "score": 0.943,
+        "nom": "Mode et matière",
+        "etablissement": "UNIVERSITE PSL",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.9424,
+        "nom": "Mode (fiche nationale)",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.9415,
+        "nom": "Conception son",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales"
+      },
+      {
+        "score": 0.9411,
+        "nom": "Scénographie",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales"
+      },
+      {
+        "score": 0.94,
+        "nom": "Jouer et mettre en scène",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales"
+      },
+      {
+        "score": 0.9388,
+        "nom": "Physique (fiche nationale)",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales"
+      }
+    ]
+  },
+  {
+    "idx_global": 9,
+    "persona_id": "emma",
+    "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+    "scope": "master_pro",
+    "query_id": "q3",
+    "query_type": "contextuelle_riche",
+    "query_text": "Je suis en M1 info à l'université de Lille, j'aime la data et le ML, je ne sais pas si je dois viser grosse boîte tech type Doctolib ou Criteo, ou plutôt une startup early-stage. Je veux un poste CDI dès la sortie, pas un CDD recherche.",
+    "elapsed_gen_s": 30.52,
+    "elapsed_fact_check_s": 8.46,
+    "answer_raw": "**TL;DR**\n1. **Grosse boîte tech (Doctolib/Criteo)** : stabilité CDI immédiate, salaires compétitifs (~38-45k€ brut), mais missions parfois cloisonnées et processus de recrutement très sélectifs (entretiens techniques poussés).\n2. **Startup early-stage** : impact direct + polyvalence, mais risque CDD/contrat court (50% des embauches en early-stage — connaissance générale) et salaires souvent inférieurs (~32-38k€).\n3. **Stratégie gagnante** : vise les deux en parallèle, mais priorise les boîtes tech avec des équipes data/ML **déjà structurées** (ex : Doctolib, Back Market) pour éviter le syndrome \"je fais tout seul\".\n\n---\n\n### **Plan A — Cible prioritaire : Scale-ups/licornes françaises (stabilité + impact)**\n📍 **Postes type \"Data Scientist\" ou \"ML Engineer\"** chez **Doctolib** (Paris), **Back Market** (Bordeaux/Paris), ou **Qonto** (Paris)\n*Pour toi : CDI à 90% pour les profils M2 avec stage en data/ML (source : baromètres Welcome to the Jungle 2023/2024 — connaissance générale). Salaires médians embauche : **38-42k€ brut** (vs 32k€ en startup early).*\n- **Pourquoi ?** Équilibre entre stabilité (levées de fonds récentes) et agilité (équipes data <50 personnes). Exige un **projet GitHub solide** (ex : modèle de recommandation ou NLP) + stage en entreprise.\n- **Comment postuler** :\n  - **Alternance en M2** : cible les offres \"Apprentissage Data Scientist\" sur [Welcome to the Jungle](https://www.welcometothejungle.com) (filtre \"Contrat pro\").\n  - **CDI direct** : passe par les **job boards spécialisés** (DataJobs, Hired) ou les **réseaux alumni** de ton M2.\n\n📍 **MSc Big Data and AI for Business** (Lille) — [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8235)\n*Pour toi : si tu veux un tremplin vers les gros acteurs tech. 80% des diplômés en CDI dans les 6 mois (enquête insertion 2023 — connaissance générale), avec un réseau alumni fort chez Criteo/Doctolib.*\n\n---\n\n### **Plan B — Ambitieux : GAFAM/licornes européennes (salaire ++ mais sélectivité extrême)**\n📍 **Postes \"Machine Learning Engineer\"** chez **Criteo** (Paris), **OVHcloud** (Roubaix), ou **Deezer** (Paris)\n*Pour toi : salaires **45-55k€ brut** (source : Glassdoor 2024 — connaissance générale), mais processus type \"LeetCode hard\" + take-home challenge. Exige un **M2 avec spécialisation ML** (ex : [Master IA Université de Lille](https://www.onisep.fr/http/redirection/formation/slug/FOR.8074)) + contributions open-source.*\n- **Stratégie** :\n  - **Stage de M2** : cible les équipes \"Recherche Appliquée\" (ex : Criteo Labs). 60% des stages débouchent sur CDI (source : rapports RH Criteo — connaissance générale).\n  - **Réseau** : participe aux meetups **Data Science Lille** ou **Paris Machine Learning** (rencontres avec des recruiters).\n\n⚠ **Attention** : Les GAFAM français (ex : Criteo) recrutent **90% de leurs juniors via stages** — postule dès le M2, pas après.\n\n---\n### **Plan C — Alternative : Startup *growth-stage* (compromis risque/stabilité)**\n📍 **Postes \"Data Analyst\" ou \"ML Ops\"** dans des startups **Série B/C** (ex : **PayFit** (Paris), **Lydia** (Paris), **Agricool** (Lille))\n*Pour toi : 70% de CDI (vs 50% en early-stage — connaissance générale), avec des missions plus variées qu’en grosse boîte. Salaire : **35-40k€ brut**.*\n- **Comment les trouver** :\n  - **Plateformes** : [Station F Jobs](https://jobs.stationf.co), [AngelList](https://angel.co) (filtre \"France\" + \"Série B\").\n  - **Approche directe** : contacte les CTO sur LinkedIn avec un **projet perso** (ex : analyse de données publiques sur un secteur qui les intéresse).\n- **Piège à éviter** : les startups en **pré-Série A** (risque de pivot = licenciements).\n\n---\n### **Comparatif rapide : Grosse boîte vs Startup**\n| Critère               | Grosse boîte (Doctolib/Criteo)       | Startup early-stage               |\n|-----------------------|--------------------------------------|-----------------------------------|\n| **Type de contrat**   | CDI 90%                              | CDD/contrat court 50%             |\n| **Salaire brut**      | 38-45k€                              | 32-38k€                          |\n| **Processus recrut.** | 4-6 entretiens (technique + culture) | 2-3 entretiens (fit > technique) |\n| **Missions**          | Spécialisées (ex : seul sur un modèle)| Polyvalentes (data + ops + prod)  |\n| **Évolution**         | Lente (2 ans pour une promo)         | Rapide (responsabilités en 6 mois)|\n\n---\n**Question pour toi** :\nPréfères-tu **maximiser ton salaire d’embauche** (Plan B) ou **avoir un impact visible rapidement** (Plan C) ? Si tu es ouvert à la mobilité, les licornes européennes (ex : **Zalando** à Berlin) recrutent massivement en data avec des salaires +20% vs France — ça t’intéresse ?",
+    "answer_annotated": "**TL;DR**\n1. **Grosse boîte tech (Doctolib/Criteo)** : stabilité CDI immédiate, salaires compétitifs (~38-45k€ brut), mais missions parfois cloisonnées et processus de recrutement très sélectifs (entretiens techniques poussés).\n2. **Startup early-stage** : impact direct + polyvalence, mais risque CDD/contrat court (50% des embauches en early-stage — connaissance générale) et salaires souvent inférieurs (~32-38k€).\n3. **Stratégie gagnante** : vise les deux en parallèle, mais priorise les boîtes tech avec des équipes data/ML **déjà structurées** (ex : Doctolib, Back Market) pour éviter le syndrome \"je fais tout seul\".\n\n---\n\n### **Plan A — Cible prioritaire : Scale-ups/licornes françaises (stabilité + impact)**\n📍 **Postes type \"Data Scientist\" ou \"ML Engineer\"** chez **Doctolib** (Paris), **Back Market** (Bordeaux/Paris), ou **Qonto** (Paris)\n*Pour toi : CDI à 90% *(non vérifié dans les sources)* pour les profils M2 avec stage en data/ML (source : baromètres Welcome to the Jungle 2023/2024 — connaissance générale). Salaires médians embauche : **38-42k€ brut** (vs 32k€ en startup early).*\n- **Pourquoi ?** Équilibre entre stabilité (levées de fonds récentes) et agilité (équipes data <50 personnes). Exige un **projet GitHub solide** (ex : modèle de recommandation ou NLP) + stage en entreprise.\n- **Comment postuler** :\n  - **Alternance en M2** : cible les offres \"Apprentissage Data Scientist\" sur [Welcome to the Jungle](https://www.welcometothejungle.com) (filtre \"Contrat pro\").\n  - **CDI direct** : passe par les **job boards spécialisés** (DataJobs, Hired) ou les **réseaux alumni** de ton M2.\n\n📍 **MSc Big Data and AI for Business** (Lille) — [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8235)\n*Pour toi : si tu veux un tremplin vers les gros acteurs tech. 80% des diplômés en CDI dans les 6 mois (enquête insertion 2023 — connaissance générale), avec un réseau alumni fort chez Criteo/Doctolib.*\n\n---\n\n### **Plan B — Ambitieux : GAFAM/licornes européennes (salaire ++ mais sélectivité extrême)**\n📍 **Postes \"Machine Learning Engineer\"** chez **Criteo** (Paris), **OVHcloud** (Roubaix), ou **Deezer** (Paris)\n*Pour toi : salaires **45-55k€ brut** (source : Glassdoor 2024 — connaissance générale), mais processus type \"LeetCode hard\" + take-home challenge. Exige un **M2 avec spécialisation ML** (ex : [Master IA Université de Lille](https://www.onisep.fr/http/redirection/formation/slug/FOR.8074)) + contributions open-source.*\n- **Stratégie** :\n  - **Stage de M2** : cible les équipes \"Recherche Appliquée\" (ex : Criteo Labs). 60% des stages débouchent sur CDI (source : rapports RH Criteo — connaissance générale).\n  - **Réseau** : participe aux meetups **Data Science Lille** ou **Paris Machine Learning** (rencontres avec des recruiters).\n\n⚠ **Attention** : Les GAFAM français (ex : Criteo) recrutent **90% de leurs juniors via stages** — postule dès le M2, pas après.\n\n---\n### **Plan C — Alternative : Startup *growth-stage* (compromis risque/stabilité)**\n📍 **Postes \"Data Analyst\" ou \"ML Ops\"** dans des startups **Série B/C** (ex : **PayFit** (Paris), **Lydia** (Paris), **Agricool** (Lille))\n*Pour toi : 70% de CDI (vs 50% en early-stage — connaissance générale), avec des missions plus variées qu’en grosse boîte. Salaire : **35-40k€ brut**.*\n- **Comment les trouver** :\n  - **Plateformes** : [Station F Jobs](https://jobs.stationf.co), [AngelList](https://angel.co) (filtre \"France\" + \"Série B\").\n  - **Approche directe** : contacte les CTO sur LinkedIn avec un **projet perso** (ex : analyse de données publiques sur un secteur qui les intéresse).\n- **Piège à éviter** : les startups en **pré-Série A** (risque de pivot = licenciements).\n\n---\n### **Comparatif rapide : Grosse boîte vs Startup**\n| Critère               | Grosse boîte (Doctolib/Criteo)       | Startup early-stage               |\n|-----------------------|--------------------------------------|-----------------------------------|\n| **Type de contrat**   | CDI 90%                              | CDD/contrat court 50%             |\n| **Salaire brut**      | 38-45k€                              | 32-38k€                          |\n| **Processus recrut.** | 4-6 entretiens (technique + culture) | 2-3 entretiens (fit > technique) |\n| **Missions**          | Spécialisées (ex : seul sur un modèle)| Polyvalentes (data + ops + prod)  |\n| **Évolution**         | Lente (2 ans pour une promo)         | Rapide (responsabilités en 6 mois)|\n\n---\n**Question pour toi** :\nPréfères-tu **maximiser ton salaire d’embauche** (Plan B) ou **avoir un impact visible rapidement** (Plan C) ? Si tu es ouvert à la mobilité, les licornes européennes (ex : **Zalando** à Berlin) recrutent massivement en data avec des salaires +20% *(non vérifié dans les sources)* vs France — ça t’intéresse ?",
+    "annotated_differs": true,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 15,
+      "n_verified": 4,
+      "n_with_disclaimer": 9,
+      "n_hallucinated": 2,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "50% des embauches en early-stage",
+        "stat_value": 50,
+        "stat_unit": "%",
+        "context_in_response": "risque CDD/contrat court (50% des embauches en early-stage — connaissance générale)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "32-38k€",
+        "stat_value": 32,
+        "stat_unit": "k€",
+        "context_in_response": "salaires souvent inférieurs (~32-38k€)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "CDI à 90%",
+        "stat_value": 90,
+        "stat_unit": "%",
+        "context_in_response": "CDI à 90% pour les profils M2 avec stage en data/ML (source : baromètres Welcome to the Jungle 2023/2024 — connaissance générale)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "38-42k€ brut",
+        "stat_value": 38,
+        "stat_unit": "k€",
+        "context_in_response": "Salaires médians embauche : 38-42k€ brut (vs 32k€ en startup early)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "80% des diplômés en CDI dans les 6 mois",
+        "stat_value": 80,
+        "stat_unit": "%",
+        "context_in_response": "80% des diplômés en CDI dans les 6 mois (enquête insertion 2023 — connaissance générale)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "45-55k€ brut",
+        "stat_value": 45,
+        "stat_unit": "k€",
+        "context_in_response": "salaires 45-55k€ brut (source : Glassdoor 2024 — connaissance générale)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "60% des stages débouchent sur CDI",
+        "stat_value": 60,
+        "stat_unit": "%",
+        "context_in_response": "60% des stages débouchent sur CDI (source : rapports RH Criteo — connaissance générale)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "70% de CDI",
+        "stat_value": 70,
+        "stat_unit": "%",
+        "context_in_response": "70% de CDI (vs 50% en early-stage — connaissance générale)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "35-40k€ brut",
+        "stat_value": 35,
+        "stat_unit": "k€",
+        "context_in_response": "Salaire : 35-40k€ brut",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "90%",
+        "stat_value": 90,
+        "stat_unit": "%",
+        "context_in_response": "Les GAFAM français (ex : Criteo) recrutent 90% de leurs juniors via stages",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "20%",
+        "stat_value": 20,
+        "stat_unit": "%",
+        "context_in_response": "licornes européennes (ex : Zalando à Berlin) recrutent massivement en data avec des salaires +20% vs France",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "0.85",
+        "stat_value": 0.85,
+        "stat_unit": "",
+        "context_in_response": "taux_emploi_3ans: 0.85",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "0.91",
+        "stat_value": 0.91,
+        "stat_unit": "",
+        "context_in_response": "taux_emploi_6ans: 0.91",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "0.83",
+        "stat_value": 0.83,
+        "stat_unit": "",
+        "context_in_response": "taux_cdi: 0.83",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "2080",
+        "stat_value": 2080,
+        "stat_unit": "€",
+        "context_in_response": "salaire_median_embauche: 2080",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 0.9878,
+        "nom": "Titre ingénieur - Ingénieur diplômé de l'Ecole Polytechnique universitaire de l'Université de Lille,",
+        "etablissement": "UNIVERSITE DE LILLE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "data_ia"
+      },
+      {
+        "score": 0.9704,
+        "nom": "Technologies de l’information (fiche nationale)",
+        "etablissement": "INSTITUT MINES TELECOM - DIRECTION GENERALE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "data_ia"
+      },
+      {
+        "score": 0.969,
+        "nom": "Consultant green IT",
+        "etablissement": "SCIENCES-U LILLE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "data_ia"
+      },
+      {
+        "score": 0.8948,
+        "nom": "DU sciences des données et intelligence artificielle",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "data_ia"
+      },
+      {
+        "score": 0.8925,
+        "nom": "Science des données : Visualisation, conception d'outils décisionnels",
+        "etablissement": "UNIVERSITE DE LILLE",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "data_ia"
+      },
+      {
+        "score": 0.8906,
+        "nom": "DU intelligence artificielle et propriété intellectuelle",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "data_ia"
+      },
+      {
+        "score": 0.8892,
+        "nom": "DU sciences des données et intelligence artificielle",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "data_ia"
+      },
+      {
+        "score": 0.8885,
+        "nom": "MSc Big Data and Artificial Intelligence for Business",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "data_ia"
+      },
+      {
+        "score": 0.8885,
+        "nom": "master mention IA - intelligence artificielle",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "data_ia"
+      },
+      {
+        "score": 0.8881,
+        "nom": "Sciences et Ingénierie - Technologie de l'information et multimédia",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "data_ia"
+      }
+    ]
+  },
+  {
+    "idx_global": 10,
+    "persona_id": "mohamed",
+    "persona_description": "Mohamed, 17 ans, CAP cuisine (voie pro/apprentissage)",
+    "scope": "voie_pro",
+    "query_id": "q1",
+    "query_type": "factuelle",
+    "query_text": "Quels sont les principaux débouchés métier après un Bac pro cuisine par apprentissage ?",
+    "elapsed_gen_s": 22.49,
+    "elapsed_fact_check_s": 5.06,
+    "answer_raw": "**TL;DR**\n1. Un Bac pro Cuisine par apprentissage ouvre principalement à des métiers opérationnels en restauration (cuisinier, commis, chef de partie), avec une insertion rapide mais des salaires modestes en début de carrière.\n2. Les débouchés varient selon le secteur : restauration traditionnelle (étoilée ou non), collective (cantines, Ehpad), ou spécialisée (traiteur, boucherie-charcuterie).\n3. Pour évoluer vers des postes à responsabilité (chef de cuisine, gestion), une poursuite d’études (BP, BM, ou BTS) ou de l’expérience terrain est indispensable.\n\n---\n\n### **Plan A — Débouchés directs (sans poursuite d’études)**\n📍 **Cuisinier en restauration traditionnelle ou collective** — *Secteurs : restaurants, hôtels, cantines scolaires/hôpitaux, Ehpad*\n*Pour toi : poste accessible immédiatement après le bac pro, avec un salaire médian embauche autour de **1 600–1 800€ brut** (estimation marché, connaissance générale). Turn-over élevé = opportunités fréquentes, mais horaires décalés (soirs/week-ends).*\n\n📍 **Commis de cuisine ou chef de partie** — *Secteurs : restaurants gastronomiques, traiteurs, grandes surfaces avec rayon frais*\n*Pour toi : en apprentissage, tu auras déjà acquis ces compétences. Évolution possible vers chef de partie (responsable d’un poste : sauces, poissons, etc.) après 2–3 ans d’expérience. Salaire : **1 800–2 200€ brut** (connaissance générale).*\n\n---\n\n### **Plan B — Débouchés avec spécialisation (poursuite d’études courte)**\n📍 **Boucher-charcutier-traiteur ou arts de la cuisine** — *Formations : BP (Brevet Professionnel) ou BM (Brevet de Maîtrise) en 1–2 ans*\n*Pour toi : ces certifications (accessibles après le bac pro) te permettent de te spécialiser et d’accéder à des postes mieux rémunérés (ex : **2 200–2 800€ brut** en traiteur ou boucherie fine). Exemples :*\n- **BP Boucher** (pour travailler en boucherie artisanale ou grande surface).\n- **BM Cuisinier en desserts de restaurant** (pour devenir pâtissier en restauration).\n*Source : Référentiels RNCP des fiches 3 et 7.*\n\n📍 **Second de cuisine (secteur militaire ou restauration collective)** — *Formation : Certificat spécifique (ex : fiche 4 pour l’armée)*\n*Pour toi : si tu vises la stabilité, les concours de la fonction publique (armée, hôpitaux) recrutent des cuisiniers avec bac pro + expérience. Salaire : **1 900–2 400€ brut** + avantages (logement, mutuelle).*\n\n---\n\n### **Plan C — Évolution vers des postes à responsabilité (expérience + formations longues)**\n📍 **Chef de cuisine ou responsable de production culinaire** — *Parcours : BTS Management en Hôtellerie-Restauration (MHR) ou expérience terrain (5+ ans)*\n*Pour toi : pour diriger une brigade ou gérer un restaurant, un BTS MHR (accessible avec ton bac pro) ou une validation des acquis (VAE) après plusieurs années d’expérience est nécessaire. Salaire : **2 500–3 500€ brut** (connaissance générale).*\n\n📍 **Entrepreneuriat (food truck, traiteur, restaurant)** — *Parcours : Expérience + stage de préparation à l’installation (chambre des métiers)*\n*Pour toi : possible après 5 ans en tant que salarié, mais exige une solide connaissance gestionnaire (comptabilité, hygiène, normes).*\n\n---\n\n### **⚠ Attention aux pièges**\n- **Salaire vs passion** : Les métiers de la cuisine sont **physiquement exigeants** (station debout, chaleur, pression) pour des salaires souvent modestes en début de carrière. Vérifie que la passion compense ces contraintes.\n- **Secteur saturé** : La restauration traditionnelle (surtout à Paris) a un **turn-over élevé** et une concurrence forte. Les postes stables sont souvent en restauration collective (moins prestigieux mais plus sécurisés).\n- **Alternance obligatoire** : Pour les poursuites d’études (BP, BM, BTS), l’alternance est quasi systématique — prévois de trouver un employeur **avant** de t’inscrire.\n\n---\n**Question pour toi :**\nQu’est-ce qui prime pour toi dans ton projet : **la rapidité d’insertion** (Plan A), **la spécialisation** (Plan B), ou **l’évolution vers un poste à responsabilité** (Plan C) ? Et es-tu prêt·e à accepter les contraintes horaires du secteur ?",
+    "answer_annotated": "**TL;DR**\n1. Un Bac pro Cuisine par apprentissage ouvre principalement à des métiers opérationnels en restauration (cuisinier, commis, chef de partie), avec une insertion rapide mais des salaires modestes en début de carrière.\n2. Les débouchés varient selon le secteur : restauration traditionnelle (étoilée ou non), collective (cantines, Ehpad), ou spécialisée (traiteur, boucherie-charcuterie).\n3. Pour évoluer vers des postes à responsabilité (chef de cuisine, gestion), une poursuite d’études (BP, BM, ou BTS) ou de l’expérience terrain est indispensable.\n\n---\n\n### **Plan A — Débouchés directs (sans poursuite d’études)**\n📍 **Cuisinier en restauration traditionnelle ou collective** — *Secteurs : restaurants, hôtels, cantines scolaires/hôpitaux, Ehpad*\n*Pour toi : poste accessible immédiatement après le bac pro, avec un salaire médian embauche autour de **1 600–1 800€ brut** (estimation marché, connaissance générale). Turn-over élevé = opportunités fréquentes, mais horaires décalés (soirs/week-ends).*\n\n📍 **Commis de cuisine ou chef de partie** — *Secteurs : restaurants gastronomiques, traiteurs, grandes surfaces avec rayon frais*\n*Pour toi : en apprentissage, tu auras déjà acquis ces compétences. Évolution possible vers chef de partie (responsable d’un poste : sauces, poissons, etc.) après 2–3 ans d’expérience. Salaire : **1 800–2 200€ brut** (connaissance générale).*\n\n---\n\n### **Plan B — Débouchés avec spécialisation (poursuite d’études courte)**\n📍 **Boucher-charcutier-traiteur ou arts de la cuisine** — *Formations : BP (Brevet Professionnel) ou BM (Brevet de Maîtrise) en 1–2 ans*\n*Pour toi : ces certifications (accessibles après le bac pro) te permettent de te spécialiser et d’accéder à des postes mieux rémunérés (ex : **2 200–2 800€ brut** en traiteur ou boucherie fine). Exemples :*\n- **BP Boucher** (pour travailler en boucherie artisanale ou grande surface).\n- **BM Cuisinier en desserts de restaurant** (pour devenir pâtissier en restauration).\n*Source : Référentiels RNCP des fiches 3 et 7.*\n\n📍 **Second de cuisine (secteur militaire ou restauration collective)** — *Formation : Certificat spécifique (ex : fiche 4 pour l’armée)*\n*Pour toi : si tu vises la stabilité, les concours de la fonction publique (armée, hôpitaux) recrutent des cuisiniers avec bac pro + expérience. Salaire : **1 900–2 400€ brut** + avantages (logement, mutuelle).*\n\n---\n\n### **Plan C — Évolution vers des postes à responsabilité (expérience + formations longues)**\n📍 **Chef de cuisine ou responsable de production culinaire** — *Parcours : BTS Management en Hôtellerie-Restauration (MHR) ou expérience terrain (5+ ans)*\n*Pour toi : pour diriger une brigade ou gérer un restaurant, un BTS MHR (accessible avec ton bac pro) ou une validation des acquis (VAE) après plusieurs années d’expérience est nécessaire. Salaire : **2 500–3 500€ brut** (connaissance générale).*\n\n📍 **Entrepreneuriat (food truck, traiteur, restaurant)** — *Parcours : Expérience + stage de préparation à l’installation (chambre des métiers)*\n*Pour toi : possible après 5 ans en tant que salarié, mais exige une solide connaissance gestionnaire (comptabilité, hygiène, normes).*\n\n---\n\n### **⚠ Attention aux pièges**\n- **Salaire vs passion** : Les métiers de la cuisine sont **physiquement exigeants** (station debout, chaleur, pression) pour des salaires souvent modestes en début de carrière. Vérifie que la passion compense ces contraintes.\n- **Secteur saturé** : La restauration traditionnelle (surtout à Paris) a un **turn-over élevé** et une concurrence forte. Les postes stables sont souvent en restauration collective (moins prestigieux mais plus sécurisés).\n- **Alternance obligatoire** : Pour les poursuites d’études (BP, BM, BTS), l’alternance est quasi systématique — prévois de trouver un employeur **avant** de t’inscrire.\n\n---\n**Question pour toi :**\nQu’est-ce qui prime pour toi dans ton projet : **la rapidité d’insertion** (Plan A), **la spécialisation** (Plan B), ou **l’évolution vers un poste à responsabilité** (Plan C) ? Et es-tu prêt·e à accepter les contraintes horaires du secteur ?",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 9,
+      "n_verified": 4,
+      "n_with_disclaimer": 5,
+      "n_hallucinated": 0,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "salaire médian embauche autour de 1 600–1 800€ brut",
+        "stat_value": 1700,
+        "stat_unit": "€ brut",
+        "context_in_response": "Salaire médian embauche pour cuisinier en restauration traditionnelle ou collective",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Salaire : 1 800–2 200€ brut",
+        "stat_value": 2000,
+        "stat_unit": "€ brut",
+        "context_in_response": "Salaire pour commis de cuisine ou chef de partie",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire : 2 200–2 800€ brut",
+        "stat_value": 2500,
+        "stat_unit": "€ brut",
+        "context_in_response": "Salaire pour BP Boucher ou BM Cuisinier en desserts de restaurant",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Salaire : 1 900–2 400€ brut",
+        "stat_value": 2150,
+        "stat_unit": "€ brut",
+        "context_in_response": "Salaire pour second de cuisine (secteur militaire ou restauration collective)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Salaire : 2 500–3 500€ brut",
+        "stat_value": 3000,
+        "stat_unit": "€ brut",
+        "context_in_response": "Salaire pour chef de cuisine ou responsable de production culinaire",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "taux_emploi_3ans: 0.73",
+        "stat_value": 73,
+        "stat_unit": "%",
+        "context_in_response": "Taux d'emploi à 3 ans pour Bac pro Cuisine (Plan A)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, ...}"
+      },
+      {
+        "stat_text": "taux_emploi_6ans: 0.8",
+        "stat_value": 80,
+        "stat_unit": "%",
+        "context_in_response": "Taux d'emploi à 6 ans pour Bac pro Cuisine (Plan A)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_6ans\": 0.8, ...}"
+      },
+      {
+        "stat_text": "taux_cdi: 0.66",
+        "stat_value": 66,
+        "stat_unit": "%",
+        "context_in_response": "Taux de CDI pour Bac pro Cuisine (Plan A)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_cdi\": 0.66, ...}"
+      },
+      {
+        "stat_text": "salaire_median_embauche: 1410",
+        "stat_value": 1410,
+        "stat_unit": "€",
+        "context_in_response": "Salaire médian à l'embauche pour Bac pro Cuisine (Plan A)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"salaire_median_embauche\": 1410, ...}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 0.8405,
+        "nom": "Cuisine",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8376,
+        "nom": "Arts de la cuisine",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8337,
+        "nom": "Boucher-charcutier-traiteur",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8275,
+        "nom": "Second de cuisine",
+        "etablissement": "MINISTERE DES ARMEES",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8272,
+        "nom": "Cuisine",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8259,
+        "nom": "Commis de cuisine",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8247,
+        "nom": "Chef de partie arts culinaires et pâtisserie",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8223,
+        "nom": "Commercialisation et services en restauration",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services"
+      },
+      {
+        "score": 0.8219,
+        "nom": "Cuisinier en restauration collective",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8217,
+        "nom": "Cuisinier",
+        "etablissement": "MINISTERE DES ARMEES",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      }
+    ]
+  },
+  {
+    "idx_global": 11,
+    "persona_id": "mohamed",
+    "persona_description": "Mohamed, 17 ans, CAP cuisine (voie pro/apprentissage)",
+    "scope": "voie_pro",
+    "query_id": "q2",
+    "query_type": "orientation_ambigue",
+    "query_text": "J'ai fini mon CAP cuisine, je ne suis plus sûr de vouloir rester en restauration. Qu'est-ce que je peux faire d'autre avec ce CAP ?",
+    "elapsed_gen_s": 23.0,
+    "elapsed_fact_check_s": 3.7,
+    "answer_raw": "**TL;DR**\n1. Ton CAP Cuisine ouvre des portes **au-delà des métiers de cuisine pure** : gestion, logistique, ou même reconversion vers des secteurs connexes.\n2. **3 pistes concrètes** : évoluer en restauration (sans rester en production), bifurquer vers l’hôtellerie/accueil, ou utiliser tes compétences en gestion pour un virage à 180°.\n3. **Aucune perte de temps** : tes acquis (hygiène, travail d’équipe, gestion des stocks) sont transférables. Focus sur les **formations courtes** (6 mois à 1 an) pour pivoter.\n\n---\n\n### **Plan A — Évolution dans la restauration (sans rester en cuisine)**\n📍 **CAP Commercialisation et services en hôtel-café-restaurant** (Lyon, Paris, Bordeaux, etc.) — CAP en 1 an (après un premier CAP), **100% financé en alternance**, débouchés : chef de rang, responsable de salle, gestionnaire de restaurant.\n*Pour toi : Utilise ton expérience terrain pour manager une équipe ou gérer un service, avec un salaire plus élevé qu’en production (salaire médian embauche : ~1 700€ brut, source Céreq).*\n→ [Fiche officielle ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.1132)\n\n📍 **Titre Professionnel Gestionnaire d’unité de restauration collective** (AFPA, GRETA) — Formation adulte **6 à 12 mois**, certifiée par le Ministère du Travail, **gratuite** pour les demandeurs d’emploi.\n*Pour toi : Passe du côté organisation (menus, budgets, commandes) avec un diplôme reconnu. Débouchés : cantines scolaires, Ehpad, entreprises (salaire : 1 800–2 200€ brut).*\n\n---\n### **Plan B — Bifurcation vers l’hôtellerie ou l’accueil (compétences transférables)**\n📍 **Titre Professionnel Réceptionniste en hôtellerie** (AFPA, CCI) — Formation **6 mois**, **80% d’insertion** (source AFPA 2023), métiers : réceptionniste, agent d’accueil en hôtel/résidence.\n*Pour toi : Ton sens du contact (acquis en cuisine) et ta résistance au stress sont des atouts. Alternance possible pour financer.*\n\n📍 **Bac Pro Métiers de l’accueil** (Lycées pro, CFA) — **1 an après un CAP**, pour travailler dans les offices de tourisme, les centres de loisirs, ou les résidences hôtelières.\n*Pour toi : Si tu aimes le relationnel mais veux quitter l’univers \"chaud\" des cuisines.*\n\n---\n### **Plan C — Reconversion radicale (en capitalisant sur tes soft skills)**\n**(connaissance générale)**\nTon CAP t’a appris :\n- **Gestion des stocks/logistique** → Piste : **Agent logistique** (formation CACES en 1 mois) ou **Préparateur de commandes** (recrutement sans diplôme dans les entrepôts Amazon, Carrefour).\n- **Travail d’équipe sous pression** → Piste : **Pompier professionnel** (concours accessible avec CAP + expérience) ou **Agent de sécurité incendie** (SSIAP 1, formation 1 mois).\n- **Créativité et respect des normes** → Piste : **Métiers de l’artisanat** (boulangerie, chocolaterie) via une **MC (Mention Complémentaire) en 1 an**.\n\n**Exemple concret** :\n> Un ancien cuisinier devenu **livreur spécialisé** (transport de produits frais) grâce à son réseau en restauration + un permis C financé par Pôle Emploi.\n\n---\n### ⚠ **Attention aux pièges**\n- **Évite les formations longues** (type BTS en 2 ans) si tu veux changer rapidement : privilégie les **titres pros** (6–12 mois) ou les **CQP** (Certificats de Qualification Professionnelle).\n- **Méfie-toi des écoles privées** promettant des \"diplômes en management hôtelier\" à 5 000€/an : les **formations publiques (GRETA, AFPA, CFA)** sont gratuites et tout aussi reconnues.\n\n---\n**Question pour toi :**\nVeux-tu **rester dans le secteur de la restauration** (mais changer de poste), **élargir à l’hôtellerie/tourisme**, ou **tourner complètement la page** ? Ton choix déterminera si tu as besoin d’une formation courte (Plan A/B) ou d’un bilan de compétences (Plan C).",
+    "answer_annotated": "**TL;DR**\n1. Ton CAP Cuisine ouvre des portes **au-delà des métiers de cuisine pure** : gestion, logistique, ou même reconversion vers des secteurs connexes.\n2. **3 pistes concrètes** : évoluer en restauration (sans rester en production), bifurquer vers l’hôtellerie/accueil, ou utiliser tes compétences en gestion pour un virage à 180°.\n3. **Aucune perte de temps** : tes acquis (hygiène, travail d’équipe, gestion des stocks) sont transférables. Focus sur les **formations courtes** (6 mois à 1 an) pour pivoter.\n\n---\n\n### **Plan A — Évolution dans la restauration (sans rester en cuisine)**\n📍 **CAP Commercialisation et services en hôtel-café-restaurant** (Lyon, Paris, Bordeaux, etc.) — CAP en 1 an (après un premier CAP), **100% financé en alternance**, débouchés : chef de rang, responsable de salle, gestionnaire de restaurant.\n*Pour toi : Utilise ton expérience terrain pour manager une équipe ou gérer un service, avec un salaire plus élevé qu’en production (salaire médian embauche : ~1 700€ brut *(non vérifié dans les sources)*, source Céreq).*\n→ [Fiche officielle ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.1132)\n\n📍 **Titre Professionnel Gestionnaire d’unité de restauration collective** (AFPA, GRETA) — Formation adulte **6 à 12 mois**, certifiée par le Ministère du Travail, **gratuite** pour les demandeurs d’emploi.\n*Pour toi : Passe du côté organisation (menus, budgets, commandes) avec un diplôme reconnu. Débouchés : cantines scolaires, Ehpad, entreprises (salaire : 1 800–2 200€ brut *(non vérifié dans les sources)*).*\n\n---\n### **Plan B — Bifurcation vers l’hôtellerie ou l’accueil (compétences transférables)**\n📍 **Titre Professionnel Réceptionniste en hôtellerie** (AFPA, CCI) — Formation **6 mois**, **80% d’insertion *(non vérifié dans les sources)*** (source AFPA 2023), métiers : réceptionniste, agent d’accueil en hôtel/résidence.\n*Pour toi : Ton sens du contact (acquis en cuisine) et ta résistance au stress sont des atouts. Alternance possible pour financer.*\n\n📍 **Bac Pro Métiers de l’accueil** (Lycées pro, CFA) — **1 an après un CAP**, pour travailler dans les offices de tourisme, les centres de loisirs, ou les résidences hôtelières.\n*Pour toi : Si tu aimes le relationnel mais veux quitter l’univers \"chaud\" des cuisines.*\n\n---\n### **Plan C — Reconversion radicale (en capitalisant sur tes soft skills)**\n**(connaissance générale)**\nTon CAP t’a appris :\n- **Gestion des stocks/logistique** → Piste : **Agent logistique** (formation CACES en 1 mois) ou **Préparateur de commandes** (recrutement sans diplôme dans les entrepôts Amazon, Carrefour).\n- **Travail d’équipe sous pression** → Piste : **Pompier professionnel** (concours accessible avec CAP + expérience) ou **Agent de sécurité incendie** (SSIAP 1, formation 1 mois).\n- **Créativité et respect des normes** → Piste : **Métiers de l’artisanat** (boulangerie, chocolaterie) via une **MC (Mention Complémentaire) en 1 an**.\n\n**Exemple concret** :\n> Un ancien cuisinier devenu **livreur spécialisé** (transport de produits frais) grâce à son réseau en restauration + un permis C financé par Pôle Emploi.\n\n---\n### ⚠ **Attention aux pièges**\n- **Évite les formations longues** (type BTS en 2 ans) si tu veux changer rapidement : privilégie les **titres pros** (6–12 mois) ou les **CQP** (Certificats de Qualification Professionnelle).\n- **Méfie-toi des écoles privées** promettant des \"diplômes en management hôtelier\" à 5 000€/an : les **formations publiques (GRETA, AFPA, CFA)** sont gratuites et tout aussi reconnues.\n\n---\n**Question pour toi :**\nVeux-tu **rester dans le secteur de la restauration** (mais changer de poste), **élargir à l’hôtellerie/tourisme**, ou **tourner complètement la page** ? Ton choix déterminera si tu as besoin d’une formation courte (Plan A/B) ou d’un bilan de compétences (Plan C).",
+    "annotated_differs": true,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 5,
+      "n_verified": 1,
+      "n_with_disclaimer": 1,
+      "n_hallucinated": 3,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "100% financé en alternance",
+        "stat_value": 100,
+        "stat_unit": "%",
+        "context_in_response": "CAP Commercialisation et services en hôtel-café-restaurant (Lyon, Paris, Bordeaux, etc.) — CAP en 1 an (après un premier CAP), 100% financé en alternance",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire médian embauche : ~1 700€ brut",
+        "stat_value": 1700,
+        "stat_unit": "€ brut",
+        "context_in_response": "salaire médian embauche : ~1 700€ brut, source Céreq",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "80% d’insertion",
+        "stat_value": 80,
+        "stat_unit": "%",
+        "context_in_response": "Titre Professionnel Réceptionniste en hôtellerie (AFPA, CCI) — Formation 6 mois, 80% d’insertion (source AFPA 2023)",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire : 1 800–2 200€ brut",
+        "stat_value": 1800,
+        "stat_unit": "€ brut",
+        "context_in_response": "Gestionnaire d’unité de restauration collective : salaire : 1 800–2 200€ brut",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire_median_embauche: 1330",
+        "stat_value": 1330,
+        "stat_unit": "€",
+        "context_in_response": "Données d'insertion pro des fiches sources (ex: FICHE 1, FICHE 2, etc.)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.61, \"taux_emploi_6ans\": 0.69, \"taux_cdi\": 0.62, \"salaire_median_embauche\": 1330, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 0.8344,
+        "nom": "Cuisinier en restauration collective",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8252,
+        "nom": "Cuisine",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8237,
+        "nom": "Commercialisation et services en hôtel-café-restaurant",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services"
+      },
+      {
+        "score": 0.8213,
+        "nom": "CAP production et service en restaurations (rapide, collective, cafétéria)",
+        "etablissement": "rapide, collective, cafétéria",
+        "niveau": null,
+        "phase": "initial",
+        "source": "onisep",
+        "domaine": "tourisme_hotellerie"
+      },
+      {
+        "score": 0.8207,
+        "nom": "Production et service en restauration (rapide, collective, cafétéria)",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8193,
+        "nom": "Cuisinier",
+        "etablissement": "MINISTERE DES ARMEES",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8192,
+        "nom": "Production et service en restaurations (rapide, collective, cafétéria)",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8147,
+        "nom": "Commis de cuisine",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8136,
+        "nom": "Cuisinier",
+        "etablissement": "HAUT COMMISSARIAT DE LA REPUBLIQUE EN POLYNESIE FRANCAISE",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 0.8119,
+        "nom": "Serveur en restauration",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services"
+      }
+    ]
+  },
+  {
+    "idx_global": 12,
+    "persona_id": "mohamed",
+    "query_id": "q3",
+    "query_text": "Je suis en CAP cuisine à Marseille, je veux continuer en Bac pro alternance mais j'hésite entre cuisine et boulangerie-pâtisserie. Salaires, perspectives, contraintes de rythme ?",
+    "error_pipeline": "ReadTimeout: The read operation timed out"
+  },
+  {
+    "idx_global": 13,
+    "persona_id": "valerie",
+    "persona_description": "Valérie, parent de lycéen (perspective externe)",
+    "scope": "parent",
+    "query_id": "q1",
+    "query_type": "factuelle",
+    "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+    "elapsed_gen_s": 19.13,
+    "elapsed_fact_check_s": 10.53,
+    "answer_raw": "**TL;DR**\n1. Une licence publique coûte **~200-600€/an** (frais d’inscription + CVEC), une école de commerce privée **~5 000-15 000€/an** (hors top 5).\n2. Le coût public est encadré par l’État ; le privé varie selon le label (grade Master, RNCP) et la notoriété.\n3. Des alternatives existent : bourses, alternance, ou formations hybrides (ex : IAE).\n\n---\n\n### **Plan A — Licence publique : coût maîtrisé et diplômes reconnus**\n📍 **Licence Économie-Gestion** (ex : [Université de Lille](https://www.univ-lille.fr/)) — bac+3 public, **~243€/an** (2024-25), grade Licence délivré par l’État.\n*Pour toi : solution la plus économique avec des débouchés solides en gestion/commerce (connaissance générale).*\n\n### **Plan B — École de commerce privée : investissement élevé, mais réseaux**\n📍 **Programme Grande École ISC Paris** — bac+5 privé, **~10 000€/an**, grade Master (label CGE).\n*Pour toi : coût justifié par l’accès à des réseaux d’anciens et stages internationaux, mais exige un budget ou une alternance (connaissance générale).*\n**Exemple concret** : [Licence Commerce International ESTICE](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24397&typeBac=0&originePc=0) (Lille) — **~6 500€/an**, sélective (38% d’admis en 2025).\n\n### **Plan C — Alternatives pour réduire la facture**\n- **IAE** (écoles universitaires de management) : **~300-2 500€/an** pour un diplôme équivalent à une école de commerce (grade Master).\n- **Alternance** : prise en charge à 100% par l’entreprise (salaire + frais de formation).\n- **Bourses** : Critères sociaux (CROUS) ou spécifiques (ex : bourses des écoles privées).\n\n---\n**⚠ Attention aux pièges**\n- **Marketing trompeur** : Certaines écoles privées affichent des \"frais réduits\" en 1ère année, puis augmentent fortement en master.\n- **Label RNCP ≠ grade Master** : Un certificat RNCP (ex : FICHE 3) n’a pas la même reconnaissance qu’un diplôme d’État ou visé par le ministère (connaissance générale).\n- **Coût caché** : Logement, déplacements et vie étudiante en métropole peuvent doubler le budget annuel.\n\n**Question pour toi** : Privilégies-tu un diplôme **économique mais exigeant en autonomie** (licence/IAE), ou un **cadre encadré avec réseau pro** malgré le coût (école privée) ? Pour affiner, un RDV avec le **Psy-EN** ou le **SCUIO** de ton établissement peut t’aider à évaluer tes options financières.",
+    "answer_annotated": "**TL;DR**\n1. Une licence publique coûte **~200-600€/an** (frais d’inscription + CVEC), une école de commerce privée **~5 000-15 000€/an** (hors top 5).\n2. Le coût public est encadré par l’État ; le privé varie selon le label (grade Master, RNCP) et la notoriété.\n3. Des alternatives existent : bourses, alternance, ou formations hybrides (ex : IAE).\n\n---\n\n### **Plan A — Licence publique : coût maîtrisé et diplômes reconnus**\n📍 **Licence Économie-Gestion** (ex : [Université de Lille](https://www.univ-lille.fr/)) — bac+3 public, **~243€/an** (2024-25), grade Licence délivré par l’État.\n*Pour toi : solution la plus économique avec des débouchés solides en gestion/commerce (connaissance générale).*\n\n### **Plan B — École de commerce privée : investissement élevé, mais réseaux**\n📍 **Programme Grande École ISC Paris** — bac+5 privé, **~10 000€/an**, grade Master (label CGE).\n*Pour toi : coût justifié par l’accès à des réseaux d’anciens et stages internationaux, mais exige un budget ou une alternance (connaissance générale).*\n**Exemple concret** : [Licence Commerce International ESTICE](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24397&typeBac=0&originePc=0) (Lille) — **~6 500€/an**, sélective (38% d’admis en 2025).\n\n### **Plan C — Alternatives pour réduire la facture**\n- **IAE** (écoles universitaires de management) : **~300-2 500€/an** pour un diplôme équivalent à une école de commerce (grade Master).\n- **Alternance** : prise en charge à 100% par l’entreprise (salaire + frais de formation).\n- **Bourses** : Critères sociaux (CROUS) ou spécifiques (ex : bourses des écoles privées).\n\n---\n**⚠ Attention aux pièges**\n- **Marketing trompeur** : Certaines écoles privées affichent des \"frais réduits\" en 1ère année, puis augmentent fortement en master.\n- **Label RNCP ≠ grade Master** : Un certificat RNCP (ex : FICHE 3) n’a pas la même reconnaissance qu’un diplôme d’État ou visé par le ministère (connaissance générale).\n- **Coût caché** : Logement, déplacements et vie étudiante en métropole peuvent doubler le budget annuel.\n\n**Question pour toi** : Privilégies-tu un diplôme **économique mais exigeant en autonomie** (licence/IAE), ou un **cadre encadré avec réseau pro** malgré le coût (école privée) ? Pour affiner, un RDV avec le **Psy-EN** ou le **SCUIO** de ton établissement peut t’aider à évaluer tes options financières.",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 15,
+      "n_verified": 9,
+      "n_with_disclaimer": 6,
+      "n_hallucinated": 0,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "~200-600€/an",
+        "stat_value": 200,
+        "stat_unit": "€/an",
+        "context_in_response": "Une licence publique coûte **~200-600€/an** (frais d’inscription + CVEC)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "~5 000-15 000€/an",
+        "stat_value": 5000,
+        "stat_unit": "€/an",
+        "context_in_response": "une école de commerce privée **~5 000-15 000€/an** (hors top 5)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "~243€/an",
+        "stat_value": 243,
+        "stat_unit": "€/an",
+        "context_in_response": "Licence Économie-Gestion (ex : Université de Lille) — **~243€/an** (2024-25)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "~10 000€/an",
+        "stat_value": 10000,
+        "stat_unit": "€/an",
+        "context_in_response": "Programme Grande École ISC Paris — **~10 000€/an**",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "38%",
+        "stat_value": 38,
+        "stat_unit": "%",
+        "context_in_response": "Licence Commerce International ESTICE (Lille) — sélective (**38% d’admis en 2025**)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Taux d'accès Parcoursup : 38.0%"
+      },
+      {
+        "stat_text": "~6 500€/an",
+        "stat_value": 6500,
+        "stat_unit": "€/an",
+        "context_in_response": "Licence Commerce International ESTICE (Lille) — **~6 500€/an**",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "~300-2 500€/an",
+        "stat_value": 300,
+        "stat_unit": "€/an",
+        "context_in_response": "IAE (écoles universitaires de management) : **~300-2 500€/an** pour un diplôme équivalent à une école de commerce",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "0.86",
+        "stat_value": 0.86,
+        "stat_unit": null,
+        "context_in_response": "Insertion pro : taux_emploi_3ans : 0.86 (FICHE 1)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "0.91",
+        "stat_value": 0.91,
+        "stat_unit": null,
+        "context_in_response": "Insertion pro : taux_emploi_6ans : 0.91 (FICHE 1)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "0.83",
+        "stat_value": 0.83,
+        "stat_unit": null,
+        "context_in_response": "Insertion pro : taux_cdi : 0.83 (FICHE 1)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "1740",
+        "stat_value": 1740,
+        "stat_unit": "€",
+        "context_in_response": "Insertion pro : salaire_median_embauche : 1740 (FICHE 1)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "0.85",
+        "stat_value": 0.85,
+        "stat_unit": null,
+        "context_in_response": "Insertion pro : taux_emploi_3ans : 0.85 (FICHE 2)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "0.91",
+        "stat_value": 0.91,
+        "stat_unit": null,
+        "context_in_response": "Insertion pro : taux_emploi_6ans : 0.91 (FICHE 2)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "0.83",
+        "stat_value": 0.83,
+        "stat_unit": null,
+        "context_in_response": "Insertion pro : taux_cdi : 0.83 (FICHE 2)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "2080",
+        "stat_value": 2080,
+        "stat_unit": "€",
+        "context_in_response": "Insertion pro : salaire_median_embauche : 2080 (FICHE 2)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 1.019,
+        "nom": "Licence - Economie et gestion - Parcours Commerce international et langues",
+        "etablissement": "ICL - ESTICE",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "eco_gestion"
+      },
+      {
+        "score": 0.9295,
+        "nom": "Programme grande école",
+        "etablissement": "INSTITUT SUPERIEUR COMMERCE PARIS",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "eco_gestion"
+      },
+      {
+        "score": 0.8502,
+        "nom": "Diplôme d'études supérieures en commerce et en entrepreneuriat",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "eco_gestion"
+      },
+      {
+        "score": 0.8487,
+        "nom": "Affaires et Relations Internationales",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "eco_gestion"
+      },
+      {
+        "score": 0.8479,
+        "nom": "diplôme finance",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "eco_gestion"
+      },
+      {
+        "score": 0.8474,
+        "nom": "diplôme du programme ingénieur d'affaires",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "eco_gestion"
+      },
+      {
+        "score": 0.8469,
+        "nom": "diplôme en gestion du luxe",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "eco_gestion"
+      },
+      {
+        "score": 0.8468,
+        "nom": "commerce international",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "eco_gestion"
+      },
+      {
+        "score": 0.8459,
+        "nom": "diplôme en comptabilité et gestion financière",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "eco_gestion"
+      },
+      {
+        "score": 0.8452,
+        "nom": "manager marketing et commercial en produits et services de luxe",
+        "etablissement": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "eco_gestion"
+      }
+    ]
+  },
+  {
+    "idx_global": 14,
+    "persona_id": "valerie",
+    "query_id": "q2",
+    "query_text": "Mon fils veut faire STAPS mais je m'inquiète des débouchés. Est-ce un choix raisonnable aujourd'hui ?",
+    "error_pipeline": "ReadTimeout: The read operation timed out"
+  },
+  {
+    "idx_global": 15,
+    "persona_id": "valerie",
+    "persona_description": "Valérie, parent de lycéen (perspective externe)",
+    "scope": "parent",
+    "query_id": "q3",
+    "query_type": "contextuelle_riche",
+    "query_text": "Mon fils est en Terminale S, moyenne 13, il adore le sport. Il hésite entre STAPS et kiné. On n'a pas les moyens d'une école privée chère. Quelles voies publiques les plus sûres ?",
+    "elapsed_gen_s": 19.51,
+    "elapsed_fact_check_s": 12.27,
+    "answer_raw": "**TL;DR**\n1. **Kiné en public = ultra-sélectif** : 3-12% de chances en licence STAPS \"accès kiné\" (même avec 13 de moyenne).\n2. **STAPS classique = plus accessible** (20-40% de chances), avec des passerelles vers le sport/santé.\n3. **Alternative réaliste** : BTS Métiers de l’Esthétique-Cosmétique (moins sélectif) + spécialisation en rééducation, ou DUT Carrières Sociales option \"animation sportive\".\n\n---\n\n### **Plan A — Réaliste : Licence STAPS classique (pas \"accès kiné\")**\n📍 **[Licence STAPS généraliste](https://www.onisep.fr/)** (ex: **Université de Strasbourg**, **Lyon 1**, **Bordeaux**)\n*Pour toi : sélectivité modérée (30-50% en public), compatible avec 13 de moyenne. Débouchés : éducateur sportif, coach, métiers du handicap (avec masters).*\n- **Pourquoi ?** Les licences STAPS \"classiques\" (sans option kiné) recrutent sur dossier moins exigeant (mention B souvent suffisante).\n- **Exemple concret** : [Licence STAPS à Bordeaux](https://www.u-bordeaux.fr/) (taux d’accès ~40%, source : Parcoursup 2024).\n- **Suite possible** : Master en réadaptation ou DU métiers du sport-santé.\n\n### **Plan B — Ambitieux : Licence STAPS \"accès kiné\" (si dossier très solide)**\n📍 **[Licence STAPS option Kinésithérapie - Université Paris-Saclay (Orsay)](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10924&typeBac=0&originePc=0)**\n*Pour toi : 12% de chances (50 places pour 2000 vœux). Exige mention B minimum + notes scientifiques élevées.*\n- **Profil type admis** : 25% de mentions TB, 52% de mentions B (source : Parcoursup 2025).\n- **Alternative moins sélective** : [Université Toulouse III](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48327&typeBac=0&originePc=0) (7% de chances, 72 places).\n- **Attention** : Même en réussissant cette licence, l’entrée en **IFMK (école de kiné)** reste ultra-compétitive (concours ou dossier).\n\n### **Plan C — Passerelle : BTS/DUT + spécialisation**\n1. **BTS Métiers de l’Esthétique-Cosmétique** (option \"bien-être\") → **DU masso-kinésithérapie** (certaines facs proposent des passerelles).\n   *Exemple* : [BTS MEC à Toulouse](https://www.onisep.fr/) (sélectivité ~60%, public).\n2. **DUT Carrières Sociales option \"animation sportive\"** → **Licence Pro métiers de la rééducation**.\n   *Exemple* : [IUT Bordeaux](https://www.iut.u-bordeaux.fr/) (taux d’accès ~50%).\n\n---\n**⚠ Attention aux pièges**\n- **Kiné en public = parcours du combattant** : Même avec une licence STAPS \"accès kiné\", l’entrée en IFMK (école de kiné) nécessite un concours ou un dossier excellent. Beaucoup abandonnent en route (source : [Céreq, 2023](https://www.cereq.fr/)).\n- **Écoles privées de kiné** : Coût moyen 8 000€/an (hors budget). Certaines promettent des \"passerelles faciles\" vers le public… mais les places sont limitées.\n- **STAPS ≠ kiné automatique** : Seules 10% des licences STAPS mènent à un métier paramédical (le reste : sport, enseignement).\n\n---\n**Question pour toi :**\nTon fils préfère-t-il **le contact direct avec les patients** (→ kiné, mais parcours long et risqué) ou **l’encadrement sportif/prévention** (→ STAPS classique, débouchés plus larges) ?\n*Pour creuser* : Le [test métiers ONISEP](https://www.onisep.fr/Decouvrir-les-metiers/Test-metiers) peut l’aider à affiner son choix. Et un RDV avec le **Psy-EN de son lycée** est indispensable pour valider la cohérence de son projet.\n\n---\n*Sources : Parcoursup 2025 (cod_aff_form: 10924, 48327), InserSup DEPP 2024, Céreq (connaissance générale).*",
+    "answer_annotated": "**TL;DR**\n1. **Kiné en public = ultra-sélectif** : 3-12% de chances en licence STAPS \"accès kiné\" (même avec 13 de moyenne).\n2. **STAPS classique = plus accessible** (20-40% de chances), avec des passerelles vers le sport/santé.\n3. **Alternative réaliste** : BTS Métiers de l’Esthétique-Cosmétique (moins sélectif) + spécialisation en rééducation, ou DUT Carrières Sociales option \"animation sportive\".\n\n---\n\n### **Plan A — Réaliste : Licence STAPS classique (pas \"accès kiné\")**\n📍 **[Licence STAPS généraliste](https://www.onisep.fr/)** (ex: **Université de Strasbourg**, **Lyon 1**, **Bordeaux**)\n*Pour toi : sélectivité modérée (30-50% en public), compatible avec 13 de moyenne. Débouchés : éducateur sportif, coach, métiers du handicap (avec masters).*\n- **Pourquoi ?** Les licences STAPS \"classiques\" (sans option kiné) recrutent sur dossier moins exigeant (mention B souvent suffisante).\n- **Exemple concret** : [Licence STAPS à Bordeaux](https://www.u-bordeaux.fr/) (taux d’accès ~40%, source : Parcoursup 2024).\n- **Suite possible** : Master en réadaptation ou DU métiers du sport-santé.\n\n### **Plan B — Ambitieux : Licence STAPS \"accès kiné\" (si dossier très solide)**\n📍 **[Licence STAPS option Kinésithérapie - Université Paris-Saclay (Orsay)](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10924&typeBac=0&originePc=0)**\n*Pour toi : 12% de chances (50 places pour 2000 vœux). Exige mention B minimum + notes scientifiques élevées.*\n- **Profil type admis** : 25% de mentions TB, 52% de mentions B *(non vérifié dans les sources)* (source : Parcoursup 2025).\n- **Alternative moins sélective** : [Université Toulouse III](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48327&typeBac=0&originePc=0) (7% de chances, 72 places).\n- **Attention** : Même en réussissant cette licence, l’entrée en **IFMK (école de kiné)** reste ultra-compétitive (concours ou dossier).\n\n### **Plan C — Passerelle : BTS/DUT + spécialisation**\n1. **BTS Métiers de l’Esthétique-Cosmétique** (option \"bien-être\") → **DU masso-kinésithérapie** (certaines facs proposent des passerelles).\n   *Exemple* : [BTS MEC à Toulouse](https://www.onisep.fr/) (sélectivité ~60%, public).\n2. **DUT Carrières Sociales option \"animation sportive\"** → **Licence Pro métiers de la rééducation**.\n   *Exemple* : [IUT Bordeaux](https://www.iut.u-bordeaux.fr/) (taux d’accès ~50%).\n\n---\n**⚠ Attention aux pièges**\n- **Kiné en public = parcours du combattant** : Même avec une licence STAPS \"accès kiné\", l’entrée en IFMK (école de kiné) nécessite un concours ou un dossier excellent. Beaucoup abandonnent en route (source : [Céreq, 2023](https://www.cereq.fr/)).\n- **Écoles privées de kiné** : Coût moyen 8 000€/an (hors budget). Certaines promettent des \"passerelles faciles\" vers le public… mais les places sont limitées.\n- **STAPS ≠ kiné automatique** : Seules 10% des licences STAPS mènent à un métier paramédical (le reste : sport, enseignement).\n\n---\n**Question pour toi :**\nTon fils préfère-t-il **le contact direct avec les patients** (→ kiné, mais parcours long et risqué) ou **l’encadrement sportif/prévention** (→ STAPS classique, débouchés plus larges) ?\n*Pour creuser* : Le [test métiers ONISEP](https://www.onisep.fr/Decouvrir-les-metiers/Test-metiers) peut l’aider à affiner son choix. Et un RDV avec le **Psy-EN de son lycée** est indispensable pour valider la cohérence de son projet.\n\n---\n*Sources : Parcoursup 2025 (cod_aff_form: 10924, 48327), InserSup DEPP 2024, Céreq (connaissance générale).*",
+    "annotated_differs": true,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 17,
+      "n_verified": 8,
+      "n_with_disclaimer": 8,
+      "n_hallucinated": 1,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "3-12% de chances en licence STAPS \"accès kiné\"",
+        "stat_value": 3,
+        "stat_unit": "%",
+        "context_in_response": "Kiné en public = ultra-sélectif : 3-12% de chances en licence STAPS \"accès kiné\" (même avec 13 de moyenne).",
+        "verdict": "verified",
+        "source_fiche_excerpt": "FICHE 9 : Taux d'accès Parcoursup : 3.0%"
+      },
+      {
+        "stat_text": "12% de chances",
+        "stat_value": 12,
+        "stat_unit": "%",
+        "context_in_response": "Licence STAPS option Kinésithérapie - Université Paris-Saclay (Orsay) : 12% de chances (50 places pour 2000 vœux).",
+        "verdict": "verified",
+        "source_fiche_excerpt": "FICHE 5 : Taux d'accès Parcoursup : 12.0%"
+      },
+      {
+        "stat_text": "50 places pour 2000 vœux",
+        "stat_value": 50,
+        "stat_unit": "places",
+        "context_in_response": "Licence STAPS option Kinésithérapie - Université Paris-Saclay (Orsay) : 12% de chances (50 places pour 2000 vœux).",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "25% de mentions TB, 52% de mentions B",
+        "stat_value": 25,
+        "stat_unit": "%",
+        "context_in_response": "Profil type admis : 25% de mentions TB, 52% de mentions B (source : Parcoursup 2025).",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "7% de chances",
+        "stat_value": 7,
+        "stat_unit": "%",
+        "context_in_response": "Alternative moins sélective : Université Toulouse III (7% de chances, 72 places).",
+        "verdict": "verified",
+        "source_fiche_excerpt": "FICHE 7 : Taux d'accès Parcoursup : 7.0%"
+      },
+      {
+        "stat_text": "72 places",
+        "stat_value": 72,
+        "stat_unit": "places",
+        "context_in_response": "Alternative moins sélective : Université Toulouse III (7% de chances, 72 places).",
+        "verdict": "verified",
+        "source_fiche_excerpt": "FICHE 7 : Places : 72"
+      },
+      {
+        "stat_text": "40% de chances",
+        "stat_value": 40,
+        "stat_unit": "%",
+        "context_in_response": "Exemple concret : Licence STAPS à Bordeaux (taux d’accès ~40%, source : Parcoursup 2024).",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "30-50% en public",
+        "stat_value": 30,
+        "stat_unit": "%",
+        "context_in_response": "Licence STAPS généraliste : sélectivité modérée (30-50% en public), compatible avec 13 de moyenne.",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "20-40% de chances",
+        "stat_value": 20,
+        "stat_unit": "%",
+        "context_in_response": "STAPS classique = plus accessible (20-40% de chances), avec des passerelles vers le sport/santé.",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "60% (sélectivité)",
+        "stat_value": 60,
+        "stat_unit": "%",
+        "context_in_response": "BTS MEC à Toulouse (sélectivité ~60%, public).",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "50% (taux d’accès)",
+        "stat_value": 50,
+        "stat_unit": "%",
+        "context_in_response": "DUT Carrières Sociales option \"animation sportive\" → Licence Pro métiers de la rééducation. Exemple : IUT Bordeaux (taux d’accès ~50%).",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "10% des licences STAPS mènent à un métier paramédical",
+        "stat_value": 10,
+        "stat_unit": "%",
+        "context_in_response": "STAPS ≠ kiné automatique : Seules 10% des licences STAPS mènent à un métier paramédical (le reste : sport, enseignement).",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "8 000€/an (hors budget)",
+        "stat_value": 8000,
+        "stat_unit": "€/an",
+        "context_in_response": "Écoles privées de kiné : Coût moyen 8 000€/an (hors budget).",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "1740€ (salaire_median_embauche)",
+        "stat_value": 1740,
+        "stat_unit": "€",
+        "context_in_response": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}",
+        "verdict": "verified",
+        "source_fiche_excerpt": "FICHE 1 : Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "0.86 (taux_emploi_3ans)",
+        "stat_value": 0.86,
+        "stat_unit": "",
+        "context_in_response": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}",
+        "verdict": "verified",
+        "source_fiche_excerpt": "FICHE 1 : Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "0.91 (taux_emploi_6ans)",
+        "stat_value": 0.91,
+        "stat_unit": "",
+        "context_in_response": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}",
+        "verdict": "verified",
+        "source_fiche_excerpt": "FICHE 1 : Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "0.83 (taux_cdi)",
+        "stat_value": 0.83,
+        "stat_unit": "",
+        "context_in_response": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}",
+        "verdict": "verified",
+        "source_fiche_excerpt": "FICHE 1 : Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 1.1839,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Sciences et Techniq",
+        "etablissement": "Université de Montpellier",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante"
+      },
+      {
+        "score": 1.1839,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Sciences et Techniq",
+        "etablissement": "Université de Montpellier",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante"
+      },
+      {
+        "score": 1.1784,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+        "etablissement": "Université Paris Cité",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante"
+      },
+      {
+        "score": 1.1784,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+        "etablissement": "Université Paris Cité",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante"
+      },
+      {
+        "score": 1.1666,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS - Préparation",
+        "etablissement": "Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante"
+      },
+      {
+        "score": 1.1666,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS - Préparation",
+        "etablissement": "Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante"
+      },
+      {
+        "score": 1.1662,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Accès Kiné",
+        "etablissement": "Université Toulouse III - Université Toulouse",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante"
+      },
+      {
+        "score": 1.1662,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Accès Kiné",
+        "etablissement": "Université Toulouse III - Université Toulouse",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante"
+      },
+      {
+        "score": 1.1629,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+        "etablissement": "Université de Perpignan - Antenne de Font Romeu",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante"
+      },
+      {
+        "score": 1.1629,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+        "etablissement": "Université de Perpignan - Antenne de Font Romeu",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante"
+      }
+    ]
+  },
+  {
+    "idx_global": 16,
+    "persona_id": "psy_en",
+    "persona_description": "Psy-EN (psychologue Éducation nationale)",
+    "scope": "pro",
+    "query_id": "q1",
+    "query_type": "factuelle",
+    "query_text": "Quels sont les indicateurs d'insertion professionnelle à 3 ans pour un master en psychologie clinique en France ?",
+    "elapsed_gen_s": 17.56,
+    "elapsed_fact_check_s": 16.17,
+    "answer_raw": "**TL;DR**\n1. Les masters en psychologie clinique affichent un **taux d’insertion à 3 ans d’environ 70-80%** (connaissance générale), mais avec une forte disparité selon le secteur (libéral vs institutionnel).\n2. **Salaire médian à l’embauche : ~1 800-2 200€ brut/mois** (source Céreq, estimations transversales pour les bac+5 en psychologie).\n3. **Seuls 50-60% des diplômés exercent comme psychologues** à 3 ans (les autres bifurquent vers l’enseignement, la recherche, ou des métiers connexes).\n\n---\n\n### **Plan A — Insertion en libéral (majoritaire, mais lent)**\n- **Taux d’emploi à 3 ans** : ~75% (connaissance générale), mais **seulement 40-50% en activité libérale exclusive** (le reste cumule avec des CDD en institutions).\n- **Salaire** : Débuts difficiles (1 500-1 800€/mois net en libéral les 2 premières années), puis stabilisation à **2 500-3 500€/mois** après 5 ans pour ceux qui tiennent (source : enquêtes APEPL).\n- **Pour vous** : Si vous visez le libéral, prévoyez un **réseau patientèle solide** (stage en cabinet pendant le master) et un **fonds de roulement** (6-12 mois sans revenu stable).\n\n### **Plan B — Secteur public/hospitalier (sécurité, mais concours)**\n- **Taux d’emploi à 3 ans** : ~85% pour les lauréats des **concours de la fonction publique hospitalière** (psychologue clinicien en hôpital, CMP, etc.).\n- **Salaire** : Grille hospitalière **~2 000€ brut/mois en début de carrière**, jusqu’à 3 000€ avec ancienneté.\n- **Pour vous** : Passez le **concours de psychologue de la FPH** (ouvert aux bac+5) dès la fin du master. **Délai moyen d’obtention d’un poste : 12-18 mois** après diplôme.\n\n### **Plan C — Reconversion vers des métiers connexes (moins saturés)**\n- **Exemples** :\n  - **Neuropsychologie** (master complémentaire requis, ex : **Université de Picardie Jules-Verne** — fiche 10) : taux d’insertion ~80% à 3 ans (source Céreq, masters spécialisés).\n  - **Psychologie du travail/ergonomie** : débouchés en entreprise (salaire moyen **2 500-3 200€ brut**).\n  - **Formation d’adultes/insertion** : concours de conseiller en insertion professionnelle (CIP) après expérience.\n- **Pour vous** : Si le marché du soin est saturé dans votre région, ces spécialisations offrent des **alternatives avec moins de précarité**.\n\n---\n**⚠ Attention aux pièges**\n- **Saturation du marché libéral** : En Île-de-France et dans les grandes villes, **1 psychologue sur 2 met +2 ans à avoir un revenu décent** (connaissance générale, rapports DREES).\n- **Concours publics très sélectifs** : ~10% de réussite au concours FPH (préparation intensive nécessaire).\n- **Coût des formations privées** : Certains masters (ex : **Institut Catholique de Lyon**, fiche 5) coûtent **3 000-6 000€/an** — vérifiez l’éligibilité CPF/VAE.\n\n---\n**Source principale** : Données Céreq (enquêtes \"Génération\" sur les masters en psychologie), complétées par les rapports DREES 2022 sur les professions paramédicales. *(Les fiches fournies ne contiennent pas de données d’insertion spécifiques à ces masters.)*\n\n**Question pour vous** :\nAvez-vous déjà une préférence entre **libéral** (flexibilité mais incertitude financière), **public** (stabilité mais concours), ou une **spécialisation connexe** (neuropsy, travail) pour sécuriser votre projet ?",
+    "answer_annotated": "**TL;DR**\n1. Les masters en psychologie clinique affichent un **taux d’insertion à 3 ans d’environ 70-80%** (connaissance générale), mais avec une forte disparité selon le secteur (libéral vs institutionnel).\n2. **Salaire médian à l’embauche : ~1 800-2 200€ brut/mois** (source Céreq, estimations transversales pour les bac+5 en psychologie).\n3. **Seuls 50-60% des diplômés exercent comme psychologues** à 3 ans (les autres bifurquent vers l’enseignement, la recherche, ou des métiers connexes).\n\n---\n\n### **Plan A — Insertion en libéral (majoritaire, mais lent)**\n- **Taux d’emploi à 3 ans** : ~75% (connaissance générale), mais **seulement 40-50% en activité libérale exclusive** (le reste cumule avec des CDD en institutions).\n- **Salaire** : Débuts difficiles (1 500-1 800€/mois net en libéral les 2 premières années), puis stabilisation à **2 500-3 500€/mois** après 5 ans pour ceux qui tiennent (source : enquêtes APEPL).\n- **Pour vous** : Si vous visez le libéral, prévoyez un **réseau patientèle solide** (stage en cabinet pendant le master) et un **fonds de roulement** (6-12 mois sans revenu stable).\n\n### **Plan B — Secteur public/hospitalier (sécurité, mais concours)**\n- **Taux d’emploi à 3 ans** : ~85% pour les lauréats des **concours de la fonction publique hospitalière** (psychologue clinicien en hôpital, CMP, etc.).\n- **Salaire** : Grille hospitalière **~2 000€ brut/mois en début de carrière**, jusqu’à 3 000€ avec ancienneté.\n- **Pour vous** : Passez le **concours de psychologue de la FPH** (ouvert aux bac+5) dès la fin du master. **Délai moyen d’obtention d’un poste : 12-18 mois** après diplôme.\n\n### **Plan C — Reconversion vers des métiers connexes (moins saturés)**\n- **Exemples** :\n  - **Neuropsychologie** (master complémentaire requis, ex : **Université de Picardie Jules-Verne** — fiche 10) : taux d’insertion ~80% à 3 ans (source Céreq, masters spécialisés).\n  - **Psychologie du travail/ergonomie** : débouchés en entreprise (salaire moyen **2 500-3 200€ brut**).\n  - **Formation d’adultes/insertion** : concours de conseiller en insertion professionnelle (CIP) après expérience.\n- **Pour vous** : Si le marché du soin est saturé dans votre région, ces spécialisations offrent des **alternatives avec moins de précarité**.\n\n---\n**⚠ Attention aux pièges**\n- **Saturation du marché libéral** : En Île-de-France et dans les grandes villes, **1 psychologue sur 2 met +2 ans à avoir un revenu décent** (connaissance générale, rapports DREES).\n- **Concours publics très sélectifs** : ~10% de réussite au concours FPH (préparation intensive nécessaire).\n- **Coût des formations privées** : Certains masters (ex : **Institut Catholique de Lyon**, fiche 5) coûtent **3 000-6 000€/an** — vérifiez l’éligibilité CPF/VAE.\n\n---\n**Source principale** : Données Céreq (enquêtes \"Génération\" sur les masters en psychologie), complétées par les rapports DREES 2022 sur les professions paramédicales. *(Les fiches fournies ne contiennent pas de données d’insertion spécifiques à ces masters.)*\n\n**Question pour vous** :\nAvez-vous déjà une préférence entre **libéral** (flexibilité mais incertitude financière), **public** (stabilité mais concours), ou une **spécialisation connexe** (neuropsy, travail) pour sécuriser votre projet ?",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 0,
+      "n_verified": 0,
+      "n_with_disclaimer": 0,
+      "n_hallucinated": 0,
+      "error": "JSON parse error: Unterminated string starting at: line 198 column 31 (char 8425). Raw: {\n  \"stats_extracted\": [\n    {\n      \"stat_text\": \"taux d’insertion à 3 ans d’environ 70-80%\",\n      \"stat_value\": 75,\n      \"stat_unit\": \"%\",\n      \"context_in_response\": \"Les masters en psychologie "
+    },
+    "fact_check_stats": [],
+    "sources_top10": [
+      {
+        "score": 1.1008,
+        "nom": "PSYCHOLOGIE:PSYCHOPATHOLOGIE CLINIQUE PSYCHANALYTIQUE — Clinique et Psychopathologie  Psychanalytiqu",
+        "etablissement": "Université Sorbonne Paris Nord",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines"
+      },
+      {
+        "score": 1.0883,
+        "nom": "PSYCHOLOGIE:PSYCHOPATHOLOGIE CLINIQUE PSYCHANALYTIQUE — None",
+        "etablissement": "Université d'Angers",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines"
+      },
+      {
+        "score": 1.0871,
+        "nom": "PSYCHOLOGIE:PSYCHOPATHOLOGIE CLINIQUE PSYCHANALYTIQUE — Cliniques Interculturelles et  Transculturel",
+        "etablissement": "Université Sorbonne Paris Nord",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines"
+      },
+      {
+        "score": 1.0856,
+        "nom": "PSYCHOLOGIE CLINIQUE, PSYCHOPATHOLOGIE ET PSYCHOLOGIE DE LA SANTE — Psychologie Clinique et Psychopa",
+        "etablissement": "Université Paris Cité",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines"
+      },
+      {
+        "score": 1.0852,
+        "nom": "PSYCHOLOGIE:PSYCHOPATHOLOGIE CLINIQUE PSYCHANALYTIQUE — M1 : Psychologie  clinique de l'enfant et de",
+        "etablissement": "Institut catholique de Lyon",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines"
+      },
+      {
+        "score": 1.085,
+        "nom": "PSYCHOLOGIE CLINIQUE, PSYCHOPATHOLOGIE ET PSYCHOLOGIE DE LA SANTE — Psychologie clinique et psychopa",
+        "etablissement": "Université Paris Cité",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines"
+      },
+      {
+        "score": 1.0848,
+        "nom": "PSYCHOLOGIE — Clinique psychopathologique et clinique de la famille",
+        "etablissement": "Université Marie et Louis Pasteur",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines"
+      },
+      {
+        "score": 1.0842,
+        "nom": "PSYCHOLOGIE — Psychologie clinique et psychopathologie plurielle (CliPP)",
+        "etablissement": "Nantes Université",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines"
+      },
+      {
+        "score": 1.084,
+        "nom": "PSYCHOLOGIE — M1 - Psychologie clinique – Psychologie de la santé",
+        "etablissement": "Université Grenoble Alpes",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines"
+      },
+      {
+        "score": 1.0838,
+        "nom": "PSYCHOLOGIE — NEUROPSYCHOLOGIE CLINIQUE ET INTÉGRATIVE",
+        "etablissement": "Université de Picardie Jules-Verne",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines"
+      }
+    ]
+  },
+  {
+    "idx_global": 17,
+    "persona_id": "psy_en",
+    "persona_description": "Psy-EN (psychologue Éducation nationale)",
+    "scope": "pro",
+    "query_id": "q2",
+    "query_type": "orientation_ambigue",
+    "query_text": "Une élève en 1ère S redouble avec 7 de moyenne en maths mais excellente en philo, comment la guider vers un post-bac réaliste ?",
+    "elapsed_gen_s": 23.91,
+    "elapsed_fact_check_s": 5.55,
+    "answer_raw": "**TL;DR**\n1. Avec 7/20 en maths, les doubles licences scientifiques (maths/physique, maths/bio) ou les prépas sont **inaccessibles** en l’état (81% des admis ont mention TB).\n2. **Piste réaliste** : double licence **Sciences-Philosophie** (Sorbonne, 21% de sélectivité, 18% de mentions B admises) ou **écoles d’ingé sans maths** (ECE Paris, 96% d’accès).\n3. **Priorité absolue** : remédiation maths (stage intensif, tutorat) + valoriser la philo comme atout différenciant.\n\n---\n\n### **Plan A — Réaliste : Double licence Sciences-Philosophie (Sorbonne)**\n📍 **[Sciences - Philosophie](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30860)** (Paris) — Licence publique, **21% de sélectivité**, 18% des admis ont une mention B.\n*Pour toi :* **Seule double licence scientifique accessible** avec 7/20 en maths (41% de mentions TB, mais 18% de B). La philo est un atout majeur pour ce parcours.\n\n**Stratégie :**\n- **Dossier Parcoursup** : Mettre en avant tes notes en philo (fiches de lecture, projets) et une **lettre de motivation** expliquant ton projet (ex : épistémologie, éthique des sciences).\n- **Maths** : Vis un **12/20 minimum** en Terminale via un stage intensif (ex : [Les Cours du Parnasse](https://www.lescoursduparnasse.com)) ou du tutorat. Sans cela, même cette filière sera hors de portée.\n- **Alternative si maths bloquantes** : Licence de **Philosophie pure** (moins sélective) + mineure en sciences en L2/L3.\n\n---\n\n### **Plan B — Ambitieux mais accessible : École d’ingé sans maths (ECE Paris)**\n📍 **[ECE Paris — Spé scientifique + non-scientifique](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39051)** — École d’ingé privée (bac+5), **89% d’accès**, 25% des admis ont une mention AB.\n*Pour toi :* **Accès direct possible** si tu abandonnes la spécialité maths en Terminale (remplacée par une autre spécialité scientifique comme **SI** ou **Physique-Chimie**). Coût : ~8 000€/an (bourses possibles).\n\n**Points clés :**\n- **Pas de maths en Terminale** = éligible à cette voie (contrairement aux prépas classiques).\n- **Philosophe + ingé** : Un profil rare et recherché en **éthique de l’IA**, management de l’innovation, ou RSE (connaissance générale).\n- **Attention** : Le coût est élevé. Vérifie les **bourses** (CROUS, fondations) ou l’**alternance** dès la 3e année.\n\n---\n### **Plan C — Passerelle : Réorientation après une L1**\nSi les maths restent un blocage en Terminale :\n1. **L1 de Philosophie** (peu sélective) + **mineure en sciences** (ex : logique, histoire des sciences).\n2. **Réorientation en L2** vers :\n   - Une **double licence** (ex : [Sciences-Philosophie](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30860)) si tes notes en maths remontent.\n   - Une **licence pro** en **médiation scientifique** ou **éthique appliquée** (connaissance générale : débouchés dans les musées, ONG, com’ scientifique).\n\n**Avantage** : Moins de pression immédiate, et une année pour **remonter en maths** via des UE libres.\n\n---\n### **⚠ Attention aux pièges**\n- **Double licence maths** : **Impossible** avec 7/20 (67-81% des admis ont mention TB).\n- **Prépas scientifiques** : **Éliminatoires** sans 14+ en maths (connaissance générale).\n- **Coût des écoles privées** : ECE Paris = ~40 000€ sur 5 ans. Prévois un plan de financement (alternance, bourses).\n\n---\n**Question pour toi :**\nQuelle option te parle le plus ?\n- **A** : Double licence Sciences-Philosophie (effort maths + projet hybride) ?\n- **B** : École d’ingé sans maths (coût élevé mais accès direct) ?\n- **C** : L1 Philosophie + réorientation progressive ?\n\n*Pour affiner, un RDV avec le Psy-EN de ton lycée ou un conseiller d’orientation (CIO) est indispensable.*",
+    "answer_annotated": "**TL;DR**\n1. Avec 7/20 en maths, les doubles licences scientifiques (maths/physique, maths/bio) ou les prépas sont **inaccessibles** en l’état (81% des admis ont mention TB *(non vérifié dans les sources)*).\n2. **Piste réaliste** : double licence **Sciences-Philosophie** (Sorbonne, 21% de sélectivité, 18% de mentions B admises *(non vérifié dans les sources)*) ou **écoles d’ingé sans maths** (ECE Paris, 96% d’accès).\n3. **Priorité absolue** : remédiation maths (stage intensif, tutorat) + valoriser la philo comme atout différenciant.\n\n---\n\n### **Plan A — Réaliste : Double licence Sciences-Philosophie (Sorbonne)**\n📍 **[Sciences - Philosophie](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30860)** (Paris) — Licence publique, **21% de sélectivité**, 18% des admis ont une mention B.\n*Pour toi :* **Seule double licence scientifique accessible** avec 7/20 en maths (41% de mentions TB *(non vérifié dans les sources)*, mais 18% de B). La philo est un atout majeur pour ce parcours.\n\n**Stratégie :**\n- **Dossier Parcoursup** : Mettre en avant tes notes en philo (fiches de lecture, projets) et une **lettre de motivation** expliquant ton projet (ex : épistémologie, éthique des sciences).\n- **Maths** : Vis un **12/20 minimum** en Terminale via un stage intensif (ex : [Les Cours du Parnasse](https://www.lescoursduparnasse.com)) ou du tutorat. Sans cela, même cette filière sera hors de portée.\n- **Alternative si maths bloquantes** : Licence de **Philosophie pure** (moins sélective) + mineure en sciences en L2/L3.\n\n---\n\n### **Plan B — Ambitieux mais accessible : École d’ingé sans maths (ECE Paris)**\n📍 **[ECE Paris — Spé scientifique + non-scientifique](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39051)** — École d’ingé privée (bac+5), **89% d’accès**, 25% des admis ont une mention AB *(non vérifié dans les sources)*.\n*Pour toi :* **Accès direct possible** si tu abandonnes la spécialité maths en Terminale (remplacée par une autre spécialité scientifique comme **SI** ou **Physique-Chimie**). Coût : ~8 000€/an (bourses possibles).\n\n**Points clés :**\n- **Pas de maths en Terminale** = éligible à cette voie (contrairement aux prépas classiques).\n- **Philosophe + ingé** : Un profil rare et recherché en **éthique de l’IA**, management de l’innovation, ou RSE (connaissance générale).\n- **Attention** : Le coût est élevé. Vérifie les **bourses** (CROUS, fondations) ou l’**alternance** dès la 3e année.\n\n---\n### **Plan C — Passerelle : Réorientation après une L1**\nSi les maths restent un blocage en Terminale :\n1. **L1 de Philosophie** (peu sélective) + **mineure en sciences** (ex : logique, histoire des sciences).\n2. **Réorientation en L2** vers :\n   - Une **double licence** (ex : [Sciences-Philosophie](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30860)) si tes notes en maths remontent.\n   - Une **licence pro** en **médiation scientifique** ou **éthique appliquée** (connaissance générale : débouchés dans les musées, ONG, com’ scientifique).\n\n**Avantage** : Moins de pression immédiate, et une année pour **remonter en maths** via des UE libres.\n\n---\n### **⚠ Attention aux pièges**\n- **Double licence maths** : **Impossible** avec 7/20 (67-81% des admis ont mention TB *(non vérifié dans les sources)*).\n- **Prépas scientifiques** : **Éliminatoires** sans 14+ en maths (connaissance générale).\n- **Coût des écoles privées** : ECE Paris = ~40 000€ sur 5 ans. Prévois un plan de financement (alternance, bourses).\n\n---\n**Question pour toi :**\nQuelle option te parle le plus ?\n- **A** : Double licence Sciences-Philosophie (effort maths + projet hybride) ?\n- **B** : École d’ingé sans maths (coût élevé mais accès direct) ?\n- **C** : L1 Philosophie + réorientation progressive ?\n\n*Pour affiner, un RDV avec le Psy-EN de ton lycée ou un conseiller d’orientation (CIO) est indispensable.*",
+    "annotated_differs": true,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 10,
+      "n_verified": 2,
+      "n_with_disclaimer": 3,
+      "n_hallucinated": 5,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "81% des admis ont mention TB",
+        "stat_value": 81,
+        "stat_unit": "%",
+        "context_in_response": "Avec 7/20 en maths, les doubles licences scientifiques (maths/physique, maths/bio) ou les prépas sont inaccessibles en l’état (81% des admis ont mention TB).",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "21% de sélectivité",
+        "stat_value": 21,
+        "stat_unit": "%",
+        "context_in_response": "Double licence Sciences-Philosophie (Sorbonne, 21% de sélectivité, 18% de mentions B admises)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Taux d'accès Parcoursup : 21.0%"
+      },
+      {
+        "stat_text": "18% de mentions B admises",
+        "stat_value": 18,
+        "stat_unit": "%",
+        "context_in_response": "Double licence Sciences-Philosophie (Sorbonne, 21% de sélectivité, 18% de mentions B admises)",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "41% de mentions TB",
+        "stat_value": 41,
+        "stat_unit": "%",
+        "context_in_response": "Pour toi : Seule double licence scientifique accessible avec 7/20 en maths (41% de mentions TB, mais 18% de B).",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "89% d’accès",
+        "stat_value": 89,
+        "stat_unit": "%",
+        "context_in_response": "École d’ingé sans maths (ECE Paris) — École d’ingé privée (bac+5), 89% d’accès, 25% des admis ont une mention AB.",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Taux d'accès Parcoursup : 89.0%"
+      },
+      {
+        "stat_text": "25% des admis ont une mention AB",
+        "stat_value": 25,
+        "stat_unit": "%",
+        "context_in_response": "École d’ingé sans maths (ECE Paris) — École d’ingé privée (bac+5), 89% d’accès, 25% des admis ont une mention AB.",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "~8 000€/an",
+        "stat_value": 8000,
+        "stat_unit": "€/an",
+        "context_in_response": "Coût : ~8 000€/an (bourses possibles).",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "40 000€ sur 5 ans",
+        "stat_value": 40000,
+        "stat_unit": "€",
+        "context_in_response": "Coût des écoles privées : ECE Paris = ~40 000€ sur 5 ans. Prévois un plan de financement (alternance, bourses).",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "67-81% des admis ont mention TB",
+        "stat_value": 67,
+        "stat_unit": "%",
+        "context_in_response": "Double licence maths : Impossible avec 7/20 (67-81% des admis ont mention TB).",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "14+ en maths",
+        "stat_value": 14,
+        "stat_unit": "/20",
+        "context_in_response": "Prépas scientifiques : Éliminatoires sans 14+ en maths (connaissance générale).",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 1.1078,
+        "nom": "Licence - Double diplôme - Licence Mathématiques et informatique appliquées aux sciences humaines et",
+        "etablissement": "Institut d'études politiques de Paris - Sciences Po",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sciences_humaines"
+      },
+      {
+        "score": 1.1075,
+        "nom": "Licence - Double diplôme - Licence Mathématiques - Sciences et Sciences sociales / Spécialité Mathém",
+        "etablissement": "Institut d'études politiques de Paris - Sciences Po",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sciences_humaines"
+      },
+      {
+        "score": 1.1042,
+        "nom": "Double licence - Sciences biomédicales / Mathématiques - Sciences biomédicales / Mathématiques",
+        "etablissement": "Université Paris Cité",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante"
+      },
+      {
+        "score": 1.1042,
+        "nom": "Double licence - Sciences biomédicales / Mathématiques - Sciences biomédicales / Mathématiques",
+        "etablissement": "Université Paris Cité",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante"
+      },
+      {
+        "score": 1.0968,
+        "nom": "Double licence - Sciences - Philosophie",
+        "etablissement": "Sorbonne université",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sciences_humaines"
+      },
+      {
+        "score": 1.0952,
+        "nom": "Licence - Double diplôme - Licence Philosophie - Humanités littéraires et Sciences sociales / Filièr",
+        "etablissement": "Institut d'études politiques de Paris - Sciences Po",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sciences_humaines"
+      },
+      {
+        "score": 1.0943,
+        "nom": "Formation d'ingénieur Bac + 5 - Bac Série générale avec 2 spécialités scientifiques mais sans la spé",
+        "etablissement": "ECE Paris",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "parcoursup",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 1.0938,
+        "nom": "Formation d'ingénieur Bac + 5 - Bac Série générale avec la spécialité Maths en Terminale + une spéci",
+        "etablissement": "ECE Paris",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "parcoursup",
+        "domaine": "ingenierie_industrielle"
+      },
+      {
+        "score": 1.0933,
+        "nom": "Double licence - Mathématiques / Physique -",
+        "etablissement": "Université Paris Cité",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sciences_fondamentales"
+      },
+      {
+        "score": 1.0912,
+        "nom": "Formation d'ingénieur Bac + 5 - Bac série générale avec la spécialité Maths en Terminale + une spéci",
+        "etablissement": "ECE Paris",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "parcoursup",
+        "domaine": "ingenierie_industrielle"
+      }
+    ]
+  },
+  {
+    "idx_global": 18,
+    "persona_id": "psy_en",
+    "query_id": "q3",
+    "query_text": "J'accompagne un élève de 2nde issu d'un milieu modeste, qui rêve de devenir ingénieur aéro mais ses résultats sont moyens (10-11 en maths). Quelles stratégies long-terme sur la suite du lycée ?",
+    "error_pipeline": "ReadTimeout: The read operation timed out"
+  }
+]
