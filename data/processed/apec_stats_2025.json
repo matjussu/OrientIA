@@ -1,0 +1,290 @@
+{
+  "source": "apec",
+  "millesime": 2025,
+  "extraction_date": "2026-04-24",
+  "extraction_methode": "lecture PDF Claude (Read tool multimodal) + curation manuelle Claudette des tableaux clés",
+  "licence": "APEC — reproduction partielle pour enrichissement corpus OrientIA (fair use orientation publique)",
+  "pdfs_sources": [
+    {
+      "fichier": "apec_jeunes_diplomes_bac5_2025.pdf",
+      "titre": "Jeunes diplômé.es d'un Bac+5 — Une insertion plus difficile et au prix de concessions importantes",
+      "date": "Novembre 2025",
+      "pages": 10
+    },
+    {
+      "fichier": "apec_previsions_2025.pdf",
+      "titre": "Prévisions Apec 2025 — Retournement de tendance pour les recrutements de cadres",
+      "date": "Avril 2025",
+      "pages": 12
+    },
+    {
+      "fichier": "apec_barometre_remuneration_cadres_2025.pdf",
+      "titre": "Baromètre 2025 de la rémunération des cadres",
+      "date": "Novembre 2025",
+      "pages": 42
+    }
+  ],
+  "entries": [
+    {
+      "categorie": "remuneration_cadres_ensemble_2025",
+      "source_pdf": "apec_barometre_remuneration_cadres_2025.pdf",
+      "page": 3,
+      "niveau_orientia": "cadre",
+      "scope": "ensemble cadres France",
+      "stats": {
+        "remuneration_mediane_annuelle_brute_totale_keur": 55,
+        "remuneration_moyenne_annuelle_brute_totale_keur": 64,
+        "remuneration_fixe_mediane_annuelle_keur": 52,
+        "d1_annuel_brut_keur": 38,
+        "d9_annuel_brut_keur": 95,
+        "evolution_vs_2024_pct": 1.8,
+        "part_cadres_augmentation_2025_pct": 53,
+        "evolution_part_augmentation_vs_2024_pp": -7,
+        "part_cadres_avec_variable_pct": 50,
+        "part_variable_moyenne_remuneration_totale_pct": 11.2,
+        "part_cadres_interessement_pct": 37,
+        "part_cadres_participation_pct": 32
+      }
+    },
+    {
+      "categorie": "remuneration_par_age_2025",
+      "source_pdf": "apec_barometre_remuneration_cadres_2025.pdf",
+      "page": 4,
+      "scope": "cadres selon tranche d'âge",
+      "stats_par_tranche": [
+        {"age": "moins 30 ans", "mediane_brute_keur": 43, "part_augmentation_2025_pct": 66, "evolution_vs_2024": "=43"},
+        {"age": "30-39 ans", "mediane_brute_keur": 52, "part_augmentation_2025_pct": 59, "evolution_vs_2021_pct": 8.3},
+        {"age": "40-49 ans", "mediane_brute_keur": 60, "part_augmentation_2025_pct": 51, "evolution_vs_2021_pct": 9.1},
+        {"age": "50+ ans", "mediane_brute_keur": 62, "part_augmentation_2025_pct": 42, "evolution_vs_2024_keur": 2}
+      ]
+    },
+    {
+      "categorie": "remuneration_par_fonction_2025",
+      "source_pdf": "apec_barometre_remuneration_cadres_2025.pdf",
+      "page": 5,
+      "scope": "cadres par fonction d'entreprise",
+      "stats_par_fonction": [
+        {"fonction": "Direction générale, adjoint direction", "mediane_brute_keur": 75, "part_augmentation_2025_pct": 53, "part_augmentation_2024_pct": 40},
+        {"fonction": "Production industrielle et maintenance", "mediane_brute_keur": 63, "part_augmentation_2025_pct": 68, "part_augmentation_2024_pct": 58},
+        {"fonction": "Achats", "mediane_brute_keur": 60, "part_augmentation_2025_pct": 63, "part_augmentation_2024_pct": 55},
+        {"fonction": "Marketing, stratégie clients et produits", "mediane_brute_keur": 60, "part_augmentation_2025_pct": 62, "part_augmentation_2024_pct": 52},
+        {"fonction": "Finance, comptabilité et gestion", "mediane_brute_keur": 60, "part_augmentation_2025_pct": 62, "part_augmentation_2024_pct": 58},
+        {"fonction": "Commercial, commerce, ventes", "mediane_brute_keur": 58, "part_augmentation_2025_pct": 56, "part_augmentation_2024_pct": 47},
+        {"fonction": "Logistique et transports", "mediane_brute_keur": 56, "part_augmentation_2025_pct": 61, "part_augmentation_2024_pct": 57},
+        {"fonction": "Informatique et systèmes d'information", "mediane_brute_keur": 55, "part_augmentation_2025_pct": 60, "part_augmentation_2024_pct": 55, "domaine_orientia": "data_ia"},
+        {"fonction": "Process, méthodes et planification", "mediane_brute_keur": 55, "part_augmentation_2025_pct": 63, "part_augmentation_2024_pct": 60},
+        {"fonction": "Qualité et sécurité", "mediane_brute_keur": 54, "part_augmentation_2025_pct": 66, "part_augmentation_2024_pct": 59},
+        {"fonction": "Travaux et chantier", "mediane_brute_keur": 54, "part_augmentation_2025_pct": 60, "part_augmentation_2024_pct": 57},
+        {"fonction": "Administratif, organisation et juridique", "mediane_brute_keur": 51, "part_augmentation_2025_pct": 58, "part_augmentation_2024_pct": 51},
+        {"fonction": "Ingénierie, études, recherche et développement", "mediane_brute_keur": 51, "part_augmentation_2025_pct": 70, "part_augmentation_2024_pct": 60, "domaine_orientia": "ingenierie_industrielle"},
+        {"fonction": "Ressources humaines et formation", "mediane_brute_keur": 51, "part_augmentation_2025_pct": 59, "part_augmentation_2024_pct": 56},
+        {"fonction": "Santé, social et médico-social", "mediane_brute_keur": 46, "part_augmentation_2025_pct": 39, "part_augmentation_2024_pct": 33, "domaine_orientia": "sante"},
+        {"fonction": "Communication, création et culture", "mediane_brute_keur": 45, "part_augmentation_2025_pct": 51, "part_augmentation_2024_pct": 37, "domaine_orientia": "communication"}
+      ]
+    },
+    {
+      "categorie": "ecart_salarial_hf_2025",
+      "source_pdf": "apec_barometre_remuneration_cadres_2025.pdf",
+      "page": 4,
+      "stats": {
+        "ecart_remuneration_mediane_hf_global_pct": 16,
+        "ecart_remuneration_mediane_hf_2024_pct": 12,
+        "ecart_a_profil_identique_pct": 6.8,
+        "historique_ecart_profil_identique": {
+          "2019": 7.1, "2020": 7.7, "2021": 7.4, "2022": 7.1, "2023": 7.0, "2024": 6.9, "2025": 6.8
+        },
+        "part_femmes_augmentees_2025_pct": 51,
+        "part_hommes_augmentes_2025_pct": 53
+      }
+    },
+    {
+      "categorie": "transparence_salariale_offres_cadres",
+      "source_pdf": "apec_barometre_remuneration_cadres_2025.pdf",
+      "page": 1,
+      "stats": {
+        "part_offres_apec_avec_salaire_affiche_2025_pct": 65,
+        "part_offres_apec_avec_salaire_affiche_2019_pct": 47
+      }
+    },
+    {
+      "categorie": "recrutements_cadres_bilan_2024_previsions_2025",
+      "source_pdf": "apec_previsions_2025.pdf",
+      "page": 1,
+      "stats": {
+        "recrutements_cadres_2024": 303400,
+        "recrutements_cadres_2024_evolution_pct": -8,
+        "recrutements_cadres_2023": 330700,
+        "recrutements_cadres_2025_prevus": 292600,
+        "recrutements_cadres_2025_evolution_pct": -4,
+        "recrutements_cadres_debutants_2024_evolution_pct": -19,
+        "recrutements_cadres_debutants_2025_evolution_pct": -16,
+        "historique_recrutements_2018_2024": {
+          "2018": 266400, "2019": 281300, "2020": 228700, "2021": 269100,
+          "2022": 308300, "2023": 330700, "2024": 303400, "2025_prev": 292600
+        },
+        "creation_nette_postes_cadres_2024": 69700,
+        "promotions_internes_non_cadres_vers_cadre_2024": 74900,
+        "sorties_cadres_2024": 267800,
+        "departs_retraite_cadres_2024": 40800
+      }
+    },
+    {
+      "categorie": "recrutements_par_region_2025",
+      "source_pdf": "apec_previsions_2025.pdf",
+      "page": 5,
+      "scope": "prévisions recrutements cadres 2025 par région hexagone",
+      "stats_par_region": [
+        {"region": "Île-de-France", "recrutements_2025_prevus": 137500, "evolution_2024_2025_pct": -4, "evolution_2023_2024_pct": -8, "part_hexagone_pct": 47},
+        {"region": "Auvergne-Rhône-Alpes", "recrutements_2025_prevus": 33900, "evolution_2024_2025_pct": -5, "evolution_2023_2024_pct": -4, "part_hexagone_pct": 12},
+        {"region": "Provence-Alpes-Côte d'Azur et Corse", "recrutements_2025_prevus": 19250, "evolution_2024_2025_pct": 0, "evolution_2023_2024_pct": -11, "part_hexagone_pct": 7},
+        {"region": "Occitanie", "recrutements_2025_prevus": 17490, "evolution_2024_2025_pct": 0, "evolution_2023_2024_pct": -10, "part_hexagone_pct": 6},
+        {"region": "Hauts-de-France", "recrutements_2025_prevus": 17010, "evolution_2024_2025_pct": -6, "evolution_2023_2024_pct": -10, "part_hexagone_pct": 6},
+        {"region": "Normandie", "recrutements_2025_prevus": 14400, "evolution_2024_2025_pct": -4, "evolution_2023_2024_pct": -14, "part_hexagone_pct": 5},
+        {"region": "Pays de la Loire", "recrutements_2025_prevus": 9470, "evolution_2024_2025_pct": -3, "evolution_2023_2024_pct": -6, "part_hexagone_pct": 4},
+        {"region": "Nouvelle-Aquitaine", "recrutements_2025_prevus": 12920, "evolution_2024_2025_pct": 0, "evolution_2023_2024_pct": -12, "part_hexagone_pct": 4},
+        {"region": "Grand Est", "recrutements_2025_prevus": 12510, "evolution_2024_2025_pct": -7, "evolution_2023_2024_pct": -5, "part_hexagone_pct": 4},
+        {"region": "Bretagne", "recrutements_2025_prevus": 6210, "evolution_2024_2025_pct": 0, "evolution_2023_2024_pct": -8, "part_hexagone_pct": 3},
+        {"region": "Centre-Val de Loire", "recrutements_2025_prevus": 6360, "evolution_2024_2025_pct": -5, "evolution_2023_2024_pct": -10, "part_hexagone_pct": 2},
+        {"region": "Bourgogne-Franche-Comté", "recrutements_2025_prevus": 5580, "evolution_2024_2025_pct": -5, "evolution_2023_2024_pct": -5, "part_hexagone_pct": 2}
+      ]
+    },
+    {
+      "categorie": "secteurs_plus_touches_retournement_2024",
+      "source_pdf": "apec_previsions_2025.pdf",
+      "page": 2,
+      "stats": {
+        "services_forte_valeur_ajoutee_evolution_pct": -10,
+        "activites_informatiques_evolution_pct": -18,
+        "chimie_pharmacie_evolution_pct": -12,
+        "equipements_electriques_electroniques_evolution_pct": -10,
+        "industrie_evolution_pct": -12,
+        "normandie_evolution_pct": -14,
+        "nouvelle_aquitaine_evolution_pct": -12,
+        "ile_de_france_evolution_pct": -8
+      }
+    },
+    {
+      "categorie": "insertion_jeunes_diplomes_bac5_par_promotion",
+      "source_pdf": "apec_jeunes_diplomes_bac5_2025.pdf",
+      "page": 4,
+      "scope": "diplômés Bac+5 âgés <30 ans, hors master enseignement",
+      "stats_par_promotion": [
+        {"promotion": 2020, "taux_emploi_salarie_12mois_pct": 69, "situation_juin": 2021},
+        {"promotion": 2021, "taux_emploi_salarie_12mois_pct": 75, "situation_juin": 2022},
+        {"promotion": 2022, "taux_emploi_salarie_12mois_pct": 74, "situation_juin": 2023},
+        {"promotion": 2023, "taux_emploi_salarie_12mois_pct": 72, "situation_juin": 2024, "evolution_vs_precedente_pp": -2}
+      ]
+    },
+    {
+      "categorie": "insertion_jeunes_bac5_promo_2023_par_discipline",
+      "source_pdf": "apec_jeunes_diplomes_bac5_2025.pdf",
+      "page": 4,
+      "scope": "promotion 2023, situation juin 2024",
+      "source": "MESR-SIES, InserSup 2020 à 2023, fichier détail, traitement Apec",
+      "stats_par_discipline": [
+        {"discipline": "Sciences, technologies, santé (ensemble)", "effectif": 51600, "taux_emploi_12mois_pct": 76, "evolution_vs_2022_pp": -2, "domaine_orientia": "sciences_fondamentales"},
+        {"discipline": "Technologie et sciences industrielles (ingénieurs)", "effectif": 34400, "taux_emploi_12mois_pct": 77, "evolution_vs_2022_pp": -2, "domaine_orientia": "ingenierie_industrielle"},
+        {"discipline": "Électronique, électrique, matériaux et mécanique", "effectif": 1400, "taux_emploi_12mois_pct": 76, "evolution_vs_2022_pp": -3},
+        {"discipline": "Informatique", "effectif": 3000, "taux_emploi_12mois_pct": 75, "evolution_vs_2022_pp": -4, "domaine_orientia": "data_ia"},
+        {"discipline": "Sciences de la vie, de la terre et de l'univers", "effectif": 6400, "taux_emploi_12mois_pct": 73, "evolution_vs_2022_pp": 0},
+        {"discipline": "Mathématiques, MASS", "effectif": 1300, "taux_emploi_12mois_pct": 73, "evolution_vs_2022_pp": 1},
+        {"discipline": "STAPS", "effectif": 1900, "taux_emploi_12mois_pct": 72, "evolution_vs_2022_pp": -3, "domaine_orientia": "sport"},
+        {"discipline": "Physique, chimie", "effectif": 1900, "taux_emploi_12mois_pct": 72, "evolution_vs_2022_pp": -1},
+        {"discipline": "Sciences humaines et sociales", "effectif": 13700, "taux_emploi_12mois_pct": 74, "evolution_vs_2022_pp": -2, "domaine_orientia": "sciences_humaines"},
+        {"discipline": "Droit, économie, gestion (ensemble)", "effectif": 48700, "taux_emploi_12mois_pct": 69, "evolution_vs_2022_pp": -4, "domaine_orientia": "eco_gestion"},
+        {"discipline": "Sciences juridiques", "effectif": 9200, "taux_emploi_12mois_pct": 71, "evolution_vs_2022_pp": -2},
+        {"discipline": "Sciences de gestion (écoles commerce)", "effectif": 32500, "taux_emploi_12mois_pct": 69, "evolution_vs_2022_pp": -4},
+        {"discipline": "Sciences politiques", "effectif": 1500, "taux_emploi_12mois_pct": 68, "evolution_vs_2022_pp": 0},
+        {"discipline": "Sciences économiques", "effectif": 3400, "taux_emploi_12mois_pct": 67, "evolution_vs_2022_pp": -2},
+        {"discipline": "Lettres, langues et arts", "effectif": 6300, "taux_emploi_12mois_pct": 59, "evolution_vs_2022_pp": 0, "domaine_orientia": "sciences_humaines"}
+      ]
+    },
+    {
+      "categorie": "recherche_emploi_difficulte_promo_2024",
+      "source_pdf": "apec_jeunes_diplomes_bac5_2025.pdf",
+      "page": 6,
+      "scope": "diplômés Bac+5 2024 vs 2022 interrogés juin 2025",
+      "stats": {
+        "promo_2024_recherche_difficile_total_pct": 84,
+        "promo_2024_recherche_tres_difficile_pct": 43,
+        "promo_2022_recherche_difficile_total_pct": 61,
+        "promo_2022_recherche_tres_difficile_pct": 22,
+        "evolution_tres_difficile_pp": 21,
+        "obstacle_manque_experience_pct": 79,
+        "obstacle_manque_offres_pct": 54,
+        "plus_30_candidatures_promo_2024_pct": 57,
+        "plus_30_candidatures_promo_2022_pct": 31,
+        "duree_recherche_6mois_plus_promo_2024_pct": 38,
+        "duree_recherche_6mois_plus_promo_2022_pct": 18,
+        "ecoles_commerce_70pct_plus30cand": 70,
+        "ingenieurs_plus30cand_pct": 58,
+        "masters_universitaires_plus30cand_pct": 52
+      }
+    },
+    {
+      "categorie": "concessions_insertion_promo_2024",
+      "source_pdf": "apec_jeunes_diplomes_bac5_2025.pdf",
+      "page": 8,
+      "scope": "diplômés Bac+5 2024 prêts à accepter pour trouver un emploi",
+      "stats": {
+        "importance_cdi_total_pct": 78,
+        "importance_cdi_tres_important_pct": 34,
+        "importance_statut_cadre_total_pct": 72,
+        "importance_statut_cadre_tres_important_pct": 32,
+        "accepter_pas_teletravail_pct": 71,
+        "accepter_autre_que_cdi_pct": 70,
+        "accepter_salaire_inferieur_pct": 59,
+        "accepter_demenager_pct": 56,
+        "accepter_non_cadre_pct": 51,
+        "accepter_emploi_hors_specialite_pct": 34,
+        "accepter_emploi_hors_niveau_pct": 30,
+        "aucune_concession_pct": 3,
+        "job_alimentaire_promo_2024_pct": 24,
+        "job_alimentaire_promo_2022_pct": 17,
+        "mobilite_interne_decue_pct": 34,
+        "mobilite_externe_risquee_pct": 44,
+        "difficulte_poste_equivalent_pct": 67
+      }
+    },
+    {
+      "categorie": "portrait_bac5_diplomes_2023",
+      "source_pdf": "apec_jeunes_diplomes_bac5_2025.pdf",
+      "page": 9,
+      "stats": {
+        "total_diplomes_bac5_2023": 151000,
+        "repartition_hf": {"hommes_pct": 50, "femmes_pct": 50},
+        "alternance_pct": 36,
+        "discipline": {
+          "sciences_technologies_sante_pct": 45,
+          "droit_economie_gestion_pct": 40,
+          "sciences_humaines_sociales_pct": 10,
+          "lettres_langues_arts_pct": 5
+        },
+        "type_diplome": {
+          "master_lmd_pct": 56,
+          "formation_ingenieur_pct": 26,
+          "diplome_management_bac5_pct": 18
+        },
+        "conditions_emploi_salarie": {
+          "cdi_fonctionnaire_pct": 72,
+          "contrats_courts_pct": 28,
+          "cadres_pct": 65,
+          "non_cadres_pct": 35
+        },
+        "secteur_activite": {
+          "services_forte_valeur_ajoutee_pct": 45,
+          "autres_services_pct": 32,
+          "industrie_pct": 12,
+          "commerce_pct": 8,
+          "construction_pct": 3
+        },
+        "statut_juridique": {"prive_pct": 84, "public_pct": 12},
+        "taille_structure": {
+          "moins_10_salaries_pct": 9,
+          "10_249_salaries_pct": 36,
+          "250_plus_salaries_pct": 55
+        }
+      }
+    }
+  ]
+}
