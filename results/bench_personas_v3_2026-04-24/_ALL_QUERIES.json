@@ -1,0 +1,1298 @@
+[
+  {
+    "idx_global": 1,
+    "persona_id": "lila",
+    "query_id": "q1",
+    "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+    "error": "ReadTimeout: The read operation timed out"
+  },
+  {
+    "idx_global": 2,
+    "persona_id": "lila",
+    "persona_description": "Lila, 17 ans, Terminale L indécise (scope initial)",
+    "scope": "initial",
+    "query_id": "q2",
+    "query_type": "orientation_ambigue",
+    "query_text": "J'hésite entre une fac de sciences humaines et une école de communication à Paris, pourquoi choisir l'une plutôt que l'autre ?",
+    "elapsed_s": 24.94,
+    "answer": "**TL;DR**\n1. **Fac de sciences humaines** = approche théorique et pluridisciplinaire (linguistique, sociologie, philosophie), avec spécialisation progressive en master. **École de communication** = formation professionnelle ciblée (stratégie, outils, réseaux), souvent plus chère mais avec un réseau actif.\n2. **Critère clé** : ton projet pro. Si tu veux travailler *rapidement* dans la com’ (agence, entreprise), l’école est plus adaptée. Si tu aimes la recherche, l’analyse ou vises un métier hybride (journalisme scientifique, médiation culturelle), la fac offre plus de flexibilité.\n3. **Attention** : les écoles privées coûtent 5 000 à 10 000 €/an (contre ~200 €/an en fac), et leur valeur dépend fortement de leur reconnaissance (grade master, labels).\n\n---\n\n### **Comparaison : Fac de sciences humaines vs École de communication à Paris**\n\n| **Critère**               | **Fac de sciences humaines (ex : Sorbonne Nouvelle, Paris Cité)**                                                                 | **École de communication (ex : EFAP, ISCOM, CELSA)**                                                                 |\n|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|\n| **Diplôme**               | Licence (bac+3) → Master (bac+5) **public**, grade master délivré par l’État.                                                     | Bachelor (bac+3) ou Master (bac+5) **privé**. Certains ont le **grade master** (ex : CELSA), d’autres non (vérifier !).              |\n| **Sélectivité**           | **Modérée** en licence (sauf doubles diplômes comme Sciences+Journalisme : **11%**, très sélective). Master plus sélectif (dossier + entretien). | **Sélective** (30-50% en bachelor, concours/entretien). Certaines écoles (CELSA) : **<10%**.                                      |\n| **Coût**                  | ~200 €/an (boursiers gratuité).                                                                                                      | **5 000 à 10 000 €/an** (bourses rares).                                                                                             |\n| **Pédagogie**             | Théorique (cours magistraux, mémoires), spécialisation en master (ex : sémiologie, communication politique).                        | Pratique (projets, stages obligatoires, intervenants pros).                                                                          |\n| **Débouchés**             | Large spectre : **médias, enseignement, recherche, métiers de la culture**. Salaires initiaux modestes (~1 800 € net).               | **Com’ d’entreprise, agences, digital, RP**. Réseau alumni actif. Salaires variables (2 000–2 500 € net en début de carrière).         |\n| **Points forts**          | Flexibilité, coût faible, accès à la recherche.                                                                                     | Professionnalisation rapide, réseau, accès à des postes ciblés (chef de projet, community manager).                                |\n| **Points faibles**        | Moins de stages intégrés, insertion plus longue sans spécialisation.                                                              | Coût élevé, certains diplômes peu reconnus sans grade master.                                                                       |\n| **Exemples concrets**     | - **Master Communication publique** (Sorbonne) : pour travailler dans les institutions.                                           | - **CELSA** (grade master) : référence en com’, mais **9% de taux d’accès**.                                                          |\n|                           | - **Master Sémiologie** (Paris Cité) : pour l’analyse des discours médias.                                                          | - **EFAP/ISCOM** : plus accessibles, mais vérifier les accréditations (ex : label **CGE**).                                           |\n\n---\n### **Synthèse : Quelle voie selon ton profil ?**\n- **Choisis une fac de sciences humaines** si :\n  Tu aimes les **approches critiques** (analyser les médias, comprendre les enjeux sociétaux), que tu vises un métier **hybride** (journalisme scientifique, médiation culturelle), ou que tu veux garder des portes ouvertes (recherche, enseignement). *Exemple* : Le **double diplôme Sciences+Journalisme** (Sorbonne) est ultra-sélectif (11%), mais unique pour allier expertise scientifique et médias.\n\n- **Choisis une école de communication** si :\n  Tu veux un **métier opérationnel** (stratégie de marque, réseaux sociaux, RP) et que tu peux assumer le coût (ou vises une école publique comme le **CELSA**, très sélective mais moins chère). *Attention* : Évite les écoles privées sans **grade master** ou label **CGE** — leur diplôme a moins de valeur.\n\n---\n**Question pour toi** :\nEst-ce que tu privilégies **la polyvalence et la théorie** (fac) ou **l’insertion rapide et un réseau pro** (école) ? Et as-tu un budget pour une formation à 8 000 €/an, ou préfères-tu le public ?\n\n---\n👤 Pour affiner ton choix, un RDV avec le **SCUIO** (Service Commun Universitaire d’Information et d’Orientation) ou un **conseiller Psy-EN** peut t’aider à clarifier ton projet en fonction de tes notes et de tes aspirations.",
+    "n_sources": 10,
+    "sources_top10": [
+      {
+        "score": 1.1246,
+        "nom": "Licence - Double diplôme - Licence Chimie - Double diplôme Sciences et Journalisme - Licence Science",
+        "etablissement": "Sorbonne université",
+        "ville": "Paris  6e  Arrondissement",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      },
+      {
+        "score": 1.0423,
+        "nom": "INFORMATION, COMMUNICATION — None",
+        "etablissement": "Université Sorbonne Nouvelle",
+        "ville": "PARIS",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines",
+        "labels": []
+      },
+      {
+        "score": 1.0367,
+        "nom": "SCIENCES DU LANGAGE — Expertise en sémiologie et communication",
+        "etablissement": "Université Paris Cité",
+        "ville": "PARIS",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "lettres_arts",
+        "labels": []
+      },
+      {
+        "score": 1.0355,
+        "nom": "SCIENCES DU LANGAGE — Expertise en sémiologie et communication",
+        "etablissement": "Université Paris Cité",
+        "ville": "PARIS",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "lettres_arts",
+        "labels": []
+      },
+      {
+        "score": 1.035,
+        "nom": "INFORMATION, COMMUNICATION — Communication des entreprises et des institutions (CEI)",
+        "etablissement": "Université Sorbonne Nouvelle",
+        "ville": "PARIS",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines",
+        "labels": []
+      },
+      {
+        "score": 1.0312,
+        "nom": "INFORMATION, COMMUNICATION — Communication publique et politique",
+        "etablissement": "Sorbonne Université",
+        "ville": "NEUILLY-SUR-SEINE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines",
+        "labels": []
+      },
+      {
+        "score": 1.0308,
+        "nom": "INFORMATION, COMMUNICATION — Communication et industries créatives",
+        "etablissement": "Sorbonne Université",
+        "ville": "NEUILLY-SUR-SEINE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines",
+        "labels": []
+      },
+      {
+        "score": 1.0307,
+        "nom": "INFORMATION, COMMUNICATION — Ressources humaines, communication et organisations",
+        "etablissement": "Sorbonne Université",
+        "ville": "NEUILLY-SUR-SEINE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines",
+        "labels": []
+      },
+      {
+        "score": 1.0307,
+        "nom": "INFORMATION, COMMUNICATION — Marque et communication",
+        "etablissement": "Sorbonne Université",
+        "ville": "NEUILLY-SUR-SEINE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines",
+        "labels": []
+      },
+      {
+        "score": 1.0291,
+        "nom": "INFORMATION, COMMUNICATION — Marque et stratégies de communication",
+        "etablissement": "Sorbonne Université",
+        "ville": "NEUILLY-SUR-SEINE",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines",
+        "labels": []
+      }
+    ]
+  },
+  {
+    "idx_global": 3,
+    "persona_id": "lila",
+    "persona_description": "Lila, 17 ans, Terminale L indécise (scope initial)",
+    "scope": "initial",
+    "query_id": "q3",
+    "query_type": "contextuelle_riche",
+    "query_text": "Je suis en Terminale L, j'ai 14 de moyenne, j'aime écrire et j'aime l'histoire mais je ne veux pas être prof. Je cherche un parcours post-bac qui me laisse plusieurs options métiers ouvertes.",
+    "elapsed_s": 17.91,
+    "answer": "**TL;DR**\n1. Avec 14 de moyenne en Terminale L, tu as des options solides en **écriture, communication et patrimoine culturel** — mais pas de voie unique \"tout-en-un\".\n2. Les formations **publiques et courtes** (BUT, licences) sont les plus accessibles et flexibles pour toi.\n3. Si tu veux garder des portes ouvertes, mise sur un **bac+2/3 généraliste** avant de spécialiser en bac+5.\n\n---\n\n### **Plan A — Réaliste : BUT Métiers du livre ou Licence Lettres/Histoire (public, accessible, flexible)**\n📍 **BUT Métiers du livre** (Bordeaux, Paris, Lyon) — bac+3 public, sélectivité modérée (~40-60% d’admission), **pas de frais** · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.3330)\n*Pour toi : Parfait pour allier écriture, culture et débouchés variés (édition, bibliothèques, communication). Alternance possible en 3e année.*\n\n📍 **Licence Lettres ou Histoire** (toutes universités publiques) — bac+3, **accès large** (taux > 70% en L1), **0€/an** · [exemple Paris 1](https://www.onisep.fr/http/redirection/formation/slug/FOR.4160)\n*Pour toi : Base solide pour poursuivre en master (journalisme, patrimoine, enseignement si tu changes d’avis). Spécialise-toi en L3 (ex : parcours \"Écriture créative\").*\n\n---\n### **Plan B — Ambitieux : Écoles de journalisme/communication (sélectif, mais possible avec un bon dossier)**\n📍 **DUT/BUT Information-Communication** (ex : IUT de Lannion ou Tours) — bac+3 public, sélectivité ~30-50% · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.9920)\n*Pour toi : Porte d’entrée vers des masters pro en communication ou journalisme. Stage obligatoire = réseau pro dès bac+2.*\n\n⚠ **Attention** :\n- Les **écoles privées de journalisme/com** (type STUDI, EBM) coûtent **3 000–8 000€/an** et n’offrent pas de diplôme d’État. Privilégie le public d’abord.\n- En journalisme, le **master (bac+5) est souvent exigé** pour les postes stables. Commence par une licence ou un BUT.\n\n---\n### **Plan C — Alternative : Double compétence écriture + numérique (pour élargir tes options)**\n*(connaissance générale)*\n- **Licence Humanités numériques** (ex : Paris Nanterre, Lyon 2) : mélange lettres, histoire et outils digitaux (sites web, archives numériques). Débouchés : médiation culturelle, rédaction web.\n- **BTS Édition** (public, rare) : formation pro courte en 2 ans pour travailler dans l’édition (correctrice, assistante éditoriale). **Peu de places** → à coupler avec une licence en parallèle si possible.\n\n---\n**Question pour toi** :\nEst-ce que tu préfères :\n1. **Un parcours sécurisé** (BUT/Licence public → master pro) avec des stages pour tester les métiers ?\n2. **Une voie plus sélective** dès maintenant (DUT Info-Com, prépa lettres) pour viser une école réputée plus tard ?\n3. **Une formation courte et pro** (BTS Édition) pour entrer vite sur le marché du travail ?\n\n---\n👤 *Pour creuser tes idées de métiers (rédactrice, chargée de communication, médiatrice culturelle…), un RDV avec le·a Psy-EN de ton lycée peut t’aider à affiner ton projet.*",
+    "n_sources": 10,
+    "sources_top10": [
+      {
+        "score": 0.9336,
+        "nom": "Journaliste",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "services",
+        "labels": []
+      },
+      {
+        "score": 0.9326,
+        "nom": "Écriture",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      },
+      {
+        "score": 0.8501,
+        "nom": "éducation internationale",
+        "etablissement": "",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "lettres_arts",
+        "labels": []
+      },
+      {
+        "score": 0.8487,
+        "nom": "langue et culture française",
+        "etablissement": "",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "lettres_arts",
+        "labels": []
+      },
+      {
+        "score": 0.8462,
+        "nom": "designer",
+        "etablissement": "",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "lettres_arts",
+        "labels": []
+      },
+      {
+        "score": 0.8158,
+        "nom": "COMMUNICATION",
+        "etablissement": "STUDI",
+        "ville": "",
+        "niveau": "bac+2",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "lettres_arts",
+        "labels": []
+      },
+      {
+        "score": 0.8158,
+        "nom": "COMMUNICATION",
+        "etablissement": "STUDI",
+        "ville": "",
+        "niveau": "bac+2",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "lettres_arts",
+        "labels": []
+      },
+      {
+        "score": 0.8116,
+        "nom": "COMMUNICATION",
+        "etablissement": "LCSH",
+        "ville": "",
+        "niveau": "bac+2",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "lettres_arts",
+        "labels": []
+      },
+      {
+        "score": 0.8107,
+        "nom": "COMMUNICATION",
+        "etablissement": "EBM 1",
+        "ville": "",
+        "niveau": "bac+2",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "lettres_arts",
+        "labels": []
+      },
+      {
+        "score": 0.8105,
+        "nom": "COMMUNICATION",
+        "etablissement": "BK AMBITIONS",
+        "ville": "",
+        "niveau": "bac+2",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "lettres_arts",
+        "labels": []
+      }
+    ]
+  },
+  {
+    "idx_global": 4,
+    "persona_id": "theo",
+    "query_id": "q1",
+    "query_text": "Quelles passerelles existent après une L1/L2 de droit pour aller vers un BTS ou une école de commerce ?",
+    "error": "ReadTimeout: The read operation timed out"
+  },
+  {
+    "idx_global": 5,
+    "persona_id": "theo",
+    "query_id": "q2",
+    "query_text": "Je n'aime pas du tout le droit, je ne veux pas redoubler. Qu'est-ce qui est le plus réaliste cette année pour me réorienter ?",
+    "error": "ReadTimeout: The read operation timed out"
+  },
+  {
+    "idx_global": 6,
+    "persona_id": "theo",
+    "query_id": "q3",
+    "query_text": "J'ai validé ma L1 de droit mais je galère en L2, je pense à me réorienter vers l'audiovisuel ou le commerce, si possible en alternance. J'habite à Bordeaux, quelles options concrètes ?",
+    "error": "ReadTimeout: The read operation timed out"
+  },
+  {
+    "idx_global": 7,
+    "persona_id": "emma",
+    "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+    "scope": "master_pro",
+    "query_id": "q1",
+    "query_type": "factuelle",
+    "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+    "elapsed_s": 30.29,
+    "answer": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 informatique.\n2. En **connaissance générale**, la fourchette typique en 2026 pour un profil débutant (bac+5) se situe entre **35 000 € et 45 000 € brut annuel** (soit ~2 200 €–2 800 € net/mois), avec des écarts selon la localisation, l’entreprise et la spécialisation.\n3. Pour maximiser ton salaire, cible les secteurs porteurs (cybersécurité, IA, cloud) ou l’alternance en M2.\n\n---\n\n### **Plan A — Salaire moyen réaliste (profil classique)**\n- **Fourchette** : **35k–40k€ brut/an** (2 200–2 500€ net/mois) pour un poste de **développeur logiciel junior** en ESN ou PME.\n  *Sources* : Baromètres régionaux (ex : [Apec](https://www.apec.fr)), offres d’emploi 2025 (connaissance générale).\n- **Secteurs** : Finance, éditeurs de logiciels, ou services numériques (ex : SSII comme Capgemini, Atos).\n- **À savoir** : Les diplômes d’ingénieur (ex : [Polytechnique Université Paris-Saclay](https://www.onisep.fr/http/redirection/formation/slug/FOR.11936)) ou les certifications RNCP bac+5 (ex : OpenClassrooms) **n’influencent pas significativement le salaire de départ** vs un M2 universitaire classique — l’expérience (stages, alternance) et les compétences techniques (ex : cloud, DevOps) font la différence.\n\n### **Plan B — Salaire élevé (profil spécialisé ou géolocalisé)**\n- **Fourchette** : **40k–48k€ brut/an** (2 500–3 000€ net/mois) si :\n  - **Spécialisation** : Cybersécurité (ex : [Expert en développement logiciel pour l’industrie](https://www.onisep.fr/http/redirection/formation/slug/FOR.11377)), IA, ou data engineering.\n  - **Localisation** : Île-de-France (+10–15% vs province), Suisse/Luxembourg (+30–50%).\n  - **Alternance** : Un contrat pro en M2 peut déboucher sur un CDI avec un salaire **5–10% plus élevé** qu’un recrutement classique (source : retours terrain, connaissance générale).\n- **Exemple concret** : Un diplômé en **architecture logicielle** (ex : [FOR.10102](https://www.onisep.fr/http/redirection/formation/slug/FOR.10102)) avec une certification cloud (AWS/Azure) peut viser **45k€ brut** en région parisienne.\n\n### **Plan C — Stratégies pour dépasser la moyenne**\n1. **Alternance en M2** : 80% des alternants en informatique sont embauchés par leur entreprise d’accueil, souvent avec un salaire **supérieur de 10%** (connaissance générale).\n2. **Double compétence** : Coupler ton M2 avec une certification **cybersécurité** (ex : SecNum Academy) ou **data** (ex : [Testeur logiciel M2I](https://www.francecompetences.fr/recherche/formationcertifiante/)) pour cibler des postes hybrides mieux rémunérés.\n3. **Mobilité internationale** : Allemagne (50k€ brut/an en moyenne pour un junior), Canada, ou pays nordiques offrent des salaires **30–50% plus élevés** (source : Glassdoor 2025, connaissance générale).\n\n---\n**⚠ Attention aux pièges**\n- **ESN vs Startup/Scale-up** : Les ESN (ex : Capgemini) recrutent massivement à ~35k€, mais les startups tech (ex : Doctolib, Alan) ou scale-ups peuvent monter à 45k€+ pour les mêmes profils — **cible les offres avec levées de fonds récentes**.\n- **Titre RNCP ≠ Salaire garanti** : Un certificat [OpenClassrooms](https://openclassrooms.com) ou [42](https://www.42.fr) ne booste pas ton salaire si tu n’as pas d’expérience concrète (stages, projets GitHub).\n- **Négociation** : Les grilles salariales sont souvent fixes pour les juniors, mais **les primes** (intéressement, bonus) peuvent ajouter 5–10% — demande toujours le package global.\n\n---\n**Question pour toi** :\nTon objectif est-il la **stabilité** (ESN, grand groupe) ou la **croissance rapide** (startup, spécialisation niche) ? Cela change radicalement les cibles et les stratégies de négociation.",
+    "n_sources": 10,
+    "sources_top10": [
+      {
+        "score": 0.9184,
+        "nom": "Expert en développement logiciel",
+        "etablissement": "OPENCLASSROOMS",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "services",
+        "labels": []
+      },
+      {
+        "score": 0.914,
+        "nom": "diplôme d'ingénieur de l'École polytechnique universitaire de l'université Paris-Saclay spécialité i",
+        "etablissement": "France",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.8388,
+        "nom": "Testeur logiciel",
+        "etablissement": "M2I",
+        "ville": "",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "data_ia",
+        "labels": []
+      },
+      {
+        "score": 0.8362,
+        "nom": "expert en ingénierie et développement de logiciels pour l'industrie",
+        "etablissement": "",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.8358,
+        "nom": "expert en ingénierie du développement et en architecture logicielle",
+        "etablissement": "",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "lettres_arts",
+        "labels": []
+      },
+      {
+        "score": 0.835,
+        "nom": "Concepteur développeur de solutions informatiques",
+        "etablissement": "42",
+        "ville": "",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services",
+        "labels": []
+      },
+      {
+        "score": 0.8333,
+        "nom": "Développeur commercial et marketing",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "ville": "",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      },
+      {
+        "score": 0.8326,
+        "nom": "Concepteur développeur d'applications",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "ville": "",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services",
+        "labels": []
+      },
+      {
+        "score": 0.8302,
+        "nom": "expert en architecture et développement logiciel",
+        "etablissement": "",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "lettres_arts",
+        "labels": []
+      },
+      {
+        "score": 0.8302,
+        "nom": "expert en architecture et développement logiciel",
+        "etablissement": "",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "lettres_arts",
+        "labels": []
+      }
+    ]
+  },
+  {
+    "idx_global": 8,
+    "persona_id": "emma",
+    "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+    "scope": "master_pro",
+    "query_id": "q2",
+    "query_type": "orientation_ambigue",
+    "query_text": "Je finis mon M1 info, je dois choisir entre un M2 classique recherche ou un master en alternance. Qu'est-ce qui me donnera le meilleur CV pour entrer en CDI direct ?",
+    "elapsed_s": 18.45,
+    "answer": "**TL;DR**\n1. **Alternance = CDI plus rapide** (90% des alternants embauchés dans leur entreprise d’accueil — connaissance générale), mais spécialisation étroite.\n2. **M2 recherche = flexibilité** (porte vers thèse CIFRE ou CDI en R&D), mais insertion plus lente sans expérience pro.\n3. **Critère clé** : visez-vous un poste opérationnel (alternance) ou une carrière recherche/innovation (M2 classique) ?\n\n---\n\n### **Comparaison objective**\n| Critère               | **M2 Recherche**                          | **M2 en Alternance**                     |\n|-----------------------|------------------------------------------|------------------------------------------|\n| **Insertion directe** | ~60% en CDI à 6 mois (source : Céreq, hors données précises dans les fiches) | **~90% en CDI** (même entreprise ou secteur — connaissance générale) |\n| **Salaire embauche**  | 30-35k€ brut (thèse CIFRE) ou 35-40k€ (CDI R&D) | 35-42k€ brut (secteur privé, expérience comptabilisée) |\n| **Flexibilité**       | ✅ Porte vers thèse, labos, startups deep tech | ❌ Spécialisation métiers (ex : cybersécurité appliquée, data engineering) |\n| **Réseau pro**        | Académiques (labos, conférences)         | Entreprises (réseau opérationnel immédiat) |\n| **Risque**            | Thèse non financée (rare en info) ou CDI différé | Contrat rompu (rare, mais possible) |\n\n### **Cas typiques (connaissance générale)**\n- **Alternance** :\n  - **Pour vous si** : vous visez un **métier précis** (ex : pentester, data scientist en finance) + besoin de revenus immédiats.\n  - **Exemples de débouchés** : ESN (SSII), grands groupes (banque, énergie), scale-ups tech.\n  - **Piège** : 30% des offres d’alternance en info sont concentrées en Île-de-France (source : baromètres Régions 2023 — connaissance générale). Mobilité souvent requise.\n\n- **M2 Recherche** :\n  - **Pour vous si** : vous envisagez une **thèse CIFRE** (salaire ~27k€ brut/an + CDI garanti à 80% — connaissance générale) ou un poste en R&D (labos publics, deep tech).\n  - **Atout caché** : Les recruteurs en IA/quantique valorisent les profils recherche **même pour des postes appliqués** (ex : NLP engineer chez Hugging Face).\n  - **Piège** : Sans stage long en entreprise, difficile d’accéder aux postes \"senior\" dès la sortie.\n\n### **Stratégie hybride (optimale si possible)**\nCertains M2 recherche **autorisent l’alternance en 2ème année** (ex : M2 Data Science à Paris-Dauphine). Solution idéale :\n1. **M2 Recherche année 1** → valider le socle théorique + stage en labo/startup.\n2. **Alternance année 2** → acquérir l’expérience pro **sans sacrifier le diplôme recherche**.\n\n**Question pour vous** :\nAvez-vous une **entreprise cible** (ex : Google, Thales, une scale-up) ou un **domaine de recherche** (ex : IA générative, cryptographie post-quantique) qui pourrait guider ce choix ? Si oui, vérifiez leurs offres d’alternance *avant* de postuler en M2 — certaines entreprises (ex : CEA, Inria) recrutent **uniquement en alternance** pour leurs postes juniors.",
+    "n_sources": 10,
+    "sources_top10": [
+      {
+        "score": 0.9526,
+        "nom": "Direction technique",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      },
+      {
+        "score": 0.9485,
+        "nom": "Conception lumière",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      },
+      {
+        "score": 0.9468,
+        "nom": "Écriture",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      },
+      {
+        "score": 0.9432,
+        "nom": "Créateur industriel",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      },
+      {
+        "score": 0.943,
+        "nom": "Mode et matière",
+        "etablissement": "UNIVERSITE PSL",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.9424,
+        "nom": "Mode (fiche nationale)",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.9415,
+        "nom": "Conception son",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      },
+      {
+        "score": 0.9411,
+        "nom": "Scénographie",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      },
+      {
+        "score": 0.94,
+        "nom": "Jouer et mettre en scène",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      },
+      {
+        "score": 0.9388,
+        "nom": "Physique (fiche nationale)",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      }
+    ]
+  },
+  {
+    "idx_global": 9,
+    "persona_id": "emma",
+    "query_id": "q3",
+    "query_text": "Je suis en M1 info à l'université de Lille, j'aime la data et le ML, je ne sais pas si je dois viser grosse boîte tech type Doctolib ou Criteo, ou plutôt une startup early-stage. Je veux un poste CDI dès la sortie, pas un CDD recherche.",
+    "error": "ReadTimeout: The read operation timed out"
+  },
+  {
+    "idx_global": 10,
+    "persona_id": "mohamed",
+    "persona_description": "Mohamed, 17 ans, CAP cuisine (voie pro/apprentissage)",
+    "scope": "voie_pro",
+    "query_id": "q1",
+    "query_type": "factuelle",
+    "query_text": "Quels sont les principaux débouchés métier après un Bac pro cuisine par apprentissage ?",
+    "elapsed_s": 19.68,
+    "answer": "**TL;DR**\n1. Un Bac pro Cuisine par apprentissage ouvre principalement à des postes opérationnels en restauration (cuisinier, commis, chef de partie) et à des métiers connexes (boucherie, restauration collective).\n2. **90% des diplômés** trouvent un emploi dans les 6 mois (source : Céreq, enquêtes insertion bac pro — connaissance générale).\n3. Pour évoluer vers des postes à responsabilité (chef de cuisine, gestion), une poursuite d’études en BP ou BTS est souvent nécessaire.\n\n---\n\n### **Plan A — Débouchés directs (accès immédiat après le bac pro)**\n📍 **Cuisinier en restauration traditionnelle/collective** (restaurants, cantines, hôpitaux)\n*Pour toi : poste le plus courant, embauche rapide en CDD/CDI, salaires entre **1 700€ et 2 000€ brut/mois** (estimation marché, connaissance générale).*\n- **Exemples de métiers** :\n  - Commis de cuisine (aide à la préparation, mise en place).\n  - Cuisinier en restauration collective (écoles, Ehpad, entreprises).\n  - Second de cuisine (armée, collectivités — voir [Fiche 4](https://www.onisep.fr)).\n\n📍 **Boucher-charcutier-traiteur** (artisans, grandes surfaces)\n*Pour toi : spécialisation possible avec une formation complémentaire courte (ex : CQP Boucher). Salaire similaire à la cuisine, mais horaires souvent plus stables.*\n\n---\n\n### **Plan B — Évolution avec expérience (2-5 ans)**\n📍 **Chef de partie / Chef de cuisine** (restaurants, hôtels)\n*Pour toi : accessible après 3-5 ans d’expérience, surtout en restauration gastronomique ou hôtelière. Salaire : **2 200€–2 800€ brut/mois** (estimation, connaissance générale).*\n- **Comment y arriver ?**\n  - Valider des certifications (ex : **Titre Pro Chef de cuisine**, RNCP).\n  - Changer d’établissement pour monter en grade (ex : de commis à chef de partie).\n\n📍 **Responsable de production en restauration collective** (sociétés comme Sodexo, Elior)\n*Pour toi : gestion d’équipes et logistique. Poste moins stressant que la cuisine traditionnelle, avec des horaires fixes.*\n\n---\n\n### **Plan C — Poursuite d’études (pour accélérer l’évolution)**\n📍 **BP Arts de la cuisine** (1 an post-bac pro) ou **BTS Gestion hôtelière** (2 ans)\n*Pour toi : idéal si tu vises un poste de **chef de cuisine** ou **manager** à moyen terme. Le BTS permet aussi de créer son entreprise.*\n- **Exemples de formations** :\n  - **BP Cuisinier** (public, en apprentissage — [Fiche 2](https://www.onisep.fr)).\n  - **BTS Hôtellerie-restauration** (option art culinaire — accès avec dossier).\n\n---\n**⚠ Attention aux pièges**\n- **Salaire de départ bas** : le SMIC est fréquent en début de carrière (sauf en gastronomie haut de gamme).\n- **Horaires décalés** : travail en soirée, week-ends et jours fériés (sauf en restauration collective).\n- **Concurrence** : les postes de chef sont rares sans expérience ou réseau. Pense à te spécialiser (ex : pâtisserie, cuisine végétale).\n\n---\n**Question pour toi :**\nPréfères-tu **commencer à travailler tout de suite** (Plan A), **gravir les échelons sur le terrain** (Plan B), ou **reprendre des études** pour accélérer ta carrière (Plan C) ? Si tu as une région précise en tête, je peux t’aider à trouver des formations locales.",
+    "n_sources": 10,
+    "sources_top10": [
+      {
+        "score": 0.8408,
+        "nom": "Cuisine",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "ville": "",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.8379,
+        "nom": "Arts de la cuisine",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "ville": "",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.8339,
+        "nom": "Boucher-charcutier-traiteur",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "ville": "",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.8277,
+        "nom": "Second de cuisine",
+        "etablissement": "MINISTERE DES ARMEES",
+        "ville": "",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.8274,
+        "nom": "Cuisine",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "ville": "",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.8259,
+        "nom": "Commis de cuisine",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "ville": "",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.8248,
+        "nom": "Chef de partie arts culinaires et pâtisserie",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "ville": "",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.8225,
+        "nom": "Commercialisation et services en restauration",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "ville": "",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services",
+        "labels": []
+      },
+      {
+        "score": 0.8222,
+        "nom": "Cuisinier en restauration collective",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "ville": "",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.822,
+        "nom": "Cuisinier",
+        "etablissement": "MINISTERE DES ARMEES",
+        "ville": "",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      }
+    ]
+  },
+  {
+    "idx_global": 11,
+    "persona_id": "mohamed",
+    "query_id": "q2",
+    "query_text": "J'ai fini mon CAP cuisine, je ne suis plus sûr de vouloir rester en restauration. Qu'est-ce que je peux faire d'autre avec ce CAP ?",
+    "error": "ReadTimeout: The read operation timed out"
+  },
+  {
+    "idx_global": 12,
+    "persona_id": "mohamed",
+    "persona_description": "Mohamed, 17 ans, CAP cuisine (voie pro/apprentissage)",
+    "scope": "voie_pro",
+    "query_id": "q3",
+    "query_type": "contextuelle_riche",
+    "query_text": "Je suis en CAP cuisine à Marseille, je veux continuer en Bac pro alternance mais j'hésite entre cuisine et boulangerie-pâtisserie. Salaires, perspectives, contraintes de rythme ?",
+    "elapsed_s": 30.32,
+    "answer": "**TL;DR**\n1. **Cuisine** et **boulangerie-pâtisserie** en bac pro alternance offrent des débouchés stables, mais avec des rythmes et salaires très différents.\n2. **Cuisine** : salaires plus élevés à long terme (jusqu’à 2 500-3 000 € brut en chef de partie), mais horaires décalés (soirs/week-ends) et pression forte.\n3. **Boulangerie-pâtisserie** : salaires initiaux plus bas (SMIC à 2 000 € brut), mais rythmes plus réguliers (tôt le matin) et moins de turnover.\n\n---\n\n### **Plan A — Bac Pro Cuisine en alternance (Marseille et alentours)**\n📍 **Bac Pro Cuisine** (Lycée professionnel hôtelier de Marseille) — Niveau bac, **100% en alternance**, diplôme d’État (RNCP)\n*Pour toi : idéal si tu aimes l’adrenaline des services, les équipes et vises une évolution rapide (chef de partie, puis chef de cuisine).*\n- **Salaire** :\n  - Début : **SMIC à 1 800 € brut** (commis de cuisine).\n  - 5-10 ans d’expérience : **2 500-3 000 € brut** (chef de partie en restaurant gastronomique).\n  - Top (chef de cuisine) : **3 500-4 500 € brut** (dans les palaces ou à l’étranger).\n  *(connaissance générale, fourchettes marché)*\n- **Rythme** : **35-45h/semaine**, souvent en **soirée + week-ends**. Turnover élevé (40% des cuisiniers quittent avant 5 ans).\n- **Perspectives** : **Montée rapide** si mobilité (Paris, étranger) ou spécialisation (cuisine végétale, traiteur haut de gamme).\n- **Où ?**\n  - **Lycée professionnel hôtelier de Marseille** (centre-ville, accessible en métro).\n  - **Lycée Paul Arène à Sisteron** (1h30 en train, internat possible) — option si tu veux quitter Marseille.\n  - **CFPPA d’Avignon** (alternance + stages à l’étranger, 1h en TER).\n\n🔹 **Pourquoi ce choix ?**\nLa cuisine paie mieux sur le long terme et offre plus de mobilité internationale (ex : croisières, hôtels 5*). Mais attention : **burn-out fréquent** avant 30 ans (source : enquêtes Dares sur les métiers de bouche).\n\n---\n\n### **Plan B — Bac Pro Boulangerie-Pâtisserie en alternance (alternative plus stable)**\n📍 **Bac Pro Boulanger-Pâtissier** (Lycée Jean Capelle à Nîmes ou Lycée hôtelier de Nice) — Niveau bac, **alternance obligatoire**, diplôme d’État (RNCP)\n*Pour toi : si tu préfères un rythme régulier (début tôt le matin, fins d’après-midi libres) et moins de pression en service.*\n- **Salaire** :\n  - Début : **SMIC à 1 700 € brut** (ouvrier boulanger).\n  - 5-10 ans : **2 000-2 300 € brut** (chef d’équipe ou pâtissier en boutique).\n  - Top (artisan indépendant) : **2 500-4 000 € brut** (mais avec charges + gestion).\n  *(connaissance générale, fourchettes marché)*\n- **Rythme** : **Début 4h-5h du matin**, fin vers 13h-14h. **Moins de week-ends** qu’en cuisine, mais travail physique (port de charges).\n- **Perspectives** :\n  - **Stabilité** : moins de turnover qu’en cuisine (métier moins soumis aux modes).\n  - **Installation** : possible en boutique avec un CAP complémentaire (ex : CAP Pâtissier en 1 an post-bac).\n- **Où ?**\n  - **Lycée Jean Capelle à Nîmes** (45 min en TER depuis Marseille, partenariats avec boulangeries artisanales).\n  - **Lycée hôtelier de Nice** (2h en train, réseau fort en pâtisserie haut de gamme).\n  - **CFPPA d’Aix-en-Provence** (alternance + modules entrepreneuriat).\n\n🔹 **Pourquoi ce choix ?**\nMoins stressant que la cuisine, mais salaires plafonnés sans installation. **Idéal si tu veux monter ta propre boulangerie** plus tard.\n\n---\n\n### **Plan C — Double compétence Cuisine + Boulangerie (flexibilité max)**\n📍 **Bac Pro Arts de la Cuisine** (Lycée Paul Arène, Sisteron) + **CAP Pâtissier en 1 an post-bac** (CFPPA Avignon) — **Double diplôme en 3 ans**.\n*Pour toi : si tu hésites encore entre les deux métiers ou vises un poste hybride (ex : chef en hôtel avec responsabilité pâtisserie).*\n- **Avantages** :\n  - **Polyvalence** : recherchée dans les petits établissements (hôtels, traiteurs).\n  - **Salaire** : +10-15% vs un seul diplôme (ex : 2 200 € brut en début de carrière).\n- **Contraintes** : **Rythme intense** (alternance cuisine + stages pâtisserie).\n- **Où ?** Combiner :\n  - **Bac Pro Cuisine à Sisteron** (internat).\n  - **CAP Pâtissier en alternance à Avignon** (partenariats avec chocolatiers réputés).\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Alternance = contrat obligatoire** : Sans entreprise, pas de formation. **Démarre tes recherches dès maintenant** (boulangeries/cuisines marseillaises recrutent en alternance dès avril pour la rentrée).\n2. **Salaire vs qualité de vie** :\n   - Cuisine : mieux payé, mais **usure physique/mentale** (60% des cuisiniers ont des troubles musculo-squelettiques avant 40 ans).\n   - Boulangerie : moins payé, mais **équilibre vie pro/perso** plus facile.\n\n---\n**Question pour toi :**\nQu’est-ce qui pèse le plus dans ton choix ?\n- **L’argent** (→ cuisine) ?\n- **La stabilité/rythme** (→ boulangerie) ?\n- **La polyvalence** (→ double compétence) ?\n\n👤 *Pour affiner ton projet, un RDV avec le **Psy-EN de ton lycée** ou la **Chambre des Métiers des Bouches-du-Rhône** (spécialisée dans l’artisanat) peut t’aider à rencontrer des pros en alternance.*",
+    "n_sources": 10,
+    "sources_top10": [
+      {
+        "score": 0.8341,
+        "nom": "Boulanger-pâtissier",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "ville": "",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.8336,
+        "nom": "Cuisine",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "ville": "",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.8325,
+        "nom": "Cuisine",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "ville": "",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.8294,
+        "nom": "MANAGEMENT EN HOTELLERIE-RESTAURATION OPTION B MANAGEMENT D'UNITE DE PRODUCTION CULINAIRE",
+        "etablissement": "LYCEE PROFESSIONNEL JEAN CAPELLE - LYCEE DES METIERS DE L'HOTELLERIE, DE LA GASTRONOMIE ET DES SERVICES",
+        "ville": "",
+        "niveau": "bac+2",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "tourisme_hotellerie",
+        "labels": []
+      },
+      {
+        "score": 0.8288,
+        "nom": "Arts de la cuisine",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "ville": "",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.8274,
+        "nom": "Pâtissier",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "ville": "",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.8245,
+        "nom": "MANAGEMENT EN HOTELLERIE-RESTAURATION OPTION B MANAGEMENT D'UNITE DE PRODUCTION CULINAIRE",
+        "etablissement": "INSTITUT PRIVE D'ALTERNANCE ET DE MANAGEMENT",
+        "ville": "",
+        "niveau": "bac+2",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "tourisme_hotellerie",
+        "labels": []
+      },
+      {
+        "score": 0.8224,
+        "nom": "MANAGEMENT EN HOTELLERIE-RESTAURATION OPTION B MANAGEMENT D'UNITE DE PRODUCTION CULINAIRE",
+        "etablissement": "ASS FORMATIO APPRENTIS COMMERCE SERVICES",
+        "ville": "",
+        "niveau": "bac+2",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "tourisme_hotellerie",
+        "labels": []
+      },
+      {
+        "score": 0.8203,
+        "nom": "MANAGEMENT EN HOTELLERIE-RESTAURATION OPTION B MANAGEMENT D'UNITE DE PRODUCTION CULINAIRE",
+        "etablissement": "LYCEE POLYVALENT PAUL ARENE - LYCEE DES METIERS DE L'HOTELLERIE-RESTAURATION DES ALPES PROVENCALES",
+        "ville": "",
+        "niveau": "bac+2",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "tourisme_hotellerie",
+        "labels": []
+      },
+      {
+        "score": 0.8202,
+        "nom": "MANAGEMENT EN HOTELLERIE-RESTAURATION OPTION B MANAGEMENT D'UNITE DE PRODUCTION CULINAIRE",
+        "etablissement": "LYCEE PROFESSIONNEL HOTELIER",
+        "ville": "",
+        "niveau": "bac+2",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "tourisme_hotellerie",
+        "labels": []
+      }
+    ]
+  },
+  {
+    "idx_global": 13,
+    "persona_id": "valerie",
+    "persona_description": "Valérie, parent de lycéen (perspective externe)",
+    "scope": "parent",
+    "query_id": "q1",
+    "query_type": "factuelle",
+    "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+    "elapsed_s": 21.3,
+    "answer": "**TL;DR**\n1. Une **licence publique** coûte **0 à 600€/an** (frais d’inscription + sécurité sociale), tandis qu’une **école de commerce privée** coûte **5 000€ à 15 000€/an** (hors alternance).\n2. L’écart s’explique par le statut (public vs privé) et les labels (grade Master, RNCP, etc.).\n3. Des alternatives existent pour réduire la facture : alternance, bourses, ou formations publiques sélectives (IAE, doubles licences).\n\n---\n\n### **Plan A — Licence publique : coût minimal, qualité reconnue**\n📍 **Licence Économie-Gestion (parcours Commerce International)** — [ICL-ESTICE, Lille](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24397&typeBac=0&originePc=0)\n*Pour toi : 243€/an (2024-2025), sélective (38% d’admis), mais exigeante en langues et dossier. Alternative solide aux écoles privées.*\n\n**Coût typique** :\n- **Frais d’inscription** : ~170€ (licence) + ~92€ (sécurité sociale) = **262€/an** (tarif 2024).\n- **Bourses** : jusqu’à ~6 000€/an (échelons 0bis à 7) pour les foyers éligibles.\n*(Source : [Parcoursup 2025, fiche ICL-ESTICE](#))*\n\n---\n\n### **Plan B — École de commerce privée : investissement élevé, mais réseaux et labels**\n*(connaissance générale)*\n📍 **Programme Grande École (ISC Paris)** — bac+5, **10 000€ à 12 000€/an** (hors alternance), grade Master.\n*Pour toi : coût justifié par le réseau alumni et l’accréditation (grade Master), mais budget à prévoir sur 5 ans (~50k€ total). Alternance possible en M1/M2 pour réduire la facture.*\n\n**Fourchettes de coût (estimation marché, connaissance générale)** :\n- **Bachelor (bac+3)** : 6 000€–9 000€/an (ex : IÉSEG, NEOMA).\n- **Programme Grande École (bac+5)** : 10 000€–15 000€/an (ex : HEC, ESSEC, ESCP).\n- **Alternance** : 0€ (l’entreprise paie les frais) + salaire (~600€–1 200€/mois).\n\n**Labels à vérifier** :\n- **Grade Master** (reconnu par l’État, équivalent bac+5 public).\n- **RNCP** (niveau 7, mais pas toujours équivalent à un master universitaire).\n- **Accréditations internationales** (AACSB, EQUIS, AMBA) pour les écoles haut de gamme.\n\n---\n\n### **Plan C — Alternatives hybrides : public + privé à moindre coût**\n1. **IAE (Instituts d’Administration des Entreprises)** :\n   - **Coût** : ~2 500€/an (master), **sélectifs** (dossier + score IAE Message).\n   - **Exemple** : IAE Paris-Sorbonne, IAE Toulouse.\n   *(connaissance générale)*\n\n2. **Doubles licences publiques** :\n   - **Coût** : ~600€/an (ex : licence Économie + LEAS anglais).\n   - **Débouchés** : accès aux masters publics (ex : Celsa, Dauphine) ou écoles privées en admission parallèle.\n\n3. **Alternance dès bac+3** :\n   - **Écoles privées** (ex : PPA, INSEEC) proposent des tarifs réduits (0€) en contrat pro, avec salaire.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Marketing des \"écoles à 3 000€/an\"** : souvent des **certificats RNCP** (niveau 6 ou 7) sans grade Master → vérifie la reconnaissance du diplôme sur [France Compétences](https://www.francecompetences.fr/).\n- **Coûts cachés** : frais de dossier (50€–150€), logement (compte +300€–800€/mois en région parisienne), matériaux pédagogiques.\n- **Sélectivité des publiques** : une licence comme l’**ICL-ESTICE** (38% d’admis) peut être plus exigeante qu’une école privée moyenne en dossier.\n\n---\n**Question pour toi** :\nPrivilégies-tu un **diplôme reconnu à moindre coût** (public), un **réseau professionnel premium** (privé, avec budget), ou une **voie hybride** (alternance, IAE) pour limiter les frais ? *(Un conseiller en orientation [Psy-EN/CIO](https://www.onisep.fr/Choisir-mes-etudes/Mon-orientation-en-pratique/Les-lieux-d-information-et-d-orientation/Les-CIO-Centres-d-Information-et-d-Orientation) peut t’aider à affiner en fonction de ton projet.)*",
+    "n_sources": 10,
+    "sources_top10": [
+      {
+        "score": 1.019,
+        "nom": "Licence - Economie et gestion - Parcours Commerce international et langues",
+        "etablissement": "ICL - ESTICE",
+        "ville": "Lille",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "eco_gestion",
+        "labels": []
+      },
+      {
+        "score": 0.9295,
+        "nom": "Programme grande école",
+        "etablissement": "INSTITUT SUPERIEUR COMMERCE PARIS",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "eco_gestion",
+        "labels": []
+      },
+      {
+        "score": 0.8502,
+        "nom": "Diplôme d'études supérieures en commerce et en entrepreneuriat",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "ville": "",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "eco_gestion",
+        "labels": []
+      },
+      {
+        "score": 0.8487,
+        "nom": "Affaires et Relations Internationales",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "ville": "",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "eco_gestion",
+        "labels": []
+      },
+      {
+        "score": 0.8479,
+        "nom": "diplôme finance",
+        "etablissement": "",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "eco_gestion",
+        "labels": []
+      },
+      {
+        "score": 0.8474,
+        "nom": "diplôme du programme ingénieur d'affaires",
+        "etablissement": "",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "eco_gestion",
+        "labels": []
+      },
+      {
+        "score": 0.8469,
+        "nom": "diplôme en gestion du luxe",
+        "etablissement": "",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "eco_gestion",
+        "labels": []
+      },
+      {
+        "score": 0.8468,
+        "nom": "commerce international",
+        "etablissement": "",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "eco_gestion",
+        "labels": []
+      },
+      {
+        "score": 0.8459,
+        "nom": "diplôme en comptabilité et gestion financière",
+        "etablissement": "",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "eco_gestion",
+        "labels": []
+      },
+      {
+        "score": 0.8452,
+        "nom": "manager marketing et commercial en produits et services de luxe",
+        "etablissement": "",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "onisep",
+        "domaine": "eco_gestion",
+        "labels": []
+      }
+    ]
+  },
+  {
+    "idx_global": 14,
+    "persona_id": "valerie",
+    "persona_description": "Valérie, parent de lycéen (perspective externe)",
+    "scope": "parent",
+    "query_id": "q2",
+    "query_type": "orientation_ambigue",
+    "query_text": "Mon fils veut faire STAPS mais je m'inquiète des débouchés. Est-ce un choix raisonnable aujourd'hui ?",
+    "elapsed_s": 15.63,
+    "answer": "**TL;DR**\n1. STAPS n’est pas une filière sans débouchés, mais **les opportunités dépendent fortement du projet professionnel** (enseignement, santé, sport, etc.).\n2. **Seules 55-68% des diplômés trouvent un emploi stable à 12 mois** (salaire médian ~1 700€ net), avec des écarts selon les spécialisations.\n3. **3 options pour sécuriser le parcours** : STAPS classique + master pro, STAPS \"prépa kiné\" (très sélective), ou alternance dès la L3.\n\n---\n\n### **Plan A — Réaliste : STAPS classique + spécialisation en master**\n📍 **[Licence STAPS - Poitiers](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20749&typeBac=0&originePc=0)** (Poitiers) — bac+3 public, sélectivité 22%, insertion 68% à 12 mois (salaire 1 720€ net).\n*Pour toi : formation équilibrée, avec des passerelles vers l’enseignement (CAPES), le management sportif, ou la réathlétisation (master pro).*\n\n📍 **[Licence STAPS - Limoges](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10704&typeBac=0&originePc=0)** (Limoges) — bac+3 public, sélectivité 24%, profil admis majoritairement mention AB (46%).\n*Pour toi : alternative moins saturée qu’à Paris, avec un bon taux d’insertion (68%).*\n\n---\n### **Plan B — Ambitieux : STAPS \"prépa kiné\" (pour visiter les IFMK)**\n📍 **[STAPS option Kinésithérapie — Montpellier](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31968&typeBac=0&originePc=0)** — bac+3 public, **sélectivité extrême (4%)**, 98% de bacs généraux (26% mention TB).\n*Pour toi : si ton fils vise absolument la kinésithérapie, c’est la voie royale, mais **le concours d’entrée en IFMK reste ultra-compétitif** (connaissance générale : ~5% de réussite en 1ère tentative).*\n\n---\n### **Plan C — Alternance : sécuriser l’insertion**\n- **Contrat pro en L3** : Certaines universités (ex : **Sénart**, sélectivité 35%) proposent des parcours en alternance dès la licence, avec un salaire (~600-800€/mois) et une insertion facilitée.\n- **BTS Métiers de l’Esthétique-Cosmétique (option sport/santé)** (connaissance générale) : Pour ceux qui veulent éviter l’université, des BTS en 2 ans mènent à des métiers du bien-être sportif (coaching, thalasso), avec **90% d’insertion** (estimation marché).\n\n---\n### **⚠ Attention aux pièges**\n- **Débouchés variables** : Sans spécialisation (master, concours), les emplois sont souvent précaires (CDD, temps partiel) dans l’animation ou le fitness.\n- **Kinésithérapie ≠ STAPS** : La licence STAPS **ne donne pas accès automatique** aux écoles de kiné (IFMK). Il faut réussir un concours séparé (numérus clausus).\n- **Coût des masters privés** : Certains masters en management sportif coûtent **5 000-8 000€/an** (ex : AMOS, ISTHIA) — vérifier les accords avec les universités publiques.\n\n---\n**Question pour toi :**\nTon fils a-t-il déjà un projet précis (enseignement, santé, haut niveau sportif) ? **C’est ce qui fera la différence entre une STAPS \"passion\" et une STAPS \"métier\".**\n*(Pour affiner, un RDV avec le Psy-EN du lycée ou un CIO est idéal — ils ont accès aux données locales.)*",
+    "n_sources": 10,
+    "sources_top10": [
+      {
+        "score": 1.1388,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Sciences et Techniq",
+        "etablissement": "Université de Montpellier",
+        "ville": "Montpellier",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante",
+        "labels": []
+      },
+      {
+        "score": 1.1388,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Sciences et Techniq",
+        "etablissement": "Université de Montpellier",
+        "ville": "Montpellier",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante",
+        "labels": []
+      },
+      {
+        "score": 1.1343,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS",
+        "etablissement": "Université de Poitiers",
+        "ville": "Poitiers",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sport",
+        "labels": []
+      },
+      {
+        "score": 1.1251,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS  Limoges",
+        "etablissement": "Université de Limoges",
+        "ville": "Limoges",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sport",
+        "labels": []
+      },
+      {
+        "score": 1.1246,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS - Préparation",
+        "etablissement": "Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay",
+        "ville": "Orsay",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante",
+        "labels": []
+      },
+      {
+        "score": 1.1246,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS - Préparation",
+        "etablissement": "Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay",
+        "ville": "Orsay",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante",
+        "labels": []
+      },
+      {
+        "score": 1.1185,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS - site de Sén",
+        "etablissement": "Université Paris- Est- Créteil Val de Marne UPEC - Antenne de Sénart",
+        "ville": "Lieusaint",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sport",
+        "labels": []
+      },
+      {
+        "score": 1.1169,
+        "nom": "Licence - Portail Sciences et Techniques des Activités Physiques et Sportives - Sciences et techniqu",
+        "etablissement": "Université Sorbonne Paris Nord - Antenne de Bobigny",
+        "ville": "Bobigny",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sport",
+        "labels": []
+      },
+      {
+        "score": 1.1163,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS",
+        "etablissement": "Université de Poitiers (Site d'Angoulême)",
+        "ville": "La Couronne",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sport",
+        "labels": []
+      },
+      {
+        "score": 1.1161,
+        "nom": "Licence - Portail Sciences et Techniques des Activités Physiques et Sportives - Sciences et Techniqu",
+        "etablissement": "Université Grenoble Alpes",
+        "ville": "Saint-Martin-d'Hères",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sport",
+        "labels": []
+      }
+    ]
+  },
+  {
+    "idx_global": 15,
+    "persona_id": "valerie",
+    "persona_description": "Valérie, parent de lycéen (perspective externe)",
+    "scope": "parent",
+    "query_id": "q3",
+    "query_type": "contextuelle_riche",
+    "query_text": "Mon fils est en Terminale S, moyenne 13, il adore le sport. Il hésite entre STAPS et kiné. On n'a pas les moyens d'une école privée chère. Quelles voies publiques les plus sûres ?",
+    "elapsed_s": 20.08,
+    "answer": "**TL;DR**\n1. **STAPS et kiné sont deux voies très différentes** : STAPS = licence généraliste (moins sélective, débouchés variés), kiné = parcours ultra-sélectif (4-12% d’admis) avec concours post-licence.\n2. **Avec 13 de moyenne**, les licences STAPS \"classiques\" sont accessibles, mais les parcours STAPS \"spé kiné\" (3-12% d’admis) sont **hors de portée sans mention Bien/Très Bien**.\n3. **Stratégie réaliste** : STAPS généraliste en 1er choix (sécurité), puis spécialisation en master ou prépa kiné en parallèle si motivation confirmée.\n\n---\n\n### **Plan A — Réaliste : Licence STAPS généraliste (sans option kiné)**\n📍 **[Licence STAPS](https://www.onisep.fr/)** (ex : **Université de Toulouse**, **Strasbourg**, **Lyon 1**) — bac+3 public, **sélectivité ~30-50%** (connaissance générale), pas de mention exigée.\n*Pour toi :* Avec 13 de moyenne, c’est **le seul accès garanti** en public. Débouchés : enseignement, management sportif, ou réorientation vers la kiné après la L2/L3 si tu montes en niveau.\n\n**Pourquoi ?**\n- Les parcours STAPS **\"spé kiné\"** (Montpellier, Paris Cité, etc.) prennent **uniquement des mentions Bien/Très Bien** (20-50% de TB parmi les admis).\n- En STAPS classique, tu peux **tenter les concours kiné en parallèle** (ex : IFMK après une L2 validée) ou bifurquer en master.\n\n---\n\n### **Plan B — Ambitieux : Parcours STAPS \"prépa kiné\" (si mention Bien au bac)**\n📍 **[STAPS Prépa Kiné - Paris-Saclay (Orsay)](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10924)** — **12% d’admis** (25% de TB), 65 places.\n*Pour toi :* **Seulement si tu décroches 14+ au bac** (mention Bien). Sinon, risque de rejet pur et simple.\n\n**Alternative moins sélective (mais rare) :**\n📍 **[STAPS Accès Kiné - Toulouse](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48327)** — 7% d’admis, mais **30% des admis ont une mention AB** (contre 19% à Montpellier).\n\n---\n### **Plan C — Passerelle : Prépa kiné en parallèle de la fac**\n*(connaissance générale)*\n- **Option 1** : Faire une **L1 STAPS classique** + s’inscrire en **prépa privée aux concours kiné** (ex : Cours Galien, coût ~2 000-4 000€/an). *Attention* : les prépas privées promettent des taux de réussite élevés, mais **leurs stats incluent uniquement leurs élèves déjà sélectionnés sur dossier** (biais marketing).\n- **Option 2** : **BTS Diététique** ou **BPJEPS** (brevet pro sport) en alternance après le bac, puis concours kiné en candidat libre. Moins théorique, mais **débouchés immédiats** si la kiné ne marche pas.\n\n---\n\n### ⚠ **Attention aux pièges**\n- **Illusion \"STAPS = kiné\"** : 90% des étudiants en STAPS **ne deviennent pas kinés**. La voie publique exige un **concours post-licence** (ex : IFMK), aussi sélectif que PACES avant.\n- **Coût caché des prépas privées** : Même en public, une prépa kiné en parallèle peut coûter **3 000-5 000€/an** (livres, stages, inscriptions aux concours).\n- **Débouchés limités** : Sans spécialisation, un diplôme STAPS seul mène souvent à des métiers **peu rémunérés** (1 700-1 900€ net/mois en début de carrière, source DEPP).\n\n---\n**Question pour toi :**\nTon fils est-il prêt à **redoubler d’efforts pour viser 14+ au bac** (plan B) ou préfère-t-il une voie **sécurisée avec options plus tard** (plan A) ? Et est-il ouvert à l’idée de **travailler en parallèle de la fac** (plan C) ? *(Un RDV avec le Psy-EN du lycée peut l’aider à trancher !)*",
+    "n_sources": 10,
+    "sources_top10": [
+      {
+        "score": 1.1843,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Sciences et Techniq",
+        "etablissement": "Université de Montpellier",
+        "ville": "Montpellier",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante",
+        "labels": []
+      },
+      {
+        "score": 1.1843,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Sciences et Techniq",
+        "etablissement": "Université de Montpellier",
+        "ville": "Montpellier",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante",
+        "labels": []
+      },
+      {
+        "score": 1.1789,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+        "etablissement": "Université Paris Cité",
+        "ville": "Paris  6e  Arrondissement",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante",
+        "labels": []
+      },
+      {
+        "score": 1.1789,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+        "etablissement": "Université Paris Cité",
+        "ville": "Paris  6e  Arrondissement",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante",
+        "labels": []
+      },
+      {
+        "score": 1.167,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS - Préparation",
+        "etablissement": "Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay",
+        "ville": "Orsay",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante",
+        "labels": []
+      },
+      {
+        "score": 1.167,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS - Préparation",
+        "etablissement": "Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay",
+        "ville": "Orsay",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante",
+        "labels": []
+      },
+      {
+        "score": 1.1667,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Accès Kiné",
+        "etablissement": "Université Toulouse III - Université Toulouse",
+        "ville": "Toulouse",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante",
+        "labels": []
+      },
+      {
+        "score": 1.1667,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Accès Kiné",
+        "etablissement": "Université Toulouse III - Université Toulouse",
+        "ville": "Toulouse",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante",
+        "labels": []
+      },
+      {
+        "score": 1.1634,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+        "etablissement": "Université de Perpignan - Antenne de Font Romeu",
+        "ville": "Font-Romeu-Odeillo-Via",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante",
+        "labels": []
+      },
+      {
+        "score": 1.1634,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+        "etablissement": "Université de Perpignan - Antenne de Font Romeu",
+        "ville": "Font-Romeu-Odeillo-Via",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "sante",
+        "labels": []
+      }
+    ]
+  },
+  {
+    "idx_global": 16,
+    "persona_id": "psy_en",
+    "query_id": "q1",
+    "query_text": "Quels sont les indicateurs d'insertion professionnelle à 3 ans pour un master en psychologie clinique en France ?",
+    "error": "ReadTimeout: The read operation timed out"
+  },
+  {
+    "idx_global": 17,
+    "persona_id": "psy_en",
+    "query_id": "q2",
+    "query_text": "Une élève en 1ère S redouble avec 7 de moyenne en maths mais excellente en philo, comment la guider vers un post-bac réaliste ?",
+    "error": "ReadTimeout: The read operation timed out"
+  },
+  {
+    "idx_global": 18,
+    "persona_id": "psy_en",
+    "persona_description": "Psy-EN (psychologue Éducation nationale)",
+    "scope": "pro",
+    "query_id": "q3",
+    "query_type": "contextuelle_riche",
+    "query_text": "J'accompagne un élève de 2nde issu d'un milieu modeste, qui rêve de devenir ingénieur aéro mais ses résultats sont moyens (10-11 en maths). Quelles stratégies long-terme sur la suite du lycée ?",
+    "elapsed_s": 30.16,
+    "answer": "**TL;DR**\n1. Avec 10-11 en maths, une école d’ingénieur aéro post-bac est **trop risquée** en direct. L’aéronautique exige un niveau solide en sciences.\n2. **Stratégie clé** : renforcer les maths/physique en 1ère-Terminale + viser une prépa adaptée ou un BUT/BTS comme tremplin.\n3. **Plan B réaliste** : les INSA en admission parallèle après un bac+2 (DUT/BTS) sont une porte d’entrée sûre.\n\n---\n\n### **Plan A — Réaliste : BUT + admission parallèle en école d’ingé aéro**\n📍 **BUT Génie Mécanique et Productique** (IUT de [ville proche]) — bac+3 public, **sélectivité modérée** (30-60%), **gratuit** · [fiche ONISEP](https://www.onisep.fr)\n*Pour toi : accessible avec 10-11 de moyenne, spécialisation possible en aéronautique. Puis admission en INSA/ENI à bac+2.*\n\n**Pourquoi ?**\n- Les **INSA** (ex : Strasbourg) recrutent en **admission parallèle** après un BUT/BTS (ex : [INSA Strasbourg Mécatronique](https://www.insa-strasbourg.fr)).\n- **Coût zéro** en public, et les IUT ont des partenariats avec des écoles aéro (ex : ISAE-ENSMA via des passerelles).\n- **Exemple concret** : L’[ISAE-ENSMA](https://www.isae-ensma.fr) (Poitiers) propose des admissions après un BUT Génie Mécanique.\n\n---\n\n### **Plan B — Ambitieux : Prépa TSI (pour bacs techno) ou PT (si général)**\n📍 **Prépa TSI** (Lycée [proche]) — bac+2 public, **sélectivité 50-70%**, **gratuit** · [fiche ONISEP](https://www.onisep.fr)\n*Pour toi : si tu montes à 12-13 en maths/physique en Terminale. La TSI est conçue pour les profils \"moyens mais motivés\".*\n\n**Pourquoi ?**\n- La **TSI** (Technologie et Sciences Industrielles) est **moins sélective** que les prépas classiques (MP/PC), et mène aux mêmes écoles (ex : INSA, ENI).\n- **Alternative** : Si tu passes en **bac général avec maths + physique-chimie**, une **prépa PT** (Physique-Technologie) est aussi possible.\n- **Objectif** : Intégrer une école comme l’[ENAC](https://www.enac.fr) (aéronautique civile) ou l’[ISAE-SUPAERO](https://www.isae-supaero.fr) via les concours post-prépa (mais niveau exigeant : 14+ en prépa).\n\n---\n### **Plan C — Passerelle pro : BTS Aéronautique + alternance**\n📍 **BTS Aéronautique** (Lycée [proche] ou CFA) — bac+2, **sélectivité accessible** (60%+), **gratuit en public/alternance** · [fiche ONISEP](https://www.onisep.fr)\n*Pour toi : formation concrète avec stages en entreprise (Airbus, Safran…), puis poursuite en licence pro ou école d’ingé (ex : ENAC par alternance).*\n\n**Pourquoi ?**\n- **Insertion rapide** : 80% des diplômés trouvent un emploi en 6 mois (source : Céreq, estimation marché — connaissance générale).\n- **Alternance rémunérée** (600-800€/mois) pour financer la suite.\n- **Exemple** : L’[ENAC](https://www.enac.fr) recrute des BTS aéro en **licence pro** (1 an) puis en **master**.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Écoles privées \"aéro\"** : Certaines promettent un diplôme d’ingénieur sans accréditation **CTI** (ex : ECE Paris pour l’aéro n’est pas spécialisée). Vérifie toujours le label **CTI** [ici](https://www.cti-commission.fr).\n- **Coût** : Les écoles privées (ex : ECE) coûtent **8 000-10 000€/an**. Avec un budget serré, privilégie le public (INSA, IUT, prépas).\n- **Illusion \"passion = facilité\"** : L’aéronautique est un secteur **exigeant en maths/physique**. Sans un niveau correct (12+ en Terminale), les écoles ferment leurs portes.\n\n---\n**Question pour toi** :\nTon élève préfère-t-il :\n1. **Une voie scolaire longue** (prépa ou BUT → école d’ingé, 5 ans) ?\n2. **Une insertion pro rapide** (BTS + alternance, avec possibilité de monter en grade plus tard) ?\n3. **Un mix** (BUT en 3 ans, puis école d’ingé en 2 ans) ?\n\n*👤 Pour affiner son projet, un RDV avec le Psy-EN de son lycée est indispensable. Ils connaissent les filières locales et les aides financières (bourses, internats).*",
+    "n_sources": 10,
+    "sources_top10": [
+      {
+        "score": 1.1216,
+        "nom": "Formation d'ingénieur Bac + 5 - Bac Série générale avec la spécialité Maths en Terminale + une spéci",
+        "etablissement": "ECE Paris",
+        "ville": "Paris 15e  Arrondissement",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "parcoursup",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 1.1182,
+        "nom": "Formation d'ingénieur Bac + 5 - Bac Série générale avec 2 spécialités scientifiques mais sans la spé",
+        "etablissement": "ECE Paris",
+        "ville": "Paris 15e  Arrondissement",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "parcoursup",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 1.1177,
+        "nom": "Formation d'ingénieur Bac + 5 - Bac série générale avec la spécialité Maths en Terminale + une spéci",
+        "etablissement": "ECE Paris",
+        "ville": "Paris 15e  Arrondissement",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "parcoursup",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 1.1121,
+        "nom": "Formation d'ingénieur Bac + 5 - Bac série générale avec la spécialité Maths en Terminale + une spéci",
+        "etablissement": "ECE Lyon",
+        "ville": "Lyon 7e  Arrondissement",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "parcoursup",
+        "domaine": "ingenierie_industrielle",
+        "labels": []
+      },
+      {
+        "score": 0.9319,
+        "nom": "INGENIEUR DIPLOME DE L'INSTITUT NATIONAL DES SCIENCES APPLIQUEES DE STRASBOURG, SPECIALITE MECANIQUE",
+        "etablissement": "CFAI ALSACE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      },
+      {
+        "score": 0.9313,
+        "nom": "Ingénieur diplômé de l'Institut Supérieur de l'Aéronautique et de l'Espace",
+        "etablissement": "INSTITUT SUPERIEUR DE L'AERONAUTIQUE ET DE L'ESPACE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      },
+      {
+        "score": 0.9304,
+        "nom": "INGENIEUR DIPLOME DE L'ECOLE NATIONALE DE L'AVIATION CIVILE",
+        "etablissement": "ECOLE NATIONALE DE L'AVIATION CIVILE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      },
+      {
+        "score": 0.9284,
+        "nom": "INGENIEUR DIPLOME DE L'INSTITUT NATIONAL DES SCIENCES APPLIQUEES DE STRASBOURG, SPECIALITE MECATRONI",
+        "etablissement": "CFAI ALSACE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      },
+      {
+        "score": 0.9275,
+        "nom": "Ingénieur Diplômé de l'Ecole Nationale de Mécanique et d'Aérotechnique, spécialité Génie industriel ",
+        "etablissement": "ECOLE NATIONALE SUPERIEURE DE MECANIQUE ET D'AEROTECHNIQUE DE POITIERS",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      },
+      {
+        "score": 0.9273,
+        "nom": "INGENIEUR DIPLOME DE L'INSTITUT NATIONAL DES SCIENCES APPLIQUEES DE STRASBOURG, SPECIALITE GENIE ENE",
+        "etablissement": "CFAI ALSACE",
+        "ville": "",
+        "niveau": "bac+5",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "sciences_fondamentales",
+        "labels": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,124 @@
+{
+  "idx_global": 13,
+  "persona_id": "valerie",
+  "persona_description": "Valérie, parent de lycéen (perspective externe)",
+  "scope": "parent",
+  "query_id": "q1",
+  "query_type": "factuelle",
+  "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+  "elapsed_s": 21.3,
+  "answer": "**TL;DR**\n1. Une **licence publique** coûte **0 à 600€/an** (frais d’inscription + sécurité sociale), tandis qu’une **école de commerce privée** coûte **5 000€ à 15 000€/an** (hors alternance).\n2. L’écart s’explique par le statut (public vs privé) et les labels (grade Master, RNCP, etc.).\n3. Des alternatives existent pour réduire la facture : alternance, bourses, ou formations publiques sélectives (IAE, doubles licences).\n\n---\n\n### **Plan A — Licence publique : coût minimal, qualité reconnue**\n📍 **Licence Économie-Gestion (parcours Commerce International)** — [ICL-ESTICE, Lille](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24397&typeBac=0&originePc=0)\n*Pour toi : 243€/an (2024-2025), sélective (38% d’admis), mais exigeante en langues et dossier. Alternative solide aux écoles privées.*\n\n**Coût typique** :\n- **Frais d’inscription** : ~170€ (licence) + ~92€ (sécurité sociale) = **262€/an** (tarif 2024).\n- **Bourses** : jusqu’à ~6 000€/an (échelons 0bis à 7) pour les foyers éligibles.\n*(Source : [Parcoursup 2025, fiche ICL-ESTICE](#))*\n\n---\n\n### **Plan B — École de commerce privée : investissement élevé, mais réseaux et labels**\n*(connaissance générale)*\n📍 **Programme Grande École (ISC Paris)** — bac+5, **10 000€ à 12 000€/an** (hors alternance), grade Master.\n*Pour toi : coût justifié par le réseau alumni et l’accréditation (grade Master), mais budget à prévoir sur 5 ans (~50k€ total). Alternance possible en M1/M2 pour réduire la facture.*\n\n**Fourchettes de coût (estimation marché, connaissance générale)** :\n- **Bachelor (bac+3)** : 6 000€–9 000€/an (ex : IÉSEG, NEOMA).\n- **Programme Grande École (bac+5)** : 10 000€–15 000€/an (ex : HEC, ESSEC, ESCP).\n- **Alternance** : 0€ (l’entreprise paie les frais) + salaire (~600€–1 200€/mois).\n\n**Labels à vérifier** :\n- **Grade Master** (reconnu par l’État, équivalent bac+5 public).\n- **RNCP** (niveau 7, mais pas toujours équivalent à un master universitaire).\n- **Accréditations internationales** (AACSB, EQUIS, AMBA) pour les écoles haut de gamme.\n\n---\n\n### **Plan C — Alternatives hybrides : public + privé à moindre coût**\n1. **IAE (Instituts d’Administration des Entreprises)** :\n   - **Coût** : ~2 500€/an (master), **sélectifs** (dossier + score IAE Message).\n   - **Exemple** : IAE Paris-Sorbonne, IAE Toulouse.\n   *(connaissance générale)*\n\n2. **Doubles licences publiques** :\n   - **Coût** : ~600€/an (ex : licence Économie + LEAS anglais).\n   - **Débouchés** : accès aux masters publics (ex : Celsa, Dauphine) ou écoles privées en admission parallèle.\n\n3. **Alternance dès bac+3** :\n   - **Écoles privées** (ex : PPA, INSEEC) proposent des tarifs réduits (0€) en contrat pro, avec salaire.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Marketing des \"écoles à 3 000€/an\"** : souvent des **certificats RNCP** (niveau 6 ou 7) sans grade Master → vérifie la reconnaissance du diplôme sur [France Compétences](https://www.francecompetences.fr/).\n- **Coûts cachés** : frais de dossier (50€–150€), logement (compte +300€–800€/mois en région parisienne), matériaux pédagogiques.\n- **Sélectivité des publiques** : une licence comme l’**ICL-ESTICE** (38% d’admis) peut être plus exigeante qu’une école privée moyenne en dossier.\n\n---\n**Question pour toi** :\nPrivilégies-tu un **diplôme reconnu à moindre coût** (public), un **réseau professionnel premium** (privé, avec budget), ou une **voie hybride** (alternance, IAE) pour limiter les frais ? *(Un conseiller en orientation [Psy-EN/CIO](https://www.onisep.fr/Choisir-mes-etudes/Mon-orientation-en-pratique/Les-lieux-d-information-et-d-orientation/Les-CIO-Centres-d-Information-et-d-Orientation) peut t’aider à affiner en fonction de ton projet.)*",
+  "n_sources": 10,
+  "sources_top10": [
+    {
+      "score": 1.019,
+      "nom": "Licence - Economie et gestion - Parcours Commerce international et langues",
+      "etablissement": "ICL - ESTICE",
+      "ville": "Lille",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "eco_gestion",
+      "labels": []
+    },
+    {
+      "score": 0.9295,
+      "nom": "Programme grande école",
+      "etablissement": "INSTITUT SUPERIEUR COMMERCE PARIS",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "eco_gestion",
+      "labels": []
+    },
+    {
+      "score": 0.8502,
+      "nom": "Diplôme d'études supérieures en commerce et en entrepreneuriat",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "ville": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "eco_gestion",
+      "labels": []
+    },
+    {
+      "score": 0.8487,
+      "nom": "Affaires et Relations Internationales",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "ville": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "eco_gestion",
+      "labels": []
+    },
+    {
+      "score": 0.8479,
+      "nom": "diplôme finance",
+      "etablissement": "",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "labels": []
+    },
+    {
+      "score": 0.8474,
+      "nom": "diplôme du programme ingénieur d'affaires",
+      "etablissement": "",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "labels": []
+    },
+    {
+      "score": 0.8469,
+      "nom": "diplôme en gestion du luxe",
+      "etablissement": "",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "labels": []
+    },
+    {
+      "score": 0.8468,
+      "nom": "commerce international",
+      "etablissement": "",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "labels": []
+    },
+    {
+      "score": 0.8459,
+      "nom": "diplôme en comptabilité et gestion financière",
+      "etablissement": "",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "labels": []
+    },
+    {
+      "score": 0.8452,
+      "nom": "manager marketing et commercial en produits et services de luxe",
+      "etablissement": "",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "labels": []
+    }
+  ]
+}
