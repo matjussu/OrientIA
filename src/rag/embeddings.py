@@ -4,6 +4,24 @@ from mistralai.client import Mistral
 EMBED_MODEL = "mistral-embed"
 
 
+def _safe_pct(val, arrondi: bool = True) -> str | None:
+    """Convertit un ratio [0,1] en pourcentage string, robuste aux NaN.
+
+    Retourne None si val est None, NaN, ou non-convertible. Utilise
+    `arrondi=True` par défaut pour stabilité retrieval (85.23% → 85%).
+    """
+    if val is None:
+        return None
+    import math
+    try:
+        f = float(val)
+        if math.isnan(f) or math.isinf(f):
+            return None
+        return f"{int(round(f * 100))}%" if arrondi else f"{f * 100:.1f}%"
+    except (ValueError, TypeError):
+        return None
+
+
 def _format_insertion_pro(ip: dict) -> str | None:
     """Formate le dict `insertion_pro` en verbatim embedding-friendly.
 
@@ -32,18 +50,21 @@ def _format_insertion_pro(ip: dict) -> str | None:
     # Schéma Céreq (insertion à 3 et 6 ans, agrégé par niveau+domaine)
     if "taux_emploi_3ans" in ip or "taux_emploi_6ans" in ip:
         cohorte = ip.get("cohorte") or "cohorte récente"
-        t3 = ip.get("taux_emploi_3ans")
-        t6 = ip.get("taux_emploi_6ans")
-        tcdi = ip.get("taux_cdi")
+        t3 = _safe_pct(ip.get("taux_emploi_3ans"))
+        t6 = _safe_pct(ip.get("taux_emploi_6ans"))
+        tcdi = _safe_pct(ip.get("taux_cdi"))
         sal = ip.get("salaire_median_embauche")
-        if t3 is not None:
-            fragments.append(f"taux emploi 3 ans : {round(t3 * 100)}%")
-        if t6 is not None:
-            fragments.append(f"taux emploi 6 ans : {round(t6 * 100)}%")
-        if tcdi is not None:
-            fragments.append(f"taux CDI : {round(tcdi * 100)}%")
-        if sal is not None:
-            fragments.append(f"salaire médian embauche : {sal}€")
+        if t3:
+            fragments.append(f"taux emploi 3 ans : {t3}")
+        if t6:
+            fragments.append(f"taux emploi 6 ans : {t6}")
+        if tcdi:
+            fragments.append(f"taux CDI : {tcdi}")
+        if sal is not None and isinstance(sal, (int, float)):
+            import math
+            sal_f = float(sal)
+            if not math.isnan(sal_f):
+                fragments.append(f"salaire médian embauche : {int(sal_f)}€")
         if fragments:
             return f"Insertion pro (source Céreq, {cohorte}) : " + " — ".join(fragments)
 
@@ -57,20 +78,20 @@ def _format_insertion_pro(ip: dict) -> str | None:
             ("taux_emploi_18m", "18 mois"),
             ("taux_emploi_24m", "24 mois"),
         ):
-            v = ip.get(h_key)
-            if v is not None:
-                horizons.append(f"{h_lib} {round(v * 100)}%")
+            pct = _safe_pct(ip.get(h_key))
+            if pct:
+                horizons.append(f"{h_lib} {pct}")
         if horizons:
             fragments.append("taux emploi " + ", ".join(horizons))
-        va = ip.get("valeur_ajoutee_emploi_6m")
-        if va is not None:
-            fragments.append(f"valeur ajoutée emploi 6m : {round(va * 100)}pp")
-        rupt = ip.get("taux_contrats_interrompus")
-        if rupt is not None:
-            fragments.append(f"taux contrats interrompus : {round(rupt * 100)}%")
-        pours = ip.get("part_poursuite_etudes")
-        if pours is not None:
-            fragments.append(f"poursuite études : {round(pours * 100)}%")
+        va = _safe_pct(ip.get("valeur_ajoutee_emploi_6m"))
+        if va:
+            fragments.append(f"valeur ajoutée emploi 6m : {va[:-1]}pp")  # 8% → 8pp
+        rupt = _safe_pct(ip.get("taux_contrats_interrompus"))
+        if rupt:
+            fragments.append(f"taux contrats interrompus : {rupt}")
+        pours = _safe_pct(ip.get("part_poursuite_etudes"))
+        if pours:
+            fragments.append(f"poursuite études : {pours}")
         if fragments:
             return f"Insertion apprentissage (Inserjeunes CFA, {annee}) : " + " — ".join(fragments)
 
@@ -86,25 +107,32 @@ def _format_admission_stats(fiche: dict) -> str | None:
     source = (fiche.get("source") or "").lower()
     fragments: list[str] = []
 
+    import math
+
     tap = fiche.get("taux_acces_parcoursup_2025")
     places = fiche.get("nombre_places")
     if tap is not None:
-        # Arrondi entier pour stabilité retrieval (52.0% → 52%)
-        tap_int = int(round(float(tap)))
-        fragments.append(f"taux d'accès {tap_int}%")
+        try:
+            tap_f = float(tap)
+            if not math.isnan(tap_f):
+                # Arrondi entier pour stabilité retrieval (52.0% → 52%)
+                fragments.append(f"taux d'accès {int(round(tap_f))}%")
+        except (ValueError, TypeError):
+            pass
     if places is not None:
         fragments.append(f"{places} places")
 
     if source == "monmaster":
-        ta_mm = fiche.get("taux_admission")
+        import math
+        ta_mm_pct = _safe_pct(fiche.get("taux_admission"))
+        if ta_mm_pct:
+            fragments.append(f"sélectivité {ta_mm_pct} admis")
         n_cand = fiche.get("n_candidats_pp")
         n_acc = fiche.get("n_acceptes_total")
-        if ta_mm is not None:
-            fragments.append(f"sélectivité {round(ta_mm * 100)}% admis")
-        if n_cand is not None:
-            fragments.append(f"{n_cand} candidats")
-        if n_acc is not None:
-            fragments.append(f"{n_acc} acceptés")
+        if isinstance(n_cand, (int, float)) and not math.isnan(float(n_cand)):
+            fragments.append(f"{int(n_cand)} candidats")
+        if isinstance(n_acc, (int, float)) and not math.isnan(float(n_acc)):
+            fragments.append(f"{int(n_acc)} acceptés")
 
     return ("Admission : " + " — ".join(fragments)) if fragments else None
 
