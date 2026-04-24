@@ -13,7 +13,7 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 - ❌ **cereq_insertion_stats.json** : absent (ingestion pas faite localement)
 - ❌ **insee_salaires_pcs_age.json** : absent (ingestion pas faite localement)
 - **parcoursup_extended.json** : 9,212 fiches ✅
-- **formations.json** : 1,424 fiches ⚠️ 1424 manques critiques
+- **formations.json** : 1,424 fiches ✅
 
 **Total fiches auditées** : 37,600
 
@@ -90,11 +90,11 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 ### `formations.json`
 
 - Total : 1,424
-- Distribution par phase : `{}`
+- Distribution par phase : `{'initial': 1352, 'master': 72}`
 - Distribution par niveau : `{'bac+3': 407, 'bac+2': 385, 'bac+5': 72}`
 - Top 5 domaines : `{'sante': 981, 'cyber': 352, 'data_ia': 91}`
 - Sources : `{'parcoursup': 1324, 'onisep': 100}`
-- Manques critiques : `{'phase': 1424}`
+- Manques critiques : `{}`
 - Valeurs suspectes par champ : `{}`
 - Doublons (signatures identiques) : 0
 - `taux_admission` hors bornes [0,1] : 0
@@ -103,9 +103,9 @@ Vérifie tous les corpus normalisés dans `data/processed/`.
 
 ## Répartition phase cumulée (vs ADR-039 cible 33/33/34)
 
-- `initial` : 16,267 (45.0%) — cible 33%
-- `master` : 13,263 (36.7%) — cible 33%
-- `reorientation` : 6,646 (18.4%) — cible 33%
+- `initial` : 17,619 (46.9%) — cible 33%
+- `master` : 13,335 (35.5%) — cible 33%
+- `reorientation` : 6,646 (17.7%) — cible 33%
 
 Si un phase dépasse 40% ou tombe sous 25% → signal de déséquilibre, action S+2 (up-sample ou down-sample).
 
@@ -113,8 +113,13 @@ Si un phase dépasse 40% ou tombe sous 25% → signal de déséquilibre, action 
 
 ## Verdict re-index FAISS (D6)
 
-🔴 **NO-GO** : 1 anomalie(s) critique(s) détectée(s). 
-Corriger avant de lancer le re-index (évite de re-embed des fiches corrompues).
+✅ **GO** : aucune anomalie bloquante détectée. Safe to proceed avec 
+re-index FAISS sur corpus élargi.
+
+Action post-validation Matteo budget $5-10 :
+```bash
+python -m src.rag.embeddings  # re-build FAISS index
+```
 
 ---
 
