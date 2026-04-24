@@ -500,6 +500,59 @@ def rncp_to_fiche(certif: dict) -> dict:
     return fiche
 
 
+def inserjeunes_cfa_to_fiche(cfa_record: dict) -> dict:
+    """Convertit un record Inserjeunes CFA en fiche pipeline.
+
+    CFA Inserjeunes = apprentissage agrégé par centre (pas par formation
+    fine). Plusieurs entrées par CFA si plusieurs années de cumul.
+
+    Mappings clés :
+    - `phase` = "reorientation" (apprentissage = voie de réorientation
+      ou initial selon perspective, mais ADR-039 classe apprentissage
+      dans réorientation pour équilibrage phases)
+    - `niveau` : None côté source (CFA agrégé) → laissé à None, le
+      fallback phase par défaut dans `merge_all_extended` n'écrase pas
+      puisque phase est déjà posée.
+    - `nom` : libellé CFA (pas une formation spécifique — c'est le centre)
+    - `domaine` : "apprentissage" (catégorie distincte pour ne pas
+      polluer les autres filtres)
+    - `insertion_pro` mappé depuis `taux_emploi` horizons + autres
+      métriques apprentissage-spécifiques (taux_contrats_interrompus,
+      valeur_ajoutee_emploi_6_mois — métriques DEPP uniques)
+    """
+    taux_emploi = cfa_record.get("taux_emploi") or {}
+    return {
+        "source": "inserjeunes_cfa",
+        "phase": "reorientation",
+        "nom": cfa_record.get("etablissement") or "CFA (libellé manquant)",
+        "etablissement": cfa_record.get("etablissement"),
+        "ville": "",  # Pas de ville au niveau CFA agrégé
+        "region": cfa_record.get("region"),
+        "uai": cfa_record.get("uai"),
+        "annee": cfa_record.get("annee"),
+        "niveau": None,  # CFA agrégé, pas de niveau unique
+        "domaine": "apprentissage",
+        "statut": "CFA Apprentissage",
+        "type_diplome": "Apprentissage (agrégé CFA)",
+        "insertion_pro": {
+            "source": "inserjeunes_cfa",
+            "annee": cfa_record.get("annee"),
+            "taux_emploi_6m": taux_emploi.get("6m"),
+            "taux_emploi_12m": taux_emploi.get("12m"),
+            "taux_emploi_18m": taux_emploi.get("18m"),
+            "taux_emploi_24m": taux_emploi.get("24m"),
+            "taux_emploi_6m_attendu": cfa_record.get("taux_emploi_6_mois_attendu"),
+            "valeur_ajoutee_emploi_6m": cfa_record.get("valeur_ajoutee_emploi_6_mois"),
+            "taux_contrats_interrompus": cfa_record.get("taux_contrats_interrompus"),
+            "part_poursuite_etudes": cfa_record.get("part_poursuite_etudes"),
+            "part_emploi_6m": cfa_record.get("part_emploi_6_mois_post"),
+            "part_autres_situations": cfa_record.get("part_autres_situations"),
+        },
+        "match_method": "inserjeunes_cfa_only",
+        "labels": [],
+    }
+
+
 def _cereq_stats_flat(entry: dict) -> dict:
     """Normalise une entrée Céreq vers les stats clés exposées sur fiches.
 
@@ -586,6 +639,7 @@ def merge_all_extended(
     parcoursup_extended: list[dict] | None = None,
     onisep_extended: list[dict] | None = None,
     lba: list[dict] | None = None,
+    inserjeunes_cfa: list[dict] | None = None,
     manual_labels: list[dict] | None = None,
     fuzzy_threshold: int = 85,
 ) -> list[dict]:
@@ -621,9 +675,13 @@ def merge_all_extended(
     oe_fiches = list(onisep_extended or [])
     lba_fiches = list(lba or [])
 
+    # Étape 3b : adapteurs sources nécessitant un mapping fiche
+    cfa_fiches = [inserjeunes_cfa_to_fiche(r) for r in (inserjeunes_cfa or [])]
+
     # Étape 4 : concat global — ordre = priorité retrieval implicite
     all_fiches = (
-        legacy + pe_fiches + oe_fiches + mm_fiches + rncp_fiches + lba_fiches
+        legacy + pe_fiches + oe_fiches + mm_fiches + rncp_fiches
+        + lba_fiches + cfa_fiches
     )
 
     # Étape 5 : attach_debouches ROME (pour fiches sans debouches — MonMaster
