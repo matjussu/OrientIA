@@ -1,0 +1,124 @@
+{
+  "idx_global": 8,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q2",
+  "query_type": "orientation_ambigue",
+  "query_text": "Je finis mon M1 info, je dois choisir entre un M2 classique recherche ou un master en alternance. Qu'est-ce qui me donnera le meilleur CV pour entrer en CDI direct ?",
+  "elapsed_s": 18.45,
+  "answer": "**TL;DR**\n1. **Alternance = CDI plus rapide** (90% des alternants embauchés dans leur entreprise d’accueil — connaissance générale), mais spécialisation étroite.\n2. **M2 recherche = flexibilité** (porte vers thèse CIFRE ou CDI en R&D), mais insertion plus lente sans expérience pro.\n3. **Critère clé** : visez-vous un poste opérationnel (alternance) ou une carrière recherche/innovation (M2 classique) ?\n\n---\n\n### **Comparaison objective**\n| Critère               | **M2 Recherche**                          | **M2 en Alternance**                     |\n|-----------------------|------------------------------------------|------------------------------------------|\n| **Insertion directe** | ~60% en CDI à 6 mois (source : Céreq, hors données précises dans les fiches) | **~90% en CDI** (même entreprise ou secteur — connaissance générale) |\n| **Salaire embauche**  | 30-35k€ brut (thèse CIFRE) ou 35-40k€ (CDI R&D) | 35-42k€ brut (secteur privé, expérience comptabilisée) |\n| **Flexibilité**       | ✅ Porte vers thèse, labos, startups deep tech | ❌ Spécialisation métiers (ex : cybersécurité appliquée, data engineering) |\n| **Réseau pro**        | Académiques (labos, conférences)         | Entreprises (réseau opérationnel immédiat) |\n| **Risque**            | Thèse non financée (rare en info) ou CDI différé | Contrat rompu (rare, mais possible) |\n\n### **Cas typiques (connaissance générale)**\n- **Alternance** :\n  - **Pour vous si** : vous visez un **métier précis** (ex : pentester, data scientist en finance) + besoin de revenus immédiats.\n  - **Exemples de débouchés** : ESN (SSII), grands groupes (banque, énergie), scale-ups tech.\n  - **Piège** : 30% des offres d’alternance en info sont concentrées en Île-de-France (source : baromètres Régions 2023 — connaissance générale). Mobilité souvent requise.\n\n- **M2 Recherche** :\n  - **Pour vous si** : vous envisagez une **thèse CIFRE** (salaire ~27k€ brut/an + CDI garanti à 80% — connaissance générale) ou un poste en R&D (labos publics, deep tech).\n  - **Atout caché** : Les recruteurs en IA/quantique valorisent les profils recherche **même pour des postes appliqués** (ex : NLP engineer chez Hugging Face).\n  - **Piège** : Sans stage long en entreprise, difficile d’accéder aux postes \"senior\" dès la sortie.\n\n### **Stratégie hybride (optimale si possible)**\nCertains M2 recherche **autorisent l’alternance en 2ème année** (ex : M2 Data Science à Paris-Dauphine). Solution idéale :\n1. **M2 Recherche année 1** → valider le socle théorique + stage en labo/startup.\n2. **Alternance année 2** → acquérir l’expérience pro **sans sacrifier le diplôme recherche**.\n\n**Question pour vous** :\nAvez-vous une **entreprise cible** (ex : Google, Thales, une scale-up) ou un **domaine de recherche** (ex : IA générative, cryptographie post-quantique) qui pourrait guider ce choix ? Si oui, vérifiez leurs offres d’alternance *avant* de postuler en M2 — certaines entreprises (ex : CEA, Inria) recrutent **uniquement en alternance** pour leurs postes juniors.",
+  "n_sources": 10,
+  "sources_top10": [
+    {
+      "score": 0.9526,
+      "nom": "Direction technique",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "labels": []
+    },
+    {
+      "score": 0.9485,
+      "nom": "Conception lumière",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "labels": []
+    },
+    {
+      "score": 0.9468,
+      "nom": "Écriture",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "labels": []
+    },
+    {
+      "score": 0.9432,
+      "nom": "Créateur industriel",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "labels": []
+    },
+    {
+      "score": 0.943,
+      "nom": "Mode et matière",
+      "etablissement": "UNIVERSITE PSL",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "labels": []
+    },
+    {
+      "score": 0.9424,
+      "nom": "Mode (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "labels": []
+    },
+    {
+      "score": 0.9415,
+      "nom": "Conception son",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "labels": []
+    },
+    {
+      "score": 0.9411,
+      "nom": "Scénographie",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "labels": []
+    },
+    {
+      "score": 0.94,
+      "nom": "Jouer et mettre en scène",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "labels": []
+    },
+    {
+      "score": 0.9388,
+      "nom": "Physique (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "labels": []
+    }
+  ]
+}

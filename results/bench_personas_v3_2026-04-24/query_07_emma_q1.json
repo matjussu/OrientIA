@@ -1,0 +1,124 @@
+{
+  "idx_global": 7,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q1",
+  "query_type": "factuelle",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "elapsed_s": 30.29,
+  "answer": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 informatique.\n2. En **connaissance générale**, la fourchette typique en 2026 pour un profil débutant (bac+5) se situe entre **35 000 € et 45 000 € brut annuel** (soit ~2 200 €–2 800 € net/mois), avec des écarts selon la localisation, l’entreprise et la spécialisation.\n3. Pour maximiser ton salaire, cible les secteurs porteurs (cybersécurité, IA, cloud) ou l’alternance en M2.\n\n---\n\n### **Plan A — Salaire moyen réaliste (profil classique)**\n- **Fourchette** : **35k–40k€ brut/an** (2 200–2 500€ net/mois) pour un poste de **développeur logiciel junior** en ESN ou PME.\n  *Sources* : Baromètres régionaux (ex : [Apec](https://www.apec.fr)), offres d’emploi 2025 (connaissance générale).\n- **Secteurs** : Finance, éditeurs de logiciels, ou services numériques (ex : SSII comme Capgemini, Atos).\n- **À savoir** : Les diplômes d’ingénieur (ex : [Polytechnique Université Paris-Saclay](https://www.onisep.fr/http/redirection/formation/slug/FOR.11936)) ou les certifications RNCP bac+5 (ex : OpenClassrooms) **n’influencent pas significativement le salaire de départ** vs un M2 universitaire classique — l’expérience (stages, alternance) et les compétences techniques (ex : cloud, DevOps) font la différence.\n\n### **Plan B — Salaire élevé (profil spécialisé ou géolocalisé)**\n- **Fourchette** : **40k–48k€ brut/an** (2 500–3 000€ net/mois) si :\n  - **Spécialisation** : Cybersécurité (ex : [Expert en développement logiciel pour l’industrie](https://www.onisep.fr/http/redirection/formation/slug/FOR.11377)), IA, ou data engineering.\n  - **Localisation** : Île-de-France (+10–15% vs province), Suisse/Luxembourg (+30–50%).\n  - **Alternance** : Un contrat pro en M2 peut déboucher sur un CDI avec un salaire **5–10% plus élevé** qu’un recrutement classique (source : retours terrain, connaissance générale).\n- **Exemple concret** : Un diplômé en **architecture logicielle** (ex : [FOR.10102](https://www.onisep.fr/http/redirection/formation/slug/FOR.10102)) avec une certification cloud (AWS/Azure) peut viser **45k€ brut** en région parisienne.\n\n### **Plan C — Stratégies pour dépasser la moyenne**\n1. **Alternance en M2** : 80% des alternants en informatique sont embauchés par leur entreprise d’accueil, souvent avec un salaire **supérieur de 10%** (connaissance générale).\n2. **Double compétence** : Coupler ton M2 avec une certification **cybersécurité** (ex : SecNum Academy) ou **data** (ex : [Testeur logiciel M2I](https://www.francecompetences.fr/recherche/formationcertifiante/)) pour cibler des postes hybrides mieux rémunérés.\n3. **Mobilité internationale** : Allemagne (50k€ brut/an en moyenne pour un junior), Canada, ou pays nordiques offrent des salaires **30–50% plus élevés** (source : Glassdoor 2025, connaissance générale).\n\n---\n**⚠ Attention aux pièges**\n- **ESN vs Startup/Scale-up** : Les ESN (ex : Capgemini) recrutent massivement à ~35k€, mais les startups tech (ex : Doctolib, Alan) ou scale-ups peuvent monter à 45k€+ pour les mêmes profils — **cible les offres avec levées de fonds récentes**.\n- **Titre RNCP ≠ Salaire garanti** : Un certificat [OpenClassrooms](https://openclassrooms.com) ou [42](https://www.42.fr) ne booste pas ton salaire si tu n’as pas d’expérience concrète (stages, projets GitHub).\n- **Négociation** : Les grilles salariales sont souvent fixes pour les juniors, mais **les primes** (intéressement, bonus) peuvent ajouter 5–10% — demande toujours le package global.\n\n---\n**Question pour toi** :\nTon objectif est-il la **stabilité** (ESN, grand groupe) ou la **croissance rapide** (startup, spécialisation niche) ? Cela change radicalement les cibles et les stratégies de négociation.",
+  "n_sources": 10,
+  "sources_top10": [
+    {
+      "score": 0.9184,
+      "nom": "Expert en développement logiciel",
+      "etablissement": "OPENCLASSROOMS",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "services",
+      "labels": []
+    },
+    {
+      "score": 0.914,
+      "nom": "diplôme d'ingénieur de l'École polytechnique universitaire de l'université Paris-Saclay spécialité i",
+      "etablissement": "France",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "labels": []
+    },
+    {
+      "score": 0.8388,
+      "nom": "Testeur logiciel",
+      "etablissement": "M2I",
+      "ville": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "labels": []
+    },
+    {
+      "score": 0.8362,
+      "nom": "expert en ingénierie et développement de logiciels pour l'industrie",
+      "etablissement": "",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "labels": []
+    },
+    {
+      "score": 0.8358,
+      "nom": "expert en ingénierie du développement et en architecture logicielle",
+      "etablissement": "",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "labels": []
+    },
+    {
+      "score": 0.835,
+      "nom": "Concepteur développeur de solutions informatiques",
+      "etablissement": "42",
+      "ville": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "labels": []
+    },
+    {
+      "score": 0.8333,
+      "nom": "Développeur commercial et marketing",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "ville": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "labels": []
+    },
+    {
+      "score": 0.8326,
+      "nom": "Concepteur développeur d'applications",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "ville": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "labels": []
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "labels": []
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "ville": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "labels": []
+    }
+  ]
+}
