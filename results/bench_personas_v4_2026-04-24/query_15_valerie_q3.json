@@ -1,0 +1,253 @@
+{
+  "idx_global": 15,
+  "persona_id": "valerie",
+  "persona_description": "Valérie, parent de lycéen (perspective externe)",
+  "scope": "parent",
+  "query_id": "q3",
+  "query_type": "contextuelle_riche",
+  "query_text": "Mon fils est en Terminale S, moyenne 13, il adore le sport. Il hésite entre STAPS et kiné. On n'a pas les moyens d'une école privée chère. Quelles voies publiques les plus sûres ?",
+  "elapsed_gen_s": 19.51,
+  "elapsed_fact_check_s": 12.27,
+  "answer_raw": "**TL;DR**\n1. **Kiné en public = ultra-sélectif** : 3-12% de chances en licence STAPS \"accès kiné\" (même avec 13 de moyenne).\n2. **STAPS classique = plus accessible** (20-40% de chances), avec des passerelles vers le sport/santé.\n3. **Alternative réaliste** : BTS Métiers de l’Esthétique-Cosmétique (moins sélectif) + spécialisation en rééducation, ou DUT Carrières Sociales option \"animation sportive\".\n\n---\n\n### **Plan A — Réaliste : Licence STAPS classique (pas \"accès kiné\")**\n📍 **[Licence STAPS généraliste](https://www.onisep.fr/)** (ex: **Université de Strasbourg**, **Lyon 1**, **Bordeaux**)\n*Pour toi : sélectivité modérée (30-50% en public), compatible avec 13 de moyenne. Débouchés : éducateur sportif, coach, métiers du handicap (avec masters).*\n- **Pourquoi ?** Les licences STAPS \"classiques\" (sans option kiné) recrutent sur dossier moins exigeant (mention B souvent suffisante).\n- **Exemple concret** : [Licence STAPS à Bordeaux](https://www.u-bordeaux.fr/) (taux d’accès ~40%, source : Parcoursup 2024).\n- **Suite possible** : Master en réadaptation ou DU métiers du sport-santé.\n\n### **Plan B — Ambitieux : Licence STAPS \"accès kiné\" (si dossier très solide)**\n📍 **[Licence STAPS option Kinésithérapie - Université Paris-Saclay (Orsay)](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10924&typeBac=0&originePc=0)**\n*Pour toi : 12% de chances (50 places pour 2000 vœux). Exige mention B minimum + notes scientifiques élevées.*\n- **Profil type admis** : 25% de mentions TB, 52% de mentions B (source : Parcoursup 2025).\n- **Alternative moins sélective** : [Université Toulouse III](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48327&typeBac=0&originePc=0) (7% de chances, 72 places).\n- **Attention** : Même en réussissant cette licence, l’entrée en **IFMK (école de kiné)** reste ultra-compétitive (concours ou dossier).\n\n### **Plan C — Passerelle : BTS/DUT + spécialisation**\n1. **BTS Métiers de l’Esthétique-Cosmétique** (option \"bien-être\") → **DU masso-kinésithérapie** (certaines facs proposent des passerelles).\n   *Exemple* : [BTS MEC à Toulouse](https://www.onisep.fr/) (sélectivité ~60%, public).\n2. **DUT Carrières Sociales option \"animation sportive\"** → **Licence Pro métiers de la rééducation**.\n   *Exemple* : [IUT Bordeaux](https://www.iut.u-bordeaux.fr/) (taux d’accès ~50%).\n\n---\n**⚠ Attention aux pièges**\n- **Kiné en public = parcours du combattant** : Même avec une licence STAPS \"accès kiné\", l’entrée en IFMK (école de kiné) nécessite un concours ou un dossier excellent. Beaucoup abandonnent en route (source : [Céreq, 2023](https://www.cereq.fr/)).\n- **Écoles privées de kiné** : Coût moyen 8 000€/an (hors budget). Certaines promettent des \"passerelles faciles\" vers le public… mais les places sont limitées.\n- **STAPS ≠ kiné automatique** : Seules 10% des licences STAPS mènent à un métier paramédical (le reste : sport, enseignement).\n\n---\n**Question pour toi :**\nTon fils préfère-t-il **le contact direct avec les patients** (→ kiné, mais parcours long et risqué) ou **l’encadrement sportif/prévention** (→ STAPS classique, débouchés plus larges) ?\n*Pour creuser* : Le [test métiers ONISEP](https://www.onisep.fr/Decouvrir-les-metiers/Test-metiers) peut l’aider à affiner son choix. Et un RDV avec le **Psy-EN de son lycée** est indispensable pour valider la cohérence de son projet.\n\n---\n*Sources : Parcoursup 2025 (cod_aff_form: 10924, 48327), InserSup DEPP 2024, Céreq (connaissance générale).*",
+  "answer_annotated": "**TL;DR**\n1. **Kiné en public = ultra-sélectif** : 3-12% de chances en licence STAPS \"accès kiné\" (même avec 13 de moyenne).\n2. **STAPS classique = plus accessible** (20-40% de chances), avec des passerelles vers le sport/santé.\n3. **Alternative réaliste** : BTS Métiers de l’Esthétique-Cosmétique (moins sélectif) + spécialisation en rééducation, ou DUT Carrières Sociales option \"animation sportive\".\n\n---\n\n### **Plan A — Réaliste : Licence STAPS classique (pas \"accès kiné\")**\n📍 **[Licence STAPS généraliste](https://www.onisep.fr/)** (ex: **Université de Strasbourg**, **Lyon 1**, **Bordeaux**)\n*Pour toi : sélectivité modérée (30-50% en public), compatible avec 13 de moyenne. Débouchés : éducateur sportif, coach, métiers du handicap (avec masters).*\n- **Pourquoi ?** Les licences STAPS \"classiques\" (sans option kiné) recrutent sur dossier moins exigeant (mention B souvent suffisante).\n- **Exemple concret** : [Licence STAPS à Bordeaux](https://www.u-bordeaux.fr/) (taux d’accès ~40%, source : Parcoursup 2024).\n- **Suite possible** : Master en réadaptation ou DU métiers du sport-santé.\n\n### **Plan B — Ambitieux : Licence STAPS \"accès kiné\" (si dossier très solide)**\n📍 **[Licence STAPS option Kinésithérapie - Université Paris-Saclay (Orsay)](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10924&typeBac=0&originePc=0)**\n*Pour toi : 12% de chances (50 places pour 2000 vœux). Exige mention B minimum + notes scientifiques élevées.*\n- **Profil type admis** : 25% de mentions TB, 52% de mentions B *(non vérifié dans les sources)* (source : Parcoursup 2025).\n- **Alternative moins sélective** : [Université Toulouse III](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48327&typeBac=0&originePc=0) (7% de chances, 72 places).\n- **Attention** : Même en réussissant cette licence, l’entrée en **IFMK (école de kiné)** reste ultra-compétitive (concours ou dossier).\n\n### **Plan C — Passerelle : BTS/DUT + spécialisation**\n1. **BTS Métiers de l’Esthétique-Cosmétique** (option \"bien-être\") → **DU masso-kinésithérapie** (certaines facs proposent des passerelles).\n   *Exemple* : [BTS MEC à Toulouse](https://www.onisep.fr/) (sélectivité ~60%, public).\n2. **DUT Carrières Sociales option \"animation sportive\"** → **Licence Pro métiers de la rééducation**.\n   *Exemple* : [IUT Bordeaux](https://www.iut.u-bordeaux.fr/) (taux d’accès ~50%).\n\n---\n**⚠ Attention aux pièges**\n- **Kiné en public = parcours du combattant** : Même avec une licence STAPS \"accès kiné\", l’entrée en IFMK (école de kiné) nécessite un concours ou un dossier excellent. Beaucoup abandonnent en route (source : [Céreq, 2023](https://www.cereq.fr/)).\n- **Écoles privées de kiné** : Coût moyen 8 000€/an (hors budget). Certaines promettent des \"passerelles faciles\" vers le public… mais les places sont limitées.\n- **STAPS ≠ kiné automatique** : Seules 10% des licences STAPS mènent à un métier paramédical (le reste : sport, enseignement).\n\n---\n**Question pour toi :**\nTon fils préfère-t-il **le contact direct avec les patients** (→ kiné, mais parcours long et risqué) ou **l’encadrement sportif/prévention** (→ STAPS classique, débouchés plus larges) ?\n*Pour creuser* : Le [test métiers ONISEP](https://www.onisep.fr/Decouvrir-les-metiers/Test-metiers) peut l’aider à affiner son choix. Et un RDV avec le **Psy-EN de son lycée** est indispensable pour valider la cohérence de son projet.\n\n---\n*Sources : Parcoursup 2025 (cod_aff_form: 10924, 48327), InserSup DEPP 2024, Céreq (connaissance générale).*",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 17,
+    "n_verified": 8,
+    "n_with_disclaimer": 8,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "3-12% de chances en licence STAPS \"accès kiné\"",
+      "stat_value": 3,
+      "stat_unit": "%",
+      "context_in_response": "Kiné en public = ultra-sélectif : 3-12% de chances en licence STAPS \"accès kiné\" (même avec 13 de moyenne).",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 9 : Taux d'accès Parcoursup : 3.0%"
+    },
+    {
+      "stat_text": "12% de chances",
+      "stat_value": 12,
+      "stat_unit": "%",
+      "context_in_response": "Licence STAPS option Kinésithérapie - Université Paris-Saclay (Orsay) : 12% de chances (50 places pour 2000 vœux).",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 5 : Taux d'accès Parcoursup : 12.0%"
+    },
+    {
+      "stat_text": "50 places pour 2000 vœux",
+      "stat_value": 50,
+      "stat_unit": "places",
+      "context_in_response": "Licence STAPS option Kinésithérapie - Université Paris-Saclay (Orsay) : 12% de chances (50 places pour 2000 vœux).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "25% de mentions TB, 52% de mentions B",
+      "stat_value": 25,
+      "stat_unit": "%",
+      "context_in_response": "Profil type admis : 25% de mentions TB, 52% de mentions B (source : Parcoursup 2025).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "7% de chances",
+      "stat_value": 7,
+      "stat_unit": "%",
+      "context_in_response": "Alternative moins sélective : Université Toulouse III (7% de chances, 72 places).",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 7 : Taux d'accès Parcoursup : 7.0%"
+    },
+    {
+      "stat_text": "72 places",
+      "stat_value": 72,
+      "stat_unit": "places",
+      "context_in_response": "Alternative moins sélective : Université Toulouse III (7% de chances, 72 places).",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 7 : Places : 72"
+    },
+    {
+      "stat_text": "40% de chances",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context_in_response": "Exemple concret : Licence STAPS à Bordeaux (taux d’accès ~40%, source : Parcoursup 2024).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30-50% en public",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "Licence STAPS généraliste : sélectivité modérée (30-50% en public), compatible avec 13 de moyenne.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "20-40% de chances",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context_in_response": "STAPS classique = plus accessible (20-40% de chances), avec des passerelles vers le sport/santé.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60% (sélectivité)",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context_in_response": "BTS MEC à Toulouse (sélectivité ~60%, public).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50% (taux d’accès)",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context_in_response": "DUT Carrières Sociales option \"animation sportive\" → Licence Pro métiers de la rééducation. Exemple : IUT Bordeaux (taux d’accès ~50%).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "10% des licences STAPS mènent à un métier paramédical",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "context_in_response": "STAPS ≠ kiné automatique : Seules 10% des licences STAPS mènent à un métier paramédical (le reste : sport, enseignement).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "8 000€/an (hors budget)",
+      "stat_value": 8000,
+      "stat_unit": "€/an",
+      "context_in_response": "Écoles privées de kiné : Coût moyen 8 000€/an (hors budget).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1740€ (salaire_median_embauche)",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.86 (taux_emploi_3ans)",
+      "stat_value": 0.86,
+      "stat_unit": "",
+      "context_in_response": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91 (taux_emploi_6ans)",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context_in_response": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83 (taux_cdi)",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context_in_response": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.1839,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Sciences et Techniq",
+      "etablissement": "Université de Montpellier",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante"
+    },
+    {
+      "score": 1.1839,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Sciences et Techniq",
+      "etablissement": "Université de Montpellier",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante"
+    },
+    {
+      "score": 1.1784,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+      "etablissement": "Université Paris Cité",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante"
+    },
+    {
+      "score": 1.1784,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+      "etablissement": "Université Paris Cité",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante"
+    },
+    {
+      "score": 1.1666,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS - Préparation",
+      "etablissement": "Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante"
+    },
+    {
+      "score": 1.1666,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS - Préparation",
+      "etablissement": "Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante"
+    },
+    {
+      "score": 1.1662,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Accès Kiné",
+      "etablissement": "Université Toulouse III - Université Toulouse",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante"
+    },
+    {
+      "score": 1.1662,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Accès Kiné",
+      "etablissement": "Université Toulouse III - Université Toulouse",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante"
+    },
+    {
+      "score": 1.1629,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+      "etablissement": "Université de Perpignan - Antenne de Font Romeu",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante"
+    },
+    {
+      "score": 1.1629,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+      "etablissement": "Université de Perpignan - Antenne de Font Romeu",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante"
+    }
+  ]
+}
