@@ -1,0 +1,815 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "version": "2.0",
+    "title": "Romeo",
+    "description": "Utilisez l’IA afin de vous aider à rapprocher un texte libre à une appellation ou à un savoir / savoir-faire du Répertoire Opérationnel des Métiers et des Emplois (ROME).\r\n\r\n***Scope :*** `api_romeov2`\r\n\r\n***Royaume :*** `/partenaire`"
+  },
+  "servers": [
+    {
+      "url": "https://api.francetravail.io/partenaire/romeo/v2",
+      "description": "PROD"
+    }
+  ],
+  "paths": {
+    "/performancePredictionCompetences": {
+      "post": {
+        "tags": [
+          "Competence"
+        ],
+        "summary": "Renvoyez-nous votre feedback pour permettre l'amélioration du modèle IA",
+        "description": "Cette ressource vous permet de nous envoyer votre feedback par rapport à la prédiction faite par l'IA. Cette information est importante pour mesurer la performance du modèle IA, pour améliorer la qualité des prédictions et délivrer un service de qualité.",
+        "operationId": "Renvoyez-nous votre feedback pour permettre l'amélioration du modèle IA",
+        "requestBody": {
+          "content": {
+            "application/json; charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/PerformanceCompetenceDTO"
+              },
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "performanceCompetence": [
+                      {
+                        "uuidInference": "b42110bb-3d55-4e92-9930-133c5d92a555",
+                        "bonnePrediction": true,
+                        "codeCompetence": "101846"
+                      }
+                    ],
+                    "optionsSupervision": {
+                      "nomAppelant": "francetravail"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "En cas de succès à l'appel API, cette dernière renvoie un code http : 200 OK ",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionPerformanceCompetence"
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "uuidInference": "b42110bb-3d55-4e92-9930-133c5d92a555"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "En cas de réponse 400, veuillez vous référer à l'erreur mentionnée dans l'objet message.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "classeOrigine": "fr.pe.empl.service.so072.exceptions.RomeoBadRequestException",
+                      "codeErreur": "J072000G",
+                      "codeHttp": 400,
+                      "message": "Le champ optionsSupervision.nomAppelant est obligatoire"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erreur serveur."
+          }
+        },
+        "servers": [
+          {
+            "url": "https://api.francetravail.io/partenaire/romeo/v2",
+            "description": ""
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "Bearer "
+            },
+            "description": "Token d'authentification Bearer"
+          }
+        ]
+      }
+    },
+    "/performancePredictionMetiers": {
+      "post": {
+        "tags": [
+          "Appellation"
+        ],
+        "summary": "Renvoyez-nous votre feedback pour permettre l'amélioration du modèle IA",
+        "description": "Cette ressource vous permet de nous envoyer votre feedback par rapport à la prédiction faite par l'IA. Cette information est importante pour mesurer la performance du modèle IA, pour améliorer la qualité des prédictions et délivrer un service de qualité.",
+        "operationId": "Renvoyez-nous votre feedback pour permettre l amélioration du modèle IA",
+        "requestBody": {
+          "content": {
+            "application/json; charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/PerformanceAppellationDTO"
+              },
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "performanceAppellation": [
+                      {
+                        "uuidInference": "93f7f573-da71-4382-94c7-e21db9c9a30f",
+                        "bonnePrediction": true,
+                        "codeAppellation": "11564"
+                      }
+                    ],
+                    "optionsSupervision": {
+                      "nomAppelant": "francetravail"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionPerformanceAppellation"
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "uuidInference": "b42110bb-3d55-4e92-9930-133c5d92a555"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "En cas de réponse 400, veuillez vous référer à l'erreur mentionnée dans l'objet message.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "classeOrigine": "fr.pe.empl.service.so072.exceptions.RomeoBadRequestException",
+                      "codeErreur": "J072000G",
+                      "codeHttp": 400,
+                      "message": "Le champ optionsSupervision.nomAppelant est obligatoire"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erreur serveur."
+          }
+        },
+        "servers": [
+          {
+            "url": "https://api.francetravail.io/partenaire/romeo/v2",
+            "description": ""
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "Bearer "
+            },
+            "description": "Token d'authentification Bearer"
+          }
+        ]
+      }
+    },
+    "/predictionCompetences": {
+      "post": {
+        "tags": [
+          "Competence"
+        ],
+        "summary": "Prédiction des savoirs / savoir-faire du ROME",
+        "description": "Obtenez le savoir / savoir-faire du ROME le plus proche à partir d’un texte libre renseigné.\r\n\r\n\r\n\r\nCas d'usage possibles :\r\n\r\n- Rapprocher une compétence d’un CV à des savoirs / savoir-faire du ROME 4.0\r\n\r\n- Rapprocher une compétence d’un référentiel extérieure à des savoirs / savoir-faire du ROME 4.0\r\n\r\n\r\n\r\nLes bonnes pratiques pour utiliser /PredictionCompetences\r\n\r\nSi votre texte contient plusieurs compétences libres, /PredictionCompetences ne pourra pas les séparer pour ensuite les associer au ROME de façon individuelle. Il est préférable de fournir un texte contenant une seule compétence libre.\r\n\r\nUtiliser /performancePredictionCompetences pour nous aider à améliorer notre modèle IA (cf. ressource ci-dessous : /performancePredictionCompetences - Renvoyez-nous votre feedback pour permettre l'amélioration du modèle IA).",
+        "operationId": "Prédiction des savoirs / savoir-faire du ROME",
+        "requestBody": {
+          "content": {
+            "application/json; charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/CompetenceDTO"
+              },
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "competences": [
+                      {
+                        "intitule": "faire du pain",
+                        "identifiant": "123456"
+                      }
+                    ],
+                    "options": {
+                      "nomAppelant": "francetravail",
+                      "nbResultats": 2,
+                      "seuilScorePrediction": 0.7
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PredictionCompetence"
+                  }
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": [
+                      {
+                        "uuidInference": "93f7f573-da71-4382-94c7-e21db9c9a30f",
+                        "identifiant": "123456",
+                        "intitule": "faire du pain",
+                        "competencesRome": [
+                          {
+                            "libelleCompetence": "Fabriquer des produits de boulangerie",
+                            "codeCompetence": "119357",
+                            "typeCompetence": "COMPETENCE-DETAILLEE",
+                            "scorePrediction": 0.8
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "En cas de réponse 400, veuillez vous référer à l'erreur mentionnée dans l'objet message.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "classeOrigine": "fr.pe.empl.service.so072.exceptions.RomeoBadRequestException",
+                      "codeErreur": "J072000G",
+                      "codeHttp": 400,
+                      "message": "Le champ optionsSupervision.nomAppelant est obligatoire"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erreur serveur."
+          }
+        },
+        "servers": [
+          {
+            "url": "https://api.francetravail.io/partenaire/romeo/v2",
+            "description": ""
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "Bearer "
+            },
+            "description": "Token d'authentification Bearer"
+          }
+        ]
+      }
+    },
+    "/predictionMetiers": {
+      "post": {
+        "tags": [
+          "Appellation"
+        ],
+        "summary": "Prédiction des appellations métier du ROME",
+        "description": "Obtenez l‘appellation métier du ROME la plus proche à partir d’un texte libre renseigné.\r\n\r\n\r\n\r\nCas d'usage possibles\r\n- Rapprocher un intitulé d’offre d’emploi à des appellations métier du ROME 4.0\r\n- Rapprocher un intitulé d’expérience d’un CV à des appellations métier du ROME 4.0\r\n\r\nLes bonnes pratiques pour utiliser /predictionMetiers\r\n- Un texte court augmente la pertinence des prédictions (évitez les textes longs).\r\n- Si le texte à rapprocher du ROME est peu explicite, précisez le champ \"contexte\" pour faciliter la prédiction de /PredictionMetiers (par exemple, l’intitulé \"conseiller\" peut se décliner en plusieurs appellations métier telles que \"conseiller en immobilier\" ou \"conseiller à l'emploi« , en précisant le champ contexte vous vous assurez d’une prédiction plus cohérente).\r\n- Il n'est pas possible de prédire plus de 20 intitulés par appel.\r\nUtiliser /performancePredictionMetiers pour nous aider à améliorer notre modèle IA.",
+        "operationId": "Prédiction des appellations métier du ROME",
+        "requestBody": {
+          "content": {
+            "application/json; charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/AppellationDTO"
+              },
+              "examples": {
+                "Example 1": {
+                  "value": {
+                    "appellations": [
+                      {
+                        "intitule": "Boucher",
+                        "identifiant": "123456",
+                        "contexte": "Commerce de détail de viandes et de produits à base de viande en magasin spécialisé"
+                      }
+                    ],
+                    "options": {
+                      "nomAppelant": "francetravail",
+                      "nbResultats": 2,
+                      "seuilScorePrediction": 0.7
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "En cas de succès à l'appel API, cette dernière renvoie un code http : 200 OK ",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PredictionAppellation"
+                  }
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": [
+                      {
+                        "metiersRome": [
+                          {
+                            "libelleAppellation": "Boucher / Bouchère",
+                            "codeAppellation": "11564",
+                            "libelleRome": "Boucherie",
+                            "codeRome": "D1101",
+                            "scorePrediction": 0.75
+                          }
+                        ],
+                        "uuidInference": "bca57776-9e3f-4c72-b939-8a48cd87ff6e",
+                        "identifiant": "123456",
+                        "intitule": "boucher",
+                        "contexte": "Commerce de détail de viandes et de produits à base de viande en magasin spécialisé"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "En cas de réponse 400, veuillez vous référer à l'erreur mentionnée dans l'objet message.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "classeOrigine": "fr.pe.empl.service.so072.exceptions.RomeoBadRequestException",
+                      "codeErreur": "J072000G",
+                      "codeHttp": 400,
+                      "message": "Le champ optionsSupervision.nomAppelant est obligatoire"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erreur serveur."
+          }
+        },
+        "servers": [
+          {
+            "url": "https://api.francetravail.io/partenaire/romeo/v2",
+            "description": ""
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "Bearer "
+            },
+            "description": "Token d'authentification Bearer"
+          }
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Appellation",
+      "description": "Prédictions sur les appellations"
+    },
+    {
+      "name": "Competence",
+      "description": "Prédictions sur les compétences"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "PerformanceCompetenceDTO": {
+        "type": "object",
+        "properties": {
+          "performanceCompetence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PerformanceCompetence"
+            }
+          },
+          "optionsSupervision": {
+            "$ref": "#/components/schemas/OptionsSupervision"
+          }
+        }
+      },
+      "PerformanceCompetence": {
+        "type": "object",
+        "properties": {
+          "uuidInference": {
+            "type": "string",
+            "description": "Identifiant unique de l'inférence renvoyé par l'API.",
+            "example": "b42110bb-3d55-4e92-9930-133c5d92a555"
+          },
+          "bonnePrediction": {
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ],
+            "description": "- True : la prédiction est correcte\r\n- False : la prédiction est fausse "
+          },
+          "codeCompetence": {
+            "type": "string",
+            "description": "- Si \"bonneprediction\" est true : veuillez renseigner le code OGR du savoir / savoir-faire prédit par l'IA qui a été sélectionné\r\n- Si \"bonneprediction\" est false : veuillez renseigner le code OGR du savoir / savoir-faire que vous auriez souhaité avoir",
+            "example": "101846"
+          }
+        },
+        "required": [
+          "uuidInference",
+          "bonnePrediction"
+        ]
+      },
+      "OptionsSupervision": {
+        "type": "object",
+        "properties": {
+          "nomAppelant": {
+            "type": "string",
+            "description": "Nom de l'application partenaire ou du partenaire appelant la ressource",
+            "example": "francetravail"
+          }
+        },
+        "required": [
+          "nomAppelant"
+        ]
+      },
+      "ExceptionPerformanceCompetence": {
+        "type": "object",
+        "properties": {
+          "uuidInference": {
+            "type": "string",
+            "description": "identifiant unique de l'inférence, utile pour l'appel à la ressource performancePredicitonCompetences",
+            "example": "b42110bb-3d55-4e92-9930-133c5d92a555"
+          }
+        },
+        "required": [
+          "uuidInference"
+        ]
+      },
+      "PerformanceAppellationDTO": {
+        "type": "object",
+        "properties": {
+          "performanceAppellation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PerformanceAppellation"
+            }
+          },
+          "optionsSupervision": {
+            "$ref": "#/components/schemas/OptionsSupervision"
+          }
+        }
+      },
+      "PerformanceAppellation": {
+        "type": "object",
+        "properties": {
+          "uuidInference": {
+            "type": "string",
+            "description": "Identifiant unique de l'inférence renvoyé par l'API.",
+            "example": "93f7f573-da71-4382-94c7-e21db9c9a30f"
+          },
+          "bonnePrediction": {
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ],
+            "description": "- True : la prédiction est correcte\r\n- False : la prédiction est fausse "
+          },
+          "codeAppellation": {
+            "type": "string",
+            "description": "- Si \"bonneprediction\" est true : veuillez renseigner le code OGR de l'appellation métier prédite par l'IA qui a été sélectionnée\r\n- Si \"bonneprediction\" est false : veuillez renseigner le code OGR de l'appellation métier que vous auriez souhaité avoir",
+            "example": "11564"
+          }
+        },
+        "required": [
+          "uuidInference",
+          "bonnePrediction"
+        ],
+        "x-examples": {
+          "Example 1": {
+            "uuidInference": "string",
+            "bonnePrediction": true,
+            "codeAppellation": "string"
+          }
+        }
+      },
+      "ExceptionPerformanceAppellation": {
+        "type": "object",
+        "properties": {
+          "uuidInference": {
+            "type": "string",
+            "example": "b42110bb-3d55-4e92-9930-133c5d92a555"
+          }
+        }
+      },
+      "CompetenceDTO": {
+        "type": "object",
+        "properties": {
+          "competences": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Competence"
+            }
+          },
+          "options": {
+            "$ref": "#/components/schemas/Options"
+          }
+        }
+      },
+      "Competence": {
+        "type": "object",
+        "properties": {
+          "intitule": {
+            "type": "string",
+            "description": "Texte libre pour lequel on souhaite prédire un savoir / savoir-faire du ROME (par exemple une compétence d'un CV)\r\n",
+            "example": "faire du pain"
+          },
+          "identifiant": {
+            "type": "string",
+            "description": "Identifiant fonctionnel unique, clé permettant d'identifier l'intitulé à prédire dans la liste fournie en entrée du service.\r\n\r\nCet identifiant est à la main du service appelant, il permet de rapprocher l'intitulé envoyé avec la prédiction retournée.",
+            "example": "123456"
+          }
+        },
+        "required": [
+          "intitule",
+          "identifiant"
+        ]
+      },
+      "Options": {
+        "type": "object",
+        "properties": {
+          "nomAppelant": {
+            "type": "string",
+            "description": "Nom de l'application partenaire ou du partenaire appelant la ressource",
+            "example": "francetravail"
+          },
+          "nbResultats": {
+            "type": "integer",
+            "description": "nombre de prédictions à retourner\r\n\r\n- entier compris entre 1 et 25\r\n\r\n- par défaut, retourne 5 résultats",
+            "format": "int32",
+            "example": 2
+          },
+          "seuilScorePrediction": {
+            "type": "number",
+            "description": "Niveau de confiance de l'IA accompagnant chaque prédiction. Plus le score est proche de 1, plus l’IA est confiante dans sa prédiction. \r\n\r\nSi un seuil est défini, il prévaut sur le nombre de résultats qui a été renseigné",
+            "format": "float",
+            "example": 0.7
+          }
+        },
+        "required": [
+          "nomAppelant"
+        ]
+      },
+      "PredictionCompetence": {
+        "type": "object",
+        "properties": {
+          "uuidInference": {
+            "type": "string",
+            "description": "identifiant unique de l'inférence, utile pour l'appel à la ressource performancePredicitonCompetences",
+            "example": "93f7f573-da71-4382-94c7-e21db9c9a30f"
+          },
+          "identifiant": {
+            "type": "string",
+            "description": "Identifiant fonctionnel unique, clé permettant d'identifier l'intitulé à prédire dans la liste fournie en entrée du service.\r\n\r\nCet identifiant est à la main du service appelant, il permet de rapprocher l'intitulé envoyé avec la prédiction retournée.",
+            "example": "123456"
+          },
+          "intitule": {
+            "type": "string",
+            "description": "Texte libre renseigné lors de l'appel à l'API et pour lequel on souhaite prédire un savoir / savoir-faire du ROME",
+            "example": "faire du pain"
+          },
+          "competencesRome": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompetenceRome"
+            }
+          }
+        },
+        "required": [
+          "uuidInference",
+          "identifiant",
+          "intitule"
+        ],
+        "x-examples": {}
+      },
+      "CompetenceRome": {
+        "type": "object",
+        "properties": {
+          "libelleCompetence": {
+            "type": "string",
+            "description": "Libellé du savoir / savoir-faire du ROME prédit",
+            "example": "Fabriquer des produits de boulangerie"
+          },
+          "codeCompetence": {
+            "type": "string",
+            "description": "Code du savoir / savoir-faire du ROME prédit",
+            "example": "119357"
+          },
+          "typeCompetence": {
+            "type": "string",
+            "description": "Type du savoir / savoir-faire du ROME prédit (savoir, compétence, macro-compétence)",
+            "example": "COMPETENCE-DETAILLEE"
+          },
+          "scorePrediction": {
+            "type": "number",
+            "description": "Score de confiance de l'IA suite à sa prédiction (plus on est proche de 1 plus l'IA est confiante)",
+            "format": "float",
+            "example": 0.8
+          }
+        },
+        "required": [
+          "libelleCompetence",
+          "codeCompetence",
+          "typeCompetence",
+          "scorePrediction"
+        ],
+        "x-examples": {
+          "Example 1": {
+            "libelleCompetence": "Utiliser les réseaux sociaux",
+            "codeCompetence": "300425",
+            "typeCompetence": "MACRO-SAVOIR-FAIRE",
+            "scorePrediction": 0.8682828
+          }
+        }
+      },
+      "AppellationDTO": {
+        "type": "object",
+        "properties": {
+          "appellations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Appellation"
+            }
+          },
+          "options": {
+            "$ref": "#/components/schemas/Options"
+          }
+        }
+      },
+      "Appellation": {
+        "type": "object",
+        "properties": {
+          "intitule": {
+            "type": "string",
+            "description": "Texte libre pour lequel on souhaite prédire un métier (par exemple l'intitulé d'une offre d'emploi). Pour rappel, il n'est pas possible de prédire plus de 20 intitulés par appel.",
+            "example": "Boucher"
+          },
+          "identifiant": {
+            "type": "string",
+            "description": "Identifiant fonctionnel unique, clé permettant d'identifier l'intitulé à prédire dans la liste fournie en entrée du service.\r\n\r\nCet identifiant est à la main du service appelant, il permet de rapprocher l'intitulé envoyé avec la prédiction retournée.",
+            "example": "123456"
+          },
+          "contexte": {
+            "type": "string",
+            "description": "aide l'IA à trouver la prédiction la plus pertinente en précisant le secteur d’activité. Ce contexte peut être décliné sous 3 formes :\r\n\r\n- un libellé NAF (INSEE)\r\n- un code SIRET (nous récupérons le libellé NAF associé à ce code)\r\n- un texte libre\r\n\r\nSi le texte à rapprocher du ROME est peu explicite, précisez le champ \"contexte\" pour faciliter la prédiction de Text2App (par exemple, l’intitulé \"conseiller\" peut se décliner en plusieurs appellations métier telles que \"conseiller en immobilier\" ou \"conseiller à l'emploi« , en précisant le champ contexte vous vous assurez d’une prédiction plus cohérente).",
+            "example": "Commerce de détail de viandes et de produits à base de viande en magasin spécialisé"
+          }
+        },
+        "required": [
+          "intitule",
+          "identifiant"
+        ],
+        "x-examples": {
+          "Example 1": "Body\n{    \"appellations\": [        {            \"intitule\": \"boucher\",            \"contexte\": \"grande surface\",            \"identifiant\": \"123456\"        }    ],    \"options\": {        \"nomAppelant\": \"Application n°1\",        \"nbResultats\": 1,        \"seuilScorePrediction\": \"\"    } }"
+        }
+      },
+      "PredictionAppellation": {
+        "type": "object",
+        "properties": {
+          "metiersRome": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AppellationRome"
+            }
+          },
+          "uuidInference": {
+            "type": "string",
+            "description": "Identifiant unique de l'inférence, utile pour l'appel à la ressource performancePredicitonMetiers",
+            "example": "bca57776-9e3f-4c72-b939-8a48cd87ff6e"
+          },
+          "identifiant": {
+            "type": "string",
+            "description": "Identifiant fonctionnel unique, clé permettant d'identifier l'intitulé à prédire dans la liste fournie en entrée du service. Cet identifiant est à la main du service appelant, il permet de rapprocher l'intitulé envoyé avec la prédiction retournée.",
+            "example": "123456"
+          },
+          "intitule": {
+            "type": "string",
+            "description": "Texte libre renseigné lors de l'appel à l'API et pour lequel on souhaite prédire un métier du ROME (par exemple l'intitulé d'une offre d'emploi).\nPour rappel, il n'est pas possible de prédire plus de 20 intitulés par appel.",
+            "example": "boucher"
+          },
+          "contexte": {
+            "type": "string",
+            "description": "Contexte renseigné lors de l'appel à l'API afin de prédire un métier du ROME",
+            "example": "Commerce de détail de viandes et de produits à base de viande en magasin spécialisé"
+          }
+        },
+        "required": [
+          "uuidInference",
+          "identifiant",
+          "intitule",
+          "contexte"
+        ]
+      },
+      "AppellationRome": {
+        "type": "object",
+        "properties": {
+          "libelleAppellation": {
+            "type": "string",
+            "description": "Libellé de l'appellation métier du ROME prédite",
+            "example": "Boucher / Bouchère"
+          },
+          "codeAppellation": {
+            "type": "string",
+            "description": "Code de l'appellation métier ROME prédite",
+            "example": "11564"
+          },
+          "libelleRome": {
+            "type": "string",
+            "description": "Libellé de la fiche ROME parente",
+            "example": "Boucherie"
+          },
+          "codeRome": {
+            "type": "string",
+            "description": "Code ROME de la fiche parente",
+            "example": "D1101"
+          },
+          "scorePrediction": {
+            "type": "number",
+            "description": "Score de confiance de l'IA suite à sa prédiction (plus on est proche de 1 plus l'IA est confiante)",
+            "format": "float",
+            "example": 0.75
+          }
+        },
+        "required": [
+          "libelleAppellation",
+          "codeAppellation",
+          "libelleRome",
+          "codeRome",
+          "scorePrediction"
+        ]
+      }
+    }
+  }
+}
