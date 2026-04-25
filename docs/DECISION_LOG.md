@@ -2183,3 +2183,103 @@ correspondantes du `.gitignore`. Aucun historique perdu côté code.
 
 ---
 
+## ADR-048 — RAG multi-corpus retrievable parallèle (2026-04-25)
+
+### Context
+
+Ordre samedi-4-axes Jarvis 2026-04-25-1140 demandait d'intégrer les
+codes ROME + format_court ONISEP dans `formations.json` via merger v2
+("humanisation ROME RAG"). Exploration data pré-implémentation a révélé
+3 obstacles structurels :
+
+1. **Couverture jointure ROME insuffisante** : 25 codes ROME distincts
+   dans `formations.json` (4 450 fiches sur 48 914 ont des debouches),
+   408 dans `ideo_fiches.json`, intersection de 8 codes (32 % couvre
+   formations / 2 % couvre ideo). Greffer enrichirait <5 % du corpus.
+2. **Match libellés métier impraticable** : formations expriment des
+   spécialités fines ("Ingénieur cybersécurité datacenter"), ideo des
+   métiers génériques ("ingénieur informatique"). 3 libellés distincts
+   matchent en exact-match. Fuzzy hors scope.
+3. **`fiche_to_text` protected file** (CLAUDE.md OrientIA) : modifs
+   interdites sans refonte propre, et ROME injecté dans le texte
+   embedding fait régresser (Run 5 ablation, ADR-033 ROME masking
+   generator pour le même phénomène côté output).
+
+### Decision
+
+Pivot vers une architecture **N corpus retrievables parallèles** plutôt
+qu'une jointure forcée à faible couverture. Chaque source de données
+hétérogène devient un corpus distinct avec son `domain` et son texte
+retrievable propre :
+
+| Corpus | Records | Domain | Source | PR |
+|---|---:|---|---|---|
+| `formations.json` | 48 914 | `formation` | Parcoursup + ONISEP fusionnés | (existant, intact) |
+| `metiers_corpus.json` | 1 075 | `metier` | ONISEP Idéo-Fiches XML | #56 |
+| `parcours_bacheliers_corpus.json` | 151 | `parcours_bacheliers` | MESRI | #57 |
+| `apec_regions_corpus.json` | 13 | `apec_region` | APEC observatoire 2026 | #59 |
+| **TOTAL** | **50 153** | 4 domains | — | — |
+
+Convergence implémentée dans `src/rag/multi_corpus.py` (PR #60) :
+- `Corpus` dataclass holds records + domain + path
+- `MultiCorpusLoader` : load_all() / load_one() avec graceful skip si
+  fichier absent (fresh clones fonctionnels)
+- `extract_texts_for_embedding(corpus)` : list[(id, text)] prêts pour
+  `embed_texts_batched(client, texts)`
+- `merge_for_embedding(corpora, domains?)` : fusion uniforme avec
+  `original_record` préservé pour reranker / generator domain-aware
+
+### Rationale
+
+- **100 % couverture vs ~5 %** : 1 075 fiches metiers + 151 parcours
+  + 13 régions APEC tous retrievables vs 8 codes ROME jointure forcée.
+- **Préservation des protected files** : `fiche_to_text` v3 inchangé,
+  `formations.json` inchangé. Pas besoin de bench delta validation
+  pour les corpus annexes (additif, pas substitutif).
+- **Pattern compatible RAG mature** : multi-corpus avec metadata
+  filtering est largement utilisé (LangChain MultiRetriever, Llama
+  Index domain routing). Rien d'exotique.
+- **Decoupling reproductibilité** : chaque corpus a son builder
+  (`build_metiers_corpus`, `parcours_bacheliers`, `apec_regions`), son
+  test suite, son CLI. Régression en cascade isolée.
+
+### Alternatives rejetées
+
+1. **Jointure ROME forcée dans `formations.json`** — couverture <5 %
+   pour un coût archi élevé. Cf ADR-040 D12 sur les limitations
+   structurelles ROME formations.
+2. **Modifier `fiche_to_text` v4** pour injecter ROME + format_court —
+   interdit par protected file note + ADR-033 (régressif). Aurait
+   demandé bench delta préalable.
+3. **N index FAISS séparés** (1 par domain) — overhead latence et
+   complexité retrieval. Préféré : 1 index unifié avec `metadata.domain`
+   filter (cf PR #61 future avec rebuild + bench v5).
+
+### Tests
+
+PR #60 livre 26 tests sur `multi_corpus.py` :
+- `Corpus` dataclass (len, is_empty)
+- `_extract_text` per domain (formation→nom, autres→text)
+- `MultiCorpusLoader.load_all/load_one/get` (4 corpus, missing file
+  graceful, invalid JSON graceful, unknown domain raise, lazy cache)
+- `extract_texts_for_embedding` (metier, formation idx-based fallback,
+  skip_empty on/off)
+- `merge_for_embedding` (fusion, filtre domain, preserve original_record,
+  skip text vide)
+
+Toujours **0 régression** sur 976 tests existants.
+
+### Liens
+
+- PR #56 metiers_corpus (Axe 1.A pivot)
+- PR #57 parcours_bacheliers (Axe 2)
+- PR #59 apec_regions (Axe 1.B)
+- PR #60 multi_corpus convergence (cette ADR)
+- PR #61 (à venir) FAISS rebuild + bench v5 chiffré
+- ADR-040 scope élargi 17-25 ans
+- ADR-033 ROME masking generator
+- ADR-047 Mistral timeout (consensus archi cohérente)
+- Protected file note : `CLAUDE.md` OrientIA, `fiche_to_text`
+
+---
+
