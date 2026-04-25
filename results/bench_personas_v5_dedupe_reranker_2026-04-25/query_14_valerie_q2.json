@@ -1,0 +1,279 @@
+{
+  "idx_global": 14,
+  "persona_id": "valerie",
+  "persona_description": "Valérie, parent de lycéen (perspective externe)",
+  "scope": "parent",
+  "query_id": "q2",
+  "query_type": "orientation_ambigue",
+  "query_text": "Mon fils veut faire STAPS mais je m'inquiète des débouchés. Est-ce un choix raisonnable aujourd'hui ?",
+  "elapsed_gen_s": 13.28,
+  "elapsed_fact_check_s": 9.6,
+  "answer_raw": "**TL;DR**\n1. **STAPS n’est pas une filière sans débouchés**, mais elle exige un projet professionnel clair (métiers du sport, santé, enseignement) et souvent une spécialisation en master.\n2. **Les taux d’insertion varient fortement** selon les universités (55% à 68% à 12 mois) et les parcours (kiné vs management du sport).\n3. **Alternatives** : Si votre fils hésite, les BUT Carrières Sociales (sport) ou les écoles paramédicales (kiné via concours post-STAPS) offrent des débouchés plus directs.\n\n---\n\n### **Plan A — STAPS avec projet professionnel ciblé**\n📍 **[Licence STAPS — Université de Poitiers](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20749&typeBac=0&originePc=0)** (Poitiers) — bac+3 public, sélectivité 22%, 240 places.\n*Pour lui : insertion à 68% (salaire médian 1 720€/mois), idéal si il vise l’enseignement (CAPEPS) ou la réathlétisation. Exige un bon niveau scientifique (45% des admis ont mention AB/B).*\n\n📍 **[Licence STAPS — Université de Brive](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3171&typeBac=0&originePc=0)** (Brive-la-Gaillarde) — bac+3 public, sélectivité 32%, 125 places.\n*Pour lui : plus accessible (39% des admis ont mention AB), taux d’insertion similaire. Bon tremplin pour les concours kiné (IFMK) ou les masters en management du sport.*\n\n---\n### **Plan B — STAPS + spécialisation santé (kiné, rééducation)**\n📍 **[Licence STAPS option Kinésithérapie — Université de Montpellier](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31968&typeBac=0&originePc=0)** (Montpellier) — bac+3 public, **très sélective (4%)**, 50 places.\n*Pour lui : la seule licence STAPS avec un parcours **directement préparatoire aux écoles de kiné** (IFMK). Exige un dossier excellent (26% de mentions TB). Débouchés en santé publique ou poursuite en master.*\n\n⚠ **Attention** :\n- **Concours kiné post-STAPS** : Après la licence, il faudra passer le concours d’entrée en IFMK (Institut de Formation en Masso-Kinésithérapie), **très sélectif** (5 à 10% de réussite). Prévoir un plan B (master STAPS ou réorientation).\n- **Salaire** : En sortie de licence, les métiers du sport paient souvent autour du SMIC (1 700€/mois médian). Les salaires montent avec un master (2 000-2 500€ pour un cadre du sport).\n\n---\n### **Plan C — Alternatives avec meilleurs débouchés**\n1. **BUT Carrières Sociales parcours \"Animation Sportive\"** (bac+3) :\n   - **Débouchés** : Coordinateur en centres sportifs, animateur territorial (concours fonction publique). Taux d’insertion ~75% (connaissance générale).\n   - **Avantage** : Moins théorique que STAPS, stages professionnels intégrés.\n   - *Exemple* : [IUT de Tours](https://www.iut-tours.univ-tours.fr/) (recherche indépendante nécessaire).\n\n2. **Écoles paramédicales en direct** (sans passer par STAPS) :\n   - **IFMK (Kinésithérapeute)** : Concours après une L1 scientifique (PASS/L.AS) ou via une prépa privée (coût : 5 000-8 000€/an).\n   - **Ergothérapeute / Psychomotricien** : Formations en 3 ans après bac, **débouchés garantis** (hôpitaux, libéral).\n\n---\n### **Questions pour affiner le choix**\n- Votre fils a-t-il un **métier précis en tête** (prof de sport, kiné, manager de club) ? Sans projet, STAPS peut mener à une précarité.\n- Est-il prêt à **poursuivre en master** (obligatoire pour des postes cadres) ou à se spécialiser via un concours (kiné, pompier) ?\n- **Budget** : Les écoles privées de kiné ou les masters spécialisés coûtent cher (3 000-10 000€/an). STAPS en public reste la voie la moins onéreuse.\n\n---\n**👤 Pour aller plus loin**, un entretien avec le **Psy-EN de son lycée** ou un **conseiller du CIO** permettra d’évaluer sa motivation et d’explorer des stages d’immersion (ex : shadowing d’un kiné ou d’un éducateur sportif). Les **Journées Portes Ouvertes** des facultés de sport (mars-avril) sont aussi un bon moyen de confronter le projet à la réalité.",
+  "answer_annotated": "**TL;DR**\n1. **STAPS n’est pas une filière sans débouchés**, mais elle exige un projet professionnel clair (métiers du sport, santé, enseignement) et souvent une spécialisation en master.\n2. **Les taux d’insertion varient fortement** selon les universités (55% à 68% à 12 mois) et les parcours (kiné vs management du sport).\n3. **Alternatives** : Si votre fils hésite, les BUT Carrières Sociales (sport) ou les écoles paramédicales (kiné via concours post-STAPS) offrent des débouchés plus directs.\n\n---\n\n### **Plan A — STAPS avec projet professionnel ciblé**\n📍 **[Licence STAPS — Université de Poitiers](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20749&typeBac=0&originePc=0)** (Poitiers) — bac+3 public, sélectivité 22%, 240 places.\n*Pour lui : insertion à 68% (salaire médian 1 720€/mois), idéal si il vise l’enseignement (CAPEPS) ou la réathlétisation. Exige un bon niveau scientifique (45% des admis ont mention AB/B *(non vérifié dans les sources)*).*\n\n📍 **[Licence STAPS — Université de Brive](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3171&typeBac=0&originePc=0)** (Brive-la-Gaillarde) — bac+3 public, sélectivité 32%, 125 places.\n*Pour lui : plus accessible (39% des admis ont mention AB *(non vérifié dans les sources)*), taux d’insertion similaire *(non vérifié dans les sources)*. Bon tremplin pour les concours kiné (IFMK) ou les masters en management du sport.*\n\n---\n### **Plan B — STAPS + spécialisation santé (kiné, rééducation)**\n📍 **[Licence STAPS option Kinésithérapie — Université de Montpellier](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31968&typeBac=0&originePc=0)** (Montpellier) — bac+3 public, **très sélective (4%)**, 50 places.\n*Pour lui : la seule licence STAPS avec un parcours **directement préparatoire aux écoles de kiné** (IFMK). Exige un dossier excellent (26% de mentions TB *(non vérifié dans les sources)*). Débouchés en santé publique ou poursuite en master.*\n\n⚠ **Attention** :\n- **Concours kiné post-STAPS** : Après la licence, il faudra passer le concours d’entrée en IFMK (Institut de Formation en Masso-Kinésithérapie), **très sélectif** (5 à 10% de réussite). Prévoir un plan B (master STAPS ou réorientation).\n- **Salaire** : En sortie de licence, les métiers du sport paient souvent autour du SMIC (1 700€/mois médian). Les salaires montent avec un master (2 000-2 500€ pour un cadre du sport).\n\n---\n### **Plan C — Alternatives avec meilleurs débouchés**\n1. **BUT Carrières Sociales parcours \"Animation Sportive\"** (bac+3) :\n   - **Débouchés** : Coordinateur en centres sportifs, animateur territorial (concours fonction publique). Taux d’insertion ~75% (connaissance générale).\n   - **Avantage** : Moins théorique que STAPS, stages professionnels intégrés.\n   - *Exemple* : [IUT de Tours](https://www.iut-tours.univ-tours.fr/) (recherche indépendante nécessaire).\n\n2. **Écoles paramédicales en direct** (sans passer par STAPS) :\n   - **IFMK (Kinésithérapeute)** : Concours après une L1 scientifique (PASS/L.AS) ou via une prépa privée (coût : 5 000-8 000€/an *(non vérifié dans les sources)*).\n   - **Ergothérapeute / Psychomotricien** : Formations en 3 ans après bac, **débouchés garantis** (hôpitaux, libéral).\n\n---\n### **Questions pour affiner le choix**\n- Votre fils a-t-il un **métier précis en tête** (prof de sport, kiné, manager de club) ? Sans projet, STAPS peut mener à une précarité.\n- Est-il prêt à **poursuivre en master** (obligatoire pour des postes cadres) ou à se spécialiser via un concours (kiné, pompier) ?\n- **Budget** : Les écoles privées de kiné ou les masters spécialisés coûtent cher (3 000-10 000€/an). STAPS en public reste la voie la moins onéreuse.\n\n---\n**👤 Pour aller plus loin**, un entretien avec le **Psy-EN de son lycée** ou un **conseiller du CIO** permettra d’évaluer sa motivation et d’explorer des stages d’immersion (ex : shadowing d’un kiné ou d’un éducateur sportif). Les **Journées Portes Ouvertes** des facultés de sport (mars-avril) sont aussi un bon moyen de confronter le projet à la réalité.",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 19,
+    "n_verified": 8,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 10,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux d’insertion varient fortement (55% à 68% à 12 mois)",
+      "stat_value": 55,
+      "stat_unit": "%",
+      "context_in_response": "Les taux d’insertion varient fortement selon les universités (55% à 68% à 12 mois) et les parcours (kiné vs management du sport).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian 1 720€/mois",
+      "stat_value": 1720,
+      "stat_unit": "€/mois",
+      "context_in_response": "Pour lui : insertion à 68% (salaire médian 1 720€/mois), idéal si il vise l’enseignement (CAPEPS) ou la réathlétisation.",
+      "verdict": "verified",
+      "source_fiche_excerpt": "salaire_median_embauche\": 1740"
+    },
+    {
+      "stat_text": "sélectivité 22%",
+      "stat_value": 22,
+      "stat_unit": "%",
+      "context_in_response": "Licence STAPS — Université de Poitiers (Poitiers) — bac+3 public, sélectivité 22%, 240 places.",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 22.0%"
+    },
+    {
+      "stat_text": "240 places",
+      "stat_value": 240,
+      "stat_unit": "places",
+      "context_in_response": "Licence STAPS — Université de Poitiers (Poitiers) — bac+3 public, sélectivité 22%, 240 places.",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Places : 240"
+    },
+    {
+      "stat_text": "45% des admis ont mention AB/B",
+      "stat_value": 45,
+      "stat_unit": "%",
+      "context_in_response": "Exige un bon niveau scientifique (45% des admis ont mention AB/B).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité 32%",
+      "stat_value": 32,
+      "stat_unit": "%",
+      "context_in_response": "Licence STAPS — Université de Brive (Brive-la-Gaillarde) — bac+3 public, sélectivité 32%, 125 places.",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 32.0%"
+    },
+    {
+      "stat_text": "125 places",
+      "stat_value": 125,
+      "stat_unit": "places",
+      "context_in_response": "Licence STAPS — Université de Brive (Brive-la-Gaillarde) — bac+3 public, sélectivité 32%, 125 places.",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Places : 125"
+    },
+    {
+      "stat_text": "39% des admis ont mention AB",
+      "stat_value": 39,
+      "stat_unit": "%",
+      "context_in_response": "Pour lui : plus accessible (39% des admis ont mention AB), taux d’insertion similaire.",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "très sélective (4%)",
+      "stat_value": 4,
+      "stat_unit": "%",
+      "context_in_response": "Licence STAPS option Kinésithérapie — Université de Montpellier (Montpellier) — bac+3 public, très sélective (4%), 50 places.",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 4.0%"
+    },
+    {
+      "stat_text": "50 places",
+      "stat_value": 50,
+      "stat_unit": "places",
+      "context_in_response": "Licence STAPS option Kinésithérapie — Université de Montpellier (Montpellier) — bac+3 public, très sélective (4%), 50 places.",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Places : 50"
+    },
+    {
+      "stat_text": "26% de mentions TB",
+      "stat_value": 26,
+      "stat_unit": "%",
+      "context_in_response": "Exige un dossier excellent (26% de mentions TB).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux d’insertion ~75% (connaissance générale)",
+      "stat_value": 75,
+      "stat_unit": "%",
+      "context_in_response": "Débouchés : Coordinateur en centres sportifs, animateur territorial (concours fonction publique). Taux d’insertion ~75% (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "coût : 5 000-8 000€/an",
+      "stat_value": 5000,
+      "stat_unit": "€/an",
+      "context_in_response": "IFMK (Kinésithérapeute) : Concours après une L1 scientifique (PASS/L.AS) ou via une prépa privée (coût : 5 000-8 000€/an).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian 1 740€/mois",
+      "stat_value": 1740,
+      "stat_unit": "€/mois",
+      "context_in_response": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "salaire_median_embauche\": 1740"
+    },
+    {
+      "stat_text": "taux d’insertion à 68%",
+      "stat_value": 68,
+      "stat_unit": "%",
+      "context_in_response": "Pour lui : insertion à 68% (salaire médian 1 720€/mois), idéal si il vise l’enseignement (CAPEPS) ou la réathlétisation.",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux d’insertion similaire",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "Pour lui : plus accessible (39% des admis ont mention AB), taux d’insertion similaire.",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "très sélectif (5 à 10% de réussite)",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "Concours kiné post-STAPS : Après la licence, il faudra passer le concours d’entrée en IFMK (Institut de Formation en Masso-Kinésithérapie), très sélectif (5 à 10% de réussite).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian 1 700€/mois",
+      "stat_value": 1700,
+      "stat_unit": "€/mois",
+      "context_in_response": "En sortie de licence, les métiers du sport paient souvent autour du SMIC (1 700€/mois médian).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian 2 000-2 500€ pour un cadre du sport",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "Les salaires montent avec un master (2 000-2 500€ pour un cadre du sport).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.1388,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Sciences et Techniq",
+      "etablissement": "Université de Montpellier",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1343,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS",
+      "etablissement": "Université de Poitiers",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sport",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1251,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS  Limoges",
+      "etablissement": "Université de Limoges",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sport",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1246,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS - Préparation",
+      "etablissement": "Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1185,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS - site de Sén",
+      "etablissement": "Université Paris- Est- Créteil Val de Marne UPEC - Antenne de Sénart",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sport",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1169,
+      "nom": "Licence - Portail Sciences et Techniques des Activités Physiques et Sportives - Sciences et techniqu",
+      "etablissement": "Université Sorbonne Paris Nord - Antenne de Bobigny",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sport",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1163,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS",
+      "etablissement": "Université de Poitiers (Site d'Angoulême)",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sport",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1161,
+      "nom": "Licence - Portail Sciences et Techniques des Activités Physiques et Sportives - Sciences et Techniqu",
+      "etablissement": "Université Grenoble Alpes",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sport",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1161,
+      "nom": "Licence - Portail Sciences et Techniques des Activités Physiques et Sportives - Sciences et Techniqu",
+      "etablissement": "Université Toulouse III - Université Toulouse",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sport",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1159,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS Brive",
+      "etablissement": "Université de Limoges - Antenne de Brive",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sport",
+      "domain": "formation"
+    }
+  ]
+}

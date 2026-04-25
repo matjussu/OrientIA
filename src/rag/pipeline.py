@@ -6,7 +6,7 @@ from src.rag.index import build_index, save_index, load_index
 from src.rag.retriever import retrieve_top_k
 from src.rag.reranker import RerankConfig, rerank
 from src.rag.mmr import mmr_select, DEFAULT_LAMBDA
-from src.rag.intent import classify_intent, intent_to_config
+from src.rag.intent import classify_intent, classify_domain_hint, intent_to_config
 from src.rag.generator import generate
 from src.validator import (
     Validator,
@@ -77,7 +77,9 @@ class OrientIAPipeline:
             effective_lambda = cfg.mmr_lambda
 
         retrieved = retrieve_top_k(self.client, self.index, self.fiches, question, k=k)
-        reranked = rerank(retrieved, self.rerank_config)
+        # ADR-049 : domain-aware reranker (no-op si hint=None, formation-centric par défaut)
+        domain_hint = classify_domain_hint(question)
+        reranked = rerank(retrieved, self.rerank_config, domain_hint=domain_hint)
         if self.use_mmr:
             top = mmr_select(reranked, k=effective_top_k, lambda_=effective_lambda)
         else:

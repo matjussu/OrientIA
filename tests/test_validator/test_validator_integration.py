@@ -133,7 +133,7 @@ def test_pipeline_opt_in_validator_sets_last_validation(mini_corpus, monkeypatch
     monkeypatch.setattr(
         pipeline_mod, "retrieve_top_k", lambda *args, **kwargs: mini_corpus
     )
-    monkeypatch.setattr(pipeline_mod, "rerank", lambda r, c: r)
+    monkeypatch.setattr(pipeline_mod, "rerank", lambda r, c, **kw: r)
 
     p = OrientIAPipeline(client=None, fiches=mini_corpus, validator=v)
     # Court-circuiter l'index pour passer le RuntimeError de answer()
@@ -159,7 +159,7 @@ def test_pipeline_without_validator_keeps_last_validation_none(mini_corpus, monk
 
     monkeypatch.setattr(pipeline_mod, "generate", lambda *args, **kwargs: "OK")
     monkeypatch.setattr(pipeline_mod, "retrieve_top_k", lambda *args, **kwargs: mini_corpus)
-    monkeypatch.setattr(pipeline_mod, "rerank", lambda r, c: r)
+    monkeypatch.setattr(pipeline_mod, "rerank", lambda r, c, **kw: r)
 
     p = OrientIAPipeline(client=None, fiches=mini_corpus)  # PAS de validator
     p.index = "mocked"
