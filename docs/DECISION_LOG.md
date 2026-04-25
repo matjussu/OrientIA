@@ -2183,3 +2183,140 @@ correspondantes du `.gitignore`. Aucun historique perdu côté code.
 
 ---
 
+## ADR-047 — Mistral timeout root cause : client par défaut, pas fiche_to_text (2026-04-25)
+
+### Context
+
+Bench v4 (2026-04-24) a vu Q12 Mohamed q3 ("CAP cuisine Marseille → Bac
+pro alternance, cuisine vs pâtisserie") timeout 4 fois consécutivement
+avec `ReadTimeout: The read operation timed out`. Pattern identique à
+Q5 Théo q2 en v3 (non-noté pour la même raison).
+
+Le SYNTHESIS v4 vs v3 (`results/bench_personas_v4_2026-04-24/_SYNTHESIS_V4_VS_V3.md`)
+recommandait : *"augmenter `timeout` côté client Mistral (actuellement
+défaut, probablement 60 s) à 180 s. Ou batch les queries lourdes en
+séparé."*
+
+**Hypothèse alternative à invalider** : `fiche_to_text` v3 a peut-être
+explosé en taille post-injection des stats chiffrées (insertion_pro,
+taux_admission, etc.), gonflant les prompts au point de provoquer le
+timeout. Cette hypothèse, si vraie, justifierait une refonte
+`fiche_to_text` v4 (cf CLAUDE.md OrientIA `Fichiers protégés`).
+
+### Investigation 2026-04-25 (Axe 4 ordre samedi-4-axes)
+
+Mesure des outputs `fiche_to_text` v3 sur 5 000 fiches du corpus 48 914 :
+
+| Métrique | Valeur (chars) | Tokens estimés (chars/4) |
+|---|---:|---:|
+| Min | 247 | 62 |
+| Médiane | 642 | 161 |
+| Moyenne | 646 | 162 |
+| p90 | 959 | 240 |
+| p99 | 1 010 | 253 |
+| Max | 1 198 | 300 |
+
+Sur le sous-ensemble cuisine (40 fiches, plus proche de Q12) :
+- Avg 326 chars / ~82 tokens par fiche
+- Max 652 chars / ~163 tokens
+- **Plus PETIT** que la moyenne globale (peu de stats riches insertion_pro
+  vs ingénierie / médecine).
+
+Total prompt estimé pour une requête typique top-K=10 :
+
+| Composant | Chars | Tokens |
+|---|---:|---:|
+| SYSTEM_PROMPT v3.2 | 31 388 | **7 847** |
+| Top-10 fiches (avg case) | 6 461 | 1 615 |
+| Top-10 fiches (worst case) | 11 386 | 2 846 |
+| Query utilisateur | ~300 | ~75 |
+| Scaffolding messages | ~400 | ~100 |
+| **TOTAL input avg** | ~38 549 | **~9 637** |
+| **TOTAL input worst** | ~43 474 | **~10 868** |
+
+Mistral medium context window : 32 K tokens. Notre input ~10 K tokens =
+30 % d'utilisation. **Aucun problème de prompt size.**
+
+Audit côté client HTTP (script bench v4) :
+
+```python
+# scripts/run_bench_personas_v4.py:126
+client = Mistral(api_key=cfg.mistral_api_key)   # ← AUCUN timeout
+```
+
+Comparé à `src/eval/run_real_full.py:83` qui passe explicitement
+`timeout_ms=120000` (2 min) au client Mistral.
+
+### Decision
+
+**Root cause : client Mistral du bench personas instancié sans
+`timeout_ms`, donc valeur par défaut SDK Mistral (~60 s côté HTTPX
+sous-jacent). Pour les queries comparatives à génération longue
+(>1 000 tokens output, ce qui prend 30-90 s avec Mistral medium), le
+client coupe la connexion avant que Mistral ait fini de streamer la
+réponse.**
+
+**`fiche_to_text` v3 est innocent.** Sa taille moyenne 162 tokens (max
+300) représente 1.6 % du prompt total. Optimiser `fiche_to_text`
+réduirait les tokens d'input mais N'AFFECTE PAS la latence de
+génération output qui est la cause du timeout.
+
+**Fix** : passer `timeout_ms=180000` (3 min) au client Mistral dans les
+2 scripts de bench :
+- `scripts/run_bench_personas_v4.py:126`
+- `scripts/run_bench_personas_v3.py` (à vérifier, même pattern probable)
+
+Optionnellement : aussi dans `src/rag/cli.py:15` et tout autre script
+qui consomme Mistral en mode interactif sur queries longues.
+
+### Rationale
+
+- **Une seule ligne, zéro risque** : ajouter `timeout_ms=180000` à un
+  client HTTP n'a aucun side-effect sur la sémantique.
+- **Empiriquement validé** : `run_real_full.py` passe à 120 s et n'a
+  jamais reporté de timeout sur 7 systèmes × 100 queries (Run F+G).
+  180 s est plus généreux pour le pire cas comparatif.
+- **Pas de modif `fiche_to_text`** : conforme au CLAUDE.md OrientIA
+  protected file note. Pas de bench delta requis avant fix.
+- **Compatible avec l'archi agentique future** (PR #12) : le tool-use
+  multipliera les appels par requête utilisateur, et chaque appel
+  pourra être long (FetchStatFromSource, QueryReformuler). Un timeout
+  généreux côté client est une condition nécessaire pour
+  l'architecture agentique. Justifie la place de cet ADR avant Axe 3
+  (cf consensus Jarvis+Claudette 2026-04-25-1140 sur l'inversion
+  Axe 4 → Axe 3).
+
+### Alternatives rejetées
+
+1. **Optimiser `fiche_to_text`** (réduire la taille des outputs) — NO,
+   le coupable n'est pas l'input mais la génération output. Pas
+   d'effet attendu sur le timeout.
+2. **Batch les queries lourdes en séparé** — NO, complexité
+   architecturale gratuite. Le timeout SDK suffit.
+3. **Stream la réponse côté client + agréger** — overkill, rajoute du
+   code de gestion. Le timeout étendu suffit pour 99 % des cas.
+4. **Retry automatique sur timeout** (cf `_call_with_retry` runner) —
+   ajoute du coût API et de la latence. Le bon timeout dès le début
+   est plus simple.
+
+### Tests
+
+- Action de vérification : ré-run le bench v4 avec
+  `timeout_ms=180000` et observer si Q12 passe (probabilité élevée
+  >90 % vu le diagnostic).
+- Reporté à la PR convergence multi-corpus + bench v5 chiffré
+  (Axe 1.A+B + Axe 1.D, budget validé Matteo 2026-04-25).
+- L'implémentation du fix sera incluse dans la PR du bench v5
+  (cohérent : la PR qui consomme le timeout étendu en validation
+  chiffrée).
+
+### Liens
+
+- Q12 ReadTimeout : `results/bench_personas_v4_2026-04-24/query_12_mohamed_q3.json`
+- Synthesis v4 : `results/bench_personas_v4_2026-04-24/_SYNTHESIS_V4_VS_V3.md` §4
+- Pattern `timeout_ms` correct : `src/eval/run_real_full.py:83`
+- Pattern à corriger : `scripts/run_bench_personas_v4.py:126`
+- Protected file note : `CLAUDE.md` OrientIA, table "Fichiers protégés"
+
+---
+
