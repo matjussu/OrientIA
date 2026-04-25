@@ -1,0 +1,199 @@
+{
+  "idx_global": 2,
+  "persona_id": "lila",
+  "persona_description": "Lila, 17 ans, Terminale L indécise (scope initial)",
+  "scope": "initial",
+  "query_id": "q2",
+  "query_type": "orientation_ambigue",
+  "query_text": "J'hésite entre une fac de sciences humaines et une école de communication à Paris, pourquoi choisir l'une plutôt que l'autre ?",
+  "elapsed_gen_s": 11.55,
+  "elapsed_fact_check_s": 4.28,
+  "answer_raw": "**TL;DR**\n1. **Fac de sciences humaines** = approche théorique et pluridisciplinaire (linguistique, sociologie, philosophie), avec des spécialisations en communication en master. **École de communication** = formation professionnelle ciblée (stratégie de marque, médias, digital), souvent plus chère mais avec un réseau pro intégré.\n2. **Critère clé** : ton projet pro. Si tu veux un métier opérationnel (chargé de com’, community manager, consultant) → école. Si tu aimes la réflexion critique ou vises la recherche/enseignement → fac.\n3. **Budget** : la fac coûte ~200€/an (public), une école privée 5 000–10 000€/an.\n\n---\n\n### **Comparaison : Fac de sciences humaines vs École de communication à Paris**\n\n| **Critère**               | **Fac de sciences humaines (ex : Sorbonne Nouvelle, Paris Cité)**                                                                 | **École de communication (ex : ISCOM, EFAP, CELSA)**                                                                 |\n|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|\n| **Diplôme**               | Licence (bac+3) → Master (bac+5) **public**, grade master délivré par l’État.                                                     | Bachelor (bac+3) ou Master (bac+5) **privé**, souvent visé ou certifié RNCP.                                          |\n| **Sélectivité**           | **Modérée** en licence (sauf doubles diplômes comme Sciences+Journalisme à Sorbonne : **11%**, très sélective). Master plus sélectif. | **Sélective** (dossier + entretien, parfois concours écrit). Ex : CELSA ~10% en master.                              |\n| **Coût**                  | **~200–600€/an** (frais d’inscription publics).                                                                                   | **5 000–10 000€/an** (privé). Certaines écoles publiques comme le **CELSA** (Sorbonne) : ~3 000€/an.                  |\n| **Pédagogie**             | **Théorique** : linguistique, sémiologie, sociologie des médias, philosophie. Spécialisation en com’ en master.                  | **Pratique** : stratégie de marque, relations presse, digital, projets concrets avec entreprises.                     |\n| **Débouchés**              | **Recherche/enseignement**, métiers de l’édition, journalisme, communication *après spécialisation en master*.                   | **Métiers opérationnels** : chargé de com’, community manager, consultant en stratégie, chef de projet digital.       |\n| **Réseau pro**            | Moins structuré, mais alumni prestigieux dans les médias/édition (ex : Sorbonne Nouvelle).                                       | **Réseau actif** : stages obligatoires, intervenants pros, partenariats avec agences/entreprises.                     |\n| **Flexibilité**           | **Large choix** de parcours (ex : semiologie, politique, numérique). Possibilité de bifurquer vers d’autres masters.              | **Parcours cadré** : spécialisation dès la licence (ex : com’ digitale, événementiel).                                  |\n| **Insertion (source)**    | **44% en emploi stable à 12 mois** (licence double diplôme Sciences+Journalisme, Sorbonne). Salaire médian : ~1 790€ net/mois.       | **70–85% en CDI à 6 mois** pour les écoles réputées (ex : CELSA). Salaire médian : ~2 000–2 500€ net/mois (connaissance générale). |\n\n---\n### **Synthèse : Quelle voie selon ton profil ?**\n- **Choisis une fac de sciences humaines** si :\n  - Tu aimes les **sciences sociales**, la théorie, ou envisages la recherche/enseignement.\n  - Tu veux **garder des portes ouvertes** (ex : bifurquer vers le journalisme, l’édition, ou un master en com’ plus tard).\n  - Ton **budget est limité** (formation publique à ~200€/an).\n\n- **Choisis une école de communication** si :\n  - Tu vises un **métier opérationnel** (chargé de com’, chef de projet) **rapidement**.\n  - Tu veux un **réseau pro intégré** (stages, alumni, partenariats entreprises).\n  - Tu es prêt·e à investir **5 000–10 000€/an** (ou à cibler une école publique comme le CELSA).\n\n⚠ **Attention** :\n- Les **écoles privées** coûtent cher : vérifie les **labels** (RNCP, grade master) et les **taux d’insertion** (ex : [classements Eduniversal](https://www.eduniversal-ranking.com/)).\n- En fac, la **spécialisation en com’ arrive tard** (master) : prépare-toi à un parcours long si tu veux un métier précis.\n\n---\n**Question pour toi** :\nEst-ce que tu privilégies **la polyvalence et la théorie** (fac) ou **l’insertion pro rapide et le réseau** (école) ? Et quel est ton budget annuel maximal ?",
+  "answer_annotated": "**TL;DR**\n1. **Fac de sciences humaines** = approche théorique et pluridisciplinaire (linguistique, sociologie, philosophie), avec des spécialisations en communication en master. **École de communication** = formation professionnelle ciblée (stratégie de marque, médias, digital), souvent plus chère mais avec un réseau pro intégré.\n2. **Critère clé** : ton projet pro. Si tu veux un métier opérationnel (chargé de com’, community manager, consultant) → école. Si tu aimes la réflexion critique ou vises la recherche/enseignement → fac.\n3. **Budget** : la fac coûte ~200€/an (public), une école privée 5 000–10 000€/an.\n\n---\n\n### **Comparaison : Fac de sciences humaines vs École de communication à Paris**\n\n| **Critère**               | **Fac de sciences humaines (ex : Sorbonne Nouvelle, Paris Cité)**                                                                 | **École de communication (ex : ISCOM, EFAP, CELSA)**                                                                 |\n|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|\n| **Diplôme**               | Licence (bac+3) → Master (bac+5) **public**, grade master délivré par l’État.                                                     | Bachelor (bac+3) ou Master (bac+5) **privé**, souvent visé ou certifié RNCP.                                          |\n| **Sélectivité**           | **Modérée** en licence (sauf doubles diplômes comme Sciences+Journalisme à Sorbonne : **11%**, très sélective). Master plus sélectif. | **Sélective** (dossier + entretien, parfois concours écrit). Ex : CELSA ~10% *(non vérifié dans les sources)* en master.                              |\n| **Coût**                  | **~200–600€/an** (frais d’inscription publics).                                                                                   | **5 000–10 000€/an** (privé). Certaines écoles publiques comme le **CELSA** (Sorbonne) : ~3 000€/an.                  |\n| **Pédagogie**             | **Théorique** : linguistique, sémiologie, sociologie des médias, philosophie. Spécialisation en com’ en master.                  | **Pratique** : stratégie de marque, relations presse, digital, projets concrets avec entreprises.                     |\n| **Débouchés**              | **Recherche/enseignement**, métiers de l’édition, journalisme, communication *après spécialisation en master*.                   | **Métiers opérationnels** : chargé de com’, community manager, consultant en stratégie, chef de projet digital.       |\n| **Réseau pro**            | Moins structuré, mais alumni prestigieux dans les médias/édition (ex : Sorbonne Nouvelle).                                       | **Réseau actif** : stages obligatoires, intervenants pros, partenariats avec agences/entreprises.                     |\n| **Flexibilité**           | **Large choix** de parcours (ex : semiologie, politique, numérique). Possibilité de bifurquer vers d’autres masters.              | **Parcours cadré** : spécialisation dès la licence (ex : com’ digitale, événementiel).                                  |\n| **Insertion (source)**    | **44% en emploi stable à 12 mois *(non vérifié dans les sources)*** (licence double diplôme Sciences+Journalisme, Sorbonne). Salaire médian : ~1 790€ net/mois.       | **70–85% en CDI à 6 mois *(non vérifié dans les sources)*** pour les écoles réputées (ex : CELSA). Salaire médian : ~2 000–2 500€ net/mois (connaissance générale). |\n\n---\n### **Synthèse : Quelle voie selon ton profil ?**\n- **Choisis une fac de sciences humaines** si :\n  - Tu aimes les **sciences sociales**, la théorie, ou envisages la recherche/enseignement.\n  - Tu veux **garder des portes ouvertes** (ex : bifurquer vers le journalisme, l’édition, ou un master en com’ plus tard).\n  - Ton **budget est limité** (formation publique à ~200€/an).\n\n- **Choisis une école de communication** si :\n  - Tu vises un **métier opérationnel** (chargé de com’, chef de projet) **rapidement**.\n  - Tu veux un **réseau pro intégré** (stages, alumni, partenariats entreprises).\n  - Tu es prêt·e à investir **5 000–10 000€/an** (ou à cibler une école publique comme le CELSA).\n\n⚠ **Attention** :\n- Les **écoles privées** coûtent cher : vérifie les **labels** (RNCP, grade master) et les **taux d’insertion** (ex : [classements Eduniversal](https://www.eduniversal-ranking.com/)).\n- En fac, la **spécialisation en com’ arrive tard** (master) : prépare-toi à un parcours long si tu veux un métier précis.\n\n---\n**Question pour toi** :\nEst-ce que tu privilégies **la polyvalence et la théorie** (fac) ou **l’insertion pro rapide et le réseau** (école) ? Et quel est ton budget annuel maximal ?",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 2,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "11%",
+      "stat_value": 11,
+      "stat_unit": "%",
+      "context_in_response": "sélectivité en licence (sauf doubles diplômes comme Sciences+Journalisme à Sorbonne : 11%)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 11.0%"
+    },
+    {
+      "stat_text": "44% en emploi stable à 12 mois",
+      "stat_value": 44,
+      "stat_unit": "%",
+      "context_in_response": "Insertion (source) : 44% en emploi stable à 12 mois (licence double diplôme Sciences+Journalisme, Sorbonne)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~1 790€ net/mois",
+      "stat_value": 1790,
+      "stat_unit": "€",
+      "context_in_response": "Salaire médian : ~1 790€ net/mois",
+      "verdict": "verified",
+      "source_fiche_excerpt": "\"salaire_median_embauche\": 1740"
+    },
+    {
+      "stat_text": "70–85% en CDI à 6 mois",
+      "stat_value": 77.5,
+      "stat_unit": "%",
+      "context_in_response": "Insertion (source) : 70–85% en CDI à 6 mois pour les écoles réputées (ex : CELSA)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~2 000–2 500€ net/mois",
+      "stat_value": 2250,
+      "stat_unit": "€",
+      "context_in_response": "Salaire médian : ~2 000–2 500€ net/mois (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~200–600€/an",
+      "stat_value": 400,
+      "stat_unit": "€",
+      "context_in_response": "Coût : ~200–600€/an (frais d’inscription publics)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "5 000–10 000€/an",
+      "stat_value": 7500,
+      "stat_unit": "€",
+      "context_in_response": "Coût : 5 000–10 000€/an (privé)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~3 000€/an",
+      "stat_value": 3000,
+      "stat_unit": "€",
+      "context_in_response": "Coût : Certaines écoles publiques comme le CELSA (Sorbonne) : ~3 000€/an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "10%",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "context_in_response": "sélectivité : CELSA ~10% en master",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.1246,
+      "nom": "Licence - Double diplôme - Licence Chimie - Double diplôme Sciences et Journalisme - Licence Science",
+      "etablissement": "Sorbonne université",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0423,
+      "nom": "INFORMATION, COMMUNICATION — None",
+      "etablissement": "Université Sorbonne Nouvelle",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0367,
+      "nom": "SCIENCES DU LANGAGE — Expertise en sémiologie et communication",
+      "etablissement": "Université Paris Cité",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0355,
+      "nom": "SCIENCES DU LANGAGE — Expertise en sémiologie et communication",
+      "etablissement": "Université Paris Cité",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.035,
+      "nom": "INFORMATION, COMMUNICATION — Communication des entreprises et des institutions (CEI)",
+      "etablissement": "Université Sorbonne Nouvelle",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0312,
+      "nom": "INFORMATION, COMMUNICATION — Communication publique et politique",
+      "etablissement": "Sorbonne Université",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0308,
+      "nom": "INFORMATION, COMMUNICATION — Communication et industries créatives",
+      "etablissement": "Sorbonne Université",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0307,
+      "nom": "INFORMATION, COMMUNICATION — Ressources humaines, communication et organisations",
+      "etablissement": "Sorbonne Université",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0307,
+      "nom": "INFORMATION, COMMUNICATION — Marque et communication",
+      "etablissement": "Sorbonne Université",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0291,
+      "nom": "INFORMATION, COMMUNICATION — Marque et stratégies de communication",
+      "etablissement": "Sorbonne Université",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    }
+  ]
+}

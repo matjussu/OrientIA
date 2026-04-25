@@ -5,6 +5,7 @@ import pytest
 
 from src.rag.intent import (
     DOMAIN_HINT_APEC,
+    DOMAIN_HINT_COMPETENCES_CERTIF,
     DOMAIN_HINT_METIER,
     DOMAIN_HINT_PARCOURS,
     classify_domain_hint,
@@ -80,6 +81,38 @@ class TestClassifyDomainHintApec:
         assert classify_domain_hint(
             "Salaire médian cadre en Auvergne-Rhône-Alpes ?"
         ) == DOMAIN_HINT_APEC
+
+
+class TestClassifyDomainHintCompetencesCertif:
+    def test_blocs_de_competences_explicit(self):
+        assert classify_domain_hint(
+            "Quels blocs de compétences sont validés par le BTS comptabilité ?"
+        ) == DOMAIN_HINT_COMPETENCES_CERTIF
+
+    def test_que_vais_je_apprendre(self):
+        assert classify_domain_hint(
+            "Que vais-je apprendre en BUT informatique ?"
+        ) == DOMAIN_HINT_COMPETENCES_CERTIF
+
+    def test_quelles_competences(self):
+        assert classify_domain_hint(
+            "Quelles compétences acquises grâce à un master de cybersécurité ?"
+        ) == DOMAIN_HINT_COMPETENCES_CERTIF
+
+    def test_rncp_explicit_number(self):
+        assert classify_domain_hint(
+            "Que couvre la fiche RNCP35185 ?"
+        ) == DOMAIN_HINT_COMPETENCES_CERTIF
+
+    def test_validation_par_blocs_vae(self):
+        assert classify_domain_hint(
+            "Comment se fait la validation partielle d'un titre RNCP en VAE ?"
+        ) == DOMAIN_HINT_COMPETENCES_CERTIF
+
+    def test_savoir_faire_certifie(self):
+        assert classify_domain_hint(
+            "Quels savoir-faire sont certifiés par un titre professionnel niveau 5 ?"
+        ) == DOMAIN_HINT_COMPETENCES_CERTIF
 
 
 class TestClassifyDomainHintNone:
@@ -225,9 +258,36 @@ class TestRerankConfigNewFields:
         assert c.domain_boost_apec_region == 1.5
         assert c.domain_boost_metier == 1.3
         assert c.domain_boost_parcours_bacheliers == 1.3
+        assert c.domain_boost_competences_certif == 1.5
 
     def test_as_dict_includes_new_fields(self):
         d = RerankConfig().as_dict()
         assert "domain_boost_apec_region" in d
         assert "domain_boost_metier" in d
         assert "domain_boost_parcours_bacheliers" in d
+        assert "domain_boost_competences_certif" in d
+
+
+class TestRerankCompetencesCertifBoost:
+    def test_boost_applied_to_competences_certif_domain_only(self):
+        formation = {"nom": "Master CS", "domain": "formation"}
+        blocs = {"text": "Compétences certifiées (RNCP100)…", "domain": "competences_certif"}
+        results = [
+            {"fiche": formation, "base_score": 0.5},
+            {"fiche": blocs, "base_score": 0.5},
+        ]
+        out = rerank(
+            results, RerankConfig(), domain_hint=DOMAIN_HINT_COMPETENCES_CERTIF
+        )
+        # blocs doit être en tête (boost ×1.5 vs formation ×1.0 implicite)
+        assert out[0]["fiche"]["domain"] == "competences_certif"
+        assert out[0]["score"] > out[1]["score"]
+
+    def test_no_boost_when_hint_absent(self):
+        # Sans hint, blocs ne doit pas être boostée — formations chiffrées
+        # gardent leur priorité naturelle.
+        blocs = {"text": "Compétences certifiées", "domain": "competences_certif"}
+        results = [{"fiche": blocs, "base_score": 0.5}]
+        out = rerank(results, RerankConfig(), domain_hint=None)
+        # Score inchangé (juste les boosts génériques s'appliquent, ici aucun)
+        assert out[0]["score"] == pytest.approx(0.5)
