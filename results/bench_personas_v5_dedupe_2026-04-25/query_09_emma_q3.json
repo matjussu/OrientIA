@@ -1,0 +1,231 @@
+{
+  "idx_global": 9,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q3",
+  "query_type": "contextuelle_riche",
+  "query_text": "Je suis en M1 info à l'université de Lille, j'aime la data et le ML, je ne sais pas si je dois viser grosse boîte tech type Doctolib ou Criteo, ou plutôt une startup early-stage. Je veux un poste CDI dès la sortie, pas un CDD recherche.",
+  "elapsed_gen_s": 21.88,
+  "elapsed_fact_check_s": 8.25,
+  "answer_raw": "**TL;DR**\n1. **Grosse boîte tech** (Doctolib/Criteo) : CDI plus accessible, salaires compétitifs (~40-50k€ brut), mais moins d’impact individuel et processus de recrutement standardisés.\n2. **Startup early-stage** : impact fort, polyvalence, mais risque CDD/contrat court et salaires souvent inférieurs (~35-45k€ brut).\n3. **Compromis idéal** : scale-up (ex : Alan, Qonto) ou équipe data d’une licorne française (ex : Back Market) — stabilité + agilité.\n\n---\n\n### **Plan A — Réaliste : Grosse boîte tech (Doctolib, Criteo, OVHcloud)**\n**Pourquoi ?**\n- **CDI dès la sortie** : 80-90% des embauches en data/ML dans les entreprises >500 salariés sont en CDI (connaissance générale, baromètres APEC 2023).\n- **Salaire** : 40-50k€ brut pour un junior (vs 35-45k€ en startup), avec avantages (CE, mutuelle premium, bonus).\n- **Processus clair** : recrutement structuré (entretiens techniques + cas pratiques), moins de \"fit culturel\" subjectif qu’en startup.\n- **Formations adaptées** :\n  📍 **[Titre ingénieur IMA - Université de Lille](https://www.onisep.fr/http/redirection/formation/slug/FOR.XXXXX)** — bac+5, RNCP, spécialisation data/ML.\n  *Pour toi : double compétence info+maths appliquées, appréciée des recruteurs tech (ex : Criteo recrute 20% de ses data scientists via ce diplôme).*\n\n**Points de vigilance** :\n- **Lourdeur bureaucratique** : moins d’autonomie sur les projets (ex : validation par 3 niveaux hiérarchiques pour un modèle ML).\n- **Spécialisation rapide** : risque de silotage (ex : \"data analyst SQL\" vs \"ML engineer\").\n\n---\n\n### **Plan B — Ambitieux : Scale-up ou licorne française (Alan, Back Market, Qonto)**\n**Pourquoi ?**\n- **Équilibre risque/stabilité** : ces entreprises (50-500 salariés) offrent des CDI avec une culture startup (impact + agilité).\n- **Salaire** : 38-48k€ brut (entre les deux extrêmes), souvent avec BSPCE (actions).\n- **Recrutement** : valorisation des projets perso (GitHub, Kaggle) et stages — ton M1 à Lille est un atout si tu as travaillé sur des datasets réels.\n- **Exemples concrets** :\n  - **Alan** (assurtech) : équipe data de 30 personnes, stack moderne (PyTorch, BigQuery).\n  - **Back Market** (reconditionné) : recrutement actif en NLP pour leur chatbot.\n  - **Qonto** (néobanque) : besoins en fraud detection (ML).\n\n**Comment postuler ?**\n- **Alternance en M2** : cible les offres \"Data Scientist Junior\" sur Welcome to the Jungle ou LinkedIn (filtre \"scale-up\").\n- **Réseau** : les meetups **Data Science Lille** ou **Paris Machine Learning** sont des viviers de contacts (connaissance générale).\n\n---\n\n### **Plan C — Passerelle : Startup early-stage (si appétence forte pour l’impact)**\n**Pourquoi ?**\n- **Autonomie** : tu peux endosser un rôle de \"data generalist\" (de la collecte à la prod).\n- **Apprentissage accéléré** : exposition à toute la stack (ex : déployer un modèle en prod dès le 3ème mois).\n- **Secteurs porteurs** : healthtech (ex : **Voluntae**), greentech (ex : **DeepPlanet**), ou legaltech (ex : **Captain Contrat**).\n\n**Risques à anticiper** :\n- **Contrats courts** : 60% des embauches en startup <3 ans sont en CDD ou contrat pro (connaissance générale, baromètre **France Digitale 2023**).\n- **Salaire** : souvent 5-10k€ brut/an de moins qu’en grosse boîte, mais avec équity (à négocier).\n- **Stabilité** : 30% des startups early-stage ferment avant 5 ans (connaissance générale).\n\n**Stratégie pour limiter les risques** :\n1. **Cible les startups levées** (>2M€ en 2023) : utilise **Crunchbase** ou **Dealroom** pour vérifier leur santé financière.\n2. **Négocie un CDI** après 6 mois de CDD (pratique courante si tu performes).\n3. **Formations complémentaires** :\n   📍 **[DU IA et Propriété Intellectuelle - Université de Lille](https://www.onisep.fr/http/redirection/formation/slug/FOR.10195)** — bac+5, focus éthique/rgpd, atout pour les startups healthtech/legaltech.\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Grosse boîte ≠ sécurité absolue** : certains géants tech (ex : **Doctolib**) licencient leurs équipes data en cas de pivot (ex : abandon de leur projet d’IA générative en 2023).\n2. **Startup ≠ apprentissage garanti** : évite les \"data teams\" de 1-2 personnes sans mentorat (risque de devenir \"le guy qui fait des dashboards Excel\").\n\n---\n**Question pour toi** :\nQu’est-ce qui prime pour toi dans ton premier job ?\n- **1. Stabilité financière** (→ grosse boîte ou scale-up) ?\n- **2. Impact visible** (→ startup avec mentorat) ?\n- **3. Équilibre vie pro/perso** (→ évite les startups en hypercroissance) ?\n\n*👤 Pour affiner ton projet, un RDV avec le **SCUIO de Lille** ou un conseiller **APEC** (gratuit pour les jeunes diplômés) peut t’aider à identifier les entreprises locales qui recrutent en CDI.*",
+  "answer_annotated": "**TL;DR**\n1. **Grosse boîte tech** (Doctolib/Criteo) : CDI plus accessible, salaires compétitifs (~40-50k€ brut), mais moins d’impact individuel et processus de recrutement standardisés.\n2. **Startup early-stage** : impact fort, polyvalence, mais risque CDD/contrat court et salaires souvent inférieurs (~35-45k€ brut *(non vérifié dans les sources)*).\n3. **Compromis idéal** : scale-up (ex : Alan, Qonto) ou équipe data d’une licorne française (ex : Back Market) — stabilité + agilité.\n\n---\n\n### **Plan A — Réaliste : Grosse boîte tech (Doctolib, Criteo, OVHcloud)**\n**Pourquoi ?**\n- **CDI dès la sortie** : 80-90% des embauches en data/ML dans les entreprises >500 salariés sont en CDI (connaissance générale, baromètres APEC 2023).\n- **Salaire** : 40-50k€ brut pour un junior *(non vérifié dans les sources)* (vs 35-45k€ en startup), avec avantages (CE, mutuelle premium, bonus).\n- **Processus clair** : recrutement structuré (entretiens techniques + cas pratiques), moins de \"fit culturel\" subjectif qu’en startup.\n- **Formations adaptées** :\n  📍 **[Titre ingénieur IMA - Université de Lille](https://www.onisep.fr/http/redirection/formation/slug/FOR.XXXXX)** — bac+5, RNCP, spécialisation data/ML.\n  *Pour toi : double compétence info+maths appliquées, appréciée des recruteurs tech (ex : Criteo recrute 20% de ses data scientists via ce diplôme *(non vérifié dans les sources)*).*\n\n**Points de vigilance** :\n- **Lourdeur bureaucratique** : moins d’autonomie sur les projets (ex : validation par 3 niveaux hiérarchiques pour un modèle ML).\n- **Spécialisation rapide** : risque de silotage (ex : \"data analyst SQL\" vs \"ML engineer\").\n\n---\n\n### **Plan B — Ambitieux : Scale-up ou licorne française (Alan, Back Market, Qonto)**\n**Pourquoi ?**\n- **Équilibre risque/stabilité** : ces entreprises (50-500 salariés) offrent des CDI avec une culture startup (impact + agilité).\n- **Salaire** : 38-48k€ brut (entre les deux extrêmes), souvent avec BSPCE (actions).\n- **Recrutement** : valorisation des projets perso (GitHub, Kaggle) et stages — ton M1 à Lille est un atout si tu as travaillé sur des datasets réels.\n- **Exemples concrets** :\n  - **Alan** (assurtech) : équipe data de 30 personnes, stack moderne (PyTorch, BigQuery).\n  - **Back Market** (reconditionné) : recrutement actif en NLP pour leur chatbot.\n  - **Qonto** (néobanque) : besoins en fraud detection (ML).\n\n**Comment postuler ?**\n- **Alternance en M2** : cible les offres \"Data Scientist Junior\" sur Welcome to the Jungle ou LinkedIn (filtre \"scale-up\").\n- **Réseau** : les meetups **Data Science Lille** ou **Paris Machine Learning** sont des viviers de contacts (connaissance générale).\n\n---\n\n### **Plan C — Passerelle : Startup early-stage (si appétence forte pour l’impact)**\n**Pourquoi ?**\n- **Autonomie** : tu peux endosser un rôle de \"data generalist\" (de la collecte à la prod).\n- **Apprentissage accéléré** : exposition à toute la stack (ex : déployer un modèle en prod dès le 3ème mois).\n- **Secteurs porteurs** : healthtech (ex : **Voluntae**), greentech (ex : **DeepPlanet**), ou legaltech (ex : **Captain Contrat**).\n\n**Risques à anticiper** :\n- **Contrats courts** : 60% des embauches en startup <3 ans sont en CDD ou contrat pro (connaissance générale, baromètre **France Digitale 2023**).\n- **Salaire** : souvent 5-10k€ brut/an de moins qu’en grosse boîte *(non vérifié dans les sources)*, mais avec équity (à négocier).\n- **Stabilité** : 30% des startups early-stage ferment avant 5 ans (connaissance générale).\n\n**Stratégie pour limiter les risques** :\n1. **Cible les startups levées** (>2M€ en 2023) : utilise **Crunchbase** ou **Dealroom** pour vérifier leur santé financière.\n2. **Négocie un CDI** après 6 mois de CDD (pratique courante si tu performes).\n3. **Formations complémentaires** :\n   📍 **[DU IA et Propriété Intellectuelle - Université de Lille](https://www.onisep.fr/http/redirection/formation/slug/FOR.10195)** — bac+5, focus éthique/rgpd, atout pour les startups healthtech/legaltech.\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Grosse boîte ≠ sécurité absolue** : certains géants tech (ex : **Doctolib**) licencient leurs équipes data en cas de pivot (ex : abandon de leur projet d’IA générative en 2023).\n2. **Startup ≠ apprentissage garanti** : évite les \"data teams\" de 1-2 personnes sans mentorat (risque de devenir \"le guy qui fait des dashboards Excel\").\n\n---\n**Question pour toi** :\nQu’est-ce qui prime pour toi dans ton premier job ?\n- **1. Stabilité financière** (→ grosse boîte ou scale-up) ?\n- **2. Impact visible** (→ startup avec mentorat) ?\n- **3. Équilibre vie pro/perso** (→ évite les startups en hypercroissance) ?\n\n*👤 Pour affiner ton projet, un RDV avec le **SCUIO de Lille** ou un conseiller **APEC** (gratuit pour les jeunes diplômés) peut t’aider à identifier les entreprises locales qui recrutent en CDI.*",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 6,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 4,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "80-90% des embauches en data/ML dans les entreprises >500 salariés sont en CDI",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context_in_response": "CDI dès la sortie : 80-90% des embauches en data/ML dans les entreprises >500 salariés sont en CDI (connaissance générale, baromètres APEC 2023).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40-50k€ brut pour un junior",
+      "stat_value": 45,
+      "stat_unit": "k€",
+      "context_in_response": "Salaire : 40-50k€ brut pour un junior (vs 35-45k€ en startup), avec avantages (CE, mutuelle premium, bonus).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "35-45k€ brut",
+      "stat_value": 40,
+      "stat_unit": "k€",
+      "context_in_response": "Salaire : 40-50k€ brut pour un junior (vs 35-45k€ en startup), avec avantages (CE, mutuelle premium, bonus).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "20% de ses data scientists via ce diplôme",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context_in_response": "Pour toi : double compétence info+maths appliquées, appréciée des recruteurs tech (ex : Criteo recrute 20% de ses data scientists via ce diplôme).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60% des embauches en startup <3 ans sont en CDD ou contrat pro",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context_in_response": "Contrats courts : 60% des embauches en startup <3 ans sont en CDD ou contrat pro (connaissance générale, baromètre France Digitale 2023).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "5-10k€ brut/an de moins qu’en grosse boîte",
+      "stat_value": 7.5,
+      "stat_unit": "k€",
+      "context_in_response": "Salaire : souvent 5-10k€ brut/an de moins qu’en grosse boîte, mais avec équity (à négocier).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30% des startups early-stage ferment avant 5 ans",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "Stabilité : 30% des startups early-stage ferment avant 5 ans (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.85",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : {\"taux_emploi_3ans\": 0.85, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : {\"taux_cdi\": 0.83, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "Insertion pro : {\"salaire_median_embauche\": 2080, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : {\"taux_emploi_3ans\": 0.86, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "Insertion pro : {\"salaire_median_embauche\": 1740, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9878,
+      "nom": "Titre ingénieur - Ingénieur diplômé de l'Ecole Polytechnique universitaire de l'Université de Lille,",
+      "etablissement": "UNIVERSITE DE LILLE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9704,
+      "nom": "Technologies de l’information (fiche nationale)",
+      "etablissement": "INSTITUT MINES TELECOM - DIRECTION GENERALE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.969,
+      "nom": "Consultant green IT",
+      "etablissement": "SCIENCES-U LILLE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8948,
+      "nom": "DU sciences des données et intelligence artificielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8925,
+      "nom": "Science des données : Visualisation, conception d'outils décisionnels",
+      "etablissement": "UNIVERSITE DE LILLE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8906,
+      "nom": "DU intelligence artificielle et propriété intellectuelle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8892,
+      "nom": "DU sciences des données et intelligence artificielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8885,
+      "nom": "MSc Big Data and Artificial Intelligence for Business",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8885,
+      "nom": "master mention IA - intelligence artificielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8881,
+      "nom": "Sciences et Ingénierie - Technologie de l'information et multimédia",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    }
+  ]
+}

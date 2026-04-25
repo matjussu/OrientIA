@@ -1,0 +1,175 @@
+{
+  "idx_global": 1,
+  "persona_id": "lila",
+  "persona_description": "Lila, 17 ans, Terminale L indécise (scope initial)",
+  "scope": "initial",
+  "query_id": "q1",
+  "query_type": "factuelle",
+  "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+  "elapsed_gen_s": 19.05,
+  "elapsed_fact_check_s": 4.26,
+  "answer_raw": "**TL;DR**\n1. Une licence de lettres modernes ouvre à des métiers variés, mais **rarement en lien direct** avec la discipline : enseignement, communication, édition, et fonctions transverses (administration, RH).\n2. **Seuls 44-74% des diplômés** trouvent un emploi stable à 12 mois (salaire médian ~1 720-1 790€ net/mois).\n3. **La poursuite d’études (master) est souvent nécessaire** pour se spécialiser et booster son employabilité.\n\n---\n\n### **Plan A — Débouchés directs (avec la licence seule)**\n📍 **Enseignement & Éducation** (concours de la fonction publique)\n*Exemples :* Professeur des écoles (CRPE), professeur de lettres (CAPES après master MEEF), animateur culturel.\n*Pour toi :* Voie la plus stable, mais **concours très sélectifs** (taux de réussite ~15-20% au CAPES).\n\n📍 **Métiers de la culture et de l’édition** (connaissance générale)\n*Exemples :* Assistant d’édition, bibliothécaire (concours D ou C), médiateur culturel, libraire.\n*Pour toi :* Secteur passionnant mais **précaire** (CDD, temps partiel fréquent). Réseau et stages indispensables.\n\n📍 **Administration & Fonction publique** (concours catégorie B)\n*Exemples :* Rédacteur territorial, attaché d’administration, chargé de communication en collectivité.\n*Pour toi :* Stabilité, mais **salaire modéré** (1 600-1 900€ net en début de carrière).\n\n---\n### **Plan B — Débouchés avec poursuite d’études (master recommandé)**\n📍 **Master MEEF** (pour l’enseignement) ou **Master Métiers du livre/Édition** (ex : [Sorbonne](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9286&typeBac=0&originePc=0))\n*Pour toi :* **Taux d’insertion à 5 ans > 80%** (source : Céreq, masters pro) vs ~50% avec la licence seule.\n\n📍 **Master Communication/Journalisme** (ex : CELSA, IUT, écoles privées)\n*Exemples :* Chargé de communication, journaliste (spécialisé culture/littérature), community manager.\n*Pour toi :* **Secteur saturé** → privilégie les formations en alternance ou les doubles compétences (ex : lettres + numérique).\n\n📍 **Master Recherche** (pour doctorat et enseignement supérieur)\n*Pour toi :* Voie **longue et incertaine** (3-5 ans de thèse, débouchés limités hors université).\n\n---\n### **Plan C — Passerelles vers d’autres secteurs (reconversion ou double compétence)**\n- **Formation complémentaire courte** (connaissance générale) :\n  *Exemples :* Certifications en **rédaction web (SEO)**, gestion de projet culturel, ou **compétences numériques** (ex : TECHNOLOGIES DE L’INFORMATION pour les humanités numériques).\n  *Pour toi :* **Boost ton employabilité** en 6-12 mois (ex : [Licence Pro Métiers du livre](https://www.onisep.fr)).\n\n- **Concours administratifs** (catégorie A après +2 ans d’expérience) :\n  *Exemples :* Attaché territorial, conservateur du patrimoine (avec master).\n  *Pour toi :* **Stabilité et évolution** possible sans lien direct avec les lettres.\n\n- **Entrepreneuriat culturel** (connaissance générale) :\n  *Exemples :* Création d’une maison d’édition, auto-édition, blog/média spécialisé.\n  *Pour toi :* Risqué, mais viable avec un **réseau solide** et des compétences en gestion.\n\n---\n### **⚠ Attention aux pièges**\n- **Précarité dans la culture/édition** : 60% des emplois sont en CDD ou temps partiel (source : [Céreq](https://www.cereq.fr)).\n- **Salaire moyen bas** : ~1 720-1 790€ net/mois à 12 mois (vs ~2 000€ pour un bac+3 scientifique).\n- **Master souvent indispensable** : La licence seule limite fortement les opportunités hors enseignement/administration.\n\n---\n**Question pour toi :**\nQuelle est ta priorité absolue parmi ces 3 axes ?\n1️⃣ **Stabilité** (enseignement/fonction publique) → Plan A + master MEEF.\n2️⃣ **Passion** (culture/édition) → Plan B + réseau/stages.\n3️⃣ **Flexibilité** (reconversion/numérique) → Plan C + formation complémentaire.\n\n---\n*Sources : Données InserSup DEPP (cohortes 2024) pour les licences citées. Le reste en synthèse (connaissance générale).* 👤 *Pour affiner, consulte le SCUIO de ton université ou un conseiller Psy-EN.*",
+  "answer_annotated": "**TL;DR**\n1. Une licence de lettres modernes ouvre à des métiers variés, mais **rarement en lien direct** avec la discipline : enseignement, communication, édition, et fonctions transverses (administration, RH).\n2. **Seuls 44-74% des diplômés** trouvent un emploi stable à 12 mois (salaire médian ~1 720-1 790€ net/mois).\n3. **La poursuite d’études (master) est souvent nécessaire** pour se spécialiser et booster son employabilité.\n\n---\n\n### **Plan A — Débouchés directs (avec la licence seule)**\n📍 **Enseignement & Éducation** (concours de la fonction publique)\n*Exemples :* Professeur des écoles (CRPE), professeur de lettres (CAPES après master MEEF), animateur culturel.\n*Pour toi :* Voie la plus stable, mais **concours très sélectifs** (taux de réussite ~15-20% au CAPES).\n\n📍 **Métiers de la culture et de l’édition** (connaissance générale)\n*Exemples :* Assistant d’édition, bibliothécaire (concours D ou C), médiateur culturel, libraire.\n*Pour toi :* Secteur passionnant mais **précaire** (CDD, temps partiel fréquent). Réseau et stages indispensables.\n\n📍 **Administration & Fonction publique** (concours catégorie B)\n*Exemples :* Rédacteur territorial, attaché d’administration, chargé de communication en collectivité.\n*Pour toi :* Stabilité, mais **salaire modéré** (1 600-1 900€ net en début de carrière).\n\n---\n### **Plan B — Débouchés avec poursuite d’études (master recommandé)**\n📍 **Master MEEF** (pour l’enseignement) ou **Master Métiers du livre/Édition** (ex : [Sorbonne](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9286&typeBac=0&originePc=0))\n*Pour toi :* **Taux d’insertion à 5 ans > 80%** (source : Céreq, masters pro) vs ~50% avec la licence seule.\n\n📍 **Master Communication/Journalisme** (ex : CELSA, IUT, écoles privées)\n*Exemples :* Chargé de communication, journaliste (spécialisé culture/littérature), community manager.\n*Pour toi :* **Secteur saturé** → privilégie les formations en alternance ou les doubles compétences (ex : lettres + numérique).\n\n📍 **Master Recherche** (pour doctorat et enseignement supérieur)\n*Pour toi :* Voie **longue et incertaine** (3-5 ans de thèse, débouchés limités hors université).\n\n---\n### **Plan C — Passerelles vers d’autres secteurs (reconversion ou double compétence)**\n- **Formation complémentaire courte** (connaissance générale) :\n  *Exemples :* Certifications en **rédaction web (SEO)**, gestion de projet culturel, ou **compétences numériques** (ex : TECHNOLOGIES DE L’INFORMATION pour les humanités numériques).\n  *Pour toi :* **Boost ton employabilité** en 6-12 mois (ex : [Licence Pro Métiers du livre](https://www.onisep.fr)).\n\n- **Concours administratifs** (catégorie A après +2 ans d’expérience) :\n  *Exemples :* Attaché territorial, conservateur du patrimoine (avec master).\n  *Pour toi :* **Stabilité et évolution** possible sans lien direct avec les lettres.\n\n- **Entrepreneuriat culturel** (connaissance générale) :\n  *Exemples :* Création d’une maison d’édition, auto-édition, blog/média spécialisé.\n  *Pour toi :* Risqué, mais viable avec un **réseau solide** et des compétences en gestion.\n\n---\n### **⚠ Attention aux pièges**\n- **Précarité dans la culture/édition** : 60% des emplois sont en CDD ou temps partiel *(non vérifié dans les sources)* (source : [Céreq](https://www.cereq.fr)).\n- **Salaire moyen bas** : ~1 720-1 790€ net/mois à 12 mois (vs ~2 000€ pour un bac+3 scientifique).\n- **Master souvent indispensable** : La licence seule limite fortement les opportunités hors enseignement/administration.\n\n---\n**Question pour toi :**\nQuelle est ta priorité absolue parmi ces 3 axes ?\n1️⃣ **Stabilité** (enseignement/fonction publique) → Plan A + master MEEF.\n2️⃣ **Passion** (culture/édition) → Plan B + réseau/stages.\n3️⃣ **Flexibilité** (reconversion/numérique) → Plan C + formation complémentaire.\n\n---\n*Sources : Données InserSup DEPP (cohortes 2024) pour les licences citées. Le reste en synthèse (connaissance générale).* 👤 *Pour affiner, consulte le SCUIO de ton université ou un conseiller Psy-EN.*",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 2,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "Seuls 44-74% des diplômés trouvent un emploi stable à 12 mois",
+      "stat_value": "44-74",
+      "stat_unit": "%",
+      "context_in_response": "Seuls 44-74% des diplômés trouvent un emploi stable à 12 mois (salaire médian ~1 720-1 790€ net/mois).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian ~1 720-1 790€ net/mois",
+      "stat_value": "1720-1790",
+      "stat_unit": "€ net/mois",
+      "context_in_response": "Seuls 44-74% des diplômés trouvent un emploi stable à 12 mois (salaire médian ~1 720-1 790€ net/mois).",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux de réussite ~15-20% au CAPES",
+      "stat_value": "15-20",
+      "stat_unit": "%",
+      "context_in_response": "concours très sélectifs (taux de réussite ~15-20% au CAPES).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60% des emplois sont en CDD ou temps partiel",
+      "stat_value": "60",
+      "stat_unit": "%",
+      "context_in_response": "Précarité dans la culture/édition : 60% des emplois sont en CDD ou temps partiel (source : Céreq).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire moyen bas : ~1 720-1 790€ net/mois à 12 mois (vs ~2 000€ pour un bac+3 scientifique)",
+      "stat_value": "1720-1790",
+      "stat_unit": "€ net/mois",
+      "context_in_response": "Salaire moyen bas : ~1 720-1 790€ net/mois à 12 mois (vs ~2 000€ pour un bac+3 scientifique).",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "Taux d’insertion à 5 ans > 80%",
+      "stat_value": ">80",
+      "stat_unit": "%",
+      "context_in_response": "Master MEEF (pour l’enseignement) : Taux d’insertion à 5 ans > 80% (source : Céreq, masters pro) vs ~50% avec la licence seule.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.146,
+      "nom": "Licence - Lettres - Parcours LETTRES MODERNES",
+      "etablissement": "Sorbonne université",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1376,
+      "nom": "Licence - Lettres - Parcours  Lettres modernes",
+      "etablissement": "Université de Lille",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1268,
+      "nom": "Licence - Lettres - Parcours Lettres modernes",
+      "etablissement": "Université Bourgogne Europe (ex université de Bourgogne)",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1266,
+      "nom": "Licence - Lettres - Parcours Lettres Modernes",
+      "etablissement": "Université de Cergy-Pontoise - CY SUP",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1234,
+      "nom": "Licence - Lettres - Parcours Lettres modernes",
+      "etablissement": "Université Gustave Eiffel",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.122,
+      "nom": "Licence - Lettres - Parcours Lettres Modernes",
+      "etablissement": "Université de Mulhouse",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1218,
+      "nom": "Licence - Lettres - Parcours Lettres Modernes",
+      "etablissement": "Université Grenoble Alpes",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1215,
+      "nom": "Licence - Lettres - Parcours Lettres modernes",
+      "etablissement": "Université Marie et Louis Pasteur - Université de Franche-Comté",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1209,
+      "nom": "Licence - Lettres - Parcours Lettres modernes",
+      "etablissement": "Université Grenoble Alpes - Antenne de Valence",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1175,
+      "nom": "Licence - Lettres - Parcours Lettres modernes - Entièrement en distanciel",
+      "etablissement": "Université de Caen Normandie",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    }
+  ]
+}

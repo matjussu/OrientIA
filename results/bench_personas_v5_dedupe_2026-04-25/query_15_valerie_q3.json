@@ -1,0 +1,247 @@
+{
+  "idx_global": 15,
+  "persona_id": "valerie",
+  "persona_description": "Valérie, parent de lycéen (perspective externe)",
+  "scope": "parent",
+  "query_id": "q3",
+  "query_type": "contextuelle_riche",
+  "query_text": "Mon fils est en Terminale S, moyenne 13, il adore le sport. Il hésite entre STAPS et kiné. On n'a pas les moyens d'une école privée chère. Quelles voies publiques les plus sûres ?",
+  "elapsed_gen_s": 22.71,
+  "elapsed_fact_check_s": 6.36,
+  "answer_raw": "**TL;DR**\n1. **Kiné en public = parcours ultra-sélectif** : les licences STAPS \"prépa kiné\" acceptent **3-12% des candidats** (moyenne 15+ requise).\n2. **STAPS classique = porte d’entrée plus large** (35% d’admission à Sénart) + possibilité de bifurquer vers kiné plus tard.\n3. **Alternative réaliste** : vise d’abord une **STAPS accessible** (ex : Sénart), puis tente les concours kiné en bac+2/3.\n\n---\n\n### **Plan A — Réaliste : STAPS classique (35% d’admission) + spécialisation kiné plus tard**\n📍 **Licence STAPS - site de Sénart** (Lieusaint, 77) — bac+3 public, **sélectivité 35%** (1361 vœux pour 95 places), pas de mention TB requise · [fiche Parcoursup](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9937&typeBac=0&originePc=0)\n*Pour toi : avec 13 de moyenne, c’est jouable. Tu pourras tenter les concours kiné en L2/L3 (IFMK publics) ou te spécialiser en réathlétisation.*\n\n📍 **Licence STAPS (sans option kiné)** — Autres universités moins demandées (ex : **Le Mans, Reims, Metz**) — sélectivité ~40-60% (connaissance générale).\n*Pour toi : si Sénart est complet, ces villes offrent des places avec un dossier similaire.*\n\n---\n\n### **Plan B — Ambitieux : Licence STAPS \"prépa kiné\" (3-12% d’admission)**\n📍 **Licence STAPS option Kinésithérapie — Montpellier** — **4% d’admission** (3243 vœux pour 50 places), 84% des admis ont **mention B ou TB** · [fiche Parcoursup](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31968&typeBac=0&originePc=0)\n*Pour toi : très risqué avec 13 de moyenne (seulement 19% des admis ont mention AB). À tenter en vœu supplémentaire si tu vises aussi le Plan A.*\n\n📍 **Licence STAPS Accès Kiné — Toulouse** — **7% d’admission**, 48% de mentions B · [fiche Parcoursup](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48327&typeBac=0&originePc=0)\n*Pour toi : légèrement plus accessible que Montpellier, mais reste un pari.*\n\n---\n### **Plan C — Passerelle : PACES/L.AS (médecine) ou BTS Podologie**\n- **L.AS (Licence Accès Santé)** : Certaines universités (ex : **Lyon, Bordeaux**) proposent des L.AS avec option STAPS. Tu suis une licence STAPS + une mineure santé, et tu passes le concours kiné en L2.\n  *Pour toi : double chance (STAPS + concours kiné). Exige un bon niveau en bio/sciences.*\n- **BTS Podologie** (public à **Montpellier, Toulouse**) : Formation en 3 ans, **sélectivité ~20%**, débouchés stables (salaire médian : ~2000€ net). Pas de prérequis en sport, mais compatible avec une reconversion ultérieure en kiné via des passerelles (connaissance générale).\n\n---\n\n### **⚠ Attention aux pièges**\n- **Illusion \"STAPS = kiné\"** : Seules **4 licences STAPS** (sur 70 en France) préparent spécifiquement à la kiné. Les autres ne donnent **aucun avantage** pour les concours d’IFMK (écoles de kiné).\n- **Coût caché des écoles privées** : Les IFMK privés coûtent **5000-8000€/an** (ex : IFMK Paris). Même en public, les concours post-STAPS sont **payants** (~200-500€ par tentative).\n- **Débouchés limités** : En STAPS sans spécialisation, les salaires à bac+3 sont **bas** (1700-1800€ net). La kiné offre de meilleurs revenus (2500-3500€ net après 5 ans), mais le parcours est long (bac+5).\n\n---\n**Question pour toi :**\nEst-ce que ton fils est prêt à **redoubler d’efforts en L1** pour viser une prépa kiné (Plan B), ou préfère-t-il une voie plus sûre (Plan A) avec une spécialisation progressive ? *Pense aussi à son projet de vie : la kiné impose 5 ans d’études + installation libérale (investissement), tandis que STAPS permet de travailler plus tôt.*",
+  "answer_annotated": "**TL;DR**\n1. **Kiné en public = parcours ultra-sélectif** : les licences STAPS \"prépa kiné\" acceptent **3-12% des candidats** (moyenne 15+ requise).\n2. **STAPS classique = porte d’entrée plus large** (35% d’admission à Sénart) + possibilité de bifurquer vers kiné plus tard.\n3. **Alternative réaliste** : vise d’abord une **STAPS accessible** (ex : Sénart), puis tente les concours kiné en bac+2/3.\n\n---\n\n### **Plan A — Réaliste : STAPS classique (35% d’admission) + spécialisation kiné plus tard**\n📍 **Licence STAPS - site de Sénart** (Lieusaint, 77) — bac+3 public, **sélectivité 35%** (1361 vœux pour 95 places), pas de mention TB requise · [fiche Parcoursup](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9937&typeBac=0&originePc=0)\n*Pour toi : avec 13 de moyenne, c’est jouable. Tu pourras tenter les concours kiné en L2/L3 (IFMK publics) ou te spécialiser en réathlétisation.*\n\n📍 **Licence STAPS (sans option kiné)** — Autres universités moins demandées (ex : **Le Mans, Reims, Metz**) — sélectivité ~40-60% (connaissance générale).\n*Pour toi : si Sénart est complet, ces villes offrent des places avec un dossier similaire.*\n\n---\n\n### **Plan B — Ambitieux : Licence STAPS \"prépa kiné\" (3-12% d’admission)**\n📍 **Licence STAPS option Kinésithérapie — Montpellier** — **4% d’admission** (3243 vœux pour 50 places), 84% des admis ont **mention B ou TB** · [fiche Parcoursup](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31968&typeBac=0&originePc=0)\n*Pour toi : très risqué avec 13 de moyenne (seulement 19% des admis ont mention AB). À tenter en vœu supplémentaire si tu vises aussi le Plan A.*\n\n📍 **Licence STAPS Accès Kiné — Toulouse** — **7% d’admission**, 48% de mentions B · [fiche Parcoursup](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48327&typeBac=0&originePc=0)\n*Pour toi : légèrement plus accessible que Montpellier, mais reste un pari.*\n\n---\n### **Plan C — Passerelle : PACES/L.AS (médecine) ou BTS Podologie**\n- **L.AS (Licence Accès Santé)** : Certaines universités (ex : **Lyon, Bordeaux**) proposent des L.AS avec option STAPS. Tu suis une licence STAPS + une mineure santé, et tu passes le concours kiné en L2.\n  *Pour toi : double chance (STAPS + concours kiné). Exige un bon niveau en bio/sciences.*\n- **BTS Podologie** (public à **Montpellier, Toulouse**) : Formation en 3 ans, **sélectivité ~20%**, débouchés stables (salaire médian : ~2000€ net). Pas de prérequis en sport, mais compatible avec une reconversion ultérieure en kiné via des passerelles (connaissance générale).\n\n---\n\n### **⚠ Attention aux pièges**\n- **Illusion \"STAPS = kiné\"** : Seules **4 licences STAPS** (sur 70 en France) préparent spécifiquement à la kiné. Les autres ne donnent **aucun avantage** pour les concours d’IFMK (écoles de kiné).\n- **Coût caché des écoles privées** : Les IFMK privés coûtent **5000-8000€/an** (ex : IFMK Paris). Même en public, les concours post-STAPS sont **payants** (~200-500€ par tentative).\n- **Débouchés limités** : En STAPS sans spécialisation, les salaires à bac+3 sont **bas** (1700-1800€ net). La kiné offre de meilleurs revenus (2500-3500€ net après 5 ans), mais le parcours est long (bac+5).\n\n---\n**Question pour toi :**\nEst-ce que ton fils est prêt à **redoubler d’efforts en L1** pour viser une prépa kiné (Plan B), ou préfère-t-il une voie plus sûre (Plan A) avec une spécialisation progressive ? *Pense aussi à son projet de vie : la kiné impose 5 ans d’études + installation libérale (investissement), tandis que STAPS permet de travailler plus tôt.*",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 15,
+    "n_verified": 4,
+    "n_with_disclaimer": 11,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "3-12% des candidats",
+      "stat_value": 3,
+      "stat_unit": "%",
+      "context_in_response": "licences STAPS \"prépa kiné\" acceptent",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 5 : Taux d'accès Parcoursup : 3.0%"
+    },
+    {
+      "stat_text": "15+ requise",
+      "stat_value": 15,
+      "stat_unit": "moyenne",
+      "context_in_response": "moyenne 15+ requise",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "35% d’admission",
+      "stat_value": 35,
+      "stat_unit": "%",
+      "context_in_response": "STAPS classique = porte d’entrée plus large (35% d’admission à Sénart)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 7 : Taux d'accès Parcoursup : 35.0%"
+    },
+    {
+      "stat_text": "1361 vœux pour 95 places",
+      "stat_value": 1361,
+      "stat_unit": "vœux",
+      "context_in_response": "Licence STAPS - site de Sénart (Lieusaint, 77) — sélectivité 35%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "4% d’admission",
+      "stat_value": 4,
+      "stat_unit": "%",
+      "context_in_response": "Licence STAPS option Kinésithérapie — Montpellier",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : Taux d'accès Parcoursup : 4.0%"
+    },
+    {
+      "stat_text": "84% des admis ont mention B ou TB",
+      "stat_value": 84,
+      "stat_unit": "%",
+      "context_in_response": "Licence STAPS option Kinésithérapie — Montpellier",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "19% des admis ont mention AB",
+      "stat_value": 19,
+      "stat_unit": "%",
+      "context_in_response": "Licence STAPS option Kinésithérapie — Montpellier",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "7% d’admission",
+      "stat_value": 7,
+      "stat_unit": "%",
+      "context_in_response": "Licence STAPS Accès Kiné — Toulouse",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 4 : Taux d'accès Parcoursup : 7.0%"
+    },
+    {
+      "stat_text": "48% de mentions B",
+      "stat_value": 48,
+      "stat_unit": "%",
+      "context_in_response": "Licence STAPS Accès Kiné — Toulouse",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~20% de sélectivité",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context_in_response": "BTS Podologie (public à Montpellier, Toulouse)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian : ~2000€ net",
+      "stat_value": 2000,
+      "stat_unit": "€ net",
+      "context_in_response": "BTS Podologie",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "5000-8000€/an",
+      "stat_value": 5000,
+      "stat_unit": "€/an",
+      "context_in_response": "coût des écoles privées IFMK",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~200-500€ par tentative",
+      "stat_value": 200,
+      "stat_unit": "€",
+      "context_in_response": "coût des concours post-STAPS",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1700-1800€ net",
+      "stat_value": 1700,
+      "stat_unit": "€ net",
+      "context_in_response": "salaires à bac+3 en STAPS sans spécialisation",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2500-3500€ net",
+      "stat_value": 2500,
+      "stat_unit": "€ net",
+      "context_in_response": "revenus après 5 ans en kiné",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.1843,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Sciences et Techniq",
+      "etablissement": "Université de Montpellier",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1789,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+      "etablissement": "Université Paris Cité",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.167,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS - Préparation",
+      "etablissement": "Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1667,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Accès Kiné",
+      "etablissement": "Université Toulouse III - Université Toulouse",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1634,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+      "etablissement": "Université de Perpignan - Antenne de Font Romeu",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1627,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Passerelle Kiné",
+      "etablissement": "Université Clermont Auvergne - Antenne de Vichy - UFR STAPS",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1594,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS - site de Sén",
+      "etablissement": "Université Paris- Est- Créteil Val de Marne UPEC - Antenne de Sénart",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sport",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0635,
+      "nom": "STAPS:INGENIERIE ET ERGONOMIE DE L'ACTIVITE PHYSIQUE — PROFESSIONS DE L'ÉDUCATION PHYSIQUE ET DES SP",
+      "etablissement": "Université Polytechnique Hauts-de-France",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sport",
+      "domain": "formation"
+    },
+    {
+      "score": 1.057,
+      "nom": "STAPS:INGENIERIE ET ERGONOMIE DE L'ACTIVITE PHYSIQUE — PROFESSIONS DE L'ÉDUCATION PHYSIQUE ET DES SP",
+      "etablissement": "Institut national des sciences appliquées Hauts-de-France",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sport",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9621,
+      "nom": "STAPS : activité physique adaptée et santé (fiche nationale)",
+      "etablissement": "UNIVERSITE DE BORDEAUX",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sante",
+      "domain": "formation"
+    }
+  ]
+}

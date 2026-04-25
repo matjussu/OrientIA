@@ -1,0 +1,215 @@
+{
+  "idx_global": 13,
+  "persona_id": "valerie",
+  "persona_description": "Valérie, parent de lycéen (perspective externe)",
+  "scope": "parent",
+  "query_id": "q1",
+  "query_type": "factuelle",
+  "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+  "elapsed_gen_s": 10.91,
+  "elapsed_fact_check_s": 5.23,
+  "answer_raw": "**TL;DR**\n1. Une licence publique coûte **170€/an** (droits nationaux 2024-25), une école de commerce privée **5 000€ à 15 000€/an** (connaissance générale).\n2. Le coût réel inclut aussi **logement, transports, et frais annexes** (ex : 300-600€/an pour les manuels).\n3. Des alternatives existent pour réduire la facture (alternance, bourses, écoles publiques).\n\n---\n\n### **Plan A — Licence publique : coût minimal, reconnaissance d'État**\n📍 **Licence Économie-Gestion** (ex : [Université de Lille](https://www.univ-lille.fr/)) — bac+3 public, **170€/an** (droits nationaux 2024-25), sélectivité variable (30-60% selon parcours).\n*Pour toi : idéal si budget serré et mobilité géographique possible. Diplôme reconnu pour les concours de la fonction publique ou les masters.*\n\n### **Plan B — École de commerce privée : investissement élevé, réseau pro**\n📍 **Licence Commerce International (ESTICE Lille)** — bac+3 privé, **~7 000€/an**, sélectivité 38% (mention B requise pour 74% des admis) · [fiche Parcoursup](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24397&typeBac=0&originePc=0).\n*Pour toi : coût justifié si visée internationale (stages à l’étranger inclus) et budget familial solide. Taux d’insertion élevé dans les métiers du commerce (connaissance générale).*\n\n### **Plan C — Alternance ou écoles publiques : réduire la facture**\n- **BUT TC (Techniques de Commercialisation)** en IUT public : **0€** (frais pris en charge par l’entreprise en alternance).\n- **IAE (écoles universitaires de management)** : **250-600€/an** pour un diplôme bac+5 grade master.\n*(connaissance générale)*\n\n⚠ **Attention aux pièges**\n- Les écoles privées **non reconnues par l’État** (sans grade licence/master ou RNCP) peuvent coûter cher pour un diplôme peu valorisé.\n- **Frais cachés** : certaines écoles privées facturent des \"frais de dossier\" (300-800€) ou des \"contributions vie étudiante\" obligatoires (jusqu’à 1 200€/an).\n\n---\n**Question pour toi :**\nPrivilégies-tu un **coût maîtrisé** avec mobilité géographique (licence publique), un **réseau pro fort** malgré l’investissement (école privée), ou une **voie hybride** (alternance/IAE) pour allier les deux ?",
+  "answer_annotated": "**TL;DR**\n1. Une licence publique coûte **170€/an** (droits nationaux 2024-25), une école de commerce privée **5 000€ à 15 000€/an** (connaissance générale).\n2. Le coût réel inclut aussi **logement, transports, et frais annexes** (ex : 300-600€/an pour les manuels).\n3. Des alternatives existent pour réduire la facture (alternance, bourses, écoles publiques).\n\n---\n\n### **Plan A — Licence publique : coût minimal, reconnaissance d'État**\n📍 **Licence Économie-Gestion** (ex : [Université de Lille](https://www.univ-lille.fr/)) — bac+3 public, **170€/an** (droits nationaux 2024-25), sélectivité variable (30-60% selon parcours).\n*Pour toi : idéal si budget serré et mobilité géographique possible. Diplôme reconnu pour les concours de la fonction publique ou les masters.*\n\n### **Plan B — École de commerce privée : investissement élevé, réseau pro**\n📍 **Licence Commerce International (ESTICE Lille)** — bac+3 privé, **~7 000€/an**, sélectivité 38% (mention B requise pour 74% des admis) · [fiche Parcoursup](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24397&typeBac=0&originePc=0).\n*Pour toi : coût justifié si visée internationale (stages à l’étranger inclus) et budget familial solide. Taux d’insertion élevé dans les métiers du commerce (connaissance générale).*\n\n### **Plan C — Alternance ou écoles publiques : réduire la facture**\n- **BUT TC (Techniques de Commercialisation)** en IUT public : **0€** (frais pris en charge par l’entreprise en alternance).\n- **IAE (écoles universitaires de management)** : **250-600€/an** pour un diplôme bac+5 grade master.\n*(connaissance générale)*\n\n⚠ **Attention aux pièges**\n- Les écoles privées **non reconnues par l’État** (sans grade licence/master ou RNCP) peuvent coûter cher pour un diplôme peu valorisé.\n- **Frais cachés** : certaines écoles privées facturent des \"frais de dossier\" (300-800€) ou des \"contributions vie étudiante\" obligatoires (jusqu’à 1 200€/an).\n\n---\n**Question pour toi :**\nPrivilégies-tu un **coût maîtrisé** avec mobilité géographique (licence publique), un **réseau pro fort** malgré l’investissement (école privée), ou une **voie hybride** (alternance/IAE) pour allier les deux ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 11,
+    "n_verified": 2,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "170€/an",
+      "stat_value": 170,
+      "stat_unit": "€",
+      "context_in_response": "Une licence publique coûte 170€/an (droits nationaux 2024-25)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "5 000€ à 15 000€/an",
+      "stat_value": 5000,
+      "stat_unit": "€",
+      "context_in_response": "une école de commerce privée 5 000€ à 15 000€/an (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "300-600€/an",
+      "stat_value": 300,
+      "stat_unit": "€",
+      "context_in_response": "frais annexes (ex : 300-600€/an pour les manuels)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30-60%",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "sélectivité variable (30-60% selon parcours)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "7 000€/an",
+      "stat_value": 7000,
+      "stat_unit": "€",
+      "context_in_response": "Licence Commerce International (ESTICE Lille) — bac+3 privé, ~7 000€/an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "38%",
+      "stat_value": 38,
+      "stat_unit": "%",
+      "context_in_response": "sélectivité 38% (mention B requise pour 74% des admis)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 38.0%"
+    },
+    {
+      "stat_text": "74%",
+      "stat_value": 74,
+      "stat_unit": "%",
+      "context_in_response": "mention B requise pour 74% des admis",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0.86",
+      "stat_value": 0.86,
+      "stat_unit": null,
+      "context_in_response": "Taux d’insertion élevé dans les métiers du commerce (connaissance générale)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, ...}"
+    },
+    {
+      "stat_text": "250-600€/an",
+      "stat_value": 250,
+      "stat_unit": "€",
+      "context_in_response": "IAE (écoles universitaires de management) : 250-600€/an pour un diplôme bac+5 grade master",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "300-800€",
+      "stat_value": 300,
+      "stat_unit": "€",
+      "context_in_response": "certaines écoles privées facturent des \"frais de dossier\" (300-800€)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 200€/an",
+      "stat_value": 1200,
+      "stat_unit": "€",
+      "context_in_response": "contributions vie étudiante obligatoires (jusqu’à 1 200€/an)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.019,
+      "nom": "Licence - Economie et gestion - Parcours Commerce international et langues",
+      "etablissement": "ICL - ESTICE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9295,
+      "nom": "Programme grande école",
+      "etablissement": "INSTITUT SUPERIEUR COMMERCE PARIS",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8502,
+      "nom": "Diplôme d'études supérieures en commerce et en entrepreneuriat",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8487,
+      "nom": "Affaires et Relations Internationales",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8479,
+      "nom": "diplôme finance",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8474,
+      "nom": "diplôme du programme ingénieur d'affaires",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8469,
+      "nom": "diplôme en gestion du luxe",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8468,
+      "nom": "commerce international",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8459,
+      "nom": "diplôme en comptabilité et gestion financière",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8452,
+      "nom": "manager marketing et commercial en produits et services de luxe",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    }
+  ]
+}
