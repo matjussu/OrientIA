@@ -144,12 +144,117 @@ Selon **MOY GLOBALE** (alternative interprétation) :
 - **Le reranker fonctionne** (mesure fact-check convergente avec notation humaine)
 - **Précision -0.42 vs v4** est imputable à variance + R3 + ma notation un peu plus stricte (subjectivité Claudette samedi PM vs vendredi PM)
 
-## 7. Conclusion Phase A
+## 7. Triple-run (Phase A.5 post-arbitrage Matteo)
 
-✅ **ADR-049 livré et testé** : code + 28 tests + bench
-✅ **Reranker fonctionne** sur les 4 signaux objectifs (verified rate, halluc rate, MOY notation, multi-corpus activation Q18)
-⚠️ **Précision factuelle 4.11 en zone ambiguë** par rapport au seuil 4.30
-🎯 **Gate verdict** : ping arbitrage Jarvis avec proposition triple-run d'abord, Phase B conditionnelle
+**Décision Matteo Telegram 14:58 : "Go triple-run"**. 3 runs supplémentaires
+des MÊMES 18 queries pour stabiliser précision/halluc avec IC95.
+
+### Résultats objectifs fact-check Mistral Small (n=3 runs)
+
+| Métrique | Run 1 | Run 2 | Run 3 | **Mean** | **stdev** | **IC95 (n=3)** |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Stats fact-checked | 197 | 218 | 212 | 209 | — | — |
+| **Verified ✅** | 47.2 % | 46.3 % | 44.3 % | **46.0 %** | 1.47pp | **± 1.66pp** ⭐ étroit |
+| **Hallucinated 🔴** | 8.1 % | 17.0 % | 15.6 % | **13.6 %** | 4.76pp | **± 5.38pp** ⚠️ large |
+| Multi-corpus activation | 2/18 | 2/18 | 2/18 | **2/18** | 0 | déterministe |
+
+### Comparaison statistique avec v4 (single)
+
+| Métrique | v4 | v5 dedupé+reranker triple-run | Verdict statistique |
+|---|---:|---:|---|
+| Verified rate | 47.3 % | 46.0 % ± 1.66pp | **≈ v4 (PAS de régression dans IC95)** ✅ |
+| Hallucination rate | 11.6 % | 13.6 % ± 5.38pp | **AMBIGU** — IC95 couvre v4 |
+| Multi-corpus | n/a | 2/18 reproduit 3× | reranker fonctionne déterministiquement ✅ |
+
+### Honnêteté méthodologique critique
+
+**Mon claim Run 1 « halluc 8.1 % < v4 11.6 % » était un outlier statistique
+favorable.** La moyenne triple-run 13.6 % n'est pas significativement
+différente de v4 11.6 % (IC95 large couvre v4).
+
+Triple-run **invalide** :
+- Le claim « v5 strictement meilleur que v4 sur halluc »
+
+Triple-run **valide** :
+- ✅ « v5 statistiquement équivalent à v4 sur verified rate »
+- ✅ « Reranker fonctionne déterministiquement » (multi-corpus 2/18 reproduit
+  exactement sur 3 runs)
+- ✅ « Pas de régression mesurable verified » (IC95 ±1.66pp étroit)
+
+### Projection précision factuelle triple-run (estimée)
+
+Pas de notation humaine triple-run faite (~3h supplémentaires). Estimation
+basée sur la corrélation verified/précision observée vendredi-samedi :
+- Verified IC95 ±1.66pp ≈ ±0.08 sur 5 → **précision triple-run estimée
+  4.10 ± 0.08**
+- Donc 4.10 ∈ [3.95, 4.30] → **ZONE AMBIGUË confirmée même post-triple-run**
+- Le seuil 4.30 strict n'est PAS franchi avec confiance
+
+## 8. Verdict shipping Phase A — état après triple-run
+
+| Critère | Verdict |
+|---|---|
+| ADR-049 reranker techniquement fonctionnel | ✅ confirmé (multi-corpus 2/18 stable) |
+| Régression vs v4 statistiquement détectable | ❌ aucune (IC95 verified couvre v4) |
+| Amélioration vs v4 statistiquement détectable | ❌ aucune (IC95 halluc large) |
+| Précision factuelle ≥ 4.30 | ❌ 4.10 ± 0.08 estimé |
+| Précision factuelle ≥ 3.95 (seuil bas) | ✅ 4.10 estimé > 3.95 |
+
+→ **Statut : ZONE AMBIGUË confirmée triple-run. Pas de gain mesurable mais
+pas de régression mesurable.**
+
+## 9. 4 paths arbitrage Matteo final
+
+### B' — Phase B GO avec caveats stricts (reco Claudette)
+- Système ≈ v4 sur formation-centric (validé triple-run)
+- Phase B ajoute 3 corpora aggrégés → bonifie multi-domain (validé PR #62
+  +0.375/25 +7.5 % précision sur queries multi-domain)
+- Reranker boost asymétrique → pas de dégradation formation
+- Filet Path 1 toujours dispo si bench final v5++ régresse
+- Coût : ~$0.07 + ~3-4h
+- Caveat à documenter INRIA : « v5 ≥ v4 sur formation-centric + extension
+  scope multi-domain » (pas « v5 > v4 strict »)
+
+### C — Path 1 revert v4 immédiat (filet sécurité)
+- Argument strict du seuil 4.30 non atteint
+- v4 prouvé shippable (référence triple-run)
+- On perd extension multi-domain (qui marche, PR #62)
+- Effort : 30 min revert + 2-3h re-bench v4 hold-out
+
+### D — Fix R3 labels d'abord puis re-bench
+- Hypothèse : R3 labels à 0 % pénalise v4 ET v5 silencieusement (reranker
+  boost SecNumEdu/CTI/CGE no-op)
+- Si fix R3 → boost réactivé sur les 4 systèmes → précision +0.2 à +0.4
+  potentiel
+- Mais : ne change pas la compa v4↔v5 (boost activé partout)
+- Effort : ~1h investigation + fix + re-bench
+
+### A.bis — Notation humaine triple-run (~1-2h)
+- Compléter Run 2 + Run 3 notation humaine (180 cellules) pour IC95
+  précision strict
+- Probablement va confirmer 4.10 ± 0.20 (cohérent avec verified IC95 étroit)
+- Coût : 0$ + 1-2h
+- Reco Claudette : pas indispensable, le verdict Zone Ambiguë est déjà clair
+
+---
+
+## Conclusion Phase A définitive
+
+✅ **ADR-049 livré, testé, fonctionnel** : reranker domain-aware reproductible
+deterministically (2/18 multi-corpus activation 3 runs).
+
+⚠️ **Pas de gain mesurable précision/halluc vs v4** : système ≈ v4 sur
+formation-centric (validé statistiquement triple-run).
+
+🎯 **Décision shipping = arbitrage Matteo** entre :
+- Option B' (Phase B GO + extension multi-domain documentée comme bonus
+  scope, pas comme upgrade strict)
+- Option C (Path 1 revert v4, sécurité INRIA)
+- Option D (fix R3 labels investigation préalable)
+
+Path 1 reste le **filet de sécurité documenté**. Quelle que soit la
+décision, l'expérience scientifique est livrée propre et défendable
+INRIA.
 
 ---
 

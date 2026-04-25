@@ -115,7 +115,17 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--persona", type=str, default=None)
     parser.add_argument("--max", type=int, default=None)
+    parser.add_argument(
+        "--out-suffix",
+        type=str,
+        default="",
+        help="Suffix appended to OUT_DIR (e.g., '_run2' for triple-run).",
+    )
     args = parser.parse_args()
+
+    global OUT_DIR
+    if args.out_suffix:
+        OUT_DIR = OUT_DIR.parent / f"{OUT_DIR.name}{args.out_suffix}"
 
     if not FICHES_PATH.exists() or not INDEX_PATH.exists():
         print("❌ formations_multi_corpus_dedupe.json ou index FAISS multi-corpus absent.")
