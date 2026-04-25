@@ -38,6 +38,7 @@ DOMAIN_HINT_APEC = "apec_region"
 DOMAIN_HINT_CROUS = "crous"
 DOMAIN_HINT_INSEE_SALAIRE = "insee_salaire"
 DOMAIN_HINT_INSERTION_PRO = "insertion_pro"
+DOMAIN_HINT_METIER_PROSPECTIVE = "metier_prospective"  # DARES Métiers 2030
 DOMAIN_HINT_COMPETENCES_CERTIF = "competences_certif"  # France Comp blocs RNCP
 
 
@@ -216,6 +217,21 @@ _PATTERNS_DOMAIN_INSERTION_PRO = [
 ]
 
 
+# DARES Métiers 2030 — projections recrutement par FAP
+_PATTERNS_DOMAIN_METIER_PROSPECTIVE = [
+    re.compile(r"\bmetier[sx]?\s+(?:en\s+)?2030\b"),
+    re.compile(r"\bperspective[sx]?\s+(?:de\s+)?(?:recrutement|emploi)\b"),
+    re.compile(r"\b(?:projection|prevision)[sx]?\s+(?:de\s+)?(?:recrutement|emploi|metier)"),
+    re.compile(r"\bpostes?\s+a\s+pourvoir\b"),
+    re.compile(r"\b(?:dares|projection\s+dares)\b"),
+    re.compile(r"\bquels?\s+metiers?\s+(?:vont\s+)?recruter\b"),
+    re.compile(r"\b(?:depart[sx]?\s+(?:en\s+)?(?:fin\s+de\s+)?)?retraite\s+(?:massive[sx]?|en\s+masse)\b"),
+    re.compile(r"\bniveau\s+de\s+tension\s+\d{4}\b"),
+    re.compile(r"\bfap\s+(?:[a-z]\d[a-z]?|\d+)\b", re.IGNORECASE),
+    re.compile(r"\bdesequilibre[sx]?\s+(?:potentiel|recrutement)"),
+]
+
+
 # France Comp blocs RNCP — compétences certifiées par diplôme/titre.
 # Détecte les questions sur le contenu pédagogique d'un diplôme : ce qu'on
 # y apprend, les blocs validables, les savoir-faire certifiés. Couvre aussi
@@ -249,12 +265,13 @@ def classify_domain_hint(question: str) -> str | None:
 
     Priorité de détection (du plus spécifique au plus générique) :
     1. APEC (marché du travail cadres) — termes très spécifiques
-    2. INSEE salaire (médian / cadre / employé / PCS)
-    3. Insertion pro (taux insertion à N mois)
-    4. Compétences certifiées RNCP (blocs / contenu pédagogique)
-    5. Parcours bacheliers (taux réussite licence × bac × mention)
-    6. CROUS (logement étudiant / vie étudiante)
-    7. Métier (profession / devenir / que fait un X)
+    2. Métier prospective DARES (métiers 2030 / postes à pourvoir 2030)
+    3. INSEE salaire (médian / cadre / employé / PCS)
+    4. Insertion pro (taux insertion à N mois)
+    5. Compétences certifiées RNCP (blocs / contenu pédagogique)
+    6. Parcours bacheliers (taux réussite licence × bac × mention)
+    7. CROUS (logement étudiant / vie étudiante)
+    8. Métier (profession / devenir / que fait un X)
     """
     if not question or not question.strip():
         return None
@@ -263,6 +280,8 @@ def classify_domain_hint(question: str) -> str | None:
 
     if any(p.search(norm) for p in _PATTERNS_DOMAIN_APEC):
         return DOMAIN_HINT_APEC
+    if any(p.search(norm) for p in _PATTERNS_DOMAIN_METIER_PROSPECTIVE):
+        return DOMAIN_HINT_METIER_PROSPECTIVE
     if any(p.search(norm) for p in _PATTERNS_DOMAIN_INSEE_SALAIRE):
         return DOMAIN_HINT_INSEE_SALAIRE
     if any(p.search(norm) for p in _PATTERNS_DOMAIN_INSERTION_PRO):
