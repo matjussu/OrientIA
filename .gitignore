@@ -31,6 +31,7 @@ results/raw_responses/
 # Critère : fichier > 50 MB OU produit de re-build trivial (moins de 2 min
 # d'API call). Ces fichiers sont des artefacts de build, pas des sources.
 data/processed/formations.json
+data/processed/formations_multi_corpus.json
 data/processed/inserjeunes_lycee_pro.json
 data/processed/insersup_insertion.json
 

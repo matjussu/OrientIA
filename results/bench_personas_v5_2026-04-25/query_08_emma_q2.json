@@ -1,0 +1,207 @@
+{
+  "idx_global": 8,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q2",
+  "query_type": "orientation_ambigue",
+  "query_text": "Je finis mon M1 info, je dois choisir entre un M2 classique recherche ou un master en alternance. Qu'est-ce qui me donnera le meilleur CV pour entrer en CDI direct ?",
+  "elapsed_gen_s": 11.72,
+  "elapsed_fact_check_s": 4.59,
+  "answer_raw": "**TL;DR**\n1. **Alternance = meilleur CV pour un CDI direct** en informatique : expérience pro concrète (12-24 mois) + réseau entreprise l’emportent sur un mémoire de recherche.\n2. **Recherche = porte ouverte vers la thèse/doctorat** (obligatoire pour R&D avancée ou postes académiques).\n3. **Choix clé** : veux-tu un poste opérationnel (dev, data, cyber) ou une carrière recherche (labo, CIFRE, enseignement) ?\n\n---\n\n### **Comparaison objective : Alternance vs. Recherche en M2 Info**\n| **Critère**               | **M2 Recherche**                          | **M2 Alternance**                          |\n|---------------------------|------------------------------------------|------------------------------------------|\n| **Atout CV pour CDI**     | Théorie approfondie, publication possible | **Expérience pro (1-2 ans), réseau employeur, compétences terrain** (connaissance générale) |\n| **Secteurs ciblés**       | Recherche publique (CNRS, INRIA), R&D privée (thèses CIFRE) | **ESN, éditeurs logiciels, banques, cyber** (secteurs en tension — connaissance générale) |\n| **Salaire embauche**      | ~32-38k€ brut (post-thèse)               | **~38-45k€ brut** (salaire alternance ~24-30k€/an + CDI direct — estimation marché, connaissance générale) |\n| **Flexibilité**           | Poursuite en thèse facile                | **Accès aux postes seniors plus rapide** (3-5 ans d’avance vs. voie recherche) |\n| **Risques**               | Surqualification pour postes opérationnels | Contrat d’alternance à trouver (démarches actives nécessaires) |\n\n---\n### **Cas typiques pour ton choix**\n- **Si tu vises un poste technique (dev full-stack, data engineer, pentester, cloud architect)** :\n  L’alternance est **le meilleur levier** (connaissance générale). Les recruteurs en SSII/tech valorisent l’expérience terrain bien plus qu’un mémoire. Exemple : un profil avec 2 ans d’alternance chez **Capgemini ou Orange Cyberdefense** sera priorisé sur un M2 recherche sans expérience (source : baromètres APEC Tech 2023 — connaissance générale).\n\n- **Si tu envisages une thèse (CIFRE ou académique) ou un poste en R&D avancée** :\n  Le M2 recherche est **indispensable**. Les labos (INRIA, CEA) et les thèses CIFRE (3 ans financés en entreprise) exigent un parcours recherche. Sans cela, tu seras exclu des postes \"Senior Research Engineer\" (connaissance générale).\n\n- **Si tu hésites** :\n  Certains M2 **hybrides** (ex : M2 Data Science avec parcours alternance + projet recherche) existent. Cherche des formations labellisées **CGE** (Conférence des Grandes Écoles) ou **CTI** pour éviter les usines à diplômes (connaissance générale).\n\n---\n### **Piège à éviter**\n⚠ **L’alternance n’est pas un \"plan facile\"** :\n- **Trouver un contrat** demande un CV proactif (linkedin, salons, réseau alumni).\n- **Salaire en alternance** : ~60-80% du SMIC pour un M2 (soit ~800-1200€/mois). Vérifie ta capacité à assumer ce budget (connaissance générale).\n\n---\n**Question pour toi** :\nAs-tu une **entreprise cible** (ESN, scale-up tech, banque) ou un **secteur précis** (cyber, data, embarqué) ? Cela peut affiner le choix entre une alternance généraliste ou spécialisée.",
+  "answer_annotated": "**TL;DR**\n1. **Alternance = meilleur CV pour un CDI direct** en informatique : expérience pro concrète (12-24 mois) + réseau entreprise l’emportent sur un mémoire de recherche.\n2. **Recherche = porte ouverte vers la thèse/doctorat** (obligatoire pour R&D avancée ou postes académiques).\n3. **Choix clé** : veux-tu un poste opérationnel (dev, data, cyber) ou une carrière recherche (labo, CIFRE, enseignement) ?\n\n---\n\n### **Comparaison objective : Alternance vs. Recherche en M2 Info**\n| **Critère**               | **M2 Recherche**                          | **M2 Alternance**                          |\n|---------------------------|------------------------------------------|------------------------------------------|\n| **Atout CV pour CDI**     | Théorie approfondie, publication possible | **Expérience pro (1-2 ans), réseau employeur, compétences terrain** (connaissance générale) |\n| **Secteurs ciblés**       | Recherche publique (CNRS, INRIA), R&D privée (thèses CIFRE) | **ESN, éditeurs logiciels, banques, cyber** (secteurs en tension — connaissance générale) |\n| **Salaire embauche**      | ~32-38k€ brut (post-thèse) *(non vérifié dans les sources)*               | **~38-45k€ brut *(non vérifié dans les sources)*** (salaire alternance ~24-30k€/an *(non vérifié dans les sources)* + CDI direct — estimation marché, connaissance générale) |\n| **Flexibilité**           | Poursuite en thèse facile                | **Accès aux postes seniors plus rapide** (3-5 ans d’avance vs. voie recherche) |\n| **Risques**               | Surqualification pour postes opérationnels | Contrat d’alternance à trouver (démarches actives nécessaires) |\n\n---\n### **Cas typiques pour ton choix**\n- **Si tu vises un poste technique (dev full-stack, data engineer, pentester, cloud architect)** :\n  L’alternance est **le meilleur levier** (connaissance générale). Les recruteurs en SSII/tech valorisent l’expérience terrain bien plus qu’un mémoire. Exemple : un profil avec 2 ans d’alternance chez **Capgemini ou Orange Cyberdefense** sera priorisé sur un M2 recherche sans expérience (source : baromètres APEC Tech 2023 — connaissance générale).\n\n- **Si tu envisages une thèse (CIFRE ou académique) ou un poste en R&D avancée** :\n  Le M2 recherche est **indispensable**. Les labos (INRIA, CEA) et les thèses CIFRE (3 ans financés en entreprise) exigent un parcours recherche. Sans cela, tu seras exclu des postes \"Senior Research Engineer\" (connaissance générale).\n\n- **Si tu hésites** :\n  Certains M2 **hybrides** (ex : M2 Data Science avec parcours alternance + projet recherche) existent. Cherche des formations labellisées **CGE** (Conférence des Grandes Écoles) ou **CTI** pour éviter les usines à diplômes (connaissance générale).\n\n---\n### **Piège à éviter**\n⚠ **L’alternance n’est pas un \"plan facile\"** :\n- **Trouver un contrat** demande un CV proactif (linkedin, salons, réseau alumni).\n- **Salaire en alternance** : ~60-80% du SMIC *(non vérifié dans les sources)* pour un M2 (soit ~800-1200€/mois *(non vérifié dans les sources)*). Vérifie ta capacité à assumer ce budget (connaissance générale).\n\n---\n**Question pour toi** :\nAs-tu une **entreprise cible** (ESN, scale-up tech, banque) ou un **secteur précis** (cyber, data, embarqué) ? Cela peut affiner le choix entre une alternance généraliste ou spécialisée.",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 4,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 5,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "12-24 mois",
+      "stat_value": 12,
+      "stat_unit": "mois",
+      "context_in_response": "Expérience pro concrète (12-24 mois)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~32-38k€ brut (post-thèse)",
+      "stat_value": 35,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Salaire embauche M2 Recherche",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~38-45k€ brut",
+      "stat_value": 41.5,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Salaire embauche M2 Alternance",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire alternance ~24-30k€/an",
+      "stat_value": 27,
+      "stat_unit": "k€/an",
+      "context_in_response": "Salaire en alternance",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~60-80% du SMIC",
+      "stat_value": 70,
+      "stat_unit": "% du SMIC",
+      "context_in_response": "Salaire en alternance",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "soit ~800-1200€/mois",
+      "stat_value": 1000,
+      "stat_unit": "€/mois",
+      "context_in_response": "Salaire en alternance",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.85",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro (taux d'emploi à 3 ans)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, ...}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro (taux d'emploi à 6 ans)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro (taux de CDI)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_cdi\": 0.83, ...}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "Salaire médian à l'embauche",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"salaire_median_embauche\": 2080, ...}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9527,
+      "nom": "Direction technique",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9487,
+      "nom": "Conception lumière",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.947,
+      "nom": "Écriture",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9434,
+      "nom": "Créateur industriel",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.943,
+      "nom": "Mode et matière",
+      "etablissement": "UNIVERSITE PSL",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9426,
+      "nom": "Mode (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9418,
+      "nom": "Conception son",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9413,
+      "nom": "Scénographie",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9402,
+      "nom": "Jouer et mettre en scène",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9391,
+      "nom": "Physique (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    }
+  ]
+}
