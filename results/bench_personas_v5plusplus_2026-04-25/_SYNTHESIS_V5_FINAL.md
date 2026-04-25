@@ -177,23 +177,81 @@ l'extension multi-domain où v4 répondait mal.
   judge LLM tiers (Claude / GPT-4o) sur les 26 queries pour
   cross-validation.
 
-### 3 paths à arbitrer Matteo
+### 3 paths à arbitrer Matteo (initial)
 
-#### Path 1 (reco Claudette) — Ship v5++ as-is
-- 9 PRs livrées (5 mergées + 4 open dont #66 Phase B)
-- Argument INRIA : extension scope + halluc -3pp + multi-domain 100 %
-- Triple-run optionnel post-shipping si critique reviewer
+#### Path 1 — Ship v5++ as-is (initialement reco Claudette)
+- Argument INRIA : extension scope + halluc -3pp single + multi-domain 100 %
 
 #### Path 2 — Triple-run v5++ d'abord ($0.30) avant shipping
-- Stabilise précision/halluc avec IC95
-- Si triple-mean halluc < 11.6 % → claim "v5++ < v4 halluc" défendable
-  scientifiquement
-- ETA : 30 min, mais retarde shipping de 1 jour
+- ✅ EXÉCUTÉ post-arbitrage Matteo (cf §7 Triple-run effectué)
 
 #### Path 3 — Fix R3 labels d'abord, puis re-bench
-- ~1h investigation + fix + re-bench
-- Pourrait améliorer v4 ET v5++ → comparaison plus juste
-- Mais ne change pas le verdict relatif v5++ ≥ v4 actuel
+- ✅ EXÉCUTÉ Top 1 R3 Phase A → fix EMPIRE les benchs (single run)
+- Reverté → ADR-052 issue #68 future work post-INRIA
+
+---
+
+## 7. Triple-run v5++ — verdict statistique honnête (POST-arbitrage Matteo)
+
+3 runs des 18 queries v4 sur l'index v5++ Phase B :
+
+| Run | Stats | Verified ✅ | Halluc 🔴 | Multi-corpus |
+|---|---:|---:|---:|---:|
+| Run 1 | 233 | 42.1 % | 8.6 % | 2/18 |
+| Run 2 | 209 | 46.9 % | 22.5 % | 2/18 |
+| Run 3 | 238 | 47.5 % | 12.6 % | 2/18 |
+| **Mean** | **227** | **45.5 %** | **14.6 %** | **2/18 stable** |
+| **stdev** | — | 2.97pp | 7.16pp | 0 |
+| **IC95 (n=3)** | — | **±3.36pp** | **±8.10pp** | déterministe |
+
+### Comparaison statistique avec v4 (single)
+
+| Métrique | v4 | v5++ triple-mean | Verdict |
+|---|---:|---:|---|
+| Verified rate | 47.3 % | 45.5 % ± 3.4pp | **≈ v4** (IC95 couvre) ✅ |
+| **Halluc rate** | **11.6 %** | **14.6 % ± 8.1pp** | **AMBIGU** (IC95 large couvre) |
+| Multi-corpus | n/a | 2/18 stable | **déterministe** ✅ |
+
+### Honnêteté méthodologique critique
+
+**Mon claim Run 1 « halluc 8.6 % < v4 11.6 % » était un OUTLIER**.
+La moyenne triple-run 14.6 % n'est PAS significativement < v4 11.6 %.
+
+**Triple-run INVALIDE** :
+- ❌ « v5++ strictement meilleur que v4 sur halluc »
+
+**Triple-run VALIDE** :
+- ✅ « v5++ statistiquement équivalent à v4 sur verified rate »
+- ✅ « Reranker fonctionne déterministiquement » (multi-corpus 2/18 reproduit
+  exactement 3 runs)
+- ✅ « Pas de régression mesurable » (IC95 verified ±3.36pp étroit)
+
+### Verdict shipping RÉVISÉ HONNÊTE
+
+**Narrative INRIA défendable post-triple-run** :
+- v5++ **ÉQUIVALENT** à v4 sur formation-centric (verified IC95 couvre,
+  halluc IC95 ambigu)
+- v5++ **EXTENSION SCOPE** multi-domain : +3 corpora aggrégés (CROUS +
+  INSEE + InserSup) sur 6 domains additifs vs formation seul v4
+- **+50 % précision factuelle** sur queries multi-domain (2.75 → 4.125,
+  PR #62)
+- Multi-corpus **8/8 activation déterministe** sur queries adaptées
+
+**Plus modeste que Run 1 single** mais honnête et défendable. Ce n'est pas
+un "v5++ > v4 strict" mais un "v5++ = v4 + extension scope" — ce qui est
+en soi un argument INRIA valide (couverture orientation élargie sans
+régression mesurable).
+
+### Top 1 R3 — résultat empirique négatif documenté
+
+Investigation R3 (issue #68) a révélé :
+- Fix R3 (`attach_labels` global vs legacy-only) : 23 → 414 labels (+390)
+- **R3 fix EMPIRE single-run** : v4 halluc 11.6 % → 25.7 %, v5++ 8.6 % → 18.0 %
+- Inspection ciblée Q1/Q10/Q14 réfute hypothèse pollution cyber
+- **Insight Matteo** : ADR-002 boost qualité externe (SecNumEdu/CTI/CGE)
+  probablement obsolète sur corpus 100 % État vérifié
+- **Reverté** main pre-fix
+- ADR-052 future work post-INRIA (3 directions explorées dans issue #68)
 
 ---
 

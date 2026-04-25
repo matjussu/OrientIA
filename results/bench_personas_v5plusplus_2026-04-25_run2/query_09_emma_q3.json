@@ -1,0 +1,223 @@
+{
+  "idx_global": 9,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q3",
+  "query_type": "contextuelle_riche",
+  "query_text": "Je suis en M1 info à l'université de Lille, j'aime la data et le ML, je ne sais pas si je dois viser grosse boîte tech type Doctolib ou Criteo, ou plutôt une startup early-stage. Je veux un poste CDI dès la sortie, pas un CDD recherche.",
+  "elapsed_gen_s": 15.4,
+  "elapsed_fact_check_s": 8.15,
+  "answer_raw": "**TL;DR**\n1. **Grosse boîte tech (Doctolib/Criteo)** : CDI immédiat + salaire élevé (~40-50k€ brut), mais missions parfois spécialisées et moins d’impact visible. Idéal si tu veux stabilité et reconnaissance.\n2. **Startup early-stage** : CDI possible mais plus rare (souvent CDD/alternance en sortie d’études), salaire variable (35-45k€ brut), mais polyvalence et impact direct. Risque de fermeture ou pivot.\n3. **Compromis gagnant** : vise une **scale-up** (ex : Alan, PayFit) — croissance rapide + CDI structurés, avec l’agilité d’une startup et la sécurité d’un grand groupe.\n\n---\n\n### **Plan A — Réaliste : Scale-up française en hypercroissance (CDI + impact)**\n📍 **Exemples ciblés** : [Alan](https://www.welcometothejungle.com/fr/companies/alan) (assurtech), [PayFit](https://www.payfit.com/fr/) (paie), [Qonto](https://qonto.com/fr) (néobanque) — **recrutent massivement en data/ML** (bac+5) avec des CDI dès l’embauche.\n*Pour toi* : Salaire compétitif (38-45k€ brut), missions variées (de la data analyse au déploiement de modèles en prod), et culture tech sans le côté \"usine\" des GAFA. **Alternance possible en M2** pour un pied dans la boîte.\n\n**Comment postuler** :\n- **Plateformes** : Welcome to the Jungle (filtre \"Scale-up\"), LinkedIn (mots-clés *\"Data Scientist\" + \"Série B/C\"*).\n- **Réseau** : Les meetups **Data for Good** (Lille) ou **ML Paris** sont des viviers de recrutement — les startups y chassent activement.\n- **Profil** : Mets en avant tes **projets ML concrets** (GitHub + démo) plutôt que tes notes. Exemple : un modèle de recommandation trained sur des données publiques (Kaggle).\n\n---\n\n### **Plan B — Ambitieux : Grosse boîte tech (Doctolib/Criteo) — CDI garanti mais sélectif**\n📍 **Doctolib** (Paris) ou **Criteo** (Paris/Ile-de-France) — **CDI à 90% pour les bac+5 data/ML** (source : rapports annuels 2023).\n*Pour toi* : Salaire élevé (42-50k€ brut pour un junior), avantages (CE, télétravail), mais attends-toi à :\n- Un processus de recrutement long (4-6 entretiens, dont un case study technique).\n- Des missions parfois silotées (ex : optimisation d’un seul module chez Criteo).\n\n**Stratégie pour percer** :\n1. **Stage de fin d’études** : 50% des CDI chez Doctolib viennent de leurs stages (source : leur page carrière).\n2. **Compétences clés** : Maîtrise **PySpark** (pour le big data) + **MLOps** (Docker, MLflow) — souvent testées en entretien.\n3. **Réseau** : Les alumni de ton master à Lille ont peut-être des contacts (demande au service stages).\n\n---\n### **Plan C — Alternative : Labo de recherche appliquée (CIFRE) → CDI en entreprise**\n*(connaissance générale)*\nSi tu veux **éviter le CDD recherche** tout en gardant un pied dans l’innovation :\n- **Thèse CIFRE** (3 ans) : Tu es salarié·e d’une entreprise (CDI à la clé dans 60% des cas — [source ANRT](https://www.anrt.asso.fr/fr/cifre-805)) tout en faisant de la R&D appliquée. Exemples :\n  - **Lille** : Labo **CRIStAL** (partenaire d’Orange, SNCF) sur des sujets ML pour l’industrie.\n  - **Paris** : **INRIA** ou **CEA** (collaborations avec Thales, Airbus).\n- **Avantage** : Salaire net ~2000€/mois (soit 30k€ brut/an) + expérience pro valorisée.\n- **Inconvénient** : Engagement sur 3 ans (mais sortie possible en CDI avant la soutenance).\n\n**Comment trouver** :\n- Plateforme **[ADUM](https://www.adum.fr/)** (filtre \"CIFRE\").\n- Contacte les **enseignants-chercheurs** de ton master — ils ont souvent des partenariats cachés.\n\n---\n### **⚠ Attention**\n- **Piège des startups** : Certaines proposent des CDI... avec une période d’essai de 12 mois (légal, mais risqué). **Vérifie toujours la clause dans le contrat**.\n- **Piège des grosses boîtes** : Un CDI chez Criteo ne signifie pas stabilité éternelle — les licencements en data sont fréquents après 2-3 ans si le projet pivote (ex : abandon de leur outil de recommandation en 2022).\n\n---\n**Question pour toi** :\nQu’est-ce qui prime pour toi dans ton premier job ?\n1. **L’impact visible** (startup/scale-up) même avec un peu moins de sécurité ?\n2. **La marque sur le CV** (Doctolib/Criteo) pour faciliter les prochaines mobilités ?\n3. **L’équilibre vie pro/perso** (dans ce cas, évite les startups en \"crunch mode\") ?\n\n*(Pour creuser les offres, je te conseille le [baromètre des salaires data 2024](https://www.hellowork.com/fr-fr/salaire/data-scientist) — connaissance générale — et le rapport [Céreq sur l’insertion des masters info](https://www.cereq.fr/) pour les tendances CDI/CDD.)*",
+  "answer_annotated": "**TL;DR**\n1. **Grosse boîte tech (Doctolib/Criteo)** : CDI immédiat + salaire élevé (~40-50k€ brut *(non vérifié dans les sources)*), mais missions parfois spécialisées et moins d’impact visible. Idéal si tu veux stabilité et reconnaissance.\n2. **Startup early-stage** : CDI possible mais plus rare (souvent CDD/alternance en sortie d’études), salaire variable (35-45k€ brut *(non vérifié dans les sources)*), mais polyvalence et impact direct. Risque de fermeture ou pivot.\n3. **Compromis gagnant** : vise une **scale-up** (ex : Alan, PayFit) — croissance rapide + CDI structurés, avec l’agilité d’une startup et la sécurité d’un grand groupe.\n\n---\n\n### **Plan A — Réaliste : Scale-up française en hypercroissance (CDI + impact)**\n📍 **Exemples ciblés** : [Alan](https://www.welcometothejungle.com/fr/companies/alan) (assurtech), [PayFit](https://www.payfit.com/fr/) (paie), [Qonto](https://qonto.com/fr) (néobanque) — **recrutent massivement en data/ML** (bac+5) avec des CDI dès l’embauche.\n*Pour toi* : Salaire compétitif (38-45k€ brut *(non vérifié dans les sources)*), missions variées (de la data analyse au déploiement de modèles en prod), et culture tech sans le côté \"usine\" des GAFA. **Alternance possible en M2** pour un pied dans la boîte.\n\n**Comment postuler** :\n- **Plateformes** : Welcome to the Jungle (filtre \"Scale-up\"), LinkedIn (mots-clés *\"Data Scientist\" + \"Série B/C\"*).\n- **Réseau** : Les meetups **Data for Good** (Lille) ou **ML Paris** sont des viviers de recrutement — les startups y chassent activement.\n- **Profil** : Mets en avant tes **projets ML concrets** (GitHub + démo) plutôt que tes notes. Exemple : un modèle de recommandation trained sur des données publiques (Kaggle).\n\n---\n\n### **Plan B — Ambitieux : Grosse boîte tech (Doctolib/Criteo) — CDI garanti mais sélectif**\n📍 **Doctolib** (Paris) ou **Criteo** (Paris/Ile-de-France) — **CDI à 90% *(non vérifié dans les sources)* pour les bac+5 data/ML** (source : rapports annuels 2023).\n*Pour toi* : Salaire élevé (42-50k€ brut *(non vérifié dans les sources)* pour un junior), avantages (CE, télétravail), mais attends-toi à :\n- Un processus de recrutement long (4-6 entretiens, dont un case study technique).\n- Des missions parfois silotées (ex : optimisation d’un seul module chez Criteo).\n\n**Stratégie pour percer** :\n1. **Stage de fin d’études** : 50% des CDI chez Doctolib viennent de leurs stages (source : leur page carrière).\n2. **Compétences clés** : Maîtrise **PySpark** (pour le big data) + **MLOps** (Docker, MLflow) — souvent testées en entretien.\n3. **Réseau** : Les alumni de ton master à Lille ont peut-être des contacts (demande au service stages).\n\n---\n### **Plan C — Alternative : Labo de recherche appliquée (CIFRE) → CDI en entreprise**\n*(connaissance générale)*\nSi tu veux **éviter le CDD recherche** tout en gardant un pied dans l’innovation :\n- **Thèse CIFRE** (3 ans) : Tu es salarié·e d’une entreprise (CDI à la clé dans 60% des cas — [source ANRT](https://www.anrt.asso.fr/fr/cifre-805)) tout en faisant de la R&D appliquée. Exemples :\n  - **Lille** : Labo **CRIStAL** (partenaire d’Orange, SNCF) sur des sujets ML pour l’industrie.\n  - **Paris** : **INRIA** ou **CEA** (collaborations avec Thales, Airbus).\n- **Avantage** : Salaire net ~2000€/mois *(non vérifié dans les sources)* (soit 30k€ brut/an *(non vérifié dans les sources)*) + expérience pro valorisée.\n- **Inconvénient** : Engagement sur 3 ans (mais sortie possible en CDI avant la soutenance).\n\n**Comment trouver** :\n- Plateforme **[ADUM](https://www.adum.fr/)** (filtre \"CIFRE\").\n- Contacte les **enseignants-chercheurs** de ton master — ils ont souvent des partenariats cachés.\n\n---\n### **⚠ Attention**\n- **Piège des startups** : Certaines proposent des CDI... avec une période d’essai de 12 mois (légal, mais risqué). **Vérifie toujours la clause dans le contrat**.\n- **Piège des grosses boîtes** : Un CDI chez Criteo ne signifie pas stabilité éternelle — les licencements en data sont fréquents après 2-3 ans si le projet pivote (ex : abandon de leur outil de recommandation en 2022).\n\n---\n**Question pour toi** :\nQu’est-ce qui prime pour toi dans ton premier job ?\n1. **L’impact visible** (startup/scale-up) même avec un peu moins de sécurité ?\n2. **La marque sur le CV** (Doctolib/Criteo) pour faciliter les prochaines mobilités ?\n3. **L’équilibre vie pro/perso** (dans ce cas, évite les startups en \"crunch mode\") ?\n\n*(Pour creuser les offres, je te conseille le [baromètre des salaires data 2024](https://www.hellowork.com/fr-fr/salaire/data-scientist) — connaissance générale — et le rapport [Céreq sur l’insertion des masters info](https://www.cereq.fr/) pour les tendances CDI/CDD.)*",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 4,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 7,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~40-50k€ brut",
+      "stat_value": 45,
+      "stat_unit": "k€",
+      "context_in_response": "salaire élevé (~40-50k€ brut) dans une grosse boîte tech",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "35-45k€ brut",
+      "stat_value": 40,
+      "stat_unit": "k€",
+      "context_in_response": "salaire variable (35-45k€ brut) dans une startup early-stage",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "38-45k€ brut",
+      "stat_value": 41.5,
+      "stat_unit": "k€",
+      "context_in_response": "Salaire compétitif (38-45k€ brut) dans une scale-up",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "42-50k€ brut",
+      "stat_value": 46,
+      "stat_unit": "k€",
+      "context_in_response": "Salaire élevé (42-50k€ brut) pour un junior chez Doctolib/Criteo",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2000€/mois",
+      "stat_value": 2000,
+      "stat_unit": "€",
+      "context_in_response": "Salaire net ~2000€/mois (soit 30k€ brut/an) pour une thèse CIFRE",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30k€ brut/an",
+      "stat_value": 30,
+      "stat_unit": "k€",
+      "context_in_response": "Salaire net ~2000€/mois (soit 30k€ brut/an) pour une thèse CIFRE",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "90%",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "CDI à 90% pour les bac+5 data/ML chez Doctolib/Criteo",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": null,
+      "context_in_response": "taux_emploi_3ans : 0.85",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": null,
+      "context_in_response": "taux_emploi_6ans : 0.91",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": null,
+      "context_in_response": "taux_cdi : 0.83",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": null,
+      "context_in_response": "salaire_median_embauche : 2080",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "60%",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context_in_response": "CDI à la clé dans 60% des cas pour une thèse CIFRE",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9878,
+      "nom": "Titre ingénieur - Ingénieur diplômé de l'Ecole Polytechnique universitaire de l'Université de Lille,",
+      "etablissement": "UNIVERSITE DE LILLE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9704,
+      "nom": "Technologies de l’information (fiche nationale)",
+      "etablissement": "INSTITUT MINES TELECOM - DIRECTION GENERALE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.969,
+      "nom": "Consultant green IT",
+      "etablissement": "SCIENCES-U LILLE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8948,
+      "nom": "DU sciences des données et intelligence artificielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8925,
+      "nom": "Science des données : Visualisation, conception d'outils décisionnels",
+      "etablissement": "UNIVERSITE DE LILLE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8906,
+      "nom": "DU intelligence artificielle et propriété intellectuelle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8892,
+      "nom": "DU sciences des données et intelligence artificielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8885,
+      "nom": "MSc Big Data and Artificial Intelligence for Business",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8885,
+      "nom": "master mention IA - intelligence artificielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8881,
+      "nom": "Sciences et Ingénierie - Technologie de l'information et multimédia",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    }
+  ]
+}

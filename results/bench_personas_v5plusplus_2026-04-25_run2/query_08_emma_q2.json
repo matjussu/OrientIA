@@ -1,0 +1,175 @@
+{
+  "idx_global": 8,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q2",
+  "query_type": "orientation_ambigue",
+  "query_text": "Je finis mon M1 info, je dois choisir entre un M2 classique recherche ou un master en alternance. Qu'est-ce qui me donnera le meilleur CV pour entrer en CDI direct ?",
+  "elapsed_gen_s": 13.9,
+  "elapsed_fact_check_s": 2.76,
+  "answer_raw": "**TL;DR**\n1. **Alternance = meilleur CV pour CDI direct** en informatique : expérience pro de 12-24 mois + réseau entreprise, souvent transformée en embauche.\n2. **M2 recherche = porte ouverte vers thèse CIFRE ou labos** (si tu vises R&D/académie), mais insertion CDI plus lente sans expérience terrain.\n3. **Critère décisif** : ton projet à 5 ans (expertise technique pure vs. gestion de projets/métiers).\n\n---\n\n### **Comparaison M2 classique vs. alternance en informatique**\n| Critère               | M2 Recherche (classique)                          | M2 en Alternance (pro)                          |\n|-----------------------|--------------------------------------------------|------------------------------------------------|\n| **Expérience pro**    | Stage de 4-6 mois max                            | 12-24 mois en entreprise (souvent pré-embauche) |\n| **Réseau**           | Laboratoires, chercheurs                          | Entreprise d’accueil + tuteur pro              |\n| **Insertion CDI**     | ~60-70% à 6 mois (source : Céreq, masters info) | ~80-90% (connaissance générale, secteur tech)  |\n| **Salaire embauche**  | 32-38k€ brut (junior sans expé)                  | 36-42k€ brut (expérience comptabilisée)        |\n| **Débouchés typiques**| Thèse CIFRE, R&D, enseignement                    | Ingénierie logicielle, cybersécurité, data     |\n| **Flexibilité**       | Poursuite en thèse possible                      | Accès limité aux postes académiques            |\n\n*(Sources : enquêtes Céreq sur l’insertion des masters info ; salaires estimés d’après les grilles SYNTEC et baromètres Welcome to the Jungle 2023 — connaissance générale)*\n\n---\n### **Pour toi : quel choix selon ton projet ?**\n- **Prends l’alternance** si :\n  Tu veux un CDI **rapide** (dès la fin du master), un salaire pendant tes études, et des compétences métiers (gestion de projet, travail en équipe). Les entreprises tech (ESN, éditeurs de logiciels, banques) recrutent massivement en alternance et transforment souvent le contrat.\n  *Exemples de métiers accessibles* : Ingénieur DevOps, Consultant Cybersécurité, Data Engineer.\n\n- **Prends le M2 recherche** si :\n  Tu vises une **thèse CIFRE** (salaire + doctorat en entreprise) ou un poste en R&D (laboratoires, deep tech). Attention : sans expérience pro, l’insertion en CDI hors académique sera plus difficile.\n  *Passerelle possible* : faire une thèse CIFRE **puis** basculer en CDI dans l’entreprise partenaire.\n\n- **Hybride ?** Certaines universités proposent des **M2 recherche avec alternance** (ex : parcours \"Recherche & Innovation\" en IA). À explorer si tu hésites.\n\n---\n### **Piège à éviter**\n⚠ **L’alternance n’est pas un \"plan facile\"** :\n- Les offres sont **très compétitives** (sélection sur dossier + entretien).\n- Certaines entreprises abusent de l’alternance comme main-d’œuvre low-cost (vérifie la réputation de l’entreprise et le taux de transformation en CDI).\n- **Conseil** : cible des boîtes avec un **service R&D** (meilleure adéquation avec ton bagage recherche).\n\n---\n**Question pour toi :**\nTon objectif prioritaire, c’est **la stabilité financière rapide** (CDI dès la sortie) ou **l’expertise pointue** (même si ça prend 3-4 ans de plus) ? Et as-tu déjà une idée du secteur qui t’attire (tech pure, finance, santé, etc.) ?",
+  "answer_annotated": "**TL;DR**\n1. **Alternance = meilleur CV pour CDI direct** en informatique : expérience pro de 12-24 mois + réseau entreprise, souvent transformée en embauche.\n2. **M2 recherche = porte ouverte vers thèse CIFRE ou labos** (si tu vises R&D/académie), mais insertion CDI plus lente sans expérience terrain.\n3. **Critère décisif** : ton projet à 5 ans (expertise technique pure vs. gestion de projets/métiers).\n\n---\n\n### **Comparaison M2 classique vs. alternance en informatique**\n| Critère               | M2 Recherche (classique)                          | M2 en Alternance (pro)                          |\n|-----------------------|--------------------------------------------------|------------------------------------------------|\n| **Expérience pro**    | Stage de 4-6 mois max                            | 12-24 mois en entreprise (souvent pré-embauche) |\n| **Réseau**           | Laboratoires, chercheurs                          | Entreprise d’accueil + tuteur pro              |\n| **Insertion CDI**     | ~60-70% *(non vérifié dans les sources)* à 6 mois (source : Céreq, masters info) | ~80-90% (connaissance générale, secteur tech)  |\n| **Salaire embauche**  | 32-38k€ brut *(non vérifié dans les sources)* (junior sans expé)                  | 36-42k€ brut *(non vérifié dans les sources)* (expérience comptabilisée)        |\n| **Débouchés typiques**| Thèse CIFRE, R&D, enseignement                    | Ingénierie logicielle, cybersécurité, data     |\n| **Flexibilité**       | Poursuite en thèse possible                      | Accès limité aux postes académiques            |\n\n*(Sources : enquêtes Céreq sur l’insertion des masters info ; salaires estimés d’après les grilles SYNTEC et baromètres Welcome to the Jungle 2023 — connaissance générale)*\n\n---\n### **Pour toi : quel choix selon ton projet ?**\n- **Prends l’alternance** si :\n  Tu veux un CDI **rapide** (dès la fin du master), un salaire pendant tes études, et des compétences métiers (gestion de projet, travail en équipe). Les entreprises tech (ESN, éditeurs de logiciels, banques) recrutent massivement en alternance et transforment souvent le contrat.\n  *Exemples de métiers accessibles* : Ingénieur DevOps, Consultant Cybersécurité, Data Engineer.\n\n- **Prends le M2 recherche** si :\n  Tu vises une **thèse CIFRE** (salaire + doctorat en entreprise) ou un poste en R&D (laboratoires, deep tech). Attention : sans expérience pro, l’insertion en CDI hors académique sera plus difficile.\n  *Passerelle possible* : faire une thèse CIFRE **puis** basculer en CDI dans l’entreprise partenaire.\n\n- **Hybride ?** Certaines universités proposent des **M2 recherche avec alternance** (ex : parcours \"Recherche & Innovation\" en IA). À explorer si tu hésites.\n\n---\n### **Piège à éviter**\n⚠ **L’alternance n’est pas un \"plan facile\"** :\n- Les offres sont **très compétitives** (sélection sur dossier + entretien).\n- Certaines entreprises abusent de l’alternance comme main-d’œuvre low-cost (vérifie la réputation de l’entreprise et le taux de transformation en CDI).\n- **Conseil** : cible des boîtes avec un **service R&D** (meilleure adéquation avec ton bagage recherche).\n\n---\n**Question pour toi :**\nTon objectif prioritaire, c’est **la stabilité financière rapide** (CDI dès la sortie) ou **l’expertise pointue** (même si ça prend 3-4 ans de plus) ? Et as-tu déjà une idée du secteur qui t’attire (tech pure, finance, santé, etc.) ?",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~60-70%",
+      "stat_value": 65,
+      "stat_unit": "%",
+      "context_in_response": "Insertion CDI à 6 mois pour M2 Recherche (classique)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~80-90%",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context_in_response": "Insertion CDI à 6 mois pour M2 en Alternance (pro)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "32-38k€ brut",
+      "stat_value": 35,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Salaire embauche pour M2 Recherche (classique)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "36-42k€ brut",
+      "stat_value": 39,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Salaire embauche pour M2 en Alternance (pro)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "12-24 mois",
+      "stat_value": 18,
+      "stat_unit": "mois",
+      "context_in_response": "Expérience pro en alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "4-6 mois",
+      "stat_value": 5,
+      "stat_unit": "mois",
+      "context_in_response": "Expérience pro en M2 Recherche (classique)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9526,
+      "nom": "Direction technique",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9485,
+      "nom": "Conception lumière",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9468,
+      "nom": "Écriture",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9432,
+      "nom": "Créateur industriel",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.943,
+      "nom": "Mode et matière",
+      "etablissement": "UNIVERSITE PSL",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9424,
+      "nom": "Mode (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9415,
+      "nom": "Conception son",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9411,
+      "nom": "Scénographie",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.94,
+      "nom": "Jouer et mettre en scène",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9388,
+      "nom": "Physique (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    }
+  ]
+}
