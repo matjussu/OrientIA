@@ -2418,6 +2418,92 @@ Toujours **0 régression** sur 976 tests existants.
 
 ---
 
+## ADR-049 — Reranker multi-domain aware (DRAFT) (2026-04-25)
+
+### Context
+
+ADR-048 a livré le pivot RAG multi-corpus (PR #60). Le bench v5 sur les
+18 queries v4 (PR #61) a montré que le multi-corpus n'est activé que
+sur 1/18 queries — celles-ci étant formation-centric par construction.
+
+Bench multi-domain dédié (8 queries non-formation-centric, PR #62)
+révèle le vrai comportement :
+- **6/8 queries activent le multi-corpus** côté FAISS (75 %)
+- **0/2 queries APEC** (a1 "marché cadres Bretagne", a2 "régions
+  cadres bac+5 informatique") récupèrent des records `apec_region`
+  dans le top-10 final, malgré leur disponibilité dans l'index
+- **Smoke test FAISS L2 direct** sur les mêmes queries APEC retourne
+  pourtant 8/10 records `apec_region`
+
+Le delta vient du `OrientIAPipeline` qui applique :
+- `reranker.RerankConfig` avec boosts SecNumEdu/CTI/labels formation
+- `intent.classify` qui privilégie le domain `formation` par défaut
+- `mmr.diversify` qui pondère sur des fields `formation`-spécifiques
+
+Conséquence : les apec_records arrivent dans le top-50 FAISS mais sont
+poussés hors du top-10 final par le reranker.
+
+### Decision (DRAFT)
+
+Adapter `RerankConfig` pour reconnaître les intents multi-domain et
+boost les corpora correspondants :
+
+| Intent détecté | Domain à boost | Boost suggéré |
+|---|---|---|
+| "marché du travail" / "cadres" / "salaire région" / "recrutements" | `apec_region` | ×1.5 |
+| "métier" / "profession" / "que fait un X" / "quel métier" | `metier` | ×1.3 |
+| "taux réussite" / "passage L1 L2" / "redoublement" / "licence par bac" | `parcours_bacheliers` | ×1.3 |
+| Intent ambigu (formation par défaut) | aucun boost | 1.0 |
+
+Implémentation envisagée :
+- Étendre `intent.classify` avec ces 3 nouveaux intents (ajout
+  patterns regex + fallback formation)
+- Étendre `RerankConfig` avec le mapping intent → domain boost
+- Préserver les boosts formation existants (SecNumEdu, CTI, etc.)
+
+### Rationale
+
+- **Sans cette adaptation, le pivot ADR-048 ne livre que 75 % de sa
+  valeur potentielle** (mesuré sur le bench multi-domain : +6 queries
+  activées, mais 2 queries APEC bloquées par le reranker → gain net
+  notation humaine seulement +0.375/25)
+- **Pas une régression sur formations** : les boosts formation
+  existants sont préservés, on ajoute des boosts conditionnels selon
+  intent
+- **Compatible avec l'archi agentique future** (PR #12 reportée
+  samedi prochain) : le tool-use Mistral aura besoin d'un retriever
+  multi-domain aware pour FetchStatFromSource
+
+### Alternatives rejetées
+
+1. **Index FAISS séparés par domain** (1 par domain, query routing
+   explicite) — overhead complexité retrieval, contredit le pivot
+   "multi-corpus dans 1 index unifié" choisi en ADR-048
+2. **Retrain reranker LightGBM/XGBoost** sur des données labellisées
+   multi-domain — ROI faible, dataset trop petit, complexity élevée
+3. **Modifier `fiche_to_text`** pour inclure des domain tags — viole
+   le protected file note + ne résoud pas le problème reranker
+
+### Tests
+
+- Implémentation reportée S+1 (hors scope deadline samedi 25/04 EOD)
+- Bench post-implémentation : re-run multi-domain 8-queries après
+  reranker adapt, mesurer impact sur a1/a2 (queries actuellement
+  bloquées) et confirmer pas de régression sur queries formation
+  existantes
+- Triple-run pour stabiliser les chiffres notation humaine + fact-check
+- Ajout de 5-10 queries multi-domain supplémentaires pour augmenter
+  la puissance statistique (N=8 → N=15-18)
+
+### Liens
+
+- Bench multi-domain qui a révélé le bug : `results/bench_multi_domain_2026-04-25/_SYNTHESIS.md` §5
+- ADR-048 (RAG multi-corpus) : prérequis
+- `src/rag/reranker.py` : `RerankConfig` à étendre
+- `src/rag/intent.py` : `classify` à étendre
+- Protected files note CLAUDE.md OrientIA : reranker stable depuis
+  Run 3 ablation, modifications additives uniquement (pas remove)
+
 ## ADR-050 — Dedup Parcoursup `cod_aff_form` dans merger v2 (2026-04-25)
 
 ### Context

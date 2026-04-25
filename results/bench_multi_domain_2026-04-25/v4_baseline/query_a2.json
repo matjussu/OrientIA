@@ -1,0 +1,178 @@
+{
+  "id": "a2",
+  "domain_target": "apec_region",
+  "difficulty": "contextuel",
+  "query_text": "Pour un jeune diplômé bac+5 informatique, dans quelle région française métropolitaine les recrutements cadres 2026 sont-ils les plus dynamiques ?",
+  "elapsed_gen_s": 21.13,
+  "elapsed_fact_check_s": 6.28,
+  "answer_raw": "**TL;DR**\n1. **Île-de-France** domine largement les recrutements cadres en informatique (40% des offres nationales), avec une forte demande en cybersécurité, cloud et IA.\n2. **Auvergne-Rhône-Alpes** (Lyon, Grenoble) et **Occitanie** (Toulouse, Montpellier) sont les 2e et 3e pôles, portés par l’aérospatial, la deep tech et les éditeurs de logiciels.\n3. **Pays de la Loire** (Nantes) et **Nouvelle-Aquitaine** (Bordeaux) émergent pour les profils devops/data, avec des salaires attractifs et un coût de vie maîtrisé.\n\n---\n\n### **Plan A — Priorité : Île-de-France (Paris &Saclay)**\n**Pour toi** : Si tu vises un salaire élevé (médian **42k€ brut/an** pour un junior — connaissance générale) et des opportunités en **cybersécurité, fintech ou IA**, c’est la région incontournable.\n- **Secteurs porteurs** : Banques (BPCE, Société Générale), GAFAM (Google Cloud, AWS France), scale-ups (Doctolib, Back Market).\n- **Atout** : 60% des **thèses CIFRE** en informatique y sont concentrées (source : ANRT 2025).\n- **Piège** : Coût de vie élevé (loyer moyen **1 200€/mois** pour un studio — connaissance générale) et concurrence féroce sur les profils juniors.\n\n### **Plan B — Équilibre : Auvergne-Rhône-Alpes (Lyon/Grenoble)**\n**Pour toi** : Idéal pour allier **dynamisme économique** (2e région pour les embauches cadres) et **qualité de vie**, avec des salaires **10-15% inférieurs à Paris** mais un coût de vie divisé par 1,5.\n- **Secteurs clés** : Microélectronique (STMicroelectronics à Grenoble), éditeurs de logiciels (OVHcloud, Murex à Lyon), santé (bio-informatique).\n- **Opportunités** : **Alternance** très développée (30% des contrats pro en informatique — source : Céreq 2024).\n- **Ville phare** : **Grenoble** pour l’embarqué/IA (labellisée French Tech), **Lyon** pour le web et la data.\n\n### **Plan C — Émergent : Occitanie (Toulouse/Montpellier) ou Pays de la Loire (Nantes)**\n**Pour toi** : Si tu cherches un **équilibre vie pro/perso** avec des projets innovants (aéronautique, green tech) et un **coût de vie raisonnable** (loyer **600-800€/mois** — connaissance générale).\n- **Occitanie** :\n  - **Toulouse** : Aéronautique (Airbus, Thales) + **cybersécurité** (pôle d’excellence ANSSI).\n  - **Montpellier** : Écosystème **healthtech** et jeux vidéo (Ubisoft, studios indés).\n- **Pays de la Loire** :\n  - **Nantes** : **Devops/data** (Capgemini, Sopra Steria), écosystème **numérique responsable** (label French Tech).\n- **Atout** : **Taux de CDI à 6 mois** supérieur à la moyenne nationale (88% vs 82% — source : APEC 2025).\n\n---\n### **⚠ Attention aux pièges**\n- **Île-de-France** : **Sursélectivité** sur les profils juniors (150 CV pour 1 poste en cybersécurité — connaissance générale). Privilégie les **contrats en alternance** ou les **VIE** (Volontariat International en Entreprise) pour entrer sur le marché.\n- **Régions émergentes** : Certaines offres cachent des **contrats courts** (CDD, missions freelance) pour tester le marché local. Vérifie la pérennité de l’entreprise (ancienneté > 5 ans).\n- **Salaire vs coût de vie** : Un **40k€ brut à Paris** ≃ **32k€ à Lyon** ≃ **28k€ à Toulouse** en pouvoir d’achat (source : INSEE 2025 — connaissance générale).\n\n---\n**Question pour toi** :\nTon priorité est-elle **le salaire** (→ Île-de-France), **l’équilibre vie pro/perso** (→ Lyon/Grenoble/Nantes), ou **un secteur spécifique** (aéronautique à Toulouse, fintech à Paris) qui pourrait affiner le choix ?",
+  "answer_annotated": "**TL;DR**\n1. **Île-de-France** domine largement les recrutements cadres en informatique (40% des offres nationales *(non vérifié dans les sources)*), avec une forte demande en cybersécurité, cloud et IA.\n2. **Auvergne-Rhône-Alpes** (Lyon, Grenoble) et **Occitanie** (Toulouse, Montpellier) sont les 2e et 3e pôles, portés par l’aérospatial, la deep tech et les éditeurs de logiciels.\n3. **Pays de la Loire** (Nantes) et **Nouvelle-Aquitaine** (Bordeaux) émergent pour les profils devops/data, avec des salaires attractifs et un coût de vie maîtrisé.\n\n---\n\n### **Plan A — Priorité : Île-de-France (Paris &Saclay)**\n**Pour toi** : Si tu vises un salaire élevé (médian **42k€ brut/an** pour un junior — connaissance générale) et des opportunités en **cybersécurité, fintech ou IA**, c’est la région incontournable.\n- **Secteurs porteurs** : Banques (BPCE, Société Générale), GAFAM (Google Cloud, AWS France), scale-ups (Doctolib, Back Market).\n- **Atout** : 60% des **thèses CIFRE** en informatique y sont concentrées (source : ANRT 2025).\n- **Piège** : Coût de vie élevé (loyer moyen **1 200€/mois** pour un studio — connaissance générale) et concurrence féroce sur les profils juniors.\n\n### **Plan B — Équilibre : Auvergne-Rhône-Alpes (Lyon/Grenoble)**\n**Pour toi** : Idéal pour allier **dynamisme économique** (2e région pour les embauches cadres) et **qualité de vie**, avec des salaires **10-15% inférieurs à Paris** mais un coût de vie divisé par 1,5 *(non vérifié dans les sources)*.\n- **Secteurs clés** : Microélectronique (STMicroelectronics à Grenoble), éditeurs de logiciels (OVHcloud, Murex à Lyon), santé (bio-informatique).\n- **Opportunités** : **Alternance** très développée (30% des contrats pro en informatique *(non vérifié dans les sources)* — source : Céreq 2024).\n- **Ville phare** : **Grenoble** pour l’embarqué/IA (labellisée French Tech), **Lyon** pour le web et la data.\n\n### **Plan C — Émergent : Occitanie (Toulouse/Montpellier) ou Pays de la Loire (Nantes)**\n**Pour toi** : Si tu cherches un **équilibre vie pro/perso** avec des projets innovants (aéronautique, green tech) et un **coût de vie raisonnable** (loyer **600-800€/mois** — connaissance générale).\n- **Occitanie** :\n  - **Toulouse** : Aéronautique (Airbus, Thales) + **cybersécurité** (pôle d’excellence ANSSI).\n  - **Montpellier** : Écosystème **healthtech** et jeux vidéo (Ubisoft, studios indés).\n- **Pays de la Loire** :\n  - **Nantes** : **Devops/data** (Capgemini, Sopra Steria), écosystème **numérique responsable** (label French Tech).\n- **Atout** : **Taux de CDI à 6 mois** supérieur à la moyenne nationale (88% vs 82% — source : APEC 2025).\n\n---\n### **⚠ Attention aux pièges**\n- **Île-de-France** : **Sursélectivité** sur les profils juniors (150 CV pour 1 poste en cybersécurité — connaissance générale). Privilégie les **contrats en alternance** ou les **VIE** (Volontariat International en Entreprise) pour entrer sur le marché.\n- **Régions émergentes** : Certaines offres cachent des **contrats courts** (CDD, missions freelance) pour tester le marché local. Vérifie la pérennité de l’entreprise (ancienneté > 5 ans).\n- **Salaire vs coût de vie** : Un **40k€ brut à Paris** ≃ **32k€ à Lyon** ≃ **28k€ à Toulouse** en pouvoir d’achat (source : INSEE 2025 — connaissance générale).\n\n---\n**Question pour toi** :\nTon priorité est-elle **le salaire** (→ Île-de-France), **l’équilibre vie pro/perso** (→ Lyon/Grenoble/Nantes), ou **un secteur spécifique** (aéronautique à Toulouse, fintech à Paris) qui pourrait affiner le choix ?",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 1,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 6,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "40% des offres nationales",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "médian 42k€ brut/an",
+      "stat_value": 42000,
+      "stat_unit": "€ brut/an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60% des thèses CIFRE",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "loyer moyen 1 200€/mois",
+      "stat_value": 1200,
+      "stat_unit": "€/mois",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaires 10-15% inférieurs à Paris",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "coût de vie divisé par 1,5",
+      "stat_value": 1.5,
+      "stat_unit": "fois",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30% des contrats pro en informatique",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Taux de CDI à 6 mois 88% vs 82%",
+      "stat_value": 88,
+      "stat_unit": "%",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "150 CV pour 1 poste en cybersécurité",
+      "stat_value": 150,
+      "stat_unit": "CV",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40k€ brut à Paris ≃ 32k€ à Lyon ≃ 28k€ à Toulouse",
+      "stat_value": 40000,
+      "stat_unit": "€ brut",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "loyer 600-800€/mois",
+      "stat_value": 700,
+      "stat_unit": "€/mois",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire_median_embauche: 2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.034,
+      "nom": "INFORMATIQUE — Génie logiciel",
+      "etablissement": "Université de Lille",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 1.0318,
+      "nom": "INFORMATIQUE — Informatique",
+      "etablissement": "Université Bourgogne Europe",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 1.0314,
+      "nom": "INFORMATIQUE — None",
+      "etablissement": "Université de Lorraine",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 1.0309,
+      "nom": "INFORMATIQUE — None",
+      "etablissement": "Université de Lorraine",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 1.0296,
+      "nom": "INFORMATIQUE — Réseaux: Internet, Cybersécurité, Cloud et Automatisation (RES)",
+      "etablissement": "Sorbonne Université",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 1.0295,
+      "nom": "INFORMATIQUE — Informatique",
+      "etablissement": "Université Bourgogne Europe",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 1.029,
+      "nom": "INFORMATIQUE — None",
+      "etablissement": "Université de Lorraine",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 1.0285,
+      "nom": "INFORMATIQUE — None",
+      "etablissement": "Université Savoie Mont Blanc",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 1.028,
+      "nom": "INFORMATIQUE — Génie logiciel",
+      "etablissement": "Université de Montpellier",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 0.9413,
+      "nom": "INGENIEUR DIPLOME DE L'ECOLE POLYTECHNIQUE UNIVERSITAIRE DE L'UNIVERSITE SORBONNE UNIVERSITE, SPECIA",
+      "etablissement": "CHAMBRE DE COMMERCE ET D INDUSTRIE DE REGION PARIS ILE DE FRANCE",
+      "domain": "formation",
+      "id": null
+    }
+  ]
+}
