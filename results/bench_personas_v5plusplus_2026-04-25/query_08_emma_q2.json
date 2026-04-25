@@ -1,0 +1,207 @@
+{
+  "idx_global": 8,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q2",
+  "query_type": "orientation_ambigue",
+  "query_text": "Je finis mon M1 info, je dois choisir entre un M2 classique recherche ou un master en alternance. Qu'est-ce qui me donnera le meilleur CV pour entrer en CDI direct ?",
+  "elapsed_gen_s": 11.47,
+  "elapsed_fact_check_s": 6.9,
+  "answer_raw": "**TL;DR**\n1. **Alternance = meilleur CV pour un CDI direct** en informatique (expérience pro + réseau), mais limite tes options si tu vises la recherche/académie.\n2. **M2 recherche = porte ouverte aux thèses CIFRE** (CDI + doctorat financé) ou aux postes R&D en entreprise.\n3. **Critère clé** : ton projet à 5 ans (expertise technique vs management) et ton appétence pour la recherche.\n\n---\n\n### **Alternance vs M2 Recherche : avantages comparés**\n| Critère               | **M2 en alternance**                          | **M2 Recherche classique**                  |\n|-----------------------|-----------------------------------------------|---------------------------------------------|\n| **Insertion directe** | ✅ **Meilleur taux CDI** (90%+ à 6 mois, connaissance générale) : expérience pro + carnet d’adresses. | ⚠ **CDI possible**, mais souvent après thèse (sauf profils R&D pointus). |\n| **Salaire embauche**  | ~38-45k€ brut (connaissance générale, profil dev/data) : l’alternance valorise l’expérience terrain. | ~35-42k€ brut (sauf thèse CIFRE → 40k€+ en sortie). |\n| **Débouchés typiques** | **Ingénieur logiciel, chef de projet, consultant** (ESN/corporate). | **Ingénieur R&D, data scientist recherche, thèse CIFRE** (labos/startups deep tech). |\n| **Flexibilité**       | ❌ Contrat signé = engagement fort (rythme 3j entreprise/2j cours). | ✅ **Stage long possible** (6 mois) + poursuite en thèse si affinités. |\n| **Réseau pro**        | ✅ **Réseau entreprise** (50% des CDI viennent du réseau, connaissance générale). | ✅ **Réseau académique** (labos, conférences) utile pour la recherche. |\n\n---\n\n### **Cas concrets pour ton choix**\n- **Si tu veux un CDI **rapide en entreprise** (ESN, éditeur de logiciels, banque/assurance)** :\n  L’alternance est **objectivement plus efficace** (connaissance générale). Les recruteurs en informatique privilégient l’expérience opérationnelle à la théorie, surtout pour des postes de dev, cloud, ou cybersécurité appliquée.\n  *Exemple* : Un M2 en alternance chez **Capgemini** ou **Orange Cyberdefense** te donnera un avantage net sur un M2 recherche sans expérience.\n\n- **Si tu envisages une **thèse CIFRE** ou un poste en R&D (IA, cryptographie, systèmes distribués)** :\n  Le M2 recherche est **indispensable**. Les thèses CIFRE (3 ans de CDD + salaire ~25k€ brut/an) sont accessibles **uniquement avec un master recherche**, et mènent souvent à des postes hautement qualifiés (ingénieur recherche, data scientist avancé).\n  *Exemple* : Un M2 en **IA fondamentale** ou **systèmes intelligents** (type ceux de **PSL** ou **Université Paris-Saclay**) ouvre des portes chez **Thales, CEA, ou DeepMind**.\n\n- **Si tu hésites** :\n  **Fais un M2 recherche avec un stage long en entreprise** (6 mois). Cela te donnera :\n  - Un pied dans la recherche (si tu aimes),\n  - Une expérience pro valorisable (si tu bifurques vers l’industrie),\n  - La possibilité de postuler en alternance **après le M2** (certaines entreprises recrutent des bac+5 en CDD/pro alternance).\n\n---\n### **Piège à éviter**\n⚠ **L’alternance n’est pas un \"plan sécurité\"** :\n- Certains M2 en alternance sont **très sélectifs** (ex : **M2 Data Science de Polytechnique**).\n- Un **mauvais choix d’entreprise** (ESN low-cost, boîte sans perspective) peut **dégrader ton CV** (connaissance générale).\n→ **Cible des entreprises reconnues** (CAC40, scale-ups tech, labos publics) et négocie un sujet technique ambitieux.\n\n---\n**Question pour toi** :\nAs-tu déjà identifié **un secteur d’activité** (cybersécurité, data, embarqué…) ou un type d’entreprise (startup, grand groupe, labo) qui t’attire ? Cela peut affiner radicalement la réponse.",
+  "answer_annotated": "**TL;DR**\n1. **Alternance = meilleur CV pour un CDI direct** en informatique (expérience pro + réseau), mais limite tes options si tu vises la recherche/académie.\n2. **M2 recherche = porte ouverte aux thèses CIFRE** (CDI + doctorat financé) ou aux postes R&D en entreprise.\n3. **Critère clé** : ton projet à 5 ans (expertise technique vs management) et ton appétence pour la recherche.\n\n---\n\n### **Alternance vs M2 Recherche : avantages comparés**\n| Critère               | **M2 en alternance**                          | **M2 Recherche classique**                  |\n|-----------------------|-----------------------------------------------|---------------------------------------------|\n| **Insertion directe** | ✅ **Meilleur taux CDI** (90%+ à 6 mois, connaissance générale) : expérience pro + carnet d’adresses. | ⚠ **CDI possible**, mais souvent après thèse (sauf profils R&D pointus). |\n| **Salaire embauche**  | ~38-45k€ brut (connaissance générale, profil dev/data) : l’alternance valorise l’expérience terrain. | ~35-42k€ brut (sauf thèse CIFRE → 40k€+ en sortie). |\n| **Débouchés typiques** | **Ingénieur logiciel, chef de projet, consultant** (ESN/corporate). | **Ingénieur R&D, data scientist recherche, thèse CIFRE** (labos/startups deep tech). |\n| **Flexibilité**       | ❌ Contrat signé = engagement fort (rythme 3j entreprise/2j cours). | ✅ **Stage long possible** (6 mois) + poursuite en thèse si affinités. |\n| **Réseau pro**        | ✅ **Réseau entreprise** (50% des CDI viennent du réseau, connaissance générale). | ✅ **Réseau académique** (labos, conférences) utile pour la recherche. |\n\n---\n\n### **Cas concrets pour ton choix**\n- **Si tu veux un CDI **rapide en entreprise** (ESN, éditeur de logiciels, banque/assurance)** :\n  L’alternance est **objectivement plus efficace** (connaissance générale). Les recruteurs en informatique privilégient l’expérience opérationnelle à la théorie, surtout pour des postes de dev, cloud, ou cybersécurité appliquée.\n  *Exemple* : Un M2 en alternance chez **Capgemini** ou **Orange Cyberdefense** te donnera un avantage net sur un M2 recherche sans expérience.\n\n- **Si tu envisages une **thèse CIFRE** ou un poste en R&D (IA, cryptographie, systèmes distribués)** :\n  Le M2 recherche est **indispensable**. Les thèses CIFRE (3 ans de CDD + salaire ~25k€ brut/an) sont accessibles **uniquement avec un master recherche**, et mènent souvent à des postes hautement qualifiés (ingénieur recherche, data scientist avancé).\n  *Exemple* : Un M2 en **IA fondamentale** ou **systèmes intelligents** (type ceux de **PSL** ou **Université Paris-Saclay**) ouvre des portes chez **Thales, CEA, ou DeepMind**.\n\n- **Si tu hésites** :\n  **Fais un M2 recherche avec un stage long en entreprise** (6 mois). Cela te donnera :\n  - Un pied dans la recherche (si tu aimes),\n  - Une expérience pro valorisable (si tu bifurques vers l’industrie),\n  - La possibilité de postuler en alternance **après le M2** (certaines entreprises recrutent des bac+5 en CDD/pro alternance).\n\n---\n### **Piège à éviter**\n⚠ **L’alternance n’est pas un \"plan sécurité\"** :\n- Certains M2 en alternance sont **très sélectifs** (ex : **M2 Data Science de Polytechnique**).\n- Un **mauvais choix d’entreprise** (ESN low-cost, boîte sans perspective) peut **dégrader ton CV** (connaissance générale).\n→ **Cible des entreprises reconnues** (CAC40, scale-ups tech, labos publics) et négocie un sujet technique ambitieux.\n\n---\n**Question pour toi** :\nAs-tu déjà identifié **un secteur d’activité** (cybersécurité, data, embarqué…) ou un type d’entreprise (startup, grand groupe, labo) qui t’attire ? Cela peut affiner radicalement la réponse.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 4,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "90%+ à 6 mois",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "Meilleur taux CDI (90%+ à 6 mois, connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~38-45k€ brut",
+      "stat_value": 38,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Salaire embauche (~38-45k€ brut, profil dev/data)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~35-42k€ brut",
+      "stat_value": 35,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Salaire embauche (~35-42k€ brut, sauf thèse CIFRE → 40k€+ en sortie)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40k€+",
+      "stat_value": 40,
+      "stat_unit": "k€",
+      "context_in_response": "sauf thèse CIFRE → 40k€+ en sortie",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "25k€ brut/an",
+      "stat_value": 25,
+      "stat_unit": "k€ brut/an",
+      "context_in_response": "salaire ~25k€ brut/an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50%",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context_in_response": "50% des CDI viennent du réseau",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context_in_response": "taux_emploi_3ans: 0.85",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context_in_response": "taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context_in_response": "taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9526,
+      "nom": "Direction technique",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9485,
+      "nom": "Conception lumière",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9468,
+      "nom": "Écriture",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9432,
+      "nom": "Créateur industriel",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.943,
+      "nom": "Mode et matière",
+      "etablissement": "UNIVERSITE PSL",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9424,
+      "nom": "Mode (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9415,
+      "nom": "Conception son",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9411,
+      "nom": "Scénographie",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.94,
+      "nom": "Jouer et mettre en scène",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9388,
+      "nom": "Physique (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    }
+  ]
+}

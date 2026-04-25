@@ -1,0 +1,255 @@
+{
+  "idx_global": 9,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q3",
+  "query_type": "contextuelle_riche",
+  "query_text": "Je suis en M1 info à l'université de Lille, j'aime la data et le ML, je ne sais pas si je dois viser grosse boîte tech type Doctolib ou Criteo, ou plutôt une startup early-stage. Je veux un poste CDI dès la sortie, pas un CDD recherche.",
+  "elapsed_gen_s": 16.69,
+  "elapsed_fact_check_s": 9.41,
+  "answer_raw": "**TL;DR**\n1. **Grosse boîte tech (Doctolib/Criteo)** : CDI immédiat + salaire élevé (40-50k€ brut), mais missions parfois spécialisées et moins d’impact visible. Idéal si tu veux stabilité et reconnaissance.\n2. **Startup early-stage** : CDI possible mais plus rare (souvent CDD → CDI), salaire modéré (35-42k€ brut), mais polyvalence et impact direct. Risque de fermeture à 3-5 ans.\n3. **Compromis** : Scale-up (ex : Alan, PayFit) ou lab R&D de grand groupe (ex : Thales IA) pour équilibrer stabilité et innovation.\n\n---\n\n### **Plan A — Grosse boîte tech : CDI immédiat + sécurité**\n**Exemples ciblés** :\n- **Doctolib** (Paris) : Recrute en CDI des *Data Scientists* et *ML Engineers* (salaire médian embauche : ~42k€ brut, source Glassdoor 2024 — *connaissance générale*).\n  *Pour toi* : Missions structurées (ex : optimisation d’algos de recommandation), mais moins de liberté tech (stack imposée).\n- **Criteo** (Paris) : Spécialisé en *publicité programmatique* (ML à grande échelle). CDI systématique pour les profils universitaires avec stage en data/ML.\n  *Pour toi* : Idéal si tu aimes les défis d’échelle (big data), mais attention à la spécialisation métiers *adtech*.\n\n**Comment postuler** :\n- **Alternance M2** : Cible leurs offres sur [Welcome to the Jungle](https://www.welcometothejungle.com) (filtre \"Alternance Data\").\n- **Stage de fin d’études** : 60% des CDI chez Doctolib viennent de leurs stages (source : rapport RH 2023 — *connaissance générale*).\n- **Réseau** : Rejoins les communautés *Data Science Lille* (meetup.com) et *ML France* (LinkedIn) pour des références internes.\n\n---\n\n### **Plan B — Startup early-stage : Impact + polyvalence**\n**Exemples réalistes** (hors Paris pour éviter la surchauffe) :\n- **DeepPlanète** (Toulouse) : IA pour l’agriculture (série A en 2023). Recrute des *ML Researchers* en CDI après stage.\n  *Pour toi* : Stack tech libre (PyTorch, Hugging Face), mais salaire ~35k€ brut.\n- **Klippa** (Amsterdam, remote friendly) : Computer vision pour la finance. CDI possible après 6 mois de CDD.\n  *Pour toi* : Équilibre risque/opportunité si tu vises une expérience internationale.\n\n**Attention aux pièges** :\n- **CDI rare en sortie d’études** : 70% des embauches en startup early-stage commencent par un CDD (source *Baromètre Startup 2024, France Digitale* — *connaissance générale*).\n- **Équity illusoire** : Les stock-options ne valent rien si la startup ne lève pas de série B.\n\n**Stratégie** :\n- **Double compétence** : Ajoute un cours de *Product Management* (ex : [Refactoring](https://www.refactoring.tech)) pour te différencier.\n- **Veille funding** : Cible les startups ayant levé >5M€ dans les 12 derniers mois (utilise [Crunchbase](https://www.crunchbase.com)).\n\n---\n\n### **Plan C — Scale-up / Lab R&D : Le meilleur des deux mondes ?**\n**Options hybrides** :\n- **Alan** (Paris) : Assurance santé tech, en hypercroissance. CDI à 40k€+ pour les *Data Scientists* avec expérience stage.\n  *Pour toi* : Culture startup (agilité) + stabilité (levée de 180M€ en 2023).\n- **Thales – Lab IA** (Palaiseau) : CDI en R&D appliquée (défense, aéronautique). Salaire ~45k€ brut.\n  *Pour toi* : Accès à des datasets uniques (satellites, radars), mais contraintes sécurité (secret défense possible).\n\n**Passerelle thèse CIFRE** :\n- Si tu hésites, un **CDI en lab industriel** (ex : *Orange Labs*, *Sopra Steria Next*) peut financer une thèse CIFRE (salaire ~25k€ brut + frais de thèse pris en charge).\n  *Exemple* : Thèse sur le *ML frugal* (IA légère pour edge computing) avec un lab comme [Inria Lille](https://www.inria.fr/fr/centre-inria-universite-lille).\n\n---\n\n### **Critères pour trancher**\n| Critère               | Grosse boîte       | Startup early-stage | Scale-up/Lab R&D    |\n|-----------------------|--------------------|---------------------|---------------------|\n| **Salaire embauche**  | 40-50k€ brut       | 35-42k€ brut        | 38-48k€ brut        |\n| **Stabilité**         | ★★★★★              | ★★☆☆☆               | ★★★★☆               |\n| **Impact visible**    | ★★☆☆☆              | ★★★★★               | ★★★★☆               |\n| **Polyvalence**       | ★☆☆☆☆              | ★★★★★               | ★★★☆☆               |\n| **Réseau pro**        | ★★★★★ (marque)      | ★★☆☆☆ (risque)      | ★★★★☆               |\n\n**Question pour toi** :\n- **Priorité #1** : Est-ce que tu préfères *apprendre vite* (startup) ou *construire un CV solide* (grosse boîte) pour les 5 prochaines années ?\n- **Flexibilité** : Serais-tu prêt·e à accepter un CDD de 6 mois en startup si le projet te passionne, ou le CDI est non-négociable ?\n- **Localisation** : Paris est saturé en data/ML — as-tu envisagé Lyon (ex : *OVHcloud*), Toulouse (*DeepPlanète*), ou le remote ?",
+  "answer_annotated": "**TL;DR**\n1. **Grosse boîte tech (Doctolib/Criteo)** : CDI immédiat + salaire élevé (40-50k€ brut), mais missions parfois spécialisées et moins d’impact visible. Idéal si tu veux stabilité et reconnaissance.\n2. **Startup early-stage** : CDI possible mais plus rare (souvent CDD → CDI), salaire modéré (35-42k€ brut), mais polyvalence et impact direct. Risque de fermeture à 3-5 ans.\n3. **Compromis** : Scale-up (ex : Alan, PayFit) ou lab R&D de grand groupe (ex : Thales IA) pour équilibrer stabilité et innovation.\n\n---\n\n### **Plan A — Grosse boîte tech : CDI immédiat + sécurité**\n**Exemples ciblés** :\n- **Doctolib** (Paris) : Recrute en CDI des *Data Scientists* et *ML Engineers* (salaire médian embauche : ~42k€ brut, source Glassdoor 2024 — *connaissance générale*).\n  *Pour toi* : Missions structurées (ex : optimisation d’algos de recommandation), mais moins de liberté tech (stack imposée).\n- **Criteo** (Paris) : Spécialisé en *publicité programmatique* (ML à grande échelle). CDI systématique pour les profils universitaires avec stage en data/ML.\n  *Pour toi* : Idéal si tu aimes les défis d’échelle (big data), mais attention à la spécialisation métiers *adtech*.\n\n**Comment postuler** :\n- **Alternance M2** : Cible leurs offres sur [Welcome to the Jungle](https://www.welcometothejungle.com) (filtre \"Alternance Data\").\n- **Stage de fin d’études** : 60% des CDI chez Doctolib viennent de leurs stages (source : rapport RH 2023 — *connaissance générale*).\n- **Réseau** : Rejoins les communautés *Data Science Lille* (meetup.com) et *ML France* (LinkedIn) pour des références internes.\n\n---\n\n### **Plan B — Startup early-stage : Impact + polyvalence**\n**Exemples réalistes** (hors Paris pour éviter la surchauffe) :\n- **DeepPlanète** (Toulouse) : IA pour l’agriculture (série A en 2023). Recrute des *ML Researchers* en CDI après stage.\n  *Pour toi* : Stack tech libre (PyTorch, Hugging Face), mais salaire ~35k€ brut.\n- **Klippa** (Amsterdam, remote friendly) : Computer vision pour la finance. CDI possible après 6 mois de CDD.\n  *Pour toi* : Équilibre risque/opportunité si tu vises une expérience internationale.\n\n**Attention aux pièges** :\n- **CDI rare en sortie d’études** : 70% des embauches en startup early-stage commencent par un CDD (source *Baromètre Startup 2024, France Digitale* — *connaissance générale*).\n- **Équity illusoire** : Les stock-options ne valent rien si la startup ne lève pas de série B.\n\n**Stratégie** :\n- **Double compétence** : Ajoute un cours de *Product Management* (ex : [Refactoring](https://www.refactoring.tech)) pour te différencier.\n- **Veille funding** : Cible les startups ayant levé >5M€ dans les 12 derniers mois (utilise [Crunchbase](https://www.crunchbase.com)).\n\n---\n\n### **Plan C — Scale-up / Lab R&D : Le meilleur des deux mondes ?**\n**Options hybrides** :\n- **Alan** (Paris) : Assurance santé tech, en hypercroissance. CDI à 40k€+ pour les *Data Scientists* avec expérience stage.\n  *Pour toi* : Culture startup (agilité) + stabilité (levée de 180M€ en 2023 *(non vérifié dans les sources)*).\n- **Thales – Lab IA** (Palaiseau) : CDI en R&D appliquée (défense, aéronautique). Salaire ~45k€ brut.\n  *Pour toi* : Accès à des datasets uniques (satellites, radars), mais contraintes sécurité (secret défense possible).\n\n**Passerelle thèse CIFRE** :\n- Si tu hésites, un **CDI en lab industriel** (ex : *Orange Labs*, *Sopra Steria Next*) peut financer une thèse CIFRE (salaire ~25k€ brut + frais de thèse pris en charge).\n  *Exemple* : Thèse sur le *ML frugal* (IA légère pour edge computing) avec un lab comme [Inria Lille](https://www.inria.fr/fr/centre-inria-universite-lille).\n\n---\n\n### **Critères pour trancher**\n| Critère               | Grosse boîte       | Startup early-stage | Scale-up/Lab R&D    |\n|-----------------------|--------------------|---------------------|---------------------|\n| **Salaire embauche**  | 40-50k€ brut       | 35-42k€ brut        | 38-48k€ brut        |\n| **Stabilité**         | ★★★★★              | ★★☆☆☆               | ★★★★☆               |\n| **Impact visible**    | ★★☆☆☆              | ★★★★★               | ★★★★☆               |\n| **Polyvalence**       | ★☆☆☆☆              | ★★★★★               | ★★★☆☆               |\n| **Réseau pro**        | ★★★★★ (marque)      | ★★☆☆☆ (risque)      | ★★★★☆               |\n\n**Question pour toi** :\n- **Priorité #1** : Est-ce que tu préfères *apprendre vite* (startup) ou *construire un CV solide* (grosse boîte) pour les 5 prochaines années ?\n- **Flexibilité** : Serais-tu prêt·e à accepter un CDD de 6 mois en startup si le projet te passionne, ou le CDI est non-négociable ?\n- **Localisation** : Paris est saturé en data/ML — as-tu envisagé Lyon (ex : *OVHcloud*), Toulouse (*DeepPlanète*), ou le remote ?",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 16,
+    "n_verified": 6,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 4,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "salaire médian embauche : ~42k€ brut",
+      "stat_value": 42000,
+      "stat_unit": "€ brut",
+      "context_in_response": "Doctolib (Paris) : Recrute en CDI des Data Scientists et ML Engineers (salaire médian embauche : ~42k€ brut, source Glassdoor 2024 — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60% des CDI chez Doctolib viennent de leurs stages",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context_in_response": "60% des CDI chez Doctolib viennent de leurs stages (source : rapport RH 2023 — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "70% des embauches en startup early-stage commencent par un CDD",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context_in_response": "70% des embauches en startup early-stage commencent par un CDD (source Baromètre Startup 2024, France Digitale — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire 40-50k€ brut",
+      "stat_value": 45000,
+      "stat_unit": "€ brut",
+      "context_in_response": "Grosse boîte tech (Doctolib/Criteo) : CDI immédiat + salaire élevé (40-50k€ brut).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire 35-42k€ brut",
+      "stat_value": 38500,
+      "stat_unit": "€ brut",
+      "context_in_response": "Startup early-stage : CDI possible mais plus rare, salaire modéré (35-42k€ brut).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire ~35k€ brut",
+      "stat_value": 35000,
+      "stat_unit": "€ brut",
+      "context_in_response": "DeepPlanète (Toulouse) : IA pour l’agriculture, recrute des ML Researchers en CDI après stage (salaire ~35k€ brut).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "levée de 180M€ en 2023",
+      "stat_value": 180,
+      "stat_unit": "M€",
+      "context_in_response": "Alan (Paris) : Assurance santé tech, en hypercroissance (levée de 180M€ en 2023).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire ~45k€ brut",
+      "stat_value": 45000,
+      "stat_unit": "€ brut",
+      "context_in_response": "Thales – Lab IA (Palaiseau) : CDI en R&D appliquée, salaire ~45k€ brut.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire 38-48k€ brut",
+      "stat_value": 43000,
+      "stat_unit": "€ brut",
+      "context_in_response": "Scale-up/Lab R&D : salaire 38-48k€ brut.",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire 25k€ brut",
+      "stat_value": 25000,
+      "stat_unit": "€ brut",
+      "context_in_response": "Thèse CIFRE : salaire ~25k€ brut + frais de thèse pris en charge.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context_in_response": "FICHE 1 : taux_emploi_3ans: 0.85",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context_in_response": "FICHE 1 : taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context_in_response": "FICHE 1 : taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "FICHE 1 : salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 0.86,
+      "stat_unit": "",
+      "context_in_response": "FICHE 5 : taux_emploi_3ans: 0.86",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "FICHE 5 : salaire_median_embauche: 1740",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9878,
+      "nom": "Titre ingénieur - Ingénieur diplômé de l'Ecole Polytechnique universitaire de l'Université de Lille,",
+      "etablissement": "UNIVERSITE DE LILLE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9704,
+      "nom": "Technologies de l’information (fiche nationale)",
+      "etablissement": "INSTITUT MINES TELECOM - DIRECTION GENERALE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.969,
+      "nom": "Consultant green IT",
+      "etablissement": "SCIENCES-U LILLE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8948,
+      "nom": "DU sciences des données et intelligence artificielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8925,
+      "nom": "Science des données : Visualisation, conception d'outils décisionnels",
+      "etablissement": "UNIVERSITE DE LILLE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8906,
+      "nom": "DU intelligence artificielle et propriété intellectuelle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8892,
+      "nom": "DU sciences des données et intelligence artificielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8885,
+      "nom": "MSc Big Data and Artificial Intelligence for Business",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8885,
+      "nom": "master mention IA - intelligence artificielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8881,
+      "nom": "Sciences et Ingénierie - Technologie de l'information et multimédia",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    }
+  ]
+}
