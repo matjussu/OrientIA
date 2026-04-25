@@ -182,7 +182,7 @@ def main() -> int:
 
     print(f"Loading config + Mistral client…")
     cfg = load_config()
-    client = Mistral(api_key=cfg.mistral_api_key)
+    client = Mistral(api_key=cfg.mistral_api_key, timeout_ms=180000)  # ADR-047
 
     print(f"Loading {FICHES_PATH}…")
     fiches = json.loads(FICHES_PATH.read_text(encoding="utf-8"))

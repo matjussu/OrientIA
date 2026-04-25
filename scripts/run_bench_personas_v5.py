@@ -1,16 +1,18 @@
-"""Bench v4 — pipeline + fact-checker Mistral Small aval.
+"""Bench v5 — pipeline + multi-corpus retrievable (formations + metiers + parcours + apec).
 
-Clone de `run_bench_personas.py` + intégration `StatFactChecker`.
-Pour chaque query :
-1. `pipeline.answer(q)` produit la réponse brute (v3 pipeline, corpus 48k v2)
-2. `fact_checker.verify(answer, sources)` détecte les stats hallucinées
-3. `fact_checker.annotate(answer, report)` ajoute `*(non vérifié)*` sur stats unsafe
-4. Sauvegarde : original answer + annotated answer + report JSON
+Clone de `run_bench_personas_v4.py` avec :
+- Inputs : `formations_multi_corpus.json` + `formations_multi_corpus.index`
+  (50 153 records vs 48 914 v4) — cf ADR-048 RAG multi-corpus
+- Mistral client : `timeout_ms=180000` (ADR-047 PR #58 — fix Q12 timeout)
+- Output : `results/bench_personas_v5_2026-04-25/`
 
-Output : `results/bench_personas_v4_2026-04-24/` avec pour chaque query :
-- `answer_raw` : sortie pipeline sans modification
-- `answer_annotated` : avec marqueurs `(non vérifié dans les sources)` sur stats unsafe
-- `fact_check_report` : détail par stat (verdict, source_excerpt, contexte)
+Reste identique à v4 :
+- Mêmes 18 queries (6 personas × 3) — comparabilité directe baseline 4.53
+- Même fact-checker StatFactChecker Mistral Small aval
+- Même format de sortie (JSON par query + _ALL_QUERIES.json)
+
+Verdict scientifique attendu : isolation de UNE seule variable (le pivot
+multi-corpus, +1 239 records additifs sans modif fiche_to_text v3).
 """
 from __future__ import annotations
 
@@ -29,12 +31,12 @@ from mistralai.client import Mistral  # noqa: E402
 from src.config import load_config  # noqa: E402
 from src.rag.fact_checker import StatFactChecker  # noqa: E402
 from src.rag.pipeline import OrientIAPipeline  # noqa: E402
-from scripts.run_bench_personas import PERSONAS  # noqa: E402
+from scripts.run_bench_personas_v3 import PERSONAS  # noqa: E402
 
 
-FICHES_PATH = REPO_ROOT / "data" / "processed" / "formations.json"
-INDEX_PATH = REPO_ROOT / "data" / "embeddings" / "formations.index"
-OUT_DIR = REPO_ROOT / "results" / "bench_personas_v4_2026-04-24"
+FICHES_PATH = REPO_ROOT / "data" / "processed" / "formations_multi_corpus.json"
+INDEX_PATH = REPO_ROOT / "data" / "embeddings" / "formations_multi_corpus.index"
+OUT_DIR = REPO_ROOT / "results" / "bench_personas_v5_2026-04-25"
 
 
 def _run_one_query(pipeline, checker, persona, query, idx):
@@ -51,7 +53,6 @@ def _run_one_query(pipeline, checker, persona, query, idx):
             "error_pipeline": f"{type(e).__name__}: {e}",
         }
 
-    # Fact-check aval
     t1 = time.time()
     try:
         report = checker.verify(answer, sources)
@@ -62,7 +63,6 @@ def _run_one_query(pipeline, checker, persona, query, idx):
         fact_check_error = None
     elapsed_fc = round(time.time() - t1, 2)
 
-    # Annotate answer si hallucinations détectées
     if report and report.stats_hallucinated:
         answer_annotated = checker.annotate(answer, report)
     else:
@@ -98,12 +98,13 @@ def _run_one_query(pipeline, checker, persona, query, idx):
         "sources_top10": [
             {
                 "score": round(float(s.get("score", 0)), 4),
-                "nom": s["fiche"].get("nom", "")[:100],
+                "nom": s["fiche"].get("nom", "")[:100] or s["fiche"].get("text", "")[:100],
                 "etablissement": s["fiche"].get("etablissement", ""),
                 "niveau": s["fiche"].get("niveau"),
                 "phase": s["fiche"].get("phase"),
                 "source": s["fiche"].get("source"),
                 "domaine": s["fiche"].get("domaine"),
+                "domain": s["fiche"].get("domain", "formation"),
             }
             for s in sources[:10]
         ],
@@ -117,7 +118,8 @@ def main() -> int:
     args = parser.parse_args()
 
     if not FICHES_PATH.exists() or not INDEX_PATH.exists():
-        print("❌ formations.json ou index FAISS absent.")
+        print("❌ formations_multi_corpus.json ou index FAISS multi-corpus absent.")
+        print("   → Exécute d'abord : python scripts/build_multi_corpus_index.py")
         return 1
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -125,6 +127,8 @@ def main() -> int:
     cfg = load_config()
     client = Mistral(api_key=cfg.mistral_api_key, timeout_ms=180000)  # ADR-047
     fiches = json.loads(FICHES_PATH.read_text(encoding="utf-8"))
+    print(f"Loaded {len(fiches):,} fiches multi-corpus")
+
     pipeline = OrientIAPipeline(client, fiches)
     pipeline.load_index_from(str(INDEX_PATH))
     checker = StatFactChecker(client)
@@ -135,7 +139,7 @@ def main() -> int:
     if args.max:
         personas_to_run = personas_to_run[: args.max]
 
-    print(f"Bench v4 : {len(personas_to_run)} persona(s) × 3 queries")
+    print(f"Bench v5 : {len(personas_to_run)} persona(s) × 3 queries (multi-corpus)")
     print("=" * 60)
 
     idx = 0
@@ -152,18 +156,22 @@ def main() -> int:
             )
             all_results.append(res)
             if "error_pipeline" in res:
-                print(f"      ❌ pipeline error")
+                print(f"      ❌ pipeline error : {res['error_pipeline'][:80]}")
             else:
                 fc = res.get("fact_check_summary") or {}
-                print(f"      gen {res['elapsed_gen_s']}s + fc {res['elapsed_fact_check_s']}s"
-                      f" | stats {fc.get('n_stats_total',0)} → {fc.get('n_verified',0)}✅"
-                      f" / {fc.get('n_with_disclaimer',0)}🟡 / {fc.get('n_hallucinated',0)}🔴")
+                domains_in_top = sorted({s["domain"] for s in res["sources_top10"]})
+                print(
+                    f"      gen {res['elapsed_gen_s']}s + fc {res['elapsed_fact_check_s']}s"
+                    f" | stats {fc.get('n_stats_total',0)} → {fc.get('n_verified',0)}✅"
+                    f" / {fc.get('n_with_disclaimer',0)}🟡 / {fc.get('n_hallucinated',0)}🔴"
+                    f" | domains {domains_in_top}"
+                )
 
     all_path = OUT_DIR / "_ALL_QUERIES.json"
     all_path.write_text(
         json.dumps(all_results, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    print(f"\n✅ Bench v4 fini. Output → {OUT_DIR}")
+    print(f"\n✅ Bench v5 fini. Output → {OUT_DIR}")
     return 0
 
 

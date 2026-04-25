@@ -1,0 +1,223 @@
+{
+  "idx_global": 7,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q1",
+  "query_type": "factuelle",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "elapsed_gen_s": 7.59,
+  "elapsed_fact_check_s": 5.51,
+  "answer_raw": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 en France.\n2. En **connaissance générale**, la fourchette typique se situe entre **35 000 € et 45 000 € brut annuel** (soit ~2 200–2 800 € net/mois) selon la région, l’entreprise et la spécialisation.\n3. Pour maximiser ton salaire, cible les secteurs **finance/tech** (Paris/Lyon) ou l’**alternance** en M2.\n\n---\n\n### **Plan A — Secteur privé (ESN/startups/tech) : 35–42k€ brut**\n- **Salaire médian** : ~38k€ brut/an (estimation marché, connaissance générale).\n- **Variables clés** : région (Île-de-France +15–20%), spécialisation (cybersécurité/data +5–10%), alternance (souvent embauché à 30–35k€ en CDI après le diplôme).\n- **Exemple concret** : Un diplômé de l’[École polytechnique universitaire de Paris-Saclay (spé informatique)](https://www.onisep.fr/http/redirection/formation/slug/FOR.11936) en alternance peut viser **40–45k€** en Île-de-France (source : enquêtes internes écoles d’ingé, connaissance générale).\n\n### **Plan B — Secteur public/EDF/banque : 32–38k€ brut + avantages**\n- **Salaire médian** : ~35k€ brut/an (grilles indiciaires + primes).\n- **Avantages** : Stabilité, télétravail, formations internes.\n- **Exemple** : Développeur à la **Banque de France** ou **EDF** (recrutements réguliers post-M2).\n\n### **Plan C — Freelance/indépendant : 400–600 €/jour (junior)**\n- **TJM (Taux Journalier Moyen)** : 400–600 €/jour en **SSII ou missions courtes** (plateformes comme Malt, Comet).\n- **Prérequis** : Portfolio solide (GitHub) + réseau (meetups, LinkedIn).\n- **Risque** : Instabilité les 6 premiers mois.\n\n---\n**⚠ Attention aux pièges**\n- **Paris vs provinces** : Un écart de **5–10k€ brut/an** existe entre Île-de-France et autres régions (source : baromètres régionaux, connaissance générale).\n- **Alternance ≠ CDI** : Certains contrats d’alternance proposent **25–30k€ brut/an** (salaire étudiant), mais l’embauche en CDI post-diplôme compense souvent.\n- **Spécialisation payante** : Les profils **cybersécurité**, **data engineering** ou **cloud** (AWS/Azure) négocient **5–15% de plus** que le développement web classique.\n\n---\n**Question pour toi** :\nTon priorité est-elle le salaire immédiat (Plan A), la stabilité (Plan B), ou la flexibilité (Plan C) ? Si tu vises un secteur précis (banque, santé, jeu vidéo), je peux affiner les fourchettes.",
+  "answer_annotated": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 en France.\n2. En **connaissance générale**, la fourchette typique se situe entre **35 000 € et 45 000 € brut annuel** (soit ~2 200–2 800 € net/mois) selon la région, l’entreprise et la spécialisation.\n3. Pour maximiser ton salaire, cible les secteurs **finance/tech** (Paris/Lyon) ou l’**alternance** en M2.\n\n---\n\n### **Plan A — Secteur privé (ESN/startups/tech) : 35–42k€ brut**\n- **Salaire médian** : ~38k€ brut/an (estimation marché, connaissance générale).\n- **Variables clés** : région (Île-de-France +15–20%), spécialisation (cybersécurité/data +5–10%), alternance (souvent embauché à 30–35k€ en CDI après le diplôme).\n- **Exemple concret** : Un diplômé de l’[École polytechnique universitaire de Paris-Saclay (spé informatique)](https://www.onisep.fr/http/redirection/formation/slug/FOR.11936) en alternance peut viser **40–45k€** en Île-de-France (source : enquêtes internes écoles d’ingé, connaissance générale).\n\n### **Plan B — Secteur public/EDF/banque : 32–38k€ brut + avantages**\n- **Salaire médian** : ~35k€ brut/an (grilles indiciaires + primes).\n- **Avantages** : Stabilité, télétravail, formations internes.\n- **Exemple** : Développeur à la **Banque de France** ou **EDF** (recrutements réguliers post-M2).\n\n### **Plan C — Freelance/indépendant : 400–600 €/jour (junior)**\n- **TJM (Taux Journalier Moyen)** : 400–600 €/jour en **SSII ou missions courtes** (plateformes comme Malt, Comet).\n- **Prérequis** : Portfolio solide (GitHub) + réseau (meetups, LinkedIn).\n- **Risque** : Instabilité les 6 premiers mois.\n\n---\n**⚠ Attention aux pièges**\n- **Paris vs provinces** : Un écart de **5–10k€ brut/an** existe entre Île-de-France et autres régions (source : baromètres régionaux, connaissance générale).\n- **Alternance ≠ CDI** : Certains contrats d’alternance proposent **25–30k€ brut/an** (salaire étudiant), mais l’embauche en CDI post-diplôme compense souvent.\n- **Spécialisation payante** : Les profils **cybersécurité**, **data engineering** ou **cloud** (AWS/Azure) négocient **5–15% de plus** que le développement web classique.\n\n---\n**Question pour toi** :\nTon priorité est-elle le salaire immédiat (Plan A), la stabilité (Plan B), ou la flexibilité (Plan C) ? Si tu vises un secteur précis (banque, santé, jeu vidéo), je peux affiner les fourchettes.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 0,
+    "n_with_disclaimer": 12,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "35 000 € et 45 000 € brut annuel",
+      "stat_value": 35000,
+      "stat_unit": "€ brut annuel",
+      "context_in_response": "fourchette typique de salaire pour un développeur post-M2 en France",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~2 200–2 800 € net/mois",
+      "stat_value": 2500,
+      "stat_unit": "€ net/mois",
+      "context_in_response": "équivalent de la fourchette 35 000 € et 45 000 € brut annuel",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~38k€ brut/an",
+      "stat_value": 38000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Salaire médian estimé pour le secteur privé (ESN/startups/tech)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Île-de-France +15–20%",
+      "stat_value": 17.5,
+      "stat_unit": "%",
+      "context_in_response": "écart de salaire entre Île-de-France et autres régions",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "cybersécurité/data +5–10%",
+      "stat_value": 7.5,
+      "stat_unit": "%",
+      "context_in_response": "écart de salaire pour les spécialisations cybersécurité ou data",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30–35k€ en CDI après le diplôme",
+      "stat_value": 32500,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "salaire d'embauche en CDI après une alternance en M2",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40–45k€ en Île-de-France",
+      "stat_value": 42500,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "salaire visé pour un diplômé de l'École polytechnique universitaire de Paris-Saclay en alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~35k€ brut/an",
+      "stat_value": 35000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Salaire médian estimé pour le secteur public/EDF/banque",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "400–600 €/jour",
+      "stat_value": 500,
+      "stat_unit": "€/jour",
+      "context_in_response": "TJM (Taux Journalier Moyen) pour un développeur freelance junior",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "5–10k€ brut/an",
+      "stat_value": 7500,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "écart de salaire entre Paris et les autres régions",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "25–30k€ brut/an",
+      "stat_value": 27500,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "salaire en contrat d'alternance (salaire étudiant)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "5–15%",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "context_in_response": "écart de salaire pour les profils cybersécurité, data engineering ou cloud",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9184,
+      "nom": "Expert en développement logiciel",
+      "etablissement": "OPENCLASSROOMS",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.914,
+      "nom": "diplôme d'ingénieur de l'École polytechnique universitaire de l'université Paris-Saclay spécialité i",
+      "etablissement": "France",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8388,
+      "nom": "Testeur logiciel",
+      "etablissement": "M2I",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8362,
+      "nom": "expert en ingénierie et développement de logiciels pour l'industrie",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8358,
+      "nom": "expert en ingénierie du développement et en architecture logicielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.835,
+      "nom": "Concepteur développeur de solutions informatiques",
+      "etablissement": "42",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8333,
+      "nom": "Développeur commercial et marketing",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8326,
+      "nom": "Concepteur développeur d'applications",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    }
+  ]
+}
