@@ -1,0 +1,295 @@
+{
+  "idx_global": 7,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q1",
+  "query_type": "factuelle",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "elapsed_gen_s": 7.55,
+  "elapsed_fact_check_s": 10.42,
+  "answer_raw": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 en France.\n2. En **connaissance générale**, la fourchette typique se situe entre **35 000 € et 45 000 € brut annuel** (soit ~2 200-2 800 € net/mois) selon la région, l’entreprise et la spécialisation.\n3. L’alternance et les compétences en **IA/cybersécurité** boostent significativement ce salaire.\n\n---\n\n### **Plan A — Développeur généraliste (35-40k€ brut)**\n- **Fourchette** : 35 000–40 000 € brut/an (2 200–2 500 € net/mois) en région, 38 000–43 000 € en Île-de-France.\n- **Facteurs clés** : Expérience en stage/alternance, maîtrise des frameworks (React, Spring), et capacité à travailler en équipe Agile.\n- **Source** : Estimations marché (connaissance générale, baromètres Welcome to the Jungle/Glassdoor 2023-2024).\n\n### **Plan B — Spécialisation haut salaire (40-45k€ brut)**\n- **Métiers porteurs** : Développeur **IA/Data** (42-45k€), **Cybersécurité** (40-48k€), ou **DevOps** (40-50k€).\n- **Exemple concret** : Un diplômé du [M2 Informatique Paris-Saclay](https://www.onisep.fr/http/redirection/formation/slug/FOR.11936) en alternance peut viser 42k€ brut en embauche (estimation).\n- **Pour toi** : Si tu as une appétence pour l’IA ou la sécurité, une **certification complémentaire** (ex : SecNumAcademie) ou un **projet open-source** peut justifier +10-15%.\n\n### **Plan C — Alternance et thèse CIFRE (45k€+)**\n- **Alternance** : Salaire légal bac+5 = **60-80% du SMIC** (~1 000-1 300 € net/mois), mais **embauche souvent à 40-45k€** après.\n- **Thèse CIFRE** : ~2 100 € net/mois pendant 3 ans, puis salaire ingénieur (45-55k€) en sortie.\n- **Pour toi** : Idéal si tu vises un poste **R&D** ou une expertise pointue (ex : blockchain, quantique).\n\n---\n**⚠ Attention aux pièges**\n- **Région** : Un salaire parisien = +15-20% vs province, mais coût de la vie +30%.\n- **Taille de l’entreprise** : Les startups proposent souvent des **stock-options** (valeur incertaine) en compensation d’un salaire brut inférieur.\n- **Freelance** : TJM débutant ~350-500 €/jour, mais **instabilité** et charges sociales (~50% du brut).\n\n**Question pour toi** : Préfères-tu maximiser ton salaire dès l’embauche (spécialisation + Île-de-France) ou privilégier un équilibre vie pro/perso (région, remote) ?",
+  "answer_annotated": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 en France.\n2. En **connaissance générale**, la fourchette typique se situe entre **35 000 € et 45 000 € brut annuel** (soit ~2 200-2 800 € net/mois) selon la région, l’entreprise et la spécialisation.\n3. L’alternance et les compétences en **IA/cybersécurité** boostent significativement ce salaire.\n\n---\n\n### **Plan A — Développeur généraliste (35-40k€ brut)**\n- **Fourchette** : 35 000–40 000 € brut/an (2 200–2 500 € net/mois) en région, 38 000–43 000 € en Île-de-France.\n- **Facteurs clés** : Expérience en stage/alternance, maîtrise des frameworks (React, Spring), et capacité à travailler en équipe Agile.\n- **Source** : Estimations marché (connaissance générale, baromètres Welcome to the Jungle/Glassdoor 2023-2024).\n\n### **Plan B — Spécialisation haut salaire (40-45k€ brut)**\n- **Métiers porteurs** : Développeur **IA/Data** (42-45k€), **Cybersécurité** (40-48k€), ou **DevOps** (40-50k€).\n- **Exemple concret** : Un diplômé du [M2 Informatique Paris-Saclay](https://www.onisep.fr/http/redirection/formation/slug/FOR.11936) en alternance peut viser 42k€ brut en embauche (estimation).\n- **Pour toi** : Si tu as une appétence pour l’IA ou la sécurité, une **certification complémentaire** (ex : SecNumAcademie) ou un **projet open-source** peut justifier +10-15%.\n\n### **Plan C — Alternance et thèse CIFRE (45k€+)**\n- **Alternance** : Salaire légal bac+5 = **60-80% du SMIC** (~1 000-1 300 € net/mois), mais **embauche souvent à 40-45k€** après.\n- **Thèse CIFRE** : ~2 100 € net/mois pendant 3 ans, puis salaire ingénieur (45-55k€) en sortie.\n- **Pour toi** : Idéal si tu vises un poste **R&D** ou une expertise pointue (ex : blockchain, quantique).\n\n---\n**⚠ Attention aux pièges**\n- **Région** : Un salaire parisien = +15-20% vs province, mais coût de la vie +30%.\n- **Taille de l’entreprise** : Les startups proposent souvent des **stock-options** (valeur incertaine) en compensation d’un salaire brut inférieur.\n- **Freelance** : TJM débutant ~350-500 €/jour, mais **instabilité** et charges sociales (~50% du brut).\n\n**Question pour toi** : Préfères-tu maximiser ton salaire dès l’embauche (spécialisation + Île-de-France) ou privilégier un équilibre vie pro/perso (région, remote) ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 21,
+    "n_verified": 4,
+    "n_with_disclaimer": 17,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "35 000–40 000 € brut/an",
+      "stat_value": 35000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Fourchette Plan A — Développeur généraliste",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 200–2 500 € net/mois",
+      "stat_value": 2350,
+      "stat_unit": "€ net/mois",
+      "context_in_response": "Fourchette Plan A — Développeur généraliste",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "38 000–43 000 € brut/an",
+      "stat_value": 38000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Fourchette Plan A — Développeur généraliste (Île-de-France)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "42-45k€",
+      "stat_value": 42000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Fourchette Plan B — Développeur IA/Data",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40-48k€",
+      "stat_value": 40000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Fourchette Plan B — Développeur Cybersécurité",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40-50k€",
+      "stat_value": 40000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Fourchette Plan B — Développeur DevOps",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "42k€ brut",
+      "stat_value": 42000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Exemple concret Plan B — M2 Informatique Paris-Saclay en alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+10-15%",
+      "stat_value": 12.5,
+      "stat_unit": "%",
+      "context_in_response": "Justification de la fourchette Plan B avec certification/projet",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60-80% du SMIC",
+      "stat_value": 70,
+      "stat_unit": "% du SMIC",
+      "context_in_response": "Salaire légal bac+5 en alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~1 000-1 300 € net/mois",
+      "stat_value": 1150,
+      "stat_unit": "€ net/mois",
+      "context_in_response": "Salaire légal bac+5 en alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40-45k€",
+      "stat_value": 40000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Embauche après alternance Plan C",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~2 100 € net/mois",
+      "stat_value": 2100,
+      "stat_unit": "€ net/mois",
+      "context_in_response": "Salaire thèse CIFRE",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "45-55k€",
+      "stat_value": 45000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Salaire ingénieur après thèse CIFRE",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+15-20%",
+      "stat_value": 17.5,
+      "stat_unit": "%",
+      "context_in_response": "Impact salaire parisien vs province",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+30%",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "Coût de la vie Paris vs province",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "350-500 €/jour",
+      "stat_value": 425,
+      "stat_unit": "€/jour",
+      "context_in_response": "TJM débutant freelance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~50% du brut",
+      "stat_value": 50,
+      "stat_unit": "% du brut",
+      "context_in_response": "Charges sociales freelance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€ net/mois",
+      "context_in_response": "Salaire_median_embauche dans les fiches sources",
+      "verdict": "verified",
+      "source_fiche_excerpt": "salaire_median_embauche: 2080"
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context_in_response": "Taux_emploi_3ans dans les fiches sources",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_emploi_3ans: 0.85"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context_in_response": "Taux_emploi_6ans dans les fiches sources",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_emploi_6ans: 0.91"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context_in_response": "Taux_cdi dans les fiches sources",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_cdi: 0.83"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9184,
+      "nom": "Expert en développement logiciel",
+      "etablissement": "OPENCLASSROOMS",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.914,
+      "nom": "diplôme d'ingénieur de l'École polytechnique universitaire de l'université Paris-Saclay spécialité i",
+      "etablissement": "France",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8388,
+      "nom": "Testeur logiciel",
+      "etablissement": "M2I",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8362,
+      "nom": "expert en ingénierie et développement de logiciels pour l'industrie",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8358,
+      "nom": "expert en ingénierie du développement et en architecture logicielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.835,
+      "nom": "Concepteur développeur de solutions informatiques",
+      "etablissement": "42",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8333,
+      "nom": "Développeur commercial et marketing",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8326,
+      "nom": "Concepteur développeur d'applications",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    }
+  ]
+}

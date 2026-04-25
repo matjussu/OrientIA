@@ -32,6 +32,10 @@ class RerankConfig:
     domain_boost_apec_region: float = 1.5
     domain_boost_metier: float = 1.3
     domain_boost_parcours_bacheliers: float = 1.3
+    # Phase B (ordre 2026-04-25-1442) — 3 nouveaux corpora aggrégés
+    domain_boost_crous: float = 1.4
+    domain_boost_insee_salaire: float = 1.5
+    domain_boost_insertion_pro: float = 1.4
 
     def as_dict(self) -> dict:
         return {
@@ -46,6 +50,9 @@ class RerankConfig:
             "domain_boost_apec_region": self.domain_boost_apec_region,
             "domain_boost_metier": self.domain_boost_metier,
             "domain_boost_parcours_bacheliers": self.domain_boost_parcours_bacheliers,
+            "domain_boost_crous": self.domain_boost_crous,
+            "domain_boost_insee_salaire": self.domain_boost_insee_salaire,
+            "domain_boost_insertion_pro": self.domain_boost_insertion_pro,
         }
 
 
@@ -54,6 +61,9 @@ _DOMAIN_BOOST_FIELDS = {
     "apec_region": "domain_boost_apec_region",
     "metier": "domain_boost_metier",
     "parcours_bacheliers": "domain_boost_parcours_bacheliers",
+    "crous": "domain_boost_crous",
+    "insee_salaire": "domain_boost_insee_salaire",
+    "insertion_pro": "domain_boost_insertion_pro",
 }
 
 

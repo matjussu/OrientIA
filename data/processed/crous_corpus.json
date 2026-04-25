@@ -1,0 +1,1000 @@
+[
+  {
+    "id": "crous:france",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "n_logements_total": 820,
+    "n_restos_total": 999,
+    "regions_principales": [
+      "Île-de-France",
+      "Auvergne-Rhône-Alpes",
+      "Nouvelle-Aquitaine",
+      "Occitanie",
+      "Hauts-de-France"
+    ],
+    "text": "Vie étudiante CROUS — vue d'ensemble France | Total résidences universitaires : 820 logements répertoriés | Total restaurants/cafétérias universitaires : 999 lieux | Types restaurants principaux : Cafétéria (434), Restaurant (361), Restaurant agréé (78), Libre-service (29), Brasserie (28) | Top régions logement : Île-de-France (155), Auvergne-Rhône-Alpes (102), Nouvelle-Aquitaine (87), Occitanie (86), Hauts-de-France (71) | Services logements principaux : Internet / Wifi, Laverie, Garage à vélos, Accessible PMR, Surveillance / Sécurité, Parking, Ascenseur"
+  },
+  {
+    "id": "crous_region:aix-marseille",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Aix-Marseille",
+    "region_slug": "aix-marseille",
+    "n_logements": 23,
+    "n_restos": 48,
+    "types_restos": {
+      "Cafétéria": 24,
+      "Restaurant agréé": 7,
+      "Restaurant": 16,
+      "Pizzéria": 1
+    },
+    "zones_principales": [
+      "Marseille",
+      "Aix",
+      "Avignon",
+      "Arles",
+      "Tallard"
+    ],
+    "services_logements_principaux": [
+      "Laverie",
+      "Surveillance / Sécurité",
+      "Parking",
+      "Accessible PMR",
+      "Parking PMR"
+    ],
+    "text": "Vie étudiante CROUS CROUS Aix-Marseille (logement + restauration universitaire) | Restaurants universitaires : 48 lieux totaux | Types principaux : Cafétéria (24), Restaurant (16), Restaurant agréé (7), Pizzéria (1) | Zones principales : Marseille, Aix, Avignon | Résidences universitaires : 23 logements répertoriés dans la région | Services principaux : Laverie, Surveillance / Sécurité, Parking, Accessible PMR, Parking PMR | Exemples résidences : Cité U Gaston Berger (Marseille); Résidence Les Balustres (Marseille); Résidence Canada (Marseille); Résidence Madagascar (Marseille); Résidence La Garidelle (Avignon) | Exemples restaurants : Cafétéria Le Gingko (Avignon, Cafétéria); Cafétéria Hexagone (Marseille, Cafétéria); EPA de la restauration collective d'Arles (Arles, Restaurant agréé); Collège Marie Marvingt (Tallard, Restaurant agréé); RU Les Gazelles (Aix, Restaurant)"
+  },
+  {
+    "id": "crous_region:amiens",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Amiens",
+    "region_slug": "amiens",
+    "n_logements": 20,
+    "n_restos": 30,
+    "types_restos": {
+      "Restaurant": 10,
+      "Cafétéria": 14,
+      "Restaurant géré": 3,
+      "Foodtruck": 2,
+      "Coffee Corner": 1
+    },
+    "zones_principales": [
+      "AMIENS CENTRE",
+      "COMPIEGNE",
+      "AMIENS CAMPUS",
+      "BEAUVAIS",
+      "AISNE"
+    ],
+    "services_logements_principaux": [
+      "Parking",
+      "Salle de travail",
+      "Distributeur boissons confiseries",
+      "Accessible PMR",
+      "Laverie"
+    ],
+    "text": "Vie étudiante CROUS CROUS Amiens (logement + restauration universitaire) | Restaurants universitaires : 30 lieux totaux | Types principaux : Cafétéria (14), Restaurant (10), Restaurant géré (3), Foodtruck (2), Coffee Corner (1) | Zones principales : AMIENS CENTRE, COMPIEGNE, AMIENS CAMPUS | Résidences universitaires : 20 logements répertoriés dans la région | Services principaux : Parking, Salle de travail, Distributeur boissons confiseries, Accessible PMR, Laverie | Exemples résidences : Résidence du Parc (COMPIEGNE); Résidence des Peupliers (COMPIEGNE); Résidence de la Hotoie (AMIENS CENTRE); Résidence du Castillon (AMIENS CENTRE); Résidence Friant 2 (AMIENS CENTRE) | Exemples restaurants : Restaurant du Bailly (AMIENS CAMPUS, Restaurant); Cafétéria de la Rotonde (AMIENS CAMPUS, Cafétéria); Restaurant d'UniLaSalle Amiens (AMIENS CENTRE, Restaurant); Cafétéria de la faculté des arts (AMIENS CENTRE, Cafétéria); Restaurant Saint-Leu (AMIENS CENTRE, Restaurant)"
+  },
+  {
+    "id": "crous_region:antilles-guyane",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Antilles-Guyane",
+    "region_slug": "antilles-guyane",
+    "n_logements": 17,
+    "n_restos": 10,
+    "types_restos": {
+      "Restaurant": 5,
+      "Cafétéria": 4,
+      "Restaurant administratif": 1
+    },
+    "zones_principales": [
+      "Guadeloupe",
+      "Guyane",
+      "Martinique"
+    ],
+    "services_logements_principaux": [],
+    "text": "Vie étudiante CROUS CROUS Antilles-Guyane (logement + restauration universitaire) | Restaurants universitaires : 10 lieux totaux | Types principaux : Restaurant (5), Cafétéria (4), Restaurant administratif (1) | Zones principales : Guadeloupe, Guyane, Martinique | Résidences universitaires : 17 logements répertoriés dans la région | Exemples résidences : Résidence universitaire de Fouillole (Guadeloupe); Résidence universitaire de Fouillole (Guadeloupe); Résidence universitaire de Desmarais (Guadeloupe); Résidences universitaires de Schoelcher (Martinique); Résidence de Baduel -Cayenne (Guyane) | Exemples restaurants : Restaurant Universitaire de Fouillole (Guadeloupe, Restaurant); Cafétéria près du SCUIO (Guadeloupe, Cafétéria); Cafétéria de Troubiran (Guyane, Cafétéria); Restaurant de la résidence de Kourou (Guyane, Restaurant); Buvette de la bibliothèque universitaire (Martinique, Cafétéria)"
+  },
+  {
+    "id": "crous_region:bfc",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Bourgogne-Franche-Comté",
+    "region_slug": "bfc",
+    "n_logements": 22,
+    "n_restos": 45,
+    "types_restos": {
+      "Cafétéria": 14,
+      "Restaurant": 13,
+      "Restaurant administratif": 1,
+      "Brasserie": 1,
+      "Restaurant agréé": 14,
+      "Foodtruck": 2
+    },
+    "zones_principales": [
+      "Besançon",
+      "Dijon",
+      "Belfort",
+      "Nevers",
+      "Auxerre"
+    ],
+    "services_logements_principaux": [
+      "Internet / Wifi",
+      "Surveillance / Sécurité",
+      "Accessible PMR",
+      "Parking",
+      "Distribution protections périodiques"
+    ],
+    "text": "Vie étudiante CROUS CROUS Bourgogne-Franche-Comté (logement + restauration universitaire) | Restaurants universitaires : 45 lieux totaux | Types principaux : Cafétéria (14), Restaurant agréé (14), Restaurant (13), Foodtruck (2), Restaurant administratif (1) | Zones principales : Besançon, Dijon, Belfort | Résidences universitaires : 22 logements répertoriés dans la région | Services principaux : Internet / Wifi, Surveillance / Sécurité, Accessible PMR, Parking, Distribution protections périodiques | Exemples résidences : Résidence Fernand Braudel (Belfort); Résidence Duvillard (Belfort); Résidence Jean Jaurès (Auxerre); Résidence la Comtoise (Besançon); Résidences Canot (Besançon) | Exemples restaurants : Belfort • Tech & go' (Belfort, Cafétéria); Dijon • Resto U' Mansart (Dijon, Restaurant); Dijon • Resto U' Montmuzard (Dijon, Restaurant); Le Creusot • Resto U' (Le Creusot, Restaurant); Dijon • Cafet' Mansart (Dijon, Cafétéria)"
+  },
+  {
+    "id": "crous_region:bordeaux",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Bordeaux",
+    "region_slug": "bordeaux",
+    "n_logements": 53,
+    "n_restos": 43,
+    "types_restos": {
+      "Restaurant": 22,
+      "épicerie": 5,
+      "Cafétéria": 2,
+      "Restaurant agréé": 12,
+      "Restaurant administratif": 1,
+      "Libre-service": 1
+    },
+    "zones_principales": [
+      "Pessac",
+      "Bordeaux",
+      "Lot et Garonne",
+      "Talence",
+      "Pau"
+    ],
+    "services_logements_principaux": [
+      "Surveillance / Sécurité",
+      "Accessible PMR",
+      "Laverie",
+      "Garage à vélos",
+      "Parking"
+    ],
+    "text": "Vie étudiante CROUS CROUS Bordeaux (logement + restauration universitaire) | Restaurants universitaires : 43 lieux totaux | Types principaux : Restaurant (22), Restaurant agréé (12), épicerie (5), Cafétéria (2), Restaurant administratif (1) | Zones principales : Pessac, Bordeaux, Lot et Garonne | Résidences universitaires : 53 logements répertoriés dans la région | Services principaux : Surveillance / Sécurité, Accessible PMR, Laverie, Garage à vélos, Parking | Exemples résidences : Village n°1 rénové (Talence); Résidence Clairefontaine 1 (Bordeaux); Le Général (Bordeaux); Les Lumières (Pessac); Le Patio (Dordogne) | Exemples restaurants : Resto U' Cap Sud (Pau, Restaurant); Crous Market' La Soucoupe (Talence, Restaurant); Crous Market' de l'ESTIA (Côte basque, épicerie); Crous Cafet' de l'IEP (Pessac, Cafétéria); Crous Market' du DUSA (Lot et Garonne, épicerie)"
+  },
+  {
+    "id": "crous_region:clermont-ferrand",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Clermont-Ferrand",
+    "region_slug": "clermont-ferrand",
+    "n_logements": 0,
+    "n_restos": 26,
+    "types_restos": {
+      "Restaurant": 15,
+      "Kiosque": 5,
+      "Cafétéria": 3,
+      "Libre-service": 1,
+      "Triporteur": 1,
+      "crous and go": 1
+    },
+    "zones_principales": [
+      "RDO - Centre-Ville",
+      "RCZ - Cezeaux",
+      "RMO - Montlucon",
+      "RAU - Aurillac"
+    ],
+    "services_logements_principaux": [],
+    "text": "Vie étudiante CROUS CROUS Clermont-Ferrand (logement + restauration universitaire) | Restaurants universitaires : 26 lieux totaux | Types principaux : Restaurant (15), Kiosque (5), Cafétéria (3), Libre-service (1), Triporteur (1) | Zones principales : RDO - Centre-Ville, RCZ - Cezeaux, RMO - Montlucon | Exemples restaurants : RESTO U' CLOS SAINT-JACQUES / DOLET (RDO - Centre-Ville, Restaurant); RESTO U'  LE CRATERE (RDO - Centre-Ville, Restaurant); RESTO U' LE MANEGE (RDO - Centre-Ville, Restaurant); KIOSQUE LEBON (RDO - Centre-Ville, Kiosque); CAFETERIA LA TERRASSE (RDO - Centre-Ville, Cafétéria)"
+  },
+  {
+    "id": "crous_region:corte",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Corte",
+    "region_slug": "corte",
+    "n_logements": 7,
+    "n_restos": 5,
+    "types_restos": {
+      "Cafétéria": 3,
+      "Restaurant": 2
+    },
+    "zones_principales": [
+      "Campus Grimaldi",
+      "Campus Mariani"
+    ],
+    "services_logements_principaux": [
+      "Parking",
+      "Surveillance / Sécurité",
+      "Internet / Wifi",
+      "Laverie",
+      "Accessible PMR"
+    ],
+    "text": "Vie étudiante CROUS CROUS Corte (logement + restauration universitaire) | Restaurants universitaires : 5 lieux totaux | Types principaux : Cafétéria (3), Restaurant (2) | Zones principales : Campus Grimaldi, Campus Mariani | Résidences universitaires : 7 logements répertoriés dans la région | Services principaux : Parking, Surveillance / Sécurité, Internet / Wifi, Laverie, Accessible PMR | Exemples résidences : Cristofanu Garelli (Campus Grimaldi); Logement T (Campus Grimaldi); Farrandu Ettori (Campus Grimaldi); Casamentu Pierrette Grimaldi (Campus Grimaldi); Cité Pascal Paoli II (Campus Mariani) | Exemples restaurants : Snacking Grimaldi U spuntinu (Campus Grimaldi, Cafétéria); Snaking Mariani (Campus Mariani, Cafétéria); RU Campus Grimaldi (Campus Grimaldi, Restaurant); Cafétéria I.U.T (Campus Grimaldi, Cafétéria); RU Campus Mariani (Campus Mariani, Restaurant)"
+  },
+  {
+    "id": "crous_region:creteil",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Créteil",
+    "region_slug": "creteil",
+    "n_logements": 18,
+    "n_restos": 46,
+    "types_restos": {
+      "Brasserie": 2,
+      "Cafétéria": 18,
+      "Restaurant": 16,
+      "Libre-service": 7,
+      "Foodtruck": 1,
+      "Coffee Corner": 2
+    },
+    "zones_principales": [
+      "Marne-la-Vallée",
+      "Créteil",
+      "Saint-Denis",
+      "Cachan",
+      "Villetaneuse"
+    ],
+    "services_logements_principaux": [
+      "Laverie",
+      "Parking",
+      "Internet / Wifi",
+      "Distribution protections périodiques",
+      "Logement adaptable"
+    ],
+    "text": "Vie étudiante CROUS CROUS Créteil (logement + restauration universitaire) | Restaurants universitaires : 46 lieux totaux | Types principaux : Cafétéria (18), Restaurant (16), Libre-service (7), Brasserie (2), Coffee Corner (2) | Zones principales : Marne-la-Vallée, Créteil, Saint-Denis | Résidences universitaires : 18 logements répertoriés dans la région | Services principaux : Laverie, Parking, Internet / Wifi, Distribution protections périodiques, Logement adaptable | Exemples résidences : Résidence Ilôt du Bel Air (Sénart); Campus de Cachan (Cachan); Résidence de Lieusaint (Sénart); Résidence du Pré-St-Gervais (Bobigny); Résidence Campus (Bobigny) | Exemples restaurants : La table de l'ESIEE (Marne-la-Vallée, Brasserie); Cafétéria de l'IUT de Montreuil (Montreuil, Cafétéria); RU ESIEE (Marne-la-Vallée, Restaurant); Libre-service Forum Express (Villetaneuse, Cafétéria); RU Arlequin Champs-sur-Marne (Marne-la-Vallée, Restaurant)"
+  },
+  {
+    "id": "crous_region:grenoble",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Grenoble",
+    "region_slug": "grenoble",
+    "n_logements": 4,
+    "n_restos": 56,
+    "types_restos": {
+      "Cafétéria": 22,
+      "Libre-service": 2,
+      "Foodtruck": 2,
+      "Restaurant": 16,
+      "Brasserie": 1,
+      "Restaurant agréé": 10,
+      "crous and go": 3
+    },
+    "zones_principales": [
+      "Saint Martin d'Heres",
+      "Grenoble Agglo",
+      "Annecy",
+      "Grenoble centre",
+      "Grenoble presqu'île"
+    ],
+    "services_logements_principaux": [
+      "Internet / Wifi",
+      "Distribution protections périodiques",
+      "Garage à vélos",
+      "Laverie",
+      "Salle de détente"
+    ],
+    "text": "Vie étudiante CROUS CROUS Grenoble (logement + restauration universitaire) | Restaurants universitaires : 56 lieux totaux | Types principaux : Cafétéria (22), Restaurant (16), Restaurant agréé (10), crous and go (3), Libre-service (2) | Zones principales : Saint Martin d'Heres, Grenoble Agglo, Annecy | Résidences universitaires : 4 logements répertoriés dans la région | Services principaux : Internet / Wifi, Distribution protections périodiques, Garage à vélos, Laverie, Salle de détente | Exemples résidences : Résidence Clacton-Tendring (Valence); Résidence des Moulins (Valence); Résidence Derodon (Valence); Résidence Latour-Maubourg (Valence) | Exemples restaurants : Cafétéria IUGA - Grenoble (Grenoble Agglo, Cafétéria); la K-Fet d'Arsonval - Grenoble (Grenoble centre, Cafétéria); Cafétéria Polygone - Grenoble (Grenoble presqu'île, Libre-service); Pizzéria Tutti Quanti - Saint-Martin-d'Hères (Saint Martin d'Heres, Cafétéria); Café Littéraire - Saint-Martin-d'Hères (Saint Martin d'Heres, Cafétéria)"
+  },
+  {
+    "id": "crous_region:lille",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Lille",
+    "region_slug": "lille",
+    "n_logements": 32,
+    "n_restos": 65,
+    "types_restos": {
+      "Brasserie": 1,
+      "Cafétéria": 35,
+      "Restaurant agréé": 4,
+      "Restaurant administratif": 1,
+      "Restaurant": 19,
+      "Coffee Corner": 1,
+      "Foodtruck": 2,
+      "Libre-service": 1,
+      "Space": 1
+    },
+    "zones_principales": [
+      "Villeneuve d'Ascq (Cité scientifique)",
+      "Villeneuve d'Ascq (Pont de bois)",
+      "Valenciennes (Domaine Universitaire)",
+      "Lens",
+      "Lille (Centre)"
+    ],
+    "services_logements_principaux": [
+      "Kitchenette individuelle",
+      "Internet / Wifi",
+      "Distribution protections périodiques",
+      "Parking",
+      "Laverie"
+    ],
+    "text": "Vie étudiante CROUS CROUS Lille (logement + restauration universitaire) | Restaurants universitaires : 65 lieux totaux | Types principaux : Cafétéria (35), Restaurant (19), Restaurant agréé (4), Foodtruck (2), Brasserie (1) | Zones principales : Villeneuve d'Ascq (Cité scientifique), Villeneuve d'Ascq (Pont de bois), Valenciennes (Domaine Universitaire) | Résidences universitaires : 32 logements répertoriés dans la région | Services principaux : Kitchenette individuelle, Internet / Wifi, Distribution protections périodiques, Parking, Laverie | Exemples résidences : Résidence de l'Artois (Arras); Résidence de la Citadelle (Arras); Résidence Gustave Ansart (Valenciennes (Domaine Universitaire)); Résidence Danrémont (Boulogne sur Mer); Résidence Saint-Roch (Cambrai) | Exemples restaurants : Class'Crous (Roubaix) (Roubaix, Brasserie); Cafétéria 3.14 (Villeneuve d'Ascq (Cité scientifique), Cafétéria); Cafétéria du R.U. Boulogne (Boulogne sur Mer, Cafétéria); Restaurant Lycée Sadi Carnot (Béthune, Restaurant agréé); Cafétéria Polie (Valenciennes (Domaine Universitaire), Cafétéria)"
+  },
+  {
+    "id": "crous_region:limoges",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Limoges",
+    "region_slug": "limoges",
+    "n_logements": 8,
+    "n_restos": 14,
+    "types_restos": {
+      "Cafétéria": 6,
+      "Restaurant": 5,
+      "Restaurant agréé": 3
+    },
+    "zones_principales": [
+      "Limoges (87)",
+      "Brive (19)",
+      "Egletons (19)"
+    ],
+    "services_logements_principaux": [
+      "Laverie",
+      "Salle TV",
+      "Internet / Wifi",
+      "Salle de travail",
+      "Garage à vélos"
+    ],
+    "text": "Vie étudiante CROUS CROUS Limoges (logement + restauration universitaire) | Restaurants universitaires : 14 lieux totaux | Types principaux : Cafétéria (6), Restaurant (5), Restaurant agréé (3) | Zones principales : Limoges (87), Brive (19), Egletons (19) | Résidences universitaires : 8 logements répertoriés dans la région | Services principaux : Laverie, Salle TV, Internet / Wifi, Salle de travail, Garage à vélos | Exemples résidences : Résidence Ester (Limoges (87)); Résidence La Borie (Limoges (87)); Résidence Egletons (Egletons (19)); Résidence Les hauts de Vanteaux (Limoges (87)); Résidence Brive (Brive (19)) | Exemples restaurants : KIOSQUE ENSIL (Limoges (87), Cafétéria); RU Thérèse Menot (Limoges (87), Restaurant); RU Brive (Brive (19), Restaurant); RU ENSIL (Limoges (87), Restaurant); RU La Borie (Limoges (87), Restaurant)"
+  },
+  {
+    "id": "crous_region:lyon",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Lyon",
+    "region_slug": "lyon",
+    "n_logements": 9,
+    "n_restos": 36,
+    "types_restos": {
+      "Cafétéria": 21,
+      "Restaurant": 12,
+      "Restaurant administratif": 1,
+      "Libre-service": 1,
+      "Kiosque": 1
+    },
+    "zones_principales": [
+      "Saint-Etienne",
+      "Lyon Tech-la Doua Villeurbanne",
+      "Porte des Alpes",
+      "Les Quais - Berges du Rhône",
+      "ENS-Gerland"
+    ],
+    "services_logements_principaux": [
+      "Internet / Wifi",
+      "Laverie",
+      "Accessible PMR",
+      "Garage à vélos",
+      "Distribution protections périodiques"
+    ],
+    "text": "Vie étudiante CROUS CROUS Lyon (logement + restauration universitaire) | Restaurants universitaires : 36 lieux totaux | Types principaux : Cafétéria (21), Restaurant (12), Restaurant administratif (1), Libre-service (1), Kiosque (1) | Zones principales : Saint-Etienne, Lyon Tech-la Doua Villeurbanne, Porte des Alpes | Résidences universitaires : 9 logements répertoriés dans la région | Services principaux : Internet / Wifi, Laverie, Accessible PMR, Garage à vélos, Distribution protections périodiques | Exemples résidences : Résidence Arches d'Agrippa (Lyon 5ème); Résidence Commandant Charcot (Lyon 5ème); Résidence André Allix (Lyon 5ème); Résidence Roanne (Roanne); Résidence Fort Saint-Irénée (Lyon 5ème) | Exemples restaurants : Cafétéria Médecine à Saint-Étienne (Saint-Etienne, Cafétéria); Cafétéria Filtre (Porte des Alpes, Cafétéria); Cafétéria Astrée (Lyon Tech-la Doua Villeurbanne, Cafétéria); Cafétéria Bistrot de Roanne (Roanne, Cafétéria); Cafétéria Carnot (Lyon 2ème, Cafétéria)"
+  },
+  {
+    "id": "crous_region:montpellier",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Montpellier",
+    "region_slug": "montpellier",
+    "n_logements": 41,
+    "n_restos": 36,
+    "types_restos": {
+      "Brasserie": 7,
+      "Cafétéria": 23,
+      "Restaurant": 6
+    },
+    "zones_principales": [
+      "Montpellier",
+      "Nîmes",
+      "Perpignan",
+      "Béziers",
+      "Narbonne"
+    ],
+    "services_logements_principaux": [
+      "Internet / Wifi",
+      "Laverie",
+      "Accessible PMR",
+      "Surveillance / Sécurité",
+      "Distribution protections périodiques"
+    ],
+    "text": "Vie étudiante CROUS CROUS Montpellier (logement + restauration universitaire) | Restaurants universitaires : 36 lieux totaux | Types principaux : Cafétéria (23), Brasserie (7), Restaurant (6) | Zones principales : Montpellier, Nîmes, Perpignan | Résidences universitaires : 41 logements répertoriés dans la région | Services principaux : Internet / Wifi, Laverie, Accessible PMR, Surveillance / Sécurité, Distribution protections périodiques | Exemples résidences : Vert-Bois (Cité universitaire) (Montpellier); Occitanie (Résidence universitaire) (Montpellier); Boutonnet (Cité universitaire) (Montpellier); Tramuntana (Résidence universitaire) (Perpignan); Triolet (Cité universitaire) (Montpellier) | Exemples restaurants : Brasserie Odontologie (Montpellier, Brasserie); Cafet' Boutonnet (Montpellier, Cafétéria); Brasserie Veyrassi (Montpellier, Brasserie); Resto U' Du Guesclin (Béziers, Restaurant); Cafet' Chimie (Montpellier, Cafétéria)"
+  },
+  {
+    "id": "crous_region:nancy-metz",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Nancy-Metz",
+    "region_slug": "nancy-metz",
+    "n_logements": 17,
+    "n_restos": 37,
+    "types_restos": {
+      "épicerie": 2,
+      "Restaurant": 17,
+      "Cafétéria": 13,
+      "Brasserie": 1,
+      "Kiosque": 1,
+      "Foodtruck": 2,
+      "Libre-service": 1
+    },
+    "zones_principales": [
+      "Nancy",
+      "Metz",
+      "Vandœuvre-lès-Nancy",
+      "Épinal",
+      "Yutz"
+    ],
+    "services_logements_principaux": [
+      "Internet / Wifi",
+      "Laverie",
+      "Surveillance / Sécurité",
+      "Distribution protections périodiques",
+      "Garage à vélos"
+    ],
+    "text": "Vie étudiante CROUS CROUS Nancy-Metz (logement + restauration universitaire) | Restaurants universitaires : 37 lieux totaux | Types principaux : Restaurant (17), Cafétéria (13), épicerie (2), Foodtruck (2), Brasserie (1) | Zones principales : Nancy, Metz, Vandœuvre-lès-Nancy | Résidences universitaires : 17 logements répertoriés dans la région | Services principaux : Internet / Wifi, Laverie, Surveillance / Sécurité, Distribution protections périodiques, Garage à vélos | Exemples résidences : Notre-Dame de Lourdes (Nancy); Saulcy (Metz); Monbois (Nancy); Jean Monnet (Longwy); Placieux (Villers-lès-Nancy) | Exemples restaurants : Market' Boudonville (Nancy, épicerie); (S)pace Brabois (Vandœuvre-lès-Nancy, Restaurant); Resto U' Cours Léopold (Nancy, Restaurant); Resto U' Médreville (Nancy, Restaurant); (S)pace Artem (Nancy, Restaurant)"
+  },
+  {
+    "id": "crous_region:nantes",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Nantes",
+    "region_slug": "nantes",
+    "n_logements": 45,
+    "n_restos": 60,
+    "types_restos": {
+      "Restaurant": 18,
+      "Cafétéria": 33,
+      "Foodtruck": 2,
+      "Restaurant agréé": 7
+    },
+    "zones_principales": [
+      "Nantes",
+      "Angers",
+      "Le Mans",
+      "Laval",
+      "La Roche-sur-Yon"
+    ],
+    "services_logements_principaux": [
+      "Internet / Wifi",
+      "Garage à vélos",
+      "Laverie",
+      "Accessible PMR",
+      "Kitchenette individuelle"
+    ],
+    "text": "Vie étudiante CROUS CROUS Nantes (logement + restauration universitaire) | Restaurants universitaires : 60 lieux totaux | Types principaux : Cafétéria (33), Restaurant (18), Restaurant agréé (7), Foodtruck (2) | Zones principales : Nantes, Angers, Le Mans | Résidences universitaires : 45 logements répertoriés dans la région | Services principaux : Internet / Wifi, Garage à vélos, Laverie, Accessible PMR, Kitchenette individuelle | Exemples résidences : Cité U' Casterneau (NANTES); Résidence de la réussite Wangari Maathaï (NANTES); Résidence U' Les Landes (NANTES); Résidence U' La Madeleine (ANGERS); Résidence U' Flora Tristan (ANGERS) | Exemples restaurants : Resto U' Vaurouzé (Le Mans, Restaurant); Cafet' Inspé (Nantes, Cafétéria); Cafet' Escale (Angers, Cafétéria); Cafet' École Centrale (Nantes, Cafétéria); Resto U' La Chantrerie (Nantes, Restaurant)"
+  },
+  {
+    "id": "crous_region:nice",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Nice",
+    "region_slug": "nice",
+    "n_logements": 20,
+    "n_restos": 22,
+    "types_restos": {
+      "Cafétéria": 12,
+      "Sandwicherie": 2,
+      "Restaurant": 7,
+      "Foodtruck": 1
+    },
+    "zones_principales": [
+      "Nice",
+      "Sophia-Antipolis",
+      "La Garde",
+      "Toulon",
+      "Cannes"
+    ],
+    "services_logements_principaux": [
+      "Internet / Wifi",
+      "Surveillance / Sécurité",
+      "Kitchenette individuelle",
+      "Garage à vélos",
+      "Laverie"
+    ],
+    "text": "Vie étudiante CROUS CROUS Nice (logement + restauration universitaire) | Restaurants universitaires : 22 lieux totaux | Types principaux : Cafétéria (12), Restaurant (7), Sandwicherie (2), Foodtruck (1) | Zones principales : Nice, Sophia-Antipolis, La Garde | Résidences universitaires : 20 logements répertoriés dans la région | Services principaux : Internet / Wifi, Surveillance / Sécurité, Kitchenette individuelle, Garage à vélos, Laverie | Exemples résidences : La Madeleine (Nice); Les Clémentines (Cannes); Montebello (Nice); Romain Gary (Nice); Saint Antoine (Nice) | Exemples restaurants : Cafétéria Lash (Nice, Cafétéria); Cafétéria Hélios (Sophia-Antipolis, Cafétéria); Sandwicherie Le P'tit Béal (La Garde, Sandwicherie); Resto U Carlone (Nice, Restaurant); Resto U Montebello (Nice, Restaurant)"
+  },
+  {
+    "id": "crous_region:normandie",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Normandie",
+    "region_slug": "normandie",
+    "n_logements": 25,
+    "n_restos": 56,
+    "types_restos": {
+      "Restaurant": 17,
+      "Restaurant agréé": 13,
+      "Cafétéria": 25,
+      "Brasserie": 1
+    },
+    "zones_principales": [
+      "Mont Saint Aignan",
+      "Le Havre",
+      "Rouen",
+      "Saint Etienne du Rouvray",
+      "Campus 2"
+    ],
+    "services_logements_principaux": [
+      "Laverie",
+      "Distribution protections périodiques",
+      "Internet / Wifi",
+      "Surveillance / Sécurité",
+      "Accessible PMR"
+    ],
+    "text": "Vie étudiante CROUS CROUS Normandie (logement + restauration universitaire) | Restaurants universitaires : 56 lieux totaux | Types principaux : Cafétéria (25), Restaurant (17), Restaurant agréé (13), Brasserie (1) | Zones principales : Mont Saint Aignan, Le Havre, Rouen | Résidences universitaires : 25 logements répertoriés dans la région | Services principaux : Laverie, Distribution protections périodiques, Internet / Wifi, Surveillance / Sécurité, Accessible PMR | Exemples résidences : Résidence Le Rouvray (secteur Rouen) (Saint Etienne du Rouvray); Résidence de l'Iton (secteur Evreux) (Evreux); Résidence du Bois site Athéna (secteur Rouen) (Mont Saint Aignan); Résidence A Docks (secteur Le Havre) (Le Havre); Résidence Lecesne (secteur du Havre) (Le Havre) | Exemples restaurants : Restaurant PANORAMA (Mont Saint Aignan, Restaurant); IFSI MAUBERT (Flers, Restaurant agréé); Brasserie PORTE OCEANE (Le Havre, Restaurant); Cafétéria IUT CAUCRIAUVILLE (Le Havre, Cafétéria); Cafétéria LEBON (Le Havre, Cafétéria)"
+  },
+  {
+    "id": "crous_region:orleans-tours",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Orléans-Tours",
+    "region_slug": "orleans-tours",
+    "n_logements": 35,
+    "n_restos": 35,
+    "types_restos": {
+      "Restaurant": 17,
+      "Cafétéria": 18
+    },
+    "zones_principales": [
+      "Orléans",
+      "Tours",
+      "Bourges",
+      "Blois",
+      "Châteauroux et Issoudun"
+    ],
+    "services_logements_principaux": [
+      "Internet / Wifi",
+      "Laverie",
+      "Garage à vélos",
+      "Accessible PMR",
+      "Salle de travail"
+    ],
+    "text": "Vie étudiante CROUS CROUS Orléans-Tours (logement + restauration universitaire) | Restaurants universitaires : 35 lieux totaux | Types principaux : Cafétéria (18), Restaurant (17) | Zones principales : Orléans, Tours, Bourges | Résidences universitaires : 35 logements répertoriés dans la région | Services principaux : Internet / Wifi, Laverie, Garage à vélos, Accessible PMR, Salle de travail | Exemples résidences : Christophe Colomb (Tours); Tonnellé (Tours); L'Hôtel Dieu (Bourges); Toussaint Desanti (Chartres); Rabelais (Tours) | Exemples restaurants : Cafétéria Forum (Orléans, Restaurant); La cafétéria (Blois, Cafétéria); La Gabare (Blois, Restaurant); RU Turly (Bourges, Restaurant); Le Flicoteaux (Chartres, Restaurant)"
+  },
+  {
+    "id": "crous_region:paris",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Paris",
+    "region_slug": "paris",
+    "n_logements": 68,
+    "n_restos": 76,
+    "types_restos": {
+      "Libre-service": 11,
+      "Restaurant": 24,
+      "Cafétéria": 39,
+      "Sandwicherie": 1,
+      "Restaurant administratif": 1
+    },
+    "zones_principales": [
+      "Paris 06",
+      "Paris 13",
+      "Paris 05",
+      "Paris 16",
+      "Paris 18"
+    ],
+    "services_logements_principaux": [
+      "Internet / Wifi",
+      "Surveillance / Sécurité",
+      "Interphone",
+      "Garage à vélos",
+      "Accessible PMR"
+    ],
+    "text": "Vie étudiante CROUS CROUS Paris (logement + restauration universitaire) | Restaurants universitaires : 76 lieux totaux | Types principaux : Cafétéria (39), Restaurant (24), Libre-service (11), Sandwicherie (1), Restaurant administratif (1) | Zones principales : Paris 06, Paris 13, Paris 05 | Résidences universitaires : 68 logements répertoriés dans la région | Services principaux : Internet / Wifi, Surveillance / Sécurité, Interphone, Garage à vélos, Accessible PMR | Exemples résidences : Résidence les Carmes (Paris 05); Résidence Mazet (Paris 06); Résidence Dareau (Paris 14); Résidence Saint-Jacques (Paris 14); Résidence Tombe Issoire (Paris 14) | Exemples restaurants : Libre-service Dauphine (Paris 16, Libre-service); RU Châtelet (Paris 05, Restaurant); Cafétéria Mines Paris-PSL (Paris 06, Cafétéria); Cafétéria snack Grands Moulins (Paris 13, Restaurant); RU de l'institut de Boulogne (Petite couronne, Restaurant)"
+  },
+  {
+    "id": "crous_region:poitiers",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Poitiers",
+    "region_slug": "poitiers",
+    "n_logements": 23,
+    "n_restos": 35,
+    "types_restos": {
+      "Brasserie": 3,
+      "Cafétéria": 10,
+      "Restaurant": 13,
+      "Sandwicherie": 1,
+      "Kiosque": 3,
+      "Restaurant administratif": 1,
+      "Libre-service": 3,
+      "Foodtruck": 1
+    },
+    "zones_principales": [
+      "Poitiers Campus",
+      "Poitiers Centre Ville",
+      "La Rochelle",
+      "Angoulême",
+      "Futuroscope"
+    ],
+    "services_logements_principaux": [
+      "Distribution protections périodiques",
+      "Internet / Wifi",
+      "Laverie",
+      "Parking",
+      "Accessible PMR"
+    ],
+    "text": "Vie étudiante CROUS CROUS Poitiers (logement + restauration universitaire) | Restaurants universitaires : 35 lieux totaux | Types principaux : Restaurant (13), Cafétéria (10), Brasserie (3), Kiosque (3), Libre-service (3) | Zones principales : Poitiers Campus, Poitiers Centre Ville, La Rochelle | Résidences universitaires : 23 logements répertoriés dans la région | Services principaux : Distribution protections périodiques, Internet / Wifi, Laverie, Parking, Accessible PMR | Exemples résidences : Cité Marie-Curie (Poitiers Centre Ville); Résidence Centre de vie (Futuroscope); Résidence Coureilles (La Rochelle); Résidence Jules Caisso (Poitiers Campus); Résidence Le Carrelet (La Rochelle) | Exemples restaurants : Le 1431 (Poitiers Centre Ville, Brasserie); Cafétéria Mini'Gem (Futuroscope, Cafétéria); Restaurant Sanital (Châtellerault, Restaurant); La Rochelle RU REPUBLIQUE VAE (La Rochelle, Cafétéria); Petit Roche (Poitiers Centre Ville, Sandwicherie)"
+  },
+  {
+    "id": "crous_region:reims",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Reims",
+    "region_slug": "reims",
+    "n_logements": 14,
+    "n_restos": 19,
+    "types_restos": {
+      "Restaurant": 11,
+      "Cafétéria": 7,
+      "Brasserie": 1
+    },
+    "zones_principales": [
+      "REIMS - Campus Sciences",
+      "TROYES - Campus",
+      "REIMS - Campus Lettres",
+      "TROYES - Centre",
+      "CHALONS - ENSAM"
+    ],
+    "services_logements_principaux": [
+      "Carte/badge d’accès",
+      "Accessible PMR",
+      "Internet / Wifi",
+      "Ascenseur",
+      "Garage à vélos"
+    ],
+    "text": "Vie étudiante CROUS CROUS Reims (logement + restauration universitaire) | Restaurants universitaires : 19 lieux totaux | Types principaux : Restaurant (11), Cafétéria (7), Brasserie (1) | Zones principales : REIMS - Campus Sciences, TROYES - Campus, REIMS - Campus Lettres | Résidences universitaires : 14 logements répertoriés dans la région | Services principaux : Carte/badge d’accès, Accessible PMR, Internet / Wifi, Ascenseur, Garage à vélos | Exemples résidences : Résidence Les Courtines (TROYES - Centre); Résidence Gérard Philipe (REIMS - Campus Sciences); Résidence Geoffroy de Villehardouin (Troyes - Campus); Résidence Le Faubourg (CHALONS - ENSAM); Résidence Les Facultés (REIMS - Campus Lettres) | Exemples restaurants : Resto U Les Lombards (TROYES - Campus, Restaurant); Resto U Jean-Charles Prost (REIMS - Campus Lettres, Restaurant); Resto U Moulin de la Housse (REIMS - Campus Sciences, Restaurant); Resto U INSPE de REIMS (REIMS - Campus Sciences, Restaurant); Resto U Paul Fort (REIMS - Campus Lettres, Restaurant)"
+  },
+  {
+    "id": "crous_region:rennes",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Rennes",
+    "region_slug": "rennes",
+    "n_logements": 31,
+    "n_restos": 43,
+    "types_restos": {
+      "Restaurant": 22,
+      "Cafétéria": 21
+    },
+    "zones_principales": [
+      "Rennes ouest-Villejean",
+      "Brest",
+      "Rennes est-Beaulieu",
+      "Rennes Centre",
+      "Vannes"
+    ],
+    "services_logements_principaux": [
+      "Accessible PMR",
+      "Internet / Wifi",
+      "Garage à vélos",
+      "Ascenseur",
+      "Laverie"
+    ],
+    "text": "Vie étudiante CROUS CROUS Rennes (logement + restauration universitaire) | Restaurants universitaires : 43 lieux totaux | Types principaux : Restaurant (22), Cafétéria (21) | Zones principales : Rennes ouest-Villejean, Brest, Rennes est-Beaulieu | Résidences universitaires : 31 logements répertoriés dans la région | Services principaux : Accessible PMR, Internet / Wifi, Garage à vélos, Ascenseur, Laverie | Exemples résidences : VILLEJEAN OUEST (Rennes ouest-Villejean); LA HARPE (Rennes ouest-Villejean); LANGUEDOC (Rennes ouest-Villejean); MICHEL DENIS (Rennes ouest-Villejean); LES VILLES DORÉES (Saint Brieuc) | Exemples restaurants : Resto U' INSA (Rennes est-Beaulieu, Restaurant); Resto U' Hoche (Rennes Centre, Restaurant); Resto U' le Métronome (Rennes ouest-Villejean, Restaurant); Resto U' l'Ereve (Rennes ouest-Villejean, Restaurant); Resto U' Mélénik (Rennes ouest-Villejean, Restaurant)"
+  },
+  {
+    "id": "crous_region:reunion",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Réunion",
+    "region_slug": "reunion",
+    "n_logements": 0,
+    "n_restos": 12,
+    "types_restos": {
+      "Restaurant": 9,
+      "Brasserie": 1,
+      "Cafétéria": 1,
+      "Restaurant géré": 1
+    },
+    "zones_principales": [
+      "Site nord",
+      "Site sud",
+      "Site Dembeni (Mayotte)"
+    ],
+    "services_logements_principaux": [],
+    "text": "Vie étudiante CROUS CROUS Réunion (logement + restauration universitaire) | Restaurants universitaires : 12 lieux totaux | Types principaux : Restaurant (9), Brasserie (1), Cafétéria (1), Restaurant géré (1) | Zones principales : Site nord, Site sud, Site Dembeni (Mayotte) | Exemples restaurants : RU Hippolyte Foucque (Site nord, Restaurant); RU le Bourbon Pittoresque (Site nord, Restaurant); RU le Jeanne Baret (Site nord, Brasserie); Cafétéria Le Croustillant (Site nord, Restaurant); Le Rapido (Site nord, Restaurant)"
+  },
+  {
+    "id": "crous_region:strasbourg",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Strasbourg",
+    "region_slug": "strasbourg",
+    "n_logements": 17,
+    "n_restos": 35,
+    "types_restos": {
+      "Restaurant": 8,
+      "crous and go": 6,
+      "Cafétéria": 11,
+      "Kiosque": 1,
+      "Brasserie": 1,
+      "Restaurant agréé": 8
+    },
+    "zones_principales": [
+      "Strasbourg",
+      "Mulhouse",
+      "Colmar"
+    ],
+    "services_logements_principaux": [
+      "Internet / Wifi",
+      "Garage à vélos",
+      "Laverie",
+      "Salle de travail",
+      "Surveillance / Sécurité"
+    ],
+    "text": "Vie étudiante CROUS CROUS Strasbourg (logement + restauration universitaire) | Restaurants universitaires : 35 lieux totaux | Types principaux : Cafétéria (11), Restaurant (8), Restaurant agréé (8), crous and go (6), Kiosque (1) | Zones principales : Strasbourg, Mulhouse, Colmar | Résidences universitaires : 17 logements répertoriés dans la région | Services principaux : Internet / Wifi, Garage à vélos, Laverie, Salle de travail, Surveillance / Sécurité | Exemples résidences : Résidence Les Héliotropes (Strasbourg); Cité U' Robertsau (Strasbourg); Résidence Alfred Weiss 1 (Strasbourg); Résidence Les Hauts de L’Illberg (Mulhouse); Résidence Les Cattleyas (Strasbourg) | Exemples restaurants : Resto U' Gallia (Strasbourg, Restaurant); Crous & Go Gallia (Strasbourg, crous and go); Crous & Go FST (Mulhouse, crous and go); Crous & Go ENSISA (Mulhouse, crous and go); Cafétéria Le Cardo (Strasbourg, Cafétéria)"
+  },
+  {
+    "id": "crous_region:toulouse",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Toulouse",
+    "region_slug": "toulouse",
+    "n_logements": 7,
+    "n_restos": 43,
+    "types_restos": {
+      "Restaurant": 17,
+      "Brasserie": 4,
+      "crous and go": 2,
+      "Cafétéria": 17,
+      "Foodtruck": 2,
+      "Libre-service": 1
+    },
+    "zones_principales": [
+      "Toulouse",
+      "Tarbes",
+      "Figeac",
+      "Auch",
+      "Albi"
+    ],
+    "services_logements_principaux": [
+      "Internet / Wifi",
+      "Parking",
+      "Laverie",
+      "Garage à vélos",
+      "Carte/badge d’accès"
+    ],
+    "text": "Vie étudiante CROUS CROUS Toulouse (logement + restauration universitaire) | Restaurants universitaires : 43 lieux totaux | Types principaux : Restaurant (17), Cafétéria (17), Brasserie (4), crous and go (2), Foodtruck (2) | Zones principales : Toulouse, Tarbes, Figeac | Résidences universitaires : 7 logements répertoriés dans la région | Services principaux : Internet / Wifi, Parking, Laverie, Garage à vélos, Carte/badge d’accès | Exemples résidences : Résidence Nobel (Albi); Résidence L'Astrolabe (Albi); Résidence Lapérouse (Albi); Résidence Françoise Sagan (Figeac); Résidence Simone Veil (Tarbes) | Exemples restaurants : Resto U' Arsenal (Toulouse, Restaurant); Brasserie L'esplanade (Toulouse, Brasserie); Brasserie Riquet (Toulouse, Brasserie); Crous & go' Le Canal (Toulouse, crous and go); Resto U' Le Célé (Figeac, Restaurant)"
+  },
+  {
+    "id": "crous_region:versailles",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "region_crous": "CROUS Versailles",
+    "region_slug": "versailles",
+    "n_logements": 27,
+    "n_restos": 66,
+    "types_restos": {
+      "Restaurant": 24,
+      "Cafétéria": 38,
+      "Brasserie": 4
+    },
+    "zones_principales": [
+      "ESSONNE",
+      "HAUTS DE SEINE",
+      "VAL D'OISE",
+      "YVELINES"
+    ],
+    "services_logements_principaux": [
+      "Laverie",
+      "Internet / Wifi",
+      "Surveillance / Sécurité",
+      "Salle de travail",
+      "Parking"
+    ],
+    "text": "Vie étudiante CROUS CROUS Versailles (logement + restauration universitaire) | Restaurants universitaires : 66 lieux totaux | Types principaux : Cafétéria (38), Restaurant (24), Brasserie (4) | Zones principales : ESSONNE, HAUTS DE SEINE, VAL D'OISE | Résidences universitaires : 27 logements répertoriés dans la région | Services principaux : Laverie, Internet / Wifi, Surveillance / Sécurité, Salle de travail, Parking | Exemples résidences : Résidence Les Châteaux St-Sylvère (VAL D'OISE); Résidence Les Chênes d’Or (VAL D'OISE); Résidence Le Dragueur (ESSONNE); Résidence Les Aunettes (ESSONNE); Résidence Jacqueline de Romilly (YVELINES) | Exemples restaurants : RU Les États-Unis (YVELINES, Restaurant); Cafétéria Descartes (YVELINES, Cafétéria); RU Vauban (YVELINES, Restaurant); RU Les Aviateurs (YVELINES, Restaurant); Cafétéria Le Tropical (ESSONNE, Cafétéria)"
+  },
+  {
+    "id": "crous_ville:montpellier",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Montpellier",
+    "region": "Occitanie",
+    "n_residences": 29,
+    "services_principaux": [
+      "Internet / Wifi",
+      "Laverie",
+      "Accessible PMR",
+      "Distribution protections périodiques",
+      "Surveillance / Sécurité",
+      "Logement adaptable",
+      "Distributeur boissons confiseries"
+    ],
+    "text": "Logements étudiants CROUS à Montpellier | Région : Occitanie | Nombre de résidences : 29 | Services principaux : Internet / Wifi, Laverie, Accessible PMR, Distribution protections périodiques, Surveillance / Sécurité, Logement adaptable, Distributeur boissons confiseries | Exemples résidences : Vert-Bois (Cité universitaire); Occitanie (Résidence universitaire); Boutonnet (Cité universitaire); Triolet (Cité universitaire); Les Arceaux (Résidence universitaire)"
+  },
+  {
+    "id": "crous_ville:nantes",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "NANTES",
+    "region": "Pays de la Loire",
+    "n_residences": 21,
+    "services_principaux": [
+      "Internet / Wifi",
+      "Garage à vélos",
+      "Laverie",
+      "Kitchenette individuelle",
+      "Accessible PMR",
+      "Surveillance / Sécurité",
+      "Parking"
+    ],
+    "text": "Logements étudiants CROUS à NANTES | Région : Pays de la Loire | Nombre de résidences : 21 | Services principaux : Internet / Wifi, Garage à vélos, Laverie, Kitchenette individuelle, Accessible PMR, Surveillance / Sécurité, Parking | Exemples résidences : Cité U' Casterneau; Résidence de la réussite Wangari Maathaï; Résidence U' Les Landes; Résidence U' Central Green; Cité U' La Bourgeonnière"
+  },
+  {
+    "id": "crous_ville:paris-18",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Paris 18",
+    "region": "Île-de-France",
+    "n_residences": 19,
+    "services_principaux": [
+      "Internet / Wifi",
+      "Surveillance / Sécurité",
+      "Interphone",
+      "Accessible PMR",
+      "Garage à vélos",
+      "Kitchenette individuelle",
+      "Ascenseur"
+    ],
+    "text": "Logements étudiants CROUS à Paris 18 | Région : Île-de-France | Nombre de résidences : 19 | Services principaux : Internet / Wifi, Surveillance / Sécurité, Interphone, Accessible PMR, Garage à vélos, Kitchenette individuelle, Ascenseur | Exemples résidences : Résidence Pajol 1; Résidence Francis de Croisset; Résidence Philippe de Girard 2; Résidence Pajol 2; Résidence Philippe de Girard 3"
+  },
+  {
+    "id": "crous_ville:angers",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "ANGERS",
+    "region": "Pays de la Loire",
+    "n_residences": 17,
+    "services_principaux": [
+      "Internet / Wifi",
+      "Garage à vélos",
+      "Accessible PMR",
+      "Distribution protections périodiques",
+      "Kitchenette individuelle",
+      "Laverie",
+      "Parking PMR"
+    ],
+    "text": "Logements étudiants CROUS à ANGERS | Région : Pays de la Loire | Nombre de résidences : 17 | Services principaux : Internet / Wifi, Garage à vélos, Accessible PMR, Distribution protections périodiques, Kitchenette individuelle, Laverie, Parking PMR | Exemples résidences : Résidence U' La Madeleine; Résidence U' Flora Tristan; Cité U' Couffon Pavot; Cité U' Belle Beille; Résidence U' La Dauversière 2"
+  },
+  {
+    "id": "crous_ville:toulouse-sud-est",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Toulouse sud-est",
+    "region": "Occitanie",
+    "n_residences": 17,
+    "services_principaux": [
+      "Garage à vélos",
+      "Internet / Wifi",
+      "Carte/badge d’accès",
+      "Veilleurs de nuit",
+      "Parking",
+      "Ascenseur",
+      "Laverie"
+    ],
+    "text": "Logements étudiants CROUS à Toulouse sud-est | Région : Occitanie | Nombre de résidences : 17 | Services principaux : Garage à vélos, Internet / Wifi, Carte/badge d’accès, Veilleurs de nuit, Parking, Ascenseur, Laverie | Exemples résidences : Résidence Paul Voivenel 2; Résidence Parc Bellevue; Résidence Jacqueline Auriol; Résidence Clément Ader; Résidence At'ome"
+  },
+  {
+    "id": "crous_ville:marseille",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Marseille",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "n_residences": 15,
+    "services_principaux": [
+      "Laverie",
+      "Surveillance / Sécurité",
+      "Parking",
+      "Salle de travail",
+      "Accessible PMR",
+      "Parking PMR",
+      "Internet / Wifi"
+    ],
+    "text": "Logements étudiants CROUS à Marseille | Région : Provence-Alpes-Côte d'Azur | Nombre de résidences : 15 | Services principaux : Laverie, Surveillance / Sécurité, Parking, Salle de travail, Accessible PMR, Parking PMR, Internet / Wifi | Exemples résidences : Cité U Gaston Berger; Résidence Les Balustres; Résidence Canada; Résidence Madagascar; Résidence Lucien Cornil"
+  },
+  {
+    "id": "crous_ville:aix-en-provence",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Aix-en-Provence",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "n_residences": 15,
+    "services_principaux": [
+      "Parking",
+      "Surveillance / Sécurité",
+      "Accessible PMR",
+      "Parking PMR",
+      "Laverie",
+      "Salle de travail",
+      "Restauration sur place"
+    ],
+    "text": "Logements étudiants CROUS à Aix-en-Provence | Région : Provence-Alpes-Côte d'Azur | Nombre de résidences : 15 | Services principaux : Parking, Surveillance / Sécurité, Accessible PMR, Parking PMR, Laverie, Salle de travail, Restauration sur place | Exemples résidences : Résidence Li Passeroun; Résidence Les Fenouillères; Résidence Les Abeilles; Cité U Arc de Meyran; Résidence La Verdière"
+  },
+  {
+    "id": "crous_ville:paris-13",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Paris 13",
+    "region": "Île-de-France",
+    "n_residences": 14,
+    "services_principaux": [
+      "Internet / Wifi",
+      "Accessible PMR",
+      "Surveillance / Sécurité",
+      "Garage à vélos",
+      "Laverie",
+      "Salle de détente",
+      "Interphone"
+    ],
+    "text": "Logements étudiants CROUS à Paris 13 | Région : Île-de-France | Nombre de résidences : 14 | Services principaux : Internet / Wifi, Accessible PMR, Surveillance / Sécurité, Garage à vélos, Laverie, Salle de détente, Interphone | Exemples résidences : Résidence Nicole Reine Lepaute; Résidence Pitié-Salpêtrière; Résidence Chevaleret; Résidence Daviel; Résidence Amiral Mouchez"
+  },
+  {
+    "id": "crous_ville:strasbourg",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Strasbourg",
+    "region": "Grand Est",
+    "n_residences": 13,
+    "services_principaux": [
+      "Internet / Wifi",
+      "Garage à vélos",
+      "Laverie",
+      "Salle de détente",
+      "Salle polyvalente",
+      "Salle de travail",
+      "Salle de sport"
+    ],
+    "text": "Logements étudiants CROUS à Strasbourg | Région : Grand Est | Nombre de résidences : 13 | Services principaux : Internet / Wifi, Garage à vélos, Laverie, Salle de détente, Salle polyvalente, Salle de travail, Salle de sport | Exemples résidences : Résidence Les Héliotropes; Cité U' Robertsau; Résidence Alfred Weiss 1; Résidence Les Cattleyas; Résidence du Bruckhof"
+  },
+  {
+    "id": "crous_ville:bordeaux",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Bordeaux",
+    "region": "Nouvelle-Aquitaine",
+    "n_residences": 13,
+    "services_principaux": [
+      "Surveillance / Sécurité",
+      "Garage à vélos",
+      "Laverie",
+      "Accessible PMR",
+      "Salle de travail",
+      "Parking"
+    ],
+    "text": "Logements étudiants CROUS à Bordeaux | Région : Nouvelle-Aquitaine | Nombre de résidences : 13 | Services principaux : Surveillance / Sécurité, Garage à vélos, Laverie, Accessible PMR, Salle de travail, Parking | Exemples résidences : Résidence Clairefontaine 1; Le Général; Jean Anouilh; Léo Drouyn; Tauzin"
+  },
+  {
+    "id": "crous_ville:pessac",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Pessac",
+    "region": "Nouvelle-Aquitaine",
+    "n_residences": 13,
+    "services_principaux": [
+      "Laverie",
+      "Surveillance / Sécurité",
+      "Accessible PMR",
+      "Restauration sur place",
+      "Garage à vélos",
+      "Salle de détente",
+      "Parking"
+    ],
+    "text": "Logements étudiants CROUS à Pessac | Région : Nouvelle-Aquitaine | Nombre de résidences : 13 | Services principaux : Laverie, Surveillance / Sécurité, Accessible PMR, Restauration sur place, Garage à vélos, Salle de détente, Parking | Exemples résidences : Les Lumières; Pierre-Gilles de Gennes; Village n°3; Village n°2 rénové; Village n°5 rénové"
+  },
+  {
+    "id": "crous_ville:tours",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Tours",
+    "region": "Centre-Val de Loire",
+    "n_residences": 12,
+    "services_principaux": [
+      "Internet / Wifi",
+      "Laverie",
+      "Garage à vélos",
+      "Surveillance / Sécurité",
+      "Salle de travail",
+      "Accessible PMR",
+      "Salle TV"
+    ],
+    "text": "Logements étudiants CROUS à Tours | Région : Centre-Val de Loire | Nombre de résidences : 12 | Services principaux : Internet / Wifi, Laverie, Garage à vélos, Surveillance / Sécurité, Salle de travail, Accessible PMR, Salle TV | Exemples résidences : Christophe Colomb; Tonnellé; Rabelais; Sanitas; Grandmont"
+  }
+]

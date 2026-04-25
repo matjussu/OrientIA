@@ -1,0 +1,231 @@
+{
+  "idx_global": 1,
+  "persona_id": "lila",
+  "persona_description": "Lila, 17 ans, Terminale L indécise (scope initial)",
+  "scope": "initial",
+  "query_id": "q1",
+  "query_type": "factuelle",
+  "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+  "elapsed_gen_s": 14.94,
+  "elapsed_fact_check_s": 5.49,
+  "answer_raw": "**TL;DR**\n1. Une licence de lettres modernes ouvre à des métiers variés, mais **peu sont directs** : la majorité des diplômés poursuivent en master (60-70% — connaissance générale) pour se spécialiser.\n2. **Salaire médian à 12 mois** : ~1 720-1 790€ net/mois (sources InserSup DEPP, cohortes 2024).\n3. **3 voies principales** : enseignement (le plus stable), culture/médias (le plus compétitif), ou reconversion via des passerelles (ex : communication, documentation).\n\n---\n\n### **Plan A — Enseignement & Recherche (débouchés stables, concours obligatoires)**\n📍 **Devenir professeur de lettres** (collège/lycée) :\n- **Après la licence** : master MEEF (1 an) + concours CAPES (taux de réussite ~30% — connaissance générale).\n- **Salaire** : ~2 000€ net/mois en début de carrière (grille Éducation nationale).\n- **Pour toi** : si tu aimes transmettre et acceptes la préparation concours.\n- **Exemple de parcours** : [Licence Lettres Modernes Sorbonne](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9286&typeBac=0&originePc=0) → Master MEEF Paris.\n\n📍 **Recherche/Université** (plus long) :\n- **Après la licence** : master recherche → thèse (5 ans) → enseignant-chercheur (maître de conférences).\n- **Salaire** : ~2 200€ net/mois après thèse (source : grilles MESRI).\n- **Pour toi** : si tu vises l’expertise littéraire (ex : spécialiste du XVIIIe siècle).\n\n---\n\n### **Plan B — Culture, Médias & Édition (débouchés compétitifs, réseaux cruciaux)**\n*(connaissance générale — métiers typiques mais non couverts par les fiches InserSup)*\n- **Métiers** :\n  - **Édition** : assistant éditorial, correcteur (salaire débutant : ~1 600-1 900€ net — connaissance générale).\n  - **Journalisme culturel** : pigiste → rédacteur (concours écoles de journalisme ou master pro).\n  - **Médiation culturelle** : bibliothèques, musées (concours territorial ou master métiers du livre).\n- **Pour toi** : si tu es mobile (Paris/Ile-de-France concentre 70% des emplois culture — connaissance générale) et prêt·e à multiplier stages/réseaux.\n- **Exemple** : [Licence Lettres Modernes Lille](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7068&typeBac=0&originePc=0) + master pro Édition (ex : Paris-Nanterre).\n\n---\n### **Plan C — Passerelles vers d’autres secteurs (reconversion avec +1 an de formation)**\n*(connaissance générale — formations complémentaires courantes après lettres)*\n- **Communication** :\n  - **Formation** : master pro communication (ex : CELSA, IUT) ou école spécialisée (admission sur dossier).\n  - **Débouchés** : chargé·e de communication, community manager (salaire : ~1 800-2 200€ net — connaissance générale).\n- **Documentation/Bibliothèques** :\n  - **Formation** : DU ou licence pro métiers du livre (ex : [Licence Pro Métiers du Livre — Bordeaux Montaigne](https://www.u-bordeaux-montaigne.fr/)).\n  - **Débouchés** : bibliothécaire territorial (concours catégorie B).\n- **Formation pour adultes** :\n  - **Exemple** : devenir formateur en français (AFPA, GRETA) après une expérience pro.\n\n---\n### **⚠ Attention aux pièges**\n- **Salaire** : les métiers \"passion\" (édition, journalisme) paient souvent **en dessous de la moyenne nationale** (salaire médian lettres : ~1 750€ net vs ~2 000€ tous diplômés confondus — connaissance générale).\n- **Concours obligatoires** : enseignement et fonction publique (bibliothèques) exigent la réussite à un concours — **prévois 1-2 ans de préparation**.\n- **Réseau indispensable** : 60% des emplois en culture/médias se trouvent via **cooptation** (stages, rencontres pro — connaissance générale).\n\n---\n**Question pour toi** :\nQu’est-ce qui te motive le plus dans les lettres modernes ?\n- **Transmettre** (enseignement) ?\n- **Créer/analyser** (édition, recherche) ?\n- **Travailler avec du public** (médiation, bibliothèques) ?\n*(Ta réponse aidera à affiner entre Plan A, B ou C.)*\n\n---\n**👤 Pour aller plus loin** :\nUn·e conseiller·ère d’orientation (Psy-EN ou CIO) peut t’aider à identifier les **compétences transférables** de ta licence (rédaction, analyse, synthèse) pour cibler des métiers hybrides (ex : chargé·e de projet culturel, rédacteur·trice technique).",
+  "answer_annotated": "**TL;DR**\n1. Une licence de lettres modernes ouvre à des métiers variés, mais **peu sont directs** : la majorité des diplômés poursuivent en master (60-70% — connaissance générale) pour se spécialiser.\n2. **Salaire médian à 12 mois** : ~1 720-1 790€ net/mois (sources InserSup DEPP, cohortes 2024).\n3. **3 voies principales** : enseignement (le plus stable), culture/médias (le plus compétitif), ou reconversion via des passerelles (ex : communication, documentation).\n\n---\n\n### **Plan A — Enseignement & Recherche (débouchés stables, concours obligatoires)**\n📍 **Devenir professeur de lettres** (collège/lycée) :\n- **Après la licence** : master MEEF (1 an) + concours CAPES (taux de réussite ~30% — connaissance générale).\n- **Salaire** : ~2 000€ net/mois en début de carrière (grille Éducation nationale).\n- **Pour toi** : si tu aimes transmettre et acceptes la préparation concours.\n- **Exemple de parcours** : [Licence Lettres Modernes Sorbonne](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9286&typeBac=0&originePc=0) → Master MEEF Paris.\n\n📍 **Recherche/Université** (plus long) :\n- **Après la licence** : master recherche → thèse (5 ans) → enseignant-chercheur (maître de conférences).\n- **Salaire** : ~2 200€ net/mois après thèse (source : grilles MESRI).\n- **Pour toi** : si tu vises l’expertise littéraire (ex : spécialiste du XVIIIe siècle).\n\n---\n\n### **Plan B — Culture, Médias & Édition (débouchés compétitifs, réseaux cruciaux)**\n*(connaissance générale — métiers typiques mais non couverts par les fiches InserSup)*\n- **Métiers** :\n  - **Édition** : assistant éditorial, correcteur (salaire débutant : ~1 600-1 900€ net — connaissance générale).\n  - **Journalisme culturel** : pigiste → rédacteur (concours écoles de journalisme ou master pro).\n  - **Médiation culturelle** : bibliothèques, musées (concours territorial ou master métiers du livre).\n- **Pour toi** : si tu es mobile (Paris/Ile-de-France concentre 70% des emplois culture — connaissance générale) et prêt·e à multiplier stages/réseaux.\n- **Exemple** : [Licence Lettres Modernes Lille](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7068&typeBac=0&originePc=0) + master pro Édition (ex : Paris-Nanterre).\n\n---\n### **Plan C — Passerelles vers d’autres secteurs (reconversion avec +1 an de formation)**\n*(connaissance générale — formations complémentaires courantes après lettres)*\n- **Communication** :\n  - **Formation** : master pro communication (ex : CELSA, IUT) ou école spécialisée (admission sur dossier).\n  - **Débouchés** : chargé·e de communication, community manager (salaire : ~1 800-2 200€ net — connaissance générale).\n- **Documentation/Bibliothèques** :\n  - **Formation** : DU ou licence pro métiers du livre (ex : [Licence Pro Métiers du Livre — Bordeaux Montaigne](https://www.u-bordeaux-montaigne.fr/)).\n  - **Débouchés** : bibliothécaire territorial (concours catégorie B).\n- **Formation pour adultes** :\n  - **Exemple** : devenir formateur en français (AFPA, GRETA) après une expérience pro.\n\n---\n### **⚠ Attention aux pièges**\n- **Salaire** : les métiers \"passion\" (édition, journalisme) paient souvent **en dessous de la moyenne nationale** (salaire médian lettres : ~1 750€ net vs ~2 000€ tous diplômés confondus — connaissance générale).\n- **Concours obligatoires** : enseignement et fonction publique (bibliothèques) exigent la réussite à un concours — **prévois 1-2 ans de préparation**.\n- **Réseau indispensable** : 60% des emplois en culture/médias se trouvent via **cooptation** (stages, rencontres pro — connaissance générale).\n\n---\n**Question pour toi** :\nQu’est-ce qui te motive le plus dans les lettres modernes ?\n- **Transmettre** (enseignement) ?\n- **Créer/analyser** (édition, recherche) ?\n- **Travailler avec du public** (médiation, bibliothèques) ?\n*(Ta réponse aidera à affiner entre Plan A, B ou C.)*\n\n---\n**👤 Pour aller plus loin** :\nUn·e conseiller·ère d’orientation (Psy-EN ou CIO) peut t’aider à identifier les **compétences transférables** de ta licence (rédaction, analyse, synthèse) pour cibler des métiers hybrides (ex : chargé·e de projet culturel, rédacteur·trice technique).",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 5,
+    "n_with_disclaimer": 8,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "60-70%",
+      "stat_value": 65,
+      "stat_unit": "%",
+      "context_in_response": "la majorité des diplômés poursuivent en master",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~1 720-1 790€ net/mois",
+      "stat_value": 1755,
+      "stat_unit": "€ net/mois",
+      "context_in_response": "Salaire médian à 12 mois",
+      "verdict": "verified",
+      "source_fiche_excerpt": "salaire_median_embauche\": 1740"
+    },
+    {
+      "stat_text": "~30%",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "taux de réussite au concours CAPES",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~2 000€ net/mois",
+      "stat_value": 2000,
+      "stat_unit": "€ net/mois",
+      "context_in_response": "Salaire en début de carrière pour professeur de lettres",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~2 200€ net/mois",
+      "stat_value": 2200,
+      "stat_unit": "€ net/mois",
+      "context_in_response": "Salaire après thèse pour enseignant-chercheur",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~1 600-1 900€ net",
+      "stat_value": 1750,
+      "stat_unit": "€ net",
+      "context_in_response": "salaire débutant en édition (assistant éditorial, correcteur)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "70%",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context_in_response": "Paris/Ile-de-France concentre 70% des emplois culture",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~1 800-2 200€ net",
+      "stat_value": 2000,
+      "stat_unit": "€ net",
+      "context_in_response": "salaire pour chargé·e de communication ou community manager",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~1 750€ net",
+      "stat_value": 1750,
+      "stat_unit": "€ net",
+      "context_in_response": "salaire médian lettres vs ~2 000€ tous diplômés confondus",
+      "verdict": "verified",
+      "source_fiche_excerpt": "salaire_median_embauche\": 1740"
+    },
+    {
+      "stat_text": "60%",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context_in_response": "60% des emplois en culture/médias se trouvent via cooptation",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context_in_response": "taux_emploi_3ans pour licence lettres modernes",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_emploi_3ans\": 0.86"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context_in_response": "taux_emploi_6ans pour licence lettres modernes",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_emploi_6ans\": 0.91"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context_in_response": "taux_cdi pour licence lettres modernes",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_cdi\": 0.83"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.146,
+      "nom": "Licence - Lettres - Parcours LETTRES MODERNES",
+      "etablissement": "Sorbonne université",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1376,
+      "nom": "Licence - Lettres - Parcours  Lettres modernes",
+      "etablissement": "Université de Lille",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1268,
+      "nom": "Licence - Lettres - Parcours Lettres modernes",
+      "etablissement": "Université Bourgogne Europe (ex université de Bourgogne)",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1266,
+      "nom": "Licence - Lettres - Parcours Lettres Modernes",
+      "etablissement": "Université de Cergy-Pontoise - CY SUP",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1234,
+      "nom": "Licence - Lettres - Parcours Lettres modernes",
+      "etablissement": "Université Gustave Eiffel",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.122,
+      "nom": "Licence - Lettres - Parcours Lettres Modernes",
+      "etablissement": "Université de Mulhouse",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1218,
+      "nom": "Licence - Lettres - Parcours Lettres Modernes",
+      "etablissement": "Université Grenoble Alpes",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1215,
+      "nom": "Licence - Lettres - Parcours Lettres modernes",
+      "etablissement": "Université Marie et Louis Pasteur - Université de Franche-Comté",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1209,
+      "nom": "Licence - Lettres - Parcours Lettres modernes",
+      "etablissement": "Université Grenoble Alpes - Antenne de Valence",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1175,
+      "nom": "Licence - Lettres - Parcours Lettres modernes - Entièrement en distanciel",
+      "etablissement": "Université de Caen Normandie",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    }
+  ]
+}

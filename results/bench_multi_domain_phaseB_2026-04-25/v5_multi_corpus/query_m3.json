@@ -1,0 +1,150 @@
+{
+  "id": "m3",
+  "domain_target": "metier",
+  "difficulty": "ambigu",
+  "query_text": "Quelle est la différence concrète entre le métier d'ingénieur mathématicien et celui d'actuaire ?",
+  "elapsed_gen_s": 11.57,
+  "elapsed_fact_check_s": 6.6,
+  "answer_raw": "**TL;DR**\n1. **Ingénieur mathématicien** : applique les maths avancées à des problèmes techniques (simulations, IA, cryptographie, modélisation industrielle).\n2. **Actuaire** : spécialiste des risques financiers (assurances, retraites, marchés) via des modèles statistiques et probabilistes.\n3. **Différence clé** : l’un conçoit des outils/systèmes (ingénierie), l’autre évalue des risques pour des décisions économiques.\n\n---\n\n### **Plan A — Ingénieur mathématicien : modélisation et innovation technique**\n**Missions** (connaissance générale) :\n- Développer des algorithmes pour l’IA, la cryptographie, ou la simulation physique (ex : aéronautique, énergie).\n- Travailler en R&D dans des secteurs tech (data science, cybersécurité, robotique) ou industriels (automobile, aérospatial).\n- **Exemple concret** : optimiser un moteur de recommandation (Netflix, Amazon) ou modéliser la propagation d’une épidémie.\n\n**Environnement** :\n- Entreprises : startups tech, grands groupes (Thales, Airbus, CEA), laboratoires de recherche.\n- **Salaire** : ~35-50k€ brut/an en début de carrière (estimation marché, connaissance générale).\n\n---\n\n### **Plan B — Actuaire : gestion des risques et finance**\n**Missions** (connaissance générale) :\n- Calculer des primes d’assurance, évaluer la solvabilité des fonds de pension, ou modéliser l’impact d’une crise économique.\n- Travailler pour des assureurs (AXA, Allianz), des banques, ou des organismes publics (Sécurité Sociale, retraites).\n- **Exemple concret** : déterminer le coût d’une assurance contre les cyberattaques pour une entreprise.\n\n**Environnement** :\n- Secteurs : assurance (70% des débouchés), finance, conseil.\n- **Salaire** : ~38-55k€ brut/an (les actuaires seniors en finance peuvent dépasser 70k€ — connaissance générale).\n- **Spécificité** : métier très réglementé (normes Solvabilité II, IFRS 17), avec des certifications obligatoires (ex : Institut des Actuaires).\n\n---\n\n### **Plan C — Passerelles et formations communes**\n**Points communs** :\n- **Compétences** : probabilités, statistiques, programmation (Python, R, SQL).\n- **Formations** : masters en maths appliquées, data science, ou écoles d’ingénieurs avec spécialisation (ex : [Master Actuariat de Rouen](https://www.univ-rouen.fr/formation/actuariat-et-ingenierie-mathematique-pour-l-assurance-et-la-finance) — source : ONISEP FOR.3).\n\n**Différences majeures** :\n| Critère               | Ingénieur mathématicien               | Actuaire                          |\n|-----------------------|---------------------------------------|-----------------------------------|\n| **Secteur**           | Tech, industrie, recherche            | Assurance, finance, conseil       |\n| **Réglementation**    | Peu (sauf secteurs comme la santé)   | Forte (certifications obligatoires) |\n| **Outils**            | Simulations, IA, calcul haute performance | Modèles financiers, bases de données clients |\n| **Impact sociétal**   | Innovation produit (ex : voiture autonome) | Protection économique (ex : retraites) |\n\n---\n\n### **⚠ Attention aux pièges**\n- **Marketing des formations** : certaines écoles privées mélangent \"data science\" et \"actuariat\" sans débouchés clairs. Vérifie les **labels** (grade Master pour les publics, accréditation CGE pour les privés) et les **taux d’insertion** (ex : [Master de Marne-la-Vallée](https://www.univ-gustave-eiffel.fr/formation/actuariat) — source : ONISEP FOR.4).\n- **Salaire vs charge mentale** : les actuaires en assurance ont des salaires attractifs, mais subissent une pression réglementaire forte (audits, rapports légaux).\n\n---\n**Question pour toi** :\nPréfères-tu **créer des outils techniques** (ingénierie) ou **garantir la stabilité économique** (finance/assurance) ? Et es-tu prêt·e à passer des certifications professionnelles (actuariat) ou à te former en continu sur des technologies émergentes (ingénierie) ?",
+  "answer_annotated": "**TL;DR**\n1. **Ingénieur mathématicien** : applique les maths avancées à des problèmes techniques (simulations, IA, cryptographie, modélisation industrielle).\n2. **Actuaire** : spécialiste des risques financiers (assurances, retraites, marchés) via des modèles statistiques et probabilistes.\n3. **Différence clé** : l’un conçoit des outils/systèmes (ingénierie), l’autre évalue des risques pour des décisions économiques.\n\n---\n\n### **Plan A — Ingénieur mathématicien : modélisation et innovation technique**\n**Missions** (connaissance générale) :\n- Développer des algorithmes pour l’IA, la cryptographie, ou la simulation physique (ex : aéronautique, énergie).\n- Travailler en R&D dans des secteurs tech (data science, cybersécurité, robotique) ou industriels (automobile, aérospatial).\n- **Exemple concret** : optimiser un moteur de recommandation (Netflix, Amazon) ou modéliser la propagation d’une épidémie.\n\n**Environnement** :\n- Entreprises : startups tech, grands groupes (Thales, Airbus, CEA), laboratoires de recherche.\n- **Salaire** : ~35-50k€ brut/an en début de carrière (estimation marché, connaissance générale).\n\n---\n\n### **Plan B — Actuaire : gestion des risques et finance**\n**Missions** (connaissance générale) :\n- Calculer des primes d’assurance, évaluer la solvabilité des fonds de pension, ou modéliser l’impact d’une crise économique.\n- Travailler pour des assureurs (AXA, Allianz), des banques, ou des organismes publics (Sécurité Sociale, retraites).\n- **Exemple concret** : déterminer le coût d’une assurance contre les cyberattaques pour une entreprise.\n\n**Environnement** :\n- Secteurs : assurance (70% des débouchés), finance, conseil.\n- **Salaire** : ~38-55k€ brut/an (les actuaires seniors en finance peuvent dépasser 70k€ — connaissance générale).\n- **Spécificité** : métier très réglementé (normes Solvabilité II, IFRS 17), avec des certifications obligatoires (ex : Institut des Actuaires).\n\n---\n\n### **Plan C — Passerelles et formations communes**\n**Points communs** :\n- **Compétences** : probabilités, statistiques, programmation (Python, R, SQL).\n- **Formations** : masters en maths appliquées, data science, ou écoles d’ingénieurs avec spécialisation (ex : [Master Actuariat de Rouen](https://www.univ-rouen.fr/formation/actuariat-et-ingenierie-mathematique-pour-l-assurance-et-la-finance) — source : ONISEP FOR.3).\n\n**Différences majeures** :\n| Critère               | Ingénieur mathématicien               | Actuaire                          |\n|-----------------------|---------------------------------------|-----------------------------------|\n| **Secteur**           | Tech, industrie, recherche            | Assurance, finance, conseil       |\n| **Réglementation**    | Peu (sauf secteurs comme la santé)   | Forte (certifications obligatoires) |\n| **Outils**            | Simulations, IA, calcul haute performance | Modèles financiers, bases de données clients |\n| **Impact sociétal**   | Innovation produit (ex : voiture autonome) | Protection économique (ex : retraites) |\n\n---\n\n### **⚠ Attention aux pièges**\n- **Marketing des formations** : certaines écoles privées mélangent \"data science\" et \"actuariat\" sans débouchés clairs. Vérifie les **labels** (grade Master pour les publics, accréditation CGE pour les privés) et les **taux d’insertion** (ex : [Master de Marne-la-Vallée](https://www.univ-gustave-eiffel.fr/formation/actuariat) — source : ONISEP FOR.4).\n- **Salaire vs charge mentale** : les actuaires en assurance ont des salaires attractifs, mais subissent une pression réglementaire forte (audits, rapports légaux).\n\n---\n**Question pour toi** :\nPréfères-tu **créer des outils techniques** (ingénierie) ou **garantir la stabilité économique** (finance/assurance) ? Et es-tu prêt·e à passer des certifications professionnelles (actuariat) ou à te former en continu sur des technologies émergentes (ingénierie) ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 8,
+    "n_verified": 4,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~35-50k€ brut/an",
+      "stat_value": 35,
+      "stat_unit": "k€ brut/an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~38-55k€ brut/an",
+      "stat_value": 38,
+      "stat_unit": "k€ brut/an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "70% des débouchés",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "peuvent dépasser 70k€",
+      "stat_value": 70,
+      "stat_unit": "k€",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "taux emploi 3 ans",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "taux emploi 6 ans",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "taux_cdi",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.0318,
+      "nom": "ingénieur/e mathématicien/ne",
+      "etablissement": "",
+      "domain": "metier",
+      "id": "metier:MET.931"
+    },
+    {
+      "score": 1.029,
+      "nom": "actuaire",
+      "etablissement": "",
+      "domain": "metier",
+      "id": "metier:MET.861"
+    },
+    {
+      "score": 1.0203,
+      "nom": "ACTUARIAT — Actuariat et Ingénierie Mathématique pour l'Assurance et la Finance",
+      "etablissement": "Université de Rouen Normandie",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 1.0169,
+      "nom": "ACTUARIAT — None",
+      "etablissement": "Université Gustave Eiffel",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 1.0016,
+      "nom": "ingénieur/e calcul",
+      "etablissement": "",
+      "domain": "metier",
+      "id": "metier:MET.206"
+    },
+    {
+      "score": 0.9911,
+      "nom": "ingénieur/e financier/ère",
+      "etablissement": "",
+      "domain": "metier",
+      "id": "metier:MET.8220"
+    },
+    {
+      "score": 0.9787,
+      "nom": "architecte-ingénieur/e",
+      "etablissement": "",
+      "domain": "metier",
+      "id": "metier:MET.8071"
+    },
+    {
+      "score": 0.972,
+      "nom": "gestionnaire actif/passif",
+      "etablissement": "",
+      "domain": "metier",
+      "id": "metier:MET.815"
+    },
+    {
+      "score": 0.9704,
+      "nom": "ingénieur/e concepteur/trice en mécanique",
+      "etablissement": "",
+      "domain": "metier",
+      "id": "metier:MET.949"
+    },
+    {
+      "score": 0.9641,
+      "nom": "ingénieur/e traitement de l'image",
+      "etablissement": "",
+      "domain": "metier",
+      "id": "metier:MET.612"
+    }
+  ]
+}
