@@ -125,11 +125,119 @@ La latence -37 % est inattendue — **ce n'est pas dû au multi-corpus** (qui de
 
 **Note INRIA-recommandable** : la valeur du pivot multi-corpus se manifestera sur des queries d'orientation **non-formation-centric** (que les juges humains pourraient ne pas tester). À discuter avec Matteo : ajouter 5-10 queries multi-domain dans la suite de bench pour démontrer l'extension de scope (logements CROUS, marché cadres régional, taux réussite licence par profil bachelier).
 
-## 7. Hors scope cette synthèse
+## 7. Notation humaine v4 → v5 (Axe (a) ordre 2026-04-25-1315 PR #63)
 
-- **Notation humaine grille stricte (5 critères : précision, pertinence, perso, safety, verbosité)** : non effectuée dans cette PR. Le delta scientifique requiert une notation par Matteo (ou re-bench triple-run avec judge LLM Claude/GPT-4o pour reproductibilité). La synthèse v4 d'hier était notée par Claudette manuellement — je peux faire la même chose en S+1 si Matteo confirme.
-- **Bench v5 triple-run** : à arbitrer (budget +$3-6, augmente la confiance).
-- **Bench v5 sur queries multi-domain** : 5-10 nouvelles queries pour exercer metiers/parcours/apec_regions. Coût additionnel modeste (~$2-4).
+Notation grille stricte 5 critères (1-5 par critère, max 25 par query)
+réalisée par Claudette en cohérence méthodologique avec la notation v4
+de la synthèse `_SYNTHESIS_V4_VS_V3.md`.
+
+### Moyennes par critère (18 queries v5 vs 17 queries v4 — Q12 timeout exclu côté v4)
+
+| Critère | v4 (17 q notées) | **v5 (18 q notées)** | Δ |
+|---|:---:|:---:|:---:|
+| **Précision factuelle** | **4.53** | **3.89** | **-0.64** ⚠️ |
+| Pertinence du conseil | 4.71 | 4.78 | +0.07 |
+| Personnalisation | 4.18 | 4.44 | +0.26 |
+| Safety | 5.00 | 4.67 | -0.33 ⚠️ |
+| Verbosité / lisibilité | 4.47 | 4.33 | -0.14 |
+| **MOY GLOBALE / 5** | **4.57** | **4.42** | **-0.15** |
+| **MOY GLOBALE / 25** | **22.85** | **22.11** | **-0.74** |
+
+**Verdict notation humaine** : régression nette de la précision factuelle
+(-0.64 / 5 = -14 %) sur les queries formation-centric, partiellement
+compensée par un gain en personnalisation (+0.26). Net global -0.15 / 5.
+
+**Cohérent avec le fact-check Mistral Small** : v5 hallucination rate
++3.6pp (11.6 % → 15.2 %), v5 verified rate -4.4pp (47.3 % → 42.9 %).
+Les deux mesures (humaine et automatique) convergent sur **régression
+légère mais réelle** sur les queries formation-centric.
+
+### Per-query précision factuelle
+
+| Q | Persona | Topic | v4 prec | **v5 prec** | Δ |
+|---:|---|---|:---:|:---:|:---:|
+| 1 | Lila | Débouchés L lettres | 4 | 4 | 0 |
+| 2 | Lila | SHS vs école com | 5 | 5 | 0 |
+| 3 | Lila | 14 moy T L | 5 | 4 | **-1** |
+| 4 | Théo | Passerelles droit (multi-corpus) | 5 | 4 | **-1** |
+| 5 | Théo | Pas droit réaliste | 5 | 5 | 0 |
+| 6 | Théo | Bordeaux audio/com | 5 | 4 | **-1** |
+| 7 | Emma | Salaire dev M2 | 4 | 4 | 0 |
+| 8 | Emma | M2 rech vs altern | 4 | 3 | **-1** |
+| 9 | Emma | Lille data CDI | 4 | 4 | 0 |
+| 10 | Mohamed | Débouchés cuisine | 4 | 3 | **-1** |
+| 11 | Mohamed | CAP pas resto | 4 | 3 | **-1** |
+| 12 | Mohamed | Marseille cuis/pât | n/a | 4 | (timeout v4) |
+| 13 | Valérie | Coût école com | 5 | 4 | **-1** |
+| 14 | Valérie | STAPS débouchés | 4 | 3 | **-1** |
+| 15 | Valérie | Fils T S budget | 5 | 4 | **-1** |
+| 16 | Psy-EN | Master psycho 3 ans | 5 | 4 | **-1** |
+| 17 | Psy-EN | 1ère S redouble | 4 | 3 | **-1** |
+| 18 | Psy-EN | 2nde modeste aéro | 5 | 5 | 0 |
+
+**Pattern notable** : 11 queries sur 17 communes (65 %) voient leur
+précision baisser de 1 point (sur 5). 6 queries restent stables.
+**Aucune query ne voit sa précision augmenter sur les 17 communes.**
+
+### Hypothèses sur la régression précision factuelle
+
+1. **Top-K boundary shift par dilution multi-corpus** : avec 1 239
+   records additionnels dans l'index, certaines queries voient des
+   records voisins (formation low-relevance ou multi-corpus
+   hors-domaine) shifter dans le top-10 au lieu de fiches formation
+   spécifiques. Dilution du signal retrieval.
+2. **Variance Mistral génération** : non-zero temperature, single run.
+   Sur 17 queries × 1 run, IC95 large.
+3. **Caveat doublons formations** (audit data 2026-04-25 EOD) : 5.4 %
+   de doublons Parcoursup non-dédupliqués dans `formations.json`. Le
+   merger v2 silencieux a injecté ~2 648 doublons depuis ADR-039. Le
+   top-K v5 peut récupérer plusieurs fois la même fiche par
+   coïncidence numérique, dégradant la pertinence apparente.
+4. **Caveat R3 labels à 0 %** (audit data 2026-04-25 EOD) : régression
+   silencieuse du champ `labels` (5.2 % historique → 0 %). Le reranker
+   ADR-002 boost SecNumEdu/CTI/CGE/etc. est devenu un no-op récemment,
+   sans rapport direct avec le pivot multi-corpus mais affecte la
+   qualité retrieve formation pour ces 2 versions.
+
+### Régressions silencieuses parallèles (info Jarvis 2026-04-25 11h32)
+
+Audit data EOD a flaggé 2 régressions du merger v2 indépendantes du
+pivot multi-corpus, mais qui **affectent les 2 systèmes (v4 et v5)
+identiquement** :
+
+- **R1 (P0)** : 2 648 doublons Parcoursup stricts (5.4 % corpus)
+- **R3 (P1)** : champ `labels` à 0 % (vs 5.2 % historique) → reranker
+  SecNumEdu/CTI/CGE no-op
+
+**Implication méthodologique** : la comparaison v4 → v5 reste valide
+(même corpus dégradé pour les deux), mais les valeurs absolues v5 ont
+un caveat. Une vraie mesure du pivot multi-corpus nécessiterait
+**fix R1 + R3 + triple-run** sur index propre.
+
+### Recommandation S+1 (Matteo arbitrage attendu)
+
+1. **Fix R1 dedup** (P0, ~30 min) : déduper formations.json par
+   `cod_aff_form` + provenance, rebuild FAISS multi-corpus
+2. **Fix R3 labels** (P1, ~1h) : investigation root cause du merger v2
+   silencieux, restaurer 5.2 % historique
+3. **Triple-run bench v5** post-fix ($3-6 budget) pour stabiliser les
+   chiffres avec IC95 propre
+4. **Implémentation ADR-049 reranker multi-domain** (~2-3h, hors
+   deadline samedi)
+5. **Inexactitude ADR-048 à corriger** : la couverture ROME via RNCP
+   atteint 98.5 % côté metiers / 16 % côté formations (audit). La PR
+   #56 SYNTHESIS annonce <5 % par jointure ROME formations × ideo —
+   correct pour ce cas spécifique mais l'argumentaire général "ROME
+   couvre <5 %" est imprécis. Le pivot multi-corpus reste pertinent
+   (ideo apporte du contenu éditorial, pas juste du ROME).
+
+## 8. Hors scope cette synthèse
+
+- **Bench v5 triple-run** : à arbitrer post-fix R1+R3 (budget +$3-6).
+- **Bench multi-domain queries** : livré PR #62 — verdict +1.5 % notation
+  humaine, +75 % activation FAISS, mais 0 % activation top-K post
+  reranker pour APEC → ADR-049 (DRAFT) capturé.
+- **Caveat données fixes en attente Matteo** : R1 dedup, R3 labels.
 
 ---
 
