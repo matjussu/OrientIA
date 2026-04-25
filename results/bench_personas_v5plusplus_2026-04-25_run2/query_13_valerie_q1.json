@@ -1,0 +1,247 @@
+{
+  "idx_global": 13,
+  "persona_id": "valerie",
+  "persona_description": "Valérie, parent de lycéen (perspective externe)",
+  "scope": "parent",
+  "query_id": "q1",
+  "query_type": "factuelle",
+  "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+  "elapsed_gen_s": 14.75,
+  "elapsed_fact_check_s": 6.33,
+  "answer_raw": "**TL;DR**\n1. Une **licence publique** coûte **170 à 600€/an** (frais d’inscription + CVEC), tandis qu’une **école de commerce privée** varie de **3 000€ à 15 000€/an** (hors alternance).\n2. L’écart s’explique par le statut (public vs privé) et les labels (grade Master, visibilité internationale).\n3. Des alternatives existent pour réduire la facture : alternance, bourses, ou formations publiques sélectives (IAE, doubles licences).\n\n---\n\n### **Plan A — Économique : Licence publique ou IAE**\n📍 **Licence Économie-Gestion (parcours Commerce International)** — [Lille, ICL-ESTICE](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24397&typeBac=0&originePc=0)\n*Pour toi : 38% de taux d’accès (sélective mais réaliste), **600€/an max** (frais + CVEC), diplôme reconnu par l’État. Idéal si budget serré.*\n\n📍 **IAE (Instituts d’Administration des Entreprises)** — [Réseau national, bac+3 à bac+5](https://www.iae-france.fr)\n*Pour toi : **243€/an** en licence, **3 800€/an** en master (tarif public), avec des parcours en alternance (0€ + salaire). Exige un bon dossier (notes >12/14).*\n\n---\n\n### **Plan B — Équilibre coût/prestige : Écoles privées accessibles ou alternance**\n📍 **Programmes Grande École en alternance** — Ex : [ISC Paris](https://www.iscparis.com) (RNCP bac+5)\n*Pour toi : **0€ de frais** (pris en charge par l’entreprise) + **salaire** (~600-1 200€/mois). Sélectivité modérée (dossier + entretien), mais exige de trouver un contrat.*\n\n📍 **Bachelors privés \"abordables\"** — Ex : [INSEEC BBA](https://bba.inseec.com) (~6 000€/an)\n*Pour toi : Moins cher qu’une grande école classique (HEC/ESSEC = 15k€/an), mais vérifie le **label RNCP** et les partenariats entreprises pour l’insertion.*\n\n---\n### **Plan C — Long terme : Double compétence ou passerelles**\n- **Double licence public/privé** : Ex : Licence d’éco + école en 5 ans (coût maîtrisé les 2 premières années).\n- **Admissions parallèles** : Intégrer une école privée en bac+3 après un BUT ou une licence (ex : concours Passerelle).\n- **Bourses et aides** : Critère social (CROUS), mérites (fondations), ou dispositifs régionaux (ex : [Aide Région Île-de-France](https://www.iledefrance.fr/aides-et-appels-projets)).\n\n---\n### **⚠ Attention aux pièges**\n- **Marketing des \"frais réduits\"** : Certaines écoles privées affichent 3 000€/an mais ajoutent 2 000€ de \"frais de vie étudiante obligatoires\" (logement partenarial, matériel). **Vérifie le coût total** sur leur site ou via l’[ONISEP](https://www.onisep.fr).\n- **Alternance ≠ gratuité automatique** : Sans contrat, tu paies les frais. Certains secteurs (luxe, finance) sont ultra-compétitifs pour les contrats.\n- **RNCP ≠ grade Master** : Un diplôme RNCP bac+5 n’a pas la même reconnaissance qu’un **grade Master** (accrédité par l’État). Exige ce label pour visée internationale.\n\n---\n**Question pour toi** :\nPrivilégies-tu la **sécurité financière** (public/alternance) ou l’**accès à un réseau elite** (école privée à 10k€/an) ? Si tu hésites, as-tu exploré les **IAE** (public + réseau pro) ou les **doubles diplômes** ?",
+  "answer_annotated": "**TL;DR**\n1. Une **licence publique** coûte **170 à 600€/an** (frais d’inscription + CVEC), tandis qu’une **école de commerce privée** varie de **3 000€ à 15 000€/an** (hors alternance).\n2. L’écart s’explique par le statut (public vs privé) et les labels (grade Master, visibilité internationale).\n3. Des alternatives existent pour réduire la facture : alternance, bourses, ou formations publiques sélectives (IAE, doubles licences).\n\n---\n\n### **Plan A — Économique : Licence publique ou IAE**\n📍 **Licence Économie-Gestion (parcours Commerce International)** — [Lille, ICL-ESTICE](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24397&typeBac=0&originePc=0)\n*Pour toi : 38% de taux d’accès (sélective mais réaliste), **600€/an max** (frais + CVEC), diplôme reconnu par l’État. Idéal si budget serré.*\n\n📍 **IAE (Instituts d’Administration des Entreprises)** — [Réseau national, bac+3 à bac+5](https://www.iae-france.fr)\n*Pour toi : **243€/an** en licence, **3 800€/an** en master (tarif public), avec des parcours en alternance (0€ + salaire). Exige un bon dossier (notes >12/14).*\n\n---\n\n### **Plan B — Équilibre coût/prestige : Écoles privées accessibles ou alternance**\n📍 **Programmes Grande École en alternance** — Ex : [ISC Paris](https://www.iscparis.com) (RNCP bac+5)\n*Pour toi : **0€ de frais** (pris en charge par l’entreprise) + **salaire** (~600-1 200€/mois). Sélectivité modérée (dossier + entretien), mais exige de trouver un contrat.*\n\n📍 **Bachelors privés \"abordables\"** — Ex : [INSEEC BBA](https://bba.inseec.com) (~6 000€/an)\n*Pour toi : Moins cher qu’une grande école classique (HEC/ESSEC = 15k€/an), mais vérifie le **label RNCP** et les partenariats entreprises pour l’insertion.*\n\n---\n### **Plan C — Long terme : Double compétence ou passerelles**\n- **Double licence public/privé** : Ex : Licence d’éco + école en 5 ans (coût maîtrisé les 2 premières années).\n- **Admissions parallèles** : Intégrer une école privée en bac+3 après un BUT ou une licence (ex : concours Passerelle).\n- **Bourses et aides** : Critère social (CROUS), mérites (fondations), ou dispositifs régionaux (ex : [Aide Région Île-de-France](https://www.iledefrance.fr/aides-et-appels-projets)).\n\n---\n### **⚠ Attention aux pièges**\n- **Marketing des \"frais réduits\"** : Certaines écoles privées affichent 3 000€/an mais ajoutent 2 000€ de \"frais de vie étudiante obligatoires\" (logement partenarial, matériel). **Vérifie le coût total** sur leur site ou via l’[ONISEP](https://www.onisep.fr).\n- **Alternance ≠ gratuité automatique** : Sans contrat, tu paies les frais. Certains secteurs (luxe, finance) sont ultra-compétitifs pour les contrats.\n- **RNCP ≠ grade Master** : Un diplôme RNCP bac+5 n’a pas la même reconnaissance qu’un **grade Master** (accrédité par l’État). Exige ce label pour visée internationale.\n\n---\n**Question pour toi** :\nPrivilégies-tu la **sécurité financière** (public/alternance) ou l’**accès à un réseau elite** (école privée à 10k€/an) ? Si tu hésites, as-tu exploré les **IAE** (public + réseau pro) ou les **doubles diplômes** ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 15,
+    "n_verified": 8,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "38% de taux d’accès",
+      "stat_value": 38,
+      "stat_unit": "%",
+      "context_in_response": "Licence Économie-Gestion (parcours Commerce International) — Lille, ICL-ESTICE",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 38.0%"
+    },
+    {
+      "stat_text": "600€/an max",
+      "stat_value": 600,
+      "stat_unit": "€/an",
+      "context_in_response": "Licence Économie-Gestion (parcours Commerce International) — Lille, ICL-ESTICE",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "243€/an",
+      "stat_value": 243,
+      "stat_unit": "€/an",
+      "context_in_response": "IAE (Instituts d’Administration des Entreprises)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "3 800€/an",
+      "stat_value": 3800,
+      "stat_unit": "€/an",
+      "context_in_response": "IAE (Instituts d’Administration des Entreprises) — master",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0€ de frais",
+      "stat_value": 0,
+      "stat_unit": "€",
+      "context_in_response": "Programmes Grande École en alternance — Ex : ISC Paris (RNCP bac+5)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~600-1 200€/mois",
+      "stat_value": 600,
+      "stat_unit": "€/mois",
+      "context_in_response": "Programmes Grande École en alternance — Ex : ISC Paris (RNCP bac+5)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~6 000€/an",
+      "stat_value": 6000,
+      "stat_unit": "€/an",
+      "context_in_response": "Bachelors privés 'abordables' — Ex : INSEEC BBA",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "15k€/an",
+      "stat_value": 15000,
+      "stat_unit": "€/an",
+      "context_in_response": "HEC/ESSEC",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "Salaire médian à l'embauche — Licence Économie-Gestion (parcours Commerce International)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "\"salaire_median_embauche\": 1740"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "Salaire médian à l'embauche — Programme grande école (ISC Paris)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "\"salaire_median_embauche\": 2080"
+    },
+    {
+      "stat_text": "0.86",
+      "stat_value": 0.86,
+      "stat_unit": "",
+      "context_in_response": "Taux d'emploi à 3 ans — Licence Économie-Gestion (parcours Commerce International)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "\"taux_emploi_3ans\": 0.86"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context_in_response": "Taux d'emploi à 6 ans — Licence Économie-Gestion (parcours Commerce International)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "\"taux_emploi_6ans\": 0.91"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context_in_response": "Taux de CDI — Licence Économie-Gestion (parcours Commerce International)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "\"taux_cdi\": 0.83"
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context_in_response": "Taux d'emploi à 3 ans — Programme grande école (ISC Paris)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "\"taux_emploi_3ans\": 0.85"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context_in_response": "Taux de CDI — Programme grande école (ISC Paris)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "\"taux_cdi\": 0.83"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.019,
+      "nom": "Licence - Economie et gestion - Parcours Commerce international et langues",
+      "etablissement": "ICL - ESTICE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9295,
+      "nom": "Programme grande école",
+      "etablissement": "INSTITUT SUPERIEUR COMMERCE PARIS",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8502,
+      "nom": "Diplôme d'études supérieures en commerce et en entrepreneuriat",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8487,
+      "nom": "Affaires et Relations Internationales",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8479,
+      "nom": "diplôme finance",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8474,
+      "nom": "diplôme du programme ingénieur d'affaires",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8469,
+      "nom": "diplôme en gestion du luxe",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8468,
+      "nom": "commerce international",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8459,
+      "nom": "diplôme en comptabilité et gestion financière",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8452,
+      "nom": "manager marketing et commercial en produits et services de luxe",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    }
+  ]
+}
