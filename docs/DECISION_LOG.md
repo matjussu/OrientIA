@@ -2504,5 +2504,121 @@ Implémentation envisagée :
 - Protected files note CLAUDE.md OrientIA : reranker stable depuis
   Run 3 ablation, modifications additives uniquement (pas remove)
 
+## ADR-050 — Dedup Parcoursup `cod_aff_form` dans merger v2 (2026-04-25)
+
+### Context
+
+Audit data EOD 2026-04-25 (Jarvis) a flaggé **R1 (P0)** : 2 648 doublons
+stricts Parcoursup dans `formations.json`. Mécanisme :
+
+- `merge_all_extended()` concatène 7 sources : legacy (Parcoursup CSV
+  via `merge_all`), `parcoursup_extended` (pré-normalisé), ONISEP,
+  MonMaster, RNCP, LBA, Inserjeunes CFA.
+- Les 2 sources Parcoursup (legacy + extended) **se chevauchent** sur
+  ~1 324 codes, produisant 2 × 1 324 = 2 648 records identiques par
+  `cod_aff_form` (1 issu de chaque source).
+- Pas de dedup au moment du concat → 5.4 % du corpus formations en
+  doublons silencieux.
+
+Manifestation pré-fix : audit Claudette du 24/04 avait scanné sur
+`(nom, etab, ville)` et noté 4 395 doublons mais classé `✅ GO` —
+signal manqué sur la **nature stricte** de ces 2 648 paires.
+
+Bench v5 sur 18 queries v4 (PR #63 notation humaine) a montré régression
+précision factuelle -0.64/5 (-14 %), pattern 11/17 baissent / 0
+augmentent. Hypothèse de travail : dilution multi-corpus + concentration
+de doublons dans top-K dégradent la pertinence retrieval.
+
+### Decision
+
+Ajouter `dedup_parcoursup_by_cod_aff_form(fiches)` dans
+`src/collect/merge.py` + appel à l'**Étape 4b** de `merge_all_extended`
+(post-concat, pré-attach).
+
+**Stratégie de fusion (préserve les enrichissements complémentaires)** :
+
+1. Group by `cod_aff_form` non-vide
+2. Pour chaque groupe size > 1 :
+   - Choisit la fiche **la plus enrichie** comme base (max nb champs
+     non-vides)
+   - **Merge soft** : tout champ absent de la base est complété depuis
+     les autres fiches du groupe (premier non-vide)
+3. Préserve l'ordre stable (1ère occurrence par `cod_aff_form`)
+4. Records sans `cod_aff_form` (autres sources) passent inchangés
+
+**Pourquoi merge soft plutôt que keep-first** : les 2 sources ont des
+enrichissements complémentaires :
+- `legacy` (issu de `merge_all`) a `match_method`, `labels` (champ
+  ADR-002 reranker SecNumEdu/CTI/CGE)
+- `parcoursup_extended` a `provenance`, `collected_at`,
+  `merge_confidence`, `insertion_pro`, `trends`
+
+Le merge soft garantit que **rien ne se perd**, contrairement à un
+naïf keep-first qui perdrait soit `labels` soit `insertion_pro`.
+
+### Output mesuré
+
+`scripts/dedup_formations_existing.py` appliqué sur le `formations.json`
+existant (48 914 fiches) :
+- **47 590 fiches en sortie** (drop 1 324)
+- Backup : `data/processed/formations.json.pre_dedup`
+- Nouveau : `data/processed/formations_dedupe.json` (86.8 MB vs 94 MB)
+
+### Rationale
+
+- **Bug merger silencieux** = signal régression -14 % précision factuelle
+  bench v5. Dedup est un fix ciblé qui peut isoler la cause R1
+- **Préservation des enrichissements** : merge soft garantit pas de
+  perte downstream (labels, insertion_pro, trends)
+- **Réversible** : `formations.json.pre_dedup` permet rollback
+- **Pas de modification des autres sources** : MonMaster déjà dédup IFC
+  ADR-044, RNCP/LBA ont des IDs uniques natifs
+
+### Alternatives rejetées
+
+1. **Keep-first sans merge** : perd `labels` ou `insertion_pro` selon
+   l'ordre de concat. Régression invisible mais réelle.
+2. **Dedup au niveau loader Parcoursup** (filtrer avant concat) :
+   complexité dispersée. Centralisation post-concat est plus claire.
+3. **Hash multi-fields** (cod_aff_form + nom + etab) : `cod_aff_form`
+   est l'identifiant Parcoursup canonique, pas besoin de plus.
+4. **Re-fetch Parcoursup CSV propre** : ne corrige pas le bug merger,
+   masque le symptôme.
+
+### Tests
+
+8 tests unitaires couvrent :
+- No duplicates passthrough
+- Simple pair (richer wins, labels preserved)
+- Three fiches same cod_aff_form (3-way merge)
+- Empty cod_aff_form passthrough
+- Mixed cod_aff_form + no-caf
+- Preserves order first cod_aff_form seen
+- Empty list
+- Legacy `labels` field preserved post-merge (régression ADR-002)
+
+Suite complète : 1 080 tests verts (1 072 baseline + 8 nouveaux), 0
+régression.
+
+### Phase 3 diagnostic en cours
+
+Le re-bench v5 sur index dedupé permettra d'isoler la cause -14 % :
+- v5_dedupé ∈ [4.30, 4.53] → cause R1 ✅ shippable INRIA
+- v5_dedupé ∈ [3.85, 3.95] → cause architecturale ❌
+- v5_dedupé ∈ [3.95, 4.30] → cause mixte → triple-run requis
+
+ADR-050 sera complété par le verdict Phase 3.
+
+### Liens
+
+- `src/collect/merge.py` : `dedup_parcoursup_by_cod_aff_form` + appel
+  dans `merge_all_extended` Étape 4b
+- `scripts/dedup_formations_existing.py` : standalone application sur
+  l'existant sans re-run merger v2 complet
+- Audit Jarvis : `~/obsidian-vault/04-Connaissances/orientia-audit-data-2026-04-25.md` §5.2
+- ADR-039 scope élargi (concat des 7 sources)
+- ADR-044 dedup MonMaster IFC (précédent, autre source)
+- Bench v5 régression précision : `results/bench_personas_v5_2026-04-25/_SYNTHESIS.md` §7
+
 ---
 

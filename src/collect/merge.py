@@ -99,6 +99,74 @@ def _infer_domaine_from_rome(rome_codes: list) -> str | None:
     return None
 
 
+def dedup_parcoursup_by_cod_aff_form(fiches: list[dict]) -> list[dict]:
+    """Déduplique les fiches Parcoursup par `cod_aff_form` (ADR-050).
+
+    Le merger v2 produit des doublons stricts pour ~1 324 codes Parcoursup
+    (= 2 648 records répétés) parce que `legacy` (issu de `merge_all` sur
+    CSV brut) ET `parcoursup_extended` (sources pré-normalisées) contiennent
+    les mêmes `cod_aff_form`. Audit data 2026-04-25 a confirmé : 5.4 % du
+    corpus formations est en double avec ce mécanisme silencieux.
+
+    Stratégie de fusion (évite la perte d'information) :
+    1. Groupe les fiches par `cod_aff_form` non vide.
+    2. Pour chaque groupe (size > 1), choisit la fiche **la plus enrichie**
+       comme base (max nb champs non-vides).
+    3. **Merge soft** : tout champ absent de la base est complété depuis
+       les autres fiches du groupe (premier non-vide). Préserve `labels`
+       depuis legacy même si la base est extended.
+    4. Retourne la liste filtrée + ordre stable (1ère occurrence du
+       cod_aff_form en input).
+
+    Fiches sans `cod_aff_form` (autres sources) sont préservées telles
+    quelles.
+    """
+    from collections import OrderedDict
+
+    keep_first_pos: dict[str, int] = {}
+    groups: dict[str, list[dict]] = OrderedDict()
+
+    for i, f in enumerate(fiches):
+        caf = f.get("cod_aff_form")
+        if not caf:
+            continue
+        if caf not in keep_first_pos:
+            keep_first_pos[caf] = i
+        groups.setdefault(caf, []).append(f)
+
+    def _merge_group(group: list[dict]) -> dict:
+        if len(group) == 1:
+            return group[0]
+
+        def _filled_count(rec: dict) -> int:
+            return sum(1 for v in rec.values() if v not in (None, "", [], {}))
+
+        base = max(group, key=_filled_count)
+        merged = dict(base)
+        for other in group:
+            if other is base:
+                continue
+            for k, v in other.items():
+                if v in (None, "", [], {}):
+                    continue
+                if merged.get(k) in (None, "", [], {}):
+                    merged[k] = v
+        return merged
+
+    out: list[dict] = []
+    seen_caf: set[str] = set()
+    for f in fiches:
+        caf = f.get("cod_aff_form")
+        if not caf:
+            out.append(f)
+            continue
+        if caf in seen_caf:
+            continue
+        seen_caf.add(caf)
+        out.append(_merge_group(groups[caf]))
+    return out
+
+
 def merge_by_rncp(parcoursup: list[dict], onisep: list[dict]) -> list[dict]:
     onisep_by_rncp = {f["rncp"]: f for f in onisep if f.get("rncp")}
     merged = []
@@ -683,6 +751,11 @@ def merge_all_extended(
         legacy + pe_fiches + oe_fiches + mm_fiches + rncp_fiches
         + lba_fiches + cfa_fiches
     )
+
+    # Étape 4b : dedup Parcoursup par cod_aff_form (ADR-050)
+    # Les fiches `legacy` (Parcoursup CSV) et `pe_fiches` (parcoursup_extended)
+    # se chevauchent silencieusement, produisant 5.4 % de doublons stricts.
+    all_fiches = dedup_parcoursup_by_cod_aff_form(all_fiches)
 
     # Étape 5 : attach_debouches ROME (pour fiches sans debouches — MonMaster
     # et RNCP n'en ont pas nativement, LBA partiel)
