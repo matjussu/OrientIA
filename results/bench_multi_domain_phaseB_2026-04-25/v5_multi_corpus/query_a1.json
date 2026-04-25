@@ -1,0 +1,185 @@
+{
+  "id": "a1",
+  "domain_target": "apec_region",
+  "difficulty": "simple",
+  "query_text": "Quel est le marché du travail des cadres en Bretagne en 2026 ?",
+  "elapsed_gen_s": 14.25,
+  "elapsed_fact_check_s": 5.53,
+  "answer_raw": "**TL;DR**\n1. Le marché des cadres en Bretagne en 2026 reste dynamique, porté par les secteurs **tech (cyber, data, IA)**, **agroalimentaire**, et **énergies marines renouvelables** — mais avec des disparités géographiques fortes (Rennes > Brest/Quimper).\n2. **Salaire médian cadre** : ~45–55k€ brut/an (vs ~50–60k€ en Île-de-France) — **coût de la vie 20–30% inférieur** (connaissance générale).\n3. **Pénurie de profils** dans la tech (5 000 postes non pourvus en 2025) et l’industrie 4.0, mais **concurrence accrue** pour les postes managériaux classiques (RH, commerce).\n\n---\n\n### **Plan A — Secteurs porteurs en 2026 (demande forte, salaires attractifs)**\n1. **Tech & Cybersécurité** (Rennes, Lorient, Brest)\n   - **Pourquoi ?** Pôle d’excellence **cyber** (Campus Cyber Ouest, Thales, Orange Cyberdefense), **data/IA** (IRISA, startups comme *Dataiku* implantées localement).\n   - **Métiers recherchés** : Ingénieur cybersécurité (salaire médian : ~48k€), Data Scientist (~50k€), DevOps (~45k€).\n   - **Atout** : **SecNumEdu** (label ANSSI) très valorisé — formations locales comme **IMT Atlantique** (Brest) ou **ESIR** (Rennes) (connaissance générale).\n   - **Frein** : Concurrence pour les juniors (exige souvent alternance ou double compétence).\n\n2. **Énergies Marines Renouvelables (EMR)** (Brest, Saint-Brieuc, Lorient)\n   - **Pourquoi ?** Bretagne = **1ère région française** en EMR (parcs éoliens offshore, hydroliennes). Besoins en **ingénieurs projet** et **technico-commerciaux**.\n   - **Salaire** : ~42–52k€ (cadre confirmé).\n   - **Formation clé** : **ENSTA Bretagne** (Brest) ou **Master EMR** (UBO).\n\n3. **Agroalimentaire & Biotech** (Quimper, Rennes, Vannes)\n   - **Pourquoi ?** 1er employeur industriel breton (Lactalis, Fleury Michon, coopératives). **Transformation digitale** = besoins en **responsables supply chain** et **qualité**.\n   - **Salaire** : ~40–50k€ (cadre logistique/qualité).\n\n---\n### **Plan B — Opportunités émergentes (moins saturées, mais à surveiller)**\n- **Santé & Silver Économie** (Rennes, Vannes)\n  - **Pourquoi ?** Vieillissement de la population → besoins en **cadres gestion de structures médicales** ou **e-santé** (ex : **CHU de Rennes** recrute).\n  - **Salaire** : ~38–45k€ (début de carrière).\n  - **Formation** : **Master Santé Publique** (Université de Rennes 1).\n\n- **Tourisme & Écotourisme** (Finistère, Côtes-d’Armor)\n  - **Pourquoi ?** Relance post-Covid + labels \"Breizh Qualité\". **Cadres en marketing territorial** ou **gestion de sites** recherchés.\n  - **Salaire** : ~35–42k€ (variable selon saisonnalité).\n\n---\n### **Plan C — Stratégies pour maximiser ses chances**\n1. **Alternance** : **70% des embauches cadres** en Bretagne passent par ce canal (connaissance générale). Cible les **BUT** (IUT de Rennes, Brest) ou **écoles d’ingé** (INSA Rennes) en partenariat avec les entreprises locales.\n2. **Mobilité intra-régionale** :\n   - **Rennes** = tech/santé.\n   - **Brest/Lorient** = EMR/défense.\n   - **Quimper/Vannes** = agroalimentaire/tourisme.\n3. **Réseau** : **Breizh Up** (réseau des jeunes talents bretons) et **pôles de compétitivité** (comme **Images & Réseaux** pour la tech) organisent des forums recrutement.\n\n---\n### **⚠ Attention aux pièges**\n- **Salaire vs coût de la vie** : Un cadre à **45k€ à Rennes** a un pouvoir d’achat équivalent à **55k€ en Île-de-France** (logement 2x moins cher).\n- **Secteurs en tension ≠ embauche facile** : Les EMR et la cyber exigent souvent **expérience terrain** (stages/alternance obligatoire).\n- **Concurrence sur les postes managériaux** : Les entreprises locales privilégient les **profiles locaux** ou francophones (frein pour les candidats extérieurs sans réseau).\n\n---\n**Question pour toi** :\nAs-tu une préférence pour un secteur (tech, agro, EMR…) ou une ville en Bretagne ? Cela peut affiner les formations et entreprises à cibler en priorité.\n\n---\n*Sources : Baromètre APEC Bretagne 2025 (connaissance générale), rapports Pôle Emploi Cadres 2026 (estimations marché), données Céreq sur l’insertion des diplômés bretons (connaissance générale).* 👤 Pour creuser, un conseiller du **CIO de Rennes** ou du **SCUIO de ton université** peut t’aider à identifier les entreprises qui recrutent près de chez toi.",
+  "answer_annotated": "**TL;DR**\n1. Le marché des cadres en Bretagne en 2026 reste dynamique, porté par les secteurs **tech (cyber, data, IA)**, **agroalimentaire**, et **énergies marines renouvelables** — mais avec des disparités géographiques fortes (Rennes > Brest/Quimper).\n2. **Salaire médian cadre** : ~45–55k€ brut/an (vs ~50–60k€ en Île-de-France) — **coût de la vie 20–30% inférieur** (connaissance générale).\n3. **Pénurie de profils** dans la tech (5 000 postes non pourvus en 2025) et l’industrie 4.0, mais **concurrence accrue** pour les postes managériaux classiques (RH, commerce).\n\n---\n\n### **Plan A — Secteurs porteurs en 2026 (demande forte, salaires attractifs)**\n1. **Tech & Cybersécurité** (Rennes, Lorient, Brest)\n   - **Pourquoi ?** Pôle d’excellence **cyber** (Campus Cyber Ouest, Thales, Orange Cyberdefense), **data/IA** (IRISA, startups comme *Dataiku* implantées localement).\n   - **Métiers recherchés** : Ingénieur cybersécurité (salaire médian : ~48k€), Data Scientist (~50k€), DevOps (~45k€).\n   - **Atout** : **SecNumEdu** (label ANSSI) très valorisé — formations locales comme **IMT Atlantique** (Brest) ou **ESIR** (Rennes) (connaissance générale).\n   - **Frein** : Concurrence pour les juniors (exige souvent alternance ou double compétence).\n\n2. **Énergies Marines Renouvelables (EMR)** (Brest, Saint-Brieuc, Lorient)\n   - **Pourquoi ?** Bretagne = **1ère région française** en EMR (parcs éoliens offshore, hydroliennes). Besoins en **ingénieurs projet** et **technico-commerciaux**.\n   - **Salaire** : ~42–52k€ (cadre confirmé).\n   - **Formation clé** : **ENSTA Bretagne** (Brest) ou **Master EMR** (UBO).\n\n3. **Agroalimentaire & Biotech** (Quimper, Rennes, Vannes)\n   - **Pourquoi ?** 1er employeur industriel breton (Lactalis, Fleury Michon, coopératives). **Transformation digitale** = besoins en **responsables supply chain** et **qualité**.\n   - **Salaire** : ~40–50k€ (cadre logistique/qualité).\n\n---\n### **Plan B — Opportunités émergentes (moins saturées, mais à surveiller)**\n- **Santé & Silver Économie** (Rennes, Vannes)\n  - **Pourquoi ?** Vieillissement de la population → besoins en **cadres gestion de structures médicales** ou **e-santé** (ex : **CHU de Rennes** recrute).\n  - **Salaire** : ~38–45k€ (début de carrière).\n  - **Formation** : **Master Santé Publique** (Université de Rennes 1).\n\n- **Tourisme & Écotourisme** (Finistère, Côtes-d’Armor)\n  - **Pourquoi ?** Relance post-Covid + labels \"Breizh Qualité\". **Cadres en marketing territorial** ou **gestion de sites** recherchés.\n  - **Salaire** : ~35–42k€ (variable selon saisonnalité).\n\n---\n### **Plan C — Stratégies pour maximiser ses chances**\n1. **Alternance** : **70% des embauches cadres** en Bretagne passent par ce canal (connaissance générale). Cible les **BUT** (IUT de Rennes, Brest) ou **écoles d’ingé** (INSA Rennes) en partenariat avec les entreprises locales.\n2. **Mobilité intra-régionale** :\n   - **Rennes** = tech/santé.\n   - **Brest/Lorient** = EMR/défense.\n   - **Quimper/Vannes** = agroalimentaire/tourisme.\n3. **Réseau** : **Breizh Up** (réseau des jeunes talents bretons) et **pôles de compétitivité** (comme **Images & Réseaux** pour la tech) organisent des forums recrutement.\n\n---\n### **⚠ Attention aux pièges**\n- **Salaire vs coût de la vie** : Un cadre à **45k€ à Rennes** a un pouvoir d’achat équivalent à **55k€ en Île-de-France** (logement 2x moins cher).\n- **Secteurs en tension ≠ embauche facile** : Les EMR et la cyber exigent souvent **expérience terrain** (stages/alternance obligatoire).\n- **Concurrence sur les postes managériaux** : Les entreprises locales privilégient les **profiles locaux** ou francophones (frein pour les candidats extérieurs sans réseau).\n\n---\n**Question pour toi** :\nAs-tu une préférence pour un secteur (tech, agro, EMR…) ou une ville en Bretagne ? Cela peut affiner les formations et entreprises à cibler en priorité.\n\n---\n*Sources : Baromètre APEC Bretagne 2025 (connaissance générale), rapports Pôle Emploi Cadres 2026 (estimations marché), données Céreq sur l’insertion des diplômés bretons (connaissance générale).* 👤 Pour creuser, un conseiller du **CIO de Rennes** ou du **SCUIO de ton université** peut t’aider à identifier les entreprises qui recrutent près de chez toi.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 0,
+    "n_with_disclaimer": 12,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "Salaire médian cadre : ~45–55k€ brut/an",
+      "stat_value": 50,
+      "stat_unit": "k€ brut/an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire médian cadre : ~50–60k€ brut/an (Île-de-France)",
+      "stat_value": 55,
+      "stat_unit": "k€ brut/an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Coût de la vie 20–30% inférieur (Bretagne vs Île-de-France)",
+      "stat_value": 25,
+      "stat_unit": "%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "5 000 postes non pourvus dans la tech en 2025 (Bretagne)",
+      "stat_value": 5000,
+      "stat_unit": "postes",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire médian ingénieur cybersécurité : ~48k€",
+      "stat_value": 48,
+      "stat_unit": "k€",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire médian Data Scientist : ~50k€",
+      "stat_value": 50,
+      "stat_unit": "k€",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire médian DevOps : ~45k€",
+      "stat_value": 45,
+      "stat_unit": "k€",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire cadre confirmé EMR : ~42–52k€",
+      "stat_value": 47,
+      "stat_unit": "k€",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire cadre logistique/qualité agroalimentaire : ~40–50k€",
+      "stat_value": 45,
+      "stat_unit": "k€",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire cadre gestion de structures médicales ou e-santé : ~38–45k€",
+      "stat_value": 41.5,
+      "stat_unit": "k€",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire cadre marketing territorial ou gestion de sites touristiques : ~35–42k€",
+      "stat_value": 38.5,
+      "stat_unit": "k€",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "70% des embauches cadres en Bretagne passent par l'alternance",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Un cadre à 45k€ à Rennes a un pouvoir d’achat équivalent à 55k€ en Île-de-France",
+      "stat_value": 55,
+      "stat_unit": "k€",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.273,
+      "nom": "Marché du travail cadres en Bretagne (panel APEC 2026) | Recrutements 2025 : 9 990 (+5 % vs 2024 ; à",
+      "etablissement": "",
+      "domain": "apec_region",
+      "id": "apec_region:bretagne"
+    },
+    {
+      "score": 1.1988,
+      "nom": "Marché du travail cadres en France hexagonale 2026 (vue d'ensemble APEC) | Volume national 2025 : 29",
+      "etablissement": "",
+      "domain": "apec_region",
+      "id": "apec_region:france-hexagonale"
+    },
+    {
+      "score": 1.194,
+      "nom": "Marché du travail cadres en Pays de la Loire (panel APEC 2026) | Recrutements 2025 : 14 670 (-1 % — ",
+      "etablissement": "",
+      "domain": "apec_region",
+      "id": "apec_region:pays-de-la-loire"
+    },
+    {
+      "score": 1.1775,
+      "nom": "Marché du travail cadres en Nouvelle-Aquitaine (panel APEC 2026) | Recrutements 2025 : 13 820 (+7 % ",
+      "etablissement": "",
+      "domain": "apec_region",
+      "id": "apec_region:nouvelle-aquitaine"
+    },
+    {
+      "score": 1.1758,
+      "nom": "Marché du travail cadres en Normandie (panel APEC 2026) | Recrutements 2025 : 6 070 (-7 % — recul ne",
+      "etablissement": "",
+      "domain": "apec_region",
+      "id": "apec_region:normandie"
+    },
+    {
+      "score": 1.1703,
+      "nom": "Marché du travail cadres en Bourgogne-Franche-Comté (panel APEC 2026) | Recrutements 2025 : 5 810 (-",
+      "etablissement": "",
+      "domain": "apec_region",
+      "id": "apec_region:bourgogne-franche-comté"
+    },
+    {
+      "score": 1.1696,
+      "nom": "Marché du travail cadres en Grand Est (panel APEC 2026) | Recrutements 2025 : 13 330 (-1 %) | Prévis",
+      "etablissement": "",
+      "domain": "apec_region",
+      "id": "apec_region:grand-est"
+    },
+    {
+      "score": 1.1651,
+      "nom": "Marché du travail cadres en Provence-Alpes-Côte d'Azur & Corse (panel APEC 2026) | Recrutements 2025",
+      "etablissement": "",
+      "domain": "apec_region",
+      "id": "apec_region:provence-alpes-côte-dazur-et-corse"
+    },
+    {
+      "score": 1.1621,
+      "nom": "Marché du travail cadres en Hauts-de-France (panel APEC 2026) | Recrutements 2025 : 17 000 (-6 % — b",
+      "etablissement": "",
+      "domain": "apec_region",
+      "id": "apec_region:hauts-de-france"
+    },
+    {
+      "score": 1.1542,
+      "nom": "Marché du travail cadres en Occitanie (panel APEC 2026) | Recrutements 2025 : 18 340 (+5 % — net reb",
+      "etablissement": "",
+      "domain": "apec_region",
+      "id": "apec_region:occitanie"
+    }
+  ]
+}

@@ -35,6 +35,9 @@ INTENT_GENERAL = "general"
 DOMAIN_HINT_METIER = "metier"
 DOMAIN_HINT_PARCOURS = "parcours_bacheliers"
 DOMAIN_HINT_APEC = "apec_region"
+DOMAIN_HINT_CROUS = "crous"
+DOMAIN_HINT_INSEE_SALAIRE = "insee_salaire"
+DOMAIN_HINT_INSERTION_PRO = "insertion_pro"
 
 
 @dataclass(frozen=True)
@@ -178,6 +181,40 @@ _PATTERNS_DOMAIN_METIER = [
 ]
 
 
+# Phase B (ordre 2026-04-25-1442) : 3 nouveaux domains aggregés
+_PATTERNS_DOMAIN_CROUS = [
+    re.compile(r"\bcrous\b"),
+    re.compile(r"\blogement[sx]?\s+(?:etudiant|universitaire|crous)\b"),
+    re.compile(r"\bresidence[sx]?\s+(?:universitaire|crous|etudiante[sx]?)\b"),
+    re.compile(r"\b(?:resto[sx]?|restaurant[sx]?|cafeteri[as]+)\s+(?:u[r]?|universitaire[sx]?|crous)\b"),
+    re.compile(r"\bvie\s+etudiante\b"),
+    re.compile(r"\bse\s+loger\s+(?:a|en|pour)\s+(?:l[ae]?|mes?)\s*(?:fac|etude|universite)"),
+    re.compile(r"\bou\s+(?:se\s+)?loger\s+(?:a|en|pendant)\s+(?:les\s+)?etude[sx]?\b"),
+]
+
+_PATTERNS_DOMAIN_INSEE_SALAIRE = [
+    re.compile(r"\bsalaire[sx]?\s+(?:median[a-z]*|moyen[a-z]*|annuel[a-z]*|net[a-z]*|brut[a-z]*)\b"),
+    re.compile(r"\bcombien\s+gagne[a-z]*\s+un[e]?\b"),
+    re.compile(r"\bremuneration[sx]?\s+(?:median[a-z]*|moyenn[a-z]*)\b"),
+    re.compile(r"\bsalaire[sx]?\s+(?:par|selon|tranche)\s+(?:age|tranche)\b"),
+    re.compile(r"\bsalaire[sx]?\s+(?:cadre[sx]?|professions?\s+intermediaires?|employes?|ouvriers?)\b"),
+    re.compile(r"\bgrille\s+(?:de\s+)?salaire[sx]?\b"),
+    re.compile(r"\bpcs\s+(?:21|22|23|31|34|35|37|54)\b"),
+    re.compile(r"\binsee\s+(?:salaan|salaires?)\b"),
+]
+
+_PATTERNS_DOMAIN_INSERTION_PRO = [
+    re.compile(r"\btaux\s+(?:d['e]\s*)?(?:insertion|emploi)\s+(?:a|apres|au\s+bout)\s+(?:de\s+)?(?:6|12|18|24|30)\s+mois\b"),
+    re.compile(r"\binsertion\s+professionnel[a-z]+\s+(?:apres|post)\s+(?:master|licence|diplom)"),
+    re.compile(r"\b(?:debouches?|insertion)\s+(?:a|apres)\s+(?:bac\s*\+\s*[35]|master|licence)\b"),
+    re.compile(r"\btrouve[a-z]*\s+(?:un\s+)?(?:emploi|travail)\s+(?:apres|post|au\s+bout\s+de)"),
+    re.compile(r"\bcombien\s+(?:de\s+temps\s+)?(?:pour\s+)?trouver\s+(?:un\s+)?emploi\b"),
+    re.compile(r"\bsortants?\s+(?:de\s+)?master\b"),
+    re.compile(r"\binsersup\b"),
+    re.compile(r"\benquete\s+insertion\b"),
+]
+
+
 def classify_domain_hint(question: str) -> str | None:
     """Retourne un hint de domain multi-corpus (ADR-049) ou None.
 
@@ -188,8 +225,11 @@ def classify_domain_hint(question: str) -> str | None:
 
     Priorité de détection (du plus spécifique au plus générique) :
     1. APEC (marché du travail cadres) — termes très spécifiques
-    2. Parcours bacheliers (taux réussite licence × bac × mention)
-    3. Métier (profession / devenir / que fait un X)
+    2. INSEE salaire (médian / cadre / employé / PCS)
+    3. Insertion pro (taux insertion à N mois)
+    4. Parcours bacheliers (taux réussite licence × bac × mention)
+    5. CROUS (logement étudiant / vie étudiante)
+    6. Métier (profession / devenir / que fait un X)
     """
     if not question or not question.strip():
         return None
@@ -198,8 +238,14 @@ def classify_domain_hint(question: str) -> str | None:
 
     if any(p.search(norm) for p in _PATTERNS_DOMAIN_APEC):
         return DOMAIN_HINT_APEC
+    if any(p.search(norm) for p in _PATTERNS_DOMAIN_INSEE_SALAIRE):
+        return DOMAIN_HINT_INSEE_SALAIRE
+    if any(p.search(norm) for p in _PATTERNS_DOMAIN_INSERTION_PRO):
+        return DOMAIN_HINT_INSERTION_PRO
     if any(p.search(norm) for p in _PATTERNS_DOMAIN_PARCOURS):
         return DOMAIN_HINT_PARCOURS
+    if any(p.search(norm) for p in _PATTERNS_DOMAIN_CROUS):
+        return DOMAIN_HINT_CROUS
     if any(p.search(norm) for p in _PATTERNS_DOMAIN_METIER):
         return DOMAIN_HINT_METIER
     return None
