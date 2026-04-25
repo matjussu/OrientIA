@@ -1,0 +1,247 @@
+{
+  "idx_global": 7,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q1",
+  "query_type": "factuelle",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "elapsed_gen_s": 11.9,
+  "elapsed_fact_check_s": 7.02,
+  "answer_raw": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 informatique.\n2. En **connaissance générale**, la fourchette typique en 2026 pour un junior (0-2 ans d’expérience) se situe entre **35 000 € et 45 000 € brut annuel** en France, avec des variations fortes selon la localisation, la spécialisation, et le type d’entreprise.\n3. L’alternance et les compétences en **cybersécurité/data/IA** peuvent booster ce salaire de +10 à +20%.\n\n---\n\n### **Plan A — Salaire médian estimé (hors spécialisation pointue)**\n- **Fourchette de base** : **35k–40k€ brut/an** (IDF) ou **32k–38k€** (régions).\n  *Pour toi* : Si tu sors d’un M2 informatique classique (ex : [expert en développement logiciel — OpenClassrooms](https://openclassrooms.com/)), vise ce palier. Les PME/ESN dominent l’embauche à ce niveau.\n  *Sources* : Baromètres **Welcome to the Jungle 2025** et **Glassdoor** (estimations marché, non vérifiées dans les fiches).\n\n### **Plan B — Salaire boosté (+10–20%) avec spécialisation ou alternance**\n- **Fourchette élevée** : **40k–45k€ brut/an** (voire + pour IA/cyber).\n  *Pour toi* :\n  - **Alternance** : Un contrat pro en M2 (ex : [diplôme d’ingénieur Paris-Saclay/ITII](https://www.onisep.fr/http/redirection/formation/slug/FOR.11936)) peut négocier **38k–42k€** en sortie.\n  - **Spécialisations porteuses** : Cybersécurité (SecNumEdu), data science, ou cloud (AWS/Azure) justifient des primes. Ex : un **expert en architecture logicielle** (cf [ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10102)) peut viser **45k€+** en région parisienne.\n  *Attention* : Ces salaires concernent les **grandes entreprises** (CAC40, licornes tech) ou les ESN haut de gamme (Capgemini Invent, Sopra Steria Next).\n\n### **Plan C — Stratégies pour maximiser ton salaire dès l’embauche**\n1. **Cible les thèses CIFRE** (25k€ brut/an + formation doctorale) si tu vises la R&D : un doctorat en informatique ouvre à **50k€+** en sortie.\n2. **Négocie ton package** : En alternance, certains contrats incluent déjà **13e mois + intéressement** (ex : banques, assurance).\n3. **Mobilité géographique** : Suisse (Genève/Lausanne = +30%), Allemagne (Munich/Berlin = +20%), ou Canada (Montréal = **50k–60k€** en équivalent pouvoir d’achat).\n\n---\n### ⚠ **Attention aux pièges**\n- **Biais des plateformes** : Les salaires affichés sur Glassdoor/LinkedIn sont souvent **auto-déclarés** (surbiais positifs) ou concernent des profils seniors. Privilégie les **grilles de branche** (Syntec pour les ESN) pour des données fiables.\n- **Écart public/privé** : Un développeur dans une **startup** peut toucher **30–35k€** avec des stock-options, tandis qu’une **banque** ou un **éditeur de logiciels** (Dassault, SAP) proposera **40k€+** mais avec moins de flexibilité.\n- **L’alternance n’est pas magique** : Un salaire de **40k€** en sortie d’alternance exige un **tuteur engageant** et des missions à haute valeur ajoutée (ex : refonte d’architecture). Un simple maintien de code legacy ne justifiera pas cette rémunération.\n\n---\n**Question pour toi** :\nTon M2 inclut-il une spécialisation (cyber, data, embarqué) ou une dimension **recherche** (labo, publications) ? Cela peut faire basculer ton salaire dans la fourchette haute. Si non, as-tu envisagé une **certification complémentaire** (AWS, OSCP, TensorFlow) pour te différencier ?",
+  "answer_annotated": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 informatique.\n2. En **connaissance générale**, la fourchette typique en 2026 pour un junior (0-2 ans d’expérience) se situe entre **35 000 € et 45 000 € brut annuel** en France, avec des variations fortes selon la localisation, la spécialisation, et le type d’entreprise.\n3. L’alternance et les compétences en **cybersécurité/data/IA** peuvent booster ce salaire de +10 à +20%.\n\n---\n\n### **Plan A — Salaire médian estimé (hors spécialisation pointue)**\n- **Fourchette de base** : **35k–40k€ brut/an** (IDF) ou **32k–38k€** (régions).\n  *Pour toi* : Si tu sors d’un M2 informatique classique (ex : [expert en développement logiciel — OpenClassrooms](https://openclassrooms.com/)), vise ce palier. Les PME/ESN dominent l’embauche à ce niveau.\n  *Sources* : Baromètres **Welcome to the Jungle 2025** et **Glassdoor** (estimations marché, non vérifiées dans les fiches).\n\n### **Plan B — Salaire boosté (+10–20%) avec spécialisation ou alternance**\n- **Fourchette élevée** : **40k–45k€ brut/an** (voire + pour IA/cyber).\n  *Pour toi* :\n  - **Alternance** : Un contrat pro en M2 (ex : [diplôme d’ingénieur Paris-Saclay/ITII](https://www.onisep.fr/http/redirection/formation/slug/FOR.11936)) peut négocier **38k–42k€** en sortie.\n  - **Spécialisations porteuses** : Cybersécurité (SecNumEdu), data science, ou cloud (AWS/Azure) justifient des primes. Ex : un **expert en architecture logicielle** (cf [ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10102)) peut viser **45k€+** en région parisienne.\n  *Attention* : Ces salaires concernent les **grandes entreprises** (CAC40, licornes tech) ou les ESN haut de gamme (Capgemini Invent, Sopra Steria Next).\n\n### **Plan C — Stratégies pour maximiser ton salaire dès l’embauche**\n1. **Cible les thèses CIFRE** (25k€ brut/an + formation doctorale) si tu vises la R&D : un doctorat en informatique ouvre à **50k€+** en sortie.\n2. **Négocie ton package** : En alternance, certains contrats incluent déjà **13e mois + intéressement** (ex : banques, assurance).\n3. **Mobilité géographique** : Suisse (Genève/Lausanne = +30%), Allemagne (Munich/Berlin = +20%), ou Canada (Montréal = **50k–60k€** en équivalent pouvoir d’achat).\n\n---\n### ⚠ **Attention aux pièges**\n- **Biais des plateformes** : Les salaires affichés sur Glassdoor/LinkedIn sont souvent **auto-déclarés** (surbiais positifs) ou concernent des profils seniors. Privilégie les **grilles de branche** (Syntec pour les ESN) pour des données fiables.\n- **Écart public/privé** : Un développeur dans une **startup** peut toucher **30–35k€** avec des stock-options, tandis qu’une **banque** ou un **éditeur de logiciels** (Dassault, SAP) proposera **40k€+** mais avec moins de flexibilité.\n- **L’alternance n’est pas magique** : Un salaire de **40k€** en sortie d’alternance exige un **tuteur engageant** et des missions à haute valeur ajoutée (ex : refonte d’architecture). Un simple maintien de code legacy ne justifiera pas cette rémunération.\n\n---\n**Question pour toi** :\nTon M2 inclut-il une spécialisation (cyber, data, embarqué) ou une dimension **recherche** (labo, publications) ? Cela peut faire basculer ton salaire dans la fourchette haute. Si non, as-tu envisagé une **certification complémentaire** (AWS, OSCP, TensorFlow) pour te différencier ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 15,
+    "n_verified": 2,
+    "n_with_disclaimer": 13,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "35 000 € et 45 000 € brut annuel",
+      "stat_value": 35000,
+      "stat_unit": "€",
+      "context_in_response": "fourchette typique en 2026 pour un junior (0-2 ans d’expérience) en France",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "35k–40k€ brut/an",
+      "stat_value": 37500,
+      "stat_unit": "€",
+      "context_in_response": "Fourchette de base en IDF pour un développeur post-M2 informatique classique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "32k–38k€",
+      "stat_value": 35000,
+      "stat_unit": "€",
+      "context_in_response": "Fourchette de base en régions pour un développeur post-M2 informatique classique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+10 à +20%",
+      "stat_value": 15,
+      "stat_unit": "%",
+      "context_in_response": "boost de salaire possible avec spécialisation ou alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "38k–42k€",
+      "stat_value": 40000,
+      "stat_unit": "€",
+      "context_in_response": "salaire en sortie d’alternance pour un contrat pro en M2",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "45k€+",
+      "stat_value": 45000,
+      "stat_unit": "€",
+      "context_in_response": "salaire pour un expert en architecture logicielle en région parisienne",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "25k€ brut/an",
+      "stat_value": 25000,
+      "stat_unit": "€",
+      "context_in_response": "salaire pour une thèse CIFRE",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50k€+",
+      "stat_value": 50000,
+      "stat_unit": "€",
+      "context_in_response": "salaire en sortie de doctorat en informatique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+30%",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "écart de salaire en Suisse (Genève/Lausanne) par rapport à la France",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+20%",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context_in_response": "écart de salaire en Allemagne (Munich/Berlin) par rapport à la France",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50k–60k€",
+      "stat_value": 55000,
+      "stat_unit": "€",
+      "context_in_response": "salaire au Canada (Montréal) en équivalent pouvoir d’achat",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30–35k€",
+      "stat_value": 32500,
+      "stat_unit": "€",
+      "context_in_response": "salaire pour un développeur dans une startup",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40k€+",
+      "stat_value": 40000,
+      "stat_unit": "€",
+      "context_in_response": "salaire pour un développeur dans une banque ou un éditeur de logiciels",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche pour plusieurs fiches (ex : Expert en développement logiciel, diplôme d'ingénieur Paris-Saclay/ITII)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche pour plusieurs fiches (ex : Testeur logiciel, Concepteur développeur de solutions informatiques)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9184,
+      "nom": "Expert en développement logiciel",
+      "etablissement": "OPENCLASSROOMS",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.914,
+      "nom": "diplôme d'ingénieur de l'École polytechnique universitaire de l'université Paris-Saclay spécialité i",
+      "etablissement": "France",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8388,
+      "nom": "Testeur logiciel",
+      "etablissement": "M2I",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8362,
+      "nom": "expert en ingénierie et développement de logiciels pour l'industrie",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8358,
+      "nom": "expert en ingénierie du développement et en architecture logicielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.835,
+      "nom": "Concepteur développeur de solutions informatiques",
+      "etablissement": "42",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8333,
+      "nom": "Développeur commercial et marketing",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8326,
+      "nom": "Concepteur développeur d'applications",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    }
+  ]
+}

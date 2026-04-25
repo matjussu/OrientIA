@@ -10,21 +10,24 @@
 
 ## Résumé exécutif
 
-**v5+++ ≥ v5++ sur la suite shipping (18 queries personas v4)** — pas de
-régression, gain marginal +3.2pp verified, hallucination stable. Push
-autorisé selon discipline scientifique (cf agent_journal R3 revert).
+**v5+++ DARES = v5++ within IC95 sur la suite shipping (triple-run, n=3)**
+— pas de régression, pas de gain mesurable non plus, le single-run gain
++3.2pp verified initial était dans le bruit (cf section Triple-run IC95
+ci-dessous).
 
-**Caveat important** : les 18 queries baseline sont formation-centric et
-ne déclenchent **aucune** activation du domain hint `metier_prospective`.
-Les 111 cells DARES sont indexées mais leur boost reranker (×1.5) n'est
-pas exercé sur cette suite. Le gain mesuré relève vraisemblablement du
-drift L2 marginal (les 111 cells réordonnent légèrement les top-K), pas
-du boost intentionnel.
+Push autorisé (pas de régression, IC95 inclut v5++ baseline). Les 111
+cells DARES sont indexées correctement mais leur boost reranker (×1.5)
+n'est pas exercé : 0/18 queries shipping activent le domain hint
+`metier_prospective` car la suite est formation-centric par design.
 
-Une mesure équitable de l'apport DARES nécessiterait des queries dédiées
+Une mesure équitable de l'apport DARES nécessite des **queries dédiées**
 ("quels métiers vont recruter en 2030", "FAP X postes à pourvoir Bretagne",
-etc.). À planifier en bench complémentaire post-merge si Matteo souhaite
-chiffrer la valeur ajoutée prospective.
+etc.) — bench complémentaire post-merge listé en suivi #1.
+
+**Note historique** : ce document a été initialement publié avec un
+verdict single-run optimiste (+3.2pp verified). Le triple-run l'a
+révisé à la baisse en transparence scientifique (pattern R3 revert
+d'hier). Le headline ci-dessus reflète la conclusion finale.
 
 ---
 
@@ -82,18 +85,84 @@ Magnitude similaire au drift Phase B observé hier (cf bench v5++ run3).
 
 ---
 
+## Triple-run IC95 (extension nuit 2026-04-26)
+
+Triple-run v5+++ DARES exécuté en parallèle (run2 + run3 lancés après
+livraison initiale, run1 = bench shipping). Pattern v5++ run3 revert
+d'hier — discipline scientifique impose de mesurer la stabilité avant
+de claim un gain.
+
+### Résultats par run
+
+| Run | n_stats | verified | hallucinated | gen avg |
+|---|---|---|---|---|
+| run1 (shipping) | 192 | 42.7% | 18.2% | 14.47s |
+| run2 | 211 | 39.8% | 11.4% | 14.06s |
+| run3 | 200 | 36.5% | 14.5% | 12.60s |
+
+### Aggregate (n=3, t-distribution df=2 → t=4.303 pour IC95)
+
+| Métrique | Mean | Std | IC95 |
+|---|---|---|---|
+| pct_verified | 39.7% | 3.10 | ±7.71pp |
+| pct_hallucinated | 14.7% | 3.40 | ±8.46pp |
+| n_stats_total | 201.0 | 9.54 | ±23.70 |
+| avg_gen_s | 13.7s | 0.98 | ±2.44s |
+
+### Honnêteté scientifique : le gain single-run était dans le bruit
+
+Le verdict initial (single-run shipping) annonçait **+3.2pp verified**
+vs v5++ baseline. Le triple-run révèle :
+
+- **Delta verified vs v5++ (39.5%) : +0.2pp** (mean ; IC95 ±7.71pp)
+- **Delta hallucinated vs v5++ (18.0%) : -3.3pp** (mean ; IC95 ±8.46pp)
+
+**Les 2 deltas sont DANS le bruit** — les intervalles de confiance
+englobent zéro. On ne peut pas statistiquement distinguer v5+++ DARES
+de v5++ sur la suite shipping. Le résumé exécutif initial était trop
+optimiste sur la portée du gain et est corrigé ci-dessous.
+
+### Per-query variance (extrait notable)
+
+- `theo_q3` : verified=[0, 0, 4] — 2/3 runs retrieval miss (0 stats extraites)
+- `mohamed_q3` : verified=[0, 0, 0] — 3/3 zero stats (cas atypique stable)
+- `theo_q2` : verified=[12, 5, 0] — swing 0→12 entre runs (variance LLM gen)
+- `psy_en_q2` : halluc=[7, 6, 1] — swing 1→7 entre runs
+
+La variance per-query domine le signal aggregé. La suite 18-query est
+trop petite pour détecter un gain marginal de cette magnitude.
+
+### Conclusion révisée du verdict
+
+Le pivot DARES (111 cells) **n'apporte pas de gain mesurable** sur la
+suite shipping formation-centric, et **n'apporte pas non plus de
+régression mesurable**. C'est cohérent avec l'observation initiale
+(0/18 queries activent `metier_prospective` domain hint).
+
+**Push reste autorisé** (pas de régression, IC95 inclut v5++ baseline),
+mais la valeur ajoutée de DARES nécessite des **queries dédiées** pour
+être chiffrée. C'est explicitement le suivi #1 ci-dessous.
+
+Coût triple-run : ~$0.10 ($0.05 × 2 runs supplémentaires).
+
+---
+
 ## Suivi recommandé (post-merge)
 
-1. **Bench DARES dédié** : 6-12 queries ciblées prospective ("FAP G postes
-   à pourvoir Île-de-France 2030", "quels métiers manuels recrutent",
-   "départs en fin de carrière infirmier", etc.) pour mesurer le gain
-   attendu du boost ×1.5 sur le domain `metier_prospective`. Estimation
-   ~$0.05 + 30 min.
-2. **Triple-run v5+++ Phase C** (bonus task #3 ordre 0029) pour IC95 sur
-   la suite shipping, si bande passante avant réveil Matteo. Confirme la
-   stabilité du gain +3.2pp ou révèle qu'il est dans le bruit.
-3. **PR #71 France Compétences blocs RNCP** — second corpus tonight, à
-   livrer en parallèle (cf order 0029).
+1. **Bench DARES dédié** (PRIORITAIRE post-merge — bench manquant) :
+   6-12 queries ciblées prospective ("FAP G postes à pourvoir
+   Île-de-France 2030", "quels métiers manuels recrutent", "départs
+   en fin de carrière infirmier", etc.) pour mesurer le gain attendu
+   du boost ×1.5 sur le domain `metier_prospective`. Estimation
+   ~$0.05 + 30 min. C'est le bench qui chiffrera la valeur ajoutée
+   de DARES.
+2. **Phase D combinée** (post-merge PR #70 + PR #71) : index = phaseB
+   + DARES + blocs (~54 297 vecteurs). Bench v5++++ Phase D vs v5++
+   pour l'effet cumulatif des 2 PRs livrés cette nuit.
+3. **PR #71 France Compétences blocs RNCP** — livré en parallèle
+   (https://github.com/matjussu/OrientIA/pull/71). Bench blocs
+   single-run montre -6.8pp halluc (à confirmer en triple-run avant
+   claim définitif).
 
 ---
 
