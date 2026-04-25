@@ -1,0 +1,136 @@
+{
+  "id": "m3",
+  "domain_target": "metier",
+  "difficulty": "ambigu",
+  "query_text": "Quelle est la différence concrète entre le métier d'ingénieur mathématicien et celui d'actuaire ?",
+  "elapsed_gen_s": 15.01,
+  "elapsed_fact_check_s": 3.07,
+  "answer_raw": "**TL;DR**\n1. **Ingénieur mathématicien** : conçoit des modèles et algorithmes pour résoudre des problèmes techniques (IA, data science, simulation industrielle). **Actuaire** : évalue les risques financiers (assurances, retraite, finance) via des outils statistiques.\n2. **Différence clé** : l’ingénieur applique les maths à des *systèmes* (techno, industrie), l’actuaire à des *risques humains/économiques* (contrats, marchés).\n3. **Pour toi** : si tu aimes la tech et l’innovation → ingénieur ; si tu préfères la finance et la régulation → actuariat.\n\n---\n\n### **Plan A — Ingénieur mathématicien : modélisation et innovation technique**\n**Missions** (connaissance générale) :\n- Développer des algorithmes pour l’**IA**, la **data science**, ou la **simulation physique** (ex : prédire la résistance d’un matériau, optimiser une chaîne logistique).\n- Travailler en **R&D** (aéronautique, énergie, tech) ou dans des **ESN** (SSII) comme data scientist.\n- Outils : Python, C++, logiciels de calcul scientifique (MATLAB, R).\n\n**Exemple de formation** :\n📍 **Diplôme d’ingénieur en Mathématiques Appliquées** (INSA Toulouse) — bac+5 public, habilitation CTI, débouchés data/CDO · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.12439)\n*Pour toi : idéal si tu veux allier maths pures et applications concrètes (robotique, santé, finance quantitative).*\n\n---\n\n### **Plan B — Actuaire : gestion des risques et finance**\n**Missions** (connaissance générale) :\n- **Calculer des primes d’assurance**, évaluer la solvabilité des fonds de pension, ou modéliser des **crises financières**.\n- Travailler chez des **assureurs** (AXA, Generali), des **banques**, ou des **cabinets de conseil** (ex : Willis Towers Watson).\n- Outils : Excel avancé, VBA, logiciels actuariels (Prophet, MoSes), normes Solvabilité II.\n\n**Exemple de formation** :\n📍 **Master Actuariat** (Université Gustave Eiffel, Marne-la-Vallée) — bac+5 public, partenariats avec le secteur assurance · [fiche Parcoursup](lien_form_psup)\n*Pour toi : choix sécurisé si tu aimes les maths *appliquées à l’économie* et vises un métier réglementé (titres protégés en France).*\n\n---\n\n### **Plan C — Passerelle : double compétence maths + finance**\n**Option hybride** (connaissance générale) :\n- **Quantitative Analyst (\"Quant\")** : mélange des deux métiers (maths pour modéliser des produits financiers complexes). Formations : masters en **mathématiques financières** (ex : Paris Dauphine) ou écoles d’ingé avec parcours finance (ex : Polytechnique X).\n- **Data Actuary** : émergent dans les assurances, utilise du machine learning pour affiner les modèles de risque.\n\n**Exemple** :\n📍 **Master Mathématiques Appliquées, Parcours Finance** (Université Côte d’Azur) — bac+5 public, stages en banques/assurances · [fiche officielle](lien)\n*Pour toi : si tu hésites entre les deux, ce parcours offre une porte de sortie vers les deux métiers.*\n\n---\n### **⚠ Attention aux pièges**\n- **Salaire** : un actuaire débutant gagne **~35-40k€** (source Céreq, masters actuariat), un ingénieur maths en data science **~38-45k€** (connaissance générale, variable selon le secteur tech).\n- **Sélectivité** : les écoles d’ingé (INSA, Polytech) sont **plus sélectives** que les masters d’actuariat (sauf Paris Dauphine).\n- **Mobilité** : l’actuariat est très **franco-français** (peu de postes à l’étranger sans réseau), tandis que l’ingénierie maths ouvre à l’international (ex : data scientist à Berlin ou Montréal).\n\n---\n**Question pour toi** :\nPréfères-tu **créer des outils techniques** (ingénieur) ou **garantir la stabilité financière** (actuaire) ? Ou bien un mix des deux (quant/finance) ?",
+  "answer_annotated": "**TL;DR**\n1. **Ingénieur mathématicien** : conçoit des modèles et algorithmes pour résoudre des problèmes techniques (IA, data science, simulation industrielle). **Actuaire** : évalue les risques financiers (assurances, retraite, finance) via des outils statistiques.\n2. **Différence clé** : l’ingénieur applique les maths à des *systèmes* (techno, industrie), l’actuaire à des *risques humains/économiques* (contrats, marchés).\n3. **Pour toi** : si tu aimes la tech et l’innovation → ingénieur ; si tu préfères la finance et la régulation → actuariat.\n\n---\n\n### **Plan A — Ingénieur mathématicien : modélisation et innovation technique**\n**Missions** (connaissance générale) :\n- Développer des algorithmes pour l’**IA**, la **data science**, ou la **simulation physique** (ex : prédire la résistance d’un matériau, optimiser une chaîne logistique).\n- Travailler en **R&D** (aéronautique, énergie, tech) ou dans des **ESN** (SSII) comme data scientist.\n- Outils : Python, C++, logiciels de calcul scientifique (MATLAB, R).\n\n**Exemple de formation** :\n📍 **Diplôme d’ingénieur en Mathématiques Appliquées** (INSA Toulouse) — bac+5 public, habilitation CTI, débouchés data/CDO · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.12439)\n*Pour toi : idéal si tu veux allier maths pures et applications concrètes (robotique, santé, finance quantitative).*\n\n---\n\n### **Plan B — Actuaire : gestion des risques et finance**\n**Missions** (connaissance générale) :\n- **Calculer des primes d’assurance**, évaluer la solvabilité des fonds de pension, ou modéliser des **crises financières**.\n- Travailler chez des **assureurs** (AXA, Generali), des **banques**, ou des **cabinets de conseil** (ex : Willis Towers Watson).\n- Outils : Excel avancé, VBA, logiciels actuariels (Prophet, MoSes), normes Solvabilité II.\n\n**Exemple de formation** :\n📍 **Master Actuariat** (Université Gustave Eiffel, Marne-la-Vallée) — bac+5 public, partenariats avec le secteur assurance · [fiche Parcoursup](lien_form_psup)\n*Pour toi : choix sécurisé si tu aimes les maths *appliquées à l’économie* et vises un métier réglementé (titres protégés en France).*\n\n---\n\n### **Plan C — Passerelle : double compétence maths + finance**\n**Option hybride** (connaissance générale) :\n- **Quantitative Analyst (\"Quant\")** : mélange des deux métiers (maths pour modéliser des produits financiers complexes). Formations : masters en **mathématiques financières** (ex : Paris Dauphine) ou écoles d’ingé avec parcours finance (ex : Polytechnique X).\n- **Data Actuary** : émergent dans les assurances, utilise du machine learning pour affiner les modèles de risque.\n\n**Exemple** :\n📍 **Master Mathématiques Appliquées, Parcours Finance** (Université Côte d’Azur) — bac+5 public, stages en banques/assurances · [fiche officielle](lien)\n*Pour toi : si tu hésites entre les deux, ce parcours offre une porte de sortie vers les deux métiers.*\n\n---\n### **⚠ Attention aux pièges**\n- **Salaire** : un actuaire débutant gagne **~35-40k€** (source Céreq, masters actuariat), un ingénieur maths en data science **~38-45k€** (connaissance générale, variable selon le secteur tech).\n- **Sélectivité** : les écoles d’ingé (INSA, Polytech) sont **plus sélectives** que les masters d’actuariat (sauf Paris Dauphine).\n- **Mobilité** : l’actuariat est très **franco-français** (peu de postes à l’étranger sans réseau), tandis que l’ingénierie maths ouvre à l’international (ex : data scientist à Berlin ou Montréal).\n\n---\n**Question pour toi** :\nPréfères-tu **créer des outils techniques** (ingénieur) ou **garantir la stabilité financière** (actuaire) ? Ou bien un mix des deux (quant/finance) ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 4,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "un actuaire débutant gagne ~35-40k€",
+      "stat_value": 37.5,
+      "stat_unit": "k€ brut annuel",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "un ingénieur maths en data science ~38-45k€",
+      "stat_value": 41.5,
+      "stat_unit": "k€ brut annuel",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, ...}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_cdi\": 0.83, ...}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€ brut mensuel",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"salaire_median_embauche\": 2080, ...}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.0203,
+      "nom": "ACTUARIAT — Actuariat et Ingénierie Mathématique pour l'Assurance et la Finance",
+      "etablissement": "Université de Rouen Normandie",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 1.0169,
+      "nom": "ACTUARIAT — None",
+      "etablissement": "Université Gustave Eiffel",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 1.0095,
+      "nom": "diplôme d'ingénieur de l'École polytechnique universitaire de l'Institut national polytechnique Cler",
+      "etablissement": "Institut national polytechnique Clermont Auvergne",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 0.929,
+      "nom": "Titre ingénieur - Ingénieur diplômé de l'Ecole Polytechnique universitaire de l'Université de Lille,",
+      "etablissement": "UNIVERSITE DE LILLE",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 0.925,
+      "nom": "Ingénieur diplômé de l'institut national des sciences appliquées de Rennes, spécialité mathéma",
+      "etablissement": "INSTITUT NATIONAL SCIENCES APPLIQUEES RENNES",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 0.9244,
+      "nom": "Ingénieur diplômé de l'école polytechnique universitaire d'Université Côte d’Azur, spécialité Mathém",
+      "etablissement": "UNIVERSITE COTE D'AZUR",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 0.9228,
+      "nom": "Ingénieur diplômé de l'institut national des sciences appliquées de Toulouse, spécialité mathématiqu",
+      "etablissement": "INSTITUT NATIONAL DES SCIENCES APPLIQUEES DE TOULOUSE (INSA)",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 0.9207,
+      "nom": "INGENIEUR DIPLOME DE L'ECOLE NATIONALE SUPERIEURE D'INFORMATIQUE ET DE MATHEMATIQUES APPLIQUEES DE L",
+      "etablissement": "ASSOC DAUPHINOISE FORMATION INDUSTRIE",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 0.9196,
+      "nom": "Ingénieur diplômé de l'École nationale supérieure d’électronique, informatique, télécommunications, ",
+      "etablissement": "INSTITUT POLYTECHNIQUE DE BORDEAUX",
+      "domain": "formation",
+      "id": null
+    },
+    {
+      "score": 0.9192,
+      "nom": "Ingénieur diplômé de l’institut national des sciences appliquées de Rouen, spécialité Mathématiques ",
+      "etablissement": "INST NAT SCIENCES APPLIQUEES ROUEN",
+      "domain": "formation",
+      "id": null
+    }
+  ]
+}

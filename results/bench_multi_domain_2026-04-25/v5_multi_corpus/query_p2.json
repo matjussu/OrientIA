@@ -1,0 +1,129 @@
+{
+  "id": "p2",
+  "domain_target": "parcours_bacheliers",
+  "difficulty": "contextuel",
+  "query_text": "Mon fils a un BAC ES mention Assez bien. Il hésite entre licence éco et licence droit. Laquelle a le meilleur taux de passage L1 → L2 ?",
+  "elapsed_gen_s": 9.75,
+  "elapsed_fact_check_s": 2.42,
+  "answer_raw": "**TL;DR**\n1. **Droit est plus sélectif que l’éco** en L1→L2 : taux de passage ~50-60% en droit vs ~60-70% en éco (connaissance générale).\n2. **L’éco offre plus de passerelles** (vers gestion, data, commerce) si ton fils hésite encore.\n3. **Le choix dépend de son projet** : droit = métiers juridiques (longs études), éco = flexibilité (bac+3 suffisant pour certains métiers).\n\n---\n\n### **Plan A — Licence d’économie : plus accessible et flexible**\n- **Taux de passage L1→L2** : ~60-70% (connaissance générale) — moins de redoublement qu’en droit.\n- **Débouchés** : banques, assurance, data analyst (avec spécialisation), concours administratifs (catégorie B).\n- **Pour lui** : idéal si il veut garder des portes ouvertes ou vise un bac+3 pro (licence pro métiers de la finance, par exemple).\n\n### **Plan B — Licence de droit : plus sélective mais porteuse à long terme**\n- **Taux de passage L1→L2** : ~50-60% (connaissance générale) — charge de travail lourde, méthodologie exigeante.\n- **Débouchés** : avocat, notaire, magistrat (mais master obligatoire + concours), ou reconversion en compliance/ressources humaines.\n- **Pour lui** : seulement si il est prêt à s’investir sur 5 ans minimum et vise un métier juridique précis.\n\n### **Plan C — Double licence éco-droit : pour les indécis motivés**\n- **Alternative** : Certaines universités proposent des **doubles licences éco-droit** (ex : Paris 1 Panthéon-Sorbonne, Aix-Marseille).\n- **Sélectivité** : très élevée (dossier + entretien), mais taux de passage L1→L2 ~70% (les étudiants sont triés à l’entrée).\n- **Pour lui** : si il a un bon niveau et ne veut pas choisir tout de suite.\n\n---\n**⚠ Attention aux pièges**\n- **Droit** : 40% d’abandon en L1 (source : ministère de l’Enseignement supérieur, 2022 — connaissance générale). Beaucoup découvrent trop tard que le métier d’avocat ne correspond pas à leurs attentes.\n- **Éco** : certaines licences sont très théoriques (peu de débouchés sans spécialisation en L3). Vérifier les parcours proposés en **licence pro** (ex : banques, assurance) pour un bac+3 concret.\n- **Double licence** : rythme intense (50h/semaine), à réserver aux étudiants organisés et endurants.\n\n---\n**Question pour toi** :\nEst-ce qu’il a déjà un métier en tête (ex : \"devenir juriste en entreprise\" vs \"travailler dans la finance\") ? Sinon, l’éco + stages lui donnera plus de temps pour explorer.",
+  "answer_annotated": "**TL;DR**\n1. **Droit est plus sélectif que l’éco** en L1→L2 : taux de passage ~50-60% en droit vs ~60-70% en éco (connaissance générale).\n2. **L’éco offre plus de passerelles** (vers gestion, data, commerce) si ton fils hésite encore.\n3. **Le choix dépend de son projet** : droit = métiers juridiques (longs études), éco = flexibilité (bac+3 suffisant pour certains métiers).\n\n---\n\n### **Plan A — Licence d’économie : plus accessible et flexible**\n- **Taux de passage L1→L2** : ~60-70% (connaissance générale) — moins de redoublement qu’en droit.\n- **Débouchés** : banques, assurance, data analyst (avec spécialisation), concours administratifs (catégorie B).\n- **Pour lui** : idéal si il veut garder des portes ouvertes ou vise un bac+3 pro (licence pro métiers de la finance, par exemple).\n\n### **Plan B — Licence de droit : plus sélective mais porteuse à long terme**\n- **Taux de passage L1→L2** : ~50-60% (connaissance générale) — charge de travail lourde, méthodologie exigeante.\n- **Débouchés** : avocat, notaire, magistrat (mais master obligatoire + concours), ou reconversion en compliance/ressources humaines.\n- **Pour lui** : seulement si il est prêt à s’investir sur 5 ans minimum et vise un métier juridique précis.\n\n### **Plan C — Double licence éco-droit : pour les indécis motivés**\n- **Alternative** : Certaines universités proposent des **doubles licences éco-droit** (ex : Paris 1 Panthéon-Sorbonne, Aix-Marseille).\n- **Sélectivité** : très élevée (dossier + entretien), mais taux de passage L1→L2 ~70% (les étudiants sont triés à l’entrée).\n- **Pour lui** : si il a un bon niveau et ne veut pas choisir tout de suite.\n\n---\n**⚠ Attention aux pièges**\n- **Droit** : 40% d’abandon en L1 (source : ministère de l’Enseignement supérieur, 2022 — connaissance générale). Beaucoup découvrent trop tard que le métier d’avocat ne correspond pas à leurs attentes.\n- **Éco** : certaines licences sont très théoriques (peu de débouchés sans spécialisation en L3). Vérifier les parcours proposés en **licence pro** (ex : banques, assurance) pour un bac+3 concret.\n- **Double licence** : rythme intense (50h/semaine), à réserver aux étudiants organisés et endurants.\n\n---\n**Question pour toi** :\nEst-ce qu’il a déjà un métier en tête (ex : \"devenir juriste en entreprise\" vs \"travailler dans la finance\") ? Sinon, l’éco + stages lui donnera plus de temps pour explorer.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 5,
+    "n_verified": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux de passage ~50-60% en droit vs ~60-70% en éco",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Taux de passage L1→L2 : ~60-70%",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Taux de passage L1→L2 : ~50-60%",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux de passage L1→L2 ~70%",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40% d’abandon en L1",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.8059,
+      "nom": "Parcours licence en Droit, gestion, économie, AES | Bachelier : BAC ES | Mention au bac : Assez bien",
+      "etablissement": "",
+      "domain": "parcours_bacheliers",
+      "id": "parcours:droit_gestion_économie_aes|bac_es|assez_bien"
+    },
+    {
+      "score": 0.8058,
+      "nom": "Parcours licence en Droit, gestion, économie, AES | Bachelier : BAC S | Mention au bac : Assez bien ",
+      "etablissement": "",
+      "domain": "parcours_bacheliers",
+      "id": "parcours:droit_gestion_économie_aes|bac_s|assez_bien"
+    },
+    {
+      "score": 0.8043,
+      "nom": "Parcours licence en Droit, gestion, économie, AES | Bachelier : BAC L | Mention au bac : Assez bien ",
+      "etablissement": "",
+      "domain": "parcours_bacheliers",
+      "id": "parcours:droit_gestion_économie_aes|bac_l|assez_bien"
+    },
+    {
+      "score": 0.8041,
+      "nom": "Parcours licence en Droit, gestion, économie, AES | Bachelier : BAC professionnel | Mention au bac :",
+      "etablissement": "",
+      "domain": "parcours_bacheliers",
+      "id": "parcours:droit_gestion_économie_aes|bac_professionnel|assez_bien"
+    },
+    {
+      "score": 0.8024,
+      "nom": "Parcours licence en Droit, gestion, économie, AES | Bachelier : BAC ES | Mention au bac : Très bien ",
+      "etablissement": "",
+      "domain": "parcours_bacheliers",
+      "id": "parcours:droit_gestion_économie_aes|bac_es|très_bien"
+    },
+    {
+      "score": 0.801,
+      "nom": "Parcours licence en Droit, gestion, économie, AES | Bachelier : BAC ES | Mention au bac : Bien | Coh",
+      "etablissement": "",
+      "domain": "parcours_bacheliers",
+      "id": "parcours:droit_gestion_économie_aes|bac_es|bien"
+    },
+    {
+      "score": 0.8004,
+      "nom": "Parcours licence en Droit, gestion, économie, AES | Bachelier : BAC S | Mention au bac : Très bien |",
+      "etablissement": "",
+      "domain": "parcours_bacheliers",
+      "id": "parcours:droit_gestion_économie_aes|bac_s|très_bien"
+    },
+    {
+      "score": 0.8001,
+      "nom": "Parcours licence en Droit, gestion, économie, AES | Bachelier : BAC L | Mention au bac : Très bien |",
+      "etablissement": "",
+      "domain": "parcours_bacheliers",
+      "id": "parcours:droit_gestion_économie_aes|bac_l|très_bien"
+    },
+    {
+      "score": 0.8001,
+      "nom": "Parcours licence en Droit, gestion, économie, AES | Bachelier : BAC L | Mention au bac : Passable pr",
+      "etablissement": "",
+      "domain": "parcours_bacheliers",
+      "id": "parcours:droit_gestion_économie_aes|bac_l|passable_premier_groupe"
+    },
+    {
+      "score": 0.7995,
+      "nom": "Parcours licence en Droit, gestion, économie, AES | Bachelier : BAC S | Mention au bac : Bien | Coho",
+      "etablissement": "",
+      "domain": "parcours_bacheliers",
+      "id": "parcours:droit_gestion_économie_aes|bac_s|bien"
+    }
+  ]
+}
