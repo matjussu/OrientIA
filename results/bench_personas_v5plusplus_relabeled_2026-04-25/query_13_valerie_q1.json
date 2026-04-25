@@ -1,0 +1,231 @@
+{
+  "idx_global": 13,
+  "persona_id": "valerie",
+  "persona_description": "Valérie, parent de lycéen (perspective externe)",
+  "scope": "parent",
+  "query_id": "q1",
+  "query_type": "factuelle",
+  "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+  "elapsed_gen_s": 9.02,
+  "elapsed_fact_check_s": 6.24,
+  "answer_raw": "**TL;DR**\n1. Une licence publique en économie/gestion coûte **~200-600€/an** (frais d’inscription + CVEC), une école de commerce privée **5 000-12 000€/an** (hors grandes écoles top 10 à 15k€+).\n2. L’écart se justifie par les labels (grade Master, RNCP), réseaux alumni, et pédagogies (alternance, international).\n3. **Stratégie clé** : si budget serré, vise une licence publique + spécialisation en master (IAE, écoles en admission parallèle).\n\n---\n\n### **Plan A — Économique : Licence publique + master**\n📍 **Licence Économie et gestion** (ex: [Paris Panthéon-Assas](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39331&typeBac=0&originePc=0)) — **243€/an** (droits 2024), sélective (15% en double diplôme), grade Licence.\n*Pour toi : coût maîtrisé, débouchés solides (salaire médian 2 630€ net après master).*\n\n### **Plan B — Investissement maîtrisé : École privée post-bac**\n📍 **Bachelor Commerce international** (ex: [ESTICE Lille](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24397&typeBac=0&originePc=0)) — **~6 000-8 000€/an**, sélective (38%), RNCP.\n*Pour toi : réseau pro et stages intégrés, mais budget à anticiper (bourses, alternance possible en L3).*\n\n### **Plan C — Alternance : Formation gratuite + salaire**\n*(connaissance générale)*\n**BTS NDRC** (public) ou **BUT TC** (IUT) : **0€** (rémunération en alternance ~600-800€/mois). Diplômes bac+2/3 reconnus, passerelles vers écoles de commerce en admission parallèle.\n\n---\n**⚠ Attention aux pièges**\n- **Privée ≠ garantie d’emploi** : une licence publique comme Assas a un taux d’emploi à 12 mois de **61%** (source DEPP 2024), comparable à des bachelors privés moins cotés.\n- **Coûts cachés** : dans le privé, prévoir +1 000-2 000€/an (voyages, vie associative obligatoire, matériel).\n- **Sélectivité post-bac** : les écoles privées accessibles (taux >30%) ont souvent des frais élevés pour un RNCP — vérifier le **label** (grade Master > RNCP niveau 6).\n\n**Question pour toi :**\nTon critère prioritaire est-il le **coût**, le **prestige du diplôme**, ou la **flexibilité** (alternance, réorientation possible) ? *(Cela change radicalement les options.)*",
+  "answer_annotated": "**TL;DR**\n1. Une licence publique en économie/gestion coûte **~200-600€/an** (frais d’inscription + CVEC), une école de commerce privée **5 000-12 000€/an** (hors grandes écoles top 10 à 15k€+).\n2. L’écart se justifie par les labels (grade Master, RNCP), réseaux alumni, et pédagogies (alternance, international).\n3. **Stratégie clé** : si budget serré, vise une licence publique + spécialisation en master (IAE, écoles en admission parallèle).\n\n---\n\n### **Plan A — Économique : Licence publique + master**\n📍 **Licence Économie et gestion** (ex: [Paris Panthéon-Assas](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39331&typeBac=0&originePc=0)) — **243€/an** (droits 2024), sélective (15% en double diplôme), grade Licence.\n*Pour toi : coût maîtrisé, débouchés solides (salaire médian 2 630€ net *(non vérifié dans les sources)* après master).*\n\n### **Plan B — Investissement maîtrisé : École privée post-bac**\n📍 **Bachelor Commerce international** (ex: [ESTICE Lille](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24397&typeBac=0&originePc=0)) — **~6 000-8 000€/an**, sélective (38%), RNCP.\n*Pour toi : réseau pro et stages intégrés, mais budget à anticiper (bourses, alternance possible en L3).*\n\n### **Plan C — Alternance : Formation gratuite + salaire**\n*(connaissance générale)*\n**BTS NDRC** (public) ou **BUT TC** (IUT) : **0€** (rémunération en alternance ~600-800€/mois). Diplômes bac+2/3 reconnus, passerelles vers écoles de commerce en admission parallèle.\n\n---\n**⚠ Attention aux pièges**\n- **Privée ≠ garantie d’emploi** : une licence publique comme Assas a un taux d’emploi à 12 mois de **61% *(non vérifié dans les sources)*** (source DEPP 2024), comparable à des bachelors privés moins cotés.\n- **Coûts cachés** : dans le privé, prévoir +1 000-2 000€/an (voyages, vie associative obligatoire, matériel).\n- **Sélectivité post-bac** : les écoles privées accessibles (taux >30%) ont souvent des frais élevés pour un RNCP — vérifier le **label** (grade Master > RNCP niveau 6).\n\n**Question pour toi :**\nTon critère prioritaire est-il le **coût**, le **prestige du diplôme**, ou la **flexibilité** (alternance, réorientation possible) ? *(Cela change radicalement les options.)*",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 4,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "200-600€/an",
+      "stat_value": 200,
+      "stat_unit": "€/an",
+      "context_in_response": "coût d'une licence publique en économie/gestion (frais d’inscription + CVEC)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "5 000-12 000€/an",
+      "stat_value": 5000,
+      "stat_unit": "€/an",
+      "context_in_response": "coût d'une école de commerce privée (hors grandes écoles top 10 à 15k€+)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "15k€+",
+      "stat_value": 15000,
+      "stat_unit": "€/an",
+      "context_in_response": "coût des grandes écoles top 10",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "243€/an",
+      "stat_value": 243,
+      "stat_unit": "€/an",
+      "context_in_response": "coût de la licence Économie et gestion à Paris Panthéon-Assas (droits 2024)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "15%",
+      "stat_value": 15,
+      "stat_unit": "%",
+      "context_in_response": "taux d'accès Parcoursup pour la licence Économie et gestion à Paris Panthéon-Assas",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 15.0%"
+    },
+    {
+      "stat_text": "61%",
+      "stat_value": 61,
+      "stat_unit": "%",
+      "context_in_response": "taux d’emploi à 12 mois pour une licence publique comme Assas",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "6 000-8 000€/an",
+      "stat_value": 6000,
+      "stat_unit": "€/an",
+      "context_in_response": "coût du Bachelor Commerce international à ESTICE Lille",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "38%",
+      "stat_value": 38,
+      "stat_unit": "%",
+      "context_in_response": "taux d'accès Parcoursup pour le Bachelor Commerce international à ESTICE Lille",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 38.0%"
+    },
+    {
+      "stat_text": "600-800€/mois",
+      "stat_value": 600,
+      "stat_unit": "€/mois",
+      "context_in_response": "rémunération en alternance pour un BTS NDRC ou BUT TC",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 000-2 000€/an",
+      "stat_value": 1000,
+      "stat_unit": "€/an",
+      "context_in_response": "coûts cachés dans le privé (voyages, vie associative, matériel)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 630€ net",
+      "stat_value": 2630,
+      "stat_unit": "€ net",
+      "context_in_response": "salaire médian après master pour une licence publique en économie/gestion",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 740€",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "salaire médian à l'embauche pour des diplômes bac+3 (ex: ESTICE)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "\"salaire_median_embauche\": 1740"
+    },
+    {
+      "stat_text": "2 080€",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire médian à l'embauche pour des diplômes bac+5 (ex: Paris Panthéon-Assas)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "\"salaire_median_embauche\": 2080"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.2258,
+      "nom": "Licence - Double diplôme - Licence Economie et gestion - Collège d'économie filière ingénierie en an",
+      "etablissement": "Université Paris Panthéon Assas",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "parcoursup",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 1.019,
+      "nom": "Licence - Economie et gestion - Parcours Commerce international et langues",
+      "etablissement": "ICL - ESTICE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9293,
+      "nom": "Programme grande école",
+      "etablissement": "INSTITUT SUPERIEUR COMMERCE PARIS",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8499,
+      "nom": "Diplôme d'études supérieures en commerce et en entrepreneuriat",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8484,
+      "nom": "Affaires et Relations Internationales",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8476,
+      "nom": "diplôme finance",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.847,
+      "nom": "diplôme du programme ingénieur d'affaires",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8465,
+      "nom": "diplôme en gestion du luxe",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8465,
+      "nom": "commerce international",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8455,
+      "nom": "diplôme en comptabilité et gestion financière",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    }
+  ]
+}

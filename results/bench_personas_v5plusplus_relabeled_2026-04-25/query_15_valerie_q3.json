@@ -1,0 +1,223 @@
+{
+  "idx_global": 15,
+  "persona_id": "valerie",
+  "persona_description": "Valérie, parent de lycéen (perspective externe)",
+  "scope": "parent",
+  "query_id": "q3",
+  "query_type": "contextuelle_riche",
+  "query_text": "Mon fils est en Terminale S, moyenne 13, il adore le sport. Il hésite entre STAPS et kiné. On n'a pas les moyens d'une école privée chère. Quelles voies publiques les plus sûres ?",
+  "elapsed_gen_s": 10.7,
+  "elapsed_fact_check_s": 5.92,
+  "answer_raw": "**TL;DR**\n1. **Kiné en public = parcours ultra-sélectif** (3-12% d’admission en L1 STAPS \"kiné\" — bac TB souvent requis).\n2. **STAPS classique = plus accessible** (35% à Sénart) mais ne garantit pas l’entrée en école de kiné.\n3. **Stratégie réaliste** : vise une L1 STAPS accessible, puis tente les concours kiné en L2/L3, ou explore les métiers du sport (entraîneur, éducateur).\n\n---\n\n### **Plan A — Réaliste : L1 STAPS accessible + concours kiné plus tard**\n📍 **Licence STAPS - site de Sénart** ([Lieuxaint](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9937&typeBac=0&originePc=0)) — bac+3 public, **35% d’admission** (sélective mais bien plus réaliste qu’une L1 \"kiné\").\n*Pour toi : avec 13 de moyenne, c’est jouable. En L2/L3, il pourra tenter les concours kiné (IFMK) ou se spécialiser en entraînement sportif.*\n\n📍 **Licence STAPS - Ingénierie et Ergonomie** ([Valenciennes](https://www.uphf.fr/)) — bac+5 public, **moins sélective** que les parcours \"kiné\".\n*Pour toi : alternative si le sport l’intéresse plus que la rééducation. Débouchés : coach, éducateur sportif, ergonomie.*\n\n---\n\n### **Plan B — Ambitieux : L1 STAPS \"prépa kiné\" (si dossier solide)**\n📍 **Licence STAPS - Prépa Kiné Paris-Saclay** ([Orsay](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10924&typeBac=0&originePc=0)) — bac+3 public, **12% d’admission**, mais meilleure prépa pour les IFMK.\n*Pour toi : si son dossier est très bon (notes en SVT/physique > 14), ça vaut le coup. Sinon, trop risqué.*\n\n📍 **Licence STAPS - Accès Kiné Toulouse** ([Toulouse](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48327&typeBac=0&originePc=0)) — bac+3 public, **7% d’admission**.\n*Pour toi : très sélective, mais si il vise absolument la kiné et a un bon niveau scientifique, à tenter en vœu 2-3.*\n\n---\n### **Plan C — Alternative : Métiers du sport sans passer par la kiné**\n- **BPJEPS** (Brevet Pro Jeunesse, Éducation Populaire et Sport) — formation **gratuite en alternance** (salaire + diplôme). Débouchés : éducateur sportif, entraîneur.\n- **BUT Carrières Sociales parcours Animation Sportive** (IUT public) — bac+3, **peu sélectif**, métiers : coordinateur sportif, gestion d’équipements.\n*(connaissance générale)*\n\n---\n### **⚠ Attention aux pièges**\n- **Illusion \"STAPS = kiné\"** : Seule une minorité de STAPS accèdent aux écoles de kiné (concours très sélectifs en L2/L3). La plupart deviennent profs de sport ou éducateurs.\n- **Coût caché** : Même en public, les études de kiné coûtent cher après la licence (IFMK privés à ~5 000-8 000€/an). Prévoir un budget ou l’alternance.\n- **Dossier scientifique** : Les L1 STAPS \"kiné\" privilégient les dossiers avec **bonnes notes en SVT, physique et maths**. Un 13 de moyenne générale ne suffit pas si ces matières sont faibles.\n\n---\n**Question pour toi :**\nEst-ce que ton fils est prêt à :\n1. **Accepter un autre métier du sport** (entraîneur, éducateur) si la kiné ne marche pas ?\n2. **Se donner 2-3 ans de plus** (L1 STAPS → concours IFMK) pour tenter la kiné ?\n3. **Travailler en parallèle** (jobs étudiants, alternance) pour financer les études ?\n\n*(Sources : Parcoursup 2025, données InserSup DEPP 2024. Pour un projet personnalisé, consulte le [Psy-EN de son lycée](https://www.education.gouv.fr/annuaire).)*",
+  "answer_annotated": "**TL;DR**\n1. **Kiné en public = parcours ultra-sélectif** (3-12% d’admission en L1 STAPS \"kiné\" — bac TB souvent requis).\n2. **STAPS classique = plus accessible** (35% à Sénart) mais ne garantit pas l’entrée en école de kiné.\n3. **Stratégie réaliste** : vise une L1 STAPS accessible, puis tente les concours kiné en L2/L3, ou explore les métiers du sport (entraîneur, éducateur).\n\n---\n\n### **Plan A — Réaliste : L1 STAPS accessible + concours kiné plus tard**\n📍 **Licence STAPS - site de Sénart** ([Lieuxaint](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9937&typeBac=0&originePc=0)) — bac+3 public, **35% d’admission** (sélective mais bien plus réaliste qu’une L1 \"kiné\").\n*Pour toi : avec 13 de moyenne *(non vérifié dans les sources)*, c’est jouable. En L2/L3, il pourra tenter les concours kiné (IFMK) ou se spécialiser en entraînement sportif.*\n\n📍 **Licence STAPS - Ingénierie et Ergonomie** ([Valenciennes](https://www.uphf.fr/)) — bac+5 public, **moins sélective** que les parcours \"kiné\".\n*Pour toi : alternative si le sport l’intéresse plus que la rééducation. Débouchés : coach, éducateur sportif, ergonomie.*\n\n---\n\n### **Plan B — Ambitieux : L1 STAPS \"prépa kiné\" (si dossier solide)**\n📍 **Licence STAPS - Prépa Kiné Paris-Saclay** ([Orsay](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10924&typeBac=0&originePc=0)) — bac+3 public, **12% d’admission**, mais meilleure prépa pour les IFMK.\n*Pour toi : si son dossier est très bon (notes en SVT/physique > 14), ça vaut le coup. Sinon, trop risqué.*\n\n📍 **Licence STAPS - Accès Kiné Toulouse** ([Toulouse](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48327&typeBac=0&originePc=0)) — bac+3 public, **7% d’admission**.\n*Pour toi : très sélective, mais si il vise absolument la kiné et a un bon niveau scientifique, à tenter en vœu 2-3.*\n\n---\n### **Plan C — Alternative : Métiers du sport sans passer par la kiné**\n- **BPJEPS** (Brevet Pro Jeunesse, Éducation Populaire et Sport) — formation **gratuite en alternance** (salaire + diplôme). Débouchés : éducateur sportif, entraîneur.\n- **BUT Carrières Sociales parcours Animation Sportive** (IUT public) — bac+3, **peu sélectif**, métiers : coordinateur sportif, gestion d’équipements.\n*(connaissance générale)*\n\n---\n### **⚠ Attention aux pièges**\n- **Illusion \"STAPS = kiné\"** : Seule une minorité de STAPS accèdent aux écoles de kiné (concours très sélectifs en L2/L3). La plupart deviennent profs de sport ou éducateurs.\n- **Coût caché** : Même en public, les études de kiné coûtent cher après la licence (IFMK privés à ~5 000-8 000€/an). Prévoir un budget ou l’alternance.\n- **Dossier scientifique** : Les L1 STAPS \"kiné\" privilégient les dossiers avec **bonnes notes en SVT, physique et maths**. Un 13 de moyenne générale ne suffit pas si ces matières sont faibles.\n\n---\n**Question pour toi :**\nEst-ce que ton fils est prêt à :\n1. **Accepter un autre métier du sport** (entraîneur, éducateur) si la kiné ne marche pas ?\n2. **Se donner 2-3 ans de plus** (L1 STAPS → concours IFMK) pour tenter la kiné ?\n3. **Travailler en parallèle** (jobs étudiants, alternance) pour financer les études ?\n\n*(Sources : Parcoursup 2025, données InserSup DEPP 2024. Pour un projet personnalisé, consulte le [Psy-EN de son lycée](https://www.education.gouv.fr/annuaire).)*",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 10,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "3-12% d’admission en L1 STAPS \"kiné\"",
+      "stat_value": 3,
+      "stat_unit": "%",
+      "context_in_response": "Kiné en public = parcours ultra-sélectif (3-12% d’admission en L1 STAPS \"kiné\" — bac TB souvent requis).",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 5 : Taux d'accès Parcoursup : 3.0%"
+    },
+    {
+      "stat_text": "12% d’admission",
+      "stat_value": 12,
+      "stat_unit": "%",
+      "context_in_response": "Licence STAPS - Prépa Kiné Paris-Saclay (Orsay) — bac+3 public, 12% d’admission, mais meilleure prépa pour les IFMK.",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 3 : Taux d'accès Parcoursup : 12.0%"
+    },
+    {
+      "stat_text": "7% d’admission",
+      "stat_value": 7,
+      "stat_unit": "%",
+      "context_in_response": "Licence STAPS - Accès Kiné Toulouse — bac+3 public, 7% d’admission.",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 4 : Taux d'accès Parcoursup : 7.0%"
+    },
+    {
+      "stat_text": "35% d’admission",
+      "stat_value": 35,
+      "stat_unit": "%",
+      "context_in_response": "Licence STAPS - site de Sénart — bac+3 public, 35% d’admission (sélective mais bien plus réaliste qu’une L1 \"kiné\").",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 7 : Taux d'accès Parcoursup : 35.0%"
+    },
+    {
+      "stat_text": "4.0%",
+      "stat_value": 4,
+      "stat_unit": "%",
+      "context_in_response": "Licence STAPS option Kinésithérapie (Montpellier) — Taux d'accès Parcoursup : 4.0%.",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : Taux d'accès Parcoursup : 4.0%"
+    },
+    {
+      "stat_text": "5 000-8 000€/an",
+      "stat_value": 5000,
+      "stat_unit": "€/an",
+      "context_in_response": "Coût caché : Même en public, les études de kiné coûtent cher après la licence (IFMK privés à ~5 000-8 000€/an).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "13 de moyenne",
+      "stat_value": 13,
+      "stat_unit": "",
+      "context_in_response": "Pour toi : avec 13 de moyenne, c’est jouable.",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 1740",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : salaire_median_embauche: 1740"
+    },
+    {
+      "stat_text": "0.86",
+      "stat_value": 0.86,
+      "stat_unit": "",
+      "context_in_response": "taux_emploi_3ans: 0.86",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : taux_emploi_3ans: 0.86"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context_in_response": "taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : taux_emploi_6ans: 0.91"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context_in_response": "taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : taux_cdi: 0.83"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 8 : salaire_median_embauche: 2080"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.1843,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Sciences et Techniq",
+      "etablissement": "Université de Montpellier",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1789,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+      "etablissement": "Université Paris Cité",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.167,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS - Préparation",
+      "etablissement": "Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1667,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Accès Kiné",
+      "etablissement": "Université Toulouse III - Université Toulouse",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1634,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Kiné",
+      "etablissement": "Université de Perpignan - Antenne de Font Romeu",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1627,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours Passerelle Kiné",
+      "etablissement": "Université Clermont Auvergne - Antenne de Vichy - UFR STAPS",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1594,
+      "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS - site de Sén",
+      "etablissement": "Université Paris- Est- Créteil Val de Marne UPEC - Antenne de Sénart",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sport",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0635,
+      "nom": "STAPS:INGENIERIE ET ERGONOMIE DE L'ACTIVITE PHYSIQUE — PROFESSIONS DE L'ÉDUCATION PHYSIQUE ET DES SP",
+      "etablissement": "Université Polytechnique Hauts-de-France",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sport",
+      "domain": "formation"
+    },
+    {
+      "score": 1.057,
+      "nom": "STAPS:INGENIERIE ET ERGONOMIE DE L'ACTIVITE PHYSIQUE — PROFESSIONS DE L'ÉDUCATION PHYSIQUE ET DES SP",
+      "etablissement": "Institut national des sciences appliquées Hauts-de-France",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sport",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9621,
+      "nom": "STAPS : activité physique adaptée et santé (fiche nationale)",
+      "etablissement": "UNIVERSITE DE BORDEAUX",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sante",
+      "domain": "formation"
+    }
+  ]
+}
