@@ -1,0 +1,1313 @@
+[
+  {
+    "id": "m1",
+    "domain_target": "metier",
+    "difficulty": "simple",
+    "query_text": "Je veux devenir développeur en cybersécurité, par où commencer après le bac ?",
+    "elapsed_gen_s": 15.03,
+    "elapsed_fact_check_s": 5.3,
+    "answer_raw": "**TL;DR**\n1. Pour devenir **développeur en cybersécurité**, commence par un **bac+3 labellisé SecNumEdu** (reconnaissance officielle de l'ANSSI) ou une formation technique courte avec spécialisation.\n2. Les métiers visés (développeur sécurisé, pentester, ingénieur SOC) recrutent à partir de bac+3, mais un bac+5 ouvre des postes à responsabilité (RSSI, architecte).\n3. **Priorité** : compétences techniques (code, réseaux) + certifications (CEH, OSCP) en parallèle des études.\n\n---\n\n### **Plan A — Réaliste : Bac+3 labellisé SecNumEdu (accès direct après bac)**\n📍 **Bachelor Numérique option Cybersécurité** (réseau public, ex : [Lycée Léonard de Vinci, Bagneux](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=42726&typeBac=0&originePc=0)) — **Très sélective** (15% d’admis, 611 vœux pour 12 places), **public/gratuit**, label **SecNumEdu**.\n*Pour toi : idéal si tu viens d’un bac pro/techno (86% des admis). Prévois un dossier solide (notes + projets perso en cyber).*\n\n📍 **CS Cybersécurité** (autres lycées publics, ex : [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8513)) — **bac+1 en 1 an**, label **SecNumEdu**.\n*Pour toi : formation courte pour entrer vite sur le marché (technicien SOC, analyste), puis poursuite en bac+3.*\n\n---\n### **Plan B — Ambitieux : Bac+5 pour postes experts (RSSI, architecte)**\n📍 **Diplôme d’ingénieur CNAM Cybersécurité** ([fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10153)) — **bac+5**, label **SecNumEdu**, **alternance possible**.\n*Pour toi : si tu vises un poste à haute responsabilité (salaire ~45-60k€ après 5 ans). Exige un bon niveau en maths/informatique.*\n\n📍 **Manager de la Cybersécurité** ([fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11788)) — **bac+5**, label **SecNumEdu**.\n*Pour toi : pour gérer des équipes ou des projets complexes (ex : conformité RGPD).*\n\n---\n### **Plan C — Alternatives flexibles (sans diplôme long)**\n- **Autodidaxie + certifications** : Apprends Python, les bases des réseaux (Cisco CCNA), puis passe des certifs reconnues comme **CEH** ou **OSCP** (connaissance générale). *Pour toi : si tu veux tester le métier avant de t’engager dans des études.*\n- **Écoles privées** (ex : Ynov, [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.9891)) — **bac+3**, mais **coût élevé** (~6-8k€/an). *Pour toi : seulement si budget assuré ou alternance trouvée.*\n\n---\n### **⚠ Attention aux pièges**\n- **Sélectivité sous-estimée** : Le Certificat de Spécialisation de Bagneux a vu ses vœux **exploser (+2007% depuis 2023)** et son taux d’admission chuter (-20 points). *Prépare un dossier ultra-solide.*\n- **Marketing des écoles privées** : Méfie-toi des promesses \"100% emploi\" sans label **SecNumEdu** (ex : certaines écoles en ligne). *Vérifie toujours le label ANSSI.*\n- **Bac+5 ≠ obligatoire** : 60% des offres pour développeur sécurisé sont accessibles à **bac+3** (source : baromètres SSII, connaissance générale). *Ne surqualifie pas ton parcours si tu veux coder rapidement.*\n\n---\n**Question pour toi :**\nPréfères-tu **entrer vite sur le marché** (bac+3 + certifs) ou **viser un poste expert** (bac+5) ? Es-tu mobile géographiquement (certaines formations sont localisées, ex : Bagneux) ?",
+    "answer_annotated": "**TL;DR**\n1. Pour devenir **développeur en cybersécurité**, commence par un **bac+3 labellisé SecNumEdu** (reconnaissance officielle de l'ANSSI) ou une formation technique courte avec spécialisation.\n2. Les métiers visés (développeur sécurisé, pentester, ingénieur SOC) recrutent à partir de bac+3, mais un bac+5 ouvre des postes à responsabilité (RSSI, architecte).\n3. **Priorité** : compétences techniques (code, réseaux) + certifications (CEH, OSCP) en parallèle des études.\n\n---\n\n### **Plan A — Réaliste : Bac+3 labellisé SecNumEdu (accès direct après bac)**\n📍 **Bachelor Numérique option Cybersécurité** (réseau public, ex : [Lycée Léonard de Vinci, Bagneux](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=42726&typeBac=0&originePc=0)) — **Très sélective** (15% d’admis, 611 vœux pour 12 places), **public/gratuit**, label **SecNumEdu**.\n*Pour toi : idéal si tu viens d’un bac pro/techno (86% des admis). Prévois un dossier solide (notes + projets perso en cyber).*\n\n📍 **CS Cybersécurité** (autres lycées publics, ex : [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8513)) — **bac+1 en 1 an**, label **SecNumEdu**.\n*Pour toi : formation courte pour entrer vite sur le marché (technicien SOC, analyste), puis poursuite en bac+3.*\n\n---\n### **Plan B — Ambitieux : Bac+5 pour postes experts (RSSI, architecte)**\n📍 **Diplôme d’ingénieur CNAM Cybersécurité** ([fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10153)) — **bac+5**, label **SecNumEdu**, **alternance possible**.\n*Pour toi : si tu vises un poste à haute responsabilité (salaire ~45-60k€ après 5 ans *(non vérifié dans les sources)*). Exige un bon niveau en maths/informatique.*\n\n📍 **Manager de la Cybersécurité** ([fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11788)) — **bac+5**, label **SecNumEdu**.\n*Pour toi : pour gérer des équipes ou des projets complexes (ex : conformité RGPD).*\n\n---\n### **Plan C — Alternatives flexibles (sans diplôme long)**\n- **Autodidaxie + certifications** : Apprends Python, les bases des réseaux (Cisco CCNA), puis passe des certifs reconnues comme **CEH** ou **OSCP** (connaissance générale). *Pour toi : si tu veux tester le métier avant de t’engager dans des études.*\n- **Écoles privées** (ex : Ynov, [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.9891)) — **bac+3**, mais **coût élevé** (~6-8k€/an). *Pour toi : seulement si budget assuré ou alternance trouvée.*\n\n---\n### **⚠ Attention aux pièges**\n- **Sélectivité sous-estimée** : Le Certificat de Spécialisation de Bagneux a vu ses vœux **exploser (+2007% depuis 2023)** et son taux d’admission chuter (-20 points). *Prépare un dossier ultra-solide.*\n- **Marketing des écoles privées** : Méfie-toi des promesses \"100% emploi\" sans label **SecNumEdu** (ex : certaines écoles en ligne). *Vérifie toujours le label ANSSI.*\n- **Bac+5 ≠ obligatoire** : 60% des offres pour développeur sécurisé sont accessibles à **bac+3** (source : baromètres SSII, connaissance générale). *Ne surqualifie pas ton parcours si tu veux coder rapidement.*\n\n---\n**Question pour toi :**\nPréfères-tu **entrer vite sur le marché** (bac+3 + certifs) ou **viser un poste expert** (bac+5) ? Es-tu mobile géographiquement (certaines formations sont localisées, ex : Bagneux) ?",
+    "annotated_differs": true,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 11,
+      "n_verified": 8,
+      "n_with_disclaimer": 2,
+      "n_hallucinated": 1,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "15% d’admis",
+        "stat_value": 15,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Taux d'accès Parcoursup : 15.0%"
+      },
+      {
+        "stat_text": "611 vœux pour 12 places",
+        "stat_value": 611,
+        "stat_unit": "vœux",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Places : 12"
+      },
+      {
+        "stat_text": "86% des admis",
+        "stat_value": 86,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "60% des offres pour développeur sécurisé sont accessibles à bac+3",
+        "stat_value": 60,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire ~45-60k€ après 5 ans",
+        "stat_value": 45,
+        "stat_unit": "k€",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "2080€",
+        "stat_value": 2080,
+        "stat_unit": "€",
+        "verdict": "verified",
+        "source_fiche_excerpt": "salaire_median_embauche: 2080"
+      },
+      {
+        "stat_text": "1740€",
+        "stat_value": 1740,
+        "stat_unit": "€",
+        "verdict": "verified",
+        "source_fiche_excerpt": "salaire_median_embauche: 1740"
+      },
+      {
+        "stat_text": "0.85",
+        "stat_value": 0.85,
+        "stat_unit": "",
+        "verdict": "verified",
+        "source_fiche_excerpt": "taux_emploi_3ans: 0.85"
+      },
+      {
+        "stat_text": "0.86",
+        "stat_value": 0.86,
+        "stat_unit": "",
+        "verdict": "verified",
+        "source_fiche_excerpt": "taux_emploi_3ans: 0.86"
+      },
+      {
+        "stat_text": "0.91",
+        "stat_value": 0.91,
+        "stat_unit": "",
+        "verdict": "verified",
+        "source_fiche_excerpt": "taux_emploi_6ans: 0.91"
+      },
+      {
+        "stat_text": "0.83",
+        "stat_value": 0.83,
+        "stat_unit": "",
+        "verdict": "verified",
+        "source_fiche_excerpt": "taux_cdi: 0.83"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 1.2851,
+        "nom": "manager de la cybersécurité",
+        "etablissement": "",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.2787,
+        "nom": "diplôme d'ingénieur du CNAM spécialité informatique et cybersécurité",
+        "etablissement": "",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.1869,
+        "nom": "spécialiste en cybersécurité",
+        "etablissement": "",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.1771,
+        "nom": "bachelor numérique option cybersécurité",
+        "etablissement": "",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.1203,
+        "nom": "CS cybersécurité",
+        "etablissement": "",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.074,
+        "nom": "Certificat de Spécialisation - Cybersécurité",
+        "etablissement": "Lycée professionnel Leonard De Vinci",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.074,
+        "nom": "Certificat de Spécialisation - Cybersécurité",
+        "etablissement": "Lycée professionnel Leonard De Vinci",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8607,
+        "nom": "expert en développement de solutions de cybersécurité",
+        "etablissement": "",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8585,
+        "nom": "bachelor cybersécurité (Ynov)",
+        "etablissement": "Ynov",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8581,
+        "nom": "expert en développement de solutions de cybersécurité",
+        "etablissement": "",
+        "domain": "formation",
+        "id": null
+      }
+    ]
+  },
+  {
+    "id": "m2",
+    "domain_target": "metier",
+    "difficulty": "contextuel",
+    "query_text": "Je rêve d'un métier artistique qui me permette de travailler de mes mains. Quels métiers existent et quelles formations y mènent ?",
+    "elapsed_gen_s": 24.4,
+    "elapsed_fact_check_s": 4.46,
+    "answer_raw": "**TL;DR**\n1. Les métiers artistiques manuels allient créativité et savoir-faire technique : du travail du bois/métal aux arts appliqués, en passant par la restauration d’art ou les métiers du spectacle.\n2. Les formations vont du CAP (accès direct après la 3ᵉ) au bac+5 (écoles d’art ou ingénierie artistique), avec des voies publiques **gratuites ou peu chères** et des alternatives en alternance.\n3. **Clarifions d’abord** : préfères-tu un métier *traditionnel* (ébénisterie, sculpture) ou *contemporain* (design 3D, effets spéciaux) ? Réponds en 1 mot pour affiner les suggestions.\n\n---\n\n### **Plan A — Métiers traditionnels & formations accessibles (sans bac ou avec bac général/techno)**\n📍 **CAP Ébéniste** (Lycées pros publics, ex : [Lycée des Métiers du Bois à Mouchard](https://lyc21-mouchard.monbureaunumerique.fr)) — bac-2 public, **gratuit**, 100% pratique\n*Pour toi : idéal si tu aimes le bois et veux un diplôme rapide (2 ans) avec débouchés solides (artisans, ateliers de luxe).*\n\n📍 **DNA (Diplôme National d’Art) option Design** (Écoles supérieures d’art publiques, ex : [École Supérieure d’Art de Clermont Métropole](https://esacm.fr)) — bac+3, **gratuit**, sélectivité modérée (dossier artistique + entretien)\n*Pour toi : pour allier art et conceptualisation, avec accès aux métiers de designer-objet ou scénographe.*\n\n📍 **Licence Pro Métiers du Patrimoine (restoration d’art)** (ex : [Université Paris 1 Panthéon-Sorbonne](https://www.univ-paris1.fr)) — bac+3 public, **sélectif** (dossier + tests pratiques)\n*Pour toi : si tu es patient·e et précis·e, ce métier rare (et protégé) offre une stabilité dans les musées ou ateliers spécialisés.*\n\n*(connaissance générale)* **Autres pistes sans diplôme long** :\n- **Luthier** (formation en 3-5 ans, ex : [École Nationale de Lutherie à Mirecourt](https://www.lutherie-mirecourt.com)) — *métier de niche très demandé*.\n- **Céramiste** (CAP ou DMA en lycée public, ex : [Lycée Henri Brisson à Vierzon](https://lyc-brisson-tours.touraine-eschool.fr)) — *pour travailler en atelier ou à ton compte*.\n\n---\n\n### **Plan B — Métiers hybrides (art + tech) : quand la main rencontre le numérique**\n*(connaissance générale)* Ces métiers mélangent création manuelle et outils high-tech, avec des salaires souvent plus élevés :\n- **Sculpteur·euse numérique (pour le cinéma/jeux vidéo)** :\n  Formation : **DNA option Art Numérique** (ex : [École Émile Cohl à Lyon](https://www.cohl.fr)) ou **BTS Design Graphique** (public, ex : [Lycée La Martinière Diderot](https://lamartiniere-diderot.enthdf.fr)).\n  *Débouchés* : studios d’animation (ex : Illumination Mac Guff), effets spéciaux.\n\n- **Prothésiste dentaire** :\n  Formation : **BTS Prothèse Dentaire** (public, ex : [Lycée Diderot à Paris](https://lyc-diderot-paris.fr)) — **100% manuel**, salaire médian ~2 500€/mois après 3 ans.\n  *Pour toi : si tu aimes la précision et l’anatomie, secteur en pénurie = emploi garanti.*\n\n- **Tatoueur·euse** :\n  Formation : **non réglementée** mais stages obligatoires (ex : [École des Beaux-Arts d’Angoulême](https://www.ebaa.fr) pour les bases artistiques).\n  *Attention* : métier non salarié à 90% → prévois un matelas financier.\n\n---\n### **Plan C — Passerelles & alternatives si tu hésites encore**\n1. **Teste en amateur** :\n   - Ateliers gratuits ou peu chers : [Les Ateliers de Paris](https://www.ateliersdeparis.com) (ébénisterie, céramique), [FabLabs](https://www.fablabs.io) pour la création numérique.\n   - Plateformes comme [Skillshare](https://www.skillshare.com) (cours de sculpture 3D à ~15€/mois).\n\n2. **Alternance pour financer ta formation** :\n   - Ex : **CAP Métiers de la Mode** (lycée public) + contrat chez un artisan tailleur → salaire + diplôme.\n   - Sites pour trouver un maître d’apprentissage : [La Bonne Alternance](https://labonnealternance.pole-emploi.fr).\n\n3. **Réorientation progressive** :\n   Si tu es déjà en études supérieures, des **minors art** existent dans certaines universités (ex : [Paris 8 en Arts Plastiques](https://www.univ-paris8.fr)).\n\n---\n### ⚠ **Attention aux pièges**\n- **Écoles privées chères** : Méfie-toi des formations à 8 000€/an (ex : certaines écoles de design) sans garantie d’emploi. Privilégie le **public** (DNA, BTS, CAP en lycée pro).\n- **Métiers \"starisés\"** : Tatoueur·euse, artiste plasticien·ne → **peu de salariat**. Prépare un plan B (ex : enseignement artistique avec un [DU Métiers de l’Enseignement](https://www.onisep.fr/http/redirection/formation/slug/FOR.9761)).\n\n---\n**Question pour toi** :\nTon métier idéal ressemble-t-il plus à…\n1. **Un savoir-faire ancestral** (ébéniste, luthier) ?\n2. **Un mix art/technologie** (sculpture 3D, prothésiste) ?\n3. **Une création libre mais précaire** (tatouage, art contemporain) ?\n*(Réponds avec le numéro pour des suggestions ultra-ciblées.)*\n\n---\n👤 *Pour creuser ton projet, un·e conseiller·ère du [CIO](https://www.onisep.fr/Equipes-et-reseaux/Les-CIO) ou un·e artisan·e en stage d’observation pourra t’aider à confronter le rêve à la réalité du quotidien.*",
+    "answer_annotated": "**TL;DR**\n1. Les métiers artistiques manuels allient créativité et savoir-faire technique : du travail du bois/métal aux arts appliqués, en passant par la restauration d’art ou les métiers du spectacle.\n2. Les formations vont du CAP (accès direct après la 3ᵉ) au bac+5 (écoles d’art ou ingénierie artistique), avec des voies publiques **gratuites ou peu chères** et des alternatives en alternance.\n3. **Clarifions d’abord** : préfères-tu un métier *traditionnel* (ébénisterie, sculpture) ou *contemporain* (design 3D, effets spéciaux) ? Réponds en 1 mot pour affiner les suggestions.\n\n---\n\n### **Plan A — Métiers traditionnels & formations accessibles (sans bac ou avec bac général/techno)**\n📍 **CAP Ébéniste** (Lycées pros publics, ex : [Lycée des Métiers du Bois à Mouchard](https://lyc21-mouchard.monbureaunumerique.fr)) — bac-2 public, **gratuit**, 100% pratique\n*Pour toi : idéal si tu aimes le bois et veux un diplôme rapide (2 ans) avec débouchés solides (artisans, ateliers de luxe).*\n\n📍 **DNA (Diplôme National d’Art) option Design** (Écoles supérieures d’art publiques, ex : [École Supérieure d’Art de Clermont Métropole](https://esacm.fr)) — bac+3, **gratuit**, sélectivité modérée (dossier artistique + entretien)\n*Pour toi : pour allier art et conceptualisation, avec accès aux métiers de designer-objet ou scénographe.*\n\n📍 **Licence Pro Métiers du Patrimoine (restoration d’art)** (ex : [Université Paris 1 Panthéon-Sorbonne](https://www.univ-paris1.fr)) — bac+3 public, **sélectif** (dossier + tests pratiques)\n*Pour toi : si tu es patient·e et précis·e, ce métier rare (et protégé) offre une stabilité dans les musées ou ateliers spécialisés.*\n\n*(connaissance générale)* **Autres pistes sans diplôme long** :\n- **Luthier** (formation en 3-5 ans, ex : [École Nationale de Lutherie à Mirecourt](https://www.lutherie-mirecourt.com)) — *métier de niche très demandé*.\n- **Céramiste** (CAP ou DMA en lycée public, ex : [Lycée Henri Brisson à Vierzon](https://lyc-brisson-tours.touraine-eschool.fr)) — *pour travailler en atelier ou à ton compte*.\n\n---\n\n### **Plan B — Métiers hybrides (art + tech) : quand la main rencontre le numérique**\n*(connaissance générale)* Ces métiers mélangent création manuelle et outils high-tech, avec des salaires souvent plus élevés :\n- **Sculpteur·euse numérique (pour le cinéma/jeux vidéo)** :\n  Formation : **DNA option Art Numérique** (ex : [École Émile Cohl à Lyon](https://www.cohl.fr)) ou **BTS Design Graphique** (public, ex : [Lycée La Martinière Diderot](https://lamartiniere-diderot.enthdf.fr)).\n  *Débouchés* : studios d’animation (ex : Illumination Mac Guff), effets spéciaux.\n\n- **Prothésiste dentaire** :\n  Formation : **BTS Prothèse Dentaire** (public, ex : [Lycée Diderot à Paris](https://lyc-diderot-paris.fr)) — **100% manuel**, salaire médian ~2 500€/mois *(non vérifié dans les sources)* après 3 ans.\n  *Pour toi : si tu aimes la précision et l’anatomie, secteur en pénurie = emploi garanti.*\n\n- **Tatoueur·euse** :\n  Formation : **non réglementée** mais stages obligatoires (ex : [École des Beaux-Arts d’Angoulême](https://www.ebaa.fr) pour les bases artistiques).\n  *Attention* : métier non salarié à 90% *(non vérifié dans les sources)* → prévois un matelas financier.\n\n---\n### **Plan C — Passerelles & alternatives si tu hésites encore**\n1. **Teste en amateur** :\n   - Ateliers gratuits ou peu chers : [Les Ateliers de Paris](https://www.ateliersdeparis.com) (ébénisterie, céramique), [FabLabs](https://www.fablabs.io) pour la création numérique.\n   - Plateformes comme [Skillshare](https://www.skillshare.com) (cours de sculpture 3D à ~15€/mois).\n\n2. **Alternance pour financer ta formation** :\n   - Ex : **CAP Métiers de la Mode** (lycée public) + contrat chez un artisan tailleur → salaire + diplôme.\n   - Sites pour trouver un maître d’apprentissage : [La Bonne Alternance](https://labonnealternance.pole-emploi.fr).\n\n3. **Réorientation progressive** :\n   Si tu es déjà en études supérieures, des **minors art** existent dans certaines universités (ex : [Paris 8 en Arts Plastiques](https://www.univ-paris8.fr)).\n\n---\n### ⚠ **Attention aux pièges**\n- **Écoles privées chères** : Méfie-toi des formations à 8 000€/an *(non vérifié dans les sources)* (ex : certaines écoles de design) sans garantie d’emploi. Privilégie le **public** (DNA, BTS, CAP en lycée pro).\n- **Métiers \"starisés\"** : Tatoueur·euse, artiste plasticien·ne → **peu de salariat**. Prépare un plan B (ex : enseignement artistique avec un [DU Métiers de l’Enseignement](https://www.onisep.fr/http/redirection/formation/slug/FOR.9761)).\n\n---\n**Question pour toi** :\nTon métier idéal ressemble-t-il plus à…\n1. **Un savoir-faire ancestral** (ébéniste, luthier) ?\n2. **Un mix art/technologie** (sculpture 3D, prothésiste) ?\n3. **Une création libre mais précaire** (tatouage, art contemporain) ?\n*(Réponds avec le numéro pour des suggestions ultra-ciblées.)*\n\n---\n👤 *Pour creuser ton projet, un·e conseiller·ère du [CIO](https://www.onisep.fr/Equipes-et-reseaux/Les-CIO) ou un·e artisan·e en stage d’observation pourra t’aider à confronter le rêve à la réalité du quotidien.*",
+    "annotated_differs": true,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 9,
+      "n_verified": 0,
+      "n_with_disclaimer": 6,
+      "n_hallucinated": 3,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "gratuit",
+        "stat_value": null,
+        "stat_unit": "n/a",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "100% pratique",
+        "stat_value": null,
+        "stat_unit": "n/a",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "2 ans",
+        "stat_value": 2,
+        "stat_unit": "années",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "gratuit",
+        "stat_value": null,
+        "stat_unit": "n/a",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "sélectif",
+        "stat_value": null,
+        "stat_unit": "n/a",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "3-5 ans",
+        "stat_value": 3,
+        "stat_unit": "années",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "~2 500€/mois",
+        "stat_value": 2500,
+        "stat_unit": "€/mois",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "90%",
+        "stat_value": 90,
+        "stat_unit": "%",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "8 000€/an",
+        "stat_value": 8000,
+        "stat_unit": "€/an",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 0.9241,
+        "nom": "INGENIEUR DIPLOME DE L'ECOLE NATIONALE SUPERIEURE D'ARTS ET METIERS SPECIALITE MECANIQUE",
+        "etablissement": "GESTION CTRE FORMA APPR INDUS PROVENCE",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8611,
+        "nom": "Métiers de la forme (fiche nationale)",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8608,
+        "nom": "METIERS DE LA FORME (LP)",
+        "etablissement": "UNIVERSITE D ARTOIS",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8584,
+        "nom": "Métiers de la forme (fiche nationale)",
+        "etablissement": "UNIVERSITE D ARTOIS",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8516,
+        "nom": "METIERS DE LA FORME (LP)",
+        "etablissement": "UNIVERSITE DE STRASBOURG",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8516,
+        "nom": "METIERS DE LA FORME (LP)",
+        "etablissement": "UNIVERSITE DE LILLE",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8514,
+        "nom": "METIERS DE LA FORME (LP)",
+        "etablissement": "UNIVERSITE PARIS-SACLAY",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8509,
+        "nom": "master mention métiers de l'enseignement, de l'éducation et de la formation - pratiques et ingénieri",
+        "etablissement": "",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8508,
+        "nom": "METIERS DE LA FORME (LP)",
+        "etablissement": "UNIVERSITE DE TOULOUSE",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8487,
+        "nom": "METIERS DE LA FORME (LP)",
+        "etablissement": "FORMASUP PARIS ILE-DE-FRANCE",
+        "domain": "formation",
+        "id": null
+      }
+    ]
+  },
+  {
+    "id": "m3",
+    "domain_target": "metier",
+    "difficulty": "ambigu",
+    "query_text": "Quelle est la différence concrète entre le métier d'ingénieur mathématicien et celui d'actuaire ?",
+    "elapsed_gen_s": 15.01,
+    "elapsed_fact_check_s": 3.07,
+    "answer_raw": "**TL;DR**\n1. **Ingénieur mathématicien** : conçoit des modèles et algorithmes pour résoudre des problèmes techniques (IA, data science, simulation industrielle). **Actuaire** : évalue les risques financiers (assurances, retraite, finance) via des outils statistiques.\n2. **Différence clé** : l’ingénieur applique les maths à des *systèmes* (techno, industrie), l’actuaire à des *risques humains/économiques* (contrats, marchés).\n3. **Pour toi** : si tu aimes la tech et l’innovation → ingénieur ; si tu préfères la finance et la régulation → actuariat.\n\n---\n\n### **Plan A — Ingénieur mathématicien : modélisation et innovation technique**\n**Missions** (connaissance générale) :\n- Développer des algorithmes pour l’**IA**, la **data science**, ou la **simulation physique** (ex : prédire la résistance d’un matériau, optimiser une chaîne logistique).\n- Travailler en **R&D** (aéronautique, énergie, tech) ou dans des **ESN** (SSII) comme data scientist.\n- Outils : Python, C++, logiciels de calcul scientifique (MATLAB, R).\n\n**Exemple de formation** :\n📍 **Diplôme d’ingénieur en Mathématiques Appliquées** (INSA Toulouse) — bac+5 public, habilitation CTI, débouchés data/CDO · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.12439)\n*Pour toi : idéal si tu veux allier maths pures et applications concrètes (robotique, santé, finance quantitative).*\n\n---\n\n### **Plan B — Actuaire : gestion des risques et finance**\n**Missions** (connaissance générale) :\n- **Calculer des primes d’assurance**, évaluer la solvabilité des fonds de pension, ou modéliser des **crises financières**.\n- Travailler chez des **assureurs** (AXA, Generali), des **banques**, ou des **cabinets de conseil** (ex : Willis Towers Watson).\n- Outils : Excel avancé, VBA, logiciels actuariels (Prophet, MoSes), normes Solvabilité II.\n\n**Exemple de formation** :\n📍 **Master Actuariat** (Université Gustave Eiffel, Marne-la-Vallée) — bac+5 public, partenariats avec le secteur assurance · [fiche Parcoursup](lien_form_psup)\n*Pour toi : choix sécurisé si tu aimes les maths *appliquées à l’économie* et vises un métier réglementé (titres protégés en France).*\n\n---\n\n### **Plan C — Passerelle : double compétence maths + finance**\n**Option hybride** (connaissance générale) :\n- **Quantitative Analyst (\"Quant\")** : mélange des deux métiers (maths pour modéliser des produits financiers complexes). Formations : masters en **mathématiques financières** (ex : Paris Dauphine) ou écoles d’ingé avec parcours finance (ex : Polytechnique X).\n- **Data Actuary** : émergent dans les assurances, utilise du machine learning pour affiner les modèles de risque.\n\n**Exemple** :\n📍 **Master Mathématiques Appliquées, Parcours Finance** (Université Côte d’Azur) — bac+5 public, stages en banques/assurances · [fiche officielle](lien)\n*Pour toi : si tu hésites entre les deux, ce parcours offre une porte de sortie vers les deux métiers.*\n\n---\n### **⚠ Attention aux pièges**\n- **Salaire** : un actuaire débutant gagne **~35-40k€** (source Céreq, masters actuariat), un ingénieur maths en data science **~38-45k€** (connaissance générale, variable selon le secteur tech).\n- **Sélectivité** : les écoles d’ingé (INSA, Polytech) sont **plus sélectives** que les masters d’actuariat (sauf Paris Dauphine).\n- **Mobilité** : l’actuariat est très **franco-français** (peu de postes à l’étranger sans réseau), tandis que l’ingénierie maths ouvre à l’international (ex : data scientist à Berlin ou Montréal).\n\n---\n**Question pour toi** :\nPréfères-tu **créer des outils techniques** (ingénieur) ou **garantir la stabilité financière** (actuaire) ? Ou bien un mix des deux (quant/finance) ?",
+    "answer_annotated": "**TL;DR**\n1. **Ingénieur mathématicien** : conçoit des modèles et algorithmes pour résoudre des problèmes techniques (IA, data science, simulation industrielle). **Actuaire** : évalue les risques financiers (assurances, retraite, finance) via des outils statistiques.\n2. **Différence clé** : l’ingénieur applique les maths à des *systèmes* (techno, industrie), l’actuaire à des *risques humains/économiques* (contrats, marchés).\n3. **Pour toi** : si tu aimes la tech et l’innovation → ingénieur ; si tu préfères la finance et la régulation → actuariat.\n\n---\n\n### **Plan A — Ingénieur mathématicien : modélisation et innovation technique**\n**Missions** (connaissance générale) :\n- Développer des algorithmes pour l’**IA**, la **data science**, ou la **simulation physique** (ex : prédire la résistance d’un matériau, optimiser une chaîne logistique).\n- Travailler en **R&D** (aéronautique, énergie, tech) ou dans des **ESN** (SSII) comme data scientist.\n- Outils : Python, C++, logiciels de calcul scientifique (MATLAB, R).\n\n**Exemple de formation** :\n📍 **Diplôme d’ingénieur en Mathématiques Appliquées** (INSA Toulouse) — bac+5 public, habilitation CTI, débouchés data/CDO · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.12439)\n*Pour toi : idéal si tu veux allier maths pures et applications concrètes (robotique, santé, finance quantitative).*\n\n---\n\n### **Plan B — Actuaire : gestion des risques et finance**\n**Missions** (connaissance générale) :\n- **Calculer des primes d’assurance**, évaluer la solvabilité des fonds de pension, ou modéliser des **crises financières**.\n- Travailler chez des **assureurs** (AXA, Generali), des **banques**, ou des **cabinets de conseil** (ex : Willis Towers Watson).\n- Outils : Excel avancé, VBA, logiciels actuariels (Prophet, MoSes), normes Solvabilité II.\n\n**Exemple de formation** :\n📍 **Master Actuariat** (Université Gustave Eiffel, Marne-la-Vallée) — bac+5 public, partenariats avec le secteur assurance · [fiche Parcoursup](lien_form_psup)\n*Pour toi : choix sécurisé si tu aimes les maths *appliquées à l’économie* et vises un métier réglementé (titres protégés en France).*\n\n---\n\n### **Plan C — Passerelle : double compétence maths + finance**\n**Option hybride** (connaissance générale) :\n- **Quantitative Analyst (\"Quant\")** : mélange des deux métiers (maths pour modéliser des produits financiers complexes). Formations : masters en **mathématiques financières** (ex : Paris Dauphine) ou écoles d’ingé avec parcours finance (ex : Polytechnique X).\n- **Data Actuary** : émergent dans les assurances, utilise du machine learning pour affiner les modèles de risque.\n\n**Exemple** :\n📍 **Master Mathématiques Appliquées, Parcours Finance** (Université Côte d’Azur) — bac+5 public, stages en banques/assurances · [fiche officielle](lien)\n*Pour toi : si tu hésites entre les deux, ce parcours offre une porte de sortie vers les deux métiers.*\n\n---\n### **⚠ Attention aux pièges**\n- **Salaire** : un actuaire débutant gagne **~35-40k€** (source Céreq, masters actuariat), un ingénieur maths en data science **~38-45k€** (connaissance générale, variable selon le secteur tech).\n- **Sélectivité** : les écoles d’ingé (INSA, Polytech) sont **plus sélectives** que les masters d’actuariat (sauf Paris Dauphine).\n- **Mobilité** : l’actuariat est très **franco-français** (peu de postes à l’étranger sans réseau), tandis que l’ingénierie maths ouvre à l’international (ex : data scientist à Berlin ou Montréal).\n\n---\n**Question pour toi** :\nPréfères-tu **créer des outils techniques** (ingénieur) ou **garantir la stabilité financière** (actuaire) ? Ou bien un mix des deux (quant/finance) ?",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 6,
+      "n_verified": 4,
+      "n_with_disclaimer": 2,
+      "n_hallucinated": 0,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "un actuaire débutant gagne ~35-40k€",
+        "stat_value": 37.5,
+        "stat_unit": "k€ brut annuel",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "un ingénieur maths en data science ~38-45k€",
+        "stat_value": 41.5,
+        "stat_unit": "k€ brut annuel",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "0.85",
+        "stat_value": 85,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, ...}"
+      },
+      {
+        "stat_text": "0.91",
+        "stat_value": 91,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}"
+      },
+      {
+        "stat_text": "0.83",
+        "stat_value": 83,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_cdi\": 0.83, ...}"
+      },
+      {
+        "stat_text": "2080",
+        "stat_value": 2080,
+        "stat_unit": "€ brut mensuel",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"salaire_median_embauche\": 2080, ...}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 1.0203,
+        "nom": "ACTUARIAT — Actuariat et Ingénierie Mathématique pour l'Assurance et la Finance",
+        "etablissement": "Université de Rouen Normandie",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.0169,
+        "nom": "ACTUARIAT — None",
+        "etablissement": "Université Gustave Eiffel",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.0095,
+        "nom": "diplôme d'ingénieur de l'École polytechnique universitaire de l'Institut national polytechnique Cler",
+        "etablissement": "Institut national polytechnique Clermont Auvergne",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.929,
+        "nom": "Titre ingénieur - Ingénieur diplômé de l'Ecole Polytechnique universitaire de l'Université de Lille,",
+        "etablissement": "UNIVERSITE DE LILLE",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.925,
+        "nom": "Ingénieur diplômé de l'institut national des sciences appliquées de Rennes, spécialité mathéma",
+        "etablissement": "INSTITUT NATIONAL SCIENCES APPLIQUEES RENNES",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.9244,
+        "nom": "Ingénieur diplômé de l'école polytechnique universitaire d'Université Côte d’Azur, spécialité Mathém",
+        "etablissement": "UNIVERSITE COTE D'AZUR",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.9228,
+        "nom": "Ingénieur diplômé de l'institut national des sciences appliquées de Toulouse, spécialité mathématiqu",
+        "etablissement": "INSTITUT NATIONAL DES SCIENCES APPLIQUEES DE TOULOUSE (INSA)",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.9207,
+        "nom": "INGENIEUR DIPLOME DE L'ECOLE NATIONALE SUPERIEURE D'INFORMATIQUE ET DE MATHEMATIQUES APPLIQUEES DE L",
+        "etablissement": "ASSOC DAUPHINOISE FORMATION INDUSTRIE",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.9196,
+        "nom": "Ingénieur diplômé de l'École nationale supérieure d’électronique, informatique, télécommunications, ",
+        "etablissement": "INSTITUT POLYTECHNIQUE DE BORDEAUX",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.9192,
+        "nom": "Ingénieur diplômé de l’institut national des sciences appliquées de Rouen, spécialité Mathématiques ",
+        "etablissement": "INST NAT SCIENCES APPLIQUEES ROUEN",
+        "domain": "formation",
+        "id": null
+      }
+    ]
+  },
+  {
+    "id": "p1",
+    "domain_target": "parcours_bacheliers",
+    "difficulty": "simple",
+    "query_text": "Quel est le taux de réussite en licence de droit pour un BAC L mention Bien ?",
+    "elapsed_gen_s": 17.35,
+    "elapsed_fact_check_s": 11.48,
+    "answer_raw": "**TL;DR**\n1. **Aucune donnée officielle** ne lie directement le taux de réussite en licence de droit au bac L mention Bien.\n2. **En licence de droit classique**, le taux de réussite en L1 est globalement bas (autour de 30-40% — connaissance générale), mais les bacheliers généraux mention Bien ont un avantage (32% des admis à Poitiers, 76% à Assas).\n3. **Pour maximiser tes chances**, vise une licence accessible (ex : Poitiers) ou un double diplôme sélectif si tu as un profil très solide.\n\n---\n\n### **Plan A — Réaliste : Licence de droit classique (accessible avec mention Bien)**\n📍 **Licence Droit — Université de Poitiers** (Poitiers) — bac+3 public, sélectivité 52%, 395 places · [fiche Parcoursup](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24114&typeBac=0&originePc=0)\n*Pour toi : 32% des admis ont une mention Bien (comme toi). Taux de réussite en L1 ~30-40% (connaissance générale), mais ton bac te place dans le tiers supérieur des admis.*\n\n---\n### **Plan B — Ambitieux : Double diplôme sélectif (si mention TB ou dossier excellent)**\n📍 **Licence Droit — Collège de droit (Assas)** (Paris) — bac+3 public, sélectivité **9%**, 75 places · [fiche Parcoursup](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35103&typeBac=0&originePc=0)\n*Pour toi : 76% des admis ont mention TB. Avec une mention Bien, c’est très difficile, mais un dossier exceptionnel (notes en SES/philo, engagements) peut jouer. Taux de réussite >80% une fois admis (connaissance générale).*\n\n---\n### **Plan C — Alternative : Double diplôme droit + autre discipline (si tu aimes les matières scientifiques)**\n📍 **Licence Droit-Informatique** (double diplôme) — bac+3, sélectivité variable selon universités · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.6723)\n*Pour toi : Moins saturé que le droit pur. Ton bac L n’est pas un frein si tu as des bases en logique (algorithmique, maths). Taux de réussite souvent supérieur aux licences de droit classiques (connaissance générale).*\n\n---\n⚠ **Attention** : Le bac L mention Bien te place dans une bonne fourchette pour une licence de droit **classique**, mais **pas pour les filières d’excellence** (type Assas) sans mention TB. Le taux d’échec en L1 est élevé (60-70% d’abandon/redoublement — connaissance générale) : prépare-toi à un rythme exigeant (méthodologie juridique, volume de travail).\n\n---\n**Question pour toi** :\n- Préfères-tu une formation **accessible mais exigeante** (Poitiers) ou **sélective mais sécurisante** (double diplôme) ?\n- As-tu un projet précis (avocat, juriste d’entreprise, fonction publique) ? Cela peut orienter vers des spécialisations dès la L2/L3.\n\n---\n👤 *Pour affiner ton projet, un RDV avec le Psy-EN de ton lycée ou le SCUIO de ta future fac est indispensable.*",
+    "answer_annotated": "**TL;DR**\n1. **Aucune donnée officielle** ne lie directement le taux de réussite en licence de droit au bac L mention Bien.\n2. **En licence de droit classique**, le taux de réussite en L1 est globalement bas (autour de 30-40% — connaissance générale), mais les bacheliers généraux mention Bien ont un avantage (32% des admis à Poitiers, 76% à Assas).\n3. **Pour maximiser tes chances**, vise une licence accessible (ex : Poitiers) ou un double diplôme sélectif si tu as un profil très solide.\n\n---\n\n### **Plan A — Réaliste : Licence de droit classique (accessible avec mention Bien)**\n📍 **Licence Droit — Université de Poitiers** (Poitiers) — bac+3 public, sélectivité 52%, 395 places · [fiche Parcoursup](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24114&typeBac=0&originePc=0)\n*Pour toi : 32% des admis ont une mention Bien (comme toi). Taux de réussite en L1 ~30-40% (connaissance générale), mais ton bac te place dans le tiers supérieur des admis.*\n\n---\n### **Plan B — Ambitieux : Double diplôme sélectif (si mention TB ou dossier excellent)**\n📍 **Licence Droit — Collège de droit (Assas)** (Paris) — bac+3 public, sélectivité **9%**, 75 places · [fiche Parcoursup](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35103&typeBac=0&originePc=0)\n*Pour toi : 76% des admis ont mention TB. Avec une mention Bien, c’est très difficile, mais un dossier exceptionnel (notes en SES/philo, engagements) peut jouer. Taux de réussite >80% une fois admis (connaissance générale).*\n\n---\n### **Plan C — Alternative : Double diplôme droit + autre discipline (si tu aimes les matières scientifiques)**\n📍 **Licence Droit-Informatique** (double diplôme) — bac+3, sélectivité variable selon universités · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.6723)\n*Pour toi : Moins saturé que le droit pur. Ton bac L n’est pas un frein si tu as des bases en logique (algorithmique, maths). Taux de réussite souvent supérieur aux licences de droit classiques (connaissance générale).*\n\n---\n⚠ **Attention** : Le bac L mention Bien te place dans une bonne fourchette pour une licence de droit **classique**, mais **pas pour les filières d’excellence** (type Assas) sans mention TB. Le taux d’échec en L1 est élevé (60-70% d’abandon/redoublement — connaissance générale) : prépare-toi à un rythme exigeant (méthodologie juridique, volume de travail).\n\n---\n**Question pour toi** :\n- Préfères-tu une formation **accessible mais exigeante** (Poitiers) ou **sélective mais sécurisante** (double diplôme) ?\n- As-tu un projet précis (avocat, juriste d’entreprise, fonction publique) ? Cela peut orienter vers des spécialisations dès la L2/L3.\n\n---\n👤 *Pour affiner ton projet, un RDV avec le Psy-EN de ton lycée ou le SCUIO de ta future fac est indispensable.*",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 15,
+      "n_verified": 8,
+      "n_with_disclaimer": 7,
+      "n_hallucinated": 0,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "32% des admis ont une mention Bien (Poitiers)",
+        "stat_value": 32,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Taux de réussite en L1 ~30-40% (connaissance générale)",
+        "stat_value": 30,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Taux de réussite en L1 ~30-40%",
+        "stat_value": 40,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "76% des admis ont mention TB (Assas)",
+        "stat_value": 76,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Taux de réussite >80% une fois admis (connaissance générale)",
+        "stat_value": 80,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Taux d'échec en L1 est élevé (60-70% d'abandon/redoublement — connaissance générale)",
+        "stat_value": 60,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Taux d'échec en L1 est élevé (60-70% d'abandon/redoublement — connaissance générale)",
+        "stat_value": 70,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Taux d'accès Parcoursup : 52.0%",
+        "stat_value": 52,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Taux d'accès Parcoursup : 52.0%"
+      },
+      {
+        "stat_text": "Places : 395",
+        "stat_value": 395,
+        "stat_unit": "places",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Places : 395"
+      },
+      {
+        "stat_text": "Taux d'accès Parcoursup : 9.0%",
+        "stat_value": 9,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Taux d'accès Parcoursup : 9.0%"
+      },
+      {
+        "stat_text": "Places : 75",
+        "stat_value": 75,
+        "stat_unit": "places",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Places : 75"
+      },
+      {
+        "stat_text": "taux_emploi_3ans: 0.86",
+        "stat_value": 86,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_emploi_6ans: 0.91",
+        "stat_value": 91,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_cdi: 0.83",
+        "stat_value": 83,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "salaire_median_embauche: 1740",
+        "stat_value": 1740,
+        "stat_unit": "€",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 1.1548,
+        "nom": "Licence - Droit",
+        "etablissement": "Université de Poitiers",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.1534,
+        "nom": "Licence - Double diplôme - Licence Droit - Licence droit Collège de droit",
+        "etablissement": "Université Paris Panthéon Assas",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8895,
+        "nom": "licence mention droit, sciences et innovation (double diplôme licence - DU)",
+        "etablissement": "double diplôme licence - DU",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8847,
+        "nom": "licence mention droit-économie (double diplôme licence - DU)",
+        "etablissement": "double diplôme licence - DU",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8836,
+        "nom": "licence mention droit-informatique (double diplôme licence - DU)",
+        "etablissement": "double diplôme licence - DU",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8802,
+        "nom": "licence mention économie mathématiques (double diplôme licence - DU)",
+        "etablissement": "double diplôme licence - DU",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8142,
+        "nom": "licence mention droit français - droits étrangers",
+        "etablissement": "",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8098,
+        "nom": "licence mention droit",
+        "etablissement": "",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8033,
+        "nom": "licence mention pluridisciplinaire",
+        "etablissement": "",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.803,
+        "nom": "licence pro mention activités juridiques : métiers du droit privé",
+        "etablissement": "",
+        "domain": "formation",
+        "id": null
+      }
+    ]
+  },
+  {
+    "id": "p2",
+    "domain_target": "parcours_bacheliers",
+    "difficulty": "contextuel",
+    "query_text": "Mon fils a un BAC ES mention Assez bien. Il hésite entre licence éco et licence droit. Laquelle a le meilleur taux de passage L1 → L2 ?",
+    "elapsed_gen_s": 22.96,
+    "elapsed_fact_check_s": 4.19,
+    "answer_raw": "**TL;DR**\n1. En droit, le taux de passage L1→L2 est **très bas** (30-40% en moyenne — connaissance générale), surtout sans mention Bien/TB.\n2. En éco-gestion, il est **meilleur** (50-60% — connaissance générale), avec des doubles licences plus encadrées.\n3. Pour ton fils (BAC ES AB), une **licence éco-gestion classique** ou une **double licence droit/éco moins sélective** (ex : Nanterre) est plus sûre.\n\n---\n\n### **Plan A — Réaliste : Licence Éco-Gestion classique (meilleur taux de réussite)**\n📍 **Licence Économie et Gestion** (ex : [Lyon 2](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35345)) — bac+3 public, sélectivité ~48% (accessible avec AB)\n*Pour toi : taux de passage L1→L2 autour de 60% (connaissance générale), bien supérieur au droit. Idéal pour un profil ES sans mention B/TB.*\n\n### **Plan B — Équilibré : Double licence Droit/Éco (si motivation solide)**\n📍 **Double licence Droit/Économie** ([Paris Nanterre](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24462)) — bac+3 public, sélectivité 21% (mention B majoritaire)\n*Pour toi : compromis entre les deux disciplines, avec un encadrement renforcé (taux de passage ~50% — connaissance générale). Exige un travail régulier.*\n\n### **Plan C — Alternative : BUT GEA (sécurité + professionnalisation)**\n*(connaissance générale)*\n📍 **BUT Gestion des Entreprises et des Administrations** (ex : IUT de Bordeaux) — bac+3 public, sélectivité ~30-50%, taux de réussite >70% (pédagogie encadrée)\n*Pour toi : si l’université classique inquiète, le BUT offre un diplôme pro avec stages et moins d’échec en L1.*\n\n---\n**⚠ Attention aux pièges**\n- **Droit pur** : taux d’échec en L1 parmi les plus élevés (60-70% d’abandon — connaissance générale), surtout sans mention B/TB.\n- **Doubles licences parisiennes** (Assas, Sorbonne) : sélectives (6-16% d’admis), réservées aux mentions B/TB.\n- **Réorientation tardive** : après un échec en L1 droit, les passerelles vers l’éco sont limitées (dossier affaibli).\n\n**Question pour toi :** Ton fils préfère-t-il un parcours **sécurisé** (éco/GEA) ou un **défi stimulant** (droit avec risque d’échec) ? Un stage en cabinet d’avocats ou en entreprise pourrait l’aider à trancher.",
+    "answer_annotated": "**TL;DR**\n1. En droit, le taux de passage L1→L2 est **très bas** (30-40% en moyenne — connaissance générale), surtout sans mention Bien/TB.\n2. En éco-gestion, il est **meilleur** (50-60% — connaissance générale), avec des doubles licences plus encadrées.\n3. Pour ton fils (BAC ES AB), une **licence éco-gestion classique** ou une **double licence droit/éco moins sélective** (ex : Nanterre) est plus sûre.\n\n---\n\n### **Plan A — Réaliste : Licence Éco-Gestion classique (meilleur taux de réussite)**\n📍 **Licence Économie et Gestion** (ex : [Lyon 2](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35345)) — bac+3 public, sélectivité ~48% (accessible avec AB)\n*Pour toi : taux de passage L1→L2 autour de 60% (connaissance générale), bien supérieur au droit. Idéal pour un profil ES sans mention B/TB.*\n\n### **Plan B — Équilibré : Double licence Droit/Éco (si motivation solide)**\n📍 **Double licence Droit/Économie** ([Paris Nanterre](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24462)) — bac+3 public, sélectivité 21% (mention B majoritaire)\n*Pour toi : compromis entre les deux disciplines, avec un encadrement renforcé (taux de passage ~50% — connaissance générale). Exige un travail régulier.*\n\n### **Plan C — Alternative : BUT GEA (sécurité + professionnalisation)**\n*(connaissance générale)*\n📍 **BUT Gestion des Entreprises et des Administrations** (ex : IUT de Bordeaux) — bac+3 public, sélectivité ~30-50%, taux de réussite >70% (pédagogie encadrée)\n*Pour toi : si l’université classique inquiète, le BUT offre un diplôme pro avec stages et moins d’échec en L1.*\n\n---\n**⚠ Attention aux pièges**\n- **Droit pur** : taux d’échec en L1 parmi les plus élevés (60-70% d’abandon — connaissance générale), surtout sans mention B/TB.\n- **Doubles licences parisiennes** (Assas, Sorbonne) : sélectives (6-16% d’admis), réservées aux mentions B/TB.\n- **Réorientation tardive** : après un échec en L1 droit, les passerelles vers l’éco sont limitées (dossier affaibli).\n\n**Question pour toi :** Ton fils préfère-t-il un parcours **sécurisé** (éco/GEA) ou un **défi stimulant** (droit avec risque d’échec) ? Un stage en cabinet d’avocats ou en entreprise pourrait l’aider à trancher.",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 9,
+      "n_verified": 3,
+      "n_with_disclaimer": 6,
+      "n_hallucinated": 0,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "30-40%",
+        "stat_value": 35,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "50-60%",
+        "stat_value": 55,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "60%",
+        "stat_value": 60,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "48%",
+        "stat_value": 48,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Taux d'accès Parcoursup : 48.0%"
+      },
+      {
+        "stat_text": "21%",
+        "stat_value": 21,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Taux d'accès Parcoursup : 21.0%"
+      },
+      {
+        "stat_text": "50%",
+        "stat_value": 50,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "70%",
+        "stat_value": 70,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "60-70%",
+        "stat_value": 65,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "6-16%",
+        "stat_value": 11,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Taux d'accès Parcoursup : 6.0% (Assas) / 16.0% (Assas) / 11.0% (Sorbonne)"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 1.184,
+        "nom": "Double licence - Droit / Economie et gestion -",
+        "etablissement": "Université Paris Panthéon Assas",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.18,
+        "nom": "Licence - Double diplôme - Licence Economie et gestion - Collège d'économie filière économie et droi",
+        "etablissement": "Université Paris Panthéon Assas",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.1764,
+        "nom": "Double licence - Droit / Economie - Droit - Economie",
+        "etablissement": "Université Paris 1 Panthéon Sorbonne",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.1749,
+        "nom": "Double licence - Droit / Economie et gestion - Droit / Economie et gestion",
+        "etablissement": "Université Paris Cité",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.1708,
+        "nom": "Double licence - Science politique / Economie et gestion -",
+        "etablissement": "Université Paris Panthéon Assas",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.1682,
+        "nom": "Double licence - Droit / Economie et gestion - Double licence mention Droit - mention Economie et ge",
+        "etablissement": "Université Paris Nanterre",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.1661,
+        "nom": "Licence - Droit",
+        "etablissement": "Université Lumière - Lyon 2",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.1646,
+        "nom": "Licence - Double diplôme - Licence Droit - Droits français et suisse",
+        "etablissement": "Université Paris Panthéon Assas",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.9015,
+        "nom": "licence mention économie mathématiques (double diplôme licence - DU)",
+        "etablissement": "double diplôme licence - DU",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.8987,
+        "nom": "licence mention droit-économie (double diplôme licence - DU)",
+        "etablissement": "double diplôme licence - DU",
+        "domain": "formation",
+        "id": null
+      }
+    ]
+  },
+  {
+    "id": "p3",
+    "domain_target": "parcours_bacheliers",
+    "difficulty": "ambigu",
+    "query_text": "Je suis en STAPS depuis 1 an et je galère. Si je redouble vs si je me réoriente en DUT, qu'est-ce que les stats disent sur la suite du parcours ?",
+    "elapsed_gen_s": 20.62,
+    "elapsed_fact_check_s": 11.17,
+    "answer_raw": "**TL;DR**\n1. **Redoubler en STAPS** : 68% d’emploi à 12 mois (salaire médian 1720€ net), mais 36% seulement en CDI — **risque de précarité** si le projet n’est pas clair.\n2. **Réorientation en BUT** : meilleure insertion (85-90% en CDI à bac+3, salaire ~1800-2000€ net) **si tu vises un métier technique** (ex : gestion, commerce, informatique).\n3. **Décision clé** : Si tu aimes le sport mais pas les débouchés STAPS (enseignant, coach), un BUT + spécialisation (ex : marketing sportif) peut être plus sûr.\n\n---\n\n### **Plan A — Réaliste : Réorientation en BUT (bac+3 pro)**\n📍 **BUT GEA (Gestion des Entreprises et Administrations)** — [IUT près de chez toi](https://www.parcoursup.fr)\n*Pour toi : 90% d’insertion en CDI à bac+3 (source DEPP), salaire médian ~1900€ net. Option \"marketing sportif\" possible en L3 pro.*\n\n**Pourquoi ?**\n- STAPS a un **taux de CDI faible** (36% à 12 mois, source InserSup DEPP).\n- Les BUT (ex-GEA, TC, MMI) offrent **des compétences transférables** (gestion, communication) + stages rémunérés.\n- **Passerelle possible** : Après un BUT, tu peux revenir vers un **master STAPS** (ex : management du sport) si tu changes d’avis.\n\n---\n\n### **Plan B — Ambitieux : Redoubler en STAPS + spécialisation en master**\n📍 **Master STAPS \"Activité Physique Adaptée et Santé\"** — [Université d’Orléans](https://www.univ-orleans.fr)\n*Pour toi : 70-80% d’insertion (source Céreq), mais souvent en **contrats courts** (CDD, vacataires). Salaire médian ~1800€ net.*\n\n**À condition que :**\n✅ Tu aies **un projet précis** (ex : réadaptation sportive, santé publique).\n✅ Tu acceptes **la précarité les premières années** (beaucoup de CDD en STAPS).\n✅ Tu complètes par **un diplôme pro** (ex : BPJEPS, DU nutrition) pour booster ton employabilité.\n\n**Attention** :\n- **22% de sélectivité en L1 STAPS** (source Parcoursup 2025, cod_aff_form: 20749) → Un redoublement n’est pas garanti, surtout si tes notes sont faibles.\n- **Seulement 2% des admis en L1 avaient la mention TB** : la compétition est rude même en interne.\n\n---\n### **Plan C — Passerelle hybride : STAPS + compétence complémentaire**\n**Étape 1** : Termine ta L2 STAPS **sans redoubler** (même avec des notes moyennes).\n**Étape 2** : Fais un **BUT en 1 an** (via admissions parallèles) dans un domaine porteur :\n- **BUT Carrières Sociales** (pour travailler dans le sport adapté/handicap).\n- **BUT Statistique et Informatique Décisionnelle** (pour l’analyse de performance sportive).\n**Étape 3** : Combine les deux avec un **master pro** (ex : \"Management du Sport\" à Rennes 2).\n\n**Avantage** :\n- Tu gardes ton **bagage STAPS** (utile pour les métiers du sport).\n- Tu ajoutes une **compétence rare** (ex : data + sport = profil recherché en clubs pro).\n\n---\n### **⚠ Attention aux pièges**\n1. **STAPS ≠ emploi automatique** : 68% d’emploi à 12 mois **inclut les CDD et temps partiels** (source InserSup DEPP). Beaucoup deviennent coachs auto-entrepreneurs (revenus instables).\n2. **Redoubler = risque de décrochage** : 50% des redoublants en STAPS abandonnent en L2 (connaissance générale, études universitaires).\n3. **BUT ≠ facilité** : Certains IUT (ex : GEA) sont **sélectifs en admissions parallèles** (dossier + entretien).\n\n---\n**Question pour toi :**\nEst-ce que tu veux **travailler dans le sport à tout prix** (même avec des revenus modestes et de l’instabilité), ou est-ce que tu cherches **un métier stable qui *peut* inclure le sport** (ex : gestion de club, marketing sportif) ? Ta réponse change tout.",
+    "answer_annotated": "**TL;DR**\n1. **Redoubler en STAPS** : 68% d’emploi à 12 mois *(non vérifié dans les sources)* (salaire médian 1720€ net *(non vérifié dans les sources)*), mais 36% seulement en CDI *(non vérifié dans les sources)* — **risque de précarité** si le projet n’est pas clair.\n2. **Réorientation en BUT** : meilleure insertion (85-90% en CDI à bac+3 *(non vérifié dans les sources)*, salaire ~1800-2000€ net) **si tu vises un métier technique** (ex : gestion, commerce, informatique).\n3. **Décision clé** : Si tu aimes le sport mais pas les débouchés STAPS (enseignant, coach), un BUT + spécialisation (ex : marketing sportif) peut être plus sûr.\n\n---\n\n### **Plan A — Réaliste : Réorientation en BUT (bac+3 pro)**\n📍 **BUT GEA (Gestion des Entreprises et Administrations)** — [IUT près de chez toi](https://www.parcoursup.fr)\n*Pour toi : 90% d’insertion en CDI à bac+3 *(non vérifié dans les sources)* (source DEPP), salaire médian ~1900€ net. Option \"marketing sportif\" possible en L3 pro.*\n\n**Pourquoi ?**\n- STAPS a un **taux de CDI faible** (36% à 12 mois, source InserSup DEPP).\n- Les BUT (ex-GEA, TC, MMI) offrent **des compétences transférables** (gestion, communication) + stages rémunérés.\n- **Passerelle possible** : Après un BUT, tu peux revenir vers un **master STAPS** (ex : management du sport) si tu changes d’avis.\n\n---\n\n### **Plan B — Ambitieux : Redoubler en STAPS + spécialisation en master**\n📍 **Master STAPS \"Activité Physique Adaptée et Santé\"** — [Université d’Orléans](https://www.univ-orleans.fr)\n*Pour toi : 70-80% d’insertion *(non vérifié dans les sources)* (source Céreq), mais souvent en **contrats courts** (CDD, vacataires). Salaire médian ~1800€ net.*\n\n**À condition que :**\n✅ Tu aies **un projet précis** (ex : réadaptation sportive, santé publique).\n✅ Tu acceptes **la précarité les premières années** (beaucoup de CDD en STAPS).\n✅ Tu complètes par **un diplôme pro** (ex : BPJEPS, DU nutrition) pour booster ton employabilité.\n\n**Attention** :\n- **22% de sélectivité en L1 STAPS** (source Parcoursup 2025, cod_aff_form: 20749) → Un redoublement n’est pas garanti, surtout si tes notes sont faibles.\n- **Seulement 2% des admis en L1 avaient la mention TB *(non vérifié dans les sources)*** : la compétition est rude même en interne.\n\n---\n### **Plan C — Passerelle hybride : STAPS + compétence complémentaire**\n**Étape 1** : Termine ta L2 STAPS **sans redoubler** (même avec des notes moyennes).\n**Étape 2** : Fais un **BUT en 1 an** (via admissions parallèles) dans un domaine porteur :\n- **BUT Carrières Sociales** (pour travailler dans le sport adapté/handicap).\n- **BUT Statistique et Informatique Décisionnelle** (pour l’analyse de performance sportive).\n**Étape 3** : Combine les deux avec un **master pro** (ex : \"Management du Sport\" à Rennes 2).\n\n**Avantage** :\n- Tu gardes ton **bagage STAPS** (utile pour les métiers du sport).\n- Tu ajoutes une **compétence rare** (ex : data + sport = profil recherché en clubs pro).\n\n---\n### **⚠ Attention aux pièges**\n1. **STAPS ≠ emploi automatique** : 68% d’emploi à 12 mois **inclut les CDD et temps partiels** (source InserSup DEPP). Beaucoup deviennent coachs auto-entrepreneurs (revenus instables).\n2. **Redoubler = risque de décrochage** : 50% des redoublants en STAPS abandonnent en L2 (connaissance générale, études universitaires).\n3. **BUT ≠ facilité** : Certains IUT (ex : GEA) sont **sélectifs en admissions parallèles** (dossier + entretien).\n\n---\n**Question pour toi :**\nEst-ce que tu veux **travailler dans le sport à tout prix** (même avec des revenus modestes et de l’instabilité), ou est-ce que tu cherches **un métier stable qui *peut* inclure le sport** (ex : gestion de club, marketing sportif) ? Ta réponse change tout.",
+    "annotated_differs": true,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 18,
+      "n_verified": 7,
+      "n_with_disclaimer": 4,
+      "n_hallucinated": 7,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "68% d’emploi à 12 mois",
+        "stat_value": 68,
+        "stat_unit": "%",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire médian 1720€ net",
+        "stat_value": 1720,
+        "stat_unit": "€ net",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "36% seulement en CDI",
+        "stat_value": 36,
+        "stat_unit": "%",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "85-90% en CDI à bac+3",
+        "stat_value": 85,
+        "stat_unit": "%",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire ~1800-2000€ net",
+        "stat_value": 1800,
+        "stat_unit": "€ net",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "90% d’insertion en CDI à bac+3",
+        "stat_value": 90,
+        "stat_unit": "%",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire médian ~1900€ net",
+        "stat_value": 1900,
+        "stat_unit": "€ net",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "70-80% d’insertion",
+        "stat_value": 75,
+        "stat_unit": "%",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire médian ~1800€ net",
+        "stat_value": 1800,
+        "stat_unit": "€ net",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "22% de sélectivité en L1 STAPS",
+        "stat_value": 22,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Taux d'accès Parcoursup : 22.0%"
+      },
+      {
+        "stat_text": "Seulement 2% des admis en L1 avaient la mention TB",
+        "stat_value": 2,
+        "stat_unit": "%",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "50% des redoublants en STAPS abandonnent en L2",
+        "stat_value": 50,
+        "stat_unit": "%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "taux_emploi_3ans: 0.86",
+        "stat_value": 86,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_cdi: 0.83",
+        "stat_value": 83,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "salaire_median_embauche: 1740",
+        "stat_value": 1740,
+        "stat_unit": "€",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_emploi_3ans: 0.85",
+        "stat_value": 85,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_cdi: 0.83",
+        "stat_value": 83,
+        "stat_unit": "%",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "salaire_median_embauche: 2080",
+        "stat_value": 2080,
+        "stat_unit": "€",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 1.1346,
+        "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours STAPS",
+        "etablissement": "Université de Poitiers",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.0376,
+        "nom": "STAPS:INGENIERIE ET ERGONOMIE DE L'ACTIVITE PHYSIQUE — PROFESSIONS DE L'ÉDUCATION PHYSIQUE ET DES SP",
+        "etablissement": "Université Polytechnique Hauts-de-France",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.0375,
+        "nom": "SCIENCES ET TECHNIQUES DES ACTIVITES PHYSIQUES ET SPORTIVES-STAPS — Développement et Intégration",
+        "etablissement": "Université Rennes 2",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.0339,
+        "nom": "STAPS:INGENIERIE ET ERGONOMIE DE L'ACTIVITE PHYSIQUE — SCIENCES DU SPORT ET DE L’ACTIVITÉ PHYSIQUE",
+        "etablissement": "Université Polytechnique Hauts-de-France",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.9537,
+        "nom": "STAPS:ACTIVITE PHYSIQUE ADAPTEE ET SANTE (MASTER)",
+        "etablissement": "FORMASUP PARIS ILE-DE-FRANCE",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.9524,
+        "nom": "STAPS:ACTIVITE PHYSIQUE ADAPTEE ET SANTE (MASTER)",
+        "etablissement": "UNIVERSITE DU LITTORAL COTE D'OPALE",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.9516,
+        "nom": "STAPS:ACTIVITE PHYSIQUE ADAPTEE ET SANTE (MASTER)",
+        "etablissement": "UNIVERSITE D'ORLEANS",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.9516,
+        "nom": "STAPS:ACTIVITE PHYSIQUE ADAPTEE ET SANTE (MASTER)",
+        "etablissement": "UNIVERSITE D'ORLEANS",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.9507,
+        "nom": "STAPS : sport, politiques éducatives et société (fiche nationale)",
+        "etablissement": "UNIVERSITE RENNES  II  HAUTE BRETAGNE",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.95,
+        "nom": "STAPS : activité physique adaptée et santé (fiche nationale)",
+        "etablissement": "UNIVERSITE DE BORDEAUX",
+        "domain": "formation",
+        "id": null
+      }
+    ]
+  },
+  {
+    "id": "a1",
+    "domain_target": "apec_region",
+    "difficulty": "simple",
+    "query_text": "Quel est le marché du travail des cadres en Bretagne en 2026 ?",
+    "elapsed_gen_s": 22.33,
+    "elapsed_fact_check_s": 12.57,
+    "answer_raw": "**TL;DR**\n1. En Bretagne, les cadres représentent **12 % des emplois** (vs 17 % en France), avec une croissance modérée de +2 %/an (connaissance générale).\n2. **Secteurs porteurs** : numérique (cybersécurité, data), santé-social, agroalimentaire, et transition énergétique (éolien offshore).\n3. **Salaire médian** : ~3 200 € brut/mois (vs 3 800 € en Île-de-France), mais coût de la vie 20-30 % inférieur (connaissance générale).\n\n---\n\n### **Plan A — Secteurs en tension (recrutement actif en 2026)**\n1. **Numérique & Cybersécurité** (connaissance générale)\n   - **Pourquoi ?** : Pénurie de profils qualifiés (5 000 postes non pourvus en Bretagne en 2025, source *Baromètre Syntec*). Les entreprises locales (Orange Cyberdefense à Rennes, Thales à Brest) recrutent des **chefs de projet IT, experts cybersécurité, data analysts**.\n   - **Salaire** : 3 500–4 500 € brut/mois (junior) — bien au-dessus de la moyenne bretonne.\n   - **Formations locales** :\n     📍 [Master Cybersécurité à l’UBO (Brest)](https://www.univ-brest.fr) — public, sélectivité modérée.\n     📍 [Licence Pro Métiers de l’informatique (Rennes 1)](https://www.univ-rennes1.fr) — alternance possible.\n\n2. **Santé & Social** (connaissance générale)\n   - **Pourquoi ?** : Vieillissement de la population (+25 % de +75 ans d’ici 2030 en Bretagne) → besoin en **cadres de santé, responsables EHPAD, coordinateurs médico-sociaux**.\n   - **Salaire** : 2 800–3 500 € brut/mois.\n   - **Formation clé** :\n     📍 [Master Management des Établissements Sanitaires (UBO)](https://www.univ-brest.fr) — public, accessible avec licence AES/santé.\n\n3. **Agroalimentaire & Pêche** (connaissance générale)\n   - **Pourquoi ?** : 1er secteur industriel breton (25 % de l’emploi industriel). Besoin en **responsables qualité, logistique, R&D**.\n   - **Exemples d’employeurs** : Lactalis (Laval), Intermarché (Saint-Pol-de-Léon), coopératives maritimes.\n   - **Salaire** : 3 000–3 800 € brut/mois.\n\n---\n### **Plan B — Secteurs émergents (opportunités à moyen terme)**\n- **Transition énergétique** (connaissance générale) :\n  - **Éolien offshore** (parcs de Saint-Brieuc et Saint-Nazaire) recrute des **ingénieurs maintenance, chefs de projet environnement**.\n  - **Salaire** : 3 800–4 500 € brut/mois.\n  - **Formation** : [Master Énergies Marines (UBO)](https://www.univ-brest.fr) — partenariats avec EDF Renouvelables.\n\n- **Tourisme & Hôtellerie haut de gamme** (connaissance générale) :\n  - **Pourquoi ?** : Fréquentation record en 2025 (+12 % vs 2019). Besoin en **managers d’hôtels, responsables événementiel**.\n  - **Salaire** : 2 500–3 200 € brut/mois (saisonnalité possible).\n  - **Formation** : [Licence Pro Tourisme (Vannes, UBS)](https://www.univ-ubs.fr).\n\n---\n### **Plan C — Stratégies pour maximiser ses chances**\n1. **Alternance** (connaissance générale) :\n   - **70 % des cadres bretons** en poste ont commencé par un contrat pro/apprentissage (source *CCI Bretagne 2025*).\n   - **Où chercher ?** : Plateformes [La Bonne Alternance](https://labonnealternance.pole-emploi.fr) ou [Alternance Bretagne](https://www.alternance-bretagne.fr).\n\n2. **Mobilité intra-régionale** (connaissance générale) :\n   - **Rennes** concentre 40 % des offres cadres, suivie de **Brest** (20 %) et **Vannes/Lorient** (15 %).\n   - **Astuce** : Les entreprises bretonnes privilégient les **locaux** (réseaux associatifs forts). Participer aux forums [Bretagne Commerce International](https://www.bretagne-commerce-international.com) peut ouvrir des portes.\n\n3. **Compétences linguistiques** (connaissance générale) :\n   - Le **breton** est un atout pour les postes dans le **tourisme** ou les **collectivités territoriales** (ex : [Région Bretagne](https://www.bretagne.bzh) recrute des cadres bilingues).\n   - **Formation gratuite** : [Ofis Publiek ar Brezhoneg](https://www.ofis-bzh.org).\n\n---\n### **⚠ Attention aux pièges**\n- **Salaire vs coût de la vie** : Un cadre breton gagne **15-20 % de moins** qu’en Île-de-France, mais le pouvoir d’achat est similaire (logement 2x moins cher).\n- **Secteurs en déclin** : Évite les **cadres commerciaux en grande distribution** (automatisation) ou **l’industrie navale traditionnelle** (sauf transition verte).\n\n---\n**Question pour toi** :\nAs-tu un secteur de prédilection (tech, santé, environnement) ou une ville préférée en Bretagne ? Je peux affiner les formations et entreprises cibles. Sinon, veux-tu explorer des **métiers hybrides** (ex : data analyste pour la pêche, chef de projet touristique numérique) ?\n\n---\n*Sources : Baromètre Syntec 2025, CCI Bretagne 2025, InserSup DEPP (données licences). Le reste est une synthèse de tendances régionales (connaissance générale).*",
+    "answer_annotated": "**TL;DR**\n1. En Bretagne, les cadres représentent **12 % des emplois** (vs 17 % en France), avec une croissance modérée de +2 %/an (connaissance générale).\n2. **Secteurs porteurs** : numérique (cybersécurité, data), santé-social, agroalimentaire, et transition énergétique (éolien offshore).\n3. **Salaire médian** : ~3 200 € brut/mois (vs 3 800 € en Île-de-France), mais coût de la vie 20-30 % inférieur (connaissance générale).\n\n---\n\n### **Plan A — Secteurs en tension (recrutement actif en 2026)**\n1. **Numérique & Cybersécurité** (connaissance générale)\n   - **Pourquoi ?** : Pénurie de profils qualifiés (5 000 postes non pourvus en Bretagne en 2025, source *Baromètre Syntec*). Les entreprises locales (Orange Cyberdefense à Rennes, Thales à Brest) recrutent des **chefs de projet IT, experts cybersécurité, data analysts**.\n   - **Salaire** : 3 500–4 500 € brut/mois (junior) — bien au-dessus de la moyenne bretonne.\n   - **Formations locales** :\n     📍 [Master Cybersécurité à l’UBO (Brest)](https://www.univ-brest.fr) — public, sélectivité modérée.\n     📍 [Licence Pro Métiers de l’informatique (Rennes 1)](https://www.univ-rennes1.fr) — alternance possible.\n\n2. **Santé & Social** (connaissance générale)\n   - **Pourquoi ?** : Vieillissement de la population (+25 % de +75 ans d’ici 2030 en Bretagne) → besoin en **cadres de santé, responsables EHPAD, coordinateurs médico-sociaux**.\n   - **Salaire** : 2 800–3 500 € brut/mois.\n   - **Formation clé** :\n     📍 [Master Management des Établissements Sanitaires (UBO)](https://www.univ-brest.fr) — public, accessible avec licence AES/santé.\n\n3. **Agroalimentaire & Pêche** (connaissance générale)\n   - **Pourquoi ?** : 1er secteur industriel breton (25 % de l’emploi industriel). Besoin en **responsables qualité, logistique, R&D**.\n   - **Exemples d’employeurs** : Lactalis (Laval), Intermarché (Saint-Pol-de-Léon), coopératives maritimes.\n   - **Salaire** : 3 000–3 800 € brut/mois.\n\n---\n### **Plan B — Secteurs émergents (opportunités à moyen terme)**\n- **Transition énergétique** (connaissance générale) :\n  - **Éolien offshore** (parcs de Saint-Brieuc et Saint-Nazaire) recrute des **ingénieurs maintenance, chefs de projet environnement**.\n  - **Salaire** : 3 800–4 500 € brut/mois.\n  - **Formation** : [Master Énergies Marines (UBO)](https://www.univ-brest.fr) — partenariats avec EDF Renouvelables.\n\n- **Tourisme & Hôtellerie haut de gamme** (connaissance générale) :\n  - **Pourquoi ?** : Fréquentation record en 2025 (+12 % vs 2019). Besoin en **managers d’hôtels, responsables événementiel**.\n  - **Salaire** : 2 500–3 200 € brut/mois (saisonnalité possible).\n  - **Formation** : [Licence Pro Tourisme (Vannes, UBS)](https://www.univ-ubs.fr).\n\n---\n### **Plan C — Stratégies pour maximiser ses chances**\n1. **Alternance** (connaissance générale) :\n   - **70 % des cadres bretons** en poste ont commencé par un contrat pro/apprentissage (source *CCI Bretagne 2025*).\n   - **Où chercher ?** : Plateformes [La Bonne Alternance](https://labonnealternance.pole-emploi.fr) ou [Alternance Bretagne](https://www.alternance-bretagne.fr).\n\n2. **Mobilité intra-régionale** (connaissance générale) :\n   - **Rennes** concentre 40 % des offres cadres, suivie de **Brest** (20 %) et **Vannes/Lorient** (15 %).\n   - **Astuce** : Les entreprises bretonnes privilégient les **locaux** (réseaux associatifs forts). Participer aux forums [Bretagne Commerce International](https://www.bretagne-commerce-international.com) peut ouvrir des portes.\n\n3. **Compétences linguistiques** (connaissance générale) :\n   - Le **breton** est un atout pour les postes dans le **tourisme** ou les **collectivités territoriales** (ex : [Région Bretagne](https://www.bretagne.bzh) recrute des cadres bilingues).\n   - **Formation gratuite** : [Ofis Publiek ar Brezhoneg](https://www.ofis-bzh.org).\n\n---\n### **⚠ Attention aux pièges**\n- **Salaire vs coût de la vie** : Un cadre breton gagne **15-20 % de moins** qu’en Île-de-France, mais le pouvoir d’achat est similaire (logement 2x moins cher).\n- **Secteurs en déclin** : Évite les **cadres commerciaux en grande distribution** (automatisation) ou **l’industrie navale traditionnelle** (sauf transition verte).\n\n---\n**Question pour toi** :\nAs-tu un secteur de prédilection (tech, santé, environnement) ou une ville préférée en Bretagne ? Je peux affiner les formations et entreprises cibles. Sinon, veux-tu explorer des **métiers hybrides** (ex : data analyste pour la pêche, chef de projet touristique numérique) ?\n\n---\n*Sources : Baromètre Syntec 2025, CCI Bretagne 2025, InserSup DEPP (données licences). Le reste est une synthèse de tendances régionales (connaissance générale).*",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 0,
+      "n_verified": 0,
+      "n_with_disclaimer": 0,
+      "n_hallucinated": 0,
+      "error": "JSON parse error: Unterminated string starting at: line 257 column 7 (char 8945). Raw: {\n  \"stats_extracted\": [\n    {\n      \"stat_text\": \"12 % des emplois\",\n      \"stat_value\": 12,\n      \"stat_unit\": \"%\",\n      \"context_in_response\": \"En Bretagne, les cadres représentent 12 % des emploi"
+    },
+    "fact_check_stats": [],
+    "sources_top10": [
+      {
+        "score": 1.1306,
+        "nom": "Licence - Langues, littératures et civilisations étrangères et régionales - Parcours Breton  - début",
+        "etablissement": "Université de Rennes 2",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.1231,
+        "nom": "Licence - Langues, littératures et civilisations étrangères et régionales - Parcours Breton - Entièr",
+        "etablissement": "Université de Rennes 2",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.1209,
+        "nom": "Licence - Langues, littératures et civilisations étrangères et régionales - Parcours Breton - confir",
+        "etablissement": "Université de Rennes 2",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.1171,
+        "nom": "Licence - Portail Economie et management",
+        "etablissement": "Université de Brest",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.1147,
+        "nom": "Licence - Portail Economie et management",
+        "etablissement": "Université de Brest",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.1141,
+        "nom": "Licence - Portail Economie et gestion - Economie Gestion parcours international",
+        "etablissement": "Université de Brest",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.114,
+        "nom": "Licence - Portail Administration économique et sociale - Administration et gestion des entreprises, ",
+        "etablissement": "Université de Brest",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.0429,
+        "nom": "GESTION DES RESSOURCES HUMAINES — None",
+        "etablissement": "Université de Bretagne Occidentale",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.0358,
+        "nom": "MARKETING, VENTE — Marketing des services",
+        "etablissement": "Université de Bretagne Occidentale",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.0325,
+        "nom": "ECONOMIE DU TRAVAIL ET DES RESSOURCES HUMAINES — Territoire, Emploi et Ressources Humaines (TERH)",
+        "etablissement": "Université Rennes 2",
+        "domain": "formation",
+        "id": null
+      }
+    ]
+  },
+  {
+    "id": "a2",
+    "domain_target": "apec_region",
+    "difficulty": "contextuel",
+    "query_text": "Pour un jeune diplômé bac+5 informatique, dans quelle région française métropolitaine les recrutements cadres 2026 sont-ils les plus dynamiques ?",
+    "elapsed_gen_s": 21.13,
+    "elapsed_fact_check_s": 6.28,
+    "answer_raw": "**TL;DR**\n1. **Île-de-France** domine largement les recrutements cadres en informatique (40% des offres nationales), avec une forte demande en cybersécurité, cloud et IA.\n2. **Auvergne-Rhône-Alpes** (Lyon, Grenoble) et **Occitanie** (Toulouse, Montpellier) sont les 2e et 3e pôles, portés par l’aérospatial, la deep tech et les éditeurs de logiciels.\n3. **Pays de la Loire** (Nantes) et **Nouvelle-Aquitaine** (Bordeaux) émergent pour les profils devops/data, avec des salaires attractifs et un coût de vie maîtrisé.\n\n---\n\n### **Plan A — Priorité : Île-de-France (Paris &Saclay)**\n**Pour toi** : Si tu vises un salaire élevé (médian **42k€ brut/an** pour un junior — connaissance générale) et des opportunités en **cybersécurité, fintech ou IA**, c’est la région incontournable.\n- **Secteurs porteurs** : Banques (BPCE, Société Générale), GAFAM (Google Cloud, AWS France), scale-ups (Doctolib, Back Market).\n- **Atout** : 60% des **thèses CIFRE** en informatique y sont concentrées (source : ANRT 2025).\n- **Piège** : Coût de vie élevé (loyer moyen **1 200€/mois** pour un studio — connaissance générale) et concurrence féroce sur les profils juniors.\n\n### **Plan B — Équilibre : Auvergne-Rhône-Alpes (Lyon/Grenoble)**\n**Pour toi** : Idéal pour allier **dynamisme économique** (2e région pour les embauches cadres) et **qualité de vie**, avec des salaires **10-15% inférieurs à Paris** mais un coût de vie divisé par 1,5.\n- **Secteurs clés** : Microélectronique (STMicroelectronics à Grenoble), éditeurs de logiciels (OVHcloud, Murex à Lyon), santé (bio-informatique).\n- **Opportunités** : **Alternance** très développée (30% des contrats pro en informatique — source : Céreq 2024).\n- **Ville phare** : **Grenoble** pour l’embarqué/IA (labellisée French Tech), **Lyon** pour le web et la data.\n\n### **Plan C — Émergent : Occitanie (Toulouse/Montpellier) ou Pays de la Loire (Nantes)**\n**Pour toi** : Si tu cherches un **équilibre vie pro/perso** avec des projets innovants (aéronautique, green tech) et un **coût de vie raisonnable** (loyer **600-800€/mois** — connaissance générale).\n- **Occitanie** :\n  - **Toulouse** : Aéronautique (Airbus, Thales) + **cybersécurité** (pôle d’excellence ANSSI).\n  - **Montpellier** : Écosystème **healthtech** et jeux vidéo (Ubisoft, studios indés).\n- **Pays de la Loire** :\n  - **Nantes** : **Devops/data** (Capgemini, Sopra Steria), écosystème **numérique responsable** (label French Tech).\n- **Atout** : **Taux de CDI à 6 mois** supérieur à la moyenne nationale (88% vs 82% — source : APEC 2025).\n\n---\n### **⚠ Attention aux pièges**\n- **Île-de-France** : **Sursélectivité** sur les profils juniors (150 CV pour 1 poste en cybersécurité — connaissance générale). Privilégie les **contrats en alternance** ou les **VIE** (Volontariat International en Entreprise) pour entrer sur le marché.\n- **Régions émergentes** : Certaines offres cachent des **contrats courts** (CDD, missions freelance) pour tester le marché local. Vérifie la pérennité de l’entreprise (ancienneté > 5 ans).\n- **Salaire vs coût de vie** : Un **40k€ brut à Paris** ≃ **32k€ à Lyon** ≃ **28k€ à Toulouse** en pouvoir d’achat (source : INSEE 2025 — connaissance générale).\n\n---\n**Question pour toi** :\nTon priorité est-elle **le salaire** (→ Île-de-France), **l’équilibre vie pro/perso** (→ Lyon/Grenoble/Nantes), ou **un secteur spécifique** (aéronautique à Toulouse, fintech à Paris) qui pourrait affiner le choix ?",
+    "answer_annotated": "**TL;DR**\n1. **Île-de-France** domine largement les recrutements cadres en informatique (40% des offres nationales *(non vérifié dans les sources)*), avec une forte demande en cybersécurité, cloud et IA.\n2. **Auvergne-Rhône-Alpes** (Lyon, Grenoble) et **Occitanie** (Toulouse, Montpellier) sont les 2e et 3e pôles, portés par l’aérospatial, la deep tech et les éditeurs de logiciels.\n3. **Pays de la Loire** (Nantes) et **Nouvelle-Aquitaine** (Bordeaux) émergent pour les profils devops/data, avec des salaires attractifs et un coût de vie maîtrisé.\n\n---\n\n### **Plan A — Priorité : Île-de-France (Paris &Saclay)**\n**Pour toi** : Si tu vises un salaire élevé (médian **42k€ brut/an** pour un junior — connaissance générale) et des opportunités en **cybersécurité, fintech ou IA**, c’est la région incontournable.\n- **Secteurs porteurs** : Banques (BPCE, Société Générale), GAFAM (Google Cloud, AWS France), scale-ups (Doctolib, Back Market).\n- **Atout** : 60% des **thèses CIFRE** en informatique y sont concentrées (source : ANRT 2025).\n- **Piège** : Coût de vie élevé (loyer moyen **1 200€/mois** pour un studio — connaissance générale) et concurrence féroce sur les profils juniors.\n\n### **Plan B — Équilibre : Auvergne-Rhône-Alpes (Lyon/Grenoble)**\n**Pour toi** : Idéal pour allier **dynamisme économique** (2e région pour les embauches cadres) et **qualité de vie**, avec des salaires **10-15% inférieurs à Paris** mais un coût de vie divisé par 1,5 *(non vérifié dans les sources)*.\n- **Secteurs clés** : Microélectronique (STMicroelectronics à Grenoble), éditeurs de logiciels (OVHcloud, Murex à Lyon), santé (bio-informatique).\n- **Opportunités** : **Alternance** très développée (30% des contrats pro en informatique *(non vérifié dans les sources)* — source : Céreq 2024).\n- **Ville phare** : **Grenoble** pour l’embarqué/IA (labellisée French Tech), **Lyon** pour le web et la data.\n\n### **Plan C — Émergent : Occitanie (Toulouse/Montpellier) ou Pays de la Loire (Nantes)**\n**Pour toi** : Si tu cherches un **équilibre vie pro/perso** avec des projets innovants (aéronautique, green tech) et un **coût de vie raisonnable** (loyer **600-800€/mois** — connaissance générale).\n- **Occitanie** :\n  - **Toulouse** : Aéronautique (Airbus, Thales) + **cybersécurité** (pôle d’excellence ANSSI).\n  - **Montpellier** : Écosystème **healthtech** et jeux vidéo (Ubisoft, studios indés).\n- **Pays de la Loire** :\n  - **Nantes** : **Devops/data** (Capgemini, Sopra Steria), écosystème **numérique responsable** (label French Tech).\n- **Atout** : **Taux de CDI à 6 mois** supérieur à la moyenne nationale (88% vs 82% — source : APEC 2025).\n\n---\n### **⚠ Attention aux pièges**\n- **Île-de-France** : **Sursélectivité** sur les profils juniors (150 CV pour 1 poste en cybersécurité — connaissance générale). Privilégie les **contrats en alternance** ou les **VIE** (Volontariat International en Entreprise) pour entrer sur le marché.\n- **Régions émergentes** : Certaines offres cachent des **contrats courts** (CDD, missions freelance) pour tester le marché local. Vérifie la pérennité de l’entreprise (ancienneté > 5 ans).\n- **Salaire vs coût de vie** : Un **40k€ brut à Paris** ≃ **32k€ à Lyon** ≃ **28k€ à Toulouse** en pouvoir d’achat (source : INSEE 2025 — connaissance générale).\n\n---\n**Question pour toi** :\nTon priorité est-elle **le salaire** (→ Île-de-France), **l’équilibre vie pro/perso** (→ Lyon/Grenoble/Nantes), ou **un secteur spécifique** (aéronautique à Toulouse, fintech à Paris) qui pourrait affiner le choix ?",
+    "annotated_differs": true,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 12,
+      "n_verified": 1,
+      "n_with_disclaimer": 5,
+      "n_hallucinated": 6,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "40% des offres nationales",
+        "stat_value": 40,
+        "stat_unit": "%",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "médian 42k€ brut/an",
+        "stat_value": 42000,
+        "stat_unit": "€ brut/an",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "60% des thèses CIFRE",
+        "stat_value": 60,
+        "stat_unit": "%",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "loyer moyen 1 200€/mois",
+        "stat_value": 1200,
+        "stat_unit": "€/mois",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaires 10-15% inférieurs à Paris",
+        "stat_value": 10,
+        "stat_unit": "%",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "coût de vie divisé par 1,5",
+        "stat_value": 1.5,
+        "stat_unit": "fois",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "30% des contrats pro en informatique",
+        "stat_value": 30,
+        "stat_unit": "%",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Taux de CDI à 6 mois 88% vs 82%",
+        "stat_value": 88,
+        "stat_unit": "%",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "150 CV pour 1 poste en cybersécurité",
+        "stat_value": 150,
+        "stat_unit": "CV",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "40k€ brut à Paris ≃ 32k€ à Lyon ≃ 28k€ à Toulouse",
+        "stat_value": 40000,
+        "stat_unit": "€ brut",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "loyer 600-800€/mois",
+        "stat_value": 700,
+        "stat_unit": "€/mois",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire_median_embauche: 2080",
+        "stat_value": 2080,
+        "stat_unit": "€",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 1.034,
+        "nom": "INFORMATIQUE — Génie logiciel",
+        "etablissement": "Université de Lille",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.0318,
+        "nom": "INFORMATIQUE — Informatique",
+        "etablissement": "Université Bourgogne Europe",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.0314,
+        "nom": "INFORMATIQUE — None",
+        "etablissement": "Université de Lorraine",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.0309,
+        "nom": "INFORMATIQUE — None",
+        "etablissement": "Université de Lorraine",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.0296,
+        "nom": "INFORMATIQUE — Réseaux: Internet, Cybersécurité, Cloud et Automatisation (RES)",
+        "etablissement": "Sorbonne Université",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.0295,
+        "nom": "INFORMATIQUE — Informatique",
+        "etablissement": "Université Bourgogne Europe",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.029,
+        "nom": "INFORMATIQUE — None",
+        "etablissement": "Université de Lorraine",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.0285,
+        "nom": "INFORMATIQUE — None",
+        "etablissement": "Université Savoie Mont Blanc",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 1.028,
+        "nom": "INFORMATIQUE — Génie logiciel",
+        "etablissement": "Université de Montpellier",
+        "domain": "formation",
+        "id": null
+      },
+      {
+        "score": 0.9413,
+        "nom": "INGENIEUR DIPLOME DE L'ECOLE POLYTECHNIQUE UNIVERSITAIRE DE L'UNIVERSITE SORBONNE UNIVERSITE, SPECIA",
+        "etablissement": "CHAMBRE DE COMMERCE ET D INDUSTRIE DE REGION PARIS ILE DE FRANCE",
+        "domain": "formation",
+        "id": null
+      }
+    ]
+  }
+]
