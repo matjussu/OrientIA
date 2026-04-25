@@ -1,0 +1,231 @@
+{
+  "idx_global": 18,
+  "persona_id": "psy_en",
+  "persona_description": "Psy-EN (psychologue Éducation nationale)",
+  "scope": "pro",
+  "query_id": "q3",
+  "query_type": "contextuelle_riche",
+  "query_text": "J'accompagne un élève de 2nde issu d'un milieu modeste, qui rêve de devenir ingénieur aéro mais ses résultats sont moyens (10-11 en maths). Quelles stratégies long-terme sur la suite du lycée ?",
+  "elapsed_gen_s": 10.91,
+  "elapsed_fact_check_s": 8.85,
+  "answer_raw": "**TL;DR**\n1. Avec 10-11 en maths en 2nde, viser une école d’ingénieur aéro **directement après le bac est trop risqué** (sélectivité forte, maths critiques).\n2. **Stratégie clé** : choisir des spécialités en 1ère/Terminale pour **monter en maths-physique** ET préparer un **BUT ou une prépa adaptée** (moins sélective qu’une école d’ingé post-bac).\n3. **Plan de secours** : BTS aéronautique (alternance possible) → poursuite en école d’ingé via admissions parallèles.\n\n---\n\n### **Plan A — Réaliste : BUT + spécialités scientifiques renforcées**\n📍 **BUT Génie Mécanique et Productique (GMP)** (ex : IUT de Toulouse)\n— bac+3 public, sélectivité ~40-60% (accessible avec 12+ de moyenne en 1ère/Terminale), **passerelle vers écoles d’ingé aéro** (ex : INSA, ISAE-ENSMA).\n*Pour toi : idéal si tu progresses en maths-physique (spé Maths + Physique-Chimie en 1ère/Terminale). L’alternance réduit les coûts.*\n\n**Chemin type** :\n- **1ère/Terminale** : Prendre **Maths + Physique-Chimie** (voire SI si possible) pour monter la moyenne à 12-13.\n- **Post-bac** : BUT GMP (ou Mesures Physiques) → **poursuite en école d’ingé aéro** via admissions parallèles (ex : [ISAE-ENSMA](https://www.ensma.fr/)).\n- **Atout** : Les BUT publics sont **gratuits** et moins sélectifs que les prépas.\n\n---\n\n### **Plan B — Ambitieux : Prépa TSI (pour bacs technos) ou prépa intégrée**\n📍 **Prépa TSI** (ex : Lycée Raspail, Paris) — 2 ans public, **sélective (12+ de moyenne exigée)**, mais **adapte aux profils moyens en maths** avec un bon dossier.\n*Pour toi : si tu vises 13+ en maths-physique en Terminale, c’est une porte vers des écoles comme l’[ENAC](https://www.enac.fr/) (aéronautique civile).*\n\n**Alternative** :\n- **Prépa intégrée** (ex : [INSA Strasbourg](https://www.insa-strasbourg.fr/), spécialité Mécatronique) — **recrute sur dossier** (12+ de moyenne), avec **pédagogie adaptée** aux profils non-élites.\n- **Coût** : Les INSA publics coûtent ~600€/an (bourses possibles).\n\n---\n### **Plan C — Passerelle : BTS Aéronautique + alternance → école d’ingé**\n📍 **BTS Aéronautique** (ex : Lycée Airbus, Toulouse) — bac+2 public/privé, **sélectivité modérée (10-11 acceptable)**, **90% en alternance** (salaire + gratuité).\n*Pour toi : solution si les maths restent un point faible. L’alternance te donne de l’expérience (atout pour les admissions parallèles).*\n\n**Exemple de parcours** :\n1. BTS Aéronautique (alternance chez un sous-traitant aéro).\n2. **Licence Pro** (ex : Maintenance Aéronautique) ou **école d’ingé en 3 ans** (ex : [EIMA](https://www.eima.fr/), admissions parallèles).\n3. **Débouchés** : Technicien supérieur → ingénieur via VAP (Validation des Acquis Professionnels).\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées post-bac** (ex : ECE Paris) : **9 000-12 000€/an** et sélectivité trompeuse (même avec 10-11, le risque d’échec est élevé sans un bon niveau en maths).\n- **Prépa classique (MP/PC)** : **À éviter** avec 10-11 en maths (rythme trop intense, taux d’échec élevé).\n- **Illusion \"aéro = pilote\"** : Les écoles d’ingé aéro (ex : ISAE-SUPAERO) forment des **ingénieurs** (conception, maintenance), pas des pilotes (formation séparée, coûteuse).\n\n---\n**Question pour toi** :\nTon élève est-il prêt à **redoubler d’efforts en maths-physique** pour viser un BUT/prépa, ou préfère-t-il une voie plus progressive comme le BTS en alternance ? *(L’alternance peut être un tremplin si les études longues font peur.)*\n\n---\n**👤 Pour aller plus loin** :\nUn RDV avec le **Psy-EN** de son lycée peut aider à affiner le choix entre BUT et BTS. Les **forums des écoles** (ex : [ONISEP](https://www.onisep.fr/)) donnent aussi des retours d’étudiants en situation similaire.",
+  "answer_annotated": "**TL;DR**\n1. Avec 10-11 en maths en 2nde, viser une école d’ingénieur aéro **directement après le bac est trop risqué** (sélectivité forte, maths critiques).\n2. **Stratégie clé** : choisir des spécialités en 1ère/Terminale pour **monter en maths-physique** ET préparer un **BUT ou une prépa adaptée** (moins sélective qu’une école d’ingé post-bac).\n3. **Plan de secours** : BTS aéronautique (alternance possible) → poursuite en école d’ingé via admissions parallèles.\n\n---\n\n### **Plan A — Réaliste : BUT + spécialités scientifiques renforcées**\n📍 **BUT Génie Mécanique et Productique (GMP)** (ex : IUT de Toulouse)\n— bac+3 public, sélectivité ~40-60% *(non vérifié dans les sources)* (accessible avec 12+ de moyenne en 1ère/Terminale *(non vérifié dans les sources)*), **passerelle vers écoles d’ingé aéro** (ex : INSA, ISAE-ENSMA).\n*Pour toi : idéal si tu progresses en maths-physique (spé Maths + Physique-Chimie en 1ère/Terminale). L’alternance réduit les coûts.*\n\n**Chemin type** :\n- **1ère/Terminale** : Prendre **Maths + Physique-Chimie** (voire SI si possible) pour monter la moyenne à 12-13.\n- **Post-bac** : BUT GMP (ou Mesures Physiques) → **poursuite en école d’ingé aéro** via admissions parallèles (ex : [ISAE-ENSMA](https://www.ensma.fr/)).\n- **Atout** : Les BUT publics sont **gratuits** et moins sélectifs que les prépas.\n\n---\n\n### **Plan B — Ambitieux : Prépa TSI (pour bacs technos) ou prépa intégrée**\n📍 **Prépa TSI** (ex : Lycée Raspail, Paris) — 2 ans public, **sélective (12+ de moyenne exigée *(non vérifié dans les sources)*)**, mais **adapte aux profils moyens en maths** avec un bon dossier.\n*Pour toi : si tu vises 13+ en maths-physique en Terminale, c’est une porte vers des écoles comme l’[ENAC](https://www.enac.fr/) (aéronautique civile).*\n\n**Alternative** :\n- **Prépa intégrée** (ex : [INSA Strasbourg](https://www.insa-strasbourg.fr/), spécialité Mécatronique) — **recrute sur dossier** (12+ de moyenne), avec **pédagogie adaptée** aux profils non-élites.\n- **Coût** : Les INSA publics coûtent ~600€/an *(non vérifié dans les sources)* (bourses possibles).\n\n---\n### **Plan C — Passerelle : BTS Aéronautique + alternance → école d’ingé**\n📍 **BTS Aéronautique** (ex : Lycée Airbus, Toulouse) — bac+2 public/privé, **sélectivité modérée (10-11 acceptable)**, **90% en alternance *(non vérifié dans les sources)*** (salaire + gratuité).\n*Pour toi : solution si les maths restent un point faible. L’alternance te donne de l’expérience (atout pour les admissions parallèles).*\n\n**Exemple de parcours** :\n1. BTS Aéronautique (alternance chez un sous-traitant aéro).\n2. **Licence Pro** (ex : Maintenance Aéronautique) ou **école d’ingé en 3 ans** (ex : [EIMA](https://www.eima.fr/), admissions parallèles).\n3. **Débouchés** : Technicien supérieur → ingénieur via VAP (Validation des Acquis Professionnels).\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées post-bac** (ex : ECE Paris) : **9 000-12 000€/an *(non vérifié dans les sources)*** et sélectivité trompeuse (même avec 10-11, le risque d’échec est élevé sans un bon niveau en maths).\n- **Prépa classique (MP/PC)** : **À éviter** avec 10-11 en maths (rythme trop intense, taux d’échec élevé).\n- **Illusion \"aéro = pilote\"** : Les écoles d’ingé aéro (ex : ISAE-SUPAERO) forment des **ingénieurs** (conception, maintenance), pas des pilotes (formation séparée, coûteuse).\n\n---\n**Question pour toi** :\nTon élève est-il prêt à **redoubler d’efforts en maths-physique** pour viser un BUT/prépa, ou préfère-t-il une voie plus progressive comme le BTS en alternance ? *(L’alternance peut être un tremplin si les études longues font peur.)*\n\n---\n**👤 Pour aller plus loin** :\nUn RDV avec le **Psy-EN** de son lycée peut aider à affiner le choix entre BUT et BTS. Les **forums des écoles** (ex : [ONISEP](https://www.onisep.fr/)) donnent aussi des retours d’étudiants en situation similaire.",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 7,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 6,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "sélectivité ~40-60%",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context_in_response": "BUT Génie Mécanique et Productique (GMP) (ex : IUT de Toulouse) — bac+3 public, sélectivité ~40-60%",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "12+ de moyenne en 1ère/Terminale",
+      "stat_value": 12,
+      "stat_unit": "moyenne",
+      "context_in_response": "accessible avec 12+ de moyenne en 1ère/Terminale",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "12+ de moyenne exigée",
+      "stat_value": 12,
+      "stat_unit": "moyenne",
+      "context_in_response": "Prépa TSI (ex : Lycée Raspail, Paris) — 2 ans public, sélective (12+ de moyenne exigée)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "90% en alternance",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "BTS Aéronautique (ex : Lycée Airbus, Toulouse) — bac+2 public/privé, sélectivité modérée (10-11 acceptable), 90% en alternance",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "9 000-12 000€/an",
+      "stat_value": 9000,
+      "stat_unit": "€/an",
+      "context_in_response": "Écoles privées post-bac (ex : ECE Paris) : 9 000-12 000€/an et sélectivité trompeuse",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "89.0%",
+      "stat_value": 89,
+      "stat_unit": "%",
+      "context_in_response": "Taux d'accès Parcoursup : 89.0%",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 89.0%"
+    },
+    {
+      "stat_text": "88.0%",
+      "stat_value": 88,
+      "stat_unit": "%",
+      "context_in_response": "Taux d'accès Parcoursup : 88.0%",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 88.0%"
+    },
+    {
+      "stat_text": "96.0%",
+      "stat_value": 96,
+      "stat_unit": "%",
+      "context_in_response": "Taux d'accès Parcoursup : 96.0%",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 96.0%"
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "taux",
+      "context_in_response": "taux_emploi_3ans: 0.85",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "taux",
+      "context_in_response": "taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "taux",
+      "context_in_response": "taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "600€/an",
+      "stat_value": 600,
+      "stat_unit": "€/an",
+      "context_in_response": "Les INSA publics coûtent ~600€/an (bourses possibles)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.1217,
+      "nom": "Formation d'ingénieur Bac + 5 - Bac Série générale avec la spécialité Maths en Terminale + une spéci",
+      "etablissement": "ECE Paris",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "parcoursup",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1183,
+      "nom": "Formation d'ingénieur Bac + 5 - Bac Série générale avec 2 spécialités scientifiques mais sans la spé",
+      "etablissement": "ECE Paris",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "parcoursup",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1179,
+      "nom": "Formation d'ingénieur Bac + 5 - Bac série générale avec la spécialité Maths en Terminale + une spéci",
+      "etablissement": "ECE Paris",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "parcoursup",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9693,
+      "nom": "ingénieur/e en aéronautique",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "onisep_ideo_fiches",
+      "domaine": null,
+      "domain": "metier"
+    },
+    {
+      "score": 0.9612,
+      "nom": "ingénieur/e mathématicien/ne",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "onisep_ideo_fiches",
+      "domaine": null,
+      "domain": "metier"
+    },
+    {
+      "score": 0.9558,
+      "nom": "professeur/e de maths ou de physique-chimie",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "onisep_ideo_fiches",
+      "domaine": null,
+      "domain": "metier"
+    },
+    {
+      "score": 0.9318,
+      "nom": "INGENIEUR DIPLOME DE L'INSTITUT NATIONAL DES SCIENCES APPLIQUEES DE STRASBOURG, SPECIALITE MECANIQUE",
+      "etablissement": "CFAI ALSACE",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9312,
+      "nom": "Ingénieur diplômé de l'Institut Supérieur de l'Aéronautique et de l'Espace",
+      "etablissement": "INSTITUT SUPERIEUR DE L'AERONAUTIQUE ET DE L'ESPACE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9303,
+      "nom": "INGENIEUR DIPLOME DE L'ECOLE NATIONALE DE L'AVIATION CIVILE",
+      "etablissement": "ECOLE NATIONALE DE L'AVIATION CIVILE",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9283,
+      "nom": "INGENIEUR DIPLOME DE L'INSTITUT NATIONAL DES SCIENCES APPLIQUEES DE STRASBOURG, SPECIALITE MECATRONI",
+      "etablissement": "CFAI ALSACE",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    }
+  ]
+}
