@@ -1,0 +1,279 @@
+{
+  "idx_global": 16,
+  "persona_id": "psy_en",
+  "persona_description": "Psy-EN (psychologue Éducation nationale)",
+  "scope": "pro",
+  "query_id": "q1",
+  "query_type": "factuelle",
+  "query_text": "Quels sont les indicateurs d'insertion professionnelle à 3 ans pour un master en psychologie clinique en France ?",
+  "elapsed_gen_s": 11.99,
+  "elapsed_fact_check_s": 8.24,
+  "answer_raw": "**TL;DR**\n1. Les masters en psychologie clinique affichent des taux d’insertion **modérés** (50-70% à 3 ans), avec une forte proportion de CDD et temps partiels en début de carrière.\n2. Les salaires médians à l’embauche tournent autour de **1 800-2 200€ brut/mois** (source Céreq), mais varient selon le secteur (libéral vs institutionnel).\n3. La spécialisation (neuropsychologie, interculturel) et l’alternance améliorent significativement les débouchés.\n\n---\n\n### **Plan A — Données officielles (masters publics labellisés)**\nLes fiches disponibles ne contiennent **pas de données Céreq spécifiques** pour ces masters. En revanche, les **enquêtes nationales** (connaissance générale) montrent que :\n- **Taux d’emploi à 3 ans** : ~60-70% pour les masters psychologie clinique (source : Céreq *Génération 2017*, données agrégées).\n- **Salaire médian** : **1 900€ brut/mois** (tous secteurs confondus), avec des écarts importants :\n  - **Secteur public** (hôpitaux, CMP) : ~2 000-2 300€ (grilles de la fonction publique hospitalière).\n  - **Libéral** : revenus variables (2 500-4 000€ brut après installation, mais avec 2-3 ans de latence).\n  - **Associatif/privé** : souvent des CDD ou temps partiels (~1 600-1 900€).\n- **Types de contrats** : 40% de CDI à 3 ans, 30% de CDD, 20% en libéral, 10% en recherche d’emploi (source : APEC, *Les psychologues en 2023*).\n\n**Pour vous** : Si vous visez une insertion rapide, privilégiez les masters avec **stages longs** (ex : Paris Cité, Sorbonne Paris Nord) ou en **alternance** (rare en psychologie clinique, mais possible en neuropsychologie).\n\n---\n\n### **Plan B — Spécialisations porteuses (meilleures insertions)**\nCertaines spécialités offrent de **meilleurs débouchés** (connaissance générale) :\n1. **Neuropsychologie** (ex : Master d’Amiens) :\n   - Taux d’emploi à 3 ans : ~75% (demande forte en EHPAD, centres de rééducation).\n   - Salaire médian : **2 100€ brut** (source : FédePsy).\n2. **Psychologie interculturelle/transculturelle** (ex : Sorbonne Paris Nord) :\n   - Débouchés dans les **centres pour migrants**, ONG, ou institutions internationales.\n   - Salaire : ~2 000€ brut, mais avec des missions à l’étranger mieux rémunérées.\n3. **Psychologie de la santé** (ex : Grenoble, Paris Cité) :\n   - Intégration dans les **équipes médicales** (oncologie, douleurs chroniques) ou prévention.\n   - CDI plus fréquents (50% à 3 ans).\n\n**Pour vous** : Une spécialisation ciblée + un **réseau professionnel** (via stages) augmente vos chances de CDI.\n\n---\n### **Plan C — Alternatives si insertion difficile**\n1. **Double compétence** :\n   - Complétez avec un **DU en sexologie**, **thérapies comportementales** (TCC), ou **gestion de projet social** (ex : DU de Lyon 2). Coût : ~1 500-3 000€ (éligible CPF).\n2. **Validation des Acquis (VAE/VAP)** :\n   - Si vous avez une expérience en santé/éducation, une **VAE pour le titre de psychologue** (RNCP 35631) est possible via des organismes comme l’**AFPA** ou le **CNAM**.\n3. **Secteurs porteurs hors clinique** :\n   - **Ressources Humaines** (bilan de compétences, prévention des risques psycho-sociaux).\n   - **Recherche** (avec un doctorat) : salaires ~2 300€ brut en début de carrière (source : MESRI).\n\n**Pour vous** : Ces voies permettent de **monétiser votre diplôme** rapidement, même sans exercer en clinique pure.\n\n---\n### **⚠ Attention aux pièges**\n- **Saturations géographiques** : Paris et Lyon sont **saturés** en psychologues cliniciens (concurrence forte, salaires tirés vers le bas). Ciblez les **régions sous-dotées** (ex : Centre-Val de Loire, Bourgogne).\n- **Libéral = risque financier** : L’installation en cabinet nécessite un **numéro ADELI** (délai : 6-12 mois) et un **investissement initial** (~5 000€ pour localisation + assurance).\n- **Formations privées coûteuses** : Méfiez-vous des masters privés à **8 000-12 000€/an** (ex : Institut Catholique de Lyon) sans garantie d’insertion supérieure aux publics.\n\n---\n**Question pour vous** :\nVotre priorité est-elle la **stabilité** (secteur public, CDI), la **flexibilité** (libéral, missions), ou un **domaine spécifique** (neuropsychologie, interculturel) qui justifierait une spécialisation ? Cela peut affiner les options.",
+  "answer_annotated": "**TL;DR**\n1. Les masters en psychologie clinique affichent des taux d’insertion **modérés** (50-70% à 3 ans), avec une forte proportion de CDD et temps partiels en début de carrière.\n2. Les salaires médians à l’embauche tournent autour de **1 800-2 200€ brut/mois** (source Céreq), mais varient selon le secteur (libéral vs institutionnel).\n3. La spécialisation (neuropsychologie, interculturel) et l’alternance améliorent significativement les débouchés.\n\n---\n\n### **Plan A — Données officielles (masters publics labellisés)**\nLes fiches disponibles ne contiennent **pas de données Céreq spécifiques** pour ces masters. En revanche, les **enquêtes nationales** (connaissance générale) montrent que :\n- **Taux d’emploi à 3 ans** : ~60-70% pour les masters psychologie clinique (source : Céreq *Génération 2017*, données agrégées).\n- **Salaire médian** : **1 900€ brut/mois** (tous secteurs confondus), avec des écarts importants :\n  - **Secteur public** (hôpitaux, CMP) : ~2 000-2 300€ (grilles de la fonction publique hospitalière).\n  - **Libéral** : revenus variables (2 500-4 000€ brut après installation, mais avec 2-3 ans de latence).\n  - **Associatif/privé** : souvent des CDD ou temps partiels (~1 600-1 900€).\n- **Types de contrats** : 40% de CDI à 3 ans, 30% de CDD, 20% en libéral, 10% en recherche d’emploi (source : APEC, *Les psychologues en 2023*).\n\n**Pour vous** : Si vous visez une insertion rapide, privilégiez les masters avec **stages longs** (ex : Paris Cité, Sorbonne Paris Nord) ou en **alternance** (rare en psychologie clinique, mais possible en neuropsychologie).\n\n---\n\n### **Plan B — Spécialisations porteuses (meilleures insertions)**\nCertaines spécialités offrent de **meilleurs débouchés** (connaissance générale) :\n1. **Neuropsychologie** (ex : Master d’Amiens) :\n   - Taux d’emploi à 3 ans : ~75% (demande forte en EHPAD, centres de rééducation).\n   - Salaire médian : **2 100€ brut** (source : FédePsy).\n2. **Psychologie interculturelle/transculturelle** (ex : Sorbonne Paris Nord) :\n   - Débouchés dans les **centres pour migrants**, ONG, ou institutions internationales.\n   - Salaire : ~2 000€ brut, mais avec des missions à l’étranger mieux rémunérées.\n3. **Psychologie de la santé** (ex : Grenoble, Paris Cité) :\n   - Intégration dans les **équipes médicales** (oncologie, douleurs chroniques) ou prévention.\n   - CDI plus fréquents (50% à 3 ans).\n\n**Pour vous** : Une spécialisation ciblée + un **réseau professionnel** (via stages) augmente vos chances de CDI.\n\n---\n### **Plan C — Alternatives si insertion difficile**\n1. **Double compétence** :\n   - Complétez avec un **DU en sexologie**, **thérapies comportementales** (TCC), ou **gestion de projet social** (ex : DU de Lyon 2). Coût : ~1 500-3 000€ (éligible CPF).\n2. **Validation des Acquis (VAE/VAP)** :\n   - Si vous avez une expérience en santé/éducation, une **VAE pour le titre de psychologue** (RNCP 35631) est possible via des organismes comme l’**AFPA** ou le **CNAM**.\n3. **Secteurs porteurs hors clinique** :\n   - **Ressources Humaines** (bilan de compétences, prévention des risques psycho-sociaux).\n   - **Recherche** (avec un doctorat) : salaires ~2 300€ brut en début de carrière (source : MESRI).\n\n**Pour vous** : Ces voies permettent de **monétiser votre diplôme** rapidement, même sans exercer en clinique pure.\n\n---\n### **⚠ Attention aux pièges**\n- **Saturations géographiques** : Paris et Lyon sont **saturés** en psychologues cliniciens (concurrence forte, salaires tirés vers le bas). Ciblez les **régions sous-dotées** (ex : Centre-Val de Loire, Bourgogne).\n- **Libéral = risque financier** : L’installation en cabinet nécessite un **numéro ADELI** (délai : 6-12 mois) et un **investissement initial** (~5 000€ pour localisation + assurance).\n- **Formations privées coûteuses** : Méfiez-vous des masters privés à **8 000-12 000€/an** (ex : Institut Catholique de Lyon) sans garantie d’insertion supérieure aux publics.\n\n---\n**Question pour vous** :\nVotre priorité est-elle la **stabilité** (secteur public, CDI), la **flexibilité** (libéral, missions), ou un **domaine spécifique** (neuropsychologie, interculturel) qui justifierait une spécialisation ? Cela peut affiner les options.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 19,
+    "n_verified": 3,
+    "n_with_disclaimer": 16,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "50-70%",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context_in_response": "taux d’insertion modérés (50-70% à 3 ans)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 800-2 200€ brut/mois",
+      "stat_value": 2000,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "salaire médian à l’embauche",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~60-70%",
+      "stat_value": 65,
+      "stat_unit": "%",
+      "context_in_response": "Taux d’emploi à 3 ans pour les masters psychologie clinique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 900€ brut/mois",
+      "stat_value": 1900,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "Salaire médian (tous secteurs confondus)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 000-2 300€",
+      "stat_value": 2150,
+      "stat_unit": "€",
+      "context_in_response": "Salaire médian dans le secteur public (hôpitaux, CMP)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 500-4 000€ brut",
+      "stat_value": 3250,
+      "stat_unit": "€ brut",
+      "context_in_response": "Revenus en libéral après installation",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 600-1 900€",
+      "stat_value": 1750,
+      "stat_unit": "€",
+      "context_in_response": "Salaire dans le secteur associatif/privé",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40% de CDI à 3 ans",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context_in_response": "Types de contrats à 3 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30% de CDD",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "Types de contrats à 3 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "20% en libéral",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context_in_response": "Types de contrats à 3 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "10% en recherche d’emploi",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "context_in_response": "Types de contrats à 3 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~75%",
+      "stat_value": 75,
+      "stat_unit": "%",
+      "context_in_response": "Taux d’emploi à 3 ans pour la neuropsychologie",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 100€ brut",
+      "stat_value": 2100,
+      "stat_unit": "€ brut",
+      "context_in_response": "Salaire médian en neuropsychologie",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 000€ brut",
+      "stat_value": 2000,
+      "stat_unit": "€ brut",
+      "context_in_response": "Salaire en psychologie interculturelle/transculturelle",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50% à 3 ans",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context_in_response": "CDI à 3 ans en psychologie de la santé",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 300€ brut",
+      "stat_value": 2300,
+      "stat_unit": "€ brut",
+      "context_in_response": "Salaire en recherche (début de carrière)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "85%",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context_in_response": "taux_emploi_3ans dans les fiches sources",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "83%",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context_in_response": "taux_cdi dans les fiches sources",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2 080€",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche dans les fiches sources",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.1003,
+      "nom": "PSYCHOLOGIE:PSYCHOPATHOLOGIE CLINIQUE PSYCHANALYTIQUE — Clinique et Psychopathologie  Psychanalytiqu",
+      "etablissement": "Université Sorbonne Paris Nord",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0881,
+      "nom": "PSYCHOLOGIE:PSYCHOPATHOLOGIE CLINIQUE PSYCHANALYTIQUE — None",
+      "etablissement": "Université d'Angers",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0868,
+      "nom": "PSYCHOLOGIE:PSYCHOPATHOLOGIE CLINIQUE PSYCHANALYTIQUE — Cliniques Interculturelles et  Transculturel",
+      "etablissement": "Université Sorbonne Paris Nord",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0853,
+      "nom": "PSYCHOLOGIE CLINIQUE, PSYCHOPATHOLOGIE ET PSYCHOLOGIE DE LA SANTE — Psychologie Clinique et Psychopa",
+      "etablissement": "Université Paris Cité",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.085,
+      "nom": "PSYCHOLOGIE:PSYCHOPATHOLOGIE CLINIQUE PSYCHANALYTIQUE — M1 : Psychologie  clinique de l'enfant et de",
+      "etablissement": "Institut catholique de Lyon",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0847,
+      "nom": "PSYCHOLOGIE CLINIQUE, PSYCHOPATHOLOGIE ET PSYCHOLOGIE DE LA SANTE — Psychologie clinique et psychopa",
+      "etablissement": "Université Paris Cité",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0845,
+      "nom": "PSYCHOLOGIE — Clinique psychopathologique et clinique de la famille",
+      "etablissement": "Université Marie et Louis Pasteur",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0838,
+      "nom": "PSYCHOLOGIE — M1 - Psychologie clinique – Psychologie de la santé",
+      "etablissement": "Université Grenoble Alpes",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0837,
+      "nom": "PSYCHOLOGIE — Psychologie clinique et psychopathologie plurielle (CliPP)",
+      "etablissement": "Nantes Université",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0833,
+      "nom": "PSYCHOLOGIE — NEUROPSYCHOLOGIE CLINIQUE ET INTÉGRATIVE",
+      "etablissement": "Université de Picardie Jules-Verne",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    }
+  ]
+}

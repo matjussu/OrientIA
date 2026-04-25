@@ -1,0 +1,231 @@
+{
+  "idx_global": 7,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q1",
+  "query_type": "factuelle",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "elapsed_gen_s": 12.72,
+  "elapsed_fact_check_s": 6.01,
+  "answer_raw": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 informatique.\n2. En **connaissance générale**, la fourchette typique en 2026 pour un profil débutant (bac+5) se situe entre **35 000 € et 45 000 € brut annuel** (soit **2 200 € – 2 800 € brut/mois**), avec des écarts selon la région, l’entreprise, et la spécialisation.\n3. L’alternance et les compétences en **cybersécurité, cloud, ou IA** peuvent pousser ce salaire vers **40 000 € – 50 000 € brut/an** (connaissance générale).\n\n---\n\n### **Plan A — Salaire moyen standard (développeur généraliste)**\n- **Fourchette** : **35k€ – 45k€ brut/an** (2 200 € – 2 800 € brut/mois).\n  *Pour toi* : Base réaliste pour un M2 informatique sans spécialisation pointue, en Île-de-France ou grande métropole. Les PME et ESN (ex : Capgemini, Atos) se situent plutôt dans le bas de la fourchette, les scale-ups tech (ex : Doctolib, Back Market) dans le haut.\n  *Source* : Estimations marché 2024-2026 (connaissance générale, baromètres Welcome to the Jungle, Glassdoor).\n\n### **Plan B — Salaire boosté (+20-30%) avec spécialisation recherchée**\n- **Fourchette** : **40k€ – 50k€ brut/an** (2 700 € – 3 300 € brut/mois).\n  *Pour toi* : Si ton M2 inclut une **double compétence** (ex : cybersécurité + dev, data engineering, cloud/AWS), ou si tu vises des secteurs en tension (fintech, santé, énergie). L’**alternance** en dernière année de master peut aussi négocier un salaire d’embauche +10-15% (connaissance générale).\n  *Exemple* : Un profil **devops** ou **expert sécurité logicielle** (comme dans les fiches [Expert en développement logiciel — OpenClassrooms](https://openclassrooms.com/) ou [Expert en architecture logicielle — ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10102)) part souvent sur **42k€-48k€ brut/an** en région parisienne.\n\n### **Plan C — Optimisation salariale (négociation, mobilité, thèse CIFRE)**\n- **Leviers** :\n  1. **Thèse CIFRE** (3 ans) : **2 100 € net/mois** (soit ~30k€ brut/an) + embauche souvent **à 45k€-55k€ brut/an** après soutenance (connaissance générale).\n  2. **Mobilité internationale** (Suisse, Allemagne, Canada) : **50k€-70k€ brut/an** pour un junior (ex : Zurich ou Munich).\n  3. **Négociation** : Les ESN montent rarement au-delà de 38k€ brut/an, mais une **startup en levée de fonds** ou un **grand groupe** (ex : Airbus, Thales) peut aller jusqu’à 45k€-50k€ pour un profil rare (connaissance générale).\n\n---\n**⚠ Attention aux pièges**\n- **Biais régional** : Un salaire à **35k€ brut/an** à Paris ≠ **35k€** à Lille (pouvoir d’achat -20% hors Île-de-France).\n- **ESN vs entreprise finale** : Une ESN proposera souvent **32k€-36k€ brut/an** contre **38k€-45k€** en direct chez un éditeur de logiciels ou une licorne tech.\n- **Titres RNCP ≠ diplôme d’État** : Les certifications comme celles d’**OpenClassrooms** ou **42** (ex : [Concepteur développeur — 42](https://www.42.fr/)) sont reconnues, mais certaines entreprises (banques, administration) appliquent encore des grilles salariales moins avantageuses pour les titres RNCP que pour les diplômes d’ingénieur ou masters universitaires (connaissance générale).\n\n---\n**Question pour toi** :\nTon M2 inclut-il une spécialisation technique porteuse (cloud, IA, cybersécurité) ? Si oui, vise plutôt le **Plan B** (40k€-50k€). Sinon, le **Plan A** (35k€-45k€) reste un excellent point de départ — avec la possibilité de **dépasser 50k€** après 2-3 ans d’expérience. Préfères-tu optimiser ton salaire dès l’embauche, ou privilégier un secteur/métier même si le salaire initial est moins élevé ?",
+  "answer_annotated": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 informatique.\n2. En **connaissance générale**, la fourchette typique en 2026 pour un profil débutant (bac+5) se situe entre **35 000 € et 45 000 € brut annuel** (soit **2 200 € – 2 800 € brut/mois**), avec des écarts selon la région, l’entreprise, et la spécialisation.\n3. L’alternance et les compétences en **cybersécurité, cloud, ou IA** peuvent pousser ce salaire vers **40 000 € – 50 000 € brut/an** (connaissance générale).\n\n---\n\n### **Plan A — Salaire moyen standard (développeur généraliste)**\n- **Fourchette** : **35k€ – 45k€ brut/an** (2 200 € – 2 800 € brut/mois).\n  *Pour toi* : Base réaliste pour un M2 informatique sans spécialisation pointue, en Île-de-France ou grande métropole. Les PME et ESN (ex : Capgemini, Atos) se situent plutôt dans le bas de la fourchette, les scale-ups tech (ex : Doctolib, Back Market) dans le haut.\n  *Source* : Estimations marché 2024-2026 (connaissance générale, baromètres Welcome to the Jungle, Glassdoor).\n\n### **Plan B — Salaire boosté (+20-30%) avec spécialisation recherchée**\n- **Fourchette** : **40k€ – 50k€ brut/an** (2 700 € – 3 300 € brut/mois).\n  *Pour toi* : Si ton M2 inclut une **double compétence** (ex : cybersécurité + dev, data engineering, cloud/AWS), ou si tu vises des secteurs en tension (fintech, santé, énergie). L’**alternance** en dernière année de master peut aussi négocier un salaire d’embauche +10-15% (connaissance générale).\n  *Exemple* : Un profil **devops** ou **expert sécurité logicielle** (comme dans les fiches [Expert en développement logiciel — OpenClassrooms](https://openclassrooms.com/) ou [Expert en architecture logicielle — ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10102)) part souvent sur **42k€-48k€ brut/an** en région parisienne.\n\n### **Plan C — Optimisation salariale (négociation, mobilité, thèse CIFRE)**\n- **Leviers** :\n  1. **Thèse CIFRE** (3 ans) : **2 100 € net/mois** (soit ~30k€ brut/an) + embauche souvent **à 45k€-55k€ brut/an** après soutenance (connaissance générale).\n  2. **Mobilité internationale** (Suisse, Allemagne, Canada) : **50k€-70k€ brut/an** pour un junior (ex : Zurich ou Munich).\n  3. **Négociation** : Les ESN montent rarement au-delà de 38k€ brut/an, mais une **startup en levée de fonds** ou un **grand groupe** (ex : Airbus, Thales) peut aller jusqu’à 45k€-50k€ pour un profil rare (connaissance générale).\n\n---\n**⚠ Attention aux pièges**\n- **Biais régional** : Un salaire à **35k€ brut/an** à Paris ≠ **35k€** à Lille (pouvoir d’achat -20% hors Île-de-France).\n- **ESN vs entreprise finale** : Une ESN proposera souvent **32k€-36k€ brut/an** contre **38k€-45k€** en direct chez un éditeur de logiciels ou une licorne tech.\n- **Titres RNCP ≠ diplôme d’État** : Les certifications comme celles d’**OpenClassrooms** ou **42** (ex : [Concepteur développeur — 42](https://www.42.fr/)) sont reconnues, mais certaines entreprises (banques, administration) appliquent encore des grilles salariales moins avantageuses pour les titres RNCP que pour les diplômes d’ingénieur ou masters universitaires (connaissance générale).\n\n---\n**Question pour toi** :\nTon M2 inclut-il une spécialisation technique porteuse (cloud, IA, cybersécurité) ? Si oui, vise plutôt le **Plan B** (40k€-50k€). Sinon, le **Plan A** (35k€-45k€) reste un excellent point de départ — avec la possibilité de **dépasser 50k€** après 2-3 ans d’expérience. Préfères-tu optimiser ton salaire dès l’embauche, ou privilégier un secteur/métier même si le salaire initial est moins élevé ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 2,
+    "n_with_disclaimer": 11,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "35 000 € – 45 000 € brut annuel",
+      "stat_value": 40000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Fourchette typique en 2026 pour un profil débutant (bac+5)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 200 € – 2 800 € brut/mois",
+      "stat_value": 2500,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "Fourchette typique en 2026 pour un profil débutant (bac+5)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40 000 € – 50 000 € brut/an",
+      "stat_value": 45000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Fourchette typique en 2026 pour un profil débutant (bac+5) avec spécialisation",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 700 € – 3 300 € brut/mois",
+      "stat_value": 3000,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "Fourchette typique en 2026 pour un profil débutant (bac+5) avec spécialisation",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 100 € net/mois",
+      "stat_value": 2100,
+      "stat_unit": "€ net/mois",
+      "context_in_response": "Salaire en thèse CIFRE (3 ans)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30k€ brut/an",
+      "stat_value": 30000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Salaire en thèse CIFRE (3 ans)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "45k€-55k€ brut/an",
+      "stat_value": 50000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Salaire après soutenance de thèse CIFRE",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50k€-70k€ brut/an",
+      "stat_value": 60000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Salaire pour un junior en mobilité internationale (Suisse, Allemagne, Canada)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "38k€-45k€",
+      "stat_value": 41500,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Salaire pour un profil rare dans un grand groupe ou une startup en levée de fonds",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "32k€-36k€ brut/an",
+      "stat_value": 34000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Salaire proposé par les ESN",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "38k€-45k€",
+      "stat_value": 41500,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "Salaire en direct chez un éditeur de logiciels ou une licorne tech",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "Salaire médian d'embauche pour un bac+5 (expert en développement logiciel, OpenClassrooms)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "salaire_median_embauche: 2080"
+    },
+    {
+      "stat_text": "1740",
+      "stat_value": 1740,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "Salaire médian d'embauche pour un bac+3 (testeur logiciel, M2I)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "salaire_median_embauche: 1740"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9184,
+      "nom": "Expert en développement logiciel",
+      "etablissement": "OPENCLASSROOMS",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.914,
+      "nom": "diplôme d'ingénieur de l'École polytechnique universitaire de l'université Paris-Saclay spécialité i",
+      "etablissement": "France",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8388,
+      "nom": "Testeur logiciel",
+      "etablissement": "M2I",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8362,
+      "nom": "expert en ingénierie et développement de logiciels pour l'industrie",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8358,
+      "nom": "expert en ingénierie du développement et en architecture logicielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.835,
+      "nom": "Concepteur développeur de solutions informatiques",
+      "etablissement": "42",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8333,
+      "nom": "Développeur commercial et marketing",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8326,
+      "nom": "Concepteur développeur d'applications",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    }
+  ]
+}

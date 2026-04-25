@@ -1,0 +1,239 @@
+{
+  "idx_global": 18,
+  "persona_id": "psy_en",
+  "persona_description": "Psy-EN (psychologue Éducation nationale)",
+  "scope": "pro",
+  "query_id": "q3",
+  "query_type": "contextuelle_riche",
+  "query_text": "J'accompagne un élève de 2nde issu d'un milieu modeste, qui rêve de devenir ingénieur aéro mais ses résultats sont moyens (10-11 en maths). Quelles stratégies long-terme sur la suite du lycée ?",
+  "elapsed_gen_s": 13.96,
+  "elapsed_fact_check_s": 8.1,
+  "answer_raw": "**TL;DR**\n1. Avec 10-11 en maths, une école d’ingénieur aéro **directe après le bac** est très risquée (sélectivité forte, prérequis en maths/physique).\n2. **Stratégie clé** : miser sur un **bac techno STI2D** (moins théorique) ou **général avec spécialités adaptées** + filière post-bac progressive (BUT, prépa adaptée).\n3. **Voie royale** : BUT Génie Mécanique/Aéro (accessible) → école d’ingé en alternance (gratuit + salaire).\n\n---\n\n### **Plan A — Réaliste : Bac techno STI2D + BUT aéro (sans pression maths)**\n📍 **BUT Génie Mécanique et Productique (parcours Aéronautique)** — bac+3 public (IUT), **sélectivité ~60%** (connaissance générale), **gratuit** et **proche des entreprises**.\n*Pour toi : idéal avec 10-11 en maths. Alternance possible dès la 2e année (salaire + expérience). Exemples : [IUT de Toulouse](https://www.iut-tlse3.fr/), [IUT de Bordeaux](https://iut.u-bordeaux.fr/).*\n\n**Chemin :**\n1. **2nde → 1ère STI2D** (spécialité *Ingénierie et Développement Durable*) : moins abstrait que la voie générale, **coefficient maths réduit**.\n2. **Terminale STI2D** → **BUT GMP** (parcours aéro) en IUT près de chez lui.\n3. **Poursuite en école d’ingé** via admissions parallèles (ex : **INSA Strasbourg** en alternance, **ENAC** pour l’aérien).\n\n---\n\n### **Plan B — Ambitieux : Bac général + prépa adaptée (si motivation forte)**\n📍 **Prépa TSI (Technologie et Sciences Industrielles)** — 2 ans public, **sélectivité ~40%** (connaissance générale), pour bacs généraux **avec spécialités SI + Physique** (même sans 15/20 en maths).\n*Pour toi : si ton élève tient à la voie générale, choisir **SI (Sciences de l’Ingénieur) + Physique-Chimie** en 1ère/Terminale. La prépa TSI est **moins élitiste** que les prépas classiques (MP/PC) et ouvre aux écoles d’ingé aéro (ex : **ESTACA**, **ENAC**).*\n\n**Attention** :\n- **10-11 en maths aujourd’hui → viser 12-13 minimum** en SI/Physique pour intégrer une prépa TSI.\n- **Alternance possible après la prépa** (ex : **ITII** pour un diplôme d’ingé en contrat pro).\n\n---\n### **Plan C — Passerelle : Métiers techniques aéro → ingé plus tard**\n*(connaissance générale)*\n1. **CAP/Bac Pro Aéronautique** (ex : **CAP Aéronautique option systèmes** ou **Bac Pro Aéronautique**) → **technicien aéro** (Airbus, sous-traitants).\n   - **Avantage** : emploi **immédiat** (salaire ~1 800€ net en début de carrière), **expérience terrain** valorisée pour une reprise d’études.\n   - **Exemples** : [Lyée Airbus à Toulouse](https://www.lycee-airbus.fr/), [AFPA](https://www.afpa.fr/).\n2. **Reprise d’études en alternance** après 2-3 ans :\n   - **Licence Pro Métiers de l’Aéronautique** → **école d’ingé** (ex : **CFAI Alsace** en mécatronique).\n   - **Coût** : 0€ (l’entreprise paie la formation + salaire).\n\n---\n### ⚠ **Attention aux pièges**\n- **Écoles privées post-bac** (ex : ECE Paris) : **9 000€/an** et sélectivité trompeuse (ex : 88% d’accès, mais **0% de boursiers** dans certaines filières). À éviter sans budget solide.\n- **\"Ingénieur aéro = pilote\"** : confusion fréquente. **Pilote** = formation spécifique (ENAC, coût ~80 000€) **différente** de l’ingénierie (conception, maintenance).\n- **Déménagement** : les formations aéro sont **concentrées** (Toulouse, Bordeaux, Strasbourg). Prévoir un budget logement si éloignement.\n\n---\n**Question pour toi :**\nTon élève préfère-t-il **l’aspect concret** (bricoler, monter des pièces → bac pro/STI2D) ou **l’aspect théorique** (calculs, conception → bac général + prépa) ? Cela changera tout pour le choix entre Plan A et B. *(Et as-tu vérifié les aides financières locales, comme les bourses régionales pour l’alternance ?)*",
+  "answer_annotated": "**TL;DR**\n1. Avec 10-11 en maths, une école d’ingénieur aéro **directe après le bac** est très risquée (sélectivité forte, prérequis en maths/physique).\n2. **Stratégie clé** : miser sur un **bac techno STI2D** (moins théorique) ou **général avec spécialités adaptées** + filière post-bac progressive (BUT, prépa adaptée).\n3. **Voie royale** : BUT Génie Mécanique/Aéro (accessible) → école d’ingé en alternance (gratuit + salaire).\n\n---\n\n### **Plan A — Réaliste : Bac techno STI2D + BUT aéro (sans pression maths)**\n📍 **BUT Génie Mécanique et Productique (parcours Aéronautique)** — bac+3 public (IUT), **sélectivité ~60%** (connaissance générale), **gratuit** et **proche des entreprises**.\n*Pour toi : idéal avec 10-11 en maths. Alternance possible dès la 2e année (salaire + expérience). Exemples : [IUT de Toulouse](https://www.iut-tlse3.fr/), [IUT de Bordeaux](https://iut.u-bordeaux.fr/).*\n\n**Chemin :**\n1. **2nde → 1ère STI2D** (spécialité *Ingénierie et Développement Durable*) : moins abstrait que la voie générale, **coefficient maths réduit**.\n2. **Terminale STI2D** → **BUT GMP** (parcours aéro) en IUT près de chez lui.\n3. **Poursuite en école d’ingé** via admissions parallèles (ex : **INSA Strasbourg** en alternance, **ENAC** pour l’aérien).\n\n---\n\n### **Plan B — Ambitieux : Bac général + prépa adaptée (si motivation forte)**\n📍 **Prépa TSI (Technologie et Sciences Industrielles)** — 2 ans public, **sélectivité ~40%** (connaissance générale), pour bacs généraux **avec spécialités SI + Physique** (même sans 15/20 en maths).\n*Pour toi : si ton élève tient à la voie générale, choisir **SI (Sciences de l’Ingénieur) + Physique-Chimie** en 1ère/Terminale. La prépa TSI est **moins élitiste** que les prépas classiques (MP/PC) et ouvre aux écoles d’ingé aéro (ex : **ESTACA**, **ENAC**).*\n\n**Attention** :\n- **10-11 en maths aujourd’hui → viser 12-13 minimum** en SI/Physique pour intégrer une prépa TSI.\n- **Alternance possible après la prépa** (ex : **ITII** pour un diplôme d’ingé en contrat pro).\n\n---\n### **Plan C — Passerelle : Métiers techniques aéro → ingé plus tard**\n*(connaissance générale)*\n1. **CAP/Bac Pro Aéronautique** (ex : **CAP Aéronautique option systèmes** ou **Bac Pro Aéronautique**) → **technicien aéro** (Airbus, sous-traitants).\n   - **Avantage** : emploi **immédiat** (salaire ~1 800€ net en début de carrière), **expérience terrain** valorisée pour une reprise d’études.\n   - **Exemples** : [Lyée Airbus à Toulouse](https://www.lycee-airbus.fr/), [AFPA](https://www.afpa.fr/).\n2. **Reprise d’études en alternance** après 2-3 ans :\n   - **Licence Pro Métiers de l’Aéronautique** → **école d’ingé** (ex : **CFAI Alsace** en mécatronique).\n   - **Coût** : 0€ (l’entreprise paie la formation + salaire).\n\n---\n### ⚠ **Attention aux pièges**\n- **Écoles privées post-bac** (ex : ECE Paris) : **9 000€/an** et sélectivité trompeuse (ex : 88% d’accès, mais **0% de boursiers** dans certaines filières). À éviter sans budget solide.\n- **\"Ingénieur aéro = pilote\"** : confusion fréquente. **Pilote** = formation spécifique (ENAC, coût ~80 000€ *(non vérifié dans les sources)*) **différente** de l’ingénierie (conception, maintenance).\n- **Déménagement** : les formations aéro sont **concentrées** (Toulouse, Bordeaux, Strasbourg). Prévoir un budget logement si éloignement.\n\n---\n**Question pour toi :**\nTon élève préfère-t-il **l’aspect concret** (bricoler, monter des pièces → bac pro/STI2D) ou **l’aspect théorique** (calculs, conception → bac général + prépa) ? Cela changera tout pour le choix entre Plan A et B. *(Et as-tu vérifié les aides financières locales, comme les bourses régionales pour l’alternance ?)*",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 14,
+    "n_verified": 6,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "sélectivité ~60%",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context_in_response": "BUT Génie Mécanique et Productique (parcours Aéronautique) — bac+3 public (IUT), sélectivité ~60% (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "gratuit",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "BUT Génie Mécanique et Productique (parcours Aéronautique) — bac+3 public (IUT), gratuit et proche des entreprises",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire + expérience",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "Alternance possible dès la 2e année (salaire + expérience)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité ~40%",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context_in_response": "Prépa TSI (Technologie et Sciences Industrielles) — 2 ans public, sélectivité ~40% (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "9 000€/an",
+      "stat_value": 9000,
+      "stat_unit": "€/an",
+      "context_in_response": "Écoles privées post-bac (ex : ECE Paris) : 9 000€/an et sélectivité trompeuse",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : Formation d'ingénieur Bac + 5 - Bac Série générale avec la spécialité Maths en Terminale + une spécialité non scientifique | Places : 20 | Détail : Bac Série générale avec la spécialité Maths en Terminale + une spécialité non scientifique"
+    },
+    {
+      "stat_text": "88%",
+      "stat_value": 88,
+      "stat_unit": "%",
+      "context_in_response": "Écoles privées post-bac (ex : ECE Paris) : 9 000€/an et sélectivité trompeuse (ex : 88% d’accès, mais 0% de boursiers dans certaines filières)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 3 : Formation d'ingénieur Bac + 5 - Bac série générale avec la spécialité Maths en Terminale + une spécialité scientifique | Taux d'accès Parcoursup : 88.0%"
+    },
+    {
+      "stat_text": "0% de boursiers",
+      "stat_value": 0,
+      "stat_unit": "%",
+      "context_in_response": "Écoles privées post-bac (ex : ECE Paris) : 9 000€/an et sélectivité trompeuse (ex : 88% d’accès, mais 0% de boursiers dans certaines filières)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "80 000€",
+      "stat_value": 80000,
+      "stat_unit": "€",
+      "context_in_response": "Pilote = formation spécifique (ENAC, coût ~80 000€) différente de l’ingénierie",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 800€ net",
+      "stat_value": 1800,
+      "stat_unit": "€ net",
+      "context_in_response": "emploi immédiat (salaire ~1 800€ net en début de carrière)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0€",
+      "stat_value": 0,
+      "stat_unit": "€",
+      "context_in_response": "Coût : 0€ (l’entreprise paie la formation + salaire)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.85",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : taux_emploi_3ans: 0.85",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "Insertion pro : salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.1217,
+      "nom": "Formation d'ingénieur Bac + 5 - Bac Série générale avec la spécialité Maths en Terminale + une spéci",
+      "etablissement": "ECE Paris",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "parcoursup",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1183,
+      "nom": "Formation d'ingénieur Bac + 5 - Bac Série générale avec 2 spécialités scientifiques mais sans la spé",
+      "etablissement": "ECE Paris",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "parcoursup",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1179,
+      "nom": "Formation d'ingénieur Bac + 5 - Bac série générale avec la spécialité Maths en Terminale + une spéci",
+      "etablissement": "ECE Paris",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "parcoursup",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9693,
+      "nom": "ingénieur/e en aéronautique",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "onisep_ideo_fiches",
+      "domaine": null,
+      "domain": "metier"
+    },
+    {
+      "score": 0.9612,
+      "nom": "ingénieur/e mathématicien/ne",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "onisep_ideo_fiches",
+      "domaine": null,
+      "domain": "metier"
+    },
+    {
+      "score": 0.9558,
+      "nom": "professeur/e de maths ou de physique-chimie",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "onisep_ideo_fiches",
+      "domaine": null,
+      "domain": "metier"
+    },
+    {
+      "score": 0.9318,
+      "nom": "INGENIEUR DIPLOME DE L'INSTITUT NATIONAL DES SCIENCES APPLIQUEES DE STRASBOURG, SPECIALITE MECANIQUE",
+      "etablissement": "CFAI ALSACE",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9312,
+      "nom": "Ingénieur diplômé de l'Institut Supérieur de l'Aéronautique et de l'Espace",
+      "etablissement": "INSTITUT SUPERIEUR DE L'AERONAUTIQUE ET DE L'ESPACE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9303,
+      "nom": "INGENIEUR DIPLOME DE L'ECOLE NATIONALE DE L'AVIATION CIVILE",
+      "etablissement": "ECOLE NATIONALE DE L'AVIATION CIVILE",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9283,
+      "nom": "INGENIEUR DIPLOME DE L'INSTITUT NATIONAL DES SCIENCES APPLIQUEES DE STRASBOURG, SPECIALITE MECATRONI",
+      "etablissement": "CFAI ALSACE",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    }
+  ]
+}

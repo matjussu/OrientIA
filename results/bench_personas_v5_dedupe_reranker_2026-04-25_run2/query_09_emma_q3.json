@@ -1,0 +1,223 @@
+{
+  "idx_global": 9,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q3",
+  "query_type": "contextuelle_riche",
+  "query_text": "Je suis en M1 info à l'université de Lille, j'aime la data et le ML, je ne sais pas si je dois viser grosse boîte tech type Doctolib ou Criteo, ou plutôt une startup early-stage. Je veux un poste CDI dès la sortie, pas un CDD recherche.",
+  "elapsed_gen_s": 13.4,
+  "elapsed_fact_check_s": 6.8,
+  "answer_raw": "**TL;DR**\n1. **Grosse boîte tech (Doctolib/Criteo)** : CDI immédiat + stabilité, mais missions parfois spécialisées et moins d’impact direct.\n2. **Startup early-stage** : plus d’autonomie et d’impact, mais risque de CDD/contrat court et pression accrue.\n3. **Compromis** : vise une scale-up (ex : Alan, Qonto) ou un lab R&D de grand groupe (ex : Thales, OVHcloud) pour allier stabilité et innovation.\n\n---\n\n### **Plan A — Réaliste : Scale-up ou lab R&D de grand groupe**\n📍 **MSc Big Data and AI for Business** (Lille) — bac+5, [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8235)\n*Pour toi : formation orientée business/tech, idéale pour cibler des postes hybrides (data scientist produit) dans des scale-ups ou labs R&D. Alternance possible avec des acteurs comme OVHcloud ou Malt.*\n\n**Pourquoi ?**\n- Les scale-ups (ex : Alan, PayFit, Qonto) recrutent en CDI des profils data/ML avec un équilibre risque/stabilité.\n- Les labs R&D des grands groupes (ex : Thales, SNCF Connect) offrent des CDI avec des projets innovants, sans la pression d’une startup early-stage.\n- Salaire médian embauche : ~38-42k€ brut (connaissance générale, marché data 2024).\n\n---\n\n### **Plan B — Ambitieux : Grosse boîte tech (Doctolib, Criteo, Dataiku)**\n📍 **Titre ingénieur IMA (Lille)** — bac+5, RNCP, [fiche officielle](https://www.univ-lille.fr/)\n*Pour toi : diplôme reconnu pour intégrer des équipes data/ML dans des tech companies. Cible les postes \"Data Scientist\" ou \"ML Engineer\" chez Doctolib (santé) ou Criteo (pub tech).*\n\n**Points clés :**\n- **Avantages** : CDI immédiat, salaire compétitif (~40-48k€ brut), formations internes, mobilité internationale.\n- **Inconvénients** : Risque de silotage (ex : équipe \"reco systèmes\" chez Criteo) et moins de visibilité sur l’impact global.\n- **Stratégie** : Postule en alternance en M2 pour un pied dans la boîte (ex : contrat pro chez Doctolib).\n\n---\n### **Plan C — Alternative : Startup avec filet de sécurité**\n*(connaissance générale)*\n- **Cible** : Startups en série B/C (ex : Spendesk, Aircall) plutôt quearly-stage. Elles offrent des CDI plus fréquemment que les seed-stage, avec une culture moins chaotique.\n- **Comment ?**\n  1. **Réseau** : Participe à des événements tech locaux (ex : [La French Tech Lille](https://lafrenchtech-lille.fr/)) pour rencontrer des fondateurs.\n  2. **Veille** : Utilise des outils comme [Welcome to the Jungle](https://www.welcometothejungle.com/) ou [Y Combinator Jobs](https://www.ycombinator.com/jobs) avec filtres \"CDI\" + \"Lille/remote\".\n  3. **Double compétence** : Ajoute un module en product management (ex : [DU IA & Propriété Intellectuelle](https://www.onisep.fr/http/redirection/formation/slug/FOR.10195)) pour te différencier.\n\n**Attention** :\n- Évite les startups en pré-seed/seed : 80% échouent avant 5 ans (connaissance générale, données Station F).\n- Négocie **toujours** une clause de CDI dans ton contrat si la startup promet une conversion après période d’essai.\n\n---\n### **Comparatif rapide : Grosse boîte vs. Startup**\n| Critère               | Grosse boîte tech       | Startup (série B+)       | Scale-up/Lab R&D       |\n|-----------------------|-------------------------|--------------------------|------------------------|\n| **Type de contrat**   | CDI (90% des cas)       | CDI (50%) / CDD (50%)    | CDI (80%)              |\n| **Salaire brut**      | 40-48k€                 | 35-45k€ (+ equity)       | 38-45k€                |\n| **Autonomie**         | Moyenne                 | Élevée                   | Haute                  |\n| **Impact visible**    | Faible (silo)           | Fort                     | Moyen-Fort            |\n| **Stabilité**         | Très haute              | Moyenne                  | Haute                 |\n\n---\n**Question pour toi :**\nQu’est-ce qui prime pour toi dans ton premier job : **la sécurité financière** (grosse boîte), **l’apprentissage accéléré** (startup), ou **l’équilibre des deux** (scale-up/lab) ? Cela peut guider ton choix de spécialisation en M2 (ex : plus de ML pour les startups, plus de data engineering pour les grands groupes).",
+  "answer_annotated": "**TL;DR**\n1. **Grosse boîte tech (Doctolib/Criteo)** : CDI immédiat + stabilité, mais missions parfois spécialisées et moins d’impact direct.\n2. **Startup early-stage** : plus d’autonomie et d’impact, mais risque de CDD/contrat court et pression accrue.\n3. **Compromis** : vise une scale-up (ex : Alan, Qonto) ou un lab R&D de grand groupe (ex : Thales, OVHcloud) pour allier stabilité et innovation.\n\n---\n\n### **Plan A — Réaliste : Scale-up ou lab R&D de grand groupe**\n📍 **MSc Big Data and AI for Business** (Lille) — bac+5, [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8235)\n*Pour toi : formation orientée business/tech, idéale pour cibler des postes hybrides (data scientist produit) dans des scale-ups ou labs R&D. Alternance possible avec des acteurs comme OVHcloud ou Malt.*\n\n**Pourquoi ?**\n- Les scale-ups (ex : Alan, PayFit, Qonto) recrutent en CDI des profils data/ML avec un équilibre risque/stabilité.\n- Les labs R&D des grands groupes (ex : Thales, SNCF Connect) offrent des CDI avec des projets innovants, sans la pression d’une startup early-stage.\n- Salaire médian embauche : ~38-42k€ brut (connaissance générale, marché data 2024).\n\n---\n\n### **Plan B — Ambitieux : Grosse boîte tech (Doctolib, Criteo, Dataiku)**\n📍 **Titre ingénieur IMA (Lille)** — bac+5, RNCP, [fiche officielle](https://www.univ-lille.fr/)\n*Pour toi : diplôme reconnu pour intégrer des équipes data/ML dans des tech companies. Cible les postes \"Data Scientist\" ou \"ML Engineer\" chez Doctolib (santé) ou Criteo (pub tech).*\n\n**Points clés :**\n- **Avantages** : CDI immédiat, salaire compétitif (~40-48k€ brut), formations internes, mobilité internationale.\n- **Inconvénients** : Risque de silotage (ex : équipe \"reco systèmes\" chez Criteo) et moins de visibilité sur l’impact global.\n- **Stratégie** : Postule en alternance en M2 pour un pied dans la boîte (ex : contrat pro chez Doctolib).\n\n---\n### **Plan C — Alternative : Startup avec filet de sécurité**\n*(connaissance générale)*\n- **Cible** : Startups en série B/C (ex : Spendesk, Aircall) plutôt quearly-stage. Elles offrent des CDI plus fréquemment que les seed-stage, avec une culture moins chaotique.\n- **Comment ?**\n  1. **Réseau** : Participe à des événements tech locaux (ex : [La French Tech Lille](https://lafrenchtech-lille.fr/)) pour rencontrer des fondateurs.\n  2. **Veille** : Utilise des outils comme [Welcome to the Jungle](https://www.welcometothejungle.com/) ou [Y Combinator Jobs](https://www.ycombinator.com/jobs) avec filtres \"CDI\" + \"Lille/remote\".\n  3. **Double compétence** : Ajoute un module en product management (ex : [DU IA & Propriété Intellectuelle](https://www.onisep.fr/http/redirection/formation/slug/FOR.10195)) pour te différencier.\n\n**Attention** :\n- Évite les startups en pré-seed/seed : 80% échouent avant 5 ans (connaissance générale, données Station F).\n- Négocie **toujours** une clause de CDI dans ton contrat si la startup promet une conversion après période d’essai.\n\n---\n### **Comparatif rapide : Grosse boîte vs. Startup**\n| Critère               | Grosse boîte tech       | Startup (série B+)       | Scale-up/Lab R&D       |\n|-----------------------|-------------------------|--------------------------|------------------------|\n| **Type de contrat**   | CDI (90% des cas) *(non vérifié dans les sources)*       | CDI (50%) / CDD (50%) *(non vérifié dans les sources)*    | CDI (80%) *(non vérifié dans les sources)*              |\n| **Salaire brut**      | 40-48k€                 | 35-45k€ (+ equity)       | 38-45k€                |\n| **Autonomie**         | Moyenne                 | Élevée                   | Haute                  |\n| **Impact visible**    | Faible (silo)           | Fort                     | Moyen-Fort            |\n| **Stabilité**         | Très haute              | Moyenne                  | Haute                 |\n\n---\n**Question pour toi :**\nQu’est-ce qui prime pour toi dans ton premier job : **la sécurité financière** (grosse boîte), **l’apprentissage accéléré** (startup), ou **l’équilibre des deux** (scale-up/lab) ? Cela peut guider ton choix de spécialisation en M2 (ex : plus de ML pour les startups, plus de data engineering pour les grands groupes).",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 4,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 6,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "salaire médian embauche : ~38-42k€ brut (connaissance générale, marché data 2024)",
+      "stat_value": 38,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Salaire médian embauche : ~38-42k€ brut (connaissance générale, marché data 2024).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire_median_embauche: 2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 2080 (dans les fiches sources)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "80% échouent avant 5 ans",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "80% échouent avant 5 ans (connaissance générale, données Station F).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context_in_response": "taux_cdi: 0.83 (dans les fiches sources)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.85",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context_in_response": "taux_emploi_3ans: 0.85 (dans les fiches sources)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context_in_response": "taux_emploi_6ans: 0.91 (dans les fiches sources)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "CDI (90% des cas)",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "Type de contrat : CDI (90% des cas) dans le tableau comparatif.",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "CDI (50%) / CDD (50%)",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context_in_response": "Type de contrat : CDI (50%) / CDD (50%) dans le tableau comparatif.",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "CDI (80%)",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "Type de contrat : CDI (80%) dans le tableau comparatif.",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire brut : 40-48k€",
+      "stat_value": 40,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Salaire brut : 40-48k€ dans le tableau comparatif.",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire brut : 35-45k€ (+ equity)",
+      "stat_value": 35,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Salaire brut : 35-45k€ (+ equity) dans le tableau comparatif.",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire brut : 38-45k€",
+      "stat_value": 38,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Salaire brut : 38-45k€ dans le tableau comparatif.",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9878,
+      "nom": "Titre ingénieur - Ingénieur diplômé de l'Ecole Polytechnique universitaire de l'Université de Lille,",
+      "etablissement": "UNIVERSITE DE LILLE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9704,
+      "nom": "Technologies de l’information (fiche nationale)",
+      "etablissement": "INSTITUT MINES TELECOM - DIRECTION GENERALE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.969,
+      "nom": "Consultant green IT",
+      "etablissement": "SCIENCES-U LILLE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8948,
+      "nom": "DU sciences des données et intelligence artificielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8925,
+      "nom": "Science des données : Visualisation, conception d'outils décisionnels",
+      "etablissement": "UNIVERSITE DE LILLE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8906,
+      "nom": "DU intelligence artificielle et propriété intellectuelle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8892,
+      "nom": "DU sciences des données et intelligence artificielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8885,
+      "nom": "MSc Big Data and Artificial Intelligence for Business",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8885,
+      "nom": "master mention IA - intelligence artificielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8881,
+      "nom": "Sciences et Ingénierie - Technologie de l'information et multimédia",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    }
+  ]
+}

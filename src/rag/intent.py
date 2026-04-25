@@ -27,6 +27,16 @@ INTENT_CONCEPTUAL = "conceptual"
 INTENT_GENERAL = "general"
 
 
+# --- ADR-049 : domain hints orthogonaux (multi-corpus reranker) ---
+# Hints additifs (parallèles aux INTENT_*) qui détectent quand une query
+# devrait privilégier un corpus retrievable non-formation. None par défaut
+# (= comportement formation-centric inchangé). Le reranker applique un
+# boost UNIQUEMENT aux fiches dont `domain` matche le hint.
+DOMAIN_HINT_METIER = "metier"
+DOMAIN_HINT_PARCOURS = "parcours_bacheliers"
+DOMAIN_HINT_APEC = "apec_region"
+
+
 @dataclass(frozen=True)
 class IntentConfig:
     top_k_sources: int
@@ -122,6 +132,77 @@ _PATTERNS_CONCEPTUAL = [
     re.compile(r"\bexpli(?:que[rz]?|cation)\b"),
     re.compile(r"\bdefini(?:tion|s|r)\b"),
 ]
+
+
+# --- ADR-049 : patterns domain hint multi-corpus ---
+
+# APEC : marché du travail cadres régional. Priorité 1 (le plus spécifique,
+# évite que "marché du travail" matche aussi sur metier).
+_PATTERNS_DOMAIN_APEC = [
+    re.compile(r"\bmarche\s+(?:du\s+)?(?:travail|emploi)\b"),
+    re.compile(r"\brecrutement[sx]?\s+(?:des\s+)?cadre[sx]?\b"),
+    re.compile(r"\bcadre[sx]?\s+(?:en|a|au)\s+\d{4}\b"),
+    re.compile(r"\bsalaire[sx]?\s+(?:median[a-z]*\s+)?cadre[sx]?\b"),
+    re.compile(r"\bdynami(?:sme|que[sx]?)\s+(?:des\s+)?cadre[sx]?\b"),
+    re.compile(r"\bperspective[sx]?\s+cadre[sx]?\b"),
+    re.compile(r"\bobservatoire\s+(?:de\s+l['e]\s*emploi|des\s+cadre)"),
+    re.compile(r"\bregion[a-z]*\s+(?:la\s+plus\s+)?dynami"),
+]
+
+# Parcours bacheliers : taux de réussite licence / passage L1→L2 /
+# redoublement / réorientation DUT-BUT par profil bachelier.
+_PATTERNS_DOMAIN_PARCOURS = [
+    re.compile(r"\btaux\s+(?:de\s+)?(?:reussite|passage|obtention)\s+(?:en\s+)?(?:licence|l1|l2)"),
+    re.compile(r"\bpassage\s+(?:en\s+)?l[12]\b"),
+    re.compile(r"\bredoublement\s+(?:en\s+)?l1\b"),
+    re.compile(r"\breorientation\s+(?:en\s+)?(?:dut|but)\b"),
+    re.compile(r"\bobtention\s+(?:de\s+la\s+)?licence\s+en\s+\d\s+ans?\b"),
+    re.compile(r"\b(?:bac|bachelier)\s+(?:l|s|es|stmg|techno|pro)[a-z]*\s+mention"),
+    re.compile(r"\bcohorte[sx]?\s+(?:de\s+)?bacheliers?\b"),
+    re.compile(r"\bstats?\s+(?:dis|des)?ent.*licence"),
+]
+
+# Métier : profession / "que fait un X" / "devenir X" / "rôle de".
+# Évite que "marché du travail" + "cadres" matche aussi (priorité APEC).
+_PATTERNS_DOMAIN_METIER = [
+    re.compile(r"\bque\s+fait\s+un[e]?\b"),
+    re.compile(r"\brole\s+(?:d['e]\s*un[e]?|du)\b"),
+    re.compile(r"\bquel(?:le)?\s+(?:est\s+)?(?:le\s+)?metier\b"),
+    re.compile(r"\bentre\s+(?:le[s]?\s+)?metier[sx]?\b"),
+    re.compile(r"\b(?:devenir|etre)\s+(?:developpeu[rs]|ingenieur[s]?|actuair|infirmier|medecin|architect|psychologue|kine|avocat|comptable|enseignant|professeur|chercheur|consultant|journalist|designer|chef|technicien)"),
+    re.compile(r"\bmetier[sx]?\s+(?:artistique[sx]?|manuel[sx]?|technique[sx]?|de\s+(?:bouche|terrain|service))"),
+    re.compile(r"\b(?:profession|carriere)\s+(?:de|en|d['e]\s*)"),
+    re.compile(r"\bjob\s+(?:de|d['e]\s*)"),
+    re.compile(r"\bworking?\s+with\s+my\s+hands\b"),
+    re.compile(r"\btravailler\s+(?:de\s+mes\s+|de\s+ses\s+)?mains\b"),
+]
+
+
+def classify_domain_hint(question: str) -> str | None:
+    """Retourne un hint de domain multi-corpus (ADR-049) ou None.
+
+    Hint orthogonal au `INTENT_*` (les 2 cohabitent : un même question peut
+    être COMPARAISON + DOMAIN_HINT_APEC). Le hint guide le reranker pour
+    boost le bon corpus retrievable. None = formation-centric par défaut
+    (comportement pre-ADR-049 préservé).
+
+    Priorité de détection (du plus spécifique au plus générique) :
+    1. APEC (marché du travail cadres) — termes très spécifiques
+    2. Parcours bacheliers (taux réussite licence × bac × mention)
+    3. Métier (profession / devenir / que fait un X)
+    """
+    if not question or not question.strip():
+        return None
+
+    norm = _strip_accents(question.lower())
+
+    if any(p.search(norm) for p in _PATTERNS_DOMAIN_APEC):
+        return DOMAIN_HINT_APEC
+    if any(p.search(norm) for p in _PATTERNS_DOMAIN_PARCOURS):
+        return DOMAIN_HINT_PARCOURS
+    if any(p.search(norm) for p in _PATTERNS_DOMAIN_METIER):
+        return DOMAIN_HINT_METIER
+    return None
 
 
 def _has_geographic_marker(question_norm: str) -> bool:
