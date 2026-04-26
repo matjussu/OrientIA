@@ -1,0 +1,156 @@
+{
+  "idx_global": 3,
+  "query_id": "q03_postes_aides_soignants",
+  "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+  "pattern_target": "postes a pourvoir + métier specific",
+  "elapsed_gen_s": 11.17,
+  "elapsed_fact_check_s": 2.07,
+  "answer_raw": "**TL;DR**\n1. Le secteur des aides-soignants devrait connaître une **forte demande** d’ici 2030, avec des créations de postes liées au vieillissement de la population et aux besoins en santé.\n2. **Entre 50 000 et 100 000 postes** pourraient être à pourvoir d’ici 2030 (connaissance générale, estimations Dares/INSEE et projections métiers).\n3. Les opportunités varient selon les régions (besoins accrus en EHPAD et hôpitaux publics).\n\n---\n\n### **Plan A — Voie directe : Formation DEAS (Diplôme d’État d’Aide-Soignant)**\n📍 **Formation DEAS** (partout en France) — bac non requis, 10 à 18 mois (alternance possible), diplôme d’État · [fiche France Compétences](https://www.francecompetences.fr)\n*Pour toi : accès sans prérequis de diplôme, financé par Pôle Emploi/OPCO/Region. 90% d’insertion à 6 mois (connaissance générale).*\n\n### **Plan B — Spécialisation : Évoluer vers infirmier ou cadre de santé**\n📍 **Passerelle DEAS → DE Infirmier** (via VAE ou concours) — bac requis pour le DE, 3 ans d’études · [fiche ONISEP](https://www.onisep.fr)\n*Pour toi : si tu veux monter en responsabilité, avec un salaire médian ~2 000€ brut (vs ~1 600€ pour aide-soignant, connaissance générale).*\n\n### **Plan C — Alternatives connexes : Métiers du grand âge et handicap**\n📍 **Certificat AMP (Aide Médico-Psychologique)** — 1 an, travail en ESAT/EHPAD · [fiche RNCP](https://www.francecompetences.fr)\n*Pour toi : si tu préfères le secteur social/handicap, avec des débouchés stables (connaissance générale).*\n\n---\n**⚠ Attention aux pièges**\n- **Salaire initial bas** : ~1 600€ brut/mois en début de carrière (connaissance générale, grilles hospitalières 2024).\n- **Conditions physiques** : travail en horaires décalés (nuit/week-end) fréquent en EHPAD/hôpitaux.\n- **Concurrence régionale** : certaines zones (Île-de-France, littoraux) sont saturées — cible les territoires ruraux ou les déserts médicaux pour plus d’opportunités.\n\n---\n**Question pour toi :**\nPréfères-tu une **insertion rapide** (DEAS en 1 an) ou un parcours plus long pour accéder à des postes mieux payés (infirmier/cadre) ? Ton choix dépendra aussi de ta mobilité géographique — es-tu prêt·e à déménager pour un poste ?",
+  "answer_annotated": "**TL;DR**\n1. Le secteur des aides-soignants devrait connaître une **forte demande** d’ici 2030, avec des créations de postes liées au vieillissement de la population et aux besoins en santé.\n2. **Entre 50 000 et 100 000 postes** pourraient être à pourvoir d’ici 2030 (connaissance générale, estimations Dares/INSEE et projections métiers).\n3. Les opportunités varient selon les régions (besoins accrus en EHPAD et hôpitaux publics).\n\n---\n\n### **Plan A — Voie directe : Formation DEAS (Diplôme d’État d’Aide-Soignant)**\n📍 **Formation DEAS** (partout en France) — bac non requis, 10 à 18 mois (alternance possible), diplôme d’État · [fiche France Compétences](https://www.francecompetences.fr)\n*Pour toi : accès sans prérequis de diplôme, financé par Pôle Emploi/OPCO/Region. 90% d’insertion à 6 mois (connaissance générale).*\n\n### **Plan B — Spécialisation : Évoluer vers infirmier ou cadre de santé**\n📍 **Passerelle DEAS → DE Infirmier** (via VAE ou concours) — bac requis pour le DE, 3 ans d’études · [fiche ONISEP](https://www.onisep.fr)\n*Pour toi : si tu veux monter en responsabilité, avec un salaire médian ~2 000€ brut (vs ~1 600€ pour aide-soignant, connaissance générale).*\n\n### **Plan C — Alternatives connexes : Métiers du grand âge et handicap**\n📍 **Certificat AMP (Aide Médico-Psychologique)** — 1 an, travail en ESAT/EHPAD · [fiche RNCP](https://www.francecompetences.fr)\n*Pour toi : si tu préfères le secteur social/handicap, avec des débouchés stables (connaissance générale).*\n\n---\n**⚠ Attention aux pièges**\n- **Salaire initial bas** : ~1 600€ brut/mois en début de carrière (connaissance générale, grilles hospitalières 2024).\n- **Conditions physiques** : travail en horaires décalés (nuit/week-end) fréquent en EHPAD/hôpitaux.\n- **Concurrence régionale** : certaines zones (Île-de-France, littoraux) sont saturées — cible les territoires ruraux ou les déserts médicaux pour plus d’opportunités.\n\n---\n**Question pour toi :**\nPréfères-tu une **insertion rapide** (DEAS en 1 an) ou un parcours plus long pour accéder à des postes mieux payés (infirmier/cadre) ? Ton choix dépendra aussi de ta mobilité géographique — es-tu prêt·e à déménager pour un poste ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 4,
+    "n_verified": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "Entre 50 000 et 100 000 postes",
+      "stat_value": null,
+      "stat_unit": "postes",
+      "context_in_response": "créations de postes d'ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "90% d’insertion à 6 mois",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "90% d’insertion à 6 mois (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian ~2 000€ brut",
+      "stat_value": 2000,
+      "stat_unit": "€ brut",
+      "context_in_response": "salaire médian ~2 000€ brut (vs ~1 600€ pour aide-soignant)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~1 600€ brut/mois",
+      "stat_value": 1600,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "Salaire initial bas : ~1 600€ brut/mois en début de carrière",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.1601,
+      "nom": "Métier 2030 (DARES) — FAP V0Z : Aides-soignants | Effectifs 2019 France : 764 466 personnes | Créati",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1576,
+      "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1556,
+      "nom": "Marché du travail prospective 2030 — région Occitanie | Effectifs 2019 totaux : 2 265 290 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1536,
+      "nom": "Marché du travail prospective 2030 — région Auvergne-Rhône-Alpes | Effectifs 2019 totaux : 3 259 115",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1514,
+      "nom": "Marché du travail prospective 2030 — région Bretagne | Effectifs 2019 totaux : 1 328 112 personnes (",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1498,
+      "nom": "Marché du travail prospective 2030 — région Pays de la Loire | Effectifs 2019 totaux : 1 561 926 per",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1492,
+      "nom": "Marché du travail prospective 2030 — région Corse | Effectifs 2019 totaux : 132 156 personnes (toute",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1456,
+      "nom": "Marché du travail prospective 2030 — région Bourgogne-Franche-Comté | Effectifs 2019 totaux : 1 070 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1447,
+      "nom": "Marché du travail prospective 2030 — région Provence-Alpes-Côte d'Azur | Effectifs 2019 totaux : 1 9",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1439,
+      "nom": "Métier 2030 (DARES) — FAP V1Z : Infirmiers, sages-femmes | Effectifs 2019 France : 653 267 personnes",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

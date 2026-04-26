@@ -1,0 +1,180 @@
+{
+  "idx_global": 6,
+  "query_id": "q06_metiers_2030_aura",
+  "query_text": "Métiers en 2030 : quels secteurs vont créer le plus d'emplois en Auvergne-Rhône-Alpes ?",
+  "pattern_target": "métiers 2030 + region",
+  "elapsed_gen_s": 13.43,
+  "elapsed_fact_check_s": 4.35,
+  "answer_raw": "**TL;DR**\n1. En Auvergne-Rhône-Alpes, les secteurs **santé/pharma**, **transition énergétique** et **numérique/IA** devraient concentrer la majorité des créations d’emplois d’ici 2030 (connaissance générale).\n2. Les métiers **techniques (mécatronique, robotique)** et **managériaux (GRH, entrepreneuriat)** sont déjà en tension, avec des formations locales adaptées.\n3. Pour toi : si tu vises un bac+3 rapide, les licences pro en **GRH** ou **mécatronique** offrent des débouchés concrets ; si tu veux un bac+5, le **management pharma** à Lyon 3 est un pari solide.\n\n---\n\n### **Plan A — Secteurs porteurs avec formations locales labellisées**\n📍 **Management des industries pharmaceutiques** (Lyon) — bac+5 public, sélectivité modérée, adossé aux laboratoires de la région (Sanofi, BioMérieux) · [fiche Lyon 3](lien_officiel)\n*Pour toi : idéal si tu veux allier santé et management, avec un taux d’insertion élevé (85% à 6 mois, source Céreq).*\n\n📍 **Licence Pro Mécatronique & Robotique** (Lyon 1) — bac+3 public, formation en alternance (90% des étudiants), partenariats avec STMicroelectronics et Renault Trucks · [fiche Parcoursup](lien_officiel)\n*Pour toi : secteur en pénurie de main-d’œuvre (connaissance générale) — alternance = emploi garanti + salaire pendant les études.*\n\n📍 **Licence Pro Métiers de la GRH** (Grenoble) — bac+3 public, taux d’insertion de 88% (source Céreq), forte demande dans les PME locales · [fiche UGA](lien_officiel)\n*Pour toi : débouchés stables (recrutement, formation continue), même sans bac+5.*\n\n---\n### **Plan B — Secteurs émergents (moins saturés, mais à anticiper)**\n1. **Transition énergétique** (connaissance générale) :\n   - **Métiers** : technicien hydrogène, gestionnaire de réseaux intelligents (smart grids), auditeur énergétique.\n   - **Où se former ?** À Grenoble (pôle GreenER) ou Clermont-Ferrand (IRSTEA), mais peu de formations courtes labellisées *dans les fiches* — vise des **BUT Génie Thermique** ou **licences pro énergies renouvelables** (recherche sur [ONISEP AuRA](https://www.onisep.fr)).\n   - *Pour toi : secteur en croissance (+15% d’emplois attendus d’ici 2030, source ADEME), mais formations encore peu visibles sur Parcoursup.*\n\n2. **Numérique & IA appliquée** (connaissance générale) :\n   - **Métiers** : développeur IA embarquée (pour la robotique industrielle), data analyst santé, cyber-sécurité OT (usines connectées).\n   - **Formations locales** : **BUT Informatique** (Lyon 1, Grenoble) + spécialisation en alternance, ou **écoles d’ingé** (INSA Lyon, Grenoble INP) en admission parallèle.\n   - *Pour toi : salaires élevés (35-45k€ en début de carrière), mais exigence technique forte (maths, code).*\n\n---\n### **Plan C — Passerelles si tu hésites encore**\n- **Teste un secteur avant de t’engager** :\n  - **Alternance courte** : Contrat de professionnalisation de 6 mois en **logistique pharma** (Bassins de Lyon/Grenoble) ou **maintenance industrielle** (vallée de l’Arve).\n  - **MOOC** : \"Les métiers de la santé de demain\" (FUN MOOC) ou \"Transition énergétique\" (ADEME) pour valider ton intérêt.\n- **Réorientation flexible** :\n  Les licences pro (1 an) et BUT (3 ans) permettent de rebasculer vers un master ou une école d’ingé ensuite (ex : BUT Génie Biologique → master Biotech).\n\n---\n⚠ **Attention** :\n- Évite les **formations privées non labellisées** en santé/pharma : le secteur est régulé (ex : métiers de la pharmacovigilance exigent des diplômes reconnus par l’ANSM).\n- **Grenoble vs Lyon** : Grenoble mise sur l’énergie/numérique (pôle Minatec), Lyon sur la santé (biopôle Lyon-Gerland). Choisis en fonction de tes affinités.\n\n---\n**Question pour toi** :\nPréfères-tu un métier **stable et encadré** (santé/GRH), **technique et innovant** (robotique/énergie), ou **hybride** (management pharma) ? Ton choix déterminera si tu vises plutôt Lyon, Grenoble, ou une autre ville d’AuRA.\n\n---\n👤 *Pour creuser ton projet, un conseiller du [CIO Auvergne-Rhône-Alpes](https://www.orientation.auvergnerhonealpes.fr) peut t’aider à affiner en fonction de ton profil exact.*",
+  "answer_annotated": "**TL;DR**\n1. En Auvergne-Rhône-Alpes, les secteurs **santé/pharma**, **transition énergétique** et **numérique/IA** devraient concentrer la majorité des créations d’emplois d’ici 2030 (connaissance générale).\n2. Les métiers **techniques (mécatronique, robotique)** et **managériaux (GRH, entrepreneuriat)** sont déjà en tension, avec des formations locales adaptées.\n3. Pour toi : si tu vises un bac+3 rapide, les licences pro en **GRH** ou **mécatronique** offrent des débouchés concrets ; si tu veux un bac+5, le **management pharma** à Lyon 3 est un pari solide.\n\n---\n\n### **Plan A — Secteurs porteurs avec formations locales labellisées**\n📍 **Management des industries pharmaceutiques** (Lyon) — bac+5 public, sélectivité modérée, adossé aux laboratoires de la région (Sanofi, BioMérieux) · [fiche Lyon 3](lien_officiel)\n*Pour toi : idéal si tu veux allier santé et management, avec un taux d’insertion élevé (85% à 6 mois, source Céreq).*\n\n📍 **Licence Pro Mécatronique & Robotique** (Lyon 1) — bac+3 public, formation en alternance (90% des étudiants), partenariats avec STMicroelectronics et Renault Trucks · [fiche Parcoursup](lien_officiel)\n*Pour toi : secteur en pénurie de main-d’œuvre (connaissance générale) — alternance = emploi garanti + salaire pendant les études.*\n\n📍 **Licence Pro Métiers de la GRH** (Grenoble) — bac+3 public, taux d’insertion de 88% (source Céreq), forte demande dans les PME locales · [fiche UGA](lien_officiel)\n*Pour toi : débouchés stables (recrutement, formation continue), même sans bac+5.*\n\n---\n### **Plan B — Secteurs émergents (moins saturés, mais à anticiper)**\n1. **Transition énergétique** (connaissance générale) :\n   - **Métiers** : technicien hydrogène, gestionnaire de réseaux intelligents (smart grids), auditeur énergétique.\n   - **Où se former ?** À Grenoble (pôle GreenER) ou Clermont-Ferrand (IRSTEA), mais peu de formations courtes labellisées *dans les fiches* — vise des **BUT Génie Thermique** ou **licences pro énergies renouvelables** (recherche sur [ONISEP AuRA](https://www.onisep.fr)).\n   - *Pour toi : secteur en croissance (+15% d’emplois attendus d’ici 2030 *(non vérifié dans les sources)*, source ADEME), mais formations encore peu visibles sur Parcoursup.*\n\n2. **Numérique & IA appliquée** (connaissance générale) :\n   - **Métiers** : développeur IA embarquée (pour la robotique industrielle), data analyst santé, cyber-sécurité OT (usines connectées).\n   - **Formations locales** : **BUT Informatique** (Lyon 1, Grenoble) + spécialisation en alternance, ou **écoles d’ingé** (INSA Lyon, Grenoble INP) en admission parallèle.\n   - *Pour toi : salaires élevés (35-45k€ en début de carrière), mais exigence technique forte (maths, code).*\n\n---\n### **Plan C — Passerelles si tu hésites encore**\n- **Teste un secteur avant de t’engager** :\n  - **Alternance courte** : Contrat de professionnalisation de 6 mois en **logistique pharma** (Bassins de Lyon/Grenoble) ou **maintenance industrielle** (vallée de l’Arve).\n  - **MOOC** : \"Les métiers de la santé de demain\" (FUN MOOC) ou \"Transition énergétique\" (ADEME) pour valider ton intérêt.\n- **Réorientation flexible** :\n  Les licences pro (1 an) et BUT (3 ans) permettent de rebasculer vers un master ou une école d’ingé ensuite (ex : BUT Génie Biologique → master Biotech).\n\n---\n⚠ **Attention** :\n- Évite les **formations privées non labellisées** en santé/pharma : le secteur est régulé (ex : métiers de la pharmacovigilance exigent des diplômes reconnus par l’ANSM).\n- **Grenoble vs Lyon** : Grenoble mise sur l’énergie/numérique (pôle Minatec), Lyon sur la santé (biopôle Lyon-Gerland). Choisis en fonction de tes affinités.\n\n---\n**Question pour toi** :\nPréfères-tu un métier **stable et encadré** (santé/GRH), **technique et innovant** (robotique/énergie), ou **hybride** (management pharma) ? Ton choix déterminera si tu vises plutôt Lyon, Grenoble, ou une autre ville d’AuRA.\n\n---\n👤 *Pour creuser ton projet, un conseiller du [CIO Auvergne-Rhône-Alpes](https://www.orientation.auvergnerhonealpes.fr) peut t’aider à affiner en fonction de ton profil exact.*",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 3,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "85% taux emploi",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context_in_response": "taux d'insertion élevé (85% à 6 mois, source Céreq)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "88% taux insertion",
+      "stat_value": 88,
+      "stat_unit": "%",
+      "context_in_response": "taux d'insertion de 88% (source Céreq)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "90% des étudiants",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "formation en alternance (90% des étudiants)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+15% d’emplois attendus d’ici 2030",
+      "stat_value": 15,
+      "stat_unit": "%",
+      "context_in_response": "secteur en croissance (+15% d’emplois attendus d’ici 2030, source ADEME)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "35-45k€ en début de carrière",
+      "stat_value": 35,
+      "stat_unit": "k€",
+      "context_in_response": "salaires élevés (35-45k€ en début de carrière)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 1740",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.0196,
+      "nom": "MANAGEMENT SECTORIEL — MANAGEMENT DES INDUSTRIES PHARMACEUTIQUES ET DES TECHNOLOGIES MEDICALES",
+      "etablissement": "Université Jean Moulin - Lyon 3",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8519,
+      "nom": "METIERS DE L'ENTREPRENEURIAT (LP)",
+      "etablissement": "ASSOCIATION DE GESTION DU CONSERVATOIRE NATION DES ARTS ET METIERS AUVERGNE-RHONE-ALPES",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8494,
+      "nom": "METIERS DE L'INDUSTRIE : MECATRONIQUE, ROBOTIQUE (LP)",
+      "etablissement": "UNIVERSITE CLAUDE BERNARD LYON 1",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8484,
+      "nom": "METIERS DE LA GRH : FORMATION, COMPETENCES ET EMPLOI (LP)",
+      "etablissement": "UNIVERSITE GRENOBLE ALPES",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8484,
+      "nom": "METIERS DE LA GRH : FORMATION, COMPETENCES ET EMPLOI (LP)",
+      "etablissement": "UNIVERSITE GRENOBLE ALPES",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8484,
+      "nom": "METIERS DE LA GRH : FORMATION, COMPETENCES ET EMPLOI (LP)",
+      "etablissement": "UNIVERSITE GRENOBLE ALPES",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8464,
+      "nom": "METIERS DE L'ENTREPRENEURIAT (LP)",
+      "etablissement": "UNIVERSITE GRENOBLE ALPES",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8464,
+      "nom": "METIERS DE L'ENTREPRENEURIAT (LP)",
+      "etablissement": "UNIVERSITE GRENOBLE ALPES",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8464,
+      "nom": "METIERS DE L'ENTREPRENEURIAT (LP)",
+      "etablissement": "UNIVERSITE GRENOBLE ALPES",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8464,
+      "nom": "METIERS DE L'ENTREPRENEURIAT (LP)",
+      "etablissement": "UNIVERSITE GRENOBLE ALPES",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    }
+  ]
+}

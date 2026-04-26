@@ -132,18 +132,93 @@ DARES observé hier et cette nuit.
 
 **Ne pas merger automatiquement** — en attente de `merge-approval`
 Matteo (pattern human-gated CLAUDE.md §Merge autorisé post-validation).
+*Note matin 26/04* : merge réalisé après approval (commit 54bddd7).
+
+---
+
+## Triple-run IC95 (extension matin 2026-04-26 post-merge)
+
+Ordre Jarvis 2026-04-26-1100 — discipline scientifique impose IC95 avant
+claim définitif d'un gain single-run.
+
+### Résultats par run (18 queries personas v4)
+
+| Run | n_stats | verified | hallucinated | gen avg |
+|---|---|---|---|---|
+| run1 (shipping nuit) | 197 | 40.6% | 11.2% | 13.79s |
+| run2 | 239 | 42.7% | 10.0% | 11.55s |
+| run3 | 215 | 47.9% | 16.7% | 12.35s |
+
+### Aggregate (n=3, t-distribution df=2 → t=4.303)
+
+| Métrique | Mean | Std | IC95 |
+|---|---|---|---|
+| pct_verified | 43.7% | 3.76 | ±9.34pp |
+| pct_hallucinated | 12.6% | 3.57 | ±8.88pp |
+| avg_gen_s | 12.6s | 1.14 | ±2.82s |
+
+### Lecture honnête
+
+- **Delta verified vs v5++ (39.5%) : +4.2pp** (IC95 ±9.34pp)
+- **Delta halluc vs v5++ (18.0%) : -5.4pp** (IC95 ±8.88pp)
+- **Delta gen vs v5++ (14.02s) : -1.4s**
+
+Les IC95 englobent zéro — strictement parlant, on ne peut pas distinguer
+v5+++ blocs de v5++ avec p<0.05 sur n=3 runs. **MAIS** la direction est
+cohérente sur 3/3 runs (verified > baseline pour les 3 runs, halluc <
+baseline pour les 3 runs). Du pur bruit alterné donnerait un signe
+variable. La cohérence directionnelle 3/3 est un signal informel qui
+n'apparaît pas dans un IC95 classique.
+
+### Comparaison vs claim single-run
+
+Single-run shipping nuit : **-6.8pp halluc**. Triple-run mean : -5.4pp.
+
+Le single-run était dans la fourchette plausible mais à l'extrémité
+favorable. Le claim "-6.8pp" du commit ba39b16 reste défendable
+directionnellement mais doit être lu comme **borne haute**, pas comme
+estimation centrale. Mean -5.4pp est plus prudent.
+
+### Conclusion révisée
+
+Le pivot blocs RNCP **réduit probablement l'hallucination** sur la suite
+shipping (direction confirmée 3/3, magnitude estimée -5.4pp ± 8.88pp),
+et **améliore probablement le ratio verified** (+4.2pp ± 9.34pp). La
+significativité statistique n'est pas atteinte sur n=3, mais la
+cohérence directionnelle suggère un effet réel sous-jacent.
+
+C'est plus solide que DARES nuit (qui était bruit IC95 ±7-8pp avec
+direction +0.2pp/-3.3pp seulement, non cohérente sur 3/3). Le contenu
+pédagogique des blocs ancre mesurablement la génération en factualité,
+même si la magnitude exacte demande plus de runs pour être fixée.
+
+⚠️ **Caveat important post-bench DARES dédié** : le bench DARES dédié
+(cf `docs/VERDICT_BENCH_DARES_DEDIE.md`) a révélé que sur des queries
+calibrées pour activer le boost ×1.5, le pivot DARES dégrade fortement
+(-30.5pp verified). Le pattern peut s'appliquer aussi à blocs RNCP avec
+boost ×1.5 — bench blocs dédié à faire pour confirmer ou infirmer (cf
+suivi #1 ci-dessous, **maintenant prioritaire** étant donné le risque
+pattern transposé).
+
+Coût triple-run : ~$0.10 (2 runs × $0.05). Total cumul blocs : ~$0.28.
 
 ---
 
 ## Suivi recommandé (post-merge)
 
-1. **Bench blocs dédié** : 6-12 queries ciblées compétences ("quels blocs
-   valide le BTS X", "que vais-je apprendre en BUT Y", "compétences VAE
-   pour titre RNCP Z") pour mesurer le gain attendu du boost ×1.5 sur le
-   domain `competences_certif`. Estimation ~$0.05 + 30 min.
-2. **Phase D combinée** (post-merge PR #70 + PR #71) : index =
+1. **Bench blocs dédié PRIORITAIRE** : 6-12 queries ciblées compétences
+   ("quels blocs valide le BTS X", "que vais-je apprendre en BUT Y",
+   "compétences VAE pour titre RNCP Z") pour mesurer le gain attendu
+   du boost ×1.5 sur le domain `competences_certif`. **Maintenant
+   prioritaire** étant donné la régression observée sur DARES dédié —
+   il faut vérifier que blocs ne reproduit pas le même pattern de
+   sur-boost. Estimation ~$0.05 + 30 min.
+2. **Tune-down boost si bench dédié blocs montre régression** :
+   réduire `domain_boost_competences_certif` de 1.5 à 1.1-1.2 (cohérent
+   avec décision post-DARES dédié si applicable).
+3. **Phase D combinée** (post-merge PR #70 + PR #71) : index =
    phaseB + DARES + blocs (~54 297 vecteurs) pour tester l'effet
-   cumulatif des 2 PRs. Bench v5++++ Phase D vs v5++ baseline.
+   cumulatif. À faire APRÈS résolution des 2 boosts (DARES + blocs).
 
 ---
 

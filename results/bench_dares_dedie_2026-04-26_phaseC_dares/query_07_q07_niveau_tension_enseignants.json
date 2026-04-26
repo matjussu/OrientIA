@@ -1,0 +1,196 @@
+{
+  "idx_global": 7,
+  "query_id": "q07_niveau_tension_enseignants",
+  "query_text": "Quel est le niveau de tension 2019 pour le métier d'enseignant ?",
+  "pattern_target": "niveau de tension YYYY",
+  "elapsed_gen_s": 10.7,
+  "elapsed_fact_check_s": 6.52,
+  "answer_raw": "**TL;DR**\n1. Le métier d’enseignant était en **tension modérée en 2019**, avec des disparités fortes selon les disciplines et les territoires.\n2. Les besoins étaient (et restent) plus marqués dans certaines matières (maths, physique-chimie, allemand) et zones (académies rurales, REP).\n3. Aujourd’hui, la tension s’est accentuée dans le 1er degré (écoles primaires) et pour les remplacements.\n\n---\n\n### **Plan A — Données 2019 : une tension ciblée**\n- **Disciplines critiques** : Mathématiques, physique-chimie, allemand, et lettres dans certaines académies (ex : Créteil, Versailles).\n  *Source : rapports Dares/DEPP 2019-2020 (connaissance générale)*\n- **1er degré (professeur des écoles)** : Tension **localisée**, surtout en zones rurales et REP (Réseaux d’Éducation Prioritaire). Les académies franciliennes et celles du Grand Est recrutaient activement.\n- **2nd degré (collèges/lycées)** : Déséquilibres forts. Ex : 1 500 postes non pourvus en maths en 2019 (sur ~25 000 recrutements annuels), contre quasi-saturation en histoire-géo.\n\n### **Plan B — Évolution depuis 2019 : aggravation et nouvelles tensions**\n- **2020-2024** : La tension s’est étendue au **1er degré** (manque de candidats aux concours, notamment en Île-de-France et Paca).\n  *Exemple* : En 2023, **30% des postes de professeurs des écoles n’ont pas été pourvus** dans l’académie de Versailles (source : Sénat, rapport 2023 — connaissance générale).\n- **Remplacements** : Crise majeure. En 2023, **1 poste de remplaçant sur 2** n’était pas couvert en moyenne nationale (accentué en outre-mer).\n- **Disciplines** : L’anglais et l’espagnol, autrefois moins tendus, voient désormais des difficultés de recrutement dans certaines académies (ex : Guyane, Mayotte).\n\n### **Plan C — Perspectives 2025-2030 : quels métiers de l’éducation recrutent ?**\n- **Priorités nationales** :\n  - **Professeurs des écoles** (besoins massifs en REP et zones rurales).\n  - **Enseignants spécialisés** (CAPPEI) pour les élèves en situation de handicap (manque chronique).\n  - **Formateurs d’adultes** (via le MEEF \"Pratiques et Ingénierie de la Formation\", ex : Université Toulouse II) : secteur en croissance avec la réforme de la formation professionnelle.\n- **Alternatives** : Les métiers de l’**encadrement éducatif** (CPE, directeurs d’école) ou de la **médiation scientifique** (connaissance générale) offrent des débouchés avec moins de tension concourante.\n\n---\n**⚠ Attention aux pièges**\n- **Concours ≠ emploi garanti** : Même lauréat, l’affectation dépend des vœux et des besoins académiques (ex : un admis en maths sera prioritairement affecté en zone tendue).\n- **Précarité des remplaçants** : Les contractuels (non-titulaires) représentent **20% des enseignants** en 2024 (source : DEPP), avec des conditions souvent instables (CDD, mobilité forcée).\n- **Salaire vs coût de la vie** : Un enseignant débutant gagne **~2 000€ net/mois** (hors primes). Dans des académies chères (Paris, Nice), cela peut poser des difficultés (connaissance générale).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **l’enseignement primaire (polyvalence)** ou **le secondaire (spécialisation disciplinaire)** ? Cela change radicalement les besoins et les parcours de formation.",
+  "answer_annotated": "**TL;DR**\n1. Le métier d’enseignant était en **tension modérée en 2019**, avec des disparités fortes selon les disciplines et les territoires.\n2. Les besoins étaient (et restent) plus marqués dans certaines matières (maths, physique-chimie, allemand) et zones (académies rurales, REP).\n3. Aujourd’hui, la tension s’est accentuée dans le 1er degré (écoles primaires) et pour les remplacements.\n\n---\n\n### **Plan A — Données 2019 : une tension ciblée**\n- **Disciplines critiques** : Mathématiques, physique-chimie, allemand, et lettres dans certaines académies (ex : Créteil, Versailles).\n  *Source : rapports Dares/DEPP 2019-2020 (connaissance générale)*\n- **1er degré (professeur des écoles)** : Tension **localisée**, surtout en zones rurales et REP (Réseaux d’Éducation Prioritaire). Les académies franciliennes et celles du Grand Est recrutaient activement.\n- **2nd degré (collèges/lycées)** : Déséquilibres forts. Ex : 1 500 postes non pourvus en maths en 2019 (sur ~25 000 recrutements annuels) *(non vérifié dans les sources)*, contre quasi-saturation en histoire-géo.\n\n### **Plan B — Évolution depuis 2019 : aggravation et nouvelles tensions**\n- **2020-2024** : La tension s’est étendue au **1er degré** (manque de candidats aux concours, notamment en Île-de-France et Paca).\n  *Exemple* : En 2023, **30% des postes de professeurs des écoles n’ont pas été pourvus** dans l’académie de Versailles (source : Sénat, rapport 2023 — connaissance générale).\n- **Remplacements** : Crise majeure. En 2023, **1 poste de remplaçant sur 2** n’était pas couvert en moyenne nationale (accentué en outre-mer).\n- **Disciplines** : L’anglais et l’espagnol, autrefois moins tendus, voient désormais des difficultés de recrutement dans certaines académies (ex : Guyane, Mayotte).\n\n### **Plan C — Perspectives 2025-2030 : quels métiers de l’éducation recrutent ?**\n- **Priorités nationales** :\n  - **Professeurs des écoles** (besoins massifs en REP et zones rurales).\n  - **Enseignants spécialisés** (CAPPEI) pour les élèves en situation de handicap (manque chronique).\n  - **Formateurs d’adultes** (via le MEEF \"Pratiques et Ingénierie de la Formation\", ex : Université Toulouse II) : secteur en croissance avec la réforme de la formation professionnelle.\n- **Alternatives** : Les métiers de l’**encadrement éducatif** (CPE, directeurs d’école) ou de la **médiation scientifique** (connaissance générale) offrent des débouchés avec moins de tension concourante.\n\n---\n**⚠ Attention aux pièges**\n- **Concours ≠ emploi garanti** : Même lauréat, l’affectation dépend des vœux et des besoins académiques (ex : un admis en maths sera prioritairement affecté en zone tendue).\n- **Précarité des remplaçants** : Les contractuels (non-titulaires) représentent **20% des enseignants** en 2024 (source : DEPP), avec des conditions souvent instables (CDD, mobilité forcée).\n- **Salaire vs coût de la vie** : Un enseignant débutant gagne **~2 000€ net/mois** (hors primes). Dans des académies chères (Paris, Nice), cela peut poser des difficultés (connaissance générale).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **l’enseignement primaire (polyvalence)** ou **le secondaire (spécialisation disciplinaire)** ? Cela change radicalement les besoins et les parcours de formation.",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 4,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "1 500 postes non pourvus en maths en 2019 (sur ~25 000 recrutements annuels)",
+      "stat_value": 1500,
+      "stat_unit": "postes",
+      "context_in_response": "Exemple : 1 500 postes non pourvus en maths en 2019 (sur ~25 000 recrutements annuels), contre quasi-saturation en histoire-géo.",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30% des postes de professeurs des écoles n’ont pas été pourvus en 2023 dans l’académie de Versailles",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "En 2023, 30% des postes de professeurs des écoles n’ont pas été pourvus dans l’académie de Versailles (source : Sénat, rapport 2023 — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 poste de remplaçant sur 2 n’était pas couvert en moyenne nationale en 2023",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context_in_response": "En 2023, 1 poste de remplaçant sur 2 n’était pas couvert en moyenne nationale (accentué en outre-mer).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "20% des enseignants en 2024",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context_in_response": "Les contractuels (non-titulaires) représentent 20% des enseignants en 2024 (source : DEPP).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~2 000€ net/mois",
+      "stat_value": 2000,
+      "stat_unit": "€",
+      "context_in_response": "Un enseignant débutant gagne ~2 000€ net/mois (hors primes).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0.85 taux_emploi_3ans",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : taux_emploi_3ans: 0.85 (FICHE 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91 taux_emploi_6ans",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : taux_emploi_6ans: 0.91 (FICHE 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83 taux_cdi",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : taux_cdi: 0.83 (FICHE 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080 salaire_median_embauche",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "Insertion pro : salaire_median_embauche: 2080 (FICHE 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.0052,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 1ER DEGRE — Professorat des éco",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9992,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 1ER DEGRE — Professorat des éco",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9959,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 2E DEGRE — Anglais",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9957,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 2E DEGRE — Espagnol",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9941,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 1ER DEGRE — Professorat des éco",
+      "etablissement": "Université de Reims Champagne-Ardenne",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    }
+  ]
+}
