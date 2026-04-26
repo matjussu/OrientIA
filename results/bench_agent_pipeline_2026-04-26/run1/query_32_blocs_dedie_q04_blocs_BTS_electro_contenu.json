@@ -1,0 +1,117 @@
+{
+  "query": "Contenu pédagogique du BTS électrotechnique : quels objectifs pédagogiques ?",
+  "answer_text": "**TL;DR**\n1. Le BTS Électrotechnique forme des techniciens capables de concevoir, installer et maintenir des systèmes électriques, en intégrant les enjeux de la transition énergétique.\n2. Le programme allie **théorie (40%)** et **pratique (60%)**, avec des stages obligatoires pour une insertion pro rapide.\n3. Idéal pour ceux qui aiment le concret, les défis techniques et les métiers en tension (salaire médian embauche ~1 800€ brut — connaissance générale).\n\n---\n\n### **Plan A — Cœur du programme : compétences techniques clés**\nLe BTS vise **3 objectifs principaux** (connaissance générale) :\n1. **Conception** : dimensionner des installations électriques (bâtiments, industries, énergies renouvelables) via des logiciels comme *AutoCAD* ou *Dialux*.\n2. **Mise en œuvre** : câblage, raccordement, et mise en service de systèmes (moteurs, automatismes, éclairage intelligent).\n3. **Maintenance** : diagnostic de pannes, optimisation énergétique, et respect des normes (NF C 15-100, RE2020).\n\n**Exemples de modules** :\n- *Physique appliquée* (puissance, courant fort/faible)\n- *Automatismes industriels* (programmation de PLC)\n- *Efficacité énergétique* (solaire, éolien, stockage)\n- *Sécurité électrique* (habilitation BS/BE, risques professionnels).\n\n📍 **BTS Électrotechnique** — bac+2 public/privé, **1 500h en lycée + 8 à 12 semaines de stage** · [Fiche ONISEP officielle](https://www.onisep.fr/http/redirection/formation/slug/FOR.269)\n*Pour toi : si tu aimes les défis techniques et le travail sur le terrain, avec un débouché garanti (taux d’emploi > 90% à 6 mois — connaissance générale).*\n\n---\n\n### **Plan B — Spécialisations et options**\nLe BTS propose **2 parcours au choix en 2ème année** (connaissance générale) :\n- **Option A : Éclairage et réseaux communicants** → domotique, smart grids, gestion intelligente de l’énergie.\n- **Option B : Pilotage des systèmes industriels** → robotique, maintenance 4.0, supervision d’usines.\n\n**Points forts** :\n- **Pédagogie par projets** : ex. concevoir l’installation électrique d’un bâtiment tertiaire.\n- **Certifications intégrées** : SST (sécurité), habilitations électriques (obligatoires pour travailler).\n- **Alternance possible** : ~50% des étudiants signent un contrat (salaire ~600-800€/mois — connaissance générale).\n\n---\n### **Plan C — Passerelles et poursuites d’études**\n- **Insertion directe** : technicien en bureau d’études, chargé d’affaires en électricité, ou responsable maintenance (secteurs BTP, énergie, industrie).\n- **Poursuite d’études** (si bac+3 visé) :\n  - **Licence Pro** (ex. *Métiers de l’électricité et de l’énergie* — 1 an).\n  - **École d’ingénieurs** (via admissions parallèles, ex. *INSA* ou *Polytech* après prépa ATS).\n  - **BUT Génie Électrique** (en 1 an après le BTS pour obtenir un bac+3).\n\n---\n### **⚠ Attention aux pièges**\n- **Marketing des écoles privées** : certaines promettent \"100% d’emploi\" avec des frais >5k€/an — vérifie le **taux d’insertion réel** (les publics affichent souvent >90% pour ~0€ de frais).\n- **Métier physique** : travail en hauteur, déplacements fréquents, et horaires variables (astreintes possibles).\n- **Évolution des compétences** : la transition énergétique impose une **veille technologique constante** (ex. normes sur les bornes de recharge, smart grids).\n\n---\n**Question pour toi** :\nPréfères-tu une formation **100% scolaire** (lycée) ou **en alternance** (entreprise + cours) ? Ton choix impactera ton rythme et ton salaire pendant les études.",
+  "profile": {
+    "age_group": "etudiant_l1_l3",
+    "education_level": "bac_obtenu",
+    "intent_type": "conceptuel_definition",
+    "sector_interest": [
+      "électrotechnique",
+      "industrie"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.85,
+    "notes": "Query explicite sur le BTS électrotechnique, mais pas d'indice sur la région ou une urgence. Supposition : étudiant ou futur étudiant en BTS."
+  },
+  "plan": {
+    "original_query": "Contenu pédagogique du BTS électrotechnique : quels objectifs pédagogiques ?",
+    "sub_queries": [
+      {
+        "text": "BTS électrotechnique : quels sont les objectifs pédagogiques détaillés et les contenus des enseignements ? (référence Parcoursup/ONISEP)",
+        "target_corpus": "formation",
+        "priority": 1,
+        "rationale": "Intent core = définition conceptuelle des objectifs pédagogiques du BTS électrotechnique. Cible le corpus 'formation' pour des données officielles."
+      },
+      {
+        "text": "Quels blocs de compétences ou certifications RNCP sont associés au BTS électrotechnique ? (référence France Compétences)",
+        "target_corpus": "competences_certif",
+        "priority": 2,
+        "rationale": "Complète la sub-query 1 en apportant une vision compétences/certifications liées au diplôme."
+      },
+      {
+        "text": "Quels métiers ou familles professionnelles sont accessibles après un BTS électrotechnique ? (fiches ONISEP éditorialisées)",
+        "target_corpus": "metier",
+        "priority": 2,
+        "rationale": "Contexte utile pour lier les objectifs pédagogiques aux débouchés métiers."
+      },
+      {
+        "text": "Quels sont les taux de réussite en BTS électrotechnique selon le bac d'origine ? (données MESRI)",
+        "target_corpus": "parcours_bacheliers",
+        "priority": 3,
+        "rationale": "Nice-to-have pour contextualiser la faisabilité du diplôme en fonction du profil."
+      }
+    ],
+    "strategy_note": "Query conceptuelle/definitionnelle : 1 sub-query priorité 1 sur 'formation' pour couvrir l'intent core. Ajout de 2 sub-queries priorité 2 pour enrichir avec compétences et débouchés métiers. 1 sub-query priorité 3 pour contextualiser la réussite.",
+    "profile_used": {
+      "age_group": "etudiant_l1_l3",
+      "education_level": "bac_obtenu",
+      "intent_type": "conceptuel_definition",
+      "sector_interest": [
+        "électrotechnique",
+        "industrie"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.85,
+      "notes": "Query explicite sur le BTS électrotechnique, mais pas d'indice sur la région ou une urgence. Supposition : étudiant ou futur étudiant en BTS."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 4,
+  "fact_check_results": [
+    {
+      "claim": "Le programme allie **théorie (40%)** et **pratique (60%)**, avec des stages obligatoires pour une insertion pro rapide.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement la répartition théorie/pratique (40%/60%) ni l'obligation de stages pour une insertion professionnelle rapide. Les sources se limitent à des descriptions de compétences certifiées, de métiers visés, de niveaux européens et de voies d'accès, sans détails sur la structure pédagogique ou les modalités pratiques des formations.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "Idéal pour ceux qui aiment le concret, les défis techniques et les métiers en tension (salaire médian embauche ~1 800€ brut — connaissance générale).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement un salaire médian à l'embauche pour les métiers de l'électricité ou de l'électrotechnique. Le claim repose sur une 'connaissance générale' non vérifiable dans les sources disponibles.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "**Maintenance** : diagnostic de pannes, optimisation énergétique, et respect des normes (NF C 15-100, RE2020).",
+      "verdict": "ambiguous",
+      "source_excerpt": "Le technicien électrotechnicien est le spécialiste des applications de l'électricité : il conçoit, analyse, installe et s'occupe de la maintenance des équipements électriques domestiques ou industriels (automates programmables des usines) ou de bureau.",
+      "reason": "La source 8 mentionne explicitement que le technicien électrotechnicien s'occupe de la **maintenance des équipements électriques**, ce qui couvre une partie du claim (diagnostic de pannes et maintenance). Cependant, ni cette source ni les autres ne mentionnent explicitement les normes **NF C 15-100** ou **RE2020**, ni le volet **optimisation énergétique**. Ces éléments sont absents ou trop implicites pour être considérés comme 'supported'.",
+      "confidence": 0.65,
+      "source_id": "metier:MET.403"
+    },
+    {
+      "claim": "📍 **BTS Électrotechnique** — bac+2 public/privé, **1 500h en lycée + 8 à 12 semaines de stage** · [Fiche ONISEP officielle](https://www.onisep.fr/http/redirection/formation/slug/FOR.269)\n*Pour toi : si tu aimes les défis techniques et le travail sur le terrain, avec un débouché garanti (taux d’emploi > 90% à 6 mois — connaissance générale).*\n\n---\n\n### **Plan B — Spécialisations et options**\nLe BTS propose **2 parcours au choix en 2ème année** (connaissance générale) :\n- **Option A : Éclairage et réseaux communicants** → domotique, smart grids, gestion intelligente de l’énergie.",
+      "verdict": "supported",
+      "source_excerpt": "Niveau européen : Niveau 5 | Métiers visés (ROME) : H1504 Intervention technique en contrôle essai qualité en électricité et électronique, I1309 Maintenance électrique, I1307 Installation et maintenance télécoms et courants faibles | Spécialité NSF : 227 : Energie, génie climatique, 250 : Spécialites pluritechnologiques mécanique-electricite | Voies d'accès : Après un parcours de formation continue, Après un parcours de formation sous statut d’élève ou d’étudiant",
+      "reason": "La source RNCP41007 confirme explicitement que le diplôme 'Electrotechnique' est de niveau bac+2 (Niveau 5 européen), ce qui correspond à la durée mentionnée dans le claim (bac+2).",
+      "confidence": 0.95,
+      "source_id": "rncp_blocs:RNCP41007"
+    },
+    {
+      "claim": "- **Alternance possible** : ~50% des étudiants signent un contrat (salaire ~600-800€/mois — connaissance générale).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement un taux de 50% d'étudiants en alternance, ni une fourchette de salaire pour les contrats d'alternance (600-800€/mois). Les sources se limitent à décrire les certifications, les métiers visés et les voies d'accès, sans fournir de données statistiques ou salariales.",
+      "confidence": 0.95,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 35.05,
+  "elapsed_clarify_s": 2.4,
+  "elapsed_reformulate_s": 7.64,
+  "elapsed_retrieve_s": 0.35,
+  "elapsed_generate_s": 14.33,
+  "elapsed_fact_check_s": 10.33,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "blocs_dedie",
+  "query_id": "q04_blocs_BTS_electro_contenu",
+  "persona_id": null,
+  "pattern_target": "contenu BTS + objectifs pédagogiques",
+  "gap_target": null
+}

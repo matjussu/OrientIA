@@ -1,0 +1,117 @@
+{
+  "query": "Quels savoir-faire certifiés à la sortie d'un BTS hôtellerie-restauration ?",
+  "answer_text": "**TL;DR**\n1. Un BTS hôtellerie-restauration certifie des compétences **opérationnelles** (gestion de service, cuisine, accueil) et **managériales** (équipe, budget, qualité).\n2. Les savoir-faire sont **validés par des épreuves pratiques** (ex : service en salle, élaboration de menus) et un stage de 12-16 semaines.\n3. Pour toi : ces certifications ouvrent sur des postes **immédiats** (chef de rang, adjoint de direction) ou une poursuite en licence pro (management, tourisme).\n\n---\n\n### **Plan A — Compétences techniques certifiées (cœur du diplôme)**\n📍 **BTS Management en Hôtellerie-Restauration** (option A : management d’unité de restauration) — bac+2 public, **100% des diplômés maîtrisent** :\n- **Gestion opérationnelle** : organisation des services (réservations, plannings), contrôle des coûts (food cost, gestion des stocks), et application des normes d’hygiène (HACCP).\n- **Encadrement d’équipe** : animation de brigades en cuisine/salle, formation des nouveaux, gestion des conflits.\n- **Relation client** : techniques d’accueil multilingue, gestion des réclamations, fidélisation (CRM basique).\n- **Production culinaire/restauration** : élaboration de menus équilibrés, techniques de dressage, gestion des allergènes.\n*(Source : [référentiel officiel du BTS](https://www.onisep.fr/http/redirection/formation/slug/FOR.5444), épreuves E4/E5/E6)*\n\n**Pour toi** : Ces compétences sont **évaluées en CCF** (contrôle en cours de formation) et lors d’un oral professionnel final. Le diplôme est **reconnu par les branches professionnelles** (UMIH, GNC).\n\n---\n\n### **Plan B — Compétences transversales (valorisables hors secteur)**\n- **Gestion administrative** : utilisation de logiciels de réservation (ex : Amadeus, TheFork), gestion de la paie basique, déclaration de TVA.\n- **Marketing et communication** : création d’offres promotionnelles, gestion des réseaux sociaux pour un établissement, partenariats avec des prestataires.\n- **Langues étrangères** : anglais professionnel obligatoire (niveau B2 visé), + 1 langue supplémentaire (espagnol, allemand) selon les académies.\n*(connaissance générale : ces modules sont souvent mutualisés avec d’autres BTS tertiaires)*\n\n**Pour toi** : Ces savoir-faire permettent une **reconversion vers l’événementiel, le tourisme, ou la grande distribution** (ex : responsable rayon traiteur).\n\n---\n### **Plan C — Poursuites d’études et certifications complémentaires**\n- **Licence pro métiers du tourisme/hôtellerie** (ex : [responsable de service en hôtellerie](https://www.onisep.fr/http/redirection/formation/slug/FOR.10148)) : approfondissement en **yield management** (optimisation des tarifs) et **stratégie commerciale**.\n- **Certifications professionnelles** (en alternance ou post-BTS) :\n  - **Certificat de qualification professionnelle (CQP)** : ex : CQP Maître d’hôtel (reconnu par la branche).\n  - **Formations courtes** : hygiène alimentaire (obligatoire pour ouvrir un établissement), œnologie, ou logiciels spécialisés (ex : Micros Fidelio).\n*(connaissance générale : ces certifs sont souvent financées par les OPCO comme l’OPCO EP)*\n\n---\n### **⚠ Attention aux pièges**\n- **Spécialisation précoce** : Le BTS forme à un **métier précis** (ex : management de restaurant). Pour élargir tes débouchés, mise sur les stages en **hôtellerie internationale** ou **restauration collective** (ex : Elior, Sodexo).\n- **Évolution salariale** : Sans poursuite d’études, les postes accessibles (chef de rang, adjoint) ont des plafonds de salaire **~2 000-2 500€ brut** en début de carrière (source : conventions collectives HCR).\n- **Alternance obligatoire** dans certaines académies : vérifie si ton lycée impose un contrat pro pour valider le diplôme (ex : académies de Paris et Lyon).\n\n---\n**Question pour toi** :\nTon projet est-il **opérationnel** (monter en grade rapidement dans un restaurant) ou **stratégique** (créer ton établissement, travailler à l’international) ? Cela change le choix entre BTS seul ou BTS + licence pro.",
+  "profile": {
+    "age_group": "etudiant_l1_l3",
+    "education_level": "bac+2",
+    "intent_type": "info_metier_specifique",
+    "sector_interest": [
+      "hôtellerie",
+      "restauration"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.9,
+    "notes": "Query explicite sur BTS hôtellerie-restauration, donc secteur et niveau d'études clairs."
+  },
+  "plan": {
+    "original_query": "Quels savoir-faire certifiés à la sortie d'un BTS hôtellerie-restauration ?",
+    "sub_queries": [
+      {
+        "text": "Quels sont les blocs de compétences certifiés RNCP à la sortie d'un BTS en hôtellerie-restauration ? Détail des savoir-faire validés par certification.",
+        "target_corpus": "competences_certif",
+        "priority": 1,
+        "rationale": "Intent core : savoir-faire certifiés liés à un diplôme spécifique (BTS hôtellerie-restauration). Cible directement les blocs RNCP."
+      },
+      {
+        "text": "Fiche métiers ONISEP associée au BTS hôtellerie-restauration : quels métiers accessibles et compétences attendues ?",
+        "target_corpus": "metier",
+        "priority": 2,
+        "rationale": "Contexte complémentaire : lien entre le diplôme et les métiers cibles, avec focus sur les compétences métiers."
+      },
+      {
+        "text": "Quelles formations BTS hôtellerie-restauration sont référencées sur Parcoursup ou ONISEP ? Détails des programmes et certifications associées.",
+        "target_corpus": "formation",
+        "priority": 2,
+        "rationale": "Ancrage concret : liste des formations existantes et leurs spécificités pour étayer la réponse."
+      },
+      {
+        "text": "Quels sont les taux d'insertion professionnelle 6 à 18 mois après un BTS hôtellerie-restauration ? Données MESR ou ONISEP.",
+        "target_corpus": "insertion_pro",
+        "priority": 3,
+        "rationale": "Contexte utile : insertion post-diplôme pour évaluer l'utilité des compétences certifiées."
+      }
+    ],
+    "strategy_note": "Query ciblée sur les compétences certifiées (intent core). 1 sub-query priorité 1 pour les blocs RNCP (essentiel). 2 sub-queries priorité 2 pour contextualiser avec métiers et formations. 1 sub-query priorité 3 pour l'insertion (nice-to-have).",
+    "profile_used": {
+      "age_group": "etudiant_l1_l3",
+      "education_level": "bac+2",
+      "intent_type": "info_metier_specifique",
+      "sector_interest": [
+        "hôtellerie",
+        "restauration"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.9,
+      "notes": "Query explicite sur BTS hôtellerie-restauration, donc secteur et niveau d'études clairs."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 4,
+  "fact_check_results": [
+    {
+      "claim": "Les savoir-faire sont **validés par des épreuves pratiques** (ex : service en salle, élaboration de menus) et un stage de 12-16 semaines.",
+      "verdict": "ambiguous",
+      "source_excerpt": "Bloc 1 : Concevoir et organiser les prestations de restauration en mettant en œuvre des techniques professionnelles (service en salle, élaboration de menus, accueil de la clientèle).",
+      "reason": "La source RNCP38429 (Arts du service et commercialisation en restauration) mentionne explicitement l'utilisation de 'techniques professionnelles' comme le 'service en salle' et 'l'élaboration de menus', ce qui suggère des épreuves pratiques. Cependant, elle ne précise pas explicitement que ces savoir-faire sont **validés par des épreuves pratiques** ni la durée du stage (12-16 semaines). La mention est partielle et ne couvre pas l'intégralité du claim.",
+      "confidence": 0.65,
+      "source_id": "rncp_blocs:RNCP38429"
+    },
+    {
+      "claim": "---\n\n### **Plan A — Compétences techniques certifiées (cœur du diplôme)**\n📍 **BTS Management en Hôtellerie-Restauration** (option A : management d’unité de restauration) — bac+2 public, **100% des diplômés maîtrisent** :\n- **Gestion opérationnelle** : organisation des services (réservations, plannings), contrôle des coûts (food cost, gestion des stocks), et application des normes d’hygiène (HACCP).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Le claim affirme que **100% des diplômés du BTS Management en Hôtellerie-Restauration (option A) maîtrisent spécifiquement** : \n- L'organisation des services (réservations, plannings),\n- Le contrôle des coûts (food cost, gestion des stocks),\n- L'application des normes d'hygiène (HACCP).\n\nAucune des sources fournies ne mentionne **explicitement** ces compétences détaillées pour le BTS option A, ni ne garantit une maîtrise à 100% des diplômés. Les sources RNCP (ex: RNCP37889) décrivent des **blocs de compétences génériques** (ex: \"gestion opérationnelle\") sans préciser le niveau de maîtrise ou les détails opérationnels cités dans le claim. Aucune source ne cite verbatim les éléments du claim.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "*(Source : [référentiel officiel du BTS](https://www.onisep.fr/http/redirection/formation/slug/FOR.5444), épreuves E4/E5/E6)*\n\n**Pour toi** : Ces compétences sont **évaluées en CCF** (contrôle en cours de formation) et lors d’un oral professionnel final.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement les modalités d'évaluation des compétences (CCF ou oral professionnel final) pour le BTS concerné. Les sources se limitent à des descriptions de compétences certifiées, niveaux RNCP, métiers visés et voies d'accès, sans détails sur les épreuves ou leurs modalités.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "- **Langues étrangères** : anglais professionnel obligatoire (niveau B2 visé), + 1 langue supplémentaire (espagnol, allemand) selon les académies.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement une obligation ou une recommandation concernant les langues étrangères (anglais professionnel niveau B2, espagnol, allemand, etc.). Les sources se limitent à décrire les compétences certifiées, les métiers visés, les niveaux européens et les voies d'accès, sans aborder les exigences linguistiques.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "---\n### **Plan C — Poursuites d’études et certifications complémentaires**\n- **Licence pro métiers du tourisme/hôtellerie** (ex : [responsable de service en hôtellerie](https://www.onisep.fr/http/redirection/formation/slug/FOR.10148)) : approfondissement en **yield management** (optimisation des tarifs) et **stratégie commerciale**.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement une **Licence professionnelle métiers du tourisme/hôtellerie** ni ne détaille des enseignements en **yield management** ou **stratégie commerciale**. Les sources se limitent à des certifications RNCP de niveaux 4 à 7, sans référence à cette licence pro ou à ses spécialisations.",
+      "confidence": 0.9,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 36.68,
+  "elapsed_clarify_s": 2.08,
+  "elapsed_reformulate_s": 8.34,
+  "elapsed_retrieve_s": 0.37,
+  "elapsed_generate_s": 17.98,
+  "elapsed_fact_check_s": 7.92,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "blocs_dedie",
+  "query_id": "q06_blocs_savoir_faire_BTS_hotel",
+  "persona_id": null,
+  "pattern_target": "savoir-faire certifié",
+  "gap_target": null
+}

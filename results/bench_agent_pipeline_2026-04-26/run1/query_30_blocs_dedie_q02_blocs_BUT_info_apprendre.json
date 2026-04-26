@@ -1,0 +1,109 @@
+{
+  "query": "Que vais-je apprendre en BUT informatique ?",
+  "answer_text": "**TL;DR**\n1. Un BUT Informatique forme aux **fondamentaux techniques** (programmation, bases de données, réseaux) + **compétences professionnelles** (gestion de projet, travail en équipe).\n2. Le parcours **Administration, Gestion et Exploitation des Données** (Fiche 7) ajoute une spécialisation **data** (SQL, analyse, sécurité).\n3. Pour un profil plus orienté **organisation/industrie**, le BUT **Qualité, Logistique et Transformation Digitale** (Fiche 8) lie informatique et processus métiers.\n\n---\n\n### **Plan A — Cœur du BUT Informatique (tronc commun)**\nTous les BUT Informatique couvrent (connaissance générale) :\n- **Développement** : Python, Java, C#, algorithmes, structures de données.\n- **Systèmes & Réseaux** : administration Linux/Windows, virtualisation, cybersécurité basique.\n- **Bases de données** : SQL, modélisation (Merise, UML), requêtes complexes.\n- **Projets concrets** : 600h de projets tuteurés en 3 ans (ex : création d’applications, gestion de parc informatique).\n- **Stages** : 22 à 26 semaines en entreprise (obligatoire pour le diplôme).\n*→ Idéal pour un profil technique polyvalent, avec une insertion pro directe (développeur, administrateur système, technicien réseaux).*\n\n---\n\n### **Plan B — Spécialisation Data (parcours AGED)**\n📍 **BUT Informatique parcours AGED** (Administration, Gestion et Exploitation des Données) — bac+3 public, **accès modérément sélectif** (30-60% selon IUT) · [Fiche ONISEP officielle](https://www.onisep.fr/http/redirection/formation/slug/FOR.7996)\n*Pour toi : si tu aimes les **données** (SQL avancé, analyse, visualisation) et la **sécurité des systèmes d’information**, ce parcours ajoute des modules comme :**\n- Gestion de gros volumes de données (Big Data).\n- Sécurité des bases de données (RGPD, sauvegardes).\n- Outils professionnels (Power BI, Talend).\n*→ Débouchés : administrateur de bases de données, analyste data junior, ou poursuite en master data science.*\n\n---\n\n### **Plan C — Informatique + Organisation (parcours alternatif)**\n📍 **BUT Qualité, Logistique et Organisation parcours Management de la Transformation Digitale** — bac+3 public, **accès accessible** (>60%) · [Fiche ONISEP officielle](https://www.onisep.fr/http/redirection/formation/slug/FOR.8544)\n*Pour toi : si tu veux **lier informatique et gestion de projets** (ex : digitalisation d’entreprises, optimisation de processus), ce BUT enseigne :**\n- Développement d’outils métiers (ERP, logiciels de gestion).\n- Analyse de données **appliquée à la logistique/qualité** (ex : tableau de bord KPI).\n- Méthodes agiles et lean management.\n*→ Débouchés : chef de projet digital, consultant en transformation numérique, ou responsable qualité en industrie.*\n\n---\n\n### **⚠ Attention aux pièges**\n- **BUT ≠ BTS** : Le BUT est un diplôme **bac+3** (grade licence), pas bac+2. Il exige un engagement sur 3 ans (pas de sortie anticipée en 2 ans comme le BTS SIO).\n- **Sélectivité variable** : Certains IUT sont très demandés (ex : Paris, Lyon) avec des taux <30%. Vérifie les stats locales sur [Parcoursup](https://www.parcoursup.fr).\n- **Alternance** : Possible en 2e ou 3e année, mais les places sont limitées (souvent <50% d’une promo). Prévois un plan B en formation initiale.\n\n---\n**Question pour toi :**\nQu’est-ce qui t’attire le plus : **coder des applications** (Plan A), **analyser des données** (Plan B), ou **optimiser des processus métiers avec des outils digitaux** (Plan C) ? Cela peut t’aider à choisir entre les parcours.\n\n---\n👤 *Pour affiner ton projet, un RDV avec le Psy-EN de ton lycée ou le SCUIO de ton IUT/fac reste le meilleur complément à cet outil.*",
+  "profile": {
+    "age_group": "other_or_unknown",
+    "education_level": "unknown",
+    "intent_type": "conceptuel_definition",
+    "sector_interest": [
+      "informatique"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.8,
+    "notes": "Query implicite sur le contenu pédagogique d'un BUT informatique. Pas d'indice sur l'âge ou le niveau d'études."
+  },
+  "plan": {
+    "original_query": "Que vais-je apprendre en BUT informatique ?",
+    "sub_queries": [
+      {
+        "text": "Quels sont les enseignements, compétences et matières abordés dans un Bachelor Universitaire de Technologie (BUT) en informatique ? Détail des programmes et blocs de formation.",
+        "target_corpus": "formation",
+        "priority": 1,
+        "rationale": "Intent core : définition conceptuelle du contenu pédagogique du BUT informatique."
+      },
+      {
+        "text": "Quels blocs de compétences RNCP sont associés aux diplômes de BUT informatique ? Liste des compétences certifiables et leur validation.",
+        "target_corpus": "competences_certif",
+        "priority": 2,
+        "rationale": "Complète la réponse avec les compétences certifiées officiellement (RNCP)."
+      },
+      {
+        "text": "Quels métiers et secteurs d'activité sont accessibles après un BUT informatique ? Perspectives professionnelles éditorialisées.",
+        "target_corpus": "metier",
+        "priority": 3,
+        "rationale": "Contexte utile pour lier apprentissages et débouchés métiers."
+      }
+    ],
+    "strategy_note": "Query conceptuelle/definitionnelle : 1 sub-query priorité 1 sur 'formation' pour couvrir l'intent core. Ajout de 2 sub-queries complémentaires (priorités 2 et 3) pour enrichir avec les compétences RNCP et les débouchés métiers, sans disperser l'attention.",
+    "profile_used": {
+      "age_group": "other_or_unknown",
+      "education_level": "unknown",
+      "intent_type": "conceptuel_definition",
+      "sector_interest": [
+        "informatique"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.8,
+      "notes": "Query implicite sur le contenu pédagogique d'un BUT informatique. Pas d'indice sur l'âge ou le niveau d'études."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 3,
+  "fact_check_results": [
+    {
+      "claim": "- **Projets concrets** : 600h de projets tuteurés en 3 ans (ex : création d’applications, gestion de parc informatique).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement un volume horaire de 600h de projets tuteurés en 3 ans pour un diplôme d'ingénieur en informatique ou un BUT. Les sources se limitent à des descriptions de compétences certifiées, de niveaux européens, de métiers visés et de spécialités NSF, sans détail sur les modalités pédagogiques (heures de projets, tuteurés, etc.).",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "- **Stages** : 22 à 26 semaines en entreprise (obligatoire pour le diplôme).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement la durée des stages en entreprise (22 à 26 semaines) pour l'obtention du diplôme d'ingénieur en informatique. Les sources se limitent à des informations sur les compétences certifiées, les métiers visés, les niveaux européens et les voies d'accès, sans détail sur les stages.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "*→ Idéal pour un profil technique polyvalent, avec une insertion pro directe (développeur, administrateur système, technicien réseaux).*\n\n---\n\n### **Plan B — Spécialisation Data (parcours AGED)**\n📍 **BUT Informatique parcours AGED** (Administration, Gestion et Exploitation des Données) — bac+3 public, **accès modérément sélectif** (30-60% selon IUT) · [Fiche ONISEP officielle](https://www.onisep.fr/http/redirection/formation/slug/FOR.7996)\n*Pour toi : si tu aimes les **données** (SQL avancé, analyse, visualisation) et la **sécurité des systèmes d’information**, ce parcours ajoute des modules comme :**\n- Gestion de gros volumes de données (Big Data).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Le claim affirme que le **BUT Informatique parcours AGED (Administration, Gestion et Exploitation des Données) est idéal pour un profil technique polyvalent avec une insertion professionnelle directe** (ex: développeur, administrateur système, technicien réseaux). Aucune des sources fournies ne mentionne explicitement : \n1. Les métiers cibles précis du BUT AGED (ex: développeur, administrateur système, technicien réseaux). \n2. Le taux ou la facilité d'insertion professionnelle directe pour ce parcours.\n3. La polyvalence technique du parcours AGED au-delà de la gestion des données et de la sécurité des systèmes d'information.\n\nLes sources RNCP fournies concernent des diplômes de niveau bac+5 (ingénieur), et non le BUT (bac+3). La source 7 (BUT AGED) n'est pas détaillée et ne permet pas de confirmer ou infirmer le claim.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "*→ Débouchés : administrateur de bases de données, analyste data junior, ou poursuite en master data science.*\n\n---\n\n### **Plan C — Informatique + Organisation (parcours alternatif)**\n📍 **BUT Qualité, Logistique et Organisation parcours Management de la Transformation Digitale** — bac+3 public, **accès accessible** (>60%) · [Fiche ONISEP officielle](https://www.onisep.fr/http/redirection/formation/slug/FOR.8544)\n*Pour toi : si tu veux **lier informatique et gestion de projets** (ex : digitalisation d’entreprises, optimisation de processus), ce BUT enseigne :**\n- Développement d’outils métiers (ERP, logiciels de gestion).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement les débouchés 'administrateur de bases de données', 'analyste data junior' ou 'poursuite en master data science' pour le BUT Qualité, Logistique et Organisation parcours Management de la Transformation Digitale. Les sources disponibles concernent principalement des diplômes de niveau bac+5 (ingénieur ou master) en informatique, sans lien direct avec ce BUT.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "Il exige un engagement sur 3 ans (pas de sortie anticipée en 2 ans comme le BTS SIO).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement une durée d'engagement de 3 ans ou une impossibilité de sortie anticipée pour un diplôme d'ingénieur en informatique. Les sources se limitent à décrire les compétences certifiées, les niveaux européens, les métiers visés et les voies d'accès, sans aborder les modalités de durée ou de sortie anticipée.",
+      "confidence": 0.95,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 35.19,
+  "elapsed_clarify_s": 2.05,
+  "elapsed_reformulate_s": 5.87,
+  "elapsed_retrieve_s": 0.46,
+  "elapsed_generate_s": 19.78,
+  "elapsed_fact_check_s": 7.02,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "blocs_dedie",
+  "query_id": "q02_blocs_BUT_info_apprendre",
+  "persona_id": null,
+  "pattern_target": "que vais-je apprendre",
+  "gap_target": null
+}

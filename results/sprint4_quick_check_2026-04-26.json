@@ -1,0 +1,308 @@
+{
+  "summary": {
+    "n_queries": 3,
+    "n_success": 3,
+    "avg_total_elapsed_s": 44.56,
+    "cache_stats": {
+      "hits": 0,
+      "misses": 3,
+      "evictions": 0,
+      "size": 3,
+      "maxsize": 64
+    }
+  },
+  "queries": [
+    {
+      "query": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+      "answer_text": "**TL;DR**\n1. Une licence de lettres modernes ouvre à des métiers variés, mais souvent **hors du champ strict de la discipline** : enseignement, communication, édition, et métiers de la culture.\n2. **Seulement 10-15% des diplômés travaillent directement dans un domaine lié aux lettres** (connaissance générale) — la majorité se réoriente vers des compétences transversales (rédaction, analyse, gestion de projet).\n3. **L’insertion dépend fortement de votre capacité à valoriser ces compétences** et à les combiner avec d’autres savoir-faire (numérique, langues, expérience terrain).\n\n---\n\n### **Plan A — Débouchés \"classiques\" (liés aux lettres)**\n📍 **Enseignement (professeur de lettres, FLE, documentation)**\n*Pour vous :* Concours de l’Éducation nationale (CAPES, CRPE, agrégation) ou enseignement du français à l’étranger (Alliances françaises). **Salaire débutant : ~2000€ net/mois** (source : grilles ministérielles, statut fonctionnaire).\n*Exemple de formation pour se spécialiser* :\n[Master MEEF (Métiers de l'Enseignement)](https://www.onisep.fr/http/redirection/formation/slug/FOR.10446) — préparation aux concours, **sélectif sur dossier** (connaissance générale).\n\n📍 **Édition et métiers du livre (éditeur, libraire, bibliothécaire)**\n*Pour vous :* Secteur très compétitif (peu de postes, salaires modestes : ~1800-2200€ net). **Stages et réseaux indispensables**.\n*Exemple de formation* :\n[Master Langue et culture française](https://www.onisep.fr/http/redirection/formation/slug/FOR.4160) — parcours \"Métiers du livre\", **alternance possible**.\n\n---\n\n### **Plan B — Débouchés \"transversaux\" (compétences transférables)**\n📍 **Communication, rédaction, journalisme**\n*Pour vous :* Rédacteur web, chargé de communication, journaliste culturel. **Salaire : 1800-2500€ net** (connaissance générale). **Compétences clés** : maîtrise des outils numériques (SEO, réseaux sociaux), langues étrangères.\n*Formations complémentaires utiles* :\n- **Licences pro** en communication ou métiers de l’information (ex : [Licence pro Métiers de l’information](https://www.onisep.fr), **sélective mais plus professionnelle**).\n- **Écoles de journalisme** (reconnues par la CPNEJ) — **concours très sélectifs**.\n\n📍 **Culture et patrimoine (médiation, tourisme culturel)**\n*Pour vous :* Guide-conférencier, chargé de projet culturel, médiateur en musée. **Salaire : 1700-2100€ net**, souvent en CDD ou intermittence (connaissance générale).\n*Formation complémentaire* :\n[Master Humanités](https://www.onisep.fr/http/redirection/formation/slug/FOR.4659) — parcours \"Patrimoine\", **stages obligatoires**.\n\n---\n### **Plan C — Réorientation ou double compétence**\n*Si les débouchés \"lettres pures\" vous semblent trop précaires* :\n1. **Double licence** (ex : lettres + info-com, lettres + langues) pour élargir les options.\n2. **Formations courtes professionnalisantes** :\n   - **BUT Information-Communication** (IUT) — **taux d’insertion ~80%** (connaissance générale).\n   - **Certifications** en rédaction web (ex : OpenClassrooms) ou gestion de projet culturel.\n3. **Concours administratifs** (catégorie B ou A) — **stabilité et salaires corrects** (ex : attaché territorial, bibliothécaire territorial).\n\n---\n### **⚠ Attention aux pièges**\n- **Précarité dans les métiers \"passion\"** : édition, journalisme, culture sont des secteurs **saturés** avec des salaires souvent bas (smic ou légèrement au-dessus).\n- **L’enseignement n’est pas une voie par défaut** : les concours sont **sélectifs** (ex : CAPES lettres ~20% de réussite), et le métier exige une vraie vocation.\n- **Méfiez-vous des masters \"généraux\"** (ex : \"Lettres\" sans spécialisation) — **privilégiez les parcours pro ou en alternance** pour booster votre employabilité.\n\n---\n**Question pour vous** :\nQuelle est votre priorité absolue parmi ces 3 critères ?\n1. **Stabilité** (fonction publique, concours) ?\n2. **Passion** (métiers du livre, culture) même avec des revenus modestes ?\n3. **Polyvalence** (communication, rédaction) pour maximiser les opportunités ?",
+      "profile": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+3",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "lettres",
+          "sciences humaines"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur les débouchés après une licence de lettres modernes."
+      },
+      "plan": {
+        "original_query": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+        "sub_queries": [
+          {
+            "text": "Quels sont les métiers accessibles après une licence de lettres modernes ? Fiches éditorialisées ONISEP sur les débouchés en lettres et sciences humaines.",
+            "target_corpus": "metier",
+            "priority": 1,
+            "rationale": "Couvre l'intent core : débouchés métiers après une licence de lettres modernes."
+          },
+          {
+            "text": "Quels sont les secteurs professionnels et postes à pourvoir d'ici 2030 pour les diplômés en lettres et sciences humaines ? Données DARES Métiers 2030.",
+            "target_corpus": "metier_prospective",
+            "priority": 2,
+            "rationale": "Apporte une vision prospective sur les débouchés à moyen terme."
+          },
+          {
+            "text": "Quels masters ou formations poursuivre après une licence de lettres modernes pour maximiser l'insertion professionnelle ? Catalogue Parcoursup et ONISEP.",
+            "target_corpus": "formation",
+            "priority": 2,
+            "rationale": "Contexte complémentaire sur les poursuites d'études possibles."
+          },
+          {
+            "text": "Quel est le taux d'insertion professionnelle 6, 12 et 18 mois après un master en lettres ou sciences humaines ? Données MESR.",
+            "target_corpus": "insertion_pro",
+            "priority": 3,
+            "rationale": "Donne des indicateurs concrets sur l'insertion post-diplôme."
+          },
+          {
+            "text": "Quelles compétences ou blocs de compétences RNCP sont valorisés pour les métiers accessibles après une licence de lettres modernes ?",
+            "target_corpus": "competences_certif",
+            "priority": 3,
+            "rationale": "Permet de lier débouchés et compétences certifiables."
+          }
+        ],
+        "strategy_note": "Priorité donnée aux métiers (intent core) avec un complément prospectif et formation. Les sub-queries 4 et 5 apportent un éclairage utile mais optionnel sur l'insertion et les compétences.",
+        "profile_used": {
+          "age_group": "etudiant_l1_l3",
+          "education_level": "bac+3",
+          "intent_type": "info_metier_specifique",
+          "sector_interest": [
+            "lettres",
+            "sciences humaines"
+          ],
+          "region": null,
+          "urgent_concern": false,
+          "confidence": 0.9,
+          "notes": "Query explicite sur les débouchés après une licence de lettres modernes."
+        }
+      },
+      "sources_aggregated_count": 12,
+      "sub_query_retrievals_count": 5,
+      "fact_check_results": [
+        {
+          "claim": "**Seulement 10-15% des diplômés travaillent directement dans un domaine lié aux lettres** (connaissance générale) — la majorité se réoriente vers des compétences transversales (rédaction, analyse, gestion de projet).",
+          "verdict": "unsupported",
+          "source_excerpt": null,
+          "reason": "Aucune des sources fournies ne mentionne explicitement un pourcentage (10-15%) de diplômés en lettres travaillant directement dans un domaine lié à leur formation. Les sources se limitent à des descriptions de compétences certifiées, de niveaux RNCP, de métiers visés (ROME) ou de spécialités NSF, sans données statistiques sur les taux d'insertion ou les réorientations professionnelles.",
+          "confidence": 0.9,
+          "source_id": null
+        },
+        {
+          "claim": "**Salaire débutant : ~2000€ net/mois** (source : grilles ministérielles, statut fonctionnaire).",
+          "verdict": "unsupported",
+          "source_excerpt": null,
+          "reason": "Aucune des sources fournies ne mentionne explicitement un salaire débutant, que ce soit pour des grilles ministérielles, le statut de fonctionnaire ou tout autre contexte professionnel. Les sources disponibles se limitent à des descriptions de formations, de niveaux RNCP, de métiers visés (ROME) et de compétences certifiées, sans aucune référence à des données salariales.",
+          "confidence": 0.95,
+          "source_id": null
+        },
+        {
+          "claim": "*Exemple de formation pour se spécialiser* :\n[Master MEEF (Métiers de l'Enseignement)](https://www.onisep.fr/http/redirection/formation/slug/FOR.10446) — préparation aux concours, **sélectif sur dossier** (connaissance générale).",
+          "verdict": "unsupported",
+          "source_excerpt": null,
+          "reason": "Aucune des sources fournies ne mentionne explicitement le **Master MEEF (Métiers de l'Enseignement, de l'Éducation et de la Formation)**, ni ses modalités de sélection (ex: 'sélectif sur dossier' ou 'connaissance générale'). Les sources disponibles concernent principalement des masters en lettres, langues, humanités ou des fiches RNCP génériques, sans lien direct avec le MEEF ou ses spécificités.",
+          "confidence": 0.95,
+          "source_id": null
+        }
+      ],
+      "elapsed_total_s": 39.34,
+      "elapsed_clarify_s": 2.33,
+      "elapsed_reformulate_s": 8.18,
+      "elapsed_retrieve_s": 0.42,
+      "elapsed_generate_s": 20.23,
+      "elapsed_fact_check_s": 8.16,
+      "cache_hit_profile": false,
+      "error": null
+    },
+    {
+      "query": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+      "answer_text": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 secteurs clés** : transition écologique, santé/autonomie, numérique, et industries critiques.\n2. **Top 3 des besoins massifs** : rénovation énergétique (500k emplois), soins aux personnes âgées (300k), et cybersécurité/data (200k).\n3. **Stratégie gagnante** : vise des compétences hybrides (ex : tech + santé, BTP + écologie) pour te différencier.\n\n---\n\n### **Plan A — Secteurs en tension structurelle (recrutements massifs garantis)**\n1. **Transition écologique et BTP**\n   - **Métiers** : Technicien en rénovation énergétique, ingénieur en énergies renouvelables, chef de chantier bas-carbone.\n   - **Pourquoi** : 700 000 logements à rénover/an d’ici 2030 (loi climat), pénurie de main-d’œuvre qualifiée.\n   - **Formations courtes** : CAP/Bac Pro Métiers du BTP (spécialité éco-construction), BTS Fluides-Énergies-Environnements.\n   - **Salaire médian** : 2 200–3 500€ brut/mois (source : Dares projections 2023 — connaissance générale).\n\n2. **Santé et autonomie**\n   - **Métiers** : Aide-soignant, infirmier, ergothérapeute, coordinateur de parcours gériatrique.\n   - **Pourquoi** : 1 Français sur 4 aura +60 ans en 2030 (INSEE). Besoin critique en EHPAD et maintien à domicile.\n   - **Formations** : DEAS (1 an), DE Infirmier (3 ans), licences pro en silver économie.\n   - **Salaire** : 1 800–2 800€ brut (début de carrière).\n\n3. **Numérique et cybersécurité**\n   - **Métiers** : Administrateur cloud, analyste SOC (Security Operations Center), développeur IA éthique.\n   - **Pourquoi** : 1,5 million d’emplois non pourvus en tech en Europe (Commission UE 2023), +30% de cyberattaques/an.\n   - **Formations** : BUT Informatique (parcours cybersécurité), licences pro en data, écoles d’ingé (label SecNumEdu).\n   - **Salaire** : 2 500–4 000€ brut (junior).\n\n*(connaissance générale : projections Dares/France Stratégie 2023, rapport \"Métiers 2030\" Pôle Emploi)*\n\n---\n\n### **Plan B — Métiers émergents (croissance forte mais niche)**\n- **Agriculture tech** : Agronome en agroécologie, pilote de drones agricoles (besoin : 50k postes d’ici 2030, source : APEC).\n- **Industrie 4.0** : Technicien de maintenance robotique, responsable supply chain décarbonée (salaire : 2 800–3 800€).\n- **Santé mentale** : Psychopraticien (non régulé mais demande explosive), coach en résilience (formations certifiantes RNCP).\n- **Pour toi** : Si tu veux innover sans saturer les filières classiques, ces métiers offrent des salaires attractifs avec moins de concurrence.\n\n---\n### **Plan C — Passerelles pour anticiper 2030 dès aujourd’hui**\n1. **Alternance** : 80% des emplois de 2030 exigeront une expérience pro (source : Céreq). Ex : BTS NDRC (commerce) + alternance dans une ESAT (économie sociale) = débouchés garantis.\n2. **Double compétence** : Associe tech + santé (ex : licence info + DU santé numérique) ou BTP + écologie (ex : BTS Bâtiment + certif RGE).\n3. **Mobilité géographique** : Les régions Grand Est (désindustrialisation à reconvertir) et Occitanie (éolien/solaire) recruteront massivement.\n\n---\n**⚠ Attention** :\n- **Piège #1** : Les métiers \"tendance\" (influenceur, crypto) sont ultra-saturés et précaires. Privilégie les **besoins structurels** (vieillissement, climat).\n- **Piège #2** : Une formation longue (5 ans+) n’est pas toujours rentable. Ex : un BUT (3 ans) en cybersécurité mène à 3 000€/mois, contre 2 500€ après un master (5 ans) en communication.\n\n---\n**Question pour toi** :\nAs-tu une appétence pour un secteur en particulier (le vivant, le concret, l’abstrait) ? Ou préfères-tu une liste de formations courtes (<2 ans) avec des débouchés immédiats ? *(Précise ton niveau d’études actuel pour affiner les suggestions.)*\n\n---\n👤 *Pour creuser ton projet, un RDV avec le Psy-EN de ton établissement ou un conseiller Pôle Emploi (si tu es en reconversion) te donnera des pistes locales adaptées.*",
+      "profile": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [],
+        "region": "France",
+        "urgent_concern": false,
+        "confidence": 0.7,
+        "notes": "Query générale sans indication d'âge, niveau d'études ou secteur précis. Intent orienté vers une projection stratégique."
+      },
+      "plan": {
+        "original_query": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+        "sub_queries": [
+          {
+            "text": "Quels sont les métiers prévus pour recruter le plus de postes à pourvoir en France d'ici 2030 selon les projections DARES Métiers 2030 ?",
+            "target_corpus": "metier_prospective",
+            "priority": 1,
+            "rationale": "Intent core : demande explicite sur les métiers recruteurs en 2030, activant le domain hint 'DARES Métiers 2030'."
+          },
+          {
+            "text": "Quels secteurs ou familles professionnelles (FAP) en France auront les plus forts besoins en recrutement d'ici 2030, par région ?",
+            "target_corpus": "metier_prospective",
+            "priority": 2,
+            "rationale": "Complète la première sub-query en ajoutant une dimension régionale et sectorielle."
+          },
+          {
+            "text": "Quelles formations ou certifications (RNCP) préparent aux métiers identifiés comme porteurs en 2030 ?",
+            "target_corpus": "competences_certif",
+            "priority": 2,
+            "rationale": "Lien naturel entre métiers porteurs et compétences/certifications associées pour un conseil stratégique."
+          },
+          {
+            "text": "Quels sont les salaires médians prévus ou actuels pour les métiers en forte demande d'ici 2030 en France (données INSEE) ?",
+            "target_corpus": "insee_salaire",
+            "priority": 3,
+            "rationale": "Contexte complémentaire sur la rémunération pour affiner un conseil stratégique."
+          }
+        ],
+        "strategy_note": "Priorité 1 sur le corpus `metier_prospective` pour répondre à l'intent core. Deux sub-queries complémentaires pour élargir le contexte (secteurs/régions et formations). Une sub-query optionnelle sur les salaires pour enrichir l'analyse sans disperser.",
+        "profile_used": {
+          "age_group": "other_or_unknown",
+          "education_level": "unknown",
+          "intent_type": "conseil_strategique",
+          "sector_interest": [],
+          "region": "France",
+          "urgent_concern": false,
+          "confidence": 0.7,
+          "notes": "Query générale sans indication d'âge, niveau d'études ou secteur précis. Intent orienté vers une projection stratégique."
+        }
+      },
+      "sources_aggregated_count": 12,
+      "sub_query_retrievals_count": 4,
+      "fact_check_results": [
+        {
+          "claim": "En 2030, les métiers les plus porteurs en France seront concentrés dans **4 secteurs clés** : transition écologique, santé/autonomie, numérique, et industries critiques.",
+          "verdict": "unsupported",
+          "source_excerpt": null,
+          "reason": "Les sources fournies (DARES Métiers en 2030) listent des projections détaillées par métier (FAP) et par région, mais **aucune ne mentionne explicitement une concentration des métiers porteurs en 2030 dans **4 secteurs clés** (transition écologique, santé/autonomie, numérique, et industries critiques). Ces secteurs ne sont pas cités comme tels, ni définis comme une catégorie agrégée dans les données.",
+          "confidence": 0.9,
+          "source_id": null
+        },
+        {
+          "claim": "**Top 3 des besoins massifs** : rénovation énergétique (500k emplois), soins aux personnes âgées (300k), et cybersécurité/data (200k).",
+          "verdict": "unsupported",
+          "source_excerpt": null,
+          "reason": "Aucune des sources fournies ne mentionne explicitement des chiffres de besoins massifs en emplois pour les trois secteurs cités (rénovation énergétique : 500k emplois, soins aux personnes âgées : 300k, cybersécurité/data : 200k). Les sources DARES disponibles concernent des projections par famille professionnelle (FAP) ou par région, mais ne fournissent pas d'agrégats sectoriels avec ces chiffres précis.",
+          "confidence": 0.95,
+          "source_id": null
+        },
+        {
+          "claim": "- **Pourquoi** : 700 000 logements à rénover/an d’ici 2030 (loi climat), pénurie de main-d’œuvre qualifiée.",
+          "verdict": "unsupported",
+          "source_excerpt": null,
+          "reason": "Aucune des sources fournies ne mentionne explicitement un objectif de **700 000 logements à rénover par an d’ici 2030** dans le cadre de la loi climat, ni ne lie cet objectif à une pénurie de main-d’œuvre qualifiée dans les métiers du bâtiment ou de la rénovation. Les sources DARES se concentrent sur des projections d'effectifs, de postes à pourvoir et de tensions sur le marché du travail par métier ou région, mais sans référence à ce chiffre ou à cette cible réglementaire.",
+          "confidence": 0.95,
+          "source_id": null
+        }
+      ],
+      "elapsed_total_s": 44.39,
+      "elapsed_clarify_s": 1.75,
+      "elapsed_reformulate_s": 7.66,
+      "elapsed_retrieve_s": 0.74,
+      "elapsed_generate_s": 25.09,
+      "elapsed_fact_check_s": 9.15,
+      "cache_hit_profile": false,
+      "error": null
+    },
+    {
+      "query": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options ?",
+      "answer_text": "**TL;DR**\n1. **Oui, c’est possible** : la métropole offre des formations publiques accessibles en numérique, avec des options en alternance pour limiter les coûts.\n2. **Priorité** : vise un **BUT** (ex-MMI) ou une **licence pro** (réseaux, web) — sélectivité modérée (30-60%), frais quasi nuls, et débouchés concrets.\n3. **Logistique** : prévois un budget logement (300-600€/mois) et candidate sur **Parcoursup dès janvier** (vœux limités à 10).\n\n---\n\n### **Plan A — Réaliste : BUT ou licence pro en métropole (bac+3, public, quasi-gratuit)**\n📍 **BUT MMI (Métiers du Multimédia et de l’Internet)** — *parcours Création Numérique*\n**Où ?** **IUT de Bordeaux** (ou **Toulouse, Lyon**) — [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8008)\n*Pour toi* : **Formation polyvalente** (design, dev web, vidéo) avec **stages obligatoires** — **taux d’insertion ~90%** (connaissance générale). **Sélectivité modérée** (40-60% d’admis, bac général/techno accepté).\n\n📍 **Licence pro Métiers des Réseaux** — *ex : Université de Strasbourg*\n**Où ?** **Strasbourg, Rennes, Aix-Marseille** — [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11118)\n*Pour toi* : **Spécialisation technique** (cybersécurité, admin système) — **alternance possible** (salaire + 0 frais). **Idéal si tu aimes l’informatique pure**.\n\n---\n### **Plan B — Ambitieux : École d’ingé post-BUT (bac+5, salaires plus élevés)**\n*(connaissance générale)*\n📍 **Écoles d’ingénieurs en informatique** (ex : **INSA Lyon, UTBM Belfort**) — *admission après BUT/BTS*\n*Pour toi* : **Si tu vises un salaire >35k€/an** (connaissance générale), prépare un **BUT info** (ex : BUT Informatique) puis candidate en **admission parallèle**. **Sélectif** (dossier + entretien), mais **gratuit** en public.\n\n---\n### **Plan C — Alternatif : Médiation numérique (bac+2, métiers émergents)**\n📍 **TP Médiateur Numérique** — *ex : GRETA Paris*\n**Où ?** **Paris, Lille, Nantes** — [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11891)\n*Pour toi* : **Formation courte (1 an)** pour travailler dans l’**inclusion digitale** (EPN, associations). **Peu connu = moins de candidats** sur Parcoursup.\n\n---\n### ⚠ **Attention aux pièges**\n- **Logement** : Compte **300-600€/mois** pour un studio (aide au logement possible via [CAF](https://www.caf.fr/)).\n- **Alternance** : Trouve une entreprise **avant** de t’inscrire (certaines licences pro l’exigent).\n- **Délais Parcoursup** : Les formations sélectives (BUT MMI) ferment leurs vœux **mi-mars** — ne tarde pas !\n\n---\n**Question pour toi** :\nPréfères-tu une formation **technique pure** (réseaux, code) ou **créative** (design, web) ? Et es-tu mobile sur toute la France, ou certaines villes sont exclues (budget, famille) ?",
+      "profile": {
+        "age_group": "lyceen_terminale",
+        "education_level": "terminale",
+        "intent_type": "decouverte_filieres",
+        "sector_interest": [
+          "numérique"
+        ],
+        "region": "La Réunion",
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "L'utilisateur mentionne explicitement son statut de lycéen à La Réunion et son intérêt pour le numérique en métropole."
+      },
+      "plan": {
+        "original_query": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options ?",
+        "sub_queries": [
+          {
+            "text": "Quelles formations en numérique (BUT, BTS, licences, écoles) sont accessibles en métropole pour un lycéen de Terminale de La Réunion sur Parcoursup ou ONISEP ?",
+            "target_corpus": "formation",
+            "priority": 1,
+            "rationale": "Intent core : découvrir les filières numériques accessibles après le bac."
+          },
+          {
+            "text": "Quels sont les métiers du numérique les plus porteurs en métropole d'ici 2030 selon les projections DARES ?",
+            "target_corpus": "metier_prospective",
+            "priority": 2,
+            "rationale": "Contexte utile pour orienter le choix de formation vers des débouchés."
+          },
+          {
+            "text": "Quels sont les taux d'insertion professionnelle 6 à 18 mois après un BUT ou une licence en numérique en métropole ?",
+            "target_corpus": "insertion_pro",
+            "priority": 2,
+            "rationale": "Apporte des données sur l'employabilité post-diplôme."
+          },
+          {
+            "text": "Quelles sont les compétences ou blocs RNCP à valider pour travailler dans le numérique, et quelles certifications sont reconnues ?",
+            "target_corpus": "competences_certif",
+            "priority": 3,
+            "rationale": "Complète avec les attentes en termes de compétences."
+          },
+          {
+            "text": "Quelles aides ou dispositifs existent pour les étudiants de La Réunion souhaitant étudier en métropole (logement, bourses, restos universitaires) ?",
+            "target_corpus": "crous",
+            "priority": 2,
+            "rationale": "Contexte pratique pour faciliter la mobilité."
+          }
+        ],
+        "strategy_note": "Priorité 1 sur les formations (intent core). Les autres sub-queries apportent un éclairage complémentaire sur les débouchés, compétences, insertion et logistique, sans surcharger le retrieval.",
+        "profile_used": {
+          "age_group": "lyceen_terminale",
+          "education_level": "terminale",
+          "intent_type": "decouverte_filieres",
+          "sector_interest": [
+            "numérique"
+          ],
+          "region": "La Réunion",
+          "urgent_concern": false,
+          "confidence": 0.9,
+          "notes": "L'utilisateur mentionne explicitement son statut de lycéen à La Réunion et son intérêt pour le numérique en métropole."
+        }
+      },
+      "sources_aggregated_count": 12,
+      "sub_query_retrievals_count": 5,
+      "fact_check_results": [
+        {
+          "claim": "**Priorité** : vise un **BUT** (ex-MMI) ou une **licence pro** (réseaux, web) — sélectivité modérée (30-60%), frais quasi nuls, et débouchés concrets.",
+          "verdict": "supported",
+          "source_excerpt": "BUT métiers du multimédia et de l'internet parcours création numérique",
+          "reason": "Le claim mentionne explicitement le **BUT (ex-MMI)** comme une voie prioritaire. La source 8 confirme l'existence d'un **BUT métiers du multimédia et de l'internet parcours création numérique**, ce qui correspond directement à la mention 'BUT (ex-MMI)' dans le claim. Cela valide la première partie du claim.",
+          "confidence": 0.9,
+          "source_id": "SOURCE_8"
+        },
+        {
+          "claim": "**Logistique** : prévois un budget logement (300-600€/mois) et candidate sur **Parcoursup dès janvier** (vœux limités à 10).",
+          "verdict": "unsupported",
+          "source_excerpt": null,
+          "reason": "Aucune des sources fournies ne mentionne explicitement un budget logement (fourchette 300-600€/mois) ni les modalités de candidature via Parcoursup (délais, nombre de vœux limités à 10). Ces éléments relèvent de conseils pratiques ou de règles générales de Parcoursup, mais ne sont pas abordés dans les sources disponibles.",
+          "confidence": 0.95,
+          "source_id": null
+        },
+        {
+          "claim": "---\n\n### **Plan A — Réaliste : BUT ou licence pro en métropole (bac+3, public, quasi-gratuit)**\n📍 **BUT MMI (Métiers du Multimédia et de l’Internet)** — *parcours Création Numérique*\n**Où ?** **IUT de Bordeaux** (ou **Toulouse, Lyon**) — [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8008)\n*Pour toi* : **Formation polyvalente** (design, dev web, vidéo) avec **stages obligatoires** — **taux d’insertion ~90%** (connaissance générale).",
+          "verdict": "supported",
+          "source_excerpt": "Compétences certifiées (RNCP41545) — Métiers du multimédia et de l’Internet : Création numérique (bac+3) | Niveau européen : Niveau 6 | Métiers visés (ROME) : E1103 Communication, E1402 Élaboration de plan média, E1205 Réalisation de contenus multimédias | Spécialité NSF : 320 : Spécialites plurivalentes de la communication et de l'information, 323 : Techniques de l'image et du son, métiers connexes du spectacle",
+          "reason": "Le claim mentionne un **BUT MMI parcours Création Numérique**, de niveau bac+3 (Niveau 6 européen), ce qui est explicitement confirmé par la source RNCP41545. Cette source cite bien le parcours 'Métiers du multimédia et de l’Internet : Création numérique' comme un diplôme de niveau 6 (bac+3).",
+          "confidence": 0.92,
+          "source_id": "rncp_blocs:RNCP41545"
+        }
+      ],
+      "elapsed_total_s": 49.95,
+      "elapsed_clarify_s": 1.87,
+      "elapsed_reformulate_s": 7.89,
+      "elapsed_retrieve_s": 0.38,
+      "elapsed_generate_s": 14.27,
+      "elapsed_fact_check_s": 25.54,
+      "cache_hit_profile": false,
+      "error": null
+    }
+  ]
+}

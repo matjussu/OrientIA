@@ -1,0 +1,115 @@
+{
+  "query": "Mon fils a un bac pro vente, peut-il intégrer un BUT et avec quelle chance de réussir ?",
+  "answer_text": "**TL;DR**\n1. Un bac pro vente permet **techniquement** d’accéder à un BUT, mais la sélectivité et l’écart de niveau rendent l’admission difficile sans préparation.\n2. Les BUT en commerce (ex : TC) recrutent **prioritairement des bacs généraux/techno** (STMG), avec des taux d’admission très bas pour les bacs pros (<10% souvent).\n3. **Stratégie réaliste** : viser d’abord un **BTS commerce** (adaptation progressive), puis une **poursuite en licence pro ou BUT en alternance**.\n\n---\n\n### **Plan A — Réaliste : BTS Commerce (adaptation + passerelle vers BUT)**\n📍 **BTS NDRC (Négociation et Digitalisation de la Relation Client)** — bac+2 public, **accessible** avec un bac pro vente (dossier + entretien), **RNCP niveau 5** · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.7955)\n*Pour toi : transition douce vers l’enseignement supérieur, avec possibilité de poursuite en **BUT TC** (via admissions parallèles) ou licence pro après le BTS.*\n\n### **Plan B — Ambitieux : BUT Techniques de Commercialisation (TC) en direct**\n📍 **BUT TC parcours Marketing et Management du Point de Vente** (Université Jean Monnet, Saint-Étienne) — bac+3 public, **sélectif** (taux d’admission <10% pour les bacs pros), **grade Licence** · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.7955)\n*Pour toi : possible **uniquement avec un excellent dossier** (14+ de moyenne en bac pro + stages marquants) et une **mise à niveau en français/maths**. Alternance recommandée pour compenser l’écart.*\n\n### **Plan C — Alternative : Certificat professionnel + expérience**\n*(connaissance générale)*\n📍 **Titre RNCP \"Responsable de Point de Vente\"** (via GRETA ou écoles spécialisées) — bac à bac+2, **formation courte (6-12 mois)**, financée par Pôle Emploi/OPCO.\n*Pour toi : idéal si ton fils veut **travailler vite** tout en gardant une porte ouverte pour un BUT en alternance plus tard (via VAP).*\n\n---\n**⚠ Attention aux pièges**\n- **Illusion d’accessibilité** : Les BUT affichent des \"places pour tous les bacs\", mais **les bacs pros sont rarement admis en direct** (sauf dossiers exceptionnels).\n- **Décalage pédagogique** : Un bac pro vente ne prépare pas aux attentes théoriques d’un BUT (comptabilité, analyse de données). Un **BTS en amont** ou une **remise à niveau** est souvent nécessaire.\n- **Alternance obligatoire ?** Certains BUT TC imposent l’alternance dès la 2e année — vérifie que ton fils a un **réseau professionnel** ou un employeur potentiel.\n\n---\n**Question pour toi :**\nTon fils est-il prêt à :\n1. **Faire un détour** (BTS → BUT) pour sécuriser son projet ?\n2. **Se remettre à niveau** (maths/français) pour tenter un BUT en direct ?\n3. **Privilégier l’emploi immédiat** (certificat pro) avec une montée en compétences progressive ?\n\n👤 *Pour un accompagnement sur mesure, un RDV avec le **Psy-EN** de son lycée ou un **conseiller CIO** est indispensable — ils connaissent les dispositifs locaux (ex : cordées de la réussite pour les bacs pros).*",
+  "profile": {
+    "age_group": "parent_lyceen",
+    "education_level": "bac_obtenu",
+    "intent_type": "conseil_strategique",
+    "sector_interest": [
+      "commerce",
+      "vente"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.9,
+    "notes": "Query explicite : bac pro vente du fils, question sur l'intégration en BUT et probabilité de réussite."
+  },
+  "plan": {
+    "original_query": "Mon fils a un bac pro vente, peut-il intégrer un BUT et avec quelle chance de réussir ?",
+    "sub_queries": [
+      {
+        "text": "Quels BUT (Bachelor Universitaire de Technologie) sont accessibles après un bac pro vente ? Liste des formations Parcoursup et ONISEP compatibles avec ce profil.",
+        "target_corpus": "formation",
+        "priority": 1,
+        "rationale": "Intent core : identifier les formations adaptées à un bac pro vente."
+      },
+      {
+        "text": "Quels sont les taux de réussite en BUT pour les bacheliers professionnels, notamment en filière vente ou commerce ? Données MESRI sur les parcours bacheliers.",
+        "target_corpus": "parcours_bacheliers",
+        "priority": 1,
+        "rationale": "Mesurer les chances de réussite spécifiques aux bac pro en BUT."
+      },
+      {
+        "text": "Quels métiers ou débouchés professionnels après un BUT dans le secteur commerce/vente ? Fiches ONISEP éditorialisées.",
+        "target_corpus": "metier",
+        "priority": 2,
+        "rationale": "Contexte complémentaire sur les débouchés pour rassurer."
+      },
+      {
+        "text": "Quels sont les blocs de compétences RNCP à valider en priorité pour un bac pro vente souhaitant intégrer un BUT commerce ?",
+        "target_corpus": "competences_certif",
+        "priority": 3,
+        "rationale": "Préparer l'intégration en identifiant les compétences clés."
+      },
+      {
+        "text": "Quelles sont les perspectives d'insertion professionnelle 6 à 18 mois après un BUT dans le domaine commerce/vente ? Données MESR.",
+        "target_corpus": "insertion_pro",
+        "priority": 2,
+        "rationale": "Apporter un éclairage sur l'après-diplôme."
+      }
+    ],
+    "strategy_note": "Priorité 1 donnée aux sub-queries essentielles (formation et taux de réussite) pour répondre à l'intent core. Les autres sub-queries apportent un contexte utile (débouchés, compétences, insertion) sans surcharger le retrieval.",
+    "profile_used": {
+      "age_group": "parent_lyceen",
+      "education_level": "bac_obtenu",
+      "intent_type": "conseil_strategique",
+      "sector_interest": [
+        "commerce",
+        "vente"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.9,
+      "notes": "Query explicite : bac pro vente du fils, question sur l'intégration en BUT et probabilité de réussite."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 5,
+  "fact_check_results": [
+    {
+      "claim": "Les BUT en commerce (ex : TC) recrutent **prioritairement des bacs généraux/techno** (STMG), avec des taux d’admission très bas pour les bacs pros (<10% souvent).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement la répartition des bacs admis en BUT Techniques de Commercialisation (TC), ni des taux d'admission pour les bacs généraux/techno (STMG) ou les bacs pros. Les sources se limitent à décrire les compétences certifiées, les métiers visés, les niveaux européens et les voies d'accès générales, sans données quantitatives ou qualitatives sur les profils prioritaires.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "---\n\n### **Plan A — Réaliste : BTS Commerce (adaptation + passerelle vers BUT)**\n📍 **BTS NDRC (Négociation et Digitalisation de la Relation Client)** — bac+2 public, **accessible** avec un bac pro vente (dossier + entretien), **RNCP niveau 5** · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.7955)\n*Pour toi : transition douce vers l’enseignement supérieur, avec possibilité de poursuite en **BUT TC** (via admissions parallèles) ou licence pro après le BTS.*\n\n### **Plan B — Ambitieux : BUT Techniques de Commercialisation (TC) en direct**\n📍 **BUT TC parcours Marketing et Management du Point de Vente** (Université Jean Monnet, Saint-Étienne) — bac+3 public, **sélectif** (taux d’admission <10% pour les bacs pros), **grade Licence** · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.7955)\n*Pour toi : possible **uniquement avec un excellent dossier** (14+ de moyenne en bac pro + stages marquants) et une **mise à niveau en français/maths**.",
+      "verdict": "contradicted",
+      "source_excerpt": "Compétences certifiées (RNCP38399) — Métiers du commerce et de la vente (bac) | Niveau européen : Niveau 4",
+      "reason": "Le claim indique que le BTS NDRC est de niveau RNCP 5, mais la source RNCP38399 (qui correspond aux métiers du commerce et de la vente, incluant le BTS NDRC) précise explicitement un niveau européen 4, et non 5. Le niveau 5 correspond généralement à un bac+2, mais cette source contredit cette affirmation pour ce diplôme spécifique.",
+      "confidence": 0.9,
+      "source_id": "rncp_blocs:RNCP38399"
+    },
+    {
+      "claim": "Alternance recommandée pour compenser l’écart.*\n\n### **Plan C — Alternative : Certificat professionnel + expérience**\n*(connaissance générale)*\n📍 **Titre RNCP \"Responsable de Point de Vente\"** (via GRETA ou écoles spécialisées) — bac à bac+2, **formation courte (6-12 mois)**, financée par Pôle Emploi/OPCO.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement le titre RNCP 'Responsable de Point de Vente', ni sa durée de formation (6-12 mois), ni son financement par Pôle Emploi/OPCO. Les sources disponibles concernent d'autres titres RNCP de niveau 4 ou 7, mais aucun ne correspond à ce claim.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "- **Alternance obligatoire ?** Certains BUT TC imposent l’alternance dès la 2e année — vérifie que ton fils a un **réseau professionnel** ou un employeur potentiel.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement l'obligation ou l'imposition de l'alternance dès la 2e année dans les BUT Techniques de Commercialisation (TC). Les sources listent bien les voies d'accès possibles (contrat d'apprentissage, contrat de professionnalisation, etc.), mais sans préciser si cela devient une obligation à partir d'une année spécifique. Le claim n'est donc ni supporté ni contredit.",
+      "confidence": 0.9,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 32.72,
+  "elapsed_clarify_s": 2.07,
+  "elapsed_reformulate_s": 8.07,
+  "elapsed_retrieve_s": 0.47,
+  "elapsed_generate_s": 11.6,
+  "elapsed_fact_check_s": 10.51,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "user_naturel",
+  "query_id": "q16_bacpro_BUT_taux",
+  "persona_id": null,
+  "pattern_target": null,
+  "gap_target": "Bac pro × BUT"
+}

@@ -1,0 +1,123 @@
+{
+  "query": "J'accompagne un élève de 2nde issu d'un milieu modeste, qui rêve de devenir ingénieur aéro mais ses résultats sont moyens (10-11 en maths). Quelles stratégies long-terme sur la suite du lycée ?",
+  "answer_text": "**TL;DR**\n1. Avec 10-11 en maths, une prépa classique (MP/PC/PSI) est trop risquée pour viser une école d’ingénieur aéro **directement après le bac**.\n2. **Stratégie gagnante** : BTS ou BUT aéro en 1er cycle (accessible avec ce niveau), puis **admission parallèle en école d’ingé** à bac+2/+3.\n3. **Priorité absolue** : renforcer les maths/physique en 1ère/Terminale (objectif 12-13) + choisir la **spécialité Maths** et **Physique-Chimie** en 1ère.\n\n---\n\n### **Plan A — Réaliste : BTS/BUT aéronautique → école d’ingé en admission parallèle**\n📍 **BTS Aéronautique** (Lycées publics partout en France) — bac+2, **formation accessible** (moyenne 10-11 acceptable), 50% de théorie/50% pratique · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.9627)\n*Pour toi : idéal pour découvrir le secteur sans pression. Puis, avec un bon dossier (12+ en BTS), candidature en **école d’ingé aéro** (ex : ESTACA, ENAC) via admissions parallèles (concours ou dossier).*\n\n📍 **BUT Génie Mécanique et Productique (parcours aéronautique)** (IUT de Toulouse, Bordeaux, etc.) — bac+3 public, **sélectivité modérée** (11-12 de moyenne au bac), diplôme reconnu par les écoles d’ingé · [exemple ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11201)\n*Pour toi : plus théorique que le BTS, mais ouvre aussi les portes des admissions parallèles. Alternance possible en 3ème année (salaire + expérience).*\n\n---\n### **Plan B — Ambitieux : Prépa TSI (pour bacs technos) → école d’ingé aéro**\n📍 **Prépa TSI** (Lycées publics avec internat possible) — 2 ans, **pour bacs STI2D/STL** (ou généraux avec dossier solide). Moins sélective que MP/PC, mais exige **12+ en maths/physique** · [liste des prépas TSI](https://www.onisep.fr)\n*Pour toi : si ton élève vise **absolument** une école comme l’**ISAE-SUPAERO** (top 3 aéro), cette voie est possible, mais il faut **monter son niveau à 13-14 en maths d’ici la Terminale**. Sinon, risque d’échec en prépa.*\n\n---\n### **Plan C — Alternative : Licence pro aéro + spécialisation**\n📍 **Licence pro Métiers de l’Industrie Aéronautique** (ex : Université de Bordeaux) — bac+3, **accessible après un BTS/BUT**, formation pro avec stages · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11201)\n*Pour toi : si les études longues ne sont pas une option, cette licence permet de travailler **directement** dans l’aéro (technicien supérieur, chef de projet). Salaire d’embauche : ~2 000€ brut (connaissance générale).*\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées coûteuses** : Certaines écoles post-bac (ex : EPSA) coûtent **8 000€/an** sans garantie d’emploi. Privilégie le **public** (BTS/BUT/prépa) pour éviter l’endettement.\n- **Prépa classique (MP/PC) avec 10-11 en maths** : Risque d’échec élevé. La **TSI** (pour bacs technos) ou un **BTS/BUT** sont plus sûrs.\n- **\"Je veux pilotier\"** : Les écoles de pilotage (ex : ENAC) recrutent **sur concours très sélectif** (niveau prépa). Mieux vaut commencer par un BTS aéro, puis se spécialiser.\n\n---\n### **Actions concrètes pour la 1ère/Terminale**\n1. **Choix des spécialités** :\n   - **1ère** : **Maths + Physique-Chimie** (obligatoire pour l’aéro).\n   - **Terminale** : Garder **Maths** (même en option) + **Physique-Chimie** ou **SI** (Sciences de l’Ingénieur).\n2. **Renforcer les notes** :\n   - Objectif : **12-13 en maths/physique** d’ici la Terminale (pour viser prépa TSI ou BUT).\n   - Ressources : Chaînes YouTube (*Les Bons Profs*, *Yvan Monka*), annales de bac.\n3. **Découverte du secteur** :\n   - Stages en entreprise (ex : sous-traitants aéro comme **Latécoère**, **Dassault**).\n   - MOOC gratuits : [\"Introduction à l’aéronautique\" (ISAE-SUPAERO)](https://www.fun-mooc.fr/).\n\n---\n**Question pour toi** :\nTon élève est-il prêt à **redoubler d’efforts en maths** pour viser une prépa TSI, ou préfère-t-il une voie plus progressive (BTS/BUT) avec une sécurité à l’arrivée ? 👤 *Pour affiner, un RDV avec le Psy-EN du lycée est indispensable.*",
+  "profile": {
+    "age_group": "parent_lyceen",
+    "education_level": "terminale",
+    "intent_type": "conseil_strategique",
+    "sector_interest": [
+      "aéronautique",
+      "ingénierie"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.85,
+    "notes": "Query faite par un accompagnant (parent/professionnel) pour un lycéen de 2nde. Résultats moyens en maths mais projet clair (ingénieur aéro). Demande de stratégie long-terme."
+  },
+  "plan": {
+    "original_query": "J'accompagne un élève de 2nde issu d'un milieu modeste, qui rêve de devenir ingénieur aéro mais ses résultats sont moyens (10-11 en maths). Quelles stratégies long-terme sur la suite du lycée ?",
+    "sub_queries": [
+      {
+        "text": "Quelles filières de Première et Terminale (spécialités, options) sont recommandées pour un élève visant une école d'ingénieur aéronautique, en tenant compte de résultats moyens en maths (10-11) ?",
+        "target_corpus": "formation",
+        "priority": 1,
+        "rationale": "Ancrage essentiel pour orienter le choix des spécialités et maximiser les chances d'accès aux formations d'ingénieur."
+      },
+      {
+        "text": "Quels sont les parcours post-bac accessibles (BUT, prépas, licences) pour intégrer une école d'ingénieur aéronautique avec un niveau moyen en maths ? Taux de réussite et prérequis associés.",
+        "target_corpus": "formation",
+        "priority": 1,
+        "rationale": "Identifier des voies adaptées à son niveau pour éviter les échecs et optimiser ses chances."
+      },
+      {
+        "text": "Quels sont les métiers de l'ingénierie aéronautique accessibles avec un niveau moyen en maths ? Alternatives ou parcours progressifs (ex : technicien supérieur avant ingénieur).",
+        "target_corpus": "metier",
+        "priority": 2,
+        "rationale": "Élargir les perspectives pour adapter le projet professionnel à son profil."
+      },
+      {
+        "text": "Quels blocs de compétences ou certifications (RNCP) peuvent compenser un niveau moyen en maths pour accéder à des formations en aéronautique ?",
+        "target_corpus": "competences_certif",
+        "priority": 2,
+        "rationale": "Identifier des leviers pour renforcer son profil sans dépendre uniquement des notes."
+      },
+      {
+        "text": "Quels sont les taux d'insertion professionnelle et salaires médians pour les diplômés d'écoles d'ingénieur aéronautique ou de BUT dans ce secteur ?",
+        "target_corpus": "multi",
+        "priority": 3,
+        "rationale": "Donner une vision long-terme pour motiver et contextualiser les efforts."
+      }
+    ],
+    "strategy_note": "Priorité donnée aux sub-queries 'formation' pour ancrer la réflexion sur des choix concrets et adaptés. Les sub-queries 'metier' et 'competences_certif' apportent des alternatives pour un profil moyen. La sub-query 'multi' offre une perspective motivante sans surcharger le retrieval.",
+    "profile_used": {
+      "age_group": "parent_lyceen",
+      "education_level": "terminale",
+      "intent_type": "conseil_strategique",
+      "sector_interest": [
+        "aéronautique",
+        "ingénierie"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.85,
+      "notes": "Query faite par un accompagnant (parent/professionnel) pour un lycéen de 2nde. Résultats moyens en maths mais projet clair (ingénieur aéro). Demande de stratégie long-terme."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 5,
+  "fact_check_results": [
+    {
+      "claim": "Avec 10-11 en maths, une prépa classique (MP/PC/PSI) est trop risquée pour viser une école d’ingénieur aéro **directement après le bac**.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement le niveau requis en mathématiques pour intégrer une prépa classique (MP/PC/PSI) ni le risque associé pour viser une école d’ingénieur aéronautique directement après le bac. Les sources se limitent à décrire des métiers, formations ou compétences certifiées, sans aborder les critères de sélection ou les profils recommandés pour les prépas.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "**Priorité absolue** : renforcer les maths/physique en 1ère/Terminale (objectif 12-13) + choisir la **spécialité Maths** et **Physique-Chimie** en 1ère.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement les **recommandations de spécialités à choisir en 1ère/Terminale** (maths, physique-chimie) ni un **objectif de niveau (12-13)** pour ces matières. Les sources se limitent à décrire des métiers, formations ou compétences certifiées (RNCP) sans aborder les prérequis lycéens.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "---\n\n### **Plan A — Réaliste : BTS/BUT aéronautique → école d’ingé en admission parallèle**\n📍 **BTS Aéronautique** (Lycées publics partout en France) — bac+2, **formation accessible** (moyenne 10-11 acceptable), 50% de théorie/50% pratique · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.9627)\n*Pour toi : idéal pour découvrir le secteur sans pression.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Le claim affirme qu'un **BTS Aéronautique** (bac+2) permet d'accéder à une **école d'ingénieur en admission parallèle**, avec une **moyenne de 10-11 acceptable** pour y entrer. Aucune des sources fournies ne mentionne explicitement : \n1. La possibilité d'intégrer une école d'ingénieur (niveau 7) après un BTS Aéronautique (niveau 5).\n2. Les conditions d'admission (moyenne requise, modalités de sélection) pour une telle voie.\n3. Un exemple concret de passerelle entre ce BTS et une école d'ingénieur en admission parallèle.\n\nLes sources décrivent des formations (BTS, licences pro, écoles d'ingénieur) ou des métiers, mais aucune ne lie explicitement le BTS Aéronautique à une admission parallèle en école d'ingénieur.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "Puis, avec un bon dossier (12+ en BTS), candidature en **école d’ingé aéro** (ex : ESTACA, ENAC) via admissions parallèles (concours ou dossier).*\n\n📍 **BUT Génie Mécanique et Productique (parcours aéronautique)** (IUT de Toulouse, Bordeaux, etc.) — bac+3 public, **sélectivité modérée** (11-12 de moyenne au bac), diplôme reconnu par les écoles d’ingé · [exemple ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11201)\n*Pour toi : plus théorique que le BTS, mais ouvre aussi les portes des admissions parallèles.",
+      "verdict": "ambiguous",
+      "source_excerpt": "Voies d'accès : Après un parcours de formation continue, Après un parcours de formation sous statut d'élève ou d'étudiant, Après un contrat d'apprentissage, Après un contrat de professionnalisation.",
+      "reason": "Le claim mentionne que le BUT Génie Mécanique et Productique (parcours aéronautique) est un diplôme reconnu par les écoles d’ingé et permet des admissions parallèles en école d’ingé aéro (ex : ESTACA, ENAC). Aucune source ne confirme explicitement que ce BUT spécifique (ou son parcours aéronautique) est reconnu pour des admissions parallèles dans ces écoles. La source RNCP38995 (SOURCE 8) évoque des voies d'accès génériques pour un diplôme d'ingénieur (niveau 7), mais sans lien direct avec le BUT GMP ou les écoles citées. La sélectivité modérée (11-12 de moyenne au bac) et la reconnaissance par les écoles d’ingé ne sont pas étayées.",
+      "confidence": 0.5,
+      "source_id": "rncp_blocs:RNCP38995"
+    },
+    {
+      "claim": "Moins sélective que MP/PC, mais exige **12+ en maths/physique** · [liste des prépas TSI](https://www.onisep.fr)\n*Pour toi : si ton élève vise **absolument** une école comme l’**ISAE-SUPAERO** (top 3 aéro), cette voie est possible, mais il faut **monter son niveau à 13-14 en maths d’ici la Terminale**.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement les critères de sélection des prépas TSI (Technologie et Sciences Industrielles), ni les notes minimales requises en maths ou physique (ex: '12+ en maths/physique'). Aucune source ne compare non plus la sélectivité des prépas TSI avec les prépas MP/PC, ni ne évoque les chances d'intégrer l'ISAE-SUPAERO via cette voie ou les niveaux recommandés (ex: '13-14 en maths en Terminale').",
+      "confidence": 0.95,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 46.7,
+  "elapsed_clarify_s": 2.51,
+  "elapsed_reformulate_s": 10.5,
+  "elapsed_retrieve_s": 0.44,
+  "elapsed_generate_s": 18.6,
+  "elapsed_fact_check_s": 14.65,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "personas_v4",
+  "query_id": "psy_en_q3",
+  "persona_id": "psy_en",
+  "pattern_target": null,
+  "gap_target": null
+}

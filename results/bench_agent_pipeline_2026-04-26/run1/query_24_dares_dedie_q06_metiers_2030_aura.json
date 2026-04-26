@@ -1,0 +1,103 @@
+{
+  "query": "Métiers en 2030 : quels secteurs vont créer le plus d'emplois en Auvergne-Rhône-Alpes ?",
+  "answer_text": "**TL;DR**\n1. En Auvergne-Rhône-Alpes, **3 secteurs clés** devraient créer le plus d’emplois d’ici 2030 : transition énergétique, santé/autonomie, et numérique/IA.\n2. **Lyon, Grenoble et Clermont-Ferrand** concentreront les opportunités, avec des besoins en compétences techniques (Bac+2 à Bac+5) et en reconversion.\n3. Priorité aux métiers **concrets et hybrides** : technicien·ne en énergies renouvelables, infirmier·ère spécialisé·e, ou développeur·se en IA appliquée.\n\n---\n\n### **Plan A — Transition énergétique & écologie industrielle**\n**Pourquoi ?** La région est un hub historique de l’industrie (mécanique, chimie) et mise sur la **décarbonation** (ex : vallée de la chimie lyonnaise, hydrogène à Grenoble).\n**Métiers porteurs (connaissance générale)** :\n- **Technicien·ne en énergies renouvelables** (solaire, hydroélectricité) : **Bac+2** (BTS/DUT) ou **Bac+3** (Licence Pro).\n  *Exemple :* **Licence Pro Métiers de l’électricité et de l’énergie** (IUT Lyon 1, Grenoble).\n- **Ingénieur·e en efficacité énergétique** : **Bac+5** (écoles d’ingé comme **Grenoble INP** ou **Polytech Clermont**).\n- **Responsable RSE** : formations en **alternance** (ex : **IAE Savoie Mont-Blanc**).\n**Zones clés** : **Lyon (69), Grenoble (38), Saint-Étienne (42)** — pôles industriels en reconversion.\n\n---\n\n### **Plan B — Santé, autonomie & silver économie**\n**Pourquoi ?** Vieillissement de la population + déserts médicaux en zones rurales (ex : Cantal, Haute-Loire).\n**Métiers en tension (connaissance générale)** :\n- **Infirmier·ère spécialisé·e** (gériatrie, soins palliatifs) : **Diplôme d’État (3 ans)** + formations courtes (ex : **IFSI de Clermont-Ferrand**).\n- **Aide-soignant·e / Auxiliaire de vie** : **Diplôme en 1 an** (accès sans bac), **recrutement immédiat** (ex : **EHPAD en Auvergne**).\n- **Ingénieur·e biomédical** : **Bac+5** (ex : **Polytech Lyon** en partenariat avec les hôpitaux).\n**Zones clés** : **Clermont-Ferrand (63), Annecy (74), villes moyennes** (ex : Le Puy-en-Velay).\n\n---\n\n### **Plan C — Numérique, IA & cybersécurité appliquée**\n**Pourquoi ?** Grenoble est la **2ᵉ ville française** en emplois tech (après Paris), avec des besoins en **IA embarquée** (ex : STMicroelectronics) et **cybersécurité** (pôle **Minalogic**).\n**Métiers émergents (connaissance générale)** :\n- **Développeur·se en IA/robotique** : **Bac+3/5** (ex : **BUT Informatique** à **IUT Grenoble**, ou **Master IA** à **UGA**).\n- **Technicien·ne en cybersécurité industrielle** : **Bac+2** (ex : **BTS SIO** option cybersécurité, lycées de **Villefontaine** ou **Roanne**).\n- **Data analyst pour la santé** : **Licences Pro** (ex : **Université Lyon 2**).\n**Zones clés** : **Grenoble (38), Lyon (69), Vienne (38)** — écosystème **deep tech**.\n\n---\n### **Attention aux pièges**\n- **Formations privées coûteuses** : Méfiez-vous des écoles non labellisées (ex : \"écoles du web\" à 8k€/an sans diplôme reconnu). Privilégiez les **BUT, Licences Pro ou écoles publiques** (ex : **INSA Lyon**, **UCA**).\n- **Déserts ruraux** : Les emplois en santé ou énergie seront concentrés près des **métropoles** (Lyon, Grenoble). En zone rurale, misez sur le **télétravail** (ex : développement web) ou les **métiers mobiles** (technicien itinérant).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **un métier technique** (ex : énergies renouvelables), **un métier relationnel** (santé/autonomie), ou **un métier hybride** (numérique + secteur traditionnel comme l’agriculture ou l’industrie) ? Cela peut affiner les formations à cibler.",
+  "profile": {
+    "age_group": "other_or_unknown",
+    "education_level": "unknown",
+    "intent_type": "conseil_strategique",
+    "sector_interest": [],
+    "region": "Auvergne-Rhône-Alpes",
+    "urgent_concern": false,
+    "confidence": 0.7,
+    "notes": "Query orientée prospective économique régionale, pas de secteur précis mentionné. Public probablement professionnel ou en réflexion stratégique."
+  },
+  "plan": {
+    "original_query": "Métiers en 2030 : quels secteurs vont créer le plus d'emplois en Auvergne-Rhône-Alpes ?",
+    "sub_queries": [
+      {
+        "text": "Quels sont les secteurs et métiers prévus pour créer le plus d'emplois d'ici 2030 en Auvergne-Rhône-Alpes selon les projections DARES Métiers 2030 ? Mentionner les postes à pourvoir et les tendances régionales.",
+        "target_corpus": "metier_prospective",
+        "priority": 1,
+        "rationale": "Intent core : demande explicitement les métiers et secteurs porteurs en 2030 pour la région AURA, aligné avec DARES."
+      },
+      {
+        "text": "Quels sont les métiers émergents ou en forte croissance en Auvergne-Rhône-Alpes d'ici 2030, avec des perspectives de recrutement détaillées ?",
+        "target_corpus": "metier",
+        "priority": 2,
+        "rationale": "Complète metier_prospective avec des fiches éditorialisées ONISEP pour contextualiser les métiers."
+      },
+      {
+        "text": "Quels secteurs d'activité en Auvergne-Rhône-Alpes recrutent le plus de cadres actuellement, et quelles sont les perspectives pour 2030 ?",
+        "target_corpus": "apec_region",
+        "priority": 2,
+        "rationale": "Ajoute une dimension marché cadres pour affiner les tendances sectorielles."
+      },
+      {
+        "text": "Quels sont les niveaux de salaire médians par secteur en Auvergne-Rhône-Alpes pour les métiers en croissance d'ici 2030 ? Données INSEE salaire par PCS.",
+        "target_corpus": "insee_salaire",
+        "priority": 3,
+        "rationale": "Contexte complémentaire sur les rémunérations pour les métiers identifiés."
+      }
+    ],
+    "strategy_note": "Query ciblée sur les métiers 2030 en AURA : 1 sub-query prioritaire sur metier_prospective (DARES) pour couvrir l'intent core. 2 sub-queries complémentaires (metier + apec_region) pour enrichir avec des données éditoriales et marché cadres. 1 sub-query optionnelle sur insee_salaire pour apporter une dimension rémunération.",
+    "profile_used": {
+      "age_group": "other_or_unknown",
+      "education_level": "unknown",
+      "intent_type": "conseil_strategique",
+      "sector_interest": [],
+      "region": "Auvergne-Rhône-Alpes",
+      "urgent_concern": false,
+      "confidence": 0.7,
+      "notes": "Query orientée prospective économique régionale, pas de secteur précis mentionné. Public probablement professionnel ou en réflexion stratégique."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 4,
+  "fact_check_results": [
+    {
+      "claim": "En Auvergne-Rhône-Alpes, **3 secteurs clés** devraient créer le plus d’emplois d’ici 2030 : transition énergétique, santé/autonomie, et numérique/IA.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement les **3 secteurs clés** (transition énergétique, santé/autonomie, numérique/IA) comme étant ceux qui créeront le plus d'emplois en Auvergne-Rhône-Alpes d'ici 2030. La source 1 (dares_region:auvergne-rhone-alpes) liste des **FAPs (Familles Professionnelles)** avec le plus de postes à pourvoir, mais ne regroupe pas ces métiers sous des secteurs agrégés comme 'transition énergétique' ou 'numérique/IA'. Aucune source ne confirme ou ne contredit directement ce claim.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "**Zones clés** : **Lyon (69), Grenoble (38), Saint-Étienne (42)** — pôles industriels en reconversion.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Le claim mentionne que Lyon (69), Grenoble (38) et Saint-Étienne (42) sont des 'pôles industriels en reconversion'. Aucune des sources fournies ne cite explicitement ces villes comme pôles industriels en reconversion. Les sources disponibles parlent de la région Auvergne-Rhône-Alpes dans son ensemble (effectifs, salaires, projections métiers) ou de tendances nationales/régionales, mais sans préciser le statut de ces villes spécifiques.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "**Zones clés** : **Clermont-Ferrand (63), Annecy (74), villes moyennes** (ex : Le Puy-en-Velay).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement des **zones clés** pour des métiers ou des bassins d'emploi spécifiques comme Clermont-Ferrand (63), Annecy (74) ou Le Puy-en-Velay. Les sources se limitent à des données régionales (Auvergne-Rhône-Alpes) ou nationales, sans granularité infra-régionale ou par ville.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "**Zones clés** : **Grenoble (38), Lyon (69), Vienne (38)** — écosystème **deep tech**.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement les villes de Grenoble, Lyon ou Vienne comme étant des 'zones clés' pour un écosystème 'deep tech'. Les sources se concentrent sur des données régionales globales (Auvergne-Rhône-Alpes), des effectifs, des salaires ou des projections métiers, sans cibler des villes spécifiques ou des secteurs technologiques comme la deep tech.",
+      "confidence": 0.95,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 33.65,
+  "elapsed_clarify_s": 2.1,
+  "elapsed_reformulate_s": 9.56,
+  "elapsed_retrieve_s": 0.38,
+  "elapsed_generate_s": 16.0,
+  "elapsed_fact_check_s": 5.6,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "dares_dedie",
+  "query_id": "q06_metiers_2030_aura",
+  "persona_id": null,
+  "pattern_target": "métiers 2030 + region",
+  "gap_target": null
+}

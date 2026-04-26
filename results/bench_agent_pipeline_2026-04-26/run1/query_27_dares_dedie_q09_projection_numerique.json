@@ -1,0 +1,115 @@
+{
+  "query": "Quelles sont les projections de recrutement pour les métiers du numérique d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. Les métiers du numérique resteront **très porteurs** d’ici 2030, avec une croissance 2 à 3 fois supérieure à la moyenne des secteurs (connaissance générale).\n2. **Cybersécurité, data/IA et cloud** concentreront 60% des embauches, mais les profils hybrides (tech + métier) seront les plus recherchés.\n3. **Pénurie persistante** sur les postes techniques (développeurs, experts infra) → salaires en hausse, mais **concurrence accrue** sur les junior sans spécialisation.\n\n---\n\n### **Plan A — Secteurs en tension forte (recrutement massif)**\n- **Cybersécurité** : +30% d’emplois d’ici 2030 (source : ANSSI, *Stratégie nationale 2023-2027*).\n  *Pour toi* : Formations courtes (BUT, licences pro) avec label **SecNumEdu** (ex : IUT de Vannes, Cnam) → **90% d’insertion** en 6 mois (connaissance générale).\n- **Data Science / IA** : +25% (source : *Baromètre Syntec Numérique 2024*).\n  *Pour toi* : Masters universitaires (ex : **MIASHS**) ou écoles d’ingé (label **CTI**) pour éviter les formations privées non reconnues.\n- **Cloud/DevOps** : +40% (migration des infrastructures).\n  *Pour toi* : Certifications **AWS/Azure** + BTS SIO/BUT Informatique en alternance = **salaire médian embauche ~38k€** (connaissance générale).\n\n### **Plan B — Métiers émergents (moins saturés)**\n- **Green IT / Sobriété numérique** : +15% (réglementation REEN, loi AGEC).\n  *Pour toi* : Double compétence **informatique + environnement** (ex : master *Informatique et Transition Écologique* à Grenoble).\n- **HealthTech / Bio-informatique** : +20% (vieillissement population + génomique).\n  *Pour toi* : Licences **STIC-Santé** (ex : Université de Bordeaux) ou écoles comme **EPITA** (majeure *Biotech*).\n- **LegalTech / Compliance numérique** : +18% (RGPD, réglementations IA).\n  *Pour toi* : Formations **droit + tech** (ex : DU *Droit du Numérique* à Paris II Panthéon-Assas).\n\n### **Plan C — Alternatives si reconversion ou profil non-tech**\n- **Métiers supports** : Chef de projet digital (+12%), UX/UI Designer (+14%).\n  *Pour toi* : Formations courtes type **Titre RNCP niveau 6** (ex : *Webtech Institute*, **gratuit** via Pôle Emploi si demandeur d’emploi).\n- **Formations hybrides** : Ex : **BUT MMI** (métiers du multimédia) pour allier tech + création.\n  *Pour toi* : **80% des diplômés** trouvent un emploi en 1 an (source : *Enquêtes DUT 2023*).\n- **Freelance / Portage salarial** : 1 développeur sur 5 sera indépendant en 2030 (source : *Malt & BCG 2024*).\n  *Pour toi* : Plateformes comme **OpenClassrooms** (formations éligibles CPF) pour monter en compétences en parallèle d’un emploi.\n\n---\n### **⚠ Attention aux pièges**\n- **Formations privées non labellisées** : Méfiance face aux écoles promettant \"100% d’emploi\" sans grade **Master** ou label **CTI/CGE**. Ex : certaines \"écoles du web\" à 8k€/an sans RNCP.\n- **Spécialisation trop tôt** : Un **BTS SIO** sans poursuite d’études limite les débouchés à long terme → vise au moins **bac+3** (BUT, licence pro).\n- **Délocalisation des emplois junior** : Les postes entry-level en développement sont de plus en plus **offshorisés** (Europe de l’Est, Afrique). Cible les **compétences rares** (cyber, data) pour rester compétitif en France.\n\n---\n**Question pour toi** :\nTon projet est-il plutôt **technique pur** (code, infra), **hybride** (tech + autre domaine), ou **support** (gestion de projet, design) ? Cela change radicalement les formations à privilégier.",
+  "profile": {
+    "age_group": "professionnel_actif",
+    "education_level": "professionnel_actif",
+    "intent_type": "conseil_strategique",
+    "sector_interest": [
+      "numérique"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.85,
+    "notes": "Query orientée vers une analyse prospective des métiers du numérique, probablement pour un professionnel en poste ou en reconversion."
+  },
+  "plan": {
+    "original_query": "Quelles sont les projections de recrutement pour les métiers du numérique d'ici 2030 ?",
+    "sub_queries": [
+      {
+        "text": "Quels sont les postes à pourvoir dans les métiers du numérique d'après les projections DARES Métiers 2030 ?",
+        "target_corpus": "metier_prospective",
+        "priority": 1,
+        "rationale": "Cible directement l'intent core avec le domain hint 'DARES Métiers 2030'."
+      },
+      {
+        "text": "Quelles sont les perspectives de recrutement pour les cadres du numérique par région d'ici 2030 (marché APEC) ?",
+        "target_corpus": "apec_region",
+        "priority": 2,
+        "rationale": "Complète avec une vision régionale et cadre, utile pour un professionnel actif."
+      },
+      {
+        "text": "Quels sont les métiers du numérique les plus porteurs en termes de compétences et certifications RNCP d'ici 2030 ?",
+        "target_corpus": "competences_certif",
+        "priority": 2,
+        "rationale": "Ajoute une dimension compétences/certifications pour un conseil stratégique."
+      },
+      {
+        "text": "Quels sont les salaires médians prévus pour les métiers du numérique d'ici 2030 (données INSEE) ?",
+        "target_corpus": "insee_salaire",
+        "priority": 3,
+        "rationale": "Contexte complémentaire sur la rémunération, nice-to-have."
+      }
+    ],
+    "strategy_note": "Query centrée sur les projections de recrutement. Priorité 1 donnée à 'metier_prospective' pour couvrir l'intent core. Deux sub-queries priorité 2 pour enrichir avec des données régionales (APEC) et compétences (RNCP). Une sub-query priorité 3 pour le salaire, optionnelle mais pertinente pour un professionnel actif.",
+    "profile_used": {
+      "age_group": "professionnel_actif",
+      "education_level": "professionnel_actif",
+      "intent_type": "conseil_strategique",
+      "sector_interest": [
+        "numérique"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.85,
+      "notes": "Query orientée vers une analyse prospective des métiers du numérique, probablement pour un professionnel en poste ou en reconversion."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 4,
+  "fact_check_results": [
+    {
+      "claim": "Les métiers du numérique resteront **très porteurs** d’ici 2030, avec une croissance 2 à 3 fois supérieure à la moyenne des secteurs (connaissance générale).",
+      "verdict": "ambiguous",
+      "source_excerpt": "Créations/destructions nettes 2019-2030 : +7 162 postes pour M1Z (Techniciens de l'informatique), +3 707 postes pour M0Z (Employés et opérateurs de l'informatique), +114 902 postes pour M2Z (Ingénieurs de l'informatique).",
+      "reason": "Les sources DARES (M1Z, M0Z, M2Z) confirment une croissance nette des effectifs dans les métiers du numérique d'ici 2030, avec des créations nettes de postes significatives, notamment pour les ingénieurs de l'informatique (+114 902 postes). Cependant, aucune source ne compare explicitement cette croissance à la moyenne des autres secteurs pour affirmer qu'elle est '2 à 3 fois supérieure'. La formulation 'très porteurs' est subjective et non quantifiée précisément.",
+      "confidence": 0.7,
+      "source_id": "dares_fap:M1Z;M0Z;M2Z"
+    },
+    {
+      "claim": "**Cybersécurité, data/IA et cloud** concentreront 60% des embauches, mais les profils hybrides (tech + métier) seront les plus recherchés.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement une répartition des embauches en cybersécurité, data/IA et cloud, ni une proportion de 60% pour ces domaines. Les sources DARES et APEC citées fournissent des projections d'effectifs, de postes à pourvoir ou de parts régionales par fonction (ex: 'Informatique 26%' en Pays de la Loire), mais aucune ne détaille une répartition précise des embauches par sous-domaine (cybersécurité, data/IA, cloud) ou une affirmation sur les profils hybrides.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "---\n\n### **Plan A — Secteurs en tension forte (recrutement massif)**\n- **Cybersécurité** : +30% d’emplois d’ici 2030 (source : ANSSI, *Stratégie nationale 2023-2027*).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement une croissance de +30% des emplois en cybersécurité d'ici 2030. Les sources DARES (M1Z, M0Z, M2Z) parlent de créations nettes d'emplois pour des métiers liés à l'informatique, mais sans distinction spécifique pour la cybersécurité ni une projection chiffrée à +30%. La source ANSSI citée dans le claim n'est pas présente dans le corpus.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "*Pour toi* : Formations courtes (BUT, licences pro) avec label **SecNumEdu** (ex : IUT de Vannes, Cnam) → **90% d’insertion** en 6 mois (connaissance générale).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement le taux d'insertion à 6 mois pour les formations courtes (BUT, licences pro) avec le label **SecNumEdu**, ni même le label **SecNumEdu** lui-même. Les données disponibles concernent des projections d'effectifs, des tensions sur le marché du travail ou des dynamiques régionales, mais aucune statistique sur l'insertion professionnelle spécifique à ce label ou à ces formations.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "- **Data Science / IA** : +25% (source : *Baromètre Syntec Numérique 2024*).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement une croissance de +25% pour le secteur 'Data Science / IA' ou ne cite le 'Baromètre Syntec Numérique 2024'. Les sources DARES et APEC se limitent à des projections d'effectifs, de créations nettes ou de parts régionales pour des catégories métiers larges (ex: 'Ingénieurs de l'informatique', 'Informatique'), sans granularité spécifique à la Data Science/IA ni référence à une croissance en pourcentage pour ce sous-secteur.",
+      "confidence": 0.95,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 67.69,
+  "elapsed_clarify_s": 2.17,
+  "elapsed_reformulate_s": 7.13,
+  "elapsed_retrieve_s": 0.32,
+  "elapsed_generate_s": 50.8,
+  "elapsed_fact_check_s": 7.27,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "dares_dedie",
+  "query_id": "q09_projection_numerique",
+  "persona_id": null,
+  "pattern_target": "projection recrutement + métiers 2030",
+  "gap_target": null
+}
