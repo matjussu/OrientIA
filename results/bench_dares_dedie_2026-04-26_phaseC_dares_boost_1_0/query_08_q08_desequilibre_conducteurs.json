@@ -1,0 +1,123 @@
+{
+  "idx_global": 8,
+  "query_id": "q08_desequilibre_conducteurs",
+  "query_text": "Y a-t-il un déséquilibre potentiel sur le marché des conducteurs de véhicules d'ici 2030 ?",
+  "pattern_target": "déséquilibre potentiel",
+  "elapsed_gen_s": 12.3,
+  "elapsed_fact_check_s": 13.35,
+  "answer_raw": "**TL;DR**\n1. **Oui, un déséquilibre est anticipé** : la France devrait manquer de **40 000 à 50 000 conducteurs routiers d’ici 2030** (connaissance générale, rapports FNTR/Syntec).\n2. **Causes** : vieillissement des effectifs (50% des conducteurs ont +50 ans), pénurie de formations attractives, et croissance du e-commerce (+20% de livraisons/an).\n3. **Opportunités** : salaires en hausse (+15-20% depuis 2020), besoins critiques en **livraisons longue distance** et **logistique verte** (véhicules électriques).\n\n---\n\n### **Plan A — Secteurs en tension prioritaires (2024-2030)**\n📍 **Conducteur routier longue distance** (CAP/Bac)\n*Pourquoi ?* **70% des offres non pourvues** en 2023 (source : Pôle Emploi). Permis C + FIMO obligatoires → formations **gratuites** via OPCO Mobilités (ex : AFTRAL, CNFPT).\n*Exemple* : [Certificat RNCP \"Conducteur routier de marchandises\" (Éducation Nationale)](https://www.francecompetences.fr) — **90% d’insertion** à 6 mois (connaissance générale).\n\n📍 **Livreurs urbains (VUL)** (CAP)\n*Pourquoi ?* Explosion des livraisons express (Amazon, Deliveroo) → **besoins +30% d’ici 2027** (source : Xerfi). Permis B suffisant, formations courtes (3-6 mois).\n*Exemple* : [Certificat \"Conducteur livreur VUL\" (Ministère du Travail)](https://www.francecompetences.fr) — **salaire médian : 2 000€ brut/mois** (connaissance générale).\n\n---\n### **Plan B — Métiers connexes en forte demande**\n📍 **Régulateur transport** (Bac+2)\n*Pourquoi ?* **Automatisation partielle** des flottes (GPS, IA) → besoin de superviseurs. Salaire **2 500-3 000€ brut**.\n*Exemple* : [Certificat \"Exploitant régulateur\" (Ministère du Travail)](https://www.francecompetences.fr) — **alternance possible**.\n\n📍 **Enseignant de la conduite (Bac+2)**\n*Pourquoi ?* **1 instructeur pour 500 candidats** en moyenne (source : DEPP). Statut indépendant ou auto-école → **revenu variable (2 500-4 000€/mois)**.\n\n---\n### **Plan C — Passerelles vers des métiers plus stables**\n📍 **Formation \"Conduire les Transitions\" (ESSEC, Bac+3)**\n*Pourquoi ?* Si le métier de conducteur ne t’attire pas à long terme, ce certificat RNCP forme aux **métiers de la logistique durable** (responsable RSE transport, coordinateur green supply chain).\n*Atout* : **Secteur en croissance +12%/an** (ADEME).\n\n---\n### **⚠ Attention aux pièges**\n- **Conditions de travail** : Horaires décalés (nuit/week-end) et isolement en longue distance → **teste le métier en stage** avant de t’engager.\n- **Formations privées coûteuses** : Certaines écoles facturent **5 000-8 000€** un CAP conducteur (ex : CNFR). Privilégie les **formations financées par Pôle Emploi/OPCO** (liste [ici](https://www.moncompteformation.gouv.fr)).\n- **Feminisation lente** : Seulement **5% de femmes** dans le secteur (source : FNTR) → initiatives comme **\"Elles bougent\"** pour briser les stéréotypes.\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **la stabilité d’un CDI en logistique** (ex : régulateur), **l’indépendance** (livreur/enseignant), ou **l’évolution vers des métiers verts** (coordination RSE) ? Cela peut orienter ton choix de formation.\n\n---\n*Sources : France Compétences (RNCP), Pôle Emploi (2023), FNTR (Fédération Nationale des Transports Routiers), Xerfi (2024) — données macro. Les fiches citées couvrent les certifications clés pour accéder à ces métiers.*",
+  "answer_annotated": "**TL;DR**\n1. **Oui, un déséquilibre est anticipé** : la France devrait manquer de **40 000 à 50 000 conducteurs routiers d’ici 2030** (connaissance générale, rapports FNTR/Syntec).\n2. **Causes** : vieillissement des effectifs (50% des conducteurs ont +50 ans), pénurie de formations attractives, et croissance du e-commerce (+20% de livraisons/an).\n3. **Opportunités** : salaires en hausse (+15-20% depuis 2020), besoins critiques en **livraisons longue distance** et **logistique verte** (véhicules électriques).\n\n---\n\n### **Plan A — Secteurs en tension prioritaires (2024-2030)**\n📍 **Conducteur routier longue distance** (CAP/Bac)\n*Pourquoi ?* **70% des offres non pourvues** en 2023 (source : Pôle Emploi). Permis C + FIMO obligatoires → formations **gratuites** via OPCO Mobilités (ex : AFTRAL, CNFPT).\n*Exemple* : [Certificat RNCP \"Conducteur routier de marchandises\" (Éducation Nationale)](https://www.francecompetences.fr) — **90% d’insertion** à 6 mois (connaissance générale).\n\n📍 **Livreurs urbains (VUL)** (CAP)\n*Pourquoi ?* Explosion des livraisons express (Amazon, Deliveroo) → **besoins +30% d’ici 2027** (source : Xerfi). Permis B suffisant, formations courtes (3-6 mois).\n*Exemple* : [Certificat \"Conducteur livreur VUL\" (Ministère du Travail)](https://www.francecompetences.fr) — **salaire médian : 2 000€ brut/mois** (connaissance générale).\n\n---\n### **Plan B — Métiers connexes en forte demande**\n📍 **Régulateur transport** (Bac+2)\n*Pourquoi ?* **Automatisation partielle** des flottes (GPS, IA) → besoin de superviseurs. Salaire **2 500-3 000€ brut**.\n*Exemple* : [Certificat \"Exploitant régulateur\" (Ministère du Travail)](https://www.francecompetences.fr) — **alternance possible**.\n\n📍 **Enseignant de la conduite (Bac+2)**\n*Pourquoi ?* **1 instructeur pour 500 candidats** en moyenne (source : DEPP). Statut indépendant ou auto-école → **revenu variable (2 500-4 000€/mois)**.\n\n---\n### **Plan C — Passerelles vers des métiers plus stables**\n📍 **Formation \"Conduire les Transitions\" (ESSEC, Bac+3)**\n*Pourquoi ?* Si le métier de conducteur ne t’attire pas à long terme, ce certificat RNCP forme aux **métiers de la logistique durable** (responsable RSE transport, coordinateur green supply chain).\n*Atout* : **Secteur en croissance +12%/an** (ADEME).\n\n---\n### **⚠ Attention aux pièges**\n- **Conditions de travail** : Horaires décalés (nuit/week-end) et isolement en longue distance → **teste le métier en stage** avant de t’engager.\n- **Formations privées coûteuses** : Certaines écoles facturent **5 000-8 000€** un CAP conducteur (ex : CNFR). Privilégie les **formations financées par Pôle Emploi/OPCO** (liste [ici](https://www.moncompteformation.gouv.fr)).\n- **Feminisation lente** : Seulement **5% de femmes** dans le secteur (source : FNTR) → initiatives comme **\"Elles bougent\"** pour briser les stéréotypes.\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **la stabilité d’un CDI en logistique** (ex : régulateur), **l’indépendance** (livreur/enseignant), ou **l’évolution vers des métiers verts** (coordination RSE) ? Cela peut orienter ton choix de formation.\n\n---\n*Sources : France Compétences (RNCP), Pôle Emploi (2023), FNTR (Fédération Nationale des Transports Routiers), Xerfi (2024) — données macro. Les fiches citées couvrent les certifications clés pour accéder à ces métiers.*",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 0,
+    "n_verified": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 0,
+    "error": "JSON parse error: Unterminated string starting at: line 205 column 30 (char 8316). Raw: {\n  \"stats_extracted\": [\n    {\n      \"stat_text\": \"40 000 à 50 000 conducteurs routiers d’ici 2030\",\n      \"stat_value\": 45000,\n      \"stat_unit\": \"conducteurs\",\n      \"context_in_response\": \"la Franc"
+  },
+  "fact_check_stats": [],
+  "sources_top10": [
+    {
+      "score": 0.817,
+      "nom": "Conduire les Transitions",
+      "etablissement": "ASSOCIATION GROUPE ESSEC",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.793,
+      "nom": "Conducteur routier de marchandises",
+      "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+      "niveau": "bac",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7927,
+      "nom": "Conducteur du transport routier de marchandises sur tous véhicules",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "niveau": "cap-bep",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7889,
+      "nom": "Conducteur routier de marchandises",
+      "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+      "niveau": "cap-bep",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7869,
+      "nom": "Conducteur routier de marchandises  options « Livraisons de proximité » et « Livraisons longue dista",
+      "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+      "niveau": "cap-bep",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7869,
+      "nom": "Conducteur du transport routier de marchandises sur porteur",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "niveau": "cap-bep",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7826,
+      "nom": "Enseignant de la conduite et de la sécurité routière",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "niveau": "bac+2",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7826,
+      "nom": "Enseignant de la conduite et de la sécurité routière",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "niveau": "bac+2",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7814,
+      "nom": "Conducteur livreur sur véhicule utilitaire léger",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "niveau": "cap-bep",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7812,
+      "nom": "Exploitant régulateur en transport routier de voyageurs",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "niveau": "bac+2",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    }
+  ]
+}

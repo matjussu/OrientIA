@@ -36,8 +36,14 @@ class RerankConfig:
     domain_boost_crous: float = 1.4
     domain_boost_insee_salaire: float = 1.5
     domain_boost_insertion_pro: float = 1.4
-    # Phase C DARES Métiers 2030
-    domain_boost_metier_prospective: float = 1.5
+    # Phase C DARES Métiers 2030 — tuned 1.5 → 1.0 le 2026-04-26.
+    # Bench dédié ordre 1100 a révélé régression -30.5pp verified /
+    # +24.2pp halluc avec ×1.5 (9/10 queries activantes voyaient top-10 =
+    # 100% DARES). Iteration ×1.1 améliore mais 6/10 queries toujours
+    # only-DARES top-K. ×1.0 = pas de boost, pure L2 ranking. Domain
+    # hint reste classifié (utilisé pour auditing/observability) mais
+    # n'écrase plus le top-K. Cohabitation formation + DARES naturelle.
+    domain_boost_metier_prospective: float = 1.0
     # France Comp blocs RNCP — compétences certifiées (cohérent données
     # chiffrées externes APEC/INSEE/DARES = 1.5).
     domain_boost_competences_certif: float = 1.5

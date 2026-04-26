@@ -195,12 +195,14 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--variant", choices=list(VARIANTS.keys()), required=True,
                         help="Index variant: phaseB (sans DARES) ou phaseC_dares (avec DARES)")
+    parser.add_argument("--out-suffix", type=str, default="",
+                        help="Suffix appendu à OUT_DIR (ex: '_boost_1_1' pour distinguer une re-run avec config reranker tunée).")
     args = parser.parse_args()
 
     variant = VARIANTS[args.variant]
     fiches_path = REPO_ROOT / variant["fiches"]
     index_path = REPO_ROOT / variant["index"]
-    out_dir = REPO_ROOT / "results" / f"bench_dares_dedie_2026-04-26_{args.variant}"
+    out_dir = REPO_ROOT / "results" / f"bench_dares_dedie_2026-04-26_{args.variant}{args.out_suffix}"
 
     if not fiches_path.exists() or not index_path.exists():
         print(f"❌ Variant {args.variant} files absents:")
