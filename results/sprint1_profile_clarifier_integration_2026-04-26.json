@@ -1,0 +1,347 @@
+{
+  "summary": {
+    "n_queries": 15,
+    "n_success": 15,
+    "n_failure": 0,
+    "match_age_group": "5/6",
+    "match_intent_type": "7/12",
+    "match_region": "2/2",
+    "match_urgent_concern": "1/1",
+    "total_elapsed_s": 73.81,
+    "avg_elapsed_s": 4.92,
+    "model": "mistral-large-latest"
+  },
+  "queries": [
+    {
+      "id": "p1_lila_q1",
+      "suite": "personas_v4",
+      "query": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+      "elapsed_s": 1.98,
+      "success": true,
+      "profile": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+3",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "lettres",
+          "sciences humaines et sociales"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur les débouchés après une licence de lettres modernes."
+      },
+      "expected": {
+        "expected_age_group": "etudiant_l1_l3",
+        "expected_intent_type": "info_metier_specifique"
+      }
+    },
+    {
+      "id": "p2_theo_q2",
+      "suite": "personas_v4",
+      "query": "Je n'aime pas du tout le droit, je ne veux pas redoubler. Quelles options pour me réorienter en cours d'année ?",
+      "elapsed_s": 2.66,
+      "success": true,
+      "profile": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+1",
+        "intent_type": "reorientation_etude",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": true,
+        "confidence": 0.85,
+        "notes": "Query explicite sur rejet du droit et urgence à se réorienter en cours d'année. Aucun secteur mentionné."
+      },
+      "expected": {
+        "expected_age_group": "etudiant_l1_l3",
+        "expected_intent_type": "reorientation_etude"
+      }
+    },
+    {
+      "id": "p3_valerie_q1",
+      "suite": "personas_v4",
+      "query": "Quel est le coût moyen d'une année d'école de commerce privée pour mon fils ?",
+      "elapsed_s": 2.03,
+      "success": true,
+      "profile": {
+        "age_group": "parent_lyceen",
+        "education_level": "unknown",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "commerce",
+          "écoles_de_commerce"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.85,
+        "notes": "L'utilisateur est probablement un parent d'un lycéen, intéressé par le coût des écoles de commerce privées."
+      },
+      "expected": {
+        "expected_age_group": "parent_lyceen",
+        "expected_intent_type": "info_metier_specifique"
+      }
+    },
+    {
+      "id": "d1_q01_postes_pourvoir",
+      "suite": "dares_dedie",
+      "query": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+      "elapsed_s": 1.88,
+      "success": true,
+      "profile": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [],
+        "region": "France",
+        "urgent_concern": false,
+        "confidence": 0.7,
+        "notes": "Query générale sans indication d'âge, niveau d'études ou secteur précis. Intent détecté comme conseil stratégique sur les tendances du marché."
+      },
+      "expected": {
+        "expected_intent_type": "info_metier_specifique"
+      }
+    },
+    {
+      "id": "d2_q05_btp_idf",
+      "suite": "dares_dedie",
+      "query": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+      "elapsed_s": 2.08,
+      "success": true,
+      "profile": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "bâtiment",
+          "construction"
+        ],
+        "region": "Île-de-France",
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur les métiers du bâtiment en Île-de-France avec une dimension prospective (2030)."
+      },
+      "expected": {
+        "expected_intent_type": "info_metier_specifique"
+      }
+    },
+    {
+      "id": "d3_q08_desequilibre",
+      "suite": "dares_dedie",
+      "query": "Y a-t-il un déséquilibre potentiel sur le marché des conducteurs de véhicules d'ici 2030 ?",
+      "elapsed_s": 2.41,
+      "success": true,
+      "profile": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "transport",
+          "logistique"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.8,
+        "notes": "Query orientée marché du travail et prospective sectorielle. Supposition d'un professionnel actif ou en reconversion intéressé par le secteur du transport."
+      },
+      "expected": {
+        "expected_intent_type": "info_metier_specifique"
+      }
+    },
+    {
+      "id": "b1_q01_BTS_compta",
+      "suite": "blocs_dedie",
+      "query": "Quels blocs de compétences valide le BTS comptabilité ?",
+      "elapsed_s": 2.21,
+      "success": true,
+      "profile": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+2",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "comptabilité",
+          "gestion"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.85,
+        "notes": "Query ciblée sur un diplôme spécifique (BTS comptabilité). Hypothèse : utilisateur en formation ou en réflexion sur ce BTS."
+      },
+      "expected": {
+        "expected_intent_type": "info_metier_specifique"
+      }
+    },
+    {
+      "id": "b2_q05_VAE",
+      "suite": "blocs_dedie",
+      "query": "Comment valider un titre RNCP par VAE par bloc ?",
+      "elapsed_s": 2.0,
+      "success": true,
+      "profile": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "demarche_administrative",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.85,
+        "notes": "Query ciblée sur une démarche VAE par bloc pour un titre RNCP. Aucun secteur mentionné, mais cible probablement un professionnel actif."
+      },
+      "expected": {
+        "expected_intent_type": "demarche_administrative"
+      }
+    },
+    {
+      "id": "b3_q10_licence_pro",
+      "suite": "blocs_dedie",
+      "query": "Quelles compétences acquises après une licence pro en communication ?",
+      "elapsed_s": 1.77,
+      "success": true,
+      "profile": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+3",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "communication"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur une licence pro en communication, donc niveau bac+3 et secteur communication clairement identifiés."
+      },
+      "expected": {
+        "expected_intent_type": "info_metier_specifique"
+      }
+    },
+    {
+      "id": "u1_lycee_reunion",
+      "suite": "user_naturel",
+      "query": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options s'offrent à moi ?",
+      "elapsed_s": 1.84,
+      "success": true,
+      "profile": {
+        "age_group": "lyceen_terminale",
+        "education_level": "terminale",
+        "intent_type": "decouverte_filieres",
+        "sector_interest": [
+          "numérique"
+        ],
+        "region": "La Réunion",
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "L'utilisateur mentionne explicitement son statut de lycéen à La Réunion et son intérêt pour le numérique en métropole."
+      },
+      "expected": {
+        "expected_age_group": "lyceen_terminale",
+        "expected_region": "La Réunion"
+      }
+    },
+    {
+      "id": "u2_reconversion_distrib",
+      "suite": "user_naturel",
+      "query": "Je travaille dans la grande distribution depuis 8 ans, je veux changer complètement de secteur. Par où commencer ?",
+      "elapsed_s": 1.76,
+      "success": true,
+      "profile": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "reconversion_pro",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur une reconversion après 8 ans en grande distribution. Aucun secteur cible mentionné."
+      },
+      "expected": {
+        "expected_age_group": "adulte_25_45",
+        "expected_intent_type": "reconversion_pro"
+      }
+    },
+    {
+      "id": "u3_cout_ecole_com",
+      "suite": "user_naturel",
+      "query": "Combien faut-il prévoir financièrement pour 5 années d'études en école de commerce ?",
+      "elapsed_s": 2.27,
+      "success": true,
+      "profile": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "commerce",
+          "gestion",
+          "école de commerce"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.7,
+        "notes": "Query focalisée sur l'aspect financier des études en école de commerce, mais pas d'indice sur la situation de l'utilisateur (lycéen, parent, professionnel, etc.)."
+      },
+      "expected": {
+        "expected_intent_type": "info_metier_specifique"
+      }
+    },
+    {
+      "id": "e1_conceptuel",
+      "suite": "edge_case",
+      "query": "C'est quoi une licence ?",
+      "elapsed_s": 2.14,
+      "success": true,
+      "profile": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "conceptuel_definition",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.7,
+        "notes": "Query très générique, pas d'indice sur l'âge, le niveau d'études ou le secteur. Best guess sur l'intent 'conceptuel_definition'."
+      },
+      "expected": {
+        "expected_intent_type": "conceptuel_definition"
+      }
+    },
+    {
+      "id": "e2_query_courte",
+      "suite": "edge_case",
+      "query": "M2 info Lyon",
+      "elapsed_s": 2.47,
+      "success": true,
+      "profile": {
+        "age_group": "etudiant_master",
+        "education_level": "bac+5",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "informatique"
+        ],
+        "region": "Auvergne-Rhône-Alpes",
+        "urgent_concern": false,
+        "confidence": 0.85,
+        "notes": "Query concise mais explicite sur le niveau d'études (M2) et le domaine (informatique). Intent supposé stratégique (poursuite d'études, insertion pro)."
+      },
+      "expected": {
+        "expected_age_group": "etudiant_master",
+        "expected_region": "Auvergne-Rhône-Alpes"
+      }
+    },
+    {
+      "id": "e3_stress_signal",
+      "suite": "edge_case",
+      "query": "Je suis en seconde, j'ai vraiment peur de ne pas savoir quoi faire après le bac, je galère.",
+      "elapsed_s": 2.29,
+      "success": true,
+      "profile": {
+        "age_group": "lyceen_2nde",
+        "education_level": "infra_bac",
+        "intent_type": "orientation_initiale",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": true,
+        "confidence": 0.85,
+        "notes": "Query exprime une peur explicite et une urgence liée à l'orientation post-bac, sans mention de secteur précis."
+      },
+      "expected": {
+        "expected_urgent_concern": true
+      }
+    }
+  ]
+}
