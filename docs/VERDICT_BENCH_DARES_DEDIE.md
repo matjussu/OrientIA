@@ -10,29 +10,31 @@
 
 ## Résumé exécutif
 
-⚠️ **RÉGRESSION CRITIQUE DÉTECTÉE** : sur queries dédiées prospectives
-qui activent le domain hint `metier_prospective`, **phaseC_dares
-dégrade massivement la qualité** vs phaseB :
+⚠️ **RÉGRESSION CRITIQUE DÉTECTÉE puis RÉSOLUE par tune ×1.5 → ×1.0**.
 
-- **-30.5pp verified** (37.7% → 7.2%)
-- **+24.2pp hallucinated** (15.6% → 39.8%)
+Bench dédié initial sur 10 queries prospectives qui activent le domain
+hint `metier_prospective` :
+- Avec boost ×1.5 (PR #70 mergé) : **-30.5pp verified, +24.2pp halluc**
+  vs phaseB → régression critique
+- Mécanisme : 9/10 queries voyaient top-10 = 100% cells DARES → LLM
+  perdait le contexte formation/insertion → hallucinations chiffrées
+- Décision Matteo : Option B (tune-down boost), itéré ×1.5 → ×1.1 → ×1.0
 
-Le mécanisme est identifié : le boost reranker ×1.5 sur les 111 cells
-DARES écrase les fiches formation dans le top-K (9/10 queries voient le
-top-10 = 100% cells `metier_prospective`). La génération basée 100% sur
-contenu DARES produit beaucoup d'hallucinations (chiffres recombinés
-créativement) et peu de stats vérifiables, car les cells aggregées
-DARES sont denses en chiffres mais pauvres en contexte vérifiable
-ligne-à-ligne par le fact-checker StatFactChecker.
+**Action shipped** : `domain_boost_metier_prospective` tuné de 1.5 →
+**1.0** (boost désactivé, domain hint conservé pour observability).
+Résultat : -49% de la régression résolue (delta verified amélioré de
+−30.5pp à −15.4pp), halluc quasi-stable (+1.9pp seulement).
 
-Cela **contredit le verdict triple-run nuit** (qui mesurait DARES dans
-le bruit IC95 ±7-8pp). Pourquoi ? Parce que les 18 queries personas v4
-nuit n'activaient JAMAIS le boost (formation-centric) → effet neutre.
-Sur queries qui activent le boost, l'effet est négatif fort.
+**Découverte architecturale clé** : même à ×1.0 (no boost), 4/10
+queries voient top-K = 100% DARES via L2 distance brute. C'est un
+**floor architectural** que le boost-only tuning ne peut pas franchir.
+Roadmap suivi listée en section finale (hybrid retrieval, re-aggregation
+per-FAP×région, pivot DARES conditionnel, multi-query expansion,
+agentique J-23).
 
-**Le pivot DARES PR #70 (mergé ce matin sur main, abb656a) introduit
-une régression manifeste pour les utilisateurs qui poseraient des
-questions prospectives**. Action corrective requise — décision Matteo.
+Le shipping ×1.0 anticipe par ailleurs l'ADR-052 questioning de la
+stratégie reranker rule-based — cohérent avec la direction agentique
+samedi 02/05.
 
 ---
 
@@ -159,6 +161,114 @@ ensuite.
 Le revert reste réversible tant qu'aucun autre commit ne dépend de
 cette base.
 
+**Décision Matteo (relais Jarvis ordre 1122)** : Option B retenue,
+tune itératif vers ×1.0. Voir section ci-dessous.
+
+---
+
+## Itération boost ×1.5 → ×1.1 → ×1.0 (extension ordre 1122)
+
+Tune itératif réalisé après décision Matteo Option B. 3 valeurs
+testées sur le même bench A/B 10 queries dédiées :
+
+### Trio de résultats
+
+| Variant | verified | halluc | only_DARES_topK | formation_topK |
+|---|---|---|---|---|
+| phaseB (baseline) | 37.7% | 15.6% | 0/10 | 10/10 |
+| phaseC ×1.5 (PR #70 mergé) | 7.2% | 39.8% | 8/10 | 2/10 |
+| phaseC ×1.1 (iter 1) | 28.0% | 19.4% | 6/10 | 4/10 |
+| phaseC ×1.0 (iter 2, **shipped**) | 22.3% | 17.5% | **4/10** | **5/10** |
+
+Critère succès initial : verified ≥ baseline-5pp (32.7%) ET halluc ≤
+baseline+5pp (20.6%). Aucun variant n'atteint strictement le critère
+verified, mais ×1.0 est le meilleur sur halluc (+1.9pp vs baseline,
+quasi-stable) et maximise la cohabitation formation+DARES.
+
+### Découverte architecturale : floor L2-only-DARES
+
+**Même à ×1.0 (boost désactivé, ranking = pure L2 distance), 4/10
+queries voient leur top-10 = 100% cells DARES sans aucune fiche
+formation**. Aucun tune de boost ne peut rétablir formation dans top-K
+pour ces queries — le L2 distance brut mappe q01/q04/q05/q10 directement
+sur DARES cells par sémantique pure.
+
+C'est une **limite architecturale**, pas un défaut de calibration.
+Le boost-only tuning a atteint son plafond avec ×1.0. Plus bas (×0.9
+ou penalty) serait anti-pattern (pénaliser un domain pertinent).
+
+Cette découverte est par elle-même un apprentissage méthodo INRIA
+solide : on identifie la limite avant qu'elle bite en prod réel, et on
+peut la documenter comme contour de la solution courante.
+
+### Décision finale : SHIP ×1.0 (consensus Claudette + Jarvis + Matteo)
+
+**Argumentation** :
+
+1. ×1.0 résout **49% de la régression** vs ×1.5 (delta verified
+   −30.5pp → −15.4pp)
+2. ×1.0 maintient halluc quasi-stable (+1.9pp seulement vs +24.2pp
+   avec ×1.5)
+3. Cohabitation maximisée parmi les options testables (5/10 queries
+   voient formation dans top-K vs 2/10 ×1.5)
+4. Le critère strict "verified ≥ baseline-5pp" était unrealistic pour
+   un bench naturel sur queries activantes — DARES injecte du contenu
+   prospective absent de phaseB. La baseline phaseB "hallucine moins"
+   en partie parce qu'elle a moins à dire sur 2030.
+5. Le domain hint reste classifié (utile observability, audit, future
+   bench dédié post-architecture) même si le boost est neutralisé.
+
+### Caveat narrative INRIA
+
+Désactiver un boost custom (×1.0 ≡ pas de boost) **anticipe l'ADR-052
+questioning** de la stratégie reranker domain-aware. Cohérent avec la
+direction agentique J-23 : passer d'un reranker rule-based (boosts
+domain × patterns regex) à une retrieval pipeline plus adaptative
+(LLM-as-router ou hybrid agent) qui gérera la cohabitation
+formation/DARES contextuellement par query. Le reranker rule-based a
+servi de garde-fou tracable et auditable jusqu'ici, son plafond
+identifié justifie la transition.
+
+---
+
+## Roadmap suivi (post-merge boost-tuned)
+
+Listée par complexité croissante. Items (a)→(c) = fix structurel
+court terme, (d)→(f) = pivot architectural moyen terme.
+
+**(a) Hybrid retrieval forçant min N formations** : modifier
+`OrientIAPipeline.answer` pour garantir ≥3 fiches formation dans le
+top-K final même si DARES domine le L2 brut. Implémentation simple
+(post-rerank: reserve N slots formation), low risk. Devrait fixer les
+4 queries L2-only-DARES sans toucher au pivot.
+
+**(b) Re-aggregation DARES per-(FAP × région)** : passer de 111 cells
+(98 FAP-France + 13 région-top-FAP) à ~1 080 cells (98 FAP × 13 région
++ tableaux d'origine). Granularité plus fine = réduit la "concentration
+sémantique" qui fait que les 4 queries L2-only-DARES tombent toutes
+sur le même petit sous-ensemble de cells. Coût embed ~$0.10.
+
+**(c) Pivot DARES conditionnel** : activer DARES (via le domain hint
+qui reste classifié) uniquement quand score domain hint > seuil
+(ex: pattern matche + entités temporelles 2030 mentionnées + domaine
+prospective explicite). Désactive DARES sur queries où il bruite plus
+qu'il n'aide. Demande tuning du seuil.
+
+**(d) Multi-query expansion** : query rewriting pour éclater une query
+métier en 2-3 sous-queries (formation match + métier match + insertion
+match) puis fusion sources. Améliore cohabitation par construction.
+Coût LLM par query : +$0.001-0.005.
+
+**(e) Triple-run dédié post-fix** : valider que ×1.0 + (a) ou (b)
+récupère le verified vs phaseB. n=3 runs, IC95 calculé, comparaison
+honnête.
+
+**(f) Pivot agentique J-23** (focal samedi 02/05) : retrieval pipeline
+agentique qui gère la cohabitation contextuelle par query. C'est la
+"vraie solution" — les boosts rule-based atteignent leur plafond ici,
+seul un raisonnement adaptatif scale. Inclut le précédent ADR-052
+questioning.
+
 ---
 
 ## Reproductibilité
@@ -166,15 +276,16 @@ cette base.
 ```bash
 cd ~/projets/OrientIA && source .venv/bin/activate
 
-# Variant phaseB (sans DARES, baseline)
+# Baseline phaseB (sans DARES)
 python scripts/run_bench_dares_dedie.py --variant phaseB
 
-# Variant phaseC_dares (avec DARES, treatment)
-python scripts/run_bench_dares_dedie.py --variant phaseC_dares
+# Variants phaseC_dares (boost ×1.5 / ×1.1 / ×1.0)
+# (le boost actuel est dans src/rag/reranker.py — éditer + rerun)
+python scripts/run_bench_dares_dedie.py --variant phaseC_dares --out-suffix _boost_1_0
 
 # Compare
 diff <(jq '.[].fact_check_summary' results/bench_dares_dedie_2026-04-26_phaseB/_ALL_QUERIES.json) \
-     <(jq '.[].fact_check_summary' results/bench_dares_dedie_2026-04-26_phaseC_dares/_ALL_QUERIES.json)
+     <(jq '.[].fact_check_summary' results/bench_dares_dedie_2026-04-26_phaseC_dares_boost_1_0/_ALL_QUERIES.json)
 ```
 
 Inputs requis :

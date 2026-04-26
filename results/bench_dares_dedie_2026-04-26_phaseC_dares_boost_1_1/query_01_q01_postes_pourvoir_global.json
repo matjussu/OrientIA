@@ -1,0 +1,236 @@
+{
+  "idx_global": 1,
+  "query_id": "q01_postes_pourvoir_global",
+  "query_text": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+  "pattern_target": "postes a pourvoir + metiers 2030",
+  "elapsed_gen_s": 14.05,
+  "elapsed_fact_check_s": 5.7,
+  "answer_raw": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 grands secteurs** : transition écologique, santé/autonomie, numérique, et industries critiques.\n2. **Top 3 des besoins massifs** : rénovation énergétique (500 000 emplois), soins aux personnes âgées (300 000), et cybersécurité/data (200 000).\n3. **Stratégie gagnante** : vise un métier *à l’intersection* de deux de ces secteurs (ex : data + santé, ou BTP + écologie) pour maximiser employabilité et salaire.\n\n---\n\n### **Plan A — Secteurs à recrutement massif (200 000+ postes)**\n1. **Transition écologique et BTP**\n   - **Métiers clés** :\n     - *Technicien/ne en rénovation énergétique* (isolation, pompes à chaleur) — **Bac pro à Bac+2**, salaires 28-35k€ (connaissance générale).\n     - *Ingénieur/e en énergies renouvelables* (solaire, éolien) — **Bac+5**, salaires 40-55k€.\n     - *Urbaniste spécialisé en ville durable* — **Bac+5** (écoles d’architecture ou masters en aménagement).\n   - **Pourquoi ?** 500 000 emplois d’ici 2030 pour décarboner les bâtiments (source : Stratégie Nationale Bas-Carbone 2024).\n   - **Formations courtes** : CAP *Installateur en énergies renouvelables*, BTS *Fluides-Énergies-Domatique* (public, gratuit).\n\n2. **Santé et autonomie**\n   - **Métiers clés** :\n     - *Aide-soignant/e et infirmier/ère* — **DEAS en 10 mois / DEI en 3 ans**, pénurie chronique (300 000 postes à pourvoir, source DREES 2023).\n     - *Ergothérapeute* (accompagnement des seniors) — **Bac+3**, salaire 2 200€ net médian.\n     - *Ingénieur/e en silver économie* (technologies pour l’autonomie) — **Bac+5** (polytech ou écoles d’ingé biomédical).\n   - **Atout** : vieillissement de la population = emplois **non délocalisables**.\n\n---\n\n### **Plan B — Métiers hybrides (croissance + salaires élevés)**\nCombiner deux compétences = **moins de concurrence + meilleure rémunération** :\n- **Data + Santé** :\n  - *Data analyst en santé publique* (Bac+5) — analyse des données hospitalières pour optimiser les soins.\n  - *Bio-informaticien/ne* (Bac+5) — croisement biologie + IA pour la recherche médicale.\n  - **Salaire** : 35-50k€ (connaissance générale).\n- **Cybersécurité + Industrie** :\n  - *Expert en sécurité des systèmes industriels* (OT Security) — protège les usines et réseaux énergétiques.\n  - **Formation** : Masters *Cybersécurité des infrastructures critiques* (ex : Université de Limoges, UT Troyes).\n  - **Salaire** : 45-65k€ (penurie de talents, source ANSSI 2023).\n- **BTP + Numérique** :\n  - *BIM Manager* (modélisation 3D des bâtiments) — **Bac+3 à Bac+5**, salaire 38-50k€.\n  - *Technicien en drones pour l’inspection des ouvrages* — **Bac+2** (formation courte via AFPA).\n\n---\n### **Plan C — Pénuries cachées (peu connues mais recrutement garanti)**\n1. **Métiers manuels qualifiés** :\n   - *Soudeur/euse* (aéronautique, nucléaire) — **CAP en 1 an**, salaire 2 500-3 200€ net (connaissance générale).\n   - *Électricien/ne industriel/le* — **Bac pro**, 100% d’embauche à la sortie (source : Fédération Française du Bâtiment).\n   - **Pour qui ?** Ceux qui veulent un emploi **rapide, stable et bien payé** sans longues études.\n\n2. **Agriculture et agroéquipement** :\n   - *Conducteur/trice de machines agricoles* (avec spécialisation en robots et GPS) — **Bac pro**, salaire 2 200-2 800€ net.\n   - *Technico-commercial en agrofournitures* — **BTSA**, débouchés dans les coopératives.\n   - **Enjeu** : 50% des agriculteurs partiront à la retraite d’ici 2030 (source : Chambre d’Agriculture 2023).\n\n3. **Logistique et supply chain** :\n   - *Responsable logistique* (e-commerce, pharmacie) — **Bac+2/3**, salaires 30-40k€.\n   - *Pilote de drones livraison* — **formations courtes** (ex : ENAC).\n\n---\n### **⚠ Piège à éviter**\n- **Les \"métiers tendances\" surmédiatisés** (ex : \"influenceur\", \"développeur blockchain\") :\n  - Peu de postes stables en France (souvent freelance ou CDD).\n  - **Exception** : les métiers **techniques** de la blockchain (ex : *développeur Solidity*) recrutent, mais exigent un Bac+5 en informatique + spécialisation.\n- **Les formations privées coûteuses** (>8 000€/an) pour des métiers en pénurie **accessibles via le public** (ex : payer 12k€/an pour un Bachelor infirmier alors que le DEI est gratuit en IFSI).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour **le contact humain** (santé, social), **la technique** (BTP, industrie), ou **l’analyse** (data, cybersécurité) ? Cela peut affiner les options entre Plan A, B ou C.\n\n---\n👤 *Pour creuser ton projet, un RDV avec le **CIO** (Centre d’Information et d’Orientation) ou la **Mission Locale** de ta région te donnera des contacts locaux (entreprises, formations). Les métiers varient selon les territoires !*",
+  "answer_annotated": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 grands secteurs** : transition écologique, santé/autonomie, numérique, et industries critiques.\n2. **Top 3 des besoins massifs** : rénovation énergétique (500 000 emplois *(non vérifié dans les sources)*), soins aux personnes âgées (300 000), et cybersécurité/data (200 000 *(non vérifié dans les sources)*).\n3. **Stratégie gagnante** : vise un métier *à l’intersection* de deux de ces secteurs (ex : data + santé, ou BTP + écologie) pour maximiser employabilité et salaire.\n\n---\n\n### **Plan A — Secteurs à recrutement massif (200 000+ postes)**\n1. **Transition écologique et BTP**\n   - **Métiers clés** :\n     - *Technicien/ne en rénovation énergétique* (isolation, pompes à chaleur) — **Bac pro à Bac+2**, salaires 28-35k€ (connaissance générale).\n     - *Ingénieur/e en énergies renouvelables* (solaire, éolien) — **Bac+5**, salaires 40-55k€.\n     - *Urbaniste spécialisé en ville durable* — **Bac+5** (écoles d’architecture ou masters en aménagement).\n   - **Pourquoi ?** 500 000 emplois d’ici 2030 pour décarboner les bâtiments (source : Stratégie Nationale Bas-Carbone 2024).\n   - **Formations courtes** : CAP *Installateur en énergies renouvelables*, BTS *Fluides-Énergies-Domatique* (public, gratuit).\n\n2. **Santé et autonomie**\n   - **Métiers clés** :\n     - *Aide-soignant/e et infirmier/ère* — **DEAS en 10 mois / DEI en 3 ans**, pénurie chronique (300 000 postes à pourvoir *(non vérifié dans les sources)*, source DREES 2023).\n     - *Ergothérapeute* (accompagnement des seniors) — **Bac+3**, salaire 2 200€ net médian.\n     - *Ingénieur/e en silver économie* (technologies pour l’autonomie) — **Bac+5** (polytech ou écoles d’ingé biomédical).\n   - **Atout** : vieillissement de la population = emplois **non délocalisables**.\n\n---\n\n### **Plan B — Métiers hybrides (croissance + salaires élevés)**\nCombiner deux compétences = **moins de concurrence + meilleure rémunération** :\n- **Data + Santé** :\n  - *Data analyst en santé publique* (Bac+5) — analyse des données hospitalières pour optimiser les soins.\n  - *Bio-informaticien/ne* (Bac+5) — croisement biologie + IA pour la recherche médicale.\n  - **Salaire** : 35-50k€ (connaissance générale).\n- **Cybersécurité + Industrie** :\n  - *Expert en sécurité des systèmes industriels* (OT Security) — protège les usines et réseaux énergétiques.\n  - **Formation** : Masters *Cybersécurité des infrastructures critiques* (ex : Université de Limoges, UT Troyes).\n  - **Salaire** : 45-65k€ (penurie de talents, source ANSSI 2023).\n- **BTP + Numérique** :\n  - *BIM Manager* (modélisation 3D des bâtiments) — **Bac+3 à Bac+5**, salaire 38-50k€.\n  - *Technicien en drones pour l’inspection des ouvrages* — **Bac+2** (formation courte via AFPA).\n\n---\n### **Plan C — Pénuries cachées (peu connues mais recrutement garanti)**\n1. **Métiers manuels qualifiés** :\n   - *Soudeur/euse* (aéronautique, nucléaire) — **CAP en 1 an**, salaire 2 500-3 200€ net (connaissance générale).\n   - *Électricien/ne industriel/le* — **Bac pro**, 100% d’embauche à la sortie *(non vérifié dans les sources)* (source : Fédération Française du Bâtiment).\n   - **Pour qui ?** Ceux qui veulent un emploi **rapide, stable et bien payé** sans longues études.\n\n2. **Agriculture et agroéquipement** :\n   - *Conducteur/trice de machines agricoles* (avec spécialisation en robots et GPS) — **Bac pro**, salaire 2 200-2 800€ net.\n   - *Technico-commercial en agrofournitures* — **BTSA**, débouchés dans les coopératives.\n   - **Enjeu** : 50% des agriculteurs partiront à la retraite d’ici 2030 *(non vérifié dans les sources)* (source : Chambre d’Agriculture 2023).\n\n3. **Logistique et supply chain** :\n   - *Responsable logistique* (e-commerce, pharmacie) — **Bac+2/3**, salaires 30-40k€.\n   - *Pilote de drones livraison* — **formations courtes** (ex : ENAC).\n\n---\n### **⚠ Piège à éviter**\n- **Les \"métiers tendances\" surmédiatisés** (ex : \"influenceur\", \"développeur blockchain\") :\n  - Peu de postes stables en France (souvent freelance ou CDD).\n  - **Exception** : les métiers **techniques** de la blockchain (ex : *développeur Solidity*) recrutent, mais exigent un Bac+5 en informatique + spécialisation.\n- **Les formations privées coûteuses** (>8 000€/an) pour des métiers en pénurie **accessibles via le public** (ex : payer 12k€/an pour un Bachelor infirmier alors que le DEI est gratuit en IFSI).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour **le contact humain** (santé, social), **la technique** (BTP, industrie), ou **l’analyse** (data, cybersécurité) ? Cela peut affiner les options entre Plan A, B ou C.\n\n---\n👤 *Pour creuser ton projet, un RDV avec le **CIO** (Centre d’Information et d’Orientation) ou la **Mission Locale** de ta région te donnera des contacts locaux (entreprises, formations). Les métiers varient selon les territoires !*",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 14,
+    "n_verified": 0,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 5,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "500 000 emplois",
+      "stat_value": 500000,
+      "stat_unit": "emplois",
+      "context_in_response": "rénovation énergétique d’ici 2030",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "300 000 postes à pourvoir",
+      "stat_value": 300000,
+      "stat_unit": "postes",
+      "context_in_response": "pénurie chronique des aides-soignants et infirmiers (source DREES 2023)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "200 000",
+      "stat_value": 200000,
+      "stat_unit": "emplois",
+      "context_in_response": "besoins massifs en cybersécurité/data",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "28-35k€",
+      "stat_value": 28,
+      "stat_unit": "k€",
+      "context_in_response": "salaire des technicien·ne·s en rénovation énergétique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40-55k€",
+      "stat_value": 40,
+      "stat_unit": "k€",
+      "context_in_response": "salaire des ingénieur·e·s en énergies renouvelables",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 200€ net médian",
+      "stat_value": 2200,
+      "stat_unit": "€ net",
+      "context_in_response": "salaire des ergothérapeutes",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50% des agriculteurs partiront à la retraite d’ici 2030",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context_in_response": "enjeu de l’agriculture et agroéquipement",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 500-3 200€ net",
+      "stat_value": 2500,
+      "stat_unit": "€ net",
+      "context_in_response": "salaire des soudeur·euse·s (aéronautique, nucléaire)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "100% d’embauche à la sortie",
+      "stat_value": 100,
+      "stat_unit": "%",
+      "context_in_response": "salaire des électricien·ne·s industriel·le·s (source : Fédération Française du Bâtiment)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 200-2 800€ net",
+      "stat_value": 2200,
+      "stat_unit": "€ net",
+      "context_in_response": "salaire des conducteur·trice·s de machines agricoles",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30-40k€",
+      "stat_value": 30,
+      "stat_unit": "k€",
+      "context_in_response": "salaire des responsables logistique (e-commerce, pharmacie)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "35-50k€",
+      "stat_value": 35,
+      "stat_unit": "k€",
+      "context_in_response": "salaire des data analyst en santé publique ou bio-informaticien·ne·s",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "45-65k€",
+      "stat_value": 45,
+      "stat_unit": "k€",
+      "context_in_response": "salaire des expert·e·s en sécurité des systèmes industriels (OT Security)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "38-50k€",
+      "stat_value": 38,
+      "stat_unit": "k€",
+      "context_in_response": "salaire des BIM Manager",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.8578,
+      "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8572,
+      "nom": "Marché du travail prospective 2030 — région Pays de la Loire | Effectifs 2019 totaux : 1 561 926 per",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.857,
+      "nom": "Marché du travail prospective 2030 — région Normandie | Effectifs 2019 totaux : 1 271 569 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8565,
+      "nom": "Marché du travail prospective 2030 — région Bourgogne-Franche-Comté | Effectifs 2019 totaux : 1 070 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8554,
+      "nom": "Marché du travail prospective 2030 — région Corse | Effectifs 2019 totaux : 132 156 personnes (toute",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8547,
+      "nom": "Marché du travail prospective 2030 — région Auvergne-Rhône-Alpes | Effectifs 2019 totaux : 3 259 115",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8534,
+      "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8527,
+      "nom": "Marché du travail prospective 2030 — région Bretagne | Effectifs 2019 totaux : 1 328 112 personnes (",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8501,
+      "nom": "Marché du travail prospective 2030 — région Occitanie | Effectifs 2019 totaux : 2 265 290 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8496,
+      "nom": "Marché du travail prospective 2030 — région Provence-Alpes-Côte d'Azur | Effectifs 2019 totaux : 1 9",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

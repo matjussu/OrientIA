@@ -1,0 +1,212 @@
+{
+  "idx_global": 1,
+  "query_id": "q01_postes_pourvoir_global",
+  "query_text": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+  "pattern_target": "postes a pourvoir + metiers 2030",
+  "elapsed_gen_s": 16.71,
+  "elapsed_fact_check_s": 5.07,
+  "answer_raw": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 grands secteurs** : transition écologique, santé/autonomie, numérique, et rénovation/construction.\n2. **Top 3 des besoins massifs** : aides-soignants (+300k postes), techniciens énergies renouvelables (+200k), et développeurs/data scientists (+150k).\n3. **Stratégie gagnante** : vise un métier à l’intersection de *deux* de ces secteurs (ex : data + santé, BTP + écologie) pour maximiser employabilité et salaire.\n\n---\n\n### **Plan A — Secteurs à recrutement massif (besoins quantitatifs)**\n1. **Santé & autonomie** (connaissance générale)\n   - **Métiers** : Aide-soignant, infirmier, ergothérapeute, coordinateur de parcours gériatrique.\n   - **Pourquoi** : Vieillissement démographique (+5M de +75 ans d’ici 2030) et pénurie chronique. **300 000 postes à pourvoir** rien qu’en Ehpad et maintien à domicile (source : Dares 2023, projections DREES).\n   - **Salaire médian** : 1 800–2 200€ brut/mois (aide-soignant) à 2 500–3 000€ (cadre de santé) — *connaissance générale, marché 2024*.\n   - **Formation clé** : DEAS (Diplôme d’État d’Aide-Soignant, **1 an**, accessible sans bac), ou IFSI (3 ans pour infirmier).\n\n2. **Transition écologique & énergies** (connaissance générale)\n   - **Métiers** : Technicien en énergies renouvelables (solaire, éolien), conseiller en rénovation énergétique, ingénieur en recyclage.\n   - **Pourquoi** : Objectif neutralité carbone 2050 → **200 000 emplois directs** d’ici 2030 (ADEME), surtout en régions (Grand Est, Occitanie, Hauts-de-France).\n   - **Salaire** : 2 000–2 800€ (technicien) à 3 500–4 500€ (ingénieur).\n   - **Formation clé** : BTS FED (Fluides-Énergies-Domotique), licence pro métiers de l’énergie, ou écoles d’ingé (ex : Mines Paris avec spécialité transition énergétique).\n\n3. **Numérique & data** (connaissance générale)\n   - **Métiers** : Développeur full-stack, data analyst, expert cybersécurité, spécialiste IA éthique.\n   - **Pourquoi** : **150 000 postes non pourvus** en 2024 (Syntec Numérique), avec un déficit persistant malgré les formations. Les PME peinent à recruter hors ÎdF.\n   - **Salaire** : 3 000–4 000€ (junior) à 6 000€+ (senior en IA/cyber).\n   - **Formation clé** : BUT Informatique, écoles 42/EPITA, ou licences pro en alternance (ex : Licence MIASHS).\n\n---\n\n### **Plan B — Métiers hybrides (croissance + salaire)**\nLes profils **à l’intersection de deux secteurs** ci-dessus seront les plus recherchés (et mieux payés) :\n- **Data scientist spécialisé santé** : Analyse de données médicales pour les hôpitaux ou pharma. **Salaire : 4 000–5 500€** (connaissance générale).\n  *Formation* : Master en bioinformatique (ex : Université Paris Cité) ou data science + stage en hôpital.\n- **Ingénieur BTP écoresponsable** : Conception de bâtiments bas carbone. **Salaire : 3 500–4 500€**.\n  *Formation* : École d’ingé avec double compétence (ex : ESTP + module RSE).\n- **Technico-commercial énergies renouvelables** : Vente de solutions solaires/éoliennes aux entreprises. **Salaire : 3 000–5 000€** (variable inclus).\n  *Formation* : BTS NDRC (Négociation Digitalisation Relation Client) + spécialisation énergie.\n\n---\n### **Plan C — Pénuries cachées (peu connus mais critiques)**\n1. **Métiers de la logistique et supply chain** (connaissance générale)\n   - **Pourquoi** : Relocalisation industrielle + e-commerce → **80 000 postes** d’ici 2030 (France Logistique).\n   - **Métiers** : Responsable supply chain, logisticien hospitalier, pilote de drone livraison.\n   - **Salaire** : 2 500–4 000€.\n   - **Formation** : BTS GTLA (Gestion des Transports), licence pro logistique.\n\n2. **Artisans du bâtiment** (connaissance générale)\n   - **Pourquoi** : **50 000 artisans manquants** (FFB) pour la rénovation énergétique (isolation, pompes à chaleur).\n   - **Métiers** : Électricien, plombier-chauffagiste, couvreur spécialisé photovoltaïque.\n   - **Salaire** : 2 200–3 500€ (indépendant jusqu’à 5 000€).\n   - **Formation** : CAP/BEP en 2 ans (ex : CAP Installateur Thermique) + FCIL (Formation Complémentaire d’Initiative Locale) en énergies renouvelables.\n\n---\n### **⚠ Attention aux pièges**\n- **Évite les formations \"trop ciblées\"** : Un master \"Blockchain\" seul est risqué ; privilégie un socle large (informatique) + spécialisation en alternance.\n- **Méfie-toi des écoles privées non reconnues** : Vérifie toujours le **grade Master** (pour les bac+5) ou le **RNCP** (pour les bac+2/3) sur [France Compétences](https://www.francecompetences.fr/).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour un **secteur en particulier** (santé, tech, écologie) ou une **compétence transversale** (gestion de projet, analyse de données) que tu voudrais combiner ? Cela peut affiner les options.",
+  "answer_annotated": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 grands secteurs** : transition écologique, santé/autonomie, numérique, et rénovation/construction.\n2. **Top 3 des besoins massifs** : aides-soignants (+300k postes), techniciens énergies renouvelables (+200k), et développeurs/data scientists (+150k).\n3. **Stratégie gagnante** : vise un métier à l’intersection de *deux* de ces secteurs (ex : data + santé, BTP + écologie) pour maximiser employabilité et salaire.\n\n---\n\n### **Plan A — Secteurs à recrutement massif (besoins quantitatifs)**\n1. **Santé & autonomie** (connaissance générale)\n   - **Métiers** : Aide-soignant, infirmier, ergothérapeute, coordinateur de parcours gériatrique.\n   - **Pourquoi** : Vieillissement démographique (+5M de +75 ans d’ici 2030) et pénurie chronique. **300 000 postes à pourvoir *(non vérifié dans les sources)*** rien qu’en Ehpad et maintien à domicile (source : Dares 2023, projections DREES).\n   - **Salaire médian** : 1 800–2 200€ brut/mois (aide-soignant) à 2 500–3 000€ (cadre de santé) — *connaissance générale, marché 2024*.\n   - **Formation clé** : DEAS (Diplôme d’État d’Aide-Soignant, **1 an**, accessible sans bac), ou IFSI (3 ans pour infirmier).\n\n2. **Transition écologique & énergies** (connaissance générale)\n   - **Métiers** : Technicien en énergies renouvelables (solaire, éolien), conseiller en rénovation énergétique, ingénieur en recyclage.\n   - **Pourquoi** : Objectif neutralité carbone 2050 → **200 000 emplois directs *(non vérifié dans les sources)*** d’ici 2030 (ADEME), surtout en régions (Grand Est, Occitanie, Hauts-de-France).\n   - **Salaire** : 2 000–2 800€ (technicien) à 3 500–4 500€ (ingénieur).\n   - **Formation clé** : BTS FED (Fluides-Énergies-Domotique), licence pro métiers de l’énergie, ou écoles d’ingé (ex : Mines Paris avec spécialité transition énergétique).\n\n3. **Numérique & data** (connaissance générale)\n   - **Métiers** : Développeur full-stack, data analyst, expert cybersécurité, spécialiste IA éthique.\n   - **Pourquoi** : **150 000 postes non pourvus *(non vérifié dans les sources)*** en 2024 (Syntec Numérique), avec un déficit persistant malgré les formations. Les PME peinent à recruter hors ÎdF.\n   - **Salaire** : 3 000–4 000€ (junior) à 6 000€+ (senior en IA/cyber).\n   - **Formation clé** : BUT Informatique, écoles 42/EPITA, ou licences pro en alternance (ex : Licence MIASHS).\n\n---\n\n### **Plan B — Métiers hybrides (croissance + salaire)**\nLes profils **à l’intersection de deux secteurs** ci-dessus seront les plus recherchés (et mieux payés) :\n- **Data scientist spécialisé santé** : Analyse de données médicales pour les hôpitaux ou pharma. **Salaire : 4 000–5 500€** (connaissance générale).\n  *Formation* : Master en bioinformatique (ex : Université Paris Cité) ou data science + stage en hôpital.\n- **Ingénieur BTP écoresponsable** : Conception de bâtiments bas carbone. **Salaire : 3 500–4 500€**.\n  *Formation* : École d’ingé avec double compétence (ex : ESTP + module RSE).\n- **Technico-commercial énergies renouvelables** : Vente de solutions solaires/éoliennes aux entreprises. **Salaire : 3 000–5 000€** (variable inclus).\n  *Formation* : BTS NDRC (Négociation Digitalisation Relation Client) + spécialisation énergie.\n\n---\n### **Plan C — Pénuries cachées (peu connus mais critiques)**\n1. **Métiers de la logistique et supply chain** (connaissance générale)\n   - **Pourquoi** : Relocalisation industrielle + e-commerce → **80 000 postes *(non vérifié dans les sources)*** d’ici 2030 (France Logistique).\n   - **Métiers** : Responsable supply chain, logisticien hospitalier, pilote de drone livraison.\n   - **Salaire** : 2 500–4 000€.\n   - **Formation** : BTS GTLA (Gestion des Transports), licence pro logistique.\n\n2. **Artisans du bâtiment** (connaissance générale)\n   - **Pourquoi** : **50 000 artisans manquants *(non vérifié dans les sources)*** (FFB) pour la rénovation énergétique (isolation, pompes à chaleur).\n   - **Métiers** : Électricien, plombier-chauffagiste, couvreur spécialisé photovoltaïque.\n   - **Salaire** : 2 200–3 500€ (indépendant jusqu’à 5 000€).\n   - **Formation** : CAP/BEP en 2 ans (ex : CAP Installateur Thermique) + FCIL (Formation Complémentaire d’Initiative Locale) en énergies renouvelables.\n\n---\n### **⚠ Attention aux pièges**\n- **Évite les formations \"trop ciblées\"** : Un master \"Blockchain\" seul est risqué ; privilégie un socle large (informatique) + spécialisation en alternance.\n- **Méfie-toi des écoles privées non reconnues** : Vérifie toujours le **grade Master** (pour les bac+5) ou le **RNCP** (pour les bac+2/3) sur [France Compétences](https://www.francecompetences.fr/).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour un **secteur en particulier** (santé, tech, écologie) ou une **compétence transversale** (gestion de projet, analyse de données) que tu voudrais combiner ? Cela peut affiner les options.",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 11,
+    "n_verified": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 5,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "+300k postes",
+      "stat_value": 300000,
+      "stat_unit": "postes",
+      "context_in_response": "Top 3 des besoins massifs : aides-soignants (+300k postes)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+200k",
+      "stat_value": 200000,
+      "stat_unit": "postes",
+      "context_in_response": "Top 3 des besoins massifs : techniciens énergies renouvelables (+200k)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+150k",
+      "stat_value": 150000,
+      "stat_unit": "postes",
+      "context_in_response": "Top 3 des besoins massifs : développeurs/data scientists (+150k)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+5M de +75 ans d’ici 2030",
+      "stat_value": 5000000,
+      "stat_unit": "personnes",
+      "context_in_response": "Vieillissement démographique (+5M de +75 ans d’ici 2030)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "300 000 postes à pourvoir",
+      "stat_value": 300000,
+      "stat_unit": "postes",
+      "context_in_response": "300 000 postes à pourvoir rien qu’en Ehpad et maintien à domicile (source : Dares 2023, projections DREES)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 800–2 200€ brut/mois",
+      "stat_value": 2000,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "Salaire médian : 1 800–2 200€ brut/mois (aide-soignant)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 500–3 000€",
+      "stat_value": 2750,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "Salaire médian : 2 500–3 000€ (cadre de santé)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "200 000 emplois directs",
+      "stat_value": 200000,
+      "stat_unit": "emplois",
+      "context_in_response": "Objectif neutralité carbone 2050 → 200 000 emplois directs d’ici 2030 (ADEME)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "150 000 postes non pourvus",
+      "stat_value": 150000,
+      "stat_unit": "postes",
+      "context_in_response": "150 000 postes non pourvus en 2024 (Syntec Numérique)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "80 000 postes",
+      "stat_value": 80000,
+      "stat_unit": "postes",
+      "context_in_response": "80 000 postes d’ici 2030 (France Logistique)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50 000 artisans manquants",
+      "stat_value": 50000,
+      "stat_unit": "artisans",
+      "context_in_response": "50 000 artisans manquants (FFB) pour la rénovation énergétique",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.7798,
+      "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7793,
+      "nom": "Marché du travail prospective 2030 — région Pays de la Loire | Effectifs 2019 totaux : 1 561 926 per",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7791,
+      "nom": "Marché du travail prospective 2030 — région Normandie | Effectifs 2019 totaux : 1 271 569 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7787,
+      "nom": "Marché du travail prospective 2030 — région Bourgogne-Franche-Comté | Effectifs 2019 totaux : 1 070 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7776,
+      "nom": "Marché du travail prospective 2030 — région Corse | Effectifs 2019 totaux : 132 156 personnes (toute",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.777,
+      "nom": "Marché du travail prospective 2030 — région Auvergne-Rhône-Alpes | Effectifs 2019 totaux : 3 259 115",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7759,
+      "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7752,
+      "nom": "Marché du travail prospective 2030 — région Bretagne | Effectifs 2019 totaux : 1 328 112 personnes (",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7728,
+      "nom": "Marché du travail prospective 2030 — région Occitanie | Effectifs 2019 totaux : 2 265 290 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7724,
+      "nom": "Marché du travail prospective 2030 — région Provence-Alpes-Côte d'Azur | Effectifs 2019 totaux : 1 9",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

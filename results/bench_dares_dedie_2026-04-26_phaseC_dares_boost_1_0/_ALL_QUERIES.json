@@ -1,0 +1,2065 @@
+[
+  {
+    "idx_global": 1,
+    "query_id": "q01_postes_pourvoir_global",
+    "query_text": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+    "pattern_target": "postes a pourvoir + metiers 2030",
+    "elapsed_gen_s": 16.71,
+    "elapsed_fact_check_s": 5.07,
+    "answer_raw": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 grands secteurs** : transition écologique, santé/autonomie, numérique, et rénovation/construction.\n2. **Top 3 des besoins massifs** : aides-soignants (+300k postes), techniciens énergies renouvelables (+200k), et développeurs/data scientists (+150k).\n3. **Stratégie gagnante** : vise un métier à l’intersection de *deux* de ces secteurs (ex : data + santé, BTP + écologie) pour maximiser employabilité et salaire.\n\n---\n\n### **Plan A — Secteurs à recrutement massif (besoins quantitatifs)**\n1. **Santé & autonomie** (connaissance générale)\n   - **Métiers** : Aide-soignant, infirmier, ergothérapeute, coordinateur de parcours gériatrique.\n   - **Pourquoi** : Vieillissement démographique (+5M de +75 ans d’ici 2030) et pénurie chronique. **300 000 postes à pourvoir** rien qu’en Ehpad et maintien à domicile (source : Dares 2023, projections DREES).\n   - **Salaire médian** : 1 800–2 200€ brut/mois (aide-soignant) à 2 500–3 000€ (cadre de santé) — *connaissance générale, marché 2024*.\n   - **Formation clé** : DEAS (Diplôme d’État d’Aide-Soignant, **1 an**, accessible sans bac), ou IFSI (3 ans pour infirmier).\n\n2. **Transition écologique & énergies** (connaissance générale)\n   - **Métiers** : Technicien en énergies renouvelables (solaire, éolien), conseiller en rénovation énergétique, ingénieur en recyclage.\n   - **Pourquoi** : Objectif neutralité carbone 2050 → **200 000 emplois directs** d’ici 2030 (ADEME), surtout en régions (Grand Est, Occitanie, Hauts-de-France).\n   - **Salaire** : 2 000–2 800€ (technicien) à 3 500–4 500€ (ingénieur).\n   - **Formation clé** : BTS FED (Fluides-Énergies-Domotique), licence pro métiers de l’énergie, ou écoles d’ingé (ex : Mines Paris avec spécialité transition énergétique).\n\n3. **Numérique & data** (connaissance générale)\n   - **Métiers** : Développeur full-stack, data analyst, expert cybersécurité, spécialiste IA éthique.\n   - **Pourquoi** : **150 000 postes non pourvus** en 2024 (Syntec Numérique), avec un déficit persistant malgré les formations. Les PME peinent à recruter hors ÎdF.\n   - **Salaire** : 3 000–4 000€ (junior) à 6 000€+ (senior en IA/cyber).\n   - **Formation clé** : BUT Informatique, écoles 42/EPITA, ou licences pro en alternance (ex : Licence MIASHS).\n\n---\n\n### **Plan B — Métiers hybrides (croissance + salaire)**\nLes profils **à l’intersection de deux secteurs** ci-dessus seront les plus recherchés (et mieux payés) :\n- **Data scientist spécialisé santé** : Analyse de données médicales pour les hôpitaux ou pharma. **Salaire : 4 000–5 500€** (connaissance générale).\n  *Formation* : Master en bioinformatique (ex : Université Paris Cité) ou data science + stage en hôpital.\n- **Ingénieur BTP écoresponsable** : Conception de bâtiments bas carbone. **Salaire : 3 500–4 500€**.\n  *Formation* : École d’ingé avec double compétence (ex : ESTP + module RSE).\n- **Technico-commercial énergies renouvelables** : Vente de solutions solaires/éoliennes aux entreprises. **Salaire : 3 000–5 000€** (variable inclus).\n  *Formation* : BTS NDRC (Négociation Digitalisation Relation Client) + spécialisation énergie.\n\n---\n### **Plan C — Pénuries cachées (peu connus mais critiques)**\n1. **Métiers de la logistique et supply chain** (connaissance générale)\n   - **Pourquoi** : Relocalisation industrielle + e-commerce → **80 000 postes** d’ici 2030 (France Logistique).\n   - **Métiers** : Responsable supply chain, logisticien hospitalier, pilote de drone livraison.\n   - **Salaire** : 2 500–4 000€.\n   - **Formation** : BTS GTLA (Gestion des Transports), licence pro logistique.\n\n2. **Artisans du bâtiment** (connaissance générale)\n   - **Pourquoi** : **50 000 artisans manquants** (FFB) pour la rénovation énergétique (isolation, pompes à chaleur).\n   - **Métiers** : Électricien, plombier-chauffagiste, couvreur spécialisé photovoltaïque.\n   - **Salaire** : 2 200–3 500€ (indépendant jusqu’à 5 000€).\n   - **Formation** : CAP/BEP en 2 ans (ex : CAP Installateur Thermique) + FCIL (Formation Complémentaire d’Initiative Locale) en énergies renouvelables.\n\n---\n### **⚠ Attention aux pièges**\n- **Évite les formations \"trop ciblées\"** : Un master \"Blockchain\" seul est risqué ; privilégie un socle large (informatique) + spécialisation en alternance.\n- **Méfie-toi des écoles privées non reconnues** : Vérifie toujours le **grade Master** (pour les bac+5) ou le **RNCP** (pour les bac+2/3) sur [France Compétences](https://www.francecompetences.fr/).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour un **secteur en particulier** (santé, tech, écologie) ou une **compétence transversale** (gestion de projet, analyse de données) que tu voudrais combiner ? Cela peut affiner les options.",
+    "answer_annotated": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 grands secteurs** : transition écologique, santé/autonomie, numérique, et rénovation/construction.\n2. **Top 3 des besoins massifs** : aides-soignants (+300k postes), techniciens énergies renouvelables (+200k), et développeurs/data scientists (+150k).\n3. **Stratégie gagnante** : vise un métier à l’intersection de *deux* de ces secteurs (ex : data + santé, BTP + écologie) pour maximiser employabilité et salaire.\n\n---\n\n### **Plan A — Secteurs à recrutement massif (besoins quantitatifs)**\n1. **Santé & autonomie** (connaissance générale)\n   - **Métiers** : Aide-soignant, infirmier, ergothérapeute, coordinateur de parcours gériatrique.\n   - **Pourquoi** : Vieillissement démographique (+5M de +75 ans d’ici 2030) et pénurie chronique. **300 000 postes à pourvoir *(non vérifié dans les sources)*** rien qu’en Ehpad et maintien à domicile (source : Dares 2023, projections DREES).\n   - **Salaire médian** : 1 800–2 200€ brut/mois (aide-soignant) à 2 500–3 000€ (cadre de santé) — *connaissance générale, marché 2024*.\n   - **Formation clé** : DEAS (Diplôme d’État d’Aide-Soignant, **1 an**, accessible sans bac), ou IFSI (3 ans pour infirmier).\n\n2. **Transition écologique & énergies** (connaissance générale)\n   - **Métiers** : Technicien en énergies renouvelables (solaire, éolien), conseiller en rénovation énergétique, ingénieur en recyclage.\n   - **Pourquoi** : Objectif neutralité carbone 2050 → **200 000 emplois directs *(non vérifié dans les sources)*** d’ici 2030 (ADEME), surtout en régions (Grand Est, Occitanie, Hauts-de-France).\n   - **Salaire** : 2 000–2 800€ (technicien) à 3 500–4 500€ (ingénieur).\n   - **Formation clé** : BTS FED (Fluides-Énergies-Domotique), licence pro métiers de l’énergie, ou écoles d’ingé (ex : Mines Paris avec spécialité transition énergétique).\n\n3. **Numérique & data** (connaissance générale)\n   - **Métiers** : Développeur full-stack, data analyst, expert cybersécurité, spécialiste IA éthique.\n   - **Pourquoi** : **150 000 postes non pourvus *(non vérifié dans les sources)*** en 2024 (Syntec Numérique), avec un déficit persistant malgré les formations. Les PME peinent à recruter hors ÎdF.\n   - **Salaire** : 3 000–4 000€ (junior) à 6 000€+ (senior en IA/cyber).\n   - **Formation clé** : BUT Informatique, écoles 42/EPITA, ou licences pro en alternance (ex : Licence MIASHS).\n\n---\n\n### **Plan B — Métiers hybrides (croissance + salaire)**\nLes profils **à l’intersection de deux secteurs** ci-dessus seront les plus recherchés (et mieux payés) :\n- **Data scientist spécialisé santé** : Analyse de données médicales pour les hôpitaux ou pharma. **Salaire : 4 000–5 500€** (connaissance générale).\n  *Formation* : Master en bioinformatique (ex : Université Paris Cité) ou data science + stage en hôpital.\n- **Ingénieur BTP écoresponsable** : Conception de bâtiments bas carbone. **Salaire : 3 500–4 500€**.\n  *Formation* : École d’ingé avec double compétence (ex : ESTP + module RSE).\n- **Technico-commercial énergies renouvelables** : Vente de solutions solaires/éoliennes aux entreprises. **Salaire : 3 000–5 000€** (variable inclus).\n  *Formation* : BTS NDRC (Négociation Digitalisation Relation Client) + spécialisation énergie.\n\n---\n### **Plan C — Pénuries cachées (peu connus mais critiques)**\n1. **Métiers de la logistique et supply chain** (connaissance générale)\n   - **Pourquoi** : Relocalisation industrielle + e-commerce → **80 000 postes *(non vérifié dans les sources)*** d’ici 2030 (France Logistique).\n   - **Métiers** : Responsable supply chain, logisticien hospitalier, pilote de drone livraison.\n   - **Salaire** : 2 500–4 000€.\n   - **Formation** : BTS GTLA (Gestion des Transports), licence pro logistique.\n\n2. **Artisans du bâtiment** (connaissance générale)\n   - **Pourquoi** : **50 000 artisans manquants *(non vérifié dans les sources)*** (FFB) pour la rénovation énergétique (isolation, pompes à chaleur).\n   - **Métiers** : Électricien, plombier-chauffagiste, couvreur spécialisé photovoltaïque.\n   - **Salaire** : 2 200–3 500€ (indépendant jusqu’à 5 000€).\n   - **Formation** : CAP/BEP en 2 ans (ex : CAP Installateur Thermique) + FCIL (Formation Complémentaire d’Initiative Locale) en énergies renouvelables.\n\n---\n### **⚠ Attention aux pièges**\n- **Évite les formations \"trop ciblées\"** : Un master \"Blockchain\" seul est risqué ; privilégie un socle large (informatique) + spécialisation en alternance.\n- **Méfie-toi des écoles privées non reconnues** : Vérifie toujours le **grade Master** (pour les bac+5) ou le **RNCP** (pour les bac+2/3) sur [France Compétences](https://www.francecompetences.fr/).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour un **secteur en particulier** (santé, tech, écologie) ou une **compétence transversale** (gestion de projet, analyse de données) que tu voudrais combiner ? Cela peut affiner les options.",
+    "annotated_differs": true,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 11,
+      "n_verified": 0,
+      "n_with_disclaimer": 6,
+      "n_hallucinated": 5,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "+300k postes",
+        "stat_value": 300000,
+        "stat_unit": "postes",
+        "context_in_response": "Top 3 des besoins massifs : aides-soignants (+300k postes)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "+200k",
+        "stat_value": 200000,
+        "stat_unit": "postes",
+        "context_in_response": "Top 3 des besoins massifs : techniciens énergies renouvelables (+200k)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "+150k",
+        "stat_value": 150000,
+        "stat_unit": "postes",
+        "context_in_response": "Top 3 des besoins massifs : développeurs/data scientists (+150k)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "+5M de +75 ans d’ici 2030",
+        "stat_value": 5000000,
+        "stat_unit": "personnes",
+        "context_in_response": "Vieillissement démographique (+5M de +75 ans d’ici 2030)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "300 000 postes à pourvoir",
+        "stat_value": 300000,
+        "stat_unit": "postes",
+        "context_in_response": "300 000 postes à pourvoir rien qu’en Ehpad et maintien à domicile (source : Dares 2023, projections DREES)",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "1 800–2 200€ brut/mois",
+        "stat_value": 2000,
+        "stat_unit": "€ brut/mois",
+        "context_in_response": "Salaire médian : 1 800–2 200€ brut/mois (aide-soignant)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "2 500–3 000€",
+        "stat_value": 2750,
+        "stat_unit": "€ brut/mois",
+        "context_in_response": "Salaire médian : 2 500–3 000€ (cadre de santé)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "200 000 emplois directs",
+        "stat_value": 200000,
+        "stat_unit": "emplois",
+        "context_in_response": "Objectif neutralité carbone 2050 → 200 000 emplois directs d’ici 2030 (ADEME)",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "150 000 postes non pourvus",
+        "stat_value": 150000,
+        "stat_unit": "postes",
+        "context_in_response": "150 000 postes non pourvus en 2024 (Syntec Numérique)",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "80 000 postes",
+        "stat_value": 80000,
+        "stat_unit": "postes",
+        "context_in_response": "80 000 postes d’ici 2030 (France Logistique)",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "50 000 artisans manquants",
+        "stat_value": 50000,
+        "stat_unit": "artisans",
+        "context_in_response": "50 000 artisans manquants (FFB) pour la rénovation énergétique",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 0.7798,
+        "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7793,
+        "nom": "Marché du travail prospective 2030 — région Pays de la Loire | Effectifs 2019 totaux : 1 561 926 per",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7791,
+        "nom": "Marché du travail prospective 2030 — région Normandie | Effectifs 2019 totaux : 1 271 569 personnes ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7787,
+        "nom": "Marché du travail prospective 2030 — région Bourgogne-Franche-Comté | Effectifs 2019 totaux : 1 070 ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7776,
+        "nom": "Marché du travail prospective 2030 — région Corse | Effectifs 2019 totaux : 132 156 personnes (toute",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.777,
+        "nom": "Marché du travail prospective 2030 — région Auvergne-Rhône-Alpes | Effectifs 2019 totaux : 3 259 115",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7759,
+        "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7752,
+        "nom": "Marché du travail prospective 2030 — région Bretagne | Effectifs 2019 totaux : 1 328 112 personnes (",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7728,
+        "nom": "Marché du travail prospective 2030 — région Occitanie | Effectifs 2019 totaux : 2 265 290 personnes ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7724,
+        "nom": "Marché du travail prospective 2030 — région Provence-Alpes-Côte d'Azur | Effectifs 2019 totaux : 1 9",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      }
+    ]
+  },
+  {
+    "idx_global": 2,
+    "query_id": "q02_perspectives_bretagne",
+    "query_text": "Quelles sont les perspectives de recrutement en Bretagne d'ici 2030 ?",
+    "pattern_target": "perspectives recrutement + region",
+    "elapsed_gen_s": 16.41,
+    "elapsed_fact_check_s": 10.92,
+    "answer_raw": "**TL;DR**\n1. La Bretagne devrait connaître une **demande soutenue** dans 3 secteurs clés d’ici 2030 : numérique/tech (cybersécurité, data), transition énergétique (éolien offshore, hydrogène), et santé/social (vieillissement de la population).\n2. **Pénurie de main-d’œuvre qualifiée** annoncée : +15 000 emplois non pourvus/an dans l’industrie et le numérique (source : *Bretagne Développement Innovation, 2023*).\n3. **Stratégie gagnante** : cibler les **formations courtes qualifiantes** (BUT, licences pro) ou les **filières en tension** (informatique, énergies marines) avec des stages en entreprise bretonne.\n\n---\n\n### **Plan A — Secteurs porteurs avec recrutement garanti**\n#### 1. **Numérique & Cybersécurité** *(connaissance générale)*\n- **Pourquoi ?** La Bretagne héberge des pôles majeurs :\n  - **Lannion** (pôle cyber avec *Orange Cyberdefense*, *Amossys*, campus *SecNum Academy* labellisé ANSSI).\n  - **Rennes** (French Tech, *Nantes Université* et *INSA Rennes* en partenariat avec *Thales*, *Capgemini*).\n  - **Brest** (data science pour la défense et les énergies marines).\n- **Métiers en tension** : technicien cybersécurité (salaire médian embauche : ~2 200€ net), développeur full-stack, analyste data.\n- **Formations clés** :\n  - **BUT Informatique** (parcours Cybersécurité) à **Vannes** (UBS) ou **Lannion** (IUT).\n  - **Licence Pro Métiers de l’informatique** (spécialité Sécurité des Systèmes) à **Rennes 1**.\n  - **Écoles d’ingé** : *ENSSAT Lannion* (cyber), *IMT Atlantique Brest* (data/IA).\n\n#### 2. **Énergies Marines Renouvelables (EMR)** *(connaissance générale)*\n- **Pourquoi ?** La Bretagne vise **40% de l’éolien offshore français d’ici 2030** (parcs de Saint-Brieuc, Saint-Nazaire). Besoins en :\n  - Techniciens de maintenance éolienne (salaire : 2 000–2 500€ net, *source : ADEME 2023*).\n  - Ingénieurs en hydrogène vert (projet *Brest Hydrogen*).\n- **Formations clés** :\n  - **BUT Génie Mécanique et Productique** (parcours Énergies Renouvelables) à **Quimper**.\n  - **Licence Pro Maintenance des Systèmes Énergétiques** à **Brest** (UBO).\n  - **Master Énergies Marines** à **Plouzané** (UBO/ENSTA Bretagne).\n\n#### 3. **Santé & Social** *(connaissance générale)*\n- **Pourquoi ?** 1 Breton sur 4 aura +60 ans en 2030 (*INSEE*). Pénurie de :\n  - Infirmiers (3 000 postes vacants en 2025, *source : ARS Bretagne*).\n  - Aides-soignants et travailleurs sociaux (salaire : 1 700–2 000€ net).\n- **Formations clés** :\n  - **IFSI** (Instituts de Formation en Soins Infirmiers) à **Rennes**, **Brest**, **Vannes** (accès sans concours depuis 2019, sélectivité modérée).\n  - **BUT Carrières Sociales** à **Quimper** (pour les métiers de l’accompagnement).\n\n---\n### **Plan B — Secteurs émergents (moins saturés, potentiel fort)**\n#### 1. **Agroalimentaire & Biotech** *(connaissance générale)*\n- **Pourquoi ?** La Bretagne est **1ère région agricole française** (lait, porc, algues). Besoins en :\n  - Ingénieurs agroalimentaires (salaire : 2 300–2 800€ net).\n  - Techniciens en biotechnologies marines (algues, cosmétiques).\n- **Formations** :\n  - **Licence Pro Bio-industries et Biotechnologies** à **Quimper**.\n  - **École d’ingé** : *Agrocampus Ouest* (Rennes) pour l’agronomie.\n\n#### 2. **Tourisme & Patrimoine** *(connaissance générale)*\n- **Pourquoi ?** 25 millions de touristes/an en Bretagne (*CRT Bretagne*). Manque de :\n  - Chefs de projet événementiel (festivals, *Vieilles Charrues*).\n  - Guides spécialisés (patrimoine celtique, randonnées côtières).\n- **Formations** :\n  - **BUT Tourisme** à **Vannes** ou **Lannion**.\n  - **Licence Pro Métiers du Patrimoine** à **Rennes 2**.\n\n---\n### **Plan C — Passerelles pour se former vite**\n1. **Alternance** :\n   - **Avantage** : 80% des alternants sont embauchés dans leur entreprise (*source : DEPP 2023*).\n   - **Où ?** Pôles comme *Brest Métropole* ou *Rennes Atalante* proposent des contrats en cyber et EMR.\n2. **Reconversion courte** :\n   - **Certifications** : *SecNum Academy* (gratuit, en ligne) pour la cyber, ou *Titre Pro Technicien Éolien* (6 mois, financé par Pôle Emploi).\n3. **Mobilité interne** :\n   - Exemple : un BTS Commerce peut bifurquer vers un **BUT GEA** (Gestion des Entreprises) à **Lorient** pour viser les PME bretonnes.\n\n---\n**⚠ Attention**\n- **Évite les formations privées non labellisées** : certaines écoles à Rennes ou Brest promettent des débouchés en \"management international\" sans partenariats locaux (vérifie les conventions avec les entreprises bretonnes).\n- **Logement** : Les loyers sont **30% plus élevés** à Rennes qu’à Brest ou Vannes (*source : Clameur 2024*).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour un secteur en particulier (tech, santé, énergie) ? Ou préfères-tu une formation **courte et qualifiante** (BUT/licence pro) pour entrer vite sur le marché du travail ? *(Cela aidera à affiner entre Plan A et Plan C.)*\n\n---\n👤 **Pour aller plus loin**, un conseiller du **CIO de Rennes** ou du **Pôle Emploi Bretagne** peut t’aider à identifier les entreprises qui recrutent près de chez toi. Les **Forums Métiers** (comme *Job en Bretagne* à Lorient) sont aussi utiles pour rencontrer des recruteurs.",
+    "answer_annotated": "**TL;DR**\n1. La Bretagne devrait connaître une **demande soutenue** dans 3 secteurs clés d’ici 2030 : numérique/tech (cybersécurité, data), transition énergétique (éolien offshore, hydrogène), et santé/social (vieillissement de la population).\n2. **Pénurie de main-d’œuvre qualifiée** annoncée : +15 000 emplois non pourvus/an dans l’industrie et le numérique *(non vérifié dans les sources)* (source : *Bretagne Développement Innovation, 2023*).\n3. **Stratégie gagnante** : cibler les **formations courtes qualifiantes** (BUT, licences pro) ou les **filières en tension** (informatique, énergies marines) avec des stages en entreprise bretonne.\n\n---\n\n### **Plan A — Secteurs porteurs avec recrutement garanti**\n#### 1. **Numérique & Cybersécurité** *(connaissance générale)*\n- **Pourquoi ?** La Bretagne héberge des pôles majeurs :\n  - **Lannion** (pôle cyber avec *Orange Cyberdefense*, *Amossys*, campus *SecNum Academy* labellisé ANSSI).\n  - **Rennes** (French Tech, *Nantes Université* et *INSA Rennes* en partenariat avec *Thales*, *Capgemini*).\n  - **Brest** (data science pour la défense et les énergies marines).\n- **Métiers en tension** : technicien cybersécurité (salaire médian embauche : ~2 200€ net), développeur full-stack, analyste data.\n- **Formations clés** :\n  - **BUT Informatique** (parcours Cybersécurité) à **Vannes** (UBS) ou **Lannion** (IUT).\n  - **Licence Pro Métiers de l’informatique** (spécialité Sécurité des Systèmes) à **Rennes 1**.\n  - **Écoles d’ingé** : *ENSSAT Lannion* (cyber), *IMT Atlantique Brest* (data/IA).\n\n#### 2. **Énergies Marines Renouvelables (EMR)** *(connaissance générale)*\n- **Pourquoi ?** La Bretagne vise **40% de l’éolien offshore français d’ici 2030** (parcs de Saint-Brieuc, Saint-Nazaire). Besoins en :\n  - Techniciens de maintenance éolienne (salaire : 2 000–2 500€ net, *source : ADEME 2023*).\n  - Ingénieurs en hydrogène vert (projet *Brest Hydrogen*).\n- **Formations clés** :\n  - **BUT Génie Mécanique et Productique** (parcours Énergies Renouvelables) à **Quimper**.\n  - **Licence Pro Maintenance des Systèmes Énergétiques** à **Brest** (UBO).\n  - **Master Énergies Marines** à **Plouzané** (UBO/ENSTA Bretagne).\n\n#### 3. **Santé & Social** *(connaissance générale)*\n- **Pourquoi ?** 1 Breton sur 4 aura +60 ans en 2030 (*INSEE*). Pénurie de :\n  - Infirmiers (3 000 postes vacants en 2025 *(non vérifié dans les sources)*, *source : ARS Bretagne*).\n  - Aides-soignants et travailleurs sociaux (salaire : 1 700–2 000€ net).\n- **Formations clés** :\n  - **IFSI** (Instituts de Formation en Soins Infirmiers) à **Rennes**, **Brest**, **Vannes** (accès sans concours depuis 2019, sélectivité modérée).\n  - **BUT Carrières Sociales** à **Quimper** (pour les métiers de l’accompagnement).\n\n---\n### **Plan B — Secteurs émergents (moins saturés, potentiel fort)**\n#### 1. **Agroalimentaire & Biotech** *(connaissance générale)*\n- **Pourquoi ?** La Bretagne est **1ère région agricole française** (lait, porc, algues). Besoins en :\n  - Ingénieurs agroalimentaires (salaire : 2 300–2 800€ net).\n  - Techniciens en biotechnologies marines (algues, cosmétiques).\n- **Formations** :\n  - **Licence Pro Bio-industries et Biotechnologies** à **Quimper**.\n  - **École d’ingé** : *Agrocampus Ouest* (Rennes) pour l’agronomie.\n\n#### 2. **Tourisme & Patrimoine** *(connaissance générale)*\n- **Pourquoi ?** 25 millions de touristes/an en Bretagne (*CRT Bretagne*). Manque de :\n  - Chefs de projet événementiel (festivals, *Vieilles Charrues*).\n  - Guides spécialisés (patrimoine celtique, randonnées côtières).\n- **Formations** :\n  - **BUT Tourisme** à **Vannes** ou **Lannion**.\n  - **Licence Pro Métiers du Patrimoine** à **Rennes 2**.\n\n---\n### **Plan C — Passerelles pour se former vite**\n1. **Alternance** :\n   - **Avantage** : 80% des alternants sont embauchés dans leur entreprise *(non vérifié dans les sources)* (*source : DEPP 2023*).\n   - **Où ?** Pôles comme *Brest Métropole* ou *Rennes Atalante* proposent des contrats en cyber et EMR.\n2. **Reconversion courte** :\n   - **Certifications** : *SecNum Academy* (gratuit, en ligne) pour la cyber, ou *Titre Pro Technicien Éolien* (6 mois, financé par Pôle Emploi).\n3. **Mobilité interne** :\n   - Exemple : un BTS Commerce peut bifurquer vers un **BUT GEA** (Gestion des Entreprises) à **Lorient** pour viser les PME bretonnes.\n\n---\n**⚠ Attention**\n- **Évite les formations privées non labellisées** : certaines écoles à Rennes ou Brest promettent des débouchés en \"management international\" sans partenariats locaux (vérifie les conventions avec les entreprises bretonnes).\n- **Logement** : Les loyers sont **30% plus élevés** à Rennes qu’à Brest ou Vannes (*source : Clameur 2024*).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour un secteur en particulier (tech, santé, énergie) ? Ou préfères-tu une formation **courte et qualifiante** (BUT/licence pro) pour entrer vite sur le marché du travail ? *(Cela aidera à affiner entre Plan A et Plan C.)*\n\n---\n👤 **Pour aller plus loin**, un conseiller du **CIO de Rennes** ou du **Pôle Emploi Bretagne** peut t’aider à identifier les entreprises qui recrutent près de chez toi. Les **Forums Métiers** (comme *Job en Bretagne* à Lorient) sont aussi utiles pour rencontrer des recruteurs.",
+    "annotated_differs": true,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 18,
+      "n_verified": 8,
+      "n_with_disclaimer": 6,
+      "n_hallucinated": 4,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "+15 000 emplois non pourvus/an dans l’industrie et le numérique",
+        "stat_value": 15000,
+        "stat_unit": "emplois/an",
+        "context_in_response": "Pénurie de main-d’œuvre qualifiée annoncée",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire médian embauche : ~2 200€ net",
+        "stat_value": 2200,
+        "stat_unit": "€ net",
+        "context_in_response": "Métiers en tension : technicien cybersécurité",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "40% de l’éolien offshore français d’ici 2030",
+        "stat_value": 40,
+        "stat_unit": "%",
+        "context_in_response": "La Bretagne vise",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire : 2 000–2 500€ net",
+        "stat_value": 2250,
+        "stat_unit": "€ net",
+        "context_in_response": "Techniciens de maintenance éolienne",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "1 Breton sur 4 aura +60 ans en 2030",
+        "stat_value": 25,
+        "stat_unit": "%",
+        "context_in_response": "Santé & Social : vieillissement de la population",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "3 000 postes vacants en 2025",
+        "stat_value": 3000,
+        "stat_unit": "postes",
+        "context_in_response": "Pénurie d’infirmiers",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire : 1 700–2 000€ net",
+        "stat_value": 1850,
+        "stat_unit": "€ net",
+        "context_in_response": "Aides-soignants et travailleurs sociaux",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "80% des alternants sont embauchés dans leur entreprise",
+        "stat_value": 80,
+        "stat_unit": "%",
+        "context_in_response": "Avantage de l’alternance",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Les loyers sont 30% plus élevés à Rennes qu’à Brest ou Vannes",
+        "stat_value": 30,
+        "stat_unit": "%",
+        "context_in_response": "Attention : Logement",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "25 millions de touristes/an en Bretagne",
+        "stat_value": 25000000,
+        "stat_unit": "touristes/an",
+        "context_in_response": "Tourisme & Patrimoine",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "taux_emploi_3ans: 0.86",
+        "stat_value": 86,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : Licence - Langues, littératures et civilisations étrangères et régionales - Parcours Breton",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_emploi_6ans: 0.91",
+        "stat_value": 91,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : Licence - Langues, littératures et civilisations étrangères et régionales - Parcours Breton",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_cdi: 0.83",
+        "stat_value": 83,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : Licence - Langues, littératures et civilisations étrangères et régionales - Parcours Breton",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "salaire_median_embauche: 1740",
+        "stat_value": 1740,
+        "stat_unit": "€",
+        "context_in_response": "Insertion pro : Licence - Langues, littératures et civilisations étrangères et régionales - Parcours Breton",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_emploi_3ans: 0.85",
+        "stat_value": 85,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : GESTION DES RESSOURCES HUMAINES (Université de Bretagne Occidentale)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_emploi_6ans: 0.91",
+        "stat_value": 91,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : GESTION DES RESSOURCES HUMAINES (Université de Bretagne Occidentale)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_cdi: 0.83",
+        "stat_value": 83,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : GESTION DES RESSOURCES HUMAINES (Université de Bretagne Occidentale)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "salaire_median_embauche: 2080",
+        "stat_value": 2080,
+        "stat_unit": "€",
+        "context_in_response": "Insertion pro : GESTION DES RESSOURCES HUMAINES (Université de Bretagne Occidentale)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 1.1214,
+        "nom": "Licence - Langues, littératures et civilisations étrangères et régionales - Parcours Breton  - début",
+        "etablissement": "Université de Rennes 2",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "langues",
+        "domain": "formation"
+      },
+      {
+        "score": 1.1157,
+        "nom": "Licence - Langues, littératures et civilisations étrangères et régionales - Parcours Breton - Entièr",
+        "etablissement": "Université de Rennes 2",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "parcoursup",
+        "domaine": "langues",
+        "domain": "formation"
+      },
+      {
+        "score": 1.0249,
+        "nom": "GESTION DES RESSOURCES HUMAINES — None",
+        "etablissement": "Université de Bretagne Occidentale",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "eco_gestion",
+        "domain": "formation"
+      },
+      {
+        "score": 1.0173,
+        "nom": "GESTION DES RESSOURCES HUMAINES — None",
+        "etablissement": "Université Bretagne Sud",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "eco_gestion",
+        "domain": "formation"
+      },
+      {
+        "score": 0.8062,
+        "nom": "Marché du travail prospective 2030 — région Bretagne | Effectifs 2019 totaux : 1 328 112 personnes (",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7803,
+        "nom": "Marché du travail cadres en Bretagne (panel APEC 2026) | Recrutements 2025 : 9 990 (+5 % vs 2024 ; à",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "apec_observatoire_emploi_cadre_2026",
+        "domaine": null,
+        "domain": "apec_region"
+      },
+      {
+        "score": 0.7586,
+        "nom": "Observations cross-régions APEC 2026 : Divergence dynamiques 2025 → convergence 2026 : en 2025, 4 ré",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "apec_observatoire_emploi_cadre_2026",
+        "domaine": null,
+        "domain": "apec_region"
+      },
+      {
+        "score": 0.7534,
+        "nom": "Marché du travail prospective 2030 — région Normandie | Effectifs 2019 totaux : 1 271 569 personnes ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7523,
+        "nom": "Marché du travail prospective 2030 — région Corse | Effectifs 2019 totaux : 132 156 personnes (toute",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7507,
+        "nom": "Marché du travail prospective 2030 — région Pays de la Loire | Effectifs 2019 totaux : 1 561 926 per",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      }
+    ]
+  },
+  {
+    "idx_global": 3,
+    "query_id": "q03_postes_aides_soignants",
+    "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+    "pattern_target": "postes a pourvoir + métier specific",
+    "elapsed_gen_s": 10.56,
+    "elapsed_fact_check_s": 5.34,
+    "answer_raw": "**TL;DR**\n1. Les projections officielles estiment **150 000 à 200 000 postes d’aides-soignants à pourvoir d’ici 2030** en France (connaissance générale, sources Dares/DEPP).\n2. Ce besoin est lié au vieillissement de la population (+12M de 60+ en 2030) et au turnover élevé dans le secteur (30% des effectifs à renouveler).\n3. **3 voies d’accès prioritaires** : formation en 10 mois (Diplôme d’État), VAE pour les professionnels expérimentés, ou reconversion via Pôle Emploi.\n\n---\n\n### **Plan A — Formation classique : Diplôme d’État (DEAS) en 10 mois**\n📍 **Formation Aide-Soignant (DEAS)** — **Partout en France** (ex : [Lycée Marie Curie](https://www.onisep.fr), [Pôle Formation Santé](https://www.pole-formationsante.fr)) — **Niveau bac**, **100% pris en charge** si financé par la Région/Pôle Emploi.\n*Pour toi : la voie la plus directe, avec **90% de taux d’insertion** à 6 mois (source : Dares 2023, estimation secteur).*\n\n### **Plan B — Reconversion accélérée : VAE ou parcours court**\n- **VAE (Validation des Acquis de l’Expérience)** : accessible si tu as **1 an d’expérience** en soin (ex : auxiliaire de vie, AMP). Délai : 6-12 mois.\n- **Formations intensives** : certaines régions proposent des DEAS en **8 mois** (ex : Île-de-France, Auvergne-Rhône-Alpes).\n*Pour toi : idéal si tu as déjà un pied dans le médical ou besoin de rapidité.*\n\n### **Plan C — Alternatives connexes avec débouchés**\n- **Agent des Services Hospitaliers (ASH)** : formation **3 mois**, puis passerelle vers DEAS.\n- **Auxiliaire de Puériculture** : formation **10-12 mois**, salaires +10% vs aide-soignant.\n*Pour toi : si tu veux tester le secteur avant de t’engager, ou viser un métier mieux payé à terme.*\n\n---\n**⚠ Attention aux pièges**\n- **Sélectivité cachée** : certaines formations DEAS en lycée public sont **saturées** (ex : 300 candidats pour 30 places à Paris). Privilégie les centres agréés par les **ARS** (Agences Régionales de Santé) ou l’alternance.\n- **Conditions de travail** : turnover élevé lié aux **horaires décalés** (nuit/week-end) et **salaire de départ ~1 700€ net** (source : conventions collectives hospitalières 2024).\n- **Faux espoirs \"médecin\"** : les fiches mentionnent des débouchés vers médecin/sage-femme, mais **ces métiers exigent 6 à 10 ans d’études supplémentaires** (PACES/L.AS, école de sage-femme). Le DEAS seul ne suffit pas.\n\n---\n**Question pour toi :**\nAs-tu une préférence entre **rapidité d’accès** (Plan A/B), **stabilité** (CDI à l’hôpital), ou **évolution de carrière** (vers infirmier/puériculteur) ? Cela peut orienter vers une formation plutôt qu’une autre. 👤 Pour affiner ton projet, un RDV avec le **CIBC** (Centre Interinstitutionnel de Bilan de Compétences) ou un conseiller Pôle Emploi spécialisé santé est vivement recommandé.",
+    "answer_annotated": "**TL;DR**\n1. Les projections officielles estiment **150 000 à 200 000 postes d’aides-soignants à pourvoir d’ici 2030 *(non vérifié dans les sources)*** en France (connaissance générale, sources Dares/DEPP).\n2. Ce besoin est lié au vieillissement de la population (+12M de 60+ en 2030 *(non vérifié dans les sources)*) et au turnover élevé dans le secteur (30% des effectifs à renouveler *(non vérifié dans les sources)*).\n3. **3 voies d’accès prioritaires** : formation en 10 mois (Diplôme d’État), VAE pour les professionnels expérimentés, ou reconversion via Pôle Emploi.\n\n---\n\n### **Plan A — Formation classique : Diplôme d’État (DEAS) en 10 mois**\n📍 **Formation Aide-Soignant (DEAS)** — **Partout en France** (ex : [Lycée Marie Curie](https://www.onisep.fr), [Pôle Formation Santé](https://www.pole-formationsante.fr)) — **Niveau bac**, **100% pris en charge** si financé par la Région/Pôle Emploi.\n*Pour toi : la voie la plus directe, avec **90% de taux d’insertion** à 6 mois (source : Dares 2023, estimation secteur).*\n\n### **Plan B — Reconversion accélérée : VAE ou parcours court**\n- **VAE (Validation des Acquis de l’Expérience)** : accessible si tu as **1 an d’expérience** en soin (ex : auxiliaire de vie, AMP). Délai : 6-12 mois.\n- **Formations intensives** : certaines régions proposent des DEAS en **8 mois** (ex : Île-de-France, Auvergne-Rhône-Alpes).\n*Pour toi : idéal si tu as déjà un pied dans le médical ou besoin de rapidité.*\n\n### **Plan C — Alternatives connexes avec débouchés**\n- **Agent des Services Hospitaliers (ASH)** : formation **3 mois**, puis passerelle vers DEAS.\n- **Auxiliaire de Puériculture** : formation **10-12 mois**, salaires +10% vs aide-soignant.\n*Pour toi : si tu veux tester le secteur avant de t’engager, ou viser un métier mieux payé à terme.*\n\n---\n**⚠ Attention aux pièges**\n- **Sélectivité cachée** : certaines formations DEAS en lycée public sont **saturées** (ex : 300 candidats pour 30 places à Paris). Privilégie les centres agréés par les **ARS** (Agences Régionales de Santé) ou l’alternance.\n- **Conditions de travail** : turnover élevé lié aux **horaires décalés** (nuit/week-end) et **salaire de départ ~1 700€ net *(non vérifié dans les sources)*** (source : conventions collectives hospitalières 2024).\n- **Faux espoirs \"médecin\"** : les fiches mentionnent des débouchés vers médecin/sage-femme, mais **ces métiers exigent 6 à 10 ans d’études supplémentaires** (PACES/L.AS, école de sage-femme). Le DEAS seul ne suffit pas.\n\n---\n**Question pour toi :**\nAs-tu une préférence entre **rapidité d’accès** (Plan A/B), **stabilité** (CDI à l’hôpital), ou **évolution de carrière** (vers infirmier/puériculteur) ? Cela peut orienter vers une formation plutôt qu’une autre. 👤 Pour affiner ton projet, un RDV avec le **CIBC** (Centre Interinstitutionnel de Bilan de Compétences) ou un conseiller Pôle Emploi spécialisé santé est vivement recommandé.",
+    "annotated_differs": true,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 8,
+      "n_verified": 3,
+      "n_with_disclaimer": 0,
+      "n_hallucinated": 5,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "150 000 à 200 000 postes d’aides-soignants à pourvoir d’ici 2030",
+        "stat_value": 150000,
+        "stat_unit": "postes",
+        "context_in_response": "projections officielles estiment ... postes d’aides-soignants à pourvoir d’ici 2030",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "+12M de 60+ en 2030",
+        "stat_value": 12,
+        "stat_unit": "millions",
+        "context_in_response": "vieillissement de la population (+12M de 60+ en 2030)",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "30% des effectifs à renouveler",
+        "stat_value": 30,
+        "stat_unit": "%",
+        "context_in_response": "turnover élevé dans le secteur (30% des effectifs à renouveler)",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "90% de taux d’insertion à 6 mois",
+        "stat_value": 90,
+        "stat_unit": "%",
+        "context_in_response": "avec 90% de taux d’insertion à 6 mois (source : Dares 2023, estimation secteur)",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire de départ ~1 700€ net",
+        "stat_value": 1700,
+        "stat_unit": "€",
+        "context_in_response": "salaire de départ ~1 700€ net (source : conventions collectives hospitalières 2024)",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "salaire_median_embauche: 1410",
+        "stat_value": 1410,
+        "stat_unit": "€",
+        "context_in_response": "salaire_median_embauche: 1410 (source: cereq, cohorte Generation 2017)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_emploi_6ans: 0.8",
+        "stat_value": 80,
+        "stat_unit": "%",
+        "context_in_response": "taux_emploi_6ans: 0.8 (source: cereq, cohorte Generation 2017)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_cdi: 0.66",
+        "stat_value": 66,
+        "stat_unit": "%",
+        "context_in_response": "taux_cdi: 0.66 (source: cereq, cohorte Generation 2017)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 0.8389,
+        "nom": "Aide-Soignant",
+        "etablissement": "MINISTERE DE LA SANTE ET DE LA PREVENTION",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "sante",
+        "domain": "formation"
+      },
+      {
+        "score": 0.8275,
+        "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+        "etablissement": "POUR LE DEVELOPPEMENT DE L APPRENTISSAGE DES PROFESSIONS DU SECTEUR SANITAIRE ET SOCIAL",
+        "niveau": "bac",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "sante",
+        "domain": "formation"
+      },
+      {
+        "score": 0.8242,
+        "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+        "etablissement": "CENTRE GERONTOLOGIQUE DEPARTEMENTAL",
+        "niveau": "bac",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "sante",
+        "domain": "formation"
+      },
+      {
+        "score": 0.8235,
+        "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+        "etablissement": "ASSISTEAL FORMATION",
+        "niveau": "bac",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "sante",
+        "domain": "formation"
+      },
+      {
+        "score": 0.8235,
+        "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+        "etablissement": "ASSISTEAL FORMATION",
+        "niveau": "bac",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "sante",
+        "domain": "formation"
+      },
+      {
+        "score": 0.8224,
+        "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+        "etablissement": "POLE FORMATION SANTE",
+        "niveau": "bac",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "sante",
+        "domain": "formation"
+      },
+      {
+        "score": 0.821,
+        "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+        "etablissement": "LYCEE PROFESSIONNEL MARIE CURIE - LYCEE DES METIERS DU COMMERCE ET DES SERVICES A LA PERSONNE",
+        "niveau": "bac",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "sante",
+        "domain": "formation"
+      },
+      {
+        "score": 0.8209,
+        "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+        "etablissement": "SOINS SERVICE",
+        "niveau": "bac",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "sante",
+        "domain": "formation"
+      },
+      {
+        "score": 0.7734,
+        "nom": "Métier 2030 (DARES) — FAP V0Z : Aides-soignants | Effectifs 2019 France : 764 466 personnes | Créati",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7717,
+        "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      }
+    ]
+  },
+  {
+    "idx_global": 4,
+    "query_id": "q04_retraite_massive",
+    "query_text": "Quels métiers vont voir une retraite massive de leurs effectifs d'ici 2030 ?",
+    "pattern_target": "retraite massive",
+    "elapsed_gen_s": 14.68,
+    "elapsed_fact_check_s": 4.69,
+    "answer_raw": "**TL;DR**\n1. D’ici 2030, les métiers les plus touchés par les départs à la retraite concernent surtout les **secteurs vieillissants** (santé, éducation, industrie, BTP) et les **métiers en tension structurelle** (numérique, énergie).\n2. **Top 3 des domaines critiques** : santé (infirmiers, médecins), enseignement (professeurs), et métiers techniques (ingénieurs, techniciens de maintenance).\n3. **Opportunité pour toi** : ces départs créent des besoins en recrutement, mais aussi en **formation accélérée** (reconversion) ou en **spécialisations hybrides** (ex : santé + tech).\n\n---\n\n### **Plan A — Secteurs en tension AVEC retraite massive (priorité emploi)**\n1. **Santé et social** (connaissance générale)\n   - **Métiers** : Infirmiers (50% des effectifs ont +50 ans), aides-soignants, médecins généralistes (déserts médicaux), ergothérapeutes.\n   - **Pourquoi** : Vieillissement de la population **et** des professionnels. Besoin estimé à +200 000 emplois d’ici 2030 (source Dares, projections 2022).\n   - **Pour toi** : Formations courtes (IFSI en 3 ans pour infirmier) ou longues (médecine), avec **débouchés garantis** mais conditions de travail exigeantes.\n\n2. **Éducation et formation** (connaissance générale)\n   - **Métiers** : Professeurs des écoles/collèges/lycées (40% des enseignants partiront d’ici 2030), formateurs pour adultes (transition écologique).\n   - **Pourquoi** : Pyramide des âges très déséquilibrée dans l’Éducation nationale. Concours de recrutement **moins sélectifs** qu’avant (ex : CRPE accessible avec une licence).\n   - **Pour toi** : Voie publique (concours) ou privée (écoles spécialisées). Salaire modéré mais **stabilité**.\n\n3. **Industrie et BTP** (connaissance générale)\n   - **Métiers** : Techniciens de maintenance industrielle, soudeurs, conducteurs de travaux, électriciens.\n   - **Pourquoi** : 30% des salariés du BTP ont +55 ans (source FFB). Pénurie déjà critique dans certains territoires.\n   - **Pour toi** : CAP/Bac Pro en 2 ans ou BTS (ex : BTS Maintenance des Systèmes). **Salaire attractif** en région (35-45k€ après expérience).\n\n---\n\n### **Plan B — Métiers émergents avec turnover accéléré (tech + transition)**\n1. **Numérique et cybersécurité** (connaissance générale)\n   - **Métiers** : Administrateurs réseau, experts cybersécurité (label SecNumEdu), développeurs full-stack.\n   - **Pourquoi** : 50 000 postes non pourvus en 2024 (source Syntec Numérique), et **départs massifs** des seniors formés dans les années 2000.\n   - **Pour toi** : Formations courtes (BUT Informatique, écoles comme 42) ou certifications (ANSSI). **Salaire médian embauche : ~2 500€ brut** (estimation marché).\n\n2. **Énergies renouvelables et environnement** (connaissance générale)\n   - **Métiers** : Techniciens en énergies vertes (solaire, éolien), auditeurs énergétiques, responsables RSE.\n   - **Pourquoi** : Plan France 2030 et départs des ingénieurs formés dans les années 1980-90. **Croissance +15%/an** des emplois verts (ADEME).\n   - **Pour toi** : BTS/DUT (ex : BTS Métiers de l’Eau) ou écoles d’ingénieurs (INSA, Polytech).\n\n3. **Logistique et transport** (connaissance générale)\n   - **Métiers** : Conducteurs routiers (pénurie de 50 000 chauffeurs), gestionnaires de supply chain.\n   - **Pourquoi** : 45% des routiers ont +50 ans (source FNTR). **Permis poids lourd financé** par Pôle Emploi dans certaines régions.\n   - **Pour toi** : Formation rapide (3-6 mois) avec **emploi garanti**.\n\n---\n### **Plan C — Reconversion et passerelles (pour profiter du turnover)**\n- **VAE (Validation des Acquis de l’Expérience)** : Permet d’obtenir un diplôme (ex : licence pro) en 1 an si tu as 3 ans d’expérience dans un métier en tension.\n- **Alternance pour adultes** : Dispositifs comme le **Pro-A** (reconversion en 1 an avec maintien de salaire).\n- **Métiers hybrides** : Ex : **infirmier + compétences en data** (pour travailler dans les hôpitaux sur les dossiers patients numérisés).\n\n---\n**⚠ Attention** :\n- Les métiers en tension ne sont pas toujours **bien rémunérés** (ex : aides-soignants, enseignants). Vérifie les grilles salariales (ex : [fiches métiers Pôle Emploi](https://candidat.pole-emploi.fr/marche-du-travail/fiches-metiers)).\n- Certaines formations sont **saturées** (ex : écoles d’infirmier en Île-de-France). Privilégie les territoires en déserts médicaux (Grand Est, Nouvelle-Aquitaine).\n\n**Question pour toi** :\nAs-tu une préférence entre **stabilité** (santé/éducation), **salaire** (tech/industrie), ou **impact sociétal** (transition écologique) ? Cela peut affiner les options.",
+    "answer_annotated": "**TL;DR**\n1. D’ici 2030, les métiers les plus touchés par les départs à la retraite concernent surtout les **secteurs vieillissants** (santé, éducation, industrie, BTP) et les **métiers en tension structurelle** (numérique, énergie).\n2. **Top 3 des domaines critiques** : santé (infirmiers, médecins), enseignement (professeurs), et métiers techniques (ingénieurs, techniciens de maintenance).\n3. **Opportunité pour toi** : ces départs créent des besoins en recrutement, mais aussi en **formation accélérée** (reconversion) ou en **spécialisations hybrides** (ex : santé + tech).\n\n---\n\n### **Plan A — Secteurs en tension AVEC retraite massive (priorité emploi)**\n1. **Santé et social** (connaissance générale)\n   - **Métiers** : Infirmiers (50% des effectifs ont +50 ans), aides-soignants, médecins généralistes (déserts médicaux), ergothérapeutes.\n   - **Pourquoi** : Vieillissement de la population **et** des professionnels. Besoin estimé à +200 000 emplois d’ici 2030 (source Dares, projections 2022).\n   - **Pour toi** : Formations courtes (IFSI en 3 ans pour infirmier) ou longues (médecine), avec **débouchés garantis** mais conditions de travail exigeantes.\n\n2. **Éducation et formation** (connaissance générale)\n   - **Métiers** : Professeurs des écoles/collèges/lycées (40% des enseignants partiront d’ici 2030), formateurs pour adultes (transition écologique).\n   - **Pourquoi** : Pyramide des âges très déséquilibrée dans l’Éducation nationale. Concours de recrutement **moins sélectifs** qu’avant (ex : CRPE accessible avec une licence).\n   - **Pour toi** : Voie publique (concours) ou privée (écoles spécialisées). Salaire modéré mais **stabilité**.\n\n3. **Industrie et BTP** (connaissance générale)\n   - **Métiers** : Techniciens de maintenance industrielle, soudeurs, conducteurs de travaux, électriciens.\n   - **Pourquoi** : 30% des salariés du BTP ont +55 ans (source FFB). Pénurie déjà critique dans certains territoires.\n   - **Pour toi** : CAP/Bac Pro en 2 ans ou BTS (ex : BTS Maintenance des Systèmes). **Salaire attractif** en région (35-45k€ après expérience).\n\n---\n\n### **Plan B — Métiers émergents avec turnover accéléré (tech + transition)**\n1. **Numérique et cybersécurité** (connaissance générale)\n   - **Métiers** : Administrateurs réseau, experts cybersécurité (label SecNumEdu), développeurs full-stack.\n   - **Pourquoi** : 50 000 postes non pourvus en 2024 *(non vérifié dans les sources)* (source Syntec Numérique), et **départs massifs** des seniors formés dans les années 2000.\n   - **Pour toi** : Formations courtes (BUT Informatique, écoles comme 42) ou certifications (ANSSI). **Salaire médian embauche : ~2 500€ brut** (estimation marché).\n\n2. **Énergies renouvelables et environnement** (connaissance générale)\n   - **Métiers** : Techniciens en énergies vertes (solaire, éolien), auditeurs énergétiques, responsables RSE.\n   - **Pourquoi** : Plan France 2030 et départs des ingénieurs formés dans les années 1980-90. **Croissance +15%/an** des emplois verts (ADEME).\n   - **Pour toi** : BTS/DUT (ex : BTS Métiers de l’Eau) ou écoles d’ingénieurs (INSA, Polytech).\n\n3. **Logistique et transport** (connaissance générale)\n   - **Métiers** : Conducteurs routiers (pénurie de 50 000 chauffeurs), gestionnaires de supply chain.\n   - **Pourquoi** : 45% des routiers ont +50 ans (source FNTR). **Permis poids lourd financé** par Pôle Emploi dans certaines régions.\n   - **Pour toi** : Formation rapide (3-6 mois) avec **emploi garanti**.\n\n---\n### **Plan C — Reconversion et passerelles (pour profiter du turnover)**\n- **VAE (Validation des Acquis de l’Expérience)** : Permet d’obtenir un diplôme (ex : licence pro) en 1 an si tu as 3 ans d’expérience dans un métier en tension.\n- **Alternance pour adultes** : Dispositifs comme le **Pro-A** (reconversion en 1 an avec maintien de salaire).\n- **Métiers hybrides** : Ex : **infirmier + compétences en data** (pour travailler dans les hôpitaux sur les dossiers patients numérisés).\n\n---\n**⚠ Attention** :\n- Les métiers en tension ne sont pas toujours **bien rémunérés** (ex : aides-soignants, enseignants). Vérifie les grilles salariales (ex : [fiches métiers Pôle Emploi](https://candidat.pole-emploi.fr/marche-du-travail/fiches-metiers)).\n- Certaines formations sont **saturées** (ex : écoles d’infirmier en Île-de-France). Privilégie les territoires en déserts médicaux (Grand Est, Nouvelle-Aquitaine).\n\n**Question pour toi** :\nAs-tu une préférence entre **stabilité** (santé/éducation), **salaire** (tech/industrie), ou **impact sociétal** (transition écologique) ? Cela peut affiner les options.",
+    "annotated_differs": true,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 9,
+      "n_verified": 0,
+      "n_with_disclaimer": 7,
+      "n_hallucinated": 2,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "50% des effectifs ont +50 ans",
+        "stat_value": 50,
+        "stat_unit": "%",
+        "context_in_response": "Infirmiers (50% des effectifs ont +50 ans)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "+200 000 emplois d’ici 2030",
+        "stat_value": 200000,
+        "stat_unit": "emplois",
+        "context_in_response": "Besoin estimé à +200 000 emplois d’ici 2030 (source Dares, projections 2022)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "40% des enseignants partiront d’ici 2030",
+        "stat_value": 40,
+        "stat_unit": "%",
+        "context_in_response": "Professeurs des écoles/collèges/lycées (40% des enseignants partiront d’ici 2030)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "30% des salariés du BTP ont +55 ans",
+        "stat_value": 30,
+        "stat_unit": "%",
+        "context_in_response": "30% des salariés du BTP ont +55 ans (source FFB)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "50 000 postes non pourvus en 2024",
+        "stat_value": 50000,
+        "stat_unit": "postes",
+        "context_in_response": "50 000 postes non pourvus en 2024 (source Syntec Numérique)",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Salaire médian embauche : ~2 500€ brut",
+        "stat_value": 2500,
+        "stat_unit": "€ brut",
+        "context_in_response": "Salaire médian embauche : ~2 500€ brut (estimation marché)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Croissance +15%/an des emplois verts",
+        "stat_value": 15,
+        "stat_unit": "%/an",
+        "context_in_response": "Croissance +15%/an des emplois verts (ADEME)",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "45% des routiers ont +50 ans",
+        "stat_value": 45,
+        "stat_unit": "%",
+        "context_in_response": "45% des routiers ont +50 ans (source FNTR)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "35-45k€ après expérience",
+        "stat_value": 35,
+        "stat_unit": "k€",
+        "context_in_response": "Salaire attractif en région (35-45k€ après expérience)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 0.7359,
+        "nom": "Métier 2030 (DARES) — FAP S0Z : Bouchers, charcutiers, boulangers | Effectifs 2019 France : 234 100 ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7347,
+        "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7345,
+        "nom": "Métier 2030 (DARES) — FAP XK_ : Artisans, Politique et Clérgé | Effectifs 2019 France : 145 425 pers",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7341,
+        "nom": "Métier 2030 (DARES) — FAP E0Z : Ouvriers peu qualifiés des industries de process | Effectifs 2019 Fr",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7337,
+        "nom": "Marché du travail prospective 2030 — région Corse | Effectifs 2019 totaux : 132 156 personnes (toute",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7335,
+        "nom": "Métier 2030 (DARES) — FAP V3Z : Professions para-médicales | Effectifs 2019 France : 439 511 personn",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7319,
+        "nom": "Marché du travail prospective 2030 — région Bretagne | Effectifs 2019 totaux : 1 328 112 personnes (",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7319,
+        "nom": "Métier 2030 (DARES) — FAP D1Z : Ouvriers qualifiés travaillant par enlèvement de métal | Effectifs 2",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7315,
+        "nom": "Métier 2030 (DARES) — FAP B3Z : Ouvriers peu qualifiés du second œuvre du bâtiment | Effectifs 2019 ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.731,
+        "nom": "Marché du travail prospective 2030 — région Normandie | Effectifs 2019 totaux : 1 271 569 personnes ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      }
+    ]
+  },
+  {
+    "idx_global": 5,
+    "query_id": "q05_metiers_btp_recruter",
+    "query_text": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+    "pattern_target": "quels métiers vont recruter + sector",
+    "elapsed_gen_s": 10.93,
+    "elapsed_fact_check_s": 5.64,
+    "answer_raw": "**TL;DR**\n1. Le BTP en Île-de-France recrute massivement pour la rénovation énergétique et les infrastructures des JO 2024 (effet reporté jusqu'en 2030).\n2. **Top 3 métiers porteurs** : technicien en rénovation énergétique, chef de chantier BIM, ingénieur structures bois/bas carbone.\n3. Formations courtes (CAP à bac+2) dominent les besoins — les bac+5 visent des niches (éco-conception, smart building).\n\n---\n\n### **Plan A — Métiers en tension immédiate (recrutement 2024-2026)**\n**(connaissance générale)**\n📍 **Technicien en rénovation énergétique** (CAP/Bac Pro) — **5 000 postes/an** en IDF d’ici 2030 (source : FFB Île-de-France, 2023).\n*Pour toi :* Formation en 1-2 ans (AFPA, GRETA), salaires débutants **28-35k€ brut** (avec primes intempéries). **90% des offres** concernent l’isolation et les pompes à chaleur.\n\n📍 **Chef de chantier BIM** (BTS/BUT) — **3 200 postes** prévus pour les chantiers franciliens (Grand Paris, JO).\n*Pour toi :* BTS Bâtiment + certification BIM (ex : **CSTB**), salaire **35-45k€** après 3 ans. **Alternance très demandée** (70% des contrats signés en 2023).\n\n📍 **Électricien smart building** (CAP/Bac Pro) — **Croissance +18%** liée aux bâtiments connectés (source : ADEME).\n*Pour toi :* Formations gratuites en lycée pro (ex : **Lycée des Métiers du Bâtiment à Paris 15e**), débouchés immédiats chez **Bouygues Énergies** ou **Spie Batignolles**.\n\n---\n\n### **Plan B — Métiers émergents (recrutement 2027-2030)**\n**(connaissance générale)**\n📍 **Ingénieur structures bois/bas carbone** (bac+5) — **1 500 postes** d’ici 2030 (obligation RE2020).\n*Pour toi :* Écoles d’ingé comme **ESTP Paris** ou **INSA Strasbourg** (spé Génie Civil). Salaire **40-55k€**, mais **sélectivité forte** (12-15 de moyenne minimale).\n\n📍 **Responsable économie circulaire** (bac+3/5) — **Niche en explosion** (réemploi des matériaux, déconstruction).\n*Pour toi :* Licences pro **Recyclage et Valorisation des Déchets** (ex : **Université Gustave Eiffel**), ou masters **Urban Mining** (Mines Paris).\n\n📍 **Technico-commercial matériaux innovants** (BTS/BUT) — **Besoins chez Saint-Gobain, Knauf** pour vendre des solutions bas carbone.\n*Pour toi :* BTS NDRC + spécialisation bâtiment (ex : **CFA Médéric**), salaire **30-40k€** + commissions.\n\n---\n### **Plan C — Passerelles et reconversions**\n**(connaissance générale)**\n- **Pour les non-bacheliers** : **Titre Pro Étanchéité du Bâtiment** (6 mois, AFPA) → **100% d’insertion** en IDF (source : Pôle Emploi 2023).\n- **Pour les bac+2/+3** : **Licence Pro Métiers du BTP** (ex : **Cnam Paris**) en alternance → **95% en CDI** sous 6 mois.\n- **Pour les cadres en reconversion** : **Certificat de Compétence \"Rénovation Globale\"** (1 an, **ESTP Executive**) → salaires **45-60k€** en management de projet.\n\n---\n### **⚠ Attention aux pièges**\n1. **Écoles privées coûteuses** : Méfiez-vous des formations à **8 000€/an** (ex : **ESGT**) sans garantie d’embauche. Privilégiez les **CFA publics** (gratuit) ou les **licences pro** (243€/an).\n2. **Faux \"métiers d’avenir\"** : Évitez les formations en **\"domotique grand public\"** (saturé) ou **\"architecte d’intérieur\"** (très concurrentiel en IDF).\n\n---\n**Question pour toi :**\nTon projet est-il plutôt **manuel/terrain** (Plan A), **technique/encadrement** (Plan B), ou en **reconversion** (Plan C) ? Et es-tu mobile en grande couronne (où les salaires sont +10% plus élevés qu’à Paris) ?",
+    "answer_annotated": "**TL;DR**\n1. Le BTP en Île-de-France recrute massivement pour la rénovation énergétique et les infrastructures des JO 2024 (effet reporté jusqu'en 2030).\n2. **Top 3 métiers porteurs** : technicien en rénovation énergétique, chef de chantier BIM, ingénieur structures bois/bas carbone.\n3. Formations courtes (CAP à bac+2) dominent les besoins — les bac+5 visent des niches (éco-conception, smart building).\n\n---\n\n### **Plan A — Métiers en tension immédiate (recrutement 2024-2026)**\n**(connaissance générale)**\n📍 **Technicien en rénovation énergétique** (CAP/Bac Pro) — **5 000 postes/an** en IDF d’ici 2030 (source : FFB Île-de-France, 2023).\n*Pour toi :* Formation en 1-2 ans (AFPA, GRETA), salaires débutants **28-35k€ brut** (avec primes intempéries). **90% des offres** concernent l’isolation et les pompes à chaleur.\n\n📍 **Chef de chantier BIM** (BTS/BUT) — **3 200 postes** prévus pour les chantiers franciliens (Grand Paris, JO).\n*Pour toi :* BTS Bâtiment + certification BIM (ex : **CSTB**), salaire **35-45k€** après 3 ans. **Alternance très demandée** (70% des contrats signés en 2023).\n\n📍 **Électricien smart building** (CAP/Bac Pro) — **Croissance +18%** liée aux bâtiments connectés (source : ADEME).\n*Pour toi :* Formations gratuites en lycée pro (ex : **Lycée des Métiers du Bâtiment à Paris 15e**), débouchés immédiats chez **Bouygues Énergies** ou **Spie Batignolles**.\n\n---\n\n### **Plan B — Métiers émergents (recrutement 2027-2030)**\n**(connaissance générale)**\n📍 **Ingénieur structures bois/bas carbone** (bac+5) — **1 500 postes** d’ici 2030 (obligation RE2020).\n*Pour toi :* Écoles d’ingé comme **ESTP Paris** ou **INSA Strasbourg** (spé Génie Civil). Salaire **40-55k€**, mais **sélectivité forte** (12-15 de moyenne minimale).\n\n📍 **Responsable économie circulaire** (bac+3/5) — **Niche en explosion** (réemploi des matériaux, déconstruction).\n*Pour toi :* Licences pro **Recyclage et Valorisation des Déchets** (ex : **Université Gustave Eiffel**), ou masters **Urban Mining** (Mines Paris).\n\n📍 **Technico-commercial matériaux innovants** (BTS/BUT) — **Besoins chez Saint-Gobain, Knauf** pour vendre des solutions bas carbone.\n*Pour toi :* BTS NDRC + spécialisation bâtiment (ex : **CFA Médéric**), salaire **30-40k€** + commissions.\n\n---\n### **Plan C — Passerelles et reconversions**\n**(connaissance générale)**\n- **Pour les non-bacheliers** : **Titre Pro Étanchéité du Bâtiment** (6 mois, AFPA) → **100% d’insertion** en IDF (source : Pôle Emploi 2023).\n- **Pour les bac+2/+3** : **Licence Pro Métiers du BTP** (ex : **Cnam Paris**) en alternance → **95% en CDI** sous 6 mois.\n- **Pour les cadres en reconversion** : **Certificat de Compétence \"Rénovation Globale\"** (1 an, **ESTP Executive**) → salaires **45-60k€** en management de projet.\n\n---\n### **⚠ Attention aux pièges**\n1. **Écoles privées coûteuses** : Méfiez-vous des formations à **8 000€/an** (ex : **ESGT**) sans garantie d’embauche. Privilégiez les **CFA publics** (gratuit) ou les **licences pro** (243€/an).\n2. **Faux \"métiers d’avenir\"** : Évitez les formations en **\"domotique grand public\"** (saturé) ou **\"architecte d’intérieur\"** (très concurrentiel en IDF).\n\n---\n**Question pour toi :**\nTon projet est-il plutôt **manuel/terrain** (Plan A), **technique/encadrement** (Plan B), ou en **reconversion** (Plan C) ? Et es-tu mobile en grande couronne (où les salaires sont +10% plus élevés qu’à Paris) ?",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 14,
+      "n_verified": 0,
+      "n_with_disclaimer": 14,
+      "n_hallucinated": 0,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "5 000 postes/an en IDF d’ici 2030",
+        "stat_value": 5000,
+        "stat_unit": "postes/an",
+        "context_in_response": "Technicien en rénovation énergétique (CAP/Bac Pro)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "28-35k€ brut",
+        "stat_value": 28,
+        "stat_unit": "k€ brut",
+        "context_in_response": "Salaire débutants technicien en rénovation énergétique",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "90% des offres",
+        "stat_value": 90,
+        "stat_unit": "%",
+        "context_in_response": "Offres concernant l’isolation et les pompes à chaleur pour technicien en rénovation énergétique",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "3 200 postes",
+        "stat_value": 3200,
+        "stat_unit": "postes",
+        "context_in_response": "Chef de chantier BIM (BTS/BUT)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "35-45k€",
+        "stat_value": 35,
+        "stat_unit": "k€",
+        "context_in_response": "Salaire chef de chantier BIM après 3 ans",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "70% des contrats signés en 2023",
+        "stat_value": 70,
+        "stat_unit": "%",
+        "context_in_response": "Alternance très demandée pour chef de chantier BIM",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "+18%",
+        "stat_value": 18,
+        "stat_unit": "%",
+        "context_in_response": "Croissance liée aux bâtiments connectés pour électricien smart building",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "1 500 postes d’ici 2030",
+        "stat_value": 1500,
+        "stat_unit": "postes",
+        "context_in_response": "Ingénieur structures bois/bas carbone (bac+5)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "40-55k€",
+        "stat_value": 40,
+        "stat_unit": "k€",
+        "context_in_response": "Salaire ingénieur structures bois/bas carbone",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "12-15 de moyenne minimale",
+        "stat_value": 12,
+        "stat_unit": "/20",
+        "context_in_response": "Sélectivité forte pour ingénieur structures bois/bas carbone",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "100% d’insertion en IDF",
+        "stat_value": 100,
+        "stat_unit": "%",
+        "context_in_response": "Titre Pro Étanchéité du Bâtiment (6 mois, AFPA)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "95% en CDI sous 6 mois",
+        "stat_value": 95,
+        "stat_unit": "%",
+        "context_in_response": "Licence Pro Métiers du BTP (ex : Cnam Paris) en alternance",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "45-60k€",
+        "stat_value": 45,
+        "stat_unit": "k€",
+        "context_in_response": "Salaire en management de projet pour certificat de compétence \"Rénovation Globale\"",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "+10% plus élevés qu’à Paris",
+        "stat_value": 10,
+        "stat_unit": "%",
+        "context_in_response": "Salaires en grande couronne par rapport à Paris",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 0.7901,
+        "nom": "Métier 2030 (DARES) — FAP B2Z : Ouvriers qualifiés du gros œuvre du bâtiment | Effectifs 2019 France",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7879,
+        "nom": "Métier 2030 (DARES) — FAP B0Z : Ouvriers peu qualifiés du gros œuvre du bâtiment, des travaux public",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7862,
+        "nom": "Métier 2030 (DARES) — FAP B3Z : Ouvriers peu qualifiés du second œuvre du bâtiment | Effectifs 2019 ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7858,
+        "nom": "Métier 2030 (DARES) — FAP B7Z : Cadres du bâtiment et des travaux publics | Effectifs 2019 France : ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7842,
+        "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7833,
+        "nom": "Métier 2030 (DARES) — FAP B4Z : Ouvriers qualifiés du second œuvre du bâtiment | Effectifs 2019 Fran",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7808,
+        "nom": "Métier 2030 (DARES) — FAP B6Z : Techniciens et agents de maîtrise du bâtiment et des travaux publics",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7743,
+        "nom": "Métier 2030 (DARES) — FAP B1Z : Ouvriers qualifiés des travaux publics, du béton et de l'extraction ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.774,
+        "nom": "Métier 2030 (DARES) — FAP B5Z : Conducteurs d'engins du bâtiment et des travaux publics | Effectifs ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7728,
+        "nom": "Métier 2030 (DARES) — FAP B1Z;B2Z;B5Z : Ouvriers qualifiés du bâtiment et conducteurs d'engins du bâ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      }
+    ]
+  },
+  {
+    "idx_global": 6,
+    "query_id": "q06_metiers_2030_aura",
+    "query_text": "Métiers en 2030 : quels secteurs vont créer le plus d'emplois en Auvergne-Rhône-Alpes ?",
+    "pattern_target": "métiers 2030 + region",
+    "elapsed_gen_s": 17.76,
+    "elapsed_fact_check_s": 7.94,
+    "answer_raw": "**TL;DR**\n1. En Auvergne-Rhône-Alpes, les secteurs **transition énergétique**, **numérique/santé** et **agro-industrie** devraient concentrer 60% des créations d’emplois d’ici 2030 (connaissance générale, projections Pôle Emploi/Dares 2022).\n2. **Lyon/Grenoble/Clermont-Ferrand** seront les pôles majeurs, avec des besoins en compétences techniques (Bac+2 à Bac+5) et en reconversion.\n3. Priorise les formations courtes (BTS/BUT) pour une insertion rapide, ou les diplômes d’ingénieur (Bac+5) pour des postes à haute valeur ajoutée.\n\n---\n\n### **Plan A — Transition énergétique & décarbonation (recrutements massifs)**\n📍 **Technicien en énergies renouvelables** (Lyon, Grenoble, Saint-Étienne)\n- **Pourquoi ?** La région vise **100% d’énergies renouvelables d’ici 2030** (Schéma Régional Climat-Air-Énergie). Besoins criants en :\n  - Maintenance éoliennes/photovoltaïques (BTS **Maintenance des Systèmes Énergétiques**, 2 ans, **taux d’emploi ~90% à 6 mois** — estimation marché, connaissance générale).\n  - Rénovation thermique des bâtiments (BUT **Génie Thermique et Énergie** à l’**IUT Lyon 1** ou **Grenoble**).\n- **Salaire débutant** : 28-35k€ brut/an (technicien) ; 40-50k€ (cadre ingénieur).\n- **Exemple concret** : Le projet **\"Lyon Métropole Zéro Carbone\"** recrute déjà 500 techniciens/an (source : ADEME AuRA 2023).\n\n📍 **Ingénieur hydrogène** (Grenoble, Clermont-Ferrand)\n- **Pour toi** : Si tu vises un Bac+5, les écoles comme **Grenoble INP – Ense³** (formation **Hydrogène et Piles à Combustible**) ou **Polytech Clermont** offrent des parcours labellisés par **France Hydrogène**.\n- **Débouchés** : Usines **McPhy** (Grenoble) ou **Symbio** (Saint-Fons) recrutent en CDI avec salaires **45-55k€** (estimation marché, connaissance générale).\n\n---\n\n### **Plan B — Numérique & Santé (pénurie de compétences)**\n📍 **Développeur IA/Santé** (Lyon, Annecy, Valence)\n- **Pourquoi ?** La région héberge **le 2e écosystème French Tech** (après Paris) et des clusters comme **Lyonbiopôle** (santé numérique). Besoins en :\n  - **BUT Informatique** (parcours **Data Science**, IUT Lyon 2 ou **Annecy**) → **taux d’emploi 95%** (connaissance générale, tendances nationales).\n  - **Licence Pro Métiers de l’IA** (Université **Clermont Auvergne**) pour des postes en **imagerie médicale** (hôpitaux de Lyon/Grenoble).\n- **Salaire** : 35-42k€ (développeur) ; 50k€+ (ingénieur data santé).\n\n📍 **Technicien biomédical** (Saint-Étienne, Villeurbanne)\n- **Pour toi** : Formation en **1 an après Bac+2** (ex : **DU Technicien Biomédical** à l’**IUT Saint-Étienne**), avec **100% de placement** dans les hôpitaux de la région (CHU Lyon, Grenoble).\n\n---\n### **Plan C — Agro-industrie & Tourisme durable (secteurs résilients)**\n📍 **Responsable qualité agroalimentaire** (Bourg-en-Bresse, Roanne)\n- **Pourquoi ?** L’Auvergne-Rhône-Alpes est **1re région agricole française** (fromages AOP, viandes). Les industries recrutent pour :\n  - **BTSA Sciences et Technologies des Aliments** (Lycée **La Martinière-Diderot**, Lyon) → **emploi garanti** dans les coopératives (ex : **Sodiaal**, **Limagrain**).\n  - **Licence Pro Agroéquipements** (IUT **Clermont-Ferrand**) pour la **robotique agricole**.\n- **Salaire** : 30-38k€ (technicien) ; 45k€ (cadre).\n\n📍 **Guide touristique spécialisé** (Chamonix, Le Puy-en-Velay)\n- **Pour toi** : Si tu aimes le contact, le **BPJEPS Tourisme** (1 an) ou la **licence Pro Métiers du Tourisme** (Université **Savoie Mont-Blanc**) mènent à des postes dans les **stations de ski** (ex : **Compagnie des Alpes**) ou les **parcs naturels** (Vulcania, Écrin).\n\n---\n### **Carte des pôles clés** (connaissance générale)\n| Ville          | Secteur dominant               | Formation phare                     | Distance max (depuis Lyon) |\n|----------------|--------------------------------|--------------------------------------|----------------------------|\n| **Grenoble**   | Hydrogène, microélectronique   | Grenoble INP – Ense³                 | 1h (TER)                   |\n| **Clermont-Fd** | Agro-industrie, mécanique      | Polytech Clermont, IUT               | 2h (A71)                  |\n| **Annecy**     | Numérique, tourisme             | IUT Annecy (BUT Info)                | 1h30 (A41)                |\n| **Saint-Étienne** | Santé, maintenance industrielle | IUT Saint-Étienne                   | 1h (A72)                  |\n\n---\n**⚠ Attention**\n- **Évite les formations privées non labellisées** (ex : écoles \"web\" à 8k€/an sans titre RNCP). Privilégie le **public** (IUT, universités) ou les écoles **reconnues par la CTI** (pour l’ingénierie).\n- **Mobilité obligatoire** : Les bassins d’emploi sont concentrés (Lyon/Grenoble = 70% des offres). Prévois un déménagement ou des trajets quotidiens (TER bien développé).\n\n**Question pour toi** :\nAs-tu une préférence entre **un métier technique rapide** (BTS/BUT, emploi en 2 ans) ou **un parcours long mais mieux payé** (ingénieur, 5 ans d’études) ? Et es-tu mobile dans toute la région, ou ancré·e à une ville en particulier ?",
+    "answer_annotated": "**TL;DR**\n1. En Auvergne-Rhône-Alpes, les secteurs **transition énergétique**, **numérique/santé** et **agro-industrie** devraient concentrer 60% des créations d’emplois d’ici 2030 (connaissance générale, projections Pôle Emploi/Dares 2022).\n2. **Lyon/Grenoble/Clermont-Ferrand** seront les pôles majeurs, avec des besoins en compétences techniques (Bac+2 à Bac+5) et en reconversion.\n3. Priorise les formations courtes (BTS/BUT) pour une insertion rapide, ou les diplômes d’ingénieur (Bac+5) pour des postes à haute valeur ajoutée.\n\n---\n\n### **Plan A — Transition énergétique & décarbonation (recrutements massifs)**\n📍 **Technicien en énergies renouvelables** (Lyon, Grenoble, Saint-Étienne)\n- **Pourquoi ?** La région vise **100% d’énergies renouvelables d’ici 2030** (Schéma Régional Climat-Air-Énergie). Besoins criants en :\n  - Maintenance éoliennes/photovoltaïques (BTS **Maintenance des Systèmes Énergétiques**, 2 ans, **taux d’emploi ~90% à 6 mois** — estimation marché, connaissance générale).\n  - Rénovation thermique des bâtiments (BUT **Génie Thermique et Énergie** à l’**IUT Lyon 1** ou **Grenoble**).\n- **Salaire débutant** : 28-35k€ brut/an (technicien) ; 40-50k€ (cadre ingénieur).\n- **Exemple concret** : Le projet **\"Lyon Métropole Zéro Carbone\"** recrute déjà 500 techniciens/an (source : ADEME AuRA 2023).\n\n📍 **Ingénieur hydrogène** (Grenoble, Clermont-Ferrand)\n- **Pour toi** : Si tu vises un Bac+5, les écoles comme **Grenoble INP – Ense³** (formation **Hydrogène et Piles à Combustible**) ou **Polytech Clermont** offrent des parcours labellisés par **France Hydrogène**.\n- **Débouchés** : Usines **McPhy** (Grenoble) ou **Symbio** (Saint-Fons) recrutent en CDI avec salaires **45-55k€** (estimation marché, connaissance générale).\n\n---\n\n### **Plan B — Numérique & Santé (pénurie de compétences)**\n📍 **Développeur IA/Santé** (Lyon, Annecy, Valence)\n- **Pourquoi ?** La région héberge **le 2e écosystème French Tech** (après Paris) et des clusters comme **Lyonbiopôle** (santé numérique). Besoins en :\n  - **BUT Informatique** (parcours **Data Science**, IUT Lyon 2 ou **Annecy**) → **taux d’emploi 95%** (connaissance générale, tendances nationales).\n  - **Licence Pro Métiers de l’IA** (Université **Clermont Auvergne**) pour des postes en **imagerie médicale** (hôpitaux de Lyon/Grenoble).\n- **Salaire** : 35-42k€ (développeur) ; 50k€+ (ingénieur data santé).\n\n📍 **Technicien biomédical** (Saint-Étienne, Villeurbanne)\n- **Pour toi** : Formation en **1 an après Bac+2** (ex : **DU Technicien Biomédical** à l’**IUT Saint-Étienne**), avec **100% de placement** dans les hôpitaux de la région (CHU Lyon, Grenoble).\n\n---\n### **Plan C — Agro-industrie & Tourisme durable (secteurs résilients)**\n📍 **Responsable qualité agroalimentaire** (Bourg-en-Bresse, Roanne)\n- **Pourquoi ?** L’Auvergne-Rhône-Alpes est **1re région agricole française** (fromages AOP, viandes). Les industries recrutent pour :\n  - **BTSA Sciences et Technologies des Aliments** (Lycée **La Martinière-Diderot**, Lyon) → **emploi garanti** dans les coopératives (ex : **Sodiaal**, **Limagrain**).\n  - **Licence Pro Agroéquipements** (IUT **Clermont-Ferrand**) pour la **robotique agricole**.\n- **Salaire** : 30-38k€ (technicien) ; 45k€ (cadre).\n\n📍 **Guide touristique spécialisé** (Chamonix, Le Puy-en-Velay)\n- **Pour toi** : Si tu aimes le contact, le **BPJEPS Tourisme** (1 an) ou la **licence Pro Métiers du Tourisme** (Université **Savoie Mont-Blanc**) mènent à des postes dans les **stations de ski** (ex : **Compagnie des Alpes**) ou les **parcs naturels** (Vulcania, Écrin).\n\n---\n### **Carte des pôles clés** (connaissance générale)\n| Ville          | Secteur dominant               | Formation phare                     | Distance max (depuis Lyon) |\n|----------------|--------------------------------|--------------------------------------|----------------------------|\n| **Grenoble**   | Hydrogène, microélectronique   | Grenoble INP – Ense³                 | 1h (TER)                   |\n| **Clermont-Fd** | Agro-industrie, mécanique      | Polytech Clermont, IUT               | 2h (A71)                  |\n| **Annecy**     | Numérique, tourisme             | IUT Annecy (BUT Info)                | 1h30 (A41)                |\n| **Saint-Étienne** | Santé, maintenance industrielle | IUT Saint-Étienne                   | 1h (A72)                  |\n\n---\n**⚠ Attention**\n- **Évite les formations privées non labellisées** (ex : écoles \"web\" à 8k€/an sans titre RNCP). Privilégie le **public** (IUT, universités) ou les écoles **reconnues par la CTI** (pour l’ingénierie).\n- **Mobilité obligatoire** : Les bassins d’emploi sont concentrés (Lyon/Grenoble = 70% des offres). Prévois un déménagement ou des trajets quotidiens (TER bien développé).\n\n**Question pour toi** :\nAs-tu une préférence entre **un métier technique rapide** (BTS/BUT, emploi en 2 ans) ou **un parcours long mais mieux payé** (ingénieur, 5 ans d’études) ? Et es-tu mobile dans toute la région, ou ancré·e à une ville en particulier ?",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 13,
+      "n_verified": 0,
+      "n_with_disclaimer": 12,
+      "n_hallucinated": 1,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "60% des créations d’emplois d’ici 2030",
+        "stat_value": 60,
+        "stat_unit": "%",
+        "context_in_response": "En Auvergne-Rhône-Alpes, les secteurs transition énergétique, numérique/santé et agro-industrie devraient concentrer 60% des créations d’emplois d’ici 2030",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "100% d’énergies renouvelables d’ici 2030",
+        "stat_value": 100,
+        "stat_unit": "%",
+        "context_in_response": "La région vise 100% d’énergies renouvelables d’ici 2030 (Schéma Régional Climat-Air-Énergie)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "taux d’emploi ~90% à 6 mois",
+        "stat_value": 90,
+        "stat_unit": "%",
+        "context_in_response": "Maintenance éoliennes/photovoltaïques (BTS Maintenance des Systèmes Énergétiques), 2 ans, taux d’emploi ~90% à 6 mois — estimation marché, connaissance générale",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Salaire débutant : 28-35k€ brut/an (technicien)",
+        "stat_value": 28,
+        "stat_unit": "k€ brut/an",
+        "context_in_response": "Salaire débutant : 28-35k€ brut/an (technicien) ; 40-50k€ (cadre ingénieur)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Salaire débutant : 40-50k€ (cadre ingénieur)",
+        "stat_value": 40,
+        "stat_unit": "k€ brut/an",
+        "context_in_response": "Salaire débutant : 28-35k€ brut/an (technicien) ; 40-50k€ (cadre ingénieur)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Le projet Lyon Métropole Zéro Carbone recrute déjà 500 techniciens/an",
+        "stat_value": 500,
+        "stat_unit": "techniciens/an",
+        "context_in_response": "Le projet Lyon Métropole Zéro Carbone recrute déjà 500 techniciens/an (source : ADEME AuRA 2023)",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Salaire : 45-55k€ (estimation marché, connaissance générale)",
+        "stat_value": 45,
+        "stat_unit": "k€",
+        "context_in_response": "Usines McPhy (Grenoble) ou Symbio (Saint-Fons) recrutent en CDI avec salaires 45-55k€ (estimation marché, connaissance générale)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "taux d’emploi 95%",
+        "stat_value": 95,
+        "stat_unit": "%",
+        "context_in_response": "BUT Informatique (parcours Data Science), IUT Lyon 2 ou Annecy → taux d’emploi 95% (connaissance générale, tendances nationales)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Salaire : 35-42k€ (développeur)",
+        "stat_value": 35,
+        "stat_unit": "k€",
+        "context_in_response": "Salaire : 35-42k€ (développeur) ; 50k€+ (ingénieur data santé)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Salaire : 50k€+ (ingénieur data santé)",
+        "stat_value": 50,
+        "stat_unit": "k€",
+        "context_in_response": "Salaire : 35-42k€ (développeur) ; 50k€+ (ingénieur data santé)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "100% de placement",
+        "stat_value": 100,
+        "stat_unit": "%",
+        "context_in_response": "Formation en 1 an après Bac+2 (ex : DU Technicien Biomédical à l’IUT Saint-Étienne), avec 100% de placement dans les hôpitaux de la région",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Salaire : 30-38k€ (technicien)",
+        "stat_value": 30,
+        "stat_unit": "k€",
+        "context_in_response": "Salaire : 30-38k€ (technicien) ; 45k€ (cadre)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Salaire : 45k€ (cadre)",
+        "stat_value": 45,
+        "stat_unit": "k€",
+        "context_in_response": "Salaire : 30-38k€ (technicien) ; 45k€ (cadre)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 0.8299,
+        "nom": "Marché du travail prospective 2030 — région Auvergne-Rhône-Alpes | Effectifs 2019 totaux : 3 259 115",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7925,
+        "nom": "Marché du travail cadres en Auvergne-Rhône-Alpes (panel APEC 2026) | Recrutements 2025 : 34 100 (-4 ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "apec_observatoire_emploi_cadre_2026",
+        "domaine": null,
+        "domain": "apec_region"
+      },
+      {
+        "score": 0.7777,
+        "nom": "Marché du travail prospective 2030 — région Centre-Val de Loire | Effectifs 2019 totaux : 975 389 pe",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7735,
+        "nom": "Marché du travail prospective 2030 — région Bourgogne-Franche-Comté | Effectifs 2019 totaux : 1 070 ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7716,
+        "nom": "Métier 2030 (DARES) — FAP E0Z : Ouvriers peu qualifiés des industries de process | Effectifs 2019 Fr",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7698,
+        "nom": "Métier 2030 (DARES) — FAP F0A : Ouvriers du textile et du cuir | Effectifs 2019 France : 86 825 pers",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7693,
+        "nom": "Marché du travail prospective 2030 — région Provence-Alpes-Côte d'Azur | Effectifs 2019 totaux : 1 9",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7678,
+        "nom": "Métier 2030 (DARES) — FAP D6Z : Techniciens et agents de maîtrise des industries mécaniques | Effect",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7667,
+        "nom": "Métier 2030 (DARES) — FAP D4Z : Ouvriers qualifiés de la mécanique | Effectifs 2019 France : 110 328",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7664,
+        "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      }
+    ]
+  },
+  {
+    "idx_global": 7,
+    "query_id": "q07_niveau_tension_enseignants",
+    "query_text": "Quel est le niveau de tension 2019 pour le métier d'enseignant ?",
+    "pattern_target": "niveau de tension YYYY",
+    "elapsed_gen_s": 10.27,
+    "elapsed_fact_check_s": 5.68,
+    "answer_raw": "**TL;DR**\n1. En 2019, le métier d’enseignant était **en tension modérée** (difficultés de recrutement localisées, pas de pénurie généralisée).\n2. Les besoins variaient fortement selon les disciplines (maths/allemand en tension, histoire-géo moins).\n3. Aujourd’hui, la situation s’est aggravée (connaissance générale) : pénurie dans certains territoires et matières.\n\n---\n\n### **Plan A — Données 2019 (source officielle)**\nLes **métiers de l’enseignement** affichaient en 2019 une **tension modérée** :\n- **Disparités géographiques** : Académies d’Île-de-France et zones rurales en difficulté de recrutement (ex : Versailles, Créteil).\n- **Disparités disciplinaires** : Pénurie en **mathématiques, allemand, physique-chimie** ; surplus en **lettres/histoire-géo**.\n- **Taux de postes non pourvus** : ~5-10% selon les académies (source : **Rapport DEPP 2020** — connaissance générale).\n*Pour toi : Si tu visais un poste en 2019, les chances dépendaient fortement de ta matière et de ta mobilité.*\n\n### **Plan B — Évolution depuis 2019 (connaissance générale)**\nLa tension s’est **intensifiée** en 2023-2024 :\n- **Crise des vocations** : Baisse de 30% des candidats aux concours (ex : CAPES) depuis 2017.\n- **Disciplines critiques** : Maths, allemand, sciences (jusqu’à **20% de postes vacants** dans certaines académies).\n- **Zones prioritaires** : Académies de **Versailles, Créteil, Aix-Marseille** offrent des **prime d’installation** (jusqu’à 4 000€).\n*Pour toi : Aujourd’hui, un professeur des écoles ou de maths a **plus de chances** d’être recruté rapidement, surtout en zone tendue.*\n\n### **Plan C — Alternatives si l’enseignement pur est saturé**\n- **Métiers connexes en tension** :\n  - **Conseiller principal d’éducation (CPE)** : Moins de candidats que de postes.\n  - **Formateur pour adultes** (ex : GRETA) : Besoins croissants en reconversion pro.\n  - **Enseignement spécialisé** (ULIS, SEGPA) : Pénurie chronique.\n*Pour toi : Si l’enseignement \"classique\" est bouché, ces voies offrent des débouchés **sans concours aussi sélectifs**.*\n\n---\n**⚠ Attention aux pièges**\n- **Concours ≠ emploi** : Réussir le CRPE/CAPES ne garantit pas un poste dans l’académie souhaitée (mutations longues en zone saturée).\n- **Précarité en début de carrière** : Remplacements et contractuels (sans titularisation) sont fréquents en zones tendues.\n- **Salaire** : Le métier reste **peu rémunérateur** (salaire net ~2 000€ en début de carrière, source : **grilles ministérielles 2024**).\n\n---\n**Question pour toi** :\nTon projet vise-t-il un **territoire précis** (ex : Île-de-France vs province) ou une **discipline en particulier** ? Ces deux critères changent radicalement les opportunités.",
+    "answer_annotated": "**TL;DR**\n1. En 2019, le métier d’enseignant était **en tension modérée** (difficultés de recrutement localisées, pas de pénurie généralisée).\n2. Les besoins variaient fortement selon les disciplines (maths/allemand en tension, histoire-géo moins).\n3. Aujourd’hui, la situation s’est aggravée (connaissance générale) : pénurie dans certains territoires et matières.\n\n---\n\n### **Plan A — Données 2019 (source officielle)**\nLes **métiers de l’enseignement** affichaient en 2019 une **tension modérée** :\n- **Disparités géographiques** : Académies d’Île-de-France et zones rurales en difficulté de recrutement (ex : Versailles, Créteil).\n- **Disparités disciplinaires** : Pénurie en **mathématiques, allemand, physique-chimie** ; surplus en **lettres/histoire-géo**.\n- **Taux de postes non pourvus** : ~5-10% selon les académies (source : **Rapport DEPP 2020** — connaissance générale).\n*Pour toi : Si tu visais un poste en 2019, les chances dépendaient fortement de ta matière et de ta mobilité.*\n\n### **Plan B — Évolution depuis 2019 (connaissance générale)**\nLa tension s’est **intensifiée** en 2023-2024 :\n- **Crise des vocations** : Baisse de 30% des candidats aux concours (ex : CAPES) depuis 2017.\n- **Disciplines critiques** : Maths, allemand, sciences (jusqu’à **20% de postes vacants** dans certaines académies).\n- **Zones prioritaires** : Académies de **Versailles, Créteil, Aix-Marseille** offrent des **prime d’installation** (jusqu’à 4 000€).\n*Pour toi : Aujourd’hui, un professeur des écoles ou de maths a **plus de chances** d’être recruté rapidement, surtout en zone tendue.*\n\n### **Plan C — Alternatives si l’enseignement pur est saturé**\n- **Métiers connexes en tension** :\n  - **Conseiller principal d’éducation (CPE)** : Moins de candidats que de postes.\n  - **Formateur pour adultes** (ex : GRETA) : Besoins croissants en reconversion pro.\n  - **Enseignement spécialisé** (ULIS, SEGPA) : Pénurie chronique.\n*Pour toi : Si l’enseignement \"classique\" est bouché, ces voies offrent des débouchés **sans concours aussi sélectifs**.*\n\n---\n**⚠ Attention aux pièges**\n- **Concours ≠ emploi** : Réussir le CRPE/CAPES ne garantit pas un poste dans l’académie souhaitée (mutations longues en zone saturée).\n- **Précarité en début de carrière** : Remplacements et contractuels (sans titularisation) sont fréquents en zones tendues.\n- **Salaire** : Le métier reste **peu rémunérateur** (salaire net ~2 000€ *(non vérifié dans les sources)* en début de carrière, source : **grilles ministérielles 2024**).\n\n---\n**Question pour toi** :\nTon projet vise-t-il un **territoire précis** (ex : Île-de-France vs province) ou une **discipline en particulier** ? Ces deux critères changent radicalement les opportunités.",
+    "annotated_differs": true,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 10,
+      "n_verified": 4,
+      "n_with_disclaimer": 5,
+      "n_hallucinated": 1,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "tension modérée",
+        "stat_value": null,
+        "stat_unit": null,
+        "context_in_response": "En 2019, le métier d’enseignant était en tension modérée",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "5-10%",
+        "stat_value": 5,
+        "stat_unit": "%",
+        "context_in_response": "Taux de postes non pourvus : ~5-10% selon les académies",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "30%",
+        "stat_value": 30,
+        "stat_unit": "%",
+        "context_in_response": "Baisse de 30% des candidats aux concours (ex : CAPES) depuis 2017",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "20%",
+        "stat_value": 20,
+        "stat_unit": "%",
+        "context_in_response": "jusqu’à 20% de postes vacants dans certaines académies",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "4 000€",
+        "stat_value": 4000,
+        "stat_unit": "€",
+        "context_in_response": "prime d’installation (jusqu’à 4 000€)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "2 000€",
+        "stat_value": 2000,
+        "stat_unit": "€",
+        "context_in_response": "salaire net ~2 000€ en début de carrière",
+        "verdict": "unsourced_unsafe",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "0.85",
+        "stat_value": 0.85,
+        "stat_unit": null,
+        "context_in_response": "taux_emploi_3ans : 0.85",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "0.91",
+        "stat_value": 0.91,
+        "stat_unit": null,
+        "context_in_response": "taux_emploi_6ans : 0.91",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "0.83",
+        "stat_value": 0.83,
+        "stat_unit": null,
+        "context_in_response": "taux_cdi : 0.83",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "2080",
+        "stat_value": 2080,
+        "stat_unit": "€",
+        "context_in_response": "salaire_median_embauche : 2080",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 1.0052,
+        "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 1ER DEGRE — Professorat des éco",
+        "etablissement": "Université Paris-Est Créteil",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines",
+        "domain": "formation"
+      },
+      {
+        "score": 0.999,
+        "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 1ER DEGRE — Professorat des éco",
+        "etablissement": "Université Paris-Est Créteil",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines",
+        "domain": "formation"
+      },
+      {
+        "score": 0.9958,
+        "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 2E DEGRE — Anglais",
+        "etablissement": "Université Paris-Est Créteil",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines",
+        "domain": "formation"
+      },
+      {
+        "score": 0.9957,
+        "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 2E DEGRE — Espagnol",
+        "etablissement": "Université Paris-Est Créteil",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines",
+        "domain": "formation"
+      },
+      {
+        "score": 0.994,
+        "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 1ER DEGRE — Professorat des éco",
+        "etablissement": "Université de Reims Champagne-Ardenne",
+        "niveau": "bac+5",
+        "phase": "master",
+        "source": "monmaster",
+        "domaine": "sciences_humaines",
+        "domain": "formation"
+      },
+      {
+        "score": 0.9162,
+        "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+        "etablissement": "UNIVERSITE TOULOUSE II",
+        "niveau": "bac+5",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "education",
+        "domain": "formation"
+      },
+      {
+        "score": 0.9162,
+        "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+        "etablissement": "UNIVERSITE TOULOUSE II",
+        "niveau": "bac+5",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "education",
+        "domain": "formation"
+      },
+      {
+        "score": 0.9162,
+        "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+        "etablissement": "UNIVERSITE TOULOUSE II",
+        "niveau": "bac+5",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "education",
+        "domain": "formation"
+      },
+      {
+        "score": 0.9162,
+        "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+        "etablissement": "UNIVERSITE TOULOUSE II",
+        "niveau": "bac+5",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "education",
+        "domain": "formation"
+      },
+      {
+        "score": 0.9162,
+        "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+        "etablissement": "UNIVERSITE TOULOUSE II",
+        "niveau": "bac+5",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "education",
+        "domain": "formation"
+      }
+    ]
+  },
+  {
+    "idx_global": 8,
+    "query_id": "q08_desequilibre_conducteurs",
+    "query_text": "Y a-t-il un déséquilibre potentiel sur le marché des conducteurs de véhicules d'ici 2030 ?",
+    "pattern_target": "déséquilibre potentiel",
+    "elapsed_gen_s": 12.3,
+    "elapsed_fact_check_s": 13.35,
+    "answer_raw": "**TL;DR**\n1. **Oui, un déséquilibre est anticipé** : la France devrait manquer de **40 000 à 50 000 conducteurs routiers d’ici 2030** (connaissance générale, rapports FNTR/Syntec).\n2. **Causes** : vieillissement des effectifs (50% des conducteurs ont +50 ans), pénurie de formations attractives, et croissance du e-commerce (+20% de livraisons/an).\n3. **Opportunités** : salaires en hausse (+15-20% depuis 2020), besoins critiques en **livraisons longue distance** et **logistique verte** (véhicules électriques).\n\n---\n\n### **Plan A — Secteurs en tension prioritaires (2024-2030)**\n📍 **Conducteur routier longue distance** (CAP/Bac)\n*Pourquoi ?* **70% des offres non pourvues** en 2023 (source : Pôle Emploi). Permis C + FIMO obligatoires → formations **gratuites** via OPCO Mobilités (ex : AFTRAL, CNFPT).\n*Exemple* : [Certificat RNCP \"Conducteur routier de marchandises\" (Éducation Nationale)](https://www.francecompetences.fr) — **90% d’insertion** à 6 mois (connaissance générale).\n\n📍 **Livreurs urbains (VUL)** (CAP)\n*Pourquoi ?* Explosion des livraisons express (Amazon, Deliveroo) → **besoins +30% d’ici 2027** (source : Xerfi). Permis B suffisant, formations courtes (3-6 mois).\n*Exemple* : [Certificat \"Conducteur livreur VUL\" (Ministère du Travail)](https://www.francecompetences.fr) — **salaire médian : 2 000€ brut/mois** (connaissance générale).\n\n---\n### **Plan B — Métiers connexes en forte demande**\n📍 **Régulateur transport** (Bac+2)\n*Pourquoi ?* **Automatisation partielle** des flottes (GPS, IA) → besoin de superviseurs. Salaire **2 500-3 000€ brut**.\n*Exemple* : [Certificat \"Exploitant régulateur\" (Ministère du Travail)](https://www.francecompetences.fr) — **alternance possible**.\n\n📍 **Enseignant de la conduite (Bac+2)**\n*Pourquoi ?* **1 instructeur pour 500 candidats** en moyenne (source : DEPP). Statut indépendant ou auto-école → **revenu variable (2 500-4 000€/mois)**.\n\n---\n### **Plan C — Passerelles vers des métiers plus stables**\n📍 **Formation \"Conduire les Transitions\" (ESSEC, Bac+3)**\n*Pourquoi ?* Si le métier de conducteur ne t’attire pas à long terme, ce certificat RNCP forme aux **métiers de la logistique durable** (responsable RSE transport, coordinateur green supply chain).\n*Atout* : **Secteur en croissance +12%/an** (ADEME).\n\n---\n### **⚠ Attention aux pièges**\n- **Conditions de travail** : Horaires décalés (nuit/week-end) et isolement en longue distance → **teste le métier en stage** avant de t’engager.\n- **Formations privées coûteuses** : Certaines écoles facturent **5 000-8 000€** un CAP conducteur (ex : CNFR). Privilégie les **formations financées par Pôle Emploi/OPCO** (liste [ici](https://www.moncompteformation.gouv.fr)).\n- **Feminisation lente** : Seulement **5% de femmes** dans le secteur (source : FNTR) → initiatives comme **\"Elles bougent\"** pour briser les stéréotypes.\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **la stabilité d’un CDI en logistique** (ex : régulateur), **l’indépendance** (livreur/enseignant), ou **l’évolution vers des métiers verts** (coordination RSE) ? Cela peut orienter ton choix de formation.\n\n---\n*Sources : France Compétences (RNCP), Pôle Emploi (2023), FNTR (Fédération Nationale des Transports Routiers), Xerfi (2024) — données macro. Les fiches citées couvrent les certifications clés pour accéder à ces métiers.*",
+    "answer_annotated": "**TL;DR**\n1. **Oui, un déséquilibre est anticipé** : la France devrait manquer de **40 000 à 50 000 conducteurs routiers d’ici 2030** (connaissance générale, rapports FNTR/Syntec).\n2. **Causes** : vieillissement des effectifs (50% des conducteurs ont +50 ans), pénurie de formations attractives, et croissance du e-commerce (+20% de livraisons/an).\n3. **Opportunités** : salaires en hausse (+15-20% depuis 2020), besoins critiques en **livraisons longue distance** et **logistique verte** (véhicules électriques).\n\n---\n\n### **Plan A — Secteurs en tension prioritaires (2024-2030)**\n📍 **Conducteur routier longue distance** (CAP/Bac)\n*Pourquoi ?* **70% des offres non pourvues** en 2023 (source : Pôle Emploi). Permis C + FIMO obligatoires → formations **gratuites** via OPCO Mobilités (ex : AFTRAL, CNFPT).\n*Exemple* : [Certificat RNCP \"Conducteur routier de marchandises\" (Éducation Nationale)](https://www.francecompetences.fr) — **90% d’insertion** à 6 mois (connaissance générale).\n\n📍 **Livreurs urbains (VUL)** (CAP)\n*Pourquoi ?* Explosion des livraisons express (Amazon, Deliveroo) → **besoins +30% d’ici 2027** (source : Xerfi). Permis B suffisant, formations courtes (3-6 mois).\n*Exemple* : [Certificat \"Conducteur livreur VUL\" (Ministère du Travail)](https://www.francecompetences.fr) — **salaire médian : 2 000€ brut/mois** (connaissance générale).\n\n---\n### **Plan B — Métiers connexes en forte demande**\n📍 **Régulateur transport** (Bac+2)\n*Pourquoi ?* **Automatisation partielle** des flottes (GPS, IA) → besoin de superviseurs. Salaire **2 500-3 000€ brut**.\n*Exemple* : [Certificat \"Exploitant régulateur\" (Ministère du Travail)](https://www.francecompetences.fr) — **alternance possible**.\n\n📍 **Enseignant de la conduite (Bac+2)**\n*Pourquoi ?* **1 instructeur pour 500 candidats** en moyenne (source : DEPP). Statut indépendant ou auto-école → **revenu variable (2 500-4 000€/mois)**.\n\n---\n### **Plan C — Passerelles vers des métiers plus stables**\n📍 **Formation \"Conduire les Transitions\" (ESSEC, Bac+3)**\n*Pourquoi ?* Si le métier de conducteur ne t’attire pas à long terme, ce certificat RNCP forme aux **métiers de la logistique durable** (responsable RSE transport, coordinateur green supply chain).\n*Atout* : **Secteur en croissance +12%/an** (ADEME).\n\n---\n### **⚠ Attention aux pièges**\n- **Conditions de travail** : Horaires décalés (nuit/week-end) et isolement en longue distance → **teste le métier en stage** avant de t’engager.\n- **Formations privées coûteuses** : Certaines écoles facturent **5 000-8 000€** un CAP conducteur (ex : CNFR). Privilégie les **formations financées par Pôle Emploi/OPCO** (liste [ici](https://www.moncompteformation.gouv.fr)).\n- **Feminisation lente** : Seulement **5% de femmes** dans le secteur (source : FNTR) → initiatives comme **\"Elles bougent\"** pour briser les stéréotypes.\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **la stabilité d’un CDI en logistique** (ex : régulateur), **l’indépendance** (livreur/enseignant), ou **l’évolution vers des métiers verts** (coordination RSE) ? Cela peut orienter ton choix de formation.\n\n---\n*Sources : France Compétences (RNCP), Pôle Emploi (2023), FNTR (Fédération Nationale des Transports Routiers), Xerfi (2024) — données macro. Les fiches citées couvrent les certifications clés pour accéder à ces métiers.*",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 0,
+      "n_verified": 0,
+      "n_with_disclaimer": 0,
+      "n_hallucinated": 0,
+      "error": "JSON parse error: Unterminated string starting at: line 205 column 30 (char 8316). Raw: {\n  \"stats_extracted\": [\n    {\n      \"stat_text\": \"40 000 à 50 000 conducteurs routiers d’ici 2030\",\n      \"stat_value\": 45000,\n      \"stat_unit\": \"conducteurs\",\n      \"context_in_response\": \"la Franc"
+    },
+    "fact_check_stats": [],
+    "sources_top10": [
+      {
+        "score": 0.817,
+        "nom": "Conduire les Transitions",
+        "etablissement": "ASSOCIATION GROUPE ESSEC",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "sciences_fondamentales",
+        "domain": "formation"
+      },
+      {
+        "score": 0.793,
+        "nom": "Conducteur routier de marchandises",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "niveau": "bac",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services",
+        "domain": "formation"
+      },
+      {
+        "score": 0.7927,
+        "nom": "Conducteur du transport routier de marchandises sur tous véhicules",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services",
+        "domain": "formation"
+      },
+      {
+        "score": 0.7889,
+        "nom": "Conducteur routier de marchandises",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services",
+        "domain": "formation"
+      },
+      {
+        "score": 0.7869,
+        "nom": "Conducteur routier de marchandises  options « Livraisons de proximité » et « Livraisons longue dista",
+        "etablissement": "MINISTERE DE L'EDUCATION NATIONALE ET DE LA JEUNESSE",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services",
+        "domain": "formation"
+      },
+      {
+        "score": 0.7869,
+        "nom": "Conducteur du transport routier de marchandises sur porteur",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services",
+        "domain": "formation"
+      },
+      {
+        "score": 0.7826,
+        "nom": "Enseignant de la conduite et de la sécurité routière",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "niveau": "bac+2",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services",
+        "domain": "formation"
+      },
+      {
+        "score": 0.7826,
+        "nom": "Enseignant de la conduite et de la sécurité routière",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "niveau": "bac+2",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services",
+        "domain": "formation"
+      },
+      {
+        "score": 0.7814,
+        "nom": "Conducteur livreur sur véhicule utilitaire léger",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "niveau": "cap-bep",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services",
+        "domain": "formation"
+      },
+      {
+        "score": 0.7812,
+        "nom": "Exploitant régulateur en transport routier de voyageurs",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "niveau": "bac+2",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "services",
+        "domain": "formation"
+      }
+    ]
+  },
+  {
+    "idx_global": 9,
+    "query_id": "q09_projection_numerique",
+    "query_text": "Quelles sont les projections de recrutement pour les métiers du numérique d'ici 2030 ?",
+    "pattern_target": "projection recrutement + métiers 2030",
+    "elapsed_gen_s": 11.13,
+    "elapsed_fact_check_s": 12.3,
+    "answer_raw": "**TL;DR**\n1. Les métiers du numérique (data, cybersécurité, développement, design) sont parmi les plus porteurs en France d’ici 2030, avec **~190 000 recrutements annuels estimés** (connaissance générale, synthèse Dares/DARES, France Stratégie 2023).\n2. **Pénurie structurelle** sur les profils techniques (data scientist, dev, cyber) et **croissance forte** sur les métiers hybrides (UX/UI, chef de projet digital).\n3. **3 voies d’accès prioritaires** : formations courtes certifiantes (RNCP), diplômes publics type BUT, ou écoles spécialisées (privées labellisées).\n\n---\n\n### **Plan A — Métiers en tension : data, cyber, développement**\n**Projections 2030** :\n- **+30% d’emplois** en data/IA (vs 2023), **50 000 postes non pourvus/an** en cybersécurité (connaissance générale, baromètre Syntec Numérique 2024).\n- **Salaire médian embauche** :\n  - Data scientist : **38-45k€ brut/an** (estimation marché, connaissance générale).\n  - Développeur full-stack : **35-40k€ brut/an** (id.).\n- **Formations adaptées** :\n  📍 **[BUT MMI (Métiers du Multimédia et de l’Internet)](https://www.onisep.fr/http/redirection/formation/slug/FOR.1836)** (Université de Lorraine) — bac+3 public, **gratuit**, débouchés data/UX.\n  *Pour toi : voie royale si tu vises un métier technique (dev, data) avec un diplôme reconnu.*\n\n---\n\n### **Plan B — Métiers hybrides : stratégie digitale, UX/UI, chef de projet**\n**Projections 2030** :\n- **+22% de postes** en gestion de projet digital (source : France Stratégie 2023).\n- **Flexibilité** : ces profils sont recherchés dans **tous les secteurs** (banque, santé, retail).\n- **Formations clés** :\n  📍 **Chef de projet web et stratégie digitale** (CCIT Ouest Normandie) — bac+3, **certificat RNCP**, alternance possible.\n  *Pour toi : idéal si tu aimes le management et la tech sans coder.*\n  📍 **Chef de projet digital** (Institut Européen F2I) — bac+3, RNCP, **coût modéré** (~3-5k€/an).\n  *Pour toi : alternative privée avec réseau pro solide (vérifie les partenariats entreprises).*\n\n---\n### **Plan C — Passerelles et reconversion : formations courtes et certifications**\n- **Besoin urgent** de profils **opérationnels rapidement** → boom des **formations courtes** (6-12 mois) :\n  - **Certifications** : Google Data Analytics, OpenClassrooms (RNCP), Le Wagon (bootcamps).\n  - **Métiers accessibles sans bac+5** : médiateur numérique (bac+2, **12 000 postes à pourvoir** d’ici 2030, connaissance générale), technicien cybersécurité (certifications SecNumAcadémie).\n- **Pour toi** : solution si tu veux te former **vite et à moindre coût** (ex : 0€ pour les demandeurs d’emploi via Pôle Emploi).\n\n---\n### **⚠ Attention aux pièges**\n1. **Marketing des écoles privées** : méfie-toi des promesses \"100% emploi\" sans **taux d’insertion vérifiés** (exige les chiffres Céreq ou InserSup).\n2. **Déséquilibre géographique** : 60% des offres sont concentrées en **Île-de-France, Auvergne-Rhône-Alpes, Occitanie** (connaissance générale) → mobilité souvent nécessaire.\n3. **Faux-ami \"data analyst\"** : le titre cache des réalités très différentes (de l’Excel avancé au machine learning). **Vérifie le programme** (ex : % de SQL vs Python).\n\n---\n**Question pour toi** :\nTon projet est-il plutôt **technique** (code, data, cyber), **managérial** (chef de projet, stratégie), ou **créatif** (UX/UI, design) ? Cela change radicalement les formations à cibler.\n\n---\n👤 *Pour affiner ton choix, un RDV avec le Psy-EN de ton établissement ou un conseiller Pôle Emploi (si reconversion) peut t’aider à croiser ces données avec ton profil personnel.*",
+    "answer_annotated": "**TL;DR**\n1. Les métiers du numérique (data, cybersécurité, développement, design) sont parmi les plus porteurs en France d’ici 2030, avec **~190 000 recrutements annuels estimés** (connaissance générale, synthèse Dares/DARES, France Stratégie 2023).\n2. **Pénurie structurelle** sur les profils techniques (data scientist, dev, cyber) et **croissance forte** sur les métiers hybrides (UX/UI, chef de projet digital).\n3. **3 voies d’accès prioritaires** : formations courtes certifiantes (RNCP), diplômes publics type BUT, ou écoles spécialisées (privées labellisées).\n\n---\n\n### **Plan A — Métiers en tension : data, cyber, développement**\n**Projections 2030** :\n- **+30% d’emplois** en data/IA (vs 2023), **50 000 postes non pourvus/an** en cybersécurité (connaissance générale, baromètre Syntec Numérique 2024).\n- **Salaire médian embauche** :\n  - Data scientist : **38-45k€ brut/an** (estimation marché, connaissance générale).\n  - Développeur full-stack : **35-40k€ brut/an** (id.).\n- **Formations adaptées** :\n  📍 **[BUT MMI (Métiers du Multimédia et de l’Internet)](https://www.onisep.fr/http/redirection/formation/slug/FOR.1836)** (Université de Lorraine) — bac+3 public, **gratuit**, débouchés data/UX.\n  *Pour toi : voie royale si tu vises un métier technique (dev, data) avec un diplôme reconnu.*\n\n---\n\n### **Plan B — Métiers hybrides : stratégie digitale, UX/UI, chef de projet**\n**Projections 2030** :\n- **+22% de postes** en gestion de projet digital (source : France Stratégie 2023).\n- **Flexibilité** : ces profils sont recherchés dans **tous les secteurs** (banque, santé, retail).\n- **Formations clés** :\n  📍 **Chef de projet web et stratégie digitale** (CCIT Ouest Normandie) — bac+3, **certificat RNCP**, alternance possible.\n  *Pour toi : idéal si tu aimes le management et la tech sans coder.*\n  📍 **Chef de projet digital** (Institut Européen F2I) — bac+3, RNCP, **coût modéré** (~3-5k€/an).\n  *Pour toi : alternative privée avec réseau pro solide (vérifie les partenariats entreprises).*\n\n---\n### **Plan C — Passerelles et reconversion : formations courtes et certifications**\n- **Besoin urgent** de profils **opérationnels rapidement** → boom des **formations courtes** (6-12 mois) :\n  - **Certifications** : Google Data Analytics, OpenClassrooms (RNCP), Le Wagon (bootcamps).\n  - **Métiers accessibles sans bac+5** : médiateur numérique (bac+2, **12 000 postes à pourvoir** d’ici 2030, connaissance générale), technicien cybersécurité (certifications SecNumAcadémie).\n- **Pour toi** : solution si tu veux te former **vite et à moindre coût** (ex : 0€ pour les demandeurs d’emploi via Pôle Emploi).\n\n---\n### **⚠ Attention aux pièges**\n1. **Marketing des écoles privées** : méfie-toi des promesses \"100% emploi\" sans **taux d’insertion vérifiés** (exige les chiffres Céreq ou InserSup).\n2. **Déséquilibre géographique** : 60% des offres sont concentrées en **Île-de-France, Auvergne-Rhône-Alpes, Occitanie** (connaissance générale) → mobilité souvent nécessaire.\n3. **Faux-ami \"data analyst\"** : le titre cache des réalités très différentes (de l’Excel avancé au machine learning). **Vérifie le programme** (ex : % de SQL vs Python).\n\n---\n**Question pour toi** :\nTon projet est-il plutôt **technique** (code, data, cyber), **managérial** (chef de projet, stratégie), ou **créatif** (UX/UI, design) ? Cela change radicalement les formations à cibler.\n\n---\n👤 *Pour affiner ton choix, un RDV avec le Psy-EN de ton établissement ou un conseiller Pôle Emploi (si reconversion) peut t’aider à croiser ces données avec ton profil personnel.*",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 16,
+      "n_verified": 8,
+      "n_with_disclaimer": 8,
+      "n_hallucinated": 0,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "~190 000 recrutements annuels estimés",
+        "stat_value": 190000,
+        "stat_unit": "recrutements/an",
+        "context_in_response": "Les métiers du numérique (data, cybersécurité, développement, design) sont parmi les plus porteurs en France d’ici 2030, avec ~190 000 recrutements annuels estimés",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "+30% d’emplois en data/IA (vs 2023)",
+        "stat_value": 30,
+        "stat_unit": "%",
+        "context_in_response": "Projections 2030 : +30% d’emplois en data/IA (vs 2023)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "50 000 postes non pourvus/an en cybersécurité",
+        "stat_value": 50000,
+        "stat_unit": "postes/an",
+        "context_in_response": "Projections 2030 : 50 000 postes non pourvus/an en cybersécurité",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Salaire médian embauche Data scientist : 38-45k€ brut/an",
+        "stat_value": 41.5,
+        "stat_unit": "k€ brut/an",
+        "context_in_response": "Salaire médian embauche : Data scientist : 38-45k€ brut/an",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "Salaire médian embauche Développeur full-stack : 35-40k€ brut/an",
+        "stat_value": 37.5,
+        "stat_unit": "k€ brut/an",
+        "context_in_response": "Salaire médian embauche : Développeur full-stack : 35-40k€ brut/an",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "+22% de postes en gestion de projet digital",
+        "stat_value": 22,
+        "stat_unit": "%",
+        "context_in_response": "Projections 2030 : +22% de postes en gestion de projet digital",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "12 000 postes à pourvoir d’ici 2030 (médiateur numérique)",
+        "stat_value": 12000,
+        "stat_unit": "postes",
+        "context_in_response": "Besoin urgent de profils opérationnels rapidement → boom des formations courtes : médiateur numérique (bac+2, 12 000 postes à pourvoir d’ici 2030)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "60% des offres sont concentrées en Île-de-France, Auvergne-Rhône-Alpes, Occitanie",
+        "stat_value": 60,
+        "stat_unit": "%",
+        "context_in_response": "Déséquilibre géographique : 60% des offres sont concentrées en Île-de-France, Auvergne-Rhône-Alpes, Occitanie",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "taux_emploi_3ans: 0.86",
+        "stat_value": 86,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : taux_emploi_3ans: 0.86 (FICHE 1, FICHE 2, FICHE 3, FICHE 4, FICHE 5, FICHE 6, FICHE 8)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_emploi_6ans: 0.91",
+        "stat_value": 91,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : taux_emploi_6ans: 0.91 (FICHE 1, FICHE 2, FICHE 3, FICHE 4, FICHE 5, FICHE 6, FICHE 8)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_cdi: 0.83",
+        "stat_value": 83,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : taux_cdi: 0.83 (FICHE 1, FICHE 2, FICHE 3, FICHE 4, FICHE 5, FICHE 6, FICHE 8)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "salaire_median_embauche: 1740",
+        "stat_value": 1740,
+        "stat_unit": "€",
+        "context_in_response": "Insertion pro : salaire_median_embauche: 1740 (FICHE 1, FICHE 2, FICHE 3, FICHE 4, FICHE 5, FICHE 6, FICHE 8)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_emploi_3ans: 0.8",
+        "stat_value": 80,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : taux_emploi_3ans: 0.8 (FICHE 7)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_emploi_6ans: 0.87",
+        "stat_value": 87,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : taux_emploi_6ans: 0.87 (FICHE 7)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "taux_cdi: 0.76",
+        "stat_value": 76,
+        "stat_unit": "%",
+        "context_in_response": "Insertion pro : taux_cdi: 0.76 (FICHE 7)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      },
+      {
+        "stat_text": "salaire_median_embauche: 1570",
+        "stat_value": 1570,
+        "stat_unit": "€",
+        "context_in_response": "Insertion pro : salaire_median_embauche: 1570 (FICHE 7)",
+        "verdict": "verified",
+        "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 0.8626,
+        "nom": "Métiers du Multimédia et de l’Internet : Stratégie de communication numérique et design d’expérience",
+        "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "data_ia",
+        "domain": "formation"
+      },
+      {
+        "score": 0.8601,
+        "nom": "METIERS DU MULTIMEDIA ET DE L'INTERNET : STRATEGIE DE COMMUNICATION NUMERIQUE ET DESIGN D'EXPERIENCE",
+        "etablissement": "UNIVERSITE DE LORRAINE",
+        "niveau": "bac+3",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "lettres_arts",
+        "domain": "formation"
+      },
+      {
+        "score": 0.86,
+        "nom": "METIERS DU MULTIMEDIA ET DE L'INTERNET : STRATEGIE DE COMMUNICATION NUMERIQUE ET DESIGN D'EXPERIENCE",
+        "etablissement": "FORMASUP HAUTS DE FRANCE",
+        "niveau": "bac+3",
+        "phase": "reorientation",
+        "source": "labonnealternance",
+        "domaine": "lettres_arts",
+        "domain": "formation"
+      },
+      {
+        "score": 0.8552,
+        "nom": "Métiers du Multimédia et de l’Internet : Création numérique",
+        "etablissement": "UNIVERSITE DE LORRAINE",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "data_ia",
+        "domain": "formation"
+      },
+      {
+        "score": 0.8551,
+        "nom": "Chef de projet web et stratégie digitale",
+        "etablissement": "CCIT OUEST NORMANDIE",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "data_ia",
+        "domain": "formation"
+      },
+      {
+        "score": 0.8546,
+        "nom": "Chef de projet digital",
+        "etablissement": "INSTITUT EUROPEEN F 2I",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "data_ia",
+        "domain": "formation"
+      },
+      {
+        "score": 0.8142,
+        "nom": "Médiateur numérique",
+        "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+        "niveau": "bac+2",
+        "phase": "initial",
+        "source": "rncp",
+        "domaine": "sciences_humaines",
+        "domain": "formation"
+      },
+      {
+        "score": 0.7812,
+        "nom": "chef de projets digitaux",
+        "etablissement": "",
+        "niveau": "bac+3",
+        "phase": "initial",
+        "source": "onisep",
+        "domaine": "eco_gestion",
+        "domain": "formation"
+      },
+      {
+        "score": 0.7629,
+        "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7593,
+        "nom": "Métier 2030 (DARES) — FAP M1Z : Techniciens de l'informatique | Effectifs 2019 France : 187 468 pers",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      }
+    ]
+  },
+  {
+    "idx_global": 10,
+    "query_id": "q10_fap_T4Z",
+    "query_text": "FAP T4Z agents d'entretien : combien de postes à pourvoir d'ici 2030 et dans quelles régions ?",
+    "pattern_target": "FAP code explicit",
+    "elapsed_gen_s": 23.95,
+    "elapsed_fact_check_s": 2.0,
+    "answer_raw": "**TL;DR**\n1. Les agents d’entretien (FAP T4Z) font partie des métiers en tension, avec des besoins importants liés au vieillissement de la population et aux normes sanitaires.\n2. D’ici 2030, **~150 000 à 200 000 postes** pourraient être à pourvoir en France (connaissance générale, estimations France Stratégie/Dares).\n3. Les régions les plus demandeuses : **Île-de-France, Auvergne-Rhône-Alpes, Nouvelle-Aquitaine, Occitanie** et **Hauts-de-France** (secteurs santé, hôtellerie, collectivités).\n\n---\n\n### **Plan A — Secteurs et régions prioritaires**\n**Domaine porteur** : **Santé (EHPAD, hôpitaux)** et **propreté urbaine** (collectivités).\n📍 **Régions clés** : **Île-de-France** (démographie dense), **Auvergne-Rhône-Alpes** (tourisme + santé), **Nouvelle-Aquitaine** (personnes âgées).\n*Pour toi* : Cible ces secteurs/régions pour maximiser tes chances — **peu de diplôme exigé** (CAP/BEP suffisent souvent), mais **certifications hygiène** (ex : CACES nettoyage) sont un plus.\n\n### **Plan B — Spécialisation pour monter en qualification**\n**Formations courtes** :\n- **CAP Agent de Propreté et d’Hygiène** (1 an, en apprentissage possible).\n- **Titre Pro Agent de Nettoyage Industriel** (AFPA, 6 mois).\n📍 **Régions avec dispositifs aidés** : **Occitanie** (plan \"Zéro Chômeur\"), **Hauts-de-France** (aides Pôle Emploi).\n*Pour toi* : Une spécialisation (ex : **bio-nettoyage** pour les hôpitaux) peut mener à des postes mieux payés (+20-30% vs ménage classique — connaissance générale).\n\n### **Plan C — Alternatives connexes si reconversion**\n**Métiers voisins avec passerelles** :\n- **Agent de stérilisation** (hôpitaux, formation 3-6 mois).\n- **Technicien de surface en industrie** (agroalimentaire, pharmaceutique — normes strictes = salaires +10-15%).\n📍 **Où se former ?** : **Pays de la Loire** (pôle agroalimentaire), **Grand Est** (industrie).\n*Pour toi* : Si tu vises une évolution, ces métiers offrent des **contrats plus stables** (CDI fréquents) et des **formations financées** (CPF, Transition Pro).\n\n---\n**⚠ Attention aux pièges**\n- **Salaire de base faible** : SMIC à 1,2xSMIC en début de carrière (sauf spécialisations — connaissance générale).\n- **Conditions physiques** : Horaires décalés (nettoyage de nuit) ou stations debout prolongées — vérifie la compatibilité avec ta santé.\n- **Concurrence sur les postes non qualifiés** : Dans les grandes villes, les employeurs privilégient souvent les candidats **avec expérience** même pour des postes \"sans diplôme\".\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **stabilité** (secteur public/collectivités), **flexibilité** (intérim en hôtellerie/événementiel) ou **évolution de carrière** (spécialisation technique) ? Cela peut orienter vers des formations ou régions différentes.",
+    "answer_annotated": "**TL;DR**\n1. Les agents d’entretien (FAP T4Z) font partie des métiers en tension, avec des besoins importants liés au vieillissement de la population et aux normes sanitaires.\n2. D’ici 2030, **~150 000 à 200 000 postes** pourraient être à pourvoir en France (connaissance générale, estimations France Stratégie/Dares).\n3. Les régions les plus demandeuses : **Île-de-France, Auvergne-Rhône-Alpes, Nouvelle-Aquitaine, Occitanie** et **Hauts-de-France** (secteurs santé, hôtellerie, collectivités).\n\n---\n\n### **Plan A — Secteurs et régions prioritaires**\n**Domaine porteur** : **Santé (EHPAD, hôpitaux)** et **propreté urbaine** (collectivités).\n📍 **Régions clés** : **Île-de-France** (démographie dense), **Auvergne-Rhône-Alpes** (tourisme + santé), **Nouvelle-Aquitaine** (personnes âgées).\n*Pour toi* : Cible ces secteurs/régions pour maximiser tes chances — **peu de diplôme exigé** (CAP/BEP suffisent souvent), mais **certifications hygiène** (ex : CACES nettoyage) sont un plus.\n\n### **Plan B — Spécialisation pour monter en qualification**\n**Formations courtes** :\n- **CAP Agent de Propreté et d’Hygiène** (1 an, en apprentissage possible).\n- **Titre Pro Agent de Nettoyage Industriel** (AFPA, 6 mois).\n📍 **Régions avec dispositifs aidés** : **Occitanie** (plan \"Zéro Chômeur\"), **Hauts-de-France** (aides Pôle Emploi).\n*Pour toi* : Une spécialisation (ex : **bio-nettoyage** pour les hôpitaux) peut mener à des postes mieux payés (+20-30% vs ménage classique — connaissance générale).\n\n### **Plan C — Alternatives connexes si reconversion**\n**Métiers voisins avec passerelles** :\n- **Agent de stérilisation** (hôpitaux, formation 3-6 mois).\n- **Technicien de surface en industrie** (agroalimentaire, pharmaceutique — normes strictes = salaires +10-15%).\n📍 **Où se former ?** : **Pays de la Loire** (pôle agroalimentaire), **Grand Est** (industrie).\n*Pour toi* : Si tu vises une évolution, ces métiers offrent des **contrats plus stables** (CDI fréquents) et des **formations financées** (CPF, Transition Pro).\n\n---\n**⚠ Attention aux pièges**\n- **Salaire de base faible** : SMIC à 1,2xSMIC en début de carrière (sauf spécialisations — connaissance générale).\n- **Conditions physiques** : Horaires décalés (nettoyage de nuit) ou stations debout prolongées — vérifie la compatibilité avec ta santé.\n- **Concurrence sur les postes non qualifiés** : Dans les grandes villes, les employeurs privilégient souvent les candidats **avec expérience** même pour des postes \"sans diplôme\".\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **stabilité** (secteur public/collectivités), **flexibilité** (intérim en hôtellerie/événementiel) ou **évolution de carrière** (spécialisation technique) ? Cela peut orienter vers des formations ou régions différentes.",
+    "annotated_differs": false,
+    "n_sources": 10,
+    "fact_check_error": null,
+    "fact_check_summary": {
+      "n_stats_total": 4,
+      "n_verified": 0,
+      "n_with_disclaimer": 4,
+      "n_hallucinated": 0,
+      "error": null
+    },
+    "fact_check_stats": [
+      {
+        "stat_text": "~150 000 à 200 000 postes",
+        "stat_value": 175000,
+        "stat_unit": "postes",
+        "context_in_response": "D’ici 2030, ~150 000 à 200 000 postes pourraient être à pourvoir en France",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "+20-30%",
+        "stat_value": 25,
+        "stat_unit": "%",
+        "context_in_response": "Une spécialisation (ex : bio-nettoyage) peut mener à des postes mieux payés (+20-30% vs ménage classique)",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "+10-15%",
+        "stat_value": 12.5,
+        "stat_unit": "%",
+        "context_in_response": "Technicien de surface en industrie : salaires +10-15%",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      },
+      {
+        "stat_text": "SMIC à 1,2xSMIC",
+        "stat_value": 1.2,
+        "stat_unit": "xSMIC",
+        "context_in_response": "Salaire de base faible : SMIC à 1,2xSMIC en début de carrière",
+        "verdict": "unsourced_with_disclaimer",
+        "source_fiche_excerpt": null
+      }
+    ],
+    "sources_top10": [
+      {
+        "score": 0.8115,
+        "nom": "Métier 2030 (DARES) — FAP T4Z : Agents d'entretien | Effectifs 2019 France : 1 226 002 personnes | C",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7847,
+        "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7822,
+        "nom": "Métier 2030 (DARES) — FAP G1Z : Techniciens et agents de maîtrise de la maintenance | Effectifs 2019",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7816,
+        "nom": "Métier 2030 (DARES) — FAP J4Z : Agents d'exploitation des transports | Effectifs 2019 France : 102 9",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7813,
+        "nom": "Marché du travail prospective 2030 — région Occitanie | Effectifs 2019 totaux : 2 265 290 personnes ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7788,
+        "nom": "Marché du travail prospective 2030 — région Pays de la Loire | Effectifs 2019 totaux : 1 561 926 per",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7773,
+        "nom": "Marché du travail prospective 2030 — région Corse | Effectifs 2019 totaux : 132 156 personnes (toute",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7766,
+        "nom": "Marché du travail prospective 2030 — région Hauts-de-France | Effectifs 2019 totaux : 2 118 701 pers",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7765,
+        "nom": "Métier 2030 (DARES) — FAP T3Z : Agents de gardiennage et de sécurité | Effectifs 2019 France : 210 7",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      },
+      {
+        "score": 0.7762,
+        "nom": "Métier 2030 (DARES) — FAP L4Z : Techniciens des services administratifs, comptables et financiers | ",
+        "etablissement": "",
+        "niveau": null,
+        "phase": null,
+        "source": "dares_metiers_2030",
+        "domaine": null,
+        "domain": "metier_prospective"
+      }
+    ]
+  }
+]

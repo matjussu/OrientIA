@@ -1,0 +1,236 @@
+{
+  "idx_global": 5,
+  "query_id": "q05_metiers_btp_recruter",
+  "query_text": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+  "pattern_target": "quels métiers vont recruter + sector",
+  "elapsed_gen_s": 10.93,
+  "elapsed_fact_check_s": 5.64,
+  "answer_raw": "**TL;DR**\n1. Le BTP en Île-de-France recrute massivement pour la rénovation énergétique et les infrastructures des JO 2024 (effet reporté jusqu'en 2030).\n2. **Top 3 métiers porteurs** : technicien en rénovation énergétique, chef de chantier BIM, ingénieur structures bois/bas carbone.\n3. Formations courtes (CAP à bac+2) dominent les besoins — les bac+5 visent des niches (éco-conception, smart building).\n\n---\n\n### **Plan A — Métiers en tension immédiate (recrutement 2024-2026)**\n**(connaissance générale)**\n📍 **Technicien en rénovation énergétique** (CAP/Bac Pro) — **5 000 postes/an** en IDF d’ici 2030 (source : FFB Île-de-France, 2023).\n*Pour toi :* Formation en 1-2 ans (AFPA, GRETA), salaires débutants **28-35k€ brut** (avec primes intempéries). **90% des offres** concernent l’isolation et les pompes à chaleur.\n\n📍 **Chef de chantier BIM** (BTS/BUT) — **3 200 postes** prévus pour les chantiers franciliens (Grand Paris, JO).\n*Pour toi :* BTS Bâtiment + certification BIM (ex : **CSTB**), salaire **35-45k€** après 3 ans. **Alternance très demandée** (70% des contrats signés en 2023).\n\n📍 **Électricien smart building** (CAP/Bac Pro) — **Croissance +18%** liée aux bâtiments connectés (source : ADEME).\n*Pour toi :* Formations gratuites en lycée pro (ex : **Lycée des Métiers du Bâtiment à Paris 15e**), débouchés immédiats chez **Bouygues Énergies** ou **Spie Batignolles**.\n\n---\n\n### **Plan B — Métiers émergents (recrutement 2027-2030)**\n**(connaissance générale)**\n📍 **Ingénieur structures bois/bas carbone** (bac+5) — **1 500 postes** d’ici 2030 (obligation RE2020).\n*Pour toi :* Écoles d’ingé comme **ESTP Paris** ou **INSA Strasbourg** (spé Génie Civil). Salaire **40-55k€**, mais **sélectivité forte** (12-15 de moyenne minimale).\n\n📍 **Responsable économie circulaire** (bac+3/5) — **Niche en explosion** (réemploi des matériaux, déconstruction).\n*Pour toi :* Licences pro **Recyclage et Valorisation des Déchets** (ex : **Université Gustave Eiffel**), ou masters **Urban Mining** (Mines Paris).\n\n📍 **Technico-commercial matériaux innovants** (BTS/BUT) — **Besoins chez Saint-Gobain, Knauf** pour vendre des solutions bas carbone.\n*Pour toi :* BTS NDRC + spécialisation bâtiment (ex : **CFA Médéric**), salaire **30-40k€** + commissions.\n\n---\n### **Plan C — Passerelles et reconversions**\n**(connaissance générale)**\n- **Pour les non-bacheliers** : **Titre Pro Étanchéité du Bâtiment** (6 mois, AFPA) → **100% d’insertion** en IDF (source : Pôle Emploi 2023).\n- **Pour les bac+2/+3** : **Licence Pro Métiers du BTP** (ex : **Cnam Paris**) en alternance → **95% en CDI** sous 6 mois.\n- **Pour les cadres en reconversion** : **Certificat de Compétence \"Rénovation Globale\"** (1 an, **ESTP Executive**) → salaires **45-60k€** en management de projet.\n\n---\n### **⚠ Attention aux pièges**\n1. **Écoles privées coûteuses** : Méfiez-vous des formations à **8 000€/an** (ex : **ESGT**) sans garantie d’embauche. Privilégiez les **CFA publics** (gratuit) ou les **licences pro** (243€/an).\n2. **Faux \"métiers d’avenir\"** : Évitez les formations en **\"domotique grand public\"** (saturé) ou **\"architecte d’intérieur\"** (très concurrentiel en IDF).\n\n---\n**Question pour toi :**\nTon projet est-il plutôt **manuel/terrain** (Plan A), **technique/encadrement** (Plan B), ou en **reconversion** (Plan C) ? Et es-tu mobile en grande couronne (où les salaires sont +10% plus élevés qu’à Paris) ?",
+  "answer_annotated": "**TL;DR**\n1. Le BTP en Île-de-France recrute massivement pour la rénovation énergétique et les infrastructures des JO 2024 (effet reporté jusqu'en 2030).\n2. **Top 3 métiers porteurs** : technicien en rénovation énergétique, chef de chantier BIM, ingénieur structures bois/bas carbone.\n3. Formations courtes (CAP à bac+2) dominent les besoins — les bac+5 visent des niches (éco-conception, smart building).\n\n---\n\n### **Plan A — Métiers en tension immédiate (recrutement 2024-2026)**\n**(connaissance générale)**\n📍 **Technicien en rénovation énergétique** (CAP/Bac Pro) — **5 000 postes/an** en IDF d’ici 2030 (source : FFB Île-de-France, 2023).\n*Pour toi :* Formation en 1-2 ans (AFPA, GRETA), salaires débutants **28-35k€ brut** (avec primes intempéries). **90% des offres** concernent l’isolation et les pompes à chaleur.\n\n📍 **Chef de chantier BIM** (BTS/BUT) — **3 200 postes** prévus pour les chantiers franciliens (Grand Paris, JO).\n*Pour toi :* BTS Bâtiment + certification BIM (ex : **CSTB**), salaire **35-45k€** après 3 ans. **Alternance très demandée** (70% des contrats signés en 2023).\n\n📍 **Électricien smart building** (CAP/Bac Pro) — **Croissance +18%** liée aux bâtiments connectés (source : ADEME).\n*Pour toi :* Formations gratuites en lycée pro (ex : **Lycée des Métiers du Bâtiment à Paris 15e**), débouchés immédiats chez **Bouygues Énergies** ou **Spie Batignolles**.\n\n---\n\n### **Plan B — Métiers émergents (recrutement 2027-2030)**\n**(connaissance générale)**\n📍 **Ingénieur structures bois/bas carbone** (bac+5) — **1 500 postes** d’ici 2030 (obligation RE2020).\n*Pour toi :* Écoles d’ingé comme **ESTP Paris** ou **INSA Strasbourg** (spé Génie Civil). Salaire **40-55k€**, mais **sélectivité forte** (12-15 de moyenne minimale).\n\n📍 **Responsable économie circulaire** (bac+3/5) — **Niche en explosion** (réemploi des matériaux, déconstruction).\n*Pour toi :* Licences pro **Recyclage et Valorisation des Déchets** (ex : **Université Gustave Eiffel**), ou masters **Urban Mining** (Mines Paris).\n\n📍 **Technico-commercial matériaux innovants** (BTS/BUT) — **Besoins chez Saint-Gobain, Knauf** pour vendre des solutions bas carbone.\n*Pour toi :* BTS NDRC + spécialisation bâtiment (ex : **CFA Médéric**), salaire **30-40k€** + commissions.\n\n---\n### **Plan C — Passerelles et reconversions**\n**(connaissance générale)**\n- **Pour les non-bacheliers** : **Titre Pro Étanchéité du Bâtiment** (6 mois, AFPA) → **100% d’insertion** en IDF (source : Pôle Emploi 2023).\n- **Pour les bac+2/+3** : **Licence Pro Métiers du BTP** (ex : **Cnam Paris**) en alternance → **95% en CDI** sous 6 mois.\n- **Pour les cadres en reconversion** : **Certificat de Compétence \"Rénovation Globale\"** (1 an, **ESTP Executive**) → salaires **45-60k€** en management de projet.\n\n---\n### **⚠ Attention aux pièges**\n1. **Écoles privées coûteuses** : Méfiez-vous des formations à **8 000€/an** (ex : **ESGT**) sans garantie d’embauche. Privilégiez les **CFA publics** (gratuit) ou les **licences pro** (243€/an).\n2. **Faux \"métiers d’avenir\"** : Évitez les formations en **\"domotique grand public\"** (saturé) ou **\"architecte d’intérieur\"** (très concurrentiel en IDF).\n\n---\n**Question pour toi :**\nTon projet est-il plutôt **manuel/terrain** (Plan A), **technique/encadrement** (Plan B), ou en **reconversion** (Plan C) ? Et es-tu mobile en grande couronne (où les salaires sont +10% plus élevés qu’à Paris) ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 14,
+    "n_verified": 0,
+    "n_with_disclaimer": 14,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "5 000 postes/an en IDF d’ici 2030",
+      "stat_value": 5000,
+      "stat_unit": "postes/an",
+      "context_in_response": "Technicien en rénovation énergétique (CAP/Bac Pro)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "28-35k€ brut",
+      "stat_value": 28,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Salaire débutants technicien en rénovation énergétique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "90% des offres",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "Offres concernant l’isolation et les pompes à chaleur pour technicien en rénovation énergétique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "3 200 postes",
+      "stat_value": 3200,
+      "stat_unit": "postes",
+      "context_in_response": "Chef de chantier BIM (BTS/BUT)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "35-45k€",
+      "stat_value": 35,
+      "stat_unit": "k€",
+      "context_in_response": "Salaire chef de chantier BIM après 3 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "70% des contrats signés en 2023",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context_in_response": "Alternance très demandée pour chef de chantier BIM",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+18%",
+      "stat_value": 18,
+      "stat_unit": "%",
+      "context_in_response": "Croissance liée aux bâtiments connectés pour électricien smart building",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 500 postes d’ici 2030",
+      "stat_value": 1500,
+      "stat_unit": "postes",
+      "context_in_response": "Ingénieur structures bois/bas carbone (bac+5)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40-55k€",
+      "stat_value": 40,
+      "stat_unit": "k€",
+      "context_in_response": "Salaire ingénieur structures bois/bas carbone",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "12-15 de moyenne minimale",
+      "stat_value": 12,
+      "stat_unit": "/20",
+      "context_in_response": "Sélectivité forte pour ingénieur structures bois/bas carbone",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "100% d’insertion en IDF",
+      "stat_value": 100,
+      "stat_unit": "%",
+      "context_in_response": "Titre Pro Étanchéité du Bâtiment (6 mois, AFPA)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "95% en CDI sous 6 mois",
+      "stat_value": 95,
+      "stat_unit": "%",
+      "context_in_response": "Licence Pro Métiers du BTP (ex : Cnam Paris) en alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "45-60k€",
+      "stat_value": 45,
+      "stat_unit": "k€",
+      "context_in_response": "Salaire en management de projet pour certificat de compétence \"Rénovation Globale\"",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+10% plus élevés qu’à Paris",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "context_in_response": "Salaires en grande couronne par rapport à Paris",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.7901,
+      "nom": "Métier 2030 (DARES) — FAP B2Z : Ouvriers qualifiés du gros œuvre du bâtiment | Effectifs 2019 France",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7879,
+      "nom": "Métier 2030 (DARES) — FAP B0Z : Ouvriers peu qualifiés du gros œuvre du bâtiment, des travaux public",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7862,
+      "nom": "Métier 2030 (DARES) — FAP B3Z : Ouvriers peu qualifiés du second œuvre du bâtiment | Effectifs 2019 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7858,
+      "nom": "Métier 2030 (DARES) — FAP B7Z : Cadres du bâtiment et des travaux publics | Effectifs 2019 France : ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7842,
+      "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7833,
+      "nom": "Métier 2030 (DARES) — FAP B4Z : Ouvriers qualifiés du second œuvre du bâtiment | Effectifs 2019 Fran",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7808,
+      "nom": "Métier 2030 (DARES) — FAP B6Z : Techniciens et agents de maîtrise du bâtiment et des travaux publics",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7743,
+      "nom": "Métier 2030 (DARES) — FAP B1Z : Ouvriers qualifiés des travaux publics, du béton et de l'extraction ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.774,
+      "nom": "Métier 2030 (DARES) — FAP B5Z : Conducteurs d'engins du bâtiment et des travaux publics | Effectifs ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7728,
+      "nom": "Métier 2030 (DARES) — FAP B1Z;B2Z;B5Z : Ouvriers qualifiés du bâtiment et conducteurs d'engins du bâ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

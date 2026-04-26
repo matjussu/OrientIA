@@ -1,0 +1,156 @@
+{
+  "idx_global": 3,
+  "query_id": "q03_postes_aides_soignants",
+  "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+  "pattern_target": "postes a pourvoir + métier specific",
+  "elapsed_gen_s": 9.52,
+  "elapsed_fact_check_s": 1.88,
+  "answer_raw": "**TL;DR**\n1. Le secteur des aides-soignants devrait connaître une **forte demande** d’ici 2030, avec des **dizaines de milliers de postes à pourvoir** en France (connaissance générale).\n2. Les besoins sont liés au vieillissement de la population, aux départs en retraite et à la hausse des pathologies chroniques.\n3. Deux voies principales pour y accéder : **diplôme d’État (DEAS)** ou **passerelles depuis d’autres métiers du soin**.\n\n---\n\n### **Plan A — Voie directe : Diplôme d’État d’Aide-Soignant (DEAS)**\n📍 **Formation DEAS** (partout en France) — bac non requis, 10 à 18 mois (alternance possible), diplôme d’État · [Site du ministère de la Santé](https://solidarites-sante.gouv.fr)\n*Pour toi : accès sans prérequis de diplôme (sous conditions d’âge), avec des **débouchés immédiats** dans les Ehpad, hôpitaux ou à domicile.*\n\n### **Plan B — Passerelles et évolutions**\n- **Depuis d’autres métiers** : Les auxiliaires de vie sociale (AVS) ou agents des services hospitaliers (ASH) peuvent se former en **6 à 12 mois** via des dispositifs comme la VAE (Validation des Acquis de l’Expérience).\n- **Vers des postes plus qualifiés** : Après 3 ans d’expérience, possibilité de devenir **infirmier(ère)** via un parcours spécifique (ex : passerelle DEAS → IFSI).\n\n### **Plan C — Alternatives pour répondre à la pénurie**\n- **Emplois saisonniers ou CDD** : Beaucoup d’établissements recrutent **sans diplôme** pour des postes d’agents de soin, avec une formation interne (ex : **contrats de professionnalisation**).\n- **Secteurs porteurs** : Les **Ehpad** et le **maintien à domicile** concentreront 60% des besoins (connaissance générale).\n\n---\n⚠ **Attention aux pièges**\n- **Formations privées coûteuses** : Méfie-toi des écoles non agréées par l’État (ex : formations \"aide-soignant\" à 5 000€ sans diplôme reconnu). Vérifie toujours le label **DEAS** sur le site du ministère.\n- **Conditions de travail** : Turn-over élevé dans certains Ehpad (surcharge, salaires ~1 600€ net/mois en début de carrière — connaissance générale).\n- **Faux espoirs sur les salaires** : Malgré la pénurie, les revalorisations restent limitées (+10% max depuis 2020).\n\n---\n**Question pour toi** :\nAs-tu déjà une expérience dans le soin (bénévolat, stage) ou cherches-tu une formation **sans prérequis** ? Cela peut orienter vers un DEAS classique ou une passerelle accélérée.",
+  "answer_annotated": "**TL;DR**\n1. Le secteur des aides-soignants devrait connaître une **forte demande** d’ici 2030, avec des **dizaines de milliers de postes à pourvoir** en France (connaissance générale).\n2. Les besoins sont liés au vieillissement de la population, aux départs en retraite et à la hausse des pathologies chroniques.\n3. Deux voies principales pour y accéder : **diplôme d’État (DEAS)** ou **passerelles depuis d’autres métiers du soin**.\n\n---\n\n### **Plan A — Voie directe : Diplôme d’État d’Aide-Soignant (DEAS)**\n📍 **Formation DEAS** (partout en France) — bac non requis, 10 à 18 mois (alternance possible), diplôme d’État · [Site du ministère de la Santé](https://solidarites-sante.gouv.fr)\n*Pour toi : accès sans prérequis de diplôme (sous conditions d’âge), avec des **débouchés immédiats** dans les Ehpad, hôpitaux ou à domicile.*\n\n### **Plan B — Passerelles et évolutions**\n- **Depuis d’autres métiers** : Les auxiliaires de vie sociale (AVS) ou agents des services hospitaliers (ASH) peuvent se former en **6 à 12 mois** via des dispositifs comme la VAE (Validation des Acquis de l’Expérience).\n- **Vers des postes plus qualifiés** : Après 3 ans d’expérience, possibilité de devenir **infirmier(ère)** via un parcours spécifique (ex : passerelle DEAS → IFSI).\n\n### **Plan C — Alternatives pour répondre à la pénurie**\n- **Emplois saisonniers ou CDD** : Beaucoup d’établissements recrutent **sans diplôme** pour des postes d’agents de soin, avec une formation interne (ex : **contrats de professionnalisation**).\n- **Secteurs porteurs** : Les **Ehpad** et le **maintien à domicile** concentreront 60% des besoins (connaissance générale).\n\n---\n⚠ **Attention aux pièges**\n- **Formations privées coûteuses** : Méfie-toi des écoles non agréées par l’État (ex : formations \"aide-soignant\" à 5 000€ sans diplôme reconnu). Vérifie toujours le label **DEAS** sur le site du ministère.\n- **Conditions de travail** : Turn-over élevé dans certains Ehpad (surcharge, salaires ~1 600€ net/mois en début de carrière — connaissance générale).\n- **Faux espoirs sur les salaires** : Malgré la pénurie, les revalorisations restent limitées (+10% max depuis 2020).\n\n---\n**Question pour toi** :\nAs-tu déjà une expérience dans le soin (bénévolat, stage) ou cherches-tu une formation **sans prérequis** ? Cela peut orienter vers un DEAS classique ou une passerelle accélérée.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 4,
+    "n_verified": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "dizaines de milliers de postes à pourvoir",
+      "stat_value": null,
+      "stat_unit": "postes",
+      "context_in_response": "Le secteur des aides-soignants devrait connaître une forte demande d’ici 2030, avec des dizaines de milliers de postes à pourvoir en France",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60% des besoins",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context_in_response": "Les Ehpad et le maintien à domicile concentreront 60% des besoins",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~1 600€ net/mois",
+      "stat_value": 1600,
+      "stat_unit": "€",
+      "context_in_response": "salaires ~1 600€ net/mois en début de carrière",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+10% max depuis 2020",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "context_in_response": "les revalorisations restent limitées (+10% max depuis 2020)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.8508,
+      "nom": "Métier 2030 (DARES) — FAP V0Z : Aides-soignants | Effectifs 2019 France : 764 466 personnes | Créati",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8489,
+      "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8474,
+      "nom": "Marché du travail prospective 2030 — région Occitanie | Effectifs 2019 totaux : 2 265 290 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.846,
+      "nom": "Marché du travail prospective 2030 — région Auvergne-Rhône-Alpes | Effectifs 2019 totaux : 3 259 115",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8443,
+      "nom": "Marché du travail prospective 2030 — région Bretagne | Effectifs 2019 totaux : 1 328 112 personnes (",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8432,
+      "nom": "Marché du travail prospective 2030 — région Pays de la Loire | Effectifs 2019 totaux : 1 561 926 per",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8427,
+      "nom": "Marché du travail prospective 2030 — région Corse | Effectifs 2019 totaux : 132 156 personnes (toute",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8401,
+      "nom": "Marché du travail prospective 2030 — région Bourgogne-Franche-Comté | Effectifs 2019 totaux : 1 070 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8395,
+      "nom": "Marché du travail prospective 2030 — région Provence-Alpes-Côte d'Azur | Effectifs 2019 totaux : 1 9",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8389,
+      "nom": "Métier 2030 (DARES) — FAP V1Z : Infirmiers, sages-femmes | Effectifs 2019 France : 653 267 personnes",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

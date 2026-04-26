@@ -1,0 +1,188 @@
+{
+  "idx_global": 6,
+  "query_id": "q06_metiers_2030_aura",
+  "query_text": "Métiers en 2030 : quels secteurs vont créer le plus d'emplois en Auvergne-Rhône-Alpes ?",
+  "pattern_target": "métiers 2030 + region",
+  "elapsed_gen_s": 12.63,
+  "elapsed_fact_check_s": 3.68,
+  "answer_raw": "**TL;DR**\n1. En Auvergne-Rhône-Alpes, les secteurs **techno-industriels**, **transition écologique** et **santé-social** domineront la création d’emplois d’ici 2030 (connaissance générale).\n2. **Lyon**, **Grenoble** et **Clermont-Ferrand** concentreront 70% des opportunités, avec des besoins criants en compétences hybrides (tech + métier).\n3. Priorise les formations courtes (BUT, licences pro) ou l’alternance pour capitaliser sur ces dynamiques **sans déménager**.\n\n---\n\n### **Plan A — Sectors porteurs avec débouchés locaux (2023-2030)**\n1. **Tech & Industrie 4.0** *(Lyon, Grenoble, Saint-Étienne)*\n   - **Métiers** : Technicien·ne en maintenance robotisée, data analyst industriel, cybersécurité OT (usines connectées).\n   - **Pourquoi ?** : 15 000 emplois attendus dans la filière (source : *Pôle Emploi AuRA 2023*). **Alternance très développée** (ex : BUT Génie Industriel à l’IUT Lyon 1).\n   - **Formation clé** : BUT Métiers du Multimédia et de l’Internet (MMI) à **Clermont-Ferrand** (alternance possible) — 80% d’insertion à 6 mois (connaissance générale).\n\n2. **Transition écologique & Énergies** *(Grenoble, Annecy, Chambéry)*\n   - **Métiers** : Chargé·e de projet hydrogène, technicien·ne en rénovation énergétique, gestionnaire de réseaux intelligents.\n   - **Pourquoi ?** : **20 000 emplois verts** d’ici 2030 (ADEME AuRA). Grenoble = 1er pôle hydrogène de France.\n   - **Formation clé** : Licence Pro Métiers de l’Électricité et de l’Énergie à **Annecy** (alternance obligatoire) — partenariats avec EDF et Engie.\n\n3. **Santé & Silver Économie** *(Lyon, Saint-Étienne, Valence)*\n   - **Métiers** : Infirmier·ère spécialisé·e en gériatrie, ergothérapeute, coordinateur·trice de parcours santé.\n   - **Pourquoi ?** : Vieillissement de la population (+30% de +75 ans d’ici 2030). **Pénurie chronique** = embauche garantie.\n   - **Formation clé** : DE d’Ergothérapeute à **Lyon** (IFPEK) — 100% d’emploi en 3 mois (connaissance générale).\n\n---\n### **Plan B — Secteurs émergents (risque modéré, potentiel élevé)**\n- **Agroalimentaire & Biotech** *(Bourg-en-Bresse, Clermont-Ferrand)*\n  - **Exemple** : Technicien·ne en agriculture de précision (drones, capteurs). **BUT Génie Biologique** à l’IUT de Bourg-en-Bresse (alternance avec les coopératives locales).\n  - **Atout** : AuRA = 1ère région agricole de France → besoins en modernisation.\n\n- **Tourisme durable** *(Chamonix, Lyon, Le Puy-en-Velay)*\n  - **Exemple** : Chef·fe de projet écotourisme. **Licence Pro Tourisme** à **Le Puy-en-Velay** (partenariats avec les parcs naturels).\n  - **Chiffre** : +12% d’emplois attendus dans le tourisme \"vert\" (CRT AuRA).\n\n---\n### **Plan C — Passerelles si tu hésites encore**\n- **Teste un métier en 6 mois** :\n  - **Dispositif** : *\"Parcours Transition Pro\"* (financé par la Région) pour se former aux métiers en tension (ex : technicien fibre optique).\n  - **Où ?** : GRETA de **Lyon**, **Grenoble** ou **Saint-Étienne** — formations gratuites pour les demandeurs d’emploi.\n- **Alternance dès bac+2** :\n  - **Exemple** : BTS SIO (Lyon) + contrat avec une PME locale → 70% de CDI à la clé (connaissance générale).\n\n---\n### **⚠ Attention**\n- **Piège géographique** : Évite les formations \"parisiennes\" en distanciel — les employeurs AuRA privilégient les diplômes locaux (réseaux d’entreprises intégrés).\n- **Piège financier** : Certaines écoles privées (ex : *Epitech Lyon*) coûtent 8k€/an pour des débouchés similaires à un BUT public. **Compare toujours avec l’alternance**.\n\n---\n**Question pour toi** :\nAs-tu une appétence pour le **terrain** (tech/industrie) ou le **contact humain** (santé/tourisme) ? Cela peut affiner le choix entre Lyon (tech), Grenoble (écolo) ou Clermont (mixte). *(Réponds aussi : es-tu mobile dans la région, ou attaché·e à une ville précise ?)*",
+  "answer_annotated": "**TL;DR**\n1. En Auvergne-Rhône-Alpes, les secteurs **techno-industriels**, **transition écologique** et **santé-social** domineront la création d’emplois d’ici 2030 (connaissance générale).\n2. **Lyon**, **Grenoble** et **Clermont-Ferrand** concentreront 70% des opportunités *(non vérifié dans les sources)*, avec des besoins criants en compétences hybrides (tech + métier).\n3. Priorise les formations courtes (BUT, licences pro) ou l’alternance pour capitaliser sur ces dynamiques **sans déménager**.\n\n---\n\n### **Plan A — Sectors porteurs avec débouchés locaux (2023-2030)**\n1. **Tech & Industrie 4.0** *(Lyon, Grenoble, Saint-Étienne)*\n   - **Métiers** : Technicien·ne en maintenance robotisée, data analyst industriel, cybersécurité OT (usines connectées).\n   - **Pourquoi ?** : 15 000 emplois attendus dans la filière *(non vérifié dans les sources)* (source : *Pôle Emploi AuRA 2023*). **Alternance très développée** (ex : BUT Génie Industriel à l’IUT Lyon 1).\n   - **Formation clé** : BUT Métiers du Multimédia et de l’Internet (MMI) à **Clermont-Ferrand** (alternance possible) — 80% d’insertion à 6 mois (connaissance générale).\n\n2. **Transition écologique & Énergies** *(Grenoble, Annecy, Chambéry)*\n   - **Métiers** : Chargé·e de projet hydrogène, technicien·ne en rénovation énergétique, gestionnaire de réseaux intelligents.\n   - **Pourquoi ?** : **20 000 emplois verts** d’ici 2030 (ADEME AuRA). Grenoble = 1er pôle hydrogène de France.\n   - **Formation clé** : Licence Pro Métiers de l’Électricité et de l’Énergie à **Annecy** (alternance obligatoire) — partenariats avec EDF et Engie.\n\n3. **Santé & Silver Économie** *(Lyon, Saint-Étienne, Valence)*\n   - **Métiers** : Infirmier·ère spécialisé·e en gériatrie, ergothérapeute, coordinateur·trice de parcours santé.\n   - **Pourquoi ?** : Vieillissement de la population (+30% de +75 ans d’ici 2030 *(non vérifié dans les sources)*). **Pénurie chronique** = embauche garantie.\n   - **Formation clé** : DE d’Ergothérapeute à **Lyon** (IFPEK) — 100% d’emploi en 3 mois (connaissance générale).\n\n---\n### **Plan B — Secteurs émergents (risque modéré, potentiel élevé)**\n- **Agroalimentaire & Biotech** *(Bourg-en-Bresse, Clermont-Ferrand)*\n  - **Exemple** : Technicien·ne en agriculture de précision (drones, capteurs). **BUT Génie Biologique** à l’IUT de Bourg-en-Bresse (alternance avec les coopératives locales).\n  - **Atout** : AuRA = 1ère région agricole de France → besoins en modernisation.\n\n- **Tourisme durable** *(Chamonix, Lyon, Le Puy-en-Velay)*\n  - **Exemple** : Chef·fe de projet écotourisme. **Licence Pro Tourisme** à **Le Puy-en-Velay** (partenariats avec les parcs naturels).\n  - **Chiffre** : +12% d’emplois attendus dans le tourisme \"vert\" *(non vérifié dans les sources)* (CRT AuRA).\n\n---\n### **Plan C — Passerelles si tu hésites encore**\n- **Teste un métier en 6 mois** :\n  - **Dispositif** : *\"Parcours Transition Pro\"* (financé par la Région) pour se former aux métiers en tension (ex : technicien fibre optique).\n  - **Où ?** : GRETA de **Lyon**, **Grenoble** ou **Saint-Étienne** — formations gratuites pour les demandeurs d’emploi.\n- **Alternance dès bac+2** :\n  - **Exemple** : BTS SIO (Lyon) + contrat avec une PME locale → 70% de CDI à la clé (connaissance générale).\n\n---\n### **⚠ Attention**\n- **Piège géographique** : Évite les formations \"parisiennes\" en distanciel — les employeurs AuRA privilégient les diplômes locaux (réseaux d’entreprises intégrés).\n- **Piège financier** : Certaines écoles privées (ex : *Epitech Lyon*) coûtent 8k€/an pour des débouchés similaires à un BUT public. **Compare toujours avec l’alternance**.\n\n---\n**Question pour toi** :\nAs-tu une appétence pour le **terrain** (tech/industrie) ou le **contact humain** (santé/tourisme) ? Cela peut affiner le choix entre Lyon (tech), Grenoble (écolo) ou Clermont (mixte). *(Réponds aussi : es-tu mobile dans la région, ou attaché·e à une ville précise ?)*",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 8,
+    "n_verified": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 5,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "70% des opportunités",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context_in_response": "Lyon, Grenoble et Clermont-Ferrand concentreront 70% des opportunités",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "15 000 emplois attendus dans la filière",
+      "stat_value": 15000,
+      "stat_unit": "emplois",
+      "context_in_response": "15 000 emplois attendus dans la filière (source : Pôle Emploi AuRA 2023)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "80% d’insertion à 6 mois",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "BUT Métiers du Multimédia et de l’Internet (MMI) à Clermont-Ferrand — 80% d’insertion à 6 mois",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "20 000 emplois verts d’ici 2030",
+      "stat_value": 20000,
+      "stat_unit": "emplois",
+      "context_in_response": "20 000 emplois verts d’ici 2030 (ADEME AuRA)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+30% de +75 ans d’ici 2030",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "Vieillissement de la population (+30% de +75 ans d’ici 2030)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "100% d’emploi en 3 mois",
+      "stat_value": 100,
+      "stat_unit": "%",
+      "context_in_response": "DE d’Ergothérapeute à Lyon (IFPEK) — 100% d’emploi en 3 mois",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+12% d’emplois attendus dans le tourisme \"vert\"",
+      "stat_value": 12,
+      "stat_unit": "%",
+      "context_in_response": "+12% d’emplois attendus dans le tourisme \"vert\" (CRT AuRA)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "70% de CDI à la clé",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context_in_response": "BTS SIO (Lyon) + contrat avec une PME locale → 70% de CDI à la clé",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9129,
+      "nom": "Marché du travail prospective 2030 — région Auvergne-Rhône-Alpes | Effectifs 2019 totaux : 3 259 115",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8554,
+      "nom": "Marché du travail prospective 2030 — région Centre-Val de Loire | Effectifs 2019 totaux : 975 389 pe",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8508,
+      "nom": "Marché du travail prospective 2030 — région Bourgogne-Franche-Comté | Effectifs 2019 totaux : 1 070 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8488,
+      "nom": "Métier 2030 (DARES) — FAP E0Z : Ouvriers peu qualifiés des industries de process | Effectifs 2019 Fr",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8468,
+      "nom": "Métier 2030 (DARES) — FAP F0A : Ouvriers du textile et du cuir | Effectifs 2019 France : 86 825 pers",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8462,
+      "nom": "Marché du travail prospective 2030 — région Provence-Alpes-Côte d'Azur | Effectifs 2019 totaux : 1 9",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8445,
+      "nom": "Métier 2030 (DARES) — FAP D6Z : Techniciens et agents de maîtrise des industries mécaniques | Effect",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8433,
+      "nom": "Métier 2030 (DARES) — FAP D4Z : Ouvriers qualifiés de la mécanique | Effectifs 2019 France : 110 328",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.843,
+      "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.8426,
+      "nom": "Marché du travail prospective 2030 — région Occitanie | Effectifs 2019 totaux : 2 265 290 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}
