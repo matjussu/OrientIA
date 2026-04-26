@@ -1,0 +1,137 @@
+{
+  "idx_global": 31,
+  "suite": "blocs_dedie",
+  "persona_id": null,
+  "query_id": "q03_blocs_master_cyber",
+  "query_text": "Quelles compétences certifiées par un master en cybersécurité ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "competences certifiées",
+  "gap_target": null,
+  "elapsed_gen_s": 10.46,
+  "elapsed_fact_check_s": 0.94,
+  "answer_raw": "**TL;DR**\n1. Un master en cybersécurité certifie des compétences techniques **et** stratégiques, validées par des labels officiels (SecNumEdu, RNCP, CTI).\n2. Les certifications professionnelles (CEH, CISSP, OSCP) complètent souvent le diplôme.\n3. Les employeurs recherchent surtout **l’expérience pratique** (stages, projets, CTF) + la capacité à résoudre des problèmes réels.\n\n---\n\n### **Plan A — Compétences techniques certifiées (cœur du diplôme)**\nLes masters labellisés **SecNumEdu** (ANSSI) ou **grade Master** (État) garantissent la maîtrise de :\n- **Sécurité offensive/defensive** : tests d’intrusion (pentest), analyse de vulnérabilités (OWASP Top 10), reverse engineering.\n- **Gestion des risques** : normes ISO 27001, RGPD, analyse de risques (EBIOS Risk Manager).\n- **Infrastructures sécurisées** : cryptographie (TLS, PKI), réseaux (firewalls, IDS/IPS), cloud security (AWS/Azure).\n- **Réponse aux incidents** : forensique numérique, SOC (Security Operations Center), gestion de crise.\n*(connaissance générale : ces compétences sont alignées sur le référentiel **SecNumEdu** et les attentes des **ANSSI/CERT**.)*\n\n**Exemple de master public labellisé** :\n📍 **Master Cybersécurité — Université de Limoges** (grade Master, label SecNumEdu) · [fiche officielle](https://www.unilim.fr)\n*Pour toi : formation gratuite, axée pratique (labos dédiés), avec stages obligatoires en entreprise.*\n\n---\n\n### **Plan B — Compétences transverses et certifications complémentaires**\nUn master valide aussi des **soft skills** critiques en cyber :\n- **Communication** : rédaction de politiques de sécurité, sensibilisation des utilisateurs.\n- **Veille technologique** : surveillance des CVE (Common Vulnerabilities and Exposures), adaptation aux nouvelles menaces (ransomware, IA malveillante).\n- **Gestion de projet** : méthodologies Agile/DevSecOps, coordination d’équipes pluridisciplinaires.\n\n**Certifications souvent intégrées au cursus** (ou à passer en parallèle) :\n- **Offensive** : OSCP (Offensive Security), CEH (Certified Ethical Hacker).\n- **Defensive** : CISSP (ISC)², CISM (ISACA).\n- **Cloud** : CCSP (cloud security), AWS Certified Security.\n*(connaissance générale : ces certifs sont souvent **financées par les écoles** ou via le CPF. Ex : l’OSCP coûte ~1 500€ mais est remboursable si réussie.)*\n\n---\n### **Plan C — Compétences émergentes (IA, IoT, réglementations)**\nLes masters récents intègrent des modules sur :\n- **Sécurité de l’IA** : protection des modèles (ML), attaques adversarial, bias algorithmique.\n- **IoT/OT** : sécurité des objets connectés (protocoles MQTT, Zigbee), systèmes industriels (SCADA).\n- **Réglementations sectorielles** : NIS2 (UE), DMA (Digital Markets Act), souveraineté numérique.\n*(connaissance générale : ces compétences sont **peu couvertes en autodidacte** et valorisées dans les secteurs finance/santé/énergie.)*\n\n---\n### **⚠ Attention aux pièges**\n- **Diplôme ≠ emploi garanti** : Un master seul ne suffit pas sans **expérience terrain** (stages, bug bounty, CTF). Les recruteurs regardent d’abord **GitHub, write-ups de CTF, ou contributions open-source**.\n- **Labels obligatoires** : Méfie-toi des formations privées **sans label SecNumEdu/CTI** — leur valeur est incertaine sur le marché.\n- **Spécialisation trop tôt** : Évite les masters ultra-spécialisés (ex : \"forensique mobile seulement\") en bac+5 sans expérience préalable.\n\n---\n**Question pour toi** :\nQuelle est ta priorité entre **technique pure** (pentest, cryptographie), **gestion de projet** (RGPD, conformité), ou **innovation** (IA/IoT) ? Cela déterminera le choix entre un master **opérationnel** (type EPITA) ou **stratégique** (type IMT).",
+  "answer_annotated": "**TL;DR**\n1. Un master en cybersécurité certifie des compétences techniques **et** stratégiques, validées par des labels officiels (SecNumEdu, RNCP, CTI).\n2. Les certifications professionnelles (CEH, CISSP, OSCP) complètent souvent le diplôme.\n3. Les employeurs recherchent surtout **l’expérience pratique** (stages, projets, CTF) + la capacité à résoudre des problèmes réels.\n\n---\n\n### **Plan A — Compétences techniques certifiées (cœur du diplôme)**\nLes masters labellisés **SecNumEdu** (ANSSI) ou **grade Master** (État) garantissent la maîtrise de :\n- **Sécurité offensive/defensive** : tests d’intrusion (pentest), analyse de vulnérabilités (OWASP Top 10), reverse engineering.\n- **Gestion des risques** : normes ISO 27001, RGPD, analyse de risques (EBIOS Risk Manager).\n- **Infrastructures sécurisées** : cryptographie (TLS, PKI), réseaux (firewalls, IDS/IPS), cloud security (AWS/Azure).\n- **Réponse aux incidents** : forensique numérique, SOC (Security Operations Center), gestion de crise.\n*(connaissance générale : ces compétences sont alignées sur le référentiel **SecNumEdu** et les attentes des **ANSSI/CERT**.)*\n\n**Exemple de master public labellisé** :\n📍 **Master Cybersécurité — Université de Limoges** (grade Master, label SecNumEdu) · [fiche officielle](https://www.unilim.fr)\n*Pour toi : formation gratuite, axée pratique (labos dédiés), avec stages obligatoires en entreprise.*\n\n---\n\n### **Plan B — Compétences transverses et certifications complémentaires**\nUn master valide aussi des **soft skills** critiques en cyber :\n- **Communication** : rédaction de politiques de sécurité, sensibilisation des utilisateurs.\n- **Veille technologique** : surveillance des CVE (Common Vulnerabilities and Exposures), adaptation aux nouvelles menaces (ransomware, IA malveillante).\n- **Gestion de projet** : méthodologies Agile/DevSecOps, coordination d’équipes pluridisciplinaires.\n\n**Certifications souvent intégrées au cursus** (ou à passer en parallèle) :\n- **Offensive** : OSCP (Offensive Security), CEH (Certified Ethical Hacker).\n- **Defensive** : CISSP (ISC)², CISM (ISACA).\n- **Cloud** : CCSP (cloud security), AWS Certified Security.\n*(connaissance générale : ces certifs sont souvent **financées par les écoles** ou via le CPF. Ex : l’OSCP coûte ~1 500€ mais est remboursable si réussie.)*\n\n---\n### **Plan C — Compétences émergentes (IA, IoT, réglementations)**\nLes masters récents intègrent des modules sur :\n- **Sécurité de l’IA** : protection des modèles (ML), attaques adversarial, bias algorithmique.\n- **IoT/OT** : sécurité des objets connectés (protocoles MQTT, Zigbee), systèmes industriels (SCADA).\n- **Réglementations sectorielles** : NIS2 (UE), DMA (Digital Markets Act), souveraineté numérique.\n*(connaissance générale : ces compétences sont **peu couvertes en autodidacte** et valorisées dans les secteurs finance/santé/énergie.)*\n\n---\n### **⚠ Attention aux pièges**\n- **Diplôme ≠ emploi garanti** : Un master seul ne suffit pas sans **expérience terrain** (stages, bug bounty, CTF). Les recruteurs regardent d’abord **GitHub, write-ups de CTF, ou contributions open-source**.\n- **Labels obligatoires** : Méfie-toi des formations privées **sans label SecNumEdu/CTI** — leur valeur est incertaine sur le marché.\n- **Spécialisation trop tôt** : Évite les masters ultra-spécialisés (ex : \"forensique mobile seulement\") en bac+5 sans expérience préalable.\n\n---\n**Question pour toi** :\nQuelle est ta priorité entre **technique pure** (pentest, cryptographie), **gestion de projet** (RGPD, conformité), ou **innovation** (IA/IoT) ? Cela déterminera le choix entre un master **opérationnel** (type EPITA) ou **stratégique** (type IMT).",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 1,
+    "n_verified": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~1 500€",
+      "stat_value": 1500,
+      "stat_unit": "€",
+      "context_in_response": "l’OSCP coûte ~1 500€ mais est remboursable si réussie",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.3721,
+      "nom": "Compétences certifiées (RNCP37649) — Expert en cybersécurité (bac+5) | Niveau européen : Niveau 7 | ",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3636,
+      "nom": "Compétences certifiées (RNCP41165) — Ingénieur diplômé de CentraleSupélec, spécialité Cybersécurité ",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3627,
+      "nom": "Compétences certifiées (RNCP39999) — Expert en cybersécurité (bac+5) | Niveau européen : Niveau 7 | ",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3619,
+      "nom": "Compétences certifiées (RNCP39495) — Cybersécurité (fiche nationale) (bac+5) | Niveau européen : Niv",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3615,
+      "nom": "Compétences certifiées (RNCP38434) — Spécialiste en cybersécurité (MS) (bac+5) | Niveau européen : N",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3604,
+      "nom": "Compétences certifiées (RNCP36399) — Expert en sécurité digitale (bac+5) | Niveau européen : Niveau ",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3586,
+      "nom": "Compétences certifiées (RNCP41445) — Expert en cybersécurité (MS) (bac+5) | Niveau européen : Niveau",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3582,
+      "nom": "Compétences certifiées (RNCP36855) — Expert en gouvernance de la sécurité des réseaux et des système",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.358,
+      "nom": "Compétences certifiées (RNCP40640) — Expert en cybersécurité (MS) (bac+5) | Niveau européen : Niveau",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3572,
+      "nom": "Compétences certifiées (RNCP39837) — Expert en cybersécurité (MS) (bac+5) | Niveau européen : Niveau",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    }
+  ]
+}

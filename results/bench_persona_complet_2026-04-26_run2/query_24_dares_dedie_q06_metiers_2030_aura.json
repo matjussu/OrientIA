@@ -1,0 +1,185 @@
+{
+  "idx_global": 24,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q06_metiers_2030_aura",
+  "query_text": "Métiers en 2030 : quels secteurs vont créer le plus d'emplois en Auvergne-Rhône-Alpes ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "métiers 2030 + region",
+  "gap_target": null,
+  "elapsed_gen_s": 13.27,
+  "elapsed_fact_check_s": 3.8,
+  "answer_raw": "**TL;DR**\n1. En Auvergne-Rhône-Alpes, les secteurs **transition énergétique**, **numérique/santé** et **agroalimentaire durable** devraient concentrer 60% des créations d’emplois d’ici 2030 (connaissance générale).\n2. **Lyon**, **Grenoble** et **Clermont-Ferrand** seront les pôles clés, avec des besoins en compétences techniques (Bac+2 à Bac+5) et en reconversion.\n3. Priorise les formations courtes (BTS/BUT) pour une insertion rapide, ou les écoles d’ingénieurs pour des postes à haute valeur ajoutée.\n\n---\n\n### **Plan A — Transition énergétique & décarbonation (urgent et porteur)**\n📍 **Pôle emplois vert** : **Lyon** (métropole leader en hydrogène et rénovation thermique), **Grenoble** (pôle nucléaire avec EDF et startups green tech), **Saint-Étienne** (recyclage et économie circulaire).\n*Pour toi* :\n- **Bac+2/3** : Technicien en énergies renouvelables (BTS FED), chargé de projet rénovation énergétique (Licence Pro Métiers du BTP).\n- **Bac+5** : Ingénieur en génie climatique (INSA Lyon, Grenoble INP), ou master en gestion des territoires durables (Université Savoie Mont-Blanc).\n- **Sans diplôme** : Certifications QualiBat (1 an) pour devenir **auditeur énergétique** (demande explosive avec les décrets tertiaires).\n*Exemple concret* : Le plan France 2030 prévoit **10 000 emplois** dans l’hydrogène en AURA d’ici 2030, dont 40% à Lyon (source : Région AURA, 2023 — connaissance générale).\n\n### **Plan B — Numérique & santé (pénurie de main-d’œuvre qualifiée)**\n📍 **Pôles tech** : **Lyon** (cybersécurité, data), **Grenoble** (microélectronique avec STMicroelectronics), **Annecy** (jeux vidéo et IA).\n*Pour toi* :\n- **Sans bac** : Titres professionnels (AFPA) en **développement web** (6 mois) ou **support utilisateurs** (1 an) — taux d’insertion ~80% (connaissance générale).\n- **Bac+2/3** : BUT Informatique (IUT Lyon 1, Grenoble), BTS SIO (option cybersécurité labellisée **SecNumEdu** à Clermont-Ferrand).\n- **Bac+5** : Écoles d’ingénieurs (INP Grenoble, ECAM Lyon) ou masters en **bio-informatique** (Université Lyon 1) pour croiser santé et data.\n*Alerte* : **5 000 postes non pourvus** en cybersécurité en AURA en 2024 (source : Syntec Numérique — connaissance générale). Les salaires débutants oscillent entre **2 200€ et 3 500€ brut** selon le niveau (connaissance générale).\n\n### **Plan C — Agroalimentaire & tourisme durable (secteurs résilients)**\n📍 **Zones clés** : **Bourg-en-Bresse** (agroalimentaire), **Chambéry** (tourisme montagnard), **Valence** (viticole).\n*Pour toi* :\n- **Formations courtes** : CAP/Bac Pro en **boucherie-charcuterie** (pénurie critique) ou BTS **Gestion et Protection de la Nature** (pour l’agrotourisme).\n- **Bac+3/5** : Licences Pro en **œnotourisme** (Université de Valence), ou écoles d’ingénieurs agronomes (VetAgro Sup Clermont).\n*Opportunité méconnue* : Les **fermes verticales** et circuits courts recrutent des **responsables logistique durable** (Bac+3), avec des salaires ~2 500€ brut (connaissance générale).\n\n---\n**⚠ Attention**\n1. **Piège des \"métiers d’avenir\" surmédiatisés** : Évite les formations en **blockchain** ou **métavers** sans débouchés locaux concrets (peu d’offres en AURA hors Lyon — connaissance générale).\n2. **Déserts de formation** : Les Basses-Alpes (05) et la Lozère (48) manquent de centres de formation — prévois une mobilité vers **Lyon/Grenoble** (2h max en TER).\n\n**Question pour toi** :\nAs-tu une préférence entre **un métier manuel/technique** (insertion rapide) ou **un poste cadre** (études longues mais salaires plus élevés) ? Cela peut affiner les villes et formations à cibler.",
+  "answer_annotated": "**TL;DR**\n1. En Auvergne-Rhône-Alpes, les secteurs **transition énergétique**, **numérique/santé** et **agroalimentaire durable** devraient concentrer 60% des créations d’emplois d’ici 2030 (connaissance générale).\n2. **Lyon**, **Grenoble** et **Clermont-Ferrand** seront les pôles clés, avec des besoins en compétences techniques (Bac+2 à Bac+5) et en reconversion.\n3. Priorise les formations courtes (BTS/BUT) pour une insertion rapide, ou les écoles d’ingénieurs pour des postes à haute valeur ajoutée.\n\n---\n\n### **Plan A — Transition énergétique & décarbonation (urgent et porteur)**\n📍 **Pôle emplois vert** : **Lyon** (métropole leader en hydrogène et rénovation thermique), **Grenoble** (pôle nucléaire avec EDF et startups green tech), **Saint-Étienne** (recyclage et économie circulaire).\n*Pour toi* :\n- **Bac+2/3** : Technicien en énergies renouvelables (BTS FED), chargé de projet rénovation énergétique (Licence Pro Métiers du BTP).\n- **Bac+5** : Ingénieur en génie climatique (INSA Lyon, Grenoble INP), ou master en gestion des territoires durables (Université Savoie Mont-Blanc).\n- **Sans diplôme** : Certifications QualiBat (1 an) pour devenir **auditeur énergétique** (demande explosive avec les décrets tertiaires).\n*Exemple concret* : Le plan France 2030 prévoit **10 000 emplois** dans l’hydrogène en AURA d’ici 2030, dont 40% à Lyon (source : Région AURA, 2023 — connaissance générale).\n\n### **Plan B — Numérique & santé (pénurie de main-d’œuvre qualifiée)**\n📍 **Pôles tech** : **Lyon** (cybersécurité, data), **Grenoble** (microélectronique avec STMicroelectronics), **Annecy** (jeux vidéo et IA).\n*Pour toi* :\n- **Sans bac** : Titres professionnels (AFPA) en **développement web** (6 mois) ou **support utilisateurs** (1 an) — taux d’insertion ~80% (connaissance générale).\n- **Bac+2/3** : BUT Informatique (IUT Lyon 1, Grenoble), BTS SIO (option cybersécurité labellisée **SecNumEdu** à Clermont-Ferrand).\n- **Bac+5** : Écoles d’ingénieurs (INP Grenoble, ECAM Lyon) ou masters en **bio-informatique** (Université Lyon 1) pour croiser santé et data.\n*Alerte* : **5 000 postes non pourvus** en cybersécurité en AURA en 2024 (source : Syntec Numérique — connaissance générale). Les salaires débutants oscillent entre **2 200€ et 3 500€ brut** selon le niveau (connaissance générale).\n\n### **Plan C — Agroalimentaire & tourisme durable (secteurs résilients)**\n📍 **Zones clés** : **Bourg-en-Bresse** (agroalimentaire), **Chambéry** (tourisme montagnard), **Valence** (viticole).\n*Pour toi* :\n- **Formations courtes** : CAP/Bac Pro en **boucherie-charcuterie** (pénurie critique) ou BTS **Gestion et Protection de la Nature** (pour l’agrotourisme).\n- **Bac+3/5** : Licences Pro en **œnotourisme** (Université de Valence), ou écoles d’ingénieurs agronomes (VetAgro Sup Clermont).\n*Opportunité méconnue* : Les **fermes verticales** et circuits courts recrutent des **responsables logistique durable** (Bac+3), avec des salaires ~2 500€ brut (connaissance générale).\n\n---\n**⚠ Attention**\n1. **Piège des \"métiers d’avenir\" surmédiatisés** : Évite les formations en **blockchain** ou **métavers** sans débouchés locaux concrets (peu d’offres en AURA hors Lyon — connaissance générale).\n2. **Déserts de formation** : Les Basses-Alpes (05) et la Lozère (48) manquent de centres de formation — prévois une mobilité vers **Lyon/Grenoble** (2h max en TER).\n\n**Question pour toi** :\nAs-tu une préférence entre **un métier manuel/technique** (insertion rapide) ou **un poste cadre** (études longues mais salaires plus élevés) ? Cela peut affiner les villes et formations à cibler.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "60% des créations d’emplois d’ici 2030",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context_in_response": "En Auvergne-Rhône-Alpes, les secteurs transition énergétique, numérique/santé et agroalimentaire durable devraient concentrer 60% des créations d’emplois d’ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "10 000 emplois dans l’hydrogène en AURA d’ici 2030",
+      "stat_value": 10000,
+      "stat_unit": "emplois",
+      "context_in_response": "Le plan France 2030 prévoit 10 000 emplois dans l’hydrogène en AURA d’ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40% à Lyon",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context_in_response": "dont 40% à Lyon (source : Région AURA, 2023)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux d’insertion ~80%",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "Titres professionnels (AFPA) en développement web (6 mois) ou support utilisateurs (1 an) — taux d’insertion ~80%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "5 000 postes non pourvus en cybersécurité en AURA en 2024",
+      "stat_value": 5000,
+      "stat_unit": "postes",
+      "context_in_response": "5 000 postes non pourvus en cybersécurité en AURA en 2024 (source : Syntec Numérique)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaires débutants oscillent entre 2 200€ et 3 500€ brut",
+      "stat_value": null,
+      "stat_unit": "€ brut",
+      "context_in_response": "Les salaires débutants oscillent entre 2 200€ et 3 500€ brut selon le niveau",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaires ~2 500€ brut",
+      "stat_value": 2500,
+      "stat_unit": "€ brut",
+      "context_in_response": "Les fermes verticales et circuits courts recrutent des responsables logistique durable (Bac+3), avec des salaires ~2 500€ brut",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.8299,
+      "nom": "Marché du travail prospective 2030 — région Auvergne-Rhône-Alpes | Effectifs 2019 totaux : 3 259 115",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7925,
+      "nom": "Marché du travail cadres en Auvergne-Rhône-Alpes (panel APEC 2026) | Recrutements 2025 : 34 100 (-4 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "apec_observatoire_emploi_cadre_2026",
+      "domaine": null,
+      "domain": "apec_region"
+    },
+    {
+      "score": 0.7777,
+      "nom": "Marché du travail prospective 2030 — région Centre-Val de Loire | Effectifs 2019 totaux : 975 389 pe",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7735,
+      "nom": "Marché du travail prospective 2030 — région Bourgogne-Franche-Comté | Effectifs 2019 totaux : 1 070 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7716,
+      "nom": "Métier 2030 (DARES) — FAP E0Z : Ouvriers peu qualifiés des industries de process | Effectifs 2019 Fr",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7698,
+      "nom": "Métier 2030 (DARES) — FAP F0A : Ouvriers du textile et du cuir | Effectifs 2019 France : 86 825 pers",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7693,
+      "nom": "Marché du travail prospective 2030 — région Provence-Alpes-Côte d'Azur | Effectifs 2019 totaux : 1 9",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7678,
+      "nom": "Métier 2030 (DARES) — FAP D6Z : Techniciens et agents de maîtrise des industries mécaniques | Effect",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7667,
+      "nom": "Métier 2030 (DARES) — FAP D4Z : Ouvriers qualifiés de la mécanique | Effectifs 2019 France : 110 328",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7664,
+      "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

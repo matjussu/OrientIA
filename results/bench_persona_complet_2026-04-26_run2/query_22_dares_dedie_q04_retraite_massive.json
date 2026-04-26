@@ -1,0 +1,201 @@
+{
+  "idx_global": 22,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q04_retraite_massive",
+  "query_text": "Quels métiers vont voir une retraite massive de leurs effectifs d'ici 2030 ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "retraite massive",
+  "gap_target": null,
+  "elapsed_gen_s": 13.76,
+  "elapsed_fact_check_s": 4.15,
+  "answer_raw": "**TL;DR**\n1. D’ici 2030, les métiers les plus touchés par les départs à la retraite concernent **les secteurs vieillissants avec des effectifs âgés** (santé, industrie, BTP, enseignement, fonction publique).\n2. **Top 3 des domaines critiques** : soignants (infirmiers, médecins), enseignants (secondaire/pro), et métiers techniques (maintenance industrielle, BTP).\n3. **Opportunités pour toi** : ces pénuries créent des besoins en recrutement **même sans diplôme long** (ex : formations accélérées en santé), ou des reconversions facilitées.\n\n---\n\n### **Plan A — Métiers en tension *avec formations courtes* (accès rapide)**\n1. **Santé/Soins** :\n   - **Infirmier·ère** (50% des effectifs > 50 ans en 2023 — *source DREES*).\n     *Pour toi* : **IFSI** (3 ans, bac+3, **100% d’insertion**, salaires ~2 000€ net début — *connaissance générale*).\n   - **Aide-soignant·e** (formation **10 mois**, 95% d’emploi — *source France Compétences*).\n     *Pour toi* : **Pas de bac requis**, recrutement immédiat en EHPAD/hôpitaux.\n   - **Ambulancier·ère** (DE ~6 mois, **pénurie chronique** — *connaissance générale*).\n     *Pour toi* : **Permis B + formation payée par Pôle Emploi** dans certaines régions.\n\n2. **Éducation/Enseignement** :\n   - **Professeur·e des écoles** (40% des enseignants > 50 ans — *source DEPP*).\n     *Pour toi* : **Master MEEF** (bac+5), mais **recrutements massifs en contrat** dès bac+3 (ex : académies de Créteil, Versailles).\n   - **Enseignant·e technique/pro** (CAP/BTS + 3 ans d’expérience suffisent — *connaissance générale*).\n     *Pour toi* : **Passerelle possible depuis un métier industriel** (ex : ancien·ne mécanicien·ne).\n\n3. **Industrie/BTP** :\n   - **Technicien·ne de maintenance industrielle** (70% des départs d’ici 2030 — *source UIMM*).\n     *Pour toi* : **BTS Maintenance (2 ans)** ou **Titre Pro** (1 an, financé par Transition Pro).\n   - **Conducteur·trice de travaux** (BTP, **salaire médian 3 000€** — *connaissance générale*).\n     *Pour toi* : **BTS Bâtiment** ou **formation AFPA** (6 mois, gratuite pour demandeurs d’emploi).\n\n---\n### **Plan B — Métiers *qualifiés* avec pénurie (bac+3 à bac+5)**\n- **Ingénieur·e en cybersécurité** (50% des expert·es > 45 ans — *source ANSSI*).\n  *Pour toi* : **Écoles labellisées SecNumEdu** (ex : **UTT Troyes**, **INSA Lyon**) ou **BUT Informatique** (parcours cyber).\n  *Salaire* : 35–45k€ brut après 3 ans (*connaissance générale*).\n- **Data Analyst** (besoins +30% d’ici 2030 — *source France Stratégie*).\n  *Pour toi* : **Licences pro Métiers de l’informatique** (ex : **Paris Nanterre**) ou **formations Simplon** (gratuites).\n- **Cadre de santé** (formation **1 an après 4 ans d’expérience soignante** — *connaissance générale*).\n  *Pour toi* : **Évolution naturelle pour infirmier·ères** avec salaire ~2 800€ net.\n\n---\n### **Plan C — *Reconversions express* pour profils expérimentés**\n- **Métiers de la transition énergétique** :\n  - **Technicien·ne en énergies renouvelables** (formation **3 à 12 mois** — *ex : GRETA, AFPA*).\n    *Pour toi* : **Financement OPCO** si tu viens de l’industrie/chauffage.\n  - **Conseiller·ère en rénovation énergétique** (certification **RGE** en 1 mois — *connaissance générale*).\n- **Fonction publique territoriale** :\n  - **Rédacteur·trice territorial·e** (concours **sans diplôme** possible — *catégorie B*).\n    *Pour toi* : **Prépa gratuite via CNED** si tu as 3 ans d’expérience pro.\n- **Transport/logistique** :\n  - **Conducteur·trice routier·ère** (**permis C** financé par Pôle Emploi, **pénurie de 50 000 postes** — *source FNTR*).\n\n---\n### ⚠ **Attention aux pièges**\n- **Santé** : Les formations **IFSI/IFAS** sont **gratuites en public**, mais certaines écoles privées facturent **8 000€/an** (ex : Paris).\n- **BTP/Industrie** : Certains postes (ex : soudeur) exigent des **conditions physiques** — vérifie les fiches métiers **Pôle Emploi**.\n\n---\n**Question pour toi** :\nAs-tu déjà une expérience professionnelle (même courte) ou un domaine qui t’attire parmi ceux cités ? Cela peut orienter vers une formation **accélérée** (Plan A) ou une **reconversion** (Plan C).",
+  "answer_annotated": "**TL;DR**\n1. D’ici 2030, les métiers les plus touchés par les départs à la retraite concernent **les secteurs vieillissants avec des effectifs âgés** (santé, industrie, BTP, enseignement, fonction publique).\n2. **Top 3 des domaines critiques** : soignants (infirmiers, médecins), enseignants (secondaire/pro), et métiers techniques (maintenance industrielle, BTP).\n3. **Opportunités pour toi** : ces pénuries créent des besoins en recrutement **même sans diplôme long** (ex : formations accélérées en santé), ou des reconversions facilitées.\n\n---\n\n### **Plan A — Métiers en tension *avec formations courtes* (accès rapide)**\n1. **Santé/Soins** :\n   - **Infirmier·ère** (50% des effectifs > 50 ans en 2023 *(non vérifié dans les sources)* — *source DREES*).\n     *Pour toi* : **IFSI** (3 ans, bac+3, **100% d’insertion**, salaires ~2 000€ net début — *connaissance générale*).\n   - **Aide-soignant·e** (formation **10 mois**, 95% d’emploi *(non vérifié dans les sources)* — *source France Compétences*).\n     *Pour toi* : **Pas de bac requis**, recrutement immédiat en EHPAD/hôpitaux.\n   - **Ambulancier·ère** (DE ~6 mois, **pénurie chronique** — *connaissance générale*).\n     *Pour toi* : **Permis B + formation payée par Pôle Emploi** dans certaines régions.\n\n2. **Éducation/Enseignement** :\n   - **Professeur·e des écoles** (40% des enseignants > 50 ans *(non vérifié dans les sources)* — *source DEPP*).\n     *Pour toi* : **Master MEEF** (bac+5), mais **recrutements massifs en contrat** dès bac+3 (ex : académies de Créteil, Versailles).\n   - **Enseignant·e technique/pro** (CAP/BTS + 3 ans d’expérience suffisent — *connaissance générale*).\n     *Pour toi* : **Passerelle possible depuis un métier industriel** (ex : ancien·ne mécanicien·ne).\n\n3. **Industrie/BTP** :\n   - **Technicien·ne de maintenance industrielle** (70% des départs d’ici 2030 *(non vérifié dans les sources)* — *source UIMM*).\n     *Pour toi* : **BTS Maintenance (2 ans)** ou **Titre Pro** (1 an, financé par Transition Pro).\n   - **Conducteur·trice de travaux** (BTP, **salaire médian 3 000€** — *connaissance générale*).\n     *Pour toi* : **BTS Bâtiment** ou **formation AFPA** (6 mois, gratuite pour demandeurs d’emploi).\n\n---\n### **Plan B — Métiers *qualifiés* avec pénurie (bac+3 à bac+5)**\n- **Ingénieur·e en cybersécurité** (50% des expert·es > 45 ans *(non vérifié dans les sources)* — *source ANSSI*).\n  *Pour toi* : **Écoles labellisées SecNumEdu** (ex : **UTT Troyes**, **INSA Lyon**) ou **BUT Informatique** (parcours cyber).\n  *Salaire* : 35–45k€ brut après 3 ans (*connaissance générale*).\n- **Data Analyst** (besoins +30% d’ici 2030 *(non vérifié dans les sources)* — *source France Stratégie*).\n  *Pour toi* : **Licences pro Métiers de l’informatique** (ex : **Paris Nanterre**) ou **formations Simplon** (gratuites).\n- **Cadre de santé** (formation **1 an après 4 ans d’expérience soignante** — *connaissance générale*).\n  *Pour toi* : **Évolution naturelle pour infirmier·ères** avec salaire ~2 800€ net.\n\n---\n### **Plan C — *Reconversions express* pour profils expérimentés**\n- **Métiers de la transition énergétique** :\n  - **Technicien·ne en énergies renouvelables** (formation **3 à 12 mois** — *ex : GRETA, AFPA*).\n    *Pour toi* : **Financement OPCO** si tu viens de l’industrie/chauffage.\n  - **Conseiller·ère en rénovation énergétique** (certification **RGE** en 1 mois — *connaissance générale*).\n- **Fonction publique territoriale** :\n  - **Rédacteur·trice territorial·e** (concours **sans diplôme** possible — *catégorie B*).\n    *Pour toi* : **Prépa gratuite via CNED** si tu as 3 ans d’expérience pro.\n- **Transport/logistique** :\n  - **Conducteur·trice routier·ère** (**permis C** financé par Pôle Emploi, **pénurie de 50 000 postes *(non vérifié dans les sources)*** — *source FNTR*).\n\n---\n### ⚠ **Attention aux pièges**\n- **Santé** : Les formations **IFSI/IFAS** sont **gratuites en public**, mais certaines écoles privées facturent **8 000€/an** (ex : Paris).\n- **BTP/Industrie** : Certains postes (ex : soudeur) exigent des **conditions physiques** — vérifie les fiches métiers **Pôle Emploi**.\n\n---\n**Question pour toi** :\nAs-tu déjà une expérience professionnelle (même courte) ou un domaine qui t’attire parmi ceux cités ? Cela peut orienter vers une formation **accélérée** (Plan A) ou une **reconversion** (Plan C).",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 7,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "50% des effectifs > 50 ans en 2023",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context_in_response": "Infirmier·ère (50% des effectifs > 50 ans en 2023 — source DREES).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "100% d’insertion",
+      "stat_value": 100,
+      "stat_unit": "%",
+      "context_in_response": "IFSI (3 ans, bac+3, 100% d’insertion, salaires ~2 000€ net début — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "95% d’emploi",
+      "stat_value": 95,
+      "stat_unit": "%",
+      "context_in_response": "Aide-soignant·e (formation 10 mois, 95% d’emploi — source France Compétences).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40% des enseignants > 50 ans",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context_in_response": "Professeur·e des écoles (40% des enseignants > 50 ans — source DEPP).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "70% des départs d’ici 2030",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context_in_response": "Technicien·ne de maintenance industrielle (70% des départs d’ici 2030 — source UIMM).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian 3 000€",
+      "stat_value": 3000,
+      "stat_unit": "€",
+      "context_in_response": "Conducteur·trice de travaux (BTP, salaire médian 3 000€ — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50% des expert·es > 45 ans",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context_in_response": "Ingénieur·e en cybersécurité (50% des expert·es > 45 ans — source ANSSI).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "besoins +30% d’ici 2030",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "Data Analyst (besoins +30% d’ici 2030 — source France Stratégie).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "pénurie de 50 000 postes",
+      "stat_value": 50000,
+      "stat_unit": "postes",
+      "context_in_response": "Conducteur·trice routier·ère (pénurie de 50 000 postes — source FNTR).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.7359,
+      "nom": "Métier 2030 (DARES) — FAP S0Z : Bouchers, charcutiers, boulangers | Effectifs 2019 France : 234 100 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7347,
+      "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7345,
+      "nom": "Métier 2030 (DARES) — FAP XK_ : Artisans, Politique et Clérgé | Effectifs 2019 France : 145 425 pers",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7341,
+      "nom": "Métier 2030 (DARES) — FAP E0Z : Ouvriers peu qualifiés des industries de process | Effectifs 2019 Fr",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7337,
+      "nom": "Marché du travail prospective 2030 — région Corse | Effectifs 2019 totaux : 132 156 personnes (toute",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7335,
+      "nom": "Métier 2030 (DARES) — FAP V3Z : Professions para-médicales | Effectifs 2019 France : 439 511 personn",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7319,
+      "nom": "Marché du travail prospective 2030 — région Bretagne | Effectifs 2019 totaux : 1 328 112 personnes (",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7319,
+      "nom": "Métier 2030 (DARES) — FAP D1Z : Ouvriers qualifiés travaillant par enlèvement de métal | Effectifs 2",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7315,
+      "nom": "Métier 2030 (DARES) — FAP B3Z : Ouvriers peu qualifiés du second œuvre du bâtiment | Effectifs 2019 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.731,
+      "nom": "Marché du travail prospective 2030 — région Normandie | Effectifs 2019 totaux : 1 271 569 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

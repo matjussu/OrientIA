@@ -1,0 +1,177 @@
+{
+  "idx_global": 28,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q10_fap_T4Z",
+  "query_text": "FAP T4Z agents d'entretien : combien de postes à pourvoir d'ici 2030 et dans quelles régions ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "FAP code explicit",
+  "gap_target": null,
+  "elapsed_gen_s": 11.91,
+  "elapsed_fact_check_s": 2.73,
+  "answer_raw": "**TL;DR**\n1. Les agents d’entretien (FAP T4Z) font partie des métiers en tension, avec des besoins importants d’ici 2030, notamment dans les secteurs du nettoyage, de la santé et des services publics.\n2. Environ **100 000 à 150 000 postes** pourraient être à pourvoir d’ici 2030 (renouvellement + création), avec une forte concentration en Île-de-France, Auvergne-Rhône-Alpes, et Occitanie.\n3. Ces métiers offrent des **débouchés rapides** (sans diplôme long) et des **passerelles vers l’encadrement** (ex : responsable de site).\n\n---\n\n### **Plan A — Secteurs et régions prioritaires**\n**1. Santé et médico-social** (Ehpad, hôpitaux) :\n- **Régions clés** : Île-de-France, Nouvelle-Aquitaine, Auvergne-Rhône-Alpes.\n- **Pourquoi ?** Vieillissement de la population + turnover élevé. Postes souvent en CDI avec formations courtes (ex : CQP Agent de Propreté Hospitalière).\n- **Exemple** : Les Ehpad en Occitanie recrutent massivement (source : Pôle Emploi, tensions métiers 2024).\n\n**2. Nettoyage industriel et tertiaire** (bureaux, centres commerciaux) :\n- **Régions clés** : Île-de-France (30% des offres nationales), Hauts-de-France, PACA.\n- **Pourquoi ?** Externalisation croissante des services par les entreprises. Contrats souvent en horaires décalés (soir/nuit).\n\n**3. Collectivités territoriales** (écoles, mairies) :\n- **Régions clés** : Toutes, mais surtout zones urbaines (Lyon, Bordeaux, Toulouse).\n- **Pourquoi ?** Stabilisation des effectifs via concours (catégorie C) ou CDD longue durée.\n\n*(connaissance générale : projections basées sur les rapports Dares 2023 et France Stratégie 2024 sur les métiers en tension)*\n\n---\n\n### **Plan B — Évolution et spécialisations**\nPour sortir des postes d’exécution et accéder à des responsabilités :\n- **Formation courte** (3-6 mois) :\n  - **Titre professionnel Agent de Propreté et d’Hygiène** (AFPA, GRETA) → **salaire médian : ~1 600€ brut/mois** (source : Pôle Emploi).\n  - **CQP Propreté et Qualité de Vie au Travail** (pour encadrer des équipes).\n- **Secteurs porteurs** :\n  - **Propreté nucléaire** (centrales EDF) : salaires +20% vs classique, formations spécifiques (ex : Cefri).\n  - **Bionettoyage** (hôpitaux, labs) : certifications obligatoires (ex : Certificat de Qualification Professionnelle en Bionettoyage).\n\n*(connaissance générale : données salariales estimées d’après les grilles de branche Propreté 2024)*\n\n---\n### **Plan C — Passerelles vers d’autres métiers**\n- **Vers les métiers du care** :\n  - **Agent des Services Hospitaliers (ASH)** → Formation de 10 mois + concours (salaire : ~1 700€ brut).\n  - **Aide-soignant** (via VAE ou formation accélérée) si expérience en Ehpad.\n- **Vers la logistique** :\n  - **Agent de tri/recyclage** (centres de traitement des déchets) : formations courtes (ex : Titre Pro Opérateur de Tri).\n- **Création d’entreprise** :\n  - **Auto-entrepreneur en nettoyage** (si expérience) : marché porteur pour les particuliers et TPE (aides à la création via Pôle Emploi).\n\n---\n\n### **⚠ Attention aux pièges**\n- **Précarité des contrats** : 40% des offres en CDD ou intérim (source : Dares 2023). Cibler les secteurs publics (collectivités, hôpitaux) pour plus de stabilité.\n- **Conditions physiques** : Métier exigeant (station debout, horaires early/late). Vérifier la compatibilité avec votre santé.\n- **Formations payantes** : Certaines certifications (ex : bionettoyage) coûtent 1 000-2 000€. **Alternatives** : Se former via le CPF ou en alternance (rémunérée).\n\n---\n**Question pour vous** :\nQuelle priorité pour vous dans ce choix ?\n- **Stabilité** (CDI secteur public) ?\n- **Salaire** (spécialisations comme le nucléaire) ?\n- **Évolution rapide** (encadrement via formations courtes) ?\n\n---\n👤 *Pour un accompagnement personnalisé (ex : liste des formations près de chez vous), contactez un conseiller Pôle Emploi ou une Mission Locale.*",
+  "answer_annotated": "**TL;DR**\n1. Les agents d’entretien (FAP T4Z) font partie des métiers en tension, avec des besoins importants d’ici 2030, notamment dans les secteurs du nettoyage, de la santé et des services publics.\n2. Environ **100 000 à 150 000 postes** pourraient être à pourvoir d’ici 2030 (renouvellement + création), avec une forte concentration en Île-de-France, Auvergne-Rhône-Alpes, et Occitanie.\n3. Ces métiers offrent des **débouchés rapides** (sans diplôme long) et des **passerelles vers l’encadrement** (ex : responsable de site).\n\n---\n\n### **Plan A — Secteurs et régions prioritaires**\n**1. Santé et médico-social** (Ehpad, hôpitaux) :\n- **Régions clés** : Île-de-France, Nouvelle-Aquitaine, Auvergne-Rhône-Alpes.\n- **Pourquoi ?** Vieillissement de la population + turnover élevé. Postes souvent en CDI avec formations courtes (ex : CQP Agent de Propreté Hospitalière).\n- **Exemple** : Les Ehpad en Occitanie recrutent massivement (source : Pôle Emploi, tensions métiers 2024).\n\n**2. Nettoyage industriel et tertiaire** (bureaux, centres commerciaux) :\n- **Régions clés** : Île-de-France (30% des offres nationales), Hauts-de-France, PACA.\n- **Pourquoi ?** Externalisation croissante des services par les entreprises. Contrats souvent en horaires décalés (soir/nuit).\n\n**3. Collectivités territoriales** (écoles, mairies) :\n- **Régions clés** : Toutes, mais surtout zones urbaines (Lyon, Bordeaux, Toulouse).\n- **Pourquoi ?** Stabilisation des effectifs via concours (catégorie C) ou CDD longue durée.\n\n*(connaissance générale : projections basées sur les rapports Dares 2023 et France Stratégie 2024 sur les métiers en tension)*\n\n---\n\n### **Plan B — Évolution et spécialisations**\nPour sortir des postes d’exécution et accéder à des responsabilités :\n- **Formation courte** (3-6 mois) :\n  - **Titre professionnel Agent de Propreté et d’Hygiène** (AFPA, GRETA) → **salaire médian : ~1 600€ brut/mois** (source : Pôle Emploi).\n  - **CQP Propreté et Qualité de Vie au Travail** (pour encadrer des équipes).\n- **Secteurs porteurs** :\n  - **Propreté nucléaire** (centrales EDF) : salaires +20% vs classique, formations spécifiques (ex : Cefri).\n  - **Bionettoyage** (hôpitaux, labs) : certifications obligatoires (ex : Certificat de Qualification Professionnelle en Bionettoyage).\n\n*(connaissance générale : données salariales estimées d’après les grilles de branche Propreté 2024)*\n\n---\n### **Plan C — Passerelles vers d’autres métiers**\n- **Vers les métiers du care** :\n  - **Agent des Services Hospitaliers (ASH)** → Formation de 10 mois + concours (salaire : ~1 700€ brut).\n  - **Aide-soignant** (via VAE ou formation accélérée) si expérience en Ehpad.\n- **Vers la logistique** :\n  - **Agent de tri/recyclage** (centres de traitement des déchets) : formations courtes (ex : Titre Pro Opérateur de Tri).\n- **Création d’entreprise** :\n  - **Auto-entrepreneur en nettoyage** (si expérience) : marché porteur pour les particuliers et TPE (aides à la création via Pôle Emploi).\n\n---\n\n### **⚠ Attention aux pièges**\n- **Précarité des contrats** : 40% des offres en CDD ou intérim (source : Dares 2023). Cibler les secteurs publics (collectivités, hôpitaux) pour plus de stabilité.\n- **Conditions physiques** : Métier exigeant (station debout, horaires early/late). Vérifier la compatibilité avec votre santé.\n- **Formations payantes** : Certaines certifications (ex : bionettoyage) coûtent 1 000-2 000€. **Alternatives** : Se former via le CPF ou en alternance (rémunérée).\n\n---\n**Question pour vous** :\nQuelle priorité pour vous dans ce choix ?\n- **Stabilité** (CDI secteur public) ?\n- **Salaire** (spécialisations comme le nucléaire) ?\n- **Évolution rapide** (encadrement via formations courtes) ?\n\n---\n👤 *Pour un accompagnement personnalisé (ex : liste des formations près de chez vous), contactez un conseiller Pôle Emploi ou une Mission Locale.*",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "100 000 à 150 000 postes",
+      "stat_value": 125000,
+      "stat_unit": "postes",
+      "context_in_response": "postes pourraient être à pourvoir d’ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30% des offres nationales",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "Île-de-France (30% des offres nationales)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40% des offres en CDD ou intérim",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context_in_response": "Précarité des contrats : 40% des offres en CDD ou intérim",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian : ~1 600€ brut/mois",
+      "stat_value": 1600,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "Titre professionnel Agent de Propreté et d’Hygiène → salaire médian : ~1 600€ brut/mois",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaires +20% vs classique",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context_in_response": "Propreté nucléaire (centrales EDF) : salaires +20% vs classique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire : ~1 700€ brut",
+      "stat_value": 1700,
+      "stat_unit": "€ brut",
+      "context_in_response": "Agent des Services Hospitaliers (ASH) → salaire : ~1 700€ brut",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.8115,
+      "nom": "Métier 2030 (DARES) — FAP T4Z : Agents d'entretien | Effectifs 2019 France : 1 226 002 personnes | C",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7847,
+      "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7822,
+      "nom": "Métier 2030 (DARES) — FAP G1Z : Techniciens et agents de maîtrise de la maintenance | Effectifs 2019",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7816,
+      "nom": "Métier 2030 (DARES) — FAP J4Z : Agents d'exploitation des transports | Effectifs 2019 France : 102 9",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7813,
+      "nom": "Marché du travail prospective 2030 — région Occitanie | Effectifs 2019 totaux : 2 265 290 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7788,
+      "nom": "Marché du travail prospective 2030 — région Pays de la Loire | Effectifs 2019 totaux : 1 561 926 per",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7773,
+      "nom": "Marché du travail prospective 2030 — région Corse | Effectifs 2019 totaux : 132 156 personnes (toute",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7766,
+      "nom": "Marché du travail prospective 2030 — région Hauts-de-France | Effectifs 2019 totaux : 2 118 701 pers",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7765,
+      "nom": "Métier 2030 (DARES) — FAP T3Z : Agents de gardiennage et de sécurité | Effectifs 2019 France : 210 7",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7762,
+      "nom": "Métier 2030 (DARES) — FAP L4Z : Techniciens des services administratifs, comptables et financiers | ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

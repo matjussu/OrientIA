@@ -1,0 +1,233 @@
+{
+  "idx_global": 39,
+  "suite": "user_naturel",
+  "persona_id": null,
+  "query_id": "q11_lycee_reunion_metropole",
+  "query_text": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options s'offrent à moi ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": null,
+  "gap_target": "DROM-COM",
+  "elapsed_gen_s": 10.27,
+  "elapsed_fact_check_s": 9.65,
+  "answer_raw": "**TL;DR**\n1. **Toutes les licences numériques à La Réunion sont accessibles** (100% de taux d’accès), mais aucune ne forme spécifiquement aux métiers *tech* en tension (développement, cybersécurité, data).\n2. **Pour le numérique en métropole**, vise des **BUT** (ex : BUT Informatique) ou des **licences pro** en alternance — bien plus professionnalisants et recherchés par les entreprises.\n3. **3 options concrètes** : un BUT en métropole (Plan A), une licence locale + spécialisation après (Plan B), ou une école privée en alternance (Plan C).\n\n---\n\n### **Plan A — Réaliste : BUT Informatique en métropole (le plus sûr pour l’emploi)**\n📍 **BUT Informatique** (ex : **IUT de Toulouse, Lyon, ou Bordeaux**) — bac+3 public, **sélectivité modérée (30-60%)**, diplôme **reconnu par les entreprises** (taux d’emploi ~90% à 6 mois — connaissance générale).\n*Pour toi :* Parfait si tu veux un métier technique (développeur, admin système) avec un diplôme **gratuit** et **proche du marché du travail**. Postule via Parcoursup en **vœux groupés** (ex : \"BUT Info Occitanie\").\n➡ **[Liste des BUT Info en France](https://www.parcoursup.fr/index.php?desc=formation&oid=butinfo2024)** *(lien générique Parcoursup — cherche \"BUT Informatique\" + ville visée)*.\n\n---\n### **Plan B — Local + spécialisation : Licence à La Réunion → Master tech en métropole**\n📍 **Licence Maths-Informatique (MIASHS)** ([Université de La Réunion](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=26392)) — bac+3 public, **100% accessible**, mais **peu professionnalisante seule** (salaire médian : 1 680€/mois).\n*Pour toi :* Si tu veux rester à La Réunion 3 ans avant de partir, choisis cette licence **puis un master en métropole** (ex : master cybersécurité à Rennes ou data à Toulouse). *Attention* : il faudra **redoubler d’efforts en autodidaxie** (projets GitHub, certifications) pour compenser le manque de stages locaux.\n\n---\n### **Plan C — Alternance privée : École tech en métropole (si budget ou entreprise trouvée)**\n📍 **Écoles type Epitech, 42, ou SUPINFO** (ex : **Campus de Paris, Lyon**) — bac+3/5 privé, **sélectivité variable** (dossier + entretien), **gratuit en alternance** (sinon 6-8k€/an).\n*Pour toi :* Si tu trouves une entreprise d’accueil en métropole (ex : ESN comme Capgemini), ces écoles offrent une **formation ultra-pratique** et un réseau pro. *Risque* : sans alternance, le coût est élevé.\n➡ *(connaissance générale)* : Contacte les **CFA numériques** (ex : [Simplon](https://simplon.co)) pour des formations courtes et gratuites en métropole.\n\n---\n### **⚠ Attention aux pièges**\n- **Les licences générales à La Réunion** (ex : MIASHS) ont un **taux d’emploi faible** (48% à 12 mois) *sauf si tu fais un master pro après*. Ne compte pas sur un bac+3 seul pour décoller.\n- **\"Partir sans filet\"** : Sans logement ou aide familiale en métropole, vise **l’alternance** (salaire + formation gratuite) ou les **BUT** (logements CROUS prioritaires).\n- **Écoles privées hors alternance** : Méfie-toi des formations à 8k€/an sans label (ex : \"bachelor webmarketing\") — **vérifie leur taux d’insertion** sur [InserJeunes](https://www.inserjeunes.education.gouv.fr/diffusion/accueil).\n\n---\n**Question pour toi :**\nEst-ce que tu préfères **partir tout de suite** (BUT en métropole) ou **rester 2-3 ans à La Réunion** pour préparer ton départ (licence locale + master après) ? Et as-tu envisagé l’**alternance** pour financer tes études ? *(Un conseiller du CIO de Saint-Denis peut t’aider à affiner ton projet — prends RDV via ton lycée !)*",
+  "answer_annotated": "**TL;DR**\n1. **Toutes les licences numériques à La Réunion sont accessibles** (100% de taux d’accès), mais aucune ne forme spécifiquement aux métiers *tech* en tension (développement, cybersécurité, data).\n2. **Pour le numérique en métropole**, vise des **BUT** (ex : BUT Informatique) ou des **licences pro** en alternance — bien plus professionnalisants et recherchés par les entreprises.\n3. **3 options concrètes** : un BUT en métropole (Plan A), une licence locale + spécialisation après (Plan B), ou une école privée en alternance (Plan C).\n\n---\n\n### **Plan A — Réaliste : BUT Informatique en métropole (le plus sûr pour l’emploi)**\n📍 **BUT Informatique** (ex : **IUT de Toulouse, Lyon, ou Bordeaux**) — bac+3 public, **sélectivité modérée (30-60%) *(non vérifié dans les sources)***, diplôme **reconnu par les entreprises** (taux d’emploi ~90% à 6 mois — connaissance générale).\n*Pour toi :* Parfait si tu veux un métier technique (développeur, admin système) avec un diplôme **gratuit** et **proche du marché du travail**. Postule via Parcoursup en **vœux groupés** (ex : \"BUT Info Occitanie\").\n➡ **[Liste des BUT Info en France](https://www.parcoursup.fr/index.php?desc=formation&oid=butinfo2024)** *(lien générique Parcoursup — cherche \"BUT Informatique\" + ville visée)*.\n\n---\n### **Plan B — Local + spécialisation : Licence à La Réunion → Master tech en métropole**\n📍 **Licence Maths-Informatique (MIASHS)** ([Université de La Réunion](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=26392)) — bac+3 public, **100% accessible**, mais **peu professionnalisante seule** (salaire médian : 1 680€/mois *(non vérifié dans les sources)*).\n*Pour toi :* Si tu veux rester à La Réunion 3 ans avant de partir, choisis cette licence **puis un master en métropole** (ex : master cybersécurité à Rennes ou data à Toulouse). *Attention* : il faudra **redoubler d’efforts en autodidaxie** (projets GitHub, certifications) pour compenser le manque de stages locaux.\n\n---\n### **Plan C — Alternance privée : École tech en métropole (si budget ou entreprise trouvée)**\n📍 **Écoles type Epitech, 42, ou SUPINFO** (ex : **Campus de Paris, Lyon**) — bac+3/5 privé, **sélectivité variable** (dossier + entretien), **gratuit en alternance** (sinon 6-8k€/an).\n*Pour toi :* Si tu trouves une entreprise d’accueil en métropole (ex : ESN comme Capgemini), ces écoles offrent une **formation ultra-pratique** et un réseau pro. *Risque* : sans alternance, le coût est élevé.\n➡ *(connaissance générale)* : Contacte les **CFA numériques** (ex : [Simplon](https://simplon.co)) pour des formations courtes et gratuites en métropole.\n\n---\n### **⚠ Attention aux pièges**\n- **Les licences générales à La Réunion** (ex : MIASHS) ont un **taux d’emploi faible** (48% à 12 mois) *sauf si tu fais un master pro après*. Ne compte pas sur un bac+3 seul pour décoller.\n- **\"Partir sans filet\"** : Sans logement ou aide familiale en métropole, vise **l’alternance** (salaire + formation gratuite) ou les **BUT** (logements CROUS prioritaires).\n- **Écoles privées hors alternance** : Méfie-toi des formations à 8k€/an sans label (ex : \"bachelor webmarketing\") — **vérifie leur taux d’insertion** sur [InserJeunes](https://www.inserjeunes.education.gouv.fr/diffusion/accueil).\n\n---\n**Question pour toi :**\nEst-ce que tu préfères **partir tout de suite** (BUT en métropole) ou **rester 2-3 ans à La Réunion** pour préparer ton départ (licence locale + master après) ? Et as-tu envisagé l’**alternance** pour financer tes études ? *(Un conseiller du CIO de Saint-Denis peut t’aider à affiner ton projet — prends RDV via ton lycée !)*",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 9,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "100% de taux d’accès",
+      "stat_value": 100,
+      "stat_unit": "%",
+      "context_in_response": "Toutes les licences numériques à La Réunion sont accessibles (100% de taux d’accès)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 100.0%"
+    },
+    {
+      "stat_text": "taux d’emploi ~90% à 6 mois",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "diplôme reconnu par les entreprises (taux d’emploi ~90% à 6 mois — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian : 1 680€/mois",
+      "stat_value": 1680,
+      "stat_unit": "€/mois",
+      "context_in_response": "licence Maths-Informatique (MIASHS) à La Réunion — bac+3 public, 100% accessible, mais peu professionnalisante seule (salaire médian : 1 680€/mois)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux d’emploi faible (48% à 12 mois)",
+      "stat_value": 48,
+      "stat_unit": "%",
+      "context_in_response": "Les licences générales à La Réunion (ex : MIASHS) ont un taux d’emploi faible (48% à 12 mois) sauf si tu fais un master pro après",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux d’emploi 3 ans : 0.85",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : taux_emploi_3ans: 0.85 (FICHE 1)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : taux_emploi_6ans: 0.91 (FICHE 1)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : taux_cdi: 0.83 (FICHE 1)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "Insertion pro : salaire_median_embauche: 2080 (FICHE 1)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux d’emploi 3 ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : taux_emploi_3ans: 0.86 (FICHES 2 à 10)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : taux_emploi_6ans: 0.91 (FICHES 2 à 10)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : taux_cdi: 0.83 (FICHES 2 à 10)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "Insertion pro : salaire_median_embauche: 1740 (FICHES 2 à 10)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "sélectivité modérée (30-60%)",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "BUT Informatique — sélectivité modérée (30-60%)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.2242,
+      "nom": "Licence - Sciences pour l'ingénieur",
+      "etablissement": "Université de La Réunion - Saint Denis",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "parcoursup",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1323,
+      "nom": "Licence - Mathématiques et informatique appliquées aux sciences humaines et sociales",
+      "etablissement": "Université de La Réunion - Saint Denis",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1315,
+      "nom": "Licence - Information et communication",
+      "etablissement": "Université de La Réunion - Saint Denis",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "communication",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1282,
+      "nom": "Licence - Géographie et aménagement",
+      "etablissement": "Université de La Réunion - Saint Denis",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1151,
+      "nom": "Licence - Physique",
+      "etablissement": "Université de La Réunion - Saint Denis",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1139,
+      "nom": "Licence - Sciences de la terre",
+      "etablissement": "Université de La Réunion - Saint Denis",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1119,
+      "nom": "Licence - Portail Sciences sociales",
+      "etablissement": "Université de La Réunion - Saint Denis",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1117,
+      "nom": "Licence - Portail Sciences sociales",
+      "etablissement": "Université de La Réunion - Saint Denis",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1117,
+      "nom": "Licence - Lettres",
+      "etablissement": "Université de La Réunion - Saint Denis",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1104,
+      "nom": "Licence - Histoire",
+      "etablissement": "Université de La Réunion - Saint Denis",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    }
+  ]
+}

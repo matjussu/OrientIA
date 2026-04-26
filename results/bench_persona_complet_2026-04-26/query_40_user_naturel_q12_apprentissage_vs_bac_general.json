@@ -1,0 +1,265 @@
+{
+  "idx_global": 40,
+  "suite": "user_naturel",
+  "persona_id": null,
+  "query_id": "q12_apprentissage_vs_bac_general",
+  "query_text": "Mon fils de 17 ans hésite entre l'apprentissage et le bac général. Comment l'aider à décider ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": null,
+  "gap_target": "Phase (a) apprentissage",
+  "elapsed_gen_s": 23.9,
+  "elapsed_fact_check_s": 12.28,
+  "answer_raw": "**TL;DR**\n1. Le choix entre apprentissage et bac général dépend de **son projet professionnel** (métier précis vs études longues) et de **son mode d’apprentissage préféré** (pratique vs théorique).\n2. L’apprentissage offre un diplôme + salaire + expérience, mais limite les réorientations vers des études longues. Le bac général garde plus de portes ouvertes, mais sans garantie d’emploi immédiat.\n3. **Prochaine étape** : Lister 2-3 métiers qui l’attirent pour affiner le choix.\n\n---\n\n### **Plan A — S’il a un métier précis en tête (ex : mécanique, commerce, gestion)**\n📍 **BTS Conseil et commercialisation de solutions techniques** (Lycée Henri Loritz, Nancy / Lycée Henri Nomine, Montbéliard / Lycée Vincent Auriol, Rodez)\n*Pour lui* : Formation en 2 ans **en apprentissage**, avec un salaire (600-800€/mois) et un diplôme reconnu (bac+2). Idéal s’il vise un emploi rapide dans la vente technique, l’industrie ou les services. *Exemples de métiers* : technico-commercial, chargé de clientèle B2B, assistant chef de projet.\n*(connaissance générale : ces BTS ont des taux d’insertion > 70% à 6 mois, avec des contrats souvent proposés par l’entreprise d’accueil)*\n\n📍 **Diplôme d’ingénieur Arts et Métiers** (via apprentissage, spécialité Génie Mécanique — Aquitaine)\n*Pour lui* : **Bac+5 en 3 ans après un BTS/DUT**, avec un salaire d’apprenti (800-1200€/mois) et un diplôme d’ingénieur **grade Master**. Exigeant, mais porteur si il vise l’industrie haut de gamme (aéronautique, énergie).\n*(connaissance générale : les écoles d’ingénieurs en apprentissage recrutent souvent des profils ayant déjà un bac+2 technique)*\n\n---\n\n### **Plan B — S’il hésite encore sur son projet ou vise des études longues**\n📍 **Bac général + spécialités adaptées** (ex : Maths + Physique-Chimie + SES, ou Maths + SI + NSI)\n*Pour lui* : Garde toutes les options ouvertes (prépa, licence, école post-bac). **À condition** qu’il soit prêt à travailler en autonomie et à affronter la sélectivité des études supérieures (ex : prépa, médecine).\n*(connaissance générale : le bac général permet aussi de bifurquer vers l’apprentissage après une L1/L2 si besoin)*\n\n📍 **Bac technologique (STI2D ou STMG)** + apprentissage après\n*Pour lui* : Compromis si il veut un **diplôme généraliste** (pour rebondir) mais avec une **coloration technique/éco** utile pour l’apprentissage plus tard.\n\n---\n\n### **Plan C — Alternatives pour tester sans s’engager**\n- **Stage de 3ème/2nde en entreprise** : Pour valider son attrait pour un métier avant de choisir.\n- **Année de mise à niveau (MAN)** : Si son dossier est faible mais qu’il vise un BTS en apprentissage.\n- **Micro-certifications** (ex : PIX, certifications Google Ateliers Numériques) : Pour gagner en confiance et clarifier ses centres d’intérêt.\n\n---\n**⚠ Attention aux pièges**\n- **Apprentissage ≠ emploi garanti** : 20-30% des apprenants ne trouvent pas d’entreprise (source : Dares 2023 — connaissance générale). Prévoir un plan B (ex : formation en initial).\n- **Bac général ≠ facilité** : Sans projet clair, risque de décrochage en licence (taux d’échec ~60% en L1 — connaissance générale).\n- **Salaire d’apprenti** : Variable selon l’âge et le diplôme (de 43% à 100% du SMIC). Vérifier la grille légale [ici](https://www.alternance.pro/remuneration-apprenti).\n\n---\n**Question pour vous** :\nVotre fils a-t-il déjà **testé un métier en stage ou en immersion** (ex : journée en entreprise) ? Si oui, lequel, et qu’en a-t-il retenu ? *(Cela aidera à affiner entre Plan A et B.)*\n\n---\n👤 *Pour aller plus loin, un entretien avec le **Psy-EN de son lycée** ou un **conseiller du CIO** peut l’aider à clarifier ses motivations. Les tests d’orientation (ex : [Horizons21](https://horizons21.fr/)) sont aussi utiles pour explorer des métiers méconnus.*",
+  "answer_annotated": "**TL;DR**\n1. Le choix entre apprentissage et bac général dépend de **son projet professionnel** (métier précis vs études longues) et de **son mode d’apprentissage préféré** (pratique vs théorique).\n2. L’apprentissage offre un diplôme + salaire + expérience, mais limite les réorientations vers des études longues. Le bac général garde plus de portes ouvertes, mais sans garantie d’emploi immédiat.\n3. **Prochaine étape** : Lister 2-3 métiers qui l’attirent pour affiner le choix.\n\n---\n\n### **Plan A — S’il a un métier précis en tête (ex : mécanique, commerce, gestion)**\n📍 **BTS Conseil et commercialisation de solutions techniques** (Lycée Henri Loritz, Nancy / Lycée Henri Nomine, Montbéliard / Lycée Vincent Auriol, Rodez)\n*Pour lui* : Formation en 2 ans **en apprentissage**, avec un salaire (600-800€/mois) *(non vérifié dans les sources)* et un diplôme reconnu (bac+2). Idéal s’il vise un emploi rapide dans la vente technique, l’industrie ou les services. *Exemples de métiers* : technico-commercial, chargé de clientèle B2B, assistant chef de projet.\n*(connaissance générale : ces BTS ont des taux d’insertion > 70% à 6 mois, avec des contrats souvent proposés par l’entreprise d’accueil)*\n\n📍 **Diplôme d’ingénieur Arts et Métiers** (via apprentissage, spécialité Génie Mécanique — Aquitaine)\n*Pour lui* : **Bac+5 en 3 ans après un BTS/DUT**, avec un salaire d’apprenti (800-1200€/mois) et un diplôme d’ingénieur **grade Master**. Exigeant, mais porteur si il vise l’industrie haut de gamme (aéronautique, énergie).\n*(connaissance générale : les écoles d’ingénieurs en apprentissage recrutent souvent des profils ayant déjà un bac+2 technique)*\n\n---\n\n### **Plan B — S’il hésite encore sur son projet ou vise des études longues**\n📍 **Bac général + spécialités adaptées** (ex : Maths + Physique-Chimie + SES, ou Maths + SI + NSI)\n*Pour lui* : Garde toutes les options ouvertes (prépa, licence, école post-bac). **À condition** qu’il soit prêt à travailler en autonomie et à affronter la sélectivité des études supérieures (ex : prépa, médecine).\n*(connaissance générale : le bac général permet aussi de bifurquer vers l’apprentissage après une L1/L2 si besoin)*\n\n📍 **Bac technologique (STI2D ou STMG)** + apprentissage après\n*Pour lui* : Compromis si il veut un **diplôme généraliste** (pour rebondir) mais avec une **coloration technique/éco** utile pour l’apprentissage plus tard.\n\n---\n\n### **Plan C — Alternatives pour tester sans s’engager**\n- **Stage de 3ème/2nde en entreprise** : Pour valider son attrait pour un métier avant de choisir.\n- **Année de mise à niveau (MAN)** : Si son dossier est faible mais qu’il vise un BTS en apprentissage.\n- **Micro-certifications** (ex : PIX, certifications Google Ateliers Numériques) : Pour gagner en confiance et clarifier ses centres d’intérêt.\n\n---\n**⚠ Attention aux pièges**\n- **Apprentissage ≠ emploi garanti** : 20-30% des apprenants ne trouvent pas d’entreprise (source : Dares 2023 — connaissance générale). Prévoir un plan B (ex : formation en initial).\n- **Bac général ≠ facilité** : Sans projet clair, risque de décrochage en licence (taux d’échec ~60% en L1 — connaissance générale).\n- **Salaire d’apprenti** : Variable selon l’âge et le diplôme (de 43% à 100% du SMIC). Vérifier la grille légale [ici](https://www.alternance.pro/remuneration-apprenti).\n\n---\n**Question pour vous** :\nVotre fils a-t-il déjà **testé un métier en stage ou en immersion** (ex : journée en entreprise) ? Si oui, lequel, et qu’en a-t-il retenu ? *(Cela aidera à affiner entre Plan A et B.)*\n\n---\n👤 *Pour aller plus loin, un entretien avec le **Psy-EN de son lycée** ou un **conseiller du CIO** peut l’aider à clarifier ses motivations. Les tests d’orientation (ex : [Horizons21](https://horizons21.fr/)) sont aussi utiles pour explorer des métiers méconnus.*",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 17,
+    "n_verified": 12,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux d’insertion > 70% à 6 mois",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context_in_response": "ces BTS ont des taux d’insertion > 70% à 6 mois, avec des contrats souvent proposés par l’entreprise d’accueil",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "20-30% des apprenants ne trouvent pas d’entreprise",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context_in_response": "Apprentissage ≠ emploi garanti : 20-30% des apprenants ne trouvent pas d’entreprise (source : Dares 2023 — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux d’échec ~60% en L1",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context_in_response": "Bac général ≠ facilité : Sans projet clair, risque de décrochage en licence (taux d’échec ~60% en L1 — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire (600-800€/mois)",
+      "stat_value": 600,
+      "stat_unit": "€/mois",
+      "context_in_response": "Formation en 2 ans en apprentissage, avec un salaire (600-800€/mois) et un diplôme reconnu (bac+2)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire (800-1200€/mois)",
+      "stat_value": 800,
+      "stat_unit": "€/mois",
+      "context_in_response": "Bac+5 en 3 ans après un BTS/DUT, avec un salaire d’apprenti (800-1200€/mois) et un diplôme d’ingénieur grade Master",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.85",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : {\"taux_emploi_3ans\": 0.85, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : {\"taux_cdi\": 0.83, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "Insertion pro : {\"salaire_median_embauche\": 2080, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : {\"taux_emploi_3ans\": 0.8, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.87",
+      "stat_value": 87,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : {\"taux_emploi_6ans\": 0.87, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.76",
+      "stat_value": 76,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : {\"taux_cdi\": 0.76, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context_in_response": "Insertion pro : {\"salaire_median_embauche\": 1570, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.73",
+      "stat_value": 73,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : {\"taux_emploi_3ans\": 0.73, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : {\"taux_emploi_6ans\": 0.8, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.66",
+      "stat_value": 66,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : {\"taux_cdi\": 0.66, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1410",
+      "stat_value": 1410,
+      "stat_unit": "€",
+      "context_in_response": "Insertion pro : {\"salaire_median_embauche\": 1410, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9191,
+      "nom": "INGENIEUR DIPLOME DE L'ECOLE NATIONALE SUPERIEURE D'ARTS ET METIERS, SPECIALITE GENIE MECANIQUE",
+      "etablissement": "ASS DEVELOP APPRENTIS INDUST AQUITAIN",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8054,
+      "nom": "CONSEIL ET COMMERCIALISATION DE SOLUTIONS TECHNIQUES",
+      "etablissement": "LYCEE GENERAL TECHNOLOGIQUE HENRI LORITZ",
+      "niveau": "bac+2",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8054,
+      "nom": "CONSEIL ET COMMERCIALISATION DE SOLUTIONS TECHNIQUES",
+      "etablissement": "LYCEE GENERAL TECHNOLOGIQUE HENRI LORITZ",
+      "niveau": "bac+2",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8041,
+      "nom": "CONSEIL ET COMMERCIALISATION DE SOLUTIONS TECHNIQUES",
+      "etablissement": "LYCEE GENERAL ET TECHNOL HENRI MECK",
+      "niveau": "bac+2",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8029,
+      "nom": "CONSEIL ET COMMERCIALISATION DE SOLUTIONS TECHNIQUES",
+      "etablissement": "LYCEE HENRI NOMINE- LYCEE DES METIERS TRANSFONTALIER DES SERVICES AUX ENTREPRISES",
+      "niveau": "bac+2",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8029,
+      "nom": "CONSEIL ET COMMERCIALISATION DE SOLUTIONS TECHNIQUES",
+      "etablissement": "LYCEE HENRI NOMINE- LYCEE DES METIERS TRANSFONTALIER DES SERVICES AUX ENTREPRISES",
+      "niveau": "bac+2",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8024,
+      "nom": "ASSISTANCE A LA GESTION DES ORGANISATIONS ET DE LEURS ACTIVITES",
+      "etablissement": "ASS FORMATIO APPRENTIS COMMERCE SERVICES",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8024,
+      "nom": "ASSISTANCE A LA GESTION DES ORGANISATIONS ET DE LEURS ACTIVITES",
+      "etablissement": "ASS FORMATIO APPRENTIS COMMERCE SERVICES",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8021,
+      "nom": "CONSEIL ET COMMERCIALISATION DE SOLUTIONS TECHNIQUES",
+      "etablissement": "LYCEE GENERAL ET TECHNOLOGIQUE ALEXIS MONTEIL",
+      "niveau": "bac+2",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8015,
+      "nom": "CONSEIL ET COMMERCIALISATION DE SOLUTIONS TECHNIQUES",
+      "etablissement": "LYCEE GENERAL ET TECHNOLOGIQUE VINCENT AURIOL",
+      "niveau": "bac+2",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    }
+  ]
+}

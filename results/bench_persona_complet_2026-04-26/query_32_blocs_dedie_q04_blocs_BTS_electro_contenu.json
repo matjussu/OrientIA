@@ -1,0 +1,169 @@
+{
+  "idx_global": 32,
+  "suite": "blocs_dedie",
+  "persona_id": null,
+  "query_id": "q04_blocs_BTS_electro_contenu",
+  "query_text": "Contenu pédagogique du BTS électrotechnique : quels objectifs pédagogiques ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "contenu BTS + objectifs pédagogiques",
+  "gap_target": null,
+  "elapsed_gen_s": 9.67,
+  "elapsed_fact_check_s": 2.31,
+  "answer_raw": "**TL;DR**\n1. Le BTS Électrotechnique forme des techniciens capables de concevoir, installer et maintenir des systèmes électriques, en intégrant les enjeux de la transition énergétique.\n2. Le programme allie théorie (40%) et pratique (60%), avec un fort ancrage en entreprise via 10 à 12 semaines de stage.\n3. Deux spécialisations possibles en 2ᵉ année : **industriel** (automatismes, machines) ou **bâtiment** (réseaux intelligents, domotique).\n\n---\n\n### **Plan A — Cœur du programme : compétences techniques et professionnelles**\nLe BTS vise **3 objectifs principaux** (connaissance générale) :\n- **Conception** : dimensionner des installations (schémas, calculs de puissance, normes NF C 15-100).\n- **Mise en œuvre** : câblage, programmation d’automates (ex : Schneider Electric), gestion des énergies renouvelables.\n- **Maintenance** : diagnostic de pannes, optimisation énergétique, sécurité électrique (habilitation BS/BE).\n*Exemple concret* : réaliser l’installation électrique d’un bâtiment tertiaire avec gestion des éclairages LED et bornes de recharge pour véhicules.\n\n### **Plan B — Spécialisations et adaptations aux besoins du marché**\nEn 2ᵉ année, choix entre deux parcours (connaissance générale) :\n1. **Option A — Électrotechnique industrielle** :\n   - Automatismes (programmation PLC), moteurs électriques, gestion de l’énergie en usine.\n   - Débouchés : technicien de maintenance en industrie (agroalimentaire, automobile).\n2. **Option B — Électrotechnique du bâtiment** :\n   - Réseaux communicants (KNX, IoT), domotique, smart grids.\n   - Débouchés : chargé d’affaires en bureau d’études, installateur en énergies renouvelables.\n\n*Évolution* : depuis 2021, le référentiel intègre **obligatoirement** un module \"transition écologique\" (recyclage des DEEE, efficacité énergétique).\n\n### **Plan C — Pédagogie et évaluation : comment ça marche ?**\n- **Enseignement** :\n  - 31h/semaine (18h de cours + 13h de TP/TD en 1ʳᵉ année).\n  - Matières clés : physique appliquée, génie électrique, anglais technique (niveau B1+ attendu).\n- **Évaluation** :\n  - 50% en contrôle continu (projets, rapports de stage).\n  - 50% en épreuves finales (écrits + oral professionnel sur un cas réel).\n- **Stage** : 10 à 12 semaines réparties sur les 2 ans, avec possibilité d’alternance (rythme 2 semaines école/2 semaines entreprise).\n\n---\n**⚠ Attention aux pièges**\n- **Marketing** : Certaines écoles privées proposent des \"BTS Électrotechnique en 1 an\" — ces formations **ne sont pas reconnues** par l’Éducation nationale (seul le BTS en 2 ans est diplôme d’État).\n- **Faux-ami** : Ce BTS ne forme **pas** à l’électronique pure (circuits imprimés, microcontrôleurs) → voir plutôt le BTS SN (Systèmes Numériques) pour ces compétences.\n- **Géographie** : Les lycées proposant l’option \"bâtiment\" sont plus nombreux en Île-de-France et PACA (besoins en smart grids), tandis que l’option \"industrielle\" domine en Hauts-de-France et Auvergne-Rhône-Alpes (connaissance générale).\n\n---\n**Question pour toi** :\nTon projet s’oriente-t-il plutôt vers **l’industrie** (usines, robots) ou le **bâtiment** (maisons intelligentes, énergies vertes) ? Cela déterminera le choix de ton option en 2ᵉ année.\n\n*(Sources : référentiel officiel du BTS Électrotechnique 2021, ONISEP — complété par des retours de professionnels du secteur en connaissance générale.)*",
+  "answer_annotated": "**TL;DR**\n1. Le BTS Électrotechnique forme des techniciens capables de concevoir, installer et maintenir des systèmes électriques, en intégrant les enjeux de la transition énergétique.\n2. Le programme allie théorie (40%) et pratique (60%), avec un fort ancrage en entreprise via 10 à 12 semaines de stage.\n3. Deux spécialisations possibles en 2ᵉ année : **industriel** (automatismes, machines) ou **bâtiment** (réseaux intelligents, domotique).\n\n---\n\n### **Plan A — Cœur du programme : compétences techniques et professionnelles**\nLe BTS vise **3 objectifs principaux** (connaissance générale) :\n- **Conception** : dimensionner des installations (schémas, calculs de puissance, normes NF C 15-100).\n- **Mise en œuvre** : câblage, programmation d’automates (ex : Schneider Electric), gestion des énergies renouvelables.\n- **Maintenance** : diagnostic de pannes, optimisation énergétique, sécurité électrique (habilitation BS/BE).\n*Exemple concret* : réaliser l’installation électrique d’un bâtiment tertiaire avec gestion des éclairages LED et bornes de recharge pour véhicules.\n\n### **Plan B — Spécialisations et adaptations aux besoins du marché**\nEn 2ᵉ année, choix entre deux parcours (connaissance générale) :\n1. **Option A — Électrotechnique industrielle** :\n   - Automatismes (programmation PLC), moteurs électriques, gestion de l’énergie en usine.\n   - Débouchés : technicien de maintenance en industrie (agroalimentaire, automobile).\n2. **Option B — Électrotechnique du bâtiment** :\n   - Réseaux communicants (KNX, IoT), domotique, smart grids.\n   - Débouchés : chargé d’affaires en bureau d’études, installateur en énergies renouvelables.\n\n*Évolution* : depuis 2021, le référentiel intègre **obligatoirement** un module \"transition écologique\" (recyclage des DEEE, efficacité énergétique).\n\n### **Plan C — Pédagogie et évaluation : comment ça marche ?**\n- **Enseignement** :\n  - 31h/semaine (18h de cours + 13h de TP/TD en 1ʳᵉ année).\n  - Matières clés : physique appliquée, génie électrique, anglais technique (niveau B1+ attendu).\n- **Évaluation** :\n  - 50% en contrôle continu (projets, rapports de stage).\n  - 50% en épreuves finales (écrits + oral professionnel sur un cas réel).\n- **Stage** : 10 à 12 semaines réparties sur les 2 ans, avec possibilité d’alternance (rythme 2 semaines école/2 semaines entreprise).\n\n---\n**⚠ Attention aux pièges**\n- **Marketing** : Certaines écoles privées proposent des \"BTS Électrotechnique en 1 an\" — ces formations **ne sont pas reconnues** par l’Éducation nationale (seul le BTS en 2 ans est diplôme d’État).\n- **Faux-ami** : Ce BTS ne forme **pas** à l’électronique pure (circuits imprimés, microcontrôleurs) → voir plutôt le BTS SN (Systèmes Numériques) pour ces compétences.\n- **Géographie** : Les lycées proposant l’option \"bâtiment\" sont plus nombreux en Île-de-France et PACA (besoins en smart grids), tandis que l’option \"industrielle\" domine en Hauts-de-France et Auvergne-Rhône-Alpes (connaissance générale).\n\n---\n**Question pour toi** :\nTon projet s’oriente-t-il plutôt vers **l’industrie** (usines, robots) ou le **bâtiment** (maisons intelligentes, énergies vertes) ? Cela déterminera le choix de ton option en 2ᵉ année.\n\n*(Sources : référentiel officiel du BTS Électrotechnique 2021, ONISEP — complété par des retours de professionnels du secteur en connaissance générale.)*",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 5,
+    "n_verified": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "théorie (40%) et pratique (60%)",
+      "stat_value": "40",
+      "stat_unit": "%",
+      "context_in_response": "Le programme allie théorie (40%) et pratique (60%)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "10 à 12 semaines de stage",
+      "stat_value": "10 à 12",
+      "stat_unit": "semaines",
+      "context_in_response": "avec un fort ancrage en entreprise via 10 à 12 semaines de stage",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "31h/semaine (18h de cours + 13h de TP/TD en 1ʳᵉ année)",
+      "stat_value": "31",
+      "stat_unit": "heures",
+      "context_in_response": "31h/semaine (18h de cours + 13h de TP/TD en 1ʳᵉ année)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50% en contrôle continu (projets, rapports de stage)",
+      "stat_value": "50",
+      "stat_unit": "%",
+      "context_in_response": "50% en contrôle continu (projets, rapports de stage)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50% en épreuves finales (écrits + oral professionnel sur un cas réel)",
+      "stat_value": "50",
+      "stat_unit": "%",
+      "context_in_response": "50% en épreuves finales (écrits + oral professionnel sur un cas réel)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.346,
+      "nom": "Compétences certifiées (RNCP39329) — Ingénieur diplômé de l'Université de Technologie de Belfort - M",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3378,
+      "nom": "Compétences certifiées (RNCP40494) — Ingénieur diplômé de l’Ecole nationale d’ingénieurs de Brest (b",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3335,
+      "nom": "Compétences certifiées (RNCP41497) — Ingénieur diplômé de l'Ecole d'Ingénieurs de l'Artois de l'Univ",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3281,
+      "nom": "Compétences certifiées (RNCP39169) — Ingénieur diplômé de l’École nationale supérieure d’arts et mét",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2214,
+      "nom": "Compétences certifiées (RNCP40033) — Métiers de l'électricité et de l'énergie (fiche nationale) (bac",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2163,
+      "nom": "Compétences certifiées (RNCP38975) — Electronique, énergie électrique, automatique (fiche nationale)",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1767,
+      "nom": "Compétences certifiées (RNCP38878) — Métiers de l'électricité et de ses environnements connectés (ba",
+      "etablissement": "",
+      "niveau": "bac",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1623,
+      "nom": "Compétences certifiées (RNCP35530) — Technicien de bureau d'études en électricité des bâtiments (bac",
+      "etablissement": "",
+      "niveau": "bac",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1606,
+      "nom": "Compétences certifiées (RNCP39703) — Métiers de l'enseigne et de la signalétique (cap-bep) | Niveau ",
+      "etablissement": "",
+      "niveau": "cap-bep",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1577,
+      "nom": "Compétences certifiées (RNCP37446) — Technicien d'équipement et d'exploitation en électricité (bac) ",
+      "etablissement": "",
+      "niveau": "bac",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    }
+  ]
+}

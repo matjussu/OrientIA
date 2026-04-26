@@ -1,0 +1,225 @@
+{
+  "idx_global": 21,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q03_postes_aides_soignants",
+  "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "postes a pourvoir + métier specific",
+  "gap_target": null,
+  "elapsed_gen_s": 8.54,
+  "elapsed_fact_check_s": 8.02,
+  "answer_raw": "**TL;DR**\n1. **Demande forte** : La France devrait avoir besoin de **100 000 à 150 000 aides-soignants d’ici 2030** (connaissance générale, projections Dares/INSEE).\n2. **Pénurie confirmée** : Le secteur est déjà en tension (30 000 postes non pourvus en 2024 — estimation Drees).\n3. **Opportunités** : Formations courtes (10-18 mois), débouchés immédiats, et passerelles vers infirmier possible.\n\n---\n\n### **Plan A — Se former rapidement (10-18 mois)**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** — [Partout en France, 1 500 IFAS](https://www.orientation-pour-tous.fr/)\n*Pour toi : Accès sans bac (sous conditions), 100% d’insertion en EHPAD/cliniques (connaissance générale).*\n→ **Exemples concrets** :\n- **IFAS de Paris** (75) — [Site ARS Île-de-France](https://www.iledefrance.ars.sante.fr/)\n- **IFAS de Lyon** (69) — [Site Croix-Rouge](https://www.croix-rouge.fr/)\n- **IFAS de Bordeaux** (33) — [Site Nouvelle-Aquitaine](https://www.nouvelle-aquitaine.ars.sante.fr/)\n\n### **Plan B — Évoluer vers infirmier (3 ans)**\n📍 **Passerelle DEAS → DE Infirmier** — [Via VAE ou concours interne](https://www.vae.gouv.fr/)\n*Pour toi : +2 ans d’études après le DEAS, mais salaire ×1.5 (2 000€ → 2 800€ brut/mois — estimation conventions collectives).*\n\n### **Plan C — Alternance ou reconversion pro**\n📍 **Contrat de professionnalisation** — Rémunération 55-80% du SMIC (connaissance générale) + prise en charge formation.\n*Pour toi : Idéal si tu es en emploi ou en reconversion (ex : AP → AS).*\n\n---\n**⚠ Attention aux pièges**\n- **Formations privées payantes** : Certaines écoles facturent 3 000-6 000€/an pour le DEAS (alors que les IFAS publics sont **gratuits**).\n- **Conditions physiques** : Le métier exige port de charges, horaires décalés (3×8). Vérifie ta compatibilité avant de t’engager.\n- **Débouchés géographiques** : Les postes sont nombreux **hors ÎdF** (Bretagne, Grand Est, Nouvelle-Aquitaine en tête — source Drees 2023).\n\n---\n**Question pour toi** :\nAs-tu déjà une expérience dans le soin (bénévolat, famille) ? Cela peut accélérer ton admission en IFAS via la **procédure de validation des acquis (VAE)**.",
+  "answer_annotated": "**TL;DR**\n1. **Demande forte** : La France devrait avoir besoin de **100 000 à 150 000 aides-soignants d’ici 2030** (connaissance générale, projections Dares/INSEE).\n2. **Pénurie confirmée** : Le secteur est déjà en tension (30 000 postes non pourvus en 2024 — estimation Drees).\n3. **Opportunités** : Formations courtes (10-18 mois), débouchés immédiats, et passerelles vers infirmier possible.\n\n---\n\n### **Plan A — Se former rapidement (10-18 mois)**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** — [Partout en France, 1 500 IFAS *(non vérifié dans les sources)*](https://www.orientation-pour-tous.fr/)\n*Pour toi : Accès sans bac (sous conditions), 100% d’insertion en EHPAD/cliniques (connaissance générale).*\n→ **Exemples concrets** :\n- **IFAS de Paris** (75) — [Site ARS Île-de-France](https://www.iledefrance.ars.sante.fr/)\n- **IFAS de Lyon** (69) — [Site Croix-Rouge](https://www.croix-rouge.fr/)\n- **IFAS de Bordeaux** (33) — [Site Nouvelle-Aquitaine](https://www.nouvelle-aquitaine.ars.sante.fr/)\n\n### **Plan B — Évoluer vers infirmier (3 ans)**\n📍 **Passerelle DEAS → DE Infirmier** — [Via VAE ou concours interne](https://www.vae.gouv.fr/)\n*Pour toi : +2 ans d’études après le DEAS, mais salaire ×1.5 (2 000€ → 2 800€ brut/mois — estimation conventions collectives).*\n\n### **Plan C — Alternance ou reconversion pro**\n📍 **Contrat de professionnalisation** — Rémunération 55-80% du SMIC (connaissance générale) + prise en charge formation.\n*Pour toi : Idéal si tu es en emploi ou en reconversion (ex : AP → AS).*\n\n---\n**⚠ Attention aux pièges**\n- **Formations privées payantes** : Certaines écoles facturent 3 000-6 000€/an pour le DEAS *(non vérifié dans les sources)* (alors que les IFAS publics sont **gratuits**).\n- **Conditions physiques** : Le métier exige port de charges, horaires décalés (3×8). Vérifie ta compatibilité avant de t’engager.\n- **Débouchés géographiques** : Les postes sont nombreux **hors ÎdF** (Bretagne, Grand Est, Nouvelle-Aquitaine en tête — source Drees 2023).\n\n---\n**Question pour toi** :\nAs-tu déjà une expérience dans le soin (bénévolat, famille) ? Cela peut accélérer ton admission en IFAS via la **procédure de validation des acquis (VAE)**.",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 4,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "100 000 à 150 000 aides-soignants d’ici 2030",
+      "stat_value": 125000,
+      "stat_unit": "effectif",
+      "context_in_response": "La France devrait avoir besoin de 100 000 à 150 000 aides-soignants d’ici 2030 (connaissance générale, projections Dares/INSEE).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30 000 postes non pourvus en 2024",
+      "stat_value": 30000,
+      "stat_unit": "effectif",
+      "context_in_response": "Le secteur est déjà en tension (30 000 postes non pourvus en 2024 — estimation Drees).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 500 IFAS",
+      "stat_value": 1500,
+      "stat_unit": "nombre",
+      "context_in_response": "Diplôme d’État d’Aide-Soignant (DEAS) — [Partout en France, 1 500 IFAS]",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "100% d’insertion en EHPAD/cliniques",
+      "stat_value": 100,
+      "stat_unit": "%",
+      "context_in_response": "Pour toi : Accès sans bac (sous conditions), 100% d’insertion en EHPAD/cliniques (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire ×1.5 (2 000€ → 2 800€ brut/mois)",
+      "stat_value": 2800,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "Pour toi : +2 ans d’études après le DEAS, mais salaire ×1.5 (2 000€ → 2 800€ brut/mois — estimation conventions collectives).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Rémunération 55-80% du SMIC",
+      "stat_value": null,
+      "stat_unit": "ratio SMIC",
+      "context_in_response": "Contrat de professionnalisation — Rémunération 55-80% du SMIC (connaissance générale) + prise en charge formation.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "3 000-6 000€/an pour le DEAS",
+      "stat_value": null,
+      "stat_unit": "€/an",
+      "context_in_response": "Formations privées payantes : Certaines écoles facturent 3 000-6 000€/an pour le DEAS (alors que les IFAS publics sont gratuits).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.73",
+      "stat_value": 73,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : taux_emploi_3ans: 0.73 (présent dans les fiches 1 à 8)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : taux_emploi_6ans: 0.8 (présent dans les fiches 1 à 8)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.66",
+      "stat_value": 66,
+      "stat_unit": "%",
+      "context_in_response": "Insertion pro : taux_cdi: 0.66 (présent dans les fiches 1 à 8)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1410",
+      "stat_value": 1410,
+      "stat_unit": "€ net/mois",
+      "context_in_response": "Insertion pro : salaire_median_embauche: 1410 (présent dans les fiches 1 à 8)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "Débouchés géographiques : Bretagne, Grand Est, Nouvelle-Aquitaine en tête — source Drees 2023",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "Les postes sont nombreux hors ÎdF (Bretagne, Grand Est, Nouvelle-Aquitaine en tête — source Drees 2023).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.8389,
+      "nom": "Aide-Soignant",
+      "etablissement": "MINISTERE DE LA SANTE ET DE LA PREVENTION",
+      "niveau": "bac",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8275,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "POUR LE DEVELOPPEMENT DE L APPRENTISSAGE DES PROFESSIONS DU SECTEUR SANITAIRE ET SOCIAL",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8242,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "CENTRE GERONTOLOGIQUE DEPARTEMENTAL",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8235,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "ASSISTEAL FORMATION",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8235,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "ASSISTEAL FORMATION",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8224,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "POLE FORMATION SANTE",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.821,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "LYCEE PROFESSIONNEL MARIE CURIE - LYCEE DES METIERS DU COMMERCE ET DES SERVICES A LA PERSONNE",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8209,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "SOINS SERVICE",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7734,
+      "nom": "Métier 2030 (DARES) — FAP V0Z : Aides-soignants | Effectifs 2019 France : 764 466 personnes | Créati",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7717,
+      "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

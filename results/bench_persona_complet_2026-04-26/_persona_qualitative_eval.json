@@ -1,0 +1,202 @@
+[
+  {
+    "persona_id": "lila",
+    "query_id": "lila_q1",
+    "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+    "verdict": "hallu_detecte",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": "44-74% des diplômés trouvent un emploi stable en 12 mois *(non vérifié dans les sources)* *(non vérifié dans les sources)*, salaire médian ~1 720-1 790€ net ([InserSup DEPP 2024])",
+    "suggestion": "Retirer les statistiques non vérifiées ou les remplacer par des données réellement sourcées pour être fiable.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "lila",
+    "query_id": "lila_q2",
+    "query_text": "J'hésite entre une fac de sciences humaines et une école de communication à Paris, pourquoi choisir l'une plutôt que l'autre ?",
+    "verdict": "hallu_detecte",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": "44% en emploi à 12 mois (non vérifié dans les sources), salaire médian ~1 790€ net (non vérifié dans les sources), 70-80% en CDI à 6 mois (non vérifié dans les sources), salaire ~2 000-2 500€ net (non vérifié dans les sources)",
+    "suggestion": "Retirer les statistiques d'insertion pro non vérifiées ou les remplacer par des fourchettes générales sans chiffres précis inventés.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "lila",
+    "query_id": "lila_q3",
+    "query_text": "Je suis en Terminale L, j'ai 14 de moyenne, j'aime écrire et j'aime l'histoire mais je ne veux pas être prof. Je cherche un parcours post-bac qui me laisse plusieurs options métiers ouvertes.",
+    "verdict": "utile_partielle",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": "taux d'accès ~60-70% pour les L avec 14+",
+    "suggestion": "Ajouter des exemples concrets de débouchés professionnels avec salaires et liens vers témoignages d'anciens étudiants.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "theo",
+    "query_id": "theo_q1",
+    "query_text": "Quelles passerelles existent après une L1/L2 de droit pour aller vers un BTS ou une école de commerce ?",
+    "verdict": "utile_partielle",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": "BTS en 1 an (accéléré) - cette formule n'est pas standard et semble surévaluée en accessibilité",
+    "suggestion": "Préciser les dates concrètes de candidature et clarifier que les BTS 1 an sont rares et peu accessibles directement après L2.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "theo",
+    "query_id": "theo_q2",
+    "query_text": "Je n'aime pas du tout le droit, je ne veux pas redoubler. Qu'est-ce qui est le plus réaliste cette année pour me réorienter ?",
+    "verdict": "utile_partielle",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": "Phase complémentaire Parcoursup (du 11 juin au 12 juillet 2024)",
+    "suggestion": "Préciser qu'on est déjà en cours d'année et expliquer les options concrètes pour une réorientation immédiate dès janvier/février.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "theo",
+    "query_id": "theo_q3",
+    "query_text": "J'ai validé ma L1 de droit mais je galère en L2, je pense à me réorienter vers l'audiovisuel ou le commerce, si possible en alternance. J'habite à Bordeaux, quelles options concrètes ?",
+    "verdict": "utile_partielle",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": "Lycée des Métiers de l'Audiovisuel, Bordeaux - BTS 100% en alternance dès la 1ère année",
+    "suggestion": "Vérifier l'existence du lycée cité et préciser les délais réels pour candidater en cours d'année universitaire.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "emma",
+    "query_id": "emma_q1",
+    "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+    "verdict": "claire",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": null,
+    "suggestion": "Ajouter sources salary surveys type APEC ou enquêtes écoles pour crédibiliser les fourchettes salariales annoncées.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "emma",
+    "query_id": "emma_q2",
+    "query_text": "Je finis mon M1 info, je dois choisir entre un M2 classique recherche ou un master en alternance. Qu'est-ce qui me donnera le meilleur CV pour entrer en CDI direct ?",
+    "verdict": "utile_partielle",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": null,
+    "suggestion": "Manque infos concrètes sur mon M1 info : quels M2 alternance existent dans ma fac/région et comment candidater concrètement maintenant.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "emma",
+    "query_id": "emma_q3",
+    "query_text": "Je suis en M1 info à l'université de Lille, j'aime la data et le ML, je ne sais pas si je dois viser grosse boîte tech type Doctolib ou Criteo, ou plutôt une startup early-stage. Je veux un poste CDI dès la sortie, pas un CDD recherche.",
+    "verdict": "hallu_detecte",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": "DU Sciences des données et IA, MSc Big Data for Business Sciences-U Lille, DU IA & Propriété Intellectuelle avec liens Onisep",
+    "suggestion": "Retirer les formations inventées et liens fictifs. Se concentrer sur parcours réels Lille: M2 Data Science, IAMD, ou alternances concrètes chez OVH/Decathlon.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "mohamed",
+    "query_id": "mohamed_q1",
+    "query_text": "Quels sont les principaux débouchés métier après un Bac pro cuisine par apprentissage ?",
+    "verdict": "utile_partielle",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": "90% des diplômés (non vérifié dans les sources) commencent comme commis ou cuisinier",
+    "suggestion": "Préciser comment choisir entre BP et BM selon mes objectifs, et donner exemples concrets d'entreprises qui recrutent en apprentissage.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "mohamed",
+    "query_id": "mohamed_q2",
+    "query_text": "J'ai fini mon CAP cuisine, je ne suis plus sûr de vouloir rester en restauration. Qu'est-ce que je peux faire d'autre avec ce CAP ?",
+    "verdict": "claire",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": null,
+    "suggestion": "Ajouter des contacts concrets (CFA, missions locales) pour m'aider à démarrer ces démarches rapidement.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "mohamed",
+    "query_id": "mohamed_q3",
+    "query_text": "Je suis en CAP cuisine à Marseille, je veux continuer en Bac pro alternance mais j'hésite entre cuisine et boulangerie-pâtisserie. Salaires, perspectives, contraintes de rythme ?",
+    "verdict": "utile_partielle",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": null,
+    "suggestion": "Manque infos concrètes sur les établissements à Marseille proposant le Bac Pro en alternance et comment candidater.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "valerie",
+    "query_id": "valerie_q1",
+    "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+    "verdict": "claire",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": null,
+    "suggestion": "Ajouter des exemples de bourses CROUS disponibles pour la licence publique avec montants concrets.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "valerie",
+    "query_id": "valerie_q2",
+    "query_text": "Mon fils veut faire STAPS mais je m'inquiète des débouchés. Est-ce un choix raisonnable aujourd'hui ?",
+    "verdict": "hallu_detecte",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": "55-68% des diplômés trouvent un emploi stable à 12 mois, vœux en baisse -34% depuis 2023, 46% de stabilité seulement, salaire médian ~2 200€ net - trop de chiffres marqués 'non vérifié' qui semblent inventés",
+    "suggestion": "Retirer les statistiques non vérifiées et se concentrer sur les faits sourcés pour éviter de me donner de fausses informations.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "valerie",
+    "query_id": "valerie_q3",
+    "query_text": "Mon fils est en Terminale S, moyenne 13, il adore le sport. Il hésite entre STAPS et kiné. On n'a pas les moyens d'une école privée chère. Quelles voies publiques les plus sûres ?",
+    "verdict": "hallu_detecte",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": "seuls 5-10% des étudiants intègrent un IFMK (Institut de Formation en Masso-Kinésithérapie) après la licence",
+    "suggestion": "Retirer les statistiques non vérifiées et se concentrer uniquement sur les données sourcées de Parcoursup pour plus de crédibilité.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "psy_en",
+    "query_id": "psy_en_q1",
+    "query_text": "Quels sont les indicateurs d'insertion professionnelle à 3 ans pour un master en psychologie clinique en France ?",
+    "verdict": "hallu_detecte",
+    "comprehensible": true,
+    "actionnable": false,
+    "hallu_flag_text": "Titre RNCP 'Psychologue' (niveau 6) : le titre de psychologue est protégé en France et exige obligatoirement un master (bac+5, niveau 7), pas un titre RNCP niveau 6",
+    "suggestion": "Supprimer les références à des titres RNCP permettant d'exercer comme psychologue et vérifier toutes les statistiques d'insertion avec sources officielles réelles.",
+    "raw_eval": null
+  },
+  {
+    "persona_id": "psy_en",
+    "query_id": "psy_en_q2",
+    "query_text": "Une élève en 1ère S redouble avec 7 de moyenne en maths mais excellente en philo, comment la guider vers un post-bac réaliste ?",
+    "verdict": null,
+    "comprehensible": null,
+    "actionnable": null,
+    "hallu_flag_text": null,
+    "suggestion": null,
+    "raw_eval": {
+      "error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 7 column 1 (char 484)"
+    }
+  },
+  {
+    "persona_id": "psy_en",
+    "query_id": "psy_en_q3",
+    "query_text": "J'accompagne un élève de 2nde issu d'un milieu modeste, qui rêve de devenir ingénieur aéro mais ses résultats sont moyens (10-11 en maths). Quelles stratégies long-terme sur la suite du lycée ?",
+    "verdict": "utile_partielle",
+    "comprehensible": true,
+    "actionnable": true,
+    "hallu_flag_text": "80% de réussite (connaissance générale) - stat non sourcée suspecte",
+    "suggestion": "Ajouter dimension psychologique : gestion motivation élève, accompagnement famille modeste, construction estime de soi face aux difficultés scolaires.",
+    "raw_eval": null
+  }
+]

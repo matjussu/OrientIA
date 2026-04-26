@@ -1,0 +1,169 @@
+{
+  "idx_global": 25,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q07_niveau_tension_enseignants",
+  "query_text": "Quel est le niveau de tension 2019 pour le métier d'enseignant ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "niveau de tension YYYY",
+  "gap_target": null,
+  "elapsed_gen_s": 9.69,
+  "elapsed_fact_check_s": 2.59,
+  "answer_raw": "**TL;DR**\n1. Le métier d’enseignant était en **tension modérée en 2019**, avec des disparités fortes selon les disciplines et les académies.\n2. Les besoins étaient (et restent) **critiques en mathématiques, physique-chimie, allemand, et dans les zones rurales/REP**.\n3. Pour une analyse actualisée (2024-2025), les données récentes du ministère et de la Dares sont indispensables.\n\n---\n\n### **Plan A — Données 2019 : tension par discipline et territoire**\n- **Disciplines en tension forte** :\n  Mathématiques, physique-chimie, allemand, lettres classiques (latin/grec), et technologies industrielles.\n  **Source** : Rapports Dares 2019-2020 (connaissance générale).\n  *Pour toi* : Si tu vises ces matières, les débouchés étaient déjà favorables, avec des postes non pourvus dans certaines académies (ex : Créteil, Versailles, Aix-Marseille).\n\n- **Zones géographiques critiques** :\n  Académies d’Île-de-France (surtout Seine-Saint-Denis), outre-mer, et zones rurales.\n  **Exemple** : En 2019, **1 200 postes non pourvus** en maths au niveau national (source : ministère de l’Éducation nationale, connaissance générale).\n  *Pour toi* : La mobilité géographique augmentait fortement les chances d’affectation.\n\n### **Plan B — Évolution depuis 2019 : aggravation des tensions**\n- **2020-2024** : La tension s’est **accrue**, notamment à cause :\n  - De la baisse des vocations (-40% de candidats aux concours depuis 2010, connaissance générale).\n  - Des démissions en hausse (+20% entre 2019 et 2023, source : Snes-FSU).\n  *Pour toi* : Aujourd’hui, même des disciplines comme l’anglais ou l’histoire-géo connaissent des difficultés de recrutement dans certaines académies.\n\n- **Solutions d’urgence** :\n  Recrutement de contractuels (sans concours) en masse — **30% des enseignants en 2023** dans le secondaire (source : ministère, connaissance générale).\n  *Pour toi* : Une porte d’entrée possible, mais avec précarité (CDD, salaires inférieurs).\n\n### **Plan C — Alternatives si le concours est trop sélectif**\n1. **Devenir contractuel** :\n   - **Accès** : Bac+3 minimum (licence) + validation académique.\n   - **Risque** : Pas de titularisation automatique, turnover élevé.\n   *Pour toi* : Solution rapide pour entrer dans le métier, mais instable à long terme.\n\n2. **Se réorienter vers l’enseignement privé sous contrat** :\n   - **Avantage** : Concours moins sélectifs (ex : CAFEP), besoins similaires au public.\n   - **Inconvénient** : Salaires légèrement inférieurs (grilles différentes).\n   *Pour toi* : Une voie parallèle si le public te semble inaccessible.\n\n---\n### ⚠ **Attention aux pièges**\n- **Concours ≠ emploi garanti** : Même lauréat, l’affectation dépend des **vœux géographiques** (ex : refuser la province = risque de rester sans poste).\n- **Contractuels : précarité cachée** : 60% des contractuels quittent après 3 ans (source : Céreq, connaissance générale).\n- **Disciplines \"faciles\"** : Même en espagnol ou anglais, certaines académies saturent (ex : Paris intra-muros).\n\n---\n**Question pour toi** :\nTon projet est-il ancré dans une discipline ou une région précise ? Cela peut radicalement changer la stratégie (ex : maths en zone rurale = opportunité vs philosophie à Paris = concurrence féroce).",
+  "answer_annotated": "**TL;DR**\n1. Le métier d’enseignant était en **tension modérée en 2019**, avec des disparités fortes selon les disciplines et les académies.\n2. Les besoins étaient (et restent) **critiques en mathématiques, physique-chimie, allemand, et dans les zones rurales/REP**.\n3. Pour une analyse actualisée (2024-2025), les données récentes du ministère et de la Dares sont indispensables.\n\n---\n\n### **Plan A — Données 2019 : tension par discipline et territoire**\n- **Disciplines en tension forte** :\n  Mathématiques, physique-chimie, allemand, lettres classiques (latin/grec), et technologies industrielles.\n  **Source** : Rapports Dares 2019-2020 (connaissance générale).\n  *Pour toi* : Si tu vises ces matières, les débouchés étaient déjà favorables, avec des postes non pourvus dans certaines académies (ex : Créteil, Versailles, Aix-Marseille).\n\n- **Zones géographiques critiques** :\n  Académies d’Île-de-France (surtout Seine-Saint-Denis), outre-mer, et zones rurales.\n  **Exemple** : En 2019, **1 200 postes non pourvus *(non vérifié dans les sources)*** en maths au niveau national (source : ministère de l’Éducation nationale, connaissance générale).\n  *Pour toi* : La mobilité géographique augmentait fortement les chances d’affectation.\n\n### **Plan B — Évolution depuis 2019 : aggravation des tensions**\n- **2020-2024** : La tension s’est **accrue**, notamment à cause :\n  - De la baisse des vocations (-40% de candidats aux concours depuis 2010 *(non vérifié dans les sources)*, connaissance générale).\n  - Des démissions en hausse (+20% entre 2019 et 2023 *(non vérifié dans les sources)*, source : Snes-FSU).\n  *Pour toi* : Aujourd’hui, même des disciplines comme l’anglais ou l’histoire-géo connaissent des difficultés de recrutement dans certaines académies.\n\n- **Solutions d’urgence** :\n  Recrutement de contractuels (sans concours) en masse — **30% des enseignants en 2023 *(non vérifié dans les sources)*** dans le secondaire (source : ministère, connaissance générale).\n  *Pour toi* : Une porte d’entrée possible, mais avec précarité (CDD, salaires inférieurs).\n\n### **Plan C — Alternatives si le concours est trop sélectif**\n1. **Devenir contractuel** :\n   - **Accès** : Bac+3 minimum (licence) + validation académique.\n   - **Risque** : Pas de titularisation automatique, turnover élevé.\n   *Pour toi* : Solution rapide pour entrer dans le métier, mais instable à long terme.\n\n2. **Se réorienter vers l’enseignement privé sous contrat** :\n   - **Avantage** : Concours moins sélectifs (ex : CAFEP), besoins similaires au public.\n   - **Inconvénient** : Salaires légèrement inférieurs (grilles différentes).\n   *Pour toi* : Une voie parallèle si le public te semble inaccessible.\n\n---\n### ⚠ **Attention aux pièges**\n- **Concours ≠ emploi garanti** : Même lauréat, l’affectation dépend des **vœux géographiques** (ex : refuser la province = risque de rester sans poste).\n- **Contractuels : précarité cachée** : 60% des contractuels quittent après 3 ans *(non vérifié dans les sources)* (source : Céreq, connaissance générale).\n- **Disciplines \"faciles\"** : Même en espagnol ou anglais, certaines académies saturent (ex : Paris intra-muros).\n\n---\n**Question pour toi** :\nTon projet est-il ancré dans une discipline ou une région précise ? Cela peut radicalement changer la stratégie (ex : maths en zone rurale = opportunité vs philosophie à Paris = concurrence féroce).",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 5,
+    "n_verified": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 5,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "1 200 postes non pourvus",
+      "stat_value": 1200,
+      "stat_unit": "postes",
+      "context_in_response": "En 2019, 1 200 postes non pourvus en maths au niveau national",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "-40% de candidats aux concours depuis 2010",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context_in_response": "La tension s'est aggravée à cause de la baisse des vocations (-40% de candidats aux concours depuis 2010)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+20% entre 2019 et 2023",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context_in_response": "Les démissions en hausse (+20% entre 2019 et 2023)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30% des enseignants en 2023",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "30% des enseignants en 2023 dans le secondaire",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60% des contractuels quittent après 3 ans",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context_in_response": "60% des contractuels quittent après 3 ans",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.0052,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 1ER DEGRE — Professorat des éco",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.999,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 1ER DEGRE — Professorat des éco",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9958,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 2E DEGRE — Anglais",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9957,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 2E DEGRE — Espagnol",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    }
+  ]
+}

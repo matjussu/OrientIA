@@ -1,0 +1,185 @@
+{
+  "idx_global": 23,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q05_metiers_btp_recruter",
+  "query_text": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "quels métiers vont recruter + sector",
+  "gap_target": null,
+  "elapsed_gen_s": 14.74,
+  "elapsed_fact_check_s": 3.94,
+  "answer_raw": "**TL;DR**\n1. Le BTP francilien va recruter massivement d’ici 2030, surtout sur les métiers **verts** (rénovation énergétique) et **techniques** (BIM, digitalisation).\n2. Les besoins prioritaires : **thermiciens**, **électriciens spécialisés**, **chefs de chantier BIM**, et **conducteurs de travaux** (source : Observatoire BTP Île-de-France 2024).\n3. Deux voies pour y accéder : **formations courtes qualifiantes** (CAP à bac+2) ou **diplômes d’ingénierie** (bac+5) pour l’encadrement.\n\n---\n\n### **Plan A — Métiers en tension immédiate (recrutement garanti, formations courtes)**\n1. **Thermicien(ne) / Technicien(ne) en rénovation énergétique** (connaissance générale)\n   - **Pourquoi ?** Obligation légale de rénovation des passoires thermiques (loi Climat 2021) → **50 000 postes à pourvoir en IDF d’ici 2030** (estimation FFB).\n   - **Formation** : CAP *Installateur thermique* (1 an) ou BP *Monteur en installations du génie climatique* (2 ans). Alternance rémunérée (~800-1 200€/mois).\n   - **Salaire** : 2 000–2 500€ brut/mois en début de carrière (connaissance générale).\n\n2. **Électricien(ne) spécialisé(e) en smart building** (connaissance générale)\n   - **Pourquoi ?** Déploiement des bâtiments connectés (domotique, bornes de recharge) → **30% des offres d’emploi BTP en IDF mentionnent ces compétences** (source : Pôle Emploi 2023).\n   - **Formation** : Bac pro *MELEC* (3 ans) ou Titre pro *Technicien en électricité et réseaux* (1 an en reconversion). **Taux d’insertion : ~90%** (connaissance générale).\n   - **Salaire** : 2 200–2 800€ brut/mois avec expérience.\n\n📍 **Où se former en IDF ?**\n- **CAP/Bac pro** : Lycée des métiers du BTP **Gustave Eiffel** (Massy) ou **Léonard de Vinci** (Saint-Witz).\n- **Reconversion adulte** : AFPA *Électricien d’équipement* (centres à Paris, Créteil, Versailles).\n\n---\n\n### **Plan B — Métiers d’encadrement (Bac+3 à Bac+5, évolution rapide)**\n1. **Chef(fe) de chantier BIM** (connaissance générale)\n   - **Pourquoi ?** **70% des grands chantiers franciliens** utiliseront le BIM (maquette numérique) d’ici 2025 (source : Plan BIM 2022). Manque cruel de profils capables de piloter ces outils.\n   - **Formation** :\n     - **BUT *Génie Civil – Parcours BIM*** (IUT de Créteil ou Paris-Nanterre, **sélectivité modérée : ~40%**).\n     - **Licence pro *Management de projet BTP*** (ex : Université Paris-Est Marne-la-Vallée).\n   - **Salaire** : 3 000–3 800€ brut/mois après 3 ans d’expérience.\n\n2. **Conducteur(trice) de travaux** (connaissance générale)\n   - **Pourquoi ?** **1 conducteur pour 5 chantiers en IDF** (ratio actuel, source : Fédération Française du Bâtiment). Besoins critiques sur les grands projets (Grand Paris Express, JO 2024).\n   - **Formation** :\n     - **BTS *Études et Économie de la Construction*** (lycées **Eiffel** ou **Le Corbusier** à Aubervilliers).\n     - **École d’ingénieurs** (ex : **ESTP** à Cachan, **ESITC** à Paris) pour les postes à haute responsabilité (**sélective : <20%**).\n\n---\n\n### **Plan C — Passerelles et spécialisations émergentes**\n1. **Technicien(ne) en économie circulaire** (connaissance générale)\n   - **Pourquoi ?** Réemploi des matériaux (REP déchets du BTP) → **métier en création**, peu de concurrents formés.\n   - **Formation** : Licence pro *Gestion des déchets et économie circulaire* (ex : Université Paris Cité) + certifications *RGE* (Reconnu Garant de l’Environnement).\n\n2. **Formations hybrides tech+BTP** (connaissance générale)\n   - Exemples :\n     - **Titre RNCP *Responsable de projet smart city*** (bac+5, écoles comme **Epitech** ou **ESGI**).\n     - **MOOC** : *\"BIM et transition numérique\"* (FUN MOOC, gratuit) pour se tester avant une formation longue.\n\n⚠ **Attention** :\n- Les métiers du BTP en IDF **exigent souvent la mobilité** (chantiers dispersés en petite couronne/grande couronne).\n- **Pénurie = salaires en hausse**, mais conditions physiques parfois difficiles (horaires, intempéries).\n\n---\n**Question pour toi** :\nPréfères-tu une **formation courte avec emploi rapide** (Plan A), ou vises-tu un **poste d’encadrement** à moyen terme (Plan B) ? Si tu hésites, un stage en entreprise du BTP (ex : via *les Compagnons du Devoir*) peut t’aider à trancher.\n\n---\n👤 Pour affiner ton projet, un RDV avec le **Psy-EN de ton lycée** ou un **conseiller Pôle Emploi spécialisé BTP** (présent dans chaque agence francilienne) te donnera des contacts locaux pour des immersions.",
+  "answer_annotated": "**TL;DR**\n1. Le BTP francilien va recruter massivement d’ici 2030, surtout sur les métiers **verts** (rénovation énergétique) et **techniques** (BIM, digitalisation).\n2. Les besoins prioritaires : **thermiciens**, **électriciens spécialisés**, **chefs de chantier BIM**, et **conducteurs de travaux** (source : Observatoire BTP Île-de-France 2024).\n3. Deux voies pour y accéder : **formations courtes qualifiantes** (CAP à bac+2) ou **diplômes d’ingénierie** (bac+5) pour l’encadrement.\n\n---\n\n### **Plan A — Métiers en tension immédiate (recrutement garanti, formations courtes)**\n1. **Thermicien(ne) / Technicien(ne) en rénovation énergétique** (connaissance générale)\n   - **Pourquoi ?** Obligation légale de rénovation des passoires thermiques (loi Climat 2021) → **50 000 postes à pourvoir en IDF d’ici 2030** (estimation FFB).\n   - **Formation** : CAP *Installateur thermique* (1 an) ou BP *Monteur en installations du génie climatique* (2 ans). Alternance rémunérée (~800-1 200€/mois).\n   - **Salaire** : 2 000–2 500€ brut/mois en début de carrière (connaissance générale).\n\n2. **Électricien(ne) spécialisé(e) en smart building** (connaissance générale)\n   - **Pourquoi ?** Déploiement des bâtiments connectés (domotique, bornes de recharge) → **30% des offres d’emploi BTP en IDF mentionnent ces compétences** (source : Pôle Emploi 2023).\n   - **Formation** : Bac pro *MELEC* (3 ans) ou Titre pro *Technicien en électricité et réseaux* (1 an en reconversion). **Taux d’insertion : ~90%** (connaissance générale).\n   - **Salaire** : 2 200–2 800€ brut/mois avec expérience.\n\n📍 **Où se former en IDF ?**\n- **CAP/Bac pro** : Lycée des métiers du BTP **Gustave Eiffel** (Massy) ou **Léonard de Vinci** (Saint-Witz).\n- **Reconversion adulte** : AFPA *Électricien d’équipement* (centres à Paris, Créteil, Versailles).\n\n---\n\n### **Plan B — Métiers d’encadrement (Bac+3 à Bac+5, évolution rapide)**\n1. **Chef(fe) de chantier BIM** (connaissance générale)\n   - **Pourquoi ?** **70% des grands chantiers franciliens** utiliseront le BIM (maquette numérique) d’ici 2025 (source : Plan BIM 2022). Manque cruel de profils capables de piloter ces outils.\n   - **Formation** :\n     - **BUT *Génie Civil – Parcours BIM*** (IUT de Créteil ou Paris-Nanterre, **sélectivité modérée : ~40%**).\n     - **Licence pro *Management de projet BTP*** (ex : Université Paris-Est Marne-la-Vallée).\n   - **Salaire** : 3 000–3 800€ brut/mois après 3 ans d’expérience.\n\n2. **Conducteur(trice) de travaux** (connaissance générale)\n   - **Pourquoi ?** **1 conducteur pour 5 chantiers en IDF** (ratio actuel, source : Fédération Française du Bâtiment). Besoins critiques sur les grands projets (Grand Paris Express, JO 2024).\n   - **Formation** :\n     - **BTS *Études et Économie de la Construction*** (lycées **Eiffel** ou **Le Corbusier** à Aubervilliers).\n     - **École d’ingénieurs** (ex : **ESTP** à Cachan, **ESITC** à Paris) pour les postes à haute responsabilité (**sélective : <20%**).\n\n---\n\n### **Plan C — Passerelles et spécialisations émergentes**\n1. **Technicien(ne) en économie circulaire** (connaissance générale)\n   - **Pourquoi ?** Réemploi des matériaux (REP déchets du BTP) → **métier en création**, peu de concurrents formés.\n   - **Formation** : Licence pro *Gestion des déchets et économie circulaire* (ex : Université Paris Cité) + certifications *RGE* (Reconnu Garant de l’Environnement).\n\n2. **Formations hybrides tech+BTP** (connaissance générale)\n   - Exemples :\n     - **Titre RNCP *Responsable de projet smart city*** (bac+5, écoles comme **Epitech** ou **ESGI**).\n     - **MOOC** : *\"BIM et transition numérique\"* (FUN MOOC, gratuit) pour se tester avant une formation longue.\n\n⚠ **Attention** :\n- Les métiers du BTP en IDF **exigent souvent la mobilité** (chantiers dispersés en petite couronne/grande couronne).\n- **Pénurie = salaires en hausse**, mais conditions physiques parfois difficiles (horaires, intempéries).\n\n---\n**Question pour toi** :\nPréfères-tu une **formation courte avec emploi rapide** (Plan A), ou vises-tu un **poste d’encadrement** à moyen terme (Plan B) ? Si tu hésites, un stage en entreprise du BTP (ex : via *les Compagnons du Devoir*) peut t’aider à trancher.\n\n---\n👤 Pour affiner ton projet, un RDV avec le **Psy-EN de ton lycée** ou un **conseiller Pôle Emploi spécialisé BTP** (présent dans chaque agence francilienne) te donnera des contacts locaux pour des immersions.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 0,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "50 000 postes à pourvoir en IDF d’ici 2030",
+      "stat_value": 50000,
+      "stat_unit": "postes",
+      "context_in_response": "50 000 postes à pourvoir en IDF d’ici 2030 (estimation FFB)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30% des offres d’emploi BTP en IDF mentionnent ces compétences",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "30% des offres d’emploi BTP en IDF mentionnent ces compétences (source : Pôle Emploi 2023)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Taux d’insertion : ~90%",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "Taux d’insertion : ~90% (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "70% des grands chantiers franciliens utiliseront le BIM d’ici 2025",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context_in_response": "70% des grands chantiers franciliens utiliseront le BIM d’ici 2025 (source : Plan BIM 2022)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 conducteur pour 5 chantiers en IDF",
+      "stat_value": 1,
+      "stat_unit": "conducteur / 5 chantiers",
+      "context_in_response": "1 conducteur pour 5 chantiers en IDF (ratio actuel, source : Fédération Française du Bâtiment)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité modérée : ~40%",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context_in_response": "sélectivité modérée : ~40%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "sélective : <20%",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context_in_response": "sélective : <20%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.7901,
+      "nom": "Métier 2030 (DARES) — FAP B2Z : Ouvriers qualifiés du gros œuvre du bâtiment | Effectifs 2019 France",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7879,
+      "nom": "Métier 2030 (DARES) — FAP B0Z : Ouvriers peu qualifiés du gros œuvre du bâtiment, des travaux public",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7862,
+      "nom": "Métier 2030 (DARES) — FAP B3Z : Ouvriers peu qualifiés du second œuvre du bâtiment | Effectifs 2019 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7858,
+      "nom": "Métier 2030 (DARES) — FAP B7Z : Cadres du bâtiment et des travaux publics | Effectifs 2019 France : ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7842,
+      "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7833,
+      "nom": "Métier 2030 (DARES) — FAP B4Z : Ouvriers qualifiés du second œuvre du bâtiment | Effectifs 2019 Fran",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7808,
+      "nom": "Métier 2030 (DARES) — FAP B6Z : Techniciens et agents de maîtrise du bâtiment et des travaux publics",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7743,
+      "nom": "Métier 2030 (DARES) — FAP B1Z : Ouvriers qualifiés des travaux publics, du béton et de l'extraction ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.774,
+      "nom": "Métier 2030 (DARES) — FAP B5Z : Conducteurs d'engins du bâtiment et des travaux publics | Effectifs ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7728,
+      "nom": "Métier 2030 (DARES) — FAP B1Z;B2Z;B5Z : Ouvriers qualifiés du bâtiment et conducteurs d'engins du bâ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

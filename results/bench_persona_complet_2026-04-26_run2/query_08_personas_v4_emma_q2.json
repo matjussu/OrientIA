@@ -1,0 +1,201 @@
+{
+  "idx_global": 8,
+  "suite": "personas_v4",
+  "persona_id": "emma",
+  "query_id": "emma_q2",
+  "query_text": "Je finis mon M1 info, je dois choisir entre un M2 classique recherche ou un master en alternance. Qu'est-ce qui me donnera le meilleur CV pour entrer en CDI direct ?",
+  "query_type": "orientation_ambigue",
+  "scope": "master_pro",
+  "pattern_target": null,
+  "gap_target": null,
+  "elapsed_gen_s": 11.99,
+  "elapsed_fact_check_s": 4.19,
+  "answer_raw": "**TL;DR**\n1. **Alternance = meilleur CV pour CDI direct** en informatique : expérience pro concrète (12-24 mois) + réseau entreprise l’emportent sur un M2 recherche académique.\n2. **M2 recherche = porte ouverte vers thèse CIFRE ou labo** (si tu vises R&D/ingénierie avancée), mais insertion directe plus lente (~6 mois de plus en moyenne).\n3. **Critère décisif** : ton projet à 5 ans — appli/métier (alternance) ou recherche/innovation (M2 classique).\n\n---\n\n### **Comparaison clé : Alternance vs M2 Recherche en Info**\n| Critère               | **M2 en alternance**                          | **M2 Recherche classique**                  |\n|-----------------------|-----------------------------------------------|---------------------------------------------|\n| **Insertion CDI**     | **90%+ en CDI sous 3 mois** (connaissance générale) : l’entreprise d’accueil propose souvent un poste. | ~70% en CDI à 6 mois (source : Céreq, masters info) — dépend du stage de fin d’études. |\n| **Rémunération**      | Salaire étudiant (60-80% SMIC) + **salaire embauche souvent supérieur** (expérience comptabilisée). | Stage souvent non rémunéré ou ~600€/mois. Salaire embauche standard (junior). |\n| **Réseau pro**        | **Accès direct aux recruteurs** de ton entreprise + secteur. | Réseau académique (labos, conférences) — utile pour thèse/startups deep tech. |\n| **Compétences**       | **Spécialisation métier** (dev ops, cybersécurité appliquée, data engineering) + soft skills (gestion de projet). | **Approche théorique** (algorithmes, IA fondamentale, vérification formelle) — valorisé en R&D. |\n| **Poursuite thèse**   | Possible via **CIFRE** (si l’entreprise a un partenariat labo), mais moins naturel. | **Voie royale pour la thèse** (accès aux écoles doctorales, financements publics). |\n\n### **Cas typiques (connaissance générale)**\n- **Alternance** :\n  - **Pour toi si** : tu vises un poste en **SSII, éditeur de logiciels, ou service IT d’une grande entreprise** (banque, énergie, santé). Exemples de métiers ciblés : *ingénieur dev full-stack, consultant cybersécurité, data scientist en production*.\n  - **Secteurs porteurs** : finance (fintech), santé (DMP), industrie (IoT). Les entreprises recrutent souvent leur alternant en CDI (taux de conversion ~70% — connaissance générale).\n  - **Piège** : choisir une entreprise sans perspective d’embauche. **Vérifie leur historique de CDI post-alternance** avant de signer.\n\n- **M2 Recherche** :\n  - **Pour toi si** : tu envisages une **thèse (CIFRE ou académique)**, ou un poste en **R&D** (labos publics, startups IA, grands groupes avec pôles innovation comme Thales, Airbus).\n  - **Atout caché** : accès aux **concours publics** (ingénieur territorial, enseignant-chercheur) souvent réservés aux diplômés de masters recherche.\n  - **Risque** : sur-spécialisation si tu changes de voie. Ex : un M2 en *vérification formelle* sera moins adapté à un poste de *chef de projet IT* qu’un profil alternance.\n\n### **Synthèse stratégique**\n- **Priorité CDI immédiat** → **Alternance** (sauf si tu vises un secteur où la recherche est reine, comme l’IA fondamentale ou la cryptographie).\n- **Priorité thèse/R&D** → **M2 Recherche** + stage en labo ou entreprise innovante (deep tech, biotech).\n- **Compromis** : certains M2 proposent **un parcours mixte** (ex : M2 avec 6 mois de cours + 6 mois de stage long rémunéré). À explorer si tu hésites.\n\n**Question pour toi** :\nAs-tu une **entreprise ou un secteur cible** en tête ? Si oui, leur politique de recrutement (alternance vs jeunes diplômés) peut trancher. Sinon, quel est ton rapport au risque : stabilité immédiate (alternance) ou pari sur un profil expert à moyen terme (recherche) ?",
+  "answer_annotated": "**TL;DR**\n1. **Alternance = meilleur CV pour CDI direct** en informatique : expérience pro concrète (12-24 mois) + réseau entreprise l’emportent sur un M2 recherche académique.\n2. **M2 recherche = porte ouverte vers thèse CIFRE ou labo** (si tu vises R&D/ingénierie avancée), mais insertion directe plus lente (~6 mois de plus en moyenne).\n3. **Critère décisif** : ton projet à 5 ans — appli/métier (alternance) ou recherche/innovation (M2 classique).\n\n---\n\n### **Comparaison clé : Alternance vs M2 Recherche en Info**\n| Critère               | **M2 en alternance**                          | **M2 Recherche classique**                  |\n|-----------------------|-----------------------------------------------|---------------------------------------------|\n| **Insertion CDI**     | **90%+ en CDI sous 3 mois** (connaissance générale) : l’entreprise d’accueil propose souvent un poste. | ~70% en CDI à 6 mois (source : Céreq, masters info) — dépend du stage de fin d’études. |\n| **Rémunération**      | Salaire étudiant (60-80% SMIC) + **salaire embauche souvent supérieur** (expérience comptabilisée). | Stage souvent non rémunéré ou ~600€/mois. Salaire embauche standard (junior). |\n| **Réseau pro**        | **Accès direct aux recruteurs** de ton entreprise + secteur. | Réseau académique (labos, conférences) — utile pour thèse/startups deep tech. |\n| **Compétences**       | **Spécialisation métier** (dev ops, cybersécurité appliquée, data engineering) + soft skills (gestion de projet). | **Approche théorique** (algorithmes, IA fondamentale, vérification formelle) — valorisé en R&D. |\n| **Poursuite thèse**   | Possible via **CIFRE** (si l’entreprise a un partenariat labo), mais moins naturel. | **Voie royale pour la thèse** (accès aux écoles doctorales, financements publics). |\n\n### **Cas typiques (connaissance générale)**\n- **Alternance** :\n  - **Pour toi si** : tu vises un poste en **SSII, éditeur de logiciels, ou service IT d’une grande entreprise** (banque, énergie, santé). Exemples de métiers ciblés : *ingénieur dev full-stack, consultant cybersécurité, data scientist en production*.\n  - **Secteurs porteurs** : finance (fintech), santé (DMP), industrie (IoT). Les entreprises recrutent souvent leur alternant en CDI (taux de conversion ~70% — connaissance générale).\n  - **Piège** : choisir une entreprise sans perspective d’embauche. **Vérifie leur historique de CDI post-alternance** avant de signer.\n\n- **M2 Recherche** :\n  - **Pour toi si** : tu envisages une **thèse (CIFRE ou académique)**, ou un poste en **R&D** (labos publics, startups IA, grands groupes avec pôles innovation comme Thales, Airbus).\n  - **Atout caché** : accès aux **concours publics** (ingénieur territorial, enseignant-chercheur) souvent réservés aux diplômés de masters recherche.\n  - **Risque** : sur-spécialisation si tu changes de voie. Ex : un M2 en *vérification formelle* sera moins adapté à un poste de *chef de projet IT* qu’un profil alternance.\n\n### **Synthèse stratégique**\n- **Priorité CDI immédiat** → **Alternance** (sauf si tu vises un secteur où la recherche est reine, comme l’IA fondamentale ou la cryptographie).\n- **Priorité thèse/R&D** → **M2 Recherche** + stage en labo ou entreprise innovante (deep tech, biotech).\n- **Compromis** : certains M2 proposent **un parcours mixte** (ex : M2 avec 6 mois de cours + 6 mois de stage long rémunéré). À explorer si tu hésites.\n\n**Question pour toi** :\nAs-tu une **entreprise ou un secteur cible** en tête ? Si oui, leur politique de recrutement (alternance vs jeunes diplômés) peut trancher. Sinon, quel est ton rapport au risque : stabilité immédiate (alternance) ou pari sur un profil expert à moyen terme (recherche) ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 4,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "90%+ en CDI sous 3 mois",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "Insertion CDI pour M2 en alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~70% en CDI à 6 mois",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context_in_response": "Insertion CDI pour M2 Recherche classique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60-80% SMIC",
+      "stat_value": null,
+      "stat_unit": "salaire étudiant",
+      "context_in_response": "Rémunération en alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~600€/mois",
+      "stat_value": 600,
+      "stat_unit": "€",
+      "context_in_response": "Rémunération stage M2 Recherche",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux de conversion ~70%",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context_in_response": "Taux de conversion alternant en CDI",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "Salaire médian embauche (source Céreq, masters info)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "salaire_median_embauche: 2080"
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "taux d'emploi 3 ans",
+      "context_in_response": "Taux d'emploi 3 ans pour masters (source Céreq)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_emploi_3ans: 0.85"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "taux d'emploi 6 ans",
+      "context_in_response": "Taux d'emploi 6 ans pour masters (source Céreq)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_emploi_6ans: 0.91"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "taux de CDI",
+      "context_in_response": "Taux de CDI pour masters (source Céreq)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_cdi: 0.83"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9526,
+      "nom": "Direction technique",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9485,
+      "nom": "Conception lumière",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9468,
+      "nom": "Écriture",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9432,
+      "nom": "Créateur industriel",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.943,
+      "nom": "Mode et matière",
+      "etablissement": "UNIVERSITE PSL",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9424,
+      "nom": "Mode (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9415,
+      "nom": "Conception son",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9411,
+      "nom": "Scénographie",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.94,
+      "nom": "Jouer et mettre en scène",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9388,
+      "nom": "Physique (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    }
+  ]
+}

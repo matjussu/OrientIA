@@ -1,0 +1,217 @@
+{
+  "idx_global": 19,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q01_postes_pourvoir_global",
+  "query_text": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "postes a pourvoir + metiers 2030",
+  "gap_target": null,
+  "elapsed_gen_s": 17.82,
+  "elapsed_fact_check_s": 4.86,
+  "answer_raw": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 secteurs clés** : transition écologique, santé/autonomie, numérique, et industries critiques.\n2. **Top 3 des besoins massifs** : rénovation énergétique (500 000 emplois), soins aux seniors (300 000), cybersécurité/data (200 000).\n3. **Stratégie gagnante** : vise des compétences hybrides (ex : BTP + digital, santé + tech) pour te différencier.\n\n---\n\n### **Plan A — Secteurs en tension structurelle (recrutements massifs garantis)**\n1. **Transition écologique et BTP**\n   - **Métiers** : Technicien en rénovation énergétique, ingénieur en énergies renouvelables, chef de chantier bas-carbone.\n   - **Pourquoi** : 700 000 logements à rénover/an d’ici 2030 (loi Climat), pénurie de main-d’œuvre qualifiée. **Salaire médian embauche** : ~2 200€ brut (source : France Stratégie, 2023 — connaissance générale).\n   - **Formations courtes** : CAP/Bac Pro Métiers de la transition énergétique (lycées pros), BTS FED (Fluides-Énergies-Domotique).\n\n2. **Santé et autonomie**\n   - **Métiers** : Aide-soignant, infirmier spécialisé en gériatrie, ergothérapeute, coordinateur de parcours santé.\n   - **Pourquoi** : 1 Français sur 4 aura +60 ans en 2030 (INSEE). **50 000 postes non pourvus/an** en EHPAD aujourd’hui (Dares — connaissance générale).\n   - **Accès rapide** : DEAS (Diplôme d’État Aide-Soignant) en 10 mois, DE Infirmier en 3 ans (IFSI).\n\n3. **Cybersécurité et data** *(corpus couvert, mais élargi aux besoins 2030)*\n   - **Métiers** : Analyste SOC (Sécurité Opérationnelle), consultant RGPD, data scientist pour la santé.\n   - **Pourquoi** : 1 cyberattaque toutes les 10 secondes en 2025 (ANSSI), **200 000 emplois non couverts** en Europe (source : (ISC)² — connaissance générale).\n   - **Formations** : BUT Informatique parcours Cybersécurité (IUT), Licence Pro Métiers de l’informatique (alternance).\n\n---\n### **Plan B — Métiers émergents (croissance forte mais risques de bulle)**\n- **Industrie 4.0** : Technicien de maintenance robotisée, opérateur en fabrication additive (impression 3D métallique).\n  *Pour toi* : Secteur en relocalisation (usines batteries, éoliennes), mais exige mobilité géographique (ex : Nord, Grand Est).\n  *Formation* : BTS Maintenance des Systèmes, Licence Pro Robotique.\n\n- **Agriculture tech** : Agronome data-driven, pilote de drones agricoles.\n  *Pour toi* : Double compétence agro + digital = salaire +20% vs agro classique (estimation — connaissance générale).\n  *Formation* : BTSA Agronomie, écoles d’ingé agro (ex : ISA Lille).\n\n- **Silver économie** : Designer d’objets connectés pour seniors, gestionnaire de résidences autonomie.\n  *Piège* : Métiers souvent en CDD ou freelance (écosystème jeune).\n\n---\n### **Plan C — Passerelles pour anticiper 2030 dès aujourd’hui**\n1. **Alternance dès bac+2** :\n   - Ex : BTS SIO (alternance) → technicien cybersécurité en 2 ans, avec **90% d’embauche** dans les 6 mois (source : Céreq, enquêtes insertion — connaissance générale).\n   - *Où* : CFA AFTEC (Bretagne), CCI Campus (Lyon).\n\n2. **Reconversion courte pour adultes** :\n   - **POEI** (Préparation Opérationnelle à l’Emploi Individuelle) : 3-6 mois financés par Pôle Emploi pour devenir technicien fibre optique ou infirmier.\n   - *Exemple* : POEI \"Technicien Réseaux Très Haut Débit\" (100% pris en charge, salaire ~2 000€/mois après formation).\n\n3. **Compétences transverses à acquérir** *(quelle que soit ta voie)* :\n   - **Anglais technique** (pour travailler sur des projets européens).\n   - **Gestion de projet** (certification PMP ou Scrum).\n   - **Sensibilisation RGPD** (obligatoire dans 80% des offres d’emploi d’ici 2030 — estimation — connaissance générale).\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées \"spécialisées 2030\"** : Méfie-toi des formations coûteuses (>8 000€/an) promettant des \"métiers d’avenir\" sans label officiel (ex : \"Master Blockchain\" non RNCP).\n- **Métiers ultra-spécialisés** : Ex : \"Consultant en crypto-monnaies\" — risque de disparition rapide (régulation européenne).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour un secteur en particulier (tech, santé, manuel) ? Ou préfères-tu une formation **polyvalente** qui te laisse des portes ouvertes (ex : BUT Informatique, DE Infirmier) ? *(C’est ce choix qui déterminera si tu vises un Plan A \"spécialisé\" ou un Plan C \"passe-partout\".)*",
+  "answer_annotated": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 secteurs clés** : transition écologique, santé/autonomie, numérique, et industries critiques.\n2. **Top 3 des besoins massifs** : rénovation énergétique (500 000 emplois *(non vérifié dans les sources)*), soins aux seniors (300 000 *(non vérifié dans les sources)*), cybersécurité/data (200 000 *(non vérifié dans les sources)*).\n3. **Stratégie gagnante** : vise des compétences hybrides (ex : BTP + digital, santé + tech) pour te différencier.\n\n---\n\n### **Plan A — Secteurs en tension structurelle (recrutements massifs garantis)**\n1. **Transition écologique et BTP**\n   - **Métiers** : Technicien en rénovation énergétique, ingénieur en énergies renouvelables, chef de chantier bas-carbone.\n   - **Pourquoi** : 700 000 logements à rénover/an d’ici 2030 *(non vérifié dans les sources)* (loi Climat), pénurie de main-d’œuvre qualifiée. **Salaire médian embauche** : ~2 200€ brut (source : France Stratégie, 2023 — connaissance générale).\n   - **Formations courtes** : CAP/Bac Pro Métiers de la transition énergétique (lycées pros), BTS FED (Fluides-Énergies-Domotique).\n\n2. **Santé et autonomie**\n   - **Métiers** : Aide-soignant, infirmier spécialisé en gériatrie, ergothérapeute, coordinateur de parcours santé.\n   - **Pourquoi** : 1 Français sur 4 aura +60 ans en 2030 *(non vérifié dans les sources)* (INSEE). **50 000 postes non pourvus/an** en EHPAD aujourd’hui (Dares — connaissance générale).\n   - **Accès rapide** : DEAS (Diplôme d’État Aide-Soignant) en 10 mois, DE Infirmier en 3 ans (IFSI).\n\n3. **Cybersécurité et data** *(corpus couvert, mais élargi aux besoins 2030)*\n   - **Métiers** : Analyste SOC (Sécurité Opérationnelle), consultant RGPD, data scientist pour la santé.\n   - **Pourquoi** : 1 cyberattaque toutes les 10 secondes en 2025 *(non vérifié dans les sources)* (ANSSI), **200 000 emplois non couverts** en Europe (source : (ISC)² — connaissance générale).\n   - **Formations** : BUT Informatique parcours Cybersécurité (IUT), Licence Pro Métiers de l’informatique (alternance).\n\n---\n### **Plan B — Métiers émergents (croissance forte mais risques de bulle)**\n- **Industrie 4.0** : Technicien de maintenance robotisée, opérateur en fabrication additive (impression 3D métallique).\n  *Pour toi* : Secteur en relocalisation (usines batteries, éoliennes), mais exige mobilité géographique (ex : Nord, Grand Est).\n  *Formation* : BTS Maintenance des Systèmes, Licence Pro Robotique.\n\n- **Agriculture tech** : Agronome data-driven, pilote de drones agricoles.\n  *Pour toi* : Double compétence agro + digital = salaire +20% vs agro classique (estimation — connaissance générale).\n  *Formation* : BTSA Agronomie, écoles d’ingé agro (ex : ISA Lille).\n\n- **Silver économie** : Designer d’objets connectés pour seniors, gestionnaire de résidences autonomie.\n  *Piège* : Métiers souvent en CDD ou freelance (écosystème jeune).\n\n---\n### **Plan C — Passerelles pour anticiper 2030 dès aujourd’hui**\n1. **Alternance dès bac+2** :\n   - Ex : BTS SIO (alternance) → technicien cybersécurité en 2 ans, avec **90% d’embauche** dans les 6 mois (source : Céreq, enquêtes insertion — connaissance générale).\n   - *Où* : CFA AFTEC (Bretagne), CCI Campus (Lyon).\n\n2. **Reconversion courte pour adultes** :\n   - **POEI** (Préparation Opérationnelle à l’Emploi Individuelle) : 3-6 mois financés par Pôle Emploi pour devenir technicien fibre optique ou infirmier.\n   - *Exemple* : POEI \"Technicien Réseaux Très Haut Débit\" (100% pris en charge, salaire ~2 000€/mois après formation).\n\n3. **Compétences transverses à acquérir** *(quelle que soit ta voie)* :\n   - **Anglais technique** (pour travailler sur des projets européens).\n   - **Gestion de projet** (certification PMP ou Scrum).\n   - **Sensibilisation RGPD** (obligatoire dans 80% des offres d’emploi d’ici 2030 — estimation — connaissance générale).\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées \"spécialisées 2030\"** : Méfie-toi des formations coûteuses (>8 000€/an) promettant des \"métiers d’avenir\" sans label officiel (ex : \"Master Blockchain\" non RNCP).\n- **Métiers ultra-spécialisés** : Ex : \"Consultant en crypto-monnaies\" — risque de disparition rapide (régulation européenne).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour un secteur en particulier (tech, santé, manuel) ? Ou préfères-tu une formation **polyvalente** qui te laisse des portes ouvertes (ex : BUT Informatique, DE Infirmier) ? *(C’est ce choix qui déterminera si tu vises un Plan A \"spécialisé\" ou un Plan C \"passe-partout\".)*",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 11,
+    "n_verified": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 6,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "500 000 emplois",
+      "stat_value": 500000,
+      "stat_unit": "emplois",
+      "context_in_response": "Top 3 des besoins massifs : rénovation énergétique (500 000 emplois)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "300 000",
+      "stat_value": 300000,
+      "stat_unit": "emplois",
+      "context_in_response": "Top 3 des besoins massifs : soins aux seniors (300 000)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "200 000",
+      "stat_value": 200000,
+      "stat_unit": "emplois",
+      "context_in_response": "Top 3 des besoins massifs : cybersécurité/data (200 000)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "700 000 logements à rénover/an d’ici 2030",
+      "stat_value": 700000,
+      "stat_unit": "logements",
+      "context_in_response": "700 000 logements à rénover/an d’ici 2030 (loi Climat)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~2 200€ brut",
+      "stat_value": 2200,
+      "stat_unit": "€ brut",
+      "context_in_response": "Salaire médian embauche : ~2 200€ brut (source : France Stratégie, 2023 — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 Français sur 4 aura +60 ans en 2030",
+      "stat_value": 25,
+      "stat_unit": "%",
+      "context_in_response": "1 Français sur 4 aura +60 ans en 2030 (INSEE)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50 000 postes non pourvus/an",
+      "stat_value": 50000,
+      "stat_unit": "postes",
+      "context_in_response": "50 000 postes non pourvus/an en EHPAD aujourd’hui (Dares — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 cyberattaque toutes les 10 secondes en 2025",
+      "stat_value": 1,
+      "stat_unit": "cyberattaque/10 secondes",
+      "context_in_response": "1 cyberattaque toutes les 10 secondes en 2025 (ANSSI)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "200 000 emplois non couverts",
+      "stat_value": 200000,
+      "stat_unit": "emplois",
+      "context_in_response": "200 000 emplois non couverts en Europe (source : (ISC)² — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "90% d’embauche",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "90% d’embauche dans les 6 mois (source : Céreq, enquêtes insertion — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "80% des offres d’emploi",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "80% des offres d’emploi d’ici 2030 — estimation — connaissance générale",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.7798,
+      "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7793,
+      "nom": "Marché du travail prospective 2030 — région Pays de la Loire | Effectifs 2019 totaux : 1 561 926 per",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7791,
+      "nom": "Marché du travail prospective 2030 — région Normandie | Effectifs 2019 totaux : 1 271 569 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7787,
+      "nom": "Marché du travail prospective 2030 — région Bourgogne-Franche-Comté | Effectifs 2019 totaux : 1 070 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7776,
+      "nom": "Marché du travail prospective 2030 — région Corse | Effectifs 2019 totaux : 132 156 personnes (toute",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.777,
+      "nom": "Marché du travail prospective 2030 — région Auvergne-Rhône-Alpes | Effectifs 2019 totaux : 3 259 115",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7759,
+      "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7752,
+      "nom": "Marché du travail prospective 2030 — région Bretagne | Effectifs 2019 totaux : 1 328 112 personnes (",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7728,
+      "nom": "Marché du travail prospective 2030 — région Occitanie | Effectifs 2019 totaux : 2 265 290 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7724,
+      "nom": "Marché du travail prospective 2030 — région Provence-Alpes-Côte d'Azur | Effectifs 2019 totaux : 1 9",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

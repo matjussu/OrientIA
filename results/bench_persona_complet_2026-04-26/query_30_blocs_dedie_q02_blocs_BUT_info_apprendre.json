@@ -1,0 +1,201 @@
+{
+  "idx_global": 30,
+  "suite": "blocs_dedie",
+  "persona_id": null,
+  "query_id": "q02_blocs_BUT_info_apprendre",
+  "query_text": "Que vais-je apprendre en BUT informatique ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "que vais-je apprendre",
+  "gap_target": null,
+  "elapsed_gen_s": 9.16,
+  "elapsed_fact_check_s": 4.33,
+  "answer_raw": "**TL;DR**\n1. Un **BUT Informatique** forme aux bases techniques (programmation, réseaux, bases de données) **et** à des compétences professionnelles (gestion de projet, travail en équipe).\n2. Le programme est **équilibré entre théorie et pratique** (60% cours, 40% projets/stages), avec une spécialisation progressive en 2e et 3e année.\n3. **3 parcours principaux** : *développement logiciel*, *réseaux/cybersécurité*, ou *data/IA* — à choisir selon ton projet.\n\n---\n\n### **Plan A — Cœur du programme : les compétences techniques**\nEn BUT Informatique, tu acquerras **obligatoirement** :\n- **Langages de programmation** (Python, Java, C#, JavaScript) et **algorithmes** (optimisation, complexité).\n- **Bases de données** (SQL, NoSQL) et **architecture logicielle** (design patterns, MVC).\n- **Réseaux et systèmes** (administration Linux/Windows, virtualisation, sécurité basique).\n*(connaissance générale : tronc commun national défini par le programme pédagogique national BUT)*\n\n📍 **Exemple concret** : Le **BUT GEII de Nantes** (public, accessible à 74%) inclut des modules *embarqué/industriel* en plus du socle informatique.\n[Fiche Parcoursup officielle](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5479&typeBac=0&originePc=0)\n\n---\n\n### **Plan B — Spécialisations en 2e/3e année**\nÀ partir de la 2e année, tu choisis **un parcours** parmi (selon les IUT) :\n1. **Développement d’applications** (web, mobile, jeux vidéo).\n2. **Réseaux et cybersécurité** (administration, pentest, cloud — *certaines formations sont labellisées SecNumEdu*).\n3. **Data et intelligence artificielle** (machine learning, visualisation, big data).\n*(connaissance générale : 80% des BUT Informatique proposent au moins 2 de ces parcours)*\n\n📍 **Alternative data/IA** : Le **BUT Info-Numérique de Strasbourg** ou **Lyon 1** (parcours *Intégration d’applications*) ouvre aux métiers de **data analyst** (débouchés : CDI à 80% en 6 mois, salaire médian ~2 100€ brut/mois — *estimation marché, connaissance générale*).\n\n---\n### **Plan C — Ce qui différencie le BUT des autres formations**\n- **Pédagogie par projets** : 600h de projets encadrés + **2 stages** (12 à 16 semaines au total).\n- **Diplôme professionnel** : reconnaissance immédiate par les entreprises (taux d’insertion ~90% à 6 mois — *connaissance générale*).\n- **Passerelles** : possibilité de poursuivre en **école d’ingénieur** (via admissions parallèles) ou **master** (ex : master cybersécurité, data science).\n\n---\n### ⚠ **Attention aux pièges**\n- **Sélectivité variable** : Certains BUT (ex : Nantes) sont **devenus plus sélectifs** (-12 points depuis 2023). Vise aussi des IUT moins demandés (ex : Belfort, Haute-Alsace) si ton dossier est moyen.\n- **Parcours limités** : Tous les IUT ne proposent pas les 3 spécialisations. Vérifie **les maquettes de cours** sur leur site avant de postuler.\n- **Alternance difficile en 1re année** : Peu de contrats avant la 2e année (sauf si tu as déjà de l’expérience).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre *développement pur*, *réseaux/sécurité*, ou *data/IA* ? Cela peut orienter ton choix d’IUT (certains excellent dans un domaine précis). 👤 *Pour affiner, un RDV avec le Psy-EN de ton lycée ou le SCUIO de ta fac reste idéal.*",
+  "answer_annotated": "**TL;DR**\n1. Un **BUT Informatique** forme aux bases techniques (programmation, réseaux, bases de données) **et** à des compétences professionnelles (gestion de projet, travail en équipe).\n2. Le programme est **équilibré entre théorie et pratique** (60% cours, 40% projets/stages *(non vérifié dans les sources)*), avec une spécialisation progressive en 2e et 3e année.\n3. **3 parcours principaux** : *développement logiciel*, *réseaux/cybersécurité*, ou *data/IA* — à choisir selon ton projet.\n\n---\n\n### **Plan A — Cœur du programme : les compétences techniques**\nEn BUT Informatique, tu acquerras **obligatoirement** :\n- **Langages de programmation** (Python, Java, C#, JavaScript) et **algorithmes** (optimisation, complexité).\n- **Bases de données** (SQL, NoSQL) et **architecture logicielle** (design patterns, MVC).\n- **Réseaux et systèmes** (administration Linux/Windows, virtualisation, sécurité basique).\n*(connaissance générale : tronc commun national défini par le programme pédagogique national BUT)*\n\n📍 **Exemple concret** : Le **BUT GEII de Nantes** (public, accessible à 74%) inclut des modules *embarqué/industriel* en plus du socle informatique.\n[Fiche Parcoursup officielle](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5479&typeBac=0&originePc=0)\n\n---\n\n### **Plan B — Spécialisations en 2e/3e année**\nÀ partir de la 2e année, tu choisis **un parcours** parmi (selon les IUT) :\n1. **Développement d’applications** (web, mobile, jeux vidéo).\n2. **Réseaux et cybersécurité** (administration, pentest, cloud — *certaines formations sont labellisées SecNumEdu*).\n3. **Data et intelligence artificielle** (machine learning, visualisation, big data).\n*(connaissance générale : 80% des BUT Informatique proposent au moins 2 de ces parcours)*\n\n📍 **Alternative data/IA** : Le **BUT Info-Numérique de Strasbourg** ou **Lyon 1** (parcours *Intégration d’applications*) ouvre aux métiers de **data analyst** (débouchés : CDI à 80% en 6 mois, salaire médian ~2 100€ brut/mois — *estimation marché, connaissance générale*).\n\n---\n### **Plan C — Ce qui différencie le BUT des autres formations**\n- **Pédagogie par projets** : 600h *(non vérifié dans les sources)* de projets encadrés + **2 stages** (12 à 16 semaines *(non vérifié dans les sources)* au total).\n- **Diplôme professionnel** : reconnaissance immédiate par les entreprises (taux d’insertion ~90% à 6 mois — *connaissance générale*).\n- **Passerelles** : possibilité de poursuivre en **école d’ingénieur** (via admissions parallèles) ou **master** (ex : master cybersécurité, data science).\n\n---\n### ⚠ **Attention aux pièges**\n- **Sélectivité variable** : Certains BUT (ex : Nantes) sont **devenus plus sélectifs** (-12 points *(non vérifié dans les sources)* depuis 2023). Vise aussi des IUT moins demandés (ex : Belfort, Haute-Alsace) si ton dossier est moyen.\n- **Parcours limités** : Tous les IUT ne proposent pas les 3 spécialisations. Vérifie **les maquettes de cours** sur leur site avant de postuler.\n- **Alternance difficile en 1re année** : Peu de contrats avant la 2e année (sauf si tu as déjà de l’expérience).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre *développement pur*, *réseaux/sécurité*, ou *data/IA* ? Cela peut orienter ton choix d’IUT (certains excellent dans un domaine précis). 👤 *Pour affiner, un RDV avec le Psy-EN de ton lycée ou le SCUIO de ta fac reste idéal.*",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 1,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 4,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "74%",
+      "stat_value": 74,
+      "stat_unit": "%",
+      "context_in_response": "Le BUT GEII de Nantes (public, accessible à 74%) inclut des modules embarqué/industriel en plus du socle informatique.",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 74.0%"
+    },
+    {
+      "stat_text": "80%",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "(connaissance générale : 80% des BUT Informatique proposent au moins 2 de ces parcours)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "80% en 6 mois",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "débouchés : CDI à 80% en 6 mois, salaire médian ~2 100€ brut/mois — estimation marché, connaissance générale",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~2 100€ brut/mois",
+      "stat_value": 2100,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "salaire médian ~2 100€ brut/mois — estimation marché, connaissance générale",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~90%",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "taux d’insertion ~90% à 6 mois — connaissance générale",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "12 à 16 semaines",
+      "stat_value": 12,
+      "stat_unit": "semaines",
+      "context_in_response": "2 stages (12 à 16 semaines au total)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "600h",
+      "stat_value": 600,
+      "stat_unit": "heures",
+      "context_in_response": "Pédagogie par projets : 600h de projets encadrés + 2 stages",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60% cours, 40% projets/stages",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context_in_response": "Le programme est équilibré entre théorie et pratique (60% cours, 40% projets/stages)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "-12 points",
+      "stat_value": 12,
+      "stat_unit": "points",
+      "context_in_response": "Certains BUT (ex : Nantes) sont devenus plus sélectifs (-12 points depuis 2023)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.2101,
+      "nom": "Compétences certifiées (RNCP41171) — Ingénieur diplômé de l’institut des sciences et techniques des ",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.208,
+      "nom": "Compétences certifiées (RNCP41378) — Ingénieur diplômé de l'Université Paris XIII spécialité Informa",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2076,
+      "nom": "Compétences certifiées (RNCP37579) — Ingénieur diplômé de l'Ecole polytechnique universitaire d'Aix-",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2068,
+      "nom": "Compétences certifiées (RNCP39490) — Méthodes informatiques appliquées à la gestion des entreprises ",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.0706,
+      "nom": "BUT - Génie électrique et informatique industrielle",
+      "etablissement": "I.U.T. Nantes",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8871,
+      "nom": "Ingénieur diplômé de l'Université de Technologie de Belfort - Montbéliard, spécialité Informatique",
+      "etablissement": "UNIVERSITE DE TECHNOLOGIE DE BELFORT-MONTBELIARD (UTBM)",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8193,
+      "nom": "INFORMATION-COMMUNICATION : INFORMATION NUMERIQUE DANS LES ORGANISATIONS (BUT)",
+      "etablissement": "UNIVERSITE DE HAUTE ALSACE",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8191,
+      "nom": "Informatique : Intégration d'applications et management du système d'information",
+      "etablissement": "UNIVERSITE CLAUDE BERNARD LYON 1",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8189,
+      "nom": "INFORMATION-COMMUNICATION : INFORMATION NUMERIQUE DANS LES ORGANISATIONS (BUT)",
+      "etablissement": "UNIVERSITE DE STRASBOURG",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8164,
+      "nom": "INFORMATION-COMMUNICATION : INFORMATION NUMERIQUE DANS LES ORGANISATIONS (BUT)",
+      "etablissement": "UNIVERSITE DE LORRAINE",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "idx_global": 19,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q01_postes_pourvoir_global",
+  "query_text": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "postes a pourvoir + metiers 2030",
+  "gap_target": null,
+  "elapsed_gen_s": 12.46,
+  "elapsed_fact_check_s": 4.5,
+  "answer_raw": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 grands secteurs** : transition écologique, santé/autonomie, numérique, et industries critiques.\n2. **Top 3 des besoins massifs** : rénovation énergétique (500 000 emplois), soins aux personnes âgées (300 000), et cybersécurité/data (200 000).\n3. **Stratégie gagnante** : vise un métier *à l’intersection* de deux de ces secteurs (ex : data + santé, ou BTP + écologie) pour maximiser employabilité et salaire.\n\n---\n\n### **Plan A — Secteurs à recrutement massif (200 000+ postes)**\n1. **Transition écologique et BTP**\n   - **Métiers clés** :\n     - *Technicien/ne en rénovation énergétique* (isolation, pompes à chaleur) — **500 000 postes** d’ici 2030 (source : Stratégie Nationale Bas-Carbone).\n     - *Ingénieur/e en énergies renouvelables* (solaire, éolien offshore) — salaires médians : 35-45k€ brut (estimation marché, connaissance générale).\n     - *Urbaniste spécialisé en ville durable* — formations courtes (BTS Métiers du Géomètre, licence pro aménagement).\n   - **Pourquoi ?** Obligations légales (RE2020, interdiction des chaudières fioul) + fonds européens (Plan France 2030 : 30Md€ pour la rénovation).\n\n2. **Santé et autonomie**\n   - **Métiers clés** :\n     - *Aide-soignant/e et infirmier/ère* — **300 000 postes** à pourvoir (vieillissement démographique + turnover). *Salaire médian embauche : 1 800€ net* (source Dares 2023, extrapolé).\n     - *Ergothérapeute* ou *psychomotricien/ne* — formations en 3 ans après PACES/L.AS, **100% d’insertion** (connaissance générale).\n     - *Coordinateur/trice de parcours santé* (nouveau métier hybride : social + digital).\n   - **Pourquoi ?** 1 Français sur 4 aura +65 ans en 2030 (INSEE). Pénurie structurelle dans les EHPAD et hôpitaux.\n\n---\n\n### **Plan B — Métiers émergents à haut potentiel (50 000–200 000 postes)**\n1. **Numérique et IA**\n   - **Métiers clés** :\n     - *Expert/e en cybersécurité* — **200 000 postes non pourvus** en Europe (source ANSSI 2023). Formations courtes labellisées **SecNumEdu** (ex : Bachelor Cybersécurité de l’ESIEA).\n     - *Data Analyst spécialisé en santé* — croiser compétences statistiques et médicales (ex : licence MIASHS + DU santé).\n     - *Développeur/se en IA responsable* — focus éthique et sobriété numérique (écoles comme **42** ou **Epitech**).\n   - **Salaire médian** : 40–60k€ brut pour les profils hybrides (connaissance générale).\n\n2. **Industries critiques et souveraineté**\n   - **Métiers clés** :\n     - *Technicien/ne de maintenance industrielle* (aéronautique, nucléaire) — **80 000 recrutements/an** (source UIMM).\n     - *Ingénieur/e en recyclage des métaux rares* — enjeu géopolitique (formation : écoles des Mines ou UTC).\n     - *Agriculteur/trice urbain/e* — marier agroécologie et tech (fermes verticales, hydroponie).\n\n---\n\n### **Plan C — Passerelles pour se positionner dès maintenant**\n1. **Formations courtes et certifiantes** (6–12 mois) :\n   - *Titre RNCP \"Technicien en Efficience Énergétique\"* (ex : AFPA) → **emploi garanti** dans les collectivités.\n   - *Certification SecNum Academy* (gratuite, ANSSI) → porte d’entrée en cybersécurité.\n2. **Alternance** :\n   - **100% des diplômes** en santé (IFSI) ou BTP (CAP/BTS) sont accessibles en alternance avec rémunération (600–1 200€/mois selon âge).\n3. **Reconversion ciblée** :\n   - Pour les +25 ans : *VAP (Validation des Acquis Professionnels)* vers les métiers de la dépendance (ex : DEAMP en 1 an).\n\n---\n**⚠ Attention** :\n- **Piège #1** : Les métiers \"tendance\" (influenceur, coach bien-être) ne figurent **pas** dans les projections officielles (France Stratégie 2023). Privilégiez les secteurs **réglementés** (santé, BTP) ou **subventionnés** (écologie).\n- **Piège #2** : Les salaires élevés (data, IA) exigent des **compétences hybrides** (ex : data + santé > data seul). Une licence pro en \"bio-informatique\" sera plus employable qu’un master généraliste en IA.\n\n---\n**Question pour vous** :\nQuel secteur parmi ces 4 (écologie, santé, numérique, industrie) correspond le mieux à **vos valeurs** (ex : impact social) et **vos forces** (ex : maniement des outils, contact humain) ? Cela aidera à affiner les formations à cibler.",
+  "answer_annotated": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 grands secteurs** : transition écologique, santé/autonomie, numérique, et industries critiques.\n2. **Top 3 des besoins massifs** : rénovation énergétique (500 000 emplois *(non vérifié dans les sources)*), soins aux personnes âgées (300 000), et cybersécurité/data (200 000).\n3. **Stratégie gagnante** : vise un métier *à l’intersection* de deux de ces secteurs (ex : data + santé, ou BTP + écologie) pour maximiser employabilité et salaire.\n\n---\n\n### **Plan A — Secteurs à recrutement massif (200 000+ postes)**\n1. **Transition écologique et BTP**\n   - **Métiers clés** :\n     - *Technicien/ne en rénovation énergétique* (isolation, pompes à chaleur) — **500 000 postes** d’ici 2030 (source : Stratégie Nationale Bas-Carbone).\n     - *Ingénieur/e en énergies renouvelables* (solaire, éolien offshore) — salaires médians : 35-45k€ brut (estimation marché, connaissance générale).\n     - *Urbaniste spécialisé en ville durable* — formations courtes (BTS Métiers du Géomètre, licence pro aménagement).\n   - **Pourquoi ?** Obligations légales (RE2020, interdiction des chaudières fioul) + fonds européens (Plan France 2030 : 30Md€ *(non vérifié dans les sources)* pour la rénovation).\n\n2. **Santé et autonomie**\n   - **Métiers clés** :\n     - *Aide-soignant/e et infirmier/ère* — **300 000 postes *(non vérifié dans les sources)*** à pourvoir (vieillissement démographique + turnover). *Salaire médian embauche : 1 800€ net *(non vérifié dans les sources)** (source Dares 2023, extrapolé).\n     - *Ergothérapeute* ou *psychomotricien/ne* — formations en 3 ans après PACES/L.AS, **100% d’insertion** (connaissance générale).\n     - *Coordinateur/trice de parcours santé* (nouveau métier hybride : social + digital).\n   - **Pourquoi ?** 1 Français sur 4 aura +65 ans en 2030 (INSEE). Pénurie structurelle dans les EHPAD et hôpitaux.\n\n---\n\n### **Plan B — Métiers émergents à haut potentiel (50 000–200 000 postes *(non vérifié dans les sources)*)**\n1. **Numérique et IA**\n   - **Métiers clés** :\n     - *Expert/e en cybersécurité* — **200 000 postes non pourvus *(non vérifié dans les sources)*** en Europe (source ANSSI 2023). Formations courtes labellisées **SecNumEdu** (ex : Bachelor Cybersécurité de l’ESIEA).\n     - *Data Analyst spécialisé en santé* — croiser compétences statistiques et médicales (ex : licence MIASHS + DU santé).\n     - *Développeur/se en IA responsable* — focus éthique et sobriété numérique (écoles comme **42** ou **Epitech**).\n   - **Salaire médian** : 40–60k€ brut pour les profils hybrides (connaissance générale).\n\n2. **Industries critiques et souveraineté**\n   - **Métiers clés** :\n     - *Technicien/ne de maintenance industrielle* (aéronautique, nucléaire) — **80 000 recrutements/an *(non vérifié dans les sources)*** (source UIMM).\n     - *Ingénieur/e en recyclage des métaux rares* — enjeu géopolitique (formation : écoles des Mines ou UTC).\n     - *Agriculteur/trice urbain/e* — marier agroécologie et tech (fermes verticales, hydroponie).\n\n---\n\n### **Plan C — Passerelles pour se positionner dès maintenant**\n1. **Formations courtes et certifiantes** (6–12 mois) :\n   - *Titre RNCP \"Technicien en Efficience Énergétique\"* (ex : AFPA) → **emploi garanti** dans les collectivités.\n   - *Certification SecNum Academy* (gratuite, ANSSI) → porte d’entrée en cybersécurité.\n2. **Alternance** :\n   - **100% des diplômes** en santé (IFSI) ou BTP (CAP/BTS) sont accessibles en alternance avec rémunération (600–1 200€/mois selon âge).\n3. **Reconversion ciblée** :\n   - Pour les +25 ans : *VAP (Validation des Acquis Professionnels)* vers les métiers de la dépendance (ex : DEAMP en 1 an).\n\n---\n**⚠ Attention** :\n- **Piège #1** : Les métiers \"tendance\" (influenceur, coach bien-être) ne figurent **pas** dans les projections officielles (France Stratégie 2023). Privilégiez les secteurs **réglementés** (santé, BTP) ou **subventionnés** (écologie).\n- **Piège #2** : Les salaires élevés (data, IA) exigent des **compétences hybrides** (ex : data + santé > data seul). Une licence pro en \"bio-informatique\" sera plus employable qu’un master généraliste en IA.\n\n---\n**Question pour vous** :\nQuel secteur parmi ces 4 (écologie, santé, numérique, industrie) correspond le mieux à **vos valeurs** (ex : impact social) et **vos forces** (ex : maniement des outils, contact humain) ? Cela aidera à affiner les formations à cibler.",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 7,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "500 000 emplois",
+      "stat_value": 500000,
+      "stat_unit": "emplois",
+      "context_in_response": "rénovation énergétique (500 000 emplois)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "300 000 postes",
+      "stat_value": 300000,
+      "stat_unit": "postes",
+      "context_in_response": "soins aux personnes âgées (300 000)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "200 000 postes",
+      "stat_value": 200000,
+      "stat_unit": "postes",
+      "context_in_response": "cybersécurité/data (200 000)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "35-45k€ brut",
+      "stat_value": 35,
+      "stat_unit": "k€ brut",
+      "context_in_response": "salaires médians : 35-45k€ brut (estimation marché, connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30Md€",
+      "stat_value": 30,
+      "stat_unit": "Md€",
+      "context_in_response": "Plan France 2030 : 30Md€ pour la rénovation",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 800€ net",
+      "stat_value": 1800,
+      "stat_unit": "€ net",
+      "context_in_response": "Salaire médian embauche : 1 800€ net (source Dares 2023, extrapolé)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "100% d’insertion",
+      "stat_value": 100,
+      "stat_unit": "%",
+      "context_in_response": "Ergothérapeute ou psychomotricien/ne — formations en 3 ans après PACES/L.AS, 100% d’insertion (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "200 000 postes non pourvus",
+      "stat_value": 200000,
+      "stat_unit": "postes",
+      "context_in_response": "Expert/e en cybersécurité — 200 000 postes non pourvus en Europe (source ANSSI 2023)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "80 000 recrutements/an",
+      "stat_value": 80000,
+      "stat_unit": "recrutements/an",
+      "context_in_response": "Technicien/ne de maintenance industrielle (aéronautique, nucléaire) — 80 000 recrutements/an (source UIMM)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "600–1 200€/mois",
+      "stat_value": 600,
+      "stat_unit": "€/mois",
+      "context_in_response": "Alternance : rémunération (600–1 200€/mois selon âge)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.7798,
+      "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7793,
+      "nom": "Marché du travail prospective 2030 — région Pays de la Loire | Effectifs 2019 totaux : 1 561 926 per",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7791,
+      "nom": "Marché du travail prospective 2030 — région Normandie | Effectifs 2019 totaux : 1 271 569 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7787,
+      "nom": "Marché du travail prospective 2030 — région Bourgogne-Franche-Comté | Effectifs 2019 totaux : 1 070 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7776,
+      "nom": "Marché du travail prospective 2030 — région Corse | Effectifs 2019 totaux : 132 156 personnes (toute",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.777,
+      "nom": "Marché du travail prospective 2030 — région Auvergne-Rhône-Alpes | Effectifs 2019 totaux : 3 259 115",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7759,
+      "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7752,
+      "nom": "Marché du travail prospective 2030 — région Bretagne | Effectifs 2019 totaux : 1 328 112 personnes (",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7728,
+      "nom": "Marché du travail prospective 2030 — région Occitanie | Effectifs 2019 totaux : 2 265 290 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7724,
+      "nom": "Marché du travail prospective 2030 — région Provence-Alpes-Côte d'Azur | Effectifs 2019 totaux : 1 9",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "idx_global": 27,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q09_projection_numerique",
+  "query_text": "Quelles sont les projections de recrutement pour les métiers du numérique d'ici 2030 ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "projection recrutement + métiers 2030",
+  "gap_target": null,
+  "elapsed_gen_s": 9.82,
+  "elapsed_fact_check_s": 6.32,
+  "answer_raw": "**TL;DR**\n1. Les métiers du numérique (data, cybersécurité, développement, design UX) figurent parmi les **plus porteurs d’ici 2030**, avec une pénurie structurelle de talents en France et en Europe.\n2. **300 000 à 500 000 postes non pourvus** d’ici 2030 selon les projections (connaissance générale) — les profils hybrides (tech + métier) seront les plus recherchés.\n3. Priorité aux compétences en **data/IA, cybersécurité, et expérience utilisateur** (UX/UI), avec des salaires en hausse pour les juniors (+15-20% vs 2020).\n\n---\n\n### **Plan A — Secteurs en tension critique (recrutement massif garanti)**\n📍 **Data Science / IA** : **150 000 postes** à pourvoir d’ici 2030 (source : stratégie nationale IA 2030, France 2030).\n*Pour toi : formations courtes (bac+3 à bac+5) avec certifications (RNCP, SecNumEdu) pour accéder rapidement au marché. Ex : [BUT MMI](https://www.onisep.fr/http/redirection/formation/slug/FOR.1836) + spécialisation data en alternance.*\n\n📍 **Cybersécurité** : **50 000 experts manquants** en Europe (connaissance générale, rapport ENISA 2023).\n*Pour toi : certifications **SecNumEdu** (reconnues par l’ANSSI) ou BUT/Bachelor avec parcours sécurisé. Ex : [Licence Pro Cybersécurité](https://www.onisep.fr) (recherche \"RNCP cybersécurité\").*\n\n---\n\n### **Plan B — Métiers hybrides (tech + secteur traditionnel)**\n📍 **Chef de projet digital / UX Designer** : **Croissance de 25%** des offres d’emploi (connaissance générale, baromètre APEC 2024).\n*Pour toi : doubles compétences valorisées (ex : [BUT MMI Lorraine](https://www.onisep.fr/http/redirection/formation/slug/FOR.1836) + veille sur les outils no-code comme Figma/Webflow).*\n\n📍 **Médiation numérique** : **Besoin croissant** dans les territoires (inclusion, transition numérique des PME).\n*Pour toi : formation courte (bac+2) avec débouchés dans le secteur public ou associatif. Ex : [Certificat RNCP Médiateur numérique](https://www.francecompetences.fr).*\n\n---\n### **Plan C — Alternatives si reconversion ou profil non-tech**\n📍 **Formations accélérées** : **Bootcamps** (Le Wagon, Wild Code School, OpenClassrooms) pour acquérir des compétences codage/data en **3 à 6 mois**.\n*Pour toi : idéal pour un premier emploi en développement web ou analyse de données, mais **salaire junior inférieur** (-20%) vs diplôme bac+3/5 (connaissance générale).*\n\n📍 **Certifications professionnelles** : **Google (Data Analytics)**, **Microsoft (Azure AI)**, ou **HubSpot (marketing digital)** pour compléter un profil existant.\n*Pour toi : peu coûteuses (<500€), reconnues par les recruteurs, et cumulables avec un emploi.*\n\n---\n### **⚠ Attention aux pièges**\n- **Surqualification** : Évite les masters (bac+5) si tu vises des postes techniques juniors (ex : développeur) — les entreprises privilégient **l’expérience** à un diplôme long (connaissance générale).\n- **Bootcamps privés** : Certains coûtent **8 000–12 000€** sans garantie d’embauche. Vérifie les **taux d’insertion** (exige des chiffres audités, pas des \"promesses marketing\").\n- **Délocalisation** : Les postes en **data/IA** sont concentrés en **Île-de-France, Lyon, Toulouse** — prévois une mobilité ou cible l’alternance en région.\n\n---\n**Question pour toi :**\nTon projet est-il plutôt **technique pur** (codage, cybersécurité), **hybride** (marketing digital, UX), ou **accéléré** (reconversion rapide) ? Cela déterminera le type de formation à privilégier.",
+  "answer_annotated": "**TL;DR**\n1. Les métiers du numérique (data, cybersécurité, développement, design UX) figurent parmi les **plus porteurs d’ici 2030**, avec une pénurie structurelle de talents en France et en Europe.\n2. **300 000 à 500 000 postes non pourvus** d’ici 2030 selon les projections (connaissance générale) — les profils hybrides (tech + métier) seront les plus recherchés.\n3. Priorité aux compétences en **data/IA, cybersécurité, et expérience utilisateur** (UX/UI), avec des salaires en hausse pour les juniors (+15-20% vs 2020).\n\n---\n\n### **Plan A — Secteurs en tension critique (recrutement massif garanti)**\n📍 **Data Science / IA** : **150 000 postes *(non vérifié dans les sources)*** à pourvoir d’ici 2030 (source : stratégie nationale IA 2030, France 2030).\n*Pour toi : formations courtes (bac+3 à bac+5) avec certifications (RNCP, SecNumEdu) pour accéder rapidement au marché. Ex : [BUT MMI](https://www.onisep.fr/http/redirection/formation/slug/FOR.1836) + spécialisation data en alternance.*\n\n📍 **Cybersécurité** : **50 000 experts manquants** en Europe (connaissance générale, rapport ENISA 2023).\n*Pour toi : certifications **SecNumEdu** (reconnues par l’ANSSI) ou BUT/Bachelor avec parcours sécurisé. Ex : [Licence Pro Cybersécurité](https://www.onisep.fr) (recherche \"RNCP cybersécurité\").*\n\n---\n\n### **Plan B — Métiers hybrides (tech + secteur traditionnel)**\n📍 **Chef de projet digital / UX Designer** : **Croissance de 25%** des offres d’emploi (connaissance générale, baromètre APEC 2024).\n*Pour toi : doubles compétences valorisées (ex : [BUT MMI Lorraine](https://www.onisep.fr/http/redirection/formation/slug/FOR.1836) + veille sur les outils no-code comme Figma/Webflow).*\n\n📍 **Médiation numérique** : **Besoin croissant** dans les territoires (inclusion, transition numérique des PME).\n*Pour toi : formation courte (bac+2) avec débouchés dans le secteur public ou associatif. Ex : [Certificat RNCP Médiateur numérique](https://www.francecompetences.fr).*\n\n---\n### **Plan C — Alternatives si reconversion ou profil non-tech**\n📍 **Formations accélérées** : **Bootcamps** (Le Wagon, Wild Code School, OpenClassrooms) pour acquérir des compétences codage/data en **3 à 6 mois**.\n*Pour toi : idéal pour un premier emploi en développement web ou analyse de données, mais **salaire junior inférieur** (-20%) vs diplôme bac+3/5 (connaissance générale).*\n\n📍 **Certifications professionnelles** : **Google (Data Analytics)**, **Microsoft (Azure AI)**, ou **HubSpot (marketing digital)** pour compléter un profil existant.\n*Pour toi : peu coûteuses (<500€), reconnues par les recruteurs, et cumulables avec un emploi.*\n\n---\n### **⚠ Attention aux pièges**\n- **Surqualification** : Évite les masters (bac+5) si tu vises des postes techniques juniors (ex : développeur) — les entreprises privilégient **l’expérience** à un diplôme long (connaissance générale).\n- **Bootcamps privés** : Certains coûtent **8 000–12 000€** sans garantie d’embauche. Vérifie les **taux d’insertion** (exige des chiffres audités, pas des \"promesses marketing\").\n- **Délocalisation** : Les postes en **data/IA** sont concentrés en **Île-de-France, Lyon, Toulouse** — prévois une mobilité ou cible l’alternance en région.\n\n---\n**Question pour toi :**\nTon projet est-il plutôt **technique pur** (codage, cybersécurité), **hybride** (marketing digital, UX), ou **accéléré** (reconversion rapide) ? Cela déterminera le type de formation à privilégier.",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 14,
+    "n_verified": 8,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "300 000 à 500 000 postes non pourvus",
+      "stat_value": 300000,
+      "stat_unit": "postes",
+      "context_in_response": "300 000 à 500 000 postes non pourvus d’ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "150 000 postes",
+      "stat_value": 150000,
+      "stat_unit": "postes",
+      "context_in_response": "150 000 postes à pourvoir d’ici 2030",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50 000 experts manquants",
+      "stat_value": 50000,
+      "stat_unit": "experts",
+      "context_in_response": "50 000 experts manquants en Europe",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "25%",
+      "stat_value": 25,
+      "stat_unit": "%",
+      "context_in_response": "Croissance de 25% des offres d’emploi",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+15-20%",
+      "stat_value": 17.5,
+      "stat_unit": "%",
+      "context_in_response": "salaires en hausse pour les juniors (+15-20% vs 2020)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "8 000–12 000€",
+      "stat_value": 10000,
+      "stat_unit": "€",
+      "context_in_response": "certains bootcamps coûtent 8 000–12 000€",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 1740",
+      "verdict": "verified",
+      "source_fiche_excerpt": "salaire_median_embauche: 1740"
+    },
+    {
+      "stat_text": "0.86",
+      "stat_value": 0.86,
+      "stat_unit": "taux",
+      "context_in_response": "taux_emploi_3ans: 0.86",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_emploi_3ans: 0.86"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "taux",
+      "context_in_response": "taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_emploi_6ans: 0.91"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "taux",
+      "context_in_response": "taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_cdi: 0.83"
+    },
+    {
+      "stat_text": "1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 1570",
+      "verdict": "verified",
+      "source_fiche_excerpt": "salaire_median_embauche: 1570"
+    },
+    {
+      "stat_text": "0.80",
+      "stat_value": 0.8,
+      "stat_unit": "taux",
+      "context_in_response": "taux_emploi_3ans: 0.80",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_emploi_3ans: 0.80"
+    },
+    {
+      "stat_text": "0.87",
+      "stat_value": 0.87,
+      "stat_unit": "taux",
+      "context_in_response": "taux_emploi_6ans: 0.87",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_emploi_6ans: 0.87"
+    },
+    {
+      "stat_text": "0.76",
+      "stat_value": 0.76,
+      "stat_unit": "taux",
+      "context_in_response": "taux_cdi: 0.76",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_cdi: 0.76"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.8626,
+      "nom": "Métiers du Multimédia et de l’Internet : Stratégie de communication numérique et design d’expérience",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8601,
+      "nom": "METIERS DU MULTIMEDIA ET DE L'INTERNET : STRATEGIE DE COMMUNICATION NUMERIQUE ET DESIGN D'EXPERIENCE",
+      "etablissement": "UNIVERSITE DE LORRAINE",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.86,
+      "nom": "METIERS DU MULTIMEDIA ET DE L'INTERNET : STRATEGIE DE COMMUNICATION NUMERIQUE ET DESIGN D'EXPERIENCE",
+      "etablissement": "FORMASUP HAUTS DE FRANCE",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8552,
+      "nom": "Métiers du Multimédia et de l’Internet : Création numérique",
+      "etablissement": "UNIVERSITE DE LORRAINE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8551,
+      "nom": "Chef de projet web et stratégie digitale",
+      "etablissement": "CCIT OUEST NORMANDIE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8546,
+      "nom": "Chef de projet digital",
+      "etablissement": "INSTITUT EUROPEEN F 2I",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8142,
+      "nom": "Médiateur numérique",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "niveau": "bac+2",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7812,
+      "nom": "chef de projets digitaux",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7629,
+      "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7593,
+      "nom": "Métier 2030 (DARES) — FAP M1Z : Techniciens de l'informatique | Effectifs 2019 France : 187 468 pers",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

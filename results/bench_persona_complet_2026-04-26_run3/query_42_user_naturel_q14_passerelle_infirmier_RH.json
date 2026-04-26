@@ -1,0 +1,233 @@
+{
+  "idx_global": 42,
+  "suite": "user_naturel",
+  "persona_id": null,
+  "query_id": "q14_passerelle_infirmier_RH",
+  "query_text": "Une amie infirmière souhaite passer à un poste en ressources humaines. Quelles passerelles existent ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": null,
+  "gap_target": "Reconversion + passerelles",
+  "elapsed_gen_s": 24.1,
+  "elapsed_fact_check_s": 6.21,
+  "answer_raw": "**TL;DR**\n1. Une infirmière peut se réorienter vers les RH via des **passerelles courtes** (certifications, VAE) ou un **diplôme bac+3/5** (licence pro, master).\n2. **2 voies prioritaires** : spécialisation RH en santé (ex : DU en gestion des ressources hospitalières) ou reconversion classique (licence pro RH).\n3. **Calendrier clé** : VAE possible toute l’année, formations certifiantes démarrent souvent en septembre/octobre.\n\n---\n\n### **Plan A — Passerelle rapide : Certifications + VAE (6-12 mois)**\n📍 **DU Gestion des Ressources Humaines en Établissements de Santé** (connaissance générale)\n*Pour toi : idéal pour rester dans le secteur santé tout en basculant vers les RH. Reconnue par les hôpitaux/clinique. Coût ~1 500-3 000€ (formation continue).*\n- **Étape 1** : Valider son expérience infirmière via une **VAE partielle** (ex : bloc \"gestion d’équipe\" du titre RNCP *Responsable RH*). [Service public VAE](https://www.service-public.fr/particuliers/vosdroits/F1319)\n- **Étape 2** : Compléter par un **DU ou certificat RH santé** (ex : Université Paris Cité, Lyon 1). Ces formations hybrides (présentiel/distanciel) ciblent les professionnels de santé.\n- **Étape 3** : Postuler en interne (ex : responsable formation dans un CHU) ou en cabinet de recrutement médical.\n\n**Pourquoi ce plan ?**\n- **Avantage** : Capitalise sur l’expérience santé (atout pour les RH hospitalières).\n- **Risque** : Peu de postes \"RH pure\" en santé → souvent des rôles hybrides (ex : gestion des plannings + formation).\n\n---\n\n### **Plan B — Reconversion classique : Licence Pro ou Master RH (1-2 ans)**\n📍 **Licence Pro Métiers des RH** (ex : **Université de Strasbourg**) — bac+3 public, sélectivité modérée (~40%), alternance possible · [exemple fiche](https://www.unistra.fr)\n*Pour toi : diplôme reconnu par les entreprises, avec stages/alternance pour transition douce. Coût ~200-600€/an (public).*\n\n- **Étape 1** : **Valider les prérequis** : certaines licences pro RH demandent un bac+2 (ton diplôme infirmier suffit).\n- **Étape 2** : **Choisir une spécialité** :\n  - *RH généralistes* (pour sortir du secteur santé).\n  - *RH et qualité de vie au travail* (pour rester en lien avec la santé).\n- **Étape 3** : **Alternance recommandée** (salaire + expérience). Ex : contrats pro dans des EHPAD ou cliniques (gestion du personnel soignant).\n\n**Variante ambitieuse** :\n📍 **Master RH** (ex : **IAE Lyon**) — bac+5 public, sélectivité 20-30%, grade Master · [fiche officielle](https://iae.univ-lyon3.fr)\n*Pour toi : si tu vises un poste cadre (ex : DRH adjoint). Admission sur dossier + entretien, avec valorisation de ton expérience terrain.*\n\n---\n### **Plan C — Passerelle \"douce\" : Postes hybrides avant formation**\n*(connaissance générale)*\n**Stratégie** : Occuper un rôle **transverse** avant de bifurquer vers les RH, pour :\n1. **Acquérir des compétences RH sur le tas** :\n   - Devenir **référente formation** dans ton service (gestion des plannings, accueil des nouveaux).\n   - Postuler en **coordination de pôle** (mix soins + management).\n2. **Se former en parallèle** :\n   - MOOC gratuits (ex : *\"Gestion des RH\"* sur FUN-MOOC).\n   - Certifications courtes (ex : *Titre RNCP Chargé de Recrutement*, ~6 mois).\n3. **Bascule progressive** : Après 1-2 ans, postuler en RH avec un profil \"terrain + compétences\".\n\n**Exemple de parcours** :\nInfirmière → Référente qualité (2 ans) → **Certification RH** → Chargée de recrutement en clinique.\n\n---\n### **⚠ Attention aux pièges**\n1. **Illusion des \"équivalences automatiques\"** : Ton diplôme infirmier ne donne **pas** d’équivalence RH. Une VAE ou formation complémentaire est **obligatoire**.\n2. **Secteur santé ≠ RH classiques** : Les postes \"RH\" en hôpital sont souvent des rôles administratifs (gestion des plannings) plutôt que stratégiques (recrutement, GPEC).\n\n---\n**Question pour toi** :\nTon amie souhaite-t-elle **rester dans le secteur santé** (ex : RH hospitalières) ou **changer complètement d’environnement** (ex : RH en entreprise classique) ? Cela change radicalement les formations à cibler.",
+  "answer_annotated": "**TL;DR**\n1. Une infirmière peut se réorienter vers les RH via des **passerelles courtes** (certifications, VAE) ou un **diplôme bac+3/5** (licence pro, master).\n2. **2 voies prioritaires** : spécialisation RH en santé (ex : DU en gestion des ressources hospitalières) ou reconversion classique (licence pro RH).\n3. **Calendrier clé** : VAE possible toute l’année, formations certifiantes démarrent souvent en septembre/octobre.\n\n---\n\n### **Plan A — Passerelle rapide : Certifications + VAE (6-12 mois)**\n📍 **DU Gestion des Ressources Humaines en Établissements de Santé** (connaissance générale)\n*Pour toi : idéal pour rester dans le secteur santé tout en basculant vers les RH. Reconnue par les hôpitaux/clinique. Coût ~1 500-3 000€ (formation continue).*\n- **Étape 1** : Valider son expérience infirmière via une **VAE partielle** (ex : bloc \"gestion d’équipe\" du titre RNCP *Responsable RH*). [Service public VAE](https://www.service-public.fr/particuliers/vosdroits/F1319)\n- **Étape 2** : Compléter par un **DU ou certificat RH santé** (ex : Université Paris Cité, Lyon 1). Ces formations hybrides (présentiel/distanciel) ciblent les professionnels de santé.\n- **Étape 3** : Postuler en interne (ex : responsable formation dans un CHU) ou en cabinet de recrutement médical.\n\n**Pourquoi ce plan ?**\n- **Avantage** : Capitalise sur l’expérience santé (atout pour les RH hospitalières).\n- **Risque** : Peu de postes \"RH pure\" en santé → souvent des rôles hybrides (ex : gestion des plannings + formation).\n\n---\n\n### **Plan B — Reconversion classique : Licence Pro ou Master RH (1-2 ans)**\n📍 **Licence Pro Métiers des RH** (ex : **Université de Strasbourg**) — bac+3 public, sélectivité modérée (~40%), alternance possible · [exemple fiche](https://www.unistra.fr)\n*Pour toi : diplôme reconnu par les entreprises, avec stages/alternance pour transition douce. Coût ~200-600€/an (public).*\n\n- **Étape 1** : **Valider les prérequis** : certaines licences pro RH demandent un bac+2 (ton diplôme infirmier suffit).\n- **Étape 2** : **Choisir une spécialité** :\n  - *RH généralistes* (pour sortir du secteur santé).\n  - *RH et qualité de vie au travail* (pour rester en lien avec la santé).\n- **Étape 3** : **Alternance recommandée** (salaire + expérience). Ex : contrats pro dans des EHPAD ou cliniques (gestion du personnel soignant).\n\n**Variante ambitieuse** :\n📍 **Master RH** (ex : **IAE Lyon**) — bac+5 public, sélectivité 20-30%, grade Master · [fiche officielle](https://iae.univ-lyon3.fr)\n*Pour toi : si tu vises un poste cadre (ex : DRH adjoint). Admission sur dossier + entretien, avec valorisation de ton expérience terrain.*\n\n---\n### **Plan C — Passerelle \"douce\" : Postes hybrides avant formation**\n*(connaissance générale)*\n**Stratégie** : Occuper un rôle **transverse** avant de bifurquer vers les RH, pour :\n1. **Acquérir des compétences RH sur le tas** :\n   - Devenir **référente formation** dans ton service (gestion des plannings, accueil des nouveaux).\n   - Postuler en **coordination de pôle** (mix soins + management).\n2. **Se former en parallèle** :\n   - MOOC gratuits (ex : *\"Gestion des RH\"* sur FUN-MOOC).\n   - Certifications courtes (ex : *Titre RNCP Chargé de Recrutement*, ~6 mois).\n3. **Bascule progressive** : Après 1-2 ans, postuler en RH avec un profil \"terrain + compétences\".\n\n**Exemple de parcours** :\nInfirmière → Référente qualité (2 ans) → **Certification RH** → Chargée de recrutement en clinique.\n\n---\n### **⚠ Attention aux pièges**\n1. **Illusion des \"équivalences automatiques\"** : Ton diplôme infirmier ne donne **pas** d’équivalence RH. Une VAE ou formation complémentaire est **obligatoire**.\n2. **Secteur santé ≠ RH classiques** : Les postes \"RH\" en hôpital sont souvent des rôles administratifs (gestion des plannings) plutôt que stratégiques (recrutement, GPEC).\n\n---\n**Question pour toi** :\nTon amie souhaite-t-elle **rester dans le secteur santé** (ex : RH hospitalières) ou **changer complètement d’environnement** (ex : RH en entreprise classique) ? Cela change radicalement les formations à cibler.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 10,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~1 500-3 000€",
+      "stat_value": 2250,
+      "stat_unit": "€",
+      "context_in_response": "Coût ~1 500-3 000€ (formation continue).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~40%",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context_in_response": "Licence Pro Métiers des RH (ex : Université de Strasbourg) — sélectivité modérée (~40%).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "20-30%",
+      "stat_value": 25,
+      "stat_unit": "%",
+      "context_in_response": "Master RH (ex : IAE Lyon) — sélectivité 20-30%.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "6.0%",
+      "stat_value": 6,
+      "stat_unit": "%",
+      "context_in_response": "Taux d'accès Parcoursup : 6.0%",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 6.0%"
+    },
+    {
+      "stat_text": "34.0%",
+      "stat_value": 34,
+      "stat_unit": "%",
+      "context_in_response": "Taux d'accès Parcoursup : 34.0%",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 34.0%"
+    },
+    {
+      "stat_text": "0.86",
+      "stat_value": 0.86,
+      "stat_unit": "taux",
+      "context_in_response": "taux_emploi_3ans: 0.86",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, ...}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "taux",
+      "context_in_response": "taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "taux",
+      "context_in_response": "taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_cdi\": 0.83, ...}"
+    },
+    {
+      "stat_text": "1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 1740",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"salaire_median_embauche\": 1740, ...}"
+    },
+    {
+      "stat_text": "0.8",
+      "stat_value": 0.8,
+      "stat_unit": "taux",
+      "context_in_response": "taux_emploi_3ans: 0.8",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, ...}"
+    },
+    {
+      "stat_text": "0.87",
+      "stat_value": 0.87,
+      "stat_unit": "taux",
+      "context_in_response": "taux_emploi_6ans: 0.87",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_6ans\": 0.87, ...}"
+    },
+    {
+      "stat_text": "0.76",
+      "stat_value": 0.76,
+      "stat_unit": "taux",
+      "context_in_response": "taux_cdi: 0.76",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_cdi\": 0.76, ...}"
+    },
+    {
+      "stat_text": "1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 1570",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"salaire_median_embauche\": 1570, ...}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.1533,
+      "nom": "Licence - Parcours d'Accès Spécifique Santé (PASS)",
+      "etablissement": "Université de Lille",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1266,
+      "nom": "Licence - Parcours d'Accès Spécifique Santé (PASS)",
+      "etablissement": "Université de Rouen Normandie - Campus Santé",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8612,
+      "nom": "Compétences certifiées (RNCP38069) — Diplôme Supérieur en Management International des Ressources Hu",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 0.8534,
+      "nom": "Sciences et Ingénierie - Informatique pour la Santé",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.85,
+      "nom": "Compétences certifiées (RNCP41398) — Manager des ressources humaines (bac+5) | Niveau européen : Niv",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 0.8154,
+      "nom": "Conseiller en transition professionnelle",
+      "etablissement": "MINISTERE DES ARMEES",
+      "niveau": "bac+2",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8149,
+      "nom": "Développer et mettre en œuvre les compétences spécifiques en prévention et santé au travail dans les",
+      "etablissement": "UNIVERSITE DE BREST",
+      "niveau": null,
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7861,
+      "nom": "Compétences certifiées (RNCP41770) — Responsable en gestion des ressources humaines (bac+3) | Niveau",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 0.7835,
+      "nom": "Compétences certifiées (RNCP40110) — Métiers de la GRH : assistant (fiche nationale) (bac+3) | Nivea",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 0.7831,
+      "nom": "Compétences certifiées (RNCP41181) — RH et transformation digitale (bac+3) | Niveau européen : Nivea",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    }
+  ]
+}
