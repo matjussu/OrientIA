@@ -15,6 +15,12 @@ from src.agent.tools.query_reformuler import (
     SubQuery,
     QUERY_REFORMULER_TOOL,
 )
+from src.agent.tools.fetch_stat_from_source import (
+    FetchStatFromSource,
+    StatVerification,
+    Source,
+    FETCH_STAT_TOOL,
+)
 
 __all__ = [
     "ProfileClarifier",
@@ -24,4 +30,8 @@ __all__ = [
     "ReformulationPlan",
     "SubQuery",
     "QUERY_REFORMULER_TOOL",
+    "FetchStatFromSource",
+    "StatVerification",
+    "Source",
+    "FETCH_STAT_TOOL",
 ]

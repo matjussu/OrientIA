@@ -21,6 +21,7 @@ from typing import Optional
 
 from mistralai.client import Mistral
 
+from src.agent.cache import LRUCache
 from src.agent.retry import call_with_retry
 from src.agent.tool import Tool
 
@@ -272,9 +273,21 @@ class ProfileClarifier:
     timeout_ms: int = 60_000
     max_retries: int = 3
     initial_backoff: float = 2.0
+    cache: LRUCache | None = None  # Sprint 3 (2b) — opt-in caching
 
     def clarify(self, query: str) -> Profile:
-        """Extrait le profil depuis `query`. Raise ValueError si parse fail."""
+        """Extrait le profil depuis `query`. Raise ValueError si parse fail.
+
+        Si `self.cache` est fourni, lookup d'abord (key = query). Cache
+        hit → retour immédiat (~0ms, $0). Cache miss → Mistral call +
+        store dans le cache.
+        """
+        # Sprint 3 (2b) — Cache lookup
+        if self.cache is not None:
+            cached = self.cache.get(query)
+            if cached is not None:
+                return cached
+
         messages = [
             {"role": "system", "content": CLARIFIER_SYSTEM_PROMPT},
             {"role": "user", "content": query},
@@ -312,4 +325,8 @@ class ProfileClarifier:
             raise ValueError(
                 f"ProfileClarifier: tool returned error: {result}"
             )
-        return Profile(**result["profile"])
+        profile = Profile(**result["profile"])
+        # Sprint 3 (2b) — Cache store post-success
+        if self.cache is not None:
+            self.cache.set(query, profile)
+        return profile

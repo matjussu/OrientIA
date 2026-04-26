@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-04-26T16:38:31",
+  "bench_a_caching": {
+    "n_queries": 10,
+    "cold_avg_s": 2.09,
+    "warm_avg_s": 0.0,
+    "speedup_factor": 20890.0,
+    "cache_stats": {
+      "hits": 10,
+      "misses": 10,
+      "evictions": 0,
+      "size": 10,
+      "maxsize": 20
+    },
+    "cold_latencies": [
+      2.19,
+      1.76,
+      2.5,
+      2.21,
+      1.88,
+      2.06,
+      1.9,
+      2.19,
+      1.92,
+      2.28
+    ],
+    "warm_latencies": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bench_b_parallel": {
+    "n_calls": 5,
+    "sequential_total_s": 19.11,
+    "parallel_total_s": 8.85,
+    "speedup_factor": 2.16,
+    "max_workers": 5
+  }
+}
