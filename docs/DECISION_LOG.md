@@ -2622,3 +2622,126 @@ ADR-050 sera complété par le verdict Phase 3.
 
 ---
 
+
+## ADR-051 — Architecture agentique : Tool registry + Agent loop with Mistral function calling (2026-04-26)
+
+### Context
+
+Le bench persona complet 2026-04-26 (PR #75) a révélé 3 limites
+structurelles du RAG rule-based actuel sur sa baseline figée 39.4 %
+verified / 17.9 % halluc :
+
+- **Floor L2-only-DARES** : 4/10 queries dédiées prospective voient
+  top-K = 100 % cells DARES sans formation, indépendant du boost.
+- **Cohabitation user-naturelle nulle** : 10/10 queries user-naturel
+  restent sur formation domain seul. L2 brut ne compose pas
+  sémantiquement les corpora ajoutés.
+- **Hallucination réglementaire** : 1 erreur catchée (titre RNCP
+  psychologue niveau 6 vs niveau 7 protégé) que le fact-checker rate.
+
+Ces limites motivent un pivot vers **agentique adaptatif** : un système
+qui raisonne sur la query, choisit les outils pertinents, vérifie ses
+sources avant de générer. Bascule axe B INRIA J-23 (focal samedi 02/05),
+livré en 4 sprints.
+
+### Decision
+
+**Pattern retenu : Agent loop with tool dispatch (function-calling natif Mistral)**.
+
+- `Tool` : abstraction d'un outil (nom, description, JSON schema des
+  paramètres, fonction Python à dispatcher).
+- `ToolRegistry` : catalogue des tools enregistrés, lookup par nom.
+- `Agent` : boucle orchestration `run(question) → final_answer` qui
+  appelle Mistral function-calling, dispatch les `tool_calls` retournés,
+  réinjecte les résultats dans la conversation, jusqu'à composition
+  finale ou max_iterations.
+- Tools concrets implémentés en sous-modules (`src/agent/tools/`) :
+  - Sprint 1 : `ProfileClarifier` (extraction profile structuré query
+    → JSON {age_group, education_level, sector_interest, region,
+    intent_type, urgent_concern})
+  - Sprint 2 : `QueryReformuler` (réécriture query éventuelle ⇒
+    sous-queries spécialisées par corpus)
+  - Sprint 3 : `FetchStatFromSource` (vérif stat avant citation)
+  - Sprint 4 : intégration end-to-end + bench vs baseline figée
+
+### Rationale
+
+**Pourquoi Mistral function-calling plutôt que ReAct ou state machine ?**
+
+1. **Cohérence stack souverain** : le projet utilise Mistral pour gen
+   + embed depuis ADR-001. Function-calling Mistral validé en POC #12
+   (axe2/pydantic-profileclarifier, Mistral Large) — gate technique
+   passé avec latence acceptable.
+2. **Simplicité MVP** : function-calling natif évite de réinventer un
+   parser ReAct fragile. Le contrat tools est explicite via JSON schema
+   typé, le SDK gère la sérialisation des `tool_calls`.
+3. **Évolutivité Sprints 2-4** : ajouter un tool = écrire un sous-module
+   + register dans `ToolRegistry`. Pas de modif du loop principal.
+4. **Composabilité** : un tool peut appeler d'autres tools si besoin
+   (ex : `QueryReformuler` peut consulter `ProfileClarifier` en interne).
+
+**Pourquoi pas state machine ?**
+
+State machine impose un graphe d'états figé (clarify → reformule →
+retrieve → answer). Trop rigide quand l'agent doit décider
+contextuellement de skipper certaines étapes (ex : query générique
+sans besoin de reformulation, ou question conceptuelle pure sans tool
+nécessaire).
+
+**Pourquoi pas LangChain ou framework externe ?**
+
+Souveraineté + simplicité : on contrôle 100 % du loop, pas de magie
+cachée, pas de dépendance lourde, ADR auditable INRIA. Pattern POC
+2026-04-22 a démontré que ~150 lignes de Python suffisent pour le loop.
+
+### Structure modulaire
+
+```
+src/agent/
+├── __init__.py        # exports publics
+├── agent.py           # Agent class + run() loop
+├── tool.py            # Tool dataclass + ToolRegistry
+└── tools/
+    ├── __init__.py
+    └── profile_clarifier.py  # Sprint 1
+    # Sprint 2 ajoutera query_reformuler.py
+    # Sprint 3 ajoutera fetch_stat_from_source.py
+```
+
+`tests/test_agent_*.py` pour tests unitaires + intégration.
+
+### Alternatives considérées
+
+1. **State machine explicite** (transitions définies clarify→reformule
+   →retrieve→generate) : rejetée — trop rigide, ne capture pas la
+   décision adaptative de skipper des étapes.
+2. **ReAct prompting custom** (pas de tool-use natif, parser
+   "Thought:/Action:/Observation:") : rejetée — fragile au format de
+   sortie LLM, fait double emploi avec le SDK Mistral function-calling.
+3. **LangChain / CrewAI / AutoGen** : rejetées — souveraineté +
+   transparence + simplicité custom > complexité framework.
+4. **Agent OpenAI Assistants API** : rejetée — souveraineté
+   (cf ADR-001), Mistral function-calling est l'équivalent souverain.
+
+### Caveat narrative INRIA
+
+L'ADR positionne explicit l'agentique comme **réponse aux 3 limites
+mesurées** du bench persona complet (PR #75). Pas un pivot
+opportuniste — un fix architectural justifié par la mesure. Cohérent
+avec l'apprentissage capitalisé du tune ×1.0 DARES (cf
+`docs/VERDICT_BENCH_DARES_DEDIE.md`) : les boosts rule-based atteignent
+leur plafond, l'adaptatif scale.
+
+Les tools agentiques restent **transparents et traçables** : chaque
+appel logged, paramètres sérialisés, résultats observables. Pas de
+black-box, INRIA reproductible.
+
+### Liens
+
+- POC validation Mistral tool-use : `experiments/poc_mistral_toolcall.py`
+  (PR #12, branche `axe2/pydantic-profileclarifier`)
+- Verdict baseline figée : `docs/VERDICT_BENCH_PERSONA_COMPLET_2026-04-26.md`
+- Sprint 1 livraison : `src/agent/` + `src/agent/tools/profile_clarifier.py`
+- ADR-001 souveraineté Mistral
+- Décision Sprints 2-4 : ADR à compléter au fil de l'eau pour chaque
+  tool concret (`QueryReformuler`, `FetchStatFromSource`).
