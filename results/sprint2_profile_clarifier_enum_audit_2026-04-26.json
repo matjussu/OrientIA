@@ -1,0 +1,975 @@
+{
+  "summary": {
+    "n_queries_total": 48,
+    "n_success": 48,
+    "n_failure": 0,
+    "n_with_anomalies": 2,
+    "n_clean": 46,
+    "age_group_distribution": {
+      "professionnel_actif": 14,
+      "etudiant_l1_l3": 9,
+      "other_or_unknown": 9,
+      "etudiant_master": 5,
+      "parent_lyceen": 5,
+      "lyceen_terminale": 2,
+      "lyceen_2nde": 2,
+      "bachelier_pro": 1,
+      "adulte_25_45": 1
+    },
+    "education_level_distribution": {
+      "professionnel_actif": 13,
+      "unknown": 11,
+      "bac+1": 4,
+      "terminale": 4,
+      "bac_obtenu": 4,
+      "bac+3": 3,
+      "infra_bac": 3,
+      "bac+5": 2,
+      "bac+4": 2,
+      "bac+2": 2
+    },
+    "intent_type_distribution": {
+      "conseil_strategique": 18,
+      "info_metier_specifique": 13,
+      "reorientation_etude": 4,
+      "reconversion_pro": 4,
+      "comparaison_options": 3,
+      "orientation_initiale": 2,
+      "conceptuel_definition": 2,
+      "demarche_administrative": 1,
+      "decouverte_filieres": 1
+    },
+    "valid_age_groups": [
+      "adulte_25_45",
+      "bachelier_general",
+      "bachelier_pro",
+      "bachelier_techno",
+      "etudiant_l1_l3",
+      "etudiant_master",
+      "lyceen_2nde",
+      "lyceen_terminale",
+      "other_or_unknown",
+      "parent_lyceen",
+      "professionnel_actif",
+      "professionnel_education"
+    ],
+    "valid_education_levels": [
+      "bac+1",
+      "bac+2",
+      "bac+3",
+      "bac+5",
+      "bac+8_doctorat",
+      "bac_obtenu",
+      "infra_bac",
+      "professionnel_actif",
+      "terminale",
+      "unknown"
+    ],
+    "valid_intent_types": [
+      "comparaison_options",
+      "conceptuel_definition",
+      "conseil_strategique",
+      "decouverte_filieres",
+      "demarche_administrative",
+      "info_metier_specifique",
+      "orientation_initiale",
+      "other",
+      "reconversion_pro",
+      "reorientation_etude"
+    ]
+  },
+  "queries": [
+    {
+      "query_id": "lila_q1",
+      "suite": "personas_v4",
+      "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+      "raw_args": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+3",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "lettres",
+          "sciences humaines"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur les débouchés après une licence de lettres modernes."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "lila_q2",
+      "suite": "personas_v4",
+      "query_text": "J'hésite entre une fac de sciences humaines et une école de communication à Paris, pourquoi choisir l'une plutôt que l'autre ?",
+      "raw_args": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+1",
+        "intent_type": "comparaison_options",
+        "sector_interest": [
+          "sciences humaines",
+          "communication"
+        ],
+        "region": "Île-de-France",
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur hésitation entre deux filières et localisation parisienne."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "lila_q3",
+      "suite": "personas_v4",
+      "query_text": "Je suis en Terminale L, j'ai 14 de moyenne, j'aime écrire et j'aime l'histoire mais je ne veux pas être prof. Je cherche un parcours post-bac qui me laisse plusieurs options métiers ouvertes.",
+      "raw_args": {
+        "age_group": "lyceen_terminale",
+        "education_level": "terminale",
+        "intent_type": "orientation_initiale",
+        "sector_interest": [
+          "littérature",
+          "écriture",
+          "histoire"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Utilisateur en Terminale L, mentionne explicitement ses centres d'intérêt (écriture, histoire) et son refus du métier de professeur."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "theo_q1",
+      "suite": "personas_v4",
+      "query_text": "Quelles passerelles existent après une L1/L2 de droit pour aller vers un BTS ou une école de commerce ?",
+      "raw_args": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+1",
+        "intent_type": "reorientation_etude",
+        "sector_interest": [
+          "droit",
+          "commerce",
+          "gestion"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "L'utilisateur mentionne explicitement une L1/L2 de droit et souhaite explorer des passerelles vers un BTS ou une école de commerce."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "theo_q2",
+      "suite": "personas_v4",
+      "query_text": "Je n'aime pas du tout le droit, je ne veux pas redoubler. Qu'est-ce qui est le plus réaliste cette année pour me réorienter ?",
+      "raw_args": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+1",
+        "intent_type": "reorientation_etude",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": true,
+        "confidence": 0.85,
+        "notes": "Query exprime une urgence et un rejet clair du droit, mais aucun secteur de repli mentionné. Réorientation probable en L1 ou BUT."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "theo_q3",
+      "suite": "personas_v4",
+      "query_text": "J'ai validé ma L1 de droit mais je galère en L2, je pense à me réorienter vers l'audiovisuel ou le commerce, si possible en alternance. J'habite à Bordeaux, quelles options concrètes ?",
+      "raw_args": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+1",
+        "intent_type": "reorientation_etude",
+        "sector_interest": [
+          "audiovisuel",
+          "commerce"
+        ],
+        "region": "Nouvelle-Aquitaine",
+        "urgent_concern": true,
+        "confidence": 0.9,
+        "notes": "Réorientation explicite depuis le droit vers audiovisuel ou commerce, préférence pour l'alternance. Région mentionnée : Bordeaux (Nouvelle-Aquitaine)."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "emma_q1",
+      "suite": "personas_v4",
+      "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+      "raw_args": {
+        "age_group": "etudiant_master",
+        "education_level": "bac+5",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "informatique",
+          "numérique"
+        ],
+        "region": "France",
+        "urgent_concern": false,
+        "confidence": 0.95
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "emma_q2",
+      "suite": "personas_v4",
+      "query_text": "Je finis mon M1 info, je dois choisir entre un M2 classique recherche ou un master en alternance. Qu'est-ce qui me donnera le meilleur CV pour entrer en CDI direct ?",
+      "raw_args": {
+        "age_group": "etudiant_master",
+        "education_level": "bac+4",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "informatique",
+          "numérique"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur choix M2 recherche vs alternance pour optimiser employabilité en CDI."
+      },
+      "anomalies": [
+        {
+          "field": "education_level",
+          "spurious_value": "bac+4",
+          "type": "enum_out_of_range"
+        }
+      ]
+    },
+    {
+      "query_id": "emma_q3",
+      "suite": "personas_v4",
+      "query_text": "Je suis en M1 info à l'université de Lille, j'aime la data et le ML, je ne sais pas si je dois viser grosse boîte tech type Doctolib ou Criteo, ou plutôt une startup early-stage. Je veux un poste CDI dès la sortie, pas un CDD recherche.",
+      "raw_args": {
+        "age_group": "etudiant_master",
+        "education_level": "bac+4",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "informatique",
+          "data",
+          "machine_learning",
+          "numérique"
+        ],
+        "region": "Hauts-de-France",
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Utilisateur explicite sur son niveau (M1 info), ses intérêts (data/ML) et son dilemme (grosse boîte vs startup). Urgence non exprimée, mais besoin clair de conseil pour un CDI post-diplôme."
+      },
+      "anomalies": [
+        {
+          "field": "education_level",
+          "spurious_value": "bac+4",
+          "type": "enum_out_of_range"
+        }
+      ]
+    },
+    {
+      "query_id": "mohamed_q1",
+      "suite": "personas_v4",
+      "query_text": "Quels sont les principaux débouchés métier après un Bac pro cuisine par apprentissage ?",
+      "raw_args": {
+        "age_group": "bachelier_pro",
+        "education_level": "bac_obtenu",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "hôtellerie-restauration",
+          "cuisine"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur Bac pro cuisine par apprentissage, demande des débouchés métiers."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "mohamed_q2",
+      "suite": "personas_v4",
+      "query_text": "J'ai fini mon CAP cuisine, je ne suis plus sûr de vouloir rester en restauration. Qu'est-ce que je peux faire d'autre avec ce CAP ?",
+      "raw_args": {
+        "age_group": "adulte_25_45",
+        "education_level": "bac_obtenu",
+        "intent_type": "reconversion_pro",
+        "sector_interest": [
+          "restauration",
+          "hôtellerie"
+        ],
+        "region": null,
+        "urgent_concern": true,
+        "confidence": 0.85,
+        "notes": "CAP cuisine mentionné comme diplôme obtenu. Incertitude sur la poursuite dans la restauration, recherche d'alternatives."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "mohamed_q3",
+      "suite": "personas_v4",
+      "query_text": "Je suis en CAP cuisine à Marseille, je veux continuer en Bac pro alternance mais j'hésite entre cuisine et boulangerie-pâtisserie. Salaires, perspectives, contraintes de rythme ?",
+      "raw_args": {
+        "age_group": "professionnel_actif",
+        "education_level": "infra_bac",
+        "intent_type": "comparaison_options",
+        "sector_interest": [
+          "cuisine",
+          "boulangerie-pâtisserie"
+        ],
+        "region": "Provence-Alpes-Côte d'Azur",
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Utilisateur en CAP cuisine à Marseille, souhaite comparer Bac pro cuisine et boulangerie-pâtisserie en alternance (salaires, perspectives, rythme)."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "valerie_q1",
+      "suite": "personas_v4",
+      "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+      "raw_args": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "comparaison_options",
+        "sector_interest": [
+          "commerce",
+          "gestion"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.7,
+        "notes": "Query comparative sur les coûts, secteurs implicites (école de commerce vs licence publique). Pas d'indice sur l'âge ou le niveau d'études."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "valerie_q2",
+      "suite": "personas_v4",
+      "query_text": "Mon fils veut faire STAPS mais je m'inquiète des débouchés. Est-ce un choix raisonnable aujourd'hui ?",
+      "raw_args": {
+        "age_group": "parent_lyceen",
+        "education_level": "unknown",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "sport",
+          "STAPS"
+        ],
+        "region": null,
+        "urgent_concern": true,
+        "confidence": 0.85,
+        "notes": "Parent inquiet pour l'orientation de son fils (STAPS). Demande implicite sur la viabilité des débouchés."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "valerie_q3",
+      "suite": "personas_v4",
+      "query_text": "Mon fils est en Terminale S, moyenne 13, il adore le sport. Il hésite entre STAPS et kiné. On n'a pas les moyens d'une école privée chère. Quelles voies publiques les plus sûres ?",
+      "raw_args": {
+        "age_group": "parent_lyceen",
+        "education_level": "terminale",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "sport",
+          "santé",
+          "kinésithérapie"
+        ],
+        "region": null,
+        "urgent_concern": true,
+        "confidence": 0.9,
+        "notes": "Parent d'un lycéen en Terminale S (moyenne 13), hésitation entre STAPS et kiné. Contrainte financière : voies publiques uniquement."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "psy_en_q1",
+      "suite": "personas_v4",
+      "query_text": "Quels sont les indicateurs d'insertion professionnelle à 3 ans pour un master en psychologie clinique en France ?",
+      "raw_args": {
+        "age_group": "etudiant_master",
+        "education_level": "bac+5",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "santé",
+          "psychologie"
+        ],
+        "region": "France",
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur un master en psychologie clinique, donc secteur santé/psychologie et niveau bac+5."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "psy_en_q2",
+      "suite": "personas_v4",
+      "query_text": "Une élève en 1ère S redouble avec 7 de moyenne en maths mais excellente en philo, comment la guider vers un post-bac réaliste ?",
+      "raw_args": {
+        "age_group": "lyceen_2nde",
+        "education_level": "infra_bac",
+        "intent_type": "reorientation_etude",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": true,
+        "confidence": 0.85,
+        "notes": "Élève en 1ère S (redoublante), mention explicite des résultats en maths (7/20) et philo (excellente). Demande de guidance post-bac réaliste."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "psy_en_q3",
+      "suite": "personas_v4",
+      "query_text": "J'accompagne un élève de 2nde issu d'un milieu modeste, qui rêve de devenir ingénieur aéro mais ses résultats sont moyens (10-11 en maths). Quelles stratégies long-terme sur la suite du lycée ?",
+      "raw_args": {
+        "age_group": "parent_lyceen",
+        "education_level": "terminale",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "ingénierie",
+          "aéronautique"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query faite par un accompagnant (parent/prof), focalisée sur un élève de 2nde avec un projet précis mais des résultats moyens. Demande de stratégie long-terme."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q01_postes_pourvoir_global",
+      "suite": "dares_dedie",
+      "query_text": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+      "raw_args": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [],
+        "region": "France",
+        "urgent_concern": false,
+        "confidence": 0.7,
+        "notes": "Query générale sans indication d'âge, niveau d'études ou secteur précis. Intent stratégique déduit du focus sur les tendances 2030."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q02_perspectives_bretagne",
+      "suite": "dares_dedie",
+      "query_text": "Quelles sont les perspectives de recrutement en Bretagne d'ici 2030 ?",
+      "raw_args": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [],
+        "region": "Bretagne",
+        "urgent_concern": false,
+        "confidence": 0.8,
+        "notes": "Query ciblée sur les perspectives de recrutement, implicite pour un professionnel actif ou en reconversion. Aucun secteur mentionné."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q03_postes_aides_soignants",
+      "suite": "dares_dedie",
+      "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+      "raw_args": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "santé",
+          "médico-social"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.8,
+        "notes": "Query ciblée sur un métier spécifique (aides-soignants) et des données prospectives. Hypothèse : professionnel actif ou en reconversion dans le secteur santé."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q04_retraite_massive",
+      "suite": "dares_dedie",
+      "query_text": "Quels métiers vont voir une retraite massive de leurs effectifs d'ici 2030 ?",
+      "raw_args": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.8,
+        "notes": "Query ciblée sur une analyse prospective des métiers, probablement pour anticiper des opportunités de reconversion ou d'emploi."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q05_metiers_btp_recruter",
+      "suite": "dares_dedie",
+      "query_text": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+      "raw_args": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "bâtiment",
+          "construction"
+        ],
+        "region": "Île-de-France",
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur les métiers du bâtiment en Île-de-France avec une dimension prospective."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q06_metiers_2030_aura",
+      "suite": "dares_dedie",
+      "query_text": "Métiers en 2030 : quels secteurs vont créer le plus d'emplois en Auvergne-Rhône-Alpes ?",
+      "raw_args": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [],
+        "region": "Auvergne-Rhône-Alpes",
+        "urgent_concern": false,
+        "confidence": 0.8,
+        "notes": "Query ciblée sur les métiers et secteurs porteurs à horizon 2030, sans mention explicite de secteur ou de situation personnelle."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q07_niveau_tension_enseignants",
+      "suite": "dares_dedie",
+      "query_text": "Quel est le niveau de tension 2019 pour le métier d'enseignant ?",
+      "raw_args": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "éducation",
+          "enseignement"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.8,
+        "notes": "L'utilisateur cherche des données spécifiques sur le métier d'enseignant, probablement pour une analyse ou une réflexion professionnelle."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q08_desequilibre_conducteurs",
+      "suite": "dares_dedie",
+      "query_text": "Y a-t-il un déséquilibre potentiel sur le marché des conducteurs de véhicules d'ici 2030 ?",
+      "raw_args": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "transport",
+          "logistique"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.8,
+        "notes": "Query orientée marché du travail et prospective sectorielle. Supposition d'un professionnel en veille ou reconversion."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q09_projection_numerique",
+      "suite": "dares_dedie",
+      "query_text": "Quelles sont les projections de recrutement pour les métiers du numérique d'ici 2030 ?",
+      "raw_args": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "numérique"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.85,
+        "notes": "Query ciblée sur les projections de recrutement, suggérant un intérêt stratégique ou professionnel."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q10_fap_T4Z",
+      "suite": "dares_dedie",
+      "query_text": "FAP T4Z agents d'entretien : combien de postes à pourvoir d'ici 2030 et dans quelles régions ?",
+      "raw_args": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "nettoyage",
+          "services_aux_entreprises"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur un métier spécifique (FAP T4Z agents d'entretien) et demande de données prospectives sur les postes à pourvoir."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q01_blocs_BTS_compta",
+      "suite": "blocs_dedie",
+      "query_text": "Quels blocs de compétences valide le BTS comptabilité ?",
+      "raw_args": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+2",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "comptabilité",
+          "gestion"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.85,
+        "notes": "Query explicite sur un BTS comptabilité, donc supposition d'un étudiant en cours de formation ou intéressé par ce diplôme."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q02_blocs_BUT_info_apprendre",
+      "suite": "blocs_dedie",
+      "query_text": "Que vais-je apprendre en BUT informatique ?",
+      "raw_args": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "conceptuel_definition",
+        "sector_interest": [
+          "informatique"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.8,
+        "notes": "Query implicite : utilisateur probablement lycéen ou étudiant en orientation, mais pas explicite. Domaine clair : informatique."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q03_blocs_master_cyber",
+      "suite": "blocs_dedie",
+      "query_text": "Quelles compétences certifiées par un master en cybersécurité ?",
+      "raw_args": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "cybersécurité",
+          "informatique"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.8,
+        "notes": "Query implicite sur un master en cybersécurité, mais pas d'indice sur le profil de l'utilisateur (étudiant, professionnel, etc.)."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q04_blocs_BTS_electro_contenu",
+      "suite": "blocs_dedie",
+      "query_text": "Contenu pédagogique du BTS électrotechnique : quels objectifs pédagogiques ?",
+      "raw_args": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac_obtenu",
+        "intent_type": "conceptuel_definition",
+        "sector_interest": [
+          "électrotechnique",
+          "industrie"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur un BTS électrotechnique, donc secteur clair et intent conceptuel."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q05_blocs_VAE_partielle",
+      "suite": "blocs_dedie",
+      "query_text": "Comment valider un titre RNCP par VAE par bloc ?",
+      "raw_args": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "demarche_administrative",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.85,
+        "notes": "Query ciblée sur une démarche VAE par bloc pour un titre RNCP. Supposition : utilisateur professionnel actif. Aucun secteur mentionné."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q06_blocs_savoir_faire_BTS_hotel",
+      "suite": "blocs_dedie",
+      "query_text": "Quels savoir-faire certifiés à la sortie d'un BTS hôtellerie-restauration ?",
+      "raw_args": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+2",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "hôtellerie",
+          "restauration"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur un BTS hôtellerie-restauration, donc secteur et niveau d'études clairs."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q07_blocs_BUT_GEA",
+      "suite": "blocs_dedie",
+      "query_text": "Que permet de faire un BUT GEA dans la pratique ?",
+      "raw_args": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "gestion",
+          "administration",
+          "commerce"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.8,
+        "notes": "Query explicite sur le BUT GEA, mais pas d'indice sur l'utilisateur (âge, niveau d'études). Secteur déduit de 'GEA' (Gestion et Administration des Entreprises)."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q08_blocs_RNCP35185",
+      "suite": "blocs_dedie",
+      "query_text": "RNCP35185 : quels blocs de compétences couvre cette fiche ?",
+      "raw_args": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.7,
+        "notes": "Query technique ciblant une fiche RNCP spécifique. Intent probable : comprendre les blocs de compétences pour une formation ou un métier. Secteur non mentionné."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q09_blocs_master_marketing",
+      "suite": "blocs_dedie",
+      "query_text": "Quel est le programme pédagogique du master Marketing Digital ?",
+      "raw_args": {
+        "age_group": "etudiant_master",
+        "education_level": "bac+3",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "marketing",
+          "digital"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.85,
+        "notes": "Query ciblée sur un master spécifique, mais pas d'indice sur la région ou une urgence. Supposition : étudiant en bac+3 cherchant des détails sur le programme."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q10_blocs_licence_pro_com",
+      "suite": "blocs_dedie",
+      "query_text": "Quelles compétences acquises après une licence pro en communication ?",
+      "raw_args": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+3",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "communication"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur une licence pro en communication, donc profil étudiant en bac+3."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q11_lycee_reunion_metropole",
+      "suite": "user_naturel",
+      "query_text": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options s'offrent à moi ?",
+      "raw_args": {
+        "age_group": "lyceen_terminale",
+        "education_level": "terminale",
+        "intent_type": "decouverte_filieres",
+        "sector_interest": [
+          "numérique"
+        ],
+        "region": "La Réunion",
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "L'utilisateur mentionne explicitement son statut de lycéen à La Réunion et son intérêt pour le numérique en métropole."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q12_apprentissage_vs_bac_general",
+      "suite": "user_naturel",
+      "query_text": "Mon fils de 17 ans hésite entre l'apprentissage et le bac général. Comment l'aider à décider ?",
+      "raw_args": {
+        "age_group": "parent_lyceen",
+        "education_level": "unknown",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.85,
+        "notes": "Query explicite sur l'hésitation entre apprentissage et bac général pour un lycéen de 17 ans. Intent conseil stratégique pour un parent."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q13_reconversion_grande_distrib",
+      "suite": "user_naturel",
+      "query_text": "Je travaille dans la grande distribution depuis 8 ans, je veux changer complètement de secteur. Par où commencer ?",
+      "raw_args": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "reconversion_pro",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur une reconversion professionnelle sans secteur précis mentionné."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q14_passerelle_infirmier_RH",
+      "suite": "user_naturel",
+      "query_text": "Une amie infirmière souhaite passer à un poste en ressources humaines. Quelles passerelles existent ?",
+      "raw_args": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "reconversion_pro",
+        "sector_interest": [
+          "ressources humaines"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "L'utilisateur parle d'une amie infirmière en reconversion vers les RH. Best guess : professionnel actif en reconversion."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q15_cout_ecole_commerce_5ans",
+      "suite": "user_naturel",
+      "query_text": "Combien faut-il prévoir financièrement pour 5 années d'études en école de commerce ?",
+      "raw_args": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "commerce",
+          "gestion",
+          "école de commerce"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.7,
+        "notes": "Query ne précise pas la situation de l'utilisateur (lycéen, parent, professionnel en reconversion, etc.). Secteur déduit : école de commerce."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q16_bacpro_BUT_taux",
+      "suite": "user_naturel",
+      "query_text": "Mon fils a un bac pro vente, peut-il intégrer un BUT et avec quelle chance de réussir ?",
+      "raw_args": {
+        "age_group": "parent_lyceen",
+        "education_level": "bac_obtenu",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "commerce",
+          "vente"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite : bac pro vente, interrogation sur l'intégration en BUT et chances de réussite."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q17_decouverte_dehors_mains",
+      "suite": "user_naturel",
+      "query_text": "Quels secteurs d'avenir conviendraient à quelqu'un qui aime travailler dehors et avec ses mains ?",
+      "raw_args": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "plein_air",
+          "travail_manuel"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.85,
+        "notes": "Query implicite sur les secteurs d'avenir pour travail en extérieur et manuel. Aucune indication sur l'âge ou le niveau d'études."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q18_seconde_orientation",
+      "suite": "user_naturel",
+      "query_text": "Je suis en seconde, j'ai peur de ne pas savoir quoi faire après le bac. Comment commencer à réfléchir à mon orientation ?",
+      "raw_args": {
+        "age_group": "lyceen_2nde",
+        "education_level": "infra_bac",
+        "intent_type": "orientation_initiale",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": true,
+        "confidence": 0.9,
+        "notes": "Query explicite sur la peur et l'orientation post-bac depuis la seconde."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q19_kine_debouches",
+      "suite": "user_naturel",
+      "query_text": "Étudier la kinésithérapie aujourd'hui, est-ce que ça vaut le coup au regard des débouchés ?",
+      "raw_args": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "santé",
+          "kinésithérapie"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.8,
+        "notes": "Query implicite sur la viabilité des études en kinésithérapie. Aucun indice sur l'âge ou le niveau d'études, mais intent stratégique clair."
+      },
+      "anomalies": []
+    },
+    {
+      "query_id": "q20_sante_rural",
+      "suite": "user_naturel",
+      "query_text": "Comment trouver un poste de soignant en zone rurale ? Quelles options de carrière ?",
+      "raw_args": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "reconversion_pro",
+        "sector_interest": [
+          "santé",
+          "médico-social"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.85,
+        "notes": "Query cible explicitement un poste de soignant en zone rurale, suggérant une recherche de reconversion ou d'évolution dans le secteur santé."
+      },
+      "anomalies": []
+    }
+  ]
+}

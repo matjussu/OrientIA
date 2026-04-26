@@ -21,6 +21,7 @@ from typing import Optional
 
 from mistralai.client import Mistral
 
+from src.agent.retry import call_with_retry
 from src.agent.tool import Tool
 
 
@@ -50,6 +51,10 @@ VALID_EDUCATION_LEVELS = {
     "bac+1",
     "bac+2",
     "bac+3",
+    "bac+4",  # ajout post-audit Sprint 2 (PR #76 audit 48q) :
+              # le LLM invente naturellement bac+4 pour M1. Pas dans
+              # le système LMD officiel (bac+3 / bac+5 / bac+8) mais
+              # utile pour tracer l'étape M1 incomplet.
     "bac+5",
     "bac+8_doctorat",
     "professionnel_actif",
@@ -259,11 +264,14 @@ class ProfileClarifier:
     - Parse les arguments retournés
     - Construit + valide la dataclass `Profile`
     - Retourne `Profile` ou raise `ValueError` si invalid
+    - Retry exponential backoff sur 429 / 5xx (cf src/agent/retry.py)
     """
 
     client: Mistral
     model: str = "mistral-large-latest"
     timeout_ms: int = 60_000
+    max_retries: int = 3
+    initial_backoff: float = 2.0
 
     def clarify(self, query: str) -> Profile:
         """Extrait le profil depuis `query`. Raise ValueError si parse fail."""
@@ -271,11 +279,15 @@ class ProfileClarifier:
             {"role": "system", "content": CLARIFIER_SYSTEM_PROMPT},
             {"role": "user", "content": query},
         ]
-        response = self.client.chat.complete(
-            model=self.model,
-            messages=messages,
-            tools=[PROFILE_CLARIFIER_TOOL.to_mistral_schema()],
-            tool_choice="any",  # force le call
+        response = call_with_retry(
+            lambda: self.client.chat.complete(
+                model=self.model,
+                messages=messages,
+                tools=[PROFILE_CLARIFIER_TOOL.to_mistral_schema()],
+                tool_choice="any",  # force le call
+            ),
+            max_retries=self.max_retries,
+            initial_backoff=self.initial_backoff,
         )
         msg = response.choices[0].message
         if not msg.tool_calls:

@@ -1,0 +1,784 @@
+{
+  "summary": {
+    "n_queries": 12,
+    "n_success": 12,
+    "n_failure": 0,
+    "avg_elapsed_s": 13.97,
+    "total_elapsed_s": 167.66,
+    "total_sub_queries": 53,
+    "avg_sub_queries_per_query": 4.42,
+    "target_corpus_distribution": {
+      "competences_certif": 9,
+      "formation": 8,
+      "metier_prospective": 8,
+      "metier": 6,
+      "insertion_pro": 6,
+      "insee_salaire": 5,
+      "apec_region": 5,
+      "parcours_bacheliers": 2,
+      "multi": 2,
+      "crous": 2
+    },
+    "model": "mistral-large-latest"
+  },
+  "queries": [
+    {
+      "id": "p1_lila_q1",
+      "suite": "personas_v4",
+      "query": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+      "elapsed_s": 11.52,
+      "success": true,
+      "profile": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+3",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "lettres",
+          "sciences humaines"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur les débouchés après une licence de lettres modernes."
+      },
+      "plan": {
+        "original_query": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+        "sub_queries": [
+          {
+            "text": "Quels sont les métiers accessibles après une licence de lettres modernes ? Fiches ONISEP détaillées sur les débouchés en lettres et sciences humaines.",
+            "target_corpus": "metier",
+            "priority": 1,
+            "rationale": "Couvre l'intent core : débouchés métiers après une licence de lettres modernes."
+          },
+          {
+            "text": "Quelles formations (master, écoles) poursuivre après une licence de lettres modernes pour maximiser les opportunités professionnelles ? Catalogue Parcoursup et ONISEP.",
+            "target_corpus": "formation",
+            "priority": 1,
+            "rationale": "Complète la première sub-query en ciblant les poursuites d'études possibles."
+          },
+          {
+            "text": "Quels sont les métiers en tension ou en croissance d'ici 2030 dans le secteur des lettres et sciences humaines ? Données DARES Métiers 2030.",
+            "target_corpus": "metier_prospective",
+            "priority": 2,
+            "rationale": "Ajoute une dimension prospective pour contextualiser les débouchés."
+          },
+          {
+            "text": "Quels sont les taux d'insertion professionnelle 6, 12 et 18 mois après un master en lettres ou sciences humaines ? Données MESR.",
+            "target_corpus": "insertion_pro",
+            "priority": 2,
+            "rationale": "Apporte des données concrètes sur l'insertion post-diplôme."
+          },
+          {
+            "text": "Quels sont les blocs de compétences ou certifications (RNCP) utiles pour se spécialiser après une licence de lettres modernes ?",
+            "target_corpus": "competences_certif",
+            "priority": 3,
+            "rationale": "Optionnel : complète avec des pistes de spécialisation par compétences."
+          }
+        ],
+        "strategy_note": "Priorité donnée aux corpora 'metier' et 'formation' pour répondre directement à l'intent core. Les sub-queries 3 et 4 ajoutent un contexte utile (prospective et insertion), tandis que la 5 est optionnelle pour élargir les pistes de spécialisation.",
+        "profile_used": {
+          "age_group": "etudiant_l1_l3",
+          "education_level": "bac+3",
+          "intent_type": "info_metier_specifique",
+          "sector_interest": [
+            "lettres",
+            "sciences humaines"
+          ],
+          "region": null,
+          "urgent_concern": false,
+          "confidence": 0.9,
+          "notes": "Query explicite sur les débouchés après une licence de lettres modernes."
+        }
+      }
+    },
+    {
+      "id": "p2_theo_q2",
+      "suite": "personas_v4",
+      "query": "Je n'aime pas du tout le droit, je ne veux pas redoubler. Quelles options pour me réorienter en cours d'année ?",
+      "elapsed_s": 14.1,
+      "success": true,
+      "profile": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+1",
+        "intent_type": "reorientation_etude",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": true,
+        "confidence": 0.85,
+        "notes": "Query explicite sur réorientation en cours d'année, mention de rejet du droit et urgence (pas de redoublement). Secteur non précisé."
+      },
+      "plan": {
+        "original_query": "Je n'aime pas du tout le droit, je ne veux pas redoubler. Quelles options pour me réorienter en cours d'année ?",
+        "sub_queries": [
+          {
+            "text": "Réorientation en cours d'année pour étudiant en L1/L2 de droit : quelles formations accessibles sans redoublement ? Liste des licences, BUT ou écoles avec admissions parallèles ou rentrées décalées (Parcoursup + ONISEP).",
+            "target_corpus": "formation",
+            "priority": 1,
+            "rationale": "Ancrage urgent_concern=True : priorité absolue sur les options immédiates sans redoublement."
+          },
+          {
+            "text": "Quels métiers ou secteurs professionnels recrutent des profils bac+1 sans exigence de diplôme en droit ? Fiches ONISEP métiers accessibles après une première année d'études supérieures.",
+            "target_corpus": "metier",
+            "priority": 2,
+            "rationale": "Complète la réorientation par des pistes métiers adaptées à un niveau bac+1."
+          },
+          {
+            "text": "Quels sont les métiers avec des postes à pourvoir d'ici 2030 (DARES Métiers 2030) qui nécessitent peu ou pas de formation longue ? Focus sur les secteurs en tension accessibles après une réorientation rapide.",
+            "target_corpus": "metier_prospective",
+            "priority": 2,
+            "rationale": "Ajoute une dimension prospective pour sécuriser le choix de réorientation."
+          },
+          {
+            "text": "Quels blocs de compétences ou certifications (RNCP) peuvent être validés en moins d'un an pour un étudiant en réorientation ? Liste des certifications accessibles sans prérequis strict en droit.",
+            "target_corpus": "competences_certif",
+            "priority": 3,
+            "rationale": "Optionnel : propose des voies de certification rapide pour une insertion accélérée."
+          },
+          {
+            "text": "Taux de réussite en L1 pour les bacheliers sans mention : quelles licences ont les meilleurs taux de réussite pour les étudiants en réorientation ? Données MESRI parcours bacheliers.",
+            "target_corpus": "parcours_bacheliers",
+            "priority": 3,
+            "rationale": "Optionnel : rassure sur les chances de réussite dans les nouvelles filières choisies."
+          }
+        ],
+        "strategy_note": "Priorité 1 sur 'formation' pour répondre à l'urgent_concern (réorientation immédiate). Deux sub-queries priorité 2 pour élargir vers des métiers accessibles et prospectifs. Deux sub-queries priorité 3 pour contextualiser avec des certifications rapides et des taux de réussite.",
+        "profile_used": {
+          "age_group": "etudiant_l1_l3",
+          "education_level": "bac+1",
+          "intent_type": "reorientation_etude",
+          "sector_interest": [],
+          "region": null,
+          "urgent_concern": true,
+          "confidence": 0.85,
+          "notes": "Query explicite sur réorientation en cours d'année, mention de rejet du droit et urgence (pas de redoublement). Secteur non précisé."
+        }
+      }
+    },
+    {
+      "id": "p3_emma_q1",
+      "suite": "personas_v4",
+      "query": "Quel est le salaire moyen d'un développeur débutant post M2 informatique ?",
+      "elapsed_s": 11.01,
+      "success": true,
+      "profile": {
+        "age_group": "etudiant_master",
+        "education_level": "bac+5",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "informatique",
+          "développement"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "Query explicite sur un métier spécifique (développeur) et niveau d'études (M2 informatique)."
+      },
+      "plan": {
+        "original_query": "Quel est le salaire moyen d'un développeur débutant post M2 informatique ?",
+        "sub_queries": [
+          {
+            "text": "Salaire médian d'un développeur débutant (PCS 388a) en France selon les données INSEE SALAAN, après un master en informatique.",
+            "target_corpus": "insee_salaire",
+            "priority": 1,
+            "rationale": "Cible directement l'intent core avec le domain hint 'INSEE salaire' pour activer les données PCS."
+          },
+          {
+            "text": "Taux d'insertion professionnelle et salaire moyen 6 à 18 mois après un master en informatique (spécialité développement), données MESR insertion_pro.",
+            "target_corpus": "insertion_pro",
+            "priority": 2,
+            "rationale": "Complète avec des données post-master spécifiques au secteur développement."
+          },
+          {
+            "text": "Perspectives de recrutement et fourchettes de salaires pour les développeurs débutants en région (marché cadres), données APEC.",
+            "target_corpus": "apec_region",
+            "priority": 2,
+            "rationale": "Ajoute une vision marché du travail cadres pour contextualiser les salaires."
+          },
+          {
+            "text": "Blocs de compétences RNCP associés aux métiers de développeur en informatique : niveaux de certification et valorisation salariale.",
+            "target_corpus": "competences_certif",
+            "priority": 3,
+            "rationale": "Optionnel pour lier compétences et salaire, utile pour un étudiant en master."
+          }
+        ],
+        "strategy_note": "Priorité 1 sur INSEE pour le salaire médian (donnée fiable et ciblée). Complété par insertion_pro et APEC pour contextualiser (priorité 2). Competences_certif en optionnel pour une vision compétences/salaire.",
+        "profile_used": {
+          "age_group": "etudiant_master",
+          "education_level": "bac+5",
+          "intent_type": "info_metier_specifique",
+          "sector_interest": [
+            "informatique",
+            "développement"
+          ],
+          "region": null,
+          "urgent_concern": false,
+          "confidence": 0.9,
+          "notes": "Query explicite sur un métier spécifique (développeur) et niveau d'études (M2 informatique)."
+        }
+      }
+    },
+    {
+      "id": "d1_q01_postes_pourvoir",
+      "suite": "dares_dedie",
+      "query": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+      "elapsed_s": 11.9,
+      "success": true,
+      "profile": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [],
+        "region": "France",
+        "urgent_concern": false,
+        "confidence": 0.7,
+        "notes": "Query générale sans indication d'âge, niveau d'études ou secteur précis. Intent déduit comme conseil stratégique pour une projection future."
+      },
+      "plan": {
+        "original_query": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+        "sub_queries": [
+          {
+            "text": "Quels sont les métiers identifiés par la DARES comme ayant le plus de postes à pourvoir d'ici 2030 en France ? Données prospectives métiers 2030 par région et famille professionnelle (FAP).",
+            "target_corpus": "metier_prospective",
+            "priority": 1,
+            "rationale": "Intent core : demande explicite sur les métiers recrutant le plus en 2030, aligné avec DARES Métiers 2030."
+          },
+          {
+            "text": "Quels secteurs ou familles de métiers (FAP) en France auront les plus fortes perspectives de recrutement cadres d'ici 2030 selon l'APEC ?",
+            "target_corpus": "apec_region",
+            "priority": 2,
+            "rationale": "Complète metier_prospective avec focus cadres (APEC), utile pour affiner les opportunités par niveau de qualification."
+          },
+          {
+            "text": "Quelles formations ou certifications (RNCP) préparent aux métiers en tension identifiés pour 2030 en France ? Blocs de compétences associés.",
+            "target_corpus": "competences_certif",
+            "priority": 2,
+            "rationale": "Lien entre métiers 2030 et formations/certifications pour contextualiser l'accès à ces métiers."
+          },
+          {
+            "text": "Quels sont les salaires médians (INSEE) associés aux métiers ou familles professionnelles (PCS) les plus recrutés en 2030 en France ?",
+            "target_corpus": "insee_salaire",
+            "priority": 3,
+            "rationale": "Contexte complémentaire sur la rémunération pour évaluer l'attractivité des métiers."
+          }
+        ],
+        "strategy_note": "Priorité 1 sur metier_prospective pour couvrir l'intent core. Ajout de apec_region et competences_certif (priorité 2) pour élargir aux cadres et formations. insee_salaire en optionnel pour enrichir l'analyse.",
+        "profile_used": {
+          "age_group": "other_or_unknown",
+          "education_level": "unknown",
+          "intent_type": "conseil_strategique",
+          "sector_interest": [],
+          "region": "France",
+          "urgent_concern": false,
+          "confidence": 0.7,
+          "notes": "Query générale sans indication d'âge, niveau d'études ou secteur précis. Intent déduit comme conseil stratégique pour une projection future."
+        }
+      }
+    },
+    {
+      "id": "d2_q02_perspectives_bretagne",
+      "suite": "dares_dedie",
+      "query": "Quelles sont les perspectives de recrutement en Bretagne d'ici 2030 ?",
+      "elapsed_s": 10.67,
+      "success": true,
+      "profile": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [],
+        "region": "Bretagne",
+        "urgent_concern": false,
+        "confidence": 0.8,
+        "notes": "Query axée sur les perspectives de recrutement, implicant un professionnel ou un demandeur d'emploi. Secteur non précisé."
+      },
+      "plan": {
+        "original_query": "Quelles sont les perspectives de recrutement en Bretagne d'ici 2030 ?",
+        "sub_queries": [
+          {
+            "text": "Quels sont les métiers et postes à pourvoir en Bretagne d'ici 2030 selon les projections DARES Métiers 2030 ?",
+            "target_corpus": "metier_prospective",
+            "priority": 1,
+            "rationale": "Cible directement l'intent core avec le domain hint 'DARES Métiers 2030' pour activer le corpus spécialisé."
+          },
+          {
+            "text": "Quelles sont les perspectives de recrutement des cadres en Bretagne selon l'APEC ?",
+            "target_corpus": "apec_region",
+            "priority": 2,
+            "rationale": "Complète avec une vision marché cadres, utile pour un professionnel actif."
+          },
+          {
+            "text": "Quels secteurs d'activité en Bretagne anticipent les plus fortes créations d'emplois d'ici 2030 ?",
+            "target_corpus": "multi",
+            "priority": 2,
+            "rationale": "Apporte un contexte sectoriel complémentaire, utile pour affiner une stratégie."
+          },
+          {
+            "text": "Quels sont les salaires médians par catégorie socioprofessionnelle en Bretagne selon l'INSEE ?",
+            "target_corpus": "insee_salaire",
+            "priority": 3,
+            "rationale": "Contexte salaire utile pour un professionnel actif, mais optionnel."
+          }
+        ],
+        "strategy_note": "Query centrée sur les perspectives de recrutement à horizon 2030. Priorité 1 donnée au corpus 'metier_prospective' (DARES) pour couvrir l'intent core. Les sub-queries 2 et 3 apportent un éclairage complémentaire (cadres et secteurs). La sub-query 4 est optionnelle pour contextualiser les salaires.",
+        "profile_used": {
+          "age_group": "professionnel_actif",
+          "education_level": "professionnel_actif",
+          "intent_type": "conseil_strategique",
+          "sector_interest": [],
+          "region": "Bretagne",
+          "urgent_concern": false,
+          "confidence": 0.8,
+          "notes": "Query axée sur les perspectives de recrutement, implicant un professionnel ou un demandeur d'emploi. Secteur non précisé."
+        }
+      }
+    },
+    {
+      "id": "d3_q07_niveau_tension",
+      "suite": "dares_dedie",
+      "query": "Quel est le niveau de tension 2019 pour le métier d'enseignant ?",
+      "elapsed_s": 11.22,
+      "success": true,
+      "profile": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "éducation",
+          "enseignement"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.8,
+        "notes": "L'utilisateur cherche des données spécifiques sur le métier d'enseignant, probablement pour une analyse ou une réflexion professionnelle."
+      },
+      "plan": {
+        "original_query": "Quel est le niveau de tension 2019 pour le métier d'enseignant ?",
+        "sub_queries": [
+          {
+            "text": "Quel était le niveau de tension pour le métier d'enseignant en 2019 selon les données DARES ou les études sur les métiers en tension ?",
+            "target_corpus": "metier_prospective",
+            "priority": 1,
+            "rationale": "La query cible explicitement le niveau de tension pour un métier spécifique en 2019, ce qui correspond aux données DARES Métiers 2030."
+          },
+          {
+            "text": "Quelles étaient les perspectives de recrutement pour les enseignants en 2019, notamment en termes de postes à pourvoir et de difficultés de recrutement ?",
+            "target_corpus": "apec_region",
+            "priority": 2,
+            "rationale": "Complète la première sub-query en apportant des données sur le marché du travail cadres, utile pour un professionnel actif."
+          },
+          {
+            "text": "Quels sont les indicateurs de tension ou de pénurie pour le métier d'enseignant dans les fiches métiers ONISEP ou autres sources éditorialisées ?",
+            "target_corpus": "metier",
+            "priority": 2,
+            "rationale": "Apporte un contexte éditorialisé sur les métiers de l'enseignement, utile pour un professionnel actif."
+          },
+          {
+            "text": "Existe-t-il des données INSEE ou autres sur les salaires des enseignants en 2019, pour contextualiser les tensions du métier ?",
+            "target_corpus": "insee_salaire",
+            "priority": 3,
+            "rationale": "Contexte complémentaire sur les salaires, utile mais non essentiel."
+          }
+        ],
+        "strategy_note": "La query est très ciblée sur le niveau de tension en 2019 pour un métier spécifique. Le corpus `metier_prospective` (DARES) est prioritaire. Les autres sub-queries apportent un contexte complémentaire (recrutement, fiches métiers, salaires) sans disperser l'intent core.",
+        "profile_used": {
+          "age_group": "professionnel_actif",
+          "education_level": "professionnel_actif",
+          "intent_type": "info_metier_specifique",
+          "sector_interest": [
+            "éducation",
+            "enseignement"
+          ],
+          "region": null,
+          "urgent_concern": false,
+          "confidence": 0.8,
+          "notes": "L'utilisateur cherche des données spécifiques sur le métier d'enseignant, probablement pour une analyse ou une réflexion professionnelle."
+        }
+      }
+    },
+    {
+      "id": "b1_q01_BTS_compta",
+      "suite": "blocs_dedie",
+      "query": "Quels blocs de compétences valide le BTS comptabilité ?",
+      "elapsed_s": 8.93,
+      "success": true,
+      "profile": {
+        "age_group": "etudiant_l1_l3",
+        "education_level": "bac+2",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "comptabilité",
+          "gestion"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.85,
+        "notes": "Query explicite sur un diplôme spécifique (BTS comptabilité), mais pas d'indice sur l'âge ou la région. Best guess pour la situation : étudiant en cours de formation."
+      },
+      "plan": {
+        "original_query": "Quels blocs de compétences valide le BTS comptabilité ?",
+        "sub_queries": [
+          {
+            "text": "Quels sont les blocs de compétences RNCP associés au BTS Comptabilité et Gestion ? Détail des compétences certifiées par ce diplôme.",
+            "target_corpus": "competences_certif",
+            "priority": 1,
+            "rationale": "Intent core : identifier les blocs de compétences spécifiques au BTS Comptabilité via le RNCP."
+          },
+          {
+            "text": "Fiche détaillée du BTS Comptabilité et Gestion : objectifs, programme et débouchés professionnels.",
+            "target_corpus": "formation",
+            "priority": 2,
+            "rationale": "Contexte complémentaire sur la formation pour enrichir la réponse."
+          },
+          {
+            "text": "Quels métiers sont accessibles après un BTS Comptabilité et Gestion ? Fiches métiers ONISEP associées.",
+            "target_corpus": "metier",
+            "priority": 3,
+            "rationale": "Nice-to-have : lien entre compétences acquises et métiers cibles."
+          }
+        ],
+        "strategy_note": "1 sub-query priorité 1 pour cibler directement les blocs RNCP (intent principal). 2 sub-queries complémentaires pour contextualiser la formation et les débouchés métiers.",
+        "profile_used": {
+          "age_group": "etudiant_l1_l3",
+          "education_level": "bac+2",
+          "intent_type": "info_metier_specifique",
+          "sector_interest": [
+            "comptabilité",
+            "gestion"
+          ],
+          "region": null,
+          "urgent_concern": false,
+          "confidence": 0.85,
+          "notes": "Query explicite sur un diplôme spécifique (BTS comptabilité), mais pas d'indice sur l'âge ou la région. Best guess pour la situation : étudiant en cours de formation."
+        }
+      }
+    },
+    {
+      "id": "b2_q05_VAE",
+      "suite": "blocs_dedie",
+      "query": "Comment valider un titre RNCP par VAE par bloc ?",
+      "elapsed_s": 9.49,
+      "success": true,
+      "profile": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "demarche_administrative",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.85,
+        "notes": "Query explicite sur la VAE et les blocs RNCP, mais aucun secteur mentionné."
+      },
+      "plan": {
+        "original_query": "Comment valider un titre RNCP par VAE par bloc ?",
+        "sub_queries": [
+          {
+            "text": "Quelles sont les étapes pour valider un titre RNCP par la VAE, spécifiquement par blocs de compétences ?",
+            "target_corpus": "competences_certif",
+            "priority": 1,
+            "rationale": "Couvre l'intent core : VAE et blocs de compétences RNCP."
+          },
+          {
+            "text": "Peut-on obtenir un titre RNCP complet en validant uniquement certains blocs de compétences via la VAE ?",
+            "target_corpus": "competences_certif",
+            "priority": 2,
+            "rationale": "Clarifie la possibilité de valider partiellement un titre RNCP."
+          },
+          {
+            "text": "Quels sont les organismes ou centres agréés pour accompagner une VAE visant un titre RNCP par blocs ?",
+            "target_corpus": "formation",
+            "priority": 2,
+            "rationale": "Apporte un complément pratique sur les acteurs impliqués."
+          },
+          {
+            "text": "Quels sont les délais et coûts moyens pour valider un titre RNCP par VAE par blocs de compétences ?",
+            "target_corpus": "multi",
+            "priority": 3,
+            "rationale": "Contexte utile mais non essentiel pour l'utilisateur."
+          }
+        ],
+        "strategy_note": "Query centrée sur la VAE et les blocs de compétences RNCP. Priorité 1 donnée au corpus 'competences_certif' pour activer les domain hints liés au RNCP. Les sub-queries 2 et 3 complètent avec des détails pratiques, tandis que la sub-query 4 apporte un contexte optionnel.",
+        "profile_used": {
+          "age_group": "professionnel_actif",
+          "education_level": "professionnel_actif",
+          "intent_type": "demarche_administrative",
+          "sector_interest": [],
+          "region": null,
+          "urgent_concern": false,
+          "confidence": 0.85,
+          "notes": "Query explicite sur la VAE et les blocs RNCP, mais aucun secteur mentionné."
+        }
+      }
+    },
+    {
+      "id": "b3_q07_BUT_GEA",
+      "suite": "blocs_dedie",
+      "query": "Que permet de faire un BUT GEA dans la pratique ?",
+      "elapsed_s": 13.02,
+      "success": true,
+      "profile": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "info_metier_specifique",
+        "sector_interest": [
+          "gestion",
+          "administration",
+          "commerce"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.8,
+        "notes": "Query explicite sur le BUT GEA mais pas d'indice sur l'utilisateur lui-même. Secteur déduit de 'GEA' (Gestion et Administration des Entreprises)."
+      },
+      "plan": {
+        "original_query": "Que permet de faire un BUT GEA dans la pratique ?",
+        "sub_queries": [
+          {
+            "text": "Quelles sont les missions concrètes et les activités professionnelles exercées après un BUT Gestion des Entreprises et des Administrations (GEA) ? Détail des tâches typiques et environnements de travail.",
+            "target_corpus": "metier",
+            "priority": 1,
+            "rationale": "Couvre l'intent core : comprendre les débouchés pratiques du BUT GEA via des fiches métiers éditorialisées."
+          },
+          {
+            "text": "Quels blocs de compétences RNCP sont validés par un BUT GEA ? Liste des compétences techniques et transversales acquises.",
+            "target_corpus": "competences_certif",
+            "priority": 2,
+            "rationale": "Complète avec les compétences certifiées, utile pour cibler des métiers ou formations complémentaires."
+          },
+          {
+            "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois pour les diplômés d'un BUT GEA ? Données MESR par secteur.",
+            "target_corpus": "insertion_pro",
+            "priority": 2,
+            "rationale": "Ajoute une dimension quantitative sur l'employabilité post-diplôme."
+          },
+          {
+            "text": "Quels métiers en gestion, administration ou commerce recrutent le plus en 2030 selon la DARES ? Postes à pourvoir pour les diplômés BUT GEA.",
+            "target_corpus": "metier_prospective",
+            "priority": 3,
+            "rationale": "Contextualise les débouchés dans les tendances longues du marché."
+          },
+          {
+            "text": "Quelles formations Parcoursup ou ONISEP permettent de se spécialiser après un BUT GEA ? Poursuites d'études possibles.",
+            "target_corpus": "formation",
+            "priority": 3,
+            "rationale": "Optionnel pour élargir aux perspectives de formation après le diplôme."
+          }
+        ],
+        "strategy_note": "Query centrée sur l'intent 'info_métier_spécifique' (GEA). Priorité 1 donnée au corpus 'metier' pour des réponses concrètes. Les sub-queries 2 et 3 apportent des données complémentaires (compétences et insertion). Les sub-queries 4 et 5 sont optionnelles pour élargir le contexte sans diluer la réponse principale.",
+        "profile_used": {
+          "age_group": "other_or_unknown",
+          "education_level": "unknown",
+          "intent_type": "info_metier_specifique",
+          "sector_interest": [
+            "gestion",
+            "administration",
+            "commerce"
+          ],
+          "region": null,
+          "urgent_concern": false,
+          "confidence": 0.8,
+          "notes": "Query explicite sur le BUT GEA mais pas d'indice sur l'utilisateur lui-même. Secteur déduit de 'GEA' (Gestion et Administration des Entreprises)."
+        }
+      }
+    },
+    {
+      "id": "u1_lycee_reunion",
+      "suite": "user_naturel",
+      "query": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options s'offrent à moi ?",
+      "elapsed_s": 12.71,
+      "success": true,
+      "profile": {
+        "age_group": "lyceen_terminale",
+        "education_level": "terminale",
+        "intent_type": "decouverte_filieres",
+        "sector_interest": [
+          "numérique"
+        ],
+        "region": "La Réunion",
+        "urgent_concern": false,
+        "confidence": 0.9,
+        "notes": "L'utilisateur mentionne explicitement son statut de lycéen à La Réunion et son intérêt pour le numérique en métropole."
+      },
+      "plan": {
+        "original_query": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options s'offrent à moi ?",
+        "sub_queries": [
+          {
+            "text": "Quelles formations en numérique (BTS, BUT, licences, écoles) sont accessibles via Parcoursup ou l'ONISEP pour un lycéen de Terminale à La Réunion souhaitant étudier en métropole ?",
+            "target_corpus": "formation",
+            "priority": 1,
+            "rationale": "Intent core : découvrir les filières numériques accessibles post-bac pour un lycéen de La Réunion."
+          },
+          {
+            "text": "Quels sont les métiers du numérique les plus porteurs en métropole, avec des perspectives de recrutement à moyen terme (2030) ?",
+            "target_corpus": "metier_prospective",
+            "priority": 2,
+            "rationale": "Apporte un éclairage sur les débouchés métiers pour affiner le choix de formation."
+          },
+          {
+            "text": "Quels sont les taux d'insertion professionnelle 6 à 18 mois après un BUT ou une licence en numérique en métropole ?",
+            "target_corpus": "insertion_pro",
+            "priority": 2,
+            "rationale": "Contexte utile pour évaluer la réussite post-diplôme dans le secteur."
+          },
+          {
+            "text": "Quelles sont les conditions de vie étudiante (logement, restos universitaires) en métropole pour un étudiant réunionnais en numérique ?",
+            "target_corpus": "crous",
+            "priority": 3,
+            "rationale": "Nice-to-have pour anticiper les aspects pratiques de la mobilité."
+          },
+          {
+            "text": "Quels sont les parcours typiques des bacheliers de La Réunion en licence de numérique en métropole : taux de réussite et mentions recommandées ?",
+            "target_corpus": "parcours_bacheliers",
+            "priority": 3,
+            "rationale": "Optionnel pour rassurer sur les chances de réussite."
+          }
+        ],
+        "strategy_note": "Découpage axé sur l'intent principal (découverte des filières numériques en métropole) avec 1 sub-query prioritaire 'formation'. Les sub-queries 2 et 3 apportent un contexte métier et insertion, tandis que 4 et 5 couvrent des aspects pratiques et rassurants pour un lycéen de La Réunion.",
+        "profile_used": {
+          "age_group": "lyceen_terminale",
+          "education_level": "terminale",
+          "intent_type": "decouverte_filieres",
+          "sector_interest": [
+            "numérique"
+          ],
+          "region": "La Réunion",
+          "urgent_concern": false,
+          "confidence": 0.9,
+          "notes": "L'utilisateur mentionne explicitement son statut de lycéen à La Réunion et son intérêt pour le numérique en métropole."
+        }
+      }
+    },
+    {
+      "id": "u2_reconversion_distrib",
+      "suite": "user_naturel",
+      "query": "Je travaille dans la grande distribution depuis 8 ans, je veux changer complètement de secteur. Par où commencer ?",
+      "elapsed_s": 13.7,
+      "success": true,
+      "profile": {
+        "age_group": "professionnel_actif",
+        "education_level": "professionnel_actif",
+        "intent_type": "reconversion_pro",
+        "sector_interest": [],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.85,
+        "notes": "Query explicite sur une reconversion après 8 ans en grande distribution, mais aucun secteur cible mentionné."
+      },
+      "plan": {
+        "original_query": "Je travaille dans la grande distribution depuis 8 ans, je veux changer complètement de secteur. Par où commencer ?",
+        "sub_queries": [
+          {
+            "text": "Quels sont les secteurs porteurs ou métiers en tension pour une reconversion professionnelle en 2024-2030, selon les projections DARES Métiers 2030 ?",
+            "target_corpus": "metier_prospective",
+            "priority": 1,
+            "rationale": "Cible l'intent core : identifier des secteurs/métiers accessibles pour une reconversion."
+          },
+          {
+            "text": "Quelles formations courtes ou certifications (blocs RNCP) permettent une reconversion rapide vers un nouveau secteur, adaptées à un profil professionnel actif ?",
+            "target_corpus": "competences_certif",
+            "priority": 1,
+            "rationale": "Priorité 1 pour ancrer la reconversion dans des parcours réalistes et certifiants."
+          },
+          {
+            "text": "Quels sont les métiers accessibles après 8 ans d'expérience en grande distribution, avec des fiches ONISEP détaillant les missions et compétences transférables ?",
+            "target_corpus": "metier",
+            "priority": 2,
+            "rationale": "Apporte un éclairage concret sur les métiers adaptés au profil."
+          },
+          {
+            "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois pour les formations courtes (BUT, licences pro) dans les secteurs ciblés pour une reconversion ?",
+            "target_corpus": "insertion_pro",
+            "priority": 2,
+            "rationale": "Contexte utile pour évaluer l'efficacité des formations envisagées."
+          },
+          {
+            "text": "Quelles sont les perspectives de recrutement cadres dans les régions françaises pour les secteurs identifiés comme porteurs ?",
+            "target_corpus": "apec_region",
+            "priority": 3,
+            "rationale": "Optionnel pour affiner la dimension géographique et cadre."
+          }
+        ],
+        "strategy_note": "Découpage axé sur l'identification de secteurs porteurs (metier_prospective) et de parcours concrets (competences_certif, metier). Les sub-queries 3 et 4 apportent un contexte complémentaire, tandis que la 5 est optionnelle pour élargir la réflexion.",
+        "profile_used": {
+          "age_group": "professionnel_actif",
+          "education_level": "professionnel_actif",
+          "intent_type": "reconversion_pro",
+          "sector_interest": [],
+          "region": null,
+          "urgent_concern": false,
+          "confidence": 0.85,
+          "notes": "Query explicite sur une reconversion après 8 ans en grande distribution, mais aucun secteur cible mentionné."
+        }
+      }
+    },
+    {
+      "id": "u3_cout_ecole_com",
+      "suite": "user_naturel",
+      "query": "Combien faut-il prévoir financièrement pour 5 années d'études en école de commerce ?",
+      "elapsed_s": 11.88,
+      "success": true,
+      "profile": {
+        "age_group": "other_or_unknown",
+        "education_level": "unknown",
+        "intent_type": "conseil_strategique",
+        "sector_interest": [
+          "commerce",
+          "gestion",
+          "école de commerce"
+        ],
+        "region": null,
+        "urgent_concern": false,
+        "confidence": 0.7,
+        "notes": "Query ne précise pas la situation de l'utilisateur (lycéen, étudiant, professionnel en reconversion). Secteur déduit : école de commerce."
+      },
+      "plan": {
+        "original_query": "Combien faut-il prévoir financièrement pour 5 années d'études en école de commerce ?",
+        "sub_queries": [
+          {
+            "text": "Quel est le coût annuel moyen des frais de scolarité pour une école de commerce en France sur 5 ans ? Données Parcoursup et ONISEP pour les écoles reconnues.",
+            "target_corpus": "formation",
+            "priority": 1,
+            "rationale": "Couvre l'intent core : budget pour 5 ans en école de commerce."
+          },
+          {
+            "text": "Quels sont les coûts annexes (logement, restauration, transports) pour un étudiant en école de commerce, par région ou en moyenne nationale ? Données CROUS.",
+            "target_corpus": "crous",
+            "priority": 2,
+            "rationale": "Complète le budget avec les dépenses de vie étudiante."
+          },
+          {
+            "text": "Existe-t-il des aides financières, bourses ou dispositifs de financement spécifiques pour les étudiants en école de commerce ? Informations ONISEP ou Parcoursup.",
+            "target_corpus": "formation",
+            "priority": 2,
+            "rationale": "Apporte des solutions pour réduire le coût global."
+          },
+          {
+            "text": "Quel est le salaire médian des jeunes diplômés d'une école de commerce après 5 ans d'études ? Données INSEE ou APEC par région ou secteur.",
+            "target_corpus": "insee_salaire",
+            "priority": 3,
+            "rationale": "Contexte utile pour évaluer le retour sur investissement."
+          },
+          {
+            "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois pour les diplômés d'écoles de commerce ? Données MESR ou APEC.",
+            "target_corpus": "insertion_pro",
+            "priority": 3,
+            "rationale": "Complète le contexte sur l'employabilité post-diplôme."
+          }
+        ],
+        "strategy_note": "Priorité 1 sur le coût direct des études (formation). Priorités 2 et 3 pour élargir au budget global (vie étudiante, aides) et au retour sur investissement (salaire, insertion). Découpage équilibré entre essentiel et contexte utile.",
+        "profile_used": {
+          "age_group": "other_or_unknown",
+          "education_level": "unknown",
+          "intent_type": "conseil_strategique",
+          "sector_interest": [
+            "commerce",
+            "gestion",
+            "école de commerce"
+          ],
+          "region": null,
+          "urgent_concern": false,
+          "confidence": 0.7,
+          "notes": "Query ne précise pas la situation de l'utilisateur (lycéen, étudiant, professionnel en reconversion). Secteur déduit : école de commerce."
+        }
+      }
+    }
+  ]
+}

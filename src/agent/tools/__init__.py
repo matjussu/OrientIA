@@ -9,5 +9,19 @@ from src.agent.tools.profile_clarifier import (
     Profile,
     PROFILE_CLARIFIER_TOOL,
 )
+from src.agent.tools.query_reformuler import (
+    QueryReformuler,
+    ReformulationPlan,
+    SubQuery,
+    QUERY_REFORMULER_TOOL,
+)
 
-__all__ = ["ProfileClarifier", "Profile", "PROFILE_CLARIFIER_TOOL"]
+__all__ = [
+    "ProfileClarifier",
+    "Profile",
+    "PROFILE_CLARIFIER_TOOL",
+    "QueryReformuler",
+    "ReformulationPlan",
+    "SubQuery",
+    "QUERY_REFORMULER_TOOL",
+]
