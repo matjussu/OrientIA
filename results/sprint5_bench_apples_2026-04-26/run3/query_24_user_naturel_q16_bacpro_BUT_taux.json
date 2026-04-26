@@ -1,0 +1,187 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q16_bacpro_BUT_taux",
+  "query_text": "Mon fils a un bac pro vente, peut-il intégrer un BUT et avec quelle chance de réussir ?",
+  "answer_text": "**TL;DR**\n1. Oui, un bac pro vente permet de candidater en BUT, mais la sélection est **modérée à forte** (30-60% de chances selon le dossier).\n2. Les BUT en commerce/marketing sont les plus adaptés à son profil, avec des passerelles pour monter en bac+5.\n3. **Condition clé** : un bon dossier (notes >12/20, stages valorisés) et une motivation solide en entretien.\n\n---\n\n### **Plan A — Réaliste : BUT Techniques de Commercialisation (TC)**\n📍 **[BUT TC parcours Marketing et Management du Point de Vente](https://www.onisep.fr/http/redirection/formation/slug/FOR.7955)** (IUT publics, partout en France) — bac+3 public, **sélectivité ~40-50%** pour les bacs pros avec dossier solide.\n*Pour toi : le meilleur match avec son bac pro vente. Débouchés en management de rayon, chef de secteur, ou poursuite en licence pro/école de commerce (via admissions parallèles).*\n\n### **Plan B — Ambitieux : BUT GACO parcours Marketing Omnicanal**\n📍 **[BUT GACO parcours Management Commercial et Marketing Omnicanal](https://www.onisep.fr/http/redirection/formation/slug/FOR.8020)** (IUT publics) — bac+3 public, **sélectivité ~50-60%** pour les bacs pros, mais exige un projet précis (ex : digital, data marketing).\n*Pour toi : si il vise des postes plus stratégiques (chefferie, analyse client), mais nécessite un investissement supplémentaire en maths/stats (connaissance générale).*\n\n### **Plan C — Alternative : Licence Pro Métiers du Commerce**\n*(connaissance générale)*\n📍 **Licences Pro Métiers du Commerce et de la Vente** (universités, ex : [Paris Nanterre](https://www.parisnanterre.fr/)) — bac+3 public, **sélectivité ~60-70%** pour les bacs pros, **1 an après un bac+2** (BTS NDRC ou BUT1 validé).\n*Pour toi : si le BUT est trop théorique. Formation ultra-pro, en alternance possible (salaire + expérience).*\n\n---\n**⚠ Attention aux pièges**\n- **Dossier faible = rejet systématique** : les IUT filtrent sur les notes (moyenne >12/20 souvent requise) et l’assiduité. Un bac pro avec 10/20 a peu de chances (connaissance générale).\n- **Alternance en BUT** : rare en 1ère année (sauf exceptions comme l’[IUT de Bobigny](https://www.iut.univ-paris13.fr/)). Privilégier les licences pro pour l’alternance.\n- **Faux-ami \"BUT = facile\"** : 50% d’échec en 1ère année pour les bacs pros non préparés (source : rapport DEPP 2022 sur les réorientations).\n\n---\n**Question pour toi :**\nTon fils préfère-t-il **un parcours court et pro** (licence pro/alternance) ou **un diplôme plus large** (BUT + poursuite d’études) ? Son projet est-il plutôt **terrain** (vente, management de magasin) ou **stratégique** (marketing digital, analyse data) ? *(Cela changera le choix entre TC et GACO.)*\n\n---\n👤 **Pour aller plus loin**, un RDV avec le **Psy-EN de son lycée** ou un **conseiller du CIO** permettra d’affiner son projet en fonction de ses notes exactes et de sa motivation. Les IUT organisent aussi des **journées portes ouvertes** (ex : [IUT de France](https://www.iut.fr/)) pour découvrir les attentes.",
+  "elapsed_pipeline_s": 20.38,
+  "elapsed_fact_check_post_hoc_s": 9.5,
+  "elapsed_clarify_s": 2.12,
+  "elapsed_reformulate_s": 9.17,
+  "elapsed_retrieve_s": 0.41,
+  "elapsed_generate_s": 8.68,
+  "fact_check_summary": {
+    "n_stats_total": 16,
+    "n_verified": 8,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 6,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "30-60% de chances",
+      "stat_value": 45,
+      "stat_unit": "%",
+      "context": "sélection est modérée à forte (30-60% de chances selon le dossier)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité ~40-50%",
+      "stat_value": 45,
+      "stat_unit": "%",
+      "context": "BUT TC parcours Marketing et Management du Point de Vente — sélectivité ~40-50%",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité ~50-60%",
+      "stat_value": 55,
+      "stat_unit": "%",
+      "context": "BUT GACO parcours Marketing Omnicanal — sélectivité ~50-60%",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité ~60-70%",
+      "stat_value": 65,
+      "stat_unit": "%",
+      "context": "Licences Pro Métiers du Commerce et de la Vente — sélectivité ~60-70%",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "moyenne >12/20",
+      "stat_value": 12,
+      "stat_unit": "/20",
+      "context": "les IUT filtrent sur les notes (moyenne >12/20 souvent requise)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10/20",
+      "stat_value": 10,
+      "stat_unit": "/20",
+      "context": "Un bac pro avec 10/20 a peu de chances",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50% d’échec en 1ère année",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "50% d’échec en 1ère année pour les bacs pros non préparés",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "rapport DEPP 2022",
+      "stat_value": 2022,
+      "stat_unit": "année",
+      "context": "source : rapport DEPP 2022 sur les réorientations",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_3ans\": 0.86, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_cdi\": 0.83, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "Insertion pro : {\"salaire_median_embauche\": 1740, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.73",
+      "stat_value": 73,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_3ans\": 0.73, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_6ans\": 0.8, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.66",
+      "stat_value": 66,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_cdi\": 0.66, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1410",
+      "stat_value": 1410,
+      "stat_unit": "€",
+      "context": "Insertion pro : {\"salaire_median_embauche\": 1410, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels BUT (Bachelor Universitaire de Technologie) sont accessibles après un bac pro vente ? Liste des formations Parcoursup et ONISEP ouvertes aux bacheliers professionnels en commerce/vente.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : identifier les formations adaptées à un bac pro vente."
+    },
+    {
+      "text": "Taux de réussite en BUT pour les bacheliers professionnels mention vente : statistiques MESRI par spécialité et taux de passage en L2.",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 1,
+      "rationale": "Mesurer les chances de réussite concrètes pour un bac pro vente."
+    },
+    {
+      "text": "Quels sont les blocs de compétences RNCP à valider en priorité pour un bac pro vente visant un BUT commerce/vente ? Prérequis et passerelles.",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Compléter avec les compétences nécessaires pour réussir en BUT."
+    },
+    {
+      "text": "Insertion professionnelle après un BUT dans le domaine commerce/vente : taux d'insertion à 6, 12 et 18 mois post-diplôme.",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Apporter un éclairage sur les débouchés post-BUT."
+    },
+    {
+      "text": "Logements CROUS et aides financières pour les étudiants en BUT issus d'un bac pro : conditions et dispositifs spécifiques.",
+      "target_corpus": "crous",
+      "priority": 3,
+      "rationale": "Nice-to-have : informations pratiques pour accompagner la transition."
+    }
+  ]
+}

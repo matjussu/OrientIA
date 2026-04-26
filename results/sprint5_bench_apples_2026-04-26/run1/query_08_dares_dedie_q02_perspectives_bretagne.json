@@ -1,0 +1,118 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q02_perspectives_bretagne",
+  "query_text": "Quelles sont les perspectives de recrutement en Bretagne d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. La Bretagne se distingue par **3 secteurs porteurs** d’ici 2030 : **cybersécurité/défense** (pôle d’excellence à Rennes/Brest), **transition énergétique** (éolien offshore, hydrogène), et **agroalimentaire/biotech** (pôles comme Valorial).\n2. **Pénurie de compétences** annoncée dans les métiers tech (data, IA, cyber) et les filières industrielles (maintenance, robotique) — **salaire médian embauche ~2 000-2 500€ brut** (estimation marché, connaissance générale).\n3. **Stratégie gagnante** : vise une formation labellisée (ex : SecNumEdu pour la cyber) + alternance pour s’ancrer localement.\n\n---\n\n### **Plan A — Secteurs en tension : Cyber/Défense & Énergies Marines (Brest/Rennes/Lorient)**\n- **Cybersécurité/Défense** :\n  - **Pôles clés** : *Campus Cyber Bretagne* (Rennes), *DCNS/Naval Group* (Brest), *Thales* (Lannion).\n  - **Métiers recherchés** : analyste SOC, pentester, ingénieur systèmes embarqués (défense).\n  - **Formations locales** :\n    - **📍 [BUT Cybersécurité](https://www.onisep.fr)** (IUT de Rennes) — bac+3 public, **label SecNumEdu ANSSI**, alternance possible.\n    - *Pour toi* : accessible sans prérequis tech poussés, débouchés directs chez Orange Cyberdefense (Rennes) ou Amossys (Brest).\n  - **Énergies marines** :\n    - **Projets** : parc éolien de Saint-Brieuc (2024), hydrogène vert à Lorient.\n    - **Métiers** : technicien maintenance éolienne (formation AFPA), ingénieur en énergies renouvelables.\n    - **Salaire** : 2 200-2 800€ brut/mois après 2-3 ans d’expérience (connaissance générale).\n\n- **Villes stratégiques** :\n  - **Brest** : 30 min des sites Naval Group (recrutements massifs en maintenance navale).\n  - **Rennes** : 1h de Saint-Malo (éolien) + écosystème cyber (French Tech Rennes).\n  - **Lorient** : hub hydrogène et réindustrialisation (chantiers navals).\n\n---\n\n### **Plan B — Agroalimentaire & Biotech : Stabilité + Innovation (Quimper/Vannes/St-Brieuc)**\n- **Secteur** : 1er employeur breton (25% des emplois industriels), avec **besoins en digitalisation** (industrie 4.0) et **R&D** (algues, protéines alternatives).\n- **Métiers porteurs** :\n  - **Data analyst agro** (optimisation des chaînes de production).\n  - **Bio-informaticien** (pôle *Biotech Santé Bretagne* à Vannes).\n  - **Responsable qualité** (normes ISO, export).\n- **Formations** :\n  - **📍 [Licence Pro Bio-informatique](https://www.univ-ubs.fr)** (Vannes) — bac+3 public, partenariats avec Olmix (algues).\n  - **📍 [BTSA Sciences et Technologies des Aliments](https://www.educagri.fr)** (Quimper) — bac+2, 80% d’insertion locale (source : Céreq, enquêtes régionales).\n- **Atout** : **moins de concurrence** que la tech, salaires stables (1 800-2 300€ brut/mois en début de carrière).\n\n---\n\n### **Plan C — Passerelles & Alternatives : Se Former aux Compétences Manquantes**\n1. **Alternance** :\n   - **Avantage** : 70% des entreprises bretonnes recrutent leurs alternants (source : *Baromètre Région Bretagne 2023*).\n   - **Où postuler** :\n     - Plateforme *[Alternance Bretagne](https://alternance.bretagne.bzh)* (5 000 offres/an).\n     - Réseau *UIMM Bretagne* pour l’industrie (mécanique, robotique).\n\n2. **Reconversion/upskilling** :\n   - **Formations courtes** :\n     - **AFPA Brest** : certifications en maintenance éolienne (3 mois, 100% emploi garanti, connaissance générale).\n     - **Simplon.co Rennes** : bootcamps data/cyber (gratuits pour demandeurs d’emploi).\n   - **Financements** : *Transition Pro Bretagne* (jusqu’à 100% du coût pour les salariés).\n\n3. **Mobilité interne** :\n   - **Exemple** : un technicien naval à Brest peut évoluer vers la **cybersécurité industrielle** via une formation *SecNum Académie* (gratuite, en ligne).\n\n---\n**⚠ Attention** :\n- **Déserts ruraux** : hors métropoles (Rennes/Brest), les offres se concentrent sur **Lannion (tech)** et **Quimper (agro)**. Prévois une mobilité de 30-60 km.\n- **Saisonnalité** : le tourisme (3e secteur breton) recrute en CDD (avril-octobre), mais peu de perspectives à long terme.\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **un métier tech en tension** (cyber, data) avec des salaires élevés mais une formation exigeante, ou **un secteur traditionnel** (agro, naval) avec une insertion plus stable mais des salaires modérés ? Cela peut orienter vers Rennes/Brest (tech) ou Quimper/Vannes (agro).",
+  "elapsed_pipeline_s": 23.6,
+  "elapsed_fact_check_post_hoc_s": 4.65,
+  "elapsed_clarify_s": 1.94,
+  "elapsed_reformulate_s": 6.55,
+  "elapsed_retrieve_s": 0.29,
+  "elapsed_generate_s": 14.82,
+  "fact_check_summary": {
+    "n_stats_total": 8,
+    "n_verified": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "3 secteurs porteurs",
+      "stat_value": 3,
+      "stat_unit": "secteurs",
+      "context": "La Bretagne se distingue par 3 secteurs porteurs d’ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 000-2 500€ brut",
+      "stat_value": 2250,
+      "stat_unit": "€ brut",
+      "context": "salaire médian embauche ~2 000-2 500€ brut (estimation marché, connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "80% d’insertion locale",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "80% d’insertion locale (source : Céreq, enquêtes régionales)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "70% des entreprises bretonnes recrutent leurs alternants",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "70% des entreprises bretonnes recrutent leurs alternants (source : Baromètre Région Bretagne 2023)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "5 000 offres/an",
+      "stat_value": 5000,
+      "stat_unit": "offres",
+      "context": "Plateforme Alternance Bretagne (5 000 offres/an)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "25% des emplois industriels",
+      "stat_value": 25,
+      "stat_unit": "%",
+      "context": "1er employeur breton (25% des emplois industriels)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 800-2 300€ brut/mois",
+      "stat_value": 2050,
+      "stat_unit": "€ brut/mois",
+      "context": "salaires stables (1 800-2 300€ brut/mois en début de carrière)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 200-2 800€ brut/mois",
+      "stat_value": 2500,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire : 2 200-2 800€ brut/mois après 2-3 ans d’expérience (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "apec_region",
+    "insee_salaire",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers et postes à pourvoir en Bretagne d'ici 2030 selon les projections DARES Métiers 2030 ?",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Cible directement l'intent core avec le domain hint 'DARES Métiers 2030' et la région Bretagne."
+    },
+    {
+      "text": "Quelles sont les perspectives de recrutement des cadres en Bretagne selon l'APEC ?",
+      "target_corpus": "apec_region",
+      "priority": 2,
+      "rationale": "Complète avec une vision marché cadres, utile pour un professionnel actif."
+    },
+    {
+      "text": "Quels secteurs d'activité en Bretagne offriront les meilleures opportunités d'emploi d'ici 2030 ?",
+      "target_corpus": "multi",
+      "priority": 2,
+      "rationale": "Apporte un contexte sectoriel complémentaire, utile pour affiner une stratégie."
+    },
+    {
+      "text": "Quels sont les salaires médians par catégorie socioprofessionnelle en Bretagne selon l'INSEE ?",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Ajoute une dimension rémunération, pertinente pour un professionnel actif."
+    }
+  ]
+}

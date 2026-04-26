@@ -1,0 +1,93 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q06_blocs_savoir_faire_BTS_hotel",
+  "query_text": "Quels savoir-faire certifiés à la sortie d'un BTS hôtellerie-restauration ?",
+  "answer_text": "**TL;DR**\n1. Un BTS hôtellerie-restauration certifie des compétences opérationnelles **et** managériales, validées par des diplômes d’État et des certifications professionnelles.\n2. Les savoir-faire couvrent **3 piliers** : gestion (budgets, équipes), technique (cuisine, service), et relation client (accueil, événementiel).\n3. Les certifications complémentaires (ex : HACCP, permis d’exploitation) boostent l’employabilité — à anticiper dès la formation.\n\n---\n\n### **Plan A — Compétences clés certifiées par le diplôme d’État**\nLe BTS **management en hôtellerie-restauration** (option A ou B) valide officiellement :\n- **Gestion** : élaboration de budgets, analyse de coûts, gestion des stocks (logiciels comme *EBP Hôtellerie*).\n- **Production culinaire/service** : techniques de cuisine professionnelle, normes d’hygiène (paquet hygiène HACCP), service en salle (arts de la table, accord mets-vins).\n- **Management d’équipe** : planning, recrutement, formation des équipes (validé par des mises en situation en entreprise).\n- **Relation client** : accueil multilingue (anglais obligatoire), gestion des réclamations, fidélisation.\n*Source : [référentiel officiel du BTS](https://www.onisep.fr/http/redirection/formation/slug/FOR.5444)*\n\n**Pour toi** : Ces compétences sont **reconnues par l’État** (diplôme niveau 5) et recherchées pour des postes à responsabilité (chef de partie, adjoint de direction).\n\n---\n\n### **Plan B — Certifications complémentaires à obtenir en parallèle**\nPour te différencier, vise ces certifications **reconnues par les professionnels** (souvent intégrées aux programmes ou en option) :\n- **HACCP** (hygiène alimentaire, obligatoire pour ouvrir un établissement).\n- **Permis d’exploitation** (pour gérer un bar/restaurant).\n- **Certifications linguistiques** (TOEIC, Bright pour l’anglais ; DELE pour l’espagnol).\n- **Logiciels métiers** : *Opera PMS* (gestion hôtelière), *Micros* (caisse restaurant).\n*(connaissance générale : ces certifications sont souvent exigées pour évoluer vers des postes de direction ou créer son entreprise.)*\n\n**Pour toi** : À négocier avec ton établissement pour les inclure dans ton parcours (certaines sont gratuites pour les apprentis).\n\n---\n\n### **Plan C — Savoir-faire transversaux (soft skills) valorisés**\nLe BTS certifie aussi des compétences **non techniques mais critiques** :\n- **Résistance au stress** (gestion des pics d’activité, horaires décalés).\n- **Adaptabilité** (saisonalité, clientèles internationales).\n- **Leadership** (animation d’équipe en cuisine ou en salle).\n*(connaissance générale : ces compétences sont évaluées lors des périodes de stage et très appréciées des recruteurs.)*\n\n**Pour toi** : Mets-les en avant dans ton CV et tes entretiens — elles font la différence pour des postes encadrants.\n\n---\n### **⚠ Attention aux pièges**\n- **Confusion BTS/BM** : Le **BM Traiteur** (niveau bac+2 aussi) forme aux métiers de l’événementiel culinaire, **pas à la gestion d’établissement** comme le BTS. [Comparer ici](https://www.onisep.fr/http/redirection/formation/slug/FOR.10478).\n- **Certifications payantes** : Certaines (ex : permis d’exploitation) coûtent 300-600€ — vérifie si ton école les prend en charge.\n- **Spécialisation trop tôt** : Un BTS généraliste ouvre plus de portes qu’une formation ultra-spécialisée (ex : seulement pâtisserie).\n\n---\n**Question pour toi** :\nAs-tu déjà une idée du secteur qui t’attire le plus (restauration traditionnelle, hôtellerie internationale, événementiel) ? Cela peut guider le choix de tes certifications complémentaires.",
+  "elapsed_pipeline_s": 34.52,
+  "elapsed_fact_check_post_hoc_s": 2.9,
+  "elapsed_clarify_s": 1.92,
+  "elapsed_reformulate_s": 7.74,
+  "elapsed_retrieve_s": 0.44,
+  "elapsed_generate_s": 24.43,
+  "fact_check_summary": {
+    "n_stats_total": 5,
+    "n_verified": 4,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "300-600€",
+      "stat_value": 300,
+      "stat_unit": "€",
+      "context": "Certifications payantes : Certaines (ex : permis d’exploitation) coûtent 300-600€ — vérifie si ton école les prend en charge.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context": "salaire_median_embauche: 1570",
+      "verdict": "verified",
+      "source_excerpt": "salaire_median_embauche: 1570 (source: cereq, cohorte: Generation 2017)"
+    },
+    {
+      "stat_text": "0.8",
+      "stat_value": 0.8,
+      "stat_unit": null,
+      "context": "taux_emploi_3ans: 0.8",
+      "verdict": "verified",
+      "source_excerpt": "taux_emploi_3ans: 0.8 (source: cereq, cohorte: Generation 2017)"
+    },
+    {
+      "stat_text": "0.87",
+      "stat_value": 0.87,
+      "stat_unit": null,
+      "context": "taux_emploi_6ans: 0.87",
+      "verdict": "verified",
+      "source_excerpt": "taux_emploi_6ans: 0.87 (source: cereq, cohorte: Generation 2017)"
+    },
+    {
+      "stat_text": "0.76",
+      "stat_value": 0.76,
+      "stat_unit": null,
+      "context": "taux_cdi: 0.76",
+      "verdict": "verified",
+      "source_excerpt": "taux_cdi: 0.76 (source: cereq, cohorte: Generation 2017)"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les blocs de compétences certifiés RNCP à valider dans un BTS hôtellerie-restauration ? Liste des savoir-faire certifiés par bloc.",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Cible directement les compétences certifiées via RNCP, essentiel pour l'intent utilisateur."
+    },
+    {
+      "text": "Fiche métier ONISEP détaillée pour les débouchés après un BTS hôtellerie-restauration : postes accessibles et compétences attendues.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporte un contexte métier complémentaire pour comprendre l'application des compétences."
+    },
+    {
+      "text": "Quelles formations BTS hôtellerie-restauration sont référencées sur Parcoursup ou ONISEP ? Focus sur les certifications associées.",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Ancrage dans les formations existantes pour contextualiser les compétences certifiées."
+    },
+    {
+      "text": "Marché du travail pour les diplômés d'un BTS hôtellerie-restauration : perspectives de recrutement et secteurs porteurs.",
+      "target_corpus": "apec_region",
+      "priority": 3,
+      "rationale": "Optionnel, pour élargir sur les débouchés professionnels."
+    }
+  ]
+}

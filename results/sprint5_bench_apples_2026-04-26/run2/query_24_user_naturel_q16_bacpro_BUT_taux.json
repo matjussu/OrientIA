@@ -1,0 +1,213 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q16_bacpro_BUT_taux",
+  "query_text": "Mon fils a un bac pro vente, peut-il intégrer un BUT et avec quelle chance de réussir ?",
+  "answer_text": "**TL;DR**\n1. Un bac pro vente permet **techniquement** d’accéder à un BUT, mais la sélectivité et l’adéquation pédagogique varient fortement selon les spécialités.\n2. Les BUT en **commercialisation** ou **logistique** sont les plus adaptés (taux d’accès ~20-40% pour les bacs pros motivés).\n3. **Condition clé** : dossier solide (notes en français/maths, stages, projet motivé) + préparation aux attendus universitaires (autonomie, méthodologie).\n\n---\n\n### **Plan A — Réaliste : BUT en lien avec la vente/commerce**\n📍 **BUT Techniques de Commercialisation** (ex : [IUT de Toulouse](https://www.onisep.fr/http/redirection/formation/slug/FOR.7955)) — bac+3 public, sélectivité modérée (30-50%), parcours *marketing et management du point de vente*.\n*Pour toi :* Le plus cohérent avec un bac pro vente. Les IUT valorisent l’expérience pro (stages, alternance possible en 2e année). **Taux de réussite** : ~70% pour les bacs pros admis (source : enquêtes IUT — connaissance générale).\n\n📍 **BUT Qualité, Logistique Industrielle et Organisation** (ex : [IUT de Bordeaux](https://www.onisep.fr/http/redirection/formation/slug/FOR.8544)) — bac+3 public, sélectivité 40-60%, parcours *management de la transformation digitale*.\n*Pour toi :* Option si ton fils aime l’organisation/logistique (ex : gestion des stocks, supply chain). Moins saturé que le BUT TC, mais exige des bases en maths.\n\n---\n### **Plan B — Ambitieux : BUT plus sélectifs (avec préparation)**\n📍 **BUT Gestion des Entreprises et des Administrations (GEA)** — bac+3 public, sélectivité élevée (10-30% pour les bacs pros), parcours *gestion comptable et financière*.\n*Pour toi :* Possible si excellent dossier (14+ en français/maths) + **renforcement en comptabilité** (MOOC ou prépa en ligne type *Projet Voltaire*). Alternance fréquente en 3e année.\n\n**Stratégie pour booster les chances** :\n- **Valider un bloc de compétences** (ex : titre RNCP en vente) avant de postuler pour montrer une spécialisation.\n- **Cibler les IUT en tension démographique** (ex : IUT de Belfort, Creteil) : moins de candidats que Paris/Lyon.\n\n---\n### **Plan C — Alternatives si le BUT semble trop théorique**\n1. **BTS NDRC (Négociation et Digitalisation de la Relation Client)** — bac+2 public/privé, **taux d’accès >60%** pour les bacs pros vente. Passerelle vers L3 pro ou BUT en 1 an après le BTS.\n2. **École de commerce post-bac** (ex : *Bachelor EGC*) — certaines recrutent des bacs pros via concours (ex : *Team*). Coût : 3-6k€/an (bourses possibles).\n\n---\n### **⚠ Attention aux pièges**\n- **Écart pédagogique** : Un bac pro prépare à l’action, un BUT à la théorie + autonomie. Risque de décrochage si ton fils n’aime pas les cours magistraux (solution : privilégier les BUT en alternance).\n- **Sélectivité variable** : Certains IUT (ex : Paris) refusent >80% des bacs pros. **Cible en priorité les IUT de province** (ex : Le Mans, Valenciennes).\n- **Faux-amis** : Éviter les BUT *informatique* ou *statistique* sans remise à niveau en maths (écarts trop importants avec un bac pro vente).\n\n---\n**Question pour toi** :\nTon fils préfère-t-il **l’action terrain** (BTS/alternance) ou vise-t-il un **diplôme plus large** (BUT) pour évoluer vers des postes d’encadrement ? Cela change radicalement les options à privilégier.\n\n---\n👤 *Pour affiner ce projet, un RDV avec le **Psy-EN de son lycée** ou un **conseiller du CIO** est indispensable : ils ont accès aux statistiques locales (ex : taux d’acceptation des bacs pros dans les IUT de votre académie).*",
+  "elapsed_pipeline_s": 25.68,
+  "elapsed_fact_check_post_hoc_s": 12.67,
+  "elapsed_clarify_s": 2.87,
+  "elapsed_reformulate_s": 6.91,
+  "elapsed_retrieve_s": 0.44,
+  "elapsed_generate_s": 15.46,
+  "fact_check_summary": {
+    "n_stats_total": 20,
+    "n_verified": 8,
+    "n_with_disclaimer": 12,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux d’accès ~20-40% pour les bacs pros motivés",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "Les BUT en commercialisation ou logistique sont les plus adaptés (taux d’accès ~20-40% pour les bacs pros motivés).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité modérée (30-50%)",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "BUT Techniques de Commercialisation — sélectivité modérée (30-50%).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité modérée (30-50%)",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "BUT Techniques de Commercialisation — sélectivité modérée (30-50%).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité 40-60%",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context": "BUT Qualité, Logistique Industrielle et Organisation — sélectivité 40-60%.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité 40-60%",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "BUT Qualité, Logistique Industrielle et Organisation — sélectivité 40-60%.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité élevée (10-30% pour les bacs pros)",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "context": "BUT Gestion des Entreprises et des Administrations (GEA) — sélectivité élevée (10-30% pour les bacs pros).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité élevée (10-30% pour les bacs pros)",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "BUT Gestion des Entreprises et des Administrations (GEA) — sélectivité élevée (10-30% pour les bacs pros).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux de réussite ~70% pour les bacs pros admis",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "Taux de réussite : ~70% pour les bacs pros admis (source : enquêtes IUT — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité 40-60%",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context": "BUT Qualité, Logistique Industrielle et Organisation — sélectivité 40-60%.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité 40-60%",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "BUT Qualité, Logistique Industrielle et Organisation — sélectivité 40-60%.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux d’accès >60% pour les bacs pros vente",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "BTS NDRC — taux d’accès >60% pour les bacs pros vente.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "refusent >80% des bacs pros",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Certains IUT (ex : Paris) refusent >80% des bacs pros.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context": "FICHE 7 : Insertion pro : taux_emploi_3ans: 0.86",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "FICHE 7 : Insertion pro : taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "FICHE 7 : Insertion pro : taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "FICHE 7 : Insertion pro : salaire_median_embauche: 1740",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context": "FICHE 8 : Insertion pro : taux_emploi_3ans: 0.86",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "FICHE 8 : Insertion pro : taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", "
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "FICHE 8 : Insertion pro : taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "FICHE 8 : Insertion pro : salaire_median_embauche: 1740",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les BUT (Bachelors Universitaires de Technologie) accessibles après un bac pro vente sur Parcoursup ? Liste des formations compatibles et critères d'admission.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : accès à un BUT après un bac pro vente."
+    },
+    {
+      "text": "Quels sont les taux de réussite en BUT pour les bacheliers professionnels, notamment ceux issus d'un bac pro vente ? Données MESRI sur les taux de réussite en L1 ou BUT.",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 1,
+      "rationale": "Répond à la question des chances de réussite pour un bac pro vente."
+    },
+    {
+      "text": "Quels métiers ou secteurs professionnels sont accessibles après un BUT suivant un bac pro vente ? Fiches ONISEP éditorialisées.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporte un contexte complémentaire sur les débouchés métiers."
+    },
+    {
+      "text": "Quels sont les blocs de compétences ou certifications (RNCP) à valider pour maximiser ses chances de réussite en BUT après un bac pro vente ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Optionnel : conseils pour renforcer le dossier ou la transition."
+    }
+  ]
+}

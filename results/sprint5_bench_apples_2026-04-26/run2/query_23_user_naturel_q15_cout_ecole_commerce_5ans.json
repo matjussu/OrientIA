@@ -1,0 +1,157 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q15_cout_ecole_commerce_5ans",
+  "query_text": "Combien faut-il prévoir financièrement pour 5 années d'études en école de commerce ?",
+  "answer_text": "**TL;DR**\n1. Le coût d’une école de commerce sur 5 ans varie de **0€ (public)** à **50 000€+ (privé top 5)** selon le type d’établissement et le mode d’études.\n2. **L’alternance réduit drastiquement les frais** (salaire + prise en charge par l’entreprise).\n3. Budget moyen estimé : **10 000–30 000€** pour une école privée classique hors alternance.\n\n---\n\n### **Plan A — Public ou alternance : coût minimal (0–5 000€)**\n📍 **IAE (Instituts d’Administration des Entreprises)** — bac+5 public, **frais d’inscription ~250–600€/an** (soit **1 250–3 000€ sur 5 ans**).\n*Pour toi : solution la plus économique avec un diplôme reconnu (grade Master). Ex : [IAE Paris](https://www.iae-paris.com).*\n→ **Alternance possible dès bac+3** : salaire (~600–1 500€/mois) + frais de scolarité pris en charge.\n\n### **Plan B — École privée classique : budget moyen (15 000–30 000€)**\n📍 **Écoles type KEDGE, NEOMA, Audencia** — bac+5 privé, **frais ~8 000–12 000€/an** (soit **40 000–60 000€ sur 5 ans**), mais **bourses possibles** (CROUS, écoles).\n*Pour toi : investissement élevé, mais réseaux alumni et internationalisation forts. Ex : [KEDGE BS](https://kedge.edu).*\n→ **Alternance en M1/M2** : réduit le coût à **0–10 000€** (reste à charge si l’entreprise ne couvre pas tout).\n\n### **Plan C — Top 5 (HEC, ESSEC, etc.) : budget élevé (30 000–70 000€)**\n📍 **HEC Paris, ESSEC, ESCP** — **frais ~15 000–20 000€/an** (soit **75 000–100 000€ sur 5 ans**), mais **aides financières** (échelonnées selon revenus).\n*Pour toi : réserver aux profils excellents (mention TB, concours BCE/ECRICOME) ou via admissions parallèles (BBA → Master).*\n→ **Alternance en M2** : salaire (~1 000–1 800€/mois) compense partiellement.\n\n---\n**⚠ Attention aux pièges**\n- **Frais cachés** : logements (Paris/Lyon = +500–1 000€/mois), voyages obligatoires (séminaires à l’étranger), matériel.\n- **Écoles non reconnues** : vérifie le **grade Master** (liste [CEFDG](https://www.cefdg.fr)) pour éviter les diplômes sans valeur.\n- **Alternance = compétition** : places limitées, recherche d’entreprise exigeante (démarrage 6–12 mois avant).\n\n**Question pour toi :**\nAs-tu une préférence entre **réseau/prestige** (budget élevé), **équilibre coût/qualité** (privé classique), ou **économie maximale** (public/alternance) ? *(Cela aidera à affiner les options.)*\n\n---\n*Sources : tarifs publics des écoles (2024), baromètres (connaissance générale). Pour des chiffres précis par école, consulte leurs sites ou le [comparateur officiel](https://www.letudiant.fr/ecoles-de-commerce/palmares.html).* 👤 *Un conseiller en orientation (Psy-EN/CIO) peut t’aider à monter un dossier de bourses.*",
+  "elapsed_pipeline_s": 19.67,
+  "elapsed_fact_check_post_hoc_s": 6.4,
+  "elapsed_clarify_s": 2.16,
+  "elapsed_reformulate_s": 7.24,
+  "elapsed_retrieve_s": 0.45,
+  "elapsed_generate_s": 9.82,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 1,
+    "n_with_disclaimer": 12,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "0€ (public)",
+      "stat_value": 0,
+      "stat_unit": "€",
+      "context": "coût d’une école de commerce sur 5 ans varie de 0€ (public)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50 000€+ (privé top 5)",
+      "stat_value": 50000,
+      "stat_unit": "€",
+      "context": "coût d’une école de commerce sur 5 ans varie de ... à 50 000€+ (privé top 5)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "250–600€/an",
+      "stat_value": 250,
+      "stat_unit": "€/an",
+      "context": "IAE (Instituts d’Administration des Entreprises) — bac+5 public, frais d’inscription ~250–600€/an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 250–3 000€ sur 5 ans",
+      "stat_value": 1250,
+      "stat_unit": "€ sur 5 ans",
+      "context": "soit 1 250–3 000€ sur 5 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~600–1 500€/mois",
+      "stat_value": 600,
+      "stat_unit": "€/mois",
+      "context": "salaire (~600–1 500€/mois) + frais de scolarité pris en charge",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8 000–12 000€/an",
+      "stat_value": 8000,
+      "stat_unit": "€/an",
+      "context": "Écoles type KEDGE, NEOMA, Audencia — bac+5 privé, frais ~8 000–12 000€/an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "40 000–60 000€ sur 5 ans",
+      "stat_value": 40000,
+      "stat_unit": "€ sur 5 ans",
+      "context": "soit 40 000–60 000€ sur 5 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0–10 000€",
+      "stat_value": 0,
+      "stat_unit": "€",
+      "context": "Alternance en M1/M2 : réduit le coût à 0–10 000€",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "15 000–20 000€/an",
+      "stat_value": 15000,
+      "stat_unit": "€/an",
+      "context": "HEC Paris, ESSEC, ESCP — frais ~15 000–20 000€/an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "75 000–100 000€ sur 5 ans",
+      "stat_value": 75000,
+      "stat_unit": "€ sur 5 ans",
+      "context": "soit 75 000–100 000€ sur 5 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~1 000–1 800€/mois",
+      "stat_value": 1000,
+      "stat_unit": "€/mois",
+      "context": "salaire (~1 000–1 800€/mois) compense partiellement",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10 000–30 000€",
+      "stat_value": 10000,
+      "stat_unit": "€",
+      "context": "Budget moyen estimé : 10 000–30 000€ pour une école privée classique hors alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context": "salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_excerpt": "salaire_median_embauche: 2080"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "insee_salaire"
+  ],
+  "sub_queries": [
+    {
+      "text": "Coût total estimé pour 5 années d'études en école de commerce (frais de scolarité, frais annexes, droits d'inscription) selon les données Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : budget études en école de commerce, couvert par les données financières des fiches formation."
+    },
+    {
+      "text": "Aides financières disponibles (bourses, prêts, exonérations) pour les étudiants en école de commerce, selon les dispositifs CROUS et autres.",
+      "target_corpus": "crous",
+      "priority": 2,
+      "rationale": "Contexte utile pour compléter la prévision financière avec des leviers de financement."
+    },
+    {
+      "text": "Salaire médian des jeunes diplômés d'école de commerce (niveau master) en 2023, par région et PCS, selon les données INSEE.",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Nice-to-have : perspective retour sur investissement après les études."
+    },
+    {
+      "text": "Taux d'insertion professionnelle à 6, 12 et 18 mois des diplômés d'école de commerce (niveau master ou équivalent), selon les données MESR.",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Contexte complémentaire sur l'employabilité post-diplôme."
+    }
+  ]
+}

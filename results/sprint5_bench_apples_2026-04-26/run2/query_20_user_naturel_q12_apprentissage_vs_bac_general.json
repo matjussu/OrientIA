@@ -1,0 +1,147 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q12_apprentissage_vs_bac_general",
+  "query_text": "Mon fils de 17 ans hésite entre l'apprentissage et le bac général. Comment l'aider à décider ?",
+  "answer_text": "**TL;DR**\n1. Le choix entre **apprentissage** et **bac général** dépend de son projet professionnel, de son mode d’apprentissage préféré (pratique vs théorique) et de sa maturité à 17 ans.\n2. L’apprentissage permet une **insertion rapide** (salaire + diplôme) mais engage sur un métier précis ; le bac général garde des portes ouvertes pour des études longues.\n3. **Étape clé** : identifier s’il a déjà une passion/métier en tête (→ apprentissage) ou s’il préfère explorer (→ bac général).\n\n---\n\n### **Plan A — S’il a un métier précis en tête (ex : mécanique, numérique, social)**\n**→ Apprentissage** (bac pro ou CAP en 2-3 ans, rémunéré).\n- **Pourquoi ?** Il acquiert une **expérience concrète**, un diplôme reconnu (RNCP), et un salaire (entre 500€ et 1 000€/mois selon âge). Exemples :\n  - **CAP Cuisine** (restauration) ou **Bac Pro Systèmes Numériques** (informatique).\n  - **Certificat RNCP** comme *Conseiller en insertion professionnelle* (Fiche 8) : formation en 1 an après un bac, pour travailler dans l’accompagnement social.\n- **Attention** : L’entreprise formatrice doit être choisie avec soin (risque de désillusion si mauvais encadrement).\n\n### **Plan B — S’il veut garder des options ouvertes (études longues, indécis)**\n**→ Bac général** (ou technologique) + poursuite d’études.\n- **Pourquoi ?** Permet de viser des **formations supérieures** (BTS, licence, écoles) sans se spécialiser trop tôt. Idéal si :\n  - Il aime les matières scolaires (maths, français, sciences).\n  - Il envisage des métiers nécessitant bac+3/5 (ingénieur, enseignant, psychologue…).\n- **Alternative** : Un **bac pro** peut aussi mener à des études supérieures (ex : BTS après un bac pro commerce).\n\n### **Plan C — Mix des deux : Apprentissage **après** le bac général**\n- **Comment ?** Faire un bac général/techno **puis** un BTS/BUT en apprentissage (ex : BUT Informatique en alternance). Cela combine :\n  - La **flexibilité** du bac pour mûrir son projet.\n  - L’**expérience pro** de l’alternance plus tard, avec un meilleur salaire (1 000€–1 500€/mois en BTS/BUT).\n\n---\n**⚠ Attention aux pièges**\n- **Apprentissage** : Certains secteurs (bâtiment, restauration) ont des conditions physiques difficiles. Bien visiter l’entreprise et discuter avec des apprentis avant de signer.\n- **Bac général** : Sans projet clair, risque de décrochage en études supérieures (1 étudiant sur 4 quitte la fac sans diplôme — *source DEPP*).\n- **Pression sociale** : Éviter les phrases comme *« L’apprentissage, c’est pour ceux qui ne sont pas bons à l’école »* — faux (ex : des bac+5 font des masters en alternance).\n\n---\n**Question pour vous (parent) :**\n- Votre fils a-t-il déjà **testé un métier** qui lui plaît (stage, job d’été, discussion avec un pro) ?\n- Est-il plus motivé par **l’autonomie financière rapide** (apprentissage) ou par **l’exploration intellectuelle** (bac général) ?\n\n---\n**👤 Pour aller plus loin**\n- **Test d’orientation** : [L’Etudiant — « Quel métier pour moi ? »](https://www.letudiant.fr/metiers.html) (gratuit).\n- **Rencontre** : Prendre RDV avec le **Psy-EN** de son lycée ou un **CIO** (Centre d’Information et d’Orientation) pour affiner son projet.\n- **Immersion** : Plateformes comme [Mon Stage en Ligne](https://www.monstageenligne.fr/) pour découvrir des métiers en 1-2 jours.\n\n*(Sources : données DEPP sur l’insertion des apprentis, fiches RNCP Ministère du Travail — le reste en synthèse générale.)*",
+  "elapsed_pipeline_s": 46.76,
+  "elapsed_fact_check_post_hoc_s": 8.96,
+  "elapsed_clarify_s": 2.04,
+  "elapsed_reformulate_s": 9.29,
+  "elapsed_retrieve_s": 0.37,
+  "elapsed_generate_s": 35.06,
+  "fact_check_summary": {
+    "n_stats_total": 11,
+    "n_verified": 8,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "salaire (entre 500€ et 1 000€/mois selon âge)",
+      "stat_value": null,
+      "stat_unit": "€/mois",
+      "context": "Il acquiert une expérience concrète, un diplôme reconnu (RNCP), et un salaire (entre 500€ et 1 000€/mois selon âge).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 étudiant sur 4 quitte la fac sans diplôme",
+      "stat_value": 25,
+      "stat_unit": "%",
+      "context": "Sans projet clair, risque de décrochage en études supérieures (1 étudiant sur 4 quitte la fac sans diplôme — source DEPP).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.73",
+      "stat_value": 73,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_3ans\": 0.73, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.66",
+      "stat_value": 66,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1410",
+      "stat_value": 1410,
+      "stat_unit": "€",
+      "context": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_3ans\": 0.8, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.87",
+      "stat_value": 87,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.76",
+      "stat_value": 76,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "1 000€–1 500€/mois en BTS/BUT",
+      "stat_value": null,
+      "stat_unit": "€/mois",
+      "context": "Cela combine : ... L’expérience pro de l’alternance plus tard, avec un meilleur salaire (1 000€–1 500€/mois en BTS/BUT).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les avantages et inconvénients de l'apprentissage par rapport au bac général pour un lycéen de 17 ans ? Comparaison des parcours, débouchés et taux de réussite.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : comparaison des deux voies pour un parent de lycéen."
+    },
+    {
+      "text": "Quels métiers ou secteurs recrutent le plus en 2030 selon la DARES ? Focus sur les opportunités pour les jeunes en formation initiale.",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte un éclairage prospectif pour contextualiser le choix."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle 6 et 12 mois après un bac général ou un diplôme obtenu via l'apprentissage ?",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Données concrètes sur l'insertion pour étayer la décision."
+    },
+    {
+      "text": "Quels sont les taux de réussite en licence (L1) selon le type de bac obtenu (général vs. autre) ? Impact sur la poursuite d'études.",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 3,
+      "rationale": "Contexte utile pour évaluer les chances de réussite post-bac général."
+    },
+    {
+      "text": "Quelles sont les différences en termes de salaire médian entre les jeunes issus d'un bac général et ceux ayant suivi un parcours en apprentissage ?",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Éclairage complémentaire sur les perspectives financières."
+    }
+  ]
+}

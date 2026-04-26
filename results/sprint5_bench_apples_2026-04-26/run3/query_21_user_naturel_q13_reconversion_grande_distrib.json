@@ -1,0 +1,188 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q13_reconversion_grande_distrib",
+  "query_text": "Je travaille dans la grande distribution depuis 8 ans, je veux changer complètement de secteur. Par où commencer ?",
+  "answer_text": "**TL;DR**\n1. Votre expérience en grande distribution est un atout transférable (gestion d’équipe, relation client, logistique).\n2. Pour une reconversion **rapide et sécurisée**, visez les métiers de l’**insertion professionnelle** ou de la **formation d’adultes** (certifications RNCP en 6 à 12 mois).\n3. Pour une reconversion **plus ambitieuse** (tech, santé, social), prévoyez 2 à 3 ans de formation avec des passerelles (VAE, alternance).\n\n---\n\n### **Plan A — Reconversion rapide (6-12 mois) : Métiers de l’insertion et de la formation**\n📍 **Conseiller en insertion professionnelle** (Certificat RNCP bac+2) — Formation financée par Pôle Emploi/OPCO, débouchés stables (associations, missions locales, AFPA).\n*Pour vous : Valorise votre expérience terrain en accompagnement et gestion de publics variés. Salaire médian embauche : ~1 800€ brut (source Céreq, fiche RNCP).*\n\n📍 **Formateur professionnel d’adultes** (Certificat RNCP bac+2) — Accessible via VAE partielle (8 ans d’expérience = équivalence partielle).\n*Pour vous : Idéal si vous aimez transmettre (ex : former aux métiers du commerce). Alternance possible pour garder un revenu.*\n\n📍 **Encadrant technique d’insertion** (Certificat RNCP niveau bac) — Formation courte (6 mois), métiers en tension (chantiers d’insertion, ESAT).\n*Pour vous : Si vous préférez le terrain à l’administratif. Salaire ~1 700€ brut (source Céreq).*\n\n---\n### **Plan B — Reconversion ambitieuse (2-3 ans) : Secteurs porteurs avec montée en compétences**\n*(connaissance générale)*\n- **Santé/Social** : DEES (Diplôme d’État d’Éducateur Spécialisé) ou DEASS (Assistant de Service Social) en 3 ans. *Pour vous : VAE possible pour réduire la durée (expérience en gestion de conflits = atout).*\n- **Tech/Numérique** : Titres RNCP bac+2 en **support informatique** (ex : AFPA) ou **data analyst** (Simplon, Wild Code School). *Pour vous : Bootcamps intensifs (6 mois) avec financements régionaux.*\n- **Logistique/Supply Chain** : Licence pro Métiers de la logistique (1 an après un bac+2). *Pour vous : Votre expérience en grande distribution est un tremplin.*\n\n---\n### **Plan C — Passerelles longues mais qualifiantes : VAE + Alternance**\n*(connaissance générale)*\n1. **Validez vos acquis** : Faites un **bilan de compétences** (financé par CPF) pour identifier les équivalences (ex : 8 ans en grande distribution = crédits ECTS en gestion/commerce).\n2. **Alternance** : Optez pour un **BTS MCO** (Management Commercial Opérationnel) ou un **BUT GEA** (Gestion des Entreprises) en alternance. *Exemple : BUT GEA à l’IUT de Toulouse (taux d’insertion : 92% à 6 mois, source Céreq).*\n3. **Création d’activité** : Formez-vous à l’**entrepreneuriat** (couveuses d’entreprises, ACRE) pour monter une épicerie solidaire ou un service de conseil en organisation.\n\n---\n### **⚠ Attention aux pièges**\n- **Formations privées coûteuses** : Méfiez-vous des écoles promettant une reconversion \"clé en main\" à 10 000€/an. Privilégiez les certifications **RNCP** (reconnues par l’État) et financées via CPF/Pôle Emploi.\n- **Sous-estimer la VAE** : Votre expérience compte ! Un **Dossier de Validation des Acquis** peut vous faire gagner 1 an de formation (ex : VAE partielle pour un bac+2).\n- **Choisir un secteur sans débouchés** : Évitez les formations saturées (ex : esthétique, tourisme). Ciblez les **métiers en tension** (insertion, logistique, numérique) via [France Compétences](https://www.francecompetences.fr).\n\n---\n**Question pour vous :**\nQuelle est votre priorité absolue dans cette reconversion ?\n✅ **Stabilité** (métier en tension avec salaire garanti) → Plan A.\n✅ **Passion** (secteur qui vous motive, même avec un effort long) → Plan B.\n✅ **Indépendance** (créer votre activité ou monter en grade) → Plan C.\n\n---\n👤 *Pour affiner votre projet, un entretien avec un conseiller en évolution professionnelle (CEP) de Pôle Emploi ou un Psy-EN est indispensable. Ils peuvent vous aider à monter un dossier de financement (CPF, Pro-A, Transition Pro).*",
+  "elapsed_pipeline_s": 24.57,
+  "elapsed_fact_check_post_hoc_s": 11.43,
+  "elapsed_clarify_s": 1.68,
+  "elapsed_reformulate_s": 9.62,
+  "elapsed_retrieve_s": 0.36,
+  "elapsed_generate_s": 12.9,
+  "fact_check_summary": {
+    "n_stats_total": 16,
+    "n_verified": 12,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "Salaire médian embauche : ~1 800€ brut (source Céreq, fiche RNCP)",
+      "stat_value": 1800,
+      "stat_unit": "€ brut",
+      "context": "Salaire médian embauche pour le métier de Conseiller en insertion professionnelle",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Salaire ~1 700€ brut (source Céreq)",
+      "stat_value": 1700,
+      "stat_unit": "€ brut",
+      "context": "Salaire pour le métier d'Encadrant technique d'insertion",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux d’insertion : 92% à 6 mois",
+      "stat_value": 92,
+      "stat_unit": "%",
+      "context": "Taux d'insertion à 6 mois pour un BUT GEA à l’IUT de Toulouse",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8 ans d’expérience = équivalence partielle",
+      "stat_value": 8,
+      "stat_unit": "ans",
+      "context": "Durée d'expérience requise pour une VAE partielle pour le métier de Formateur professionnel d’adultes",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Taux d'emploi à 3 ans pour le métier de Formateur professionnel d'adultes (FICHE 7)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.87",
+      "stat_value": 87,
+      "stat_unit": "%",
+      "context": "Taux d'emploi à 6 ans pour le métier de Formateur professionnel d'adultes (FICHE 7)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.76",
+      "stat_value": 76,
+      "stat_unit": "%",
+      "context": "Taux de CDI pour le métier de Formateur professionnel d'adultes (FICHE 7)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context": "Salaire médian à l'embauche pour le métier de Formateur professionnel d'adultes (FICHE 7)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Taux d'emploi à 3 ans pour le métier de Conseiller en insertion professionnelle (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.87",
+      "stat_value": 87,
+      "stat_unit": "%",
+      "context": "Taux d'emploi à 6 ans pour le métier de Conseiller en insertion professionnelle (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.76",
+      "stat_value": 76,
+      "stat_unit": "%",
+      "context": "Taux de CDI pour le métier de Conseiller en insertion professionnelle (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context": "Salaire médian à l'embauche pour le métier de Conseiller en insertion professionnelle (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.73",
+      "stat_value": 73,
+      "stat_unit": "%",
+      "context": "Taux d'emploi à 3 ans pour le métier d'Encadrant technique d'insertion (FICHE 5)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Taux d'emploi à 6 ans pour le métier d'Encadrant technique d'insertion (FICHE 5)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.66",
+      "stat_value": 66,
+      "stat_unit": "%",
+      "context": "Taux de CDI pour le métier d'Encadrant technique d'insertion (FICHE 5)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1410",
+      "stat_value": 1410,
+      "stat_unit": "€",
+      "context": "Salaire médian à l'embauche pour le métier d'Encadrant technique d'insertion (FICHE 5)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Reconversion professionnelle après 8 ans en grande distribution : quelles formations qualifiantes ou certifiantes (RNCP) permettent une transition vers un nouveau secteur ?",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Ancrage essentiel pour identifier des parcours de formation adaptés à une reconversion."
+    },
+    {
+      "text": "Quels sont les métiers porteurs à l'horizon 2030 (DARES) qui recrutent en dehors de la grande distribution, avec des perspectives de postes à pourvoir ?",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Cibler des secteurs en tension pour maximiser les opportunités de reconversion."
+    },
+    {
+      "text": "Quels blocs de compétences (RNCP) sont transférables depuis la grande distribution vers d'autres secteurs, et quelles certifications les valident ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Identifier les compétences existantes valorisables pour faciliter la transition."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle (6/12/18 mois) pour les formations type BUT ou master dans des secteurs accessibles après une reconversion ?",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Évaluer l'efficacité des formations en termes d'emploi post-diplôme."
+    },
+    {
+      "text": "Quels secteurs offrent des salaires médians attractifs (INSEE) pour des profils en reconversion, hors grande distribution ?",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Apporter une vision financière pour motiver le choix de secteur."
+    }
+  ]
+}

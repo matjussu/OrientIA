@@ -1,0 +1,138 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q01_postes_pourvoir_global",
+  "query_text": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+  "answer_text": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 grands secteurs** : transition écologique, santé/autonomie, numérique, et industries critiques.\n2. **Top 3 des besoins massifs** : rénovation énergétique (500 000 emplois), soins aux personnes âgées (300 000), et cybersécurité/data (200 000).\n3. **Stratégie gagnante** : vise un métier à l’intersection de **2 de ces secteurs** (ex : data + santé, ou BTP + écologie) pour maximiser employabilité et salaire.\n\n---\n\n### **Plan A — Secteurs à recrutement massif (besoins quantifiés)**\n1. **Transition écologique & BTP** (connaissance générale)\n   - **Métiers** : Technicien en rénovation énergétique, ingénieur en énergies renouvelables, chef de projet hydrogène.\n   - **Postes à pourvoir** : ~500 000 d’ici 2030 (source : Stratégie Nationale Bas-Carbone 2024, ADEME).\n   - **Pourquoi ?** : Obligation légale de rénovation des passoires thermiques (loi Climat 2021) + pénurie de main-d’œuvre qualifiée.\n   - **Formations clés** : BTS Métiers du Géomètre-Topographe, Licence Pro Métiers de l’Énergie, écoles d’ingénieurs (ex : Mines ParisTech, INSA).\n\n2. **Santé & Autonomie** (connaissance générale)\n   - **Métiers** : Aide-soignant, infirmier spécialisé en gériatrie, ergothérapeute, coordinateur de parcours santé.\n   - **Postes à pourvoir** : ~300 000 (vieillissement démographique + déserts médicaux).\n   - **Pourquoi ?** : 1 Français sur 4 aura +65 ans en 2030 (INSEE). Les EHPAD et services à domicile manquent déjà de 80 000 professionnels (DREES 2023).\n   - **Formations clés** : IFSI (public, gratuit), BUT Carrières Sociales, Master Santé Publique.\n\n3. **Numérique & Cybersécurité** (connaissance générale)\n   - **Métiers** : Expert en cybersécurité (SOC, pentest), data scientist, développeur IA, administrateur cloud.\n   - **Postes à pourvoir** : ~200 000 (source : Syntec Numérique 2023, rapport \"Compétences 2030\").\n   - **Pourquoi ?** : 1 cyberattaque toutes les 10 secondes en France (ANSSI 2023) + généralisation de l’IA dans les PME.\n   - **Formations clés** : BUT Informatique, écoles d’ingénieurs (UTT, EPITA), certifications SecNumAcadémie (gratuites).\n\n---\n\n### **Plan B — Métiers hybrides (double compétence = salaire + employabilité)**\nCes métiers combinent **2 secteurs porteurs** et offrent des salaires 20-30% plus élevés (connaissance générale) :\n- **Data Analyst Santé** : Croisement data + santé pour optimiser les parcours patients (ex : prédiction des réadmissions).\n  *Formation* : Master Data Science + stage en hôpital/ARS.\n- **Ingénieur BTP Éco-Conception** : Bâtiments bas carbone + matériaux recyclés.\n  *Formation* : École d’ingénieurs (ESTP, INSA) + spécialisation RSE.\n- **Consultant en Sobriété Numérique** : Réduire l’empreinte carbone des data centers.\n  *Formation* : Master Informatique + certifications Green IT.\n\n---\n### **Plan C — Pénuries critiques (peu connues mais recrutement garanti)**\n1. **Métiers des Industries Souveraines** (connaissance générale)\n   - **Exemples** : Technicien en microélectronique (STMicroelectronics recrute 3 000 personnes en France d’ici 2025), soudeur aéronautique (Airbus), opérateur en chimie verte.\n   - **Atout** : CDI signés **avant la fin de la formation** (ex : 98% des diplômés du BTS Chimie trouvent un emploi en 6 mois, source : Céreq 2022).\n   - **Formations** : BTS, Licences Pro en alternance (réseaux **UIMM** ou **AFPA**).\n\n2. **Agriculture de Précision** (connaissance générale)\n   - **Métiers** : Pilote de drone agricole, technicien en robotique agricole, conseiller en agroécologie.\n   - **Besoin** : 50 000 emplois non pourvus (chiffre : Chambre d’Agriculture 2023).\n   - **Formation** : BTSA, Licence Pro Agroéquipements (ex : AgroParisTech).\n\n---\n### **⚠ Attention aux pièges**\n- **Évite les formations \"trop génériques\"** : Un BTS Commerce ou une licence de psycho **sans spécialisation** aura un taux d’insertion < 50% (connaissance générale, marché saturé).\n- **Méfie-toi des écoles privées non labellisées** : Certaines promettent des débouchés en \"management du luxe\" ou \"marketing digital\" mais affichent **< 30% d’insertion à 6 mois** (source : enquêtes Céreq sur les écoles non reconnues par l’État).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour un **secteur en particulier** (santé, tech, écologie, industrie) ? Ou préfères-tu un métier qui **combine plusieurs domaines** pour plus de polyvalence ? *(Exemple : un data scientist en santé gagnera +15% qu’un data scientist \"générique\" — connaissance générale.)*\n\n---\n👤 *Pour creuser ton projet, un RDV avec le Psy-EN de ton lycée ou un conseiller du CIO (Centre d’Information et d’Orientation) te donnera des pistes locales (alternances, formations gratuites près de chez toi).*",
+  "elapsed_pipeline_s": 26.04,
+  "elapsed_fact_check_post_hoc_s": 4.14,
+  "elapsed_clarify_s": 1.99,
+  "elapsed_reformulate_s": 8.98,
+  "elapsed_retrieve_s": 0.98,
+  "elapsed_generate_s": 14.09,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 0,
+    "n_with_disclaimer": 10,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "500 000 emplois",
+      "stat_value": 500000,
+      "stat_unit": "emplois",
+      "context": "Postes à pourvoir en transition écologique & BTP d’ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "300 000",
+      "stat_value": 300000,
+      "stat_unit": "emplois",
+      "context": "Postes à pourvoir en santé & autonomie",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "80 000 professionnels",
+      "stat_value": 80000,
+      "stat_unit": "professionnels",
+      "context": "Manque de professionnels dans les EHPAD et services à domicile",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "200 000",
+      "stat_value": 200000,
+      "stat_unit": "emplois",
+      "context": "Postes à pourvoir en numérique & cybersécurité",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 Français sur 4 aura +65 ans en 2030",
+      "stat_value": 25,
+      "stat_unit": "%",
+      "context": "Vieillissement démographique en France",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 cyberattaque toutes les 10 secondes en France",
+      "stat_value": 1,
+      "stat_unit": "cyberattaque/10 secondes",
+      "context": "Fréquence des cyberattaques en France",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "98% des diplômés du BTS Chimie trouvent un emploi en 6 mois",
+      "stat_value": 98,
+      "stat_unit": "%",
+      "context": "Taux d'insertion des diplômés du BTS Chimie",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50 000 emplois non pourvus",
+      "stat_value": 50000,
+      "stat_unit": "emplois",
+      "context": "Besoin en agriculture de précision",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "< 50% taux d’insertion",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "Taux d’insertion des formations trop génériques (BTS Commerce, licence de psycho)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "< 30% d’insertion à 6 mois",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "Taux d’insertion des écoles privées non labellisées",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers prévus pour recruter le plus de postes à pourvoir en France à l'horizon 2030 selon les projections DARES ?",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Intent core : demande explicite sur les métiers 2030 et postes à pourvoir, activant le domain hint 'DARES'."
+    },
+    {
+      "text": "Quels secteurs ou familles professionnelles (FAP) en France auront les plus fortes créations nettes d'emplois d'ici 2030 ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Complète la première sub-query avec une vision sectorielle et quantitative."
+    },
+    {
+      "text": "Quels sont les métiers émergents ou en forte croissance en France pour 2030, avec des perspectives de recrutement élevées ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporte un éclairage éditorialisé ONISEP sur les métiers en tension ou émergents."
+    },
+    {
+      "text": "Quels sont les niveaux de salaire médian associés aux métiers les plus recruteurs en 2030 en France, par région ?",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Contexte complémentaire sur la rémunération, utile pour un conseil stratégique."
+    },
+    {
+      "text": "Quelles formations ou certifications (RNCP) préparent aux métiers les plus recruteurs en 2030 en France ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Lien avec les compétences et certifications pour anticiper les besoins en formation."
+    }
+  ]
+}

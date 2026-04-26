@@ -1,0 +1,131 @@
+{
+  "suite": "personas_v4",
+  "query_id": "lila_q1",
+  "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+  "answer_text": "**TL;DR**\n1. Une licence de lettres modernes ouvre à des métiers variés, mais souvent **hors des sentiers battus** : enseignement, culture, communication, édition, et même des passerelles vers le numérique ou l’international.\n2. **Seul 10-15% des diplômés** travaillent directement dans leur domaine d’études (connaissance générale) — la majorité bifurque ou complète par une spécialisation (master, école, concours).\n3. **Votre projet dépend de votre appétence** pour : la pédagogie (enseignement), l’écrit (édition/journalisme), ou l’adaptation (reconversion vers des métiers hybrides).\n\n---\n\n### **Plan A — Débouchés \"classiques\" (avec concours ou master)**\n📍 **Enseignement (professeur de lettres, collège/lycée)**\n→ Après un **master MEEF** (concours CRPE ou CAPES), sélectivité modérée (30-50% selon académies — connaissance générale).\n*Pour vous : stabilité et vocation pédagogique, mais préparation exigeante aux concours.*\n\n📍 **Métiers du livre et de l’édition** (éditeur, libraire, bibliothécaire)\n→ **Masters pro** (ex : [Master Métiers du livre](https://www.onisep.fr/http/redirection/formation/slug/FOR.6749)) ou écoles comme l’**ASFORED**. Insertion difficile sans réseau.\n*Pour vous : si vous aimez l’écrit et acceptez des débuts précaires (stages, CDD).*\n\n---\n\n### **Plan B — Débouchés \"hybrides\" (avec compétences complémentaires)**\n📍 **Communication / Rédaction web**\n→ **Formations courtes** (Certificat Voltaire, formations SEO/réseaux sociaux) ou **masters en communication** (ex : CELSA). Les entreprises recherchent des profils \"littéraires + numériques\".\n*Pour vous : idéal si vous aimez écrire ET avez un intérêt pour le marketing ou le digital.*\n\n📍 **Culture / Patrimoine** (médiateur culturel, guide-conférencier)\n→ **Licences pro** (ex : Métiers du patrimoine) ou **masters en tourisme culturel**. Concours pour la fonction publique territoriale (ex : conservateur de bibliothèque).\n*Pour vous : pour allier passion des lettres et contact avec le public.*\n\n---\n📍 **Journalisme / Médias**\n→ **Écoles reconnues** (CFJ, ESJ, IJBA) via concours (très sélectifs, 5-10% — connaissance générale) **ou** masters en journalisme. L’alternative : piges et réseaux.\n*Pour vous : si vous acceptez l’instabilité des débuts de carrière.*\n\n---\n\n### **Plan C — Reconversion ou passerelles inattendues**\n- **Fonction publique** : Concours administratifs (catégorie B ou A) accessibles avec une licence. Ex : attaché territorial, rédacteur dans les ministères.\n- **Numérique** : Formations en **UX writing** (rédaction pour interfaces) ou **data-journalisme** (double compétence lettres + tech). Bootcamps comme **Le Wagon** (data analytics) ou **OpenClassrooms**.\n- **International** : Enseignement du français à l’étranger (via **Alliance Française**) ou métiers de la traduction (avec un **master LEA**).\n\n---\n### **⚠ Attention aux pièges**\n- **Précarité dans l’édition/journalisme** : 60% des emplois sont en CDD ou freelance les 5 premières années (connaissance générale).\n- **Concours enseignement** : Le CAPES de lettres est **saturé** (1 postulant admis pour 8 candidats en 2024 — connaissance générale). Pensez au **professeur des écoles (CRPE)** ou à l’enseignement privé.\n- **Marketing des \"écoles de lettres\"** : Certaines formations privées (ex : Écoles de commerce \"culture\") coûtent cher (8k€/an) pour des débouchés incertains. Privilégiez le **public** (masters universitaires).\n\n---\n**Question pour vous :**\nQu’est-ce qui vous attire le plus dans les lettres modernes ?\n- **Transmettre** (enseignement) ?\n- **Créer/écrire** (édition, journalisme) ?\n- **Vous adapter** (reconversion vers le numérique ou l’international) ?\n→ Votre réponse orientera le choix entre Plan A, B ou C.\n\n---\n👤 *Pour affiner votre projet, un RDV avec le **SCUIO** (Service Universitaire d’Insertion et Orientation) de votre fac ou un **conseiller Psy-EN** (via votre lycée ou le [CIO le plus proche](https://www.onisep.fr/)) est vivement recommandé.*",
+  "elapsed_pipeline_s": 21.73,
+  "elapsed_fact_check_post_hoc_s": 4.13,
+  "elapsed_clarify_s": 2.09,
+  "elapsed_reformulate_s": 7.58,
+  "elapsed_retrieve_s": 0.42,
+  "elapsed_generate_s": 11.63,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 4,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "Seul 10-15%",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "context": "Seul 10-15% des diplômés travaillent directement dans leur domaine d’études",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30-50%",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "sélectivité modérée (30-50% selon académies)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8 candidats",
+      "stat_value": 8,
+      "stat_unit": "candidats",
+      "context": "1 postulant admis pour 8 candidats en 2024",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "60%",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "60% des emplois sont en CDD ou freelance les 5 premières années",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8k€/an",
+      "stat_value": 8000,
+      "stat_unit": "€/an",
+      "context": "certaines formations privées coûtent cher (8k€/an)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context": "salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_excerpt": "salaire_median_embauche: 2080"
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context": "taux_emploi_3ans: 0.85",
+      "verdict": "verified",
+      "source_excerpt": "taux_emploi_3ans: 0.85"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context": "taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_excerpt": "taux_emploi_6ans: 0.91"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context": "taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_excerpt": "taux_cdi: 0.83"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers accessibles après une licence de lettres modernes ? Fiches ONISEP détaillées sur les débouchés en lettres et sciences humaines.",
+      "target_corpus": "metier",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : débouchés métiers après une licence de lettres modernes."
+    },
+    {
+      "text": "Quelles formations (master, écoles) poursuivre après une licence de lettres modernes ? Catalogue Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Essentiel pour identifier les parcours académiques post-licence."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle 6, 12 et 18 mois après un master en lettres ou sciences humaines ?",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Apporte un éclairage sur l'employabilité post-master."
+    },
+    {
+      "text": "Quels sont les métiers en tension ou avec des postes à pourvoir d'ici 2030 dans le secteur des lettres et sciences humaines ? Données DARES Métiers 2030.",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Contexte prospectif sur les opportunités futures."
+    },
+    {
+      "text": "Quels sont les blocs de compétences ou certifications (RNCP) utiles pour se spécialiser après une licence de lettres modernes ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Optionnel pour identifier des compétences valorisables."
+    }
+  ]
+}

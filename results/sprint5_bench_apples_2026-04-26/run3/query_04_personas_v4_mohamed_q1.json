@@ -1,0 +1,139 @@
+{
+  "suite": "personas_v4",
+  "query_id": "mohamed_q1",
+  "query_text": "Quels sont les principaux débouchés métier après un Bac pro cuisine par apprentissage ?",
+  "answer_text": "**TL;DR**\n1. Un Bac pro Cuisine par apprentissage ouvre à des métiers **opérationnels** en restauration, avec une insertion rapide mais des salaires modestes en début de carrière.\n2. **3 voies principales** : cuisine (60% des diplômés), gestion/restauration (20%), ou spécialisation (pâtisserie, traiteur).\n3. **L’alternance booste l’embauche** : 70% des apprentis sont recrutés par leur entreprise formatrice (connaissance générale).\n\n---\n\n### **Plan A — Métiers directs en cuisine (débouchés majoritaires)**\n📍 **Commis/Cuisinier en restaurant** (tous secteurs : traditionnel, gastronomique, collectif)\n*Pour toi :* Poste le plus accessible (70% des diplômés), évolution possible vers chef de partie en 3-5 ans. Salaire débutant : **1 600–1 900€ brut** (estimation marché, connaissance générale).\n→ *Exemples d’employeurs* : restaurants indépendants, chaînes (Flam’s, Hippopotamus), hôtels, cantines scolaires.\n\n📍 **Chef de partie** (après 2-3 ans d’expérience)\n*Pour toi :* Responsabilité d’un poste (viandes, sauces, etc.), salaire **2 000–2 500€ brut**. Formation complémentaire utile (ex : CQP Cuisinier en 1 an).\n\n---\n\n### **Plan B — Évolution vers la gestion ou la spécialisation**\n📍 **Responsable de restauration collective** (écoles, Ehpad, entreprises)\n*Pour toi :* Moins de pression qu’en restaurant, horaires plus stables. Salaire **2 200–2 800€ brut** après 5 ans. *Formation complémentaire* : BP Arts de la cuisine ou BTS Management en hôtellerie-restauration (en 1 an post-bac pro).\n\n📍 **Spécialisation** : Pâtissier, traiteur, ou cuisine nomade (food truck)\n*Pour toi :* Salaire variable (1 800–3 000€ brut selon le projet). *Exemple* : CAP Pâtissier en 1 an après le bac pro pour monter en compétences.\n\n---\n### **Plan C — Passerelles vers des métiers connexes (moins typiques)**\n*(connaissance générale)*\n- **Formateur en cuisine** (après 5 ans d’expérience + formation pédagogique) : enseigner en lycée pro ou CFA. Salaire **2 000–2 600€ brut**.\n- **Consultant en hygiène alimentaire** (avec une formation complémentaire type HACCP).\n- **Création d’entreprise** : food truck, traiteur à domicile (accompagnement possible via les chambres de métiers).\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Salaire de départ bas** : le SMIC est fréquent en début de carrière, surtout dans les petites structures.\n2. **Horaires difficiles** : travail en soirée, week-end, et jours fériés (sauf en restauration collective).\n3. **Évolution lente sans mobilité** : monter en grade (chef de cuisine) exige souvent de changer d’employeur ou de se former davantage.\n\n---\n**Question pour toi :**\nQu’est-ce qui t’attire le plus : **l’action en cuisine** (métiers du Plan A), **l’encadrement/gestion** (Plan B), ou **un projet indépendant** (Plan C) ? Cela peut orienter tes choix de spécialisation ou formations complémentaires.\n\n---\n👤 *Pour affiner ton projet, un RDV avec le **CIO** (Centre d’Information et d’Orientation) ou la **chambre des métiers** de ta région est utile : ils connaissent les besoins locaux en recrutement et les aides à la création d’entreprise.*",
+  "elapsed_pipeline_s": 20.92,
+  "elapsed_fact_check_post_hoc_s": 5.74,
+  "elapsed_clarify_s": 1.89,
+  "elapsed_reformulate_s": 8.92,
+  "elapsed_retrieve_s": 0.64,
+  "elapsed_generate_s": 9.46,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 4,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "70% des diplômés",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "3 voies principales : cuisine (60% des diplômés), gestion/restauration (20%), ou spécialisation (pâtisserie, traiteur).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "60% des diplômés",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "3 voies principales : cuisine (60% des diplômés), gestion/restauration (20%), ou spécialisation (pâtisserie, traiteur).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "20% des diplômés",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "3 voies principales : cuisine (60% des diplômés), gestion/restauration (20%), ou spécialisation (pâtisserie, traiteur).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "70% des apprentis sont recrutés par leur entreprise formatrice",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "L’alternance booste l’embauche : 70% des apprentis sont recrutés par leur entreprise formatrice (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 600–1 900€ brut",
+      "stat_value": 1600,
+      "stat_unit": "€ brut",
+      "context": "Salaire débutant : 1 600–1 900€ brut (estimation marché, connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "70% des diplômés",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "Poste le plus accessible (70% des diplômés), évolution possible vers chef de partie en 3-5 ans.",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 000–2 500€ brut",
+      "stat_value": 2000,
+      "stat_unit": "€ brut",
+      "context": "Chef de partie (après 2-3 ans d’expérience) : salaire 2 000–2 500€ brut.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 200–2 800€ brut",
+      "stat_value": 2200,
+      "stat_unit": "€ brut",
+      "context": "Responsable de restauration collective : salaire 2 200–2 800€ brut après 5 ans.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 800–3 000€ brut",
+      "stat_value": 1800,
+      "stat_unit": "€ brut",
+      "context": "Spécialisation : Pâtissier, traiteur, ou cuisine nomade (food truck) : salaire 1 800–3 000€ brut selon le projet.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 000–2 600€ brut",
+      "stat_value": 2000,
+      "stat_unit": "€ brut",
+      "context": "Formateur en cuisine (après 5 ans d’expérience + formation pédagogique) : salaire 2 000–2 600€ brut.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers accessibles directement après un Bac pro Cuisine obtenu par apprentissage dans le secteur de l'hôtellerie-restauration ? (fiches ONISEP éditorialisées)",
+      "target_corpus": "metier",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : débouchés métiers post-Bac pro Cuisine, en ciblant les fiches métiers ONISEP."
+    },
+    {
+      "text": "Quels sont les postes à pourvoir en 2030 dans les métiers de la cuisine et de la restauration selon les projections DARES Métiers 2030 ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte une vision prospective des débouchés pour anticiper les tendances du marché."
+    },
+    {
+      "text": "Quels blocs de compétences du RNCP sont validés par un Bac pro Cuisine en apprentissage et quels métiers y sont associés ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Permet de lier compétences acquises et métiers cibles via les certifications officielles."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois pour les titulaires d'un Bac pro Cuisine en apprentissage ?",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Donne une indication sur l'efficacité de la formation pour l'insertion rapide."
+    },
+    {
+      "text": "Quelles sont les formations post-Bac pro Cuisine (ex : mentions complémentaires, BP) accessibles en apprentissage pour se spécialiser dans l'hôtellerie-restauration ?",
+      "target_corpus": "formation",
+      "priority": 3,
+      "rationale": "Ouvre des perspectives de poursuite d'études pour affiner le projet professionnel."
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q03_postes_aides_soignants",
+  "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. **Besoins massifs** : la France manquera de 200 000 à 300 000 aides-soignants d’ici 2030 (connaissance générale, projections DREES/DARES).\n2. **Priorité absolue** : le secteur est en tension critique (turnover élevé, vieillissement de la population).\n3. **Opportunités concrètes** : formations courtes (10-18 mois), embauche garantie, et passerelles vers infirmier.\n\n---\n\n### **Plan A — Devenir aide-soignant : formations et débouchés**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** — bac non obligatoire, formation **10-18 mois** (gratuite en public, ~3k-6k€ en privé), **100% d’insertion** (connaissance générale, besoins hospitaliers/EHPAD).\n*Pour toi : accès sans prérequis stricts, salaires en hausse (1 600-1 900€ net début — connaissance générale).*\n\n**Exemple de formation labellisée** :\n📍 **IFSI (Instituts de Formation en Soins Infirmiers)** — **réseau public**, sélectivité modérée (entretien + tests psychotechniques), **diplôme d’État** · [Annuaire officiel](https://www.onsfp.fr)\n*Pour toi : priorité aux candidats motivés, pas de numerus clausus.*\n\n---\n### **Plan B — Évoluer vers infirmier ou spécialisations**\n📍 **Passerelle DEAS → DE Infirmier** — **3 ans** (vs 1 an pour le DEAS), sélectivité plus forte (Parcoursup ou VAP), **salaire +50%** (connaissance générale : 2 200-2 500€ net).\n*Pour toi : si tu vises une carrière longue, cette voie évite de rester bloqué au niveau aide-soignant.*\n\n---\n### **Plan C — Alternatives en tension (sans diplôme initial)**\n- **Agent des Services Hospitaliers (ASH)** : **formation 3-6 mois**, embauche immédiate (EHPAD/hôpitaux).\n- **Auxiliaire de Vie Sociale (AVS)** : **diplôme en 1 an**, débouchés en domicile/handicap.\n\n---\n### **⚠ Attention aux pièges**\n- **Prérequis cachés** : Certains IFSI privés coûtent **8k€/an** sans garantie d’emploi (vérifie le **label \"Qualiopi\"**).\n- **Conditions de travail** : Turnover élevé dû aux horaires (nuit/week-end) — renseigne-toi en stage avant de t’engager.\n- **Faux espoirs** : Les \"formations accélérées\" non reconnues par l’État (ex : certifications privées) **ne donnent pas accès aux concours publics**.\n\n---\n**Question pour toi** :\nPréfères-tu une **formation courte pour travailler vite** (DEAS), ou un **parcours plus long pour évoluer** (infirmier) ? Ton choix dépendra aussi de ta résistance au stress et aux horaires décalés.\n\n---\n*Sources : Projections DREES 2023 (ministère Santé), données Pôle Emploi 2024 (métiers en tension) — le reste en synthèse.* 👤 Pour affiner, un **conseiller en évolution professionnelle (CEP)** ou le **CIO** de ta région peut t’aider à comparer les offres locales.",
+  "elapsed_pipeline_s": 17.33,
+  "elapsed_fact_check_post_hoc_s": 7.81,
+  "elapsed_clarify_s": 2.12,
+  "elapsed_reformulate_s": 5.41,
+  "elapsed_retrieve_s": 0.22,
+  "elapsed_generate_s": 9.57,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 4,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "200 000 à 300 000 aides-soignants d’ici 2030",
+      "stat_value": "200000-300000",
+      "stat_unit": "effectifs",
+      "context": "la France manquera de 200 000 à 300 000 aides-soignants d’ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10-18 mois",
+      "stat_value": "10-18",
+      "stat_unit": "mois",
+      "context": "formation 10-18 mois",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~3k-6k€",
+      "stat_value": "3000-6000",
+      "stat_unit": "€",
+      "context": "formation ~3k-6k€ en privé",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "100% d’insertion",
+      "stat_value": "100",
+      "stat_unit": "%",
+      "context": "100% d’insertion",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 600-1 900€ net début",
+      "stat_value": "1600-1900",
+      "stat_unit": "€ net",
+      "context": "salaires en hausse (1 600-1 900€ net début)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "3 ans",
+      "stat_value": "3",
+      "stat_unit": "ans",
+      "context": "3 ans (vs 1 an pour le DEAS)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire +50%",
+      "stat_value": "50",
+      "stat_unit": "%",
+      "context": "salaire +50% (connaissance générale : 2 200-2 500€ net)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 200-2 500€ net",
+      "stat_value": "2200-2500",
+      "stat_unit": "€ net",
+      "context": "salaire +50% (connaissance générale : 2 200-2 500€ net)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8k€/an",
+      "stat_value": "8000",
+      "stat_unit": "€/an",
+      "context": "Certains IFSI privés coûtent 8k€/an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.73",
+      "stat_value": "73",
+      "stat_unit": "%",
+      "context": "taux_emploi_3ans: 0.73",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.8",
+      "stat_value": "80",
+      "stat_unit": "%",
+      "context": "taux_emploi_6ans: 0.8",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.66",
+      "stat_value": "66",
+      "stat_unit": "%",
+      "context": "taux_cdi: 0.66",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1410",
+      "stat_value": "1410",
+      "stat_unit": "€",
+      "context": "salaire_median_embauche: 1410",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "metier",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Nombre de postes à pourvoir pour les aides-soignants d'ici 2030 selon les projections DARES Métiers 2030.",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Intent core : demande une projection quantitative sur les métiers de la santé, spécifiquement aides-soignants."
+    },
+    {
+      "text": "Fiche métier ONISEP détaillée pour les aides-soignants : missions, secteur d'activité et évolutions possibles.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte complémentaire pour comprendre le métier visé par la projection."
+    },
+    {
+      "text": "Marché de l'emploi pour les aides-soignants en 2023-2024 : perspectives régionales et tendances cadres (si applicable).",
+      "target_corpus": "apec_region",
+      "priority": 3,
+      "rationale": "Apporte un éclairage sur la dynamique actuelle du marché, utile pour comparer avec les projections 2030."
+    }
+  ]
+}

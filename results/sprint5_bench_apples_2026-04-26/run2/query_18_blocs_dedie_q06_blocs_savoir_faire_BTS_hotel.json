@@ -1,0 +1,101 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q06_blocs_savoir_faire_BTS_hotel",
+  "query_text": "Quels savoir-faire certifiés à la sortie d'un BTS hôtellerie-restauration ?",
+  "answer_text": "**TL;DR**\n1. Un BTS Hôtellerie-Restauration certifie des compétences opérationnelles en gestion, service et production culinaire, avec une forte dimension managériale en option A.\n2. Les savoir-faire validés couvrent **3 piliers** : technique (cuisine/service), gestion (budgets, RH), et relation client (accueil, fidélisation).\n3. Ces compétences sont immédiatement exploitables en entreprise, avec des débouchés concrets en restauration, hôtellerie ou événementiel.\n\n---\n\n### **Plan A — Compétences techniques certifiées (cœur de métier)**\n📍 **Savoir-faire en production culinaire et service** :\n*Maîtrise des techniques de cuisine (bases et élaboration de menus), normes d’hygiène (HACCP), service en salle (arts de la table, gestion des flux clients), et gestion des stocks (approvisionnement, rotation).*\n→ **Exemple concret** : Capacité à superviser une brigade en cuisine ou une équipe en salle, avec respect des coûts et des délais.\n*(connaissance générale, alignée sur le référentiel officiel du BTS — voir [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.5444))*\n\n### **Plan B — Compétences managériales (option A : Management d’unité de restauration)**\n📍 **Gestion d’une unité opérationnelle** :\n*Élaboration de budgets, pilotage des ressources humaines (planning, formation), analyse des performances (chiffre d’affaires, satisfaction client), et mise en place de stratégies commerciales (menus, événements).*\n→ **Pour toi** : Idéal si tu vises un poste d’adjoint·e ou de responsable de restaurant à moyen terme, avec une dimension stratégique.\n\n### **Plan C — Compétences transversales (valorisables hors secteur)**\n📍 **Soft skills et adaptabilité** :\n*Gestion du stress en contexte exigeant, travail d’équipe pluridisciplinaire, communication multilingue (anglais professionnel souvent requis), et résolution de conflits clients/fournisseurs.*\n→ **Atout différenciant** : Ces compétences sont transférables vers des métiers de l’accueil, du tourisme, ou même de la logistique.\n\n---\n**⚠ Attention aux pièges**\n- **Piège #1 — Confusion avec un diplôme de cuisine pure** : Le BTS HR forme des **managers polyvalents**, pas des chef·fes cuisinier·ères (pour cela, vise un CAP/CFP + expérience).\n- **Piège #2 — Sous-estimation de l’alternance** : 80% des compétences s’acquièrent en entreprise (connaissance générale). Un BTS en alternance double tes chances d’embauche à la sortie.\n- **Piège #3 — Méconnaissance des débouchés** : Le secteur recrute massivement (turnover élevé), mais les postes à responsabilité exigent souvent 2-3 ans d’expérience post-diplôme.\n\n---\n**Question pour toi** :\nQuelle dimension t’attire le plus : le contact client (service/salle), la création (cuisine), ou l’organisation (gestion d’équipe) ? Cela peut orienter ton choix d’option ou de spécialisation en stage.",
+  "elapsed_pipeline_s": 21.7,
+  "elapsed_fact_check_post_hoc_s": 5.1,
+  "elapsed_clarify_s": 1.95,
+  "elapsed_reformulate_s": 8.7,
+  "elapsed_retrieve_s": 0.36,
+  "elapsed_generate_s": 10.68,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 4,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "80% des compétences s'acquièrent en entreprise",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Un BTS en alternance double tes chances d'embauche à la sortie.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "80% des compétences s'acquièrent en entreprise (connaissance générale)",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Un BTS en alternance double tes chances d'embauche à la sortie.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_3ans\": 0.8, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.87",
+      "stat_value": 87,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_6ans\": 0.87, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.76",
+      "stat_value": 76,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_cdi\": 0.76, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context": "Insertion pro : {\"salaire_median_embauche\": 1570, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les blocs de compétences certifiés RNCP à la sortie d'un BTS en hôtellerie-restauration ? Détail des compétences validées et des certifications associées.",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Intent core : savoir-faire certifiés liés à un diplôme spécifique. Cible directement les blocs RNCP."
+    },
+    {
+      "text": "Fiche métier ONISEP : quelles compétences et savoir-faire sont attendus pour les métiers accessibles après un BTS hôtellerie-restauration ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte complémentaire : compétences métiers associées au diplôme, via une source éditorialisée."
+    },
+    {
+      "text": "Quels sont les parcours de formation (BTS, licences pro) en hôtellerie-restauration disponibles sur Parcoursup ou ONISEP, et leurs débouchés en termes de compétences acquises ?",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Ancrage formation : liste des diplômes et compétences générales associées pour contextualiser."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois pour les titulaires d'un BTS hôtellerie-restauration ?",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Contexte optionnel : insertion post-diplôme pour évaluer l'utilité des compétences certifiées."
+    }
+  ]
+}

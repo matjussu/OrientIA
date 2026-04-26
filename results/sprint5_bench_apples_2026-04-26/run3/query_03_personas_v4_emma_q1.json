@@ -1,0 +1,189 @@
+{
+  "suite": "personas_v4",
+  "query_id": "emma_q1",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "answer_text": "**TL;DR**\n1. **Salaire médian débutant** : ~2 000–2 500 € brut/mois (24–30 k€ brut/an) pour un développeur post-M2 informatique en France.\n2. **Variations fortes** selon spécialisation (data/IA > web), région (Île-de-France +15–20%), et statut (CDI vs freelance).\n3. **Négociation clé** : l’alternance en M2 et les compétences cloud/cybersécurité boostent significativement les propositions.\n\n---\n\n### **Plan A — Développeur logiciel/web (profil généraliste)**\n**Salaire** : **2 000–2 300 € brut/mois** (24–27 k€/an) en province, **2 300–2 600 €** en Île-de-France *(connaissance générale, baromètres APEC/Syntec 2023)*.\n**Pour toi** : Si ton M2 est axé développement logiciel (Java, Python, .NET), ces fourchettes s’appliquent. Pense à valoriser tes projets GitHub et stages pour viser le haut de la fourchette.\n\n### **Plan B — Spécialisation porteuse (data, IA, cybersécurité, cloud)**\n**Salaire** : **2 500–3 200 € brut/mois** (30–38 k€/an) pour les profils **data engineer**, **expert cloud (AWS/Azure)**, ou **pentester junior** *(connaissance générale, études Malt/Welcome to the Jungle 2024)*.\n**Pour toi** : Un M2 avec des UE en **data science** ([Master Mathématiques et Applications](https://www.onisep.fr/http/redirection/formation/slug/FOR.10458)) ou **cybersécurité** te permettrait de viser ces salaires. L’alternance en M2 est un levier puissant (+10–15% sur le salaire d’embauche).\n\n### **Plan C — Freelance ou ESN premium (risque/récompense)**\n**Salaire** : **2 800–4 000 € brut/mois** (en freelance, TJM ~350–500 €/jour après 1–2 ans d’expérience) ou **2 500–3 000 €** en ESN spécialisée (ex : Octo, Zenika) *(connaissance générale, marché 2024)*.\n**Pour toi** : Si tu es prêt à prendre des risques, le freelance via des plateformes comme **Malt** ou **Crème de la Crème** peut doubler ton revenu après 2 ans. Les ESN \"boutiques\" paient mieux que les grands groupes, mais avec moins de stabilité.\n\n---\n**⚠ Attention aux pièges**\n- **Île-de-France vs régions** : Un salaire parisien à 2 500 € brut équivaut à **1 900 € net** après impôts et loyer (vs 2 100 € net en province pour 2 300 € brut).\n- **Titres RNCP ≠ M2** : Certaines écoles privées (ex : **Epitech**, **EPSI**) proposent des \"MSc\" à 8k€/an avec des salaires d’embauche **inférieurs de 15–20%** à un M2 universitaire *(connaissance générale, enquêtes Céreq)*.\n- **Alternance = double tranchant** : Un salaire d’alternant (600–1 200 €/mois) compense rarement le coût de la vie en Île-de-France. Cible les entreprises qui prennent en charge **100% des frais de formation**.\n\n---\n**Question pour toi** :\nTon M2 inclut-il une spécialisation technique (cloud, data, cyber) ou vises-tu un poste plus généraliste ? Cela change radicalement les fourchettes salariales et les entreprises cibles.",
+  "elapsed_pipeline_s": 20.93,
+  "elapsed_fact_check_post_hoc_s": 9.14,
+  "elapsed_clarify_s": 2.08,
+  "elapsed_reformulate_s": 6.9,
+  "elapsed_retrieve_s": 0.48,
+  "elapsed_generate_s": 11.47,
+  "fact_check_summary": {
+    "n_stats_total": 17,
+    "n_verified": 4,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 13,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "2 000–2 500 € brut/mois (24–30 k€ brut/an)",
+      "stat_value": 2250,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire médian débutant pour un développeur post-M2 informatique en France",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 000–2 300 € brut/mois (24–27 k€/an)",
+      "stat_value": 2150,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire pour un développeur logiciel/web généraliste en province",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 300–2 600 € brut/mois",
+      "stat_value": 2450,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire pour un développeur logiciel/web généraliste en Île-de-France",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 500–3 200 € brut/mois (30–38 k€/an)",
+      "stat_value": 2850,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire pour les profils spécialisés (data engineer, expert cloud, pentester junior)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+10–15%",
+      "stat_value": 12.5,
+      "stat_unit": "%",
+      "context": "Impact de l'alternance en M2 sur le salaire d'embauche",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 800–4 000 € brut/mois",
+      "stat_value": 3400,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire en freelance pour un développeur",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "TJM ~350–500 €/jour",
+      "stat_value": 425,
+      "stat_unit": "€/jour",
+      "context": "Taux journalier moyen en freelance après 1–2 ans d'expérience",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 500–3 000 €",
+      "stat_value": 2750,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire en ESN spécialisée (ex : Octo, Zenika)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+15–20%",
+      "stat_value": 17.5,
+      "stat_unit": "%",
+      "context": "Écart de salaire entre Île-de-France et les régions",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 900 € net",
+      "stat_value": 1900,
+      "stat_unit": "€ net/mois",
+      "context": "Salaire net équivalent à 2 500 € brut en Île-de-France après impôts et loyer",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 100 € net",
+      "stat_value": 2100,
+      "stat_unit": "€ net/mois",
+      "context": "Salaire net équivalent à 2 300 € brut en province après impôts et loyer",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "15–20%",
+      "stat_value": 17.5,
+      "stat_unit": "%",
+      "context": "Écart de salaire entre les salaires d'embauche des écoles privées (ex : Epitech, EPSI) et un M2 universitaire",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "600–1 200 €/mois",
+      "stat_value": 900,
+      "stat_unit": "€/mois",
+      "context": "Salaire d'un alternant",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire médian d'embauche pour les masters mentionnés dans les fiches",
+      "verdict": "verified",
+      "source_excerpt": "salaire_median_embauche: 2080"
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context": "Taux d'emploi à 3 ans pour les masters mentionnés dans les fiches",
+      "verdict": "verified",
+      "source_excerpt": "taux_emploi_3ans: 0.85"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context": "Taux d'emploi à 6 ans pour les masters mentionnés dans les fiches",
+      "verdict": "verified",
+      "source_excerpt": "taux_emploi_6ans: 0.91"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context": "Taux de CDI pour les masters mentionnés dans les fiches",
+      "verdict": "verified",
+      "source_excerpt": "taux_cdi: 0.83"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "insee_salaire"
+  ],
+  "sub_queries": [
+    {
+      "text": "Salaire médian d'un développeur débutant (PCS 388a) en France après un M2 en informatique, données INSEE SALAAN par région.",
+      "target_corpus": "insee_salaire",
+      "priority": 1,
+      "rationale": "Cible directement l'intent core avec le domain hint 'INSEE salaire' et la PCS adaptée."
+    },
+    {
+      "text": "Taux d'insertion professionnelle et salaire moyen 6 mois après un M2 en informatique, données MESR insertion master.",
+      "target_corpus": "insertion_pro",
+      "priority": 1,
+      "rationale": "Complète avec des données spécifiques post-M2 pour affiner la réponse."
+    },
+    {
+      "text": "Perspectives de recrutement et fourchettes de salaires pour les développeurs débutants cadres en région France, données APEC.",
+      "target_corpus": "apec_region",
+      "priority": 2,
+      "rationale": "Apporte une vision marché du travail cadres pour contextualiser."
+    },
+    {
+      "text": "Blocs de compétences RNCP associés aux M2 en informatique et leur impact sur le salaire d'embauche.",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Optionnel pour lier compétences et rémunération."
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q04_blocs_BTS_electro_contenu",
+  "query_text": "Contenu pédagogique du BTS électrotechnique : quels objectifs pédagogiques ?",
+  "answer_text": "**TL;DR**\n1. Le BTS Électrotechnique forme des techniciens capables de concevoir, installer et maintenir des systèmes électriques (industriels, tertiaires, énergies renouvelables).\n2. **Objectifs clés** : maîtrise des normes (NF C 15-100), gestion de projets, efficacité énergétique, et sécurité électrique.\n3. **Pour toi** : idéal si tu vises un métier opérationnel avec débouchés rapides (90% d’insertion à 6 mois — connaissance générale), ou une poursuite en licence pro/école d’ingé.\n\n---\n\n### **Plan A — Cœur de la formation : compétences techniques et normes**\nLe BTS Électrotechnique (bac+2, **RNCP niveau 5**) se structure autour de **4 blocs principaux** (connaissance générale) :\n- **Conception et dimensionnement** : schémas électriques, choix de matériaux, logiciels (ex : AutoCAD Electrical, SEE Electrical).\n- **Installation et maintenance** : moteurs, automatismes, réseaux (domotique, smart grids), avec focus sur les **normes NF C 15-100** (obligatoires pour travailler).\n- **Efficacité énergétique** : optimisation des consommations, intégration d’énergies renouvelables (solaire, éolien).\n- **Sécurité et réglementation** : habilitations électriques (BS, BR, BC), prévention des risques (INRS).\n\n**Pédagogie** : 30% de cours théoriques (maths appliquées, physique), **70% de travaux pratiques** (ateliers, chantiers-école). Stage obligatoire de **8 à 12 semaines** en entreprise.\n\n---\n\n### **Plan B — Spécialisations et options**\nCertains lycées proposent des **modules complémentaires** pour se différencier (connaissance générale) :\n- **Option \"Smart Grids\"** : gestion intelligente des réseaux électriques (ex : Lycée des Métiers de l’Énergie à Grenoble).\n- **Option \"Industrie 4.0\"** : robotique, IoT appliqué à l’électrotechnique (ex : Lycée Jules Verne à Limoux).\n- **Double compétence** : BTS + **Certificat de Compétence en Entreprise (CCE)** en automatismes (reconnu par les industriels).\n\n*Pour toi* : Ces options boostent l’employabilité dans des secteurs porteurs (énergies vertes, usines connectées).\n\n---\n\n### **Plan C — Passerelles et poursuites d’études**\n- **Licences pro** (bac+3) : Ex : *Licence Pro Métiers de l’Électricité et de l’Énergie* (Université de Bordeaux), avec spécialisations en **éclairage intelligent** ou **maintenance industrielle**.\n- **Écoles d’ingénieurs** : Via admissions parallèles (ex : **INSA** après un BTS + prépa ATS, ou **UT** en alternance).\n- **Certifications complémentaires** : Habilitations électriques (ex : **H1V-B1V** pour travailler en haute tension), ou **certificat Green IT** pour les énergies renouvelables.\n\n*Pour toi* : La poursuite en licence pro offre un **salaire médian embauche ~2 000€ brut** (estimation marché — connaissance générale), contre ~1 800€ avec \"juste\" le BTS.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Piège n°1** : Les **normes électriques évoluent vite** (ex : nouvelle réglementation RE2020). Une formation qui ne les met pas à jour = risque d’inemployabilité. *Vérifie que le lycée partenaire est certifié **Qualiopi** et travaille avec des entreprises locales.*\n- **Piège n°2** : Certains BTS \"électrotechnique\" en **lycées privés hors contrat** coûtent **3 000 à 6 000€/an** sans garantie de stage. Privilégie le **public** (gratuit) ou les CFA (rémunéré en alternance).\n\n---\n**Question pour toi** :\nQu’est-ce qui t’attire le plus dans ce domaine : le **terrain** (installations, dépannages), la **conception** (bureaux d’études), ou les **nouvelles technologies** (smart grids, IoT) ? Cela peut orienter ton choix d’options ou de poursuite d’études.\n\n---\n👤 *Pour affiner ton projet, un RDV avec le **Psy-EN** de ton lycée ou un **CIO** (Centre d’Information et d’Orientation) est indispensable — ils ont les données locales sur les lycées et entreprises partenaires.*",
+  "elapsed_pipeline_s": 19.65,
+  "elapsed_fact_check_post_hoc_s": 5.93,
+  "elapsed_clarify_s": 1.87,
+  "elapsed_reformulate_s": 6.93,
+  "elapsed_retrieve_s": 0.21,
+  "elapsed_generate_s": 10.64,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 4,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "90% d’insertion à 6 mois",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "idéal si tu vises un métier opérationnel avec débouchés rapides (90% d’insertion à 6 mois — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30% de cours théoriques",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "Pédagogie : 30% de cours théoriques (maths appliquées, physique), 70% de travaux pratiques",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "70% de travaux pratiques",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "Pédagogie : 30% de cours théoriques (maths appliquées, physique), 70% de travaux pratiques",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Stage obligatoire de 8 à 12 semaines",
+      "stat_value": null,
+      "stat_unit": "semaines",
+      "context": "Stage obligatoire de 8 à 12 semaines en entreprise",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian embauche ~2 000€ brut",
+      "stat_value": 2000,
+      "stat_unit": "€ brut",
+      "context": "La poursuite en licence pro offre un salaire médian embauche ~2 000€ brut (estimation marché — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~1 800€",
+      "stat_value": 1800,
+      "stat_unit": "€",
+      "context": "contre ~1 800€ avec \"juste\" le BTS",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context": "salaire_median_embauche: 1570 (source: FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "taux_emploi_3ans: 0.8 (source: FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.87",
+      "stat_value": 87,
+      "stat_unit": "%",
+      "context": "taux_emploi_6ans: 0.87 (source: FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.76",
+      "stat_value": 76,
+      "stat_unit": "%",
+      "context": "taux_cdi: 0.76 (source: FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "metier"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les objectifs pédagogiques officiels du BTS électrotechnique selon le référentiel de formation Parcoursup ou ONISEP ? Détaillez les compétences visées et les contenus enseignés.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : définition conceptuelle des objectifs pédagogiques du BTS électrotechnique, aligné avec le corpus 'formation' (Parcoursup/ONISEP)."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications (RNCP) sont associés au BTS électrotechnique ? Liste des compétences certifiées à valider.",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Complète la sub-query 1 en ciblant les compétences certifiées (RNCP), utile pour un étudiant en L1-L3."
+    },
+    {
+      "text": "Quels métiers ou familles professionnelles (FAP) sont accessibles après un BTS électrotechnique ? Focus sur les débouchés concrets en électrotechnique et énergie.",
+      "target_corpus": "metier",
+      "priority": 3,
+      "rationale": "Contexte complémentaire : métiers cibles pour un étudiant intéressé par l'électrotechnique."
+    }
+  ]
+}

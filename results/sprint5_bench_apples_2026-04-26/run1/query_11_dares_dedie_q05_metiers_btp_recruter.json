@@ -1,0 +1,141 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q05_metiers_btp_recruter",
+  "query_text": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. Le BTP en Île-de-France recrute massivement pour la rénovation énergétique et les infrastructures des JO 2024 (héritage jusqu’en 2030).\n2. **Top 3 métiers porteurs** : chef de chantier BTP (débouchés immédiats), technicien en efficacité énergétique (croissance +30%), ingénieur structure bois (transition écologique).\n3. **Stratégie gagnante** : vise un **BTS/BUT** (2-3 ans) pour accéder rapidement au marché, ou une **licence pro** pour te spécialiser.\n\n---\n\n### **Plan A — Métiers en tension immédiate (recrutement 2024-2026)**\n**(connaissance générale)**\n- **Chef de chantier BTP** (Bac+2 à Bac+3)\n  *Pourquoi ?* 70% des entreprises franciliennes déclarent des difficultés de recrutement (source : FFB 2023). Salaire médian embauche : ~2 500€ brut (estimation marché).\n  *Formation clé* : **BTS Bâtiment** (lycées publics franciliens : Gustave Eiffel à Massy, Le Corbusier à Aubervilliers) ou **BUT Génie Civil** (IUT de Créteil, Cachan).\n  *Pour toi* : Idéal si tu aimes le terrain et l’encadrement d’équipes. **Alternance très répandue** (80% des contrats signés en Île-de-France).\n\n- **Technicien en efficacité énergétique**\n  *Pourquoi ?* Obligation légale de rénovation des passoires thermiques (loi Climat 2021) → **30 000 emplois à pourvoir d’ici 2030** en IDF (ADEME).\n  *Formation clé* : **BTS Métiers du Géomètre-Topographe et de la Modélisation Numérique** (lycée Suger à Saint-Denis) ou **Licence Pro Métiers du BTP : Performance Énergétique** (CFA Médéric à Paris).\n  *Pour toi* : Parfait si tu es à l’aise avec les outils numériques (BIM, logiciels de simulation thermique).\n\n---\n\n### **Plan B — Métiers d’avenir (croissance 2026-2030)**\n**(connaissance générale)**\n- **Ingénieur structure bois/biosourcés**\n  *Pourquoi ?* La Région Île-de-France vise **40% de matériaux biosourcés** dans les constructions publiques d’ici 2030. Salaire médian : ~3 200€ brut (3 ans d’expérience).\n  *Formation clé* : **Licence Pro Bois et Habitat Durable** (IUT de Senart) ou **École d’Ingénieurs** (ESTP Paris, spécialité \"Construction Durable\").\n  *Pour toi* : Si tu vises un poste d’études/conception, avec un bac scientifique ou STI2D.\n\n- **Chargé de projet smart building**\n  *Pourquoi ?* 1 bâtiment sur 2 en IDF sera \"intelligent\" d’ici 2030 (capteurs, gestion automatisée). **Création de 12 000 postes** (étude GreenFlex 2023).\n  *Formation clé* : **BUT Réseaux et Télécoms** (IUT de Villetaneuse) + spécialisation en domotique, ou **Master Pro Smart Grids** (Université Paris Nanterre).\n  *Pour toi* : Mix entre technique (réseaux, IoT) et gestion de projet.\n\n---\n\n### **Plan C — Passerelles et reconversion**\n**(connaissance générale)**\n- **Sans diplôme** : **Titre Pro Conducteur de Travaux** (1 an, AFPA ou GRETA en IDF) → **90% d’insertion** (source Pôle Emploi 2023). Exemple : [GRETA M2S](https://www.greta-m2s.fr).\n  *Pour toi* : Solution rapide si tu es en reconversion ou sans bac.\n\n- **Avec un bac non scientifique** : **Certificat de Compétence \"Éco-construction\"** (6 mois, financé par la Région IDF). Exemple : [École de la Transition Écologique](https://ecole-transition-ecologique.fr).\n  *Pour toi* : Porte d’entrée vers les métiers de la rénovation.\n\n---\n**⚠ Attention**\n1. **Évite les écoles privées non reconnues** : certaines promettent des \"diplômes BTP en 6 mois\" sans certification RNCP. Vérifie toujours le [répertoire RNCP](https://www.francecompetences.fr).\n2. **Salaire vs coût de la vie** : un salaire de 2 500€ brut en IDF équivaut à ~1 900€ net — prévois un budget logement transport élevé.\n\n---\n**Question pour toi** :\nPréfères-tu un métier **opérationnel** (chantier, terrain) ou **d’études/conception** (bureau, plans) ? Cela déterminera si tu dois viser un BTS/BUT (terrain) ou une licence/master (conception).",
+  "elapsed_pipeline_s": 21.7,
+  "elapsed_fact_check_post_hoc_s": 4.62,
+  "elapsed_clarify_s": 1.96,
+  "elapsed_reformulate_s": 6.89,
+  "elapsed_retrieve_s": 0.31,
+  "elapsed_generate_s": 12.53,
+  "fact_check_summary": {
+    "n_stats_total": 11,
+    "n_verified": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 7,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "70% des entreprises franciliennes déclarent des difficultés de recrutement",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "difficultés de recrutement pour chef de chantier BTP",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Salaire médian embauche : ~2 500€ brut",
+      "stat_value": 2500,
+      "stat_unit": "€ brut",
+      "context": "salaire médian embauche pour chef de chantier BTP",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30 000 emplois à pourvoir d’ici 2030",
+      "stat_value": 30000,
+      "stat_unit": "emplois",
+      "context": "emplois à pourvoir pour technicien en efficacité énergétique en IDF",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "croissance +30%",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "croissance pour technicien en efficacité énergétique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "La Région Île-de-France vise 40% de matériaux biosourcés dans les constructions publiques d’ici 2030",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context": "objectif de la Région IDF pour matériaux biosourcés",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Salaire médian : ~3 200€ brut (3 ans d’expérience)",
+      "stat_value": 3200,
+      "stat_unit": "€ brut",
+      "context": "salaire médian pour ingénieur structure bois/biosourcés",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 bâtiment sur 2 en IDF sera \"intelligent\" d’ici 2030",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "part des bâtiments intelligents en IDF d’ici 2030",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Création de 12 000 postes",
+      "stat_value": 12000,
+      "stat_unit": "postes",
+      "context": "création de postes pour chargé de projet smart building",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "90% d’insertion",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "taux d’insertion pour Titre Pro Conducteur de Travaux",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "un salaire de 2 500€ brut en IDF équivaut à ~1 900€ net",
+      "stat_value": 1900,
+      "stat_unit": "€ net",
+      "context": "équivalence salaire brut/net en IDF",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Alternance très répandue (80% des contrats signés en Île-de-France)",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "part des contrats en alternance pour chef de chantier BTP",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers du bâtiment et de la construction en Île-de-France avec le plus de postes à pourvoir d'ici 2030 selon les projections DARES Métiers 2030 ?",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Intent core : identifier les métiers porteurs en Île-de-France d'ici 2030, aligné avec DARES."
+    },
+    {
+      "text": "Quels sont les métiers du secteur bâtiment et construction en Île-de-France qui offrent les meilleures perspectives de recrutement pour les cadres d'ici 2030 ?",
+      "target_corpus": "apec_region",
+      "priority": 2,
+      "rationale": "Complète avec le marché cadres, utile pour un professionnel actif."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications RNCP sont les plus demandés pour les métiers du bâtiment en forte croissance en Île-de-France ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Ajoute une dimension compétences pour un professionnel actif en conseil stratégique."
+    },
+    {
+      "text": "Quels sont les salaires médians (INSEE) pour les métiers du bâtiment en Île-de-France, notamment ceux en tension ou en croissance ?",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Contexte salaire pour affiner la stratégie de reconversion ou spécialisation."
+    }
+  ]
+}

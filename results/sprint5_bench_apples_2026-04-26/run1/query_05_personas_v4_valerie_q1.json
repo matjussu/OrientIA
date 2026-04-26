@@ -1,0 +1,138 @@
+{
+  "suite": "personas_v4",
+  "query_id": "valerie_q1",
+  "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+  "answer_text": "**TL;DR**\n1. Une année en école de commerce privée coûte **5 000 à 15 000 €** (hors grandes écoles top 10), contre **0 à 600 €** en licence publique.\n2. Les licences pro publiques (bac+3) sont gratuites ou quasi-gratuites, tandis que les programmes bac+5 privés dépassent souvent **10 000 €/an**.\n3. Le coût dépend du niveau (bac+3 vs bac+5) et du label (grade master, visé, etc.).\n\n---\n\n### **Plan A — Licence publique (bac+3) : coût quasi-nul**\n📍 **Licence pro Métiers du commerce international** (ex : [Université de Bordeaux](https://www.onisep.fr/http/redirection/formation/slug/FOR.11370))\n*Pour toi : 0 €/an (hors CVEC ~100 €). Idéal pour un budget serré avec insertion pro rapide.*\n\n### **Plan B — École de commerce privée (bac+5) : investissement lourd**\n📍 **Programme Grande École de TBS** (Toulouse) — [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8192)\n*Pour toi : ~12 000 €/an (hors alternance). Rentable si visée internationale ou salaires élevés (connaissance générale : 35-45k€ brut en début de carrière pour les diplômés).*\n\n### **Plan C — Alternance : coût réduit ou nul**\n📍 **Licence pro Technico-commercial** (ex : [IUT de Lyon](https://www.onisep.fr/http/redirection/formation/slug/FOR.11371)) **en alternance**\n*Pour toi : 0 €/an + salaire (600-1 200 €/mois). Solution optimale si tu veux allier pratique et diplôme gratuit.*\n\n---\n**⚠ Attention aux pièges**\n- **Marketing des \"écoles\"** : certaines formations privées bac+3 (ex : \"bachelor\") coûtent 8 000 €/an **sans grade master** (diplôme non reconnu à l’étranger).\n- **Coûts cachés** : en licence publique, prévoir 300-600 €/an (logement, transports, matériel) même si les frais d’inscription sont nuls.\n\n**Question pour toi :** Privilégies-tu un diplôme **gratuit avec insertion rapide** (licence pro), ou un **réseau/prestige** justifiant un investissement lourd (école privée) ? *(Un conseiller en orientation peut t’aider à affiner selon ton projet et tes moyens.)* 👤",
+  "elapsed_pipeline_s": 17.24,
+  "elapsed_fact_check_post_hoc_s": 5.94,
+  "elapsed_clarify_s": 1.91,
+  "elapsed_reformulate_s": 8.06,
+  "elapsed_retrieve_s": 0.54,
+  "elapsed_generate_s": 6.74,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 6,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "5 000 à 15 000 €",
+      "stat_value": 5000,
+      "stat_unit": "€",
+      "context": "Une année en école de commerce privée coûte",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0 à 600 €",
+      "stat_value": 600,
+      "stat_unit": "€",
+      "context": "contre en licence publique.",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10 000 €/an",
+      "stat_value": 10000,
+      "stat_unit": "€/an",
+      "context": "les programmes bac+5 privés dépassent souvent",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0 €/an",
+      "stat_value": 0,
+      "stat_unit": "€/an",
+      "context": "Pour toi :",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~100 €",
+      "stat_value": 100,
+      "stat_unit": "€",
+      "context": "hors CVEC",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "12 000 €/an",
+      "stat_value": 12000,
+      "stat_unit": "€/an",
+      "context": "Pour toi :",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "35-45k€ brut",
+      "stat_value": 35,
+      "stat_unit": "k€ brut",
+      "context": "salaire (connaissance générale :",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "600-1 200 €/mois",
+      "stat_value": 600,
+      "stat_unit": "€/mois",
+      "context": "salaire (",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8 000 €/an",
+      "stat_value": 8000,
+      "stat_unit": "€/an",
+      "context": "certaines formations privées bac+3 (ex : \"bachelor\") coûtent",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "300-600 €/an",
+      "stat_value": 300,
+      "stat_unit": "€/an",
+      "context": "en licence publique, prévoir",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quel est le coût moyen annuel d'une formation en école de commerce privée en France (frais de scolarité, frais annexes) selon le catalogue Parcoursup et ONISEP ?",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core sur le coût des écoles de commerce privées, corpus le plus adapté pour les données tarifaires."
+    },
+    {
+      "text": "Quel est le coût moyen annuel d'une licence publique en France (frais d'inscription, CVEC, frais annexes) selon les données Parcoursup et ONISEP ?",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core sur le coût des licences publiques pour comparaison."
+    },
+    {
+      "text": "Quels sont les dispositifs de financement (bourses, prêts, aides) disponibles pour les écoles de commerce privées et les licences publiques en France ?",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Contexte utile pour relativiser les coûts affichés."
+    },
+    {
+      "text": "Quels sont les salaires médians à l'embauche pour les diplômés d'écoles de commerce privées et de licences publiques (données INSEE ou APEC) ?",
+      "target_corpus": "multi",
+      "priority": 2,
+      "rationale": "Apporte une perspective de retour sur investissement, complémentaire au coût."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois pour les diplômés d'écoles de commerce privées et de licences publiques (master/BUT) ?",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Nice-to-have pour évaluer l'impact du choix de formation sur l'emploi."
+    }
+  ]
+}

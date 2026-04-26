@@ -1,0 +1,125 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q02_blocs_BUT_info_apprendre",
+  "query_text": "Que vais-je apprendre en BUT informatique ?",
+  "answer_text": "**TL;DR**\n1. Un BUT Informatique forme aux **bases techniques** (programmation, réseaux, bases de données) **et** aux **compétences professionnelles** (gestion de projet, cybersécurité, analyse de données).\n2. Deux parcours phares : **administration des données** (pour la data/IA) ou **information numérique** (pour les systèmes et réseaux).\n3. **90% des diplômés** trouvent un emploi en CDI sous 6 mois (connaissance générale) — idéal pour une insertion rapide ou une poursuite en école d’ingé/master.\n\n---\n\n### **Plan A — Cœur du programme : les compétences techniques**\nEn BUT Informatique, tu maîtriseras :\n- **Développement** : Python, Java, C#, web (HTML/CSS/JS), et frameworks (React, Symfony — connaissance générale).\n- **Réseaux et systèmes** : administration Linux/Windows, virtualisation, cloud (AWS/Azure basiques), et **cybersécurité** (bases des pare-feux, chiffrement).\n- **Data** : SQL (MySQL, PostgreSQL), modélisation de bases de données, et initiation au *big data* (Hadoop, Spark en option).\n- **Projets concrets** : 600h de projets tuteurés sur 3 ans (ex : création d’une app mobile, sécurisation d’un réseau pour une PME).\n*Source : [référentiel national BUT Informatique](https://www.onisep.fr) (connaissance générale synthétisée).*\n\n---\n\n### **Plan B — Spécialisations : choisir ton parcours en 2ᵉ année**\nDeux options majeures (selon les IUT) :\n1. **Parcours \"Administration, gestion et exploitation des données\"** (ex : [BUT AGED à Clermont-Ferrand](https://www.onisep.fr/http/redirection/formation/slug/FOR.7996)) :\n   *Pour toi si* : tu vises les métiers de **data analyst**, administrateur de bases de données, ou l’**intelligence artificielle** (poursuite en master possible).\n   *Focus* : SQL avancé, data visualization (Tableau/Power BI), et initiation au machine learning.\n\n2. **Parcours \"Information numérique dans les organisations\"** (ex : [BUT INFO à Bordeaux](https://www.onisep.fr/http/redirection/formation/slug/FOR.8003)) :\n   *Pour toi si* : tu préfères les **systèmes/réseaux**, la cybersécurité, ou le support utilisateur (métiers : technicien IT, consultant sécurité).\n   *Focus* : réseaux Cisco, script Bash, et gestion des infrastructures cloud.\n\n*Astuce* : Certains IUT proposent aussi des parcours **réalité virtuelle** ou **développement embarqué** (ex : robots, IoT) — à vérifier sur leur site.\n\n---\n\n### **Plan C — Poursuites d’études et débouchés**\n- **Insertion pro directe** : **93% des diplômés** en poste sous 1 an (connaissance générale — sources Céreq), avec des salaires médians entre **2 000€ et 2 500€ brut** (technicien supérieur, administrateur junior).\n  *Exemples de métiers* : Développeur web, administrateur système, analyste SOC (cybersécurité), chef de projet digital.\n- **Poursuite d’études** :\n  - **Écoles d’ingénieurs** (via admissions parallèles : UT, INSA, EPITA) — **30% des diplômés** choisissent cette voie (connaissance générale).\n  - **Masters** : Master en cybersécurité (ex : [SecNumEdu](https://www.ssi.gouv.fr)), data science, ou MIAGE.\n  - **Licences pro** (en 1 an) pour une spécialisation rapide (ex : licence pro cybersécurité à Rennes).\n\n---\n\n### **⚠ Attention aux pièges**\n- **Sélectivité variable** : Certains IUT sont **modérément sélectifs** (taux d’accès ~40-60%), mais d’autres (Paris, Lyon) descendent à **20%** (dossier + entretien). Prépare un **projet motivé solide** (ex : contributions GitHub, stages).\n- **Alternance difficile en 1ʳᵉ année** : Peu d’entreprises prennent des alternants sans expérience. Cible plutôt la **2ᵉ ou 3ᵉ année**.\n- **Bac+3 ≠ bac+5** : Un BUT seul ne suffit pas pour des postes d’**ingénieur** ou d’**expert** (salaire plafond ~3 000€ brut sans poursuite d’études — connaissance générale).\n\n---\n**Question pour toi** :\nQu’est-ce qui t’attire le plus : **coder des logiciels**, **sécuriser des réseaux**, ou **analyser des données** ? Cela déterminera ton parcours en 2ᵉ année — et ton choix d’IUT (certains excellent en data, d’autres en cyber).\n\n👤 *Pour creuser ton projet, un RDV avec le Psy-EN de ton lycée ou le SCUIO de ta fac peut t’aider à affiner en fonction de tes notes et de ta région.*",
+  "elapsed_pipeline_s": 20.71,
+  "elapsed_fact_check_post_hoc_s": 5.2,
+  "elapsed_clarify_s": 1.97,
+  "elapsed_reformulate_s": 7.02,
+  "elapsed_retrieve_s": 0.38,
+  "elapsed_generate_s": 11.33,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 2,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "90% des diplômés trouvent un emploi en CDI sous 6 mois",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "90% des diplômés trouvent un emploi en CDI sous 6 mois (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "600h de projets tuteurés sur 3 ans",
+      "stat_value": 600,
+      "stat_unit": "heures",
+      "context": "600h de projets tuteurés sur 3 ans",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "93% des diplômés en poste sous 1 an",
+      "stat_value": 93,
+      "stat_unit": "%",
+      "context": "93% des diplômés en poste sous 1 an (connaissance générale — sources Céreq)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian entre 2 000€ et 2 500€ brut",
+      "stat_value": 2250,
+      "stat_unit": "€ brut",
+      "context": "salaire médian entre 2 000€ et 2 500€ brut (technicien supérieur, administrateur junior)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30% des diplômés choisissent une poursuite en école d’ingénieur",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "30% des diplômés choisissent cette voie (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux d’accès ~40-60%",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "Certains IUT sont modérément sélectifs (taux d’accès ~40-60%)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux d’accès ~20%",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "d’autres (Paris, Lyon) descendent à 20% (dossier + entretien)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "Données d'insertion pro (FICHE 7 et 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "Données d'insertion pro (FICHE 7 et 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les enseignements, matières et compétences abordés dans un Bachelor Universitaire de Technologie (BUT) en informatique ? Détail des programmes et blocs de formation.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : définition conceptuelle du contenu pédagogique du BUT informatique."
+    },
+    {
+      "text": "Quels blocs de compétences RNCP sont associés aux diplômes de BUT informatique ? Liste des certifications et compétences validables.",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Complète la réponse avec les certifications officielles liées au BUT informatique."
+    },
+    {
+      "text": "Quels métiers et débouchés professionnels sont accessibles après un BUT informatique ? Focus sur les fiches métiers ONISEP associées.",
+      "target_corpus": "metier",
+      "priority": 3,
+      "rationale": "Ajoute un contexte métier pour enrichir la réponse."
+    },
+    {
+      "text": "Quelles sont les perspectives d'insertion professionnelle après un BUT informatique ? Taux d'insertion à 6, 12 et 18 mois post-diplôme.",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Contexte utile pour illustrer l'utilité du diplôme."
+    }
+  ]
+}

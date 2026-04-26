@@ -1,0 +1,91 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q13_reconversion_grande_distrib",
+  "query_text": "Je travaille dans la grande distribution depuis 8 ans, je veux changer complètement de secteur. Par où commencer ?",
+  "answer_text": "**TL;DR**\n1. Votre expérience en grande distribution est un atout transférable (gestion d’équipe, relation client, logistique) — capitalisez dessus pour une reconversion **sans tout reprendre à zéro**.\n2. **3 pistes prioritaires** : formations courtes certifiantes (6-12 mois), métiers de l’insertion/formation (débouchés stables), ou secteurs en tension (BTP, transition écologique) avec des passerelles adaptées.\n3. **Première étape concrète** : validez votre projet via un bilan de compétences (finançable par votre CPF) ou un stage découverte avant de choisir une formation.\n\n---\n\n### **Plan A — Reconversion rapide (6-12 mois) : Métiers de l’insertion et de la formation**\n📍 **Formateur professionnel d’adultes** (Certificat RNCP bac+2) — [Fiche officielle](https://www.francecompetences.fr/)\n*Pour vous : Valorise votre expérience terrain (ex : former aux métiers du commerce). Formation financée via CPF/OPCO, débouchés dans les OPCA, AFPA, ou grandes enseignes (ex : Carrefour Formation).*\n\n📍 **Conseiller en insertion professionnelle** (Certificat RNCP bac+2) — [Ministère du Travail](https://travail-emploi.gouv.fr/)\n*Pour vous : Métier en tension (taux d’emploi ~90% à 6 mois — connaissance générale), salariat ou indépendant. Idéal si vous aimez l’accompagnement individuel.*\n\n---\n### **Plan B — Spécialisation sectorielle (1 an) : BTP ou transition écologique**\n📍 **Licence pro métiers du BTP** (bac+3) — Ex : [Université de Lille](https://www.onisep.fr/http/redirection/formation/slug/FOR.11031)\n*Pour vous : Secteur qui recrute massivement (penurie de main-d’œuvre — connaissance générale). Postes de chef de chantier ou coordinateur accessible avec votre expérience managériale + formation.*\n\n📍 **Licence pro transitions agricoles/environnementales** (bac+3) — Ex : [Université de Bordeaux](https://www.onisep.fr/http/redirection/formation/slug/FOR.10474)\n*Pour vous : Si vous visez un métier \"avec sens\". Débouchés : animateur territorial, chargé de mission RSE en entreprise.*\n\n---\n### **Plan C — Passerelle progressive : Validation des Acquis + Alternance**\n- **Étape 1** : Faites reconnaître vos 8 ans d’expérience via une **VAE** (Validation des Acquis de l’Expérience) pour obtenir un diplôme partiel (ex : BTS MCO). [Service public VAE](https://www.service-public.fr/).\n- **Étape 2** : Alternez avec un **contrat de professionnalisation** (rémunéré) dans un nouveau secteur. Ex : conseiller clientèle en banque/assurance (formations courtes type Titres RNCP).\n- *Pour vous : Moins risqué financièrement, et test du secteur avant engagement.*\n\n---\n**⚠ Attention aux pièges**\n- **Formations privées coûteuses** : Méfiez-vous des écoles promettant une reconversion \"clé en main\" à 10 000€+ sans garantie d’emploi. Privilégiez les certifications RNCP financées par le CPF.\n- **Secteurs saturés** : Évitez les métiers déjà très demandés (ex : psychologie, communication) sans réseau solide. Ciblez les **métiers en tension** (liste [Pôle Emploi](https://candidat.pole-emploi.fr/marche-du-travail/les-metiers-qui-recrutent)).\n- **Sous-estimer la charge mentale** : Une reconversion = énergie + temps. Prévoyez un **temps partiel** ou un congé de transition pro (finançable) pour suivre une formation.\n\n---\n**Question pour vous :**\nVotre priorité est-elle **la stabilité rapide** (Plan A), **un secteur porteur à long terme** (Plan B), ou **une transition sans risque financier** (Plan C) ? Et seriez-vous mobile géographiquement pour une formation ? *(Ex : certaines licences pro ne sont proposées qu’en région.)*",
+  "elapsed_pipeline_s": 24.89,
+  "elapsed_fact_check_post_hoc_s": 2.07,
+  "elapsed_clarify_s": 1.92,
+  "elapsed_reformulate_s": 10.57,
+  "elapsed_retrieve_s": 0.44,
+  "elapsed_generate_s": 11.95,
+  "fact_check_summary": {
+    "n_stats_total": 4,
+    "n_verified": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux d’emploi ~90% à 6 mois",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "Métier en tension (taux d’emploi ~90% à 6 mois — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "penurie de main-d’œuvre",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "Secteur qui recrute massivement (penurie de main-d’œuvre — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8 ans d’expérience",
+      "stat_value": 8,
+      "stat_unit": "ans",
+      "context": "Faites reconnaître vos 8 ans d’expérience",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10 000€+",
+      "stat_value": 10000,
+      "stat_unit": "€",
+      "context": "Formations privées coûteuses : Méfiez-vous des écoles promettant une reconversion « clé en main » à 10 000€+",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les secteurs porteurs en 2024-2030 pour une reconversion professionnelle après 8 ans dans la grande distribution ? Mentionner les métiers avec des postes à pourvoir selon la DARES.",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Cible l'intent core : identifier des secteurs/métiers porteurs pour une reconversion, en s'appuyant sur des données prospectives (DARES 2030)."
+    },
+    {
+      "text": "Quelles formations courtes ou certifications (blocs de compétences RNCP) permettent une reconversion rapide vers un nouveau secteur après une expérience en grande distribution ?",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Priorité à des formations ou certifications adaptées à une reconversion rapide, en activant le domain hint RNCP."
+    },
+    {
+      "text": "Quels sont les métiers accessibles sans diplôme long, avec des perspectives de recrutement cadres ou non-cadres, et leurs salaires médians (INSEE) ?",
+      "target_corpus": "multi",
+      "priority": 2,
+      "rationale": "Combine métiers, salaires et accessibilité pour donner une vision globale des options sans diplôme long."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois pour les formations type BUT ou licences professionnelles dans des secteurs ouverts à la reconversion ?",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Apporte un éclairage sur l'efficacité des formations courtes en termes d'insertion post-reconversion."
+    },
+    {
+      "text": "Quelles sont les aides financières ou dispositifs (ex : CPF, Pôle Emploi) pour financer une formation dans le cadre d'une reconversion professionnelle ?",
+      "target_corpus": "formation",
+      "priority": 3,
+      "rationale": "Optionnel : aborde la question pratique du financement, utile mais non prioritaire pour l'intent core."
+    }
+  ]
+}

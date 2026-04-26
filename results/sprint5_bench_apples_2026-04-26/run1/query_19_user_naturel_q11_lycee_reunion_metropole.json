@@ -1,0 +1,195 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q11_lycee_reunion_metropole",
+  "query_text": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options s'offrent à moi ?",
+  "answer_text": "**TL;DR**\n1. **Oui, des formations en numérique en métropole sont accessibles** depuis La Réunion, avec des options adaptées à différents profils (bac général/techno, budget, projet pro).\n2. **Priorité aux BUT et licences pro** : sélectivité modérée (30-60%), diplômes reconnus, et stages intégrés pour l’insertion.\n3. **Pense à l’alternance** (réseau des CFA en métropole) pour réduire les coûts et booster ton employabilité.\n\n---\n\n### **Plan A — Réaliste : BUT ou licence pro en métropole (bac+3, public, accessible)**\n📍 **BUT Métiers du Multimédia et de l’Internet (MMI)** — *parcours Création Numérique* (disponible dans **plusieurs villes** : Bordeaux, Lyon, Toulouse, etc.)\n→ **Public, sélectivité modérée** (taux d’accès ~40-60% sur Parcoursup), **diplôme grade Licence** (reconnu par l’État).\n*Pour toi* : Idéal si tu aimes le design web, la vidéo ou le développement front-end. **Alternance possible en 2e/3e année** (salaire + 0 frais).\n→ [Fiche ONISEP officielle](https://www.onisep.fr/http/redirection/formation/slug/FOR.8008)\n\n📍 **Licence pro Métiers du Numérique** — *parcours Conception, Rédaction et Réalisation Web* (ex : **Université de Strasbourg, Le Mans**)\n→ **1 an après un bac+2** (BTS SIO, DUT info), **taux d’insertion ~90%** (source Céreq).\n*Pour toi* : Parfait si tu veux te spécialiser rapidement en **développement web ou gestion de projets digitaux**.\n\n---\n### **Plan B — Ambitieux : Écoles spécialisées (privé, sélectif mais pro)**\n📍 **Écoles type Epitech, 42, ou SUPINFO** (campus à **Paris, Lyon, Lille**…)\n→ **Sélectivité variable** (Epitech : concours + entretien ; 42 : **gratuite** mais rythme intense).\n*Pour toi* : Si tu vises l’expertise technique (cybersécurité, IA) ou un réseau pro fort. **Budget** : 6k-8k€/an (sauf 42).\n→ (connaissance générale) : [Site Epitech](https://www.epitech.eu) / [42](https://www.42.fr)\n\n---\n### **Plan C — Alternatives : Court + local (avant de partir)**\n📍 **TP Médiateur Numérique** (bac+2, **formation courte et concrète**)\n→ **Débouchés** : animation d’ateliers numériques (EPI, associations). **Peu sélectif**, idéal pour un **premier diplôme avant de tenter la métropole**.\n→ [Fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11891)\n\n---\n### **⚠ Attention aux pièges**\n1. **Logement** : Les loyers en métropole (Paris, Lyon) peuvent **doubler** ton budget. Pense aux **résidences CROUS** (dossier à faire **dès maintenant**).\n2. **Alternance** : Certaines écoles/licences pro l’exigent en 3e année → **trouve une entreprise avant de partir** (plateformes comme [La Bonne Alternance](https://labonnealternance.pole-emploi.fr)).\n3. **Faux-amis** : Méfie-toi des écoles privées non reconnues par l’État (vérifie le **grade Licence/Master** ou le **RNCP** sur [France Compétences](https://www.francecompetences.fr)).\n\n---\n**Question pour toi** :\nEst-ce que tu préfères **une formation généraliste** (BUT MMI pour explorer) ou **une spécialisation rapide** (licence pro, école type Epitech) ? Et as-tu un budget pour le privé, ou tu comptes sur le public/alternance ?",
+  "elapsed_pipeline_s": 21.24,
+  "elapsed_fact_check_post_hoc_s": 11.92,
+  "elapsed_clarify_s": 1.93,
+  "elapsed_reformulate_s": 8.27,
+  "elapsed_retrieve_s": 0.4,
+  "elapsed_generate_s": 10.63,
+  "fact_check_summary": {
+    "n_stats_total": 17,
+    "n_verified": 12,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux d’accès ~40-60%",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "BUT Métiers du Multimédia et de l’Internet (MMI) — sélectivité modérée (taux d’accès ~40-60%)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux d’insertion ~90%",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "Licence pro Métiers du Numérique — taux d’insertion ~90% (source Céreq)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire + 0 frais",
+      "stat_value": 0,
+      "stat_unit": "€",
+      "context": "Alternance possible en 2e/3e année (salaire + 0 frais)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context": "Licence pro mention métiers du numérique : conception, rédaction et réalisation web — Insertion pro : taux_emploi_3ans: 0.86",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "Licence pro mention métiers du numérique : conception, rédaction et réalisation web — Insertion pro : taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "Licence pro mention métiers du numérique : conception, rédaction et réalisation web — Insertion pro : taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "Licence pro mention métiers du numérique : conception, rédaction et réalisation web — Insertion pro : salaire_median_embauche: 1740",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context": "BUT métiers du multimédia et de l'internet parcours création numérique — Insertion pro : taux_emploi_3ans: 0.86",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "BUT métiers du multimédia et de l'internet parcours création numérique — Insertion pro : taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "BUT métiers du multimédia et de l'internet parcours création numérique — Insertion pro : taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "BUT métiers du multimédia et de l'internet parcours création numérique — Insertion pro : salaire_median_embauche: 1740",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "TP Médiateur Numérique — Insertion pro : taux_emploi_3ans: 0.8",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.87",
+      "stat_value": 87,
+      "stat_unit": "%",
+      "context": "TP Médiateur Numérique — Insertion pro : taux_emploi_6ans: 0.87",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.76",
+      "stat_value": 76,
+      "stat_unit": "%",
+      "context": "TP Médiateur Numérique — Insertion pro : taux_cdi: 0.76",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context": "TP Médiateur Numérique — Insertion pro : salaire_median_embauche: 1570",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "6k-8k€/an",
+      "stat_value": 7000,
+      "stat_unit": "€/an",
+      "context": "Budget : 6k-8k€/an (sauf 42)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "les loyers en métropole (Paris, Lyon) peuvent doubler ton budget",
+      "stat_value": 2,
+      "stat_unit": "fois",
+      "context": "Les loyers en métropole (Paris, Lyon) peuvent doubler ton budget",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles formations en numérique (BUT, BTS, licences, écoles d'ingénieurs) sont accessibles via Parcoursup ou l'ONISEP pour un lycéen de Terminale à La Réunion souhaitant étudier en métropole ?",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : découvrir les filières numériques accessibles post-bac en métropole."
+    },
+    {
+      "text": "Quels sont les métiers du numérique les plus porteurs en métropole et leurs perspectives d'emploi d'ici 2030 selon la DARES ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Contexte utile pour orienter le choix de formation en fonction des débouchés."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle 6 à 18 mois après un BUT ou une licence en numérique en métropole ?",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Apporte une vision concrète des débouchés post-diplôme."
+    },
+    {
+      "text": "Quelles sont les conditions de vie étudiante (logement, restos universitaires) en métropole pour un étudiant réunionnais en numérique ?",
+      "target_corpus": "crous",
+      "priority": 3,
+      "rationale": "Nice-to-have pour anticiper les aspects pratiques."
+    },
+    {
+      "text": "Quels sont les parcours typiques des bacheliers de La Réunion en licence de numérique en métropole : taux de réussite et mentions recommandées ?",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 3,
+      "rationale": "Optionnel pour évaluer les chances de réussite."
+    }
+  ]
+}

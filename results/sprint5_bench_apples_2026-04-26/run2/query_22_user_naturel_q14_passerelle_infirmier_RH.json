@@ -1,0 +1,122 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q14_passerelle_infirmier_RH",
+  "query_text": "Une amie infirmière souhaite passer à un poste en ressources humaines. Quelles passerelles existent ?",
+  "answer_text": "**TL;DR**\n1. Une infirmière peut se réorienter vers les RH, mais **pas en direct** : il faut valider des compétences en gestion, droit du travail ou psychologie.\n2. **3 voies principales** : formation courte type DU (1 an), licence pro RH (alternance possible), ou VAE pour un titre RNCP.\n3. **Étape clé** : identifier si elle vise un poste RH **dans le médical** (ex : RH hospitalières) ou **en entreprise classique** → les formations diffèrent.\n\n---\n\n### **Plan A — Réaliste : DU ou Licence Pro RH en 1 an (avec validation partielle de son expérience)**\n📍 **DU Responsable en Gestion des Ressources Humaines** (ex : **Université Paris Cité**)\n— bac+3 public, **accessible sans bac+2** via VAP (Validation des Acquis Professionnels), **coût ~200-600€/an**, formation continue possible.\n*Pour elle : idéal pour acquérir les bases (droit du travail, paie, recrutement) tout en capitalisant sur son expérience terrain (gestion d’équipes, organisation).*\n\n📍 **Licence Pro Métiers des RH** (ex : **IUT de Bordeaux** ou **Lyon 2**)\n— bac+3 public en **alternance**, **sélectivité modérée** (dossier + entretien), **gratuit** en contrat pro.\n*Pour elle : l’alternance permet de financer la formation et d’acquérir de l’expérience RH concrète. Exemples de parcours : [fiche ONISEP Licence Pro RH](https://www.onisep.fr/ressources/univers-formation/formations/licence-pro-metiers-des-ressources-humaines).*\n\n**Calendrier clé** :\n- **VAP** : dossier à déposer **avant juin** pour une rentrée en septembre (contactez le **SUFCO** de l’université visée).\n- **Alternance** : recherche d’entreprise **dès mars-avril**.\n\n---\n\n### **Plan B — Ambitieux : Master RH ou Titre RNCP via VAE (pour un poste cadre)**\n📍 **Titre RNCP \"Responsable RH\"** (ex : **CEF** ou **IGS-RH**)\n— **niveau bac+3/4**, accessible par **VAE totale** (3 ans d’expérience requise, dont en management), **coût ~3 000-5 000€** (finançable via CPF).\n*Pour elle : si elle a encadré des équipes (ex : infirmière cadre), la VAE peut lui permettre d’obtenir un diplôme **sans reprendre des études longues**.*\n\n📍 **Master RH** (ex : **IAE Gustave Eiffel** ou **Université de Strasbourg**)\n— bac+5 public, **sélectif** (dossier + score IAE Message ou TAGE MAGE), **coût ~300-500€/an**.\n*Pour elle : si elle vise un poste **cadre en RH** (ex : responsable formation, recrutement), mais nécessite un **bac+3 d’abord** (cf Plan A).*\n\n**À savoir** :\n- La **VAE** prend **6-12 mois** (dossier + jury). Premier contact : **conseiller VAE** de sa région ([site officiel](https://www.vae.gouv.fr/)).\n- Pour un **Master**, prévoir **2 ans** (M1 + M2) en formation continue ou alternance.\n\n---\n### **Plan C — Passerelle ciblée : RH dans le secteur médical (moins de concurrence)**\n(connaissance générale)\nSi elle souhaite **rester dans la santé**, des postes hybrides existent :\n- **Chargée de recrutement en EHPAD/cliniques** : formations courtes type **DU RH Santé** (ex : **Université de Nantes**).\n- **Responsable formation en établissement médical** : valoriser son expérience terrain + **certificat en ingénierie de formation** (ex : **CNAM**).\n- **Coordinatrice QVT (Qualité de Vie au Travail)** : domaine en croissance dans les hôpitaux, accessible avec un **DU Psychologie du travail** + expérience soignante.\n\n**Avantage** : son expérience d’infirmière est un **atout majeur** pour comprendre les enjeux RH du secteur.\n\n---\n⚠ **Attention aux pièges**\n- **Équivalence automatique** : son diplôme d’infirmière (DE) ne donne **aucun crédit** en RH sans VAP/VAE.\n- **Coût des formations privées** : certaines écoles proposent des \"bac+3 RH\" à **8 000€/an** → privilégier le public ou l’alternance.\n- **Salaire** : un poste RH junior paie **~1 800-2 200€ brut/mois** (source : APEC 2023, estimation marché) — moins qu’une infirmière expérimentée en hôpitaux publics.\n\n---\n**Question pour elle** :\nSon projet est-il **spécifiquement RH** (paie, recrutement, droit) ou plutôt **management d’équipe** (ex : cadre de santé) ? Selon la réponse, les formations prioritaires changent.",
+  "elapsed_pipeline_s": 30.05,
+  "elapsed_fact_check_post_hoc_s": 4.38,
+  "elapsed_clarify_s": 2.89,
+  "elapsed_reformulate_s": 8.11,
+  "elapsed_retrieve_s": 0.64,
+  "elapsed_generate_s": 18.4,
+  "fact_check_summary": {
+    "n_stats_total": 8,
+    "n_verified": 0,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "coût ~200-600€/an",
+      "stat_value": 200,
+      "stat_unit": "€/an",
+      "context": "DU Responsable en Gestion des Ressources Humaines (Université Paris Cité)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "gratuit",
+      "stat_value": 0,
+      "stat_unit": "€/an",
+      "context": "Licence Pro Métiers des RH (alternance)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "coût ~3 000-5 000€",
+      "stat_value": 3000,
+      "stat_unit": "€",
+      "context": "Titre RNCP Responsable RH (CEF ou IGS-RH)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "coût ~300-500€/an",
+      "stat_value": 300,
+      "stat_unit": "€/an",
+      "context": "Master RH (IAE Gustave Eiffel ou Université de Strasbourg)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Salaire ~1 800-2 200€ brut/mois",
+      "stat_value": 1800,
+      "stat_unit": "€ brut/mois",
+      "context": "poste RH junior",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "3 ans d’expérience requise",
+      "stat_value": 3,
+      "stat_unit": "années",
+      "context": "VAE totale pour Titre RNCP Responsable RH",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "6-12 mois",
+      "stat_value": 6,
+      "stat_unit": "mois",
+      "context": "durée de la VAE",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 ans",
+      "stat_value": 2,
+      "stat_unit": "années",
+      "context": "durée d'un Master RH",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles formations ou certifications RNCP en ressources humaines sont accessibles aux professionnels en reconversion, notamment pour une infirmière souhaitant évoluer vers les RH ?",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : identifier les passerelles formationnelles pour une reconversion RH."
+    },
+    {
+      "text": "Quels blocs de compétences RNCP en ressources humaines peuvent être validés pour une reconversion depuis un métier paramédical comme infirmière ?",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Identifie les compétences transférables ou à acquérir via des certifications RH."
+    },
+    {
+      "text": "Quels sont les métiers des ressources humaines accessibles après une reconversion, avec des exemples de parcours depuis le secteur paramédical ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporte un éclairage sur les métiers RH cibles et leurs spécificités."
+    },
+    {
+      "text": "Quelles sont les perspectives de recrutement cadres en ressources humaines par région, selon les données APEC ?",
+      "target_corpus": "apec_region",
+      "priority": 2,
+      "rationale": "Contextualise les opportunités de marché pour les postes RH."
+    },
+    {
+      "text": "Quels sont les salaires médians dans les métiers des ressources humaines (PCS INSEE) pour un professionnel en reconversion ?",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Fournit une indication sur la rémunération potentielle en RH."
+    }
+  ]
+}

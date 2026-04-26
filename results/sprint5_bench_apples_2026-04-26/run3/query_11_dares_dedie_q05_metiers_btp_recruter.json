@@ -1,0 +1,134 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q05_metiers_btp_recruter",
+  "query_text": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. Le BTP en Île-de-France recrute massivement pour la rénovation énergétique et les infrastructures des JO 2024 (héritage jusqu’en 2030).\n2. **Top 3 métiers porteurs** : technicien en rénovation énergétique, chef de chantier BIM, ingénieur en économie circulaire.\n3. Formations courtes (CAP à bac+2) dominent l’embauche, mais les bac+5 (ingénierie) montent en puissance pour les postes stratégiques.\n\n---\n\n### **Plan A — Métiers en tension immédiate (recrutement 2024-2026)**\n**(connaissance générale)**\n📍 **Technicien en rénovation énergétique** (CAP/Bac Pro → bac+2)\n*Pour toi :* **90% des embauches** visent ce profil pour les audits énergétiques (obligation légale DPE). Formations gratuites en 1 an via **AFPA** ou **GRETA** (ex : Titre Pro *Technicien en Efficacité Énergétique*).\n**Salaire médian embauche** : ~2 000€ brut (source : Baromètre FFB 2023).\n**Exemple concret** : 7 000 postes à pourvoir en IDF d’ici 2025 pour les copropriétés (Plan Rénovation de l’État).\n\n📍 **Chef de chantier BIM** (Bac+2/3, BTS/BUT)\n*Pour toi :* Le **BIM** (maquette numérique) devient obligatoire sur les marchés publics. Les **BUT Génie Civil** (ex : IUT de Cachan) ou **BTS Bâtiment** avec spécialisation BIM sont **recrutés à 100%** (source : Fédération Française du Bâtiment).\n**Salaire** : 2 300–2 800€ brut en début de carrière.\n\n---\n\n### **Plan B — Métiers émergents (croissance 2027-2030)**\n**(connaissance générale)**\n📍 **Ingénieur en économie circulaire** (bac+5, école d’ingé ou master)\n*Pour toi :* Les **déchets du BTP** (70% des déchets en France) poussent à créer des postes pour recycler les matériaux. **Écoles cibles** :\n- **ESTP** (Paris) : Mastère *Bâtiment Durable*\n- **École des Ponts ParisTech** : Master *Ressources et Déchets*\n**Salaire** : 3 000–3 500€ brut (cadres).\n**Atout** : Double compétence *techno + réglementation* (RE2020).\n\n📍 **Responsable de chantier bas carbone** (bac+3/5)\n*Pour toi :* Les appels d’offres publics exigent désormais un **bilan carbone**. Les **licences pro** (ex : *Management de Projet BTP Bas Carbone* à l’IUT de Bobigny) ou **écoles d’ingé** (INSA, Polytech) forment à ces enjeux.\n**Exemple** : 1 200 postes créés pour les **villages olympiques** (héritage JO 2024).\n\n---\n\n### **Plan C — Passerelles et reconversion**\n**(connaissance générale)**\n1. **Sans diplôme** :\n   - **Titre Pro *Ouvrier du Bâtiment Gros Œuvre*** (6 mois, AFPA) → **embauche garantie** (pénurie de main-d’œuvre).\n   - **Salaire** : 1 800–2 100€ brut (SMIC + primes).\n\n2. **Avec un bac général/techno** :\n   - **BTS Métiers du Géomètre-Topographe** (IUT de Ville-d’Avray) → **100% d’insertion** (source : ONISEP).\n   - **Débouchés** : Topographie pour les **grands projets** (Grand Paris Express, métros automatisés).\n\n3. **Pour les femmes** (seulement 10% des effectifs BTP) :\n   - **Programmes dédiés** comme *Les Elles du BTP* (mentorat + aides financières).\n   - **Métiers cibles** : Conductrice de travaux, économiste de la construction (moins de manutention).\n\n---\n### **⚠ Attention**\n- **Piège #1** : Les formations privées type *École Chevaleret* (10k€/an) promettent des \"diplômes reconnus\" → vérifie **RNCP** ou **label FFB** avant de payer.\n- **Piège #2** : Les **CAP/Bac Pro** en lycée pro public sont **gratuits** et tout aussi efficaces que les écoles privées (ex : Lycée Le Corbusier à Aubervilliers).\n\n---\n**Question pour toi** :\nPréfères-tu une formation **courte et opérationnelle** (Plan A) pour entrer vite sur le marché, ou un **parcours long** (Plan B) pour viser des postes d’encadrement ? Si tu as déjà un diplôme, on peut affiner les passerelles.",
+  "elapsed_pipeline_s": 24.33,
+  "elapsed_fact_check_post_hoc_s": 6.6,
+  "elapsed_clarify_s": 2.69,
+  "elapsed_reformulate_s": 6.51,
+  "elapsed_retrieve_s": 0.4,
+  "elapsed_generate_s": 14.73,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 0,
+    "n_with_disclaimer": 10,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "90% des embauches",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "90% des embauches visent ce profil pour les audits énergétiques (obligation légale DPE)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~2 000€ brut",
+      "stat_value": 2000,
+      "stat_unit": "€",
+      "context": "Salaire médian embauche : ~2 000€ brut (source : Baromètre FFB 2023)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "7 000 postes",
+      "stat_value": 7000,
+      "stat_unit": "postes",
+      "context": "7 000 postes à pourvoir en IDF d’ici 2025 pour les copropriétés (Plan Rénovation de l’État)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "100%",
+      "stat_value": 100,
+      "stat_unit": "%",
+      "context": "Les BUT Génie Civil ou BTS Bâtiment avec spécialisation BIM sont recrutés à 100%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 300–2 800€ brut",
+      "stat_value": 2300,
+      "stat_unit": "€",
+      "context": "Salaire : 2 300–2 800€ brut en début de carrière",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "70% des déchets",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "Les déchets du BTP (70% des déchets en France) poussent à créer des postes pour recycler les matériaux",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "3 000–3 500€ brut",
+      "stat_value": 3000,
+      "stat_unit": "€",
+      "context": "Salaire : 3 000–3 500€ brut (cadres)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 200 postes",
+      "stat_value": 1200,
+      "stat_unit": "postes",
+      "context": "1 200 postes créés pour les villages olympiques (héritage JO 2024)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10%",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "context": "Seulement 10% des effectifs BTP sont des femmes",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 800–2 100€ brut",
+      "stat_value": 1800,
+      "stat_unit": "€",
+      "context": "Salaire : 1 800–2 100€ brut (SMIC + primes)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "insee_salaire",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers du bâtiment et de la construction en Île-de-France avec les postes à pourvoir d'ici 2030 selon les projections DARES Métiers 2030 ?",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Intent core : projections recrutement 2030 dans le secteur bâtiment en Île-de-France."
+    },
+    {
+      "text": "Quels sont les métiers porteurs dans le secteur du bâtiment en Île-de-France, avec perspectives de recrutement cadres si applicable ?",
+      "target_corpus": "apec_region",
+      "priority": 2,
+      "rationale": "Complète avec données marché cadres pour affiner les opportunités."
+    },
+    {
+      "text": "Quelles fiches métiers ONISEP détaillent les missions, compétences et formations pour les métiers du bâtiment en forte demande ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte éditorialisé pour comprendre les métiers identifiés."
+    },
+    {
+      "text": "Quels sont les salaires médians (INSEE) pour les métiers du bâtiment en Île-de-France, par PCS ?",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Contexte salaire pour évaluer l'attractivité des métiers."
+    }
+  ]
+}

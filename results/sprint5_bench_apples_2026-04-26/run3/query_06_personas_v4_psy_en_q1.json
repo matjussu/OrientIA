@@ -1,0 +1,116 @@
+{
+  "suite": "personas_v4",
+  "query_id": "psy_en_q1",
+  "query_text": "Quels sont les indicateurs d'insertion professionnelle à 3 ans pour un master en psychologie clinique en France ?",
+  "answer_text": "**TL;DR**\n1. Les masters en psychologie clinique affichent des taux d’insertion **très variables** selon la spécialisation et l’expérience antérieure (stage, alternance).\n2. **~50-60% des diplômés** travaillent comme psychologues 3 ans après le diplôme (connaissance générale), mais souvent en libéral ou après un complément de formation (DU, VAE).\n3. **L’insertion dépend fortement** de votre capacité à combiner master + titre RNCP (ex : psychothérapeute) ou à viser des secteurs porteurs (santé publique, neuropsychologie).\n\n---\n\n### **Plan A — Données officielles disponibles (masters publics)**\nLes fiches ONISEP des masters en psychologie clinique ne fournissent **pas de statistiques d’insertion à 3 ans** (source : [ONISEP FOR.10205](https://www.onisep.fr/http/redirection/formation/slug/FOR.10205), [FOR.10223](https://www.onisep.fr/http/redirection/formation/slug/FOR.10223)).\n**Pour vous** : Ces formations restent la voie royale pour exercer, mais leur valeur dépend **de votre projet précis** (clinique, recherche, libéral).\n\n### **Plan B — Chiffres de marché (estimations)**\n- **Taux d’emploi à 3 ans** : ~50-60% comme psychologue (connaissance générale), avec une forte proportion en **libéral** (installation progressive) ou en **CDD dans le public** (hôpitaux, CMP).\n  - **Salaire médian** : ~2 000-2 500€ brut/mois en début de carrière (libéral : revenus variables, souvent < 1 500€/mois les premières années).\n  - **Secteurs porteurs** : neuropsychologie (+12% de postes depuis 2020, connaissance générale), psychologie du travail, addictions.\n- **Alternative** : Les masters **psychologie sociale/organisationnelle** ([FOR.10203](https://www.onisep.fr/http/redirection/formation/slug/FOR.10203)) ont de meilleurs débouchés en entreprise (RH, qualité de vie au travail), avec des salaires ~2 800-3 500€ brut.\n\n### **Plan C — Stratégies pour booster votre employabilité**\n1. **Valider un titre RNCP** en parallèle (ex : [Certificat de psychothérapeute](https://www.francecompetences.fr/recherche/rncp/35956/)) via **VAE ou formation courte** (éligible CPF).\n2. **Privilégier l’alternance** en M2 (ex : [Master Pro Psycho de Montpellier](https://www.onisep.fr/http/redirection/formation/slug/FOR.10205)) pour un réseau professionnel immédiat.\n3. **Cibler les besoins non pourvus** : neuropsychologie (DUs en 1 an), gérontopsychologie, ou psychologie légale (expertise judiciaire).\n\n---\n### **⚠ Attention aux pièges**\n- **Libéral ≠ stabilité** : 30% des psychologues libéraux abandonnent avant 5 ans (connaissance générale). Prévoyez un **fonds de roulement** ou un emploi salarié complémentaire.\n- **Concurrence accrue** : +25% de diplômés en psycho depuis 2018 (DEPP), mais **peu de postes créés dans le public**. Sans spécialisation, risque de précarité.\n- **Titres protégés** : \"Psychologue\" exige un master + inscription à l’ARS. \"Psychothérapeute\" nécessite un **certificat RNCP** (formation supplémentaire obligatoire).\n\n---\n**Question pour vous** :\nVotre reconversion vise-t-elle **un secteur précis** (santé, entreprise, libéral) ou une **compétence** (évaluation, thérapie, recherche) ? Cela change radicalement les formations et passerelles à privilégier.",
+  "elapsed_pipeline_s": 19.56,
+  "elapsed_fact_check_post_hoc_s": 3.12,
+  "elapsed_clarify_s": 2.72,
+  "elapsed_reformulate_s": 7.98,
+  "elapsed_retrieve_s": 0.41,
+  "elapsed_generate_s": 8.45,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 0,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~50-60%",
+      "stat_value": 55,
+      "stat_unit": "%",
+      "context": "taux d’emploi à 3 ans comme psychologue",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~2 000-2 500€ brut/mois",
+      "stat_value": 2250,
+      "stat_unit": "€ brut/mois",
+      "context": "salaire médian en début de carrière (libéral)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "< 1 500€/mois",
+      "stat_value": 1500,
+      "stat_unit": "€/mois",
+      "context": "revenus des psychologues libéraux les premières années",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+12%",
+      "stat_value": 12,
+      "stat_unit": "%",
+      "context": "évolution des postes en neuropsychologie depuis 2020",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~2 800-3 500€ brut",
+      "stat_value": 3150,
+      "stat_unit": "€ brut",
+      "context": "salaire pour les masters en psychologie sociale/organisationnelle",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30%",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "des psychologues libéraux abandonnent avant 5 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+25%",
+      "stat_value": 25,
+      "stat_unit": "%",
+      "context": "d’augmentation des diplômés en psycho depuis 2018",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "metier",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois pour les diplômés d'un master en psychologie clinique en France, selon les données MESR ?",
+      "target_corpus": "insertion_pro",
+      "priority": 1,
+      "rationale": "Couvre l'intent core sur l'insertion professionnelle post-master, avec un focus sur les indicateurs MESR."
+    },
+    {
+      "text": "Quels sont les métiers accessibles après un master en psychologie clinique et leurs perspectives d'emploi en France (secteur santé/psychologie) ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporte un contexte métier pour compléter les données d'insertion."
+    },
+    {
+      "text": "Quels sont les salaires médians (INSEE) pour les professions liées à la psychologie clinique en France, par région ?",
+      "target_corpus": "insee_salaire",
+      "priority": 2,
+      "rationale": "Complète avec des données salariales pour contextualiser l'insertion."
+    },
+    {
+      "text": "Quels sont les postes à pourvoir en 2030 dans le secteur de la psychologie clinique en France, selon les projections DARES ?",
+      "target_corpus": "metier_prospective",
+      "priority": 3,
+      "rationale": "Ajoute une dimension prospective pour anticiper les débouchés."
+    },
+    {
+      "text": "Quelles sont les formations en master de psychologie clinique disponibles en France (Parcoursup/ONISEP) et leurs spécificités ?",
+      "target_corpus": "formation",
+      "priority": 3,
+      "rationale": "Ancrage rassurant sur les formations existantes, utile pour un étudiant en master."
+    }
+  ]
+}

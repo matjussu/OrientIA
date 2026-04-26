@@ -1,0 +1,163 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q12_apprentissage_vs_bac_general",
+  "query_text": "Mon fils de 17 ans hésite entre l'apprentissage et le bac général. Comment l'aider à décider ?",
+  "answer_text": "**TL;DR**\n1. **Pas de réponse universelle** : le choix dépend de son projet professionnel, de ses forces scolaires et de son rapport au concret vs théorique.\n2. **Apprentissage** = emploi immédiat + salaire, mais spécialisation précoce ; **bac général** = portes ouvertes plus longues, mais abstraction.\n3. **Étape clé** : lui faire tester les deux via stages et rencontres avec des pros *avant* de trancher.\n\n---\n\n### **Plan A — S’il a déjà une idée de métier manuel/technique**\n**📍 Apprentissage (CAP/Bac Pro)** + **Certificat RNCP** (ex : *Encadrant technique d'insertion* ou *Formateur pro d'adultes* plus tard)\n*Pour lui* : Si il aime le concret (bricolage, mécanique, cuisine, etc.), l’alternance lui offre un salaire (600-800€/mois en 1re année) et un diplôme pro *sans frais*. Les RNCP permettent ensuite des passerelles vers l’encadrement (ex : devenir formateur avec un bac+2).\n*(connaissance générale : 70% des apprentis trouvent un CDI dans leur domaine à la sortie — source Dares 2022, non vérifié dans les fiches)*\n\n### **Plan B — S’il aime l’école mais veut une sécurité pro rapide**\n**📍 Bac général** + **BTS/BUT en alternance après**\n*Pour lui* : Garder les portes de la fac ouvertes (médecine, ingénierie, etc.) tout en visant un BTS/BUT en alternance post-bac (ex : BUT Informatique). Beaucoup de licences pros recrutent aussi en alternance après un bac général.\n*(connaissance générale : un bachelier général a 2x plus de chances d’accéder à un BUT qu’un bac pro — DEPP 2023, estimation)*\n\n### **Plan C — S’il ne sait pas : mixer les deux**\n**📍 Année de détermination** (lycée pro ou 2de générale avec stages)\n*Pour lui* :\n- **Option 1** : S’inscrire en **2de générale** et faire **2 stages** (1 en entreprise, 1 en lycée pro) pour comparer.\n- **Option 2** : Intégrer une **prépa-apprentissage** (dispositif public pour découvrir les métiers en 1 an avant de signer un contrat).\n*(connaissance générale : 30% des lycéens changent de voie entre la 2de et la Terminale — DEPP)*\n\n---\n**⚠ Attention aux pièges**\n- **Apprentissage** : Certains secteurs (bâtiment, restauration) ont des conditions physiques difficiles. Vérifier les **taux de rupture de contrat** (15-20% en moyenne, source Dares).\n- **Bac général** : Sans projet clair, le risque est de se retrouver en fac sans débouchés. **Alternatives** : BUT (IUT) ou écoles post-bac (type Epitech) pour éviter la précarité étudiante.\n- **Pression sociale** : Éviter les phrases comme *« L’apprentissage, c’est pour ceux qui ne sont pas bons à l’école »* — faux (ex : CAP Cuisine → Chef étoilé, Bac Pro Aéronautique → Ingénieur avec expérience).\n\n---\n**Question pour toi** :\nEst-ce qu’il préfère :\n1️⃣ **Gagner de l’argent tout de suite** et apprendre un métier sur le terrain ?\n2️⃣ **Garder le temps de réfléchir** en gardant toutes les options ouvertes (études longues possibles) ?\n3️⃣ **Tester les deux** via des stages avant de choisir ?\n\n👤 *Pour aller plus loin, un RDV avec le **Psy-EN** de son lycée ou un **conseiller en évolution professionnelle (CEP)** peut l’aider à clarifier ses motivations.*",
+  "elapsed_pipeline_s": 25.0,
+  "elapsed_fact_check_post_hoc_s": 8.76,
+  "elapsed_clarify_s": 1.86,
+  "elapsed_reformulate_s": 9.95,
+  "elapsed_retrieve_s": 0.4,
+  "elapsed_generate_s": 12.79,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 8,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "600-800€/mois",
+      "stat_value": 700,
+      "stat_unit": "€/mois",
+      "context": "salaire en 1re année d'apprentissage",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "70% des apprentis trouvent un CDI dans leur domaine à la sortie",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "taux d'insertion en CDI pour les apprentis (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "un bachelier général a 2x plus de chances d’accéder à un BUT qu’un bac pro",
+      "stat_value": 2,
+      "stat_unit": "fois",
+      "context": "comparaison des chances d'accès à un BUT entre bachelier général et bac pro (estimation)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30% des lycéens changent de voie entre la 2de et la Terminale",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "taux de changement de voie entre 2de et Terminale (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "15-20% en moyenne",
+      "stat_value": 17.5,
+      "stat_unit": "%",
+      "context": "taux de rupture de contrat en apprentissage",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.73",
+      "stat_value": 73,
+      "stat_unit": "%",
+      "context": "taux d'emploi à 3 ans pour le métier 'Encadrant technique d'insertion'",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "taux d'emploi à 6 ans pour le métier 'Encadrant technique d'insertion'",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.66",
+      "stat_value": 66,
+      "stat_unit": "%",
+      "context": "taux de CDI à la sortie pour le métier 'Encadrant technique d'insertion'",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1410",
+      "stat_value": 1410,
+      "stat_unit": "€",
+      "context": "salaire médian à l'embauche pour le métier 'Encadrant technique d'insertion'",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "taux d'emploi à 3 ans pour le métier 'Formateur professionnel d'adultes'",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.87",
+      "stat_value": 87,
+      "stat_unit": "%",
+      "context": "taux d'emploi à 6 ans pour le métier 'Formateur professionnel d'adultes'",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", "
+    },
+    {
+      "stat_text": "taux_cdi: 0.76",
+      "stat_value": 76,
+      "stat_unit": "%",
+      "context": "taux de CDI à la sortie pour le métier 'Formateur professionnel d'adultes'",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context": "salaire médian à l'embauche pour le métier 'Formateur professionnel d'adultes'",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les avantages et inconvénients de l'apprentissage par rapport au bac général pour un lycéen de 17 ans ? Données Parcoursup et ONISEP sur les taux de réussite, débouchés et poursuites d'études.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : comparaison apprentissage vs bac général avec des données concrètes."
+    },
+    {
+      "text": "Quels métiers ou secteurs recrutent le plus en 2030 selon la DARES ? Focus sur les opportunités pour les jeunes en formation initiale ou en apprentissage.",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte un éclairage prospectif sur les débouchés métiers pour éclairer le choix."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle 6, 12 et 18 mois après un bac général ou un diplôme obtenu via l'apprentissage ? Données MESR pour master/BUT.",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Compare l'insertion pro des deux voies pour objectiver les choix."
+    },
+    {
+      "text": "Quels sont les retours d'expérience des jeunes en apprentissage vs bac général ? Témoignages ou fiches métiers ONISEP sur les parcours types.",
+      "target_corpus": "metier",
+      "priority": 3,
+      "rationale": "Ajoute une dimension qualitative via des retours d'expérience."
+    },
+    {
+      "text": "Quelles sont les compétences clés à valider via le RNCP pour les métiers accessibles après un bac général ou un apprentissage ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Permet d'anticiper les compétences à acquérir selon la voie choisie."
+    }
+  ]
+}

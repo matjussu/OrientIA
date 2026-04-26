@@ -1,0 +1,52 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q03_blocs_master_cyber",
+  "query_text": "Quelles compétences certifiées par un master en cybersécurité ?",
+  "answer_text": "**TL;DR**\n1. Un master en cybersécurité certifie des compétences **techniques** (sécurité des systèmes, cryptographie) et **managériales** (gestion des risques, conformité RGPD).\n2. Les certifications professionnelles (CISSP, CEH) sont souvent intégrées et valorisées par les employeurs.\n3. Deux voies : master universitaire (recherche/appliqué) ou titre RNCP (pro, alternance).\n\n---\n\n### **Plan A — Compétences techniques certifiées**\n📍 **Master Cybersécurité** (ex : [Master mention Cybersécurité](https://www.onisep.fr/http/redirection/formation/slug/FOR.10254)) — bac+5 public, grade Master\n*Pour toi : socle obligatoire pour les métiers de RSSI, ingénieur sécurité, ou pentester. Inclut cryptographie, sécurité des réseaux, et analyse des vulnérabilités.*\n\n**Compétences clés** (connaissance générale) :\n- **Sécurité offensive** : tests d’intrusion (pentest), analyse de malwares.\n- **Sécurité défensive** : configuration de pare-feux, détection d’intrusions (IDS/IPS), réponse aux incidents (SOC).\n- **Conformité** : RGPD, normes ISO 27001, NIS 2 (directive européenne).\n- **Outils** : maîtrise de Wireshark, Metasploit, Nessus, et langages (Python, Bash).\n\n---\n\n### **Plan B — Compétences managériales et certifications pro**\n📍 **Titre Manager de la Cybersécurité** (ex : [RNCP niveau 7](https://www.onisep.fr/http/redirection/formation/slug/FOR.11788)) — bac+5, souvent en alternance\n*Pour toi : idéal si tu vises un poste de RSSI ou consultant. Intègre des certifications reconnues (CISSP, CISM) et des modules en gestion de crise.*\n\n**Certifications intégrées ou préparées** (connaissance générale) :\n- **CISSP** (Certified Information Systems Security Professional) : standard pour les postes à responsabilité.\n- **CEH** (Certified Ethical Hacker) : pour les profils offensifs.\n- **ISO 27001 Lead Auditor** : pour l’audit et la conformité.\n- **CompTIA Security+** : base pour débuter dans le domaine.\n\n---\n\n### **Plan C — Soft skills et spécialisations émergentes**\n*Pour toi : les employeurs recherchent aussi des compétences transverses, souvent négligées mais critiques.*\n\n**Compétences complémentaires** (connaissance générale) :\n- **Communication** : expliquer des risques techniques à des non-experts (ex : direction, clients).\n- **Veille technologique** : suivre les nouvelles menaces (ransomwares, IA malveillante).\n- **Éthique et droit** : comprendre les enjeux juridiques (cybercriminalité, souveraineté des données).\n- **Spécialisations porteuses** :\n  - **Cloud Security** (AWS Certified Security, CCSP).\n  - **IoT/OT Security** (sécurité des objets connectés et systèmes industriels).\n  - **Cybersécurité appliquée à l’IA** (protection des modèles, attaques adverses).\n\n---\n\n### **⚠ Attention aux pièges**\n- **Certifications ≠ diplôme** : Un master seul ne suffit pas pour les postes seniors. Les certifications (CISSP, CEH) sont souvent **exigées en complément** du bac+5.\n- **Alternance obligatoire pour certains titres** : Vérifie si le RNCP visé impose un contrat pro (ex : Manager de la Cybersécurité).\n- **Métiers réglementés** : Pour devenir **RSSI dans certains secteurs** (banque, santé), des certifications spécifiques (ex : PCI DSS) peuvent être imposées.\n\n---\n**Question pour toi** :\nQuelle est ta priorité entre **technique pure** (pentest, cryptographie), **management** (RSSI, conformité), ou **spécialisation émergente** (cloud, IA) ? Cela déterminera le choix entre master universitaire, titre RNCP, ou double compétence.",
+  "elapsed_pipeline_s": 19.73,
+  "elapsed_fact_check_post_hoc_s": 0.0,
+  "elapsed_clarify_s": 1.83,
+  "elapsed_reformulate_s": 6.97,
+  "elapsed_retrieve_s": 0.42,
+  "elapsed_generate_s": 10.52,
+  "fact_check_summary": {
+    "n_stats_total": 0,
+    "n_verified": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les blocs de compétences certifiés par les masters en cybersécurité selon le Répertoire National des Certifications Professionnelles (RNCP) ?",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Cible directement les compétences certifiées via les blocs RNCP pour les masters en cybersécurité."
+    },
+    {
+      "text": "Quelles compétences spécifiques sont attendues pour les métiers de la cybersécurité selon les fiches ONISEP ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporte un complément éditorialisé sur les compétences métiers en cybersécurité."
+    },
+    {
+      "text": "Quels sont les masters en cybersécurité disponibles en France et leurs caractéristiques (parcours, durée, établissements) ?",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Contextualise les formations associées aux compétences certifiées."
+    },
+    {
+      "text": "Quels sont les métiers de la cybersécurité accessibles après un master et leurs perspectives d'insertion professionnelle ?",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Ajoute une dimension insertion post-diplôme pour enrichir le contexte."
+    }
+  ]
+}

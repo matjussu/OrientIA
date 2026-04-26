@@ -1,0 +1,107 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q11_lycee_reunion_metropole",
+  "query_text": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options s'offrent à moi ?",
+  "answer_text": "**TL;DR**\n1. **Tu peux tout à fait étudier le numérique en métropole** depuis La Réunion, avec des options adaptées à ton profil (bac général/techno/pro).\n2. **Priorité aux formations publiques** (gratuites ou quasi-gratuites) : BUT, licences, écoles labellisées.\n3. **3 pistes concrètes** : BUT informatique (le plus sûr), licences pro numériques, ou écoles spécialisées (plus sélectives).\n\n---\n\n### **Plan A — Réaliste : BUT Informatique en métropole**\n📍 **BUT Informatique** (ex : **IUT de Toulouse, Lyon, Bordeaux**) — bac+3 public, **100% accessible** (sélectivité ~60-80% selon ville), diplôme **grade Licence** · [Exemple : BUT Info Toulouse](https://www.iut-blagnac.fr/formation/but-informatique)\n*Pour toi :* **Parfait pour un départ en métropole** avec un diplôme pro reconnu. Alternance possible dès la 2e année (salaire + expérience).\n\n### **Plan B — Ambitieux : École d’ingénieurs post-bac (public)**\n📍 **Réseau Polytech** (ex : **Polytech Marseille, Montpellier**) — bac+5 public, **sélectivité 20-40%**, diplôme **ingénieur CTI** · [Site Polytech](https://www.polytech-reseau.org)\n*Pour toi :* Si tu vises un **niveau bac+5** avec un bon dossier (14+ de moyenne), les Polytech recrutent via **Parcoursup** (pas de prépa obligatoire).\n\n### **Plan C — Alternatif : Licences pro numériques**\n📍 **Licence Pro Métiers de l’informatique** (ex : **Université de Strasbourg, Nantes**) — bac+3 public, **accessible**, spécialisations en **cybersécurité, data, développement web** · [Exemple ONISEP](https://www.onisep.fr)\n*Pour toi :* **Moins technique qu’un BUT**, mais idéal si tu veux allier numérique et gestion/communication.\n\n---\n**⚠ Attention aux pièges**\n- **Coût du privé** : Certaines écoles (type **Epitech, SUPINFO**) coûtent **6 000–10 000€/an** — vérifie les aides (boursiers, alternance).\n- **Logement** : Prévois un budget **500–800€/mois** pour un studio en métropole (aides comme **APL** ou **garantie Visale** existent).\n- **Faux-amis** : Méfie-toi des formations en **\"1 an\"** promettant un \"diplôme reconnu\" — souvent des certifications sans valeur (ex : **titres RNCP non labellisés**).\n\n---\n**Question pour toi :**\nEst-ce que tu préfères **une formation courte et pro (BUT)** pour entrer vite sur le marché du travail, ou un **parcours plus long (école d’ingé)** pour viser des postes à responsabilité ? *(Et as-tu une région de métropole en tête ?)*",
+  "elapsed_pipeline_s": 19.96,
+  "elapsed_fact_check_post_hoc_s": 3.16,
+  "elapsed_clarify_s": 2.56,
+  "elapsed_reformulate_s": 8.85,
+  "elapsed_retrieve_s": 0.4,
+  "elapsed_generate_s": 8.13,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "sélectivité ~60-80%",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "BUT Informatique (ex : IUT de Toulouse, Lyon, Bordeaux) — bac+3 public, 100% accessible (sélectivité ~60-80% selon ville)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire + expérience",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "Alternance possible dès la 2e année (salaire + expérience).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité 20-40%",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "Réseau Polytech (ex : Polytech Marseille, Montpellier) — bac+5 public, sélectivité 20-40%",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "14+ de moyenne",
+      "stat_value": 14,
+      "stat_unit": null,
+      "context": "Si tu vises un niveau bac+5 avec un bon dossier (14+ de moyenne), les Polytech recrutent via Parcoursup",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "6 000–10 000€/an",
+      "stat_value": 6000,
+      "stat_unit": "€/an",
+      "context": "Coût du privé : Certaines écoles (type Epitech, SUPINFO) coûtent 6 000–10 000€/an — vérifie les aides",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "500–800€/mois",
+      "stat_value": 500,
+      "stat_unit": "€/mois",
+      "context": "Logement : Prévois un budget 500–800€/mois pour un studio en métropole",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles formations en numérique (BUT, BTS, licences, écoles) sont accessibles via Parcoursup pour un lycéen de Terminale à La Réunion souhaitant étudier en métropole ? Inclure les critères géographiques et les spécialités proposées.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : découvrir les filières numériques accessibles post-bac en métropole via Parcoursup."
+    },
+    {
+      "text": "Quels sont les métiers du numérique les plus porteurs en métropole et à La Réunion ? Focus sur les secteurs en croissance et les compétences recherchées.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte complémentaire : comprendre les débouchés métiers pour affiner le choix de formation."
+    },
+    {
+      "text": "Quels sont les postes à pourvoir dans le numérique d'ici 2030 en métropole et à La Réunion selon les projections DARES ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporter une vision prospective pour éclairer la décision."
+    },
+    {
+      "text": "Quels sont les taux de réussite en licence (L1) pour les bacheliers de La Réunion en métropole, notamment dans les filières numériques ?",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 3,
+      "rationale": "Nice-to-have : évaluer les chances de réussite selon l'origine géographique."
+    },
+    {
+      "text": "Quelles aides ou dispositifs existent pour les étudiants de La Réunion souhaitant étudier en métropole (logement, bourses, accompagnement CROUS) ?",
+      "target_corpus": "crous",
+      "priority": 3,
+      "rationale": "Nice-to-have : informations pratiques pour faciliter la mobilité."
+    }
+  ]
+}

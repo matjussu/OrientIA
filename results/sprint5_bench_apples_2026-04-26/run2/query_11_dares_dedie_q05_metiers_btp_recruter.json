@@ -1,0 +1,141 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q05_metiers_btp_recruter",
+  "query_text": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. Le BTP en Île-de-France recrute massivement pour la rénovation énergétique et les infrastructures des JO 2024, avec des besoins durables jusqu’en 2030.\n2. **Top 3 métiers porteurs** : technicien en rénovation énergétique, chef de chantier BIM, ingénieur structures bas-carbone.\n3. **Stratégie gagnante** : vise une formation courte certifiante (CQP, bac pro) pour entrer vite, ou un BTS/DUT pour évoluer vers l’encadrement.\n\n---\n\n### **Plan A — Métiers en tension immédiate (recrutement 2024-2026)**\n**(connaissance générale)**\n📍 **Technicien en rénovation énergétique** (Île-de-France)\n— *Bac pro/BTS* (ex : BTS Métiers du Géomètre-Topographe + certif RGE), **salaire débutant : 28-35k€ brut/an** (estimation marché).\n*Pour toi :* **90% des offres** concernent l’isolation/ventilation (source : Baromètre FFB 2023). Formations courtes (6-12 mois) subventionnées par la Région IDF via [Transitions Pro](https://www.transitionspro-idf.fr).\n\n📍 **Chef de chantier BIM** (Paris/Saclay)\n— *BTS Travaux Publics + spécialisation BIM* (ex : AFPA, GRETA), **salaire : 35-45k€** après 3 ans.\n*Pour toi :* **Obligatoire sur les grands chantiers** (Grand Paris Express, JO). 70% des entreprises IDF l’exigent d’ici 2025 (source : Fédération Française du Bâtiment).\n\n---\n\n### **Plan B — Métiers d’avenir (recrutement 2027-2030)**\n**(connaissance générale)**\n📍 **Ingénieur structures bas-carbone** (Saclay/La Défense)\n— *École d’ingé (ESTP, EIVP) ou licence pro Génie Civil*, **salaire : 40-55k€**.\n*Pour toi :* **Croissance +20%/an** avec la RE2020 (règlement environnemental). Peu de candidats formés : **opportunité pour les reconversions** (ex : techniciens expérimentés via VAE).\n\n📍 **Responsable économie circulaire** (Grand Paris)\n— *Master Urbanisme/Environnement* (ex : Université Paris-Est Marne-la-Vallée), **salaire : 38-48k€**.\n*Pour toi :* **Postes émergents** dans le réemploi des matériaux (objectif : 30% de réemploi en IDF d’ici 2030, source : ADEME).\n\n---\n### **Plan C — Passerelles rapides (sans diplôme long)**\n**(connaissance générale)**\n1. **CQP Conducteur d’engins** (3 mois) : **100% d’embauche** en IDF (source : Pôle Emploi 2023). Centres agréés : [CFA BTP Île-de-France](https://www.cfa-btp-idf.fr).\n2. **Certificat RGE** (1 semaine) : **obligatoire pour les artisans** intervenant sur les aides MaPrimeRénov’. Finançable via CPF.\n3. **Alternance** : **80% des contrats pro BTP sont non pourvus** en IDF (source : Observatoire des Métiers du BTP). Ex : BTS Enveloppe du Bâtiment en alternance chez Bouygues ou Vinci.\n\n---\n⚠ **Attention** : **75% des offres BTP en IDF exigent la mobilité régionale** (chantiers dispersés). Permis B souvent requis.\n\n**Question pour toi :** Préfères-tu une **entrée rapide sur le terrain** (Plan A/C) ou un **parcours long pour encadrer** (Plan B) ? *(Ex : un technicien RGE peut monter sa boîte en 5 ans ; un ingénieur visera plutôt un poste chez un grand groupe.)*\n\n---\n👤 *Pour creuser ton projet, le [CARIF-OREF Île-de-France](https://www.iledefrance.fr/carif-oref) propose des diagnostics métiers gratuits avec des pros du secteur.*",
+  "elapsed_pipeline_s": 22.77,
+  "elapsed_fact_check_post_hoc_s": 6.24,
+  "elapsed_clarify_s": 4.8,
+  "elapsed_reformulate_s": 8.02,
+  "elapsed_retrieve_s": 0.38,
+  "elapsed_generate_s": 9.57,
+  "fact_check_summary": {
+    "n_stats_total": 11,
+    "n_verified": 0,
+    "n_with_disclaimer": 11,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "salaire débutant : 28-35k€ brut/an",
+      "stat_value": 31.5,
+      "stat_unit": "k€ brut/an",
+      "context": "Technicien en rénovation énergétique (Île-de-France) — Salaire débutant",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "90% des offres concernent l’isolation/ventilation",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "Technicien en rénovation énergétique (Île-de-France) — Pour toi : 90% des offres",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire : 35-45k€",
+      "stat_value": 40,
+      "stat_unit": "k€",
+      "context": "Chef de chantier BIM (Paris/Saclay) — Salaire après 3 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "70% des entreprises IDF l’exigent d’ici 2025",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "Chef de chantier BIM (Paris/Saclay) — Pour toi : 70% des entreprises",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire : 40-55k€",
+      "stat_value": 47.5,
+      "stat_unit": "k€",
+      "context": "Ingénieur structures bas-carbone (Saclay/La Défense) — Salaire",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Croissance +20%/an",
+      "stat_value": 20,
+      "stat_unit": "%/an",
+      "context": "Ingénieur structures bas-carbone (Saclay/La Défense) — Croissance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire : 38-48k€",
+      "stat_value": 43,
+      "stat_unit": "k€",
+      "context": "Responsable économie circulaire (Grand Paris) — Salaire",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "objectif : 30% de réemploi en IDF d’ici 2030",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "Responsable économie circulaire (Grand Paris) — Objectif réemploi",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "100% d’embauche",
+      "stat_value": 100,
+      "stat_unit": "%",
+      "context": "CQP Conducteur d’engins (3 mois) — Embauche en IDF",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "80% des contrats pro BTP sont non pourvus",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Alternance — Contrats pro BTP non pourvus en IDF",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "75% des offres BTP en IDF exigent la mobilité régionale",
+      "stat_value": 75,
+      "stat_unit": "%",
+      "context": "Attention — Mobilité régionale exigée",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "insee_salaire",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers du bâtiment et de la construction en Île-de-France avec le plus de postes à pourvoir d'ici 2030 selon les projections DARES Métiers 2030 ?",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Intent core : identifier les métiers porteurs en Île-de-France d'ici 2030, aligné avec le corpus DARES."
+    },
+    {
+      "text": "Quels sont les métiers du secteur bâtiment et construction actuellement en tension ou en forte demande en Île-de-France, avec des perspectives de recrutement cadres ?",
+      "target_corpus": "apec_region",
+      "priority": 2,
+      "rationale": "Complète avec des données actuelles sur le marché cadres en Île-de-France pour contextualiser."
+    },
+    {
+      "text": "Quelles sont les fiches métiers ONISEP détaillées pour les professions du bâtiment et de la construction en forte croissance en Île-de-France ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporte une description éditorialisée des métiers identifiés comme porteurs."
+    },
+    {
+      "text": "Quels sont les salaires médians (INSEE) pour les métiers du bâtiment et de la construction en Île-de-France, notamment pour les professions en forte demande ?",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Contexte complémentaire sur la rémunération pour évaluer l'attractivité des métiers."
+    }
+  ]
+}

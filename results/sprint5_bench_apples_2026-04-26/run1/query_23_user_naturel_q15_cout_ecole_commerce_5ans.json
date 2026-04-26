@@ -1,0 +1,131 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q15_cout_ecole_commerce_5ans",
+  "query_text": "Combien faut-il prévoir financièrement pour 5 années d'études en école de commerce ?",
+  "answer_text": "**TL;DR**\n1. Le coût total d’une école de commerce sur 5 ans varie de **0 € (public)** à **50 000 €+ (privé)** selon le type d’établissement et le mode de financement.\n2. **L’alternance** (contrat pro/apprentissage) réduit souvent le coût à 0 € + salaire.\n3. **Précise ton projet** : vises-tu une école post-bac, post-prépa, publique ou privée ?\n\n---\n\n### **Plan A — Public ou alternance : coût faible (0–10 000 €)**\n📍 **IAE (Instituts d’Administration des Entreprises)** — bac+5 public, **frais d’inscription ~250–600 €/an** (soit **1 250–3 000 € sur 5 ans**).\n*Pour toi : accessible sans sélection drastique, diplômes reconnus (grade Master).*\n[Exemple : IAE Paris-Sorbonne](https://www.onisep.fr/http/redirection/formation/slug/FOR.10720)\n\n📍 **Écoles en alternance** — bac+5 privé/public, **0 € de frais** (prise en charge par l’entreprise) + **salaire (600–1 500 €/mois)**.\n*Pour toi : idéal si tu veux allier expérience pro et diplôme sans dette.*\n\n---\n### **Plan B — Privé classique : coût moyen (20 000–40 000 €)**\n📍 **Écoles post-bac (type ESC)** — bac+5 privé, **6 000–12 000 €/an** (soit **30 000–60 000 € sur 5 ans**).\n*Pour toi : sélectives (concours SESAME/ACCÈS), mais réseaux alumni solides.*\n*(connaissance générale : exemples – KEDGE, NEOMA, Rennes SB)*\n\n📍 **Écoles post-prépa (HEC, ESSEC, ESCP)** — bac+5 privé, **15 000–20 000 €/an** (soit **75 000–100 000 € sur 5 ans**), mais **bourses possibles** (jusqu’à 50%).\n*Pour toi : élitistes (top 5–10% des candidats), ROI élevé si carrière internationale.*\n\n---\n### **Plan C — Optimisation financière : bourses et mobilité**\n- **Bourses** : CROUS (jusqu’à 6 000 €/an), bourses des écoles (ex : HEC 5 000–15 000 €/an).\n- **Mobilité** : Certaines écoles à l’étranger coûtent moins cher (ex : Allemagne ~500 €/an).\n- **Travail étudiant** : Jobs en parallèle (10–15h/semaine) pour couvrir 30–50% des frais.\n\n---\n**⚠ Attention aux pièges**\n- **Marketing** : Méfie-toi des écoles non reconnues par l’État (vérifie le **grade Master** ou le label **CGE**).\n- **Dette** : Un prêt étudiant >30 000 € peut peser lourd en début de carrière (salaire médian embauche : ~35 000 € brut/an — *connaissance générale*).\n- **Alternance** : Tous les secteurs ne recrutent pas en apprentissage (ex : finance > commerce international).\n\n---\n**Question pour toi :**\nQuelle est ta priorité : **minimiser les coûts**, **maximiser le prestige du diplôme**, ou **allier études et expérience pro** (alternance) ? *(Cela aidera à affiner les options.)*\n\n---\n👤 *Pour un accompagnement personnalisé (budget précis, simulations de prêts), contacte le **CIO** ou le **service social étudiant** de ton académie.*",
+  "elapsed_pipeline_s": 24.03,
+  "elapsed_fact_check_post_hoc_s": 6.11,
+  "elapsed_clarify_s": 2.15,
+  "elapsed_reformulate_s": 8.68,
+  "elapsed_retrieve_s": 0.35,
+  "elapsed_generate_s": 12.85,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 0,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "frais d’inscription ~250–600 €/an (soit 1 250–3 000 € sur 5 ans)",
+      "stat_value": 250,
+      "stat_unit": "€/an",
+      "context": "IAE (Instituts d’Administration des Entreprises) — bac+5 public, frais d’inscription ~250–600 €/an (soit 1 250–3 000 € sur 5 ans).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire (600–1 500 €/mois)",
+      "stat_value": 600,
+      "stat_unit": "€/mois",
+      "context": "Écoles en alternance — bac+5 privé/public, 0 € de frais (prise en charge par l’entreprise) + salaire (600–1 500 €/mois).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "6 000–12 000 €/an (soit 30 000–60 000 € sur 5 ans)",
+      "stat_value": 6000,
+      "stat_unit": "€/an",
+      "context": "Écoles post-bac (type ESC) — bac+5 privé, 6 000–12 000 €/an (soit 30 000–60 000 € sur 5 ans).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "15 000–20 000 €/an (soit 75 000–100 000 € sur 5 ans)",
+      "stat_value": 15000,
+      "stat_unit": "€/an",
+      "context": "Écoles post-prépa (HEC, ESSEC, ESCP) — bac+5 privé, 15 000–20 000 €/an (soit 75 000–100 000 € sur 5 ans), mais bourses possibles (jusqu’à 50%).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "bourses des écoles (ex : HEC 5 000–15 000 €/an)",
+      "stat_value": 5000,
+      "stat_unit": "€/an",
+      "context": "Bourses : CROUS (jusqu’à 6 000 €/an), bourses des écoles (ex : HEC 5 000–15 000 €/an).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "CROUS (jusqu’à 6 000 €/an)",
+      "stat_value": 6000,
+      "stat_unit": "€/an",
+      "context": "Bourses : CROUS (jusqu’à 6 000 €/an), bourses des écoles (ex : HEC 5 000–15 000 €/an).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Mobilité : Certaines écoles à l’étranger coûtent moins cher (ex : Allemagne ~500 €/an)",
+      "stat_value": 500,
+      "stat_unit": "€/an",
+      "context": "Mobilité : Certaines écoles à l’étranger coûtent moins cher (ex : Allemagne ~500 €/an).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Travail étudiant : Jobs en parallèle (10–15h/semaine) pour couvrir 30–50% des frais",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "Travail étudiant : Jobs en parallèle (10–15h/semaine) pour couvrir 30–50% des frais.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian embauche : ~35 000 € brut/an",
+      "stat_value": 35000,
+      "stat_unit": "€ brut/an",
+      "context": "Dette : Un prêt étudiant >30 000 € peut peser lourd en début de carrière (salaire médian embauche : ~35 000 € brut/an — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "apec_region",
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quel est le coût annuel moyen des frais de scolarité en école de commerce pour un programme grande école (PGE) sur 5 années ? Données Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : budget scolarité sur 5 ans."
+    },
+    {
+      "text": "Quels sont les coûts annexes (logement, restauration, transports) pour un étudiant en école de commerce, par région ou en moyenne nationale ? Données CROUS.",
+      "target_corpus": "crous",
+      "priority": 2,
+      "rationale": "Complète le budget avec les dépenses vie étudiante."
+    },
+    {
+      "text": "Existe-t-il des aides financières, bourses ou dispositifs de financement spécifiques pour les étudiants en école de commerce ? Données Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Apporte des solutions pour réduire le coût global."
+    },
+    {
+      "text": "Quel est le salaire médian des jeunes diplômés d'école de commerce (niveau master) après 6 à 18 mois d'insertion professionnelle ? Données MESR insertion_pro.",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Contexte utile pour évaluer le retour sur investissement."
+    },
+    {
+      "text": "Quelles sont les perspectives de recrutement et les salaires moyens pour les cadres issus d'écoles de commerce, par région ? Données APEC et INSEE.",
+      "target_corpus": "multi",
+      "priority": 3,
+      "rationale": "Elargit la réflexion sur la rentabilité des études."
+    }
+  ]
+}
