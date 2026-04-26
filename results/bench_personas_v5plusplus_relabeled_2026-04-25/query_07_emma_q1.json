@@ -1,0 +1,263 @@
+{
+  "idx_global": 7,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q1",
+  "query_type": "factuelle",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "elapsed_gen_s": 11.84,
+  "elapsed_fact_check_s": 8.21,
+  "answer_raw": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian *spécifique* pour un développeur post-M2 informatique.\n2. En **connaissance générale**, la fourchette typique en 2026 pour un profil débutant (bac+5) se situe entre **38 000 € et 45 000 € brut annuel** (soit **2 300–2 800 € brut/mois**), avec des variations fortes selon la localisation, la spécialisation, et le type d’entreprise.\n3. Pour maximiser ton salaire, cible les **compétences critiques** (cybersécurité, cloud, IA) ou les secteurs en tension (fintech, santé, énergie).\n\n---\n\n### **Plan A — Salaire moyen réaliste (profil classique)**\n- **Fourchette** : **38–42k€ brut/an** (2 300–2 600 € brut/mois) pour un poste de **développeur logiciel junior** en ESN ou PME.\n  *Sources* : Baromètres **APEC 2025** et **Welcome to the Jungle** (estimations marché, non vérifiées dans les fiches).\n- **Pour toi** : Si tu sors d’un M2 généraliste sans spécialisation pointue, cette fourchette est la référence. Les **régions** (Île-de-France +15%, provinces dynamiques comme Lyon/Toulouse +5–10%) et l’**alternance** (souvent embauchée en CDI avec prime) jouent fortement.\n\n### **Plan B — Salaire élevé (profil spécialisé ou secteur porteur)**\n- **Fourchette** : **42–48k€ brut/an** (2 600–3 000 € brut/mois) pour des profils **experts en cybersécurité (label SecNumEdu)**, **cloud/DevOps**, ou **data/IA**.\n  *Exemples de formations labellisées* :\n  📍 [Expert en architecture logicielle (SecNumEdu)](https://www.onisep.fr/http/redirection/formation/slug/FOR.7944) — *Pour toi : Le label SecNumEdu est un atout pour viser le haut de la fourchette en SSII ou éditeurs de logiciels.*\n- **Secteurs clés** : Fintech (Paris), santé (dossiers médicaux), énergie (transition numérique). L’**alternance en M2** (salaire ~1 500–1 800 € brut/mois) mène souvent à un CDI avec augmentation.\n\n### **Plan C — Optimisation à long terme (3–5 ans)**\n- **Cible** : **50–70k€ brut/an** en évoluant vers des rôles d’**architecte logiciel**, **tech lead**, ou **expert cybersécurité** (avec certifications type **AWS/Google Cloud**, **CISSP**, ou **thèse CIFRE**).\n- **Pour toi** : Une **thèse CIFRE** (2 500–3 000 € brut/mois pendant 3 ans + CDI garanti) ou un **MBA spécialisé** (ex : HEC Digital) peut accélérer cette progression.\n\n---\n⚠ **Attention aux pièges**\n- **ESN vs Éditeur** : Les ESN (ex : Capgemini, Atos) recrutent largement mais paient souvent **5–10% de moins** qu’un éditeur de logiciels (ex : Dassault Systèmes, SAP) ou une licorne tech.\n- **Localisation** : Un salaire parisien (40k€) équivaut à **32–35k€ en pouvoir d’achat** à Nantes ou Bordeaux (coût du logement).\n- **Alternance ≠ CDI automatique** : Vérifie la clause de **période d’essai post-alternance** (certaines entreprises la prolongent à 6–12 mois).\n\n---\n**Question pour toi** :\nTa priorité est-elle le **salaire immédiat** (cible les secteurs en tension), la **stabilité** (ESN + formation continue), ou la **montée en compétences** (recherche/CIFRE pour viser l’expertise) ?",
+  "answer_annotated": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian *spécifique* pour un développeur post-M2 informatique.\n2. En **connaissance générale**, la fourchette typique en 2026 pour un profil débutant (bac+5) se situe entre **38 000 € et 45 000 € brut annuel** (soit **2 300–2 800 € brut/mois**), avec des variations fortes selon la localisation, la spécialisation, et le type d’entreprise.\n3. Pour maximiser ton salaire, cible les **compétences critiques** (cybersécurité, cloud, IA) ou les secteurs en tension (fintech, santé, énergie).\n\n---\n\n### **Plan A — Salaire moyen réaliste (profil classique)**\n- **Fourchette** : **38–42k€ brut/an** (2 300–2 600 € brut/mois) pour un poste de **développeur logiciel junior** en ESN ou PME.\n  *Sources* : Baromètres **APEC 2025** et **Welcome to the Jungle** (estimations marché, non vérifiées dans les fiches).\n- **Pour toi** : Si tu sors d’un M2 généraliste sans spécialisation pointue, cette fourchette est la référence. Les **régions** (Île-de-France +15%, provinces dynamiques comme Lyon/Toulouse +5–10%) et l’**alternance** (souvent embauchée en CDI avec prime) jouent fortement.\n\n### **Plan B — Salaire élevé (profil spécialisé ou secteur porteur)**\n- **Fourchette** : **42–48k€ brut/an** (2 600–3 000 € brut/mois) pour des profils **experts en cybersécurité (label SecNumEdu)**, **cloud/DevOps**, ou **data/IA**.\n  *Exemples de formations labellisées* :\n  📍 [Expert en architecture logicielle (SecNumEdu)](https://www.onisep.fr/http/redirection/formation/slug/FOR.7944) — *Pour toi : Le label SecNumEdu est un atout pour viser le haut de la fourchette en SSII ou éditeurs de logiciels.*\n- **Secteurs clés** : Fintech (Paris), santé (dossiers médicaux), énergie (transition numérique). L’**alternance en M2** (salaire ~1 500–1 800 € brut/mois) mène souvent à un CDI avec augmentation.\n\n### **Plan C — Optimisation à long terme (3–5 ans)**\n- **Cible** : **50–70k€ brut/an** en évoluant vers des rôles d’**architecte logiciel**, **tech lead**, ou **expert cybersécurité** (avec certifications type **AWS/Google Cloud**, **CISSP**, ou **thèse CIFRE**).\n- **Pour toi** : Une **thèse CIFRE** (2 500–3 000 € brut/mois pendant 3 ans + CDI garanti) ou un **MBA spécialisé** (ex : HEC Digital) peut accélérer cette progression.\n\n---\n⚠ **Attention aux pièges**\n- **ESN vs Éditeur** : Les ESN (ex : Capgemini, Atos) recrutent largement mais paient souvent **5–10% de moins** qu’un éditeur de logiciels (ex : Dassault Systèmes, SAP) ou une licorne tech.\n- **Localisation** : Un salaire parisien (40k€) équivaut à **32–35k€ en pouvoir d’achat** à Nantes ou Bordeaux (coût du logement).\n- **Alternance ≠ CDI automatique** : Vérifie la clause de **période d’essai post-alternance** (certaines entreprises la prolongent à 6–12 mois).\n\n---\n**Question pour toi** :\nTa priorité est-elle le **salaire immédiat** (cible les secteurs en tension), la **stabilité** (ESN + formation continue), ou la **montée en compétences** (recherche/CIFRE pour viser l’expertise) ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 17,
+    "n_verified": 4,
+    "n_with_disclaimer": 13,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "38 000 € et 45 000 € brut annuel",
+      "stat_value": 41500,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "fourchette typique en 2026 pour un profil débutant (bac+5)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 300–2 800 € brut/mois",
+      "stat_value": 2550,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "fourchette typique en 2026 pour un profil débutant (bac+5)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "38–42k€ brut/an",
+      "stat_value": 40000,
+      "stat_unit": "k€ brut/an",
+      "context_in_response": "salaire moyen réaliste (profil classique) pour un développeur logiciel junior",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 300–2 600 € brut/mois",
+      "stat_value": 2450,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "salaire moyen réaliste (profil classique) pour un développeur logiciel junior",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Île-de-France +15%",
+      "stat_value": 15,
+      "stat_unit": "%",
+      "context_in_response": "régions (Île-de-France +15%, provinces dynamiques comme Lyon/Toulouse +5–10%)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "provinces dynamiques comme Lyon/Toulouse +5–10%",
+      "stat_value": 7.5,
+      "stat_unit": "%",
+      "context_in_response": "régions (Île-de-France +15%, provinces dynamiques comme Lyon/Toulouse +5–10%)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "42–48k€ brut/an",
+      "stat_value": 45000,
+      "stat_unit": "k€ brut/an",
+      "context_in_response": "salaire élevé (profil spécialisé ou secteur porteur)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 600–3 000 € brut/mois",
+      "stat_value": 2800,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "salaire élevé (profil spécialisé ou secteur porteur)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50–70k€ brut/an",
+      "stat_value": 60000,
+      "stat_unit": "k€ brut/an",
+      "context_in_response": "salaire à long terme (3–5 ans)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 500–3 000 € brut/mois",
+      "stat_value": 2750,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "salaire en thèse CIFRE",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "5–10%",
+      "stat_value": 7.5,
+      "stat_unit": "%",
+      "context_in_response": "différence de salaire entre ESN et éditeur de logiciels",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40k€",
+      "stat_value": 40000,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "salaire parisien",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "32–35k€",
+      "stat_value": 33500,
+      "stat_unit": "€ brut/an",
+      "context_in_response": "pouvoir d'achat à Nantes ou Bordeaux",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context_in_response": "taux_emploi_3ans dans les fiches sources",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context_in_response": "taux_emploi_6ans dans les fiches sources",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context_in_response": "taux_cdi dans les fiches sources",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "salaire_median_embauche dans les fiches sources",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.2537,
+      "nom": "expert en ingénierie du développement et en architecture logicielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.2453,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 1.2453,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9184,
+      "nom": "Expert en développement logiciel",
+      "etablissement": "OPENCLASSROOMS",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.914,
+      "nom": "diplôme d'ingénieur de l'École polytechnique universitaire de l'université Paris-Saclay spécialité i",
+      "etablissement": "France",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8388,
+      "nom": "Testeur logiciel",
+      "etablissement": "M2I",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8362,
+      "nom": "expert en ingénierie et développement de logiciels pour l'industrie",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.835,
+      "nom": "Concepteur développeur de solutions informatiques",
+      "etablissement": "42",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8333,
+      "nom": "Développeur commercial et marketing",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8326,
+      "nom": "Concepteur développeur d'applications",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    }
+  ]
+}

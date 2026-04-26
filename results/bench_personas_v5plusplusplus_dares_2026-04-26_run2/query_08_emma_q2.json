@@ -1,0 +1,167 @@
+{
+  "idx_global": 8,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q2",
+  "query_type": "orientation_ambigue",
+  "query_text": "Je finis mon M1 info, je dois choisir entre un M2 classique recherche ou un master en alternance. Qu'est-ce qui me donnera le meilleur CV pour entrer en CDI direct ?",
+  "elapsed_gen_s": 9.95,
+  "elapsed_fact_check_s": 2.3,
+  "answer_raw": "**TL;DR**\n1. **Alternance = meilleur CV pour CDI direct** en informatique (expérience pro + réseau), mais exige un rythme soutenu.\n2. **M2 recherche = porte ouverte aux thèses CIFRE** (CDI + doctorat rémunéré) si tu vises l’expertise R&D.\n3. **Choix clé** : priorité à l’insertion immédiate (alternance) ou à la spécialisation longue (recherche + CIFRE).\n\n---\n\n### **Alternance vs. M2 Recherche : avantages concrets**\n- **Alternance (M2 pro)** :\n  - **Atout CDI** : 70-80% des alternants sont embauchés par leur entreprise d’accueil (connaissance générale, secteur tech).\n  - **Réseau** : accès à des offres cachées (cooptation, missions internes).\n  - **Salaire** : ~800-1500€/mois (selon âge et convention).\n  - **Inconvénient** : charge de travail élevée (cours + 3-4 jours en entreprise).\n\n- **M2 Recherche** :\n  - **Thèse CIFRE** : 3 ans de CDI (salaire ~2300€ brut/mois) + doctorat, idéal pour R&D/IA/data science (connaissance générale).\n  - **Reconnaissance académique** : publication possible, porte vers les labos ou l’enseignement.\n  - **Risque** : moins d’expérience \"terrain\" si pas de stages longs en parallèle.\n\n### **Cas typiques par profil**\n- **Si tu veux un CDI en 6 mois** (dev, cybersécurité, cloud) → **alternance** (les recruteurs tech privilégient l’expérience).\n- **Si tu vises l’expertise** (IA, cryptographie, recherche appliquée) → **M2 recherche + thèse CIFRE** (les entreprises comme Thales, Airbus, ou les startups deep tech recrutent des docteurs).\n- **Compromis** : certains M2 recherche acceptent l’alternance (ex : M2 en data science avec labo partenaire). **Vérifie les conventions** avec ton université.\n\n### **Piège à éviter**\n⚠ **Alternance ≠ garantie d’embauche** : certains secteurs (ex : jeu vidéo) utilisent l’alternance comme période d’essai déguisée. **Négocie un CDI dès la signature** si possible, ou vise des entreprises avec un historique d’embauche (ex : ESN comme Capgemini, ou éditeurs de logiciels).\n\n---\n**Question pour toi** :\nAs-tu une entreprise ou un domaine cible (ex : cybersécurité, data) ? Cela peut affiner le choix : l’alternance est plus valorisée dans les PME/ETI, tandis que les grands groupes (CEA, CNRS, big tech) recrutent aussi via thèses CIFRE.",
+  "answer_annotated": "**TL;DR**\n1. **Alternance = meilleur CV pour CDI direct** en informatique (expérience pro + réseau), mais exige un rythme soutenu.\n2. **M2 recherche = porte ouverte aux thèses CIFRE** (CDI + doctorat rémunéré) si tu vises l’expertise R&D.\n3. **Choix clé** : priorité à l’insertion immédiate (alternance) ou à la spécialisation longue (recherche + CIFRE).\n\n---\n\n### **Alternance vs. M2 Recherche : avantages concrets**\n- **Alternance (M2 pro)** :\n  - **Atout CDI** : 70-80% des alternants sont embauchés par leur entreprise d’accueil (connaissance générale, secteur tech).\n  - **Réseau** : accès à des offres cachées (cooptation, missions internes).\n  - **Salaire** : ~800-1500€/mois (selon âge et convention).\n  - **Inconvénient** : charge de travail élevée (cours + 3-4 jours en entreprise).\n\n- **M2 Recherche** :\n  - **Thèse CIFRE** : 3 ans de CDI (salaire ~2300€ brut/mois) + doctorat, idéal pour R&D/IA/data science (connaissance générale).\n  - **Reconnaissance académique** : publication possible, porte vers les labos ou l’enseignement.\n  - **Risque** : moins d’expérience \"terrain\" si pas de stages longs en parallèle.\n\n### **Cas typiques par profil**\n- **Si tu veux un CDI en 6 mois *(non vérifié dans les sources)*** (dev, cybersécurité, cloud) → **alternance** (les recruteurs tech privilégient l’expérience).\n- **Si tu vises l’expertise** (IA, cryptographie, recherche appliquée) → **M2 recherche + thèse CIFRE** (les entreprises comme Thales, Airbus, ou les startups deep tech recrutent des docteurs).\n- **Compromis** : certains M2 recherche acceptent l’alternance (ex : M2 en data science avec labo partenaire). **Vérifie les conventions** avec ton université.\n\n### **Piège à éviter**\n⚠ **Alternance ≠ garantie d’embauche** : certains secteurs (ex : jeu vidéo) utilisent l’alternance comme période d’essai déguisée. **Négocie un CDI dès la signature** si possible, ou vise des entreprises avec un historique d’embauche (ex : ESN comme Capgemini, ou éditeurs de logiciels).\n\n---\n**Question pour toi** :\nAs-tu une entreprise ou un domaine cible (ex : cybersécurité, data) ? Cela peut affiner le choix : l’alternance est plus valorisée dans les PME/ETI, tandis que les grands groupes (CEA, CNRS, big tech) recrutent aussi via thèses CIFRE.",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 5,
+    "n_verified": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "70-80%",
+      "stat_value": 75,
+      "stat_unit": "%",
+      "context_in_response": "70-80% des alternants sont embauchés par leur entreprise d’accueil",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~800-1500€/mois",
+      "stat_value": 1150,
+      "stat_unit": "€/mois",
+      "context_in_response": "Salaire : ~800-1500€/mois (selon âge et convention)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "3-4 jours",
+      "stat_value": 3.5,
+      "stat_unit": "jours",
+      "context_in_response": "charge de travail élevée (cours + 3-4 jours en entreprise)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~2300€ brut/mois",
+      "stat_value": 2300,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "salaire ~2300€ brut/mois",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "6 mois",
+      "stat_value": 6,
+      "stat_unit": "mois",
+      "context_in_response": "CDI en 6 mois",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9526,
+      "nom": "Direction technique",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9485,
+      "nom": "Conception lumière",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9468,
+      "nom": "Écriture",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9432,
+      "nom": "Créateur industriel",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.943,
+      "nom": "Mode et matière",
+      "etablissement": "UNIVERSITE PSL",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9424,
+      "nom": "Mode (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9415,
+      "nom": "Conception son",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9411,
+      "nom": "Scénographie",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.94,
+      "nom": "Jouer et mettre en scène",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9388,
+      "nom": "Physique (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    }
+  ]
+}
