@@ -19,6 +19,7 @@ from typing import Any
 
 from mistralai.client import Mistral
 
+from src.agent.retry import call_with_retry
 from src.agent.tool import ToolRegistry
 
 
@@ -54,6 +55,8 @@ class Agent:
     system_prompt: str = DEFAULT_SYSTEM_PROMPT
     max_iterations: int = 5
     timeout_ms: int = 180_000  # ADR-047
+    max_retries_per_call: int = 3  # retry exponential backoff (cf retry.py)
+    retry_initial_backoff: float = 2.0
 
     def run(self, question: str) -> AgentRunResult:
         """Boucle orchestration : question → final answer.
@@ -71,11 +74,15 @@ class Agent:
 
         for iteration in range(self.max_iterations):
             try:
-                response = self.client.chat.complete(
-                    model=self.model,
-                    messages=messages,
-                    tools=self.registry.to_mistral_schemas() or None,
-                    tool_choice="auto" if len(self.registry) else None,
+                response = call_with_retry(
+                    lambda: self.client.chat.complete(
+                        model=self.model,
+                        messages=messages,
+                        tools=self.registry.to_mistral_schemas() or None,
+                        tool_choice="auto" if len(self.registry) else None,
+                    ),
+                    max_retries=self.max_retries_per_call,
+                    initial_backoff=self.retry_initial_backoff,
                 )
             except Exception as e:
                 return AgentRunResult(
