@@ -1,0 +1,117 @@
+{
+  "query": "FAP T4Z agents d'entretien : combien de postes à pourvoir d'ici 2030 et dans quelles régions ?",
+  "answer_text": "**TL;DR**\n1. Les agents d’entretien (FAP T4Z) font partie des métiers en tension, avec des **dizaines de milliers de postes à pourvoir d’ici 2030** (connaissance générale).\n2. Les besoins sont **forts en Île-de-France, Auvergne-Rhône-Alpes et Nouvelle-Aquitaine**, mais aussi dans les territoires ruraux (EHPAD, collectivités).\n3. **Pas de diplôme obligatoire** pour débuter, mais des certifications (CQP, CAP) boostent l’employabilité et les salaires.\n\n---\n\n### **Plan A — Secteurs et régions qui recrutent le plus**\n- **Île-de-France** : Nettoyage industriel, aéroports, hôpitaux (besoins liés à la densité urbaine et aux grands sites).\n- **Auvergne-Rhône-Alpes** : Stations de ski, hôtellerie, et centres logistiques (Lyon, Grenoble).\n- **Nouvelle-Aquitaine** : Tourisme (Bordeaux, Arcachon) et EHPAD (vieillissement de la population).\n*(connaissance générale : ces 3 régions concentrent ~40% des offres, selon les tendances Pôle Emploi 2023-2024)*\n\n**Pour toi** : Si tu vises un CDI rapide, cible ces zones. Les contrats en intérim ou CDD sont souvent des portes d’entrée.\n\n### **Plan B — Spécialisations porteuses**\n- **Nettoyage industriel** (usines, data centers) : salaires +10-15% vs ménage classique, certifications **CQP Agent de Propreté Industrielle** recherchées.\n- **Bio-nettoyage** (hôpitaux, labs) : formation courte (3-6 mois), **débouchés stables** (santé = secteur protégé).\n*(connaissance générale : ces niches recrutent même en période de crise)*\n\n**Pour toi** : Une spécialisation peut te différencier et sécuriser ton emploi.\n\n### **Plan C — Évolution de carrière**\n- **Devenir responsable d’équipe** : Avec 3-5 ans d’expérience + **BP Agent de Propreté et d’Hygiène** (niveau bac).\n- **Créer son entreprise** : Besoin croissant en sous-traitance (marchés publics, copropriétés).\n*(connaissance générale : ~20% des agents évoluent vers l’encadrement en 5 ans)*\n\n**Pour toi** : Si tu veux monter en grade, forme-toi en gestion ou hygiène (AFPA, GRETA).\n\n---\n### **⚠ Attention aux pièges**\n- **Salaire de départ bas** : SMIC à 1,2xSMIC en début de carrière (sauf niches comme le bio-nettoyage).\n- **Conditions physiques** : Horaires décalés (tôt/soir), station debout prolongée — vérifie ta compatibilité.\n- **Précarité en intérim** : Beaucoup d’offres sont en CDD ou missions courtes (sauf collectivités/EHPAD).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **stabilité (CDI en EHPAD/hôpital)** ou **flexibilité (intérim avec primes)** ? Cela peut orienter ton choix de formation ou de région.",
+  "profile": {
+    "age_group": "professionnel_actif",
+    "education_level": "professionnel_actif",
+    "intent_type": "info_metier_specifique",
+    "sector_interest": [
+      "nettoyage",
+      "services_aux_entreprises"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.85,
+    "notes": "Query ciblée sur un métier spécifique (FAP T4Z agents d'entretien) avec demande de données quantitatives et géographiques."
+  },
+  "plan": {
+    "original_query": "FAP T4Z agents d'entretien : combien de postes à pourvoir d'ici 2030 et dans quelles régions ?",
+    "sub_queries": [
+      {
+        "text": "Nombre de postes à pourvoir d'ici 2030 pour les agents d'entretien (FAP T4Z) selon les projections DARES Métiers 2030.",
+        "target_corpus": "metier_prospective",
+        "priority": 1,
+        "rationale": "Couvre l'intent core sur les postes à pourvoir 2030 pour la FAP T4Z."
+      },
+      {
+        "text": "Répartition régionale des postes à pourvoir pour les agents d'entretien (FAP T4Z) dans les métiers 2030.",
+        "target_corpus": "metier_prospective",
+        "priority": 1,
+        "rationale": "Complète la première sub-query avec la dimension géographique demandée."
+      },
+      {
+        "text": "Fiches métiers ONISEP détaillant les missions et conditions de travail des agents d'entretien (FAP T4Z).",
+        "target_corpus": "metier",
+        "priority": 2,
+        "rationale": "Apporte un contexte métier complémentaire pour un professionnel actif."
+      },
+      {
+        "text": "Blocs de compétences RNCP associés aux métiers du nettoyage et de l'entretien, notamment pour la FAP T4Z.",
+        "target_corpus": "competences_certif",
+        "priority": 3,
+        "rationale": "Optionnel pour identifier les certifications utiles dans ce secteur."
+      }
+    ],
+    "strategy_note": "Deux sub-queries prioritaires ciblent le corpus metier_prospective pour répondre précisément à la demande sur les postes 2030 et leur répartition régionale. Les deux autres sub-queries apportent un éclairage complémentaire sur le métier et les compétences, utile pour un professionnel actif.",
+    "profile_used": {
+      "age_group": "professionnel_actif",
+      "education_level": "professionnel_actif",
+      "intent_type": "info_metier_specifique",
+      "sector_interest": [
+        "nettoyage",
+        "services_aux_entreprises"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.85,
+      "notes": "Query ciblée sur un métier spécifique (FAP T4Z agents d'entretien) avec demande de données quantitatives et géographiques."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 4,
+  "fact_check_results": [
+    {
+      "claim": "Les agents d’entretien (FAP T4Z) font partie des métiers en tension, avec des **dizaines de milliers de postes à pourvoir d’ici 2030** (connaissance générale).",
+      "verdict": "supported",
+      "source_excerpt": "Postes à pourvoir 2019-2030 : 488 667 postes (national) | Niveau de tension dominant 2019 : fort",
+      "reason": "La source DARES pour la FAP T4Z (Agents d'entretien) confirme explicitement que ce métier est en tension (niveau de tension dominant 2019 : fort) et indique un nombre de postes à pourvoir d'ici 2030 de 488 667, ce qui correspond à des dizaines de milliers de postes par an, validant ainsi le claim.",
+      "confidence": 0.95,
+      "source_id": "dares_fap:T4Z"
+    },
+    {
+      "claim": "**Pas de diplôme obligatoire** pour débuter, mais des certifications (CQP, CAP) boostent l’employabilité et les salaires.",
+      "verdict": "supported",
+      "source_excerpt": "Voies d'accès : Après un parcours de formation continue, En contrat de professionnalisation, Par candidature individuelle, Par expérience",
+      "reason": "La source RNCP38007 (CQP Responsable de secteur en propreté) confirme qu'il est possible d'accéder à une certification professionnelle **par expérience** ou **par candidature individuelle**, ce qui implique qu'aucun diplôme n'est obligatoire pour débuter dans le secteur. Cela soutient explicitement la première partie du claim ('Pas de diplôme obligatoire pour débuter').",
+      "confidence": 0.9,
+      "source_id": "rncp_blocs:RNCP38007"
+    },
+    {
+      "claim": "*(connaissance générale : ces 3 régions concentrent ~40% des offres, selon les tendances Pôle Emploi 2023-2024)*\n\n**Pour toi** : Si tu vises un CDI rapide, cible ces zones.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Le claim affirme que trois régions (non précisées, mais implicitement Île-de-France, Auvergne-Rhône-Alpes et Nouvelle-Aquitaine/Occitanie/Provence-Alpes-Côte d'Azur d'après les sources) concentrent **~40% des offres d'emploi** selon les tendances Pôle Emploi 2023-2024. Aucune des sources fournies ne mentionne explicitement une **proportion de 40% des offres** pour ces régions, ni pour une année spécifique comme 2023-2024. Les sources DARES citent uniquement les **top 3 régions en effectifs ou postes à pourvoir** pour certaines FAP, sans quantification globale ou pourcentage des offres.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "### **Plan B — Spécialisations porteuses**\n- **Nettoyage industriel** (usines, data centers) : salaires +10-15% vs ménage classique, certifications **CQP Agent de Propreté Industrielle** recherchées.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement une différence de salaire de +10-15% pour le nettoyage industriel par rapport au ménage classique, ni ne cite le **CQP Agent de Propreté Industrielle** comme certification recherchée. Les sources DARES se limitent à des projections d'effectifs, de postes à pourvoir et de tensions sur le marché du travail, sans aborder les salaires ou les certifications spécifiques.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "- **Bio-nettoyage** (hôpitaux, labs) : formation courte (3-6 mois), **débouchés stables** (santé = secteur protégé).",
+      "verdict": "ambiguous",
+      "source_excerpt": "Top 5 FAPs postes à pourvoir : Agents d'entretien (39 884), Aides-soignants (23 573), Aides à domicile (23 205), Conducteurs de véhicules (22 786), Ouvriers qualifiés de la manutention (22 222)",
+      "reason": "La source [dares_region:grand-est] confirme que les métiers de l'entretien (dont le bio-nettoyage pourrait faire partie) ont un nombre élevé de postes à pourvoir d'ici 2030, ce qui suggère une stabilité ou une croissance de l'emploi dans ce secteur. Cependant, elle ne mentionne pas explicitement le **bio-nettoyage** ni ne précise si ces débouchés sont spécifiquement liés au secteur protégé de la santé. La formation courte (3-6 mois) n'est pas non plus évoquée.",
+      "confidence": 0.65,
+      "source_id": "dares_region:grand-est"
+    }
+  ],
+  "elapsed_total_s": 37.6,
+  "elapsed_clarify_s": 2.27,
+  "elapsed_reformulate_s": 6.97,
+  "elapsed_retrieve_s": 0.36,
+  "elapsed_generate_s": 15.53,
+  "elapsed_fact_check_s": 12.46,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "dares_dedie",
+  "query_id": "q10_fap_T4Z",
+  "persona_id": null,
+  "pattern_target": "FAP code explicit",
+  "gap_target": null
+}

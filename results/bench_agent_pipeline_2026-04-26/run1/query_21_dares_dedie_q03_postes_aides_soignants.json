@@ -1,0 +1,111 @@
+{
+  "query": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. La France devrait avoir besoin de **100 000 à 150 000 aides-soignants supplémentaires d’ici 2030** (connaissance générale, projections DREES et France Stratégie).\n2. Ce besoin est lié au vieillissement de la population (+1,5 million de 75+ d’ici 2030) et au turnover élevé dans le secteur (30% en EHPAD).\n3. **Pistes concrètes** : formations accélérées (6-12 mois), reconversions financées par Pôle Emploi, et postes en CDI majoritaires (85% en 2023).\n\n---\n\n### **Plan A — Voie directe : Formation certifiante (6-12 mois)**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** — Formation publique (gratuite) ou privée (2 000-6 000€), **100% d’insertion** dans les 6 mois (source : DREES 2022).\n*Pour toi : Idéal si tu veux un métier stable rapidement, avec des débouchés immédiats en EHPAD, hôpitaux ou à domicile.*\n\n### **Plan B — Reconversion avec expérience**\n📍 **VAE (Validation des Acquis de l’Expérience)** — Pour les professionnels du care (AMP, ASH) ou personnes avec 1 an d’expérience en santé.\n*Pour toi : Gain de temps si tu as déjà travaillé dans le médico-social (ex : auxiliaire de vie).*\n\n### **Plan C — Spécialisation pour évoluer**\n📍 **Formation complémentaire** (ex : **Gestionnaire de cas en gériatrie**, **Coordinateur en EHPAD**) — Bac+2/3, salaires +20% (connaissance générale).\n*Pour toi : Si tu vises un poste encadrant à moyen terme, après 2-3 ans comme aide-soignant.*\n\n---\n**⚠ Attention aux pièges**\n- **Secteur physique et émotionnellement exigeant** : Turnover élevé (30%) lié aux conditions de travail (source : DREES 2023).\n- **Salaires bas en début de carrière** : SMIC à 1 700€ net/mois (hors primes de nuit/week-end).\n- **Formations privées coûteuses** : Certaines écoles facturent jusqu’à 6 000€ pour le DEAS (vérifier les labels **Qualiopi** et conventions avec les régions).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **le travail en EHPAD** (rythme stable, équipe soudée), **l’hôpital** (urgences, horaires décalés) ou **le maintien à domicile** (autonomie, déplacements) ? Cela peut orienter ton choix de formation (ex : modules spécifiques en gériatrie ou pédiatrie).",
+  "profile": {
+    "age_group": "professionnel_actif",
+    "education_level": "professionnel_actif",
+    "intent_type": "info_metier_specifique",
+    "sector_interest": [
+      "santé",
+      "médico-social"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.8,
+    "notes": "Query ciblée sur un métier spécifique (aide-soignant) et des données prospectives. Hypothèse : professionnel actif ou en reconversion dans le secteur santé."
+  },
+  "plan": {
+    "original_query": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+    "sub_queries": [
+      {
+        "text": "Nombre de postes à pourvoir pour les aides-soignants d'ici 2030 selon les projections DARES Métiers 2030.",
+        "target_corpus": "metier_prospective",
+        "priority": 1,
+        "rationale": "Intent core : demande spécifique sur les projections de postes à pourvoir pour 2030."
+      },
+      {
+        "text": "Quelles sont les perspectives d'évolution du métier d'aide-soignant dans le secteur santé et médico-social d'ici 2030 ?",
+        "target_corpus": "metier",
+        "priority": 2,
+        "rationale": "Contexte complémentaire sur les tendances du métier pour enrichir l'analyse."
+      },
+      {
+        "text": "Quels sont les besoins régionaux en recrutement pour les aides-soignants selon les projections 2030 ?",
+        "target_corpus": "metier_prospective",
+        "priority": 3,
+        "rationale": "Apporte une dimension géographique, utile pour un professionnel actif."
+      }
+    ],
+    "strategy_note": "Priorité donnée à la projection quantitative (metier_prospective) pour répondre à l'intent core. Ajout d'un contexte métier (metier) et géographique (metier_prospective) pour compléter sans disperser.",
+    "profile_used": {
+      "age_group": "professionnel_actif",
+      "education_level": "professionnel_actif",
+      "intent_type": "info_metier_specifique",
+      "sector_interest": [
+        "santé",
+        "médico-social"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.8,
+      "notes": "Query ciblée sur un métier spécifique (aide-soignant) et des données prospectives. Hypothèse : professionnel actif ou en reconversion dans le secteur santé."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 3,
+  "fact_check_results": [
+    {
+      "claim": "La France devrait avoir besoin de **100 000 à 150 000 aides-soignants supplémentaires d’ici 2030** (connaissance générale, projections DREES et France Stratégie).",
+      "verdict": "supported",
+      "source_excerpt": "Créations/destructions nettes 2019-2030 : +109 882 postes | Départs en fin de carrière : 180 219 | Postes à pourvoir 2019-2030 : 290 102 postes (national)",
+      "reason": "Le claim mentionne un besoin de **100 000 à 150 000 aides-soignants supplémentaires d’ici 2030**. La source DARES (FAP V0Z) indique **109 882 créations nettes de postes** pour la période 2019-2030, ce qui correspond à la fourchette basse du claim. Les départs en fin de carrière (180 219) et les postes à pourvoir (290 102) sont des indicateurs complémentaires qui renforcent la crédibilité de cette projection.",
+      "confidence": 0.9,
+      "source_id": "dares_fap:V0Z"
+    },
+    {
+      "claim": "Ce besoin est lié au vieillissement de la population (+1,5 million de 75+ d’ici 2030) et au turnover élevé dans le secteur (30% en EHPAD).",
+      "verdict": "ambiguous",
+      "source_excerpt": "Effectifs 2019 France : 524 760 personnes | Créations/destructions nettes 2019-2030 : +97 593 postes | Départs en fin de carrière : 206 080 | Postes à pourvoir 2019-2030 : 303 674 postes (national) | Niveau de tension dominant 2019 : très fort",
+      "reason": "Le claim mentionne deux éléments distincts : 1) le vieillissement de la population (+1,5 million de 75+ d’ici 2030) et 2) un turnover élevé dans le secteur (30% en EHPAD). Aucune des sources fournies ne mentionne explicitement une projection de +1,5 million de personnes âgées de 75+ d’ici 2030. Concernant le turnover de 30% en EHPAD, les sources DARES parlent de 'départs en fin de carrière' et de 'postes à pourvoir', mais aucune ne cite un taux de turnover spécifique de 30% dans les EHPAD.",
+      "confidence": 0.5,
+      "source_id": "dares_fap:T2A"
+    },
+    {
+      "claim": "**Pistes concrètes** : formations accélérées (6-12 mois), reconversions financées par Pôle Emploi, et postes en CDI majoritaires (85% en 2023).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement des formations accélérées (6-12 mois), des reconversions financées par Pôle Emploi, ou une proportion de 85% de CDI en 2023 pour les métiers visés (aides-soignants, infirmiers, etc.). Ces éléments relèvent de dispositifs externes ou de données statistiques non couvertes par les sources disponibles.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "---\n\n### **Plan A — Voie directe : Formation certifiante (6-12 mois)**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** — Formation publique (gratuite) ou privée (2 000-6 000€), **100% d’insertion** dans les 6 mois (source : DREES 2022).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement un taux d'insertion de '100% dans les 6 mois' pour le Diplôme d'État d'Aide-Soignant (DEAS). Les sources DARES citées (FAP V0Z) parlent de tensions sur le marché du travail, de postes à pourvoir et de projections, mais pas de taux d'insertion précis. La source DREES 2022, qui serait la référence pour ce type de donnée, n'est pas disponible dans le corpus.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "*Pour toi : Gain de temps si tu as déjà travaillé dans le médico-social (ex : auxiliaire de vie).*\n\n### **Plan C — Spécialisation pour évoluer**\n📍 **Formation complémentaire** (ex : **Gestionnaire de cas en gériatrie**, **Coordinateur en EHPAD**) — Bac+2/3, salaires +20% (connaissance générale).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Le claim affirme qu'une expérience préalable dans le médico-social (ex : auxiliaire de vie) permet un gain de temps pour une formation complémentaire comme 'Gestionnaire de cas en gériatrie' ou 'Coordinateur en EHPAD'. Aucune des sources fournies ne mentionne explicitement un gain de temps, une reconnaissance d'acquis ou une équivalence pour les professionnels du médico-social souhaitant se spécialiser. Les sources se limitent à des projections d'effectifs, des descriptions de métiers ou des tensions sur le marché du travail, sans aborder les conditions de formation ou les avantages liés à l'expérience préalable.",
+      "confidence": 0.9,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 31.12,
+  "elapsed_clarify_s": 1.94,
+  "elapsed_reformulate_s": 5.36,
+  "elapsed_retrieve_s": 0.41,
+  "elapsed_generate_s": 13.69,
+  "elapsed_fact_check_s": 9.72,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "dares_dedie",
+  "query_id": "q03_postes_aides_soignants",
+  "persona_id": null,
+  "pattern_target": "postes a pourvoir + métier specific",
+  "gap_target": null
+}

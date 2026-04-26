@@ -1,0 +1,95 @@
+{
+  "query": "Quels blocs de compétences valide le BTS comptabilité ?",
+  "answer_text": "**TL;DR**\n1. Le BTS Comptabilité et Gestion valide **6 blocs de compétences** clés, alignés sur les attentes des métiers de la comptabilité et de la gestion.\n2. Ces blocs couvrent à la fois des savoirs techniques (comptabilité, fiscalité) et des savoir-faire transversaux (communication, digitalisation).\n3. Pour toi : ces compétences sont directement exploitables en entreprise ou en poursuite d’études (DCG, licence pro).\n\n---\n\n### **Plan A — Cœur de métier : les 3 blocs techniques**\nLe BTS Comptabilité et Gestion certifie **3 blocs professionnels** centrés sur les fondamentaux du métier :\n1. **Gestion comptable, fiscale et sociale** : tenue des comptes, déclarations fiscales, paie (logiciels comme Ciel, Sage).\n2. **Analyse et prévision de l’activité** : tableaux de bord, budgets, analyse financière.\n3. **Fiabilisation de l’information comptable** : contrôle interne, audit, normes (PCG, IFRS).\n*(Source : [référentiel officiel du BTS CG — ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10529))*\n\n**Pour toi** : Ces blocs sont **obligatoires** pour obtenir le diplôme et correspondent aux tâches quotidiennes d’un comptable en entreprise.\n\n---\n\n### **Plan B — Compétences transversales : 2 blocs complémentaires**\nLe diplôme inclut aussi **2 blocs transversaux** pour élargir ton employabilité :\n4. **Communication et relation client** : rédaction de notes, accueil, gestion des conflits (oral/écrit).\n5. **Digitalisation des processus** : maîtrise des outils bureautiques (Excel avancé), ERP (SAP, Oracle), et sécurité des données.\n*(connaissance générale — adaptation aux évolutions du référentiel 2023)*\n\n**Pour toi** : Ces compétences te différencient pour des postes en cabinet (relation clients) ou en entreprise (transformation numérique).\n\n---\n### **Plan C — Bloc optionnel : spécialisation en alternance**\n6. **Parcours personnalisé** (en alternance) : selon ton entreprise d’accueil, tu peux valider des compétences sectorielles (ex : comptabilité publique, gestion de patrimoine).\n*(connaissance générale — variable selon les académies et contrats d’apprentissage)*\n\n**Pour toi** : Idéal si tu vises un secteur spécifique (banque, associations) ou une poursuite en licence pro ciblée.\n\n---\n### **⚠ Attention aux pièges**\n- **Blocs indissociables** : Les 5 premiers blocs sont **obligatoires** pour valider le diplôme. Le 6e dépend de ton parcours.\n- **Épreuves certifiantes** : Chaque bloc est évalué séparément (CCF ou examen final). Un échec sur un bloc = redoublement partiel possible.\n- **Évolution du référentiel** : Depuis 2023, le bloc \"digitalisation\" a remplacé \"organisation du travail\" — vérifie que ta formation est à jour.\n\n---\n**Question pour toi** :\nCes blocs correspondent-ils à tes affinités (chiffres vs relation client) ? Si tu vises un métier précis (expert-comptable, contrôleur de gestion), certains blocs seront plus critiques que d’autres — veux-tu qu’on creuse un débouché en particulier ?",
+  "profile": {
+    "age_group": "etudiant_l1_l3",
+    "education_level": "bac+2",
+    "intent_type": "info_metier_specifique",
+    "sector_interest": [
+      "comptabilité",
+      "gestion"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.85,
+    "notes": "Query explicite sur un BTS comptabilité, donc supposition d'un étudiant en cours de formation ou intéressé par ce diplôme."
+  },
+  "plan": {
+    "original_query": "Quels blocs de compétences valide le BTS comptabilité ?",
+    "sub_queries": [
+      {
+        "text": "Quels sont les blocs de compétences RNCP associés au BTS Comptabilité et Gestion ? Détail des compétences certifiées par ce diplôme.",
+        "target_corpus": "competences_certif",
+        "priority": 1,
+        "rationale": "Intent core : identifier les blocs de compétences spécifiques au BTS Comptabilité via le RNCP."
+      },
+      {
+        "text": "Fiche détaillée du BTS Comptabilité et Gestion : objectifs, programme et débouchés professionnels.",
+        "target_corpus": "formation",
+        "priority": 2,
+        "rationale": "Contexte complémentaire sur le diplôme pour enrichir la réponse."
+      },
+      {
+        "text": "Quels métiers sont accessibles après un BTS Comptabilité et Gestion ? Liste des professions et missions associées.",
+        "target_corpus": "metier",
+        "priority": 3,
+        "rationale": "Apporte une vision métier pour contextualiser l'utilité des compétences validées."
+      }
+    ],
+    "strategy_note": "Sub-query 1 cible directement l'intent core (blocs RNCP). Les sub-queries 2 et 3 ajoutent du contexte utile pour un étudiant en L1-L3, sans disperser l'attention.",
+    "profile_used": {
+      "age_group": "etudiant_l1_l3",
+      "education_level": "bac+2",
+      "intent_type": "info_metier_specifique",
+      "sector_interest": [
+        "comptabilité",
+        "gestion"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.85,
+      "notes": "Query explicite sur un BTS comptabilité, donc supposition d'un étudiant en cours de formation ou intéressé par ce diplôme."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 3,
+  "fact_check_results": [
+    {
+      "claim": "*(Source : [référentiel officiel du BTS CG — ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10529))*\n\n**Pour toi** : Ces blocs sont **obligatoires** pour obtenir le diplôme et correspondent aux tâches quotidiennes d’un comptable en entreprise.",
+      "verdict": "ambiguous",
+      "source_excerpt": "Bloc 1 : Gérer les opérations comptables courantes | Bloc 2 : [...] (RNCP41644)",
+      "reason": "Le claim affirme que les blocs de compétences du BTS CG sont **obligatoires** pour obtenir le diplôme et correspondent aux tâches quotidiennes d’un comptable. \n\n1. **Obligation des blocs** : Les sources RNCP (ex: RNCP41644, RNCP39159) listent des blocs de compétences pour des diplômes de niveau bac+2 (dont le BTS CG), mais aucune ne précise explicitement que **tous** les blocs sont **obligatoires** pour obtenir le diplôme. Elles décrivent les compétences certifiées, mais pas les modalités d'évaluation ou de validation (ex: possibilité de valider des blocs séparément). \n\n2. **Correspondance aux tâches quotidiennes** : La source RNCP41644 (Bloc 1 : *Gérer les opérations comptables courantes*) et la description du métier de comptable (SOURCE 7) confirment que ces blocs couvrent des tâches quotidiennes. Cependant, le claim généralise à **tous** les blocs du BTS CG sans distinction, ce qui n'est pas explicitement soutenu par les sources. \n\nLe claim est donc **partiellement vrai** mais trop absolu pour être classé 'supported'.",
+      "confidence": 0.7,
+      "source_id": "rncp_blocs:RNCP41644"
+    },
+    {
+      "claim": "*(connaissance générale — adaptation aux évolutions du référentiel 2023)*\n\n**Pour toi** : Ces compétences te différencient pour des postes en cabinet (relation clients) ou en entreprise (transformation numérique).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Le claim mentionne une différenciation pour des postes en cabinet (relation clients) ou en entreprise (transformation numérique), en lien avec une adaptation aux évolutions du référentiel 2023. Aucune des sources fournies ne mentionne explicitement ces éléments (relation clients, transformation numérique, ou des compétences spécifiques liées aux évolutions récentes des référentiels). Les sources se limitent à des descriptions générales des métiers, niveaux RNCP, et compétences techniques en comptabilité et gestion.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "- **Évolution du référentiel** : Depuis 2023, le bloc \"digitalisation\" a remplacé \"organisation du travail\" — vérifie que ta formation est à jour.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement un changement dans les référentiels de compétences, notamment le remplacement d'un bloc 'organisation du travail' par un bloc 'digitalisation' depuis 2023. Les sources décrivent des blocs de compétences pour divers diplômes (RNCP), mais sans référence à cette évolution spécifique.",
+      "confidence": 0.9,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 28.94,
+  "elapsed_clarify_s": 2.29,
+  "elapsed_reformulate_s": 5.95,
+  "elapsed_retrieve_s": 0.76,
+  "elapsed_generate_s": 13.12,
+  "elapsed_fact_check_s": 6.81,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "blocs_dedie",
+  "query_id": "q01_blocs_BTS_compta",
+  "persona_id": null,
+  "pattern_target": "bloc + competence",
+  "gap_target": null
+}

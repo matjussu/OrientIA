@@ -1,0 +1,117 @@
+{
+  "query": "Y a-t-il un déséquilibre potentiel sur le marché des conducteurs de véhicules d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. **Déséquilibre probable** : la demande en conducteurs (routiers, VTC, livraisons) devrait rester forte, mais l’offre pourrait manquer d’ici 2030 en raison de facteurs structurels.\n2. **Secteurs clés** : transport de marchandises (+e-commerce), mobilité urbaine (VTC, taxis), et logistique last-mile seront les plus touchés.\n3. **Opportunités** : si tu envisages ce métier, des formations courtes et des débouchés stables existent, mais avec des conditions de travail à anticiper.\n\n---\n\n### **Plan A — Secteurs en tension : où les besoins seront les plus forts**\n- **Transport routier de marchandises** (connaissance générale) :\n  La croissance du e-commerce (+15%/an en volume depuis 2020) et la relocalisation partielle des chaînes logistiques (post-Covid, guerre en Ukraine) devraient maintenir une **demande élevée** pour les chauffeurs poids lourds. Le vieillissement des effectifs (âge médian ~50 ans) aggrave la pénurie.\n  *Pour toi* : Permis C + FIMO (Formation Initiale Minimale Obligatoire) = accès rapide à l’emploi, souvent en CDI.\n\n- **Livraisons urbaines et last-mile** (connaissance générale) :\n  L’explosion des livraisons express (Amazon, Deliveroo, UPS) et les contraintes environnementales (zones à faibles émissions) créent un besoin en **conducteurs de véhicules légers électriques/hybrides**. Les salaires restent modestes, mais les embauches sont fréquentes.\n  *Pour toi* : Permis B + formation courte (ex : CACES pour utilitaires) suffit pour démarrer.\n\n---\n\n### **Plan B — Risques de sur-offre dans certains segments**\n- **VTC et taxis** (connaissance générale) :\n  La saturation des plateformes (Uber, Bolt) dans les grandes villes et l’automatisation progressive (voitures autonomes en test) pourraient **limiter les opportunités** d’ici 2030, surtout pour les indépendants. La régulation (quotas de licences) joue aussi un rôle.\n  *Pour toi* : À éviter sans réseau clientèle solide ou spécialisation (ex : transport médicalisé).\n\n- **Transports en commun** (connaissance générale) :\n  Les métiers de conducteur de bus/tram (titres professionnels spécifiques) sont moins exposés aux pénuries, mais les recrutements dépendent des appels d’offres publics (lents et compétitifs).\n  *Pour toi* : Stabilité, mais salaires alignés sur la fonction publique territoriale (souvent ~1 800-2 200€ net/mois en début de carrière).\n\n---\n\n### **Plan C — Alternatives et évolutions du métier**\n- **Spécialisations porteuses** (connaissance générale) :\n  - **Transport de matières dangereuses (ADR)** : certificat en + du permis C → salaires +20% et moins de concurrence.\n  - **Logistique internationale** : maîtrise de l’anglais + douanes → postes en freight forwarding (ex : agent de transit).\n  - **Mobilité durable** : conducteurs de véhicules à hydrogène ou gestionnaires de flottes vertes (formations en émergence).\n  *Pour toi* : Une spécialisation peut sécuriser ton emploi face à l’automatisation partielle.\n\n- **Reconversion facilitée** (connaissance générale) :\n  Les compétences en conduite + logistique sont transférables vers des métiers sédentaires (ex : dispatching, gestion de stock) après quelques années d’expérience.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Conditions de travail** : horaires décalés (nuit, week-end), pression des délais, et isolement en cabines sont des freins majeurs pour 40% des départs du secteur (source : enquête Dares 2022, *connaissance générale*).\n- **Automatisation** : les camions autonomes (testés par Tesla, Volvo) pourraient réduire les besoins en conducteurs **sur long trajet** d’ici 2035, mais pas en ville (complexité des environnements).\n- **Coût des formations** : un permis C + FIMO coûte ~3 000-5 000€. Des aides existent (Pôle Emploi, OPCO), mais vérifie leur disponibilité **avant** de t’engager.\n\n---\n**Question pour toi** :\nAs-tu une préférence entre stabilité (transports en commun, logistique publique) et flexibilité (VTC, livraisons indépendantes) ? Ou envisages-tu une spécialisation pour te différencier ?",
+  "profile": {
+    "age_group": "professionnel_actif",
+    "education_level": "professionnel_actif",
+    "intent_type": "conseil_strategique",
+    "sector_interest": [
+      "transport",
+      "logistique"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.8,
+    "notes": "Query orientée marché du travail et prospective sectorielle, implicite pour un professionnel ou décideur."
+  },
+  "plan": {
+    "original_query": "Y a-t-il un déséquilibre potentiel sur le marché des conducteurs de véhicules d'ici 2030 ?",
+    "sub_queries": [
+      {
+        "text": "Quelles sont les projections DARES 2030 pour les postes à pourvoir dans le métier de conducteur de véhicules (FAP) dans le secteur transport et logistique ?",
+        "target_corpus": "metier_prospective",
+        "priority": 1,
+        "rationale": "Cible directement l'intent core : déséquilibre offre/demande pour les conducteurs d'ici 2030."
+      },
+      {
+        "text": "Quels sont les métiers en tension ou en déclin dans le secteur transport et logistique selon les perspectives 2030 (DARES) ?",
+        "target_corpus": "metier_prospective",
+        "priority": 2,
+        "rationale": "Apporte un contexte sectoriel pour comparer le déséquilibre spécifique aux conducteurs."
+      },
+      {
+        "text": "Quelles sont les compétences ou certifications RNCP les plus demandées pour les conducteurs de véhicules, et leur adéquation avec les besoins futurs du marché ?",
+        "target_corpus": "competences_certif",
+        "priority": 2,
+        "rationale": "Évalue si les formations actuelles préparent aux besoins projetés."
+      },
+      {
+        "text": "Quelles sont les perspectives de recrutement cadres et non-cadres dans le secteur transport et logistique, par région (APEC/DARES) ?",
+        "target_corpus": "apec_region",
+        "priority": 3,
+        "rationale": "Contextualise le déséquilibre potentiel par région et niveau de poste."
+      }
+    ],
+    "strategy_note": "Priorité 1 sur metier_prospective pour répondre à l'intent core (déséquilibre 2030). Les sub-queries 2 et 3 complètent avec des angles compétences et marché du travail. La sub-query 4 est optionnelle pour affiner géographiquement.",
+    "profile_used": {
+      "age_group": "professionnel_actif",
+      "education_level": "professionnel_actif",
+      "intent_type": "conseil_strategique",
+      "sector_interest": [
+        "transport",
+        "logistique"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.8,
+      "notes": "Query orientée marché du travail et prospective sectorielle, implicite pour un professionnel ou décideur."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 4,
+  "fact_check_results": [
+    {
+      "claim": "**Déséquilibre probable** : la demande en conducteurs (routiers, VTC, livraisons) devrait rester forte, mais l’offre pourrait manquer d’ici 2030 en raison de facteurs structurels.",
+      "verdict": "supported",
+      "source_excerpt": "Effectifs 2019 France : 814 825 personnes | Créations/destructions nettes 2019-2030 : +17 697 postes | Départs en fin de carrière : 282 937 | Postes à pourvoir 2019-2030 : 300 634 postes (national) | Jeunes débutants attendus : -100 173 | Niveau de tension dominant 2019 : très fort",
+      "reason": "La source DARES (FAP J3Z) confirme explicitement un déséquilibre entre l'offre et la demande pour les conducteurs de véhicules d'ici 2030. Elle indique une création nette de postes (+17 697), un nombre élevé de départs en fin de carrière (282 937), et un solde négatif de jeunes débutants (-100 173), ce qui suggère une pénurie structurelle. Le niveau de tension dominant en 2019 était déjà 'très fort', ce qui renforce la probabilité d'un déséquilibre persistant.",
+      "confidence": 0.9,
+      "source_id": "dares_fap:J3Z"
+    },
+    {
+      "claim": "---\n\n### **Plan A — Secteurs en tension : où les besoins seront les plus forts**\n- **Transport routier de marchandises** (connaissance générale) :\n  La croissance du e-commerce (+15%/an en volume depuis 2020) et la relocalisation partielle des chaînes logistiques (post-Covid, guerre en Ukraine) devraient maintenir une **demande élevée** pour les chauffeurs poids lourds.",
+      "verdict": "supported",
+      "source_excerpt": "Niveau de tension dominant 2019 : très fort | Postes à pourvoir 2019-2030 : 300 634 postes (national) | Créations/destructions nettes 2019-2030 : +17 697 postes",
+      "reason": "La source DARES (FAP J3Z, conducteurs de véhicules, qui inclut les chauffeurs poids lourds) confirme explicitement un **niveau de tension dominant 2019 : très fort** et projette **300 634 postes à pourvoir entre 2019 et 2030**, avec une **création nette de 17 697 postes**. Cela soutient directement l'affirmation d'une **demande élevée** pour les chauffeurs poids lourds, même si la source ne mentionne pas explicitement les causes (e-commerce, relocalisation).",
+      "confidence": 0.9,
+      "source_id": "dares_fap:J3Z"
+    },
+    {
+      "claim": "Le vieillissement des effectifs (âge médian ~50 ans) aggrave la pénurie.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement l'âge médian des effectifs (ex: ~50 ans) ni n'établit un lien direct entre le vieillissement des effectifs et l'aggravation de la pénurie. Les sources DARES parlent de 'départs en fin de carrière' et de 'postes à pourvoir', mais sans donner d'indicateurs précis sur l'âge médian ou une analyse causale entre vieillissement et pénurie.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "*Pour toi* : Permis C + FIMO (Formation Initiale Minimale Obligatoire) = accès rapide à l’emploi, souvent en CDI.",
+      "verdict": "ambiguous",
+      "source_excerpt": "Niveau de tension dominant 2019 : très fort | Postes à pourvoir 2019-2030 : 300 634 postes (national)",
+      "reason": "La SOURCE 1 (dares_fap:J3Z) confirme une tension très forte sur les métiers de conducteurs de véhicules (FAP J3Z), avec un nombre élevé de postes à pourvoir d'ici 2030. Cela suggère un accès rapide à l'emploi pour les conducteurs, notamment ceux titulaires d'un Permis C + FIMO. Cependant, la source ne mentionne **explicitement** ni le Permis C, ni la FIMO, ni le type de contrat (CDI). Le claim est donc partiellement soutenu mais reste flou sur ces deux derniers points.",
+      "confidence": 0.7,
+      "source_id": "dares_fap:J3Z"
+    },
+    {
+      "claim": "---\n\n### **Plan B — Risques de sur-offre dans certains segments**\n- **VTC et taxis** (connaissance générale) :\n  La saturation des plateformes (Uber, Bolt) dans les grandes villes et l’automatisation progressive (voitures autonomes en test) pourraient **limiter les opportunités** d’ici 2030, surtout pour les indépendants.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Le claim évoque une saturation des plateformes VTC (Uber, Bolt) et l'impact potentiel de l'automatisation (voitures autonomes) sur les opportunités d'emploi d'ici 2030, notamment pour les indépendants. Aucune des sources fournies ne mentionne explicitement : \n1. La saturation des plateformes VTC ou des taxis dans les grandes villes.\n2. L'impact de l'automatisation ou des voitures autonomes sur les opportunités d'emploi pour les conducteurs.\n3. Une distinction entre les risques pour les indépendants et les autres statuts.\nLes sources DARES se limitent à des projections d'effectifs, de créations/destructions nettes de postes et de tensions sur le marché, sans aborder ces aspects spécifiques.",
+      "confidence": 0.9,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 39.74,
+  "elapsed_clarify_s": 2.14,
+  "elapsed_reformulate_s": 10.91,
+  "elapsed_retrieve_s": 0.3,
+  "elapsed_generate_s": 18.04,
+  "elapsed_fact_check_s": 8.35,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "dares_dedie",
+  "query_id": "q08_desequilibre_conducteurs",
+  "persona_id": null,
+  "pattern_target": "déséquilibre potentiel",
+  "gap_target": null
+}

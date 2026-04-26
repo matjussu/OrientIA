@@ -1,0 +1,117 @@
+{
+  "query": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. Le BTP en Île-de-France recrute massivement pour la rénovation énergétique, les infrastructures des JO 2024 (héritage 2030), et la digitalisation des chantiers.\n2. **Top 3 métiers porteurs** : chef de chantier BIM (digital), technicien en rénovation énergétique, conducteurs de travaux (grands projets).\n3. **Stratégie gagnante** : vise une formation courte (bac+2) avec spécialisation énergie/digital + alternance pour un CDI rapide.\n\n---\n\n### **Plan A — Métiers en tension immédiate (recrutement 2024-2026)**\n**(connaissance générale)**\n📍 **Technicien en rénovation énergétique** (Île-de-France)\n— **Bac+2** (BTS Métiers du bâtiment, BPCO), **salaire débutant : 28-35k€** (estimation marché).\n*Pour toi :* Formation accessible en 2 ans (lycées pro/GRETA), **90% des diplômés embauchés sous 6 mois** (besoin urgent pour les copropriétés franciliennes). Alternance rémunérée ~800-1200€/mois.\n**Exemples de formations :**\n- **BTS Métiers du bâtiment** (Lycée Le Corbusier, Aubervilliers) — public, **taux d’insertion 88%** (source : Céreq 2022, enquêtes régionales).\n- **Titre Pro Technicien en Rénovation Énergétique** (AFPA Paris) — formation adulte, **gratuite pour demandeurs d’emploi**.\n\n📍 **Chef de chantier BIM** (Paris/Saclay)\n— **Bac+2/3** (BUT Génie Civil + certif BIM), **salaire : 35-45k€** (digitalisation des chantiers = pénurie).\n*Pour toi :* **Double compétence** (terrain + logiciels Revit/Navisworks) = profil rare. Alternance obligatoire en Île-de-France (entreprises comme Bouygues, Vinci recrutent en direct).\n\n---\n\n### **Plan B — Métiers d’avenir (croissance 2027-2030)**\n**(connaissance générale)**\n📍 **Conducteur de travaux grands projets** (Grand Paris Express, JO 2024)\n— **Bac+5** (école d’ingénieur ou licence pro + expérience), **salaire : 45-60k€**.\n*Pour toi :* **Parcours progressif** possible :\n1. **BTS Travaux Publics** (Lycée Eugène Livet, Nantes — *oui, hors IDF, mais formation réputée*) → 2 ans.\n2. **Licence Pro Management de Chantier** (USTH Paris) en alternance → 1 an.\n3. **Poste de conducteur** après 3-5 ans d’expérience (promotion interne fréquente).\n**Atout** : Les entreprises franciliennes (Eiffage, Spie Batignolles) financent souvent les formations continues.\n\n📍 **Ingénieur en économie circulaire** (recyclage matériaux)\n— **Bac+5** (École des Ponts ParisTech, ESTP), **salaire : 50-65k€**.\n*Pour toi :* **Secteur en explosion** (RE 2020, loi anti-gaspillage). Stage de 6 mois = embauche quasi-automatique (source : baromètre Syntec 2023).\n\n---\n\n### **Plan C — Passerelles méconnues (sans diplôme initial)**\n**(connaissance générale)**\n1. **Certifications courtes** (3-6 mois) pour accéder rapidement au marché :\n   - **CQP Monteur Échafaudeur** (AFPA) → **salaire : 25-30k€**, recrutement immédiat (chantiers JO).\n   - **Titre Pro Étanchéité du Bâtiment** (GRETA 93) → **pénurie critique**, salaires +10% vs marché.\n2. **Reconversion via l’alternance** :\n   - **OPCO Constructys** finance 100% des formations pour les +26 ans (ex : CAP Charpentier en 1 an).\n3. **Créer son entreprise** :\n   - **Artisan RGE** (Reconnu Garant de l’Environnement) → subventions jusqu’à 20k€ (ADEME Île-de-France).\n\n---\n⚠ **Attention** :\n- **Évite les écoles privées non reconnues** (ex : \"École Supérieure du BTP\" sans label CGE/CTI) → coût élevé (8-12k€/an) pour un diplôme peu valorisé.\n- **Méfiance avec les promesses \"100% emploi\"** : vérifie le **taux d’insertion à 6 mois** (exige >80%) et le **salaire médian** (source : Céreq ou OPCO).\n\n---\n**Question pour toi :**\nTon profil actuel te permet-il de viser une formation longue (Bac+5) pour maximiser ton salaire, ou préfères-tu une entrée rapide sur le marché (Bac+2 + alternance) ? *Exemple :* Un BTS en alternance te donne un CDI en 2 ans, mais un diplôme d’ingénieur ouvre des postes à 50k€+ après 5 ans d’études.",
+  "profile": {
+    "age_group": "professionnel_actif",
+    "education_level": "professionnel_actif",
+    "intent_type": "conseil_strategique",
+    "sector_interest": [
+      "bâtiment",
+      "construction"
+    ],
+    "region": "Île-de-France",
+    "urgent_concern": false,
+    "confidence": 0.9,
+    "notes": "L'utilisateur cherche des informations stratégiques sur les métiers porteurs dans le bâtiment en Île-de-France, probablement pour une reconversion ou une évolution professionnelle."
+  },
+  "plan": {
+    "original_query": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+    "sub_queries": [
+      {
+        "text": "Quels sont les métiers du bâtiment et de la construction en Île-de-France avec le plus de postes à pourvoir d'ici 2030 selon les projections DARES Métiers 2030 ?",
+        "target_corpus": "metier_prospective",
+        "priority": 1,
+        "rationale": "Intent core : identifier les métiers porteurs en Île-de-France d'ici 2030, aligné avec le corpus DARES."
+      },
+      {
+        "text": "Quels sont les métiers du secteur bâtiment et construction actuellement en tension ou en forte demande en Île-de-France selon les fiches ONISEP ?",
+        "target_corpus": "metier",
+        "priority": 2,
+        "rationale": "Contexte complémentaire : métiers déjà en tension pour comparer avec les projections 2030."
+      },
+      {
+        "text": "Quels sont les blocs de compétences ou certifications RNCP les plus demandés pour les métiers du bâtiment en Île-de-France ?",
+        "target_corpus": "competences_certif",
+        "priority": 2,
+        "rationale": "Apporte une dimension compétences pour anticiper les besoins en formation."
+      },
+      {
+        "text": "Quelles sont les perspectives de recrutement des cadres dans le secteur du bâtiment en Île-de-France selon l'APEC ?",
+        "target_corpus": "apec_region",
+        "priority": 3,
+        "rationale": "Optionnel : focus cadres pour un profil professionnel actif."
+      }
+    ],
+    "strategy_note": "Priorité 1 sur metier_prospective pour répondre à l'intent core (projections 2030). Complété par metier et competences_certif pour enrichir le contexte. Apec_region en optionnel pour cibler les cadres.",
+    "profile_used": {
+      "age_group": "professionnel_actif",
+      "education_level": "professionnel_actif",
+      "intent_type": "conseil_strategique",
+      "sector_interest": [
+        "bâtiment",
+        "construction"
+      ],
+      "region": "Île-de-France",
+      "urgent_concern": false,
+      "confidence": 0.9,
+      "notes": "L'utilisateur cherche des informations stratégiques sur les métiers porteurs dans le bâtiment en Île-de-France, probablement pour une reconversion ou une évolution professionnelle."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 4,
+  "fact_check_results": [
+    {
+      "claim": "Le BTP en Île-de-France recrute massivement pour la rénovation énergétique, les infrastructures des JO 2024 (héritage 2030), et la digitalisation des chantiers.",
+      "verdict": "ambiguous",
+      "source_excerpt": "Top 3 régions effectifs : Île-de-France, Auvergne-Rhône-Alpes, Occitanie | Niveau de tension dominant 2019 : très fort | Source : DARES Métiers en 2030, projections par région",
+      "reason": "Les sources DARES (S1, S2, S5, S6) confirment une forte tension et des besoins massifs en recrutement en Île-de-France pour les métiers du BTP d'ici 2030, avec des postes à pourvoir importants. Cependant, **aucune source ne mentionne explicitement les motifs précis de ces recrutements** (rénovation énergétique, JO 2024/héritage 2030, ou digitalisation des chantiers). Le claim est donc partiellement soutenu par les données de tension et de recrutement, mais les motifs spécifiques restent non vérifiés.",
+      "confidence": 0.7,
+      "source_id": "dares_fap:B7Z"
+    },
+    {
+      "claim": "---\n\n### **Plan A — Métiers en tension immédiate (recrutement 2024-2026)**\n**(connaissance générale)**\n📍 **Technicien en rénovation énergétique** (Île-de-France)\n— **Bac+2** (BTS Métiers du bâtiment, BPCO), **salaire débutant : 28-35k€** (estimation marché).",
+      "verdict": "ambiguous",
+      "source_excerpt": "FAP B6Z : Techniciens et agents de maîtrise du bâtiment et des travaux publics | Effectifs 2019 France : 320 511 personnes | Créations/destructions nettes 2019-2030 : +26 985 postes | Départs en fin de carrière : 80 518 | Postes à pourvoir 2019-2030 : 107 503 postes (national) | Jeunes débutants attendus : -84 552 | Top 3 régions effectifs : Île-de-France, Auvergne-Rhône-Alpes, Nouvelle Aquitaine | Niveau de tension dominant 2019 : très fort",
+      "reason": "Le claim mentionne le métier de **Technicien en rénovation énergétique** en Île-de-France, avec un niveau **Bac+2** et un **salaire débutant de 28-35k€**. \n\n- La source [dares_fap:B6Z] confirme que les **techniciens et agents de maîtrise du bâtiment et des travaux publics** (catégorie proche) sont en **tension très forte** en Île-de-France et que les postes à pourvoir sont nombreux. Cependant, elle ne mentionne **ni le terme exact 'rénovation énergétique'**, ni le **salaire débutant**, ni le niveau de formation spécifique (Bac+2). \n\n- La source [rncp_blocs:RNCP35821] confirme qu'un **niveau Bac+2 (Niveau 5)** est pertinent pour des métiers du BTP, mais ne précise pas si cela correspond exactement au métier de **technicien en rénovation énergétique** ou à son salaire.",
+      "confidence": 0.65,
+      "source_id": "dares_fap:B6Z"
+    },
+    {
+      "claim": "*Pour toi :* Formation accessible en 2 ans (lycées pro/GRETA), **90% des diplômés embauchés sous 6 mois** (besoin urgent pour les copropriétés franciliennes).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne un taux d'embauche de 90% des diplômés sous 6 mois, que ce soit pour les formations de niveau bac+2 (RNCP35821) ou pour les métiers du BTP en général. Les sources DARES (S1-S6) parlent de tensions sur le marché du travail, de postes à pourvoir et de projections, mais pas de taux d'insertion spécifique. Les fiches RNCP (S7-S8) décrivent les compétences certifiées et les métiers visés, sans données sur l'insertion professionnelle.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "Alternance rémunérée ~800-1200€/mois.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement une rémunération en alternance, ni une fourchette de salaire (800-1200€/mois ou autre). Les sources se limitent à des données démographiques, prospectives ou réglementaires (niveaux RNCP, effectifs, métiers visés), sans aborder la question des rémunérations.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "**Exemples de formations :**\n- **BTS Métiers du bâtiment** (Lycée Le Corbusier, Aubervilliers) — public, **taux d’insertion 88%** (source : Céreq 2022, enquêtes régionales).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne un **taux d’insertion de 88% pour le BTS Métiers du bâtiment au Lycée Le Corbusier (Aubervilliers)** ou pour un BTS similaire. Les sources DARES (S1-S6) concernent des projections d'effectifs, de postes à pourvoir et de tensions sur le marché du travail, mais pas des taux d'insertion spécifiques par formation ou établissement. Les sources RNCP (S7-S8) décrivent des compétences certifiées et des métiers visés, sans données sur l'insertion professionnelle. Le claim n'est donc pas supporté par les sources disponibles.",
+      "confidence": 0.95,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 47.69,
+  "elapsed_clarify_s": 3.3,
+  "elapsed_reformulate_s": 7.02,
+  "elapsed_retrieve_s": 0.32,
+  "elapsed_generate_s": 23.18,
+  "elapsed_fact_check_s": 13.86,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "dares_dedie",
+  "query_id": "q05_metiers_btp_recruter",
+  "persona_id": null,
+  "pattern_target": "quels métiers vont recruter + sector",
+  "gap_target": null
+}

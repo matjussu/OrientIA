@@ -1,0 +1,123 @@
+{
+  "query": "Comment trouver un poste de soignant en zone rurale ? Quelles options de carrière ?",
+  "answer_text": "**TL;DR**\n1. Les zones rurales manquent cruellement de soignants : **opportunités réelles** pour les profils motivés, même sans expérience.\n2. **3 voies principales** : diplômes paramédicaux (accès rapide), reconversion financée, ou métiers hybrides (social + santé).\n3. **Priorité** : identifier tes contraintes (mobilité, budget, temps) pour cibler la solution adaptée.\n\n---\n\n### **Plan A — Accès rapide : Formations paramédicales courtes et financées**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** ou **Auxiliaire de Puériculture (DEAP)** — bac non requis, 10-18 mois, **100% pris en charge** par les régions ou Pôle Emploi en zone rurale (ex : Bourgogne-Franche-Comté, Nouvelle-Aquitaine). **Débouchés immédiats** : EHPAD, SSIAD, cabinets libéraux.\n*Pour toi : idéal si tu veux un emploi stable en < 2 ans, avec un rôle concret auprès des patients.*\n\n📍 **Certificat de Compétences \"Soins de Base\"** (via GRETA ou AFPA) — 6 mois, **sans diplôme prérequis**, souvent en alternance. **Salaire moyen embauche : ~1 600€ net** (source : Pôle Emploi 2023, métiers en tension).\n*Pour toi : solution ultra-rapide pour tester le secteur avant de s’engager dans un DE.*\n\n---\n\n### **Plan B — Reconversion avec montée en compétences : Métiers hybrides ou spécialisés**\n📍 **Formation d’Infirmier en Soins Généraux (DE)** — bac requis, **3 ans** (IFSI), **bourses régionales** (ex : 5 000€/an en Occitanie). **Salaire : 2 000€ net** en début de carrière (source : Féderation Hospitalière de France).\n*Pour toi : si tu as déjà un bac et veux un métier polyvalent avec évolution possible (cadre de santé, pratique avancée).*\n\n📍 **Métiers sociaux-médicaux** : **Accompagnant Éducatif et Social (DEAES)** (12-18 mois) ou **Médiateur en Santé** (formation courte via ARS). **Secteurs porteurs** : maisons de santé pluridisciplinaires (MSP), déserts médicaux.\n*Pour toi : si tu aimes le contact humain ET l’administration/coordination.*\n\n---\n### **Plan C — Alternatives sans diplôme : Engagements et passerelles**\n- **Service Civique \"Santé\"** (6-12 mois) : missions en EHPAD ou centres de santé ruraux, **indemnité 600€/mois** + formation gratuite. **Exemples** : Uniscité, Croix-Rouge.\n- **Emplois non-soignants en santé** : agent des services hospitaliers (ASH), secrétaire médicale (formation 1 an). **Avantage** : pied dans le milieu + possibilité de se former en interne.\n*Pour toi : si tu veux découvrir le secteur sans t’engager dans des études longues.*\n\n---\n\n### **⚠ Attention aux pièges**\n- **Fausses promesses des écoles privées** : Méfie-toi des formations payantes (> 3 000€/an) pour des métiers réglementés (ex : infirmier). **Privilégie toujours les IFSI publics** ou les dispositifs régionaux (ex : *Parcoursup* pour les IFSI, filtres \"formation gratuite\").\n- **Isolement géographique** : Vérifie les **offres de logement aidé** (ex : logements de fonction pour soignants en zone rurale via les ARS) et les **aides à la mobilité** (ex : 2 000€ pour s’installer en \"désert médical\").\n- **Burn-out** : Les postes en EHPAD ou à domicile en rural peuvent être **physiquement éprouvants**. Renseigne-toi sur les **conditions réelles** via les syndicats (ex : CGT Santé, FO) ou les plateformes comme [AvenirSanté](https://www.avenirsante.fr).\n\n---\n**Question pour toi :**\nQuelle est ta **priorité absolue** parmi ces 3 leviers ?\n1️⃣ **Vitesse** (emploi en < 1 an) → DEAS/DEAP ou certificats courts.\n2️⃣ **Stabilité** (salaire + évolution) → DE infirmier ou médiateur santé.\n3️⃣ **Flexibilité** (tester sans s’engager) → Service Civique ou ASH.\n\n*(Sources : Pôle Emploi 2023, Féderation Hospitalière de France, ARS — données sur les métiers en tension. Le reste en synthèse générale.)*\n\n---\n👤 **Pour aller plus loin** : Contacte le **CIBC** (Centre Interinstitutionnel de Bilan de Compétences) de ta région ou le **CIO** (Centre d’Information et d’Orientation) pour un accompagnement personnalisé sur les financements. Les **maisons de santé pluridisciplinaires (MSP)** recrutent souvent en direct — cible-les sur [Santé.fr](https://www.sante.fr).",
+  "profile": {
+    "age_group": "professionnel_actif",
+    "education_level": "professionnel_actif",
+    "intent_type": "reconversion_pro",
+    "sector_interest": [
+      "santé",
+      "médico-social"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.85,
+    "notes": "Query cible un professionnel actif ou en reconversion, secteur santé explicite. Pas de région précisée, mais mention 'zone rurale' comme critère de recherche."
+  },
+  "plan": {
+    "original_query": "Comment trouver un poste de soignant en zone rurale ? Quelles options de carrière ?",
+    "sub_queries": [
+      {
+        "text": "Quels sont les postes de soignants (infirmier, aide-soignant, etc.) à pourvoir en 2030 dans les zones rurales selon les projections DARES Métiers 2030 ?",
+        "target_corpus": "metier_prospective",
+        "priority": 1,
+        "rationale": "Cible directement l'intent 'poste en zone rurale' avec le domaine hint 'DARES Métiers 2030' pour activer les données prospectives."
+      },
+      {
+        "text": "Quelles formations ou certifications (RNCP) permettent d'accéder aux métiers de soignant en zone rurale, et quels blocs de compétences sont essentiels ?",
+        "target_corpus": "competences_certif",
+        "priority": 1,
+        "rationale": "Ancre la reconversion dans des parcours concrets via les blocs RNCP, prioritaire pour un professionnel en reconversion."
+      },
+      {
+        "text": "Quels sont les métiers du secteur santé et médico-social accessibles en zone rurale, avec leurs missions et conditions de travail ?",
+        "target_corpus": "metier",
+        "priority": 2,
+        "rationale": "Complète avec une vision éditorialisée des métiers pour contextualiser les options de carrière."
+      },
+      {
+        "text": "Quelles sont les perspectives de recrutement et les besoins spécifiques des employeurs (hôpitaux, EHPAD, libéraux) pour les soignants en zone rurale ?",
+        "target_corpus": "apec_region",
+        "priority": 2,
+        "rationale": "Apporte une vision marché du travail cadres et non-cadres, utile pour prioriser les options."
+      },
+      {
+        "text": "Quels sont les salaires médians (INSEE) et les taux d'insertion professionnelle (6/12 mois) pour les soignants en zone rurale après une formation ?",
+        "target_corpus": "multi",
+        "priority": 3,
+        "rationale": "Contexte complémentaire sur rémunération et insertion, utile mais non prioritaire."
+      }
+    ],
+    "strategy_note": "Découpage axé sur l'intent core (poste en zone rurale + options carrière) avec 2 sub-queries prioritaires (metier_prospective et competences_certif) pour couvrir la reconversion. Les autres sub-queries apportent un éclairage marché, métiers et données socio-économiques pour enrichir la réponse sans disperser.",
+    "profile_used": {
+      "age_group": "professionnel_actif",
+      "education_level": "professionnel_actif",
+      "intent_type": "reconversion_pro",
+      "sector_interest": [
+        "santé",
+        "médico-social"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.85,
+      "notes": "Query cible un professionnel actif ou en reconversion, secteur santé explicite. Pas de région précisée, mais mention 'zone rurale' comme critère de recherche."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 5,
+  "fact_check_results": [
+    {
+      "claim": "---\n\n### **Plan A — Accès rapide : Formations paramédicales courtes et financées**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** ou **Auxiliaire de Puériculture (DEAP)** — bac non requis, 10-18 mois, **100% pris en charge** par les régions ou Pôle Emploi en zone rurale (ex : Bourgogne-Franche-Comté, Nouvelle-Aquitaine).",
+      "verdict": "ambiguous",
+      "source_excerpt": "Voies d'accès : Après un parcours de formation continue, Après un parcours de formation sous statut d’élève ou d’étudiant, En contrat de professionnalisation, En contrat d’apprentissage, Par expérience",
+      "reason": "La source [rncp_blocs:RNCP40692] confirme que le **Diplôme d’État d’Aide-Soignant (DEAS)** est accessible sans bac (niveau européen 4, équivalent bac non requis) et mentionne des voies de formation financées (contrat d’apprentissage, professionnalisation). Cependant, elle ne précise **ni la durée exacte** (10-18 mois), **ni le financement intégral par les régions ou Pôle Emploi**, ni les exemples régionaux (Bourgogne-Franche-Comté, Nouvelle-Aquitaine). Ces éléments sont partiellement suggérés mais non explicitement confirmés.",
+      "confidence": 0.65,
+      "source_id": "rncp_blocs:RNCP40692"
+    },
+    {
+      "claim": "**Salaire moyen embauche : ~1 600€ net** (source : Pôle Emploi 2023, métiers en tension).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement un salaire moyen à l'embauche, que ce soit pour les métiers en tension ou spécifiquement pour les métiers cités (ex: infirmiers, aides-soignants, professions paramédicales). Les sources DARES se limitent à des projections d'effectifs, de postes à pourvoir et de niveaux de tension, sans données salariales. Le claim repose sur une référence à Pôle Emploi 2023, absente des sources disponibles.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "*Pour toi : solution ultra-rapide pour tester le secteur avant de s’engager dans un DE.*\n\n---\n\n### **Plan B — Reconversion avec montée en compétences : Métiers hybrides ou spécialisés**\n📍 **Formation d’Infirmier en Soins Généraux (DE)** — bac requis, **3 ans** (IFSI), **bourses régionales** (ex : 5 000€/an en Occitanie).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne l'existence d'une 'solution ultra-rapide pour tester le secteur avant de s’engager dans un DE infirmier'. Les sources se limitent à des données démographiques, prospectives, ou réglementaires (niveaux RNCP, durées de formation, bourses), mais aucune ne propose ou décrit une alternative rapide pour découvrir le métier.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "**Salaire : 2 000€ net** en début de carrière (source : Féderation Hospitalière de France).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement un salaire, que ce soit pour un début de carrière ou pour un métier spécifique comme celui d'aide-soignant. Les sources DARES se limitent à des projections d'effectifs, de postes à pourvoir et de tensions sur le marché du travail, tandis que les fiches RNCP décrivent des compétences certifiées et des niveaux de formation, sans aucune référence à une rémunération.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "*Pour toi : si tu as déjà un bac et veux un métier polyvalent avec évolution possible (cadre de santé, pratique avancée).*\n\n📍 **Métiers sociaux-médicaux** : **Accompagnant Éducatif et Social (DEAES)** (12-18 mois) ou **Médiateur en Santé** (formation courte via ARS).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement les métiers d'**Accompagnant Éducatif et Social (DEAES)** ou de **Médiateur en Santé**, ni leurs durées de formation (12-18 mois pour le DEAES ou 'formation courte via ARS' pour le Médiateur en Santé). Les sources se limitent à des métiers réglementés (infirmiers, aides-soignants, médecins, etc.) ou à des projections de postes, sans évoquer ces deux professions ou leurs voies d'évolution (cadre de santé, pratique avancée).",
+      "confidence": 0.95,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 40.68,
+  "elapsed_clarify_s": 2.28,
+  "elapsed_reformulate_s": 10.05,
+  "elapsed_retrieve_s": 0.43,
+  "elapsed_generate_s": 18.2,
+  "elapsed_fact_check_s": 9.72,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "user_naturel",
+  "query_id": "q20_sante_rural",
+  "persona_id": null,
+  "pattern_target": null,
+  "gap_target": "Santé × géographique rural"
+}

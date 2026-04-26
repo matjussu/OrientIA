@@ -1,0 +1,115 @@
+{
+  "query": "Étudier la kinésithérapie aujourd'hui, est-ce que ça vaut le coup au regard des débouchés ?",
+  "answer_text": "**TL;DR**\n1. La kinésithérapie reste un métier **stable et recherché** (connaissance générale), mais avec des **débouchés variables selon la spécialisation et la région**.\n2. Le diplôme d’État (bac+5) est **obligatoire** et **sélectif** (numerus clausus supprimé mais concours exigeant).\n3. **Plan A** : Voie classique (IFMK) — **Plan B** : Alternance (apprentissage) — **Plan C** : Réorientation si échec aux concours.\n\n---\n\n### **Plan A — Réaliste : Formation classique en IFMK (Institut de Formation en Masso-Kinésithérapie)**\n📍 **Diplôme d’État de masseur-kinésithérapeute** (ex. : [IFMK Rennes](https://www.onisep.fr/http/redirection/formation/slug/FOR.2321))\n*Pour toi : voie standard, **sélective** (concours post-bac ou post-L1 STAPS/PACES), mais **débouchés assurés** en libéral ou salariat (hôpitaux, cliniques).*\n\n---\n### **Plan B — Ambitieux : Apprentissage (réseau des IFMK partenaires)**\n📍 **Formation en alternance** (ex. : [IFMK en apprentissage](https://www.onisep.fr/http/redirection/formation/slug/FOR.2321))\n*Pour toi : **rémunération pendant les études** + insertion facilitée, mais **places limitées** (concours + contrat avec un maître de stage).*\n\n---\n### **Plan C — Passerelle : Réorientation vers des métiers connexes**\n- **STAPS (licence)** → Métiers du sport/rééducation (moins sélectif, débouchés en prévention/santé).\n- **Podologie ou ergothérapie** (bac+3, concours moins saturés).\n*Pour toi : si les concours kiné échouent, ces voies offrent des **alternatives paramédicales stables**.*\n\n---\n### **⚠ Attention aux pièges**\n- **Sélectivité** : Le concours post-bac (ex-PACES) reste **exigeant** (notes >14/20 en sciences recommandées — connaissance générale).\n- **Densité géographique** : Les **déserts médicaux** offrent des opportunités, mais l’installation en libéral demande un **réseau** (connaissance générale).\n- **Évolution du métier** : L’IA et la télérééducation **transforment la pratique** (moins de manipulations, plus de suivi digital — connaissance générale).\n\n---\n**Question pour toi :**\nPréfères-tu **la sécurité d’un diplôme d’État classique** (Plan A), **l’autonomie financière via l’alternance** (Plan B), ou **explorer des métiers connexes moins saturés** (Plan C) ?\n\n---\n*👤 Pour affiner ton projet, un RDV avec le **Psy-EN** de ton lycée ou un **CIO** est indispensable (spécificités régionales, préparation aux concours).*",
+  "profile": {
+    "age_group": "other_or_unknown",
+    "education_level": "unknown",
+    "intent_type": "conseil_strategique",
+    "sector_interest": [
+      "santé",
+      "kinésithérapie"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.8,
+    "notes": "Query implicite sur la viabilité du métier de kinésithérapeute. Peut cacher une inquiétude sur les débouchés."
+  },
+  "plan": {
+    "original_query": "Étudier la kinésithérapie aujourd'hui, est-ce que ça vaut le coup au regard des débouchés ?",
+    "sub_queries": [
+      {
+        "text": "Quels sont les débouchés professionnels actuels et les perspectives d'emploi pour les kinésithérapeutes en France ? Mentionner les postes à pourvoir et les tendances DARES Métiers 2030.",
+        "target_corpus": "metier_prospective",
+        "priority": 1,
+        "rationale": "Cible directement l'intent 'débouchés' avec des données prospectives pour évaluer la pertinence du choix."
+      },
+      {
+        "text": "Quels sont les taux d'insertion professionnelle des diplômés en kinésithérapie (master/BUT) à 6, 12 et 18 mois après l'obtention du diplôme ?",
+        "target_corpus": "insertion_pro",
+        "priority": 1,
+        "rationale": "Donne une vision concrète de l'insertion post-diplôme, essentiel pour évaluer la rentabilité des études."
+      },
+      {
+        "text": "Quel est le salaire médian des kinésithérapeutes en France selon les données INSEE et PCS, et comment évolue-t-il selon les régions ?",
+        "target_corpus": "insee_salaire",
+        "priority": 2,
+        "rationale": "Complète l'analyse des débouchés avec une dimension financière, utile pour le conseil stratégique."
+      },
+      {
+        "text": "Quelles sont les formations en kinésithérapie disponibles en France (Parcoursup/ONISEP) et leurs spécificités (durée, coût, accès) ?",
+        "target_corpus": "formation",
+        "priority": 2,
+        "rationale": "Ancrage concret sur les formations pour contextualiser les débouchés."
+      },
+      {
+        "text": "Quelles sont les compétences et blocs de compétences (RNCP) à valider pour exercer comme kinésithérapeute et comment se certifier ?",
+        "target_corpus": "competences_certif",
+        "priority": 3,
+        "rationale": "Apporte une dimension pratique sur les compétences requises, optionnel mais utile."
+      }
+    ],
+    "strategy_note": "Priorité donnée aux corpus prospectifs et d'insertion pour répondre à l'intent 'débouchés'. Les sub-queries formation et compétences sont ajoutées pour équilibrer avec des éléments concrets, mais en priorité secondaire.",
+    "profile_used": {
+      "age_group": "other_or_unknown",
+      "education_level": "unknown",
+      "intent_type": "conseil_strategique",
+      "sector_interest": [
+        "santé",
+        "kinésithérapie"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.8,
+      "notes": "Query implicite sur la viabilité du métier de kinésithérapeute. Peut cacher une inquiétude sur les débouchés."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 5,
+  "fact_check_results": [
+    {
+      "claim": "Le diplôme d’État (bac+5) est **obligatoire** et **sélectif** (numerus clausus supprimé mais concours exigeant).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement le caractère **obligatoire** du diplôme d'État de masseur-kinésithérapeute (bac+5), ni son mode de sélection (numerus clausus supprimé mais concours exigeant). Les sources RNCP (6, 7, 8) concernent des diplômes de niveau bac+3 (niveau 6 européen) dans le domaine des activités physiques et sportives, et non la kinésithérapie. Aucune source ne traite des conditions d'accès ou de sélection pour le diplôme de kinésithérapeute.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": ": [IFMK Rennes](https://www.onisep.fr/http/redirection/formation/slug/FOR.2321))\n*Pour toi : voie standard, **sélective** (concours post-bac ou post-L1 STAPS/PACES), mais **débouchés assurés** en libéral ou salariat (hôpitaux, cliniques).*\n\n---\n### **Plan B — Ambitieux : Apprentissage (réseau des IFMK partenaires)**\n📍 **Formation en alternance** (ex.",
+      "verdict": "ambiguous",
+      "source_excerpt": null,
+      "reason": "Le claim affirme deux éléments distincts : \n1. **Sélectivité de la formation (concours post-bac ou post-L1 STAPS/PACES)** : Aucune des sources fournies ne mentionne explicitement la sélectivité de l'IFMK Rennes ou les modalités de concours (post-bac ou post-L1 STAPS/PACES). \n2. **Débouchés assurés en libéral ou salariat (hôpitaux, cliniques)** : Les sources RNCP citées mentionnent des métiers visés (ROME K1207, G1204, etc.), mais ne garantissent pas explicitement des débouchés « assurés » dans ces secteurs. Aucune statistique ou affirmation claire sur l'employabilité n'est présente.\n\nAucune source ne contredit directement le claim, mais aucune ne le confirme non plus de manière explicite.",
+      "confidence": 0.5,
+      "source_id": null
+    },
+    {
+      "claim": ": [IFMK en apprentissage](https://www.onisep.fr/http/redirection/formation/slug/FOR.2321))\n*Pour toi : **rémunération pendant les études** + insertion facilitée, mais **places limitées** (concours + contrat avec un maître de stage).*\n\n---\n### **Plan C — Passerelle : Réorientation vers des métiers connexes**\n- **STAPS (licence)** → Métiers du sport/rééducation (moins sélectif, débouchés en prévention/santé).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement la rémunération pendant les études en IFMK en apprentissage, l'insertion facilitée, ou le nombre de places limitées (concours + contrat avec un maître de stage). Les sources se concentrent sur les diplômes, compétences certifiées et métiers visés, sans aborder ces aspects pratiques.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "*Pour toi : si les concours kiné échouent, ces voies offrent des **alternatives paramédicales stables**.*\n\n---\n### **⚠ Attention aux pièges**\n- **Sélectivité** : Le concours post-bac (ex-PACES) reste **exigeant** (notes >14/20 en sciences recommandées — connaissance générale).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Le claim affirme que les voies alternatives aux concours kiné offrent des 'alternatives paramédicales stables'. Aucune des sources fournies ne mentionne explicitement des alternatives paramédicales *stables* (ex : ergothérapie, psychomotricité, infirmier, etc.) ou ne compare leur stabilité (emploi, salaire, débouchés) à celle de la kinésithérapie. Les sources 6 à 8 concernent des diplômes en STAPS (niveau 6), mais ceux-ci ne sont pas des formations paramédicales au sens strict (ex : kiné, infirmier, etc.), et leur stabilité n'est pas évoquée.",
+      "confidence": 0.9,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 33.32,
+  "elapsed_clarify_s": 2.58,
+  "elapsed_reformulate_s": 9.4,
+  "elapsed_retrieve_s": 0.46,
+  "elapsed_generate_s": 12.01,
+  "elapsed_fact_check_s": 8.85,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "user_naturel",
+  "query_id": "q19_kine_debouches",
+  "persona_id": null,
+  "pattern_target": null,
+  "gap_target": "Métier × débouchés"
+}

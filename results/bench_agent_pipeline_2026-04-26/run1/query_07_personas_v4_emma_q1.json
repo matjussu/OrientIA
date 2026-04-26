@@ -1,0 +1,117 @@
+{
+  "query": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "answer_text": "**TL;DR**\n1. **Salaire médian débutant** : ~2 200 € brut/mois (26 400 € brut/an) pour un développeur post-M2 informatique en France (connaissance générale).\n2. **Fourchette réaliste** : 2 000 € à 2 800 € brut/mois selon région, spécialisation (IA/data > web), et taille d’entreprise.\n3. **Alternance et CIFRE** : +10-20 % si expérience pro solide (ex : 2 500-3 000 € brut/mois).\n\n---\n\n### **Plan A — Développeur en entreprise (salaire standard)**\n- **Médian** : **2 200 € brut/mois** (source : baromètres APEC/Syntec, 2023-2024 — connaissance générale).\n  *Pour toi* : Base réaliste pour un profil junior sans expérience hors stages. **Paris +10-15%** (vs province).\n\n### **Plan B — Spécialisation valorisante (salaire élevé)**\n- **IA/Data/Cloud** : **2 500-3 000 € brut/mois** dès l’embauche (connaissance générale).\n  *Pour toi* : Si ton M2 inclut ces compétences (ex : [Master Technologies de l’Information](https://www.onisep.fr/http/redirection/formation/slug/FOR.4855)), cible les ESN/startups tech.\n- **Alternance/CIFRE** : **2 800-3 200 € brut/mois** en fin de contrat (connaissance générale).\n\n### **Plan C — Secteur public ou freelance**\n- **Fonction publique** : **1 900-2 100 € brut/mois** (catégorie A, grille indiciaire — connaissance générale).\n- **Freelance** : **TJM 300-500 €** (soit **2 400-4 000 € brut/mois** si 8 jours facturés — connaissance générale).\n  *Pour toi* : Risque mais flexibilité. Pense à l’[ACRE](https://www.urssaf.fr) pour réduire les charges la 1ère année.\n\n---\n**⚠ Attention aux pièges**\n- **Région** : Écart Paris (médian ~2 400 €) vs province (médian ~2 000 €).\n- **Taille entreprise** : Une licorne paiera +30 % qu’une PME (mais exigera plus d’autonomie).\n- **Titre vs diplôme** : Un **diplôme d’ingénieur** (ex : [CESI](https://www.onisep.fr/http/redirection/formation/slug/FOR.11462)) peut négocier +5-10 % vs un M2 classique (connaissance générale).\n\n---\n**Question pour toi** :\nTon M2 inclut-il une spécialisation technique (IA, cybersécurité, cloud) ou une dimension managériale (chefferie de projet) ? Cela peut faire varier ton salaire de **±20 %**.",
+  "profile": {
+    "age_group": "etudiant_master",
+    "education_level": "bac+5",
+    "intent_type": "info_metier_specifique",
+    "sector_interest": [
+      "informatique",
+      "numérique"
+    ],
+    "region": "France",
+    "urgent_concern": false,
+    "confidence": 0.9,
+    "notes": "Query explicite sur un métier spécifique (développeur) et un niveau d'études (M2 informatique)."
+  },
+  "plan": {
+    "original_query": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+    "sub_queries": [
+      {
+        "text": "Salaire médian d'un développeur débutant (PCS 388a) en France selon les données INSEE SALAAN, après un master en informatique.",
+        "target_corpus": "insee_salaire",
+        "priority": 1,
+        "rationale": "Cible directement le corpus INSEE pour des données salariales précises par PCS et région."
+      },
+      {
+        "text": "Quelles sont les perspectives de recrutement et fourchettes de salaire pour un développeur débutant cadre en région France, selon l'APEC ?",
+        "target_corpus": "apec_region",
+        "priority": 1,
+        "rationale": "Complète avec des données APEC sur le marché des cadres, plus actuelles et orientées recrutement."
+      },
+      {
+        "text": "Taux d'insertion professionnelle à 6, 12 et 18 mois pour les diplômés d'un master en informatique (spécialité développement), selon les données MESR.",
+        "target_corpus": "insertion_pro",
+        "priority": 2,
+        "rationale": "Ajoute un contexte sur l'insertion post-diplôme pour affiner la pertinence."
+      },
+      {
+        "text": "Quels sont les blocs de compétences RNCP les plus demandés pour un développeur débutant en informatique ?",
+        "target_corpus": "competences_certif",
+        "priority": 3,
+        "rationale": "Optionnel pour lier compétences et employabilité, mais moins prioritaire."
+      }
+    ],
+    "strategy_note": "Priorité 1 donnée aux corpus salariaux (INSEE et APEC) pour répondre à l'intent core. Insertion_pro apporte un contexte utile mais secondaire. Competences_certif est un nice-to-have.",
+    "profile_used": {
+      "age_group": "etudiant_master",
+      "education_level": "bac+5",
+      "intent_type": "info_metier_specifique",
+      "sector_interest": [
+        "informatique",
+        "numérique"
+      ],
+      "region": "France",
+      "urgent_concern": false,
+      "confidence": 0.9,
+      "notes": "Query explicite sur un métier spécifique (développeur) et un niveau d'études (M2 informatique)."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 4,
+  "fact_check_results": [
+    {
+      "claim": "**Salaire médian débutant** : ~2 200 € brut/mois (26 400 € brut/an) pour un développeur post-M2 informatique en France (connaissance générale).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement un salaire médian débutant pour un développeur post-M2 informatique en France. Les sources disponibles se limitent à des descriptions de formations, de certifications (RNCP) ou de métiers visés, sans données salariales.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "**Fourchette réaliste** : 2 000 € à 2 800 € brut/mois selon région, spécialisation (IA/data > web), et taille d’entreprise.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne de fourchette salariale pour des profils d'ingénieurs informatiques ou de développeurs, quelle que soit la région, la spécialisation (IA/data/web) ou la taille de l'entreprise. Les sources se limitent à des descriptions de formations, de certifications (RNCP) ou de métiers visés, sans données chiffrées sur les salaires.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "**Alternance et CIFRE** : +10-20 % si expérience pro solide (ex : 2 500-3 000 € brut/mois).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement une augmentation de salaire de +10-20 % pour une expérience professionnelle solide (ex : 2 500-3 000 € brut/mois) dans le cadre de l'alternance ou d'une CIFRE. Les sources se limitent à des descriptions de formations, de niveaux RNCP ou de métiers visés, sans données salariales ou comparatives.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "---\n\n### **Plan A — Développeur en entreprise (salaire standard)**\n- **Médian** : **2 200 € brut/mois** (source : baromètres APEC/Syntec, 2023-2024 — connaissance générale).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne de données salariales, ni de baromètres APEC ou Syntec, ni de chiffre spécifique comme '2 200 € brut/mois' pour un développeur en entreprise. Les sources se limitent à des descriptions de formations, certifications (RNCP) et métiers visés, sans aucune référence à des statistiques salariales.",
+      "confidence": 0.98,
+      "source_id": null
+    },
+    {
+      "claim": "**Paris +10-15%** (vs province).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement une différence de salaire de +10-15% à Paris par rapport à la province pour les métiers de l'informatique ou tout autre domaine. Les sources concernent uniquement des descriptions de formations, certifications ou compétences, sans données salariales ou géographiques.",
+      "confidence": 0.95,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 25.24,
+  "elapsed_clarify_s": 1.83,
+  "elapsed_reformulate_s": 7.72,
+  "elapsed_retrieve_s": 0.39,
+  "elapsed_generate_s": 9.38,
+  "elapsed_fact_check_s": 5.93,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "personas_v4",
+  "query_id": "emma_q1",
+  "persona_id": "emma",
+  "pattern_target": null,
+  "gap_target": null
+}

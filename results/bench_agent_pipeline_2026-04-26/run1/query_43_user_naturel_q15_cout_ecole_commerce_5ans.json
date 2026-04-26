@@ -1,0 +1,119 @@
+{
+  "query": "Combien faut-il prévoir financièrement pour 5 années d'études en école de commerce ?",
+  "answer_text": "**TL;DR**\n1. Le coût d’une école de commerce sur 5 ans varie de **0 € (public)** à **50 000 €+ (privé top 5)** selon le type d’établissement et le mode de financement.\n2. L’alternance (contrat pro/apprentissage) réduit drastiquement la facture, voire la supprime.\n3. Budget moyen estimé : **5 000–15 000 €/an** hors alternance (connaissance générale).\n\n---\n\n### **Plan A — Public ou en alternance : coût faible ou nul**\n📍 **Diplôme d’études supérieures de gestion (IMT-BS)** — bac+5 public (Évry), ~250 €/an (droits universitaires) + 100 € de CVEC · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.9152)\n*Pour toi : solution la moins chère, avec possibilité d’alternance en M1/M2 (salaire + frais pris en charge).*\n\n📍 **IAE (ex : IAE Paris-Sorbonne)** — bac+5 public, ~300–600 €/an · [exemple IAE](https://www.iae-paris.com)\n*Pour toi : sélectivité modérée (dossier + score IAE Message), coût maîtrisé. Alternance fréquente en master.*\n\n---\n### **Plan B — Privé classique : budget moyen (10 000–30 000 € sur 5 ans)**\n📍 **Diplôme en marketing ou finance (type ESC Pau, EM Normandie)** — bac+5 privé, **6 000–10 000 €/an** · [exemple ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11738)\n*Pour toi : écoles post-bac ou admissions parallèles (BTS/BUT → ESC). Bourses possibles (CROUS, régions).*\n\n📍 **Écoles spécialisées (ex : INSEEC, SKEMA)** — **8 000–12 000 €/an**, mais réseaux solides et alternance en M1/M2.\n*Pour toi : coût élevé, mais ROI potentiel si visée internationale (connaissance générale).*\n\n---\n### **Plan C — Top 5 (HEC, ESSEC, etc.) : investissement lourd (30 000–70 000 €)**\n📍 **Diplôme Grande École (HEC, ESSEC, ESCP)** — **15 000–25 000 €/an**, soit **75 000 €+** sur 5 ans (hors bourses).\n*Pour toi : réserver aux profils excellents (prépa/concours) ou via admissions parallèles (BBA → MSc). Alternance en M2 possible.*\n\n---\n### **⚠ Attention aux pièges**\n- **Frais cachés** : logements (Paris = +800–1 200 €/mois), voyages obligatoires (semestres à l’étranger), matériel (ordinateur pro).\n- **Alternance ≠ garantie** : toutes les écoles ne la proposent pas systématiquement (vérifier les taux de placement).\n- **Prêt étudiant** : taux d’endettement à anticiper (ex : 50 000 € de prêt = ~300–500 €/mois sur 10 ans après diplôme).\n\n---\n**Coûts estimés par scenario (connaissance générale) :**\n| Type d’école          | Coût total 5 ans (hors alternance) | Avec alternance (2–3 ans) |\n|-----------------------|------------------------------------|---------------------------|\n| **Public (IAE/IMT-BS)** | 1 500–3 000 €                     | **0 €** (salaire couvre frais) |\n| **Privé moyen (ESC)**  | 30 000–50 000 €                   | 5 000–15 000 €            |\n| **Top 5 (HEC/ESSEC)**  | 75 000–100 000 €                  | 20 000–40 000 €           |\n\n---\n**Question pour toi :**\nAs-tu une préférence entre **réseau prestigieux** (coût élevé), **équilibre budget/qualité** (ESC régionales), ou **solution 100% financée** (public + alternance) ? Cela peut orienter vers des écoles précises.",
+  "profile": {
+    "age_group": "other_or_unknown",
+    "education_level": "unknown",
+    "intent_type": "conseil_strategique",
+    "sector_interest": [
+      "commerce",
+      "gestion",
+      "école de commerce"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.7,
+    "notes": "Query ne précise pas la situation de l'utilisateur (lycéen, parent, professionnel en reconversion). Secteur explicite : école de commerce."
+  },
+  "plan": {
+    "original_query": "Combien faut-il prévoir financièrement pour 5 années d'études en école de commerce ?",
+    "sub_queries": [
+      {
+        "text": "Coût total estimé pour 5 années d'études en école de commerce (frais de scolarité, frais annexes, droits d'inscription) selon les données Parcoursup et ONISEP.",
+        "target_corpus": "formation",
+        "priority": 1,
+        "rationale": "Couvre l'intent core : estimation financière des études en école de commerce."
+      },
+      {
+        "text": "Aides financières disponibles (bourses, prêts, exonérations) pour les étudiants en école de commerce, selon les dispositifs Crous et autres.",
+        "target_corpus": "crous",
+        "priority": 2,
+        "rationale": "Complète l'estimation financière avec les aides possibles."
+      },
+      {
+        "text": "Salaire médian des jeunes diplômés d'école de commerce (niveau bac+5) selon les données INSEE et APEC, pour évaluer le retour sur investissement.",
+        "target_corpus": "insee_salaire",
+        "priority": 2,
+        "rationale": "Apporte un contexte utile sur le retour financier post-diplôme."
+      },
+      {
+        "text": "Taux d'insertion professionnelle à 6, 12 et 18 mois des diplômés d'école de commerce (master/BUT), selon les données MESR.",
+        "target_corpus": "insertion_pro",
+        "priority": 3,
+        "rationale": "Contexte optionnel sur l'employabilité post-diplôme."
+      }
+    ],
+    "strategy_note": "Query centrée sur le coût financier, donc priorité 1 sur les données 'formation'. Les sub-queries 2 et 3 apportent un éclairage complémentaire sur les aides et le retour sur investissement. La sub-query 4 est optionnelle pour contextualiser l'insertion professionnelle.",
+    "profile_used": {
+      "age_group": "other_or_unknown",
+      "education_level": "unknown",
+      "intent_type": "conseil_strategique",
+      "sector_interest": [
+        "commerce",
+        "gestion",
+        "école de commerce"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.7,
+      "notes": "Query ne précise pas la situation de l'utilisateur (lycéen, parent, professionnel en reconversion). Secteur explicite : école de commerce."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 4,
+  "fact_check_results": [
+    {
+      "claim": "Le coût d’une école de commerce sur 5 ans varie de **0 € (public)** à **50 000 €+ (privé top 5)** selon le type d’établissement et le mode de financement.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement le coût d'une école de commerce sur 5 ans, que ce soit pour les établissements publics ou privés. Les sources se limitent à des intitulés de diplômes ou domaines de formation, sans données chiffrées ou comparatives sur les frais de scolarité.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "Budget moyen estimé : **5 000–15 000 €/an** hors alternance (connaissance générale).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement un budget moyen pour des formations hors alternance. Le claim repose sur une \"connaissance générale\" non étayée par les sources disponibles, qui se limitent à décrire des diplômes sans détails financiers.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "---\n\n### **Plan A — Public ou en alternance : coût faible ou nul**\n📍 **Diplôme d’études supérieures de gestion (IMT-BS)** — bac+5 public (Évry), ~250 €/an (droits universitaires) + 100 € de CVEC · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.9152)\n*Pour toi : solution la moins chère, avec possibilité d’alternance en M1/M2 (salaire + frais pris en charge).*\n\n📍 **IAE (ex : IAE Paris-Sorbonne)** — bac+5 public, ~300–600 €/an · [exemple IAE](https://www.iae-paris.com)\n*Pour toi : sélectivité modérée (dossier + score IAE Message), coût maîtrisé.",
+      "verdict": "ambiguous",
+      "source_excerpt": "Le Diplôme d'Études Supérieures de Gestion (DESG) proposé par IMT-BS est un diplôme de niveau bac+5, accessible en formation initiale ou en alternance. Les frais de scolarité pour les étudiants en formation initiale s'élèvent aux droits universitaires standard (environ 250 € par an) auxquels s'ajoutent les frais de CVEC (Contribution à la Vie Étudiante et de Campus, environ 100 €).",
+      "reason": "La source 5 (diplôme d'études supérieures de gestion d'IMT-BS) mentionne explicitement le niveau bac+5, les frais de scolarité en formation initiale (250 €/an + CVEC) et la possibilité d'alternance. Cependant, elle ne précise pas explicitement si les frais sont pris en charge en alternance ou si un salaire est versé, ce qui rend le claim partiellement vérifié mais pas entièrement confirmé.",
+      "confidence": 0.75,
+      "source_id": "source_5"
+    },
+    {
+      "claim": "Alternance fréquente en master.*\n\n---\n### **Plan B — Privé classique : budget moyen (10 000–30 000 € sur 5 ans)**\n📍 **Diplôme en marketing ou finance (type ESC Pau, EM Normandie)** — bac+5 privé, **6 000–10 000 €/an** · [exemple ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11738)\n*Pour toi : écoles post-bac ou admissions parallèles (BTS/BUT → ESC).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Le claim \"Alternance fréquente en master\" n'est pas explicitement mentionné dans aucune des sources fournies. Aucune source ne traite de la fréquence ou de la disponibilité de l'alternance dans les masters ou diplômes équivalents (marketing, finance, gestion, etc.).",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "Bourses possibles (CROUS, régions).*\n\n📍 **Écoles spécialisées (ex : INSEEC, SKEMA)** — **8 000–12 000 €/an**, mais réseaux solides et alternance en M1/M2.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement la possibilité de bourses (CROUS, régions) pour les écoles spécialisées comme INSEEC ou SKEMA. Les sources se limitent à des descriptions de diplômes et de domaines de formation, sans aborder les aspects financiers ou les aides disponibles.",
+      "confidence": 0.95,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 32.42,
+  "elapsed_clarify_s": 2.17,
+  "elapsed_reformulate_s": 7.26,
+  "elapsed_retrieve_s": 0.39,
+  "elapsed_generate_s": 15.52,
+  "elapsed_fact_check_s": 7.08,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "user_naturel",
+  "query_id": "q15_cout_ecole_commerce_5ans",
+  "persona_id": null,
+  "pattern_target": null,
+  "gap_target": "Financement"
+}

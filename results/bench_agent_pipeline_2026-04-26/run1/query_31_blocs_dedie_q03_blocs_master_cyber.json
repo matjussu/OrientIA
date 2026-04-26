@@ -1,0 +1,93 @@
+{
+  "query": "Quelles compétences certifiées par un master en cybersécurité ?",
+  "answer_text": "**TL;DR**\n1. Un master en cybersécurité certifie des compétences **techniques** (sécurité des réseaux, cryptographie) et **managériales** (gestion des risques, conformité RGPD).\n2. Les certifications **reconnues** (CISSP, CEH, ISO 27001) sont souvent intégrées aux programmes labellisés **SecNumEdu** (ANSSI).\n3. Priorise les formations avec **grade Master** ou **label CGE** pour une reconnaissance professionnelle.\n\n---\n\n### **Plan A — Compétences techniques certifiées**\n📍 **Master Cybersécurité** (bac+5) — [Débouchés : RSSI, ingénieur sécurité, administrateur sécurité](https://www.onisep.fr/http/redirection/formation/slug/FOR.10254)\n*Pour toi : compétences validées en **pentesting, analyse de vulnérabilités, réponse aux incidents** (normes NIST/ANSSI).*\n\n### **Plan B — Compétences managériales et conformité**\n📍 **Manager de la Cybersécurité** (bac+5) — [Débouchés : RSSI, audits sécurité, conformité RGPD](https://www.onisep.fr/http/redirection/formation/slug/FOR.11788)\n*Pour toi : focus sur **gestion des risques, gouvernance, normes ISO 27001** — idéal pour des rôles stratégiques.*\n\n### **Plan C — Certifications complémentaires (connaissance générale)**\nLes masters labellisés **SecNumEdu** (ANSSI) intègrent souvent des certifications **CISSP, CEH, ou OSCP** (reconnues mondialement). Vérifie les partenariats avec des organismes comme **ISACA** ou **(ISC)²** pour des certifications supplémentaires.\n\n---\n**⚠ Attention aux pièges**\n- **Marketing trompeur** : certains masters privés promettent des certifications sans être accrédités par l’ANSSI ou la CGE. Vérifie les labels officiels.\n- **Spécialisation vs généraliste** : un master \"Cybersécurité\" peut être très technique (ex : cryptographie) ou orienté management (ex : RGPD). Compare les programmes.\n\n**Question pour toi :** Préfères-tu une expertise **technique** (hacking éthique, SOC) ou **managériale** (stratégie, conformité) ? Cela déterminera le choix entre les Plans A et B.",
+  "profile": {
+    "age_group": "other_or_unknown",
+    "education_level": "unknown",
+    "intent_type": "info_metier_specifique",
+    "sector_interest": [
+      "cybersécurité",
+      "informatique"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.7,
+    "notes": "Query ciblée sur les compétences d'un master en cybersécurité, mais pas d'indice sur le profil de l'utilisateur (étudiant, professionnel, etc.)."
+  },
+  "plan": {
+    "original_query": "Quelles compétences certifiées par un master en cybersécurité ?",
+    "sub_queries": [
+      {
+        "text": "Quels sont les blocs de compétences certifiés par les masters en cybersécurité selon le référentiel RNCP ?",
+        "target_corpus": "competences_certif",
+        "priority": 1,
+        "rationale": "Cible directement les compétences certifiées via les blocs RNCP pour les masters en cybersécurité."
+      },
+      {
+        "text": "Quelles compétences spécifiques sont attendues pour les métiers de la cybersécurité selon les fiches ONISEP ?",
+        "target_corpus": "metier",
+        "priority": 2,
+        "rationale": "Apporte un complément éditorialisé sur les compétences métiers en cybersécurité."
+      },
+      {
+        "text": "Quels sont les masters en cybersécurité disponibles en France et leurs caractéristiques (durée, modalités, établissements) ?",
+        "target_corpus": "formation",
+        "priority": 2,
+        "rationale": "Contextualise les formations associées aux compétences certifiées."
+      },
+      {
+        "text": "Quels sont les métiers accessibles après un master en cybersécurité et leurs perspectives d'insertion professionnelle ?",
+        "target_corpus": "insertion_pro",
+        "priority": 3,
+        "rationale": "Ajoute une dimension insertion pro pour compléter l'analyse des compétences."
+      }
+    ],
+    "strategy_note": "Priorité donnée aux compétences certifiées (RNCP) et aux métiers (ONISEP). Les formations et l'insertion pro sont des compléments utiles mais secondaires.",
+    "profile_used": {
+      "age_group": "other_or_unknown",
+      "education_level": "unknown",
+      "intent_type": "info_metier_specifique",
+      "sector_interest": [
+        "cybersécurité",
+        "informatique"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.7,
+      "notes": "Query ciblée sur les compétences d'un master en cybersécurité, mais pas d'indice sur le profil de l'utilisateur (étudiant, professionnel, etc.)."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 4,
+  "fact_check_results": [
+    {
+      "claim": "Les certifications **reconnues** (CISSP, CEH, ISO 27001) sont souvent intégrées aux programmes labellisés **SecNumEdu** (ANSSI).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement l'intégration des certifications reconnues (CISSP, CEH, ISO 27001) dans les programmes labellisés **SecNumEdu** (ANSSI). Les sources se limitent à décrire des compétences certifiées, des métiers visés et des niveaux RNCP, sans référence aux certifications ou labels spécifiques comme SecNumEdu.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "---\n\n### **Plan A — Compétences techniques certifiées**\n📍 **Master Cybersécurité** (bac+5) — [Débouchés : RSSI, ingénieur sécurité, administrateur sécurité](https://www.onisep.fr/http/redirection/formation/slug/FOR.10254)\n*Pour toi : compétences validées en **pentesting, analyse de vulnérabilités, réponse aux incidents** (normes NIST/ANSSI).*\n\n### **Plan B — Compétences managériales et conformité**\n📍 **Manager de la Cybersécurité** (bac+5) — [Débouchés : RSSI, audits sécurité, conformité RGPD](https://www.onisep.fr/http/redirection/formation/slug/FOR.11788)\n*Pour toi : focus sur **gestion des risques, gouvernance, normes ISO 27001** — idéal pour des rôles stratégiques.*\n\n### **Plan C — Certifications complémentaires (connaissance générale)**\nLes masters labellisés **SecNumEdu** (ANSSI) intègrent souvent des certifications **CISSP, CEH, ou OSCP** (reconnues mondialement).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Le claim mentionne des **compétences spécifiques** (pentesting, analyse de vulnérabilités, réponse aux incidents, normes NIST/ANSSI, gestion des risques, gouvernance, normes ISO 27001) ainsi que des **certifications complémentaires** (CISSP, CEH, OSCP). Aucune des sources fournies ne cite explicitement ces compétences ou certifications. Les sources se limitent à des informations générales sur les niveaux RNCP, les métiers visés (ROME) et les voies d'accès, sans détailler les contenus pédagogiques ou les certifications intégrées.",
+      "confidence": 0.9,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 25.48,
+  "elapsed_clarify_s": 2.46,
+  "elapsed_reformulate_s": 6.18,
+  "elapsed_retrieve_s": 0.37,
+  "elapsed_generate_s": 7.29,
+  "elapsed_fact_check_s": 9.18,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "blocs_dedie",
+  "query_id": "q03_blocs_master_cyber",
+  "persona_id": null,
+  "pattern_target": "competences certifiées",
+  "gap_target": null
+}

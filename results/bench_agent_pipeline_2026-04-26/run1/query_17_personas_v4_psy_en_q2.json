@@ -1,0 +1,93 @@
+{
+  "query": "Une élève en 1ère S redouble avec 7 de moyenne en maths mais excellente en philo, comment la guider vers un post-bac réaliste ?",
+  "answer_text": "**TL;DR**\n1. Avec 7 de moyenne en maths en 1ère S, les filières scientifiques sélectives (prépa, écoles d’ingé, PACES) sont **inaccessibles en direct** — mais des voies adaptées existent.\n2. **Priorité absolue** : rebondir sur ses points forts (philo, expression) + éviter les blocages en maths.\n3. **3 pistes réalistes** : BTS/licences en SHS (sans maths), filières technos (STMG → BUT), ou réorientation progressive via une année de mise à niveau.\n\n---\n\n### **Plan A — Réaliste : Filières sans maths ou avec maths allégées**\n📍 **BTS Communication** (Lycées publics partout en France) — bac+2 public, **sélectivité modérée** (dossier + entretien), **0 maths** après le bac.\n*Pour elle : valorise son aisance en philo/expression (épreuves orales/écrites). Taux d’emploi : ~60% à 6 mois (connaissance générale).*\n→ [Exemple : BTS Com Lyon](https://www.onisep.fr/formation/identifiant) *(lien générique — vérifier sur Parcoursup)*\n\n📍 **Licence de Philosophie** (Université) — bac+3 public, **accès large** (>80% des vœux acceptés en 2025), **aucune maths**.\n*Pour elle : poursuite naturelle de sa force disciplinaire. Attention : débouchés étroits sans master (connaissance générale) — prévoir un double cursus (ex : info-com) ou une spécialisation (enseignement, édition).*\n\n📍 **BUT Métiers du Livre** (IUT, ex : Bordeaux) — bac+3 public, **sélectivité ~40%**, maths limitées à la L1 (statistiques basiques).\n*Pour elle : allie culture écrite (philo) et professionnalisation. Alternance possible en L3.*\n\n---\n### **Plan B — Ambitieux mais accessible : Réorientation progressive**\n**Option 1 : Année de mise à niveau (MAN) en SHS**\n- Ex : **MAN Lettres** (pour intégrer une licence après) ou **MAN AES** (économie *sans maths approfondies*).\n- **Sélectivité** : dossier (notes de français/philo prioritaires).\n- *Pour elle* : évite un redoublement en Terminale S (risque de découragement) et prépare une licence ciblée.\n\n**Option 2 : BAC Techno (STMG) en 1 an**\n- **Spécialité Mercatique** ou **Ressources Humaines** : 0 maths complexes, débouchés sur BTS/BUT en com/gestion.\n- *Pour elle* : si elle accepte de changer de voie *maintenant* pour éviter l’échec en Terminale S.\n\n---\n### **Plan C — Passerelle longue : Reconversion via l’alternance**\nSi elle tient à un métier *indirectement* lié aux maths (ex : data *visualisation*, bibliothécaire scientifique) :\n1. **BTS/BUT en SHS** (ex : BUT Info-Com) → **licence pro** en médiation scientifique.\n2. **Alternance** : les entreprises valorisent les profils \"hybrides\" (ex : rédacteur technique avec bagage philo).\n- *Exemple* : Licence pro Métiers de l’édition (Paris Nanterre) après un BTS Com.\n\n---\n### **⚠ Attention**\n- **Éviter absolument** : les filières avec maths lourdes (prépa, PACES, éco-gestion en fac) ou les écoles privées coûteuses (>5k€/an) sans garantie d’emploi.\n- **Piège psychologique** : un redoublement en Terminale S avec 7 en maths a un **risque élevé d’échec** (connaissance générale) → mieux vaut bifurquer *maintenant*.\n\n---\n**Question pour elle** :\nEst-ce qu’elle préfère :\n1. **Une voie courte et pro** (BTS Com → emploi rapide) ?\n2. **Un parcours long et théorique** (licence philo → master) ?\n3. **Un compromis** (BUT Métiers du Livre → alternance) ?\n\n---\n👤 *Pour affiner son projet, un RDV avec le Psy-EN de son lycée est indispensable : il/elle connaît les formations locales et les dispositifs d’accompagnement (ex : cordées de la réussite pour les filières sélectives).*",
+  "profile": {
+    "age_group": "lyceen_terminale",
+    "education_level": "terminale",
+    "intent_type": "reorientation_etude",
+    "sector_interest": [],
+    "region": null,
+    "urgent_concern": true,
+    "confidence": 0.85,
+    "notes": "Élève en 1ère S (supposée en terminale pour le post-bac), difficultés en maths mais forces en philo. Besoin de réorientation réaliste."
+  },
+  "plan": {
+    "original_query": "Une élève en 1ère S redouble avec 7 de moyenne en maths mais excellente en philo, comment la guider vers un post-bac réaliste ?",
+    "sub_queries": [
+      {
+        "text": "Quelles formations post-bac sur Parcoursup ou ONISEP sont accessibles avec un profil scientifique fragile en maths mais fort en philosophie, pour une réorientation réaliste en terminale ?",
+        "target_corpus": "formation",
+        "priority": 1,
+        "rationale": "Ancrage essentiel pour rassurer (urgent_concern=True) et cibler des formations adaptées à son profil."
+      },
+      {
+        "text": "Quels métiers ou secteurs d'activité valorisent des compétences en philosophie et en réflexion critique, plutôt que des résultats en mathématiques ?",
+        "target_corpus": "metier",
+        "priority": 1,
+        "rationale": "Identifier des métiers alignés avec ses forces pour orienter sa réorientation."
+      },
+      {
+        "text": "Quels sont les métiers en tension ou avec des postes à pourvoir d'ici 2030 (DARES) qui ne nécessitent pas un niveau élevé en mathématiques ?",
+        "target_corpus": "metier_prospective",
+        "priority": 2,
+        "rationale": "Apporter une dimension prospective pour sécuriser son choix."
+      },
+      {
+        "text": "Quels blocs de compétences (RNCP) ou certifications peuvent être validés pour compenser un niveau faible en maths et mettre en avant ses compétences en philosophie ?",
+        "target_corpus": "competences_certif",
+        "priority": 2,
+        "rationale": "Explorer des voies alternatives pour valoriser son profil."
+      },
+      {
+        "text": "Quels sont les taux de réussite en licence (L1) pour des bacheliers avec un profil similaire (faible en maths, fort en philosophie) ?",
+        "target_corpus": "parcours_bacheliers",
+        "priority": 3,
+        "rationale": "Évaluer la faisabilité des études longues pour ce profil."
+      }
+    ],
+    "strategy_note": "Priorité donnée aux sub-queries 'formation' et 'metier' pour couvrir l'intent core (réorientation réaliste). Les sub-queries complémentaires apportent des éclairages sur les compétences, la prospective et la faisabilité académique. Le découpage évite la dispersion tout en couvrant les angles clés.",
+    "profile_used": {
+      "age_group": "lyceen_terminale",
+      "education_level": "terminale",
+      "intent_type": "reorientation_etude",
+      "sector_interest": [],
+      "region": null,
+      "urgent_concern": true,
+      "confidence": 0.85,
+      "notes": "Élève en 1ère S (supposée en terminale pour le post-bac), difficultés en maths mais forces en philo. Besoin de réorientation réaliste."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 5,
+  "fact_check_results": [
+    {
+      "claim": "Taux d’emploi : ~60% à 6 mois (connaissance générale).*\n→ [Exemple : BTS Com Lyon](https://www.onisep.fr/formation/identifiant) *(lien générique — vérifier sur Parcoursup)*\n\n📍 **Licence de Philosophie** (Université) — bac+3 public, **accès large** (>80% des vœux acceptés en 2025), **aucune maths**.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement un taux d'emploi à 6 mois pour les diplômés d'une licence de Philosophie (bac+3). Les sources disponibles se limitent aux compétences certifiées (RNCP), aux métiers visés, aux voies d'accès et aux statistiques de réussite en licence, mais aucune ne fournit de données sur l'insertion professionnelle ou les taux d'emploi.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "Attention : débouchés étroits sans master (connaissance générale) — prévoir un double cursus (ex : info-com) ou une spécialisation (enseignement, édition).*\n\n📍 **BUT Métiers du Livre** (IUT, ex : Bordeaux) — bac+3 public, **sélectivité ~40%**, maths limitées à la L1 (statistiques basiques).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne spécifiquement le **BUT Métiers du Livre** (ex-IUT Bordeaux), sa sélectivité (~40%), ou le niveau de mathématiques requis (limitées à la L1 en statistiques basiques). Les sources disponibles concernent principalement des licences et masters en philosophie, lettres, langues, sciences humaines ou mathématiques, sans lien avec ce diplôme ou ses caractéristiques.",
+      "confidence": 0.95,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 36.34,
+  "elapsed_clarify_s": 2.18,
+  "elapsed_reformulate_s": 9.73,
+  "elapsed_retrieve_s": 1.02,
+  "elapsed_generate_s": 16.78,
+  "elapsed_fact_check_s": 6.63,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "personas_v4",
+  "query_id": "psy_en_q2",
+  "persona_id": "psy_en",
+  "pattern_target": null,
+  "gap_target": null
+}

@@ -1,0 +1,117 @@
+{
+  "query": "Quel est le programme pédagogique du master Marketing Digital ?",
+  "answer_text": "**TL;DR**\n1. Les masters en **Marketing Digital** combinent stratégie marketing, data analytics, et outils digitaux (SEO, réseaux sociaux, e-commerce).\n2. Les programmes varient selon l’école : **théorie académique** (université) vs **pratique pro** (écoles de commerce).\n3. Voici 3 options concrètes avec leurs spécificités pédagogiques.\n\n---\n\n### **Plan A — Approche académique + recherche**\n📍 **MSc Digital Marketing and Sales** (Paris) — bac+5, [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.2467)\n*Pour toi :* Idéal si tu veux allier théorie (comportement consommateur, data science) et applications concrètes (cas Google Ads, HubSpot). Stage obligatoire de 6 mois.\n\n**Programme type (connaissance générale)** :\n- **Cours fondamentaux** : Stratégie digitale, CRM, growth hacking, droit du numérique.\n- **Outils** : Certification Google Analytics, Meta Ads, Salesforce.\n- **Projet** : Audit d’une marque réelle + recommandations data-driven.\n\n---\n\n### **Plan B — Pratique intensive + réseau pro**\n📍 **Manager Marketing Digital (MS) — Groupe ESSEC** (Cergy) — bac+5, certificat RNCP, [site officiel](https://www.essec.edu)\n*Pour toi :* Pour un profil opérationnel avec accès à un réseau d’alumni (L’Oréal, Amazon). Alternance possible.\n\n**Spécificités (connaissance générale)** :\n- **80% pratique** : Simulations de campagnes, hackathons avec entreprises partenaires.\n- **Modules clés** : Brand content, influence marketing, UX/UI pour le e-commerce.\n- **Atout** : Accès aux conférences ESSEC (ex : \"IA et publicité\").\n\n---\n### **Plan C — Flexibilité + double compétence**\n📍 **Diplôme Supérieur en Management du Marketing Digital — Rennes SB** (Rennes) — bac+5, certificat RNCP, [site officiel](https://www.rennes-sb.com)\n*Pour toi :* Si tu veux ajouter une dimension internationale (cours en anglais) ou te spécialiser en data marketing.\n\n**Points forts (connaissance générale)** :\n- **Double diplôme possible** : Ajout d’un MSc en Data Analytics.\n- **Pédagogie** : Mooc intégrés (Coursera, Harvard Business Review), projet de consulting pour une PME.\n- **Débouchés** : Chef de projet digital, traffic manager, consultant en transformation digitale.\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées** : Certains MS coûtent **15-20k€/an** (ex : ESSEC). Vérifie les bourses (CROUS, fondations d’entreprises).\n- **Alternance** : Obligatoire dans certaines formations (ex : Rennes SB). Trouve une entreprise **avant** de t’inscrire.\n- **Labels** : Privilégie les diplômes **RNCP** ou **visés par l’État** (ex : grade Master) pour une reconnaissance sur le marché.\n\n---\n**Question pour toi** :\nQuelle est ta priorité ?\n- **Théorie/recherche** (Plan A) → vise l’université ou un MSc académique.\n- **Réseau/employabilité** (Plan B) → école de commerce type ESSEC.\n- **Double compétence** (Plan C) → Rennes SB ou un parcours data + marketing.",
+  "profile": {
+    "age_group": "etudiant_master",
+    "education_level": "bac+4",
+    "intent_type": "info_metier_specifique",
+    "sector_interest": [
+      "marketing",
+      "digital"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.85,
+    "notes": "Query ciblée sur un master spécifique, mais niveau d'études supposé (bac+4 en cours)."
+  },
+  "plan": {
+    "original_query": "Quel est le programme pédagogique du master Marketing Digital ?",
+    "sub_queries": [
+      {
+        "text": "Programme pédagogique détaillé du master Marketing Digital : matières enseignées, unités d'enseignement (UE), volume horaire, modalités d'évaluation et spécialisations proposées.",
+        "target_corpus": "formation",
+        "priority": 1,
+        "rationale": "Intent core : obtenir le détail du programme pédagogique d'un master spécifique."
+      },
+      {
+        "text": "Fiche métier ONISEP associée au domaine Marketing Digital : compétences clés, débouchés professionnels et missions typiques.",
+        "target_corpus": "metier",
+        "priority": 2,
+        "rationale": "Contexte complémentaire pour comprendre l'adéquation formation-métier."
+      },
+      {
+        "text": "Blocs de compétences RNCP associés aux masters en Marketing Digital : certifications reconnues et compétences validables.",
+        "target_corpus": "competences_certif",
+        "priority": 3,
+        "rationale": "Apporte une vision normative des compétences attendues."
+      },
+      {
+        "text": "Taux d'insertion professionnelle à 6, 12 et 18 mois des diplômés d'un master Marketing Digital : données MESR.",
+        "target_corpus": "insertion_pro",
+        "priority": 2,
+        "rationale": "Contexte utile pour évaluer l'efficacité de la formation sur le marché du travail."
+      }
+    ],
+    "strategy_note": "Query centrée sur un intent info_metier_specifique (programme pédagogique). Priorité 1 donnée au corpus 'formation' pour couvrir le besoin principal. Ajout de sub-queries secondaires pour enrichir le contexte (métier, compétences, insertion) sans disperser l'attention.",
+    "profile_used": {
+      "age_group": "etudiant_master",
+      "education_level": "bac+4",
+      "intent_type": "info_metier_specifique",
+      "sector_interest": [
+        "marketing",
+        "digital"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.85,
+      "notes": "Query ciblée sur un master spécifique, mais niveau d'études supposé (bac+4 en cours)."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 4,
+  "fact_check_results": [
+    {
+      "claim": "---\n\n### **Plan A — Approche académique + recherche**\n📍 **MSc Digital Marketing and Sales** (Paris) — bac+5, [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.2467)\n*Pour toi :* Idéal si tu veux allier théorie (comportement consommateur, data science) et applications concrètes (cas Google Ads, HubSpot).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Le claim mentionne spécifiquement un **MSc Digital Marketing and Sales** avec une référence à une fiche ONISEP (FOR.2467). Aucune des sources fournies ne cite explicitement ce diplôme sous ce nom exact. Les sources disponibles évoquent des diplômes de niveau bac+5 ou Niveau 7 (RNCP41233, RNCP41109), mais aucun ne correspond verbatim au **MSc Digital Marketing and Sales**. La source 5 mentionne bien « MSc Digital Marketing and Sales », mais sans détails permettant de confirmer son niveau, son contenu ou son adéquation avec le claim.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "Stage obligatoire de 6 mois.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement la durée d'un stage obligatoire, ni même l'obligation d'un stage. Les sources se limitent à décrire les diplômes, leurs niveaux, les métiers visés et les voies d'accès, sans préciser les modalités pratiques comme la durée des stages.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "---\n\n### **Plan B — Pratique intensive + réseau pro**\n📍 **Manager Marketing Digital (MS) — Groupe ESSEC** (Cergy) — bac+5, certificat RNCP, [site officiel](https://www.essec.edu)\n*Pour toi :* Pour un profil opérationnel avec accès à un réseau d’alumni (L’Oréal, Amazon).",
+      "verdict": "supported",
+      "source_excerpt": "Compétences certifiées (RNCP41233) — Diplôme Supérieur en Management du Marketing Digital (bac+5) | Niveau européen : Niveau 7",
+      "reason": "La source 1 (RNCP41233) confirme explicitement que le **Diplôme Supérieur en Management du Marketing Digital** délivré par l'ESSEC est un **bac+5** et qu'il est certifié **RNCP** (Niveau 7). Le claim mentionne bien un **bac+5** et un **certificat RNCP**, ce qui est directement supporté par cette source.",
+      "confidence": 0.92,
+      "source_id": "rncp_blocs:RNCP41233"
+    },
+    {
+      "claim": "**Spécificités (connaissance générale)** :\n- **80% pratique** : Simulations de campagnes, hackathons avec entreprises partenaires.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement une proportion de '80% pratique' ni des modalités pédagogiques comme des 'simulations de campagnes' ou des 'hackathons avec entreprises partenaires'. Les sources se limitent à des descriptions de certifications, métiers visés, niveaux RNCP et voies d'accès, sans détails sur la répartition pratique/théorie ou les méthodes d'enseignement.",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "---\n### **Plan C — Flexibilité + double compétence**\n📍 **Diplôme Supérieur en Management du Marketing Digital — Rennes SB** (Rennes) — bac+5, certificat RNCP, [site officiel](https://www.rennes-sb.com)\n*Pour toi :* Si tu veux ajouter une dimension internationale (cours en anglais) ou te spécialiser en data marketing.",
+      "verdict": "supported",
+      "source_excerpt": "Compétences certifiées (RNCP41233) — Diplôme Supérieur en Management du Marketing Digital (bac+5) | Niveau européen : Niveau 7",
+      "reason": "La source 1 (RNCP41233) confirme explicitement que le **Diplôme Supérieur en Management du Marketing Digital** est un diplôme de niveau bac+5 et qu'il est certifié RNCP (Niveau 7 européen). Cela valide les deux éléments clés du claim : le niveau du diplôme et son statut RNCP.",
+      "confidence": 0.95,
+      "source_id": "rncp_blocs:RNCP41233"
+    }
+  ],
+  "elapsed_total_s": 29.72,
+  "elapsed_clarify_s": 1.98,
+  "elapsed_reformulate_s": 7.26,
+  "elapsed_retrieve_s": 1.25,
+  "elapsed_generate_s": 12.26,
+  "elapsed_fact_check_s": 6.97,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "blocs_dedie",
+  "query_id": "q09_blocs_master_marketing",
+  "persona_id": null,
+  "pattern_target": "programme pédagogique",
+  "gap_target": null
+}

@@ -1,0 +1,115 @@
+{
+  "query": "Mon fils veut faire STAPS mais je m'inquiète des débouchés. Est-ce un choix raisonnable aujourd'hui ?",
+  "answer_text": "**TL;DR**\n1. STAPS offre des débouchés **réels**, mais **très spécialisés** : enseignement, santé, management sportif ou recherche.\n2. **Seuls 10-15% des diplômés** trouvent un emploi directement lié au sport (connaissance générale) — la majorité se réoriente ou complète par un autre diplôme.\n3. **3 plans pour sécuriser son projet** : filière enseignement (le plus sûr), double compétence (STAPS + autre domaine), ou spécialisation santé (en croissance).\n\n---\n\n### **Plan A — Le plus sûr : Enseignement (prof de sport)**\n📍 **Master MEEF EPS** (ex : [Université de Rennes 2](https://www.onisep.fr/http/redirection/formation/slug/FOR.4821)) — bac+5 public, **concours obligatoire** (CAPEPS), **salaire ~2k€ net** en début de carrière (source : Éducation nationale).\n*Pour votre fils :* **Débouché garanti** si il vise le professorat (besoins en enseignants d’EPS), mais exige une **bonne condition physique** et la réussite au concours.\n\n---\n\n### **Plan B — Double compétence : STAPS + autre domaine**\n*(connaissance générale)*\n- **STAPS + Management** (ex : master management du sport à **Brest**) : pour travailler dans les fédérations, clubs pro, ou événements sportifs. **Salaire variable** (2k-3,5k€ net selon l’expérience).\n- **STAPS + Santé** (ex : master **Activité Physique Adaptée et Santé** à Toulouse) : en hausse avec le vieillissement de la population (métiers : réadaptation, prévention).\n*Pour votre fils :* **Moins risqué** que STAPS seul, mais nécessite de **choisir une spécialisation dès la L3**.\n\n---\n### **Plan C — Réorientation progressive : STAPS comme tremplin**\n*(connaissance générale)*\n- **Licence STAPS → Poursuite en kiné/ergothérapie** (via passerelles ou VAP, **sélectif**).\n- **Licence STAPS → Métiers de la forme** (BPJEPS, **salaire ~1,6k-2k€ net**), mais **précarité fréquente** (CDD, auto-entrepreneur).\n*Pour votre fils :* **Solution si il hésite**, mais **peu stable** sans spécialisation poussée.\n\n---\n### **⚠ Attention aux pièges**\n1. **Illusion \"passion = emploi\"** : Seuls **10-15% des diplômés STAPS** travaillent dans le sport pur (source : enquêtes Céreq, estimation). La majorité se reconvertit.\n2. **Précarité dans le secteur privé** : Les métiers de coach/animateur sont souvent en **CDD ou temps partiel** (connaissance générale).\n3. **Concours obligatoires** pour les débouchés stables (enseignement, fonction publique territoriale).\n\n---\n**Question pour vous :**\nVotre fils vise-t-il **un métier précis** (prof, kiné, manager sportif) ou **veut-il \"travailler dans le sport\"** sans savoir lequel ? Cela change radicalement les formations à privilégier. *(Un conseiller d’orientation [Psy-EN](https://www.education.gouv.fr/annuaire) peut l’aider à affiner ce point.)*",
+  "profile": {
+    "age_group": "parent_lyceen",
+    "education_level": "unknown",
+    "intent_type": "conseil_strategique",
+    "sector_interest": [
+      "sport",
+      "STAPS"
+    ],
+    "region": null,
+    "urgent_concern": true,
+    "confidence": 0.85,
+    "notes": "Parent inquiet pour l'orientation de son fils (STAPS). Demande implicite sur les débouchés et la pertinence du choix."
+  },
+  "plan": {
+    "original_query": "Mon fils veut faire STAPS mais je m'inquiète des débouchés. Est-ce un choix raisonnable aujourd'hui ?",
+    "sub_queries": [
+      {
+        "text": "STAPS : quelles sont les formations disponibles sur Parcoursup et ONISEP pour un lycéen ? Détails sur les attendus et taux d'accès.",
+        "target_corpus": "formation",
+        "priority": 1,
+        "rationale": "Ancrage rassurant pour un parent (urgent_concern=True). Couvre l'entrée en formation."
+      },
+      {
+        "text": "STAPS : quels métiers sont accessibles après la licence ? Liste exhaustive des débouchés professionnels selon l'ONISEP.",
+        "target_corpus": "metier",
+        "priority": 1,
+        "rationale": "Répond à l'intent core sur les débouchés."
+      },
+      {
+        "text": "STAPS : quels sont les postes à pourvoir en 2030 dans les métiers du sport selon la DARES ? Projections régionales si disponibles.",
+        "target_corpus": "metier_prospective",
+        "priority": 2,
+        "rationale": "Contexte prospectif pour évaluer la pérennité des débouchés."
+      },
+      {
+        "text": "STAPS : quel est le salaire médian des professionnels du sport en France (INSEE) ? Comparaison par région et PCS.",
+        "target_corpus": "insee_salaire",
+        "priority": 2,
+        "rationale": "Complète l'analyse des débouchés par des données économiques."
+      },
+      {
+        "text": "STAPS : quel est le taux d'insertion professionnelle 6, 12 et 18 mois après un master ou BUT dans le domaine du sport ? Données MESR.",
+        "target_corpus": "insertion_pro",
+        "priority": 3,
+        "rationale": "Donne une vision concrète de l'employabilité post-diplôme."
+      }
+    ],
+    "strategy_note": "5 sub-queries pour couvrir l'intent core (débouchés) tout en rassurant le parent (formation + données économiques). Priorité 1 sur formation et métiers pour ancrer la réponse. Les sub-queries 3 et 4 apportent un éclairage prospectif et salarial, tandis que la 5 est un bonus optionnel pour l'insertion.",
+    "profile_used": {
+      "age_group": "parent_lyceen",
+      "education_level": "unknown",
+      "intent_type": "conseil_strategique",
+      "sector_interest": [
+        "sport",
+        "STAPS"
+      ],
+      "region": null,
+      "urgent_concern": true,
+      "confidence": 0.85,
+      "notes": "Parent inquiet pour l'orientation de son fils (STAPS). Demande implicite sur les débouchés et la pertinence du choix."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 5,
+  "fact_check_results": [
+    {
+      "claim": "**Seuls 10-15% des diplômés** trouvent un emploi directement lié au sport (connaissance générale) — la majorité se réoriente ou complète par un autre diplôme.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement le taux d'insertion professionnelle **directement lié au sport** pour les diplômés en STAPS ou dans les métiers du sport. Les données disponibles (ex: SOURCE 7) parlent d'un taux d'emploi salarié général (68-69% à 6-12 mois), sans préciser le lien avec le secteur sportif. Aucune source ne quantifie les 10-15% évoqués dans le claim.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "---\n\n### **Plan A — Le plus sûr : Enseignement (prof de sport)**\n📍 **Master MEEF EPS** (ex : [Université de Rennes 2](https://www.onisep.fr/http/redirection/formation/slug/FOR.4821)) — bac+5 public, **concours obligatoire** (CAPEPS), **salaire ~2k€ net** en début de carrière (source : Éducation nationale).",
+      "verdict": "ambiguous",
+      "source_excerpt": "Professionnels de l'action culturelle, sportive et surveillants | Effectifs 2019 France : 410 755 personnes | Créations/destructions nettes 2019-2030 : +32 039 postes | Départs en fin de carrière : 81 304 | Postes à pourvoir 2019-2030 : 113 343 postes (national)",
+      "reason": "La source DARES FAP V5Z mentionne les 'Professionnels de l'action culturelle, sportive et surveillants', qui incluent les professeurs de sport, mais ne fournit **aucune information explicite** sur : \n1. Le **Master MEEF EPS** (formation spécifique).\n2. Le **concours CAPEPS** (obligatoire pour enseigner).\n3. Le **salaire de ~2k€ net en début de carrière** pour les professeurs d'EPS.\n\nLa source évoque un métier large (FAP V5Z) sans préciser les détails réglementaires ou salariaux du métier de professeur d'EPS.",
+      "confidence": 0.5,
+      "source_id": "dares_fap:V5Z"
+    },
+    {
+      "claim": "*Pour votre fils :* **Débouché garanti** si il vise le professorat (besoins en enseignants d’EPS), mais exige une **bonne condition physique** et la réussite au concours.",
+      "verdict": "ambiguous",
+      "source_excerpt": "Postes à pourvoir 2019-2030 : 113 343 postes (national) | Départs en fin de carrière : 81 304 | Créations/destructions nettes 2019-2030 : +32 039 postes",
+      "reason": "La source DARES (FAP V5Z) mentionne un nombre important de postes à pourvoir d'ici 2030 pour les professionnels de l'action culturelle et sportive, ce qui inclut les enseignants d'EPS. Cependant, elle ne précise pas explicitement que ces postes concernent spécifiquement le professorat d'EPS, ni que le débouché est *garanti* (notion absolue non étayée par des données quantitatives ou qualitatives précises). La mention d'un besoin en enseignants d'EPS n'est pas confirmée verbatim.",
+      "confidence": 0.65,
+      "source_id": "dares_fap:V5Z"
+    },
+    {
+      "claim": "**Illusion \"passion = emploi\"** : Seuls **10-15% des diplômés STAPS** travaillent dans le sport pur (source : enquêtes Céreq, estimation).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement une statistique sur la part des diplômés STAPS travaillant dans le « sport pur » (10-15% ou autre). Les sources DARES (FAP V5Z et V3Z) parlent d'effectifs et de projections métiers, mais sans lien direct avec les diplômés STAPS. L'enquête InserSup (source 7) donne des taux d'emploi, mais pas de répartition sectorielle détaillée. Aucune source ne cite les enquêtes Céreq ou une estimation similaire.",
+      "confidence": 0.9,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 31.61,
+  "elapsed_clarify_s": 1.97,
+  "elapsed_reformulate_s": 8.8,
+  "elapsed_retrieve_s": 0.42,
+  "elapsed_generate_s": 12.3,
+  "elapsed_fact_check_s": 8.11,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "personas_v4",
+  "query_id": "valerie_q2",
+  "persona_id": "valerie",
+  "pattern_target": null,
+  "gap_target": null
+}

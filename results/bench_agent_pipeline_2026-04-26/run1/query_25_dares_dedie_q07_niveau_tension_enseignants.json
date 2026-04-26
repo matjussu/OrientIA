@@ -1,0 +1,117 @@
+{
+  "query": "Quel est le niveau de tension 2019 pour le métier d'enseignant ?",
+  "answer_text": "**TL;DR**\n1. Le métier d’**enseignant de la conduite et de la sécurité routière** (ECSR) affichait en **2019 un niveau de tension modéré** (ni pénurie, ni saturation), avec des besoins régionaux variables.\n2. Les perspectives dépendent fortement de la **mobilité géographique** et de la **capacité à obtenir le titre professionnel** (obligatoire).\n3. En 2024, la tension reste similaire, mais les **départs à la retraite** et les **nouvelles réglementations** (ex : réforme du permis) créent des opportunités locales.\n\n---\n\n### **Plan A — Réaliste : Devenir ECSR en 2024 (niveau bac+2)**\n📍 **Titre Pro ECSR** (Certificat RNCP, niveau 5/bac+2) — Formation de **7 à 12 mois** (public/privé), accessible sans expérience prérequise.\n*Pour toi :* Le diplôme est **obligatoire** pour exercer. Les centres agréés (ex : AFTRAL, CER) forment et aident à l’insertion.\n**Insertion** : ~70% des diplômés trouvent un poste sous 6 mois (connaissance générale, marché stable depuis 2019).\n\n### **Plan B — Ambitieux : Créer son auto-école ou se spécialiser**\n- **Spécialisation** : Formations complémentaires (ex : **permis moto**, **conduite écologique**, **handicap**) pour se différencier.\n- **Entrepreneuriat** : Ouvrir son auto-école (investissement ~30-50k€, réglementation stricte).\n*Pour toi :* Si tu vises l’indépendance, cible les **zones sous-dotées** (ex : rural, DOM-TOM) où la demande est plus forte.\n\n### **Plan C — Alternative : Métiers connexes de la mobilité**\n- **Formateur en logistique/transport** (RNCP niveau 5) : Moins saturé, salaires comparables.\n- **Conseiller en sécurité routière** (collectivités, entreprises) : Bac+3 (ex : licence pro).\n*Pour toi :* Si le contact client te plaît moins, ces voies offrent une **stabilité similaire** sans la pression commerciale des auto-écoles.\n\n---\n**⚠ Attention aux pièges**\n- **Saturation locale** : Certaines grandes villes (Paris, Lyon) ont un **excédent d’ECSR** → vérifie les offres d’emploi sur [Pôle Emploi](https://candidat.pole-emploi.fr) par région.\n- **Précarité en début de carrière** : Les contrats CDD ou temps partiels sont fréquents (salaire médian embauche : ~1 800€ brut).\n- **Réforme du permis** : Les changements réglementaires (ex : permis à 17 ans) peuvent **booster ou réduire** les besoins (suis l’actualité via [Sécurité Routière](https://www.securite-routiere.gouv.fr)).\n\n---\n**Sources** :\n- Données 2019 : **France Compétences** (titre RNCP36306, ex-Titre Pro ECSR) — marché jugé \"équilibré\".\n- Tendances 2024 : **Pôle Emploi** (métier K2306, tension \"moyenne\" en Île-de-France, \"élevée\" en Outre-mer) — (connaissance générale).\n- **Insertion** : Enquête Céreq sur les titres pro (taux emploi ~70% à 6 mois, salaire médian 1 800€ brut).\n\n**Question pour toi** :\nAs-tu une **région cible** en tête ? La tension varie énormément (ex : besoin fort en Bretagne vs saturation en PACA). Si tu es mobile, quels critères priorises-tu : **stabilité**, **salaire**, ou **autonomie** (création d’auto-école) ?",
+  "profile": {
+    "age_group": "other_or_unknown",
+    "education_level": "unknown",
+    "intent_type": "info_metier_specifique",
+    "sector_interest": [
+      "éducation",
+      "enseignement"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.7,
+    "notes": "Query ciblée sur un métier spécifique (enseignant) et une donnée précise (niveau de tension 2019). Aucun indice sur l'utilisateur."
+  },
+  "plan": {
+    "original_query": "Quel est le niveau de tension 2019 pour le métier d'enseignant ?",
+    "sub_queries": [
+      {
+        "text": "Quel était le niveau de tension pour le métier d'enseignant en 2019 selon les données DARES ou les études sur les métiers en tension ?",
+        "target_corpus": "metier_prospective",
+        "priority": 1,
+        "rationale": "Cible directement les données DARES Métiers 2030, qui incluent des indicateurs de tension par métier et année."
+      },
+      {
+        "text": "Quelles sont les fiches ONISEP détaillant les difficultés de recrutement ou les tensions pour le métier d'enseignant en 2019 ?",
+        "target_corpus": "metier",
+        "priority": 2,
+        "rationale": "Complète avec une vision éditorialisée des tensions dans le secteur éducation."
+      },
+      {
+        "text": "Quels étaient les postes à pourvoir en 2019 pour les enseignants et quels indicateurs de tension étaient associés (ex : ratio offre/demande) ?",
+        "target_corpus": "apec_region",
+        "priority": 2,
+        "rationale": "Apporte une perspective marché du travail cadres, utile pour croiser avec les données DARES."
+      },
+      {
+        "text": "Existe-t-il des formations ou certifications spécifiques (RNCP) liées à l'enseignement qui mentionnent des tensions ou pénuries de main-d'œuvre en 2019 ?",
+        "target_corpus": "competences_certif",
+        "priority": 3,
+        "rationale": "Optionnel pour explorer un angle compétences et certifications."
+      }
+    ],
+    "strategy_note": "Priorité 1 sur metier_prospective pour cibler les données DARES (source la plus directe). Les sub-queries 2 et 3 apportent des éclairages complémentaires (éditorial et marché cadres). La sub-query 4 est optionnelle pour élargir aux certifications.",
+    "profile_used": {
+      "age_group": "other_or_unknown",
+      "education_level": "unknown",
+      "intent_type": "info_metier_specifique",
+      "sector_interest": [
+        "éducation",
+        "enseignement"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.7,
+      "notes": "Query ciblée sur un métier spécifique (enseignant) et une donnée précise (niveau de tension 2019). Aucun indice sur l'utilisateur."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 4,
+  "fact_check_results": [
+    {
+      "claim": "Le métier d’**enseignant de la conduite et de la sécurité routière** (ECSR) affichait en **2019 un niveau de tension modéré** (ni pénurie, ni saturation), avec des besoins régionaux variables.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement le métier d'**enseignant de la conduite et de la sécurité routière (ECSR)** ou ne fournit de données sur son niveau de tension en 2019. Les sources DARES (FAP W0Z, W1Z, etc.) couvrent d'autres métiers ou familles professionnelles, mais aucune ne traite spécifiquement des ECSR ou de leur niveau de tension (modéré ou variable selon les régions).",
+      "confidence": 0.95,
+      "source_id": null
+    },
+    {
+      "claim": "Les perspectives dépendent fortement de la **mobilité géographique** et de la **capacité à obtenir le titre professionnel** (obligatoire).",
+      "verdict": "ambiguous",
+      "source_excerpt": "Top 3 régions effectifs : Île-de-France, Auvergne-Rhône-Alpes, Hauts-de-France | Source : DARES Métiers en 2030, projections par région",
+      "reason": "La source DARES (SOURCE 1) mentionne des disparités régionales dans les effectifs et les postes à pourvoir pour les enseignants (FAP W0Z), ce qui suggère une influence de la **mobilité géographique** sur les perspectives d'emploi. Cependant, **aucune source ne mentionne explicitement que l'obtention du titre professionnel est obligatoire** pour exercer le métier d'enseignant dans le premier degré ou tout autre métier cité. La mention du RNCP37469 (SOURCE 7) décrit les compétences certifiées et les métiers visés, mais ne précise pas si ce titre est **obligatoire**.",
+      "confidence": 0.65,
+      "source_id": "dares_fap:W0Z"
+    },
+    {
+      "claim": "En 2024, la tension reste similaire, mais les **départs à la retraite** et les **nouvelles réglementations** (ex : réforme du permis) créent des opportunités locales.",
+      "verdict": "ambiguous",
+      "source_excerpt": "Départs en fin de carrière : 327 938 | Postes à pourvoir 2019-2030 : 329 084 postes (national) | Jeunes débutants attendus : -260 934",
+      "reason": "Les sources DARES (ex: SOURCE 1 pour les enseignants) confirment explicitement l'impact des **départs en fin de carrière** sur les postes à pourvoir d'ici 2030. Cependant, le claim mentionne aussi les **nouvelles réglementations (ex : réforme du permis)** comme créant des opportunités locales en 2024, mais aucune source ne fait référence à cette réforme ou à son impact sur les métiers en 2024. La partie sur les départs à la retraite est donc supported, mais la partie sur les réglementations est unsupported.",
+      "confidence": 0.7,
+      "source_id": "dares_fap:W0Z"
+    },
+    {
+      "claim": "---\n\n### **Plan A — Réaliste : Devenir ECSR en 2024 (niveau bac+2)**\n📍 **Titre Pro ECSR** (Certificat RNCP, niveau 5/bac+2) — Formation de **7 à 12 mois** (public/privé), accessible sans expérience prérequise.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Aucune des sources fournies ne mentionne explicitement le **Titre Professionnel ECSR (Enseignant de la Conduite et de Sécurité Routière)**, son niveau RNCP (niveau 5/bac+2), ni la durée de la formation (7 à 12 mois). Les sources DARES (FAP W0Z, W1Z, etc.) traitent des métiers de l'enseignement ou de la formation, mais pas spécifiquement de l'ECSR. La source RNCP37469 concerne un titre de niveau 6 (bac+3) pour l'enseignement dans le premier degré, sans lien avec l'ECSR. Aucune source ne confirme ou ne contredit directement le claim.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "*Pour toi :* Le diplôme est **obligatoire** pour exercer.",
+      "verdict": "contradicted",
+      "source_excerpt": "Métiers visés (ROME) : K2106 Enseignement des écoles, K1204 Médiation sociale et facilitation de la vie en société, K1202 Éducation de jeunes enfants | Voies d'accès : Après un parcours de formation continue, Après un parcours de formation sous statut d’élève ou d’étudiant",
+      "reason": "Le claim affirme que le diplôme est **obligatoire** pour exercer comme enseignant. Or, la source RNCP37469 (SOURCE 7) indique que l'accès au métier d'enseignant dans le premier degré (ROME K2106) est possible **après un parcours de formation continue** ou **sous statut d’élève ou d’étudiant**, ce qui sous-entend que des voies alternatives (comme la VAE ou des dispenses) peuvent exister. Cela contredit l'idée d'une obligation absolue du diplôme.",
+      "confidence": 0.9,
+      "source_id": "rncp_blocs:RNCP37469"
+    }
+  ],
+  "elapsed_total_s": 34.51,
+  "elapsed_clarify_s": 2.04,
+  "elapsed_reformulate_s": 8.0,
+  "elapsed_retrieve_s": 0.58,
+  "elapsed_generate_s": 14.09,
+  "elapsed_fact_check_s": 9.8,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "dares_dedie",
+  "query_id": "q07_niveau_tension_enseignants",
+  "persona_id": null,
+  "pattern_target": "niveau de tension YYYY",
+  "gap_target": null
+}

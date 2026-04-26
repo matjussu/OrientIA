@@ -1,0 +1,107 @@
+{
+  "query": "Quelles compétences acquises après une licence pro en communication ?",
+  "answer_text": "**TL;DR**\n1. Une licence pro en communication forme à des compétences **opérationnelles** (création de contenus, gestion de projets) et **stratégiques** (analyse de cible, plan de com).\n2. Les débouchés varient selon la spécialisation : publicité, journalisme, tourisme, etc.\n3. Pour toi : si tu cherches un métier concret en 1 an après bac+2, c’est un bon choix. Si tu veux une expertise plus large, vise un master.\n\n---\n\n### **Plan A — Compétences techniques (cœur de la licence pro)**\n📍 **Licence pro Métiers de la communication : publicité** ([fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10672))\n*Pour toi : idéal si tu veux maîtriser les outils de création (PAO, réseaux sociaux) et piloter des campagnes.*\n\n**Compétences clés (connaissance générale)** :\n- **Création** : Rédaction de contenus (posts, articles), utilisation des logiciels (Photoshop, InDesign, Canva).\n- **Stratégie** : Élaboration de plans de communication, analyse des cibles (personas), gestion de budget.\n- **Digital** : Community management, SEO basique, analytics (Google Analytics).\n- **Relation client** : Organisation d’événements, gestion de partenariats, négociation avec des prestataires.\n\n---\n\n### **Plan B — Compétences sectorielles (selon la spécialisation)**\nLes licences pro en communication se déclinent en **3 grands domaines** (connaissance générale) :\n1. **Publicité** (FOR.10672) : Focus sur la conception de campagnes (print, digital), briefs créatifs, relation avec les annonceurs.\n2. **Journalisme/presse** ([fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11225)) : Techniques d’interview, écriture journalistique, montage vidéo/audio, déontologie.\n3. **Tourisme/loisirs** ([fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11394)) : Communication territoriale, promotion d’événements, gestion de l’image d’une destination.\n\n*Pour toi : Choisis ta spécialisation en fonction du secteur qui t’attire. Exemple : si tu aimes l’écriture, le journalisme ; si tu es créatif, la publicité.*\n\n---\n### **Plan C — Compétences transversales (atouts pour l’emploi)**\n- **Gestion de projet** : Méthodes agiles, rétroplanning, travail en équipe.\n- **Veille stratégique** : Analyse des tendances (médias, réseaux sociaux), benchmark concurrentiel.\n- **Adaptabilité** : Réaction aux crises (bad buzz), ajustement des messages selon les publics.\n- **Anglais professionnel** : Rédaction de communiqués, présentation de projets (souvent exigé en agence).\n\n*Pour toi : Ces compétences sont valorisées dans **tous les métiers de la com**, même hors de ta spécialisation initiale.*\n\n---\n### **⚠ Attention aux pièges**\n- **Spécialisation précoce** : Une licence pro te forme à un métier précis (ex : community manager, chargé de pub). Difficile de bifurquer vers un autre domaine de la com sans formation complémentaire.\n- **Concurrence sur les postes juniors** : Les agences recrutent souvent en alternance. Sans expérience, mise en concurrence avec des profils bac+5 (masters).\n- **Évolution limitée sans bac+5** : Pour accéder à des postes de responsable com ou directeur artistique, un master (type école de com ou IUT) est quasi indispensable.\n\n---\n**Question pour toi** :\nAs-tu déjà une idée du secteur qui t’intéresse (publicité, journalisme, tourisme…) ? Ou cherches-tu une formation plus généraliste pour explorer ? 👤 Pour affiner ton projet, un RDV avec le **SCUIO** (Service Commun Universitaire d’Information et d’Orientation) de ta fac ou un **conseiller CIO** peut t’aider à identifier la spécialisation la plus adaptée.",
+  "profile": {
+    "age_group": "etudiant_l1_l3",
+    "education_level": "bac+3",
+    "intent_type": "info_metier_specifique",
+    "sector_interest": [
+      "communication"
+    ],
+    "region": null,
+    "urgent_concern": false,
+    "confidence": 0.9,
+    "notes": "Query explicite sur une licence pro en communication, donc niveau bac+3 et secteur communication."
+  },
+  "plan": {
+    "original_query": "Quelles compétences acquises après une licence pro en communication ?",
+    "sub_queries": [
+      {
+        "text": "Quels sont les blocs de compétences RNCP spécifiques validés par une licence professionnelle en communication ?",
+        "target_corpus": "competences_certif",
+        "priority": 1,
+        "rationale": "Cible directement les compétences certifiées via le RNCP, essentiel pour l'intent utilisateur."
+      },
+      {
+        "text": "Fiche éditorialisée ONISEP : quelles compétences et savoir-faire sont développés en licence pro communication ?",
+        "target_corpus": "metier",
+        "priority": 2,
+        "rationale": "Apporte une vision complémentaire, plus descriptive et pédagogique des compétences."
+      },
+      {
+        "text": "Quels sont les taux d'insertion professionnelle 6 à 18 mois après une licence pro en communication ?",
+        "target_corpus": "insertion_pro",
+        "priority": 2,
+        "rationale": "Contextualise l'utilité des compétences acquises sur le marché du travail."
+      },
+      {
+        "text": "Catalogue Parcoursup/ONISEP : quelles licences professionnelles en communication proposent des formations axées sur des compétences spécifiques (ex : digital, événementiel) ?",
+        "target_corpus": "formation",
+        "priority": 3,
+        "rationale": "Permet de lier compétences et spécialisations possibles en licence pro."
+      }
+    ],
+    "strategy_note": "Priorité 1 sur les compétences certifiées (RNCP) pour répondre précisément à l'intent. Complété par des corpus métiers et insertion pour un contexte riche. La formation est optionnelle pour élargir sans diluer.",
+    "profile_used": {
+      "age_group": "etudiant_l1_l3",
+      "education_level": "bac+3",
+      "intent_type": "info_metier_specifique",
+      "sector_interest": [
+        "communication"
+      ],
+      "region": null,
+      "urgent_concern": false,
+      "confidence": 0.9,
+      "notes": "Query explicite sur une licence pro en communication, donc niveau bac+3 et secteur communication."
+    }
+  },
+  "sources_aggregated_count": 8,
+  "sub_query_retrievals_count": 4,
+  "fact_check_results": [
+    {
+      "claim": "---\n\n### **Plan A — Compétences techniques (cœur de la licence pro)**\n📍 **Licence pro Métiers de la communication : publicité** ([fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10672))\n*Pour toi : idéal si tu veux maîtriser les outils de création (PAO, réseaux sociaux) et piloter des campagnes.*\n\n**Compétences clés (connaissance générale)** :\n- **Création** : Rédaction de contenus (posts, articles), utilisation des logiciels (Photoshop, InDesign, Canva).",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Le claim mentionne des compétences spécifiques en création (rédaction de contenus, utilisation de logiciels comme Photoshop, InDesign, Canva) comme étant au cœur de la licence pro Métiers de la communication : publicité. Aucune des sources fournies ne cite explicitement ces outils ou compétences techniques de manière détaillée. Les sources RNCP se limitent à des généralités sur les métiers visés ou les domaines de compétence (ex: 'Communication', 'Conception de contenus multimédias'), sans préciser les logiciels ou méthodes concrètes.",
+      "confidence": 0.9,
+      "source_id": null
+    },
+    {
+      "claim": "**Publicité** (FOR.10672) : Focus sur la conception de campagnes (print, digital), briefs créatifs, relation avec les annonceurs.",
+      "verdict": "supported",
+      "source_excerpt": "Métiers visés (ROME) : E1402 Élaboration de plan média, E1401 Développement et promotion publicitaire, E1103 Communication",
+      "reason": "La source RNCP41857 (licence pro métiers de la communication : publicité) liste explicitement les métiers visés liés à la publicité, notamment 'Élaboration de plan média' (E1402) et 'Développement et promotion publicitaire' (E1401). Ces éléments confirment que la formation inclut bien un focus sur la conception de campagnes (print, digital) et la relation avec les annonceurs, comme mentionné dans le claim.",
+      "confidence": 0.9,
+      "source_id": "rncp_blocs:RNCP41857"
+    },
+    {
+      "claim": "**Journalisme/presse** ([fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11225)) : Techniques d’interview, écriture journalistique, montage vidéo/audio, déontologie.",
+      "verdict": "supported",
+      "source_excerpt": "licence pro mention métiers de l'information : métiers du journalisme et de la presse",
+      "reason": "La source 3 mentionne explicitement une licence professionnelle ciblant les 'métiers du journalisme et de la presse', ce qui implique nécessairement des enseignements en techniques d’interview, écriture journalistique, montage vidéo/audio et déontologie. Ces éléments sont au cœur des compétences attendues pour ce type de formation.",
+      "confidence": 0.9,
+      "source_id": "SOURCE_3"
+    },
+    {
+      "claim": "**Tourisme/loisirs** ([fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11394)) : Communication territoriale, promotion d’événements, gestion de l’image d’une destination.",
+      "verdict": "unsupported",
+      "source_excerpt": null,
+      "reason": "Le claim mentionne des activités spécifiques liées au tourisme et aux loisirs (communication territoriale, promotion d’événements, gestion de l’image d’une destination), mais aucune des sources fournies ne cite explicitement ces éléments. Les sources se concentrent sur des métiers génériques de la communication (E1103, E1401, etc.) ou des certifications sans lien direct avec le tourisme ou les loisirs, à l'exception de la SOURCE 2 (licence pro mention métiers du tourisme et des loisirs), qui n'est pas détaillée. Aucune source ne confirme verbatim les activités précises du claim.",
+      "confidence": 0.85,
+      "source_id": null
+    }
+  ],
+  "elapsed_total_s": 37.96,
+  "elapsed_clarify_s": 1.77,
+  "elapsed_reformulate_s": 13.3,
+  "elapsed_retrieve_s": 0.36,
+  "elapsed_generate_s": 13.56,
+  "elapsed_fact_check_s": 8.98,
+  "cache_hit_profile": false,
+  "error": null,
+  "suite": "blocs_dedie",
+  "query_id": "q10_blocs_licence_pro_com",
+  "persona_id": null,
+  "pattern_target": "competences acquises",
+  "gap_target": null
+}
