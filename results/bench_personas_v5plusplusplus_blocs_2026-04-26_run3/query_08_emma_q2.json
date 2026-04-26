@@ -1,0 +1,199 @@
+{
+  "idx_global": 8,
+  "persona_id": "emma",
+  "persona_description": "Emma, 22 ans, M1 Info (scope master-pro)",
+  "scope": "master_pro",
+  "query_id": "q2",
+  "query_type": "orientation_ambigue",
+  "query_text": "Je finis mon M1 info, je dois choisir entre un M2 classique recherche ou un master en alternance. Qu'est-ce qui me donnera le meilleur CV pour entrer en CDI direct ?",
+  "elapsed_gen_s": 8.57,
+  "elapsed_fact_check_s": 4.88,
+  "answer_raw": "**TL;DR**\n1. **Alternance = meilleur CV pour CDI direct** en informatique (connaissance générale) : expérience pro concrète + réseau employeur l’emportent sur un M2 recherche académique.\n2. **M2 recherche = porte ouverte aux thèses CIFRE** (CDI en labo + salaire) si tu vises R&D ou un doctorat appliqué.\n3. **Choix clé** : priorité à l’insertion immédiate (alternance) ou à un projet long terme (recherche + CIFRE).\n\n---\n\n### **Comparaison M2 classique recherche vs M2 en alternance**\n| Critère               | M2 Recherche (classique)                          | M2 en Alternance (pro)                          |\n|-----------------------|--------------------------------------------------|-------------------------------------------------|\n| **Atout CV pour CDI**  | Publications, compétences théoriques pointues    | **1 à 2 ans d’expérience pro** (atout n°1 pour les recruteurs en tech — connaissance générale) |\n| **Réseau**           | Laboratoires, académique                         | **Entreprise d’accueil** (50% des alternants signent un CDI chez leur employeur — estimation marché, connaissance générale) |\n| **Salaire à l’embauche** | ~32-38k€ brut (ingénieur R&D junior)           | **~35-42k€ brut** (l’expérience compense le manque de diplôme \"recherche\" — connaissance générale) |\n| **Débouchés typiques** | Thèse (CIFRE), R&D, data science théorique       | **Développeur full-stack, devops, cloud architect, cyber** (postes en tension) |\n| **Flexibilité**       | Poursuite en thèse possible                      | Difficile de bifurquer vers la recherche après (sauf VAE) |\n\n---\n### **Cas concrets selon ton projet**\n- **Si tu veux un CDI *rapide* en ESN/tech** → **Alternance** (les recruteurs privilégient l’expérience terrain sur les notes — connaissance générale).\n- **Si tu vises un poste R&D ou une thèse CIFRE** (3 ans de CDI en labo + 2 300€/mois) → **M2 recherche** + ciblage des offres CIFRE sur [ANRT](https://www.anrt.asso.fr/fr/cifre-809).\n- **Si tu hésites** → **Alternance en labo R&D** (ex : Thales, CEA) : compromis entre expérience pro *et* accès à la recherche appliquée.\n\n---\n**Question pour toi** :\nAs-tu une entreprise ou un domaine tech précis en tête (cyber, IA, embarqué) ? Certains secteurs (ex : cybersécurité) recrutent massivement en alternance avec des débouchés CDI quasi-automatiques (connaissance générale).",
+  "answer_annotated": "**TL;DR**\n1. **Alternance = meilleur CV pour CDI direct** en informatique (connaissance générale) : expérience pro concrète + réseau employeur l’emportent sur un M2 recherche académique.\n2. **M2 recherche = porte ouverte aux thèses CIFRE** (CDI en labo + salaire) si tu vises R&D ou un doctorat appliqué.\n3. **Choix clé** : priorité à l’insertion immédiate (alternance) ou à un projet long terme (recherche + CIFRE).\n\n---\n\n### **Comparaison M2 classique recherche vs M2 en alternance**\n| Critère               | M2 Recherche (classique)                          | M2 en Alternance (pro)                          |\n|-----------------------|--------------------------------------------------|-------------------------------------------------|\n| **Atout CV pour CDI**  | Publications, compétences théoriques pointues    | **1 à 2 ans d’expérience pro** (atout n°1 pour les recruteurs en tech — connaissance générale) |\n| **Réseau**           | Laboratoires, académique                         | **Entreprise d’accueil** (50% des alternants signent un CDI chez leur employeur — estimation marché, connaissance générale) |\n| **Salaire à l’embauche** | ~32-38k€ brut *(non vérifié dans les sources)* (ingénieur R&D junior)           | **~35-42k€ brut *(non vérifié dans les sources)*** (l’expérience compense le manque de diplôme \"recherche\" — connaissance générale) |\n| **Débouchés typiques** | Thèse (CIFRE), R&D, data science théorique       | **Développeur full-stack, devops, cloud architect, cyber** (postes en tension) |\n| **Flexibilité**       | Poursuite en thèse possible                      | Difficile de bifurquer vers la recherche après (sauf VAE) |\n\n---\n### **Cas concrets selon ton projet**\n- **Si tu veux un CDI *rapide* en ESN/tech** → **Alternance** (les recruteurs privilégient l’expérience terrain sur les notes — connaissance générale).\n- **Si tu vises un poste R&D ou une thèse CIFRE** (3 ans de CDI en labo + 2 300€/mois *(non vérifié dans les sources)*) → **M2 recherche** + ciblage des offres CIFRE sur [ANRT](https://www.anrt.asso.fr/fr/cifre-809).\n- **Si tu hésites** → **Alternance en labo R&D** (ex : Thales, CEA) : compromis entre expérience pro *et* accès à la recherche appliquée.\n\n---\n**Question pour toi** :\nAs-tu une entreprise ou un domaine tech précis en tête (cyber, IA, embarqué) ? Certains secteurs (ex : cybersécurité) recrutent massivement en alternance avec des débouchés CDI quasi-automatiques (connaissance générale).",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 4,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "1 à 2 ans d’expérience pro",
+      "stat_value": 1,
+      "stat_unit": "à 2 ans",
+      "context_in_response": "Atout n°1 pour les recruteurs en tech",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50% des alternants signent un CDI chez leur employeur",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context_in_response": "estimation marché, connaissance générale",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~32-38k€ brut",
+      "stat_value": 32,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Salaire à l’embauche (M2 Recherche)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~35-42k€ brut",
+      "stat_value": 35,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Salaire à l’embauche (M2 en Alternance)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 300€/mois",
+      "stat_value": 2300,
+      "stat_unit": "€/mois",
+      "context_in_response": "salaire CIFRE",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context_in_response": "taux_emploi_3ans",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context_in_response": "taux_emploi_6ans",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context_in_response": "taux_cdi",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9526,
+      "nom": "Direction technique",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9485,
+      "nom": "Conception lumière",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9468,
+      "nom": "Écriture",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9432,
+      "nom": "Créateur industriel",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.943,
+      "nom": "Mode et matière",
+      "etablissement": "UNIVERSITE PSL",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9424,
+      "nom": "Mode (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9415,
+      "nom": "Conception son",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9411,
+      "nom": "Scénographie",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.94,
+      "nom": "Jouer et mettre en scène",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9388,
+      "nom": "Physique (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    }
+  ]
+}

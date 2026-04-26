@@ -1,0 +1,287 @@
+{
+  "idx_global": 13,
+  "persona_id": "valerie",
+  "persona_description": "Valérie, parent de lycéen (perspective externe)",
+  "scope": "parent",
+  "query_id": "q1",
+  "query_type": "factuelle",
+  "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+  "elapsed_gen_s": 11.11,
+  "elapsed_fact_check_s": 9.61,
+  "answer_raw": "**TL;DR**\n1. Une année en école de commerce privée coûte **5 000 à 15 000 €** (hors grandes écoles top 5), contre **0 à 600 €** en licence publique.\n2. Le coût public inclut uniquement les droits d’inscription (170 € en licence, 243 € en master en 2024-2025).\n3. Les alternatives existent : licences pro, IAE, ou écoles en alternance pour réduire la facture.\n\n---\n\n### **Plan A — Licence publique : coût minimal, diplômes reconnus**\n📍 **Licence Économie-Gestion (parcours Commerce international)** — [Université de Lille](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24397&typeBac=0&originePc=0)\n*Pour toi : 170 €/an (droits 2024), sélective (38 % d’admis), débouchés en logistique/export. Alternative à l’ICL-ESTICE (privé, 5-10k€/an).*\n\n**Coût réel** :\n- **Licence publique** : 170 €/an (boursiers exonérés).\n- **École privée type ICL-ESTICE** : ~7 000 €/an (hors frais de vie).\n*(Source : Parcoursup 2025, cod_aff_form: 24397)*\n\n---\n\n### **Plan B — École de commerce privée : investissement élevé, réseaux professionnels**\n*(connaissance générale)*\n📍 **Programme Grande École (ISC Paris, ESDES, etc.)** — bac+5, **8 000 à 12 000 €/an** (hors top 5 comme HEC/ESSEC à 15-20k€).\n*Pour toi : coût justifié si visée internationale ou secteurs très sélectifs (luxe, finance). Alternatives : IAE (public, ~500 €/an) ou contrats pro (rémunérés).*\n\n**Exemples de coûts annuels moyens** (estimation marché, connaissance générale) :\n- **Bachelor (bac+3)** : 6 000–10 000 €.\n- **Master (bac+5)** : 8 000–15 000 € (hors grandes écoles).\n- **Alternance** : 0 € (l’entreprise paie les frais de scolarité).\n\n---\n\n### **Plan C — Alternatives économiques : IAE, licences pro, alternance**\n📍 **Diplôme en Commerce International (IAE ou licence pro)** — bac+3/5, **243–600 €/an** (public), souvent en alternance.\n*Pour toi : même diplôme que le privé, avec salaire en alternance (600–1 500 €/mois). Ex : [IAE Gustave Eiffel](https://www.iae-eiffel.fr).*\n\n**Astuce** :\n- Les **licences pro** (1 an après bac+2) coûtent ~243 € et mènent à des postes opérationnels (achats, vente à l’international).\n- L’**alternance** annule les frais de scolarité (privé comme public) et paie un salaire.\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Marketing des écoles privées** : certaines affichent des \"bourses\" ou \"aides\" qui réduisent peu le coût réel. Vérifie le **coût net** après déductions.\n2. **Frais cachés** : dans le privé, ajoute 500–1 000 €/an pour les voyages obligatoires, logiciels, ou associations étudiantes.\n3. **Rentabilité variable** : un diplôme privé n’est pas toujours mieux perçu qu’un master public (ex : IAE). Compare les **taux d’insertion** (source : [InserSup](https://www.enseignementsup-recherche.gouv.fr)).\n\n---\n**Question pour toi** :\nPrivilégies-tu un **budget serré** (public/alternance) ou un **réseau élitiste** (privé) ? Si tu vises l’international, as-tu vérifié les partenariats des formations (échanges Erasmus, doubles diplômes) ?",
+  "answer_annotated": "**TL;DR**\n1. Une année en école de commerce privée coûte **5 000 à 15 000 €** (hors grandes écoles top 5), contre **0 à 600 €** en licence publique.\n2. Le coût public inclut uniquement les droits d’inscription (170 € en licence, 243 € en master en 2024-2025).\n3. Les alternatives existent : licences pro, IAE, ou écoles en alternance pour réduire la facture.\n\n---\n\n### **Plan A — Licence publique : coût minimal, diplômes reconnus**\n📍 **Licence Économie-Gestion (parcours Commerce international)** — [Université de Lille](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24397&typeBac=0&originePc=0)\n*Pour toi : 170 €/an (droits 2024), sélective (38 % d’admis), débouchés en logistique/export. Alternative à l’ICL-ESTICE (privé, 5-10k€/an).*\n\n**Coût réel** :\n- **Licence publique** : 170 €/an (boursiers exonérés).\n- **École privée type ICL-ESTICE** : ~7 000 €/an (hors frais de vie).\n*(Source : Parcoursup 2025, cod_aff_form: 24397)*\n\n---\n\n### **Plan B — École de commerce privée : investissement élevé, réseaux professionnels**\n*(connaissance générale)*\n📍 **Programme Grande École (ISC Paris, ESDES, etc.)** — bac+5, **8 000 à 12 000 €/an** (hors top 5 comme HEC/ESSEC à 15-20k€).\n*Pour toi : coût justifié si visée internationale ou secteurs très sélectifs (luxe, finance). Alternatives : IAE (public, ~500 €/an) ou contrats pro (rémunérés).*\n\n**Exemples de coûts annuels moyens** (estimation marché, connaissance générale) :\n- **Bachelor (bac+3)** : 6 000–10 000 €.\n- **Master (bac+5)** : 8 000–15 000 € (hors grandes écoles).\n- **Alternance** : 0 € (l’entreprise paie les frais de scolarité).\n\n---\n\n### **Plan C — Alternatives économiques : IAE, licences pro, alternance**\n📍 **Diplôme en Commerce International (IAE ou licence pro)** — bac+3/5, **243–600 €/an** (public), souvent en alternance.\n*Pour toi : même diplôme que le privé, avec salaire en alternance (600–1 500 €/mois). Ex : [IAE Gustave Eiffel](https://www.iae-eiffel.fr).*\n\n**Astuce** :\n- Les **licences pro** (1 an après bac+2) coûtent ~243 € et mènent à des postes opérationnels (achats, vente à l’international).\n- L’**alternance** annule les frais de scolarité (privé comme public) et paie un salaire.\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Marketing des écoles privées** : certaines affichent des \"bourses\" ou \"aides\" qui réduisent peu le coût réel. Vérifie le **coût net** après déductions.\n2. **Frais cachés** : dans le privé, ajoute 500–1 000 €/an pour les voyages obligatoires, logiciels, ou associations étudiantes.\n3. **Rentabilité variable** : un diplôme privé n’est pas toujours mieux perçu qu’un master public (ex : IAE). Compare les **taux d’insertion** (source : [InserSup](https://www.enseignementsup-recherche.gouv.fr)).\n\n---\n**Question pour toi** :\nPrivilégies-tu un **budget serré** (public/alternance) ou un **réseau élitiste** (privé) ? Si tu vises l’international, as-tu vérifié les partenariats des formations (échanges Erasmus, doubles diplômes) ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 20,
+    "n_verified": 12,
+    "n_with_disclaimer": 8,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "5 000 à 15 000 €",
+      "stat_value": 5000,
+      "stat_unit": "€",
+      "context_in_response": "coût annuel d'une année en école de commerce privée (hors grandes écoles top 5)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0 à 600 €",
+      "stat_value": 600,
+      "stat_unit": "€",
+      "context_in_response": "coût annuel en licence publique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "170 €",
+      "stat_value": 170,
+      "stat_unit": "€",
+      "context_in_response": "droits d'inscription en licence publique (2024-2025)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Coût : 170 €/an (droits 2024)"
+    },
+    {
+      "stat_text": "243 €",
+      "stat_value": 243,
+      "stat_unit": "€",
+      "context_in_response": "droits d'inscription en master public (2024-2025)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Coût : 243 €/an (droits 2024)"
+    },
+    {
+      "stat_text": "38 %",
+      "stat_value": 38,
+      "stat_unit": "%",
+      "context_in_response": "taux d'admis en licence Économie-Gestion parcours Commerce international (Université de Lille)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 38.0%"
+    },
+    {
+      "stat_text": "7 000 €/an",
+      "stat_value": 7000,
+      "stat_unit": "€",
+      "context_in_response": "coût annuel d'une école privée type ICL-ESTICE",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "8 000 à 12 000 €/an",
+      "stat_value": 8000,
+      "stat_unit": "€",
+      "context_in_response": "coût annuel d'un Programme Grande École (ISC Paris, ESDES, etc.)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "15-20k€",
+      "stat_value": 15000,
+      "stat_unit": "€",
+      "context_in_response": "coût annuel des grandes écoles top 5 (HEC/ESSEC)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "6 000–10 000 €",
+      "stat_value": 6000,
+      "stat_unit": "€",
+      "context_in_response": "coût annuel moyen d'un Bachelor (bac+3) en école privée",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "8 000–15 000 €",
+      "stat_value": 8000,
+      "stat_unit": "€",
+      "context_in_response": "coût annuel moyen d'un Master (bac+5) en école privée (hors grandes écoles)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "243–600 €/an",
+      "stat_value": 243,
+      "stat_unit": "€",
+      "context_in_response": "coût annuel d'un diplôme en Commerce International (IAE ou licence pro)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Coût : 243–600 €/an (public)"
+    },
+    {
+      "stat_text": "600–1 500 €/mois",
+      "stat_value": 600,
+      "stat_unit": "€",
+      "context_in_response": "salaire en alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0.86",
+      "stat_value": 0.86,
+      "stat_unit": null,
+      "context_in_response": "taux d'emploi à 3 ans pour la licence Économie-Gestion parcours Commerce international (ICL-ESTICE)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, ...}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": null,
+      "context_in_response": "taux d'emploi à 6 ans pour la licence Économie-Gestion parcours Commerce international (ICL-ESTICE)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": null,
+      "context_in_response": "taux de CDI à 3 ans pour la licence Économie-Gestion parcours Commerce international (ICL-ESTICE)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_cdi\": 0.83, ...}"
+    },
+    {
+      "stat_text": "1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "salaire médian à l'embauche pour la licence Économie-Gestion parcours Commerce international (ICL-ESTICE)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"salaire_median_embauche\": 1740, ...}"
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": null,
+      "context_in_response": "taux d'emploi à 3 ans pour le Programme Grande École (ISC Paris)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, ...}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": null,
+      "context_in_response": "taux d'emploi à 6 ans pour le Programme Grande École (ISC Paris)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": null,
+      "context_in_response": "taux de CDI à 3 ans pour le Programme Grande École (ISC Paris)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_cdi\": 0.83, ...}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire médian à l'embauche pour le Programme Grande École (ISC Paris)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"salaire_median_embauche\": 2080, ...}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.019,
+      "nom": "Licence - Economie et gestion - Parcours Commerce international et langues",
+      "etablissement": "ICL - ESTICE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9295,
+      "nom": "Programme grande école",
+      "etablissement": "INSTITUT SUPERIEUR COMMERCE PARIS",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8502,
+      "nom": "Diplôme d'études supérieures en commerce et en entrepreneuriat",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8487,
+      "nom": "Affaires et Relations Internationales",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8479,
+      "nom": "diplôme finance",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8474,
+      "nom": "diplôme du programme ingénieur d'affaires",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8469,
+      "nom": "diplôme en gestion du luxe",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8468,
+      "nom": "commerce international",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8459,
+      "nom": "diplôme en comptabilité et gestion financière",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8452,
+      "nom": "manager marketing et commercial en produits et services de luxe",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    }
+  ]
+}

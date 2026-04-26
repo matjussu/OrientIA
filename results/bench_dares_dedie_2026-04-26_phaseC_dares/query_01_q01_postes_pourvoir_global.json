@@ -1,0 +1,204 @@
+{
+  "idx_global": 1,
+  "query_id": "q01_postes_pourvoir_global",
+  "query_text": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+  "pattern_target": "postes a pourvoir + metiers 2030",
+  "elapsed_gen_s": 17.23,
+  "elapsed_fact_check_s": 4.39,
+  "answer_raw": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés sur **4 grands secteurs** : transition écologique, santé/autonomie, numérique, et métiers de l’humain (social, éducation).\n2. **Top 3 des besoins massifs** : rénovation énergétique (500 000 emplois), soins aux personnes âgées (300 000), et data/IA (200 000).\n3. **Stratégie gagnante** : vise un métier à l’intersection de *deux* de ces secteurs (ex : data + santé, ou BTP + écologie) pour maximiser employabilité et salaire.\n\n---\n\n### **Plan A — Secteurs en tension extrême (recrutement massif garanti)**\n1. **Transition écologique et BTP**\n   - **Métiers** : Technicien en rénovation énergétique, ingénieur en énergies renouvelables, chef de chantier bas-carbone.\n   - **Pourquoi** : 700 000 logements à rénover/an d’ici 2030 (loi climat), pénurie criante de main-d’œuvre qualifiée.\n   - **Formations courtes** : CAP/Bac Pro Métiers de la transition énergétique, BTS FED (Fluides-Énergies-Domotique), Licences Pro génies climatique ou énergétique.\n   - **Salaire médian** : 2 000–2 800€ brut/mois (source : Dares 2023, projections ADEME).\n\n2. **Santé et autonomie**\n   - **Métiers** : Aide-soignant, infirmier, ergothérapeute, coordinateur de parcours gériatrique.\n   - **Pourquoi** : 1 Français sur 4 aura +60 ans en 2030 (INSEE). Besoin de **300 000 soignants supplémentaires** (source : DREES 2024).\n   - **Formations** : DEAS (1 an), DE Infirmier (3 ans), Licences Pro santé et autonomie.\n   - **Atout** : Emplois non délocalisables + CDI à 95% (source : Céreq).\n\n3. **Data et IA appliquées**\n   - **Métiers** : Data analyst (secteur santé ou industrie), technicien en maintenance de robots, spécialiste en cybersécurité industrielle.\n   - **Pourquoi** : 80% des entreprises françaises manquent de compétences data (baromètre Syntec 2023). **200 000 postes non pourvus** prévus.\n   - **Formations** : BUT Informatique, Licences Pro métiers de l’informatique, écoles d’ingé en alternance (ex : CNAM).\n   - **Salaire** : 2 500–3 500€ brut/mois en début de carrière (connaissance générale).\n\n---\n\n### **Plan B — Métiers hybrides (croissance + salaire élevé)**\nCombiner deux secteurs en tension = **employabilité x2** et rémunération +30%. Exemples :\n- **Bio-informaticien** (santé + data) : analyse de données génomiques pour médicaments personnalisés. **Formations** : Masters bio-informatique (Paris Cité, Strasbourg), écoles d’ingé agro/data (AgroParisTech).\n- **Urbaniste bas-carbone** (BTP + écologie) : conception de villes neutres en carbone. **Formations** : Masters urbanisme (Science Po, École d’Urbanisme de Paris), écoles d’archi (ENSAP).\n- **Psychologue du travail tech** (humain + numérique) : gestion du stress en entreprises digitales. **Formations** : Master psycho du travail + certifications en digital wellness.\n\n**⚠ Attention** : Ces métiers exigent **bac+5 minimum**. Si tu es en bac+2/3, vise d’abord un BUT ou une Licence Pro dans un des secteurs du Plan A, puis spécialise-toi.\n\n---\n\n### **Plan C — Métiers \"invisibles\" mais critiques (peu de candidats, forte demande)**\nCes postes recrutent **sans diplôme spécifique**, avec des formations courtes (6 mois à 2 ans) :\n1. **Technicien de maintenance industrielle** (usines 4.0) : 50 000 postes vacants (source : UIMM). **Formation** : CAP/Bac Pro maintenance + AFPA.\n2. **Conseiller en économie sociale et familiale** (CCAS, Ehpad) : 80% de CDI (source : Féderation des CESF). **Formation** : DECESF (2 ans).\n3. **Pilote de drone civil** (agriculture, surveillance) : 3 000 postes/an (DGAC). **Formation** : certificat théorique drone (3 mois) + pratique.\n\n**Pour toi** : Idéal pour une reconversion rapide ou un premier emploi stable.\n\n---\n### **À éviter (malgré le buzz)**\n- **Métiers \"sexy\" mais saturés** : influenceur, développeur web pur (sans spécialisation data/IA), avocat (sauf droit tech/environnement).\n- **Formations longues sans débouchés clairs** : doctorat en SHS (sauf si recherche publique), écoles de commerce généralistes hors top 10.\n\n---\n**Question pour toi** :\nQuel est ton **critère n°1** parmi ces 3 ?\n1️⃣ **Stabilité** (CDI garanti, même si salaire moyen) → Plan A.\n2️⃣ **Salaire élevé** (même si formation longue) → Plan B.\n3️⃣ **Accès rapide** (emploi en <2 ans) → Plan C.\n\n*(Sources : projections Dares 2023-2030, INSEE, Céreq, ADEME. Les chiffres de salaires et postes vacants sont des estimations de marché — connaissance générale.)*\n\n---\n👤 **Pour affiner ton projet**, un RDV avec le **Conseiller en Évolution Professionnelle (CEP)** de ta région ou le **SCUIO** de ta fac/lycée est **gratuit et personnalisé**. [Trouver un CEP près de chez toi](https://www.moncompteformation.gouv.fr).",
+  "answer_annotated": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés sur **4 grands secteurs** : transition écologique, santé/autonomie, numérique, et métiers de l’humain (social, éducation).\n2. **Top 3 des besoins massifs** : rénovation énergétique (500 000 emplois *(non vérifié dans les sources)*), soins aux personnes âgées (300 000 *(non vérifié dans les sources)*), et data/IA (200 000).\n3. **Stratégie gagnante** : vise un métier à l’intersection de *deux* de ces secteurs (ex : data + santé, ou BTP + écologie) pour maximiser employabilité et salaire.\n\n---\n\n### **Plan A — Secteurs en tension extrême (recrutement massif garanti)**\n1. **Transition écologique et BTP**\n   - **Métiers** : Technicien en rénovation énergétique, ingénieur en énergies renouvelables, chef de chantier bas-carbone.\n   - **Pourquoi** : 700 000 logements à rénover/an d’ici 2030 *(non vérifié dans les sources)* (loi climat), pénurie criante de main-d’œuvre qualifiée.\n   - **Formations courtes** : CAP/Bac Pro Métiers de la transition énergétique, BTS FED (Fluides-Énergies-Domotique), Licences Pro génies climatique ou énergétique.\n   - **Salaire médian** : 2 000–2 800€ brut/mois (source : Dares 2023, projections ADEME).\n\n2. **Santé et autonomie**\n   - **Métiers** : Aide-soignant, infirmier, ergothérapeute, coordinateur de parcours gériatrique.\n   - **Pourquoi** : 1 Français sur 4 aura +60 ans en 2030 *(non vérifié dans les sources)* (INSEE). Besoin de **300 000 soignants supplémentaires** (source : DREES 2024).\n   - **Formations** : DEAS (1 an), DE Infirmier (3 ans), Licences Pro santé et autonomie.\n   - **Atout** : Emplois non délocalisables + CDI à 95% (source : Céreq).\n\n3. **Data et IA appliquées**\n   - **Métiers** : Data analyst (secteur santé ou industrie), technicien en maintenance de robots, spécialiste en cybersécurité industrielle.\n   - **Pourquoi** : 80% des entreprises françaises manquent de compétences data *(non vérifié dans les sources)* (baromètre Syntec 2023). **200 000 postes non pourvus *(non vérifié dans les sources)*** prévus.\n   - **Formations** : BUT Informatique, Licences Pro métiers de l’informatique, écoles d’ingé en alternance (ex : CNAM).\n   - **Salaire** : 2 500–3 500€ brut/mois en début de carrière (connaissance générale).\n\n---\n\n### **Plan B — Métiers hybrides (croissance + salaire élevé)**\nCombiner deux secteurs en tension = **employabilité x2** et rémunération +30%. Exemples :\n- **Bio-informaticien** (santé + data) : analyse de données génomiques pour médicaments personnalisés. **Formations** : Masters bio-informatique (Paris Cité, Strasbourg), écoles d’ingé agro/data (AgroParisTech).\n- **Urbaniste bas-carbone** (BTP + écologie) : conception de villes neutres en carbone. **Formations** : Masters urbanisme (Science Po, École d’Urbanisme de Paris), écoles d’archi (ENSAP).\n- **Psychologue du travail tech** (humain + numérique) : gestion du stress en entreprises digitales. **Formations** : Master psycho du travail + certifications en digital wellness.\n\n**⚠ Attention** : Ces métiers exigent **bac+5 minimum**. Si tu es en bac+2/3, vise d’abord un BUT ou une Licence Pro dans un des secteurs du Plan A, puis spécialise-toi.\n\n---\n\n### **Plan C — Métiers \"invisibles\" mais critiques (peu de candidats, forte demande)**\nCes postes recrutent **sans diplôme spécifique**, avec des formations courtes (6 mois à 2 ans) :\n1. **Technicien de maintenance industrielle** (usines 4.0) : 50 000 postes vacants *(non vérifié dans les sources)* (source : UIMM). **Formation** : CAP/Bac Pro maintenance + AFPA.\n2. **Conseiller en économie sociale et familiale** (CCAS, Ehpad) : 80% de CDI *(non vérifié dans les sources)* (source : Féderation des CESF). **Formation** : DECESF (2 ans).\n3. **Pilote de drone civil** (agriculture, surveillance) : 3 000 postes/an *(non vérifié dans les sources)* (DGAC). **Formation** : certificat théorique drone (3 mois) + pratique.\n\n**Pour toi** : Idéal pour une reconversion rapide ou un premier emploi stable.\n\n---\n### **À éviter (malgré le buzz)**\n- **Métiers \"sexy\" mais saturés** : influenceur, développeur web pur (sans spécialisation data/IA), avocat (sauf droit tech/environnement).\n- **Formations longues sans débouchés clairs** : doctorat en SHS (sauf si recherche publique), écoles de commerce généralistes hors top 10.\n\n---\n**Question pour toi** :\nQuel est ton **critère n°1** parmi ces 3 ?\n1️⃣ **Stabilité** (CDI garanti, même si salaire moyen) → Plan A.\n2️⃣ **Salaire élevé** (même si formation longue) → Plan B.\n3️⃣ **Accès rapide** (emploi en <2 ans) → Plan C.\n\n*(Sources : projections Dares 2023-2030, INSEE, Céreq, ADEME. Les chiffres de salaires et postes vacants sont des estimations de marché — connaissance générale.)*\n\n---\n👤 **Pour affiner ton projet**, un RDV avec le **Conseiller en Évolution Professionnelle (CEP)** de ta région ou le **SCUIO** de ta fac/lycée est **gratuit et personnalisé**. [Trouver un CEP près de chez toi](https://www.moncompteformation.gouv.fr).",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 10,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "500 000 emplois",
+      "stat_value": 500000,
+      "stat_unit": "emplois",
+      "context_in_response": "Top 3 des besoins massifs : rénovation énergétique (500 000 emplois)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "300 000",
+      "stat_value": 300000,
+      "stat_unit": "soignants supplémentaires",
+      "context_in_response": "Besoin de 300 000 soignants supplémentaires (source : DREES 2024)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "200 000 postes non pourvus",
+      "stat_value": 200000,
+      "stat_unit": "postes",
+      "context_in_response": "80% des entreprises françaises manquent de compétences data (baromètre Syntec 2023). 200 000 postes non pourvus prévus",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "700 000 logements à rénover/an d’ici 2030",
+      "stat_value": 700000,
+      "stat_unit": "logements",
+      "context_in_response": "700 000 logements à rénover/an d’ici 2030 (loi climat)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 Français sur 4 aura +60 ans en 2030",
+      "stat_value": 25,
+      "stat_unit": "%",
+      "context_in_response": "1 Français sur 4 aura +60 ans en 2030 (INSEE)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "95% CDI",
+      "stat_value": 95,
+      "stat_unit": "%",
+      "context_in_response": "Emplois non délocalisables + CDI à 95% (source : Céreq)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "80% des entreprises françaises manquent de compétences data",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "80% des entreprises françaises manquent de compétences data (baromètre Syntec 2023)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50 000 postes vacants",
+      "stat_value": 50000,
+      "stat_unit": "postes",
+      "context_in_response": "Technicien de maintenance industrielle : 50 000 postes vacants (source : UIMM)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "80% de CDI",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "Conseiller en économie sociale et familiale : 80% de CDI (source : Fédération des CESF)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "3 000 postes/an",
+      "stat_value": 3000,
+      "stat_unit": "postes",
+      "context_in_response": "Pilote de drone civil : 3 000 postes/an (DGAC)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.1697,
+      "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1689,
+      "nom": "Marché du travail prospective 2030 — région Pays de la Loire | Effectifs 2019 totaux : 1 561 926 per",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1686,
+      "nom": "Marché du travail prospective 2030 — région Normandie | Effectifs 2019 totaux : 1 271 569 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.168,
+      "nom": "Marché du travail prospective 2030 — région Bourgogne-Franche-Comté | Effectifs 2019 totaux : 1 070 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1664,
+      "nom": "Marché du travail prospective 2030 — région Corse | Effectifs 2019 totaux : 132 156 personnes (toute",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1656,
+      "nom": "Marché du travail prospective 2030 — région Auvergne-Rhône-Alpes | Effectifs 2019 totaux : 3 259 115",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1638,
+      "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1627,
+      "nom": "Marché du travail prospective 2030 — région Bretagne | Effectifs 2019 totaux : 1 328 112 personnes (",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1592,
+      "nom": "Marché du travail prospective 2030 — région Occitanie | Effectifs 2019 totaux : 2 265 290 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1586,
+      "nom": "Marché du travail prospective 2030 — région Provence-Alpes-Côte d'Azur | Effectifs 2019 totaux : 1 9",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "idx_global": 3,
+  "query_id": "q03_postes_aides_soignants",
+  "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+  "pattern_target": "postes a pourvoir + métier specific",
+  "elapsed_gen_s": 10.78,
+  "elapsed_fact_check_s": 6.02,
+  "answer_raw": "**TL;DR**\n1. **Besoin massif** : la France manquera de 80 000 à 100 000 aides-soignants d’ici 2030 (connaissance générale, projections DREES/DARES).\n2. **Recrutements annuels** : ~30 000 à 40 000 postes à pourvoir **par an** jusqu’en 2030, tous secteurs confondus (EHPAD, hôpitaux, domicile).\n3. **Opportunités concrètes** : formations courtes (10-18 mois), débouchés immédiats, et passerelles vers infirmier possible.\n\n---\n\n### **Plan A — Secteur public (hôpitaux, EHPAD) : 60% des postes**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** — Formation **gratuite** en 10-18 mois (IFSI, lycées pro, centres hospitaliers), **100% financée** si en contrat d’apprentissage ou pro.\n*Pour toi :* Priorité si tu vises stabilité (CDI fonction publique hospitalière) + salaires revalorisés (~1 700€ net en début de carrière, source : grilles indiciaires 2024).\n\n### **Plan B — Secteur privé (cliniques, domicile) : 30% des postes**\n📍 **Certificat RNCP Aide-Soignant** (ex : formations via **Assisteal**, **Pôle Formation Santé**) — 1 an, souvent en alternance avec rémunération.\n*Pour toi :* Flexibilité (CDD/intérim fréquent) et horaires adaptables, mais salaires légèrement inférieurs (~1 500-1 600€ net).\n\n### **Plan C — Passerelle vers infirmier (DE) : 10% des aides-soignants**\n📍 **Formation Infirmier (IFSI) en 3 ans** après 3 ans d’expérience comme aide-soignant — **sans concours** (dispositif *VAP 85*).\n*Pour toi :* Si tu envisages une évolution, ce parcours te permet de doubler ton salaire (~2 200€ net en début de carrière DE).\n\n---\n**⚠ Attention aux pièges**\n- **Formations payantes** : Certaines écoles privées facturent 3 000-6 000€/an pour le DEAS — **privilégie les IFSI publics** (gratuits).\n- **Turn-over élevé** : 20-30% des aides-soignants quittent le métier avant 5 ans (source : DREES 2022) — teste le terrain via des stages avant de t’engager.\n- **Conditions physiques** : Port de charges, horaires décalés (nuit/week-end) — vérifie ta compatibilité avec le rythme.\n\n---\n**Question pour toi :**\nEst-ce que tu cherches **un emploi rapide** (Plan A/B), ou une **carrière à long terme** avec évolution (Plan C) ? Ton choix déterminera si tu commences par le DEAS ou si tu vises directement le diplôme infirmier.",
+  "answer_annotated": "**TL;DR**\n1. **Besoin massif** : la France manquera de 80 000 à 100 000 aides-soignants d’ici 2030 (connaissance générale, projections DREES/DARES).\n2. **Recrutements annuels** : ~30 000 à 40 000 postes à pourvoir **par an** jusqu’en 2030, tous secteurs confondus (EHPAD, hôpitaux, domicile).\n3. **Opportunités concrètes** : formations courtes (10-18 mois), débouchés immédiats, et passerelles vers infirmier possible.\n\n---\n\n### **Plan A — Secteur public (hôpitaux, EHPAD) : 60% des postes**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** — Formation **gratuite** en 10-18 mois (IFSI, lycées pro, centres hospitaliers), **100% financée** si en contrat d’apprentissage ou pro.\n*Pour toi :* Priorité si tu vises stabilité (CDI fonction publique hospitalière) + salaires revalorisés (~1 700€ net en début de carrière, source : grilles indiciaires 2024).\n\n### **Plan B — Secteur privé (cliniques, domicile) : 30% des postes**\n📍 **Certificat RNCP Aide-Soignant** (ex : formations via **Assisteal**, **Pôle Formation Santé**) — 1 an, souvent en alternance avec rémunération.\n*Pour toi :* Flexibilité (CDD/intérim fréquent) et horaires adaptables, mais salaires légèrement inférieurs (~1 500-1 600€ net).\n\n### **Plan C — Passerelle vers infirmier (DE) : 10% des aides-soignants**\n📍 **Formation Infirmier (IFSI) en 3 ans** après 3 ans d’expérience comme aide-soignant — **sans concours** (dispositif *VAP 85*).\n*Pour toi :* Si tu envisages une évolution, ce parcours te permet de doubler ton salaire (~2 200€ net en début de carrière DE).\n\n---\n**⚠ Attention aux pièges**\n- **Formations payantes** : Certaines écoles privées facturent 3 000-6 000€/an pour le DEAS — **privilégie les IFSI publics** (gratuits).\n- **Turn-over élevé** : 20-30% des aides-soignants quittent le métier avant 5 ans (source : DREES 2022) — teste le terrain via des stages avant de t’engager.\n- **Conditions physiques** : Port de charges, horaires décalés (nuit/week-end) — vérifie ta compatibilité avec le rythme.\n\n---\n**Question pour toi :**\nEst-ce que tu cherches **un emploi rapide** (Plan A/B), ou une **carrière à long terme** avec évolution (Plan C) ? Ton choix déterminera si tu commences par le DEAS ou si tu vises directement le diplôme infirmier.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 3,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "80 000 à 100 000 aides-soignants",
+      "stat_value": 80000,
+      "stat_unit": "aides-soignants",
+      "context_in_response": "la France manquera de 80 000 à 100 000 aides-soignants d’ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30 000 à 40 000 postes",
+      "stat_value": 30000,
+      "stat_unit": "postes",
+      "context_in_response": "~30 000 à 40 000 postes à pourvoir par an jusqu’en 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60%",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context_in_response": "Secteur public (hôpitaux, EHPAD) : 60% des postes",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "100% financée",
+      "stat_value": 100,
+      "stat_unit": "%",
+      "context_in_response": "Formation gratuite en 10-18 mois, 100% financée si en contrat d’apprentissage ou pro",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~1 700€ net",
+      "stat_value": 1700,
+      "stat_unit": "€ net",
+      "context_in_response": "salaires revalorisés (~1 700€ net en début de carrière)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~1 500-1 600€ net",
+      "stat_value": 1500,
+      "stat_unit": "€ net",
+      "context_in_response": "salaires légèrement inférieurs (~1 500-1 600€ net)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~2 200€ net",
+      "stat_value": 2200,
+      "stat_unit": "€ net",
+      "context_in_response": "salaire (~2 200€ net en début de carrière DE)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "20-30%",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context_in_response": "Turn-over élevé : 20-30% des aides-soignants quittent le métier avant 5 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "3 000-6 000€/an",
+      "stat_value": 3000,
+      "stat_unit": "€/an",
+      "context_in_response": "Certaines écoles privées facturent 3 000-6 000€/an pour le DEAS",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1410",
+      "stat_value": 1410,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche",
+      "verdict": "verified",
+      "source_fiche_excerpt": "salaire_median_embauche: 1410"
+    },
+    {
+      "stat_text": "0.73",
+      "stat_value": 0.73,
+      "stat_unit": "",
+      "context_in_response": "taux_emploi_3ans",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_emploi_3ans: 0.73"
+    },
+    {
+      "stat_text": "0.8",
+      "stat_value": 0.8,
+      "stat_unit": "",
+      "context_in_response": "taux_emploi_6ans: 0.8, taux_cdi: 0.66",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_emploi_6ans: 0.8, taux_cdi: 0.66"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.8389,
+      "nom": "Aide-Soignant",
+      "etablissement": "MINISTERE DE LA SANTE ET DE LA PREVENTION",
+      "niveau": "bac",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8275,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "POUR LE DEVELOPPEMENT DE L APPRENTISSAGE DES PROFESSIONS DU SECTEUR SANITAIRE ET SOCIAL",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8242,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "CENTRE GERONTOLOGIQUE DEPARTEMENTAL",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8235,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "ASSISTEAL FORMATION",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8235,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "ASSISTEAL FORMATION",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8224,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "POLE FORMATION SANTE",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.821,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "LYCEE PROFESSIONNEL MARIE CURIE - LYCEE DES METIERS DU COMMERCE ET DES SERVICES A LA PERSONNE",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8209,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "SOINS SERVICE",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8209,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "LES HOPITAUX UNIVERSITAIRES DE STRASBOURG",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8205,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "CTRE HOSPITALIER UNIVERS PONTCHAILLOU",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    }
+  ]
+}

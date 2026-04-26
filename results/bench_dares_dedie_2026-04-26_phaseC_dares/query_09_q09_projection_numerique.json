@@ -1,0 +1,212 @@
+{
+  "idx_global": 9,
+  "query_id": "q09_projection_numerique",
+  "query_text": "Quelles sont les projections de recrutement pour les métiers du numérique d'ici 2030 ?",
+  "pattern_target": "projection recrutement + métiers 2030",
+  "elapsed_gen_s": 11.74,
+  "elapsed_fact_check_s": 4.29,
+  "answer_raw": "**TL;DR**\n1. Le numérique reste un secteur porteur, mais avec des **décalages forts entre métiers** : pénurie sur les profils techniques (cyber, IA, cloud), saturation sur certains métiers du web/marketing.\n2. **300 000 à 500 000 emplois non pourvus** d’ici 2030 en Europe (estimation France Stratégie 2023 — connaissance générale), surtout en cybersécurité (+35% de besoins) et data science.\n3. **L’alternance et les reconversions** seront les principaux leviers pour combler ces besoins — les formations courtes (bac+2/3) et certifiantes monteront en puissance.\n\n---\n\n### **Plan A — Métiers en tension critique (pénurie avérée)**\n**Cybersécurité, IA/ML, Cloud/DevOps** :\n- **Projections** : +20 à 35% de postes non pourvus d’ici 2030 (source : ANSSI 2023, rapport \"Besoin en compétences cyber\" — connaissance générale).\n- **Pourquoi ?** Manque de formations initiales + explosion des cyberattaques (+400% depuis 2020). Les salaires médians en embauche dépassent déjà **38-45k€ brut** pour les profils juniors (estimation marché — connaissance générale).\n- **Formations clés** : BUT Informatique (parcours cyber), Masters SecNumEdu (label ANSSI), écoles d’ingénieurs (CTI) avec spécialisation sécurité.\n\n**Data Science / Analyse** :\n- **Projections** : +150 000 postes en Europe (McKinsey 2022 — connaissance générale), mais **saturation sur les profils \"data analyst\" juniors** (concurrence des bootcamps).\n- **Évolution** : Besoin croissant de **double compétence** (ex : data + santé, data + énergie).\n\n---\n\n### **Plan B — Métiers stables mais concurrentiels**\n**Développement logiciel (full-stack, mobile)** :\n- **Projections** : Croissance modérée (+5 à 10%), mais **offre > demande** pour les juniors (surture des bootcamps).\n- **Stratégie** : Se différencier par une **spécialisation** (ex : blockchain, embarqué) ou une **expérience pro solide** (alternance obligatoire).\n- **Salaire médian junior** : ~32-38k€ brut (estimation — connaissance générale).\n\n**UX/UI Design, Product Management** :\n- **Projections** : Stables, mais **exigence accrue** sur les portfolios et l’expérience utilisateur.\n- **Piège** : Beaucoup de formations privées coûteuses (8-12k€/an) sans garantie d’embauche.\n\n---\n### **Plan C — Opportunités émergentes (moins saturées)**\n**Green IT / Sobriété numérique** :\n- **Projections** : +25% de postes d’ici 2030 (ADEME 2023 — connaissance générale), liés aux réglementations européennes (ex : loi REEN).\n- **Formations** : Masters en \"informatique durable\" (ex : Université de Bordeaux), certifications **Numérique Responsable** (INR).\n\n**Métiers hybrides** :\n- **Exemples** :\n  - **Bio-informaticien** (santé + data) : pénurie criante en recherche médicale.\n  - **Legal Tech** (droit + dev) : automatisation des contrats.\n  - **Data Journalism** : croisement médias + analyse de données.\n- **Avantage** : Moins de concurrence que les filières tech pures.\n\n---\n### **⚠ Attention aux pièges**\n- **Bootcamps privés** : Certains promettent \"100% d’embauche\" mais omettent que **seuls 60-70% trouvent un CDI** (enquête Wild Code School 2022 — connaissance générale). Vérifiez les **statistiques officielles** (ex : labels **Qualiopi**, **RNCP**).\n- **Métiers \"sexy\" mais saturés** : Community manager, growth hacker → **salaire junior souvent < 25k€** et turnover élevé.\n- **Délocalisation** : Les postes en **cybersécurité/IA** se concentrent en Île-de-France, Lyon, Toulouse. Peu d’offres en zones rurales.\n\n---\n**Question pour toi** :\nTon projet s’oriente plutôt vers **la technique pure** (cyber, dev, data), **l’hybride** (métiers émergents), ou **la reconversion rapide** (bootcamp, alternance) ? Cela change radicalement les formations à cibler.",
+  "answer_annotated": "**TL;DR**\n1. Le numérique reste un secteur porteur, mais avec des **décalages forts entre métiers** : pénurie sur les profils techniques (cyber, IA, cloud), saturation sur certains métiers du web/marketing.\n2. **300 000 à 500 000 emplois non pourvus** d’ici 2030 en Europe (estimation France Stratégie 2023 — connaissance générale), surtout en cybersécurité (+35% de besoins) et data science.\n3. **L’alternance et les reconversions** seront les principaux leviers pour combler ces besoins — les formations courtes (bac+2/3) et certifiantes monteront en puissance.\n\n---\n\n### **Plan A — Métiers en tension critique (pénurie avérée)**\n**Cybersécurité, IA/ML, Cloud/DevOps** :\n- **Projections** : +20 à 35% de postes non pourvus d’ici 2030 (source : ANSSI 2023, rapport \"Besoin en compétences cyber\" — connaissance générale).\n- **Pourquoi ?** Manque de formations initiales + explosion des cyberattaques (+400% depuis 2020). Les salaires médians en embauche dépassent déjà **38-45k€ brut** pour les profils juniors (estimation marché — connaissance générale).\n- **Formations clés** : BUT Informatique (parcours cyber), Masters SecNumEdu (label ANSSI), écoles d’ingénieurs (CTI) avec spécialisation sécurité.\n\n**Data Science / Analyse** :\n- **Projections** : +150 000 postes en Europe (McKinsey 2022 — connaissance générale), mais **saturation sur les profils \"data analyst\" juniors** (concurrence des bootcamps).\n- **Évolution** : Besoin croissant de **double compétence** (ex : data + santé, data + énergie).\n\n---\n\n### **Plan B — Métiers stables mais concurrentiels**\n**Développement logiciel (full-stack, mobile)** :\n- **Projections** : Croissance modérée (+5 à 10%), mais **offre > demande** pour les juniors (surture des bootcamps).\n- **Stratégie** : Se différencier par une **spécialisation** (ex : blockchain, embarqué) ou une **expérience pro solide** (alternance obligatoire).\n- **Salaire médian junior** : ~32-38k€ brut (estimation — connaissance générale).\n\n**UX/UI Design, Product Management** :\n- **Projections** : Stables, mais **exigence accrue** sur les portfolios et l’expérience utilisateur.\n- **Piège** : Beaucoup de formations privées coûteuses (8-12k€/an) sans garantie d’embauche.\n\n---\n### **Plan C — Opportunités émergentes (moins saturées)**\n**Green IT / Sobriété numérique** :\n- **Projections** : +25% de postes d’ici 2030 (ADEME 2023 — connaissance générale), liés aux réglementations européennes (ex : loi REEN).\n- **Formations** : Masters en \"informatique durable\" (ex : Université de Bordeaux), certifications **Numérique Responsable** (INR).\n\n**Métiers hybrides** :\n- **Exemples** :\n  - **Bio-informaticien** (santé + data) : pénurie criante en recherche médicale.\n  - **Legal Tech** (droit + dev) : automatisation des contrats.\n  - **Data Journalism** : croisement médias + analyse de données.\n- **Avantage** : Moins de concurrence que les filières tech pures.\n\n---\n### **⚠ Attention aux pièges**\n- **Bootcamps privés** : Certains promettent \"100% d’embauche\" mais omettent que **seuls 60-70% trouvent un CDI** (enquête Wild Code School 2022 — connaissance générale). Vérifiez les **statistiques officielles** (ex : labels **Qualiopi**, **RNCP**).\n- **Métiers \"sexy\" mais saturés** : Community manager, growth hacker → **salaire junior souvent < 25k€** et turnover élevé.\n- **Délocalisation** : Les postes en **cybersécurité/IA** se concentrent en Île-de-France, Lyon, Toulouse. Peu d’offres en zones rurales.\n\n---\n**Question pour toi** :\nTon projet s’oriente plutôt vers **la technique pure** (cyber, dev, data), **l’hybride** (métiers émergents), ou **la reconversion rapide** (bootcamp, alternance) ? Cela change radicalement les formations à cibler.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 11,
+    "n_verified": 0,
+    "n_with_disclaimer": 11,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "300 000 à 500 000 emplois non pourvus",
+      "stat_value": 400000,
+      "stat_unit": "emplois",
+      "context_in_response": "emplois non pourvus d’ici 2030 en Europe",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+35% de besoins",
+      "stat_value": 35,
+      "stat_unit": "%",
+      "context_in_response": "besoins en cybersécurité",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+20 à 35% de postes non pourvus d’ici 2030",
+      "stat_value": 27.5,
+      "stat_unit": "%",
+      "context_in_response": "Projections pour cybersécurité, IA/ML, Cloud/DevOps",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+400% depuis 2020",
+      "stat_value": 400,
+      "stat_unit": "%",
+      "context_in_response": "explosion des cyberattaques",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "38-45k€ brut",
+      "stat_value": 41.5,
+      "stat_unit": "k€",
+      "context_in_response": "salaire médian en embauche pour profils juniors en cybersécurité",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+150 000 postes en Europe",
+      "stat_value": 150000,
+      "stat_unit": "postes",
+      "context_in_response": "Projections pour Data Science",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+5 à 10%",
+      "stat_value": 7.5,
+      "stat_unit": "%",
+      "context_in_response": "Croissance modérée pour développement logiciel",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~32-38k€ brut",
+      "stat_value": 35,
+      "stat_unit": "k€",
+      "context_in_response": "Salaire médian junior pour développement logiciel",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+25% de postes d’ici 2030",
+      "stat_value": 25,
+      "stat_unit": "%",
+      "context_in_response": "Projections pour Green IT / Sobriété numérique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60-70%",
+      "stat_value": 65,
+      "stat_unit": "%",
+      "context_in_response": "seuls trouvent un CDI après bootcamps",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "< 25k€",
+      "stat_value": 25,
+      "stat_unit": "k€",
+      "context_in_response": "salaire junior pour métiers saturés comme community manager",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.1444,
+      "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1389,
+      "nom": "Métier 2030 (DARES) — FAP M1Z : Techniciens de l'informatique | Effectifs 2019 France : 187 468 pers",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1343,
+      "nom": "Métier 2030 (DARES) — FAP M0Z : Employés et opérateurs de l'informatique | Effectifs 2019 France : 3",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1341,
+      "nom": "Métier 2030 (DARES) — FAP U0Z : Professionnels de la communication et de l'information | Effectifs 2",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1335,
+      "nom": "Métier 2030 (DARES) — FAP M2Z : Ingénieurs de l'informatique | Effectifs 2019 France : 464 939 perso",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1306,
+      "nom": "Marché du travail prospective 2030 — région Normandie | Effectifs 2019 totaux : 1 271 569 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1241,
+      "nom": "Marché du travail prospective 2030 — région Corse | Effectifs 2019 totaux : 132 156 personnes (toute",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1223,
+      "nom": "Marché du travail prospective 2030 — région Bourgogne-Franche-Comté | Effectifs 2019 totaux : 1 070 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1215,
+      "nom": "Marché du travail prospective 2030 — région Bretagne | Effectifs 2019 totaux : 1 328 112 personnes (",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 1.1179,
+      "nom": "Marché du travail prospective 2030 — région Centre-Val de Loire | Effectifs 2019 totaux : 975 389 pe",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

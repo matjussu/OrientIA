@@ -1,0 +1,175 @@
+{
+  "idx_global": 17,
+  "persona_id": "psy_en",
+  "persona_description": "Psy-EN (psychologue Éducation nationale)",
+  "scope": "pro",
+  "query_id": "q2",
+  "query_type": "orientation_ambigue",
+  "query_text": "Une élève en 1ère S redouble avec 7 de moyenne en maths mais excellente en philo, comment la guider vers un post-bac réaliste ?",
+  "elapsed_gen_s": 15.97,
+  "elapsed_fact_check_s": 3.39,
+  "answer_raw": "**TL;DR**\n1. Avec 7/20 en maths en 1ère S, les doubles licences sélectives (Sciences Po, biomédical, philosophie-sciences) sont **hors de portée** (10-20% d’admission, 30-65% de mentions TB requises).\n2. **Priorité absolue** : rebondir en Terminale avec un choix de spécialités aligné sur ses forces (philo + SES/LLCE/HGGSP) et viser des formations **accessibles** (taux > 60%) ou des passerelles (ex : L1 philo → L2/L3 sélective).\n3. **Plan A réaliste** : Licence de philosophie (public, peu sélective) + mineure maths allégée, ou BTS/But en communication/métiers du livre si rejet des maths. **Plan B** : Prépa littéraire (hypokhâgne) si niveau général solide hors maths.\n\n---\n\n### **Plan A — Réaliste : Licences publiques peu sélectives + spécialisation progressive**\n📍 **Licence Philosophie** (Sorbonne Université, Paris)\nPublic, **sélectivité ~5-10%** (hors Parcoursup pour la plupart des licences classiques), débouchés : enseignement (via MEEF), métiers de l’édition, journalisme. [Détails sur les licences de philo](https://www.lettres.sorbonne-universite.fr/formation/licences/licence-philosophie)\n*Pour elle : aligné sur son point fort (philo), pas de maths obligatoires en L1. Possibilité d’ajouter une mineure \"culture scientifique\" si réconciliation avec les maths.*\n\n📍 **BUT Métiers du Livre** (IUT Paris-Rives de Seine)\nPublic, **taux d’accès > 70%** (connaissance générale), alternance possible en L3. Débouchés : bibliothèques, édition, librairies.\n*Pour elle : zéro maths, valorisation de ses compétences rédactionnelles et analytiques (philo).*\n\n---\n### **Plan B — Ambitieux : Prépa littéraire (hypokhâgne) si niveau général hors maths solide**\n📍 **CPGE Littéraire (AL)** (Lycée Henri-IV, Paris)\nPublic, **sélectivité modérée** (~30-40% en AL, contre 10% en BL). Programme : philo (10h/semaine), lettres, langues, option maths **allégée** (2h).\n*Pour elle : si elle vise une école de commerce (via BCE) ou l’ENS en philo plus tard. Exige un 14+ de moyenne en français/philo/histoire en Terminale.*\n**⚠ Attention** : la prépa demande un rythme soutenu — à éviter si le redoublement a érodé sa confiance.\n\n---\n### **Plan C — Passerelle : Réorientation après une L1/L2**\n1. **Étape 1** : Licence de philosophie ou LLCE (langues) en **accès libre** (peu sélectif).\n2. **Étape 2** : En L2, candidater à des **doubles licences** (ex : philo-sociologie) ou des **licences pro** (métiers de l’édition) via **eCandidat** (sélectivité ~20-30%, moins que Parcoursup).\n*Exemple* : Après une L1 philo à Nantes, intégrer la [double licence philo-sciences sociales](https://formations.univ-nantes.fr/fr/licence-double-philosophie-sciences-sociales-5YKHS.html) (taux ~25%).\n\n---\n### **Points clés à lui transmettre**\n- **Urgence Terminale** :\n  - Abandonner la spécialité maths si blocage persistant (remplacer par SES, HGGSP, ou LLCE).\n  - Cibler **14+ en philo/français/histoire** pour garder la porte de la prépa ouverte.\n- **Alternatives si maths = trauma** :\n  - **BTS Édition** (public, [exemple au lycée Diderot](https://diderot.fr/formations/bts-edition/)) : 0 maths, stages en maison d’édition.\n  - **Écoles de journalisme post-bac** (ex : [EFJ](https://www.efj.fr/), privé mais admissions sur dossier + entretien, pas de maths).\n- **Piège à éviter** : Les doubles licences \"prestigieuses\" (Sciences Po, biomédical) sont des **impasses** avec son profil actuel — même avec une progression en Terminale, les taux d’admission (<20%) et le niveau requis (mention TB) les rendent inaccessibles.\n\n---\n**Question pour elle** :\nEst-ce qu’elle veut **éviter les maths à tout prix** (→ BTS/BUT sans maths), ou **se réconciliier avec** (→ licence philo + mineure scientifique, ou prépa AL avec maths allégées) ?\n*Rappel* : Un RDV avec le **Psy-EN** de son lycée peut l’aider à affiner ce choix en fonction de ses notes de Terminale et de sa résistance au stress.",
+  "answer_annotated": "**TL;DR**\n1. Avec 7/20 en maths en 1ère S, les doubles licences sélectives (Sciences Po, biomédical, philosophie-sciences) sont **hors de portée** (10-20% d’admission, 30-65% de mentions TB requises *(non vérifié dans les sources)*).\n2. **Priorité absolue** : rebondir en Terminale avec un choix de spécialités aligné sur ses forces (philo + SES/LLCE/HGGSP) et viser des formations **accessibles** (taux > 60%) ou des passerelles (ex : L1 philo → L2/L3 sélective).\n3. **Plan A réaliste** : Licence de philosophie (public, peu sélective) + mineure maths allégée, ou BTS/But en communication/métiers du livre si rejet des maths. **Plan B** : Prépa littéraire (hypokhâgne) si niveau général solide hors maths.\n\n---\n\n### **Plan A — Réaliste : Licences publiques peu sélectives + spécialisation progressive**\n📍 **Licence Philosophie** (Sorbonne Université, Paris)\nPublic, **sélectivité ~5-10% *(non vérifié dans les sources)*** (hors Parcoursup pour la plupart des licences classiques), débouchés : enseignement (via MEEF), métiers de l’édition, journalisme. [Détails sur les licences de philo](https://www.lettres.sorbonne-universite.fr/formation/licences/licence-philosophie)\n*Pour elle : aligné sur son point fort (philo), pas de maths obligatoires en L1. Possibilité d’ajouter une mineure \"culture scientifique\" si réconciliation avec les maths.*\n\n📍 **BUT Métiers du Livre** (IUT Paris-Rives de Seine)\nPublic, **taux d’accès > 70%** (connaissance générale), alternance possible en L3. Débouchés : bibliothèques, édition, librairies.\n*Pour elle : zéro maths, valorisation de ses compétences rédactionnelles et analytiques (philo).*\n\n---\n### **Plan B — Ambitieux : Prépa littéraire (hypokhâgne) si niveau général hors maths solide**\n📍 **CPGE Littéraire (AL)** (Lycée Henri-IV, Paris)\nPublic, **sélectivité modérée** (~30-40% en AL, contre 10% en BL). Programme : philo (10h/semaine), lettres, langues, option maths **allégée** (2h).\n*Pour elle : si elle vise une école de commerce (via BCE) ou l’ENS en philo plus tard. Exige un 14+ de moyenne en français/philo/histoire en Terminale.*\n**⚠ Attention** : la prépa demande un rythme soutenu — à éviter si le redoublement a érodé sa confiance.\n\n---\n### **Plan C — Passerelle : Réorientation après une L1/L2**\n1. **Étape 1** : Licence de philosophie ou LLCE (langues) en **accès libre** (peu sélectif).\n2. **Étape 2** : En L2, candidater à des **doubles licences** (ex : philo-sociologie) ou des **licences pro** (métiers de l’édition) via **eCandidat** (sélectivité ~20-30%, moins que Parcoursup).\n*Exemple* : Après une L1 philo à Nantes, intégrer la [double licence philo-sciences sociales](https://formations.univ-nantes.fr/fr/licence-double-philosophie-sciences-sociales-5YKHS.html) (taux ~25%).\n\n---\n### **Points clés à lui transmettre**\n- **Urgence Terminale** :\n  - Abandonner la spécialité maths si blocage persistant (remplacer par SES, HGGSP, ou LLCE).\n  - Cibler **14+ en philo/français/histoire** pour garder la porte de la prépa ouverte.\n- **Alternatives si maths = trauma** :\n  - **BTS Édition** (public, [exemple au lycée Diderot](https://diderot.fr/formations/bts-edition/)) : 0 maths, stages en maison d’édition.\n  - **Écoles de journalisme post-bac** (ex : [EFJ](https://www.efj.fr/), privé mais admissions sur dossier + entretien, pas de maths).\n- **Piège à éviter** : Les doubles licences \"prestigieuses\" (Sciences Po, biomédical) sont des **impasses** avec son profil actuel — même avec une progression en Terminale, les taux d’admission (<20%) et le niveau requis (mention TB) les rendent inaccessibles.\n\n---\n**Question pour elle** :\nEst-ce qu’elle veut **éviter les maths à tout prix** (→ BTS/BUT sans maths), ou **se réconciliier avec** (→ licence philo + mineure scientifique, ou prépa AL avec maths allégées) ?\n*Rappel* : Un RDV avec le **Psy-EN** de son lycée peut l’aider à affiner ce choix en fonction de ses notes de Terminale et de sa résistance au stress.",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 2,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "10-20% d’admission",
+      "stat_value": 15,
+      "stat_unit": "%",
+      "context_in_response": "taux d'admission pour les doubles licences sélectives (Sciences Po, biomédical, philosophie-sciences)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 1 : Taux d'accès Parcoursup : 10.0% | FICHE 2 : Taux d'accès Parcoursup : 18.0% | FICHE 3 : Taux d'accès Parcoursup : 20.0% | FICHE 5 : Taux d'accès Parcoursup : 15.0%"
+    },
+    {
+      "stat_text": "30-65% de mentions TB requises",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "niveau requis pour les doubles licences sélectives",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité ~5-10%",
+      "stat_value": 7.5,
+      "stat_unit": "%",
+      "context_in_response": "sélectivité de la licence Philosophie à Sorbonne Université",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux d’accès > 70%",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context_in_response": "taux d'accès pour le BUT Métiers du Livre",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité modérée (~30-40% en AL, contre 10% en BL)",
+      "stat_value": 35,
+      "stat_unit": "%",
+      "context_in_response": "sélectivité des CPGE Littéraire (AL) vs BL",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "20-30%",
+      "stat_value": 25,
+      "stat_unit": "%",
+      "context_in_response": "sélectivité des licences pro ou doubles licences après une L1/L2",
+      "verdict": "verified",
+      "source_fiche_excerpt": "FICHE 4 : Taux d'accès Parcoursup : 21.0%"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.1076,
+      "nom": "Licence - Double diplôme - Licence Mathématiques et informatique appliquées aux sciences humaines et",
+      "etablissement": "Institut d'études politiques de Paris - Sciences Po",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1074,
+      "nom": "Licence - Double diplôme - Licence Mathématiques - Sciences et Sciences sociales / Spécialité Mathém",
+      "etablissement": "Institut d'études politiques de Paris - Sciences Po",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1039,
+      "nom": "Double licence - Sciences biomédicales / Mathématiques - Sciences biomédicales / Mathématiques",
+      "etablissement": "Université Paris Cité",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0967,
+      "nom": "Double licence - Sciences - Philosophie",
+      "etablissement": "Sorbonne université",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0951,
+      "nom": "Licence - Double diplôme - Licence Philosophie - Humanités littéraires et Sciences sociales / Filièr",
+      "etablissement": "Institut d'études politiques de Paris - Sciences Po",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 1.094,
+      "nom": "Formation d'ingénieur Bac + 5 - Bac Série générale avec 2 spécialités scientifiques mais sans la spé",
+      "etablissement": "ECE Paris",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "parcoursup",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0936,
+      "nom": "Formation d'ingénieur Bac + 5 - Bac Série générale avec la spécialité Maths en Terminale + une spéci",
+      "etablissement": "ECE Paris",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "parcoursup",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0909,
+      "nom": "Formation d'ingénieur Bac + 5 - Bac série générale avec la spécialité Maths en Terminale + une spéci",
+      "etablissement": "ECE Paris",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "parcoursup",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 1.0032,
+      "nom": "DIDACTIQUE DES SCIENCES — Didactique des Mathématiques",
+      "etablissement": "Université Paris Cité",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9985,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 2E DEGRE — Philosophie",
+      "etablissement": "Sorbonne Université",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    }
+  ]
+}
