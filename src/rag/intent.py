@@ -38,6 +38,7 @@ DOMAIN_HINT_APEC = "apec_region"
 DOMAIN_HINT_CROUS = "crous"
 DOMAIN_HINT_INSEE_SALAIRE = "insee_salaire"
 DOMAIN_HINT_INSERTION_PRO = "insertion_pro"
+DOMAIN_HINT_COMPETENCES_CERTIF = "competences_certif"  # France Comp blocs RNCP
 
 
 @dataclass(frozen=True)
@@ -215,6 +216,29 @@ _PATTERNS_DOMAIN_INSERTION_PRO = [
 ]
 
 
+# France Comp blocs RNCP — compétences certifiées par diplôme/titre.
+# Détecte les questions sur le contenu pédagogique d'un diplôme : ce qu'on
+# y apprend, les blocs validables, les savoir-faire certifiés. Couvre aussi
+# les références explicites à RNCP (numéro de fiche) et VAE/validation
+# partielle par bloc — usages opérationnels typiques des étudiants en
+# reconversion ou phase (b)/(c) du scope élargi.
+_PATTERNS_DOMAIN_COMPETENCES_CERTIF = [
+    re.compile(r"\bbloc[sx]?\s+(?:de\s+)?competence[sx]?\b"),
+    re.compile(r"\bcompetence[sx]?\s+(?:certifie[a-z]*|attestee[sx]?|valide[a-z]*)\b"),
+    re.compile(r"\bcompetence[sx]?\s+(?:acquise[sx]?|developpee[sx]?)\s+(?:apres|en\s+sortant|grace\s+a)"),
+    re.compile(r"\bque\s+(?:vais|va[a-z]*)?[\s-]?(?:je|on|tu)\s+apprendre\b"),
+    re.compile(r"\bce\s+que\s+(?:je|on)\s+(?:vais|va)\s+apprendre\b"),
+    re.compile(r"\bquel(?:s|les)?\s+(?:competences?|savoir[s\-]faire|skills?)\b"),
+    re.compile(r"\bsavoir[\s\-]faire\s+(?:certifie[a-z]*|valide[a-z]*|acquis)\b"),
+    re.compile(r"\b(?:objectif|programme)[sx]?\s+(?:pedagogique[sx]?|de\s+formation)\b"),
+    re.compile(r"\bcontenu[sx]?\s+(?:du|de\s+(?:la|l['e]\s*))?(?:bts|but|licence|master|diplom|formation|certif)"),
+    re.compile(r"\bque\s+(?:permet[a-z]*\s+(?:de\s+)?(?:faire|valider))\b"),
+    re.compile(r"\brncp\s*\d+"),
+    re.compile(r"\bvalidation\s+(?:partielle|par\s+bloc[sx]?)\b"),
+    re.compile(r"\bvae\s+(?:par\s+bloc[sx]?|partielle)\b"),
+]
+
+
 def classify_domain_hint(question: str) -> str | None:
     """Retourne un hint de domain multi-corpus (ADR-049) ou None.
 
@@ -227,9 +251,10 @@ def classify_domain_hint(question: str) -> str | None:
     1. APEC (marché du travail cadres) — termes très spécifiques
     2. INSEE salaire (médian / cadre / employé / PCS)
     3. Insertion pro (taux insertion à N mois)
-    4. Parcours bacheliers (taux réussite licence × bac × mention)
-    5. CROUS (logement étudiant / vie étudiante)
-    6. Métier (profession / devenir / que fait un X)
+    4. Compétences certifiées RNCP (blocs / contenu pédagogique)
+    5. Parcours bacheliers (taux réussite licence × bac × mention)
+    6. CROUS (logement étudiant / vie étudiante)
+    7. Métier (profession / devenir / que fait un X)
     """
     if not question or not question.strip():
         return None
@@ -242,6 +267,8 @@ def classify_domain_hint(question: str) -> str | None:
         return DOMAIN_HINT_INSEE_SALAIRE
     if any(p.search(norm) for p in _PATTERNS_DOMAIN_INSERTION_PRO):
         return DOMAIN_HINT_INSERTION_PRO
+    if any(p.search(norm) for p in _PATTERNS_DOMAIN_COMPETENCES_CERTIF):
+        return DOMAIN_HINT_COMPETENCES_CERTIF
     if any(p.search(norm) for p in _PATTERNS_DOMAIN_PARCOURS):
         return DOMAIN_HINT_PARCOURS
     if any(p.search(norm) for p in _PATTERNS_DOMAIN_CROUS):

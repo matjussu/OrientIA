@@ -36,6 +36,9 @@ class RerankConfig:
     domain_boost_crous: float = 1.4
     domain_boost_insee_salaire: float = 1.5
     domain_boost_insertion_pro: float = 1.4
+    # France Comp blocs RNCP — compétences certifiées (cohérent données
+    # chiffrées externes APEC/INSEE/DARES = 1.5).
+    domain_boost_competences_certif: float = 1.5
 
     def as_dict(self) -> dict:
         return {
@@ -53,6 +56,7 @@ class RerankConfig:
             "domain_boost_crous": self.domain_boost_crous,
             "domain_boost_insee_salaire": self.domain_boost_insee_salaire,
             "domain_boost_insertion_pro": self.domain_boost_insertion_pro,
+            "domain_boost_competences_certif": self.domain_boost_competences_certif,
         }
 
 
@@ -64,6 +68,7 @@ _DOMAIN_BOOST_FIELDS = {
     "crous": "domain_boost_crous",
     "insee_salaire": "domain_boost_insee_salaire",
     "insertion_pro": "domain_boost_insertion_pro",
+    "competences_certif": "domain_boost_competences_certif",
 }
 
 
