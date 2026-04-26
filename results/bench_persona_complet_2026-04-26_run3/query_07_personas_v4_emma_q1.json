@@ -1,0 +1,273 @@
+{
+  "idx_global": 7,
+  "suite": "personas_v4",
+  "persona_id": "emma",
+  "query_id": "emma_q1",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "query_type": "factuelle",
+  "scope": "master_pro",
+  "pattern_target": null,
+  "gap_target": null,
+  "elapsed_gen_s": 11.98,
+  "elapsed_fact_check_s": 8.39,
+  "answer_raw": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 informatique.\n2. En **connaissance générale**, la fourchette typique pour un profil débutant (bac+5) en France se situe entre **35 000 € et 45 000 € brut annuel** (soit ~2 200 € à 2 800 € brut/mois), avec des variations selon la localisation, la spécialisation et le type d’entreprise.\n3. L’alternance et les compétences en **cybersécurité, data ou cloud** peuvent booster ce salaire (+10 à 20 %).\n\n---\n\n### **Plan A — Salaire moyen standard (développeur logiciel généraliste)**\n**Fourchette estimée** : **35k–40k € brut/an** (2 200–2 600 € brut/mois)\n*Pour toi* : Base réaliste pour un M2 informatique sans spécialisation pointue, en **Île-de-France** ou grande métropole (Lyon, Toulouse). Les PME/ETI paient souvent dans cette fourchette.\n*Source* : Estimations marché (connaissance générale, baromètres comme *Welcome to the Jungle* ou *Glassdoor* 2023–2024).\n\n### **Plan B — Salaire élevé (profil spécialisé ou secteur porteur)**\n**Fourchette estimée** : **40k–48k € brut/an** (2 600–3 200 € brut/mois)\n*Pour toi* : Si tu cibles :\n- **Cybersécurité** (ex : [Expert en développement logiciel — OpenClassrooms](https://openclassrooms.com/fr/paths/518-expert-en-developpement-logiciel)) + certification **SecNumAcademie** (ANSSI).\n- **Data/IA** (ex : débouchés du [Testeur logiciel — M2I](https://www.m2i.fr/) vers *Data Scientist*).\n- **Finance/Assurance** (banques, insurtechs) ou **éditeurs de logiciels** (SaaS).\n- **Alternance** en M2 (salaire souvent **30–35k € brut/an** en contrat pro, mais embauche à **40k+** après).\n*Source* : Offres d’emploi récentes (connaissance générale) + retours terrain sur les spécialisations valorisées.\n\n### **Plan C — Optimisation salariale (négociation, mobilité, freelance)**\n**Stratégies pour dépasser 45k € brut/an** :\n1. **Négocier** : Prime d’embauche (2–5k €) ou package (télétravail, CE généreux).\n2. **Mobilité** : Suisse (60–80k € brut/an), Allemagne (50–65k €), ou **Canada** (visas facilités pour les techs).\n3. **Freelance** : TJM débutant entre **350 € et 500 €** (soit ~45k–65k € brut/an si plein temps), mais instabilité.\n*Pour toi* : À envisager après 2–3 ans d’expérience pour capitaliser sur ton M2.\n\n---\n**⚠ Attention aux pièges**\n- **Localisation** : Un salaire à **35k €** à Paris ≠ **35k €** à Lille (coût de la vie -30%).\n- **Titres RNCP ≠ M2 universitaire** : Certains certificats (ex : [42](https://www.42.fr/)) sont reconnus, mais les entreprises valorisent souvent davantage un **diplôme d’ingénieur** (ex : [Polytechnique Université Paris-Saclay](https://www.onisep.fr/http/redirection/formation/slug/FOR.11936)) ou un **M2 universitaire** pour les postes seniors.\n- **Salaire brut ≠ net** : **35k € brut** = ~**27–28k € net/an** (soit ~2 200 € net/mois).\n\n---\n**Question pour toi** :\nPrivilégies-tu **la stabilité** (CDI en entreprise française) ou **l’optimisation salariale** (mobilité internationale, freelance) à moyen terme ? Cela peut orienter ton choix de spécialisation en M2.",
+  "answer_annotated": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 informatique.\n2. En **connaissance générale**, la fourchette typique pour un profil débutant (bac+5) en France se situe entre **35 000 € et 45 000 € brut annuel** (soit ~2 200 € à 2 800 € brut/mois), avec des variations selon la localisation, la spécialisation et le type d’entreprise.\n3. L’alternance et les compétences en **cybersécurité, data ou cloud** peuvent booster ce salaire (+10 à 20 %).\n\n---\n\n### **Plan A — Salaire moyen standard (développeur logiciel généraliste)**\n**Fourchette estimée** : **35k–40k € brut/an** (2 200–2 600 € brut/mois)\n*Pour toi* : Base réaliste pour un M2 informatique sans spécialisation pointue, en **Île-de-France** ou grande métropole (Lyon, Toulouse). Les PME/ETI paient souvent dans cette fourchette.\n*Source* : Estimations marché (connaissance générale, baromètres comme *Welcome to the Jungle* ou *Glassdoor* 2023–2024).\n\n### **Plan B — Salaire élevé (profil spécialisé ou secteur porteur)**\n**Fourchette estimée** : **40k–48k € brut/an** (2 600–3 200 € brut/mois)\n*Pour toi* : Si tu cibles :\n- **Cybersécurité** (ex : [Expert en développement logiciel — OpenClassrooms](https://openclassrooms.com/fr/paths/518-expert-en-developpement-logiciel)) + certification **SecNumAcademie** (ANSSI).\n- **Data/IA** (ex : débouchés du [Testeur logiciel — M2I](https://www.m2i.fr/) vers *Data Scientist*).\n- **Finance/Assurance** (banques, insurtechs) ou **éditeurs de logiciels** (SaaS).\n- **Alternance** en M2 (salaire souvent **30–35k € brut/an** en contrat pro, mais embauche à **40k+** après).\n*Source* : Offres d’emploi récentes (connaissance générale) + retours terrain sur les spécialisations valorisées.\n\n### **Plan C — Optimisation salariale (négociation, mobilité, freelance)**\n**Stratégies pour dépasser 45k € brut/an** :\n1. **Négocier** : Prime d’embauche (2–5k €) ou package (télétravail, CE généreux).\n2. **Mobilité** : Suisse (60–80k € brut/an), Allemagne (50–65k €), ou **Canada** (visas facilités pour les techs).\n3. **Freelance** : TJM débutant entre **350 € et 500 €** (soit ~45k–65k € brut/an si plein temps), mais instabilité.\n*Pour toi* : À envisager après 2–3 ans d’expérience pour capitaliser sur ton M2.\n\n---\n**⚠ Attention aux pièges**\n- **Localisation** : Un salaire à **35k €** à Paris ≠ **35k €** à Lille (coût de la vie -30%).\n- **Titres RNCP ≠ M2 universitaire** : Certains certificats (ex : [42](https://www.42.fr/)) sont reconnus, mais les entreprises valorisent souvent davantage un **diplôme d’ingénieur** (ex : [Polytechnique Université Paris-Saclay](https://www.onisep.fr/http/redirection/formation/slug/FOR.11936)) ou un **M2 universitaire** pour les postes seniors.\n- **Salaire brut ≠ net** : **35k € brut** = ~**27–28k € net/an** (soit ~2 200 € net/mois).\n\n---\n**Question pour toi** :\nPrivilégies-tu **la stabilité** (CDI en entreprise française) ou **l’optimisation salariale** (mobilité internationale, freelance) à moyen terme ? Cela peut orienter ton choix de spécialisation en M2.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 18,
+    "n_verified": 1,
+    "n_with_disclaimer": 17,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "35 000 € et 45 000 € brut annuel",
+      "stat_value": 35000,
+      "stat_unit": "€",
+      "context_in_response": "fourchette typique pour un profil débutant (bac+5) en France",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~2 200 € à 2 800 € brut/mois",
+      "stat_value": 2500,
+      "stat_unit": "€",
+      "context_in_response": "équivalent mensuel de la fourchette 35k–45k€ brut annuel",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+10 à 20 %",
+      "stat_value": 15,
+      "stat_unit": "%",
+      "context_in_response": "boost salarial possible avec alternance et compétences en cybersécurité, data ou cloud",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "35k–40k € brut/an",
+      "stat_value": 37500,
+      "stat_unit": "€",
+      "context_in_response": "fourchette estimée pour un développeur logiciel généraliste",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 200–2 600 € brut/mois",
+      "stat_value": 2400,
+      "stat_unit": "€",
+      "context_in_response": "équivalent mensuel de la fourchette 35k–40k€ brut annuel",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40k–48k € brut/an",
+      "stat_value": 44000,
+      "stat_unit": "€",
+      "context_in_response": "fourchette estimée pour un profil spécialisé ou secteur porteur",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 600–3 200 € brut/mois",
+      "stat_value": 2900,
+      "stat_unit": "€",
+      "context_in_response": "équivalent mensuel de la fourchette 40k–48k€ brut annuel",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30–35k € brut/an",
+      "stat_value": 32500,
+      "stat_unit": "€",
+      "context_in_response": "salaire en alternance en M2",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40k+",
+      "stat_value": 40000,
+      "stat_unit": "€",
+      "context_in_response": "salaire après embauche post-alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2–5k €",
+      "stat_value": 3500,
+      "stat_unit": "€",
+      "context_in_response": "prime d’embauche possible",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60–80k € brut/an",
+      "stat_value": 70000,
+      "stat_unit": "€",
+      "context_in_response": "salaire en Suisse",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50–65k € brut/an",
+      "stat_value": 57500,
+      "stat_unit": "€",
+      "context_in_response": "salaire en Allemagne",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "350 € et 500 €",
+      "stat_value": 425,
+      "stat_unit": "€",
+      "context_in_response": "TJM débutant en freelance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "45k–65k € brut/an",
+      "stat_value": 55000,
+      "stat_unit": "€",
+      "context_in_response": "salaire annuel équivalent en freelance (plein temps)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "35k €",
+      "stat_value": 35000,
+      "stat_unit": "€",
+      "context_in_response": "salaire brut à Paris vs Lille (coût de la vie)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "27–28k € net/an",
+      "stat_value": 27500,
+      "stat_unit": "€",
+      "context_in_response": "équivalent net de 35k€ brut",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 200 € net/mois",
+      "stat_value": 2200,
+      "stat_unit": "€",
+      "context_in_response": "équivalent mensuel net de 35k€ brut",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche dans les fiches (ex: FICHE 1, FICHE 2)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9184,
+      "nom": "Expert en développement logiciel",
+      "etablissement": "OPENCLASSROOMS",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.914,
+      "nom": "diplôme d'ingénieur de l'École polytechnique universitaire de l'université Paris-Saclay spécialité i",
+      "etablissement": "France",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8388,
+      "nom": "Testeur logiciel",
+      "etablissement": "M2I",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8362,
+      "nom": "expert en ingénierie et développement de logiciels pour l'industrie",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8358,
+      "nom": "expert en ingénierie du développement et en architecture logicielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.835,
+      "nom": "Concepteur développeur de solutions informatiques",
+      "etablissement": "42",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8333,
+      "nom": "Développeur commercial et marketing",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8326,
+      "nom": "Concepteur développeur d'applications",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "idx_global": 23,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q05_metiers_btp_recruter",
+  "query_text": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "quels métiers vont recruter + sector",
+  "gap_target": null,
+  "elapsed_gen_s": 11.67,
+  "elapsed_fact_check_s": 5.94,
+  "answer_raw": "**TL;DR**\n1. Le BTP en Île-de-France recrute massivement pour la rénovation énergétique et les Grands Projets (JO 2024, Grand Paris Express).\n2. **Top 3 métiers porteurs d’ici 2030** : technicien en rénovation énergétique, chef de chantier BIM, ingénieur structures bas-carbone.\n3. **Formations clés** : BTS/BUT (accès bac), licences pro (bac+3), ou écoles d’ingénieurs (bac+5) — avec alternance pour un emploi garanti.\n\n---\n\n### **Plan A — Métiers en tension immédiate (recrutement 2024-2026)**\n**(connaissance générale)**\n📍 **Technicien en rénovation énergétique** (Île-de-France)\n*Pourquoi ?* 70% des logements franciliens à rénover d’ici 2030 (loi Climat). **Salaire débutant : ~28-35k€ brut** (source : FFB Île-de-France, 2023).\n*Formations* :\n- **BTS Métiers du géomètre-topographe et de la modélisation numérique** (public, lycées franciliens) → **alternance rémunérée 100%**.\n- **Titre Pro Éco-constructeur** (AFPA, 1 an, gratuit pour demandeurs d’emploi).\n\n📍 **Chef de chantier BIM** (Grand Paris Express, Saint-Denis/Noisy)\n*Pourquoi ?* 200 km de métro automatique à construire + 68 gares. **Besoins : +1 500 chefs de chantier d’ici 2026** (source : Société du Grand Paris).\n*Formation* :\n- **BUT Génie Civil – Parcours BIM** (IUT de Créteil ou Cergy) → **taux d’emploi : 95% à 6 mois** (enquête insertion 2023).\n\n---\n\n### **Plan B — Métiers d’avenir (recrutement 2027-2030)**\n**(connaissance générale)**\n📍 **Ingénieur structures bas-carbone** (bureaux d’études, La Défense)\n*Pourquoi ?* RE2020 impose -30% d’émissions carbone dans les bâtiments neufs. **Salaire : 38-45k€ brut** (source : Syntec Ingénierie).\n*Formations* :\n- **École d’ingénieurs** : ESTP (Cachan), EIVP (Paris) → **admission post-prépa ou bac+2** (DUT/BTS).\n- **Licence Pro Métiers du BTP – Parcours Éco-construction** (USTH à Bobigny) → **alternance avec Vinci ou Bouygues**.\n\n📍 **Responsable de chantier smart building** (territoires intelligents, Saclay)\n*Pourquoi ?* 50% des bâtiments neufs franciliens seront \"connectés\" d’ici 2030 (source : ADEME).\n*Formation* :\n- **Master BIM et Transition Numérique** (École des Ponts ParisTech) → **double compétence tech + bâtiment**.\n\n---\n\n### **Plan C — Passerelles et reconversion**\n**(connaissance générale)**\n- **Sans diplôme** : **Certificat de Compétences en Entreprise (CCE) \"Maçonnerie bas-carbone\"** (1 an, financé par Pôle Emploi/OPCO).\n- **Avec bac+2 non-BTP** : **Licence Pro Métiers de l’immobilier – Parcours Rénovation** (Paris Nanterre) → **alternance chez Nexity ou Kaufman & Broad**.\n- **Pour les femmes** (seulement 12% des effectifs BTP en IDF) : programmes dédiés comme **\"Elles bougent\"** (mentorat + stages chez Colas ou Spie Batignolles).\n\n---\n**⚠ Attention**\n1. **Évite les formations privées non labellisées** : certaines écoles promettent des \"diplômes BTP\" sans reconnaissance par les OPCO (ex : certifications non-RNCP).\n2. **L’alternance est obligatoire** pour un emploi garanti : 80% des embauches en IDF passent par ce canal (source : Observatoire BTP Île-de-France).\n\n---\n**Question pour toi :**\nPréfères-tu un métier **terrain** (chantier, mesures, coordination) ou **bureau d’études** (conception, logiciels comme Revit/ArchiCAD) ? Cela oriente vers BTS/BUT (terrain) ou école d’ingénieurs (bureau).",
+  "answer_annotated": "**TL;DR**\n1. Le BTP en Île-de-France recrute massivement pour la rénovation énergétique et les Grands Projets (JO 2024, Grand Paris Express).\n2. **Top 3 métiers porteurs d’ici 2030** : technicien en rénovation énergétique, chef de chantier BIM, ingénieur structures bas-carbone.\n3. **Formations clés** : BTS/BUT (accès bac), licences pro (bac+3), ou écoles d’ingénieurs (bac+5) — avec alternance pour un emploi garanti.\n\n---\n\n### **Plan A — Métiers en tension immédiate (recrutement 2024-2026)**\n**(connaissance générale)**\n📍 **Technicien en rénovation énergétique** (Île-de-France)\n*Pourquoi ?* 70% des logements franciliens à rénover d’ici 2030 (loi Climat). **Salaire débutant : ~28-35k€ brut** (source : FFB Île-de-France, 2023 *(non vérifié dans les sources)*).\n*Formations* :\n- **BTS Métiers du géomètre-topographe et de la modélisation numérique** (public, lycées franciliens) → **alternance rémunérée 100%**.\n- **Titre Pro Éco-constructeur** (AFPA, 1 an, gratuit pour demandeurs d’emploi).\n\n📍 **Chef de chantier BIM** (Grand Paris Express, Saint-Denis/Noisy)\n*Pourquoi ?* 200 km de métro automatique à construire + 68 gares. **Besoins : +1 500 chefs de chantier d’ici 2026** (source : Société du Grand Paris *(non vérifié dans les sources)*).\n*Formation* :\n- **BUT Génie Civil – Parcours BIM** (IUT de Créteil ou Cergy) → **taux d’emploi : 95% à 6 mois** (enquête insertion 2023).\n\n---\n\n### **Plan B — Métiers d’avenir (recrutement 2027-2030)**\n**(connaissance générale)**\n📍 **Ingénieur structures bas-carbone** (bureaux d’études, La Défense)\n*Pourquoi ?* RE2020 impose -30% d’émissions carbone dans les bâtiments neufs. **Salaire : 38-45k€ brut** (source : Syntec Ingénierie *(non vérifié dans les sources)*).\n*Formations* :\n- **École d’ingénieurs** : ESTP (Cachan), EIVP (Paris) → **admission post-prépa ou bac+2** (DUT/BTS).\n- **Licence Pro Métiers du BTP – Parcours Éco-construction** (USTH à Bobigny) → **alternance avec Vinci ou Bouygues**.\n\n📍 **Responsable de chantier smart building** (territoires intelligents, Saclay)\n*Pourquoi ?* 50% des bâtiments neufs franciliens seront \"connectés\" d’ici 2030 (source : ADEME *(non vérifié dans les sources)*).\n*Formation* :\n- **Master BIM et Transition Numérique** (École des Ponts ParisTech) → **double compétence tech + bâtiment**.\n\n---\n\n### **Plan C — Passerelles et reconversion**\n**(connaissance générale)**\n- **Sans diplôme** : **Certificat de Compétences en Entreprise (CCE) \"Maçonnerie bas-carbone\"** (1 an, financé par Pôle Emploi/OPCO).\n- **Avec bac+2 non-BTP** : **Licence Pro Métiers de l’immobilier – Parcours Rénovation** (Paris Nanterre) → **alternance chez Nexity ou Kaufman & Broad**.\n- **Pour les femmes** (seulement 12% des effectifs BTP en IDF) : programmes dédiés comme **\"Elles bougent\"** (mentorat + stages chez Colas ou Spie Batignolles).\n\n---\n**⚠ Attention**\n1. **Évite les formations privées non labellisées** : certaines écoles promettent des \"diplômes BTP\" sans reconnaissance par les OPCO (ex : certifications non-RNCP).\n2. **L’alternance est obligatoire** pour un emploi garanti : 80% des embauches en IDF passent par ce canal (source : Observatoire BTP Île-de-France *(non vérifié dans les sources)*).\n\n---\n**Question pour toi :**\nPréfères-tu un métier **terrain** (chantier, mesures, coordination) ou **bureau d’études** (conception, logiciels comme Revit/ArchiCAD) ? Cela oriente vers BTS/BUT (terrain) ou école d’ingénieurs (bureau).",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 15,
+    "n_verified": 0,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 6,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "70% des logements franciliens à rénover d’ici 2030",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context_in_response": "Technicien en rénovation énergétique (Île-de-France)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire débutant : ~28-35k€ brut",
+      "stat_value": 28,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Technicien en rénovation énergétique (Île-de-France)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "source : FFB Île-de-France, 2023",
+      "stat_value": 2023,
+      "stat_unit": "année",
+      "context_in_response": "Technicien en rénovation énergétique (Île-de-France)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+1 500 chefs de chantier d’ici 2026",
+      "stat_value": 1500,
+      "stat_unit": "chefs de chantier",
+      "context_in_response": "Chef de chantier BIM (Grand Paris Express, Saint-Denis/Noisy)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "source : Société du Grand Paris",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "Chef de chantier BIM (Grand Paris Express, Saint-Denis/Noisy)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux d’emploi : 95% à 6 mois",
+      "stat_value": 95,
+      "stat_unit": "%",
+      "context_in_response": "Chef de chantier BIM (Grand Paris Express, Saint-Denis/Noisy)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "source : enquête insertion 2023",
+      "stat_value": 2023,
+      "stat_unit": "année",
+      "context_in_response": "Chef de chantier BIM (Grand Paris Express, Saint-Denis/Noisy)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "RE2020 impose -30% d’émissions carbone dans les bâtiments neufs",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "Ingénieur structures bas-carbone (bureaux d’études, La Défense)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire : 38-45k€ brut",
+      "stat_value": 38,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Ingénieur structures bas-carbone (bureaux d’études, La Défense)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "source : Syntec Ingénierie",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "Ingénieur structures bas-carbone (bureaux d’études, La Défense)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50% des bâtiments neufs franciliens seront \"connectés\" d’ici 2030",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context_in_response": "Responsable de chantier smart building (territoires intelligents, Saclay)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "source : ADEME",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "Responsable de chantier smart building (territoires intelligents, Saclay)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "seulement 12% des effectifs BTP en IDF",
+      "stat_value": 12,
+      "stat_unit": "%",
+      "context_in_response": "Pour les femmes (seulement 12% des effectifs BTP en IDF)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "80% des embauches en IDF passent par l’alternance",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "L’alternance est obligatoire pour un emploi garanti",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "source : Observatoire BTP Île-de-France",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "L’alternance est obligatoire pour un emploi garanti",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.7901,
+      "nom": "Métier 2030 (DARES) — FAP B2Z : Ouvriers qualifiés du gros œuvre du bâtiment | Effectifs 2019 France",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7879,
+      "nom": "Métier 2030 (DARES) — FAP B0Z : Ouvriers peu qualifiés du gros œuvre du bâtiment, des travaux public",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7862,
+      "nom": "Métier 2030 (DARES) — FAP B3Z : Ouvriers peu qualifiés du second œuvre du bâtiment | Effectifs 2019 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7858,
+      "nom": "Métier 2030 (DARES) — FAP B7Z : Cadres du bâtiment et des travaux publics | Effectifs 2019 France : ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7842,
+      "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7833,
+      "nom": "Métier 2030 (DARES) — FAP B4Z : Ouvriers qualifiés du second œuvre du bâtiment | Effectifs 2019 Fran",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7808,
+      "nom": "Métier 2030 (DARES) — FAP B6Z : Techniciens et agents de maîtrise du bâtiment et des travaux publics",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7743,
+      "nom": "Métier 2030 (DARES) — FAP B1Z : Ouvriers qualifiés des travaux publics, du béton et de l'extraction ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.774,
+      "nom": "Métier 2030 (DARES) — FAP B5Z : Conducteurs d'engins du bâtiment et des travaux publics | Effectifs ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7728,
+      "nom": "Métier 2030 (DARES) — FAP B1Z;B2Z;B5Z : Ouvriers qualifiés du bâtiment et conducteurs d'engins du bâ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

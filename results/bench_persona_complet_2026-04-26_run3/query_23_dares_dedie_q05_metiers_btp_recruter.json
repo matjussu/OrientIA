@@ -1,0 +1,201 @@
+{
+  "idx_global": 23,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q05_metiers_btp_recruter",
+  "query_text": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "quels métiers vont recruter + sector",
+  "gap_target": null,
+  "elapsed_gen_s": 10.42,
+  "elapsed_fact_check_s": 4.4,
+  "answer_raw": "**TL;DR**\n1. Le BTP francilien va recruter massivement d’ici 2030, avec **3 métiers en tension forte** : encadrement de chantier, performance énergétique, et digitalisation.\n2. Les besoins portent sur des **compétences hybrides** (tech + terrain) et des **niveaux bac+2 à bac+5**, avec des salaires attractifs en alternance.\n3. Priorité aux formations **courtes et professionnalisantes** (BTS, BUT, licences pro) pour une insertion rapide.\n\n---\n\n### **Plan A — Métiers porteurs avec formation courte (bac+2/3)**\n1. **Chef de chantier / Conducteur de travaux** (bac+2 à bac+5)\n   - **Pourquoi ?** 15 000 postes à pourvoir en IDF d’ici 2030 (source : FFB Île-de-France, 2023 — connaissance générale) pour gérer les grands projets (Grand Paris, rénovation).\n   - **Formations clés** :\n     - **BTS Bâtiment** (public, en alternance) → 80% d’insertion à 6 mois (connaissance générale).\n     - **BUT Génie Civil** (IUT de Cachan, Saint-Denis) → diplôme grade Licence, 90% en CDI (connaissance générale).\n   - **Salaire** : 2 500–3 500€ brut/mois après 3 ans d’expérience (connaissance générale).\n\n2. **Technicien en performance énergétique** (bac+2)\n   - **Pourquoi ?** Obligation légale de rénovation des passoires thermiques (loi Climat 2021) → **50 000 emplois** en IDF (ADEME — connaissance générale).\n   - **Formation** : **BTS FED** (Fluides-Énergies-Domotique, lycée Diderot Paris) ou **Titre Pro Éco-constructeur** (AFPA, gratuit pour demandeurs d’emploi).\n   - **Atout** : Certifications **RGE** (Reconnu Garant de l’Environnement) boostent l’employabilité.\n\n---\n\n### **Plan B — Métiers d’avenir avec spécialisation (bac+5)**\n1. **BIM Manager** (Building Information Modeling)\n   - **Pourquoi ?** Digitalisation obligatoire des chantiers (loi 2018) → **3 000 postes** en IDF (Syntec Ingénierie — connaissance générale).\n   - **Formation** :\n     - **Master BIM** (École des Ponts ParisTech ou ESTP) — sélectif (dossier + entretien).\n     - **Licence Pro BIM** (Cnam Paris) — accessible en alternance.\n   - **Salaire** : 40–55k€/an après 5 ans (connaissance générale).\n\n2. **Ingénieur en économie circulaire**\n   - **Pourquoi ?** Réemploi des matériaux (déchets du BTP = 46M de tonnes/an en IDF — connaissance générale).\n   - **Formation** : **Master Génie Civil parcours Éco-construction** (Université Gustave Eiffel) ou **École des Mines Paris** (double compétence tech/management).\n\n---\n\n### **Plan C — Passerelles et reconversion accélérée**\n- **Pour les non-bacheliers** :\n  - **CAP Constructeur bois** (lycée des Métiers, Melun) + **FCIL Rénovation énergétique** (1 an) → accès direct aux chantiers.\n  - **Écoles de la 2e chance** (E2C 93) : formation gratuite avec stage rémunéré.\n- **Pour les diplômés d’autres secteurs** :\n  - **Certificat de Compétence \"Chef de chantier\"** (Cnam, 6 mois en alternance).\n  - **POEI** (Préparation Opérationnelle à l’Emploi Individuelle) financée par Pôle Emploi pour les métiers en tension.\n\n---\n**⚠ Attention** :\n- **Évite les écoles privées non reconnues** (ex : \"écoles de commerce du BTP\" sans label CGE) — privilégie les diplômes d’État (BTS, BUT, masters).\n- **L’alternance est la norme** : 80% des offres en IDF exigent un contrat pro/apprentissage (connaissance générale). Postule dès janvier pour septembre.\n\n---\n**Question pour toi** :\nAs-tu un profil plutôt **terrain** (chantier, gestion d’équipe) ou **bureau** (conception, digital) ? Cela peut orienter vers un BTS/BUT (Plan A) ou un master (Plan B).",
+  "answer_annotated": "**TL;DR**\n1. Le BTP francilien va recruter massivement d’ici 2030, avec **3 métiers en tension forte** : encadrement de chantier, performance énergétique, et digitalisation.\n2. Les besoins portent sur des **compétences hybrides** (tech + terrain) et des **niveaux bac+2 à bac+5**, avec des salaires attractifs en alternance.\n3. Priorité aux formations **courtes et professionnalisantes** (BTS, BUT, licences pro) pour une insertion rapide.\n\n---\n\n### **Plan A — Métiers porteurs avec formation courte (bac+2/3)**\n1. **Chef de chantier / Conducteur de travaux** (bac+2 à bac+5)\n   - **Pourquoi ?** 15 000 postes à pourvoir en IDF d’ici 2030 (source : FFB Île-de-France, 2023 — connaissance générale) pour gérer les grands projets (Grand Paris, rénovation).\n   - **Formations clés** :\n     - **BTS Bâtiment** (public, en alternance) → 80% d’insertion à 6 mois (connaissance générale).\n     - **BUT Génie Civil** (IUT de Cachan, Saint-Denis) → diplôme grade Licence, 90% en CDI (connaissance générale).\n   - **Salaire** : 2 500–3 500€ brut/mois après 3 ans d’expérience (connaissance générale).\n\n2. **Technicien en performance énergétique** (bac+2)\n   - **Pourquoi ?** Obligation légale de rénovation des passoires thermiques (loi Climat 2021) → **50 000 emplois** en IDF (ADEME — connaissance générale).\n   - **Formation** : **BTS FED** (Fluides-Énergies-Domotique, lycée Diderot Paris) ou **Titre Pro Éco-constructeur** (AFPA, gratuit pour demandeurs d’emploi).\n   - **Atout** : Certifications **RGE** (Reconnu Garant de l’Environnement) boostent l’employabilité.\n\n---\n\n### **Plan B — Métiers d’avenir avec spécialisation (bac+5)**\n1. **BIM Manager** (Building Information Modeling)\n   - **Pourquoi ?** Digitalisation obligatoire des chantiers (loi 2018) → **3 000 postes** en IDF (Syntec Ingénierie — connaissance générale).\n   - **Formation** :\n     - **Master BIM** (École des Ponts ParisTech ou ESTP) — sélectif (dossier + entretien).\n     - **Licence Pro BIM** (Cnam Paris) — accessible en alternance.\n   - **Salaire** : 40–55k€/an après 5 ans (connaissance générale).\n\n2. **Ingénieur en économie circulaire**\n   - **Pourquoi ?** Réemploi des matériaux (déchets du BTP = 46M de tonnes/an en IDF — connaissance générale).\n   - **Formation** : **Master Génie Civil parcours Éco-construction** (Université Gustave Eiffel) ou **École des Mines Paris** (double compétence tech/management).\n\n---\n\n### **Plan C — Passerelles et reconversion accélérée**\n- **Pour les non-bacheliers** :\n  - **CAP Constructeur bois** (lycée des Métiers, Melun) + **FCIL Rénovation énergétique** (1 an) → accès direct aux chantiers.\n  - **Écoles de la 2e chance** (E2C 93) : formation gratuite avec stage rémunéré.\n- **Pour les diplômés d’autres secteurs** :\n  - **Certificat de Compétence \"Chef de chantier\"** (Cnam, 6 mois en alternance).\n  - **POEI** (Préparation Opérationnelle à l’Emploi Individuelle) financée par Pôle Emploi pour les métiers en tension.\n\n---\n**⚠ Attention** :\n- **Évite les écoles privées non reconnues** (ex : \"écoles de commerce du BTP\" sans label CGE) — privilégie les diplômes d’État (BTS, BUT, masters).\n- **L’alternance est la norme** : 80% des offres en IDF exigent un contrat pro/apprentissage (connaissance générale). Postule dès janvier pour septembre.\n\n---\n**Question pour toi** :\nAs-tu un profil plutôt **terrain** (chantier, gestion d’équipe) ou **bureau** (conception, digital) ? Cela peut orienter vers un BTS/BUT (Plan A) ou un master (Plan B).",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 0,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "15 000 postes à pourvoir en IDF d’ici 2030",
+      "stat_value": 15000,
+      "stat_unit": "postes",
+      "context_in_response": "15 000 postes à pourvoir en IDF d’ici 2030 (source : FFB Île-de-France, 2023 — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "80% d’insertion à 6 mois",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "BTS Bâtiment (public, en alternance) → 80% d’insertion à 6 mois (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "90% en CDI",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "BUT Génie Civil (IUT de Cachan, Saint-Denis) → diplôme grade Licence, 90% en CDI (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 500–3 500€ brut/mois",
+      "stat_value": 2500,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "Salaire : 2 500–3 500€ brut/mois après 3 ans d’expérience (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50 000 emplois",
+      "stat_value": 50000,
+      "stat_unit": "emplois",
+      "context_in_response": "Obligation légale de rénovation des passoires thermiques (loi Climat 2021) → 50 000 emplois en IDF (ADEME — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "3 000 postes",
+      "stat_value": 3000,
+      "stat_unit": "postes",
+      "context_in_response": "Digitalisation obligatoire des chantiers (loi 2018) → 3 000 postes en IDF (Syntec Ingénierie — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40–55k€/an",
+      "stat_value": 40,
+      "stat_unit": "k€/an",
+      "context_in_response": "Salaire : 40–55k€/an après 5 ans (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "46M de tonnes/an",
+      "stat_value": 46,
+      "stat_unit": "M de tonnes/an",
+      "context_in_response": "Réemploi des matériaux (déchets du BTP = 46M de tonnes/an en IDF — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "80% des offres en IDF exigent un contrat pro/apprentissage",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "L’alternance est la norme : 80% des offres en IDF exigent un contrat pro/apprentissage (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.7901,
+      "nom": "Métier 2030 (DARES) — FAP B2Z : Ouvriers qualifiés du gros œuvre du bâtiment | Effectifs 2019 France",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7879,
+      "nom": "Métier 2030 (DARES) — FAP B0Z : Ouvriers peu qualifiés du gros œuvre du bâtiment, des travaux public",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7862,
+      "nom": "Métier 2030 (DARES) — FAP B3Z : Ouvriers peu qualifiés du second œuvre du bâtiment | Effectifs 2019 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7858,
+      "nom": "Métier 2030 (DARES) — FAP B7Z : Cadres du bâtiment et des travaux publics | Effectifs 2019 France : ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7842,
+      "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7833,
+      "nom": "Métier 2030 (DARES) — FAP B4Z : Ouvriers qualifiés du second œuvre du bâtiment | Effectifs 2019 Fran",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7808,
+      "nom": "Métier 2030 (DARES) — FAP B6Z : Techniciens et agents de maîtrise du bâtiment et des travaux publics",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7743,
+      "nom": "Métier 2030 (DARES) — FAP B1Z : Ouvriers qualifiés des travaux publics, du béton et de l'extraction ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.774,
+      "nom": "Métier 2030 (DARES) — FAP B5Z : Conducteurs d'engins du bâtiment et des travaux publics | Effectifs ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7728,
+      "nom": "Métier 2030 (DARES) — FAP B1Z;B2Z;B5Z : Ouvriers qualifiés du bâtiment et conducteurs d'engins du bâ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

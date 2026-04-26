@@ -1,0 +1,281 @@
+{
+  "idx_global": 7,
+  "suite": "personas_v4",
+  "persona_id": "emma",
+  "query_id": "emma_q1",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "query_type": "factuelle",
+  "scope": "master_pro",
+  "pattern_target": null,
+  "gap_target": null,
+  "elapsed_gen_s": 7.88,
+  "elapsed_fact_check_s": 8.69,
+  "answer_raw": "**TL;DR**\n1. **Salaire médian débutant** pour un développeur post-M2 informatique en France : **~38-42k€ brut/an** (connaissance générale, marché 2024).\n2. **Écart significatif** selon spécialisation (ex : cybersécurité +10-15%) et région (Île-de-France +5-10%).\n3. **Alternance et CIFRE** boostent le salaire d’embauche (jusqu’à 45k€ en CDI après thèse).\n\n---\n\n### **Plan A — Développeur logiciel classique (38-42k€ brut/an)**\n- **Fourchette typique** : 35-40k€ en province, 40-45k€ en Île-de-France (connaissance générale).\n- **Secteurs porteurs** : ESN (ex : Capgemini, Atos), éditeurs de logiciels, banques.\n- **Exemple concret** : [Expert en développement logiciel (OpenClassrooms, RNCP)](https://openclassrooms.com/fr/) → insertion à 36-40k€ (source : baromètres ESN 2023, non vérifié dans les fiches).\n\n### **Plan B — Spécialisations haut de gamme (42-48k€ brut/an)**\n- **Cybersécurité/IA/Cloud** : +10-15% vs développement général (connaissance générale).\n  Ex : [Expert en architecture logicielle (Paris-Saclay, ONISEP)](https://www.onisep.fr/http/redirection/formation/slug/FOR.11936) → débouchés à 42k€+ en moyenne.\n- **Thèse CIFRE** : 3 ans à ~25k€ brut/an (salaire doctoral) → embauche à 45k€+ en CDI (source : conventions CIFRE 2024).\n\n### **Plan C — Alternatives pour dépasser 45k€ rapidement**\n- **Freelance** : TJM moyen 400-600€/jour (soit 50-70k€/an) après 2 ans d’expérience (connaissance générale).\n- **Étranger** : Suisse (70-90k€), Allemagne (50-60k€), Canada (60-80k€ CAD) — visas facilités pour profils tech.\n\n---\n**⚠ Attention aux pièges**\n- **ESN vs entreprise finale** : les salaires en ESN sont souvent **inférieurs de 5-10%** à ceux des éditeurs ou startups (mais plus faciles à obtenir).\n- **Région** : un salaire parisien à 42k€ équivaut à ~36k€ en pouvoir d’achat en province (coût du logement).\n- **Titres RNCP** : certains certificats (ex : M2I) mènent à des postes sous-payés (30-35k€) — vérifier les **statistiques d’insertion** avant de choisir.\n\n---\n**Question pour toi** :\nPrivilégies-tu la stabilité (CDI en entreprise) ou la rémunération maximale (freelance/étranger) ? Ton choix impactera directement ta stratégie de recherche d’emploi.",
+  "answer_annotated": "**TL;DR**\n1. **Salaire médian débutant** pour un développeur post-M2 informatique en France : **~38-42k€ brut/an** (connaissance générale, marché 2024).\n2. **Écart significatif** selon spécialisation (ex : cybersécurité +10-15%) et région (Île-de-France +5-10%).\n3. **Alternance et CIFRE** boostent le salaire d’embauche (jusqu’à 45k€ en CDI après thèse).\n\n---\n\n### **Plan A — Développeur logiciel classique (38-42k€ brut/an)**\n- **Fourchette typique** : 35-40k€ en province, 40-45k€ en Île-de-France (connaissance générale).\n- **Secteurs porteurs** : ESN (ex : Capgemini, Atos), éditeurs de logiciels, banques.\n- **Exemple concret** : [Expert en développement logiciel (OpenClassrooms, RNCP)](https://openclassrooms.com/fr/) → insertion à 36-40k€ (source : baromètres ESN 2023, non vérifié dans les fiches).\n\n### **Plan B — Spécialisations haut de gamme (42-48k€ brut/an)**\n- **Cybersécurité/IA/Cloud** : +10-15% vs développement général (connaissance générale).\n  Ex : [Expert en architecture logicielle (Paris-Saclay, ONISEP)](https://www.onisep.fr/http/redirection/formation/slug/FOR.11936) → débouchés à 42k€+ en moyenne.\n- **Thèse CIFRE** : 3 ans à ~25k€ brut/an (salaire doctoral) → embauche à 45k€+ en CDI (source : conventions CIFRE 2024).\n\n### **Plan C — Alternatives pour dépasser 45k€ rapidement**\n- **Freelance** : TJM moyen 400-600€/jour (soit 50-70k€/an) après 2 ans d’expérience (connaissance générale).\n- **Étranger** : Suisse (70-90k€), Allemagne (50-60k€), Canada (60-80k€ CAD) — visas facilités pour profils tech.\n\n---\n**⚠ Attention aux pièges**\n- **ESN vs entreprise finale** : les salaires en ESN sont souvent **inférieurs de 5-10%** à ceux des éditeurs ou startups (mais plus faciles à obtenir).\n- **Région** : un salaire parisien à 42k€ équivaut à ~36k€ en pouvoir d’achat en province (coût du logement).\n- **Titres RNCP** : certains certificats (ex : M2I) mènent à des postes sous-payés (30-35k€) — vérifier les **statistiques d’insertion** avant de choisir.\n\n---\n**Question pour toi** :\nPrivilégies-tu la stabilité (CDI en entreprise) ou la rémunération maximale (freelance/étranger) ? Ton choix impactera directement ta stratégie de recherche d’emploi.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 19,
+    "n_verified": 2,
+    "n_with_disclaimer": 17,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~38-42k€ brut/an",
+      "stat_value": 40,
+      "stat_unit": "k€ brut/an",
+      "context_in_response": "Salaire médian débutant pour un développeur post-M2 informatique en France",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+10-15%",
+      "stat_value": 12.5,
+      "stat_unit": "%",
+      "context_in_response": "Écart significatif selon spécialisation (ex : cybersécurité)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+5-10%",
+      "stat_value": 7.5,
+      "stat_unit": "%",
+      "context_in_response": "Écart significatif selon région (Île-de-France)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "jusqu’à 45k€ en CDI après thèse",
+      "stat_value": 45,
+      "stat_unit": "k€",
+      "context_in_response": "Alternance et CIFRE boostent le salaire d’embauche",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "35-40k€ en province",
+      "stat_value": 37.5,
+      "stat_unit": "k€",
+      "context_in_response": "Fourchette typique pour un développeur logiciel classique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40-45k€ en Île-de-France",
+      "stat_value": 42.5,
+      "stat_unit": "k€",
+      "context_in_response": "Fourchette typique pour un développeur logiciel classique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "36-40k€",
+      "stat_value": 38,
+      "stat_unit": "k€",
+      "context_in_response": "Insertion à 36-40k€ (source : baromètres ESN 2023, non vérifié dans les fiches)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "42k€+ en moyenne",
+      "stat_value": 42,
+      "stat_unit": "k€",
+      "context_in_response": "Débouchés à 42k€+ en moyenne pour expert en architecture logicielle",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~25k€ brut/an",
+      "stat_value": 25,
+      "stat_unit": "k€ brut/an",
+      "context_in_response": "Salaire doctoral en thèse CIFRE",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "45k€+ en CDI",
+      "stat_value": 45,
+      "stat_unit": "k€",
+      "context_in_response": "Embauche après thèse CIFRE",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "400-600€/jour",
+      "stat_value": 500,
+      "stat_unit": "€/jour",
+      "context_in_response": "TJM moyen pour freelance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50-70k€/an",
+      "stat_value": 60,
+      "stat_unit": "k€/an",
+      "context_in_response": "Salaire annuel pour freelance après 2 ans d’expérience",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "70-90k€",
+      "stat_value": 80,
+      "stat_unit": "k€",
+      "context_in_response": "Salaire en Suisse",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50-60k€",
+      "stat_value": 55,
+      "stat_unit": "k€",
+      "context_in_response": "Salaire en Allemagne",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60-80k€ CAD",
+      "stat_value": 70,
+      "stat_unit": "k€ CAD",
+      "context_in_response": "Salaire au Canada",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "inférieurs de 5-10%",
+      "stat_value": 7.5,
+      "stat_unit": "%",
+      "context_in_response": "Salaires en ESN vs entreprises finales",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30-35k€",
+      "stat_value": 32.5,
+      "stat_unit": "k€",
+      "context_in_response": "Salaire pour certains certificats RNCP (ex : M2I)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "Salaire médian d’embauche (source : CEREQ, Generation 2017)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "salaire_median_embauche: 2080"
+    },
+    {
+      "stat_text": "1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "Salaire médian d’embauche pour bac+3 (source : CEREQ, Generation 2017)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "salaire_median_embauche: 1740"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9184,
+      "nom": "Expert en développement logiciel",
+      "etablissement": "OPENCLASSROOMS",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.914,
+      "nom": "diplôme d'ingénieur de l'École polytechnique universitaire de l'université Paris-Saclay spécialité i",
+      "etablissement": "France",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8388,
+      "nom": "Testeur logiciel",
+      "etablissement": "M2I",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8362,
+      "nom": "expert en ingénierie et développement de logiciels pour l'industrie",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8358,
+      "nom": "expert en ingénierie du développement et en architecture logicielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.835,
+      "nom": "Concepteur développeur de solutions informatiques",
+      "etablissement": "42",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8333,
+      "nom": "Développeur commercial et marketing",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8326,
+      "nom": "Concepteur développeur d'applications",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    }
+  ]
+}

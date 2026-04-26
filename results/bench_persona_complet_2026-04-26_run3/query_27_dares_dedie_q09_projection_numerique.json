@@ -1,0 +1,177 @@
+{
+  "idx_global": 27,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q09_projection_numerique",
+  "query_text": "Quelles sont les projections de recrutement pour les métiers du numérique d'ici 2030 ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "projection recrutement + métiers 2030",
+  "gap_target": null,
+  "elapsed_gen_s": 6.76,
+  "elapsed_fact_check_s": 3.11,
+  "answer_raw": "**TL;DR**\n1. Les métiers du numérique (data, cybersécurité, développement, design) figurent parmi les **plus porteurs d’ici 2030**, avec des pénuries de talents documentées en Europe.\n2. **300 000 à 500 000 postes non pourvus** en France d’ici 2030 (estimation marché, connaissance générale) — surtout en data, IA et cybersécurité.\n3. Les profils **hybrides** (tech + métier : data analyst marketing, UX designer, chef de projet web) seront les plus recherchés.\n\n---\n\n### **Plan A — Secteurs en tension critique (recrutement massif)**\n📍 **Data / IA / Cybersécurité** — pénurie structurelle, salaires en hausse\n*Pour toi : formations courtes (bac+3 à bac+5) avec certifications (RNCP, SecNumEdu) = passeport emploi. Ex : [BUT MMI](https://www.onisep.fr/http/redirection/formation/slug/FOR.1836) (Université de Lorraine) ou [Certificat RNCP Chef de projet web](https://www.onisep.fr/http/redirection/formation/slug/FOR.1836).*\n\n### **Plan B — Métiers hybrides (tech + secteur)**\n📍 **Chef de projet digital, UX/UI designer, Data analyst métier** — croisés avec santé, finance, ou transition écologique\n*Pour toi : double compétence = atout. Ex : un BUT MMI (stratégie numérique) + spécialisation en data santé ou green IT (connaissance générale).*\n\n### **Plan C — Alternatives aux pénuries (moins saturé mais stable)**\n📍 **Développement full-stack, DevOps, Cloud** — besoins constants, moins médiatisés que l’IA\n*Pour toi : formations certifiantes (OpenClassrooms, AFPA) ou BTS SIO en alternance pour entrer vite sur le marché.*\n\n---\n**⚠ Attention aux pièges**\n- **Effet \"hype\"** : évite les formations trop généralistes (\"numérique\") sans spécialisation technique (data, cyber, dev). Les recruteurs ciblent des compétences précises.\n- **Alternance obligatoire** : 80% des offres junior en numérique exigent une expérience pro (source : baromètres régionaux, connaissance générale). Privilégie les cursus avec stages longs ou alternance intégrée.\n- **Diplômes vs certifications** : Un RNCP ou un titre professionnel > un diplôme non reconnu. Vérifie toujours le [répertoire France Compétences](https://www.francecompetences.fr/).\n\n---\n**Question pour toi :**\nTon projet se situe plutôt côté **technique pure** (code, data, cyber), côté **création/design** (UX, web), ou côté **stratégie** (chef de projet, marketing digital) ? Cela change radicalement les formations à cibler.",
+  "answer_annotated": "**TL;DR**\n1. Les métiers du numérique (data, cybersécurité, développement, design) figurent parmi les **plus porteurs d’ici 2030**, avec des pénuries de talents documentées en Europe.\n2. **300 000 à 500 000 postes non pourvus** en France d’ici 2030 (estimation marché, connaissance générale) — surtout en data, IA et cybersécurité.\n3. Les profils **hybrides** (tech + métier : data analyst marketing, UX designer, chef de projet web) seront les plus recherchés.\n\n---\n\n### **Plan A — Secteurs en tension critique (recrutement massif)**\n📍 **Data / IA / Cybersécurité** — pénurie structurelle, salaires en hausse\n*Pour toi : formations courtes (bac+3 à bac+5) avec certifications (RNCP, SecNumEdu) = passeport emploi. Ex : [BUT MMI](https://www.onisep.fr/http/redirection/formation/slug/FOR.1836) (Université de Lorraine) ou [Certificat RNCP Chef de projet web](https://www.onisep.fr/http/redirection/formation/slug/FOR.1836).*\n\n### **Plan B — Métiers hybrides (tech + secteur)**\n📍 **Chef de projet digital, UX/UI designer, Data analyst métier** — croisés avec santé, finance, ou transition écologique\n*Pour toi : double compétence = atout. Ex : un BUT MMI (stratégie numérique) + spécialisation en data santé ou green IT (connaissance générale).*\n\n### **Plan C — Alternatives aux pénuries (moins saturé mais stable)**\n📍 **Développement full-stack, DevOps, Cloud** — besoins constants, moins médiatisés que l’IA\n*Pour toi : formations certifiantes (OpenClassrooms, AFPA) ou BTS SIO en alternance pour entrer vite sur le marché.*\n\n---\n**⚠ Attention aux pièges**\n- **Effet \"hype\"** : évite les formations trop généralistes (\"numérique\") sans spécialisation technique (data, cyber, dev). Les recruteurs ciblent des compétences précises.\n- **Alternance obligatoire** : 80% des offres junior en numérique exigent une expérience pro (source : baromètres régionaux, connaissance générale). Privilégie les cursus avec stages longs ou alternance intégrée.\n- **Diplômes vs certifications** : Un RNCP ou un titre professionnel > un diplôme non reconnu. Vérifie toujours le [répertoire France Compétences](https://www.francecompetences.fr/).\n\n---\n**Question pour toi :**\nTon projet se situe plutôt côté **technique pure** (code, data, cyber), côté **création/design** (UX, web), ou côté **stratégie** (chef de projet, marketing digital) ? Cela change radicalement les formations à cibler.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 4,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "300 000 à 500 000 postes non pourvus",
+      "stat_value": 300000,
+      "stat_unit": "postes",
+      "context_in_response": "300 000 à 500 000 postes non pourvus en France d’ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "80% des offres junior en numérique exigent une expérience pro",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "80% des offres junior en numérique exigent une expérience pro (source : baromètres régionaux, connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 1740",
+      "verdict": "verified",
+      "source_fiche_excerpt": "salaire_median_embauche: 1740"
+    },
+    {
+      "stat_text": "0.86",
+      "stat_value": 0.86,
+      "stat_unit": null,
+      "context_in_response": "taux_emploi_3ans: 0.86",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_emploi_3ans: 0.86"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": null,
+      "context_in_response": "taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_emploi_6ans: 0.91"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": null,
+      "context_in_response": "taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_fiche_excerpt": "taux_cdi: 0.83"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.8631,
+      "nom": "Métiers du Multimédia et de l’Internet : Stratégie de communication numérique et design d’expérience",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8605,
+      "nom": "METIERS DU MULTIMEDIA ET DE L'INTERNET : STRATEGIE DE COMMUNICATION NUMERIQUE ET DESIGN D'EXPERIENCE",
+      "etablissement": "UNIVERSITE DE LORRAINE",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8604,
+      "nom": "METIERS DU MULTIMEDIA ET DE L'INTERNET : STRATEGIE DE COMMUNICATION NUMERIQUE ET DESIGN D'EXPERIENCE",
+      "etablissement": "FORMASUP HAUTS DE FRANCE",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8558,
+      "nom": "Métiers du Multimédia et de l’Internet : Création numérique",
+      "etablissement": "UNIVERSITE DE LORRAINE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8555,
+      "nom": "Chef de projet web et stratégie digitale",
+      "etablissement": "CCIT OUEST NORMANDIE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7816,
+      "nom": "chef de projets digitaux",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "onisep",
+      "domaine": "eco_gestion",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7635,
+      "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7597,
+      "nom": "Métier 2030 (DARES) — FAP M1Z : Techniciens de l'informatique | Effectifs 2019 France : 187 468 pers",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7567,
+      "nom": "Métier 2030 (DARES) — FAP M0Z : Employés et opérateurs de l'informatique | Effectifs 2019 France : 3",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7565,
+      "nom": "Métier 2030 (DARES) — FAP U0Z : Professionnels de la communication et de l'information | Effectifs 2",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

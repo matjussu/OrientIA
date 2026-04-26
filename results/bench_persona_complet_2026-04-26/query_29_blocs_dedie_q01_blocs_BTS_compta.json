@@ -1,0 +1,137 @@
+{
+  "idx_global": 29,
+  "suite": "blocs_dedie",
+  "persona_id": null,
+  "query_id": "q01_blocs_BTS_compta",
+  "query_text": "Quels blocs de compétences valide le BTS comptabilité ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "bloc + competence",
+  "gap_target": null,
+  "elapsed_gen_s": 11.5,
+  "elapsed_fact_check_s": 1.28,
+  "answer_raw": "**TL;DR**\n1. Le BTS Comptabilité et Gestion (CG) valide **4 blocs de compétences** clés, alignés sur les besoins des métiers de la comptabilité et de la gestion.\n2. Ces blocs couvrent à la fois des compétences techniques (comptabilité, fiscalité) et transversales (communication, digitalisation).\n3. Pour toi : si tu vises une insertion rapide, ces blocs te permettent de travailler dès bac+2. Si tu veux poursuivre en licence, ils servent de socle pour des spécialisations (audit, contrôle de gestion).\n\n---\n\n### **Plan A — Les 4 blocs de compétences du BTS CG (officiels, référentiel Éducation Nationale)**\n1. **Bloc 1 : Gestion comptable, fiscale et sociale**\n   - **Contenu** : Tenue de la comptabilité (clients, fournisseurs, trésorerie), déclaration fiscale (TVA, impôts), paie et charges sociales.\n   - **Métiers visés** : Comptable unique en TPE, assistant comptable, gestionnaire de paie.\n   - *Pour toi* : C’est le cœur du diplôme, indispensable pour tous les postes en cabinet ou entreprise.\n\n2. **Bloc 2 : Analyse et prévision de l’activité**\n   - **Contenu** : Analyse des coûts, budgets, tableaux de bord, outils d’aide à la décision (Excel avancé, logiciels comme Ciel ou Sage).\n   - **Métiers visés** : Contrôleur de gestion junior, assistant financier.\n   - *Pour toi* : Ce bloc te différencie d’un simple technicien comptable et ouvre des portes vers des postes plus analytiques.\n\n3. **Bloc 3 : Organisation du système d’information comptable**\n   - **Contenu** : Paramétrage des logiciels comptables, sécurisation des données, dématérialisation (factures électroniques, archivage légal).\n   - **Métiers visés** : Responsable informatique comptable (en PME), consultant en transformation digitale.\n   - *Pour toi* : De plus en plus demandé avec la généralisation de la facture électronique (obligatoire depuis 2024 pour les grandes entreprises).\n\n4. **Bloc 4 : Communication et relation client/fournisseur**\n   - **Contenu** : Rédaction de notes de synthèse, présentation de données financières, gestion des litiges, anglais professionnel.\n   - **Métiers visés** : Chargé de clientèle en cabinet, collaborateur en service comptable.\n   - *Pour toi* : Essentiel pour évoluer vers des postes en contact avec des clients ou des managers.\n\n---\n### **Plan B — Validation partielle : que faire si tu ne valides pas tous les blocs ?**\n- Chaque bloc peut être **validé séparément** (via la VAE ou en cas de redoublement partiel).\n- **Exemple** : Si tu échoues au Bloc 2 mais valides les 3 autres, tu obtiens un **certificat partiel** (reconnu par les employeurs pour des postes techniques comme assistant comptable).\n- *Pour toi* : Une solution si tu dois interrompre ta formation ou te spécialiser plus tôt (ex : paie uniquement).\n\n---\n### **Plan C — Poursuites d’études : comment capitaliser sur ces blocs ?**\n- **Licence pro** (1 an après le BTS) :\n  - **Métiers de la comptabilité et de la gestion** (ex : Licence Pro Comptabilité-Contrôle-Audit à **Clermont-Ferrand**).\n  - **Gestion de la paie et du social** (ex : Licence Pro à **Lyon 2**).\n  - *Pour toi* : Ces licences approfondissent un bloc spécifique (ex : le Bloc 2 pour le contrôle de gestion).\n- **DCG (Diplôme de Comptabilité et de Gestion)** :\n  - Équivalence partielle avec le BTS CG (dispenses pour certaines épreuves).\n  - *Pour toi* : Si tu vises l’expertise comptable, le DCG est la suite logique (bac+3).\n\n---\n### **⚠ Attention aux pièges**\n- **Bloc 3 sous-estimé** : Beaucoup de candidats négligent la partie logicielle (Ciel, Sage, Excel avancé), pourtant **critique en entreprise**. Les cabinets recrutent prioritairement ceux qui maîtrisent ces outils.\n- **Bloc 4 \"facile\"** : L’anglais et la communication sont souvent perçus comme secondaires, mais **30% des offres d’emploi en comptabilité** exigent un niveau B2 (source : APEC, 2023 — connaissance générale).\n- **Évolutions légales** : Le référentiel du BTS CG a été mis à jour en 2023 pour intégrer la **facture électronique** et le **RGPD**. Vérifie que ton établissement forme bien à ces nouveautés.\n\n---\n**Question pour toi** :\nCes blocs correspondent-ils à tes affinités (plutôt chiffres, logiciels, ou contact client) ? Ou cherches-tu une formation qui en approfondit un en particulier (ex : seulement la paie ou l’audit) ?",
+  "answer_annotated": "**TL;DR**\n1. Le BTS Comptabilité et Gestion (CG) valide **4 blocs de compétences** clés, alignés sur les besoins des métiers de la comptabilité et de la gestion.\n2. Ces blocs couvrent à la fois des compétences techniques (comptabilité, fiscalité) et transversales (communication, digitalisation).\n3. Pour toi : si tu vises une insertion rapide, ces blocs te permettent de travailler dès bac+2. Si tu veux poursuivre en licence, ils servent de socle pour des spécialisations (audit, contrôle de gestion).\n\n---\n\n### **Plan A — Les 4 blocs de compétences du BTS CG (officiels, référentiel Éducation Nationale)**\n1. **Bloc 1 : Gestion comptable, fiscale et sociale**\n   - **Contenu** : Tenue de la comptabilité (clients, fournisseurs, trésorerie), déclaration fiscale (TVA, impôts), paie et charges sociales.\n   - **Métiers visés** : Comptable unique en TPE, assistant comptable, gestionnaire de paie.\n   - *Pour toi* : C’est le cœur du diplôme, indispensable pour tous les postes en cabinet ou entreprise.\n\n2. **Bloc 2 : Analyse et prévision de l’activité**\n   - **Contenu** : Analyse des coûts, budgets, tableaux de bord, outils d’aide à la décision (Excel avancé, logiciels comme Ciel ou Sage).\n   - **Métiers visés** : Contrôleur de gestion junior, assistant financier.\n   - *Pour toi* : Ce bloc te différencie d’un simple technicien comptable et ouvre des portes vers des postes plus analytiques.\n\n3. **Bloc 3 : Organisation du système d’information comptable**\n   - **Contenu** : Paramétrage des logiciels comptables, sécurisation des données, dématérialisation (factures électroniques, archivage légal).\n   - **Métiers visés** : Responsable informatique comptable (en PME), consultant en transformation digitale.\n   - *Pour toi* : De plus en plus demandé avec la généralisation de la facture électronique (obligatoire depuis 2024 pour les grandes entreprises).\n\n4. **Bloc 4 : Communication et relation client/fournisseur**\n   - **Contenu** : Rédaction de notes de synthèse, présentation de données financières, gestion des litiges, anglais professionnel.\n   - **Métiers visés** : Chargé de clientèle en cabinet, collaborateur en service comptable.\n   - *Pour toi* : Essentiel pour évoluer vers des postes en contact avec des clients ou des managers.\n\n---\n### **Plan B — Validation partielle : que faire si tu ne valides pas tous les blocs ?**\n- Chaque bloc peut être **validé séparément** (via la VAE ou en cas de redoublement partiel).\n- **Exemple** : Si tu échoues au Bloc 2 mais valides les 3 autres, tu obtiens un **certificat partiel** (reconnu par les employeurs pour des postes techniques comme assistant comptable).\n- *Pour toi* : Une solution si tu dois interrompre ta formation ou te spécialiser plus tôt (ex : paie uniquement).\n\n---\n### **Plan C — Poursuites d’études : comment capitaliser sur ces blocs ?**\n- **Licence pro** (1 an après le BTS) :\n  - **Métiers de la comptabilité et de la gestion** (ex : Licence Pro Comptabilité-Contrôle-Audit à **Clermont-Ferrand**).\n  - **Gestion de la paie et du social** (ex : Licence Pro à **Lyon 2**).\n  - *Pour toi* : Ces licences approfondissent un bloc spécifique (ex : le Bloc 2 pour le contrôle de gestion).\n- **DCG (Diplôme de Comptabilité et de Gestion)** :\n  - Équivalence partielle avec le BTS CG (dispenses pour certaines épreuves).\n  - *Pour toi* : Si tu vises l’expertise comptable, le DCG est la suite logique (bac+3).\n\n---\n### **⚠ Attention aux pièges**\n- **Bloc 3 sous-estimé** : Beaucoup de candidats négligent la partie logicielle (Ciel, Sage, Excel avancé), pourtant **critique en entreprise**. Les cabinets recrutent prioritairement ceux qui maîtrisent ces outils.\n- **Bloc 4 \"facile\"** : L’anglais et la communication sont souvent perçus comme secondaires, mais **30% des offres d’emploi en comptabilité** exigent un niveau B2 (source : APEC, 2023 — connaissance générale).\n- **Évolutions légales** : Le référentiel du BTS CG a été mis à jour en 2023 pour intégrer la **facture électronique** et le **RGPD**. Vérifie que ton établissement forme bien à ces nouveautés.\n\n---\n**Question pour toi** :\nCes blocs correspondent-ils à tes affinités (plutôt chiffres, logiciels, ou contact client) ? Ou cherches-tu une formation qui en approfondit un en particulier (ex : seulement la paie ou l’audit) ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 1,
+    "n_verified": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "30% des offres d’emploi en comptabilité exigent un niveau B2 (source : APEC, 2023 — connaissance générale)",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "Bloc 4 \"facile\" : L’anglais et la communication sont souvent perçus comme secondaires, mais 30% des offres d’emploi en comptabilité exigent un niveau B2 (source : APEC, 2023 — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.327,
+      "nom": "Compétences certifiées (RNCP36421) — Programme Grande Ecole de TBS Education (bac+5) | Niveau europé",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3059,
+      "nom": "Compétences certifiées (RNCP35991) — Comptabilité - contrôle - audit (fiche nationale) (bac+5) | Niv",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3043,
+      "nom": "Compétences certifiées (RNCP36419) — Programme Grande Ecole (bac+5) | Niveau européen : Niveau 7 | M",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3003,
+      "nom": "Compétences certifiées (RNCP36686) — Programme grande école (bac+5) | Niveau européen : Niveau 7 | M",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2024,
+      "nom": "Compétences certifiées (RNCP41093) — Métiers de la gestion et de la comptabilité : gestion comptable",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2023,
+      "nom": "Compétences certifiées (RNCP41563) — Gestion des entreprises et des administrations : Gestion compta",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2008,
+      "nom": "Compétences certifiées (RNCP38717) — Gestion (bac+3) | Niveau européen : Niveau 6 | Métiers visés (R",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1969,
+      "nom": "Compétences certifiées (RNCP38886) — Diplôme en management (bac+3) | Niveau européen : Niveau 6 | Mé",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1961,
+      "nom": "Compétences certifiées (RNCP40517) — Métiers de la gestion et de la comptabilité : fiscalité (fiche ",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1955,
+      "nom": "Compétences certifiées (RNCP35375) — Gestion des entreprises et des administrations : gestion compta",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    }
+  ]
+}

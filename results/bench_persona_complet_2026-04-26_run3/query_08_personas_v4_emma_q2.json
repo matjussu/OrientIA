@@ -1,0 +1,209 @@
+{
+  "idx_global": 8,
+  "suite": "personas_v4",
+  "persona_id": "emma",
+  "query_id": "emma_q2",
+  "query_text": "Je finis mon M1 info, je dois choisir entre un M2 classique recherche ou un master en alternance. Qu'est-ce qui me donnera le meilleur CV pour entrer en CDI direct ?",
+  "query_type": "orientation_ambigue",
+  "scope": "master_pro",
+  "pattern_target": null,
+  "gap_target": null,
+  "elapsed_gen_s": 11.6,
+  "elapsed_fact_check_s": 6.0,
+  "answer_raw": "**TL;DR**\n1. **Alternance = meilleur CV pour CDI direct** (connaissance générale) : expérience pro de 12-24 mois + réseau entreprise, souvent transformée en embauche (50-70% des cas).\n2. **M2 recherche = porte ouverte vers thèse/doctorat** (CIFRE incluse) ou postes R&D pointus, mais insertion CDI plus lente sans expérience terrain.\n3. **Critère clé** : ton projet à 5 ans. Veux-tu manager des équipes tech (alternance) ou innover en labo/startup deep tech (recherche) ?\n\n---\n\n### **1. M2 en alternance : l’atout CDI immédiat**\n- **Pourquoi ?** L’alternance te donne **1 à 2 ans d’expérience pro** en entreprise, avec un salaire (60-100% du SMIC selon âge). Les entreprises recrutent souvent leur alternant en CDI (taux de transformation ~50-70% selon secteurs — connaissance générale).\n  - *Exemples de débouchés* : Ingénieur logiciel, chef de projet IT, consultant cybersécurité, data scientist (selon spécialisation).\n  - *Secteurs porteurs* : ESN (SSII), banques, industrie, éditeurs de logiciels.\n- **Points faibles** :\n  - Charge de travail élevée (cours + 3-4 jours en entreprise/semaine).\n  - Moins adapté si tu vises une **carrière académique** (thèse, enseignement).\n\n### **2. M2 recherche : la voie R&D et thèse (CIFRE)**\n- **Pourquoi ?** Idéal si tu veux :\n  - Faire une **thèse CIFRE** (3 ans en entreprise + labo, salaire ~2 000€ brut/mois, CDI souvent à la clé).\n  - Travailler en **R&D** (deep learning, cryptographie, IA fondamentale) ou dans des startups deep tech.\n  - Postuler à des postes **hautement techniques** (ex : ingénieur recherche en IA chez Hugging Face, Thales, CEA).\n- **Points faibles** :\n  - **Insertion CDI plus longue** sans expérience terrain (sauf si thèse CIFRE).\n  - Salaire d’embauche parfois inférieur à celui d’un profil en alternance (mais évolution plus rapide sur postes experts).\n\n### **3. Cas hybride : M2 recherche + stage long (6 mois)**\n- **Compromis** : Certains M2 recherche proposent des **stages de 6 mois** en labo ou entreprise. Moins d’expérience qu’en alternance, mais permet de tester la R&D sans s’engager en thèse.\n- *Exemple* : Stage en labo IA → embauche en CDI comme ingénieur R&D, ou poursuite en thèse.\n\n---\n### **Synthèse : comment choisir ?**\n| Critère                | M2 Alternance               | M2 Recherche                |\n|------------------------|-----------------------------|-----------------------------|\n| **CDI direct**         | ✅ Très probable (50-70%)   | ❌ Moins direct (sauf thèse CIFRE) |\n| **Salaire à l’embauche** | ~35-45k€ brut (connaissance générale) | ~30-40k€ brut (hors thèse) |\n| **Projet long terme**  | Management, production      | Recherche, innovation, académique |\n| **Réseau pro**         | ✅ Entreprise + alumni       | ✅ Labos + conférences      |\n\n**Question pour toi** :\n- Veux-tu **un poste opérationnel rapidement** (alternance) ou **approfondir un domaine de niche** (recherche) ?\n- As-tu une **entreprise cible** pour l’alternance, ou un **sujet de thèse** qui te passionne ?\n\n---\n👤 *Pour affiner ton choix, discutes-en avec le **SCUIO** de ta fac ou un **conseiller Pôle Emploi Campus** (gratuit pour les étudiants). Ils ont accès aux offres d’alternance locales et aux stats d’insertion précises de ton université.*",
+  "answer_annotated": "**TL;DR**\n1. **Alternance = meilleur CV pour CDI direct** (connaissance générale) : expérience pro de 12-24 mois + réseau entreprise, souvent transformée en embauche (50-70% des cas).\n2. **M2 recherche = porte ouverte vers thèse/doctorat** (CIFRE incluse) ou postes R&D pointus, mais insertion CDI plus lente sans expérience terrain.\n3. **Critère clé** : ton projet à 5 ans. Veux-tu manager des équipes tech (alternance) ou innover en labo/startup deep tech (recherche) ?\n\n---\n\n### **1. M2 en alternance : l’atout CDI immédiat**\n- **Pourquoi ?** L’alternance te donne **1 à 2 ans d’expérience pro** en entreprise, avec un salaire (60-100% du SMIC selon âge). Les entreprises recrutent souvent leur alternant en CDI (taux de transformation ~50-70% selon secteurs — connaissance générale).\n  - *Exemples de débouchés* : Ingénieur logiciel, chef de projet IT, consultant cybersécurité, data scientist (selon spécialisation).\n  - *Secteurs porteurs* : ESN (SSII), banques, industrie, éditeurs de logiciels.\n- **Points faibles** :\n  - Charge de travail élevée (cours + 3-4 jours en entreprise/semaine).\n  - Moins adapté si tu vises une **carrière académique** (thèse, enseignement).\n\n### **2. M2 recherche : la voie R&D et thèse (CIFRE)**\n- **Pourquoi ?** Idéal si tu veux :\n  - Faire une **thèse CIFRE** (3 ans en entreprise + labo, salaire ~2 000€ brut/mois, CDI souvent à la clé).\n  - Travailler en **R&D** (deep learning, cryptographie, IA fondamentale) ou dans des startups deep tech.\n  - Postuler à des postes **hautement techniques** (ex : ingénieur recherche en IA chez Hugging Face, Thales, CEA).\n- **Points faibles** :\n  - **Insertion CDI plus longue** sans expérience terrain (sauf si thèse CIFRE).\n  - Salaire d’embauche parfois inférieur à celui d’un profil en alternance (mais évolution plus rapide sur postes experts).\n\n### **3. Cas hybride : M2 recherche + stage long (6 mois)**\n- **Compromis** : Certains M2 recherche proposent des **stages de 6 mois** en labo ou entreprise. Moins d’expérience qu’en alternance, mais permet de tester la R&D sans s’engager en thèse.\n- *Exemple* : Stage en labo IA → embauche en CDI comme ingénieur R&D, ou poursuite en thèse.\n\n---\n### **Synthèse : comment choisir ?**\n| Critère                | M2 Alternance               | M2 Recherche                |\n|------------------------|-----------------------------|-----------------------------|\n| **CDI direct**         | ✅ Très probable (50-70%)   | ❌ Moins direct (sauf thèse CIFRE) |\n| **Salaire à l’embauche** | ~35-45k€ brut (connaissance générale) | ~30-40k€ brut (hors thèse) |\n| **Projet long terme**  | Management, production      | Recherche, innovation, académique |\n| **Réseau pro**         | ✅ Entreprise + alumni       | ✅ Labos + conférences      |\n\n**Question pour toi** :\n- Veux-tu **un poste opérationnel rapidement** (alternance) ou **approfondir un domaine de niche** (recherche) ?\n- As-tu une **entreprise cible** pour l’alternance, ou un **sujet de thèse** qui te passionne ?\n\n---\n👤 *Pour affiner ton choix, discutes-en avec le **SCUIO** de ta fac ou un **conseiller Pôle Emploi Campus** (gratuit pour les étudiants). Ils ont accès aux offres d’alternance locales et aux stats d’insertion précises de ton université.*",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 4,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "12-24 mois",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "L’alternance te donne 1 à 2 ans d’expérience pro en entreprise",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60-100% du SMIC selon âge",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "salaire (60-100% du SMIC selon âge)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "50-70%",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context_in_response": "Les entreprises recrutent souvent leur alternant en CDI (taux de transformation ~50-70% selon secteurs)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~35-45k€ brut",
+      "stat_value": 35,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Salaire à l’embauche : ~35-45k€ brut (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~30-40k€ brut",
+      "stat_value": 30,
+      "stat_unit": "k€ brut",
+      "context_in_response": "Salaire à l’embauche : ~30-40k€ brut (hors thèse)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 000€ brut/mois",
+      "stat_value": 2000,
+      "stat_unit": "€ brut/mois",
+      "context_in_response": "salaire ~2 000€ brut/mois (thèse CIFRE)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": null,
+      "context_in_response": "taux_emploi_3ans: 0.85",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": null,
+      "context_in_response": "taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": null,
+      "context_in_response": "taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9526,
+      "nom": "Direction technique",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9485,
+      "nom": "Conception lumière",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9468,
+      "nom": "Écriture",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9432,
+      "nom": "Créateur industriel",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.943,
+      "nom": "Mode et matière",
+      "etablissement": "UNIVERSITE PSL",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9424,
+      "nom": "Mode (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9415,
+      "nom": "Conception son",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9411,
+      "nom": "Scénographie",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.94,
+      "nom": "Jouer et mettre en scène",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9388,
+      "nom": "Physique (fiche nationale)",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    }
+  ]
+}

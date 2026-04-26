@@ -1,0 +1,201 @@
+{
+  "idx_global": 32,
+  "suite": "blocs_dedie",
+  "persona_id": null,
+  "query_id": "q04_blocs_BTS_electro_contenu",
+  "query_text": "Contenu pédagogique du BTS électrotechnique : quels objectifs pédagogiques ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "contenu BTS + objectifs pédagogiques",
+  "gap_target": null,
+  "elapsed_gen_s": 11.89,
+  "elapsed_fact_check_s": 4.25,
+  "answer_raw": "**TL;DR**\n1. Le BTS Électrotechnique forme des techniciens capables de concevoir, installer et maintenir des systèmes électriques, en intégrant les enjeux de la transition énergétique.\n2. Le programme allie théorie (40%) et pratique (60%), avec un fort ancrage industriel via des stages et projets concrets.\n3. Deux options possibles : **systèmes connectés** (domotique, IoT) ou **énergies renouvelables** (solaire, éolien).\n\n---\n\n### **Plan A — Cœur de la formation : compétences techniques et professionnelles**\nLe BTS Électrotechnique vise **3 objectifs principaux** (connaissance générale) :\n- **Concevoir et dimensionner** des installations électriques (bâtiments, industries, réseaux) en respectant les normes (NF C 15-100, NFC 18-510).\n- **Intervenir sur des systèmes** : maintenance, dépannage, mise en service, avec une approche diagnostic (ex : analyse de schémas, utilisation d’outils comme LabVIEW ou AutoCAD Electrical).\n- **Intégrer les transitions technologiques** : efficacité énergétique, smart grids, et motorisations électriques (véhicules, robots).\n\n**Pédagogie** :\n- **1 350 h de cours** sur 2 ans, dont **840 h en travaux pratiques** (ateliers, plateaux techniques).\n- **22 semaines de stage** en entreprise (obligatoire), souvent source d’embauche.\n- **Projet technique industriel** en 2e année (ex : optimisation d’une installation photovoltaïque).\n\n---\n\n### **Plan B — Spécialisations et adaptations aux besoins du marché**\nDeux **parcours de spécialisation** sont proposés dans la plupart des lycées (connaissance générale) :\n1. **Systèmes connectés** :\n   - Focus sur la domotique (KNX, IoT), les réseaux communicants (Ethernet industriel, Modbus), et la cybersécurité des installations.\n   - Débouchés : technicien en automatismes, intégrateur de solutions smart building.\n2. **Énergies renouvelables** :\n   - Formation aux technologies solaires, éoliennes, et à la gestion intelligente de l’énergie (stockage, onduleurs).\n   - Débouchés : technicien en maintenance d’éoliennes, chargé de projets EnR chez les installateurs.\n\n**Évolutions récentes** :\n- Intégration de **modules sur la mobilité électrique** (bornes de recharge, véhicules) et la **réglementation RE2020**.\n- Partenariats avec des acteurs comme **Schneider Electric** ou **Enedis** pour des certifications complémentaires (ex : habilitation électrique BS/BE).\n\n---\n\n### **Plan C — Passerelles et poursuites d’études**\n- **Insertion directe** : 60-70% des diplômés entrent dans la vie active (connaissance générale), avec des postes comme :\n  - Technicien de maintenance industrielle (salaire médian embauche : ~1 800€ brut).\n  - Chargé d’affaires en électricité (chez les installateurs comme **Spie** ou **Bouygues Énergies**).\n- **Poursuites d’études** (pour 30-40%) :\n  - **Licence pro** (ex : Licence Pro Métiers de l’électricité et de l’énergie, **taux d’insertion à 6 mois : ~85%** — estimation marché).\n  - **Écoles d’ingénieurs** via admissions parallèles (ex : **INSA**, **Polytech**, ou **UT**) après une année de mise à niveau.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Sélectivité variable** : Certains lycées publics affichent des taux d’accès > 80% (ex : lycées en zone rurale), tandis que les établissements réputés (ex : **Lycée Diderot à Paris**) peuvent être plus exigeants (dossier + entretien).\n- **Coût matériel** : Prévoir ~300-500€ pour l’équipement (multimètre, EPI, logiciels) — certaines régions aident via des bourses (ex : **Île-de-France**).\n- **Faux-ami** : Ce BTS ne forme **pas** à l’électronique pure (circuits imprimés, microcontrôleurs) — pour cela, vise plutôt un **BTS SN (Systèmes Numériques)** option EC.\n\n---\n**Question pour toi** :\nTon projet s’oriente-t-il vers **l’industrie/énergie** (maintenance, EnR) ou vers **les systèmes intelligents** (domotique, IoT) ? Cela peut guider ton choix de spécialisation en 2e année.\n\n---\n👤 Pour préciser ton orientation, un échange avec le **Psy-EN de ton lycée** ou un **CIO** (Centre d’Information et d’Orientation) te permettra d’affiner en fonction de ton projet et de ton territoire.",
+  "answer_annotated": "**TL;DR**\n1. Le BTS Électrotechnique forme des techniciens capables de concevoir, installer et maintenir des systèmes électriques, en intégrant les enjeux de la transition énergétique.\n2. Le programme allie théorie (40%) et pratique (60%), avec un fort ancrage industriel via des stages et projets concrets.\n3. Deux options possibles : **systèmes connectés** (domotique, IoT) ou **énergies renouvelables** (solaire, éolien).\n\n---\n\n### **Plan A — Cœur de la formation : compétences techniques et professionnelles**\nLe BTS Électrotechnique vise **3 objectifs principaux** (connaissance générale) :\n- **Concevoir et dimensionner** des installations électriques (bâtiments, industries, réseaux) en respectant les normes (NF C 15-100, NFC 18-510).\n- **Intervenir sur des systèmes** : maintenance, dépannage, mise en service, avec une approche diagnostic (ex : analyse de schémas, utilisation d’outils comme LabVIEW ou AutoCAD Electrical).\n- **Intégrer les transitions technologiques** : efficacité énergétique, smart grids, et motorisations électriques (véhicules, robots).\n\n**Pédagogie** :\n- **1 350 h de cours** sur 2 ans, dont **840 h en travaux pratiques** (ateliers, plateaux techniques).\n- **22 semaines de stage** en entreprise (obligatoire), souvent source d’embauche.\n- **Projet technique industriel** en 2e année (ex : optimisation d’une installation photovoltaïque).\n\n---\n\n### **Plan B — Spécialisations et adaptations aux besoins du marché**\nDeux **parcours de spécialisation** sont proposés dans la plupart des lycées (connaissance générale) :\n1. **Systèmes connectés** :\n   - Focus sur la domotique (KNX, IoT), les réseaux communicants (Ethernet industriel, Modbus), et la cybersécurité des installations.\n   - Débouchés : technicien en automatismes, intégrateur de solutions smart building.\n2. **Énergies renouvelables** :\n   - Formation aux technologies solaires, éoliennes, et à la gestion intelligente de l’énergie (stockage, onduleurs).\n   - Débouchés : technicien en maintenance d’éoliennes, chargé de projets EnR chez les installateurs.\n\n**Évolutions récentes** :\n- Intégration de **modules sur la mobilité électrique** (bornes de recharge, véhicules) et la **réglementation RE2020**.\n- Partenariats avec des acteurs comme **Schneider Electric** ou **Enedis** pour des certifications complémentaires (ex : habilitation électrique BS/BE).\n\n---\n\n### **Plan C — Passerelles et poursuites d’études**\n- **Insertion directe** : 60-70% des diplômés entrent dans la vie active (connaissance générale), avec des postes comme :\n  - Technicien de maintenance industrielle (salaire médian embauche : ~1 800€ brut).\n  - Chargé d’affaires en électricité (chez les installateurs comme **Spie** ou **Bouygues Énergies**).\n- **Poursuites d’études** (pour 30-40%) :\n  - **Licence pro** (ex : Licence Pro Métiers de l’électricité et de l’énergie, **taux d’insertion à 6 mois : ~85%** — estimation marché).\n  - **Écoles d’ingénieurs** via admissions parallèles (ex : **INSA**, **Polytech**, ou **UT**) après une année de mise à niveau.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Sélectivité variable** : Certains lycées publics affichent des taux d’accès > 80% (ex : lycées en zone rurale), tandis que les établissements réputés (ex : **Lycée Diderot à Paris**) peuvent être plus exigeants (dossier + entretien).\n- **Coût matériel** : Prévoir ~300-500€ pour l’équipement (multimètre, EPI, logiciels) — certaines régions aident via des bourses (ex : **Île-de-France**).\n- **Faux-ami** : Ce BTS ne forme **pas** à l’électronique pure (circuits imprimés, microcontrôleurs) — pour cela, vise plutôt un **BTS SN (Systèmes Numériques)** option EC.\n\n---\n**Question pour toi** :\nTon projet s’oriente-t-il vers **l’industrie/énergie** (maintenance, EnR) ou vers **les systèmes intelligents** (domotique, IoT) ? Cela peut guider ton choix de spécialisation en 2e année.\n\n---\n👤 Pour préciser ton orientation, un échange avec le **Psy-EN de ton lycée** ou un **CIO** (Centre d’Information et d’Orientation) te permettra d’affiner en fonction de ton projet et de ton territoire.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 0,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "1 350 h de cours",
+      "stat_value": 1350,
+      "stat_unit": "heures",
+      "context_in_response": "1 350 h de cours sur 2 ans, dont 840 h en travaux pratiques",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "840 h en travaux pratiques",
+      "stat_value": 840,
+      "stat_unit": "heures",
+      "context_in_response": "1 350 h de cours sur 2 ans, dont 840 h en travaux pratiques",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "22 semaines de stage",
+      "stat_value": 22,
+      "stat_unit": "semaines",
+      "context_in_response": "22 semaines de stage en entreprise (obligatoire)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "60-70% des diplômés entrent dans la vie active",
+      "stat_value": 65,
+      "stat_unit": "%",
+      "context_in_response": "60-70% des diplômés entrent dans la vie active (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian embauche : ~1 800€ brut",
+      "stat_value": 1800,
+      "stat_unit": "€ brut",
+      "context_in_response": "salaire médian embauche : ~1 800€ brut",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30-40% poursuites d’études",
+      "stat_value": 35,
+      "stat_unit": "%",
+      "context_in_response": "30-40% poursuites d’études",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux d’insertion à 6 mois : ~85%",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context_in_response": "Licence Pro Métiers de l’électricité et de l’énergie, taux d’insertion à 6 mois : ~85% (estimation marché)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux d’accès > 80%",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "Certains lycées publics affichent des taux d’accès > 80%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~300-500€ pour l’équipement",
+      "stat_value": null,
+      "stat_unit": "€",
+      "context_in_response": "Prévoir ~300-500€ pour l’équipement (multimètre, EPI, logiciels)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.346,
+      "nom": "Compétences certifiées (RNCP39329) — Ingénieur diplômé de l'Université de Technologie de Belfort - M",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3378,
+      "nom": "Compétences certifiées (RNCP40494) — Ingénieur diplômé de l’Ecole nationale d’ingénieurs de Brest (b",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3335,
+      "nom": "Compétences certifiées (RNCP41497) — Ingénieur diplômé de l'Ecole d'Ingénieurs de l'Artois de l'Univ",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3281,
+      "nom": "Compétences certifiées (RNCP39169) — Ingénieur diplômé de l’École nationale supérieure d’arts et mét",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2214,
+      "nom": "Compétences certifiées (RNCP40033) — Métiers de l'électricité et de l'énergie (fiche nationale) (bac",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2163,
+      "nom": "Compétences certifiées (RNCP38975) — Electronique, énergie électrique, automatique (fiche nationale)",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1767,
+      "nom": "Compétences certifiées (RNCP38878) — Métiers de l'électricité et de ses environnements connectés (ba",
+      "etablissement": "",
+      "niveau": "bac",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1623,
+      "nom": "Compétences certifiées (RNCP35530) — Technicien de bureau d'études en électricité des bâtiments (bac",
+      "etablissement": "",
+      "niveau": "bac",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1606,
+      "nom": "Compétences certifiées (RNCP39703) — Métiers de l'enseigne et de la signalétique (cap-bep) | Niveau ",
+      "etablissement": "",
+      "niveau": "cap-bep",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1577,
+      "nom": "Compétences certifiées (RNCP37446) — Technicien d'équipement et d'exploitation en électricité (bac) ",
+      "etablissement": "",
+      "niveau": "bac",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    }
+  ]
+}

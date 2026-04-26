@@ -1,0 +1,128 @@
+{
+  "idx_global": 32,
+  "suite": "blocs_dedie",
+  "persona_id": null,
+  "query_id": "q04_blocs_BTS_electro_contenu",
+  "query_text": "Contenu pédagogique du BTS électrotechnique : quels objectifs pédagogiques ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "contenu BTS + objectifs pédagogiques",
+  "gap_target": null,
+  "elapsed_gen_s": 5.73,
+  "elapsed_fact_check_s": 0.0,
+  "answer_raw": "**TL;DR**\n1. Le BTS Électrotechnique forme des techniciens capables de concevoir, installer et maintenir des systèmes électriques.\n2. Il allie théorie (électricité, automatismes) et pratique (travaux en atelier/laboratoire).\n3. Idéal pour une insertion rapide ou une poursuite d’études en licence pro ou école d’ingénieurs.\n\n---\n\n### **Plan A — Objectifs principaux (connaissance générale)**\n**Concevoir et dimensionner** des installations électriques (bâtiments, industries) en respectant les normes (NF C 15-100, etc.).\n**Intervenir sur des systèmes** : maintenance, dépannage, optimisation énergétique (ex : panneaux solaires, moteurs industriels).\n\n### **Plan B — Compétences transverses (connaissance générale)**\n**Automatismes et informatique industrielle** : programmation de PLC (automates), supervision de processus.\n**Gestion de projet** : planification, coûts, sécurité (habilitation électrique obligatoire).\n\n### **Plan C — Débouchés et passerelles (connaissance générale)**\n**Métiers visés** : Technicien de maintenance, chargé d’affaires en électricité, ou responsable d’exploitation.\n**Poursuites d’études** : Licence pro (ex : Énergies renouvelables), écoles d’ingénieurs (via admissions parallèles).\n\n---\n**⚠ Attention aux pièges**\n- **Sélectivité des poursuites d’études** : Certaines licences pro ou écoles post-BTS exigent un excellent dossier (14+ de moyenne).\n- **Évolution technologique** : Le programme intègre de plus en plus l’IoT et la smart grid — vérifie que l’établissement propose des équipements récents.\n\n---\n**Question pour toi** : Préfères-tu une formation axée sur l’industrie (automatismes) ou le bâtiment (domotique, énergies renouvelables) ? Cela peut orienter ton choix d’options ou de spécialisations en 2ᵉ année.",
+  "answer_annotated": "**TL;DR**\n1. Le BTS Électrotechnique forme des techniciens capables de concevoir, installer et maintenir des systèmes électriques.\n2. Il allie théorie (électricité, automatismes) et pratique (travaux en atelier/laboratoire).\n3. Idéal pour une insertion rapide ou une poursuite d’études en licence pro ou école d’ingénieurs.\n\n---\n\n### **Plan A — Objectifs principaux (connaissance générale)**\n**Concevoir et dimensionner** des installations électriques (bâtiments, industries) en respectant les normes (NF C 15-100, etc.).\n**Intervenir sur des systèmes** : maintenance, dépannage, optimisation énergétique (ex : panneaux solaires, moteurs industriels).\n\n### **Plan B — Compétences transverses (connaissance générale)**\n**Automatismes et informatique industrielle** : programmation de PLC (automates), supervision de processus.\n**Gestion de projet** : planification, coûts, sécurité (habilitation électrique obligatoire).\n\n### **Plan C — Débouchés et passerelles (connaissance générale)**\n**Métiers visés** : Technicien de maintenance, chargé d’affaires en électricité, ou responsable d’exploitation.\n**Poursuites d’études** : Licence pro (ex : Énergies renouvelables), écoles d’ingénieurs (via admissions parallèles).\n\n---\n**⚠ Attention aux pièges**\n- **Sélectivité des poursuites d’études** : Certaines licences pro ou écoles post-BTS exigent un excellent dossier (14+ de moyenne).\n- **Évolution technologique** : Le programme intègre de plus en plus l’IoT et la smart grid — vérifie que l’établissement propose des équipements récents.\n\n---\n**Question pour toi** : Préfères-tu une formation axée sur l’industrie (automatismes) ou le bâtiment (domotique, énergies renouvelables) ? Cela peut orienter ton choix d’options ou de spécialisations en 2ᵉ année.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 0,
+    "n_verified": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [],
+  "sources_top10": [
+    {
+      "score": 1.346,
+      "nom": "Compétences certifiées (RNCP39329) — Ingénieur diplômé de l'Université de Technologie de Belfort - M",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3378,
+      "nom": "Compétences certifiées (RNCP40494) — Ingénieur diplômé de l’Ecole nationale d’ingénieurs de Brest (b",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3335,
+      "nom": "Compétences certifiées (RNCP41497) — Ingénieur diplômé de l'Ecole d'Ingénieurs de l'Artois de l'Univ",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3281,
+      "nom": "Compétences certifiées (RNCP39169) — Ingénieur diplômé de l’École nationale supérieure d’arts et mét",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2214,
+      "nom": "Compétences certifiées (RNCP40033) — Métiers de l'électricité et de l'énergie (fiche nationale) (bac",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2163,
+      "nom": "Compétences certifiées (RNCP38975) — Electronique, énergie électrique, automatique (fiche nationale)",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1767,
+      "nom": "Compétences certifiées (RNCP38878) — Métiers de l'électricité et de ses environnements connectés (ba",
+      "etablissement": "",
+      "niveau": "bac",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1623,
+      "nom": "Compétences certifiées (RNCP35530) — Technicien de bureau d'études en électricité des bâtiments (bac",
+      "etablissement": "",
+      "niveau": "bac",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1606,
+      "nom": "Compétences certifiées (RNCP39703) — Métiers de l'enseigne et de la signalétique (cap-bep) | Niveau ",
+      "etablissement": "",
+      "niveau": "cap-bep",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1577,
+      "nom": "Compétences certifiées (RNCP37446) — Technicien d'équipement et d'exploitation en électricité (bac) ",
+      "etablissement": "",
+      "niveau": "bac",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    }
+  ]
+}

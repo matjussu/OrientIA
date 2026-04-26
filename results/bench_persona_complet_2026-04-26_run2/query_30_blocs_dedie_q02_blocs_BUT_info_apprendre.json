@@ -1,0 +1,177 @@
+{
+  "idx_global": 30,
+  "suite": "blocs_dedie",
+  "persona_id": null,
+  "query_id": "q02_blocs_BUT_info_apprendre",
+  "query_text": "Que vais-je apprendre en BUT informatique ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "que vais-je apprendre",
+  "gap_target": null,
+  "elapsed_gen_s": 10.35,
+  "elapsed_fact_check_s": 3.18,
+  "answer_raw": "**TL;DR**\n1. Un **BUT Informatique** forme aux bases techniques (programmation, réseaux, bases de données) + gestion de projets, avec une forte dimension professionnelle (stages, alternance).\n2. Les spécialisations varient selon les IUT : développement logiciel, cybersécurité, data, ou systèmes embarqués.\n3. **Pour toi** : si tu veux un diplôme polyvalent et concret en 3 ans, c’est une excellente option — mais précise ton projet pour choisir la bonne spécialité.\n\n---\n\n### **Plan A — Cœur du programme : les compétences techniques et professionnelles**\nEn BUT Informatique, tu acquerras :\n- **Programmation** (Python, Java, C/C++, web) et **algorithmes** (base de l’informatique).\n- **Bases de données** (SQL, modélisation) et **réseaux** (administration, sécurité).\n- **Gestion de projet** (méthodes agiles, travail en équipe) et **expérience pro** (stages obligatoires, alternance possible).\n*(connaissance générale : référentiel national du BUT Informatique, aligné sur les besoins des entreprises.)*\n\n📍 **Exemple concret** : [BUT Génie Électrique et Informatique Industrielle — IUT Nantes](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5479&typeBac=0&originePc=0)\n*Pour toi : formation accessible (74% de taux d’accès en 2025), idéale si tu aimes l’informatique appliquée à l’industrie (automatismes, IoT).*\n\n---\n\n### **Plan B — Spécialisations possibles : choisis ton domaine**\nLes BUT Informatique proposent des **parcours différenciés** en 2ᵉ/3ᵉ année. Exemples :\n- **Développement logiciel** (applications, jeux vidéo).\n- **Cybersécurité** (protection des systèmes, tests d’intrusion).\n- **Data** (analyse de données, intelligence artificielle).\n- **Systèmes embarqués** (robotique, objets connectés).\n*(connaissance générale : les IUT adaptent leurs parcours aux besoins locaux — vérifie les options sur leur site.)*\n\n📍 **Autres BUT Informatique** :\n- **UTBM (Belfort)** : parcours orienté data science (débouchés : data analyst, CDO).\n- **Université de Strasbourg/Haute-Alsace/Lorraine** : parcours \"Information Numérique dans les Organisations\" (mix informatique + gestion de projets digitaux).\n\n---\n### **Plan C — Alternatives si l’informatique \"pure\" ne te convient pas**\n- **BUT MMI (Métiers du Multimédia et de l’Internet)** : pour allier code, design et communication digitale.\n- **Licences pro** (ex : \"Systèmes Informatiques et Logiciels\" en 1 an après un bac+2) pour une spécialisation rapide.\n*(connaissance générale : ces voies évitent les maths poussées tout en restant techniques.)*\n\n---\n### **⚠ Attention aux pièges**\n- **Sélectivité variable** : certains BUT (ex : Nantes) sont devenus plus exigeants (-12 points de taux d’accès depuis 2023). Vise large (5-6 vœux en BUT).\n- **Maths présentes** : même si moins théoriques qu’en prépa, les maths discrètes et l’algèbre booléenne sont au programme.\n- **Alternance compétitive** : les places en contrat pro sont limitées — prépare-toi à démarcher les entreprises dès la 2ᵉ année.\n\n---\n**Question pour toi** :\nQu’est-ce qui t’attire le plus dans l’informatique ?\n✅ **Coder des logiciels/applications** → BUT classique ou parcours \"Développement\".\n✅ **Protéger les données/sécuriser les réseaux** → BUT avec option cybersécurité (ex : IUT de Vannes, Annecy).\n✅ **Analyser des données ou travailler sur l’IA** → BUT data (ex : UTBM) ou licence pro statistique.\n✅ **Travailler sur des objets connectés/robots** → BUT systèmes embarqués ou génie électrique.\n\n*(Pour affiner, un RDV avec le **Psy-EN** de ton lycée ou le **SCUIO** de ta fac peut t’aider à identifier le parcours le plus adapté à ton projet.)*",
+  "answer_annotated": "**TL;DR**\n1. Un **BUT Informatique** forme aux bases techniques (programmation, réseaux, bases de données) + gestion de projets, avec une forte dimension professionnelle (stages, alternance).\n2. Les spécialisations varient selon les IUT : développement logiciel, cybersécurité, data, ou systèmes embarqués.\n3. **Pour toi** : si tu veux un diplôme polyvalent et concret en 3 ans, c’est une excellente option — mais précise ton projet pour choisir la bonne spécialité.\n\n---\n\n### **Plan A — Cœur du programme : les compétences techniques et professionnelles**\nEn BUT Informatique, tu acquerras :\n- **Programmation** (Python, Java, C/C++, web) et **algorithmes** (base de l’informatique).\n- **Bases de données** (SQL, modélisation) et **réseaux** (administration, sécurité).\n- **Gestion de projet** (méthodes agiles, travail en équipe) et **expérience pro** (stages obligatoires, alternance possible).\n*(connaissance générale : référentiel national du BUT Informatique, aligné sur les besoins des entreprises.)*\n\n📍 **Exemple concret** : [BUT Génie Électrique et Informatique Industrielle — IUT Nantes](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5479&typeBac=0&originePc=0)\n*Pour toi : formation accessible (74% de taux d’accès en 2025), idéale si tu aimes l’informatique appliquée à l’industrie (automatismes, IoT).*\n\n---\n\n### **Plan B — Spécialisations possibles : choisis ton domaine**\nLes BUT Informatique proposent des **parcours différenciés** en 2ᵉ/3ᵉ année. Exemples :\n- **Développement logiciel** (applications, jeux vidéo).\n- **Cybersécurité** (protection des systèmes, tests d’intrusion).\n- **Data** (analyse de données, intelligence artificielle).\n- **Systèmes embarqués** (robotique, objets connectés).\n*(connaissance générale : les IUT adaptent leurs parcours aux besoins locaux — vérifie les options sur leur site.)*\n\n📍 **Autres BUT Informatique** :\n- **UTBM (Belfort)** : parcours orienté data science (débouchés : data analyst, CDO).\n- **Université de Strasbourg/Haute-Alsace/Lorraine** : parcours \"Information Numérique dans les Organisations\" (mix informatique + gestion de projets digitaux).\n\n---\n### **Plan C — Alternatives si l’informatique \"pure\" ne te convient pas**\n- **BUT MMI (Métiers du Multimédia et de l’Internet)** : pour allier code, design et communication digitale.\n- **Licences pro** (ex : \"Systèmes Informatiques et Logiciels\" en 1 an après un bac+2) pour une spécialisation rapide.\n*(connaissance générale : ces voies évitent les maths poussées tout en restant techniques.)*\n\n---\n### **⚠ Attention aux pièges**\n- **Sélectivité variable** : certains BUT (ex : Nantes) sont devenus plus exigeants (-12 points de taux d’accès depuis 2023). Vise large (5-6 vœux en BUT).\n- **Maths présentes** : même si moins théoriques qu’en prépa, les maths discrètes et l’algèbre booléenne sont au programme.\n- **Alternance compétitive** : les places en contrat pro sont limitées — prépare-toi à démarcher les entreprises dès la 2ᵉ année.\n\n---\n**Question pour toi** :\nQu’est-ce qui t’attire le plus dans l’informatique ?\n✅ **Coder des logiciels/applications** → BUT classique ou parcours \"Développement\".\n✅ **Protéger les données/sécuriser les réseaux** → BUT avec option cybersécurité (ex : IUT de Vannes, Annecy).\n✅ **Analyser des données ou travailler sur l’IA** → BUT data (ex : UTBM) ou licence pro statistique.\n✅ **Travailler sur des objets connectés/robots** → BUT systèmes embarqués ou génie électrique.\n\n*(Pour affiner, un RDV avec le **Psy-EN** de ton lycée ou le **SCUIO** de ta fac peut t’aider à identifier le parcours le plus adapté à ton projet.)*",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 5,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "74% de taux d’accès en 2025",
+      "stat_value": 74,
+      "stat_unit": "%",
+      "context_in_response": "formation accessible (74% de taux d’accès en 2025)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Taux d'accès Parcoursup : 74.0%"
+    },
+    {
+      "stat_text": "0.86 taux_emploi_3ans",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context_in_response": "non cité explicitement dans la réponse",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, ...}"
+    },
+    {
+      "stat_text": "0.91 taux_emploi_6ans",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context_in_response": "non cité explicitement dans la réponse",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}"
+    },
+    {
+      "stat_text": "0.83 taux_cdi",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context_in_response": "non cité explicitement dans la réponse",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_cdi\": 0.83, ...}"
+    },
+    {
+      "stat_text": "1740 salaire_median_embauche",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "non cité explicitement dans la réponse",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"salaire_median_embauche\": 1740, ...}"
+    },
+    {
+      "stat_text": "-12 points de taux d’accès depuis 2023",
+      "stat_value": 12,
+      "stat_unit": "points",
+      "context_in_response": "certains BUT (ex : Nantes) sont devenus plus exigeants (-12 points de taux d’accès depuis 2023)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.2101,
+      "nom": "Compétences certifiées (RNCP41171) — Ingénieur diplômé de l’institut des sciences et techniques des ",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.208,
+      "nom": "Compétences certifiées (RNCP41378) — Ingénieur diplômé de l'Université Paris XIII spécialité Informa",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2076,
+      "nom": "Compétences certifiées (RNCP37579) — Ingénieur diplômé de l'Ecole polytechnique universitaire d'Aix-",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2068,
+      "nom": "Compétences certifiées (RNCP39490) — Méthodes informatiques appliquées à la gestion des entreprises ",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.0706,
+      "nom": "BUT - Génie électrique et informatique industrielle",
+      "etablissement": "I.U.T. Nantes",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "parcoursup",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8871,
+      "nom": "Ingénieur diplômé de l'Université de Technologie de Belfort - Montbéliard, spécialité Informatique",
+      "etablissement": "UNIVERSITE DE TECHNOLOGIE DE BELFORT-MONTBELIARD (UTBM)",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8193,
+      "nom": "INFORMATION-COMMUNICATION : INFORMATION NUMERIQUE DANS LES ORGANISATIONS (BUT)",
+      "etablissement": "UNIVERSITE DE HAUTE ALSACE",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8191,
+      "nom": "Informatique : Intégration d'applications et management du système d'information",
+      "etablissement": "UNIVERSITE CLAUDE BERNARD LYON 1",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8189,
+      "nom": "INFORMATION-COMMUNICATION : INFORMATION NUMERIQUE DANS LES ORGANISATIONS (BUT)",
+      "etablissement": "UNIVERSITE DE STRASBOURG",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8164,
+      "nom": "INFORMATION-COMMUNICATION : INFORMATION NUMERIQUE DANS LES ORGANISATIONS (BUT)",
+      "etablissement": "UNIVERSITE DE LORRAINE",
+      "niveau": "bac+3",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    }
+  ]
+}

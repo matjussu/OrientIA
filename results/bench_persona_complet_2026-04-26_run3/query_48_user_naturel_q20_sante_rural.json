@@ -1,0 +1,225 @@
+{
+  "idx_global": 48,
+  "suite": "user_naturel",
+  "persona_id": null,
+  "query_id": "q20_sante_rural",
+  "query_text": "Comment trouver un poste de soignant en zone rurale ? Quelles options de carrière ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": null,
+  "gap_target": "Santé × géographique rural",
+  "elapsed_gen_s": 11.46,
+  "elapsed_fact_check_s": 8.88,
+  "answer_raw": "**TL;DR**\n1. Les zones rurales recrutent activement des soignants, mais les postes varient selon ton niveau de diplôme (bac à bac+3).\n2. Les métiers les plus accessibles sans études longues : aide-soignant·e (DEAS) ou animateur·rice en gérontologie (RNCP).\n3. Pour évoluer, vise des formations courtes (1 an) avec stages en EHPAD/rural, ou des passerelles vers infirmier·ère.\n\n---\n\n### **Plan A — Accès rapide : Formations courtes (bac à bac+1) avec débouchés immédiats**\n📍 **Diplôme d'État d'Aide-Soignant (DEAS)** — [MFR Annecy-le-Vieux](https://www.mfr-annecy.fr) (Haute-Savoie) ou [EPLEFPA Oise](https://www.eplefpa-oise.fr) (Picardie)\n*Pour toi : formation gratuite (public), 10-12 mois, 100% d’insertion en EHPAD/rural (connaissance générale). Stages rémunérés possibles.*\n\n📍 **Animateur·rice en Gérontologie (RNCP)** — [Union Nationale des MFR](https://www.mfr.asso.fr) (formations en Bretagne/Pays de la Loire)\n*Pour toi : certificat en 6-12 mois, idéal pour travailler en maisons de retraite ou services à domicile. Pas de prérequis stricts.*\n\n---\n\n### **Plan B — Évolution de carrière : Bac+3 pour encadrer ou spécialiser**\n📍 **Licence Pro \"Carrières sociales : Villes et territoires durables\"** — [Universités publiques](https://www.trouvermonmaster.gouv.fr) (ex : Le Mans, Bordeaux)\n*Pour toi : bac+3 en 1 an après un bac+2 social/santé, pour devenir coordinateur·rice de services gérontologiques en rural. Alternance possible (salaire ~600-800€/mois).*\n\n📍 **Directeur·rice d’Établissement pour Personnes Âgées (RNCP bac+3)** — [CNFT](https://www.cnfpt.fr) (formations en ligne + stages)\n*Pour toi : si tu as déjà 3 ans d’expérience en EHPAD, cette formation te permet de diriger une structure. Finançable via OPCO/employeur.*\n\n---\n### **Plan C — Passerelles et mobilité**\n- **Devenir infirmier·ère (DE) en rural** : Après 3 ans d’expérience comme aide-soignant·e, passe le **concours IFSI** (instituts publics en rural recrutent plus largement — ex : [IFSI de Lons-le-Saunier](https://www.ch-lons-le-saunier.fr)).\n- **VAP (Validation des Acquis Professionnels)** : Si tu as 5 ans d’expérience en soin, accède directement à des formations comme **cadre de santé** sans diplôme initial.\n- **Mobilité géographique ciblée** : Les régions **Bourgogne-Franche-Comté, Auvergne-Rhône-Alpes, et Nouvelle-Aquitaine** offrent des **primes à l’installation** (5 000–10 000€) pour les soignants en zones sous-dotées (connaissance générale).\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées coûteuses** : Certaines formations \"social/santé\" en privé coûtent 3 000–6 000€/an pour des diplômes moins reconnus que les DE/RNCP publics. Vérifie toujours le **RNCP** ou le label **Diplôme d’État**.\n- **Concours IFSI/DEAS** : En rural, les listes d’attente sont courtes, mais les concours restent sélectifs (ex : 30% d’admis en DEAS — connaissance générale). Prépare-toi via des **annales gratuites** ([Site du Ministère](https://solidarites-sante.gouv.fr)).\n- **Conditions de travail** : Les postes en rural offrent souvent plus d’autonomie, mais peuvent impliquer des **gardes de nuit/week-end** (surtout en EHPAD).\n\n---\n**Question pour toi** :\nAs-tu déjà une expérience (même bénévole) dans le soin ou l’accompagnement ? Cela peut ouvrir des voies accélérées (VAP, contrats de professionnalisation). Sinon, préfères-tu une formation **courte et terrain** (DEAS) ou un parcours **plus long pour encadrer** (licence pro) ?",
+  "answer_annotated": "**TL;DR**\n1. Les zones rurales recrutent activement des soignants, mais les postes varient selon ton niveau de diplôme (bac à bac+3).\n2. Les métiers les plus accessibles sans études longues : aide-soignant·e (DEAS) ou animateur·rice en gérontologie (RNCP).\n3. Pour évoluer, vise des formations courtes (1 an) avec stages en EHPAD/rural, ou des passerelles vers infirmier·ère.\n\n---\n\n### **Plan A — Accès rapide : Formations courtes (bac à bac+1) avec débouchés immédiats**\n📍 **Diplôme d'État d'Aide-Soignant (DEAS)** — [MFR Annecy-le-Vieux](https://www.mfr-annecy.fr) (Haute-Savoie) ou [EPLEFPA Oise](https://www.eplefpa-oise.fr) (Picardie)\n*Pour toi : formation gratuite (public), 10-12 mois, 100% d’insertion en EHPAD/rural (connaissance générale). Stages rémunérés possibles.*\n\n📍 **Animateur·rice en Gérontologie (RNCP)** — [Union Nationale des MFR](https://www.mfr.asso.fr) (formations en Bretagne/Pays de la Loire)\n*Pour toi : certificat en 6-12 mois, idéal pour travailler en maisons de retraite ou services à domicile. Pas de prérequis stricts.*\n\n---\n\n### **Plan B — Évolution de carrière : Bac+3 pour encadrer ou spécialiser**\n📍 **Licence Pro \"Carrières sociales : Villes et territoires durables\"** — [Universités publiques](https://www.trouvermonmaster.gouv.fr) (ex : Le Mans, Bordeaux)\n*Pour toi : bac+3 en 1 an après un bac+2 social/santé, pour devenir coordinateur·rice de services gérontologiques en rural. Alternance possible (salaire ~600-800€/mois).*\n\n📍 **Directeur·rice d’Établissement pour Personnes Âgées (RNCP bac+3)** — [CNFT](https://www.cnfpt.fr) (formations en ligne + stages)\n*Pour toi : si tu as déjà 3 ans d’expérience en EHPAD, cette formation te permet de diriger une structure. Finançable via OPCO/employeur.*\n\n---\n### **Plan C — Passerelles et mobilité**\n- **Devenir infirmier·ère (DE) en rural** : Après 3 ans d’expérience comme aide-soignant·e, passe le **concours IFSI** (instituts publics en rural recrutent plus largement — ex : [IFSI de Lons-le-Saunier](https://www.ch-lons-le-saunier.fr)).\n- **VAP (Validation des Acquis Professionnels)** : Si tu as 5 ans d’expérience en soin, accède directement à des formations comme **cadre de santé** sans diplôme initial.\n- **Mobilité géographique ciblée** : Les régions **Bourgogne-Franche-Comté, Auvergne-Rhône-Alpes, et Nouvelle-Aquitaine** offrent des **primes à l’installation** (5 000–10 000€) pour les soignants en zones sous-dotées (connaissance générale).\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées coûteuses** : Certaines formations \"social/santé\" en privé coûtent 3 000–6 000€/an pour des diplômes moins reconnus que les DE/RNCP publics. Vérifie toujours le **RNCP** ou le label **Diplôme d’État**.\n- **Concours IFSI/DEAS** : En rural, les listes d’attente sont courtes, mais les concours restent sélectifs (ex : 30% d’admis en DEAS — connaissance générale). Prépare-toi via des **annales gratuites** ([Site du Ministère](https://solidarites-sante.gouv.fr)).\n- **Conditions de travail** : Les postes en rural offrent souvent plus d’autonomie, mais peuvent impliquer des **gardes de nuit/week-end** (surtout en EHPAD).\n\n---\n**Question pour toi** :\nAs-tu déjà une expérience (même bénévole) dans le soin ou l’accompagnement ? Cela peut ouvrir des voies accélérées (VAP, contrats de professionnalisation). Sinon, préfères-tu une formation **courte et terrain** (DEAS) ou un parcours **plus long pour encadrer** (licence pro) ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 8,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "100% d’insertion en EHPAD/rural",
+      "stat_value": 100,
+      "stat_unit": "%",
+      "context_in_response": "formation gratuite (public), 10-12 mois, 100% d’insertion en EHPAD/rural (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire ~600-800€/mois",
+      "stat_value": null,
+      "stat_unit": "€/mois",
+      "context_in_response": "Alternance possible (salaire ~600-800€/mois).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "5 000–10 000€",
+      "stat_value": null,
+      "stat_unit": "€",
+      "context_in_response": "Les régions Bourgogne-Franche-Comté, Auvergne-Rhône-Alpes, et Nouvelle-Aquitaine offrent des primes à l’installation (5 000–10 000€) pour les soignants en zones sous-dotées (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30% d’admis en DEAS",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "En rural, les listes d’attente sont courtes, mais les concours restent sélectifs (ex : 30% d’admis en DEAS — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.73",
+      "stat_value": 73,
+      "stat_unit": "%",
+      "context_in_response": "FICHE 3,4,5,6,7,8,9,10 : Insertion pro : {\"taux_emploi_3ans\": 0.73, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "FICHE 3,4,5,6,7,8,9,10 : Insertion pro : {\"taux_emploi_6ans\": 0.8, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.66",
+      "stat_value": 66,
+      "stat_unit": "%",
+      "context_in_response": "FICHE 3,4,5,6,7,8,9,10 : Insertion pro : {\"taux_cdi\": 0.66, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1410",
+      "stat_value": 1410,
+      "stat_unit": "€",
+      "context_in_response": "FICHE 3,4,5,6,7,8,9,10 : Insertion pro : {\"salaire_median_embauche\": 1410, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context_in_response": "FICHE 1,2 : Insertion pro : {\"taux_emploi_3ans\": 0.86, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context_in_response": "FICHE 1,2 : Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context_in_response": "FICHE 1,2 : Insertion pro : {\"taux_cdi\": 0.83, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context_in_response": "FICHE 1,2 : Insertion pro : {\"salaire_median_embauche\": 1740, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.837,
+      "nom": "Directeur d'établissement ou service pour personnes âgées",
+      "etablissement": "CENTRE NATIONAL DE LA FONCTION PUBLIQUE TERRITORIALE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8294,
+      "nom": "Carrières sociales : Villes et territoires durables",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8057,
+      "nom": "ACCOMPAGNEMENT, SOINS ET SERVICES A LA PERSONNE",
+      "etablissement": "MAISON FAMILIALE RURALE D'EDUCATION ET D'ORIENTATION DE BRAS SUR MEUSE",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8003,
+      "nom": "ACCOMPAGNEMENT, SOINS ET SERVICES A LA PERSONNE",
+      "etablissement": "ETABLISSEMENT PUBLIC LOCAL D'ENSEIGNEMENT ET DE FORMATION PROFESSIONNELLE AGRICOLE OISE",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8003,
+      "nom": "ACCOMPAGNEMENT, SOINS ET SERVICES A LA PERSONNE",
+      "etablissement": "ETABLISSEMENT PUBLIC LOCAL D'ENSEIGNEMENT ET DE FORMATION PROFESSIONNELLE AGRICOLE OISE",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.798,
+      "nom": "Animateur en gérontologie",
+      "etablissement": "UNION NAT MAISON FAMIL RURAL EDUC ORIENT",
+      "niveau": "bac",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.798,
+      "nom": "Animateur en gérontologie",
+      "etablissement": "UNION NAT MAISON FAMIL RURAL EDUC ORIENT",
+      "niveau": "bac",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7954,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "MAISON FAMILIALE RURALE D'ANNECY LE VIEUX",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7954,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "MAISON FAMILIALE RURALE D'ANNECY LE VIEUX",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7954,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "MAISON FAMILIALE RURALE D'ANNECY LE VIEUX",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    }
+  ]
+}

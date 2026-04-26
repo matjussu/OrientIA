@@ -1,0 +1,169 @@
+{
+  "idx_global": 33,
+  "suite": "blocs_dedie",
+  "persona_id": null,
+  "query_id": "q05_blocs_VAE_partielle",
+  "query_text": "Comment valider un titre RNCP par VAE par bloc ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "VAE par bloc + RNCP",
+  "gap_target": null,
+  "elapsed_gen_s": 10.02,
+  "elapsed_fact_check_s": 2.28,
+  "answer_raw": "**TL;DR**\n1. La VAE par blocs permet de valider un titre RNCP progressivement, sans tout repasser.\n2. Chaque bloc correspond à une compétence précise du référentiel du titre.\n3. **Étapes clés** : identifier le titre cible, choisir les blocs, préparer un dossier de preuves, passer devant un jury.\n\n---\n\n### **Plan A — Réaliste : VAE par blocs en autonomie**\n1. **Choisir un titre RNCP éligible** (ex : RNCP37989 en informatique) et vérifier son découpage en blocs sur [France Compétences](https://www.francecompetences.fr).\n2. **Préparer un dossier par bloc** : expériences pro, formations, certifications, projets personnels (ex : GitHub pour un bloc \"développement logiciel\").\n3. **Valider bloc par bloc** devant un jury (certificateur ou organisme agréé). Coût : ~200-500€/bloc (connaissance générale).\n*Pour toi : idéal si tu as déjà des compétences ciblées et un budget modéré.*\n\n---\n\n### **Plan B — Ambitieux : VAE par blocs + accompagnement**\n1. **S’inscrire à un accompagnement VAE** (ex : CNAM, GRETA, AFPA) pour structurer ton dossier et maximiser tes chances.\n2. **Valider plusieurs blocs en une fois** si tes expériences couvrent plusieurs compétences du référentiel.\n3. **Obtenir le titre complet** en 6-12 mois (contre 2-3 ans en formation classique).\n*Pour toi : si tu veux un suivi personnalisé et accélérer le processus (coût : ~1 500-3 000€ total, connaissance générale).*\n\n---\n\n### **Plan C — Alternative : Mix VAE + formation**\n1. **Valider certains blocs par VAE** (ex : blocs \"gestion de projet\" si tu as de l’expérience), et **compléter par une formation courte** (ex : MOOC certifiant) pour les blocs manquants.\n2. **Utiliser le CPF** pour financer les formations complémentaires (ex : OpenClassrooms, Simplon).\n3. **Présenter l’ensemble au jury** pour obtenir le titre complet.\n*Pour toi : solution flexible si tu manques de preuves pour certains blocs.*\n\n---\n\n### **⚠ Attention aux pièges**\n- **Blocs indissociables** : certains titres RNCP imposent de valider des blocs groupés (ex : bloc \"sécurité\" + bloc \"réseaux\" en cybersécurité). Vérifie le référentiel avant de candidater.\n- **Preuves insuffisantes** : un jury peut refuser un bloc si tes expériences ne couvrent pas **toutes** les compétences listées (ex : pour un bloc \"data analysis\", il faut prouver maîtrise de Python *et* SQL *et* visualisation).\n- **Délais administratifs** : compte 3-6 mois entre le dépôt du dossier et la validation finale (connaissance générale).\n\n---\n**Question pour toi :** As-tu déjà identifié un titre RNCP précis qui t’intéresse ? Si oui, je peux t’aider à analyser son découpage en blocs. Sinon, veux-tu explorer des exemples par secteur (tech, santé, management) ?",
+  "answer_annotated": "**TL;DR**\n1. La VAE par blocs permet de valider un titre RNCP progressivement, sans tout repasser.\n2. Chaque bloc correspond à une compétence précise du référentiel du titre.\n3. **Étapes clés** : identifier le titre cible, choisir les blocs, préparer un dossier de preuves, passer devant un jury.\n\n---\n\n### **Plan A — Réaliste : VAE par blocs en autonomie**\n1. **Choisir un titre RNCP éligible** (ex : RNCP37989 en informatique) et vérifier son découpage en blocs sur [France Compétences](https://www.francecompetences.fr).\n2. **Préparer un dossier par bloc** : expériences pro, formations, certifications, projets personnels (ex : GitHub pour un bloc \"développement logiciel\").\n3. **Valider bloc par bloc** devant un jury (certificateur ou organisme agréé). Coût : ~200-500€/bloc (connaissance générale).\n*Pour toi : idéal si tu as déjà des compétences ciblées et un budget modéré.*\n\n---\n\n### **Plan B — Ambitieux : VAE par blocs + accompagnement**\n1. **S’inscrire à un accompagnement VAE** (ex : CNAM, GRETA, AFPA) pour structurer ton dossier et maximiser tes chances.\n2. **Valider plusieurs blocs en une fois** si tes expériences couvrent plusieurs compétences du référentiel.\n3. **Obtenir le titre complet** en 6-12 mois (contre 2-3 ans en formation classique).\n*Pour toi : si tu veux un suivi personnalisé et accélérer le processus (coût : ~1 500-3 000€ total, connaissance générale).*\n\n---\n\n### **Plan C — Alternative : Mix VAE + formation**\n1. **Valider certains blocs par VAE** (ex : blocs \"gestion de projet\" si tu as de l’expérience), et **compléter par une formation courte** (ex : MOOC certifiant) pour les blocs manquants.\n2. **Utiliser le CPF** pour financer les formations complémentaires (ex : OpenClassrooms, Simplon).\n3. **Présenter l’ensemble au jury** pour obtenir le titre complet.\n*Pour toi : solution flexible si tu manques de preuves pour certains blocs.*\n\n---\n\n### **⚠ Attention aux pièges**\n- **Blocs indissociables** : certains titres RNCP imposent de valider des blocs groupés (ex : bloc \"sécurité\" + bloc \"réseaux\" en cybersécurité). Vérifie le référentiel avant de candidater.\n- **Preuves insuffisantes** : un jury peut refuser un bloc si tes expériences ne couvrent pas **toutes** les compétences listées (ex : pour un bloc \"data analysis\", il faut prouver maîtrise de Python *et* SQL *et* visualisation).\n- **Délais administratifs** : compte 3-6 mois entre le dépôt du dossier et la validation finale (connaissance générale).\n\n---\n**Question pour toi :** As-tu déjà identifié un titre RNCP précis qui t’intéresse ? Si oui, je peux t’aider à analyser son découpage en blocs. Sinon, veux-tu explorer des exemples par secteur (tech, santé, management) ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 5,
+    "n_verified": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~200-500€/bloc",
+      "stat_value": 200,
+      "stat_unit": "€",
+      "context_in_response": "Coût : ~200-500€/bloc (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~1 500-3 000€ total",
+      "stat_value": 1500,
+      "stat_unit": "€",
+      "context_in_response": "coût : ~1 500-3 000€ total, connaissance générale",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "6-12 mois",
+      "stat_value": 6,
+      "stat_unit": "mois",
+      "context_in_response": "Obtenir le titre complet en 6-12 mois (contre 2-3 ans en formation classique).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2-3 ans",
+      "stat_value": 2,
+      "stat_unit": "ans",
+      "context_in_response": "Obtenir le titre complet en 6-12 mois (contre 2-3 ans en formation classique).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "3-6 mois",
+      "stat_value": 3,
+      "stat_unit": "mois",
+      "context_in_response": "compte 3-6 mois entre le dépôt du dossier et la validation finale (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.2568,
+      "nom": "Compétences certifiées (RNCP39183) — Techniques, Patrimoine, Territoires de l'industrie : histoire, ",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2524,
+      "nom": "Compétences certifiées (RNCP41280) — Diplôme national supérieur d'arts plastiques (bac+5) | Niveau e",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.248,
+      "nom": "Compétences certifiées (RNCP41760) — Certificat d’aptitude au professorat de l’enseignement adapté a",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2478,
+      "nom": "Compétences certifiées (RNCP42021) — Réalisateur de jeu vidéo (bac+5) | Niveau européen : Niveau 7 |",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2463,
+      "nom": "Compétences certifiées (RNCP38156) — Sciences de l’éducation et de la formation (fiche nationale) (b",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2455,
+      "nom": "Compétences certifiées (RNCP39292) — Ingénieur diplômé de l'Ecole Supérieure d'Ingénieurs de Rennes ",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2445,
+      "nom": "Compétences certifiées (RNCP39925) — Restaurateur du patrimoine (bac+5) | Niveau européen : Niveau 7",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2438,
+      "nom": "Compétences certifiées (RNCP38155) — Métiers de l'enseignement, de l'éducation et de la formation (M",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1582,
+      "nom": "Compétences certifiées (RNCP41390) — Communication et valorisation de la création artistique (fiche ",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1507,
+      "nom": "Compétences certifiées (RNCP40321) — Valorisation des agro-ressouces (fiche nationale) (bac+3) | Niv",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    }
+  ]
+}

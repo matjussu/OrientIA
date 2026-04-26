@@ -1,0 +1,241 @@
+{
+  "idx_global": 18,
+  "suite": "personas_v4",
+  "persona_id": "psy_en",
+  "query_id": "psy_en_q3",
+  "query_text": "J'accompagne un élève de 2nde issu d'un milieu modeste, qui rêve de devenir ingénieur aéro mais ses résultats sont moyens (10-11 en maths). Quelles stratégies long-terme sur la suite du lycée ?",
+  "query_type": "contextuelle_riche",
+  "scope": "pro",
+  "pattern_target": null,
+  "gap_target": null,
+  "elapsed_gen_s": 11.02,
+  "elapsed_fact_check_s": 8.99,
+  "answer_raw": "**TL;DR**\n1. Avec 10-11 en maths, une école d’ingénieur aéro **directement après le bac** est très risquée (sélectivité forte, prérequis en maths/physique).\n2. **Stratégie clé** : choisir des spécialités en 1ère/Terminale qui **ouvrent des portes** (maths + physique-chimie) + viser des formations **accessibles** (BUT, prépa adaptée) avant de rebondir.\n3. **Alternative réaliste** : BUT Génie Mécanique ou Aéronautique en alternance → puis école d’ingé en admissions parallèles.\n\n---\n\n### **Plan A — Réaliste : BUT + alternance → école d’ingé**\n📍 **BUT Génie Mécanique et Productique (GMP)** (ex : IUT de Toulouse, Lyon, Strasbourg)\n*Pourquoi ?* **Accessible avec 10-11 de moyenne** (sélectivité ~60-70% en moyenne), **alternance possible** (salaire + expérience). Spécialisation aéro possible en 2e/3e année. Puis admissions parallèles en école d’ingé (ex : **INSA Strasbourg** en mécanique, **ESTACA**).\n*(connaissance générale : réseau des IUT publics, coût ~0€/an en formation initiale)*\n\n📍 **BUT Métiers de l’Aéronautique** (ex : IUT d’Aix-Marseille, Bordeaux)\n*Pourquoi ?* **Formation ciblée aéro**, partenariats avec Airbus/Dassault. **Alternance fréquente** (contrat pro dès la 2e année). Débouchés : technicien supérieur → évolution vers ingé via VAE ou admissions parallèles.\n*(connaissance générale : taux d’insertion ~90% à 6 mois, salaire médian ~2 000€/mois en embauche)*\n\n---\n### **Plan B — Ambitieux : Prépa TSI (pour bacs techno) ou prépa intégrée**\n📍 **Prépa TSI** (ex : Lycée Raspail Paris, Lycée Saint-Exupéry Lyon)\n*Pourquoi ?* **Moins sélective** que les prépas classiques (MP/PC), **adaptée aux profils moyens** (10-12 de moyenne). Accès aux écoles d’ingé via concours **CCP** (ex : **ESTACA**, **ENAC**). *Attention* : rythme intense, mais encadrement renforcé.\n*(connaissance générale : 30-40% de boursiers en TSI, coût ~0€ en public)*\n\n📍 **Prépa intégrée** (ex : **EIGSI La Rochelle**, **ESAIP Angers**)\n*Pourquoi ?* **Sélectivité modérée** (50-60%), **5 ans sécurisés** (prépa + école). Certaines ont des **partenariats aéro** (ex : EIGSI avec Thales). Coût : ~3 000-6 000€/an (bourses possibles).\n*(connaissance générale : taux d’emploi à 6 mois ~85%)*\n\n---\n### **Plan C — Passerelle : BTS → Licence Pro → École d’ingé**\n📍 **BTS Aéronautique** (ex : Lycée Airbus Toulouse, AFPA)\n*Pourquoi ?* **Très concret** (50% de pratique), **débouchés rapides** (technicien aéro). Puis **Licence Pro** (ex : Maintenance Aéronautique) → **admission parallèle** en école d’ingé (ex : **EIMA**).\n*(connaissance générale : salaire médian post-BTS ~1 800€/mois, coût ~0€ en public)*\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées \"aéro\" non reconnues** : Méfie-toi des formations à 8 000€/an sans label **CTI** (ex : certaines \"écoles d’ingé aéro\" non accréditées). Vérifie toujours sur [CTI](https://www.cti-commission.fr/).\n- **Prépa classique (MP/PC) avec 10-11 en maths** : Risque d’échec élevé. Préfère **TSI** ou **BUT** si le niveau n’est pas solide.\n- **Déménagement** : Les BUT/BTS aéro sont souvent **hors Île-de-France** (Toulouse, Bordeaux, Lyon). Prévois logistique/budget si ta famille ne peut pas t’aider.\n\n---\n**Question pour toi** :\nEst-ce que ton élève est prêt à **quitter sa région** pour une formation, ou faut-il privilégier des options locales (même moins \"prestigieuses\") ? *(ex : un BTS Aéronautique en Île-de-France existe, mais les débouchés sont meilleurs à Toulouse/Bordeaux).*",
+  "answer_annotated": "**TL;DR**\n1. Avec 10-11 en maths, une école d’ingénieur aéro **directement après le bac** est très risquée (sélectivité forte, prérequis en maths/physique).\n2. **Stratégie clé** : choisir des spécialités en 1ère/Terminale qui **ouvrent des portes** (maths + physique-chimie) + viser des formations **accessibles** (BUT, prépa adaptée) avant de rebondir.\n3. **Alternative réaliste** : BUT Génie Mécanique ou Aéronautique en alternance → puis école d’ingé en admissions parallèles.\n\n---\n\n### **Plan A — Réaliste : BUT + alternance → école d’ingé**\n📍 **BUT Génie Mécanique et Productique (GMP)** (ex : IUT de Toulouse, Lyon, Strasbourg)\n*Pourquoi ?* **Accessible avec 10-11 de moyenne** (sélectivité ~60-70% en moyenne), **alternance possible** (salaire + expérience). Spécialisation aéro possible en 2e/3e année. Puis admissions parallèles en école d’ingé (ex : **INSA Strasbourg** en mécanique, **ESTACA**).\n*(connaissance générale : réseau des IUT publics, coût ~0€/an en formation initiale)*\n\n📍 **BUT Métiers de l’Aéronautique** (ex : IUT d’Aix-Marseille, Bordeaux)\n*Pourquoi ?* **Formation ciblée aéro**, partenariats avec Airbus/Dassault. **Alternance fréquente** (contrat pro dès la 2e année). Débouchés : technicien supérieur → évolution vers ingé via VAE ou admissions parallèles.\n*(connaissance générale : taux d’insertion ~90% à 6 mois, salaire médian ~2 000€/mois en embauche)*\n\n---\n### **Plan B — Ambitieux : Prépa TSI (pour bacs techno) ou prépa intégrée**\n📍 **Prépa TSI** (ex : Lycée Raspail Paris, Lycée Saint-Exupéry Lyon)\n*Pourquoi ?* **Moins sélective** que les prépas classiques (MP/PC), **adaptée aux profils moyens** (10-12 de moyenne). Accès aux écoles d’ingé via concours **CCP** (ex : **ESTACA**, **ENAC**). *Attention* : rythme intense, mais encadrement renforcé.\n*(connaissance générale : 30-40% de boursiers en TSI, coût ~0€ en public)*\n\n📍 **Prépa intégrée** (ex : **EIGSI La Rochelle**, **ESAIP Angers**)\n*Pourquoi ?* **Sélectivité modérée** (50-60%), **5 ans sécurisés** (prépa + école). Certaines ont des **partenariats aéro** (ex : EIGSI avec Thales). Coût : ~3 000-6 000€/an (bourses possibles).\n*(connaissance générale : taux d’emploi à 6 mois ~85%)*\n\n---\n### **Plan C — Passerelle : BTS → Licence Pro → École d’ingé**\n📍 **BTS Aéronautique** (ex : Lycée Airbus Toulouse, AFPA)\n*Pourquoi ?* **Très concret** (50% de pratique), **débouchés rapides** (technicien aéro). Puis **Licence Pro** (ex : Maintenance Aéronautique) → **admission parallèle** en école d’ingé (ex : **EIMA**).\n*(connaissance générale : salaire médian post-BTS ~1 800€/mois, coût ~0€ en public)*\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées \"aéro\" non reconnues** : Méfie-toi des formations à 8 000€/an sans label **CTI** (ex : certaines \"écoles d’ingé aéro\" non accréditées). Vérifie toujours sur [CTI](https://www.cti-commission.fr/).\n- **Prépa classique (MP/PC) avec 10-11 en maths** : Risque d’échec élevé. Préfère **TSI** ou **BUT** si le niveau n’est pas solide.\n- **Déménagement** : Les BUT/BTS aéro sont souvent **hors Île-de-France** (Toulouse, Bordeaux, Lyon). Prévois logistique/budget si ta famille ne peut pas t’aider.\n\n---\n**Question pour toi** :\nEst-ce que ton élève est prêt à **quitter sa région** pour une formation, ou faut-il privilégier des options locales (même moins \"prestigieuses\") ? *(ex : un BTS Aéronautique en Île-de-France existe, mais les débouchés sont meilleurs à Toulouse/Bordeaux).*",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 14,
+    "n_verified": 4,
+    "n_with_disclaimer": 10,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "sélectivité ~60-70%",
+      "stat_value": 65,
+      "stat_unit": "%",
+      "context_in_response": "BUT Génie Mécanique et Productique (GMP) : Accessible avec 10-11 de moyenne (sélectivité ~60-70%)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "coût ~0€/an en formation initiale",
+      "stat_value": 0,
+      "stat_unit": "€/an",
+      "context_in_response": "BUT Génie Mécanique et Productique (GMP) : (connaissance générale : réseau des IUT publics, coût ~0€/an en formation initiale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux d’insertion ~90% à 6 mois",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context_in_response": "BUT Métiers de l’Aéronautique : (connaissance générale : taux d’insertion ~90% à 6 mois, salaire médian ~2 000€/mois en embauche)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian ~2 000€/mois en embauche",
+      "stat_value": 2000,
+      "stat_unit": "€/mois",
+      "context_in_response": "BUT Métiers de l’Aéronautique : (connaissance générale : taux d’insertion ~90% à 6 mois, salaire médian ~2 000€/mois en embauche)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30-40% de boursiers en TSI",
+      "stat_value": 35,
+      "stat_unit": "%",
+      "context_in_response": "Prépa TSI : (connaissance générale : 30-40% de boursiers en TSI, coût ~0€ en public)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "coût ~0€ en public",
+      "stat_value": 0,
+      "stat_unit": "€",
+      "context_in_response": "Prépa TSI : (connaissance générale : 30-40% de boursiers en TSI, coût ~0€ en public)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "coût : ~3 000-6 000€/an (bourses possibles)",
+      "stat_value": 4500,
+      "stat_unit": "€/an",
+      "context_in_response": "Prépa intégrée : Coût : ~3 000-6 000€/an (bourses possibles)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux d’emploi à 6 mois ~85%",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context_in_response": "Prépa intégrée : (connaissance générale : taux d’emploi à 6 mois ~85%)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian post-BTS ~1 800€/mois",
+      "stat_value": 1800,
+      "stat_unit": "€/mois",
+      "context_in_response": "BTS Aéronautique : (connaissance générale : salaire médian post-BTS ~1 800€/mois, coût ~0€ en public)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "coût ~0€ en public",
+      "stat_value": 0,
+      "stat_unit": "€",
+      "context_in_response": "BTS Aéronautique : (connaissance générale : salaire médian post-BTS ~1 800€/mois, coût ~0€ en public)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.85",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context_in_response": "FICHE 1 : Insertion pro : {\"taux_emploi_3ans\": 0.85, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context_in_response": "FICHE 1 : Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context_in_response": "FICHE 1 : Insertion pro : {\"taux_cdi\": 0.83, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "FICHE 1 : Insertion pro : {\"salaire_median_embauche\": 2080, ...}",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.1217,
+      "nom": "Formation d'ingénieur Bac + 5 - Bac Série générale avec la spécialité Maths en Terminale + une spéci",
+      "etablissement": "ECE Paris",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "parcoursup",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1183,
+      "nom": "Formation d'ingénieur Bac + 5 - Bac Série générale avec 2 spécialités scientifiques mais sans la spé",
+      "etablissement": "ECE Paris",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "parcoursup",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 1.1179,
+      "nom": "Formation d'ingénieur Bac + 5 - Bac série générale avec la spécialité Maths en Terminale + une spéci",
+      "etablissement": "ECE Paris",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "parcoursup",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9693,
+      "nom": "ingénieur/e en aéronautique",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "onisep_ideo_fiches",
+      "domaine": null,
+      "domain": "metier"
+    },
+    {
+      "score": 0.9612,
+      "nom": "ingénieur/e mathématicien/ne",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "onisep_ideo_fiches",
+      "domaine": null,
+      "domain": "metier"
+    },
+    {
+      "score": 0.9558,
+      "nom": "professeur/e de maths ou de physique-chimie",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "onisep_ideo_fiches",
+      "domaine": null,
+      "domain": "metier"
+    },
+    {
+      "score": 0.9318,
+      "nom": "INGENIEUR DIPLOME DE L'INSTITUT NATIONAL DES SCIENCES APPLIQUEES DE STRASBOURG, SPECIALITE MECANIQUE",
+      "etablissement": "CFAI ALSACE",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9312,
+      "nom": "Ingénieur diplômé de l'Institut Supérieur de l'Aéronautique et de l'Espace",
+      "etablissement": "INSTITUT SUPERIEUR DE L'AERONAUTIQUE ET DE L'ESPACE",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9303,
+      "nom": "INGENIEUR DIPLOME DE L'ECOLE NATIONALE DE L'AVIATION CIVILE",
+      "etablissement": "ECOLE NATIONALE DE L'AVIATION CIVILE",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8498,
+      "nom": "diplôme d'ingénieur de l'École supérieure des techniques aéronautiques et de construction automobile",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    }
+  ]
+}

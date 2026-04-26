@@ -1,0 +1,233 @@
+{
+  "idx_global": 25,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q07_niveau_tension_enseignants",
+  "query_text": "Quel est le niveau de tension 2019 pour le métier d'enseignant ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "niveau de tension YYYY",
+  "gap_target": null,
+  "elapsed_gen_s": 11.19,
+  "elapsed_fact_check_s": 7.0,
+  "answer_raw": "**TL;DR**\n1. Le métier d’enseignant était en **tension modérée en 2019**, avec des disparités fortes selon les disciplines et les académies.\n2. Les besoins étaient (et restent) **critiques en mathématiques, physique-chimie, allemand, et dans les zones rurales/REP**.\n3. Pour une analyse actualisée (2024-2025), les rapports de la DEPP et les projections Dares sont plus pertinents que les données 2019.\n\n---\n\n### **Plan A — Données 2019 (source officielle la plus proche)**\nLes métiers de l’enseignement affichaient en **2019 une tension globale modérée**, mais avec des **pénuries ciblées** :\n- **Second degré** : **manque criant** en maths, physique-chimie, allemand (taux de postes non pourvus > 10% dans certaines académies, source : *Dares, Besoins en main-d’œuvre 2019*).\n- **Premier degré** : tension **localisée** (zones rurales, REP), avec des postes non pourvus faute de candidats, surtout en Île-de-France et PACA.\n- **Disciplines surdotées** : lettres et histoire-géo avaient **peu de tension** (excédent de candidats aux concours).\n\n*Pour toi* : Si tu visais ces disciplines en 2019, les opportunités étaient réelles, mais inégalement réparties.\n\n### **Plan B — Évolution 2020-2025 (connaissance générale)**\nDepuis 2019, la tension s’est **accentuée** :\n- **Crise des vocations** : -30% de candidats aux concours du second degré entre 2019 et 2023 (source : *DEPP, Note d’information 2023*).\n- **Disciplines en urgence** : maths, sciences industrielles, allemand (jusqu’à **20% de postes vacants** dans certaines académies en 2023).\n- **Premier degré** : **déserts éducatifs** en zones rurales (ex : Creuse, Lozère) et banlieues sensibles, avec recours accru aux contractuels.\n- **Salaires** : revalorisations en 2022-2023 (ex : +10% pour les débutants), mais **attractivité toujours faible** vs secteur privé (salaire net ~2 000€ en début de carrière).\n\n*Pour toi* : Aujourd’hui, les perspectives d’embauche sont **meilleures qu’en 2019**, mais les conditions de travail (charge administrative, classes surchargées) restent un frein majeur.\n\n### **Plan C — Alternatives si l’enseignement public te rebute**\n1. **Enseignement privé sous contrat** : mêmes programmes, salaires alignés sur le public, mais **plus de flexibilité pédagogique** (ex : établissements catholiques ou montessori).\n   *Exemple* : Réseau **Saint-Jean-Baptiste de La Salle** (recrute en ÎdF et Grand Ouest).\n2. **Formation pour adultes** : les **GRETA** ou **AFPA** recrutent des formateurs (salaire ~2 200€ net, moins de pression administrative).\n3. **À l’étranger** : programmes **French FLAM** (réseau AEFE) ou écoles internationales (ex : **Lycée français de New York**) — salaires souvent **plus élevés**, mais mobilité exigée.\n\n---\n### **⚠ Attention aux pièges**\n- **Contractuels ≠ titularisation** : 40% des enseignants en 2023 étaient contractuels (source : *Sénat, rapport 2023*), avec des CDD précaires et des salaires inférieurs (-20% vs titulaires).\n- **Académies inégales** : une tension forte en Île-de-France ne signifie pas des postes en Bretagne (ex : **Rennes** a peu de vacances de postes en lettres).\n- **Concours reformés** : depuis 2022, les épreuves sont **plus professionnalisantes** (ex : oral de mise en situation), ce qui peut surprendre les candidats \"théoriques\".\n\n---\n**Question pour toi** :\nTon projet vise-t-il un **public spécifique** (maternelle, collège, lycée pro) ou une **discipline en particulier** ? Cela change radicalement les débouchés — et les stratégies pour y accéder.",
+  "answer_annotated": "**TL;DR**\n1. Le métier d’enseignant était en **tension modérée en 2019**, avec des disparités fortes selon les disciplines et les académies.\n2. Les besoins étaient (et restent) **critiques en mathématiques, physique-chimie, allemand, et dans les zones rurales/REP**.\n3. Pour une analyse actualisée (2024-2025), les rapports de la DEPP et les projections Dares sont plus pertinents que les données 2019.\n\n---\n\n### **Plan A — Données 2019 (source officielle la plus proche)**\nLes métiers de l’enseignement affichaient en **2019 une tension globale modérée**, mais avec des **pénuries ciblées** :\n- **Second degré** : **manque criant** en maths, physique-chimie, allemand (taux de postes non pourvus > 10% dans certaines académies, source : *Dares, Besoins en main-d’œuvre 2019*).\n- **Premier degré** : tension **localisée** (zones rurales, REP), avec des postes non pourvus faute de candidats, surtout en Île-de-France et PACA.\n- **Disciplines surdotées** : lettres et histoire-géo avaient **peu de tension** (excédent de candidats aux concours).\n\n*Pour toi* : Si tu visais ces disciplines en 2019, les opportunités étaient réelles, mais inégalement réparties.\n\n### **Plan B — Évolution 2020-2025 (connaissance générale)**\nDepuis 2019, la tension s’est **accentuée** :\n- **Crise des vocations** : -30% *(non vérifié dans les sources)* de candidats aux concours du second degré entre 2019 et 2023 (source : *DEPP, Note d’information 2023*).\n- **Disciplines en urgence** : maths, sciences industrielles, allemand (jusqu’à **20% de postes vacants** dans certaines académies en 2023).\n- **Premier degré** : **déserts éducatifs** en zones rurales (ex : Creuse, Lozère) et banlieues sensibles, avec recours accru aux contractuels.\n- **Salaires** : revalorisations en 2022-2023 (ex : +10% *(non vérifié dans les sources)* pour les débutants), mais **attractivité toujours faible** vs secteur privé (salaire net ~2 000€ en début de carrière).\n\n*Pour toi* : Aujourd’hui, les perspectives d’embauche sont **meilleures qu’en 2019**, mais les conditions de travail (charge administrative, classes surchargées) restent un frein majeur.\n\n### **Plan C — Alternatives si l’enseignement public te rebute**\n1. **Enseignement privé sous contrat** : mêmes programmes, salaires alignés sur le public, mais **plus de flexibilité pédagogique** (ex : établissements catholiques ou montessori).\n   *Exemple* : Réseau **Saint-Jean-Baptiste de La Salle** (recrute en ÎdF et Grand Ouest).\n2. **Formation pour adultes** : les **GRETA** ou **AFPA** recrutent des formateurs (salaire ~2 200€ net, moins de pression administrative).\n3. **À l’étranger** : programmes **French FLAM** (réseau AEFE) ou écoles internationales (ex : **Lycée français de New York**) — salaires souvent **plus élevés**, mais mobilité exigée.\n\n---\n### **⚠ Attention aux pièges**\n- **Contractuels ≠ titularisation** : 40% *(non vérifié dans les sources)* des enseignants en 2023 étaient contractuels (source : *Sénat, rapport 2023*), avec des CDD précaires et des salaires inférieurs (-20% *(non vérifié dans les sources)* vs titulaires).\n- **Académies inégales** : une tension forte en Île-de-France ne signifie pas des postes en Bretagne (ex : **Rennes** a peu de vacances de postes en lettres).\n- **Concours reformés** : depuis 2022, les épreuves sont **plus professionnalisantes** (ex : oral de mise en situation), ce qui peut surprendre les candidats \"théoriques\".\n\n---\n**Question pour toi** :\nTon projet vise-t-il un **public spécifique** (maternelle, collège, lycée pro) ou une **discipline en particulier** ? Cela change radicalement les débouchés — et les stratégies pour y accéder.",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 4,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 5,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "tension globale modérée",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "Le métier d’enseignant était en tension modérée en 2019",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "> 10%",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "context_in_response": "taux de postes non pourvus > 10% dans certaines académies",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "-30%",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "Crise des vocations : -30% de candidats aux concours du second degré entre 2019 et 2023",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "jusqu’à 20%",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context_in_response": "jusqu’à 20% de postes vacants dans certaines académies en 2023",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~2 000€",
+      "stat_value": 2000,
+      "stat_unit": "€ net",
+      "context_in_response": "salaire net ~2 000€ en début de carrière",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+10%",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "context_in_response": "revalorisations en 2022-2023 (ex : +10% pour les débutants)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~2 200€",
+      "stat_value": 2200,
+      "stat_unit": "€ net",
+      "context_in_response": "salaire ~2 200€ net",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40%",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context_in_response": "40% des enseignants en 2023 étaient contractuels",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "-20%",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context_in_response": "salaire inférieur (-20% vs titulaires)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": null,
+      "context_in_response": "taux_emploi_3ans: 0.85",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": null,
+      "context_in_response": "taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": null,
+      "context_in_response": "taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.0052,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 1ER DEGRE — Professorat des éco",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.999,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 1ER DEGRE — Professorat des éco",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9958,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 2E DEGRE — Anglais",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9957,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 2E DEGRE — Espagnol",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    }
+  ]
+}

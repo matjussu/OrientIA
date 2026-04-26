@@ -1,0 +1,241 @@
+{
+  "idx_global": 7,
+  "suite": "personas_v4",
+  "persona_id": "emma",
+  "query_id": "emma_q1",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "query_type": "factuelle",
+  "scope": "master_pro",
+  "pattern_target": null,
+  "gap_target": null,
+  "elapsed_gen_s": 7.84,
+  "elapsed_fact_check_s": 7.81,
+  "answer_raw": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 informatique.\n2. En **connaissance générale**, la fourchette typique pour un profil débutant (bac+5) en France se situe entre **35 000 € et 45 000 € brut annuel** (soit **2 200 €–2 800 € brut/mois**), avec des variations selon la région, l’entreprise et la spécialisation.\n3. L’alternance et les compétences en **IA/data/cybersécurité** peuvent booster ce salaire (+10-20%).\n\n---\n\n### **Plan A — Développeur généraliste (back/fullstack)**\n**Salaire estimé** : **35 000–40 000 € brut/an** (connaissance générale).\n- **Contexte** : Profil classique sortis d’un M2 informatique (ex : [Expert en développement logiciel — OpenClassrooms](https://openclassrooms.com/fr/)).\n- **Lever** : Alternance en M2 (+5–10%), mobilité (Île-de-France +10-15%).\n\n### **Plan B — Spécialisation valorisée (data/IA/cyber)**\n**Salaire estimé** : **40 000–48 000 € brut/an** (connaissance générale).\n- **Exemples** :\n  - **Data Scientist** (via M2 comme [Testeur logiciel — M2I](https://www.m2i.fr/) avec parcours data).\n  - **Ingénieur cybersécurité** (formations labellisées **SecNumEdu** non listées ici).\n- **Pour toi** : Si tu as des compétences en **machine learning** ou **cloud**, vise ces niches.\n\n### **Plan C — Passerelles vers l’international ou grands groupes**\n**Salaire estimé** : **45 000–55 000 € brut/an** (connaissance générale).\n- **Stratégies** :\n  - **CIFRE** (thèse en entreprise, ~2 700 € brut/mois + exonérations).\n  - **ESN/GAFA** (ex : SAP, Capgemini, ou startups scale-ups en série B+).\n  - **Suisse/Luxembourg** (salaire x1.3–1.5, mais coût de la vie élevé).\n- **Pour toi** : Idéal si tu vises une carrière accélérée ou l’expatriation.\n\n---\n**⚠ Attention aux pièges**\n- **Biais régional** : Un salaire à **38 000 €** à Paris ≠ **38 000 €** à Lille (pouvoir d’achat).\n- **Titres RNCP ≠ M2 universitaire** : Certains certificats (ex : OpenClassrooms) peuvent être moins valorisés que des diplômes d’État en négociation salariale.\n- **Alternance ≠ CDI** : Un salaire en alternance (60-80% du SMIC) n’est pas représentatif du marché post-diplôme.\n\n**Question pour toi** : As-tu une spécialisation technique (ex : Rust, Kubernetes, MLOps) ou un secteur cible (banque, santé, tech) qui pourrait affiner cette estimation ?",
+  "answer_annotated": "**TL;DR**\n1. Les fiches officielles ne fournissent pas de salaire médian précis pour un développeur post-M2 informatique.\n2. En **connaissance générale**, la fourchette typique pour un profil débutant (bac+5) en France se situe entre **35 000 € et 45 000 € brut annuel** (soit **2 200 €–2 800 € brut/mois**), avec des variations selon la région, l’entreprise et la spécialisation.\n3. L’alternance et les compétences en **IA/data/cybersécurité** peuvent booster ce salaire (+10-20%).\n\n---\n\n### **Plan A — Développeur généraliste (back/fullstack)**\n**Salaire estimé** : **35 000–40 000 € brut/an** (connaissance générale).\n- **Contexte** : Profil classique sortis d’un M2 informatique (ex : [Expert en développement logiciel — OpenClassrooms](https://openclassrooms.com/fr/)).\n- **Lever** : Alternance en M2 (+5–10%), mobilité (Île-de-France +10-15%).\n\n### **Plan B — Spécialisation valorisée (data/IA/cyber)**\n**Salaire estimé** : **40 000–48 000 € brut/an** (connaissance générale).\n- **Exemples** :\n  - **Data Scientist** (via M2 comme [Testeur logiciel — M2I](https://www.m2i.fr/) avec parcours data).\n  - **Ingénieur cybersécurité** (formations labellisées **SecNumEdu** non listées ici).\n- **Pour toi** : Si tu as des compétences en **machine learning** ou **cloud**, vise ces niches.\n\n### **Plan C — Passerelles vers l’international ou grands groupes**\n**Salaire estimé** : **45 000–55 000 € brut/an** (connaissance générale).\n- **Stratégies** :\n  - **CIFRE** (thèse en entreprise, ~2 700 € brut/mois + exonérations).\n  - **ESN/GAFA** (ex : SAP, Capgemini, ou startups scale-ups en série B+).\n  - **Suisse/Luxembourg** (salaire x1.3–1.5, mais coût de la vie élevé).\n- **Pour toi** : Idéal si tu vises une carrière accélérée ou l’expatriation.\n\n---\n**⚠ Attention aux pièges**\n- **Biais régional** : Un salaire à **38 000 €** à Paris ≠ **38 000 €** à Lille (pouvoir d’achat).\n- **Titres RNCP ≠ M2 universitaire** : Certains certificats (ex : OpenClassrooms) peuvent être moins valorisés que des diplômes d’État en négociation salariale.\n- **Alternance ≠ CDI** : Un salaire en alternance (60-80% du SMIC) n’est pas représentatif du marché post-diplôme.\n\n**Question pour toi** : As-tu une spécialisation technique (ex : Rust, Kubernetes, MLOps) ou un secteur cible (banque, santé, tech) qui pourrait affiner cette estimation ?",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 14,
+    "n_verified": 4,
+    "n_with_disclaimer": 10,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "35 000 € et 45 000 € brut annuel",
+      "stat_value": 35000,
+      "stat_unit": "€",
+      "context_in_response": "fourchette typique pour un profil débutant (bac+5) en France",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "2 200 €–2 800 € brut/mois",
+      "stat_value": 2200,
+      "stat_unit": "€",
+      "context_in_response": "fourchette typique pour un profil débutant (bac+5) en France",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+10-20%",
+      "stat_value": 15,
+      "stat_unit": "%",
+      "context_in_response": "salaire boosté par l'alternance et les compétences en IA/data/cybersécurité",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "35 000–40 000 € brut/an",
+      "stat_value": 35000,
+      "stat_unit": "€",
+      "context_in_response": "Salaire estimé pour un développeur généraliste (back/fullstack)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+5–10%",
+      "stat_value": 7.5,
+      "stat_unit": "%",
+      "context_in_response": "Lever : Alternance en M2",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+10-15%",
+      "stat_value": 12.5,
+      "stat_unit": "%",
+      "context_in_response": "Lever : mobilité (Île-de-France)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "40 000–48 000 € brut/an",
+      "stat_value": 40000,
+      "stat_unit": "€",
+      "context_in_response": "Salaire estimé pour une spécialisation valorisée (data/IA/cyber)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "45 000–55 000 € brut/an",
+      "stat_value": 45000,
+      "stat_unit": "€",
+      "context_in_response": "Salaire estimé pour une passerelle vers l’international ou grands groupes",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~2 700 € brut/mois",
+      "stat_value": 2700,
+      "stat_unit": "€",
+      "context_in_response": "Salaire en CIFRE (thèse en entreprise)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "x1.3–1.5",
+      "stat_value": 1.4,
+      "stat_unit": "ratio",
+      "context_in_response": "salaire en Suisse/Luxembourg par rapport à la France",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context_in_response": "taux_emploi_3ans pour plusieurs fiches (ex : Expert en développement logiciel, École polytechnique universitaire Paris-Saclay)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context_in_response": "taux_emploi_6ans pour plusieurs fiches (ex : Expert en développement logiciel, École polytechnique universitaire Paris-Saclay)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context_in_response": "taux_cdi pour plusieurs fiches (ex : Expert en développement logiciel, École polytechnique universitaire Paris-Saclay)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche pour plusieurs fiches (ex : Expert en développement logiciel, École polytechnique universitaire Paris-Saclay)",
+      "verdict": "verified",
+      "source_fiche_excerpt": "{\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.9184,
+      "nom": "Expert en développement logiciel",
+      "etablissement": "OPENCLASSROOMS",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.914,
+      "nom": "diplôme d'ingénieur de l'École polytechnique universitaire de l'université Paris-Saclay spécialité i",
+      "etablissement": "France",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8388,
+      "nom": "Testeur logiciel",
+      "etablissement": "M2I",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "data_ia",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8362,
+      "nom": "expert en ingénierie et développement de logiciels pour l'industrie",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "ingenierie_industrielle",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8358,
+      "nom": "expert en ingénierie du développement et en architecture logicielle",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.835,
+      "nom": "Concepteur développeur de solutions informatiques",
+      "etablissement": "42",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8333,
+      "nom": "Développeur commercial et marketing",
+      "etablissement": "MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sciences_fondamentales",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8326,
+      "nom": "Concepteur développeur d'applications",
+      "etablissement": "MINISTERE DU TRAVAIL DU PLEIN EMPLOI ET DE L' INSERTION",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "services",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8302,
+      "nom": "expert en architecture et développement logiciel",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "onisep",
+      "domaine": "lettres_arts",
+      "domain": "formation"
+    }
+  ]
+}

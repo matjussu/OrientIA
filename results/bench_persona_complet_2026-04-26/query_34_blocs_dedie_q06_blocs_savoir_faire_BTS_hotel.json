@@ -1,0 +1,128 @@
+{
+  "idx_global": 34,
+  "suite": "blocs_dedie",
+  "persona_id": null,
+  "query_id": "q06_blocs_savoir_faire_BTS_hotel",
+  "query_text": "Quels savoir-faire certifiés à la sortie d'un BTS hôtellerie-restauration ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "savoir-faire certifié",
+  "gap_target": null,
+  "elapsed_gen_s": 21.92,
+  "elapsed_fact_check_s": 0.0,
+  "answer_raw": "**TL;DR**\n1. Un **BTS Hôtellerie-Restauration** (niveau bac+2) certifie des compétences opérationnelles en gestion, service, et production culinaire, avec une forte dimension terrain.\n2. Les savoir-faire clés sont **validés par des blocs de compétences RNCP** (ex : gestion d’équipe, techniques de service, hygiène alimentaire).\n3. Deux options principales : **option A (Management en hôtellerie)** ou **option B (Art culinaire, art de la table et du service)** — à choisir selon ton projet.\n\n---\n\n### **Plan A — Compétences techniques certifiées (cœur du diplôme)**\n*(connaissance générale)*\n- **Production culinaire** : Maîtrise des techniques de cuisine (bases, cuissons, dressage), normées par le référentiel RNCP. Inclut la gestion des stocks et des coûts matières.\n- **Service en salle** : Techniques de service (à l’assiette, au guéridon), gestion des réservations, et **accueil client** (langues étrangères souvent exigées en stage).\n- **Hygiène et sécurité** : Certification **HACCP** (obligatoire pour travailler en restauration), respect des normes sanitaires (paquet hygiène UE).\n- **Gestion opérationnelle** : Utilisation de logiciels de réservation (ex : **Opera PMS**, **TheFork**), élaboration de plannings, et gestion des conflits en équipe.\n\n**Pour toi** : Ces compétences sont **évaluées en contrôle continu + épreuves finales** (ex : épreuve pratique de 6h en cuisine). Le diplôme donne accès à des postes **immédiats** (chef de partie, maître d’hôtel).\n\n---\n\n### **Plan B — Compétences managériales et transversales (valorisables à bac+3/5)**\n*(connaissance générale)*\n- **Management d’équipe** : Animation de brigades en cuisine ou en salle, formation des nouveaux arrivants (compétence clé pour évoluer vers chef de service ou directeur adjoint).\n- **Gestion économique** : Calcul des coûts de revient, élaboration de menus rentables, et **analyse de la performance** (taux de remplissage, marge par couvert).\n- **Marketing et relation client** : Fidélisation (programmes de fidélité, gestion des avis en ligne), et **vente additionnelle** (upselling).\n- **Langues étrangères** : Anglais professionnel obligatoire, seconde langue (espagnol, allemand) souvent demandée dans les établissements haut de gamme.\n\n**Pour toi** : Ces compétences permettent de **poursuivre en licence pro** (ex : Licence Pro Management de l’Hôtellerie) ou en **école hôtelière post-BTS** (ex : Vatel, Ferrandi).\n\n---\n### **Plan C — Certifications complémentaires (à ajouter pour se différencier)**\n*(connaissance générale)*\n1. **Certificats spécialisés** :\n   - **Sommellerie** (WSET niveau 2, diplôme de l’Union de la Sommellerie Française).\n   - **Œnologie** (certificat de l’École du Vin de Bordeaux).\n   - **Barista** (certification SCA, utile pour les établissements tendance).\n2. **Logiciels métiers** :\n   - **Revenue Management** (Duetto, IDEAS) pour les hôtels.\n   - **Logiciels de caisse** (Micros, Square) pour la restauration.\n3. **Labels qualité** :\n   - **Certification \"Éco-responsable\"** (ex : Green Key pour les hôtels).\n   - **Formation \"Accueil des clients en situation de handicap\"** (obligatoire dans certains établissements).\n\n**Pour toi** : Ces certifs se préparent **en parallèle du BTS** (stages, MOOC) ou via des **formations courtes post-diplôme** (1 semaine à 3 mois).\n\n---\n### **⚠ Attention aux pièges**\n- **Piège 1** : Le BTS HR ne forme **pas aux métiers de la pâtisserie fine** (il faut un CAP/BTM Pâtissier en complément).\n- **Piège 2** : Les **stages sont obligatoires** (14 à 16 semaines) — vérifie que ton lycée a des partenariats avec des établissements **reconnus** (sinon, difficile de trouver des stages qualifiants).\n- **Piège 3** : Sans expérience à l’étranger, les **postes à l’international** (croisières, hôtels 5*) seront inaccessibles — privilégie les **échanges Erasmus** ou stages hors France.\n\n---\n**Question pour toi** :\nTon projet est-il plutôt **opérationnel** (travailler rapidement en cuisine/salle) ou **managérial** (viser un poste d’encadrement à moyen terme) ? Cela déterminera le choix entre l’**option A** (management) ou l’**option B** (art culinaire) du BTS.",
+  "answer_annotated": "**TL;DR**\n1. Un **BTS Hôtellerie-Restauration** (niveau bac+2) certifie des compétences opérationnelles en gestion, service, et production culinaire, avec une forte dimension terrain.\n2. Les savoir-faire clés sont **validés par des blocs de compétences RNCP** (ex : gestion d’équipe, techniques de service, hygiène alimentaire).\n3. Deux options principales : **option A (Management en hôtellerie)** ou **option B (Art culinaire, art de la table et du service)** — à choisir selon ton projet.\n\n---\n\n### **Plan A — Compétences techniques certifiées (cœur du diplôme)**\n*(connaissance générale)*\n- **Production culinaire** : Maîtrise des techniques de cuisine (bases, cuissons, dressage), normées par le référentiel RNCP. Inclut la gestion des stocks et des coûts matières.\n- **Service en salle** : Techniques de service (à l’assiette, au guéridon), gestion des réservations, et **accueil client** (langues étrangères souvent exigées en stage).\n- **Hygiène et sécurité** : Certification **HACCP** (obligatoire pour travailler en restauration), respect des normes sanitaires (paquet hygiène UE).\n- **Gestion opérationnelle** : Utilisation de logiciels de réservation (ex : **Opera PMS**, **TheFork**), élaboration de plannings, et gestion des conflits en équipe.\n\n**Pour toi** : Ces compétences sont **évaluées en contrôle continu + épreuves finales** (ex : épreuve pratique de 6h en cuisine). Le diplôme donne accès à des postes **immédiats** (chef de partie, maître d’hôtel).\n\n---\n\n### **Plan B — Compétences managériales et transversales (valorisables à bac+3/5)**\n*(connaissance générale)*\n- **Management d’équipe** : Animation de brigades en cuisine ou en salle, formation des nouveaux arrivants (compétence clé pour évoluer vers chef de service ou directeur adjoint).\n- **Gestion économique** : Calcul des coûts de revient, élaboration de menus rentables, et **analyse de la performance** (taux de remplissage, marge par couvert).\n- **Marketing et relation client** : Fidélisation (programmes de fidélité, gestion des avis en ligne), et **vente additionnelle** (upselling).\n- **Langues étrangères** : Anglais professionnel obligatoire, seconde langue (espagnol, allemand) souvent demandée dans les établissements haut de gamme.\n\n**Pour toi** : Ces compétences permettent de **poursuivre en licence pro** (ex : Licence Pro Management de l’Hôtellerie) ou en **école hôtelière post-BTS** (ex : Vatel, Ferrandi).\n\n---\n### **Plan C — Certifications complémentaires (à ajouter pour se différencier)**\n*(connaissance générale)*\n1. **Certificats spécialisés** :\n   - **Sommellerie** (WSET niveau 2, diplôme de l’Union de la Sommellerie Française).\n   - **Œnologie** (certificat de l’École du Vin de Bordeaux).\n   - **Barista** (certification SCA, utile pour les établissements tendance).\n2. **Logiciels métiers** :\n   - **Revenue Management** (Duetto, IDEAS) pour les hôtels.\n   - **Logiciels de caisse** (Micros, Square) pour la restauration.\n3. **Labels qualité** :\n   - **Certification \"Éco-responsable\"** (ex : Green Key pour les hôtels).\n   - **Formation \"Accueil des clients en situation de handicap\"** (obligatoire dans certains établissements).\n\n**Pour toi** : Ces certifs se préparent **en parallèle du BTS** (stages, MOOC) ou via des **formations courtes post-diplôme** (1 semaine à 3 mois).\n\n---\n### **⚠ Attention aux pièges**\n- **Piège 1** : Le BTS HR ne forme **pas aux métiers de la pâtisserie fine** (il faut un CAP/BTM Pâtissier en complément).\n- **Piège 2** : Les **stages sont obligatoires** (14 à 16 semaines) — vérifie que ton lycée a des partenariats avec des établissements **reconnus** (sinon, difficile de trouver des stages qualifiants).\n- **Piège 3** : Sans expérience à l’étranger, les **postes à l’international** (croisières, hôtels 5*) seront inaccessibles — privilégie les **échanges Erasmus** ou stages hors France.\n\n---\n**Question pour toi** :\nTon projet est-il plutôt **opérationnel** (travailler rapidement en cuisine/salle) ou **managérial** (viser un poste d’encadrement à moyen terme) ? Cela déterminera le choix entre l’**option A** (management) ou l’**option B** (art culinaire) du BTS.",
+  "annotated_differs": false,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 0,
+    "n_verified": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [],
+  "sources_top10": [
+    {
+      "score": 1.3232,
+      "nom": "Compétences certifiées (RNCP39248) — Manager en hôtellerie-restauration (bac+5) | Niveau européen : ",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3231,
+      "nom": "Compétences certifiées (RNCP41315) — Manager des entreprises de l'hôtellerie, tourisme et de la rest",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3168,
+      "nom": "Compétences certifiées (RNCP41126) — Responsable de gestion et développement d'établissement dans le",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.3122,
+      "nom": "Compétences certifiées (RNCP38581) — Directeur d'hôtellerie internationale (bac+5) | Niveau européen",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.311,
+      "nom": "Compétences certifiées (RNCP38937) — Manager des hébergements touristiques (bac+5) | Niveau européen",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.213,
+      "nom": "Compétences certifiées (RNCP37719) — Diplôme en management international de l'hôtellerie et de la re",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2117,
+      "nom": "Compétences certifiées (RNCP40112) — Organisation et gestion des établissements hôteliers et de rest",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2099,
+      "nom": "Compétences certifiées (RNCP41942) — Management dans l'hôtellerie restauration (bac+3) | Niveau euro",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2045,
+      "nom": "Compétences certifiées (RNCP36267) — Manager dans l'Hôtellerie Restauration (bac+3) | Niveau europée",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2032,
+      "nom": "Compétences certifiées (RNCP40185) — Métiers des arts culinaires et des arts de la table (fiche nati",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    }
+  ]
+}

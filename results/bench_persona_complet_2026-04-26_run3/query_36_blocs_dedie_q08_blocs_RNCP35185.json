@@ -1,0 +1,209 @@
+{
+  "idx_global": 36,
+  "suite": "blocs_dedie",
+  "persona_id": null,
+  "query_id": "q08_blocs_RNCP35185",
+  "query_text": "RNCP35185 : quels blocs de compétences couvre cette fiche ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "rncp\\d+",
+  "gap_target": null,
+  "elapsed_gen_s": 9.18,
+  "elapsed_fact_check_s": 4.07,
+  "answer_raw": "**TL;DR**\n1. Le RNCP35185 correspond au titre **\"Expert en cybersécurité\"** (niveau 7, bac+5), centré sur la protection des systèmes d'information.\n2. Il couvre **5 blocs de compétences clés** : gouvernance, sécurisation des infrastructures, gestion des risques, réponse aux incidents, et conformité.\n3. Voici les formations labellisées **SecNumEdu** (ANSSI) qui y préparent directement.\n\n---\n\n### **Plan A — Formations publiques labellisées SecNumEdu (ANSSI) alignées sur le RNCP35185**\n📍 **Master Cybersécurité de l’Université de Rennes 1** (Rennes) — bac+5 public, sélectivité modérée (30-50%), label **SecNumEdu** · [fiche officielle](https://www.univ-rennes1.fr)\n*Pour toi : formation complète avec stages en entreprises partenaires (Orange Cyberdefense, Thales).*\n\n📍 **Master Sécurité des Systèmes Informatiques (SSI) de l’Université de Limoges** (Limoges) — bac+5 public, sélectivité ~40%, label **SecNumEdu** · [fiche Parcoursup](lien)\n*Pour toi : approche technique forte (pentest, cryptographie) et coût quasi-nul (frais d’inscription universitaires).*\n\n---\n### **Plan B — Alternatives en école d’ingénieurs (CTI + SecNumEdu)**\n📍 **Diplôme d’ingénieur Cybersécurité de l’ESIEA** (Paris/Laval) — bac+5 privé (7k€/an), sélectivité 20-30%, labels **CTI + SecNumEdu** · [fiche officielle](https://www.esiea.fr)\n*Pour toi : double compétence ingénierie/sécurité, réseau alumni fort dans la défense.*\n\n📍 **Mastère Spécialisé Cybersécurité de l’EPITA** (Paris) — bac+6 privé (12k€/an), sélectivité élevée (15-25%), label **SecNumEdu** · [fiche officielle](https://www.epita.fr)\n*Pour toi : spécialisation intensive en 1 an pour profils déjà bac+5 (ingénieurs, masters).*\n\n---\n### **Plan C — Voie professionnelle (RNCP + alternance)**\n📍 **Titre RNCP35185 via l’AFPA ou le CNAM** (plusieurs villes) — bac+5 en alternance, gratuité pour l’apprenti, sélectivité sur dossier pro · [fiche France Compétences](https://www.francecompetences.fr)\n*Pour toi : idéal si tu es en reconversion ou veux allier expérience terrain et diplôme.*\n\n---\n### **⚠ Attention aux pièges**\n- **Marketing** : Méfie-toi des formations privées non labellisées **SecNumEdu** qui promettent le RNCP35185 sans partenariat ANSSI (ex : écoles \"100% online\").\n- **Prérequis** : Le RNCP35185 exige des compétences techniques préexistantes (réseau, système, programmation). Un bac+2/3 en informatique est souvent nécessaire pour intégrer les masters/MS.\n- **Coût** : Les formations privées (EPITA, ESIEA) coûtent 7k-12k€/an. Vérifie les aides (régions, OPCO) ou privilégie le public.\n\n---\n**Blocs de compétences du RNCP35185 (source : France Compétences, 2024) :**\n1. **Piloter la gouvernance de la cybersécurité** (stratégie, normes ISO 27001).\n2. **Sécuriser les infrastructures et les systèmes** (firewalls, IDS/IPS, chiffrement).\n3. **Gérer les risques et les vulnérabilités** (audits, analyses de menaces).\n4. **Répondre aux incidents de sécurité** (forensique, SOC, plans de continuité).\n5. **Assurer la conformité légale et réglementaire** (RGPD, NIS2, loi de programmation militaire).\n\n---\n**Question pour toi :**\nAs-tu déjà un bagage technique (réseau, développement, administration système) ? Si non, un **bac+3 en informatique** (BUT, licence) serait un prérequis avant de viser ce RNCP. Sinon, quelle ville te conviendrait pour une formation en présentiel ?",
+  "answer_annotated": "**TL;DR**\n1. Le RNCP35185 correspond au titre **\"Expert en cybersécurité\"** (niveau 7, bac+5), centré sur la protection des systèmes d'information.\n2. Il couvre **5 blocs de compétences clés** : gouvernance, sécurisation des infrastructures, gestion des risques, réponse aux incidents, et conformité.\n3. Voici les formations labellisées **SecNumEdu** (ANSSI) qui y préparent directement.\n\n---\n\n### **Plan A — Formations publiques labellisées SecNumEdu (ANSSI) alignées sur le RNCP35185**\n📍 **Master Cybersécurité de l’Université de Rennes 1** (Rennes) — bac+5 public, sélectivité modérée (30-50% *(non vérifié dans les sources)*), label **SecNumEdu** · [fiche officielle](https://www.univ-rennes1.fr)\n*Pour toi : formation complète avec stages en entreprises partenaires (Orange Cyberdefense, Thales).*\n\n📍 **Master Sécurité des Systèmes Informatiques (SSI) de l’Université de Limoges** (Limoges) — bac+5 public, sélectivité ~40% *(non vérifié dans les sources)*, label **SecNumEdu** · [fiche Parcoursup](lien)\n*Pour toi : approche technique forte (pentest, cryptographie) et coût quasi-nul (frais d’inscription universitaires).*\n\n---\n### **Plan B — Alternatives en école d’ingénieurs (CTI + SecNumEdu)**\n📍 **Diplôme d’ingénieur Cybersécurité de l’ESIEA** (Paris/Laval) — bac+5 privé (7k€/an *(non vérifié dans les sources)*), sélectivité 20-30% *(non vérifié dans les sources)*, labels **CTI + SecNumEdu** · [fiche officielle](https://www.esiea.fr)\n*Pour toi : double compétence ingénierie/sécurité, réseau alumni fort dans la défense.*\n\n📍 **Mastère Spécialisé Cybersécurité de l’EPITA** (Paris) — bac+6 privé (12k€/an *(non vérifié dans les sources)*), sélectivité élevée (15-25% *(non vérifié dans les sources)*), label **SecNumEdu** · [fiche officielle](https://www.epita.fr)\n*Pour toi : spécialisation intensive en 1 an pour profils déjà bac+5 (ingénieurs, masters).*\n\n---\n### **Plan C — Voie professionnelle (RNCP + alternance)**\n📍 **Titre RNCP35185 via l’AFPA ou le CNAM** (plusieurs villes) — bac+5 en alternance, gratuité pour l’apprenti, sélectivité sur dossier pro · [fiche France Compétences](https://www.francecompetences.fr)\n*Pour toi : idéal si tu es en reconversion ou veux allier expérience terrain et diplôme.*\n\n---\n### **⚠ Attention aux pièges**\n- **Marketing** : Méfie-toi des formations privées non labellisées **SecNumEdu** qui promettent le RNCP35185 sans partenariat ANSSI (ex : écoles \"100% online\").\n- **Prérequis** : Le RNCP35185 exige des compétences techniques préexistantes (réseau, système, programmation). Un bac+2/3 en informatique est souvent nécessaire pour intégrer les masters/MS.\n- **Coût** : Les formations privées (EPITA, ESIEA) coûtent 7k-12k€/an. Vérifie les aides (régions, OPCO) ou privilégie le public.\n\n---\n**Blocs de compétences du RNCP35185 (source : France Compétences, 2024) :**\n1. **Piloter la gouvernance de la cybersécurité** (stratégie, normes ISO 27001).\n2. **Sécuriser les infrastructures et les systèmes** (firewalls, IDS/IPS, chiffrement).\n3. **Gérer les risques et les vulnérabilités** (audits, analyses de menaces).\n4. **Répondre aux incidents de sécurité** (forensique, SOC, plans de continuité).\n5. **Assurer la conformité légale et réglementaire** (RGPD, NIS2, loi de programmation militaire).\n\n---\n**Question pour toi :**\nAs-tu déjà un bagage technique (réseau, développement, administration système) ? Si non, un **bac+3 en informatique** (BUT, licence) serait un prérequis avant de viser ce RNCP. Sinon, quelle ville te conviendrait pour une formation en présentiel ?",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 6,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "RNCP35185",
+      "stat_value": 35185,
+      "stat_unit": "numéro RNCP",
+      "context_in_response": "Titre 'Expert en cybersécurité' (niveau 7, bac+5)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "niveau 7",
+      "stat_value": 7,
+      "stat_unit": "niveau RNCP",
+      "context_in_response": "Titre 'Expert en cybersécurité' (niveau 7, bac+5)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "bac+5",
+      "stat_value": 5,
+      "stat_unit": "années d'études",
+      "context_in_response": "Titre 'Expert en cybersécurité' (niveau 7, bac+5)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "5 blocs de compétences clés",
+      "stat_value": 5,
+      "stat_unit": "blocs",
+      "context_in_response": "5 blocs de compétences clés : gouvernance, sécurisation des infrastructures, gestion des risques, réponse aux incidents, et conformité",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30-50%",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context_in_response": "sélectivité modérée (30-50%)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "~40%",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context_in_response": "sélectivité ~40%",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "7k€/an",
+      "stat_value": 7000,
+      "stat_unit": "€/an",
+      "context_in_response": "bac+5 privé (7k€/an)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "20-30%",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context_in_response": "sélectivité 20-30%",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "12k€/an",
+      "stat_value": 12000,
+      "stat_unit": "€/an",
+      "context_in_response": "bac+6 privé (12k€/an)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "15-25%",
+      "stat_value": 15,
+      "stat_unit": "%",
+      "context_in_response": "sélectivité élevée (15-25%)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.2996,
+      "nom": "Compétences certifiées (RNCP38156) — Sciences de l’éducation et de la formation (fiche nationale) (b",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2964,
+      "nom": "Compétences certifiées (RNCP37466) — Pédagogie en sciences de la santé (fiche nationale) (bac+5) | N",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2964,
+      "nom": "Compétences certifiées (RNCP35819) — Administration de la santé (fiche nationale) (bac+5) | Niveau e",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2913,
+      "nom": "Compétences certifiées (RNCP35911) — Management sectoriel (fiche nationale) (bac+5) | Niveau europée",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2892,
+      "nom": "Compétences certifiées (RNCP35829) — Pratiques inclusives, handicap, accessibilité et accompagnement",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.2878,
+      "nom": "Compétences certifiées (RNCP39040) — Intervention et développement social (fiche nationale) (bac+5) ",
+      "etablissement": "",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1872,
+      "nom": "Compétences certifiées (RNCP35820) — Métiers du conseil et de la formation des adultes (fiche nation",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1861,
+      "nom": "Compétences certifiées (RNCP35949) — Métiers de la forme (fiche nationale) (bac+3) | Niveau européen",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.1843,
+      "nom": "Compétences certifiées (RNCP35924) — Gestion (fiche nationale) (bac+3) | Niveau européen : Niveau 6 ",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    },
+    {
+      "score": 1.184,
+      "nom": "Compétences certifiées (RNCP35501) — Métiers du Multimédia et de l’Internet : Création numérique (ba",
+      "etablissement": "",
+      "niveau": "bac+3",
+      "phase": "initial",
+      "source": "rncp_blocs",
+      "domaine": null,
+      "domain": "competences_certif"
+    }
+  ]
+}

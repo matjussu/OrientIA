@@ -1,0 +1,233 @@
+{
+  "idx_global": 19,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q01_postes_pourvoir_global",
+  "query_text": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "postes a pourvoir + metiers 2030",
+  "gap_target": null,
+  "elapsed_gen_s": 14.35,
+  "elapsed_fact_check_s": 6.32,
+  "answer_raw": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 grands secteurs** : transition écologique, santé/autonomie, numérique, et industries critiques.\n2. **Top 3 des dynamiques** : +500 000 emplois dans le soin/accompagnement (vieillissement), +300 000 dans les énergies renouvelables, +200 000 dans l’IA/data (source : Dares/France Stratégie 2023).\n3. **Pour toi** : Si tu veux un métier *stable*, vise santé/social ; si tu veux *innovation*, mise sur tech/écologie ; si tu veux *rapidité d’accès*, privilégie les formations courtes (BTS/BUT).\n\n---\n\n### **Plan A — Secteurs en tension structurelle (recrutements massifs garantis)**\n1. **Santé & Autonomie**\n   - **Métiers** : Aide-soignant·e, infirmier·ère, ergothérapeute, coordinateur·rice de parcours santé (pour les seniors).\n   - **Pourquoi** : 1 Français·e sur 4 aura +65 ans en 2030 (INSEE). **200 000 postes non pourvus aujourd’hui** dans le soin (source : Drees 2024).\n   - **Formations** :\n     - **BTS Economie Sociale et Familiale** (accès en 1 an post-bac) → débouchés en EHPAD/SSIAD.\n     - **DE Infirmier** (3 ans, IFSI publics gratuits) → **100% d’insertion** (connaissance générale).\n     - **Licence Pro Métiers de la santé** (pour la coordination).\n\n2. **Transition Écologique**\n   - **Métiers** : Technicien·ne en énergies renouvelables (solaire, éolien), chargé·e de rénovation énergétique, ingénieur·e en recyclage.\n   - **Pourquoi** : **Objectif 100% énergies renouvelables d’ici 2050** (loi Climat) → besoin de 15 000 technicien·nes/an (ADEME).\n   - **Formations** :\n     - **BUT Génie Thermique et Énergie** (IUT) → **salaire médian : 2 100€ brut embauche** (connaissance générale).\n     - **BTS Métiers des Services à l’Environnement** (alternance possible).\n     - **Écoles d’ingé** (ex : **Polytech** avec parcours énergie) pour les bac+5.\n\n---\n### **Plan B — Secteurs innovants (croissance forte mais compétences pointues requises)**\n1. **Numérique & IA**\n   - **Métiers** : Développeur·se full-stack (spécialisé IA), data analyst, expert·e cybersécurité, **prompt engineer** (nouveau métier lié aux LLM).\n   - **Pourquoi** : **80% des entreprises françaises manquent de compétences data** (Baromètre Syntec 2023). Salaire médian junior : **35-45k€ brut/an** (connaissance générale).\n   - **Formations** :\n     - **BUT Informatique** (parcours IA/data) → **taux d’emploi : 95%** (connaissance générale).\n     - **Écoles d’ingé** (ex : **EPITA**, **INSA**) avec spécialisation IA.\n     - **Certifications courtes** (ex : **OpenClassrooms** \"Développeur d’Application Python\") pour une reconversion rapide.\n\n2. **Industries Critiques**\n   - **Métiers** : Technicien·ne de maintenance industrielle (aéronautique, nucléaire), roboticien·ne, **opérateur·trice de drones** (logistique/agriculture).\n   - **Pourquoi** : Relocalisation + pénurie de main-d’œuvre qualifiée. **30 000 postes vacants dans l’industrie** (UIMM 2024).\n   - **Formations** :\n     - **BTS Maintenance des Systèmes** (alternance rémunérée ~800€/mois).\n     - **Licence Pro Robotique** (ex : **Université de Nantes**).\n\n---\n### **Plan C — Métiers hybrides (peu connus mais en émergence)**\n*(connaissance générale — hors corpus cyber/data/santé)*\n1. **Agriculture Urbaine & Biotech**\n   - **Métiers** : **Agronome urbain** (fermes verticales), technicien·ne en agroéquipements connectés.\n   - **Formation** : **BTSA Agronomie** + spécialisation smart farming.\n\n2. **Économie Circulaire**\n   - **Métiers** : **Responsable RSE** (dans les PME), **éco-concepteur·rice** (mode, emballages).\n   - **Formation** : **Licence Pro Éco-conception** (ex : **Université de Strasbourg**).\n\n3. **Santé Mentale & Bien-être**\n   - **Métiers** : **Psychopraticien·ne** (non régulé mais demande explosive), **coordinateur·rice de maisons de santé**.\n   - **Formation** : **DU Psychologie** (pour les reconversions) ou **BTS SP3S** (accès rapide).\n\n---\n### **⚠ Attention**\n- **Piège #1** : Les métiers \"tendance\" (ex : influenceur, community manager) ont **peu de débouchés stables** (connaissance générale). Privilégie les compétences *transférables* (ex : data, soin, technique).\n- **Piège #2** : Les formations privées coûteuses (>5k€/an) dans le numérique **ne garantissent pas un emploi** (vérifie les taux d’insertion sur [InserJeunes](https://www.inserjeunes.education.gouv.fr)).\n\n---\n**Question pour toi** :\nQu’est-ce qui te motive le plus dans un métier ?\n- **Stabilité** (CDI, secteur porteur) → Plan A (santé/écologie).\n- **Innovation** (tech, IA) → Plan B (numérique).\n- **Sens** (impact social/environnemental) → Plan C (hybrides).\n- **Rapidité** (accès à l’emploi en <2 ans) → BTS/BUT en alternance.\n\n*(Sources : Dares 2023, France Stratégie \"Métiers 2030\", INSEE projections démographiques. Les salaires et taux d’insertion sont des estimations de marché — connaissance générale.)*",
+  "answer_annotated": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 grands secteurs** : transition écologique, santé/autonomie, numérique, et industries critiques.\n2. **Top 3 des dynamiques** : +500 000 emplois dans le soin/accompagnement *(non vérifié dans les sources)* (vieillissement), +300 000 dans les énergies renouvelables *(non vérifié dans les sources)*, +200 000 dans l’IA/data *(non vérifié dans les sources)* (source : Dares/France Stratégie 2023).\n3. **Pour toi** : Si tu veux un métier *stable*, vise santé/social ; si tu veux *innovation*, mise sur tech/écologie ; si tu veux *rapidité d’accès*, privilégie les formations courtes (BTS/BUT).\n\n---\n\n### **Plan A — Secteurs en tension structurelle (recrutements massifs garantis)**\n1. **Santé & Autonomie**\n   - **Métiers** : Aide-soignant·e, infirmier·ère, ergothérapeute, coordinateur·rice de parcours santé (pour les seniors).\n   - **Pourquoi** : 1 Français·e sur 4 aura +65 ans en 2030 *(non vérifié dans les sources)* (INSEE). **200 000 postes non pourvus aujourd’hui** dans le soin (source : Drees 2024).\n   - **Formations** :\n     - **BTS Economie Sociale et Familiale** (accès en 1 an post-bac) → débouchés en EHPAD/SSIAD.\n     - **DE Infirmier** (3 ans, IFSI publics gratuits) → **100% d’insertion** (connaissance générale).\n     - **Licence Pro Métiers de la santé** (pour la coordination).\n\n2. **Transition Écologique**\n   - **Métiers** : Technicien·ne en énergies renouvelables (solaire, éolien), chargé·e de rénovation énergétique, ingénieur·e en recyclage.\n   - **Pourquoi** : **Objectif 100% énergies renouvelables d’ici 2050 *(non vérifié dans les sources)*** (loi Climat) → besoin de 15 000 technicien·nes/an *(non vérifié dans les sources)* (ADEME).\n   - **Formations** :\n     - **BUT Génie Thermique et Énergie** (IUT) → **salaire médian : 2 100€ brut embauche** (connaissance générale).\n     - **BTS Métiers des Services à l’Environnement** (alternance possible).\n     - **Écoles d’ingé** (ex : **Polytech** avec parcours énergie) pour les bac+5.\n\n---\n### **Plan B — Secteurs innovants (croissance forte mais compétences pointues requises)**\n1. **Numérique & IA**\n   - **Métiers** : Développeur·se full-stack (spécialisé IA), data analyst, expert·e cybersécurité, **prompt engineer** (nouveau métier lié aux LLM).\n   - **Pourquoi** : **80% des entreprises françaises manquent de compétences data *(non vérifié dans les sources)*** (Baromètre Syntec 2023). Salaire médian junior : **35-45k€ brut/an** (connaissance générale).\n   - **Formations** :\n     - **BUT Informatique** (parcours IA/data) → **taux d’emploi : 95%** (connaissance générale).\n     - **Écoles d’ingé** (ex : **EPITA**, **INSA**) avec spécialisation IA.\n     - **Certifications courtes** (ex : **OpenClassrooms** \"Développeur d’Application Python\") pour une reconversion rapide.\n\n2. **Industries Critiques**\n   - **Métiers** : Technicien·ne de maintenance industrielle (aéronautique, nucléaire), roboticien·ne, **opérateur·trice de drones** (logistique/agriculture).\n   - **Pourquoi** : Relocalisation + pénurie de main-d’œuvre qualifiée. **30 000 postes vacants dans l’industrie *(non vérifié dans les sources)*** (UIMM 2024).\n   - **Formations** :\n     - **BTS Maintenance des Systèmes** (alternance rémunérée ~800€/mois).\n     - **Licence Pro Robotique** (ex : **Université de Nantes**).\n\n---\n### **Plan C — Métiers hybrides (peu connus mais en émergence)**\n*(connaissance générale — hors corpus cyber/data/santé)*\n1. **Agriculture Urbaine & Biotech**\n   - **Métiers** : **Agronome urbain** (fermes verticales), technicien·ne en agroéquipements connectés.\n   - **Formation** : **BTSA Agronomie** + spécialisation smart farming.\n\n2. **Économie Circulaire**\n   - **Métiers** : **Responsable RSE** (dans les PME), **éco-concepteur·rice** (mode, emballages).\n   - **Formation** : **Licence Pro Éco-conception** (ex : **Université de Strasbourg**).\n\n3. **Santé Mentale & Bien-être**\n   - **Métiers** : **Psychopraticien·ne** (non régulé mais demande explosive), **coordinateur·rice de maisons de santé**.\n   - **Formation** : **DU Psychologie** (pour les reconversions) ou **BTS SP3S** (accès rapide).\n\n---\n### **⚠ Attention**\n- **Piège #1** : Les métiers \"tendance\" (ex : influenceur, community manager) ont **peu de débouchés stables** (connaissance générale). Privilégie les compétences *transférables* (ex : data, soin, technique).\n- **Piège #2** : Les formations privées coûteuses (>5k€/an) dans le numérique **ne garantissent pas un emploi** (vérifie les taux d’insertion sur [InserJeunes](https://www.inserjeunes.education.gouv.fr)).\n\n---\n**Question pour toi** :\nQu’est-ce qui te motive le plus dans un métier ?\n- **Stabilité** (CDI, secteur porteur) → Plan A (santé/écologie).\n- **Innovation** (tech, IA) → Plan B (numérique).\n- **Sens** (impact social/environnemental) → Plan C (hybrides).\n- **Rapidité** (accès à l’emploi en <2 ans) → BTS/BUT en alternance.\n\n*(Sources : Dares 2023, France Stratégie \"Métiers 2030\", INSEE projections démographiques. Les salaires et taux d’insertion sont des estimations de marché — connaissance générale.)*",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 9,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "+500 000 emplois dans le soin/accompagnement",
+      "stat_value": 500000,
+      "stat_unit": "emplois",
+      "context_in_response": "Top 3 des dynamiques : +500 000 emplois dans le soin/accompagnement (vieillissement)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+300 000 dans les énergies renouvelables",
+      "stat_value": 300000,
+      "stat_unit": "emplois",
+      "context_in_response": "Top 3 des dynamiques : +300 000 dans les énergies renouvelables",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "+200 000 dans l’IA/data",
+      "stat_value": 200000,
+      "stat_unit": "emplois",
+      "context_in_response": "Top 3 des dynamiques : +200 000 dans l’IA/data (source : Dares/France Stratégie 2023)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 Français·e sur 4 aura +65 ans en 2030",
+      "stat_value": 1,
+      "stat_unit": "Français·e sur 4",
+      "context_in_response": "1 Français·e sur 4 aura +65 ans en 2030 (INSEE)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "200 000 postes non pourvus aujourd’hui dans le soin",
+      "stat_value": 200000,
+      "stat_unit": "postes",
+      "context_in_response": "200 000 postes non pourvus aujourd’hui dans le soin (source : Drees 2024)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "100% d’insertion",
+      "stat_value": 100,
+      "stat_unit": "%",
+      "context_in_response": "DE Infirmier (3 ans, IFSI publics gratuits) → 100% d’insertion (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Objectif 100% énergies renouvelables d’ici 2050",
+      "stat_value": 100,
+      "stat_unit": "%",
+      "context_in_response": "Objectif 100% énergies renouvelables d’ici 2050 (loi Climat)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "besoin de 15 000 technicien·nes/an",
+      "stat_value": 15000,
+      "stat_unit": "technicien·nes/an",
+      "context_in_response": "besoin de 15 000 technicien·nes/an (ADEME)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian : 2 100€ brut embauche",
+      "stat_value": 2100,
+      "stat_unit": "€ brut",
+      "context_in_response": "BUT Génie Thermique et Énergie (IUT) → salaire médian : 2 100€ brut embauche (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "80% des entreprises françaises manquent de compétences data",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "80% des entreprises françaises manquent de compétences data (Baromètre Syntec 2023)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire médian junior : 35-45k€ brut/an",
+      "stat_value": 35,
+      "stat_unit": "k€ brut/an",
+      "context_in_response": "Salaire médian junior : 35-45k€ brut/an (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux d’emploi : 95%",
+      "stat_value": 95,
+      "stat_unit": "%",
+      "context_in_response": "BUT Informatique (parcours IA/data) → taux d’emploi : 95% (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "30 000 postes vacants dans l’industrie",
+      "stat_value": 30000,
+      "stat_unit": "postes",
+      "context_in_response": "30 000 postes vacants dans l’industrie (UIMM 2024)",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.7798,
+      "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7793,
+      "nom": "Marché du travail prospective 2030 — région Pays de la Loire | Effectifs 2019 totaux : 1 561 926 per",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7791,
+      "nom": "Marché du travail prospective 2030 — région Normandie | Effectifs 2019 totaux : 1 271 569 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7787,
+      "nom": "Marché du travail prospective 2030 — région Bourgogne-Franche-Comté | Effectifs 2019 totaux : 1 070 ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7776,
+      "nom": "Marché du travail prospective 2030 — région Corse | Effectifs 2019 totaux : 132 156 personnes (toute",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.777,
+      "nom": "Marché du travail prospective 2030 — région Auvergne-Rhône-Alpes | Effectifs 2019 totaux : 3 259 115",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7759,
+      "nom": "Marché du travail prospective 2030 — région Île-de-France | Effectifs 2019 totaux : 5 808 956 person",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7752,
+      "nom": "Marché du travail prospective 2030 — région Bretagne | Effectifs 2019 totaux : 1 328 112 personnes (",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7728,
+      "nom": "Marché du travail prospective 2030 — région Occitanie | Effectifs 2019 totaux : 2 265 290 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7724,
+      "nom": "Marché du travail prospective 2030 — région Provence-Alpes-Côte d'Azur | Effectifs 2019 totaux : 1 9",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

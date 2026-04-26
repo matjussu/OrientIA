@@ -1,0 +1,209 @@
+{
+  "idx_global": 21,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q03_postes_aides_soignants",
+  "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "postes a pourvoir + métier specific",
+  "gap_target": null,
+  "elapsed_gen_s": 8.13,
+  "elapsed_fact_check_s": 6.72,
+  "answer_raw": "**TL;DR**\n1. **La demande en aides-soignants est massive** : entre 150 000 et 200 000 postes à pourvoir d’ici 2030 (connaissance générale).\n2. **Pénurie structurelle** : vieillissement de la population + départs en retraite non compensés.\n3. **Opportunités concrètes** : formations courtes (10-18 mois), débouchés immédiats, et passerelles vers d’autres métiers du soin.\n\n---\n\n### **Plan A — Devenir aide-soignant : formations et débouchés**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** — bac requis, 10-18 mois de formation (alternance possible), **100% public** · [fiche officielle](https://www.education.gouv.fr)\n*Pour toi : accès direct aux postes en Ehpad, hôpitaux, ou à domicile. Salaire médian embauche : ~1 600€ brut (connaissance générale).*\n\n### **Plan B — Évoluer vers d’autres métiers du soin**\n📍 **Passerelle vers Infirmier (DE)** — après 3 ans d’expérience, accès à la formation en 1 an (via VAE ou concours) · [fiche Santé.gouv](https://solidarites-sante.gouv.fr)\n*Pour toi : progression salariale (salaire infirmier : ~2 000€ brut) et responsabilités élargies.*\n\n### **Plan C — Se spécialiser ou changer de voie**\n📍 **Formations complémentaires** (ex : **Gestionnaire de cas en santé**, **Coordinateur en EHPAD**) — bac+2/3, en alternance · [fiche France Compétences](https://www.francecompetences.fr)\n*Pour toi : pour sortir des soins directs tout en restant dans le secteur médical (salaire ~1 800-2 200€ brut).*\n\n---\n**⚠ Attention aux pièges**\n- **Salaire de départ bas** : ~1 600€ brut (1 250€ net) — vérifie ta capacité à vivre avec ce revenu, surtout en région chère.\n- **Conditions physiques** : travail en horaires décalés (nuit/week-end) et charge émotionnelle forte (connaissance générale).\n- **Concurrence en Île-de-France** : pénurie globale, mais saturation dans certaines zones urbaines (privilégie les territoires ruraux ou les Ehpad).\n\n---\n**Question pour toi :**\nAs-tu une préférence entre **l’accès rapide à l’emploi** (aide-soignant), **la progression de carrière** (infirmier), ou **un métier moins physique** (coordination/gestion) ? Cela peut orienter vers des formations différentes.",
+  "answer_annotated": "**TL;DR**\n1. **La demande en aides-soignants est massive** : entre 150 000 et 200 000 postes à pourvoir d’ici 2030 (connaissance générale).\n2. **Pénurie structurelle** : vieillissement de la population + départs en retraite non compensés.\n3. **Opportunités concrètes** : formations courtes (10-18 mois), débouchés immédiats, et passerelles vers d’autres métiers du soin.\n\n---\n\n### **Plan A — Devenir aide-soignant : formations et débouchés**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** — bac requis, 10-18 mois de formation *(non vérifié dans les sources)* (alternance possible), **100% public** · [fiche officielle](https://www.education.gouv.fr)\n*Pour toi : accès direct aux postes en Ehpad, hôpitaux, ou à domicile. Salaire médian embauche : ~1 600€ brut (connaissance générale).*\n\n### **Plan B — Évoluer vers d’autres métiers du soin**\n📍 **Passerelle vers Infirmier (DE)** — après 3 ans d’expérience, accès à la formation en 1 an (via VAE ou concours) · [fiche Santé.gouv](https://solidarites-sante.gouv.fr)\n*Pour toi : progression salariale (salaire infirmier : ~2 000€ brut *(non vérifié dans les sources)*) et responsabilités élargies.*\n\n### **Plan C — Se spécialiser ou changer de voie**\n📍 **Formations complémentaires** (ex : **Gestionnaire de cas en santé**, **Coordinateur en EHPAD**) — bac+2/3, en alternance · [fiche France Compétences](https://www.francecompetences.fr)\n*Pour toi : pour sortir des soins directs tout en restant dans le secteur médical (salaire ~1 800-2 200€ brut *(non vérifié dans les sources)*).*\n\n---\n**⚠ Attention aux pièges**\n- **Salaire de départ bas** : ~1 600€ brut (1 250€ net) — vérifie ta capacité à vivre avec ce revenu, surtout en région chère.\n- **Conditions physiques** : travail en horaires décalés (nuit/week-end) et charge émotionnelle forte (connaissance générale).\n- **Concurrence en Île-de-France** : pénurie globale, mais saturation dans certaines zones urbaines (privilégie les territoires ruraux ou les Ehpad).\n\n---\n**Question pour toi :**\nAs-tu une préférence entre **l’accès rapide à l’emploi** (aide-soignant), **la progression de carrière** (infirmier), ou **un métier moins physique** (coordination/gestion) ? Cela peut orienter vers des formations différentes.",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 4,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "entre 150 000 et 200 000 postes à pourvoir d’ici 2030",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "La demande en aides-soignants est massive : entre 150 000 et 200 000 postes à pourvoir d’ici 2030 (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "10-18 mois de formation",
+      "stat_value": null,
+      "stat_unit": null,
+      "context_in_response": "Diplôme d’État d’Aide-Soignant (DEAS) — bac requis, 10-18 mois de formation (alternance possible), 100% public.",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire médian embauche : ~1 600€ brut",
+      "stat_value": 1600,
+      "stat_unit": "€ brut",
+      "context_in_response": "Salaire médian embauche : ~1 600€ brut (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire infirmier : ~2 000€ brut",
+      "stat_value": 2000,
+      "stat_unit": "€ brut",
+      "context_in_response": "progression salariale (salaire infirmier : ~2 000€ brut) et responsabilités élargies.",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "salaire ~1 800-2 200€ brut",
+      "stat_value": null,
+      "stat_unit": "€ brut",
+      "context_in_response": "pour sortir des soins directs tout en restant dans le secteur médical (salaire ~1 800-2 200€ brut).",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "Salaire de départ bas : ~1 600€ brut (1 250€ net)",
+      "stat_value": 1600,
+      "stat_unit": "€ brut",
+      "context_in_response": "Salaire de départ bas : ~1 600€ brut (1 250€ net) — vérifie ta capacité à vivre avec ce revenu, surtout en région chère.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.73",
+      "stat_value": 73,
+      "stat_unit": "%",
+      "context_in_response": "Donnée issue des fiches sources (non citée explicitement dans la réponse).",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context_in_response": "Donnée issue des fiches sources (non citée explicitement dans la réponse).",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.66",
+      "stat_value": 66,
+      "stat_unit": "%",
+      "context_in_response": "Donnée issue des fiches sources (non citée explicitement dans la réponse).",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1410",
+      "stat_value": 1410,
+      "stat_unit": "€",
+      "context_in_response": "Donnée issue des fiches sources (non citée explicitement dans la réponse).",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 0.8389,
+      "nom": "Aide-Soignant",
+      "etablissement": "MINISTERE DE LA SANTE ET DE LA PREVENTION",
+      "niveau": "bac",
+      "phase": "initial",
+      "source": "rncp",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8275,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "POUR LE DEVELOPPEMENT DE L APPRENTISSAGE DES PROFESSIONS DU SECTEUR SANITAIRE ET SOCIAL",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8242,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "CENTRE GERONTOLOGIQUE DEPARTEMENTAL",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8235,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "ASSISTEAL FORMATION",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8235,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "ASSISTEAL FORMATION",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8224,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "POLE FORMATION SANTE",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.821,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "LYCEE PROFESSIONNEL MARIE CURIE - LYCEE DES METIERS DU COMMERCE ET DES SERVICES A LA PERSONNE",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.8209,
+      "nom": "AIDE-SOIGNANT (DIPLÔME D'ETAT)",
+      "etablissement": "SOINS SERVICE",
+      "niveau": "bac",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "sante",
+      "domain": "formation"
+    },
+    {
+      "score": 0.7734,
+      "nom": "Métier 2030 (DARES) — FAP V0Z : Aides-soignants | Effectifs 2019 France : 764 466 personnes | Créati",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    },
+    {
+      "score": 0.7717,
+      "nom": "Marché du travail prospective 2030 — région Grand Est | Effectifs 2019 totaux : 2 064 238 personnes ",
+      "etablissement": "",
+      "niveau": null,
+      "phase": null,
+      "source": "dares_metiers_2030",
+      "domaine": null,
+      "domain": "metier_prospective"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "idx_global": 25,
+  "suite": "dares_dedie",
+  "persona_id": null,
+  "query_id": "q07_niveau_tension_enseignants",
+  "query_text": "Quel est le niveau de tension 2019 pour le métier d'enseignant ?",
+  "query_type": null,
+  "scope": null,
+  "pattern_target": "niveau de tension YYYY",
+  "gap_target": null,
+  "elapsed_gen_s": 8.66,
+  "elapsed_fact_check_s": 4.41,
+  "answer_raw": "**TL;DR**\n1. Le métier d’enseignant était en **tension modérée en 2019**, avec des disparités fortes selon les disciplines et les académies.\n2. Les besoins étaient (et restent) **critiques en mathématiques, physique-chimie, allemand, et dans les zones rurales ou prioritaires**.\n3. Pour une analyse actualisée, priorise les **sources récentes** (DEPP, Dares) ou les rapports académiques locaux.\n\n---\n\n### **Plan A — Données 2019 : tension par discipline et territoire**\n- **Disciplines en tension forte** (connaissance générale) :\n  Mathématiques, physique-chimie, allemand, lettres classiques (latin/grec), et technologies industrielles. Les académies de **Créteil, Versailles, et Aix-Marseille** recrutaient activement, avec des postes non pourvus en fin d’année.\n  *Source : Rapports Dares/DEPP 2019-2020 (estimations, non vérifiées dans les fiches fournies).*\n\n- **Zones géographiques critiques** (connaissance générale) :\n  Les **académies rurales** (Limoges, Clermont-Ferrand, Reims) et les **REP/REP+** (quartiers prioritaires) peinaient à attirer des candidats, malgré des primes d’installation.\n\n### **Plan B — Évolution depuis 2019 : tendances récentes**\n- **Aggravation en 2023-2024** (connaissance générale) :\n  La tension s’est étendue à **l’anglais, l’espagnol**, et même au **premier degré** (professeurs des écoles), avec un taux de postes non pourvus dépassant **10% dans certaines académies** (ex : Versailles, Lyon).\n  *Exemple concret* : En 2023, **1 600 postes** n’ont pas trouvé preneur en mathématiques au concours externe (source : Sénat, rapport sur l’éducation nationale).\n- **Solutions d’urgence** :\n  Recrutement de **contractuels** (sans concours) et **détachements** d’enseignants d’autres disciplines.\n\n### **Plan C — Comment vérifier la tension actuelle ?**\n1. **Consulte les rapports officiels** :\n   - [Publication DEPP \"Les enseignants en 2023\"](https://www.education.gouv.fr) (recherche \"note d’information DEPP\").\n   - [Baromètre Dares des métiers en tension](https://dares.travail-emploi.gouv.fr).\n2. **Contacte les rectorats** :\n   Les académies publient des **listes de postes vacants** (ex : [Académie de Toulouse](https://www.ac-toulouse.fr)).\n3. **Outils pratiques** :\n   - [Onisep \"Métiers en tension\"](https://www.onisep.fr) (filtre par région).\n   - [Pôle Emploi \"La Bonne Boite\"](https://labonneboite.pole-emploi.fr) (mots-clés : \"professeur certifié\", \"professeur des écoles\").\n\n---\n**⚠ Attention aux pièges**\n- **Données obsolètes** : Les chiffres de 2019 sous-estiment la crise actuelle (démission massive post-Covid, baisse des vocations).\n- **Disparités locales** : Une académie en tension pour les maths peut être saturée en histoire-géo. **Vérifie toujours par discipline/zone**.\n- **Contractuels ≠ stabilité** : Ces postes précaires (souvent renouvelés) ne garantissent pas une titularisation.\n\n---\n**Question pour toi** :\nAs-tu une discipline ou une académie précise en tête ? Je peux t’aider à croiser les données locales (ex : besoins en SVT à Bordeaux vs Lille). Sinon, préfères-tu explorer les **voies d’accès** (concours, contractuel, reconversion) ?",
+  "answer_annotated": "**TL;DR**\n1. Le métier d’enseignant était en **tension modérée en 2019**, avec des disparités fortes selon les disciplines et les académies.\n2. Les besoins étaient (et restent) **critiques en mathématiques, physique-chimie, allemand, et dans les zones rurales ou prioritaires**.\n3. Pour une analyse actualisée, priorise les **sources récentes** (DEPP, Dares) ou les rapports académiques locaux.\n\n---\n\n### **Plan A — Données 2019 : tension par discipline et territoire**\n- **Disciplines en tension forte** (connaissance générale) :\n  Mathématiques, physique-chimie, allemand, lettres classiques (latin/grec), et technologies industrielles. Les académies de **Créteil, Versailles, et Aix-Marseille** recrutaient activement, avec des postes non pourvus en fin d’année.\n  *Source : Rapports Dares/DEPP 2019-2020 (estimations, non vérifiées dans les fiches fournies).*\n\n- **Zones géographiques critiques** (connaissance générale) :\n  Les **académies rurales** (Limoges, Clermont-Ferrand, Reims) et les **REP/REP+** (quartiers prioritaires) peinaient à attirer des candidats, malgré des primes d’installation.\n\n### **Plan B — Évolution depuis 2019 : tendances récentes**\n- **Aggravation en 2023-2024** (connaissance générale) :\n  La tension s’est étendue à **l’anglais, l’espagnol**, et même au **premier degré** (professeurs des écoles), avec un taux de postes non pourvus dépassant **10% dans certaines académies** (ex : Versailles, Lyon).\n  *Exemple concret* : En 2023, **1 600 postes *(non vérifié dans les sources)*** n’ont pas trouvé preneur en mathématiques au concours externe (source : Sénat, rapport sur l’éducation nationale).\n- **Solutions d’urgence** :\n  Recrutement de **contractuels** (sans concours) et **détachements** d’enseignants d’autres disciplines.\n\n### **Plan C — Comment vérifier la tension actuelle ?**\n1. **Consulte les rapports officiels** :\n   - [Publication DEPP \"Les enseignants en 2023\"](https://www.education.gouv.fr) (recherche \"note d’information DEPP\").\n   - [Baromètre Dares des métiers en tension](https://dares.travail-emploi.gouv.fr).\n2. **Contacte les rectorats** :\n   Les académies publient des **listes de postes vacants** (ex : [Académie de Toulouse](https://www.ac-toulouse.fr)).\n3. **Outils pratiques** :\n   - [Onisep \"Métiers en tension\"](https://www.onisep.fr) (filtre par région).\n   - [Pôle Emploi \"La Bonne Boite\"](https://labonneboite.pole-emploi.fr) (mots-clés : \"professeur certifié\", \"professeur des écoles\").\n\n---\n**⚠ Attention aux pièges**\n- **Données obsolètes** : Les chiffres de 2019 sous-estiment la crise actuelle (démission massive post-Covid, baisse des vocations).\n- **Disparités locales** : Une académie en tension pour les maths peut être saturée en histoire-géo. **Vérifie toujours par discipline/zone**.\n- **Contractuels ≠ stabilité** : Ces postes précaires (souvent renouvelés) ne garantissent pas une titularisation.\n\n---\n**Question pour toi** :\nAs-tu une discipline ou une académie précise en tête ? Je peux t’aider à croiser les données locales (ex : besoins en SVT à Bordeaux vs Lille). Sinon, préfères-tu explorer les **voies d’accès** (concours, contractuel, reconversion) ?",
+  "annotated_differs": true,
+  "n_sources": 10,
+  "fact_check_error": null,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 4,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "tension modérée en 2019",
+      "stat_value": null,
+      "stat_unit": "qualitatif",
+      "context_in_response": "Le métier d’enseignant était en tension modérée en 2019",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "10%",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "context_in_response": "taux de postes non pourvus dépassant 10% dans certaines académies",
+      "verdict": "unsourced_with_disclaimer",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "1 600 postes",
+      "stat_value": 1600,
+      "stat_unit": "postes",
+      "context_in_response": "1 600 postes n’ont pas trouvé preneur en mathématiques au concours externe",
+      "verdict": "unsourced_unsafe",
+      "source_fiche_excerpt": null
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "taux",
+      "context_in_response": "taux_emploi_3ans: 0.85",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "taux",
+      "context_in_response": "taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "taux",
+      "context_in_response": "taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context_in_response": "salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_fiche_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "sources_top10": [
+    {
+      "score": 1.0052,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 1ER DEGRE — Professorat des éco",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.999,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 1ER DEGRE — Professorat des éco",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9958,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 2E DEGRE — Anglais",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9957,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 2E DEGRE — Espagnol",
+      "etablissement": "Université Paris-Est Créteil",
+      "niveau": "bac+5",
+      "phase": "master",
+      "source": "monmaster",
+      "domaine": "sciences_humaines",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    },
+    {
+      "score": 0.9162,
+      "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES ET INGENIERIE DE LA F",
+      "etablissement": "UNIVERSITE TOULOUSE II",
+      "niveau": "bac+5",
+      "phase": "reorientation",
+      "source": "labonnealternance",
+      "domaine": "education",
+      "domain": "formation"
+    }
+  ]
+}
