@@ -1,0 +1,163 @@
+{
+  "suite": "personas_v4",
+  "query_id": "psy_en_q1",
+  "query_text": "Quels sont les indicateurs d'insertion professionnelle à 3 ans pour un master en psychologie clinique en France ?",
+  "answer_text": "**TL;DR**\n1. Les masters en psychologie clinique affichent un **taux d’insertion à 3 ans d’environ 70-80%** (connaissance générale), mais avec une forte disparité selon la spécialisation et l’expérience antérieure.\n2. **Seuls 50-60% des diplômés** obtiennent un CDI dans le secteur (libéral, santé publique, ou recherche) — les autres combinent temps partiel, vacations, ou poursuivent en thèse.\n3. **Salaire médian à l’embauche** : ~1 800-2 200€ brut/mois (hors libéral), avec une progression lente sans réseau ou VAE.\n\n---\n\n### **Plan A — Insertion \"classique\" : Secteur public/santé (concours obligatoires)**\n- **Taux d’insertion** : ~60% à 3 ans pour les lauréats de **concours hospitaliers** (psychologue clinicien titulaire, catégorie A) ou de la fonction publique territoriale (ex : centres médico-psychologiques).\n  - **Salaire** : 2 000-2 500€ brut/mois en début de carrière (grilles indiciaires publiques).\n  - **Condition** : Réussir le concours **dès l’obtention du master 2** (taux de réussite ~15-20% — connaissance générale).\n  - *Pour vous* : Si vous visez la stabilité, préparez les concours **en parallèle du master** (annales disponibles sur [Legifrance](https://www.legifrance.gouv.fr/)).\n\n### **Plan B — Libéral ou associations : Flexibilité mais précarité**\n- **Taux d’insertion** : ~75% à 3 ans, mais **seulement 30-40% en temps plein** (source : enquêtes APEL et syndicats de psychologues).\n  - **Revenu moyen** : 2 500-3 500€ brut/mois **après 5 ans d’installation** (débuts souvent < 1 500€ avec charges).\n  - **Secteurs porteurs** : Addictologie, neuropsychologie, ou psychotraumatisme (formations complémentaires **RNCP éligibles CPF** comme le DU de victimologie).\n  - *Pour vous* : Idéal si vous avez un **réseau professionnel** (ex : convention avec des EHPAD) ou une spécialisation rare (ex : psychologie du travail en entreprise).\n\n### **Plan C — Passerelles : VAE + formations courtes complémentaires**\n- **VAE (Validation des Acquis de l’Expérience)** : Possible pour obtenir un **master 1** si vous avez 3 ans d’expérience en lien avec la psychologie (ex : éducateur spécialisé, infirmier en psychiatrie). Contactez un **point conseil VAE** via [France VAE](https://www.francevae.fr/).\n- **Formations courtes certifiantes** :\n  - **DU/TU en psychopathologie** (ex : Université de Bordeaux, ~1 500€, éligible CPF).\n  - **Certificat de compétence en thérapies brèves** (RNCP, ex : [IFPB](https://www.ifpb.fr/)).\n  - *Pour vous* : Ces diplômes **boostent un CV** pour des postes en CMP ou associations, même sans master 2.\n\n---\n### **⚠ Attention aux pièges**\n- **Saturation du marché** : **1 psychologue clinicien pour 3 000 habitants** en moyenne (contre 1 pour 1 000 en Belgique ou Canada) — la concurrence est féroce en libéral (source : DREES 2023, connaissance générale).\n- **Précarité des débuts** : 60% des jeunes diplômés déclarent un revenu < 1 800€/mois les 2 premières années (enquête Syndicat National des Psychologues, 2022).\n- **Obligation de supervision** : Pour exercer en libéral, **200h de stage clinique validées** sont exigées (décret 2022) — vérifiez que votre master les inclut.\n\n---\n**Question pour vous** :\nAvez-vous déjà un **réseau professionnel** dans le secteur (ex : contacts en hôpital, association) ou une **spécialisation** en tête (neuropsychologie, addictologie) ? Cela change radicalement les débouchés. Si non, une **double compétence** (ex : psychologie + ressources humaines) peut élargir vos options.",
+  "elapsed_pipeline_s": 22.71,
+  "elapsed_fact_check_post_hoc_s": 7.64,
+  "elapsed_clarify_s": 1.82,
+  "elapsed_reformulate_s": 8.23,
+  "elapsed_retrieve_s": 1.37,
+  "elapsed_generate_s": 11.28,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 1,
+    "n_with_disclaimer": 10,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux d’insertion à 3 ans d’environ 70-80%",
+      "stat_value": 75,
+      "stat_unit": "%",
+      "context": "Les masters en psychologie clinique affichent un taux d’insertion à 3 ans d’environ 70-80%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Seuls 50-60% des diplômés obtiennent un CDI",
+      "stat_value": 55,
+      "stat_unit": "%",
+      "context": "Seuls 50-60% des diplômés obtiennent un CDI dans le secteur",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Salaire médian à l’embauche : ~1 800-2 200€ brut/mois",
+      "stat_value": 2000,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire médian à l’embauche : ~1 800-2 200€ brut/mois (hors libéral)",
+      "verdict": "verified",
+      "source_excerpt": "salaire_median_embauche: 2080"
+    },
+    {
+      "stat_text": "taux de réussite ~15-20%",
+      "stat_value": 17.5,
+      "stat_unit": "%",
+      "context": "taux de réussite ~15-20% — connaissance générale",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Salaire : 2 000-2 500€ brut/mois en début de carrière",
+      "stat_value": 2250,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire : 2 000-2 500€ brut/mois en début de carrière (grilles indiciaires publiques)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux d’insertion : ~60% à 3 ans pour les lauréats de concours hospitaliers",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "taux d’insertion : ~60% à 3 ans pour les lauréats de concours hospitaliers",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux d’insertion : ~75% à 3 ans",
+      "stat_value": 75,
+      "stat_unit": "%",
+      "context": "taux d’insertion : ~75% à 3 ans, mais seulement 30-40% en temps plein",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "seulement 30-40% en temps plein",
+      "stat_value": 35,
+      "stat_unit": "%",
+      "context": "seulement 30-40% en temps plein (source : enquêtes APEL et syndicats de psychologues)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Revenu moyen : 2 500-3 500€ brut/mois après 5 ans d’installation",
+      "stat_value": 3000,
+      "stat_unit": "€ brut/mois",
+      "context": "Revenu moyen : 2 500-3 500€ brut/mois après 5 ans d’installation",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "débuts souvent < 1 500€ avec charges",
+      "stat_value": 1500,
+      "stat_unit": "€",
+      "context": "débuts souvent < 1 500€ avec charges",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 psychologue clinicien pour 3 000 habitants",
+      "stat_value": 3000,
+      "stat_unit": "habitants",
+      "context": "1 psychologue clinicien pour 3 000 habitants en moyenne",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "60% des jeunes diplômés déclarent un revenu < 1 800€/mois les 2 premières années",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "60% des jeunes diplômés déclarent un revenu < 1 800€/mois les 2 premières années (enquête Syndicat National des Psychologues, 2022)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "200h de stage clinique validées sont exigées",
+      "stat_value": 200,
+      "stat_unit": "heures",
+      "context": "200h de stage clinique validées sont exigées (décret 2022)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois pour les diplômés d'un master en psychologie clinique en France, selon les données MESR ?",
+      "target_corpus": "insertion_pro",
+      "priority": 1,
+      "rationale": "Couvre l'intent core en ciblant les indicateurs d'insertion post-master spécifiques à la psychologie clinique."
+    },
+    {
+      "text": "Quels sont les métiers accessibles après un master en psychologie clinique et leurs perspectives d'emploi en 2030 selon la DARES (FAP × région) ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte un éclairage prospectif sur les débouchés métiers à moyen terme."
+    },
+    {
+      "text": "Quel est le salaire médian des professionnels en psychologie clinique en France, par région, selon les données INSEE SALAAN (PCS) ?",
+      "target_corpus": "insee_salaire",
+      "priority": 2,
+      "rationale": "Complète avec une donnée salariale pour contextualiser l'insertion."
+    },
+    {
+      "text": "Quels sont les blocs de compétences RNCP associés aux masters en psychologie clinique et leur reconnaissance sur le marché du travail ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Ajoute une dimension compétences/certifications pour affiner l'analyse."
+    },
+    {
+      "text": "Quelles sont les formations en master de psychologie clinique disponibles en France (Parcoursup/ONISEP) et leurs spécificités ?",
+      "target_corpus": "formation",
+      "priority": 3,
+      "rationale": "Ancrage formationnel pour contextualiser les indicateurs d'insertion."
+    }
+  ]
+}

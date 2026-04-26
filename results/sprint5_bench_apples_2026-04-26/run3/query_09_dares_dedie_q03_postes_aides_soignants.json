@@ -1,0 +1,104 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q03_postes_aides_soignants",
+  "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. **Besoin massif** : la France manquera de 200 000 à 300 000 aides-soignants d’ici 2030 (connaissance générale, projections DREES/DARES).\n2. **Recrutements annuels** : ~50 000 postes à pourvoir **par an** (départs en retraite + création de postes en EHPAD/domicile).\n3. **Opportunités** : formations courtes (10-18 mois), débouchés immédiats, et passerelles vers infirmier possible.\n\n---\n\n### **Plan A — Voie directe : DEAS (Diplôme d’État d’Aide-Soignant)**\n- **Formation** : 10 à 18 mois (alternance possible), **gratuite** en institut public (IFAS), rémunérée en apprentissage.\n- **Débouchés** : 90%+ d’insertion sous 6 mois (secteurs : hôpitaux, EHPAD, domicile).\n- **Pourquoi ?** : Accès sans bac (concours ou sélection sur dossier), salaires en hausse (salaire médian embauche : ~1 700€ brut, source DREES 2023).\n\n### **Plan B — Spécialisation : Aide-soignant en milieu spécifique**\n- **Secteurs porteurs** : Psychiatrie, pédiatrie, ou bloc opératoire (formations complémentaires de 3 à 6 mois).\n- **Avantage** : Salaire +10-15% (estimation, connaissance générale) et meilleure stabilité.\n- **Exemple** : Certificat \"Aide-soignant en gériatrie\" (demande explosive avec vieillissement population).\n\n### **Plan C — Passerelle vers infirmier (DE)**\n- **Parcours** : Après 3 ans d’expérience, accès à la formation infirmière (DE) **sans concours** (via VAP ou parcours spécifique).\n- **Gain** : Salaire presque doublé (médian infirmier : ~2 400€ brut, source DREES).\n- **Attention** : Formation infirmière = 3 ans (contre 1 an pour le DEAS).\n\n---\n⚠ **Attention aux pièges**\n- **Prérequis** : Certains IFAS exigent le bac ou un diplôme niveau 3 (ex : CAP Petite Enfance). Vérifie les conditions locales.\n- **Conditions de travail** : Horaires décalés (nuit/week-end) fréquents en EHPAD/hôpital — à anticiper.\n- **Formations privées** : Coût élevé (3 000–8 000€) pour des diplômes identiques au public. Privilégie **toujours** les IFAS publics ou l’apprentissage.\n\n---\n**Question pour toi** :\nAs-tu une préférence pour un secteur (personnes âgées, handicap, hôpitaux) ou une région ? Cela peut orienter vers des formations ou aides locales (ex : bourses régionales pour le DEAS).",
+  "elapsed_pipeline_s": 14.78,
+  "elapsed_fact_check_post_hoc_s": 3.41,
+  "elapsed_clarify_s": 2.32,
+  "elapsed_reformulate_s": 4.85,
+  "elapsed_retrieve_s": 0.24,
+  "elapsed_generate_s": 7.36,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 0,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "200 000 à 300 000 aides-soignants manquants d’ici 2030",
+      "stat_value": "200000-300000",
+      "stat_unit": "effectif",
+      "context": "la France manquera de [X] aides-soignants d’ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~50 000 postes à pourvoir par an",
+      "stat_value": "50000",
+      "stat_unit": "postes/an",
+      "context": "~50 000 postes à pourvoir par an (départs en retraite + création de postes en EHPAD/domicile)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "90%+ d’insertion sous 6 mois",
+      "stat_value": "90",
+      "stat_unit": "%",
+      "context": "Débouchés : [X] d’insertion sous 6 mois",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian embauche : ~1 700€ brut",
+      "stat_value": "1700",
+      "stat_unit": "€ brut",
+      "context": "salaire médian embauche : [X]",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Salaire +10-15%",
+      "stat_value": "10-15",
+      "stat_unit": "%",
+      "context": "Salaire [X] (estimation, connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian infirmier : ~2 400€ brut",
+      "stat_value": "2400",
+      "stat_unit": "€ brut",
+      "context": "salaire médian infirmier : [X]",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Coût élevé (3 000–8 000€) pour des diplômes identiques au public",
+      "stat_value": "3000-8000",
+      "stat_unit": "€",
+      "context": "Coût élevé ([X]) pour des diplômes identiques au public",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "insee_salaire",
+    "metier",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Nombre de postes à pourvoir pour les aides-soignants d'ici 2030 selon les projections DARES Métiers 2030.",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Intent core : demande spécifique sur les projections de postes à pourvoir dans le secteur santé."
+    },
+    {
+      "text": "Fiche métier ONISEP détaillée pour les aides-soignants : missions, environnement de travail et perspectives.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte complémentaire sur le métier pour enrichir l'analyse des besoins en recrutement."
+    },
+    {
+      "text": "Salaire médian des aides-soignants en France selon les données INSEE SALAAN par PCS et région.",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Information utile pour contextualiser l'attractivité du métier."
+    }
+  ]
+}

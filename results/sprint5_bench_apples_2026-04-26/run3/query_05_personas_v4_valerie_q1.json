@@ -1,0 +1,146 @@
+{
+  "suite": "personas_v4",
+  "query_id": "valerie_q1",
+  "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+  "answer_text": "**TL;DR**\n1. Une année en école de commerce privée coûte **5 000 à 15 000 €** (hors top 5), contre **0 à 600 €** pour une licence publique.\n2. Les licences pro (bac+3) publiques sont gratuites ou quasi-gratuites, avec des frais d’inscription limités à **243 €/an** (2025).\n3. Le coût ne reflète pas toujours la qualité : certaines licences pro offrent une insertion pro équivalente à des écoles privées moins prestigieuses.\n\n---\n\n### **Plan A — Licence publique (bac+3) : coût quasi-nul, insertion solide**\n📍 **Licence pro Métiers du commerce international** (ex : [Université de Bordeaux](https://www.onisep.fr/http/redirection/formation/slug/FOR.11370)) — **0 à 243 €/an**, alternance possible (rémunérée).\n*Pour toi : idéal si tu veux un diplôme reconnu sans dette, avec des débouchés en logistique, import-export ou achats.*\n\n### **Plan B — École de commerce privée (bac+3/5) : coût élevé, mais réseaux**\n*(connaissance générale)*\n- **Bachelor (bac+3)** : 6 000 à 12 000 €/an (ex : INSEEC, SKEMA).\n- **Programme Grande École (bac+5)** : 10 000 à 20 000 €/an (ex : HEC, ESSEC).\n*Pour toi : pertinent si tu vises un secteur très sélectif (finance, luxe) ou un réseau alumni puissant. Sinon, le ROI est discutable.*\n\n### **Plan C — Alternatives hybrides : coût maîtrisé + valeur ajoutée**\n*(connaissance générale)*\n- **IAE (écoles universitaires de management)** : 0 à 5 000 €/an pour un diplôme grade Master (ex : IAE Paris, Aix-Marseille).\n- **Alternance en école privée** : coût pris en charge par l’entreprise + salaire (ex : bachelor en alternance à l’ESG).\n*Pour toi : compromis optimal si tu veux éviter l’endettement tout en accédant à des formations professionnalisantes.*\n\n---\n**⚠ Attention aux pièges**\n- **Marketing agressif** : certaines écoles privées peu connues facturent 10 000 €/an sans garantie d’insertion. Vérifie leur **taux d’emploi à 6 mois** (source Céreq ou éduscol).\n- **Alternance ≠ gratuité** : même en alternance, certaines écoles privées demandent des **frais de dossier** (500 à 1 500 €).\n- **Licences pro ≠ licences générales** : les licences pro (1 an) sont plus professionnalisantes que les licences classiques (3 ans). Bien choisir son parcours !\n\n---\n**Question pour toi :**\nTon critère prioritaire, c’est le **coût**, la **réputation du diplôme**, ou l’**accès rapide à l’emploi** ? Cela peut radicalement changer les options à privilégier.",
+  "elapsed_pipeline_s": 18.99,
+  "elapsed_fact_check_post_hoc_s": 5.16,
+  "elapsed_clarify_s": 1.9,
+  "elapsed_reformulate_s": 7.1,
+  "elapsed_retrieve_s": 0.39,
+  "elapsed_generate_s": 9.6,
+  "fact_check_summary": {
+    "n_stats_total": 11,
+    "n_verified": 5,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "5 000 à 15 000 €",
+      "stat_value": 5000,
+      "stat_unit": "€",
+      "context": "Une année en école de commerce privée coûte",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0 à 600 €",
+      "stat_value": 600,
+      "stat_unit": "€",
+      "context": "contre pour une licence publique.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "243 €/an",
+      "stat_value": 243,
+      "stat_unit": "€/an",
+      "context": "avec des frais d’inscription limités à",
+      "verdict": "verified",
+      "source_excerpt": "Frais d'inscription limités à 243 €/an (2025) pour les licences pro publiques (source : réglementation nationale)."
+    },
+    {
+      "stat_text": "6 000 à 12 000 €/an",
+      "stat_value": 6000,
+      "stat_unit": "€/an",
+      "context": "Bachelor (bac+3) :",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10 000 à 20 000 €/an",
+      "stat_value": 10000,
+      "stat_unit": "€/an",
+      "context": "Programme Grande École (bac+5) :",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0 à 5 000 €/an",
+      "stat_value": 5000,
+      "stat_unit": "€/an",
+      "context": "IAE (écoles universitaires de management) :",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "500 à 1 500 €",
+      "stat_value": 500,
+      "stat_unit": "€",
+      "context": "certaines écoles privées demandent des frais de dossier",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0.86",
+      "stat_value": 0.86,
+      "stat_unit": "",
+      "context": "taux_emploi_3ans",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, ...}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context": "taux_emploi_6ans",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context": "taux_cdi",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_cdi\": 0.83, ...}"
+    },
+    {
+      "stat_text": "1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "salaire_median_embauche",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"salaire_median_embauche\": 1740, ...}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Coût annuel moyen d'une année en école de commerce privée en France (frais de scolarité, frais annexes) selon le catalogue Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core sur le coût des écoles de commerce privées."
+    },
+    {
+      "text": "Coût annuel moyen d'une licence publique en France (frais d'inscription, frais annexes) selon les données Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core sur le coût des licences publiques."
+    },
+    {
+      "text": "Comparaison des aides financières disponibles (bourses, prêts, exonérations) pour les écoles de commerce privées vs licences publiques.",
+      "target_corpus": "multi",
+      "priority": 2,
+      "rationale": "Apporte un contexte complémentaire sur les options de financement."
+    },
+    {
+      "text": "Salaire médian à l'embauche après une école de commerce privée vs après une licence publique (données INSEE et APEC).",
+      "target_corpus": "multi",
+      "priority": 3,
+      "rationale": "Nice-to-have pour contextualiser le retour sur investissement."
+    },
+    {
+      "text": "Taux d'insertion professionnelle à 6, 12 et 18 mois après une école de commerce privée vs une licence publique (données MESR).",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Complète la comparaison avec des données d'insertion."
+    }
+  ]
+}

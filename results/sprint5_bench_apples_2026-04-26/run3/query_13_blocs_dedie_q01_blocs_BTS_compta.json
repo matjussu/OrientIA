@@ -1,0 +1,63 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q01_blocs_BTS_compta",
+  "query_text": "Quels blocs de compétences valide le BTS comptabilité ?",
+  "answer_text": "**TL;DR**\n1. Le BTS Comptabilité et Gestion (CG) valide des blocs de compétences **centrés sur la gestion financière, la fiscalité, et les outils numériques** — alignés sur les besoins des PME et cabinets.\n2. Ces blocs sont **directement utilisables** pour travailler (comptable, assistant de gestion) ou poursuivre en licence pro/école de commerce.\n3. Attention : certains blocs (ex : \"contrôle de gestion\") sont plus valorisés que d’autres en insertion pro.\n\n---\n\n### **Plan A — Blocs de compétences *cœur de métier* (prioritaires pour l’emploi)**\nLe BTS CG valide **5 blocs principaux** (référentiel officiel Éducation nationale, 2021) :\n1. **Gestion comptable, fiscale et sociale** : tenue de livres, déclarations fiscales, paie *(le plus demandé en entreprise — connaissance générale)*.\n2. **Contrôle de gestion et analyse financière** : budgets, tableaux de bord, coûts *(valorisé pour évoluer vers responsable comptable)*.\n3. **Gestion des obligations légales** : normes juridiques, audit interne *(critique pour les cabinets comptables)*.\n4. **Outils numériques** : logiciels de compta (Sage, Ciel), Excel avancé, dématérialisation *(compétence transversale très recherchée)*.\n5. **Communication professionnelle** : rédaction de notes, relation clients/fournisseurs *(sous-estimé mais clé en PME)*.\n\n*Pour toi* : Ces blocs permettent de **travailler immédiatement** (70% des diplômés en poste sous 6 mois — *estimation marché, connaissance générale*) ou de poursuivre en **licence pro métiers de la comptabilité** (ex : Licence Pro Gestion Comptable et Financière).\n\n---\n\n### **Plan B — Blocs *complémentaires* (pour se spécialiser ou pivoter)**\n- **Bloc \"Anglais professionnel\"** : obligatoire, mais souvent minimaliste (niveau B1 visé). *À renforcer en autoformation pour les cabinets internationaux*.\n- **Bloc \"Culture économique et managériale\"** : utile pour une poursuite en **école de commerce** (admissions parallèles) ou un poste en **contrôle de gestion**.\n- **Bloc \"Projet de développement commercial\"** : rare dans les programmes, mais certains BTS (en alternance) l’incluent pour préparer à des rôles hybrides (ex : comptable + assistant commercial).\n\n*Pour toi* : Si tu vises un **poste évolutif** (vers expert-comptable par exemple), mise sur les blocs **contrôle de gestion + anglais**. Pour un **pivot vers le conseil**, ajoute des certifications (ex : SAP — *connaissance générale*).\n\n---\n### **Plan C — Valoriser ses blocs hors diplôme (VAE, certifications)**\nLes blocs du BTS CG peuvent être **reconnus séparément** via :\n- **La VAE** (Validation des Acquis de l’Expérience) : si tu as déjà travaillé en compta, certains blocs peuvent être validés sans repasser l’examen.\n- **Certifications complémentaires** :\n  - **DSCG** (Diplôme Supérieur de Comptabilité et Gestion) pour monter en grade.\n  - **Certifications logiciels** (Sage, QuickBooks) via des formations courtes (ex : AFPA, GRETA).\n  - **TOEIC** (700+) pour booster ton profil à l’international.\n\n*Pour toi* : Idéal si tu **reprends tes études après un break** ou veux **te spécialiser sans refaire un diplôme complet**.\n\n---\n### **⚠ Attention aux pièges**\n- **Blocs ≠ compétences automatiques** : Un bloc \"contrôle de gestion\" validé ne signifie pas que tu maîtrises *tous* les outils (ex : Power BI). Les entreprises testent ces compétences en entretien.\n- **Alternance ≠ garantie d’emploi** : Même avec tous les blocs validés, un BTS CG en alternance n’assure pas un CDI (taux d’embauche post-alternance ~50-60% — *connaissance générale*).\n- **Évolutions bloquées sans +3** : Avec seulement le BTS, tu auras un **plafond de verre** pour des postes comme **responsable comptable** (licence pro ou DCG souvent requis).\n\n---\n**Question pour toi** :\nQuelle est ta priorité avec ce diplôme ?\n- **Travailler rapidement** (quels blocs mettre en avant dans ton CV ?)\n- **Poursuivre tes études** (vers quelle spécialisation : audit, paie, international ?)\n- **Te reconvertir** (quels blocs faire reconnaître via VAE ?)",
+  "elapsed_pipeline_s": 20.47,
+  "elapsed_fact_check_post_hoc_s": 1.4,
+  "elapsed_clarify_s": 2.13,
+  "elapsed_reformulate_s": 5.71,
+  "elapsed_retrieve_s": 0.22,
+  "elapsed_generate_s": 12.41,
+  "fact_check_summary": {
+    "n_stats_total": 2,
+    "n_verified": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "70% des diplômés en poste sous 6 mois",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "Ces blocs permettent de travailler immédiatement (70% des diplômés en poste sous 6 mois — estimation marché, connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux d’embauche post-alternance ~50-60%",
+      "stat_value": 50,
+      "stat_unit": "-60%",
+      "context": "même avec tous les blocs validés, un BTS CG en alternance n’assure pas un CDI (taux d’embauche post-alternance ~50-60% — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les blocs de compétences RNCP associés au BTS Comptabilité et Gestion ? Détail des compétences certifiées par ce diplôme.",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Intent core : identifier les blocs de compétences spécifiques au BTS Comptabilité via le référentiel RNCP."
+    },
+    {
+      "text": "Fiche éditorialisée ONISEP du BTS Comptabilité et Gestion : description des compétences et enseignements validés.",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Contexte complémentaire : apporter une description pédagogique des compétences visées par le diplôme."
+    },
+    {
+      "text": "Quels métiers sont accessibles après un BTS Comptabilité et Gestion ? Compétences attendues par les employeurs.",
+      "target_corpus": "metier",
+      "priority": 3,
+      "rationale": "Nice-to-have : lier compétences du diplôme aux attentes métiers pour contextualiser."
+    }
+  ]
+}

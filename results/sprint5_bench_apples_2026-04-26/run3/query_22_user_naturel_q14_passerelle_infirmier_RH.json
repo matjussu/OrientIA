@@ -1,0 +1,155 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q14_passerelle_infirmier_RH",
+  "query_text": "Une amie infirmière souhaite passer à un poste en ressources humaines. Quelles passerelles existent ?",
+  "answer_text": "**TL;DR**\n1. Une infirmière peut se réorienter vers les RH **sans tout reprendre à zéro** : ses compétences en gestion d’équipes, écoute et réglementation santé sont transférables.\n2. **3 étapes clés** : Validation des acquis (VAE) → Formation courte ciblée (bac+2/+3) → Spécialisation progressive.\n3. **Budget temps** : 6 mois à 2 ans selon le niveau visé (assistant RH vs manager).\n\n---\n\n### **Plan A — Passerelle rapide : VAE + Certificat RNCP bac+2 (6-12 mois)**\n📍 **Assistant en ressources humaines** (CCI France) — Certificat RNCP bac+2, **accessible en VAE** (validation de l’expérience infirmière : gestion de planning, conflits, formations équipes).\n*Pour toi : Idéal pour un premier poste en RH (recrutement, paie, administration) sans quitter son emploi. Coût : ~2 000-4 000€ (finançable CPF/OPCO).*\n→ **Calendrier** : Dossier VAE à déposer **avant septembre** pour une rentrée en janvier. [Détails VAE](https://www.francecompetences.fr/)\n\n📍 **Conseiller en insertion professionnelle** (Ministère du Travail) — Certificat RNCP bac+2, **formation en 1 an en alternance**.\n*Pour toi : Spécialisation dans l’accompagnement (reconversion, handicap) — valorise ton expérience soignante en \"gestion de parcours\".*\n\n---\n### **Plan B — Montée en compétences : Licence Pro RH (1 an) ou Bachelor**\n*(connaissance générale)*\n**Étape 1** : Valider un **bac+3 en RH** via :\n- **Licence Pro Métiers des RH** (ex : **Université Paris Nanterre** ou **Lyon 2**) — **admission sur dossier + entretien**, souvent possible avec un bac+2 (infirmier = bac+3) + expérience.\n  *Exemple* : [Licence Pro GRH Paris Nanterre](https://www.parisnanterre.fr/) (alternance possible).\n- **Bachelor RH** en école privée (ex : **IGS-RH**, **ESGRH**) — **coût : 6 000-8 000€/an**, mais **titres RNCP** reconnus.\n\n**Étape 2** : **Alternance obligatoire** pour financer la formation et acquérir de l’expérience RH.\n→ **Calendrier** : Candidatures **dès janvier** pour une rentrée en septembre.\n\n---\n### **Plan C — Réorientation longue : Master RH (bac+5) avec spécialisation**\n*(connaissance générale)*\nPour viser un poste de **Manager RH** ou **Responsable formation** :\n1. **Prérequis** : Avoir un bac+3 (via Plan B) **ou** faire une **VAE pour un bac+3** (ex : Licence AES).\n2. **Formations ciblées** :\n   - **Master GRH** en université (ex : **Paris 1 Panthéon-Sorbonne**, **Toulouse 1**) — **sélectif** (dossier + test).\n   - **MBA RH** en école privée (ex : **IGS-RH**) — **coût élevé** (10 000-15 000€) mais **réseau pro**.\n3. **Spécialisations valorisantes** pour une infirmière :\n   - **RH santé** (gestion des soins, pénurie de personnel).\n   - **Qualité de vie au travail (QVT)** — ton expérience terrain est un atout.\n\n---\n### **Points de vigilance**\n⚠ **Piège 1** : Les **écoles privées non-RNCP** (ex : certaines \"formations RH en ligne\") ne donnent pas de diplôme reconnu. Vérifie toujours le **RNCP** sur [France Compétences](https://www.francecompetences.fr/).\n⚠ **Piège 2** : L’**alternance est quasi-obligatoire** pour financer un bac+3/+5. Sans contrat, budget à prévoir (8 000-15 000€/an en privé).\n\n---\n**Question pour toi** :\nTon amie vise-t-elle un poste **opérationnel rapidement** (Plan A) ou un **poste cadre à moyen terme** (Plan C) ? Son employeur actuel (hôpital/clinique) pourrait-il financer une formation via le **CPF** ou un **Projet de Transition Professionnelle (PTP)** ? *(C’est souvent le cas pour les infirmières en reconversion.)*",
+  "elapsed_pipeline_s": 23.01,
+  "elapsed_fact_check_post_hoc_s": 7.93,
+  "elapsed_clarify_s": 2.98,
+  "elapsed_reformulate_s": 9.01,
+  "elapsed_retrieve_s": 0.53,
+  "elapsed_generate_s": 10.48,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 8,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux_emploi_3ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Insertion pro (Assistant en ressources humaines)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.87",
+      "stat_value": 87,
+      "stat_unit": "%",
+      "context": "Insertion pro (Assistant en ressources humaines)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.76",
+      "stat_value": 76,
+      "stat_unit": "%",
+      "context": "Insertion pro (Assistant en ressources humaines)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context": "Insertion pro (Assistant en ressources humaines)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.85",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context": "Insertion pro (Manager en ressources humaines)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "Insertion pro (Manager en ressources humaines)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "Insertion pro (Manager en ressources humaines)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context": "Insertion pro (Manager en ressources humaines)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "6 mois à 2 ans",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "Budget temps : 6 mois à 2 ans selon le niveau visé (assistant RH vs manager).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~2 000-4 000€",
+      "stat_value": null,
+      "stat_unit": "€",
+      "context": "Coût : ~2 000-4 000€ (finançable CPF/OPCO).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "6 000-8 000€/an",
+      "stat_value": null,
+      "stat_unit": "€/an",
+      "context": "coût : 6 000-8 000€/an, mais titres RNCP reconnus.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10 000-15 000€",
+      "stat_value": null,
+      "stat_unit": "€",
+      "context": "coût élevé (10 000-15 000€) mais réseau pro.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles formations ou certifications en ressources humaines sont accessibles aux professionnels en reconversion, notamment pour une infirmière souhaitant évoluer vers ce secteur ? Mentionner les passerelles possibles (VAE, blocs de compétences, etc.).",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : identifier les formations adaptées à une reconversion depuis le secteur médical vers les RH."
+    },
+    {
+      "text": "Quels sont les blocs de compétences RNCP ou certifications spécifiques en ressources humaines qu'une infirmière pourrait valider pour faciliter sa transition professionnelle ?",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Active le domain hint 'blocs de compétences' pour cibler les certifications utiles à une reconversion."
+    },
+    {
+      "text": "Quels métiers en ressources humaines sont accessibles à des profils en reconversion, notamment pour une infirmière ? Fiches métiers ONISEP ou équivalent.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporte un éclairage sur les métiers RH adaptés à une transition depuis le secteur médical."
+    },
+    {
+      "text": "Quelles sont les perspectives de recrutement cadres en ressources humaines par région, et quels postes sont les plus porteurs pour une reconversion ?",
+      "target_corpus": "apec_region",
+      "priority": 2,
+      "rationale": "Contextualise les opportunités de marché pour une infirmière en reconversion vers les RH."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle 6 à 18 mois après une formation en ressources humaines, notamment pour des profils en reconversion ?",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Complète avec des données sur l'insertion post-formation pour rassurer sur la viabilité du projet."
+    }
+  ]
+}

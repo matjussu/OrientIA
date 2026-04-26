@@ -1,0 +1,131 @@
+{
+  "suite": "personas_v4",
+  "query_id": "psy_en_q1",
+  "query_text": "Quels sont les indicateurs d'insertion professionnelle à 3 ans pour un master en psychologie clinique en France ?",
+  "answer_text": "**TL;DR**\n1. Les masters en psychologie clinique affichent des taux d’insertion **modérés** (autour de 60-70% à 3 ans), avec une forte proportion de CDD et temps partiels en début de carrière.\n2. Les débouchés varient selon la spécialisation (clinique, santé, neuropsy) et la région — l’Île-de-France offre plus d’opportunités mais aussi plus de concurrence.\n3. Pour maximiser votre employabilité, combinez le master avec une **formation complémentaire** (DU, certifications) ou une **expérience terrain** (stages, bénévolat).\n\n---\n\n### **Plan A — Masters publics : insertion progressive, mais stabilité à moyen terme**\n📍 **Master Psychologie Clinique et Psychopathologie** (Paris Cité) — bac+5 public, [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10205)\n*Pour vous : formation généraliste avec accès aux concours de la fonction publique hospitalière (psychologue clinicien en hôpital, CMP).*\n- **Insertion** : ~65% en emploi à 3 ans (source : Céreq, enquêtes générales masters psycho), dont **40% en CDI** (souvent après plusieurs CDD). Salaire médian embauche : **1 800€ brut/mois** (secteur public) à **2 200€** (libéral après installation).\n- **Secteurs porteurs** : Santé mentale (CMP, hôpitaux), protection de l’enfance, addictologie.\n\n📍 **Master Psychopathologie Clinique Psychanalytique** (Lyon 2) — bac+5 public, [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10223)\n*Pour vous : approche psychanalytique reconnue, mais réseau professionnel crucial pour l’insertion.*\n- **Spécificité** : Débouchés vers les **centres de soins psychanalytiques** ou la recherche (avec thèse). Taux d’emploi similaire (~60-65%), mais **plus de précarité en début de carrière** (connaissance générale).\n\n---\n\n### **Plan B — Spécialisations et doubles compétences : booster son employabilité**\n1. **DU ou certifications complémentaires** (ex : DU en neuropsychologie, formations en TCC) :\n   - **Exemple** : DU de Neuropsychologie (Bordeaux) → +10-15% de taux d’insertion (estimation, non vérifié).\n   - **Financement** : Éligible CPF (compte personnel de formation) pour certains DU.\n\n2. **Alternance en M2** (rare mais possible) :\n   - **Exemple** : Master Pro Psychologie du Travail (Aix-Marseille) avec contrats en entreprises ou institutions.\n   - **Avantage** : 80% des alternants trouvent un CDI dans leur structure d’accueil (connaissance générale).\n\n3. **Installation en libéral** :\n   - **Prérequis** : Master + stage pro de 500h minimum + inscription à l’ARS (démarches administratives longues).\n   - **Revenu** : **2 500€ à 4 000€/mois** après 3-5 ans (variable selon la patientèle), mais **risque financier élevé** les 2 premières années.\n\n---\n\n### **Plan C — Passerelles et reconversion sécurisée**\n- **VAE (Validation des Acquis de l’Expérience)** :\n  - Si vous avez déjà travaillé dans le social/éducatif, une VAE partielle peut réduire la durée du master (ex : validation de l’UE \"psychologie sociale\").\n  - **Contact** : Service VAE de votre université ou [France VAE](https://www.francevae.fr/).\n\n- **Formations courtes qualifiantes** (si le master est trop long) :\n  - **Certificat de Compétences en Psychologie** (RNCP niveau 6) → 1 an, éligible CPF.\n  - **Exemple** : Certificat \"Intervenant en psychologie sociale\" (Cnam) → débouchés en prévention, RH.\n\n- **Apprentissage adulte** :\n  - Certains masters proposent des **contrats de professionnalisation** pour les >26 ans (ex : master Pro Psycho à Nantes). Rémunération : **65-100% du SMIC** selon l’âge.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Précarité des débuts** : 30 à 40% des jeunes diplômés enchaînent CDD ou temps partiels les 3 premières années (source : Céreq, tendances générales).\n- **Saturation en libéral** : Certaines régions (ex : PACA) ont un **ratio psychologues/patients déséquilibré** → étudiez la démographie avant installation.\n- **Concours publics** : Les postes de psychologue clinicien dans la fonction publique hospitalière sont **très compétitifs** (1 poste pour 20-50 candidats selon les années).\n\n---\n**Question pour vous** :\nVotre priorité est-elle la **stabilité rapide** (voies publiques, concours), la **flexibilité** (libéral, mais avec risque financier), ou une **spécialisation pointue** (neuropsy, psychanalyse) malgré un marché plus niche ? Cela peut affiner les formations à cibler.",
+  "elapsed_pipeline_s": 22.72,
+  "elapsed_fact_check_post_hoc_s": 6.95,
+  "elapsed_clarify_s": 2.1,
+  "elapsed_reformulate_s": 7.66,
+  "elapsed_retrieve_s": 0.39,
+  "elapsed_generate_s": 12.57,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 7,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~65% en emploi à 3 ans",
+      "stat_value": 65,
+      "stat_unit": "%",
+      "context": "Master Psychologie Clinique et Psychopathologie (Paris Cité) — insertion",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "40% en CDI",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context": "Master Psychologie Clinique et Psychopathologie (Paris Cité) — insertion",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Salaire médian embauche : 1 800€ brut/mois (secteur public) à 2 200€ (libéral après installation)",
+      "stat_value": 1800,
+      "stat_unit": "€ brut/mois",
+      "context": "Master Psychologie Clinique et Psychopathologie (Paris Cité) — salaire",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~60-65%",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "Master Psychopathologie Clinique Psychanalytique (Lyon 2) — taux d’emploi",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+10-15% de taux d’insertion",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "context": "DU ou certifications complémentaires (ex : DU en neuropsychologie)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "80% des alternants trouvent un CDI dans leur structure d’accueil",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Alternance en M2 (ex : Master Pro Psychologie du Travail, Aix-Marseille)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 500€ à 4 000€/mois",
+      "stat_value": 2500,
+      "stat_unit": "€/mois",
+      "context": "Installation en libéral (revenu après 3-5 ans)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30 à 40% des jeunes diplômés enchaînent CDD ou temps partiels les 3 premières années",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "Précarité des débuts (source : Céreq, tendances générales)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 poste pour 20-50 candidats selon les années",
+      "stat_value": 20,
+      "stat_unit": "postes pour candidats",
+      "context": "Concours publics (fonction publique hospitalière)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois pour les diplômés d'un master en psychologie clinique en France ? Données MESR insertion master.",
+      "target_corpus": "insertion_pro",
+      "priority": 1,
+      "rationale": "Cible directement l'intent core : insertion post-master en psychologie clinique."
+    },
+    {
+      "text": "Quels sont les métiers accessibles après un master en psychologie clinique et leurs perspectives d'emploi en 2030 (DARES Métiers 2030) ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Complète avec une vision prospective des métiers liés à la psychologie clinique."
+    },
+    {
+      "text": "Quel est le salaire médian des professionnels en psychologie clinique en France (données INSEE SALAAN PCS × région) ?",
+      "target_corpus": "insee_salaire",
+      "priority": 2,
+      "rationale": "Ajoute une dimension salariale pour contextualiser l'insertion."
+    },
+    {
+      "text": "Quels sont les blocs de compétences RNCP associés aux métiers de la psychologie clinique ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Permet de lier compétences et insertion professionnelle."
+    },
+    {
+      "text": "Quelles sont les formations en master de psychologie clinique disponibles en France (Parcoursup + ONISEP) et leurs spécificités ?",
+      "target_corpus": "formation",
+      "priority": 3,
+      "rationale": "Ancrage formation pour un étudiant en master."
+    }
+  ]
+}

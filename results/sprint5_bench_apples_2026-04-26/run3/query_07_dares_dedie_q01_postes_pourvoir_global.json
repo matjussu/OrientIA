@@ -1,0 +1,84 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q01_postes_pourvoir_global",
+  "query_text": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+  "answer_text": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 secteurs clés** : transition écologique, santé/autonomie, numérique, et industries de pointe.\n2. **Top 3 des familles de métiers en tension** : soignants (vieillissement), techniciens énergies renouvelables, et experts data/cyber (pénurie structurelle).\n3. **Stratégie gagnante** : vise des compétences hybrides (ex : *BTP + digital*, *santé + IA*) pour te différencier.\n\n---\n\n### **Plan A — Secteurs en explosion (recrutements massifs prévisibles)**\n1. **Transition écologique & énergies renouvelables** (connaissance générale)\n   - **Métiers** : Technicien·ne maintenance éoliennes/solaire, ingénieur·e en efficacité énergétique, chef·fe de projet hydrogène.\n   - **Pourquoi** : Objectif neutralité carbone 2050 → **500 000 emplois verts supplémentaires d’ici 2030** (source : Stratégie Nationale Bas-Carbone).\n   - **Formations** : BTS Métiers des services à l’environnement (Lyon), Licence pro Énergies renouvelables (Le Havre), écoles d’ingé comme **Polytech Grenoble** (spé énergie).\n\n2. **Santé & autonomie** (connaissance générale)\n   - **Métiers** : Infirmier·ère spécialisé·e (gériatrie, psychiatrie), ergothérapeute, aide-soignant·e avec compétences numériques (dossiers patients).\n   - **Pourquoi** : **1 million de départs à la retraite dans le secteur d’ici 2030** + vieillissement de la population (source : DREES).\n   - **Formations** : IFSI (public, gratuit), BUT Carrières sociales (parcours personnes âgées), ou **DU \"Silver économie\"** (ex : Université de Bordeaux).\n\n3. **Numérique & cyber** (connaissance générale)\n   - **Métiers** : Développeur·se full-stack (spé IA), expert·e cybersécurité (SOC), data analyst (santé/industrie).\n   - **Pourquoi** : **Pénurie de 150 000 professionnel·les du numérique en 2030** (source : France Stratégie).\n   - **Formations** : BUT Informatique (IUT de Toulouse), **Licence MIASHS** (maths + data), ou écoles comme **Epitech** (alternance possible).\n\n---\n\n### **Plan B — Métiers hybrides (moins de concurrence, salaires élevés)**\nCes profils combinent **2 compétences rares** → **moins de candidats, meilleurs salaires** (connaissance générale) :\n- **Bio-informaticien·ne** (biologie + data) : analyse génomique pour la médecine personnalisée.\n  *Formations* : Master Bioinformatique (Université Paris Cité), **École d’ingé AgroParisTech**.\n- **BIM Manager** (BTP + digital) : modélisation 3D des chantiers.\n  *Formations* : Licence pro BIM (USTH au Vietnam ou **CFA BTP Île-de-France**).\n- **Neuro-ergothérapeute** (santé + tech) : rééducation via réalité virtuelle.\n  *Formations* : Master Handicap et Innovation (Université de Lyon) + formation complémentaire en VR.\n\n---\n### **Plan C — Passerelles méconnues (sans diplôme long)**\nPour accéder rapidement à ces métiers (connaissance générale) :\n1. **Certifications courtes** :\n   - **Cybersécurité** : Certificat **SecNum Académie** (ANSSI, gratuit) + alternance.\n   - **Énergies renouvelables** : **Titre pro Technicien en énergies renouvelables** (AFPA, 6 mois).\n2. **Reconversion accélérée** :\n   - **Santé** : Prépa concours infirmier en 1 an (ex : **IFSI de Lille**) pour les bac+2.\n   - **Numérique** : **Wild Code School** (bootcamp 5 mois, financable par Pôle Emploi).\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées \"usines à diplômes\"** : Certaines formations en \"management du développement durable\" ou \"digital\" coûtent **8 000€/an** sans débouchés garantis. Vérifie toujours le **taux d’insertion** (ex : [InserJeunes](https://www.inserjeunes.education.gouv.fr/)).\n- **Métiers \"à la mode\"** : \"Influenceur RSE\" ou \"consultant blockchain\" sont **ultra-concurrentiels** et peu stables. Privilégie les **compétences techniques** (ex : savoir coder en Python pour la data).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour un **secteur en particulier** (santé, tech, environnement) ou préfères-tu une formation **courte** (6-12 mois) pour entrer vite sur le marché du travail ?\n\n---\n👤 *Pour creuser ton projet, un RDV avec le Psy-EN de ton établissement ou un conseiller du **CIO** (Centre d’Information et d’Orientation) t’aidera à affiner en fonction de ton parcours actuel.*",
+  "elapsed_pipeline_s": 27.52,
+  "elapsed_fact_check_post_hoc_s": 3.83,
+  "elapsed_clarify_s": 2.31,
+  "elapsed_reformulate_s": 8.86,
+  "elapsed_retrieve_s": 0.54,
+  "elapsed_generate_s": 15.8,
+  "fact_check_summary": {
+    "n_stats_total": 4,
+    "n_verified": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "500 000 emplois verts supplémentaires d’ici 2030",
+      "stat_value": 500000,
+      "stat_unit": "emplois",
+      "context": "Objectif neutralité carbone 2050 → 500 000 emplois verts supplémentaires d’ici 2030 (source : Stratégie Nationale Bas-Carbone).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 million de départs à la retraite dans le secteur [santé] d’ici 2030",
+      "stat_value": 1000000,
+      "stat_unit": "départs",
+      "context": "1 million de départs à la retraite dans le secteur d’ici 2030 + vieillissement de la population (source : DREES).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Pénurie de 150 000 professionnel·les du numérique en 2030",
+      "stat_value": 150000,
+      "stat_unit": "professionnel·les",
+      "context": "Pénurie de 150 000 professionnel·les du numérique en 2030 (source : France Stratégie).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8 000€/an",
+      "stat_value": 8000,
+      "stat_unit": "€/an",
+      "context": "Certaines formations en 'management du développement durable' ou 'digital' coûtent 8 000€/an sans débouchés garantis.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers identifiés par la DARES comme ayant le plus de postes à pourvoir d'ici 2030 en France ? Données prospectives métiers 2030 par région et famille professionnelle (FAP).",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Intent core : demande explicite sur les métiers recrutant le plus en 2030, aligné avec DARES Métiers 2030."
+    },
+    {
+      "text": "Quels secteurs ou métiers en France offrent les meilleures perspectives de recrutement pour les cadres d'ici 2030 ? Analyse marché travail cadres par région.",
+      "target_corpus": "apec_region",
+      "priority": 2,
+      "rationale": "Complète metier_prospective avec focus cadres, utile pour affiner les opportunités ciblées."
+    },
+    {
+      "text": "Quels sont les métiers émergents ou en tension en France qui pourraient nécessiter des compétences spécifiques d'ici 2030 ? Fiches métiers ONISEP éditorialisées.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporte un éclairage qualitatif sur les métiers en tension ou émergents, complémentaire aux données quantitatives."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications (RNCP) sont associés aux métiers en forte demande d'ici 2030 en France ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Nice-to-have : lie compétences et métiers porteurs pour anticiper les formations utiles."
+    }
+  ]
+}

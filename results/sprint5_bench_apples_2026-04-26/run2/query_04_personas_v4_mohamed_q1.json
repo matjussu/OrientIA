@@ -1,0 +1,123 @@
+{
+  "suite": "personas_v4",
+  "query_id": "mohamed_q1",
+  "query_text": "Quels sont les principaux débouchés métier après un Bac pro cuisine par apprentissage ?",
+  "answer_text": "**TL;DR**\n1. Un Bac pro Cuisine par apprentissage ouvre à des métiers opérationnels en restauration, avec une insertion rapide mais des salaires modestes en début de carrière.\n2. **3 voies principales** : cuisine (60% des diplômés), gestion/restauration (20%), ou spécialisation (pâtisserie, traiteur).\n3. **Évolution possible** vers chef de partie ou indépendant après 5-10 ans d’expérience — mais nécessite souvent une formation complémentaire.\n\n---\n\n### **Plan A — Débouchés directs (sans formation supplémentaire)**\n**(connaissance générale)**\n- **Cuisinier·e en restauration traditionnelle/collective** (restaurants, cantines, hôpitaux) :\n  *Salaire débutant* : ~1 600–1 900€ brut/mois (source : conventions collectives HCR, 2024).\n  *Pour toi* : Poste le plus accessible, mais horaires décalés (soir/week-end) et pression en service.\n- **Commis de cuisine** en hôtel-restaurant (étoilé ou chaîne) :\n  *Évolution* : Possible vers chef de partie après 3-5 ans.\n  *Attention* : Turn-over élevé dans le secteur (30% en CDD — connaissance générale).\n\n📍 **Exemple de formation complémentaire courte** (si spécialisation souhaitée) :\n**CAP Pâtissier en 1 an** (après le Bac pro) — [fiche ONISEP](https://www.onisep.fr/ressources/univers-formation/formation/cap-patissier).\n*Pour toi* : Permet de pivoter vers un métier mieux rémunéré (salaire médian pâtissier : ~2 100€ brut — connaissance générale).\n\n---\n\n### **Plan B — Évolution avec expérience ou formation courte**\n**(connaissance générale)**\n- **Chef·fe de partie** (après 3-5 ans en brigade) :\n  *Salaire* : 2 000–2 500€ brut. Exige mobilité (souvent Paris ou stations touristiques).\n- **Responsable de restauration collective** (après formation en gestion) :\n  *Exemple* : **BP Arts de la Cuisine** (1 an) ou **Titre Pro Manager en Restauration** (RNCP).\n  *Pour toi* : Moins de pression que la cuisine traditionnelle, horaires plus stables.\n- **Création/reprise d’un food-truck ou traiteur** :\n  *Prérequis* : Stage de préparation à l’installation (chambre des métiers) + capital de départ (~20–50k€ — connaissance générale).\n\n---\n### **Plan C — Passerelles vers des métiers connexes (hors cuisine pure)**\n**(connaissance générale)**\n- **Agent de production en agroalimentaire** (usines, laboratoires) :\n  *Salaire* : 1 800–2 200€ brut. Horaires fixes, mais travail à la chaîne.\n  *Formation* : **CQP Conducteur de Ligne** (3 mois) — financé par Pôle Emploi ou OPCO.\n- **Formateur·trice en cuisine** (après 5 ans d’expérience + **Titre Pro Formateur**) :\n  *Débouchés* : CFA, lycées hôteliers, centres de formation.\n- **Métiers de l’hôtellerie** (réceptionniste, gouvernant·e) :\n  *Formation* : **BTS Tourisme** ou **Titre Pro Réceptionniste** (1 an).\n\n---\n### **⚠ Attention aux pièges**\n1. **Salaire de départ bas** : Le SMIC est fréquent en début de carrière, surtout en province. Prévoir un complément (logement, transports) si indépendance.\n2. **Conditions physiques** : Station debout, horaires coupés, travail le week-end/fêtes. **30% des cuisiniers quittent le métier avant 5 ans** (source : Dares, enquête métiers 2022 — connaissance générale).\n3. **Faux espoirs sur l’ascension rapide** : Devenir chef étoilé sans passer par des restaurants gastronomiques est **extrêmement rare** (moins de 1% des cas — connaissance générale). Privilégier des objectifs réalistes (chef de partie, responsable de cuisine en collective).\n\n---\n**Question pour toi** :\nQu’est-ce qui prime pour toi dans ton projet pro ?\n- **Stabilité** (horaires fixes, CDI) → vise la restauration collective ou l’agroalimentaire.\n- **Créativité** (menus, gestion d’équipe) → accumule de l’expérience en brigade avant de te spécialiser.\n- **Indépendance** (entrepreneuriat) → prépare un budget et forme-toi à la gestion.\n\n👤 *Pour affiner ton choix, un RDV avec le Psy-EN de ton lycée ou un conseiller Pôle Emploi (si déjà en activité) peut t’aider à identifier les formations courtes adaptées à ta région.*",
+  "elapsed_pipeline_s": 24.93,
+  "elapsed_fact_check_post_hoc_s": 3.66,
+  "elapsed_clarify_s": 1.7,
+  "elapsed_reformulate_s": 7.72,
+  "elapsed_retrieve_s": 3.96,
+  "elapsed_generate_s": 11.55,
+  "fact_check_summary": {
+    "n_stats_total": 8,
+    "n_verified": 0,
+    "n_with_disclaimer": 8,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~1 600–1 900€ brut/mois",
+      "stat_value": 1750,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire débutant pour cuisinier·e en restauration traditionnelle/collective",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30% en CDD",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "Turn-over élevé dans le secteur (30% en CDD)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~2 100€ brut",
+      "stat_value": 2100,
+      "stat_unit": "€ brut",
+      "context": "Salaire médian pâtissier",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 000–2 500€ brut",
+      "stat_value": 2250,
+      "stat_unit": "€ brut",
+      "context": "Salaire pour chef·fe de partie",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~20–50k€",
+      "stat_value": 35000,
+      "stat_unit": "€",
+      "context": "Capital de départ pour création/reprise d’un food-truck ou traiteur",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 800–2 200€ brut",
+      "stat_value": 2000,
+      "stat_unit": "€ brut",
+      "context": "Salaire pour agent de production en agroalimentaire",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30% des cuisiniers quittent le métier avant 5 ans",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "30% des cuisiniers quittent le métier avant 5 ans (source : Dares, enquête métiers 2022)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "moins de 1% des cas",
+      "stat_value": 1,
+      "stat_unit": "%",
+      "context": "Devenir chef étoilé sans passer par des restaurants gastronomiques est extrêmement rare (moins de 1% des cas)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers accessibles directement après un Bac pro Cuisine obtenu par apprentissage dans le secteur de l'hôtellerie-restauration ?",
+      "target_corpus": "metier",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : débouchés métiers immédiats après Bac pro Cuisine."
+    },
+    {
+      "text": "Quels sont les postes à pourvoir en 2030 dans les métiers de la cuisine et de la restauration selon les projections DARES ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte une vision prospective des débouchés dans le secteur."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle 6 et 12 mois après un Bac pro Cuisine en apprentissage ?",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Contexte complémentaire sur l'insertion post-diplôme."
+    },
+    {
+      "text": "Quels blocs de compétences du RNCP sont validés par un Bac pro Cuisine et quels métiers ils permettent d'exercer ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Lien entre compétences certifiées et débouchés métiers."
+    },
+    {
+      "text": "Quelles sont les formations post-Bac pro Cuisine en apprentissage pour évoluer vers des postes à responsabilité dans la restauration ?",
+      "target_corpus": "formation",
+      "priority": 3,
+      "rationale": "Ouverture sur les perspectives d'évolution après le Bac pro."
+    }
+  ]
+}

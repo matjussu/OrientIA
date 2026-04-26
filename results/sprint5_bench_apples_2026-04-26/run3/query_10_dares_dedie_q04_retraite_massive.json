@@ -1,0 +1,141 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q04_retraite_massive",
+  "query_text": "Quels métiers vont voir une retraite massive de leurs effectifs d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. D’ici 2030, les métiers les plus touchés par les départs à la retraite concernent surtout les secteurs **publics, industriels et techniques**, où les effectifs vieillissants sont nombreux.\n2. **Top 3 des secteurs critiques** : santé (infirmiers, médecins), enseignement, et métiers techniques (BTP, maintenance industrielle).\n3. **Opportunités** : ces départs créeront des besoins massifs en recrutement, avec des formations accessibles (du CAP au bac+5).\n\n---\n\n### **Plan A — Métiers en tension avec formations courtes (bac à bac+2)**\n1. **Santé et social** :\n   - **Infirmier·ère** (IFSI, bac+3) ou **aide-soignant·e** (DEAS, 10-18 mois) : **50% des effectifs auront plus de 50 ans en 2030** (connaissance générale).\n   - **Pour toi** : formations gratuites en public (IFSI), débouchés garantis, salaires stables (salaire médian embauche : ~1 800€ net, source Dares 2023).\n\n2. **BTP et industrie** :\n   - **Technicien·ne de maintenance industrielle** (BTS, bac+2) ou **électricien·ne** (CAP/Bac Pro) : **40% des salariés ont +50 ans** (connaissance générale).\n   - **Pour toi** : alternance rémunérée possible, pénurie = embauche rapide (CDI à 90% en sortie de formation).\n\n3. **Enseignement et éducation** :\n   - **Professeur des écoles** (master MEEF, bac+5) : **1 départ à la retraite sur 2 d’ici 2030** (source DEPP).\n   - **Pour toi** : concours accessible après une licence, stabilité de l’emploi public.\n\n---\n\n### **Plan B — Métiers qualifiés avec bac+3/5 (salaire et évolution)**\n1. **Ingénierie et numérique** :\n   - **Ingénieur·e en cybersécurité** (écoles d’ingé, bac+5) : **30% des experts ont +50 ans** (connaissance générale), et la demande explose (+20% de postes/an).\n   - **Pour toi** : salaires élevés (médian embauche : ~3 000€ brut), mais sélectivité forte (prépa ou admissions parallèles).\n\n2. **Métiers de la transition énergétique** :\n   - **Technicien·ne en énergies renouvelables** (BUT, bac+3) ou **ingénieur·e environnement** (bac+5) : **secteur en croissance + départs massifs** (50% des emplois d’ici 2030, source ADEME).\n   - **Pour toi** : formations en alternance possibles, débouchés dans les collectivités ou grandes entreprises.\n\n3. **Transport et logistique** :\n   - **Conducteur·trice de train (SNCF)** ou **pilote de ligne** : **âge moyen = 50 ans**, formations internes (ex : école SNCF).\n   - **Pour toi** : concours sélectifs, mais carrières longues et bien rémunérées (salaire médian : ~2 500€ net).\n\n---\n\n### **Plan C — Passerelles et reconversions accélérées**\n1. **Validations des Acquis de l’Expérience (VAE)** :\n   - Pour les adultes en poste : **VAE pour devenir infirmier·ère, enseignant·e, ou technicien·ne** sans reprendre des études longues.\n   - **Exemple** : Un·e auxiliaire de puériculture peut obtenir un diplôme d’infirmier·ère en 1 an via VAE (connaissance générale).\n\n2. **Formations courtes ciblées** :\n   - **Certifications professionnelles** (ex : **Titre Pro Technicien Supérieur en Cybersécurité**, 1 an) pour les métiers tech en tension.\n   - **Pour toi** : financées par Pôle Emploi ou CPF, idéales pour une reconversion rapide.\n\n3. **Secteurs émergents** :\n   - **Métiers du vieillissement** (gériatrie, silver économie) ou **agriculture urbaine** : **peu de candidats pour des besoins croissants**.\n   - **Pour toi** : formations innovantes (ex : **BTSA en agroécologie**), souvent avec aides financières.\n\n---\n**⚠ Attention** :\n- Les métiers publics (enseignement, santé) exigent souvent des **concours** : anticipe 1-2 ans de préparation.\n- Dans le privé (BTP, industrie), les **conditions physiques** peuvent limiter l’accès après 40 ans — vérifie les fiches métiers (ex : [Pôle Emploi](https://candidat.pole-emploi.fr/)).\n\n---\n**Question pour toi** :\nAs-tu une préférence pour un secteur en particulier (santé, tech, éducation) ? Ou cherches-tu avant tout **stabilité**, **salaire**, ou **sens** dans ton futur métier ? *(Cela peut affiner les suggestions.)*\n\n---\n👤 *Pour creuser ton projet, un entretien avec un·e conseiller·ère du [CIO](https://www.onisep.fr/) ou de Pôle Emploi (si reconversion) t’aidera à identifier les formations locales et financements adaptés.*",
+  "elapsed_pipeline_s": 22.5,
+  "elapsed_fact_check_post_hoc_s": 7.18,
+  "elapsed_clarify_s": 1.8,
+  "elapsed_reformulate_s": 8.16,
+  "elapsed_retrieve_s": 0.4,
+  "elapsed_generate_s": 12.15,
+  "fact_check_summary": {
+    "n_stats_total": 11,
+    "n_verified": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 8,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "50% des effectifs auront plus de 50 ans en 2030",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "Infirmier·ère (IFSI, bac+3) ou aide-soignant·e (DEAS, 10-18 mois) : 50% des effectifs auront plus de 50 ans en 2030 (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian embauche : ~1 800€ net",
+      "stat_value": 1800,
+      "stat_unit": "€ net",
+      "context": "salaire médian embauche : ~1 800€ net, source Dares 2023",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "40% des salariés ont +50 ans",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context": "Technicien·ne de maintenance industrielle (BTS, bac+2) ou électricien·ne (CAP/Bac Pro) : 40% des salariés ont +50 ans (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 départ à la retraite sur 2 d’ici 2030",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "Professeur des écoles (master MEEF, bac+5) : 1 départ à la retraite sur 2 d’ici 2030 (source DEPP).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30% des experts ont +50 ans",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "Ingénieur·e en cybersécurité (écoles d’ingé, bac+5) : 30% des experts ont +50 ans (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+20% de postes/an",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "Ingénieur·e en cybersécurité (écoles d’ingé, bac+5) : et la demande explose (+20% de postes/an).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50% des emplois d’ici 2030",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "Technicien·ne en énergies renouvelables (BUT, bac+3) ou ingénieur·e environnement (bac+5) : secteur en croissance + départs massifs (50% des emplois d’ici 2030, source ADEME).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "âge moyen = 50 ans",
+      "stat_value": 50,
+      "stat_unit": "ans",
+      "context": "Conducteur·trice de train (SNCF) ou pilote de ligne : âge moyen = 50 ans, formations internes (ex : école SNCF).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian : ~2 500€ net",
+      "stat_value": 2500,
+      "stat_unit": "€ net",
+      "context": "Conducteur·trice de train (SNCF) ou pilote de ligne : salaires bien rémunérées (salaire médian : ~2 500€ net).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "CDI à 90% en sortie de formation",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "Technicien·ne de maintenance industrielle (BTS, bac+2) ou électricien·ne (CAP/Bac Pro) : pénurie = embauche rapide (CDI à 90% en sortie de formation).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian embauche : ~3 000€ brut",
+      "stat_value": 3000,
+      "stat_unit": "€ brut",
+      "context": "Ingénieur·e en cybersécurité (écoles d’ingé, bac+5) : salaires élevés (médian embauche : ~3 000€ brut).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers concernés par des départs massifs à la retraite d'ici 2030 selon les projections DARES ? Mentionner les postes à pourvoir et les secteurs impactés.",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Cible directement l'intent core avec le domain hint 'DARES' et 'postes à pourvoir 2030'."
+    },
+    {
+      "text": "Quels métiers ou familles professionnelles (FAP) sont identifiés comme en tension ou en déclin démographique d'ici 2030, avec des données régionales si disponibles ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Approfondit la question avec une dimension régionale et des termes comme 'FAP' et 'tension démographique'."
+    },
+    {
+      "text": "Existe-t-il des fiches métiers ONISEP détaillant les perspectives d'évolution pour les professions touchées par les départs à la retraite d'ici 2030 ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Complète avec un corpus éditorialisé pour contextualiser les métiers identifiés."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications (RNCP) sont associés aux métiers en déclin démographique d'ici 2030, et pourraient nécessiter une adaptation des formations ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Ajoute une dimension compétences pour anticiper les besoins en formation."
+    }
+  ]
+}

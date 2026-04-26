@@ -1,0 +1,99 @@
+{
+  "suite": "personas_v4",
+  "query_id": "lila_q1",
+  "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+  "answer_text": "**TL;DR**\n1. Une licence de lettres modernes ouvre à des métiers variés, mais **peu sont accessibles directement après le bac+3** : la plupart exigent une spécialisation en master ou une formation complémentaire.\n2. **3 pistes principales** : enseignement (concours), culture/médias (réseaux + stages), ou reconversion vers des métiers techniques (via formations courtes).\n3. **L’insertion directe est difficile** (salaire médian ~1 600€ brut en début de carrière — connaissance générale) : anticipe un master ou une double compétence.\n\n---\n\n### **Plan A — Enseignement & Recherche (voie \"classique\")**\n- **Devenir professeur** : après la licence, prépare un **master MEEF** (1 an) puis passe le **CAPES de lettres modernes** (concours national). **Débouchés stables** (fonctionnaire) mais **sélectif** (taux de réussite ~30% — connaissance générale).\n  *Pour toi :* Si tu aimes transmettre et acceptes la préparation intensive aux concours.\n- **Recherche/université** : poursuite en **master recherche** puis thèse (bac+8) pour viser l’enseignement supérieur ou les métiers du patrimoine (bibliothèques, archives). **Peu de postes** en université (concours très sélectifs).\n\n### **Plan B — Culture, Édition & Médias (voie \"projet pro\")**\n- **Métiers de l’édition** : assistant d’édition, correcteur, ou chargé de communication après un **master pro** (ex : Édition à Paris-Nanterre ou Lyon 2). **Secteur très compétitif** (stages indispensables).\n  *Pour toi :* Si tu es mobile (Paris concentre 80% des emplois — connaissance générale) et prêt·e à multiplier les expériences.\n- **Journalisme/culture** : écoles spécialisées (ex : **CFJ**, **ESJ Lille**) ou masters en médiation culturelle. **Précarité fréquente** en début de carrière (pigiste, CDD).\n- **Fonction publique territoriale** : concours de **bibliothécaire** ou **chargé de mission culturelle** (bac+3 suffisant pour certains postes).\n\n### **Plan C — Reconversion vers des métiers techniques (voie \"hybride\")**\n- **Double compétence** : forme-toi en **1 an** à un métier porteur via une **licence pro** (ex : métiers du livre, documentation numérique) ou une **formation courte** (ex : **certification en rédaction web**, **community management**).\n  *Pour toi :* Si tu veux un emploi rapidement et acceptes de sortir des lettres \"pures\".\n- **Exemples concrets** :\n  - **Rédacteur web** (formation en ligne type **OpenClassrooms** + portfolio).\n  - **Chargé de communication** (DU ou licence pro en com’).\n  - **Traduction** (master pro en traduction littéraire/technique).\n\n---\n**⚠ Attention aux pièges**\n- **Salaire** : Les métiers \"purs\" (recherche, édition) paient souvent **en dessous de 2 000€ brut/mois** en début de carrière (source : enquêtes APEC sur les lettres — connaissance générale).\n- **Précarité** : 40% des diplômés en lettres occupent des emplois **non liés à leur domaine** 5 ans après le diplôme (source : Céreq, Generation 2013 — connaissance générale).\n- **Concours** : Sans master, les portes se ferment vite (même pour l’enseignement).\n\n---\n**Question pour toi :**\nQu’est-ce qui prime pour toi : **la stabilité** (enseignement/fonction publique), **la passion** (édition/culture, même précaire), ou **l’employabilité rapide** (double compétence technique) ? *(Cette réponse change radicalement les formations à cibler.)*",
+  "elapsed_pipeline_s": 22.39,
+  "elapsed_fact_check_post_hoc_s": 2.84,
+  "elapsed_clarify_s": 2.44,
+  "elapsed_reformulate_s": 8.85,
+  "elapsed_retrieve_s": 1.09,
+  "elapsed_generate_s": 10.01,
+  "fact_check_summary": {
+    "n_stats_total": 5,
+    "n_verified": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux de réussite ~30%",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "taux de réussite ~30% — connaissance générale",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Paris concentre 80% des emplois",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Paris concentre 80% des emplois — connaissance générale",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian ~1 600€ brut en début de carrière",
+      "stat_value": 1600,
+      "stat_unit": "€ brut",
+      "context": "salaire médian ~1 600€ brut en début de carrière — connaissance générale",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "40% des diplômés en lettres occupent des emplois non liés à leur domaine 5 ans après le diplôme",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context": "40% des diplômés en lettres occupent des emplois non liés à leur domaine 5 ans après le diplôme (source : Céreq, Generation 2013 — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Les métiers 'purs' (recherche, édition) paient souvent en dessous de 2 000€ brut/mois en début de carrière",
+      "stat_value": 2000,
+      "stat_unit": "€ brut/mois",
+      "context": "Les métiers 'purs' (recherche, édition) paient souvent en dessous de 2 000€ brut/mois en début de carrière (source : enquêtes APEC sur les lettres — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers accessibles après une licence de lettres modernes ? Fiches ONISEP détaillant les débouchés professionnels et secteurs d'activité.",
+      "target_corpus": "metier",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : débouchés métiers spécifiques aux lettres modernes."
+    },
+    {
+      "text": "Quels sont les postes à pourvoir en 2030 dans les métiers liés aux lettres et sciences humaines ? Données DARES Métiers 2030 par famille professionnelle.",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte une dimension prospective sur les débouchés futurs."
+    },
+    {
+      "text": "Quels masters ou formations post-licence de lettres modernes permettent une insertion professionnelle rapide ? Taux d'insertion 6/12/18 mois post-diplôme.",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Complète avec des données concrètes sur l'insertion après un master."
+    },
+    {
+      "text": "Quels sont les blocs de compétences RNCP à valider pour se spécialiser après une licence de lettres modernes ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Optionnel : apporte des pistes pour une montée en compétences certifiée."
+    },
+    {
+      "text": "Quels sont les taux de réussite en licence de lettres modernes selon le bac d'origine ? Données MESRI sur les parcours des bacheliers.",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 3,
+      "rationale": "Optionnel : contexte sur la réussite en licence pour évaluer la faisabilité."
+    }
+  ]
+}

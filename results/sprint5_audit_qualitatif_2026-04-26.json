@@ -1,0 +1,200 @@
+{
+  "summary": {
+    "n_sprint5_halluc_audited": 10,
+    "n_sprint4_unsupported_audited": 10,
+    "sprint5_distribution": {
+      "A": 5,
+      "C": 5
+    },
+    "sprint4_distribution": {
+      "A": 3,
+      "C": 7
+    },
+    "overall_distribution": {
+      "A": 8,
+      "C": 12
+    }
+  },
+  "evaluations": [
+    {
+      "method": "StatFactChecker (Sprint 5 apples-to-apples)",
+      "verdict_original": "unsourced_unsafe",
+      "query_id": "q13_reconversion_grande_distrib",
+      "claim_excerpt": "Salaire médian embauche pour le métier de Conseiller en insertion professionnelle",
+      "category": "A",
+      "audit_reason": "Aucune source n'est fournie dans le retrieval. Le LLM a généré un chiffre précis (1 800€ brut) et cite 'Céreq, fiche RNCP' sans document source correspondant. Hallucination factuelle claire.",
+      "confidence": 0.95
+    },
+    {
+      "method": "StatFactChecker (Sprint 5 apples-to-apples)",
+      "verdict_original": "unsourced_unsafe",
+      "query_id": "q01_postes_pourvoir_global",
+      "claim_excerpt": "Top 3 des dynamiques : +500 000 emplois dans le soin/accompagnement (vieillissement), +300 000 dans les énergies renouvelables, +200 000 dans l’IA/data (source : Dares 2023, projections France Stratégie).",
+      "category": "A",
+      "audit_reason": "Chiffres précis (+500k, +300k, +200k) avec attribution explicite à 'Dares 2023, projections France Stratégie' sans aucune source retrievée. Le LLM a fabriqué des statistiques quantifiées et leur provenance.",
+      "confidence": 0.95
+    },
+    {
+      "method": "StatFactChecker (Sprint 5 apples-to-apples)",
+      "verdict_original": "unsourced_unsafe",
+      "query_id": "psy_en_q1",
+      "claim_excerpt": "Master Psychopathologie Clinique Psychanalytique (Lyon 2) — taux d’emploi",
+      "category": "C",
+      "audit_reason": "Aucune source retrievée n'est fournie pour ce claim spécifique sur Lyon 2. Le LLM mentionne un master existant mais sans données d'insertion propres à cet établissement. Gap documentaire évident.",
+      "confidence": 0.95
+    },
+    {
+      "method": "StatFactChecker (Sprint 5 apples-to-apples)",
+      "verdict_original": "unsourced_unsafe",
+      "query_id": "emma_q1",
+      "claim_excerpt": "Salaire pour les profils spécialisés (data engineer, expert cloud, pentester junior)",
+      "category": "C",
+      "audit_reason": "Aucune source n'a été retrievée pour valider les salaires spécifiques (2500-3200€) des profils data engineer/cloud/pentester. Le claim est plausible et cohérent avec le marché, mais constitue un gap documentaire évident.",
+      "confidence": 0.95
+    },
+    {
+      "method": "StatFactChecker (Sprint 5 apples-to-apples)",
+      "verdict_original": "unsourced_unsafe",
+      "query_id": "q05_metiers_btp_recruter",
+      "claim_excerpt": "création de postes pour chargé de projet smart building",
+      "category": "A",
+      "audit_reason": "Aucune source n'est retrievée pour étayer ce claim spécifique sur les chargés de projet smart building. Le LLM a extrapolé à partir de tendances générales du BTP sans ancrage documentaire dans la base de connaissances.",
+      "confidence": 0.95
+    },
+    {
+      "method": "StatFactChecker (Sprint 5 apples-to-apples)",
+      "verdict_original": "unsourced_unsafe",
+      "query_id": "q05_metiers_btp_recruter",
+      "claim_excerpt": "difficultés de recrutement pour chef de chantier BTP",
+      "category": "C",
+      "audit_reason": "Aucune source n'est fournie dans les excerpts retrievés. Le claim sur les difficultés de recrutement des chefs de chantier est plausible et cohérent avec le contexte BTP, mais impossible à vérifier sans sources.",
+      "confidence": 0.85
+    },
+    {
+      "method": "StatFactChecker (Sprint 5 apples-to-apples)",
+      "verdict_original": "unsourced_unsafe",
+      "query_id": "mohamed_q1",
+      "claim_excerpt": "Évolution possible vers chef de partie ou indépendant après 5-10 ans d’expérience.",
+      "category": "C",
+      "audit_reason": "Le claim sur l'évolution de carrière après 5-10 ans est plausible dans le secteur de la restauration, mais aucune source n'est fournie pour le valider. Gap de données sur les trajectoires professionnelles post-Bac pro cuisine.",
+      "confidence": 0.85
+    },
+    {
+      "method": "StatFactChecker (Sprint 5 apples-to-apples)",
+      "verdict_original": "unsourced_unsafe",
+      "query_id": "q01_postes_pourvoir_global",
+      "claim_excerpt": "Pourquoi : 1 Français sur 4 aura +60 ans en 2030 (INSEE). 200 000 postes non pourvus aujourd’hui (source : FHP 2024).",
+      "category": "A",
+      "audit_reason": "Aucune source retrievée n'est fournie pour vérifier le claim. Les chiffres précis (1/4 des Français +60 ans, 200 000 postes non pourvus) et citations explicites (INSEE, FHP 2024) suggèrent une fabrication par le LLM en absence totale de sources.",
+      "confidence": 0.95
+    },
+    {
+      "method": "StatFactChecker (Sprint 5 apples-to-apples)",
+      "verdict_original": "unsourced_unsafe",
+      "query_id": "q01_postes_pourvoir_global",
+      "claim_excerpt": "Top 3 des dynamiques : +500 000 emplois dans le soin/accompagnement (vieillissement), +300 000 dans les énergies renouvelables, +200 000 dans l’IA/data (source : Dares 2023, projections France Stratégie).",
+      "category": "A",
+      "audit_reason": "Aucune source n'est fournie alors que le claim cite explicitement 'Dares 2023, projections France Stratégie' avec des chiffres très précis (+500k, +300k, +200k). Sans sources retrievées, ces données chiffrées détaillées sont probablement fabriquées.",
+      "confidence": 0.95
+    },
+    {
+      "method": "StatFactChecker (Sprint 5 apples-to-apples)",
+      "verdict_original": "unsourced_unsafe",
+      "query_id": "q11_lycee_reunion_metropole",
+      "claim_excerpt": "Coût du privé : Certaines écoles (type Epitech, SUPINFO) coûtent 6 000–10 000€/an — vérifie les aides",
+      "category": "C",
+      "audit_reason": "Les frais de scolarité d'Epitech et SUPINFO sont des informations publiques factuelles (6000-10000€/an est correct), mais aucune source retrievée ne couvre ces données tarifaires. Gap documentaire sur les écoles privées.",
+      "confidence": 0.85
+    },
+    {
+      "method": "FetchStatFromSource (Sprint 4 bench)",
+      "verdict_original": "unsupported",
+      "query_id": "emma_q3",
+      "claim_excerpt": "**Grosse boîte tech (Doctolib/Criteo)** : stabilité, salaires compétitifs (~40-50k€ brut), mais moins d’impact individuel et processus plus rigides.",
+      "category": "A",
+      "audit_reason": "Aucune source n'est fournie alors que le claim contient des affirmations factuelles précises (fourchette salariale 40-50k€, caractéristiques organisationnelles de Doctolib/Criteo). Le LLM a généré ces informations sans ancrage documentaire.",
+      "confidence": 0.95
+    },
+    {
+      "method": "FetchStatFromSource (Sprint 4 bench)",
+      "verdict_original": "unsupported",
+      "query_id": "q03_postes_aides_soignants",
+      "claim_excerpt": "*Pour toi : Gain de temps si tu as déjà travaillé dans le médico-social (ex : auxiliaire de vie).*\n\n### **Plan C — Spécialisation pour évoluer**\n📍 **Formation complémentaire** (ex : **Gestionnaire de cas en gériatrie**, **Coordinateur en EHPAD**) — Bac+2/3, salaires +20% (connaissance générale).",
+      "category": "C",
+      "audit_reason": "Le claim décrit des parcours de formation et reconversion logiques (VAE pour expérience médico-sociale, formations Bac+2/3 pour spécialisation). Aucune source n'est retrievée pour vérifier, mais les informations sont plausibles et cohérentes avec le système français.",
+      "confidence": 0.85
+    },
+    {
+      "method": "FetchStatFromSource (Sprint 4 bench)",
+      "verdict_original": "unsupported",
+      "query_id": "psy_en_q1",
+      "claim_excerpt": "*Pour vous* : Ces formations courtes (6-12 mois) sont souvent éligibles au **CPF** et accessibles en **formation continue**.",
+      "category": "A",
+      "audit_reason": "Le claim affirme que ces formations courtes sont éligibles au CPF et accessibles en formation continue, mais aucune source n'est fournie pour vérifier cette affirmation. Le LLM a probablement généralisé à partir de connaissances préentraînées sans ancrage documentaire.",
+      "confidence": 0.85
+    },
+    {
+      "method": "FetchStatFromSource (Sprint 4 bench)",
+      "verdict_original": "unsupported",
+      "query_id": "emma_q2",
+      "claim_excerpt": "**Alternance = meilleur CV pour un CDI direct** si tu vises un poste opérationnel (ingénierie, data, cybersécurité) : expérience pro de 12-24 mois + réseau entreprise.",
+      "category": "C",
+      "audit_reason": "Aucune source n'est retrievée pour supporter ce claim. L'affirmation sur l'avantage de l'alternance pour le CDI en postes opérationnels est plausible et cohérente avec le contexte du marché de l'emploi, mais manque de données factuelles dans le corpus.",
+      "confidence": 0.85
+    },
+    {
+      "method": "FetchStatFromSource (Sprint 4 bench)",
+      "verdict_original": "unsupported",
+      "query_id": "q11_lycee_reunion_metropole",
+      "claim_excerpt": "**Priorité aux BUT et licences pro** : sélectivité modérée (30-60%), diplômes reconnus, et stages intégrés.",
+      "category": "C",
+      "audit_reason": "Le claim sur la sélectivité 30-60% des BUT/licences pro est une connaissance générale du système français, probablement vraie mais aucune source retrievée ne documente ces taux. Gap de données factuelles dans le RAG.",
+      "confidence": 0.85
+    },
+    {
+      "method": "FetchStatFromSource (Sprint 4 bench)",
+      "verdict_original": "unsupported",
+      "query_id": "q20_sante_rural",
+      "claim_excerpt": "*Pour toi : si tu as déjà un bac et veux un métier polyvalent avec évolution possible (cadre de santé, pratique avancée).*\n\n📍 **Métiers sociaux-médicaux** : **Accompagnant Éducatif et Social (DEAES)** (12-18 mois) ou **Médiateur en Santé** (formation courte via ARS).",
+      "category": "C",
+      "audit_reason": "Le claim décrit des parcours de formation légitimes (DEAES, médiateur en santé) et une analyse de pertinence pour l'utilisateur. Aucune source n'est fournie pour vérifier, mais le contenu semble plausible et non inventé.",
+      "confidence": 0.75
+    },
+    {
+      "method": "FetchStatFromSource (Sprint 4 bench)",
+      "verdict_original": "unsupported",
+      "query_id": "q19_kine_debouches",
+      "claim_excerpt": "Le diplôme d’État (bac+5) est **obligatoire** et **sélectif** (numerus clausus supprimé mais concours exigeant).",
+      "category": "C",
+      "audit_reason": "Le claim sur le diplôme bac+5 obligatoire et la suppression du numerus clausus est factuellement correct (réforme 2020). Aucune source n'a été retrievée pour le vérifier, indiquant un gap dans la base documentaire.",
+      "confidence": 0.85
+    },
+    {
+      "method": "FetchStatFromSource (Sprint 4 bench)",
+      "verdict_original": "unsupported",
+      "query_id": "q09_blocs_master_marketing",
+      "claim_excerpt": "---\n\n### **Plan A — Approche académique + recherche**\n📍 **MSc Digital Marketing and Sales** (Paris) — bac+5, [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.2467)\n*Pour toi :* Idéal si tu veux allier théorie (comportement consommateur, data science) et applications concrètes",
+      "category": "A",
+      "audit_reason": "Le claim présente un programme spécifique (MSc Digital Marketing and Sales à Paris) avec détails pédagogiques précis, sans aucune source retrievée. Le LLM a généré de toute pièce cette formation et ses caractéristiques.",
+      "confidence": 0.95
+    },
+    {
+      "method": "FetchStatFromSource (Sprint 4 bench)",
+      "verdict_original": "unsupported",
+      "query_id": "q01_postes_pourvoir_global",
+      "claim_excerpt": "---\n\n### **Plan A — Métiers en tension *dès 2025* (besoins urgents, formations courtes)**\n1.",
+      "category": "C",
+      "audit_reason": "Aucune source n'est retrievée pour ce claim structurel (titre de section 'Plan A'). Le contenu est probablement valide mais le système RAG n'a fourni aucun document pour vérifier cette catégorisation des métiers en tension.",
+      "confidence": 0.85
+    },
+    {
+      "method": "FetchStatFromSource (Sprint 4 bench)",
+      "verdict_original": "unsupported",
+      "query_id": "q16_bacpro_BUT_taux",
+      "claim_excerpt": "Les BUT en commerce (ex : TC) recrutent **prioritairement des bacs généraux/techno** (STMG), avec des taux d’admission très bas pour les bacs pros (<10% souvent).",
+      "category": "C",
+      "audit_reason": "Aucune source n'est fournie dans le retrieval (top-K vide). Le claim sur les taux d'admission <10% pour bacs pros en BUT TC est statistiquement plausible mais totalement non documenté par les sources retrievées.",
+      "confidence": 0.95
+    }
+  ]
+}

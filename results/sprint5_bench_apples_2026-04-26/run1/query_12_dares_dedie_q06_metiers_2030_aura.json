@@ -1,0 +1,125 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q06_metiers_2030_aura",
+  "query_text": "Métiers en 2030 : quels secteurs vont créer le plus d'emplois en Auvergne-Rhône-Alpes ?",
+  "answer_text": "**TL;DR**\n1. En Auvergne-Rhône-Alpes, **3 secteurs porteront la croissance d’ici 2030** : transition énergétique, santé/biotech, et numérique/IA.\n2. **Lyon, Grenoble et Clermont-Ferrand** concentreront 70% des opportunités (connaissance générale).\n3. Priorise les formations courtes (BTS/BUT) ou en alternance pour une insertion rapide.\n\n---\n\n### **Plan A — Transition énergétique & décarbonation (recrutements massifs)**\n📍 **Technicien en énergies renouvelables** (Lyon, Grenoble, Annecy)\n*Pour toi : BTS Métiers des services à l’environnement (public, 100% en alternance possible) ou BUT Génie Thermique. **Débouchés : 80% en CDI sous 6 mois** (estimation région AuRA, connaissance générale).*\n- **Exemples d’employeurs** : Engie Green, Schneider Electric (Grenoble), startups hydrogène (Lyon).\n- **Salaire médian embauche** : ~2 000-2 300€ brut (connaissance générale, marché AuRA).\n\n📍 **Ingénieur en efficacité énergétique** (Grenoble, Saint-Étienne)\n*Pour toi : École d’ingé comme **Grenoble INP – Ense³** (public, sélectif) ou **Polytech Clermont** (moins sélectif). Alternance rémunérée ~800-1 200€/mois.*\n\n---\n### **Plan B — Santé & biotechnologies (pénurie de main-d’œuvre)**\n📍 **Technicien de laboratoire/biotech** (Lyon, Villeurbanne)\n*Pour toi : BTS Bioanalyses et contrôles (lycées publics comme **La Martinière Monplaisir**, Lyon) ou BUT Génie Biologique. **Taux d’emploi : ~90% à 1 an** (connaissance générale, filières paramédicales AuRA).*\n- **Secteurs porteurs** : Vaccins (Sanofi Lyon), diagnostic (BioMérieux), cosmétiques (L’Oréal).\n- **Salaire** : 1 800-2 200€ brut en début de carrière.\n\n📍 **Infirmier spécialisé (gériatrie, bloc opératoire)** (Clermont-Ferrand, Saint-Étienne)\n*Pour toi : IFSI publics (gratuit, sélectivité modérée). **100% d’emploi à la sortie** (connaissance générale, tension régionale).*\n- **Évolution** : Cadre de santé (Bac+3) ou pratique avancée (Bac+5).\n\n---\n### **Plan C — Numérique & IA (demande stable mais compétitive)**\n📍 **Développeur full-stack / Data Analyst** (Lyon, Grenoble)\n*Pour toi : BUT Informatique (IUT Lyon 1, Grenoble) ou **Simplon.co** (formation gratuite subventionnée, alternance).*\n- **Atout AuRA** : Pôles tech comme **Lyonbiopôle** et **Giant** (Grenoble) recrutent en masse.\n- **Salaire junior** : 2 500-3 000€ brut (connaissance générale, marché lyonnais).\n\n📍 **Technicien en cybersécurité** (Annecy, Valence)\n*Pour toi : BTS SIO option Cybersécurité (lycées comme **Berthollet**, Annecy) ou **Licence Pro Cybersécurité** (Univ. Savoie Mont Blanc).*\n- **Label SecNumEdu** : Vise les formations certifiées par l’ANSSI pour un CV différenciant.\n\n---\n### **Carte des bassins d’emploi (connaissance générale)**\n- **Lyon** : Santé (HCL), tech (startups), énergie (EDF).\n- **Grenoble** : Microélectronique (STMicroelectronics), énergie (CEA), biotech.\n- **Clermont-Ferrand** : Santé (CHU), agroalimentaire (Michelin, Limagrain).\n- **Saint-Étienne/Annecy** : Industrie 4.0, tourisme tech (station connectées).\n\n**⚠ Attention** :\n- **Évite les formations privées non labellisées** (ex : écoles \"tech\" à 8k€/an sans titre RNCP).\n- **Alternance = clé** : 60% des embauches en AuRA passent par ce canal (connaissance générale, données Région).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour le terrain (technicien) ou la conception (ingénieur/analyste) ? Cela peut affiner le choix entre BTS/BUT (Plan A) et écoles d’ingé (Plan B). 👤 Pour creuser, le **CARIF-OREF Auvergne-Rhône-Alpes** ([lien](https://www.oref-auvergnerhonealpes.fr)) propose des fiches métiers détaillées par bassin.",
+  "elapsed_pipeline_s": 36.52,
+  "elapsed_fact_check_post_hoc_s": 4.36,
+  "elapsed_clarify_s": 1.69,
+  "elapsed_reformulate_s": 9.3,
+  "elapsed_retrieve_s": 0.46,
+  "elapsed_generate_s": 25.07,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 0,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "70% des opportunités",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "Lyon, Grenoble et Clermont-Ferrand concentreront 70% des opportunités",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "80% en CDI sous 6 mois",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Débouchés : 80% en CDI sous 6 mois (estimation région AuRA, connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~2 000-2 300€ brut",
+      "stat_value": 2000,
+      "stat_unit": "€",
+      "context": "Salaire médian embauche : ~2 000-2 300€ brut (connaissance générale, marché AuRA)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~800-1 200€/mois",
+      "stat_value": 1000,
+      "stat_unit": "€/mois",
+      "context": "Alternance rémunérée ~800-1 200€/mois",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~90% à 1 an",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "Taux d’emploi : ~90% à 1 an (connaissance générale, filières paramédicales AuRA)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 800-2 200€ brut",
+      "stat_value": 2000,
+      "stat_unit": "€",
+      "context": "Salaire : 1 800-2 200€ brut en début de carrière",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "100% d’emploi à la sortie",
+      "stat_value": 100,
+      "stat_unit": "%",
+      "context": "100% d’emploi à la sortie (connaissance générale, tension régionale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 500-3 000€ brut",
+      "stat_value": 2750,
+      "stat_unit": "€",
+      "context": "Salaire junior : 2 500-3 000€ brut (connaissance générale, marché lyonnais)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "60% des embauches en AuRA passent par l’alternance",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "Alternance = clé : 60% des embauches en AuRA passent par ce canal (connaissance générale, données Région)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "apec_region",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les secteurs et métiers prévus pour créer le plus d'emplois d'ici 2030 en Auvergne-Rhône-Alpes selon les projections DARES Métiers 2030 ? Mentionner les postes à pourvoir et les tendances régionales.",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Intent core : demande explicite sur les métiers 2030 et la création d'emplois en AURA, aligné avec DARES."
+    },
+    {
+      "text": "Quels sont les secteurs d'activité en croissance en Auvergne-Rhône-Alpes qui recrutent des cadres ? Perspectives du marché du travail cadres dans la région.",
+      "target_corpus": "apec_region",
+      "priority": 2,
+      "rationale": "Complète metier_prospective avec une focale cadres, utile pour contextualiser les opportunités."
+    },
+    {
+      "text": "Quels sont les métiers émergents ou en tension en Auvergne-Rhône-Alpes selon les fiches ONISEP ? Secteurs porteurs identifiés.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporte une vision éditorialisée des métiers porteurs, complémentaire aux données quantitatives."
+    },
+    {
+      "text": "Quels domaines de formation (Parcoursup/ONISEP) préparent aux secteurs en croissance en Auvergne-Rhône-Alpes d'ici 2030 ?",
+      "target_corpus": "formation",
+      "priority": 3,
+      "rationale": "Lien avec les formations pour ancrer la réflexion dans l'action, mais moins prioritaire."
+    }
+  ]
+}

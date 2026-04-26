@@ -1,0 +1,203 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q14_passerelle_infirmier_RH",
+  "query_text": "Une amie infirmière souhaite passer à un poste en ressources humaines. Quelles passerelles existent ?",
+  "answer_text": "**TL;DR**\n1. Une infirmière peut se réorienter vers les RH via des passerelles adaptées, mais **aucune n’est directe** : il faut valider des compétences en gestion/droit.\n2. **3 chemins principaux** : formation courte (bac+2), VAE pour un bac+3, ou master RH en alternance (bac+5).\n3. **Étape clé** : identifier ses atouts transférables (gestion d’équipes, formation, réglementation santé) pour cibler la bonne voie.\n\n---\n\n### **Plan A — Réaliste : Certificat RNCP bac+2 en RH (1 an, accessible sans prérequis)**\n📍 **[Assistant RH](https://www.onisep.fr/http/redirection/formation/slug/FOR.4997)** — Certificat RNCP (niveau bac+2), **formation courte** (6 à 12 mois), souvent en alternance.\n*Pour ton amie : idéal pour un premier pas en RH avec son expérience terrain. Les compétences en gestion de planning (infirmière) sont un atout.*\n\n**Étapes concrètes** :\n1. **Choisir une formation** : Cible un **Titre RNCP \"Assistant RH\"** (ex : CNAM, GRETA, écoles privées comme l’IFOCOP). Coût : ~2 000-6 000€ (gratuit en alternance).\n2. **Valider ses acquis** : Son expérience en coordination d’équipes soignantes peut être valorisée via un **dossier VAP** (Validation des Acquis Professionnels) pour entrer en formation sans diplôme prérequis.\n3. **Alternance** : Trouver un contrat dans un service RH d’un hôpital, clinique, ou EHPAD (son réseau santé est un avantage).\n\n---\n\n### **Plan B — Ambitieux : Licence pro ou VAE bac+3 (18-24 mois, pour évoluer vers des postes de chargé·e RH)**\n*(connaissance générale — pas de fiche retrievée pour ce niveau)*\n**2 options** :\n1. **Licence pro \"Gestion des RH\"** (1 an après un bac+2) :\n   - Exemples : **Licence pro Métiers des RH** (universités comme Paris Nanterre, Lyon 2).\n   - **Admission** : Sur dossier + entretien. Son expérience infirmière compte pour 30-40% de la note (connaissance générale).\n   - **Alternance obligatoire** dans 90% des cas : salaire ~600-800€/mois.\n\n2. **VAE pour un bac+3 RH** :\n   - Cibler un **Titre RNCP niveau 6** (ex : \"Responsable RH\" du CNAM).\n   - **Processus** : Dossier de recevabilité (3 mois) → Jury (6 mois). Coût : ~3 000-5 000€ (finançable via CPF).\n   - **Atouts infirmiers** : Gestion des conflits, application des conventions collectives (hôpitaux), formation du personnel.\n\n**Pour ton amie** : Si elle vise un poste de **chargé·e de recrutement** ou **gestion de carrière**, ce niveau est indispensable.\n\n---\n### **Plan C — Long terme : Master RH (bac+5) en alternance (3-4 ans, pour des postes stratégiques)**\n📍 **[Master mention Gestion des RH](https://www.onisep.fr/http/redirection/formation/slug/FOR.4997)** — bac+5, **grade master**, souvent en alternance.\n*Pour ton amie : si elle veut accéder à des postes comme **DRH adjoint·e** ou **consultante RH**, mais nécessite un investissement long.*\n\n**Parcours type** :\n1. **Étape 1** : Valider un bac+3 RH (via Plan B).\n2. **Étape 2** : Intégrer un **master RH en alternance** (ex : IAEs comme Aix-Marseille ou Paris 1). Sélectivité : 20-30% (dossier + tests).\n3. **Spécialisation** : Choisir un parcours **\"RH et santé au travail\"** pour capitaliser sur son expérience médicale.\n\n**Financement** :\n- **Alternance** : Prise en charge par l’employeur + salaire (~800-1 200€/mois en M1, ~1 000-1 500€ en M2).\n- **CPF** : Jusqu’à 500€/an pour les formations éligibles.\n\n---\n### **⚠ Attention**\n1. **Piège \"reconversion express\"** : Les formations RH **100% en ligne et \"accélérées\"** (ex : \"Devenez RH en 3 mois\") sont souvent **non reconnues** (pas de RNCP/grade master). Vérifier systématiquement le **RNCP** sur [France Compétences](https://www.francecompetences.fr/).\n2. **Salaire** : Un·e infirmière en RH débutant·e gagne **10-20% de moins** qu’en soin (salaire médian embauche : ~2 000€ brut vs ~2 300€ en soin — *estimation marché, connaissance générale*).\n\n---\n**Question pour ton amie** :\nSon objectif est-il **opérationnel** (recrutement, paie) ou **stratégique** (politique RH, dialogue social) ? Cela change radicalement le parcours :\n- **Opérationnel** → Plan A (bac+2) ou B (licence pro).\n- **Stratégique** → Plan C (master), mais avec un détour par un bac+3 d’abord.",
+  "elapsed_pipeline_s": 26.89,
+  "elapsed_fact_check_post_hoc_s": 10.65,
+  "elapsed_clarify_s": 2.22,
+  "elapsed_reformulate_s": 9.87,
+  "elapsed_retrieve_s": 0.4,
+  "elapsed_generate_s": 14.4,
+  "fact_check_summary": {
+    "n_stats_total": 18,
+    "n_verified": 8,
+    "n_with_disclaimer": 10,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "6 à 12 mois",
+      "stat_value": 6,
+      "stat_unit": "mois",
+      "context": "Certificat RNCP (niveau bac+2), formation courte (6 à 12 mois)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~2 000-6 000€",
+      "stat_value": 2000,
+      "stat_unit": "€",
+      "context": "Coût : ~2 000-6 000€ (gratuit en alternance)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30-40%",
+      "stat_value": 35,
+      "stat_unit": "%",
+      "context": "Son expérience infirmière compte pour 30-40% de la note",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~600-800€/mois",
+      "stat_value": 700,
+      "stat_unit": "€/mois",
+      "context": "Salaire ~600-800€/mois",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~3 000-5 000€",
+      "stat_value": 4000,
+      "stat_unit": "€",
+      "context": "Coût : ~3 000-5 000€ (finançable via CPF)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "800-1 200€/mois",
+      "stat_value": 1000,
+      "stat_unit": "€/mois",
+      "context": "Salaire (~800-1 200€/mois en M1)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 000-1 500€/mois",
+      "stat_value": 1250,
+      "stat_unit": "€/mois",
+      "context": "Salaire (~1 000-1 500€/mois en M2)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10-20%",
+      "stat_value": 15,
+      "stat_unit": "%",
+      "context": "Un·e infirmière en RH débutant·e gagne 10-20% de moins qu’en soin",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~2 000€ brut",
+      "stat_value": 2000,
+      "stat_unit": "€ brut",
+      "context": "salaire médian embauche : ~2 000€ brut vs ~2 300€ en soin",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~2 300€",
+      "stat_value": 2300,
+      "stat_unit": "€",
+      "context": "salaire médian embauche : ~2 000€ brut vs ~2 300€ en soin",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0.8",
+      "stat_value": 0.8,
+      "stat_unit": "",
+      "context": "taux_emploi_3ans: 0.8",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.87",
+      "stat_value": 0.87,
+      "stat_unit": "",
+      "context": "taux_emploi_6ans: 0.87",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.76",
+      "stat_value": 0.76,
+      "stat_unit": "",
+      "context": "taux_cdi: 0.76",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "1570",
+      "stat_value": 1570,
+      "stat_unit": "",
+      "context": "salaire_median_embauche: 1570",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context": "taux_emploi_3ans: 0.85",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context": "taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context": "taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "",
+      "context": "salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles formations ou certifications en ressources humaines sont accessibles aux professionnels en reconversion, notamment pour une infirmière souhaitant évoluer vers les RH ? Mots-clés : passerelles, reconversion professionnelle, formations RH, catalogue Parcoursup, ONISEP.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : identifier les formations adaptées à une reconversion vers les RH."
+    },
+    {
+      "text": "Quels sont les métiers des ressources humaines accessibles après une expérience en secteur médical ou paramédical, comme infirmière ? Fiches éditorialisées ONISEP.",
+      "target_corpus": "metier",
+      "priority": 1,
+      "rationale": "Identifie les métiers RH compatibles avec un profil infirmière pour une transition fluide."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications RNCP sont recommandés pour une infirmière en reconversion vers les RH ? Focus : compétences transférables et certifications utiles.",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Permet de cibler les compétences à valider pour faciliter la transition vers les RH."
+    },
+    {
+      "text": "Quelles sont les perspectives de recrutement cadres dans les ressources humaines d'ici 2030 ? Données DARES Métiers 2030 par région.",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte un éclairage sur la demande future en RH pour sécuriser la reconversion."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle 6 à 18 mois après un master ou BUT en ressources humaines ? Données MESR insertion.",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Contextualise les débouchés post-formation pour évaluer la faisabilité de la reconversion."
+    }
+  ]
+}

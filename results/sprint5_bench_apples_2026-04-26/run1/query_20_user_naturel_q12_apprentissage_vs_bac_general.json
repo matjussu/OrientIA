@@ -1,0 +1,75 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q12_apprentissage_vs_bac_general",
+  "query_text": "Mon fils de 17 ans hésite entre l'apprentissage et le bac général. Comment l'aider à décider ?",
+  "answer_text": "**TL;DR**\n1. **Pas de réponse universelle** : l’apprentissage et le bac général ouvrent des portes différentes, mais dépendent de son projet, de ses forces et de son rapport aux études.\n2. **Critère clé** : s’il a une idée précise de métier (ex : graphisme, mécanique) → apprentissage. S’il aime les matières générales ou vise des études longues → bac général.\n3. **Action concrète** : faites ensemble le test d’orientation [ONISEP \"Mon orientation en ligne\"](https://www.onisep.fr/Choisir-mes-etudes/Au-lycee-au-CFA/Apres-la-3e/Mon-orientation-en-ligne) (10 min) pour identifier ses affinités.\n\n---\n\n### **Plan A — S’il a un métier en tête ou aime le concret**\n**📍 Apprentissage** (CAP/Bac Pro/BTS en alternance) — **niveau bac ou bac+2**, 100% professionnel, rémunéré (25-80% du SMIC selon âge).\n*Pour lui : idéal si il veut un diplôme + expérience rapide (ex : graphiste, mécanicien, cuisinier), avec un salaire dès 17 ans. Les CFA (Centres de Formation d’Apprentis) proposent des formations gratuites et diplômantes.*\n*(connaissance générale)*\n\n**Exemple concret** :\n📍 **Graphiste** (Certificat RNCP bac+2) — formation en 2 ans en alternance, débouchés dans les agences/startups.\n*Pour lui : s’il aime le design et veut éviter les études longues, c’est un bon compromis.*\n\n---\n\n### **Plan B — S’il aime les matières générales ou vise des études supérieures**\n**📍 Bac général** (Terminale → BTS/licence/prépa) — **niveau bac**, porte d’entrée pour les filières sélectives (médecine, écoles d’ingé, etc.).\n*Pour lui : nécessaire si il envisage une licence, une prépa, ou un métier nécessitant bac+5 (ex : architecte, psychologue). Le bac général garde plus d’options ouvertes, mais sans garantie d’emploi immédiat.*\n*(connaissance générale)*\n\n**Alternative hybride** :\nCertains lycées proposent des **bacs pros \"mixte\"** (ex : bac pro Gestion-Administration avec enseignements généraux renforcés) pour garder une porte vers le supérieur. À explorer si il hésite encore.\n\n---\n\n### **Plan C — S’il ne sait pas encore : tester avant de choisir**\n1. **Stage d’observation** : 1 semaine en entreprise (ex : garage, agence de com’) pour valider son attrait pour un métier.\n2. **Mini-MOOC** : plateformes comme [FUN MOOC](https://www.fun-mooc.fr/) (cours gratuits) pour tester des domaines (ex : \"Découvrir la psychologie\" ou \"Initiation au code\").\n3. **Année de détermination** : certaines régions proposent des dispositifs type *\"Prépa apprentissage\"* (6 mois pour découvrir plusieurs métiers).\n*(connaissance générale)*\n\n---\n**⚠ Attention aux pièges**\n- **Apprentissage** : tous les secteurs ne recrutent pas en alternance (ex : arts, social). Vérifier les offres sur [La Bonne Alternance](https://labonnealternance.pole-emploi.fr/).\n- **Bac général** : sans projet clair, risque de décrochage en études supérieures (40% d’abandon en licence — *source DEPP 2022*).\n- **Pression sociale** : évitez les phrases comme *\"L’apprentissage, c’est pour ceux qui ne sont pas faits pour les études\"* — les deux voies mènent à des diplômes reconnus.\n\n---\n**Question pour vous** :\nEst-ce qu’il préfère :\n1. **Apprendre en faisant** (métier précis, salaire immédiat) ?\n2. **Garder des portes ouvertes** (études longues, métiers variés) ?\n3. **Ou a-t-il besoin de plus de temps pour explorer** (stages, MOOC) ?\n\n---\n👤 *Pour aller plus loin, un entretien avec le **Psy-EN** (Psychologue de l’Éducation Nationale) de son lycée peut l’aider à clarifier ses motivations. Prenez rendez-vous via son professeur principal.*",
+  "elapsed_pipeline_s": 27.78,
+  "elapsed_fact_check_post_hoc_s": 1.31,
+  "elapsed_clarify_s": 1.92,
+  "elapsed_reformulate_s": 9.07,
+  "elapsed_retrieve_s": 0.45,
+  "elapsed_generate_s": 16.34,
+  "fact_check_summary": {
+    "n_stats_total": 2,
+    "n_verified": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "25-80% du SMIC selon âge",
+      "stat_value": null,
+      "stat_unit": "pourcentage du SMIC",
+      "context": "rémunéré (25-80% du SMIC selon âge)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "40% d’abandon en licence",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context": "sans projet clair, risque de décrochage en études supérieures (40% d’abandon en licence — source DEPP 2022).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les avantages et inconvénients de l'apprentissage par rapport au bac général pour un lycéen de 17 ans ? Données Parcoursup et ONISEP sur les taux de réussite, débouchés et poursuites d'études.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : comparaison apprentissage vs bac général avec des données concrètes."
+    },
+    {
+      "text": "Quels métiers ou secteurs recrutent le plus en 2030 selon la DARES ? Focus sur les opportunités pour les jeunes sans diplôme supérieur initial.",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte un éclairage prospectif sur les débouchés pour orienter le choix."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois pour les titulaires d'un bac général vs un diplôme obtenu par apprentissage ?",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Compare l'insertion pro des deux voies pour objectiver le choix."
+    },
+    {
+      "text": "Quels sont les blocs de compétences ou certifications RNCP accessibles via l'apprentissage dès 17 ans ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Explore les compétences concrètes acquises via l'apprentissage."
+    },
+    {
+      "text": "Quels sont les retours d'expérience ou témoignages de jeunes en apprentissage vs bac général ? Focus sur la vie étudiante, l'autonomie et les difficultés rencontrées.",
+      "target_corpus": "multi",
+      "priority": 3,
+      "rationale": "Apporte une dimension qualitative et humaine au choix."
+    }
+  ]
+}

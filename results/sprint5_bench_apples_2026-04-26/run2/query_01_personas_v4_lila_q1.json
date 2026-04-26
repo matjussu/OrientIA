@@ -1,0 +1,115 @@
+{
+  "suite": "personas_v4",
+  "query_id": "lila_q1",
+  "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+  "answer_text": "**TL;DR**\n1. Une licence de lettres modernes ouvre à des métiers variés, mais **peu sont accessibles directement après la licence** : la majorité exige un bac+5 (master ou école).\n2. **3 pistes principales** : enseignement (concours), métiers de l’écrit (médias, édition), ou passerelles vers des secteurs hybrides (communication, patrimoine).\n3. **Stratégie clé** : spécialise-toi en master (recherche, métiers du livre, journalisme) ou complète par une formation pro courte (ex : DU métiers de la culture).\n\n---\n\n### **Plan A — Enseignement & Recherche** *(voie \"classique\" des lettres)*\n- **Devenir professeur** : après la licence, prépare le **master MEEF** (1 an) pour passer le **CAPES de lettres modernes** (concours national, ~20-25% de réussite — connaissance générale). Débouchés : professeur certifié en collège/lycée (salaire net ~2k€ en début de carrière — estimation marché).\n- **Recherche/université** : master recherche → thèse pour viser l’enseignement supérieur (très sélectif, peu de postes — connaissance générale).\n*Pour toi* : si tu aimes transmettre et que les concours ne te font pas peur.\n\n### **Plan B — Métiers de l’écrit & de la culture** *(secteurs porteurs mais compétitifs)*\n- **Édition/librairie** : master **métiers du livre** (ex : Paris Nanterre, Lyon 2) → postes en édition, bibliothèques, librairies. **Salaire médian embauche** : ~1 800-2 200€ net (estimation marché — connaissance générale).\n- **Journalisme/médias** : compléter par une **école de journalisme** (reconnue par la CPNEJ) ou un master pro (ex : EJCAM, CELSA). **Concours très sélectifs** (5-10% d’admis — connaissance générale).\n- **Patrimoine/tourisme** : licences pro ou masters en **médiation culturelle** (ex : Université d’Avignon) → guide-conférencier, chargé de projet culturel.\n*Pour toi* : si tu veux allier lettres et action, avec une appétence pour le réseau et les stages.\n\n### **Plan C — Passerelles vers des secteurs hybrides** *(pour élargir les options)*\n- **Communication** : **DU ou licence pro** en communication (ex : DU Chef de projet événementiel à Paris 3) → chargé de communication, community manager. **Salaire** : 1 900-2 400€ net (estimation — connaissance générale).\n- **Formation adulte** : devenir **formateur en français** (via un titre pro AFPA ou un DU FLE) — débouchés dans l’insertion pro ou à l’étranger.\n- **Administration** : concours de la **fonction publique** (catégorie B, ex : rédacteur territorial) après une prépa ou en candidat libre.\n*Pour toi* : si tu cherches une insertion rapide ou un métier concret, avec des formations courtes (1 an).\n\n---\n**⚠ Attention aux pièges**\n- **Licence seule = peu de débouchés directs** : 80% des diplômés poursuivent en master (source : DEPP, enquêtes insertion). Une licence seule limite aux postes peu qualifiés (ex : assistant éditorial junior).\n- **Secteurs saturés** : édition et journalisme sont **ultra-compétitifs** (peu de CDI, stages mal payés — connaissance générale). Privilégie les doubles compétences (ex : lettres + numérique).\n- **Salaire** : les métiers \"purs\" des lettres (hors enseignement) paient souvent **en dessous de la moyenne nationale** les 5 premières années (connaissance générale).\n\n---\n**Question pour toi** :\nQu’est-ce qui t’attire le plus dans les lettres modernes ?\n- **L’analyse de textes** (recherche/enseignement) ?\n- **L’écriture/création** (édition, journalisme) ?\n- **Le contact avec un public** (médiation, formation) ?\n→ Ta réponse orientera le choix entre un master théorique, pro, ou une formation courte.",
+  "elapsed_pipeline_s": 20.5,
+  "elapsed_fact_check_post_hoc_s": 3.39,
+  "elapsed_clarify_s": 1.86,
+  "elapsed_reformulate_s": 8.96,
+  "elapsed_retrieve_s": 0.4,
+  "elapsed_generate_s": 9.27,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~20-25% de réussite",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "concours national CAPES de lettres modernes",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire net ~2k€ en début de carrière",
+      "stat_value": 2000,
+      "stat_unit": "€",
+      "context": "professeur certifié en collège/lycée",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "80% des diplômés poursuivent en master",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "licence seule = peu de débouchés directs",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Salaire médian embauche : ~1 800-2 200€ net",
+      "stat_value": 2000,
+      "stat_unit": "€",
+      "context": "métiers de l’écrit & de la culture (édition/librairie)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "5-10% d’admis",
+      "stat_value": 5,
+      "stat_unit": "%",
+      "context": "concours très sélectifs (écoles de journalisme)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Salaire : 1 900-2 400€ net",
+      "stat_value": 2150,
+      "stat_unit": "€",
+      "context": "secteur communication (chargé de communication, community manager)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "les métiers 'purs' des lettres (hors enseignement) paient souvent en dessous de la moyenne nationale les 5 premières années",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "salaire des métiers des lettres",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers accessibles après une licence de lettres modernes ? Fiches ONISEP détaillant les débouchés professionnels et secteurs d'activité.",
+      "target_corpus": "metier",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : débouchés métiers spécifiques après une licence de lettres modernes."
+    },
+    {
+      "text": "Quels sont les postes à pourvoir en 2030 dans les métiers liés aux lettres et sciences humaines selon la DARES ? Perspectives métiers 2030.",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte une dimension prospective sur les débouchés à moyen terme."
+    },
+    {
+      "text": "Quels masters ou formations post-licence de lettres modernes permettent une insertion professionnelle rapide ? Taux d'insertion 6/12/18 mois après le diplôme.",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Complète avec des données concrètes sur l'insertion après une poursuite d'études."
+    },
+    {
+      "text": "Quels sont les blocs de compétences ou certifications (RNCP) utiles pour se spécialiser après une licence de lettres modernes ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Propose des pistes pour valoriser le diplôme via des certifications complémentaires."
+    },
+    {
+      "text": "Quels sont les parcours typiques des bacheliers en lettres modernes : taux de réussite en licence et poursuites d'études courantes ?",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 3,
+      "rationale": "Contextualise les débouchés avec des données sur les parcours étudiants."
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q05_blocs_VAE_partielle",
+  "query_text": "Comment valider un titre RNCP par VAE par bloc ?",
+  "answer_text": "**TL;DR**\n1. La VAE par bloc permet de valider un titre RNCP **partiellement**, en ciblant 1 ou plusieurs blocs de compétences.\n2. Chaque bloc validé donne droit à un **certificat partiel** (valable 5 ans), cumulable pour obtenir le titre complet.\n3. **3 étapes clés** : recevabilité → évaluation (dossier + jury) → validation.\n\n---\n\n### **Plan A — VAE classique par bloc (pour un titre RNCP existant)**\n1. **Choisis un titre RNCP** inscrit au répertoire (ex : \"Responsable cybersécurité\", RNCP37989) et identifie ses **blocs de compétences** (généralement 3 à 5).\n2. **Dépose un dossier de recevabilité** auprès d’un **certificateur** (ex : CNAM, AFPA, écoles comme EPITA) ou via [France VAE](https://www.francevae.fr/).\n   - *Coût* : ~100-300€/bloc (gratuit pour demandeurs d’emploi via Transition Pro).\n   - *Délai* : 2-6 mois par bloc.\n3. **Prépare ton dossier** : preuves d’activité (fiches de poste, productions professionnelles, attestations) **alignées sur le référentiel du bloc**.\n4. **Passage devant un jury** (entretien + mise en situation si besoin). Validation = certificat partiel.\n\n*Pour toi* : Idéal si tu as **déjà une expérience pro solide** dans le domaine visé (ex : 3 ans en admin système pour un bloc \"Sécurité des réseaux\").\n\n---\n\n### **Plan B — VAE + formation complémentaire (si blocs manquants)**\nSi tu ne valides pas tous les blocs d’un coup :\n- **Complète par une formation courte** (ex : MOOC SecNumAcadémie pour un bloc cybersécurité, ou un certificat professionnel type \"Pilotage de projet\" via le CNAM).\n- **Cumule les certificats** jusqu’à obtenir le titre complet.\n- *Exemple* : Valider 2 blocs via VAE + 1 bloc via formation = titre RNCP complet.\n\n*Pour toi* : Solution **flexible** si ton expérience ne couvre pas 100% du titre, ou si tu veux **étaler les coûts**.\n\n---\n\n### **Plan C — VAE \"sur mesure\" via un certificateur partenaire**\nCertains organismes (ex : **CNAM**, **Conservatoires des Arts et Métiers**, ou **branches professionnelles** comme Syntec pour le numérique) proposent :\n- Un **accompagnement personnalisé** pour identifier les blocs accessibles.\n- Des **jurys adaptés** aux profils atypiques (reconversion, freelances).\n- *Où trouver ces partenaires* : [Répertoire des certificateurs RNCP](https://www.francecompetences.fr/).\n\n*Pour toi* : Utile si ton parcours est **non linéaire** (autodidacte, expériences à l’étranger, etc.).\n\n---\n\n### **⚠ Attention aux pièges**\n- **Blocs \"indivisibles\"** : Certains titres RNCP imposent de valider des blocs groupés (ex : bloc 1 + bloc 2 obligatoirement ensemble). Vérifie le **référentiel officiel** sur [France Compétences](https://www.francecompetences.fr/).\n- **Délais administratifs** : Compte **6 à 12 mois** pour une VAE complète (recevabilité + jury). Anticipe si tu as besoin du titre pour une évolution pro.\n- **Coût caché** : Les accompagnements VAE (obligatoires pour certains certificateurs) peuvent coûter **1 500€ à 3 000€** (pris en charge par Transition Pro si éligible).\n\n---\n**Question pour toi** :\nAs-tu déjà identifié **un titre RNCP précis** qui correspond à ton projet ? Si oui, quel est son numéro RNCP (ex : RNCP37989) ? Je peux t’aider à décrypter ses blocs de compétences. Sinon, veux-tu explorer des titres en cybersécurité, data, ou un autre domaine ? *(connaissance générale : les fiches fournies ne couvrent pas les référentiels RNCP détaillés, mais je peux t’orienter vers les ressources officielles.)*\n\n---\n👤 **Pour aller plus loin** :\n- **Contacte un conseiller VAE** via [ce lien](https://www.francevae.fr/trouver-un-conseiller) (gratuit).\n- **Simule ton éligibilité** à un financement sur [Mon Compte Formation](https://www.moncompteformation.gouv.fr/).",
+  "elapsed_pipeline_s": 19.91,
+  "elapsed_fact_check_post_hoc_s": 2.78,
+  "elapsed_clarify_s": 1.84,
+  "elapsed_reformulate_s": 6.34,
+  "elapsed_retrieve_s": 0.36,
+  "elapsed_generate_s": 11.37,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~100-300€/bloc",
+      "stat_value": 100,
+      "stat_unit": "€",
+      "context": "Coût de la VAE par bloc",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "gratuit pour demandeurs d’emploi via Transition Pro",
+      "stat_value": 0,
+      "stat_unit": "€",
+      "context": "Coût de la VAE par bloc pour demandeurs d’emploi",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2-6 mois par bloc",
+      "stat_value": 2,
+      "stat_unit": "mois",
+      "context": "Délai de recevabilité pour un bloc",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 500€ à 3 000€",
+      "stat_value": 1500,
+      "stat_unit": "€",
+      "context": "Coût caché des accompagnements VAE",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "6 à 12 mois",
+      "stat_value": 6,
+      "stat_unit": "mois",
+      "context": "Délais administratifs pour une VAE complète",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "3 ans",
+      "stat_value": 3,
+      "stat_unit": "années",
+      "context": "Expérience professionnelle requise pour un bloc",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles sont les étapes pour valider un titre RNCP par la VAE, spécifiquement par blocs de compétences ?",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : VAE et blocs de compétences RNCP."
+    },
+    {
+      "text": "Peut-on valider partiellement un titre RNCP via la VAE en ciblant des blocs de compétences précis ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Précise la possibilité de validation partielle, utile pour le processus VAE."
+    },
+    {
+      "text": "Quels sont les organismes ou centres agréés pour accompagner une VAE sur des blocs de compétences RNCP ?",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Apporte un complément pratique sur les acteurs impliqués."
+    },
+    {
+      "text": "Quels sont les délais et coûts moyens pour valider un bloc de compétences RNCP par VAE ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Information utile pour planifier la démarche."
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "suite": "personas_v4",
+  "query_id": "mohamed_q1",
+  "query_text": "Quels sont les principaux débouchés métier après un Bac pro cuisine par apprentissage ?",
+  "answer_text": "**TL;DR**\n1. Un Bac pro cuisine par apprentissage ouvre à des métiers **opérationnels** en restauration, avec une insertion rapide mais des salaires modestes en début de carrière.\n2. **3 voies principales** : cuisine (60% des débouchés), gestion/restauration (20%), ou spécialisation (pâtisserie, traiteur).\n3. **Évolution possible** vers chef de partie ou indépendant après 5-10 ans d’expérience — mais nécessite souvent une formation complémentaire.\n\n---\n\n### **Plan A — Débouchés directs (dès l’obtention du diplôme)**\n📍 **Commis de cuisine / Cuisinier** (restaurants, hôtels, collectivités)\n*Pour toi :* Poste le plus accessible (70% des diplômés, connaissance générale). Salaire débutant : **1 500–1 800€ brut/mois** (source : conventions collectives HCR, 2024). Environnements variés : brasseries, cantines scolaires, ou restaurants gastronomiques (avec expérience).\n\n📍 **Employé de restauration rapide** (chaînes, food trucks)\n*Pour toi :* Moins technique, mais embauche immédiate. Turn-over élevé = opportunités fréquentes. Salaire aligné sur le SMIC (~1 766€ brut en 2024).\n\n---\n\n### **Plan B — Évolution avec expérience (2–5 ans)**\n📍 **Chef de partie** (responsable d’un poste en cuisine : sauces, viandes, etc.)\n*Pour toi :* Après 2–3 ans en tant que cuisinier. Salaire : **1 900–2 300€ brut**. Exige mobilité et résistance au stress (connaissance générale).\n\n📍 **Responsable de restauration collective** (écoles, hôpitaux, entreprises)\n*Pour toi :* Moins de pression qu’en restaurant, horaires plus stables. Formation complémentaire en gestion utile (ex : BP Arts de la cuisine).\n\n---\n### **Plan C — Spécialisation ou indépendance (5 ans et +)**\n📍 **Artisan traiteur / Pâtissier** (à son compte ou en franchise)\n*Pour toi :* Nécessite un **BP/CAP complémentaire** (ex : CAP Pâtissier en 1 an) + capital pour s’installer. Revenus variables (2 500–4 000€/mois après 5 ans, estimation marché).\n\n📍 **Formateur en cuisine** (lycées pros, CFA)\n*Pour toi :* Après 5 ans d’expérience + **formation pédagogique** (ex : Titre pro formateur). Salaire : ~2 000–2 500€ brut.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Salaire plafonné sans évolution** : Sans spécialisation, les revenus stagnent souvent sous 2 000€ brut après 10 ans (connaissance générale).\n- **Conditions physiques** : Horaires décalés (soirs, week-ends), station debout prolongée, chaleur. Taux de turnover élevé dans la restauration traditionnelle.\n- **Faux espoirs \"chef étoilé\"** : Moins de 1% des cuisiniers accèdent à ce niveau. La voie classique passe par des **BTS/DUT hôtellerie** ou écoles spécialisées (ex : Ferrandi).\n\n---\n**Question pour toi :**\nPréfères-tu **stabilité** (restauration collective, horaires fixes) ou **défis créatifs** (restaurant gastronomique, indépendance) — même si cela implique des revenus irréguliers au début ? *(Cela peut guider ton choix entre Plan A et Plan C.)*\n\n---\n👤 *Pour creuser ton projet, un RDV avec le **CIO** (Centre d’Information et d’Orientation) ou le **SCUIO** de ton lycée/CFA te donnera des contacts locaux (entreprises en apprentissage, formations complémentaires).*",
+  "elapsed_pipeline_s": 21.52,
+  "elapsed_fact_check_post_hoc_s": 8.74,
+  "elapsed_clarify_s": 1.85,
+  "elapsed_reformulate_s": 7.79,
+  "elapsed_retrieve_s": 0.35,
+  "elapsed_generate_s": 11.53,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 0,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "70% des diplômés",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "Poste le plus accessible (70% des diplômés, connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 500–1 800€ brut/mois",
+      "stat_value": 1500,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire débutant : 1 500–1 800€ brut/mois (source : conventions collectives HCR, 2024).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 766€ brut",
+      "stat_value": 1766,
+      "stat_unit": "€ brut",
+      "context": "Salaire aligné sur le SMIC (~1 766€ brut en 2024).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 900–2 300€ brut",
+      "stat_value": 1900,
+      "stat_unit": "€ brut",
+      "context": "Salaire : 1 900–2 300€ brut.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 500–4 000€/mois",
+      "stat_value": 2500,
+      "stat_unit": "€/mois",
+      "context": "Revenus variables (2 500–4 000€/mois après 5 ans, estimation marché).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 000–2 500€ brut",
+      "stat_value": 2000,
+      "stat_unit": "€ brut",
+      "context": "Salaire : ~2 000–2 500€ brut.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "60% des débouchés",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "3 voies principales : cuisine (60% des débouchés), gestion/restauration (20%), ou spécialisation (pâtisserie, traiteur).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "20% des débouchés",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "3 voies principales : cuisine (60% des débouchés), gestion/restauration (20%), ou spécialisation (pâtisserie, traiteur).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "5-10 ans",
+      "stat_value": 5,
+      "stat_unit": "ans",
+      "context": "Évolution possible vers chef de partie ou indépendant après 5-10 ans d’expérience.",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2–3 ans",
+      "stat_value": 2,
+      "stat_unit": "ans",
+      "context": "Après 2–3 ans en tant que cuisinier.",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "5 ans",
+      "stat_value": 5,
+      "stat_unit": "ans",
+      "context": "Artisan traiteur / Pâtissier (à son compte ou en franchise) : Nécessite un BP/CAP complémentaire (ex : CAP Pâtissier en 1 an) + capital pour s’installer. Revenus variables (2 500–4 000€/mois après 5 ans, estimation marché).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "moins de 1%",
+      "stat_value": 1,
+      "stat_unit": "%",
+      "context": "Faux espoirs 'chef étoilé' : Moins de 1% des cuisiniers accèdent à ce niveau.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers accessibles directement après un Bac pro Cuisine obtenu par apprentissage ? Liste des débouchés professionnels dans le secteur de la cuisine et de la restauration.",
+      "target_corpus": "metier",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : débouchés métiers après un Bac pro Cuisine."
+    },
+    {
+      "text": "Quels sont les postes à pourvoir en 2030 dans le secteur de la cuisine et de la restauration selon les projections DARES Métiers 2030 ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte une vision prospective sur les débouchés dans le secteur."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle 6, 12 et 18 mois après un Bac pro Cuisine obtenu par apprentissage ?",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Complète avec des données concrètes sur l'insertion post-diplôme."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications RNCP sont associés aux métiers accessibles après un Bac pro Cuisine ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Ajoute une dimension compétences pour affiner les débouchés."
+    },
+    {
+      "text": "Quelles sont les formations post-Bac pro Cuisine (ex : mentions complémentaires, BP, BTS) pour évoluer dans le secteur de la cuisine et de la restauration ?",
+      "target_corpus": "formation",
+      "priority": 3,
+      "rationale": "Propose des pistes pour une évolution après le Bac pro."
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q15_cout_ecole_commerce_5ans",
+  "query_text": "Combien faut-il prévoir financièrement pour 5 années d'études en école de commerce ?",
+  "answer_text": "**TL;DR**\n1. Le coût total d’une école de commerce sur 5 ans varie de **0 € (public)** à **50 000 €+ (privé)** selon le type d’établissement et le mode de financement.\n2. Les écoles **publiques (IAE, universités)** coûtent 200-600 €/an, les **écoles privées** 8 000-15 000 €/an (hors alternance).\n3. L’alternance réduit souvent les frais à 0 € et permet un salaire (600-1 500 €/mois).\n\n---\n\n### **Plan A — Public : IAE ou universités (0-3 000 € sur 5 ans)**\n📍 **Master Économie et Finance** (ex : [IAE Paris](https://www.onisep.fr/http/redirection/formation/slug/FOR.11732)) — bac+5 public, ~600 €/an (droits universitaires).\n*Pour toi : solution la moins chère, avec des débouchés solides en finance/comptabilité. Exige souvent un bon dossier (L3/licence pro).*\n\n### **Plan B — Privé classique (35 000-50 000 € sur 5 ans)**\n📍 **Diplôme Grande École (ESCP, HEC, etc.)** — bac+5 privé, 12 000-18 000 €/an. Bourses possibles (CROUS, fondations).\n*Pour toi : prestige et réseau, mais budget élevé. Prépare un plan de financement (prêt étudiant, job, famille).*\n*(connaissance générale : exemples de coûts basés sur les tarifs 2024 des écoles top 10.)*\n\n### **Plan C — Alternance (0 € + salaire)**\n📍 **Licence Pro Commerce International** (ex : [exemple](https://www.onisep.fr/http/redirection/formation/slug/FOR.11370)) — bac+3 en alternance, 0 € de frais + salaire (600-1 500 €/mois).\n*Pour toi : idéal pour éviter l’endettement. Poursuite possible en master en alternance (ex : IAE).*\n\n---\n**⚠ Attention aux pièges**\n- **Marketing des écoles privées** : certaines affichent des \"bourses\" qui couvrent seulement 10-20% des frais. Vérifie le **coût net** après aides.\n- **Sélectivité de l’alternance** : trouver une entreprise n’est pas garanti (surtout en M1/M2). Prépare un plan B (stage rémunéré, job étudiant).\n- **Frais cachés** : logements (Paris = 800-1 200 €/mois), déplacements, matériel. Budget total souvent **+30%** vs frais de scolarité seuls.\n\n---\n**Question pour toi :**\nAs-tu une préférence entre **prestige/réseau** (privé), **sécurité financière** (public/alternance), ou **flexibilité** (mix des deux) ? Cela peut affiner les options. *(Un conseiller en orientation [Psy-EN/CIO](https://www.onisep.fr/Choisir-mes-etudes/Parcours-et-insertion-professionnelle/Se-faire-accompagner-dans-son-orientation) pourra t’aider à monter un dossier de bourses.)*",
+  "elapsed_pipeline_s": 18.18,
+  "elapsed_fact_check_post_hoc_s": 4.48,
+  "elapsed_clarify_s": 2.75,
+  "elapsed_reformulate_s": 6.94,
+  "elapsed_retrieve_s": 0.42,
+  "elapsed_generate_s": 8.07,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 0,
+    "n_with_disclaimer": 10,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "0 € (public)",
+      "stat_value": 0,
+      "stat_unit": "€",
+      "context": "coût total d’une école de commerce sur 5 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50 000 €+ (privé)",
+      "stat_value": 50000,
+      "stat_unit": "€",
+      "context": "coût total d’une école de commerce sur 5 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "200-600 €/an",
+      "stat_value": 200,
+      "stat_unit": "€/an",
+      "context": "coût des écoles publiques (IAE, universités)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8 000-15 000 €/an",
+      "stat_value": 8000,
+      "stat_unit": "€/an",
+      "context": "coût des écoles privées (hors alternance)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "600-1 500 €/mois",
+      "stat_value": 600,
+      "stat_unit": "€/mois",
+      "context": "salaire en alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~600 €/an",
+      "stat_value": 600,
+      "stat_unit": "€/an",
+      "context": "coût du Master Économie et Finance (IAE Paris)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "12 000-18 000 €/an",
+      "stat_value": 12000,
+      "stat_unit": "€/an",
+      "context": "coût des Grandes Écoles (ESCP, HEC, etc.)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "35 000-50 000 €",
+      "stat_value": 35000,
+      "stat_unit": "€",
+      "context": "coût total sur 5 ans pour un plan privé classique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0 €",
+      "stat_value": 0,
+      "stat_unit": "€",
+      "context": "coût en alternance (Licence Pro Commerce International)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "800-1 200 €/mois",
+      "stat_value": 800,
+      "stat_unit": "€/mois",
+      "context": "coût des logements à Paris",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quel est le coût annuel moyen des frais de scolarité pour une école de commerce en France sur 5 ans, incluant les années de prépa si nécessaire ? Données Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : estimation financière des études en école de commerce."
+    },
+    {
+      "text": "Quels sont les coûts annexes (logement, restauration, transports) pour un étudiant en école de commerce, selon les données CROUS et vie étudiante ?",
+      "target_corpus": "crous",
+      "priority": 2,
+      "rationale": "Complète l'estimation financière avec les dépenses liées à la vie étudiante."
+    },
+    {
+      "text": "Existe-t-il des aides financières, bourses ou dispositifs de financement spécifiques pour les étudiants en école de commerce ? Données Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Apporte un contexte utile sur les solutions pour réduire les coûts."
+    },
+    {
+      "text": "Quel est le salaire médian des jeunes diplômés d'une école de commerce, par région, selon les données INSEE et APEC ?",
+      "target_corpus": "multi",
+      "priority": 3,
+      "rationale": "Permet d'évaluer le retour sur investissement après les études."
+    }
+  ]
+}

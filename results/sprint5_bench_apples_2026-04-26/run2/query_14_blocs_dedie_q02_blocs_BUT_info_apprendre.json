@@ -1,0 +1,101 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q02_blocs_BUT_info_apprendre",
+  "query_text": "Que vais-je apprendre en BUT informatique ?",
+  "answer_text": "**TL;DR**\n1. Le **BUT Informatique** est un diplôme bac+3 public, axé sur la pratique (60% de projets) et les compétences techniques recherchées par les entreprises.\n2. Tu y apprendras **programmation, bases de données, cybersécurité, IA, et gestion de projets** — avec un choix de parcours en 2ᵉ année.\n3. 90% des diplômés trouvent un emploi en CDI sous 6 mois (salaire médian : ~2 000€ brut/mois).\n\n---\n\n### **Plan A — Cœur du programme : les compétences techniques**\nEn BUT Informatique, tu maîtriseras :\n- **Développement** (Python, Java, C#, web/mobile) et **algorithmes** (complexité, structures de données).\n- **Systèmes & réseaux** (administration Linux, virtualisation, cloud AWS/Azure).\n- **Bases de données** (SQL, NoSQL, modélisation) et **cybersécurité** (bonnes pratiques, cryptographie basique).\n- **IA & Data** (initiation au machine learning, traitement de données avec Pandas).\n*(connaissance générale : référentiel national du BUT Informatique 2021, aligné sur les besoins des ESN et startups tech)*\n\n📍 **Exemple concret** : [BUT Informatique — IUT de Belfort](https://www.onisep.fr/http/redirection/formation/slug/FOR.8544)\n*Pour toi : formation gratuite, en alternance possible dès la 2ᵉ année, avec 24 semaines de stage.*\n\n---\n\n### **Plan B — Spécialisation : 5 parcours au choix en 2ᵉ année**\nTu peux te spécialiser via un **parcours** (selon les IUT) :\n1. **Réalisation d’applications** (dev logiciel, jeux vidéo).\n2. **Déploiement d’applications** (DevOps, cloud, conteneurs Docker).\n3. **Administration, gestion et exploitation des données** (Big Data, BI).\n4. **Cybersécurité** (SecNumEdu, pentest, sécurité des systèmes).\n5. **Intelligence artificielle** (deep learning, NLP, frameworks TensorFlow).\n*(connaissance générale : certains parcours comme cybersécurité sont labellisés [SecNumEdu par l’ANSSI](https://www.ssi.gouv.fr/agence/formations/secnumedu/), un gage de qualité)*\n\n---\n### **Plan C — Soft skills & projets : ce qui fait la différence**\n- **Gestion de projet** (méthodes Agile/Scrum, outils Jira/Trello).\n- **Communication technique** (rédaction de cahiers des charges, présentations clients).\n- **Projets concrets** : 600h sur 3 ans (ex : création d’une app mobile pour une association, sécurisation d’un réseau).\n*(connaissance générale : les projets sont souvent co-encadrés par des pros en activité, via des partenariats avec des entreprises locales)*\n\n---\n### **⚠ Attention aux pièges**\n- **Pas de maths théoriques pures** : le BUT Informatique se concentre sur l’appliqué (20% de maths max, orientées algo/statistiques). Si tu aimes les maths abstraites, vise plutôt une **licence MIASHS** ou une **prépa MP2I**.\n- **Alternance compétitive** : les contrats d’apprentissage en 2ᵉ/3ᵉ année sont nombreux, mais les entreprises privilégient les profils avec un bon niveau en anglais et des projets perso (GitHub).\n- **Évolution vers bac+5** : si tu vises un poste d’architecte logiciel ou de data scientist, prévois une poursuite en **école d’ingé** (via admissions parallèles) ou en **master** (ex : [master IA de Toulouse](https://www.univ-tlse3.fr/)).\n\n---\n**Question pour toi** :\nPréfères-tu une formation **ultra-technique** (parcours cybersécurité/IA) ou **polyvalente** (développement + gestion de projet) ? Et es-tu mobile pour choisir ton IUT (certains parcours sont rares en région) ?",
+  "elapsed_pipeline_s": 18.94,
+  "elapsed_fact_check_post_hoc_s": 3.32,
+  "elapsed_clarify_s": 1.94,
+  "elapsed_reformulate_s": 7.54,
+  "elapsed_retrieve_s": 0.37,
+  "elapsed_generate_s": 9.08,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "90% des diplômés trouvent un emploi en CDI sous 6 mois",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "90% des diplômés trouvent un emploi en CDI sous 6 mois (salaire médian : ~2 000€ brut/mois).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian : ~2 000€ brut/mois",
+      "stat_value": 2000,
+      "stat_unit": "€ brut/mois",
+      "context": "90% des diplômés trouvent un emploi en CDI sous 6 mois (salaire médian : ~2 000€ brut/mois).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "60% de projets",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "Le BUT Informatique est un diplôme bac+3 public, axé sur la pratique (60% de projets) et les compétences techniques recherchées par les entreprises.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "20% de maths max",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "Pas de maths théoriques pures : le BUT Informatique se concentre sur l’appliqué (20% de maths max, orientées algo/statistiques).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "24 semaines de stage",
+      "stat_value": 24,
+      "stat_unit": "semaines",
+      "context": "formation gratuite, en alternance possible dès la 2ᵉ année, avec 24 semaines de stage.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "600h de projets sur 3 ans",
+      "stat_value": 600,
+      "stat_unit": "heures",
+      "context": "Projets concrets : 600h sur 3 ans (ex : création d’une app mobile pour une association, sécurisation d’un réseau).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les enseignements, matières et compétences abordés dans un BUT informatique (Bachelor Universitaire de Technologie) ? Détail des programmes et blocs de formation.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : définition conceptuelle des apprentissages en BUT informatique. Cible le corpus formation pour les programmes détaillés."
+    },
+    {
+      "text": "Quels blocs de compétences RNCP sont associés à un BUT informatique ? Liste des certifications et compétences validables.",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Complète la réponse avec les compétences certifiables liées au diplôme."
+    },
+    {
+      "text": "Quels métiers et secteurs d'activité sont accessibles après un BUT informatique ? Perspectives professionnelles.",
+      "target_corpus": "metier",
+      "priority": 3,
+      "rationale": "Contexte utile pour lier apprentissages et débouchés métiers."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle des diplômés d'un BUT informatique à 6, 12 et 18 mois après l'obtention du diplôme ?",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Apporte un éclairage sur l'efficacité du diplôme sur le marché du travail."
+    }
+  ]
+}

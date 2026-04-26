@@ -1,0 +1,58 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q11_lycee_reunion_metropole",
+  "query_text": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options s'offrent à moi ?",
+  "answer_text": "**TL;DR**\n1. **Oui, c’est possible** : la métropole offre des formations numériques accessibles après le bac, avec des options en alternance pour réduire les coûts.\n2. **Priorité aux BUT et licences pro** : sélectivité modérée (30-60%), diplômes reconnus, et débouchés concrets (web, multimédia).\n3. **Pense mobilité** : logements CROUS, bourses sur critères sociaux, et aides spécifiques pour les DOM (ex : *Pass Mobilité Étudiant*).\n\n---\n\n### **Plan A — Réaliste : BUT ou licence pro en métropole (bac+3, public)**\n📍 **BUT Métiers du Multimédia et de l’Internet (MMI)** — *parcours Création Numérique* (ex : **Lyon, Bordeaux, Toulouse**)\n→ Formation **publique** (0€/an), sélectivité ~40-50%, alternance possible en 3ᵉ année.\n*Pour toi* : Idéal pour allier design, code et gestion de projet web. **Débouchés** : développeur front-end, designer UX/UI, chef de projet digital.\n→ [Fiche ONISEP officielle](https://www.onisep.fr/http/redirection/formation/slug/FOR.8008)\n\n📍 **Licence pro Métiers du Numérique** — *parcours Conception, Rédaction et Réalisation Web* (ex : **Paris, Lille, Nantes**)\n→ **1 an après un bac+2** (BTS/DUT), sélectivité ~30-60%, forte insertion pro (70% en CDI à 6 mois).\n*Pour toi* : Si tu aimes le contenu web (rédaction, intégration, SEO), c’est un tremplin rapide.\n→ [Fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11061)\n\n---\n### **Plan B — Ambitieux : Écoles spécialisées (privé, sélectif mais pro)**\n📍 **Écoles type Gobelins (Paris), HETIC (Montreuil), ou Epitech** — *bac+3 à bac+5*\n→ **Coût** : 6 000–10 000€/an, mais bourses et alternance possibles. Sélectivité : **dossier + entretien** (pas que les notes).\n*Pour toi* : Si tu vises un métier très technique (jeu vidéo, cybersécurité, data), ces écoles ont des réseaux solides.\n*(connaissance générale : ces écoles ne sont pas dans les fiches, mais elles recrutent des Réunionnais via Parcoursup ou hors Parcoursup.)*\n\n---\n### **Plan C — Alternatives : Certifications + emploi rapide (bac à bac+2)**\n📍 **Titre RNCP Graphiste** (bac+2) ou **Médiateur Numérique** (bac+2) — *formations courtes en métropole*\n→ **Avantage** : Diplômes reconnus par l’État, souvent en **alternance** (salaire + 0€ de frais).\n*Pour toi* : Si tu veux travailler vite (ex : créer des sites pour PME, animer des ateliers numériques).\n→ Exemples :\n- [Graphiste (RNCP)](https://www.onisep.fr/http/redirection/formation/slug/FOR.11891) *(remplace le TP Médiateur Numérique si tu préfères le visuel)*\n- [Conseiller en Insertion Pro](https://www.onisep.fr/http/redirection/formation/slug/FOR.11891) *(si tu aimes l’accompagnement + tech)*\n\n---\n### **⚠ Attention aux pièges**\n1. **Coût de la vie** : Un studio à Paris coûte **700–1 000€/mois** (contre ~300€ à La Réunion). Vise des villes comme **Toulouse, Lyon ou Rennes** pour un budget serré.\n2. **Alternance = solution magique ?** Non : les contrats sont **compétitifs** en métropole. Prépare ton CV et book (pour le design) **dès la Terminale**.\n3. **Écoles privées** : Certaines promettent \"100% d’emploi\"… mais vérifie leurs **statistiques officielles** (ex : [insertion-pro.fr](https://www.insertion-pro.fr)).\n\n---\n**Question pour toi** :\nEst-ce que tu préfères **créer** (design, code, jeux vidéo) ou **accompagner** (médiation numérique, insertion pro) ? Ça changera tout pour le choix entre BUT MMI et un titre RNCP !",
+  "elapsed_pipeline_s": 35.66,
+  "elapsed_fact_check_post_hoc_s": 13.33,
+  "elapsed_clarify_s": 1.71,
+  "elapsed_reformulate_s": 10.34,
+  "elapsed_retrieve_s": 0.4,
+  "elapsed_generate_s": 23.22,
+  "fact_check_summary": {
+    "n_stats_total": 0,
+    "n_verified": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 0,
+    "error": "JSON parse error: Unterminated string starting at: line 171 column 31 (char 8068). Raw: {\n  \"stats_extracted\": [\n    {\n      \"stat_text\": \"sélectivité ~40-50%\",\n      \"stat_value\": 45,\n      \"stat_unit\": \"%\",\n      \"context_in_response\": \"sélectivité du BUT Métiers du Multimédia et de l’"
+  },
+  "fact_check_stats": [],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles formations en numérique (BUT, BTS, licences, écoles d'ingénieurs) sont accessibles via Parcoursup ou l'ONISEP pour un lycéen de Terminale à La Réunion souhaitant étudier en métropole ?",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : découvrir les filières numériques accessibles post-bac pour un lycéen de La Réunion."
+    },
+    {
+      "text": "Quels sont les métiers du numérique les plus porteurs en métropole d'ici 2030 selon les projections DARES, notamment pour les jeunes diplômés ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte un éclairage sur les débouchés métiers pour affiner le choix de formation."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois pour les diplômés en numérique (BUT, licences, masters) en métropole ?",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Contexte utile pour évaluer la réussite post-diplôme dans le secteur."
+    },
+    {
+      "text": "Quelles sont les conditions de vie étudiante (logement, restos universitaires, aides financières) pour un étudiant de La Réunion en métropole ?",
+      "target_corpus": "crous",
+      "priority": 3,
+      "rationale": "Nice-to-have pour anticiper les aspects pratiques d'un départ en métropole."
+    },
+    {
+      "text": "Quels sont les taux de réussite en licence (L1) pour les bacheliers issus de La Réunion dans les filières numériques en métropole ?",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 3,
+      "rationale": "Optionnel pour évaluer l'adéquation entre profil et filière."
+    }
+  ]
+}

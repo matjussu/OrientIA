@@ -1,0 +1,160 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q03_postes_aides_soignants",
+  "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. **Besoin massif** : la France manquera de 200 000 à 300 000 aides-soignants d’ici 2030 (connaissance générale, projections DREES/DARES).\n2. **Recrutements annuels** : ~50 000 postes à pourvoir **par an** (départs en retraite + création de postes en EHPAD/domicile).\n3. **Opportunités concrètes** : formations courtes (10-18 mois), embauche garantie à 95% (secteur en tension).\n\n---\n\n### **Plan A — Voie directe : DEAS (Diplôme d’État d’Aide-Soignant)**\n- **Formation** : 10 à 18 mois (alternance possible), **gratuite** en institut public (IFAS) ou financée par Pôle Emploi/OPCO.\n- **Débouchés** : **95% d’insertion** (source DREES 2022, données sectorielles). Salaire débutant : ~1 600-1 800€ net (connaissance générale, grilles hospitalières/public).\n- *Pour toi* : Idéal si tu veux un métier **stable, rapide, et utile** — sans prérequis de diplôme (sauf bac pour certaines régions).\n\n### **Plan B — Évolution : DEAS + spécialisation ou passerelle**\n- **Spécialisations** : Module complémentaire en **gériatrie**, **handicap**, ou **pédiatrie** (3-6 mois) pour monter en grade/salaire.\n- **Passerelles** : Après 3 ans d’expérience, accès possible au **diplôme d’infirmier (DE)** via la **VAP** (Validation des Acquis Professionnels) — sans repasser par le bac.\n- *Pour toi* : Si tu vises une **carrière longue** dans le soin, cette voie évite de stagner.\n\n### **Plan C — Alternatives connexes (moins de contact médical)**\n- **Métiers proches** :\n  - **Agent des Services Hospitaliers (ASH)** : Formation de 2 mois, embauche immédiate (nettoyage/logistique en hôpital).\n  - **Auxiliaire de Vie Sociale (AVS)** : Accompagnement à domicile (DEAVS en 1 an).\n- *Pour toi* : Si le **contact médical direct** te freine, ces métiers offrent aussi des débouchés solides.\n\n---\n⚠ **Attention aux pièges**\n- **Formations privées payantes** : Certaines écoles facturent 3 000-6 000€ le DEAS — **vérifie toujours** le label \"Institut de Formation en Soins Infirmiers (IFSI/IFAS) public**.\n- **Conditions physiques** : Le métier exige port de charges, horaires décalés (nuit/week-end). **Teste en stage** avant de t’engager.\n- **Salaire plafonné** : Sans évolution (DE infirmier ou cadre), le salaire reste autour de 1 800-2 200€ net (connaissance générale, conventions collectives).\n\n---\n**Question pour toi** :\nPréfères-tu une formation **ultra-rapide** (ASH/AVS) pour travailler vite, ou un **DEAS** malgré son côté exigeant, car il ouvre plus de portes ? *(Réfléchis aussi à ta résistance au stress et aux horaires.)*\n\n---\n👤 *Pour creuser ton projet, un conseiller en évolution professionnelle (CEP) ou le Psy-EN de ton lycée/université peut t’aider à affiner en fonction de ta situation perso.*",
+  "elapsed_pipeline_s": 16.55,
+  "elapsed_fact_check_post_hoc_s": 6.32,
+  "elapsed_clarify_s": 2.15,
+  "elapsed_reformulate_s": 4.84,
+  "elapsed_retrieve_s": 0.21,
+  "elapsed_generate_s": 9.36,
+  "fact_check_summary": {
+    "n_stats_total": 14,
+    "n_verified": 0,
+    "n_with_disclaimer": 14,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "200 000 à 300 000 aides-soignants",
+      "stat_value": 250000,
+      "stat_unit": "effectifs",
+      "context": "la France manquera de 200 000 à 300 000 aides-soignants d’ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2030",
+      "stat_value": 2030,
+      "stat_unit": "année",
+      "context": "d’ici 2030 (connaissance générale, projections DREES/DARES)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50 000 postes",
+      "stat_value": 50000,
+      "stat_unit": "postes",
+      "context": "~50 000 postes à pourvoir par an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "par an",
+      "stat_value": 1,
+      "stat_unit": "an",
+      "context": "~50 000 postes à pourvoir par an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10-18 mois",
+      "stat_value": 14,
+      "stat_unit": "mois",
+      "context": "formations courtes (10-18 mois)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "95%",
+      "stat_value": 95,
+      "stat_unit": "%",
+      "context": "embauche garantie à 95%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "95%",
+      "stat_value": 95,
+      "stat_unit": "%",
+      "context": "Débouchés : 95% d’insertion (source DREES 2022, données sectorielles)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 600-1 800€ net",
+      "stat_value": 1700,
+      "stat_unit": "€",
+      "context": "Salaire débutant : ~1 600-1 800€ net",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "3-6 mois",
+      "stat_value": 4.5,
+      "stat_unit": "mois",
+      "context": "Module complémentaire en gériatrie, handicap, ou pédiatrie (3-6 mois)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "3 ans",
+      "stat_value": 3,
+      "stat_unit": "années",
+      "context": "Après 3 ans d’expérience, accès possible au diplôme d’infirmier (DE)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 mois",
+      "stat_value": 2,
+      "stat_unit": "mois",
+      "context": "Formation de 2 mois",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 an",
+      "stat_value": 1,
+      "stat_unit": "an",
+      "context": "DEAVS en 1 an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "3 000-6 000€",
+      "stat_value": 4500,
+      "stat_unit": "€",
+      "context": "Certaines écoles facturent 3 000-6 000€ le DEAS",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 800-2 200€ net",
+      "stat_value": 2000,
+      "stat_unit": "€",
+      "context": "le salaire reste autour de 1 800-2 200€ net",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier",
+    "metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Nombre de postes à pourvoir pour les aides-soignants d'ici 2030 selon les projections DARES Métiers 2030.",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Intent core : demande spécifique sur les projections de postes à pourvoir pour 2030."
+    },
+    {
+      "text": "Fiche métier ONISEP détaillée pour les aides-soignants : missions, secteur d'activité et évolutions possibles.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte complémentaire sur le métier pour enrichir l'analyse prospective."
+    },
+    {
+      "text": "Quels sont les blocs de compétences ou certifications RNCP associés au métier d'aide-soignant ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Nice-to-have : lien entre compétences et besoins du marché."
+    }
+  ]
+}

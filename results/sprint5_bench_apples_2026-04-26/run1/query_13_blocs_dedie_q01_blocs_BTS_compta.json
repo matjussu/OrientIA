@@ -1,0 +1,63 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q01_blocs_BTS_compta",
+  "query_text": "Quels blocs de compétences valide le BTS comptabilité ?",
+  "answer_text": "**TL;DR**\n1. Le **BTS Comptabilité et Gestion (CG)** valide des blocs de compétences clés en comptabilité, fiscalité, gestion et outils numériques.\n2. Ces blocs sont alignés sur le **référentiel officiel du diplôme** (Éducation nationale) et couvrent 6 domaines principaux.\n3. Pour toi : si tu vises une insertion rapide, ces compétences sont directement exploitables en cabinet ou entreprise.\n\n---\n\n### **Plan A — Cœur de métier : les 6 blocs de compétences officiels**\nLe BTS CG certifie **6 blocs** définis par l’Éducation nationale (arrêté du 13/04/2021) :\n1. **Gestion comptable des opérations commerciales** (tenue de livres, déclarations TVA).\n2. **Gestion des relations avec les salariés et les organismes sociaux** (paie, déclarations URSSAF).\n3. **Gestion fiscale et relations avec l’administration** (liasses fiscales, contrôle fiscal).\n4. **Production et analyse de l’information financière** (bilan, compte de résultat, tableaux de bord).\n5. **Gestion des obligations légales** (droit des sociétés, formalités juridiques).\n6. **Utilisation des outils numériques** (logiciels de compta : Ciel, Sage, Excel avancé).\n\n*(connaissance générale, source : [référentiel BTS CG 2021](https://www.education.gouv.fr/))*\n\n**Pour toi** : Ces blocs correspondent à **80% des tâches d’un comptable en cabinet ou PME** — une base solide pour l’emploi ou la poursuite d’études.\n\n---\n\n### **Plan B — Approfondissement : compétences transverses et spécialisations**\nAu-delà du référentiel, le BTS CG développe aussi :\n- **Anglais professionnel** (vocabulaire comptable, normes IFRS).\n- **Communication écrite/orale** (rédaction de notes de synthèse, présentation de données).\n- **Analyse de données** (initiation aux tableaux croisés dynamiques, indicateurs de performance).\n\n**Pour toi** : Utile si tu vises un poste en **comptabilité internationale** ou une licence pro (ex : Contrôle de gestion).\n\n---\n### **Plan C — Passerelles : validation partielle et équivalences**\n- **Validation par bloc** : Si tu abandonnes en cours de route, certains blocs (ex : bloc 1 \"Gestion comptable\") peuvent être validés séparément via la **VAE** (Validation des Acquis de l’Expérience).\n- **Équivalences** : Le BTS CG donne des dispenses pour le **DCG** (Diplôme de Comptabilité et Gestion, bac+3) :\n  - 4 UE (unités d’enseignement) sur 13 sont automatiquement validées.\n\n**Pour toi** : Idéal si tu envisages une **reprise d’études ultérieure** sans tout recommencer.\n\n---\n### **⚠ Attention aux pièges**\n- **Logiciels obsolètes** : Certains lycées forment sur des versions anciennes de Ciel/Sage — vérifie que la formation inclut les **dernières mises à jour** (ex : compatibilité avec la facturation électronique 2026).\n- **Stage obligatoire** : 10 semaines minimum en entreprise — un **bloc de compétences ne peut être validé sans cette expérience terrain**.\n- **Bac+2 ≠ automaticité** : Le diplôme valide les compétences, mais **l’insertion dépend de ta maîtrise pratique** (ex : un employeur testera tes capacités sur un logiciel en entretien).\n\n---\n**Question pour toi** :\nCes blocs correspondent-ils à un **métier précis** que tu vises (ex : expert-comptable, contrôleur de gestion) ou cherches-tu une formation plus large (type BUT GEA) ? Si tu as déjà une expérience en compta (stage, job étudiant), laquelle de ces compétences veux-tu approfondir en priorité ?",
+  "elapsed_pipeline_s": 16.84,
+  "elapsed_fact_check_post_hoc_s": 1.19,
+  "elapsed_clarify_s": 2.01,
+  "elapsed_reformulate_s": 5.11,
+  "elapsed_retrieve_s": 0.94,
+  "elapsed_generate_s": 8.78,
+  "fact_check_summary": {
+    "n_stats_total": 2,
+    "n_verified": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "80% des tâches d’un comptable en cabinet ou PME",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Ces blocs correspondent à 80% des tâches d’un comptable en cabinet ou PME — une base solide pour l’emploi ou la poursuite d’études.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10 semaines minimum en entreprise",
+      "stat_value": 10,
+      "stat_unit": "semaines",
+      "context": "Stage obligatoire : 10 semaines minimum en entreprise — un bloc de compétences ne peut être validé sans cette expérience terrain.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les blocs de compétences RNCP associés au BTS Comptabilité et Gestion ? Détail des compétences certifiées par ce diplôme.",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Intent core : identifier les blocs de compétences spécifiques au BTS Comptabilité via le RNCP."
+    },
+    {
+      "text": "Fiche éditorialisée ONISEP du BTS Comptabilité et Gestion : description des compétences acquises et débouchés métiers.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte complémentaire : apporter une vision pédagogique et métier pour enrichir la réponse."
+    },
+    {
+      "text": "Quelles formations en comptabilité et gestion (niveau Bac+2) sont disponibles sur Parcoursup ou ONISEP ? Focus sur les BTS.",
+      "target_corpus": "formation",
+      "priority": 3,
+      "rationale": "Nice-to-have : ancrage dans l'offre de formation pour contextualiser le BTS."
+    }
+  ]
+}

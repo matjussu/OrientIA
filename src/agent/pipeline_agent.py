@@ -64,8 +64,15 @@ class AgentAnswer:
     cache_hit_profile: bool = False
     error: str | None = None
 
-    def to_dict(self) -> dict:
-        return {
+    def to_dict(self, include_sources: bool = False) -> dict:
+        """Serialize AgentAnswer.
+
+        `include_sources=True` (Sprint 5) sérialise les sources_aggregated
+        complètes (texte + score + domain + id + nom etc.) pour permettre
+        un fact-check post-hoc avec StatFactChecker (apples-to-apples
+        baseline). Coût taille fichier : ~10-50 KB par query si activé.
+        """
+        out = {
             "query": self.query,
             "answer_text": self.answer_text,
             "profile": self.profile.to_dict() if self.profile else None,
@@ -82,6 +89,18 @@ class AgentAnswer:
             "cache_hit_profile": self.cache_hit_profile,
             "error": self.error,
         }
+        if include_sources:
+            # Sérialise format compatible StatFactChecker (existant `src/rag/fact_checker.py`).
+            # StatFactChecker.verify(answer, sources) attend list[dict] avec
+            # `fiche` key contenant le texte recherchable.
+            out["sources_aggregated"] = [
+                {
+                    "score": float(s.get("score", 0)),
+                    "fiche": s.get("fiche", {}),
+                }
+                for s in self.sources_aggregated
+            ]
+        return out
 
 
 @dataclass

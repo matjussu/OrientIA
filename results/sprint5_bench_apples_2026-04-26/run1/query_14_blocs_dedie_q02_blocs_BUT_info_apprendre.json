@@ -1,0 +1,95 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q02_blocs_BUT_info_apprendre",
+  "query_text": "Que vais-je apprendre en BUT informatique ?",
+  "answer_text": "**TL;DR**\n1. Un **BUT Informatique** forme aux bases techniques (programmation, réseaux, bases de données) **et** aux compétences professionnelles (gestion de projet, cybersécurité, data).\n2. Le parcours **Administration, Gestion et Exploitation des Données** (Fiche 8) est idéal pour travailler sur les données et les systèmes d’information.\n3. Si tu veux un mix **tech + management**, le BUT **Qualité, Logistique et Transformation Digitale** (Fiche 7) peut aussi t’intéresser.\n\n---\n\n### **Plan A — Cœur de métier : BUT Informatique, parcours Données**\n📍 **[BUT Informatique, parcours AGED](https://www.onisep.fr/http/redirection/formation/slug/FOR.7996)** — bac+3 public, **accès via Parcoursup** (taux > 60% typiquement — *connaissance générale*).\n*Pour toi :* Si tu aimes **coder, analyser des données ou administrer des bases**, c’est le plus direct. Stages inclus dès la 2ᵉ année.\n\n**Au programme (connaissance générale) :**\n- **Développement** (Python, Java, SQL)\n- **Réseaux et systèmes** (Linux, virtualisation, cloud)\n- **Data** (bases de données, requêtes avancées, introduction au *machine learning*)\n- **Projets concrets** (ex : création d’une appli web avec base de données).\n\n---\n\n### **Plan B — Alternative hybride : BUT Qualité & Transformation Digitale**\n📍 **[BUT QLIO, parcours Management de la Transformation Digitale](https://www.onisep.fr/http/redirection/formation/slug/FOR.8544)** — bac+3 public, **moins technique**, plus orienté **organisation et outils numériques**.\n*Pour toi :* Si tu veux **comprendre comment la tech s’intègre dans les entreprises** (ex : déployer un ERP, gérer un projet digital) sans devenir développeur pur.\n\n**Points clés (connaissance générale) :**\n- **Outils** : Excel avancé, Power BI, bases de données (moins poussé qu’en BUT Info).\n- **Processus** : Lean management, agilité, cybersécurité *appliquée* (ex : RGPD).\n- **Débouchés** : Chargé de projet digital, consultant en organisation, technico-commercial.\n\n---\n\n### **Plan C — Passerelle vers des spécialisations**\nSi tu veux **approfondir après le BUT** :\n- **Écoles d’ingé** (via admissions parallèles) : ex : **INSA**, **UT** (spécialités data/IA).\n- **Licences pro** : Ex : *Licence Pro Métiers de l’informatique* (parcours cybersécurité ou data).\n- **Alternance** : Beaucoup de BUT proposent des contrats pro en 3ᵉ année (salaire ~600-800€/mois — *connaissance générale*).\n\n---\n\n### **⚠ Attention aux pièges**\n- **BUT ≠ BTS** : Le BUT est un diplôme **bac+3** (grade Licence), pas bac+2. Engagement sur 3 ans obligatoire.\n- **Spécialisation progressive** : Le tronc commun en 1ʳᵉ année est large. Le choix de parcours (ex : données, cybersécurité) se fait souvent en 2ᵉ année.\n- **Alternance** : Certaines écoles privées proposent des \"BUT en alternance\" **hors IUT publics** → vérifie le **label \"BUT\"** (diplôme d’État) et le taux d’insertion.\n\n---\n**Question pour toi :**\nEst-ce que tu veux **plonger dans la technique pure** (Plan A), ou préfères un mix **tech + gestion/organisation** (Plan B) ? Ou bien tu cherches une formation **avec plus de stages ou d’alternance** dès le début ?",
+  "elapsed_pipeline_s": 16.1,
+  "elapsed_fact_check_post_hoc_s": 4.41,
+  "elapsed_clarify_s": 1.93,
+  "elapsed_reformulate_s": 6.08,
+  "elapsed_retrieve_s": 0.24,
+  "elapsed_generate_s": 7.84,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 4,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux > 60% typiquement",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "accès via Parcoursup (taux > 60% typiquement — *connaissance générale*).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire ~600-800€/mois",
+      "stat_value": null,
+      "stat_unit": "€/mois",
+      "context": "Alternance : Beaucoup de BUT proposent des contrats pro en 3ᵉ année (salaire ~600-800€/mois — *connaissance générale*).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context": "Plan A — Cœur de métier : BUT Informatique, parcours Données",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "Plan A — Cœur de métier : BUT Informatique, parcours Données",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "Plan A — Cœur de métier : BUT Informatique, parcours Données",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "Plan A — Cœur de métier : BUT Informatique, parcours Données",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les enseignements, matières et compétences abordés dans un Bachelor Universitaire de Technologie (BUT) en informatique ? Détail des programmes et blocs de formation.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : définition conceptuelle du contenu pédagogique du BUT informatique."
+    },
+    {
+      "text": "Quels blocs de compétences RNCP sont associés aux diplômes de BUT informatique ? Liste des certifications et compétences validables.",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Complète la réponse avec les certifications officielles liées au diplôme."
+    },
+    {
+      "text": "Quels métiers et secteurs d'activité sont accessibles après un BUT informatique ? Perspectives professionnelles détaillées.",
+      "target_corpus": "metier",
+      "priority": 3,
+      "rationale": "Contexte utile pour lier apprentissages et débouchés professionnels."
+    }
+  ]
+}

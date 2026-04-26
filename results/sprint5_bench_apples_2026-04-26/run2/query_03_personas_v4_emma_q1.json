@@ -1,0 +1,189 @@
+{
+  "suite": "personas_v4",
+  "query_id": "emma_q1",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "answer_text": "**TL;DR**\n1. Un développeur débutant post-M2 informatique en France gagne **entre 35k€ et 42k€ brut annuel** (médiane ~38k€), selon le secteur et la localisation.\n2. L’alternance et les compétences spécialisées (cloud, cybersécurité, data) boostent ce salaire de +10 à +20%.\n3. Les écarts régionaux sont forts : +15% en Île-de-France vs provinces.\n\n---\n\n### **Plan A — Salaire médian standard (développeur généraliste)**\n**35k€–38k€ brut/an** (soit ~2 300–2 600€ net/mois) pour un poste en **ESN** (ex : Capgemini, Atos) ou PME.\n*Pour toi :* Si tu n’as pas de spécialisation pointue, c’est la fourchette réaliste en CDI hors Île-de-France.\n*(connaissance générale, basée sur les baromètres APEC/Syntec 2023–2024 et retours terrain)*\n\n---\n\n### **Plan B — Salaire boosté (spécialisation + alternance)**\n**40k€–45k€ brut/an** (voire +) si :\n- **Alternance en M2** (expérience pro valorisée, réseau entreprise).\n- **Compétences rares** : DevOps (Kubernetes/Docker), cybersécurité (SecNum Academy), ou data (Python/ML).\n- **Localisation** : Île-de-France (+15%), Suisse/Luxembourg (+30%).\n*Pour toi :* Vise une **thèse CIFRE** (2 700€ net/mois + doctorat) ou un M2 en alternance pour maximiser ton salaire d’embauche.\n\n---\n### **Plan C — Secteurs porteurs (salaires supérieurs)**\n- **Finance/Assurance** (ex : Société Générale, AXA) : **42k€–48k€ brut** pour des profils back-end (Java/Scala) ou quant.\n- **Editeurs de logiciels** (ex : Dassault Systèmes, SAP) : **40k€–50k€ brut** si tu maîtrises leurs stacks techniques.\n- **Startups tech** (levées de fonds récentes) : **38k€–45k€ brut** + equity (risque/opportunité).\n*Pour toi :* Cible ces secteurs en stage de M2 pour négocier un CDI au-dessus de la médiane.\n\n---\n\n### ⚠ **Attention aux pièges**\n- **ESN vs Editeur** : Une ESN paie souvent **5k€–10k€ de moins** qu’un éditeur pour le même profil. Vérifie les grilles salariales sur Glassdoor **avant** de signer.\n- **Alternance = salaire de stage** : En M2, l’alternance te rapporte **~1 000–1 500€/mois** (pas 35k€). Le vrai gain est l’embauche à la clé.\n- **\"Junior\" ≠ débutant** : Certaines offres \"junior\" exigent 2–3 ans d’expérience. Lis les fiches de poste (ex : [Welcome to the Jungle](https://www.welcometothejungle.com)).\n\n---\n**Question pour toi :**\nTon M2 inclut-il une spécialisation technique (cloud, IA, cybersécurité) ou une dimension business (product management) ? Cela peut faire varier ton salaire de **±20%**.",
+  "elapsed_pipeline_s": 19.54,
+  "elapsed_fact_check_post_hoc_s": 8.11,
+  "elapsed_clarify_s": 1.85,
+  "elapsed_reformulate_s": 7.99,
+  "elapsed_retrieve_s": 0.41,
+  "elapsed_generate_s": 9.29,
+  "fact_check_summary": {
+    "n_stats_total": 17,
+    "n_verified": 4,
+    "n_with_disclaimer": 13,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "entre 35k€ et 42k€ brut annuel",
+      "stat_value": 35,
+      "stat_unit": "k€",
+      "context": "Un développeur débutant post-M2 informatique en France gagne",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "médiane ~38k€",
+      "stat_value": 38,
+      "stat_unit": "k€",
+      "context": "Un développeur débutant post-M2 informatique en France gagne entre 35k€ et 42k€ brut annuel (médiane",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+10 à +20%",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "context": "L’alternance et les compétences spécialisées (cloud, cybersécurité, data) boostent ce salaire de",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+15%",
+      "stat_value": 15,
+      "stat_unit": "%",
+      "context": "Les écarts régionaux sont forts : +15% en Île-de-France vs provinces.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "35k€–38k€ brut/an",
+      "stat_value": 35,
+      "stat_unit": "k€",
+      "context": "35k€–38k€ brut/an (soit ~2 300–2 600€ net/mois) pour un poste en ESN",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~2 300–2 600€ net/mois",
+      "stat_value": 2450,
+      "stat_unit": "€",
+      "context": "35k€–38k€ brut/an (soit ~2 300–2 600€ net/mois) pour un poste en ESN",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "40k€–45k€ brut/an",
+      "stat_value": 40,
+      "stat_unit": "k€",
+      "context": "40k€–45k€ brut/an (voire +) si :",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 700€ net/mois",
+      "stat_value": 2700,
+      "stat_unit": "€",
+      "context": "Vise une thèse CIFRE (2 700€ net/mois + doctorat)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "42k€–48k€ brut",
+      "stat_value": 42,
+      "stat_unit": "k€",
+      "context": "Finance/Assurance (ex : Société Générale, AXA) : 42k€–48k€ brut pour des profils back-end",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "40k€–50k€ brut",
+      "stat_value": 40,
+      "stat_unit": "k€",
+      "context": "Editeurs de logiciels (ex : Dassault Systèmes, SAP) : 40k€–50k€ brut",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "38k€–45k€ brut",
+      "stat_value": 38,
+      "stat_unit": "k€",
+      "context": "Startups tech (levées de fonds récentes) : 38k€–45k€ brut + equity",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "5k€–10k€ de moins",
+      "stat_value": 5,
+      "stat_unit": "k€",
+      "context": "Une ESN paie souvent 5k€–10k€ de moins qu’un éditeur pour le même profil.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~1 000–1 500€/mois",
+      "stat_value": 1250,
+      "stat_unit": "€",
+      "context": "En M2, l’alternance te rapporte ~1 000–1 500€/mois (pas 35k€).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context": "salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_excerpt": "salaire_median_embauche: 2080"
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context": "taux_emploi_3ans: 0.85",
+      "verdict": "verified",
+      "source_excerpt": "taux_emploi_3ans: 0.85"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context": "taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_excerpt": "taux_emploi_6ans: 0.91"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context": "taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_excerpt": "taux_cdi: 0.83"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Salaire médian d'un développeur débutant en France après un master (M2) en informatique, données INSEE SALAAN par PCS et région.",
+      "target_corpus": "insee_salaire",
+      "priority": 1,
+      "rationale": "Cible directement l'intent core avec le domain hint 'INSEE salaire' pour activer les données PCS × région."
+    },
+    {
+      "text": "Perspectives de recrutement et salaire moyen pour les cadres débutants en développement informatique en France, marché du travail cadres (APEC).",
+      "target_corpus": "apec_region",
+      "priority": 1,
+      "rationale": "Complète avec des données APEC sur le marché des cadres, pertinent pour un profil bac+5."
+    },
+    {
+      "text": "Taux d'insertion professionnelle à 6, 12 et 18 mois pour les diplômés d'un master en informatique (M2), données MESR.",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Ajoute un contexte sur l'insertion post-diplôme, utile pour un étudiant en master."
+    },
+    {
+      "text": "Blocs de compétences RNCP associés aux métiers de développeur en informatique : niveaux de certification et correspondances avec un M2.",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Optionnel pour lier compétences et diplôme, mais moins prioritaire que les données salariales."
+    }
+  ]
+}
