@@ -40,6 +40,11 @@ DOMAIN_HINT_INSEE_SALAIRE = "insee_salaire"
 DOMAIN_HINT_INSERTION_PRO = "insertion_pro"
 DOMAIN_HINT_METIER_PROSPECTIVE = "metier_prospective"  # DARES Métiers 2030
 DOMAIN_HINT_COMPETENCES_CERTIF = "competences_certif"  # France Comp blocs RNCP
+# Sprint 6 axes (Sprint 7 Action 5 : tuner intent classifier)
+DOMAIN_HINT_FORMATION_INSERTION = "formation_insertion"  # Inserjeunes lycée pro (axe 3b)
+DOMAIN_HINT_FINANCEMENT_ETUDES = "financement_etudes"  # Financement curé (axe 4)
+DOMAIN_HINT_TERRITOIRE_DROM = "territoire_drom"  # DROM-COM territorial (axe 2)
+DOMAIN_HINT_VOIE_PRE_BAC = "voie_pre_bac"  # BAC PRO + CAP catalogue (axe 3a)
 
 
 @dataclass(frozen=True)
@@ -255,6 +260,78 @@ _PATTERNS_DOMAIN_COMPETENCES_CERTIF = [
 ]
 
 
+_PATTERNS_DOMAIN_FORMATION_INSERTION = [
+    re.compile(r"\binsertion\s+(?:apres|post)\s+(?:un\s+|une\s+|le\s+|la\s+)?(?:bac\s+pro|cap|bts)\b"),
+    re.compile(r"\btaux\s+(?:d['e]\s*)?emploi\s+(?:apres|post)\s+(?:un\s+|une\s+|le\s+|la\s+)?(?:bac\s+pro|cap|bts|lycee\s+pro)\b"),
+    re.compile(r"\b(?:insertion|emploi|debouches)\s+(?:bac\s+pro|cap|bts)\b"),
+    re.compile(r"\b(?:que\s+devien)\w*\s+(?:les|des)\s+(?:diplomes?|sortants?)\s+(?:de\s+)?(?:bac\s+pro|cap)\b"),
+    re.compile(r"\binserjeunes\b"),
+    re.compile(r"\blycee\s+pro\s+(?:apres|insertion|debouches?)\b"),
+    re.compile(r"\b(?:taux|chance)[a-z]*\s+(?:d['e]\s*)?(?:emploi|insertion)\s+(?:par|selon)\s+(?:specialit|formation)\b"),
+    re.compile(r"\bcontinue[a-z]*\s+(?:ses\s+|mes\s+|leurs\s+)?etude[sx]?\s+apres\s+(?:un\s+|une\s+)?(?:bac\s+pro|cap)\b"),
+    re.compile(r"\bpoursuite\s+(?:d['e]\s*)?etudes?\s+(?:apres|post)\s+(?:un\s+|une\s+)?(?:bac\s+pro|cap)\b"),
+]
+
+_PATTERNS_DOMAIN_FINANCEMENT_ETUDES = [
+    re.compile(r"\b(?:bourse|aide|financement|subvention)[sx]?\s+(?:etudiant[a-z]*|formation|etudes?)\b"),
+    re.compile(r"\b(?:comment|aide[sx]?)\s+(?:financer|payer)\s+(?:mes?|ses?)\s+(?:etudes?|formation)\b"),
+    re.compile(r"\b(?:bourse[sx]?\s+crous|crous\s+bourse[sx]?)\b"),
+    re.compile(r"\bbourse[sx]?\s+sur\s+critere[sx]?\s+sociaux?\b"),
+    re.compile(r"\bcpf\b"),
+    re.compile(r"\bcompte\s+personnel\s+(?:de\s+)?formation\b"),
+    re.compile(r"\b(?:ptp|projet\s+de\s+transition\s+professionnelle|transitions?\s+pro)\b"),
+    re.compile(r"\bafdas\b|\bopco\b|\bconstructys\b|\bakto\b"),
+    re.compile(r"\bagefiph\b|\bfiphfp\b|\brqth\b"),
+    re.compile(r"\b(?:cej|contrat\s+(?:d['e]\s*)?engagement\s+jeunes?)\b"),
+    re.compile(r"\bgarantie\s+jeunes?\b"),
+    re.compile(r"\b(?:apl|aide\s+au\s+logement)\s+(?:etudiant|crous|paje)\b"),
+    re.compile(r"\bdispositif[sx]?\s+(?:de\s+)?financement\b"),
+    re.compile(r"\bcombien\s+(?:coute|fait|prevoir)\s+(?:.*?)?(?:etude|formation|ecole)"),
+    re.compile(r"\b(?:cout|cout\s+annuel|frais)[sx]?\s+(?:de\s+(?:la|l['e]\s*))?(?:formation|etudes?|ecole|inscription)\b"),
+    re.compile(r"\b(?:reconversion|reorientat)[a-z]*\s+(?:financement|comment\s+financer|aide[sx]?)\b"),
+    re.compile(r"\b(?:visale|caution|garantie\s+locative)\b"),
+    # Note : VAE pattern restreint pour éviter conflit avec compétences_certif
+    # (validation par blocs VAE = competences_certif). VAE comme financement
+    # nécessite un contexte explicite "financement / coût / prise en charge".
+    re.compile(r"\b(?:financement|prise\s+en\s+charge|aide|cout)\s+(?:vae|validation\s+des\s+acquis)\b"),
+    re.compile(r"\b(?:vae|validation\s+des\s+acquis)\s+(?:.{0,40})?(?:financ|cout|prise\s+en\s+charge|payer|paie)"),
+]
+
+_PATTERNS_DOMAIN_TERRITOIRE_DROM = [
+    re.compile(r"\b(?:drom|com|outre[\s\-]mer|outremer)\b"),
+    re.compile(r"\b(?:guadeloupe|martinique|guyane|la\s+reunion|reunion|mayotte)\b"),
+    re.compile(r"\b(?:departement|region)\s+(?:97[1-6]|d['e]\s*outre[\s\-]mer)\b"),
+    re.compile(r"\b(?:antille[sx]?|caraibe[sx]?|ocean\s+indien)\b"),
+    re.compile(r"\bladom\b"),
+    re.compile(r"\b(?:passeport\s+mobilite|mobilite\s+(?:outre[\s\-]mer|metropole))\b"),
+    re.compile(r"\b(?:sma|service\s+militaire\s+adapte)\b"),
+    re.compile(r"\binsularite\b"),
+]
+
+_PATTERNS_DOMAIN_VOIE_PRE_BAC = [
+    # Patterns "découverte / catalogue / liste" — distinguer voie_pre_bac (Sprint 6 axe 3a)
+    # des cas de transition individuelle "je suis en CAP, je veux passer en bac pro"
+    # qui restent formation-centric (None).
+    re.compile(r"\b(?:specialite|filiere)[sx]?\s+(?:de\s+)?(?:bac\s+pro|cap|bp|mc)\b"),
+    re.compile(r"\b(?:liste|catalogue|toutes?\s+les?|quelle[sx]?)\s+(?:specialite[sx]?|formations?)\s+(?:bac\s+pro|cap|de\s+bac\s+pro)\b"),
+    re.compile(r"\b(?:choisir|orientation)\s+(?:apres|post)\s+(?:la\s+)?(?:troisieme|3eme)\b"),
+    re.compile(r"\bcatalogue\s+(?:bac\s+pro|cap)\b"),
+    re.compile(r"\b(?:bac\s+pro|cap)\s+(?:metier[sx]?|specialit)"),
+    re.compile(r"\bquels?\s+(?:bac\s+pro|cap)\b"),
+    re.compile(r"\bbac\s+pro\s+(?:en|dans)\s+(?:cyber|industrie|electricite|agriculture|tourisme|hotellerie|commerce|sante|sport|art)"),
+    re.compile(r"\bcap\s+(?:en|dans)\s+(?:cuisine|petite\s+enfance|coiffure|electricien|patissier|industrie|hotellerie|restauration)"),
+    re.compile(r"\b(?:liste|catalogue|toutes?\s+les?)\s+(?:des\s+)?(?:bac\s+pro|cap)\s+(?:en|dans)\b"),
+    re.compile(r"\b(?:liste|catalogue|toutes?)\s+(?:des\s+)?cap\b"),
+    re.compile(r"\bmention\s+complementaire\s+(?:apres|en|comment|liste)"),
+    re.compile(r"\b(?:contenu|programme)\s+(?:du|de\s+(?:la|l['e]\s*))?\s*(?:bac\s+pro|cap)\b"),
+    re.compile(r"\bbaccalaureat\s+professionnel\s+(?:specialit|liste|catalogue|metier)"),
+    # Note : `\bbac\s+pro\b` standalone retiré pour éviter de capturer les
+    # cas de transition individuelle "je veux passer en bac pro" qui doivent
+    # rester formation-centric. Le routing voie_pre_bac cible explicitement
+    # les questions catalogue / découverte / programme.
+]
+
+
 def classify_domain_hint(question: str) -> str | None:
     """Retourne un hint de domain multi-corpus (ADR-049) ou None.
 
@@ -266,12 +343,20 @@ def classify_domain_hint(question: str) -> str | None:
     Priorité de détection (du plus spécifique au plus générique) :
     1. APEC (marché du travail cadres) — termes très spécifiques
     2. Métier prospective DARES (métiers 2030 / postes à pourvoir 2030)
-    3. INSEE salaire (médian / cadre / employé / PCS)
-    4. Insertion pro (taux insertion à N mois)
-    5. Compétences certifiées RNCP (blocs / contenu pédagogique)
-    6. Parcours bacheliers (taux réussite licence × bac × mention)
-    7. CROUS (logement étudiant / vie étudiante)
-    8. Métier (profession / devenir / que fait un X)
+    3. Territoire DROM (Sprint 7 — Guadeloupe / Martinique / Guyane / Réunion / Mayotte)
+    4. Financement études (Sprint 7 — bourses / CPF / aides)
+    5. INSEE salaire (médian / cadre / employé / PCS)
+    6. Insertion pro (taux insertion à N mois post bac+3+)
+    7. Formation insertion (Sprint 7 — bac pro/CAP/BTS insertion via Inserjeunes)
+    8. Voie pré-bac (Sprint 7 — BAC PRO + CAP catalogue spécialités)
+    9. Compétences certifiées RNCP (blocs / contenu pédagogique)
+    10. Parcours bacheliers (taux réussite licence × bac × mention)
+    11. CROUS (logement étudiant / vie étudiante)
+    12. Métier (profession / devenir / que fait un X)
+
+    Sprint 7 Action 5 : ajout des 4 nouveaux hints (axes Sprint 6 :
+    formation_insertion, financement_etudes, territoire_drom, voie_pre_bac)
+    pour router les queries vers les nouveaux corpora curated/aggregés.
     """
     if not question or not question.strip():
         return None
@@ -282,10 +367,21 @@ def classify_domain_hint(question: str) -> str | None:
         return DOMAIN_HINT_APEC
     if any(p.search(norm) for p in _PATTERNS_DOMAIN_METIER_PROSPECTIVE):
         return DOMAIN_HINT_METIER_PROSPECTIVE
+    # Sprint 7 axes 2 + 4 prioritaires (signaux très spécifiques DROM / financement)
+    if any(p.search(norm) for p in _PATTERNS_DOMAIN_TERRITOIRE_DROM):
+        return DOMAIN_HINT_TERRITOIRE_DROM
+    if any(p.search(norm) for p in _PATTERNS_DOMAIN_FINANCEMENT_ETUDES):
+        return DOMAIN_HINT_FINANCEMENT_ETUDES
     if any(p.search(norm) for p in _PATTERNS_DOMAIN_INSEE_SALAIRE):
         return DOMAIN_HINT_INSEE_SALAIRE
     if any(p.search(norm) for p in _PATTERNS_DOMAIN_INSERTION_PRO):
         return DOMAIN_HINT_INSERTION_PRO
+    # Sprint 7 axe 3b — bac pro / CAP / BTS insertion (Inserjeunes)
+    if any(p.search(norm) for p in _PATTERNS_DOMAIN_FORMATION_INSERTION):
+        return DOMAIN_HINT_FORMATION_INSERTION
+    # Sprint 7 axe 3a — voie pré-bac catalogue qualitatif
+    if any(p.search(norm) for p in _PATTERNS_DOMAIN_VOIE_PRE_BAC):
+        return DOMAIN_HINT_VOIE_PRE_BAC
     if any(p.search(norm) for p in _PATTERNS_DOMAIN_COMPETENCES_CERTIF):
         return DOMAIN_HINT_COMPETENCES_CERTIF
     if any(p.search(norm) for p in _PATTERNS_DOMAIN_PARCOURS):
