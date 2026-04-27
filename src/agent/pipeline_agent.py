@@ -122,6 +122,11 @@ class AgentPipeline:
     system_prompt_override: str | None = None  # None = SYSTEM_PROMPT v3.2 (default)
     # Pour activer v3.3 strict (R1-R6) : passer SYSTEM_PROMPT_V33_STRICT
     # depuis src.prompt.system_strict.
+    # Sprint 8 Wave 1 — post-process anti-hallu (bugs P0 user_test_v3)
+    enable_post_process: bool = True  # default ON : fix Bugs Q8, Q9, Q10
+    # Désactivable pour bench apples-to-apples Sprint 5/6/7 si besoin.
+    # Post-process déterministe non-LLM (≠ critic loop Sprint 7 OFF par
+    # défaut), ne risque pas de régression LLM-driven.
 
     def __post_init__(self) -> None:
         self.clarifier = ProfileClarifier(
@@ -277,6 +282,12 @@ class AgentPipeline:
                 system_prompt_override=self.system_prompt_override,
             )
             result.elapsed_generate_s = round(time.time() - t0, 2)
+
+            # Sprint 8 Wave 1 — post-process anti-hallu (bugs P0)
+            if self.enable_post_process:
+                from src.rag.post_process import post_process_answer
+                answer_text, _ = post_process_answer(answer_text, sources_agg)
+
             result.answer_text = answer_text
 
             # Étape 6 (optionnelle) : fact-check post-gen — PARALLEL Sprint 4 optim
