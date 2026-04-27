@@ -57,6 +57,7 @@ from typing import Any
 
 
 RAW_PATH = Path("data/raw/domtom/territoires_2026.json")
+RAW_DISPOSITIFS_ETENDUS_PATH = Path("data/raw/domtom/dispositifs_etendus_2026.json")  # Sprint 8 W2
 CORPUS_PATH = Path("data/processed/domtom_corpus.json")
 
 
@@ -199,12 +200,51 @@ def aggregate_synthese_cross(raw: dict[str, Any]) -> list[dict[str, Any]]:
     }]
 
 
+def aggregate_dispositifs_etendus(path: Path | None = None) -> list[dict[str, Any]]:
+    """Sprint 8 W2 — agrège les dispositifs étendus DROM (10 cells supplémentaires).
+
+    Source : `data/raw/domtom/dispositifs_etendus_2026.json`. Pattern flat
+    (1 cell par dispositif, structure simple subject/content/source).
+    """
+    target = path or RAW_DISPOSITIFS_ETENDUS_PATH
+    if not target.exists():
+        return []
+    raw = json.loads(target.read_text(encoding="utf-8"))
+    out: list[dict[str, Any]] = []
+    for d in raw.get("dispositifs_etendus", []):
+        subject = d.get("subject", "")
+        content = d.get("content", "")
+        public = d.get("public_cible", "")
+        source = d.get("source_officielle", "")
+
+        parts = [
+            f"DROM-COM (extension Sprint 8 W2) — {subject}",
+            content,
+        ]
+        if public:
+            parts.append(f"Public cible : {public}")
+        if source:
+            parts.append(f"Source officielle (vérification année en cours) : {source}")
+
+        out.append({
+            "id": f"domtom_dispositif:{d['id']}",
+            "domain": "territoire_drom",
+            "source": "domtom_curated",
+            "granularity": "dispositif_etendu",
+            "subject": subject,
+            "source_officielle": source,
+            "text": " | ".join(p for p in parts if p),
+        })
+    return out
+
+
 def build_corpus(raw: dict[str, Any] | None = None) -> list[dict[str, Any]]:
     if raw is None:
         raw = load_raw()
     out: list[dict[str, Any]] = []
     out.extend(aggregate_by_territoire(raw))
     out.extend(aggregate_synthese_cross(raw))
+    out.extend(aggregate_dispositifs_etendus())  # Sprint 8 W2
     return out
 
 
