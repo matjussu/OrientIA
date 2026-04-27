@@ -9,6 +9,7 @@ from src.collect.build_dares_corpus import (
     _safe_float,
     _slug,
     aggregate_by_fap,
+    aggregate_by_fap_region,
     aggregate_by_region,
     build_corpus,
     save_corpus,
@@ -132,12 +133,95 @@ class TestAggregateByRegion:
         assert top[0][1] == 13.0
 
 
+class TestAggregateByFapRegion:
+    """Sprint 6 (2026-04-27) — granulaire couple (FAP, région)."""
+
+    def test_one_cell_per_couple(self, dares_sample):
+        out = aggregate_by_fap_region(dares_sample)
+        # 3 records dans le sample = 3 couples distincts (J5Z×IDF, J5Z×Bret, P4Z×IDF)
+        assert len(out) == 3
+        ids = {r["id"] for r in out}
+        assert "dares_fap_region:J5Z:ile-de-france" in ids
+        assert "dares_fap_region:J5Z:bretagne" in ids
+        assert "dares_fap_region:P4Z:ile-de-france" in ids
+
+    def test_no_aggregation_just_shape(self, dares_sample):
+        """Pas de SUM : valeurs raw préservées (≠ aggregate_by_fap qui SUM régions)."""
+        out = aggregate_by_fap_region(dares_sample)
+        j5z_idf = next(
+            r for r in out if r["code_fap"] == "J5Z" and r["region"] == "Île-de-France"
+        )
+        # Sample : J5Z × IDF a effectifs=50, postes=13, creations=5
+        assert j5z_idf["effectifs_2019_milliers"] == 50.0
+        assert j5z_idf["postes_a_pourvoir_milliers"] == 13.0
+        assert j5z_idf["creations_destructions_milliers"] == 5.0
+
+    def test_granularity_tag(self, dares_sample):
+        out = aggregate_by_fap_region(dares_sample)
+        assert all(r["granularity"] == "fap_region" for r in out)
+
+    def test_text_includes_libelle_and_region(self, dares_sample):
+        out = aggregate_by_fap_region(dares_sample)
+        j5z_bret = next(
+            r for r in out if r["code_fap"] == "J5Z" and r["region"] == "Bretagne"
+        )
+        assert "Agents administratifs" in j5z_bret["text"]
+        assert "Bretagne" in j5z_bret["text"]
+        assert "FAP J5Z" in j5z_bret["text"]
+
+    def test_specificite_label_high(self, dares_sample):
+        """indice_specificite ≥ 1.5 → label sur-représenté."""
+        out = aggregate_by_fap_region(dares_sample)
+        # P4Z × IDF a spec=1.5
+        p4z_idf = next(
+            r for r in out if r["code_fap"] == "P4Z" and r["region"] == "Île-de-France"
+        )
+        assert "sur-représenté" in p4z_idf["text"]
+        assert p4z_idf["indice_specificite"] == 1.5
+
+    def test_specificite_label_low(self, dares_sample):
+        """indice_specificite ≤ 0.7 → label sous-représenté."""
+        out = aggregate_by_fap_region(dares_sample)
+        # J5Z × Bretagne a spec=0.6
+        j5z_bret = next(
+            r for r in out if r["code_fap"] == "J5Z" and r["region"] == "Bretagne"
+        )
+        assert "sous-représenté" in j5z_bret["text"]
+
+    def test_skips_records_missing_fap_or_region(self):
+        """Records sans code_fap ou région sont ignorés."""
+        records = [
+            {"code_fap": "", "region": "IDF", "fap_libelle": "x"},
+            {"code_fap": "J5Z", "region": "", "fap_libelle": "x"},
+        ]
+        out = aggregate_by_fap_region(records)
+        assert out == []
+
+
+class TestGranularityTagsExisting:
+    """Vérifie que les anciennes agrégations exposent aussi `granularity`."""
+
+    def test_aggregate_by_fap_tags(self, dares_sample):
+        out = aggregate_by_fap(dares_sample)
+        assert all(r["granularity"] == "fap" for r in out)
+
+    def test_aggregate_by_region_tags(self, dares_sample):
+        out = aggregate_by_region(dares_sample)
+        assert all(r["granularity"] == "region" for r in out)
+
+
 def test_build_corpus_combines(dares_sample):
     corpus = build_corpus(dares_sample)
-    # 2 FAP + 2 régions = 4 cells
-    assert len(corpus) == 4
+    # 2 FAP + 2 régions + 3 couples (FAP, région) = 7 cells
+    assert len(corpus) == 7
     assert all(c["domain"] == "metier_prospective" for c in corpus)
     assert all(c["source"] == "dares_metiers_2030" for c in corpus)
+
+
+def test_build_corpus_three_granularities(dares_sample):
+    corpus = build_corpus(dares_sample)
+    granularities = {c["granularity"] for c in corpus}
+    assert granularities == {"fap", "region", "fap_region"}
 
 
 def test_save_corpus_round_trip(tmp_path, dares_sample):
