@@ -1,0 +1,76 @@
+{
+  "version": "2026-04-27-W2",
+  "note_methodo": "Extension Sprint 8 W2 du corpus DROM territorial. Ajoute 10 cells par dimension (formations spécifiques DROM, marché du travail détaillé, dispositifs LADOM élargis, mobilité Erasmus régionale Antilles/Océan Indien) au-delà des 5 cells territoires + 1 synthèse Sprint 6.",
+  "dispositifs_etendus": [
+    {
+      "id": "drom_formations_universite_antilles",
+      "subject": "Université des Antilles — formations dans les DROM",
+      "content": "L'Université des Antilles (UA) est l'établissement public d'enseignement supérieur des DROM Antilles. Campus principaux : Fouillole (Pointe-à-Pitre, Guadeloupe), Schoelcher (Fort-de-France, Martinique), Saint-Claude (Guadeloupe). Formations : licences générales (Lettres, Sciences, Économie-Gestion, Droit, STAPS), Masters, Doctorats. Spécificités : tropiques, biodiversité, écologie marine, anthropologie caribéenne. Plus de 12 000 étudiants. Permet aux jeunes Antillais de poursuivre leurs études près de leur famille avant éventuelle mobilité métropole en master.",
+      "public_cible": "Étudiants Guadeloupe et Martinique post-bac",
+      "source_officielle": "https://www.univ-antilles.fr/"
+    },
+    {
+      "id": "drom_formations_universite_reunion",
+      "subject": "Université de La Réunion — offre formation",
+      "content": "L'Université de La Réunion (UR) propose une large palette de formations sur 3 campus principaux (Saint-Denis, Le Tampon, Saint-Pierre). Plus de 20 000 étudiants. Filières fortes : océan Indien (sciences marines, écologie tropicale), énergies renouvelables (solaire, biomasse), santé, sport (STAPS), informatique, économie. Couvre licences/masters/doctorats. Acteur clé pour les jeunes Réunionnais qui veulent étudier sur place avant éventuelle poursuite métropole.",
+      "public_cible": "Étudiants La Réunion post-bac",
+      "source_officielle": "https://www.univ-reunion.fr/"
+    },
+    {
+      "id": "drom_formations_universite_guyane",
+      "subject": "Université de Guyane — offre formation spécifique",
+      "content": "L'Université de Guyane (UG) est l'établissement public à Cayenne, Kourou (campus filière spatiale) et Saint-Laurent-du-Maroni. Plus de 5 000 étudiants. Spécificités unique en France : licence professionnelle Spatial (en partenariat CNES/Arianespace au Centre Spatial Guyanais), formations forestières amazoniennes, langues guyanaises, anthropologie autochtone. Filière clé pour la jeunesse guyanaise et la diaspora amazonienne.",
+      "public_cible": "Étudiants Guyane et amazone post-bac",
+      "source_officielle": "https://www.univ-guyane.fr/"
+    },
+    {
+      "id": "drom_formations_cufr_mayotte",
+      "subject": "CUFR Mayotte — offre formation post-bac limitée",
+      "content": "Le Centre Universitaire de Formation et de Recherche (CUFR) de Mayotte est l'établissement public d'enseignement supérieur principal sur l'île. Offre limitée : licences (Lettres, Sciences, Sociologie, Anglais, Mathématiques), peu de masters. Environ 2 000 étudiants. Pour études supérieures post-licence ou filières non-couvertes, mobilité La Réunion ou métropole nécessaire (passeport mobilité LADOM disponible). CUFR en cours de transformation en pleine université Mayotte (projet 2026+).",
+      "public_cible": "Étudiants Mayotte post-bac",
+      "source_officielle": "https://www.univ-mayotte.fr/"
+    },
+    {
+      "id": "drom_marche_travail_secteurs_porteurs",
+      "subject": "DROM — secteurs porteurs marché du travail 2024-2030",
+      "content": "Secteurs porteurs DROM (perspectives 2024-2030) : tourisme (Antilles, Réunion : 50 000+ emplois), santé/médico-social (vieillissement Antilles + jeunesse Mayotte demande croissante), énergies renouvelables (Réunion solaire, Guyane éolien-biomasse), BTP (rénovation énergétique, logements sociaux), agriculture tropicale (canne, banane, vanille, ananas). Métiers en tension : aides-soignants, infirmier·es, électriciens BTP, ingénieurs énergies renouvelables. Source : DARES + Pôle Emploi territorial DROM (à consulter pour chiffres exacts).",
+      "public_cible": "Jeunes orientation DROM, conseillers d'orientation",
+      "source_officielle": "https://statistiques.francetravail.fr/"
+    },
+    {
+      "id": "drom_dispositif_passeport_mobilite_etudes",
+      "subject": "Passeport Mobilité Études (LADOM)",
+      "content": "Le Passeport Mobilité Études est financé par LADOM (Agence de l'Outre-Mer pour la Mobilité). Public : étudiants ressortissants DROM/COM (Guadeloupe, Martinique, Guyane, Réunion, Mayotte, Saint-Pierre-et-Miquelon, etc.) inscrits dans une formation supérieure en métropole. Couvre : 1 billet aller-retour DROM ↔ métropole/an + 1 billet de prise de poste à l'arrivée si stage. Conditions : être boursier CROUS échelon 0bis-7 ou âgé de moins de 26 ans avec ressources foyer fiscal sous plafond. Demande sur ladom.fr ou via SCUIO.",
+      "public_cible": "Étudiants ressortissants DROM mobilité études métropole",
+      "source_officielle": "https://www.ladom.fr/"
+    },
+    {
+      "id": "drom_dispositif_passeport_mobilite_stage",
+      "subject": "Passeport Mobilité Stage Pro (LADOM)",
+      "content": "Le Passeport Mobilité Stage Professionnel (PMSP) finance la mobilité DROM ↔ métropole pour stage obligatoire dans un cursus de formation initiale ou continue. Public : élèves/étudiants/apprentis ressortissants DROM. Couvre billet d'avion + frais de séjour partiels selon barème. Demande à formuler avant le départ via LADOM régional ou SCUIO de l'établissement. Cumulable avec Passeport Mobilité Études.",
+      "public_cible": "Étudiants/apprentis DROM en stage obligatoire métropole",
+      "source_officielle": "https://www.ladom.fr/passeport-mobilite-stage-professionnel/"
+    },
+    {
+      "id": "drom_dispositif_sma_service_militaire_adapte",
+      "subject": "SMA — Service Militaire Adapté pour décrocheurs DROM",
+      "content": "Le SMA (Service Militaire Adapté) est un dispositif d'insertion socio-professionnelle pour jeunes 18-25 ans en difficulté d'insertion dans les DROM. 7 régiments : Guadeloupe, Martinique, Guyane, Réunion, Mayotte, Polynésie française, Nouvelle-Calédonie. Formation rémunérée 6-12 mois (rémunération volontaire ~340€/mois + hébergement + restauration gratuits) dans un métier en tension régionale (BTP, logistique, restauration, mécanique, sécurité, santé). Taux d'insertion ~80% (emploi ou formation qualifiante post-SMA). Inscription : Mission Locale ou directement régiment SMA local.",
+      "public_cible": "Jeunes DROM 18-25 ans NEET (sans emploi ni formation)",
+      "source_officielle": "https://www.le-sma.com/"
+    },
+    {
+      "id": "drom_mobilite_erasmus_ocean_indien",
+      "subject": "Erasmus+ régional Océan Indien (depuis La Réunion / Mayotte)",
+      "content": "Pour les étudiants de l'Université de La Réunion ou du CUFR Mayotte, Erasmus+ propose mobilité régionale Océan Indien : Maurice, Madagascar, Seychelles, Comores, Afrique du Sud, Mozambique, Australie occidentale (sous réserve accords inter-universitaires). Bourse Erasmus+ 280-450€/mois selon zone + maintien bourse CROUS française. Spécificité DROM : remplit la mobilité internationale Erasmus+ tout en restant dans la zone géographique d'origine, contrairement à la mobilité métropole qui peut se faire via dispositifs interne France.",
+      "public_cible": "Étudiants Réunion / Mayotte mobilité internationale ciblée",
+      "source_officielle": "https://www.univ-reunion.fr/international/"
+    },
+    {
+      "id": "drom_mobilite_erasmus_caraibes_amerique",
+      "subject": "Erasmus+ régional Caraïbes / Amériques (depuis Antilles / Guyane)",
+      "content": "Pour les étudiants de l'Université des Antilles ou de Guyane, Erasmus+ propose mobilité régionale Caraïbes/Amériques : Cuba, République Dominicaine, Mexique, Brésil, Colombie, Venezuela, Argentine (selon accords). Bourse 280-450€/mois + maintien CROUS. Spécifique Guyane : partenariats privilégiés avec Brésil (espagnol/portugais), Suriname, Guyane-anglaise. Permet une internationalisation cohérente avec la zone caribéenne et amazonienne d'origine.",
+      "public_cible": "Étudiants Antilles / Guyane mobilité internationale régionale",
+      "source_officielle": "https://www.univ-antilles.fr/international/"
+    }
+  ]
+}

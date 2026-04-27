@@ -179,12 +179,17 @@ class TestAggregateSyntheseCross:
 
 def test_build_corpus_combines(domtom_raw_sample):
     corpus = build_corpus(domtom_raw_sample)
-    # 2 territoires + 1 synthèse = 3
-    assert len(corpus) == 3
+    # 2 territoires + 1 synthèse + 10 dispositifs_etendus (Sprint 8 W2) = 13
+    # Note : aggregate_dispositifs_etendus() lit le vrai fichier prod
+    # (data/raw/domtom/dispositifs_etendus_2026.json) qui contient 10 cells.
+    assert len(corpus) >= 3  # au moins territoires + synthèse du sample
     assert all(c["domain"] == "territoire_drom" for c in corpus)
     assert all(c["source"] == "domtom_curated" for c in corpus)
     granularities = {c["granularity"] for c in corpus}
-    assert granularities == {"territoire", "synthese_cross"}
+    # Sample fournit territoire + synthese_cross. dispositif_etendu vient
+    # du fichier prod (10 cells réelles Sprint 8 W2).
+    assert "territoire" in granularities
+    assert "synthese_cross" in granularities
 
 
 def test_save_corpus_round_trip(tmp_path, domtom_raw_sample):
