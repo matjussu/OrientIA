@@ -47,6 +47,16 @@ class RerankConfig:
     # France Comp blocs RNCP — compétences certifiées (cohérent données
     # chiffrées externes APEC/INSEE/DARES = 1.5).
     domain_boost_competences_certif: float = 1.5
+    # Sprint 7 Action 5 — boosts pour les nouveaux corpora Sprint 6.
+    # Cohabitation avec multi-corpus existant : niveaux similaires aux
+    # autres domaines factuels (1.4-1.5). Pas de pénalité hors-domain.
+    # Anti-hallu défensif (axes 4 + 2) bénéficie du nouveau verdict
+    # `verified_by_official_source` (Sprint 7 Action 1) — le boost
+    # accentue le retrieval, l'Action 1 valorise la mesure.
+    domain_boost_formation_insertion: float = 1.4  # Inserjeunes lycée pro (axe 3b star)
+    domain_boost_financement_etudes: float = 1.5  # Financement curated (axe 4 muet → unmute)
+    domain_boost_territoire_drom: float = 1.5  # DROM territorial (axe 2 non-mesuré)
+    domain_boost_voie_pre_bac: float = 1.4  # BAC PRO + CAP catalogue (axe 3a rare)
 
     def as_dict(self) -> dict:
         return {
@@ -66,6 +76,11 @@ class RerankConfig:
             "domain_boost_insertion_pro": self.domain_boost_insertion_pro,
             "domain_boost_metier_prospective": self.domain_boost_metier_prospective,
             "domain_boost_competences_certif": self.domain_boost_competences_certif,
+            # Sprint 7 Action 5
+            "domain_boost_formation_insertion": self.domain_boost_formation_insertion,
+            "domain_boost_financement_etudes": self.domain_boost_financement_etudes,
+            "domain_boost_territoire_drom": self.domain_boost_territoire_drom,
+            "domain_boost_voie_pre_bac": self.domain_boost_voie_pre_bac,
         }
 
 
@@ -79,6 +94,11 @@ _DOMAIN_BOOST_FIELDS = {
     "insertion_pro": "domain_boost_insertion_pro",
     "metier_prospective": "domain_boost_metier_prospective",
     "competences_certif": "domain_boost_competences_certif",
+    # Sprint 7 Action 5 — Sprint 6 axes
+    "formation_insertion": "domain_boost_formation_insertion",
+    "financement_etudes": "domain_boost_financement_etudes",
+    "territoire_drom": "domain_boost_territoire_drom",
+    "voie_pre_bac": "domain_boost_voie_pre_bac",
 }
 
 
