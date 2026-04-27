@@ -1,0 +1,156 @@
+{
+  "version": "2026-04-27",
+  "note_methodo": "Corpus curé compilé depuis sources officielles publiques (INSEE Antilles-Guyane, INSEE Océan Indien, INSEE Mayotte, France Travail statistiques territoriales, data.gouv.fr). Les chiffres démographiques et économiques sont des estimations récentes (référentiel 2022-2024 selon disponibilité INSEE). L'orientation user pointe systématiquement vers la source officielle pour les chiffres exacts à jour.",
+  "territoires": [
+    {
+      "id": "guadeloupe",
+      "code_insee": "971",
+      "nom": "Guadeloupe",
+      "zone": "Antilles",
+      "population_approximative_2024": 378000,
+      "densite_hab_km2": 225,
+      "part_jeunes_15_24_pct": 12,
+      "taux_chomage_global_pct": {"approx": 17, "annee": "2023", "comparaison_france_metro": 7},
+      "taux_chomage_jeunes_15_24_pct": {"approx": 33, "annee": "2023"},
+      "pib_par_habitant_eur": {"approx": 22000, "annee": "2022", "comparaison_france_metro": 38000},
+      "salaire_median_net_mensuel_eur": {"approx": 1750, "annee": "2022"},
+      "secteurs_dominants": ["tourisme", "agriculture (canne à sucre, banane)", "services publics", "BTP"],
+      "specificites_orientation": [
+        "Insularité : mobilité contrainte vers métropole pour études supérieures spécialisées",
+        "Coût de la vie majoré ~10-15% vs métropole (alimentation, logement)",
+        "Université des Antilles propose Licences/Masters de proximité (campus Fouillole)",
+        "BTS, BUT, classes prépa accessibles localement",
+        "Aide à la mobilité inter-académies (LADOM, CROUS)"
+      ],
+      "sources_officielles": [
+        "https://www.insee.fr/fr/statistiques?geo=DEP-971",
+        "https://statistiques.francetravail.fr/"
+      ]
+    },
+    {
+      "id": "martinique",
+      "code_insee": "972",
+      "nom": "Martinique",
+      "zone": "Antilles",
+      "population_approximative_2024": 358000,
+      "densite_hab_km2": 320,
+      "part_jeunes_15_24_pct": 10,
+      "taux_chomage_global_pct": {"approx": 13, "annee": "2023", "comparaison_france_metro": 7},
+      "taux_chomage_jeunes_15_24_pct": {"approx": 28, "annee": "2023"},
+      "pib_par_habitant_eur": {"approx": 24000, "annee": "2022", "comparaison_france_metro": 38000},
+      "salaire_median_net_mensuel_eur": {"approx": 1850, "annee": "2022"},
+      "secteurs_dominants": ["tourisme", "agriculture (banane)", "services publics", "services aux entreprises"],
+      "specificites_orientation": [
+        "Population vieillissante (3ᵉ département le plus âgé de France)",
+        "Exode des jeunes vers métropole pour études et emploi",
+        "Université des Antilles (campus Schoelcher) — Licences/Masters",
+        "Tissu BTS/BUT diversifié (industrie, services, agriculture tropicale)",
+        "LADOM (Agence de l'Outre-Mer pour la Mobilité) finance la mobilité étudiante"
+      ],
+      "sources_officielles": [
+        "https://www.insee.fr/fr/statistiques?geo=DEP-972",
+        "https://statistiques.francetravail.fr/"
+      ]
+    },
+    {
+      "id": "guyane",
+      "code_insee": "973",
+      "nom": "Guyane",
+      "zone": "Amérique du Sud",
+      "population_approximative_2024": 290000,
+      "densite_hab_km2": 4,
+      "part_jeunes_15_24_pct": 17,
+      "taux_chomage_global_pct": {"approx": 13, "annee": "2023", "comparaison_france_metro": 7},
+      "taux_chomage_jeunes_15_24_pct": {"approx": 33, "annee": "2023"},
+      "pib_par_habitant_eur": {"approx": 17000, "annee": "2022", "comparaison_france_metro": 38000},
+      "salaire_median_net_mensuel_eur": {"approx": 1700, "annee": "2022"},
+      "secteurs_dominants": ["Centre Spatial Guyanais (CNES, Arianespace)", "forêt et bois", "services publics", "BTP", "exploitation aurifère"],
+      "specificites_orientation": [
+        "Croissance démographique la plus forte des DROM (+2-3% par an)",
+        "Population la plus jeune des DROM (≥17% de 15-24 ans)",
+        "Vastes territoires isolés (intérieur amazonien) — accès difficile aux études",
+        "Université de Guyane (Cayenne) — Licences spécialisées tropiques + BTS/BUT",
+        "Filière spatial : opportunités exceptionnelles autour du CNES et Arianespace (ingénierie)",
+        "Immigration importante : populations bilingues (français, créole, portugais, anglais, langues autochtones)"
+      ],
+      "sources_officielles": [
+        "https://www.insee.fr/fr/statistiques?geo=DEP-973",
+        "https://statistiques.francetravail.fr/"
+      ]
+    },
+    {
+      "id": "la-reunion",
+      "code_insee": "974",
+      "nom": "La Réunion",
+      "zone": "Océan Indien",
+      "population_approximative_2024": 870000,
+      "densite_hab_km2": 350,
+      "part_jeunes_15_24_pct": 13,
+      "taux_chomage_global_pct": {"approx": 18, "annee": "2023", "comparaison_france_metro": 7},
+      "taux_chomage_jeunes_15_24_pct": {"approx": 36, "annee": "2023"},
+      "pib_par_habitant_eur": {"approx": 22000, "annee": "2022", "comparaison_france_metro": 38000},
+      "salaire_median_net_mensuel_eur": {"approx": 1800, "annee": "2022"},
+      "secteurs_dominants": ["tourisme", "agriculture (canne, vanille, géranium)", "services publics", "BTP", "énergies renouvelables (solaire, hydraulique)"],
+      "specificites_orientation": [
+        "DROM le plus peuplé : marché de l'emploi plus diversifié que les Antilles",
+        "Université de La Réunion (Saint-Denis, Le Tampon) — large offre Licences/Masters",
+        "Filière mer/biodiversité, énergies renouvelables, ingénierie tropicale",
+        "Connexions vers Mayotte, Maurice, Madagascar (plateforme régionale)",
+        "Aide à la mobilité Erasmus+ vers pays Océan Indien"
+      ],
+      "sources_officielles": [
+        "https://www.insee.fr/fr/statistiques?geo=DEP-974",
+        "https://statistiques.francetravail.fr/"
+      ]
+    },
+    {
+      "id": "mayotte",
+      "code_insee": "976",
+      "nom": "Mayotte",
+      "zone": "Océan Indien",
+      "population_approximative_2024": 310000,
+      "densite_hab_km2": 800,
+      "part_jeunes_15_24_pct": 20,
+      "taux_chomage_global_pct": {"approx": 30, "annee": "2023", "comparaison_france_metro": 7},
+      "taux_chomage_jeunes_15_24_pct": {"approx": 50, "annee": "2023"},
+      "pib_par_habitant_eur": {"approx": 10000, "annee": "2022", "comparaison_france_metro": 38000},
+      "salaire_median_net_mensuel_eur": {"approx": 1300, "annee": "2022"},
+      "secteurs_dominants": ["services publics", "agriculture vivrière", "BTP", "pêche"],
+      "specificites_orientation": [
+        "DROM le plus jeune de France (≥20% de 15-24 ans)",
+        "DROM le plus pauvre (PIB/hab le plus faible de France)",
+        "Forte croissance démographique + immigration des Comores",
+        "Bilinguisme (français, shimaoré, kibouchi, arabe)",
+        "Centre Universitaire de Formation et de Recherche (CUFR) — offre limitée, mobilité métropole ou Réunion fréquente",
+        "Taux d'illettrisme élevé : enjeu fort de remise à niveau et alphabétisation",
+        "Aide à la mobilité (LADOM) cruciale pour études supérieures"
+      ],
+      "sources_officielles": [
+        "https://www.insee.fr/fr/statistiques?geo=DEP-976",
+        "https://statistiques.francetravail.fr/"
+      ]
+    }
+  ],
+  "synthese_cross_drom": {
+    "id": "synthese_drom_orientation",
+    "nom": "DROM — synthèse comparative orientation jeunes",
+    "indicateurs_communs": {
+      "ecart_pib_hab_vs_france_metro": "Tous les DROM ont un PIB/hab inférieur à la France métropolitaine. Écart : -36% (Mayotte la plus basse à 10 000€) à -37% (Guadeloupe à 22 000€). Métro = ~38 000€ (2022).",
+      "chomage_jeunes_eleve": "Le taux de chômage des 15-24 ans est 4 à 7 fois plus élevé qu'en métropole. Ordre croissant : Martinique (28%), Guadeloupe (33%), Guyane (33%), La Réunion (36%), Mayotte (50%). Métro ~17%.",
+      "demographie_jeunes": "La part de jeunes 15-24 ans est plus élevée qu'en métropole. Mayotte 20%, Guyane 17%, La Réunion 13%, Guadeloupe 12%, Martinique 10% (vieillissante). Métro ~12%.",
+      "scolarisation": "L'accès aux études supérieures est un défi structurel : universités locales avec offre limitée → mobilité métropole fréquente, financée notamment par LADOM (Aide Mobilité Étudiants Outre-Mer)."
+    },
+    "dispositifs_specifiques_drom": [
+      "LADOM (Agence de l'Outre-Mer pour la Mobilité) — passeport mobilité études : prise en charge billet d'avion DROM ↔ métropole pour études et stages",
+      "Aide à la mobilité internationale CROUS étendue aux ressortissants DROM",
+      "Bourse CROUS sur critères sociaux : barème spécifique DROM (proximité parents)",
+      "Préparations aux concours sociaux et grandes écoles : antennes spécialisées dans certains DROM (ex CESI La Réunion, IEP)",
+      "Service militaire adapté (SMA) : insertion par formation pour décrocheurs DROM (taux insertion ~80%)"
+    ],
+    "sources_officielles_synthese": [
+      "https://www.insee.fr/fr/statistiques (filtrer par département DROM 971-976)",
+      "https://www.ladom.fr/ (passeport mobilité études)",
+      "https://www.le-sma.com/ (Service Militaire Adapté)"
+    ]
+  }
+}
