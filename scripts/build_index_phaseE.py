@@ -54,10 +54,12 @@ SRC_INDEX_PHASED = Path("data/embeddings/formations_multi_corpus_phaseD.index")
 
 # Corpus Sprint 6 — sources pour les nouvelles cells à embed
 DARES_CORPUS = Path("data/processed/dares_corpus.json")  # 1 160 cells, on prend granularity:fap_region (1 049)
-INSERJEUNES_CORPUS = Path("data/processed/inserjeunes_lycee_pro_corpus.json")  # 689 cells
+INSERJEUNES_CORPUS = Path("data/processed/inserjeunes_lycee_pro_corpus.json")  # 2 693 cells (Sprint 7 Action 4)
 FINANCEMENT_CORPUS = Path("data/processed/financement_corpus.json")  # 28 cells
 DOMTOM_CORPUS = Path("data/processed/domtom_corpus.json")  # 6 cells
 VOIE_PRE_BAC_CORPUS = Path("data/processed/voie_pre_bac_corpus.json")  # 20 cells
+# Sprint 8 Wave 1 — corrections factuelles
+CORRECTIONS_CORPUS = Path("data/processed/corrections_factuelles_corpus.json")  # 5 cells
 
 # Outputs Phase E
 TARGET_FICHES = Path("data/processed/formations_multi_corpus_phaseE.json")
@@ -108,6 +110,13 @@ def _load_new_records() -> tuple[list[dict], dict[str, int]]:
         new_records.extend(vpb)
         counts["voie_pre_bac"] = len(vpb)
         print(f"   Voie pré-bac : {len(vpb)} cells")
+
+    # 6. Sprint 8 W1 — Corrections factuelles (5 cells priorité haute)
+    if CORRECTIONS_CORPUS.exists():
+        corrections = [r for r in json.loads(CORRECTIONS_CORPUS.read_text(encoding="utf-8")) if r.get("text")]
+        new_records.extend(corrections)
+        counts["corrections_factuelles"] = len(corrections)
+        print(f"   Corrections factuelles : {len(corrections)} cells")
 
     return new_records, counts
 
