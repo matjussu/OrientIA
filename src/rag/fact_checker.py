@@ -53,7 +53,7 @@ On te donne :
 
 Tu dois :
 - Lister TOUS les chiffres/statistiques/pourcentages/salaires cités dans la RÉPONSE
-- Pour chacun, vérifier s'il est présent dans au moins une FICHE (texte littéral, ou paraphrase proche)
+- Pour chacun, vérifier s'il est présent dans au moins une FICHE (texte littéral, ou paraphrase proche, ou fourchette approximative)
 - Retourner un JSON structuré (pas de texte hors JSON)
 
 ## Schéma JSON strict
@@ -68,7 +68,7 @@ Tu dois :
       "context_in_response": "phrase courte qui entoure la stat",
       "is_sourced_in_fiches": true|false,
       "source_fiche_excerpt": "extrait fiche si sourcé, sinon null",
-      "verdict": "verified" | "unsourced_with_disclaimer" | "unsourced_unsafe"
+      "verdict": "verified" | "verified_by_official_source" | "unsourced_with_disclaimer" | "unsourced_unsafe"
     }
   ]
 }
@@ -77,7 +77,12 @@ Tu dois :
 ## Règles d'évaluation
 
 - `verified` : stat présente textuellement (ou paraphrase très proche, ex 0.85 ↔ 85%) dans au moins une fiche. Récupère l'extrait concerné dans `source_fiche_excerpt`.
-- `unsourced_with_disclaimer` : stat PAS dans les fiches MAIS la réponse marque `(connaissance générale)` ou `(estimation)` ou `(non vérifié)` à proximité immédiate → OK, pas de hallucination.
+- `verified_by_official_source` : la stat est mentionnée dans une fiche **anti-hallu défensif** qui :
+  - donne une fourchette approximative explicite (ex `~X-Y€`, `~500€/an`, `~17000-22000€`)
+  - **ET** pointe vers une URL officielle (etudiant.gouv.fr, education.gouv.fr, insee.fr, statistiques.francetravail.fr, moncompteformation.gouv.fr, service-public.fr, agefiph.fr, etc.)
+  - **ET** la valeur dans la réponse tombe dans la fourchette ou est cohérente avec elle
+  → Compte comme verified (pattern de cell curated avec disclaimer "voir source pour montant exact").
+- `unsourced_with_disclaimer` : stat PAS dans les fiches MAIS la réponse marque `(connaissance générale)` ou `(estimation)` ou `(non vérifié)` à proximité immédiate → OK, pas de hallucination, mais pas verified.
 - `unsourced_unsafe` : stat PAS dans les fiches ET AUCUN disclaimer proche → **hallucination à flaguer**. Cite une source fabriquée type "CEREQ 2023", "DEPP", "FNEK", "APEC", "Welcome to the Jungle", "Glassdoor", "Syntec" sans que cette stat soit dans les fiches = `unsourced_unsafe`.
 
 ## Exemples
@@ -85,6 +90,14 @@ Tu dois :
 RÉPONSE : "Le taux d'emploi à 3 ans est de 85% (source Céreq Generation 2017)."
 FICHE 1 : "Master Info Paris | Insertion pro (source Céreq, Generation 2017) : taux emploi 3 ans : 85%"
 → `verified`, source_fiche_excerpt = "Insertion pro (source Céreq, Generation 2017) : taux emploi 3 ans : 85%"
+
+RÉPONSE : "Le PIB par habitant en Guyane est environ 17000€."
+FICHE 1 : "DROM — Guyane (973) | PIB par habitant (€) : ~17000 (2022) ; France métro ~38000 | Sources officielles : insee.fr/fr/statistiques?geo=DEP-973"
+→ `verified_by_official_source` (fourchette ~17000 + URL insee.fr officielle, valeur réponse cohérente)
+
+RÉPONSE : "Le CPF crédite 500€/an pour les salariés."
+FICHE 1 : "Financement — CPF | Montants approximatifs : 500€/an ; plafond 5000€ | Source officielle : moncompteformation.gouv.fr"
+→ `verified_by_official_source` (montant approximatif 500€ + URL officielle moncompteformation.gouv.fr)
 
 RÉPONSE : "Salaire ~2500€ net (connaissance générale)."
 FICHES : aucune ne contient 2500€
@@ -102,6 +115,50 @@ FICHES : aucune ne contient 90% ni "CEREQ 2023"
 - Focus sur : pourcentages, taux, salaires, effectifs, ratios, montants de frais d'inscription, durées formations.
 """
 
+# URL patterns reconnus comme "source officielle" pour le upgrade verdict
+# `verified_by_official_source` (Sprint 7 Action 1 — anti-hallu défensif unmute).
+OFFICIAL_SOURCE_URL_PATTERNS = (
+    r"etudiant\.gouv\.fr",
+    r"education\.gouv\.fr",
+    r"insee\.fr",
+    r"statistiques\.francetravail\.fr",
+    r"francetravail\.fr",
+    r"moncompteformation\.gouv\.fr",
+    r"service-public\.fr",
+    r"agefiph\.fr",
+    r"fiphfp\.fr",
+    r"transitionspro\.fr",
+    r"vae\.gouv\.fr",
+    r"travail-emploi\.gouv\.fr",
+    r"caf\.fr",
+    r"visale\.fr",
+    r"afdas\.com",
+    r"constructys\.fr",
+    r"akto\.fr",
+    r"ladom\.fr",
+    r"le-sma\.com",
+)
+
+OFFICIAL_SOURCE_REGEX = re.compile(
+    "|".join(OFFICIAL_SOURCE_URL_PATTERNS),
+    re.IGNORECASE,
+)
+
+
+def _extract_has_official_source(source_excerpt: Optional[str]) -> bool:
+    """Vrai si l'extrait fiche contient une URL officielle reconnue."""
+    if not source_excerpt:
+        return False
+    return bool(OFFICIAL_SOURCE_REGEX.search(source_excerpt))
+
+
+VERIFIED_VERDICTS: tuple[str, ...] = ("verified", "verified_by_official_source")
+"""Verdicts comptés comme verified dans summary (n_verified).
+
+Sprint 7 Action 1 : ajout de `verified_by_official_source` pour le pattern
+anti-hallu défensif (chiffre approximatif `~X` + URL officielle inline).
+Préserve la non-régression : `verified` reste comptabilisé identique."""
+
 
 @dataclass
 class StatVerification:
@@ -111,7 +168,8 @@ class StatVerification:
     context_in_response: str = ""
     is_sourced_in_fiches: bool = False
     source_fiche_excerpt: Optional[str] = None
-    verdict: str = "unsourced_unsafe"  # verified | unsourced_with_disclaimer | unsourced_unsafe
+    # verdict ∈ {verified, verified_by_official_source, unsourced_with_disclaimer, unsourced_unsafe}
+    verdict: str = "unsourced_unsafe"
 
 
 @dataclass
@@ -122,7 +180,22 @@ class VerificationReport:
 
     @property
     def stats_verified(self) -> list[StatVerification]:
+        """Stats verified (incluant verified_by_official_source Sprint 7).
+
+        Note : pour distinguer les 2 sous-catégories, voir
+        `stats_verified_strict` et `stats_verified_by_source` séparément.
+        """
+        return [s for s in self.stats_extracted if s.verdict in VERIFIED_VERDICTS]
+
+    @property
+    def stats_verified_strict(self) -> list[StatVerification]:
+        """Stats verified avec match strict dans fiches (verdict == 'verified')."""
         return [s for s in self.stats_extracted if s.verdict == "verified"]
+
+    @property
+    def stats_verified_by_source(self) -> list[StatVerification]:
+        """Stats verified par source officielle (anti-hallu défensif unmute Sprint 7)."""
+        return [s for s in self.stats_extracted if s.verdict == "verified_by_official_source"]
 
     @property
     def stats_with_disclaimer(self) -> list[StatVerification]:
@@ -136,7 +209,9 @@ class VerificationReport:
     def summary(self) -> dict:
         return {
             "n_stats_total": len(self.stats_extracted),
-            "n_verified": len(self.stats_verified),
+            "n_verified": len(self.stats_verified),  # Sprint 7 : strict + by_source
+            "n_verified_strict": len(self.stats_verified_strict),
+            "n_verified_by_source": len(self.stats_verified_by_source),
             "n_with_disclaimer": len(self.stats_with_disclaimer),
             "n_hallucinated": len(self.stats_hallucinated),
             "error": self.error,
