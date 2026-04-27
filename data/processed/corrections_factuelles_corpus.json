@@ -1,0 +1,52 @@
+[
+  {
+    "id": "correction:hec_admission_ast_pas_tremplin_passerelle",
+    "domain": "correction_factuelle",
+    "source": "corrections_factuelles_curated",
+    "granularity": "correction",
+    "subject": "HEC Paris admission post-bac+3",
+    "ref_user_test": "user_test_v3 Q1 (Léo, Catherine, Sarah, Thomas, Dominique tour 1 + tour 2 NON corrigée)",
+    "source_officielle": "https://www.hec.edu/fr/master-s-programs/admissions/admission-process",
+    "text": "Correction factuelle — HEC Paris admission post-bac+3 | Information correcte (autorité) : Pour intégrer HEC Paris en admission parallèle (à bac+3), le concours dédié est l'AST (Admission sur Titres), géré par la BCE (Banque Commune d'Épreuves). Tremplin et Passerelle sont des concours d'autres écoles (ex: KEDGE, EM Strasbourg, EM Normandie, EDC Paris, etc.). HEC recrute environ 200 étudiants/an via AST. | Public cible : Lycéens visant HEC, étudiants bac+2/bac+3 en réorientation | Erreur fréquente à éviter : OrientIA cite Tremplin/Passerelle pour HEC. Or ces concours s'appliquent à d'autres écoles (Audencia, EDHEC, EM Lyon… via banque commune). HEC Paris recrute via AST (Admission sur Titres) avec banque BCE Concours BCE. | Source officielle (montant/règle exacte année en cours) : https://www.hec.edu/fr/master-s-programs/admissions/admission-process | Note : cette correction est prioritaire pour OrientIA. Toujours préférer cette information à toute autre source dans la réponse au public cible."
+  },
+  {
+    "id": "correction:vae_experience_liee_diplome",
+    "domain": "correction_factuelle",
+    "source": "corrections_factuelles_curated",
+    "granularity": "correction",
+    "subject": "VAE — expérience requise",
+    "ref_user_test": "user_test_v3 (tour 1 + tour 2 NON corrigée selon retours Catherine + Dominique)",
+    "source_officielle": "https://vae.gouv.fr/",
+    "text": "Correction factuelle — VAE — expérience requise | Information correcte (autorité) : La VAE (Validation des Acquis de l'Expérience) exige au minimum 1 an d'expérience (professionnelle, bénévole, syndicale, etc.) DIRECTEMENT EN LIEN avec le diplôme/titre/certificat visé. Une expérience de 3 ans en restauration ne permet PAS de valider une VAE en informatique. Le lien à la certification visée est évalué par le certificateur (université, école, ministère). | Public cible : Adultes en reconversion, salariés visant un diplôme | Erreur fréquente à éviter : OrientIA dit parfois '3 ans d'expérience pro' sans préciser le lien avec le diplôme. La VAE exige expérience LIÉE au diplôme visé. | Source officielle (montant/règle exacte année en cours) : https://vae.gouv.fr/ | Note : cette correction est prioritaire pour OrientIA. Toujours préférer cette information à toute autre source dans la réponse au public cible."
+  },
+  {
+    "id": "correction:medecine_bac_s_supprime_2021",
+    "domain": "correction_factuelle",
+    "source": "corrections_factuelles_curated",
+    "granularity": "correction",
+    "subject": "Études de santé — bac d'origine recommandé",
+    "ref_user_test": "user_test_v3 Q7 médecine (tour 1 + tour 2 NON corrigée)",
+    "source_officielle": "https://www.education.gouv.fr/reussir-au-lycee",
+    "text": "Correction factuelle — Études de santé — bac d'origine recommandé | Information correcte (autorité) : Le bac S a été supprimé en 2021. Pour les études de santé (médecine, dentaire, pharmacie, sage-femme via PASS/L.AS), le bac d'origine recommandé est désormais le bac général avec deux spécialités scientifiques en terminale (typiquement Mathématiques + Physique-Chimie OU Mathématiques + SVT, plus souvent Mathématiques + Physique-Chimie + option Mathématiques expertes pour les profils ambitieux). Le bac STL et STSS peuvent aussi mener à PASS/L.AS mais avec un taux de réussite plus faible (selectivité PASS ~15-20% pour bac général). | Public cible : Lycéens ou étudiants visant études de santé, parents | Erreur fréquente à éviter : OrientIA cite 'bac S' ou 'bac S/ST2S recommandé' pour les études de médecine. Or le bac S a été supprimé en 2021 dans le cadre de la réforme du bac (suppression des séries L/ES/S au profit du bac général avec spécialités). | Source officielle (montant/règle exacte année en cours) : https://www.education.gouv.fr/reussir-au-lycee | Note : cette correction est prioritaire pour OrientIA. Toujours préférer cette information à toute autre source dans la réponse au public cible."
+  },
+  {
+    "id": "correction:epita_couts_scolarite_2025",
+    "domain": "correction_factuelle",
+    "source": "corrections_factuelles_curated",
+    "granularity": "correction",
+    "subject": "EPITA — coûts de scolarité cycle ingénieur",
+    "ref_user_test": "user_test_v3 Q3 EPITA cybersécurité",
+    "source_officielle": "https://www.epita.fr/admissions/",
+    "text": "Correction factuelle — EPITA — coûts de scolarité cycle ingénieur | Information correcte (autorité) : Le coût annuel de scolarité de l'EPITA pour le cycle ingénieur est d'environ 10 000-11 500€/an en 2024-2025 (cycle ingénieur 5 ans, post-bac). Les frais peuvent varier selon l'année du cycle (préparatoire, ingénieur 1A-3A) et selon le statut (étudiant boursier, alternance possible en année 4-5 qui réduit le coût). Pour le montant exact année en cours, consulter le site officiel. | Public cible : Lycéens et parents évaluant le budget études privées | Erreur fréquente à éviter : OrientIA cite parfois 8500€/an pour EPITA. Le coût réel est plus élevé. | Source officielle (montant/règle exacte année en cours) : https://www.epita.fr/admissions/ | Note : cette correction est prioritaire pour OrientIA. Toujours préférer cette information à toute autre source dans la réponse au public cible."
+  },
+  {
+    "id": "correction:bba_inseec_couts_scolarite_2025",
+    "domain": "correction_factuelle",
+    "source": "corrections_factuelles_curated",
+    "granularity": "correction",
+    "subject": "BBA INSEEC — coûts de scolarité",
+    "ref_user_test": "user_test_v3 Q1 HEC plan A (BBA INSEEC mentionné comme alternative)",
+    "source_officielle": "https://www.inseec.com/fr/programmes/bba/",
+    "text": "Correction factuelle — BBA INSEEC — coûts de scolarité | Information correcte (autorité) : Le coût annuel de scolarité du BBA INSEEC est d'environ 12 000-14 500€/an en 2024-2025 (programme 4 ans, grade Licence). Tarif variable selon le campus (Paris, Bordeaux, Lyon, Chambéry-Annecy) et les frais d'inscription. Possibilité d'alternance en année 3-4 qui peut réduire le coût personnel. Pour le tarif exact année en cours et par campus, consulter le site officiel. | Public cible : Lycéens et parents évaluant le budget écoles de commerce post-bac | Erreur fréquente à éviter : OrientIA cite 10 000€/an pour BBA INSEEC. Le coût réel est plus élevé. | Source officielle (montant/règle exacte année en cours) : https://www.inseec.com/fr/programmes/bba/ | Note : cette correction est prioritaire pour OrientIA. Toujours préférer cette information à toute autre source dans la réponse au public cible."
+  }
+]
