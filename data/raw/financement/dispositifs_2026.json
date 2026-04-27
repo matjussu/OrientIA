@@ -1,0 +1,333 @@
+{
+  "version": "2026-04-27",
+  "note_methodo": "Corpus curé compilé depuis sources officielles publiques (etudiant.gouv.fr, education.gouv.fr, moncompteformation.gouv.fr, service-public.fr, Pôle Emploi, AGEFIPH). Les montants sont approximatifs et datés du dernier référentiel public connu (2024-2025 pour la plupart). L'orientation user pointe systématiquement vers la source officielle pour montant exact année en cours.",
+  "dispositifs": [
+    {
+      "id": "bourse_crous_sup",
+      "nom": "Bourse sur critères sociaux CROUS — enseignement supérieur",
+      "organisme": "CROUS",
+      "voies": ["initial"],
+      "public_cible": "Étudiants post-bac (BTS, BUT, Licence, Master, doctorat, écoles d'ingénieurs/commerce reconnues)",
+      "montants_approximatifs_eur_an": {"min": 1080, "max": 5965, "annee": "2024-2025"},
+      "conditions_cles": [
+        "Revenus du foyer fiscal en-dessous d'un plafond (7 échelons 0bis à 7)",
+        "Âge max 28 ans à l'inscription en 1ère année",
+        "Études dans un établissement habilité à recevoir des boursiers"
+      ],
+      "demande": "Dossier social étudiant (DSE) à constituer entre janvier et mai sur etudiant.gouv.fr pour la rentrée suivante",
+      "source_officielle": "https://www.etudiant.gouv.fr/fr/les-bourses-sur-criteres-sociaux-2317",
+      "specificite": "Compatible avec autres aides (logement APL, aide à la mobilité internationale)"
+    },
+    {
+      "id": "aide_mobilite_master",
+      "nom": "Aide à la mobilité Master",
+      "organisme": "Ministère de l'Enseignement supérieur",
+      "voies": ["initial"],
+      "public_cible": "Étudiants boursiers CROUS qui changent de région entre la Licence et le Master",
+      "montants_approximatifs_eur": {"forfait": 1000, "annee": "2024-2025"},
+      "conditions_cles": [
+        "Avoir obtenu sa Licence en France",
+        "S'inscrire en Master dans une autre région académique",
+        "Être boursier CROUS (échelon 0bis à 7)"
+      ],
+      "demande": "Sur etudiant.gouv.fr (espace MesServices)",
+      "source_officielle": "https://www.etudiant.gouv.fr/fr/aide-la-mobilite-en-master-2"
+    },
+    {
+      "id": "aide_mobilite_internationale",
+      "nom": "Aide à la mobilité internationale (CROUS / Erasmus+)",
+      "organisme": "CROUS + Union Européenne (Erasmus+)",
+      "voies": ["initial"],
+      "public_cible": "Étudiants en mobilité d'études ou de stage à l'étranger",
+      "montants_approximatifs_eur_mois": {"min": 280, "max": 450, "note": "Variable selon zone (1, 2, 3) et durée"},
+      "conditions_cles": [
+        "Mobilité d'au moins 2 mois (parfois 3 selon programme)",
+        "Validation pédagogique préalable de l'établissement",
+        "Pour Erasmus+ : mobilité dans un pays programme ou partenaire"
+      ],
+      "source_officielle": "https://www.etudiant.gouv.fr/fr/laide-la-mobilite-internationale-1003",
+      "specificite": "Cumulable avec la bourse CROUS sur critères sociaux"
+    },
+    {
+      "id": "bourse_lycee",
+      "nom": "Bourse de lycée (collégiens et lycéens)",
+      "organisme": "Ministère de l'Éducation Nationale",
+      "voies": ["initial"],
+      "public_cible": "Élèves au lycée général, technologique ou professionnel (CAP, BAC PRO, mentions complémentaires)",
+      "montants_approximatifs_eur_an": {"min": 460, "max": 1086, "annee": "2025-2026", "note": "6 échelons selon revenus"},
+      "conditions_cles": [
+        "Plafond de revenus du foyer fiscal (variable selon échelon 1 à 6)",
+        "Élève scolarisé dans un établissement public ou privé sous contrat"
+      ],
+      "demande": "Demande à formuler chaque année (campagne avril-octobre selon académie) via le portail Scolarité-Services",
+      "source_officielle": "https://www.education.gouv.fr/les-bourses-de-college-et-de-lycee-12116",
+      "specificite": "Cumulable avec prime à l'internat, prime d'équipement (BAC PRO/CAP industriels), bourse au mérite"
+    },
+    {
+      "id": "prime_equipement_bac_pro",
+      "nom": "Prime d'équipement bac pro / CAP",
+      "organisme": "Ministère de l'Éducation Nationale",
+      "voies": ["initial"],
+      "public_cible": "Élèves boursiers en 1ère année de CAP, BAC PRO ou Brevet des métiers d'art (BMA) dans des spécialités industrielles imposant un équipement coûteux",
+      "montants_approximatifs_eur": {"forfait": 341.71, "annee": "2024-2025"},
+      "conditions_cles": [
+        "Être boursier de lycée",
+        "Inscrit en 1ère année dans une spécialité éligible (mécanique, BTP, électronique, etc.)"
+      ],
+      "demande": "Versée automatiquement par l'établissement",
+      "source_officielle": "https://www.service-public.fr/particuliers/vosdroits/F1010"
+    },
+    {
+      "id": "cpf",
+      "nom": "Compte Personnel de Formation (CPF)",
+      "organisme": "Caisse des Dépôts (gestion) / Ministère du Travail (cadre)",
+      "voies": ["continue", "reconversion"],
+      "public_cible": "Toute personne active de 16 ans et plus (salariés, demandeurs d'emploi, indépendants, agents publics)",
+      "montants_approximatifs_eur_an": {"abondement_standard": 500, "abondement_non_qualifie": 800, "plafond": 5000, "plafond_non_qualifie": 8000, "annee": "2024-2025"},
+      "conditions_cles": [
+        "Abondement automatique annuel sur compte CPF (proportionnel temps de travail)",
+        "Utilisable sur formations certifiantes inscrites au RNCP (Répertoire National des Certifications Professionnelles) ou Répertoire spécifique",
+        "Reste à charge participation 100€ depuis mai 2024 (sauf cas spécifiques : abondement employeur, demandeur d'emploi)"
+      ],
+      "demande": "Compte personnel sur moncompteformation.gouv.fr",
+      "source_officielle": "https://www.moncompteformation.gouv.fr/",
+      "specificite": "Mobilisable pour VAE (Validation des Acquis), bilan de compétences, permis B (poids lourds), création/reprise d'entreprise"
+    },
+    {
+      "id": "cej",
+      "nom": "Contrat d'engagement jeune (CEJ)",
+      "organisme": "Mission Locale ou France Travail (Pôle Emploi)",
+      "voies": ["continue", "reconversion"],
+      "public_cible": "Jeunes 16-25 ans (jusqu'à 29 ans pour personnes en situation de handicap), sans emploi ni formation, en difficulté d'insertion",
+      "montants_approximatifs_eur_mois": {"max": 528, "note": "Sous conditions de ressources et de parcours"},
+      "conditions_cles": [
+        "Accompagnement intensif (15-20h/semaine d'activités professionnelles)",
+        "Durée 6 à 12 mois renouvelable",
+        "Engagement à se former / chercher activement"
+      ],
+      "demande": "Contact Mission Locale (16-25 ans) ou France Travail (jeunes diplômés cherchant emploi)",
+      "source_officielle": "https://travail-emploi.gouv.fr/emploi-et-insertion/cej",
+      "specificite": "Remplace l'ancienne Garantie Jeunes depuis mars 2022. Allocation mensuelle modulée selon ressources"
+    },
+    {
+      "id": "afe_pole_emploi",
+      "nom": "Aide au retour à l'emploi formation (AREF) / Allocation formation Pôle Emploi",
+      "organisme": "France Travail (Pôle Emploi)",
+      "voies": ["continue", "reconversion"],
+      "public_cible": "Demandeurs d'emploi indemnisés en formation validée par France Travail",
+      "montants_approximatifs": "Maintien de l'allocation chômage (ARE) au taux journalier habituel pendant la formation",
+      "conditions_cles": [
+        "Formation validée dans le PPAE (Projet Personnalisé d'Accès à l'Emploi)",
+        "Durée formation < durée droits ARE restants"
+      ],
+      "demande": "Espace personnel France Travail",
+      "source_officielle": "https://www.francetravail.fr/candidat/en-formation/mes-aides-financieres/laide-au-retour-a-lemploi-formation.html"
+    },
+    {
+      "id": "agepi",
+      "nom": "Aide à la garde d'enfants pour parent isolé (AGEPI)",
+      "organisme": "France Travail (Pôle Emploi)",
+      "voies": ["continue", "reconversion"],
+      "public_cible": "Parents isolés (élevant seuls leur(s) enfant(s) de moins de 10 ans), en formation ou reprise d'emploi",
+      "montants_approximatifs_eur": {"min": 130, "max": 400, "note": "Forfait selon nombre d'enfants et durée hebdo activité"},
+      "conditions_cles": [
+        "Être en formation ou reprise d'emploi",
+        "Au moins 1 enfant de moins de 10 ans à charge",
+        "Demande dans les 60 jours suivant le début formation/emploi"
+      ],
+      "source_officielle": "https://www.francetravail.fr/candidat/en-formation/mes-aides-financieres/aide-a-la-garde-denfants-pour-pa.html"
+    },
+    {
+      "id": "ptp_transitions_pro",
+      "nom": "Projet de transition professionnelle (PTP)",
+      "organisme": "Transitions Pro (associations régionales paritaires)",
+      "voies": ["reconversion"],
+      "public_cible": "Salariés CDI/CDD ayant 24 mois d'ancienneté (12 mois dans l'entreprise actuelle), souhaitant changer de métier",
+      "montants_approximatifs": "Maintien du salaire à 100% pendant la formation (jusqu'à 1 an), prise en charge frais formation",
+      "conditions_cles": [
+        "Projet de reconversion validé par le Transitions Pro régional",
+        "Formation certifiante inscrite RNCP",
+        "Demande à transmettre 4 mois avant le début de la formation"
+      ],
+      "demande": "Dossier en ligne sur le site du Transitions Pro de votre région",
+      "source_officielle": "https://www.transitionspro.fr/",
+      "specificite": "Successeur du CIF (Congé Individuel de Formation) depuis 2019. Accord employeur nécessaire pour le maintien de poste"
+    },
+    {
+      "id": "vae",
+      "nom": "Validation des acquis de l'expérience (VAE)",
+      "organisme": "Ministère du Travail / France VAE (portail unique)",
+      "voies": ["continue", "reconversion"],
+      "public_cible": "Toute personne avec au moins 1 an d'expérience (professionnelle, bénévole, syndicale) liée à la certification visée",
+      "montants_approximatifs_eur": {"prise_en_charge_max": 3000, "note": "Frais d'accompagnement VAE pris en charge selon dispositif"},
+      "conditions_cles": [
+        "1 an d'expérience minimum en lien avec le diplôme/titre visé",
+        "Diplôme ou certification inscrit au RNCP"
+      ],
+      "demande": "France VAE (portail unique) ou directement auprès du certificateur",
+      "source_officielle": "https://vae.gouv.fr/",
+      "specificite": "Réforme 2023 : portail unique France VAE, accompagnement gratuit jusqu'à 24h, pris en charge sur le CPF ou par OPCO"
+    },
+    {
+      "id": "proa",
+      "nom": "Pro-A (reconversion ou promotion par alternance)",
+      "organisme": "OPCO (Opérateurs de compétences)",
+      "voies": ["reconversion"],
+      "public_cible": "Salariés CDI/CDD à temps plein ou partiel, ayant un niveau de qualification < licence, souhaitant évoluer ou changer de métier en alternance",
+      "montants_approximatifs": "Frais formation pris en charge à 100% par l'OPCO, salaire maintenu pendant les heures de formation",
+      "conditions_cles": [
+        "Formation certifiante listée par l'accord de branche",
+        "Au moins 24 mois d'ancienneté dans l'entreprise",
+        "Niveau de diplôme actuel < licence (sauf cas branche le permet)"
+      ],
+      "demande": "Via l'employeur et l'OPCO de la branche",
+      "source_officielle": "https://travail-emploi.gouv.fr/formation-professionnelle/pro-a"
+    },
+    {
+      "id": "afdas",
+      "nom": "AFDAS — Opérateur de Compétences (OPCO) Culture / Médias / Loisirs / Sport",
+      "organisme": "AFDAS",
+      "voies": ["continue", "reconversion"],
+      "public_cible": "Salariés et indépendants des secteurs : spectacle vivant, cinéma, audiovisuel, presse, édition, communication, télécoms, publicité, sport, loisirs",
+      "montants_approximatifs": "Variable selon dispositif : Plan de développement compétences employeur, CPF abondé, Pro-A, alternance",
+      "conditions_cles": [
+        "Salarié ou indépendant des branches couvertes",
+        "Cotisation employeur à l'AFDAS"
+      ],
+      "source_officielle": "https://www.afdas.com/",
+      "specificite": "Couvre les intermittents du spectacle (régime spécifique d'indemnisation chômage) — formation et aide au maintien"
+    },
+    {
+      "id": "constructys",
+      "nom": "Constructys — OPCO BTP (Bâtiment, Travaux Publics, Négoce des matériaux)",
+      "organisme": "Constructys",
+      "voies": ["continue", "reconversion"],
+      "public_cible": "Salariés des entreprises du Bâtiment et Travaux Publics, du négoce de matériaux de construction",
+      "montants_approximatifs": "Variable selon dispositif (alternance, Pro-A, plan compétences, CPF)",
+      "source_officielle": "https://www.constructys.fr/"
+    },
+    {
+      "id": "akto",
+      "nom": "Akto — OPCO services à forte intensité de main-d'œuvre",
+      "organisme": "Akto",
+      "voies": ["continue", "reconversion"],
+      "public_cible": "Salariés des branches : propreté, hôtellerie-restauration, intérim, sécurité privée, prévention/sécurité, casinos, autres services",
+      "source_officielle": "https://www.akto.fr/"
+    },
+    {
+      "id": "aide_apprenti_permis",
+      "nom": "Aide au permis B pour apprentis",
+      "organisme": "État (via le Centre de Formation d'Apprentis)",
+      "voies": ["initial"],
+      "public_cible": "Apprentis de 18 ans et plus, en cours de formation en CFA",
+      "montants_approximatifs_eur": {"forfait": 500, "annee": "2024-2025"},
+      "conditions_cles": [
+        "Avoir 18 ans et plus",
+        "Être en cours de formation en CFA",
+        "Engagé dans le passage du permis B"
+      ],
+      "demande": "Dossier auprès du CFA",
+      "source_officielle": "https://www.service-public.fr/particuliers/vosdroits/F34053"
+    },
+    {
+      "id": "agefiph",
+      "nom": "AGEFIPH — Aides à la formation et à l'insertion des personnes en situation de handicap",
+      "organisme": "AGEFIPH (Association de gestion du fonds pour l'insertion professionnelle des personnes handicapées)",
+      "voies": ["handicap", "reconversion"],
+      "public_cible": "Personnes ayant une Reconnaissance de la Qualité de Travailleur Handicapé (RQTH), en projet d'insertion professionnelle ou en formation",
+      "montants_approximatifs": "Variable selon dispositif : aide à l'apprentissage (jusqu'à 6000€ pour l'employeur), aide à la formation, prestations spécifiques (aménagement poste, transport adapté)",
+      "conditions_cles": [
+        "Avoir une RQTH ou être bénéficiaire de l'obligation d'emploi (BOETH)",
+        "Projet professionnel validé"
+      ],
+      "demande": "Espace personnel sur agefiph.fr ou via Cap Emploi",
+      "source_officielle": "https://www.agefiph.fr/",
+      "specificite": "Cap Emploi (réseau de 98 structures) accompagne les RQTH dans leur projet professionnel"
+    },
+    {
+      "id": "fiphfp",
+      "nom": "FIPHFP — Fonds pour l'insertion des personnes handicapées dans la fonction publique",
+      "organisme": "FIPHFP",
+      "voies": ["handicap"],
+      "public_cible": "Agents de la fonction publique en situation de handicap, candidats au concours fonction publique",
+      "montants_approximatifs": "Aides ciblées : aménagement poste, formation, accompagnement pour les concours fonction publique",
+      "source_officielle": "https://www.fiphfp.fr/"
+    },
+    {
+      "id": "rsa_jeune",
+      "nom": "Revenu de solidarité active (RSA) jeunes 18-24 ans",
+      "organisme": "CAF (Caisse d'Allocations Familiales)",
+      "voies": ["reconversion"],
+      "public_cible": "Jeunes 18-24 ans ayant travaillé au moins 2 ans (3214 heures) au cours des 3 dernières années, en difficulté",
+      "montants_approximatifs_eur_mois": {"forfait_personne_seule": 635.71, "annee": "2024", "note": "Revalorisé chaque année au 1er avril"},
+      "conditions_cles": [
+        "18-24 ans",
+        "2 ans d'activité professionnelle minimum (3214 heures)",
+        "Résidence stable et régulière en France"
+      ],
+      "source_officielle": "https://www.service-public.fr/particuliers/vosdroits/F19778",
+      "specificite": "RSA classique à partir de 25 ans (sans condition d'activité préalable)"
+    },
+    {
+      "id": "aide_paje",
+      "nom": "Prime à la naissance / PreParE pour étudiants parents",
+      "organisme": "CAF",
+      "voies": ["initial"],
+      "public_cible": "Étudiants parents de jeunes enfants",
+      "specificite": "Prestations CAF (PAJE, allocations familiales, aide au logement APL) restent dues pendant les études — vérifier compatibilité avec bourse CROUS",
+      "source_officielle": "https://www.caf.fr/"
+    },
+    {
+      "id": "aide_mobilite_parcoursup",
+      "nom": "Aide à la mobilité Parcoursup (changement académie après bac)",
+      "organisme": "Ministère de l'Enseignement supérieur",
+      "voies": ["initial"],
+      "public_cible": "Néo-bacheliers boursiers qui acceptent un vœu Parcoursup hors de leur académie",
+      "montants_approximatifs_eur": {"forfait": 500, "annee": "2024-2025"},
+      "conditions_cles": [
+        "Bachelier de l'année",
+        "Boursier CROUS (échelons 0bis à 7) ou équivalent",
+        "Accepter un vœu hors de son académie de bac"
+      ],
+      "source_officielle": "https://www.etudiant.gouv.fr/fr/aide-la-mobilite-parcoursup-2"
+    },
+    {
+      "id": "aide_premiere_installation",
+      "nom": "Aide à la première installation (CROUS)",
+      "organisme": "CROUS",
+      "voies": ["initial"],
+      "public_cible": "Étudiants éligibles aux logements CROUS qui s'installent dans une nouvelle ville pour leurs études",
+      "montants_approximatifs": "Variable selon situation, avance du dépôt de garantie possible (Visale, Loca-Pass)",
+      "source_officielle": "https://www.etudiant.gouv.fr/fr/le-logement-etudiant-65"
+    },
+    {
+      "id": "visale",
+      "nom": "Visale — Garantie locative gratuite",
+      "organisme": "Action Logement",
+      "voies": ["initial", "continue"],
+      "public_cible": "Étudiants, jeunes 18-30 ans, salariés en début de contrat, alternants — locataires du parc privé ou public",
+      "montants_approximatifs": "Garantie loyers impayés gratuite (alternative à un garant physique). Couvre jusqu'à 36 mensualités",
+      "conditions_cles": [
+        "Locataire du parc privé ou public (hors logement Crous)",
+        "Bail dans les 6 mois suivant l'obtention du visa Visale"
+      ],
+      "demande": "Sur visale.fr (visa à activer avant signature bail)",
+      "source_officielle": "https://www.visale.fr/"
+    },
+    {
+      "id": "apl_etudiant",
+      "nom": "Aides au logement (APL, ALF, ALS) — étudiants",
+      "organisme": "CAF",
+      "voies": ["initial", "continue"],
+      "public_cible": "Étudiants locataires d'un logement éligible (résidence universitaire, parc privé, foyer)",
+      "montants_approximatifs": "Variable selon ressources étudiant, loyer, zone géographique. Simulateur disponible sur caf.fr",
+      "conditions_cles": [
+        "Logement décent et conventionné (pour APL)",
+        "Étudiant avec ressources sous plafond (déclaration annuelle)"
+      ],
+      "demande": "caf.fr (compte personnel)",
+      "source_officielle": "https://www.caf.fr/allocataires/aides-et-demarches/conditions-d-attribution/logement",
+      "specificite": "Cumulables avec bourse CROUS sur critères sociaux"
+    }
+  ]
+}
