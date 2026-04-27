@@ -1,0 +1,175 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q04_blocs_BTS_electro_contenu",
+  "query_text": "Contenu pédagogique du BTS électrotechnique : quels objectifs pédagogiques ?",
+  "answer_text": "**TL;DR**\n1. Le BTS Électrotechnique forme des techniciens capables de concevoir, installer et maintenir des systèmes électriques (industriels, tertiaires, énergies renouvelables).\n2. **3 piliers pédagogiques** : études techniques (schémas, normes), mise en œuvre pratique (chantiers, labos), gestion de projet (coûts, sécurité).\n3. **60% du temps en travaux pratiques** — idéal si tu aimes le concret et les défis terrain.\n\n---\n\n### **Plan A — Cœur de la formation : compétences techniques clés**\n📍 **BTS Électrotechnique** — bac+2 public/privé sous contrat, **accès via Parcoursup** (taux variable selon lycées) · [Fiche ONISEP officielle](https://www.onisep.fr/http/redirection/formation/slug/FOR.269)\n*Pour toi :* Formation équilibrée théorie/pratique, avec **4 blocs principaux** :\n- **Conception** : dimensionnement d’installations (logiciels comme *Dialux*, *AutoCAD*), lecture de plans.\n- **Réglage/mise en service** : moteurs, automatismes (programmation basique de PLC), énergies renouvelables (solaire, éolien).\n- **Maintenance** : diagnostic de pannes, normes de sécurité (habilitation électrique *BR/B1V*).\n- **Communication technique** : rédaction de rapports, relation client/fournisseurs.\n\n**Exemple concret** : Tu pourras dimensionner l’installation électrique d’un bâtiment tertiaire (bureaux, hôpitaux) en respectant la norme **NF C 15-100**, puis la tester en labo.\n\n---\n\n### **Plan B — Spécialisations et options en fonction des lycées**\n*(connaissance générale)*\n- **Options possibles** (selon établissements) :\n  - *Énergies renouvelables* : focus sur photovoltaïque, stockage batterie.\n  - *Industrie 4.0* : cobotique, maintenance prédictive (capteurs IoT).\n  - *Bâtiment intelligent* : domotique (KNX, protocoles de communication).\n- **Projets tutorés** : Exemple : optimiser la consommation énergétique d’un atelier industriel (avec partenariats locaux comme *Schneider Electric* ou *Enedis*).\n- **Stages** : 8 à 10 semaines en entreprise (obligatoires), souvent rémunérés (~300-600€/mois).\n\n*Astuce* : Certains lycées proposent des **modules complémentaires** (ex : certification *Qualifelec* pour les audits énergétiques).\n\n---\n\n### **Plan C — Poursuites d’études et débouchés directs**\n📍 **Licence Pro Métiers de l’électricité et de l’énergie** — bac+3, **sélectivité modérée** (dossier + entretien) · [Fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11022)\n*Pour toi :* Après le BTS, spécialise-toi en **1 an** (ex : *efficacité énergétique* ou *smart grids*), avec un taux d’insertion de **~90% à 6 mois** (source : enquêtes ministérielles).\n\n**Débouchés directs (BTS seul)** *(connaissance générale)* :\n- **Technicien de maintenance** (industries, data centers) : salaire médian ~2 000€ brut/mois.\n- **Chargé d’affaires en électricité** (bureaux d’études) : interface client/technique.\n- **Responsable de chantier** (entreprises comme *Spie* ou *Bouygues Énergies*).\n- **Technico-commercial** (matériel électrique) : commission possible.\n\n**Secteurs porteurs** : Transition énergétique (recrutements en hausse pour les *techniciens en ENR*), rénovation des bâtiments (norme *RE2020*).\n\n---\n\n### ⚠ **Attention aux pièges**\n- **Équipement personnel** : Certains lycées exigent l’achat d’un *multimètre* (~100€) ou d’une *tenue de chantier* (norme EN ISO 20471).\n- **Maths/physique** : Niveau **première terminale scientifique** requis (ex : lois de Kirchhoff, trigonométrie). Si tu as des lacunes, révise les *puissances* et *dérivées* avant la rentrée.\n- **Alternance** : Peu de contrats en 1ère année (les entreprises préfèrent les BTS 2ème année). Prépare un **CV technique** (projets scolaires, stages) dès maintenant.\n\n---\n**Question pour toi** :\nQu’est-ce qui t’attire le plus dans ce BTS : le côté **terrain/chantier**, la **technologie** (automatismes, ENR), ou la **gestion de projet** ? Cela peut t’aider à choisir ton option ou ton stage.",
+  "elapsed_pipeline_s": 28.25,
+  "elapsed_fact_check_post_hoc_s": 9.2,
+  "elapsed_clarify_s": 2.75,
+  "elapsed_reformulate_s": 7.41,
+  "elapsed_retrieve_s": 3.68,
+  "elapsed_generate_s": 14.4,
+  "fact_check_summary": {
+    "n_stats_total": 14,
+    "n_verified": 8,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "60% du temps en travaux pratiques",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "60% du temps en travaux pratiques — idéal si tu aimes le concret et les défis terrain.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux variable selon lycées",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "accès via Parcoursup (taux variable selon lycées)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8 à 10 semaines en entreprise",
+      "stat_value": 8,
+      "stat_unit": "semaines",
+      "context": "Stages : 8 à 10 semaines en entreprise (obligatoires)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~300-600€/mois",
+      "stat_value": 300,
+      "stat_unit": "€/mois",
+      "context": "souvent rémunérés (~300-600€/mois)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux d’insertion de ~90% à 6 mois",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "avec un taux d’insertion de ~90% à 6 mois (source : enquêtes ministérielles)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian ~2 000€ brut/mois",
+      "stat_value": 2000,
+      "stat_unit": "€ brut/mois",
+      "context": "Technicien de maintenance (industries, data centers) : salaire médian ~2 000€ brut/mois",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_3ans: 0.8 (FICHE 7)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.87",
+      "stat_value": 87,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_6ans: 0.87 (FICHE 7)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.76",
+      "stat_value": 76,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_cdi: 0.76 (FICHE 7)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context": "Insertion pro : salaire_median_embauche: 1570 (FICHE 7)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_3ans: 0.86 (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_6ans: 0.91 (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_cdi: 0.83 (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "Insertion pro : salaire_median_embauche: 1740 (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "BTS électrotechnique : quels sont les objectifs pédagogiques détaillés et les contenus des enseignements ? (référence Parcoursup/ONISEP)",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core = définition conceptuelle des objectifs pédagogiques du BTS électrotechnique. Corpus 'formation' est le plus adapté pour ce type d'information."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications RNCP sont associés au BTS électrotechnique ? (référence France Compétences)",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Complète la compréhension des objectifs pédagogiques par les compétences certifiées attendues."
+    },
+    {
+      "text": "Quels métiers ou familles professionnelles sont ciblés par le BTS électrotechnique ? (fiches ONISEP éditorialisées)",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporte un contexte métier pour comprendre les débouchés et finalités des objectifs pédagogiques."
+    },
+    {
+      "text": "Quels sont les taux de réussite en licence pour les bacheliers ayant suivi un BTS électrotechnique ? (données MESRI)",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 3,
+      "rationale": "Contexte optionnel sur la poursuite d'études après ce BTS, utile pour les étudiants L1-L3."
+    }
+  ]
+}

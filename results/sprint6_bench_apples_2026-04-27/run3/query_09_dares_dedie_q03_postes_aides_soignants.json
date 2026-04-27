@@ -1,0 +1,154 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q03_postes_aides_soignants",
+  "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. **Besoin massif** : la France devrait manquer de **200 000 à 300 000 aides-soignants d’ici 2030** (connaissance générale, projections DREES et branches professionnelles).\n2. **Recrutements annuels** : ~50 000 postes à pourvoir **chaque année** jusqu’en 2030 pour combler les départs et la croissance des besoins (vieillissement, dépendance).\n3. **Opportunités concrètes** : formations courtes (10-18 mois), débouchés immédiats, et passerelles vers infirmier possible.\n\n---\n\n### **Plan A — Se former rapidement (débouchés garantis)**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** — Formation en **10-18 mois** (alternance possible), 100% financée par les régions/Pôle Emploi pour les demandeurs d’emploi.\n*Pour toi : accès sans bac (sous conditions), salaire médian embauche ~1 700€ brut (source : conventions collectives hospitalières, 2023).*\n\n### **Plan B — Visée évolutive (aide-soignant → infirmier)**\n📍 **Passerelle DEAS → DE Infirmier** — Après 3 ans d’expérience, accès à une **formation infirmier en 1 an** (au lieu de 3) via la VAE ou modules complémentaires.\n*Pour toi : stratégie pour doubler ton salaire à moyen terme (salaire médian infirmier : ~2 500€ brut).*\n\n### **Plan C — Secteurs porteurs (hors hôpital classique)**\n*(connaissance générale)*\n- **EHPAD/SSIAD** : 60% des recrutements prévus (turnover élevé, besoins en soins à domicile).\n- **Handicap** : structures médico-sociales (IME, MAS) en tension.\n- **Suisse/Luxembourg** : salaires +30% (2 200–2 800€ brut), reconnaissance automatique du DEAS français.\n\n---\n**⚠ Attention aux pièges**\n- **Formations privées payantes** : certaines écoles facturent 3 000–6 000€ le DEAS (alors qu’il est **gratuit en public** via les IFAS).\n- **Conditions physiques** : le métier exige une bonne résistance (port de charges, horaires décalés).\n- **Turnover** : 20% des aides-soignants quittent le secteur avant 5 ans (source : DREES 2022) — bien se renseigner sur les conditions de travail **avant** de s’engager.\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **l’hôpital public** (stabilité, avantages sociaux), **le privé/libéral** (salaire parfois supérieur, flexibilité), ou **l’international** (Suisse, Canada) ? Cela peut orienter ton choix de formation.",
+  "elapsed_pipeline_s": 17.23,
+  "elapsed_fact_check_post_hoc_s": 6.98,
+  "elapsed_clarify_s": 3.31,
+  "elapsed_reformulate_s": 6.05,
+  "elapsed_retrieve_s": 0.2,
+  "elapsed_generate_s": 7.67,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 1,
+    "n_with_disclaimer": 11,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "200 000 à 300 000 aides-soignants d’ici 2030",
+      "stat_value": "200000-300000",
+      "stat_unit": "effectif",
+      "context": "la France devrait manquer de ... aides-soignants d’ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50 000 postes à pourvoir chaque année jusqu’en 2030",
+      "stat_value": "50000",
+      "stat_unit": "postes/an",
+      "context": "~50 000 postes à pourvoir chaque année jusqu’en 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10-18 mois",
+      "stat_value": "10-18",
+      "stat_unit": "mois",
+      "context": "formations courtes (10-18 mois)",
+      "verdict": "verified",
+      "source_excerpt": "FICHE 7 : Nom : aide-soignant/e | Durée de la formation : 10 à 18 mois (formation initiale ou en alternance)"
+    },
+    {
+      "stat_text": "1 700€ brut",
+      "stat_value": "1700",
+      "stat_unit": "€ brut",
+      "context": "salaire médian embauche ~1 700€ brut",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "3 ans d’expérience",
+      "stat_value": "3",
+      "stat_unit": "années",
+      "context": "Après 3 ans d’expérience",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 an",
+      "stat_value": "1",
+      "stat_unit": "an",
+      "context": "formation infirmier en 1 an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~2 500€ brut",
+      "stat_value": "2500",
+      "stat_unit": "€ brut",
+      "context": "salaire médian infirmier : ~2 500€ brut",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "60% des recrutements prévus",
+      "stat_value": "60",
+      "stat_unit": "%",
+      "context": "EHPAD/SSIAD : 60% des recrutements prévus",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+30%",
+      "stat_value": "30",
+      "stat_unit": "%",
+      "context": "salaires +30% (2 200–2 800€ brut)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 200–2 800€ brut",
+      "stat_value": "2200-2800",
+      "stat_unit": "€ brut",
+      "context": "salaires +30% (2 200–2 800€ brut)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "20% des aides-soignants quittent le secteur avant 5 ans",
+      "stat_value": "20",
+      "stat_unit": "%",
+      "context": "20% des aides-soignants quittent le secteur avant 5 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "3 000–6 000€",
+      "stat_value": "3000-6000",
+      "stat_unit": "€",
+      "context": "certaines écoles facturent 3 000–6 000€ le DEAS",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "_metier",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Nombre de postes à pourvoir pour les aides-soignants d'ici 2030 selon les projections DARES Métiers 2030.",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Intent core : demande explicite de données prospectives sur les métiers de la santé."
+    },
+    {
+      "text": "Fiche métier ONISEP détaillée pour les aides-soignants : missions, secteur d'activité et perspectives d'emploi.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte complémentaire pour comprendre les enjeux du métier ciblé."
+    },
+    {
+      "text": "Quels sont les blocs de compétences RNCP associés aux formations d'aide-soignant ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Lien indirect avec les besoins en formation pour répondre aux postes à pourvoir."
+    }
+  ]
+}

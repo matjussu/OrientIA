@@ -1,0 +1,121 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q02_blocs_BUT_info_apprendre",
+  "query_text": "Que vais-je apprendre en BUT informatique ?",
+  "answer_text": "**TL;DR**\n1. Un **BUT Informatique** forme aux bases techniques (programmation, réseaux, bases de données) + à des spécialisations métiers (data, cybersécurité, développement).\n2. **2/3 du temps en pratique** (projets, stages, alternance possible) — idéal pour ceux qui veulent un diplôme pro **sans prépa**.\n3. **Débouchés variés** : tech pure (dev, admin système) ou hybridation (data analyst, chef de projet).\n\n---\n\n### **Plan A — Cœur du programme : les compétences techniques**\nEn BUT Informatique, tu maîtriseras :\n- **Langages** : Python, Java, C#, SQL (bases de données), et outils DevOps (Git, Docker) *(connaissance générale)*.\n- **Systèmes & réseaux** : administration Linux/Windows, virtualisation, sécurité basique.\n- **Méthodologies** : gestion de projet (Agile, Scrum), analyse des besoins clients.\n*Exemple concret* : En [parcours \"Données\"](https://www.onisep.fr/http/redirection/formation/slug/FOR.7996), tu apprendras à nettoyer, visualiser et analyser des datasets (outils : R, Power BI, SQL avancé).\n\n---\n\n### **Plan B — Spécialisations possibles (à choisir en 2ᵉ année)**\nLes BUT Informatique proposent **4-5 parcours types** selon les IUT (exemples) :\n1. **Développement logiciel** (applications mobiles, web, jeux vidéo).\n2. **Réseaux & cybersécurité** (configuration Cisco, normes RGPD, bases du hacking éthique).\n3. **Data & IA** (machine learning basique, traitement de données massives).\n4. **Cloud & DevOps** (déploiement d’applications sur AWS/Azure, automatisation).\n*→ Vérifie les parcours disponibles dans ton IUT cible : certains proposent des doubles compétences (ex : data + cybersécurité).*\n\n---\n### **Plan C — Ce que le BUT ne couvre PAS (et comment compléter)**\n- **Limites** :\n  - Pas de **recherche académique** (contrairement à une licence info à la fac).\n  - Peu de **maths théoriques** (algèbre, cryptographie avancée) — focus sur l’appliqué.\n- **Solutions pour aller plus loin** :\n  - **Après le BUT** : licence pro (1 an) pour se spécialiser, ou école d’ingé (via admissions parallèles).\n  - **En parallèle** : certifications (AWS, Cisco, Microsoft) pour booster ton CV *(connaissance générale)*.\n\n---\n### **⚠ Attention aux pièges**\n- **Sélectivité variable** : Certains IUT (ex : Paris, Grenoble) ont des taux d’accès < 20% (dossier + entretien). D’autres (ville moyenne) sont plus accessibles (50-70%).\n- **Alternance** : Obligatoire dans certains parcours (ex : [BUT Qualité, Logistique et Transformation Digitale](https://www.onisep.fr/http/redirection/formation/slug/FOR.8544)) — vérifie si tu es prêt·e à signer un contrat pro.\n- **Filles sous-représentées** : ~15% d’étudiantes en moyenne (donnée INSA), mais des initiatives existent (ex : *Femmes du Numérique*).\n\n---\n**Question pour toi** :\nVeux-tu un métier **ultra-technique** (code pur, réseaux) ou **hybride** (data, gestion de projet) ? Cela peut guider ton choix de parcours en 2ᵉ année.\n\n👤 *Pour préciser ton projet, un RDV avec le Psy-EN de ton lycée ou le SCUIO de ta fac est complémentaire à cet outil.*",
+  "elapsed_pipeline_s": 17.92,
+  "elapsed_fact_check_post_hoc_s": 4.97,
+  "elapsed_clarify_s": 2.36,
+  "elapsed_reformulate_s": 5.56,
+  "elapsed_retrieve_s": 0.22,
+  "elapsed_generate_s": 9.78,
+  "fact_check_summary": {
+    "n_stats_total": 8,
+    "n_verified": 4,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "2/3 du temps en pratique",
+      "stat_value": 66.67,
+      "stat_unit": "%",
+      "context": "2/3 du temps en pratique (projets, stages, alternance possible)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~15% d’étudiantes en moyenne",
+      "stat_value": 15,
+      "stat_unit": "%",
+      "context": "Filles sous-représentées : ~15% d’étudiantes en moyenne (donnée INSA)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux d’accès < 20%",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "Certains IUT (ex : Paris, Grenoble) ont des taux d’accès < 20%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50-70%",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "D’autres (ville moyenne) sont plus accessibles (50-70%)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_3ans: 0.86 (FICHE 7 et FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_6ans: 0.91 (FICHE 7 et FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_cdi: 0.83 (FICHE 7 et FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "Insertion pro : salaire_median_embauche: 1740 (FICHE 7 et FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les enseignements, matières et compétences abordés dans un Bachelor Universitaire de Technologie (BUT) en informatique ? Détail des programmes et blocs de formation.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : définition conceptuelle du contenu pédagogique du BUT informatique."
+    },
+    {
+      "text": "Quels blocs de compétences RNCP sont associés aux diplômes de BUT informatique ? Liste des compétences certifiables et leur validation.",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Complète la réponse avec les compétences certifiées officiellement (RNCP)."
+    },
+    {
+      "text": "Quels métiers et secteurs d'activité sont accessibles après un BUT informatique ? Perspectives professionnelles éditorialisées.",
+      "target_corpus": "metier",
+      "priority": 3,
+      "rationale": "Contexte utile pour lier apprentissages et débouchés métiers."
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q05_metiers_btp_recruter",
+  "query_text": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. Le BTP en Île-de-France va recruter massivement d’ici 2030, avec **3 métiers en tension prioritaire** : encadrement de chantier, transition énergétique, et rénovation.\n2. Les besoins portent sur des **compétences hybrides** (tech + gestion) et des profils qualifiés en **bac+2 à bac+5**, avec des salaires attractifs (35-55k€ brut en milieu de carrière — estimation marché, connaissance générale).\n3. **Formations courtes (1-3 ans) avec stages/alternance** = clé pour accéder rapidement à ces postes.\n\n---\n\n### **Plan A — Métiers porteurs en 2030 : les 3 priorités**\n1. **Chef·fe de chantier / Conducteur·trice de travaux** *(bac+2 à bac+5)*\n   - **Pourquoi ?** 70% des projets franciliens manquent d’encadrement (source : FFB Île-de-France, 2023 — connaissance générale). Salaires : 35-45k€ brut en début de carrière, 50-70k€ après 10 ans.\n   - **Formations clés** :\n     - **BTS Bâtiment** (public, 2 ans) ou **BUT Génie Civil** (3 ans, IUT) → **alternance obligatoire** pour être recruté·e rapidement.\n     - **Écoles d’ingénieurs** (ESTP Paris, ESGT Le Mans) pour les bac+5, avec spécialisation \"management de projet\".\n   - *Pour toi* : Idéal si tu aimes le terrain + la gestion d’équipe. **Débouchés garantis** avec l’expérience.\n\n2. **Technicien·ne / Ingénieur·e en performance énergétique** *(bac+2 à bac+5)*\n   - **Pourquoi ?** La RE2020 (réglementation environnementale) impose des compétences en **rénovation basse consommation** et **énergies renouvelables**. 50 000 emplois à pourvoir d’ici 2030 en IDF (ADEME — connaissance générale).\n   - **Formations clés** :\n     - **BTS FED** (Fluides-Énergies-Domotique) ou **Licence Pro Métiers du BTP : Performance Énergétique** (ex : Paris Nanterre).\n     - **Écoles spécialisées** : INSA Strasbourg (master), CNAM (formations continues pour adultes).\n   - *Pour toi* : Parfait si tu es sensible à l’écologie et aux **technologies innovantes** (BIM, smart grids).\n\n3. **Économiste de la construction / Métrieur·euse** *(bac+3 à bac+5)*\n   - **Pourquoi ?** Métier méconnu mais **critique** pour les appels d’offres et la maîtrise des coûts. Salaire moyen : 40-50k€ brut (connaissance générale).\n   - **Formations clés** :\n     - **BUT Génie Civil** (parcours Économie de la Construction) ou **Licence Pro Bâtiment et Construction** (ex : Gustave Eiffel).\n     - **Écoles** : ESTP, ESITC Caen (admissions parallèles possibles).\n   - *Pour toi* : Si tu aimes les **chiffres et la négociation**, ce métier offre une **stabilité rare**.\n\n---\n\n### **Plan B — Spécialisations émergentes (pour se différencier)**\n- **BIM Manager** (modélisation 3D des bâtiments) : **bac+5** (master ou école d’ingé), salaires élevés (45-60k€ — connaissance générale). *Formations* : Master BIM à l’École des Ponts ou CNAM.\n- **Responsable QSE** (Qualité-Sécurité-Environnement) : **licence pro ou master**, indispensable sur les grands chantiers. *Exemple* : Licence Pro QSE à Paris 12.\n- *Pour toi* : Ces métiers demandent une **veille technologique constante** mais offrent des **postes à responsabilité rapide**.\n\n---\n### **Plan C — Passerelles et alternatives si tu débutes**\n- **Sans diplôme** : Commence par un **CAP/BP** (maçonnerie, électricité) en alternance (ex : CFA BTP Île-de-France) → monte en compétences via la **formation continue** (AFPA, GRETA).\n- **En reconversion** : Opte pour une **Licence Pro en 1 an** (ex : \"Réhabilitation du patrimoine bâti\" à Versailles) ou un **Titre Pro** (finançable par CPF).\n- *Pour toi* : L’alternance est **la voie royale** : 80% des alternant·es sont embauché·es dans leur entreprise (source : OPCO Constructys — connaissance générale).\n\n---\n**⚠ Attention** :\n- **Évite les écoles privées non reconnues** (ex : formations \"bâtiment\" à 8 000€/an sans label). Privilégie les **diplômes d’État** (BTS, BUT, licences pro) ou les titres **RNCP** (répertoire national).\n- **Méfie-toi des promesses de salaire** : les annonces \"50k€ dès bac+2\" concernent souvent des **cadres expérimentés**, pas des débutant·es.\n\n---\n**Question pour toi** :\nAs-tu déjà une expérience (stage, job) dans le bâtiment, ou préfères-tu te former **de zéro** ? Cela peut orienter vers un BTS (terrain) ou une licence pro (spécialisation rapide).",
+  "elapsed_pipeline_s": 32.14,
+  "elapsed_fact_check_post_hoc_s": 3.7,
+  "elapsed_clarify_s": 2.44,
+  "elapsed_reformulate_s": 6.91,
+  "elapsed_retrieve_s": 0.74,
+  "elapsed_generate_s": 22.04,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 0,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "70% des projets franciliens manquent d’encadrement",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "70% des projets franciliens manquent d’encadrement (source : FFB Île-de-France, 2023 — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50 000 emplois à pourvoir d’ici 2030 en IDF",
+      "stat_value": 50000,
+      "stat_unit": "emplois",
+      "context": "50 000 emplois à pourvoir d’ici 2030 en IDF (ADEME — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire 35-55k€ brut en milieu de carrière",
+      "stat_value": 35,
+      "stat_unit": "k€",
+      "context": "salaire 35-55k€ brut en milieu de carrière — estimation marché, connaissance générale",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire 35-45k€ brut en début de carrière, 50-70k€ après 10 ans",
+      "stat_value": 35,
+      "stat_unit": "k€",
+      "context": "Salaires : 35-45k€ brut en début de carrière, 50-70k€ après 10 ans.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire moyen 40-50k€ brut",
+      "stat_value": 40,
+      "stat_unit": "k€",
+      "context": "Salaire moyen : 40-50k€ brut (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire 45-60k€",
+      "stat_value": 45,
+      "stat_unit": "k€",
+      "context": "salaires élevés (45-60k€ — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "80% des alternant·es sont embauché·es dans leur entreprise",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "80% des alternant·es sont embauché·es dans leur entreprise (source : OPCO Constructys — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "_competences_certif",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers du bâtiment et de la construction en Île-de-France avec le plus de postes à pourvoir d'ici 2030 selon les projections DARES Métiers 2030 ?",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Cible directement l'intent core : recrutement futur en Île-de-France, avec activation du domain hint 'DARES Métiers 2030'."
+    },
+    {
+      "text": "Quels sont les métiers porteurs dans le secteur du bâtiment en Île-de-France, avec des perspectives de recrutement cadres si applicable ?",
+      "target_corpus": "apec_region",
+      "priority": 2,
+      "rationale": "Complète avec le marché cadres régional pour affiner les opportunités professionnelles."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications RNCP sont les plus demandés pour les métiers du bâtiment en forte croissance en Île-de-France ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Ajoute une dimension compétences pour contextualiser les besoins en formation."
+    },
+    {
+      "text": "Quels sont les salaires médians (INSEE) pour les métiers du bâtiment en Île-de-France, notamment ceux en tension ou en croissance ?",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Contexte utile pour évaluer l'attractivité financière des métiers identifiés."
+    }
+  ]
+}

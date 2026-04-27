@@ -1,0 +1,192 @@
+{
+  "suite": "personas_v4",
+  "query_id": "emma_q1",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "answer_text": "**TL;DR**\n1. **Salaire médian débutant** pour un développeur post-M2 informatique : **~2 200€ brut/mois** (soit ~35-38k€ brut/an) — source Céreq (connaissance générale).\n2. **Écart significatif** selon spécialisation : data/IA (+15-20%) vs web mobile (médian).\n3. **Alternance et région** impactent fortement : +10-15% en Île-de-France, -5-10% en provinces moins tendues.\n\n---\n\n### **Plan A — Développeur généraliste (web, logiciel, embarqué)**\n**Salaire typique** : **2 000–2 400€ brut/mois** (35–40k€ brut/an).\n- **Pour toi** : Accès direct avec ton M2, surtout si stages/alternance en entreprise. Secteurs porteurs : ESN (SSII), éditeurs de logiciels, banques.\n- **Exemple de formation** : [Master Technologies de l'Information](https://www.onisep.fr/http/redirection/formation/slug/FOR.4855) (parcours Développement Logiciel).\n\n### **Plan B — Spécialisation haut de gamme (data, IA, cybersécurité)**\n**Salaire typique** : **2 500–3 000€ brut/mois** (42–48k€ brut/an).\n- **Pour toi** : Si ton M2 inclut des compétences en **data science**, **machine learning**, ou **cybersécurité** (ex : [Master Mathématiques et Applications](https://www.onisep.fr/http/redirection/formation/slug/FOR.10458), parcours Data), les salaires débutants grimpent rapidement.\n- **Levier** : Certifications (AWS, Google Cloud, SecNumAcademie) ou thèse CIFRE (2 700€ brut/mois + doctorat).\n\n### **Plan C — Alternance ou mobilité géographique stratégique**\n**Salaire boosté** : **+10-20%** vs voie classique.\n- **Pour toi** :\n  - **Alternance en dernière année de M2** : Salaire ~1 500–1 800€ net/mois (selon âge) + embauche fréquente à 2 500–3 000€ brut après diplôme.\n  - **Cibler Île-de-France, Lyon, ou Toulouse** : Les salaires y sont systématiquement plus élevés (ex : +15% vs Bordeaux ou Nantes).\n  - **Startups scale-ups** : Primes et stock-options possibles (mais risque accru).\n\n---\n**⚠ Attention aux pièges**\n- **ESN (SSII) vs Editeurs** : Les ESN recrutent massivement (salaire médian), mais les éditeurs de logiciels/tech (ex : Doctrine, Dataiku) offrent +10-15% et meilleurs projets.\n- **Titres RNCP privés** : Certains \"M2\" privés (ex : écoles du numérique non labellisées CGE/CTI) peuvent mener à des salaires inférieurs de 10-20%. Vérifie le **grade master** (label État) ou le **RNCP niveau 7**.\n- **Négociation** : Peu de marge sur le fixe en début de carrière (sauf pénurie avérée), mais **primes** (13e mois, intéressement) et **télétravail** sont négociables.\n\n---\n**Question pour toi** :\nTon M2 inclut-il une spécialisation technique pointue (data, cloud, cyber) ou vises-tu un secteur d’activité en particulier (finance, santé, jeu vidéo) ? Cela peut faire varier le salaire de **±20%**.",
+  "elapsed_pipeline_s": 29.32,
+  "elapsed_fact_check_post_hoc_s": 6.93,
+  "elapsed_clarify_s": 1.86,
+  "elapsed_reformulate_s": 6.51,
+  "elapsed_retrieve_s": 0.42,
+  "elapsed_generate_s": 20.53,
+  "fact_check_summary": {
+    "n_stats_total": 16,
+    "n_verified": 5,
+    "n_with_disclaimer": 11,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~2 200€ brut/mois",
+      "stat_value": 2200,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire médian débutant pour un développeur post-M2 informatique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "35-38k€ brut/an",
+      "stat_value": 36.5,
+      "stat_unit": "k€ brut/an",
+      "context": "Salaire médian débutant pour un développeur post-M2 informatique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 000–2 400€ brut/mois",
+      "stat_value": 2200,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire typique pour un développeur généraliste (web, logiciel, embarqué)",
+      "verdict": "verified",
+      "source_excerpt": "salaire_median_embauche: 2080"
+    },
+    {
+      "stat_text": "35–40k€ brut/an",
+      "stat_value": 37.5,
+      "stat_unit": "k€ brut/an",
+      "context": "Salaire typique pour un développeur généraliste (web, logiciel, embarqué)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 500–3 000€ brut/mois",
+      "stat_value": 2750,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire typique pour une spécialisation haut de gamme (data, IA, cybersécurité)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "42–48k€ brut/an",
+      "stat_value": 45,
+      "stat_unit": "k€ brut/an",
+      "context": "Salaire typique pour une spécialisation haut de gamme (data, IA, cybersécurité)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 700€ brut/mois",
+      "stat_value": 2700,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire en thèse CIFRE",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 500–1 800€ net/mois",
+      "stat_value": 1650,
+      "stat_unit": "€ net/mois",
+      "context": "Salaire en alternance en dernière année de M2",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 500–3 000€ brut/mois",
+      "stat_value": 2750,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire après diplôme en alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+10-20%",
+      "stat_value": 15,
+      "stat_unit": "%",
+      "context": "Écart de salaire selon spécialisation (data/IA vs web mobile)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+10-15%",
+      "stat_value": 12.5,
+      "stat_unit": "%",
+      "context": "Impact de l'Île-de-France sur les salaires",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "-5-10%",
+      "stat_value": -7.5,
+      "stat_unit": "%",
+      "context": "Impact des provinces moins tendues sur les salaires",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire médian à l'embauche pour plusieurs masters (Technologies de l'Information, Mathématiques, Management des systèmes d'information, etc.)",
+      "verdict": "verified",
+      "source_excerpt": "salaire_median_embauche: 2080"
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context": "Taux d'emploi à 3 ans pour plusieurs masters",
+      "verdict": "verified",
+      "source_excerpt": "taux_emploi_3ans: 0.85"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context": "Taux d'emploi à 6 ans pour plusieurs masters",
+      "verdict": "verified",
+      "source_excerpt": "taux_emploi_6ans: 0.91"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context": "Taux de CDI pour plusieurs masters",
+      "verdict": "verified",
+      "source_excerpt": "taux_cdi: 0.83"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_metier",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Salaire médian d'un développeur débutant en France après un master (M2) en informatique, données INSEE SALAAN par PCS et région.",
+      "target_corpus": "insee_salaire",
+      "priority": 1,
+      "rationale": "Cible directement l'intent core avec le corpus spécialisé sur les salaires."
+    },
+    {
+      "text": "Taux d'insertion professionnelle et salaire moyen 6 à 18 mois après un master en informatique (M2), données MESR.",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Complète avec des données post-diplôme spécifiques aux masters."
+    },
+    {
+      "text": "Perspectives de recrutement et fourchettes de salaires pour les développeurs débutants cadres en région, données APEC.",
+      "target_corpus": "apec_region",
+      "priority": 2,
+      "rationale": "Apporte une vision marché du travail cadres pour contextualiser."
+    },
+    {
+      "text": "Fiche métier ONISEP détaillée pour 'développeur informatique' : missions, compétences et conditions de travail.",
+      "target_corpus": "metier",
+      "priority": 3,
+      "rationale": "Contexte métier pour enrichir la compréhension du poste."
+    }
+  ]
+}

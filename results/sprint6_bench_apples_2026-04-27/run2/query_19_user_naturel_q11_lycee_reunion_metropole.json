@@ -1,0 +1,134 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q11_lycee_reunion_metropole",
+  "query_text": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options s'offrent à moi ?",
+  "answer_text": "**TL;DR**\n1. **Oui, c’est tout à fait possible** : la métropole offre des formations numériques accessibles depuis La Réunion, avec des aides pour le logement/transport.\n2. **Priorité** : vise des **BUT** (ex-MST) ou **licences pro** en alternance (salaire + diplôme pro).\n3. **Cible 3 villes** : Toulouse (pôle aéronautique/tech), Lyon (écosystème startups), ou Nantes (qualité de vie + numérique).\n\n---\n\n### **Plan A — Réaliste : BUT ou Licence Pro en alternance** *(sécurité + emploi)*\n📍 **BUT MMI (Métiers du Multimédia et de l’Internet)** — **Toulouse (IUT Blagnac)**\nBac+3 public, **sélectivité modérée** (30-50% sur Parcoursup), **alternance possible dès la 2e année** · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11061)\n*Pour toi :* Parfait pour allier **création web, design et code**, avec un taux d’emploi > **85% à 6 mois** (connaissance générale). Logement étudiant aidé (CROUS).\n\n📍 **Licence Pro Métiers du Numérique (Conception Web)** — **Lyon (IUT Lyon 1)**\nBac+3 public, **accessible** (>60% de taux d’accès), **alternance obligatoire** (salaire ~600-800€/mois) · [exemple similaire ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11061)\n*Pour toi :* Idéal si tu aimes **coder et gérer des projets web**, avec un **réseau pro lyonnais** (startups, agences).\n\n---\n### **Plan B — Ambitieux : École d’ingé ou Tech (sélectif mais gratifiant)**\n📍 **École 42** — **Paris (et campus à Lyon, Nice…)**\nFormation **gratuite**, **sans diplôme requis**, pédagogie par projets (pas de cours magistraux). Sélectivité sur **motivation** (pas de notes) · [Site officiel](https://www.42.fr)\n*Pour toi :* Si tu es **autonome et passionné·e par la tech pure** (cybersécurité, IA, dev). Logement possible en **résidence étudiante partenaire**.\n\n📍 **Bachelor Tech de l’Université (ex : UT Capitole à Toulouse)**\nBac+3 public, **sélectivité moyenne** (40-50%), **double compétence tech + gestion** · [exemple UT Capitole](https://www.ut-capitole.fr)\n*Pour toi :* Pour viser des postes **hybrides** (chef de projet digital, consultant IT).\n\n---\n### **Plan C — Passerelle : Prépa ou BTS d’abord, puis spécialisation**\n- **BTS SIO (Services Informatiques aux Organisations)** à La Réunion → **poursuite en licence pro ou école en métropole** (ex : **EPSI** à Toulouse).\n- **Classe prépa TSI** (pour bacs techno) → **concours écoles d’ingé** (ex : **INSA Lyon**).\n\n---\n### **⚠ Attention aux pièges**\n1. **Coût de la vie** : Prévois **800-1200€/mois** pour un studio (hors aides). Vise les **résidences CROUS** (dossier social étudiant à faire **dès maintenant**).\n2. **Alternance = obligation de trouver une entreprise** : Commence les recherches **dès la 1ère année** (plateformes comme **JobTeaser** ou **LinkedIn**).\n3. **Écoles privées** : Méfie-toi des formations à **>5000€/an** sans label **CTI** ou **grade Licence** (ex : \"bachelors\" non reconnus).\n\n---\n**Question pour toi :**\n- **Préfères-tu une ville dynamique (Lyon) ou un cadre plus \"tech\" (Toulouse) ?**\n- **Es-tu prêt·e à chercher une alternance dès la rentrée, ou tu veux d’abord te former ?**\n\n👤 *Pour peaufiner ton projet, prends RDV avec le·a Psy-EN de ton lycée ou le CIO de Saint-Denis — ils connaissent les aides spécifiques pour les Réunionnais·es en métropole !*",
+  "elapsed_pipeline_s": 28.64,
+  "elapsed_fact_check_post_hoc_s": 5.57,
+  "elapsed_clarify_s": 1.93,
+  "elapsed_reformulate_s": 8.95,
+  "elapsed_retrieve_s": 0.43,
+  "elapsed_generate_s": 17.33,
+  "fact_check_summary": {
+    "n_stats_total": 8,
+    "n_verified": 4,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux d’emploi > 85% à 6 mois",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context": "BUT MMI (Métiers du Multimédia et de l’Internet) — Toulouse (IUT Blagnac) : taux d’emploi > 85% à 6 mois (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux d’accès >60%",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "Licence Pro Métiers du Numérique (Conception Web) — Lyon (IUT Lyon 1) : taux d’accès >60%",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire ~600-800€/mois",
+      "stat_value": 700,
+      "stat_unit": "€/mois",
+      "context": "Licence Pro Métiers du Numérique (Conception Web) — Lyon (IUT Lyon 1) : salaire ~600-800€/mois",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux d’emploi 3 ans : 86%",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context": "licence pro mention métiers du numérique : conception, rédaction et réalisation web : taux_emploi_3ans: 0.86",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux d’emploi 6 ans : 91%",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "licence pro mention métiers du numérique : conception, rédaction et réalisation web : taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux de CDI : 83%",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "licence pro mention métiers du numérique : conception, rédaction et réalisation web : taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire médian à l’embauche : 1740€",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "licence pro mention métiers du numérique : conception, rédaction et réalisation web : salaire_median_embauche: 1740",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "Coût de la vie : 800-1200€/mois",
+      "stat_value": null,
+      "stat_unit": "€/mois",
+      "context": "Prévois 800-1200€/mois pour un studio (hors aides)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "formation_insertion",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "_formation",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "_metier_prospective",
+    "_metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles formations en numérique (BTS, BUT, licences, écoles) sont accessibles via Parcoursup ou ONISEP pour un lycéen de Terminale à La Réunion souhaitant étudier en métropole ?",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : découvrir les filières numériques accessibles post-bac pour un lycéen de La Réunion."
+    },
+    {
+      "text": "Quels sont les métiers du numérique les plus porteurs en métropole d'ici 2030 selon les projections DARES, notamment pour les jeunes diplômés ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Contexte utile : identifier les métiers d'avenir pour affiner le choix de formation."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois pour les diplômés en numérique (BUT, licences, masters) en métropole ?",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Complète la décision avec des données sur l'employabilité post-diplôme."
+    },
+    {
+      "text": "Quelles sont les conditions de vie étudiante (logement, restos universitaires, aides) pour un étudiant de La Réunion en métropole ?",
+      "target_corpus": "crous",
+      "priority": 3,
+      "rationale": "Nice-to-have : informations pratiques pour préparer le départ."
+    },
+    {
+      "text": "Quels sont les parcours typiques des bacheliers de La Réunion en licence de numérique en métropole : taux de réussite, mentions, difficultés récurrentes ?",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 3,
+      "rationale": "Optionnel : anticiper les défis académiques spécifiques."
+    }
+  ]
+}

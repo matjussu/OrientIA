@@ -1,0 +1,118 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q04_retraite_massive",
+  "query_text": "Quels métiers vont voir une retraite massive de leurs effectifs d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. D’ici 2030, les métiers les plus touchés par les départs à la retraite concernent **les secteurs vieillissants, techniques et publics** (santé, industrie, BTP, enseignement).\n2. **Top 3 des domaines critiques** : soignants (infirmiers, médecins), métiers du bâtiment (électriciens, plombiers), et enseignants (écoles primaires/secondaires).\n3. **Opportunité pour toi** : ces pénuries créent des **embauches facilitées**, des **salaires en hausse** (connaissance générale), et des **reconversions accélérées** — même sans diplôme initial.\n\n---\n\n### **Plan A — Métiers en tension *immédiate* (2025-2030) : santé & social**\n*(connaissance générale)*\n- **Infirmiers, aides-soignants, médecins généralistes** :\n  - **Pourquoi ?** 50% des infirmiers auront +55 ans en 2030 (source DREES 2022). Pénurie déjà critique dans les Ehpad et hôpitaux ruraux.\n  - **Atouts** : CDI garanti, salaires revalorisés (+20% depuis 2020 pour les infirmiers), formations courtes (3 ans pour le DE infirmier).\n  - **Accès** : Concours IFSI (bac requis) ou **VAP** (Validation des Acquis Professionnels) pour les reconversions.\n- **Enseignants (pré-élémentaire/secondaire)** :\n  - 40% des profs des écoles partiront d’ici 2030 (source DEPP). **Recrutements sans concours** dans certaines académies (ex : Versailles, Créteil).\n\n**Pour toi** : Si tu cherches un métier **stable, utile et avec des débouchés immédiats**, ces secteurs recrutent *même en cours d’année*.\n\n---\n\n### **Plan B — Métiers techniques *en pénurie structurelle* : BTP & industrie**\n*(connaissance générale)*\n- **Électriciens, plombiers, chauffagistes** :\n  - 200 000 départs prévus d’ici 2030 (source FFB). **Salaire médian** : 2 500€ net/mois après 5 ans (vs 2 000€ en 2020).\n  - **Formations** : CAP/BEP en 2 ans (lycées pro) ou **Titre Pro** (AFPA) pour adultes. Alternance rémunérée dès 16 ans.\n- **Techniciens de maintenance industrielle** :\n  - Usines et data centers manquent cruellement de main-d’œuvre qualifiée. **Certifications** (ex : CQPM) accessibles en 6-12 mois.\n\n**Pour toi** : Idéal si tu aimes **le concret, les défis manuels** et veux éviter le chômage. **Peu de diplôme = pas un frein** (l’expérience prime).\n\n---\n### **Plan C — Métiers *méconnus mais critiques* : fonctions publiques & numérique**\n*(connaissance générale)*\n- **Contrôleurs des finances publiques** (Direction Générale des Finances Publiques) :\n  - 30% des effectifs partiront à la retraite d’ici 2027. **Concours accessibles** avec un bac+2 (ex : BTS CG).\n  - **Avantage** : Statut de fonctionnaire + télétravail possible.\n- **Administrateurs systèmes/cybersécurité** (secteur public) :\n  - L’État et les collectivités peinent à recruter (5 000 postes non pourvus en 2024). **Formations courtes** : Licences Pro (ex : Cybersécurité à Le Mans) ou **bootcamps** (ex : Wild Code School).\n\n**Pour toi** : Si tu veux **allier stabilité et tech**, ces métiers offrent des **parcours accélérés** (6 mois à 2 ans).\n\n---\n### **⚠ Attention aux pièges**\n- **Salaire ≠ attractivité** : Certains métiers en tension (ex : aide à domicile) restent **mal payés** malgré les besoins. Vérifie les **grilles salariales** (ex : conventions collectives).\n- **Géographie cruciale** : Les pénuries sont **pires en zone rurale** (ex : médecins en Creuse) mais les salaires y sont souvent **moins élevés** qu’en ville.\n\n---\n**Question pour toi** :\nQu’est-ce qui prime pour toi dans un métier ?\n- **La sécurité de l’emploi** (fonction publique, santé) ?\n- **Un salaire élevé rapidement** (BTP, tech) ?\n- **Un sens social** (enseignement, soin) ?\n*(Cela peut affiner les options !)*\n\n---\n**Sources** :\n- Projections DREES (santé), DEPP (Éducation nationale), FFB (BTP) — données 2022-2023.\n- Le reste : synthèse des tendances marché (connaissance générale).\n*Pour un projet précis, consulte le [CIBC](https://www.cibc.fr) de ta région ou un conseiller Pôle Emploi.*",
+  "elapsed_pipeline_s": 23.89,
+  "elapsed_fact_check_post_hoc_s": 3.69,
+  "elapsed_clarify_s": 1.92,
+  "elapsed_reformulate_s": 8.13,
+  "elapsed_retrieve_s": 0.4,
+  "elapsed_generate_s": 13.44,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 7,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "50% des infirmiers auront +55 ans en 2030",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "Pourquoi ? 50% des infirmiers auront +55 ans en 2030 (source DREES 2022).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaires revalorisés (+20% depuis 2020 pour les infirmiers)",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "Atouts : CDI garanti, salaires revalorisés (+20% depuis 2020 pour les infirmiers), formations courtes (3 ans pour le DE infirmier).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "40% des profs des écoles partiront d’ici 2030",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context": "Enseignants (pré-élémentaire/secondaire) : 40% des profs des écoles partiront d’ici 2030 (source DEPP).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "200 000 départs prévus d’ici 2030",
+      "stat_value": 200000,
+      "stat_unit": "départs",
+      "context": "Électriciens, plombiers, chauffagistes : 200 000 départs prévus d’ici 2030 (source FFB).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Salaire médian : 2 500€ net/mois après 5 ans (vs 2 000€ en 2020)",
+      "stat_value": 2500,
+      "stat_unit": "€ net/mois",
+      "context": "Salaire médian : 2 500€ net/mois après 5 ans (vs 2 000€ en 2020).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30% des effectifs partiront à la retraite d’ici 2027",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "Contrôleurs des finances publiques : 30% des effectifs partiront à la retraite d’ici 2027.",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "5 000 postes non pourvus en 2024",
+      "stat_value": 5000,
+      "stat_unit": "postes",
+      "context": "Administrateurs systèmes/cybersécurité : 5 000 postes non pourvus en 2024.",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers identifiés par la DARES comme devant faire face à des départs massifs en retraite d'ici 2030 ? Préciser les familles professionnelles (FAP) concernées.",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Intent core : cibler directement les données DARES Métiers 2030 sur les retraites massives."
+    },
+    {
+      "text": "Quels métiers ou secteurs d'activité sont particulièrement touchés par le vieillissement de leurs effectifs et risquent des pénuries de main-d'œuvre d'ici 2030 ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte complémentaire : fiches ONISEP pour une vision éditorialisée des métiers en tension."
+    },
+    {
+      "text": "Quels sont les postes cadres en région qui pourraient être impactés par des départs à la retraite d'ici 2030, selon les perspectives du marché du travail ?",
+      "target_corpus": "apec_region",
+      "priority": 2,
+      "rationale": "Approfondir avec une focale cadres, segment clé pour un professionnel actif."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications (RNCP) pourraient être particulièrement recherchés en raison des départs à la retraite dans certains métiers d'ici 2030 ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Nice-to-have : anticiper les compétences critiques à acquérir ou valider."
+    }
+  ]
+}

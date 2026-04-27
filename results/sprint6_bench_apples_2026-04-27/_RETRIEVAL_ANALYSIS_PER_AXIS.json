@@ -1,0 +1,85 @@
+{
+  "method": "Option A retrieval-side (corrélation, pas causalité — ablation ground truth manquante)",
+  "n_total_entries": 72,
+  "n_total_stats": 629,
+  "n_total_verified": 148,
+  "n_total_halluc": 100,
+  "pct_verified_global": 23.5,
+  "pct_halluc_global": 15.9,
+  "runs_breakdown": [
+    {
+      "run": "run1",
+      "n_queries": 24,
+      "n_stats_total": 200,
+      "pct_verified": 22.5,
+      "pct_hallucinated": 21.5
+    },
+    {
+      "run": "run2",
+      "n_queries": 24,
+      "n_stats_total": 202,
+      "pct_verified": 20.3,
+      "pct_hallucinated": 18.3
+    },
+    {
+      "run": "run3",
+      "n_queries": 24,
+      "n_stats_total": 227,
+      "pct_verified": 27.3,
+      "pct_hallucinated": 8.8
+    }
+  ],
+  "axes_breakdown": {
+    "axe1_dares_re_agg": {
+      "n_queries_active": 17,
+      "n_stats_when_active": 132,
+      "n_verified_when_active": 9,
+      "n_halluc_when_active": 38,
+      "pct_queries_active": 23.6,
+      "pct_verified_when_active": 6.8,
+      "attribution_pp_estimate": 1.43,
+      "is_mute_candidate": false
+    },
+    "axe2_drom_territorial": {
+      "n_queries_active": 0,
+      "n_stats_when_active": 0,
+      "n_verified_when_active": 0,
+      "n_halluc_when_active": 0,
+      "pct_queries_active": 0.0,
+      "pct_verified_when_active": 0.0,
+      "attribution_pp_estimate": 0.0,
+      "is_mute_candidate": false
+    },
+    "axe3a_voie_pre_bac": {
+      "n_queries_active": 1,
+      "n_stats_when_active": 11,
+      "n_verified_when_active": 4,
+      "n_halluc_when_active": 0,
+      "pct_queries_active": 1.4,
+      "pct_verified_when_active": 36.4,
+      "attribution_pp_estimate": 0.64,
+      "is_mute_candidate": false
+    },
+    "axe3b_inserjeunes": {
+      "n_queries_active": 14,
+      "n_stats_when_active": 114,
+      "n_verified_when_active": 48,
+      "n_halluc_when_active": 1,
+      "pct_queries_active": 19.4,
+      "pct_verified_when_active": 42.1,
+      "attribution_pp_estimate": 7.63,
+      "is_mute_candidate": false
+    },
+    "axe4_financement": {
+      "n_queries_active": 3,
+      "n_stats_when_active": 23,
+      "n_verified_when_active": 0,
+      "n_halluc_when_active": 3,
+      "pct_queries_active": 4.2,
+      "pct_verified_when_active": 0.0,
+      "attribution_pp_estimate": 0.0,
+      "is_mute_candidate": true
+    }
+  },
+  "caveat": "Ces chiffres sont des estimations corrélationnelles : un axe présent dans le top-K et associé à des stats verified n'est pas pour autant la cause causale de ces verified. Le LLM gen peut citer une stat sourcée d'une fiche A (autre axe) même quand l'axe X est aussi présent dans le top-K. Ground truth = ablation 1 run/axe désactivé (×6 cost). Acceptable Sprint 6 pour orientation Sprint 7 (priorisation axes muets / axes fortement contributeurs)."
+}

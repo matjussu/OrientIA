@@ -1,0 +1,113 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q02_blocs_BUT_info_apprendre",
+  "query_text": "Que vais-je apprendre en BUT informatique ?",
+  "answer_text": "**TL;DR**\n1. Un **BUT Informatique** forme aux bases de la programmation, des réseaux, des bases de données et de la cybersécurité, avec une forte dimension pratique (projets, stages, alternance).\n2. Selon le parcours choisi (ex : *administration des données*), tu peux te spécialiser en data, développement logiciel, ou infrastructure.\n3. C’est un diplôme **bac+3 public, accessible et professionnel**, idéal pour entrer directement sur le marché du travail ou poursuivre en master.\n\n---\n\n### **Plan A — Cœur du programme : les compétences techniques communes**\nEn BUT Informatique, tu acquerras **obligatoirement** :\n- **Développement logiciel** (Python, Java, C#, algorithms) et **bases de données** (SQL, NoSQL).\n- **Réseaux et systèmes** (administration Linux/Windows, virtualisation, sécurité basique).\n- **Gestion de projet** (méthodes Agile, travail en équipe) et **anglais technique**.\n*(connaissance générale : référentiel national du BUT Informatique, 2021)*\n→ **60% du temps en travaux pratiques** (projets, labs) — bien plus concret qu’une licence classique.\n\n### **Plan B — Spécialisations selon le parcours**\nChaque IUT propose des parcours différents. Exemples concrets :\n📍 **BUT Informatique, parcours *Administration, gestion et exploitation des données*** (disponible dans plusieurs villes)\n*Pour toi :* Si tu aimes les **bases de données, le Big Data ou l’analyse**, ce parcours te forme à concevoir et administrer des systèmes de données (outils comme Hadoop, Power BI).\n→ [Détails officiels ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.7996)\n\n📍 **BUT Qualité, logistique industrielle et organisation, parcours *Management de la transformation digitale***\n*Pour toi :* Moins technique, plus orienté **optimisation des processus** (ex : automatisation, ERP comme SAP). Idéal si tu veux travailler à l’interface entre IT et métiers (logistique, santé, industrie).\n→ [Détails officiels ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8544)\n\n*(connaissance générale : ces parcours sont proposés dans des dizaines d’IUT en France, avec des variantes locales — vérifie les maquettes sur les sites des établissements.)*\n\n### **Plan C — Alternatives si l’informatique \"pure\" ne te convient pas**\n- **BTS SIO** (plus court, bac+2) : idéal pour une insertion rapide en support/réseaux, mais moins polyvalent qu’un BUT.\n- **Licence Informatique** (plus théorique) : si tu vises la recherche ou un master académique.\n- **Écoles d’ingé post-BUT** (ex : INSA, UT) : certaines recrutent en année 3 après un BUT pour un diplôme bac+5.\n\n---\n**⚠ Attention aux pièges**\n- **Ne confonds pas BUT et licence** : le BUT est **professionnalisant** (stages obligatoires, 26-32 semaines en entreprise), pas seulement théorique.\n- **Sélectivité variable** : certains IUT sont très demandés (ex : Paris, Grenoble). Vérifie les **taux d’accès Parcoursup** (ex : 30-60% selon les villes — *connaissance générale*).\n- **Alternance** : possible dès la 2ème ou 3ème année, mais **peu de places** (souvent <20% d’une promo). Postule tôt aux offres.\n\n---\n**Question pour toi :**\nQu’est-ce qui t’attire le plus : **coder des logiciels**, **analyser des données**, ou **optimiser des systèmes** (réseaux, cloud) ? Cela peut t’aider à choisir ton parcours en BUT.",
+  "elapsed_pipeline_s": 17.59,
+  "elapsed_fact_check_post_hoc_s": 4.78,
+  "elapsed_clarify_s": 1.95,
+  "elapsed_reformulate_s": 5.86,
+  "elapsed_retrieve_s": 0.44,
+  "elapsed_generate_s": 9.34,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 4,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "60% du temps en travaux pratiques",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "60% du temps en travaux pratiques (projets, labs) — bien plus concret qu’une licence classique.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30-60% selon les villes",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "Vérifie les taux d’accès Parcoursup (ex : 30-60% selon les villes — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "moins de 20% d’une promo",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "Alternance possible dès la 2ème ou 3ème année, mais peu de places (souvent <20% d’une promo).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_3ans: 0.86 (Fiche 7 et Fiche 8).",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_6ans: 0.91 (Fiche 7 et Fiche 8).",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_cdi: 0.83 (Fiche 7 et Fiche 8).",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "Insertion pro : salaire_median_embauche: 1740 (Fiche 7 et Fiche 8).",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les enseignements, compétences et matières abordés dans un Bachelor Universitaire de Technologie (BUT) en informatique ? Détail des programmes et blocs de formation prévus.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : définition conceptuelle du contenu pédagogique d'un BUT informatique."
+    },
+    {
+      "text": "Quels blocs de compétences RNCP sont associés aux diplômes de BUT informatique ? Liste des certifications et compétences validables.",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Complète la réponse avec les compétences certifiables liées au diplôme."
+    },
+    {
+      "text": "Quels métiers ou familles professionnelles sont accessibles après un BUT informatique ? Perspectives d'évolution et secteurs d'activité.",
+      "target_corpus": "metier",
+      "priority": 3,
+      "rationale": "Contexte utile pour lier apprentissages et débouchés professionnels."
+    }
+  ]
+}

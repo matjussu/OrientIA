@@ -1,0 +1,148 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q15_cout_ecole_commerce_5ans",
+  "query_text": "Combien faut-il prévoir financièrement pour 5 années d'études en école de commerce ?",
+  "answer_text": "**TL;DR**\n1. Le coût total d’une école de commerce sur 5 ans varie de **0 € (public)** à **50 000 €+ (privé)** selon le type d’établissement et le mode de financement.\n2. Les formations publiques (IAE, universités) coûtent **200-600 €/an**, les écoles privées **5 000-15 000 €/an** (hors alternance).\n3. L’alternance réduit drastiquement les frais (salaire + prise en charge par l’entreprise).\n\n---\n\n### **Plan A — Public : Coût minimal (200-3 000 € sur 5 ans)**\n📍 **Master en Management (IAE)** — bac+5 public, **243-601 €/an** (droits universitaires), grade Master · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11729)\n*Pour toi : solution la plus économique, avec des débouchés similaires aux écoles privées (connaissance générale).*\n\n📍 **Licence + Master Langues et Commerce International** — bac+5 public, **~600 €/an** · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.4845)\n*Pour toi : idéal pour allier langues et commerce à moindre coût, avec stages rémunérés possibles.*\n\n---\n\n### **Plan B — Privé classique : Budget élevé (25 000-50 000 € sur 5 ans)**\n📍 **Diplôme d’École de Commerce (type ESC)** — bac+5 privé, **8 000-15 000 €/an**, visé/grade Master · [exemple : diplôme en marketing](https://www.onisep.fr/http/redirection/formation/slug/FOR.11738)\n*Pour toi : réseau alumni puissant et international, mais investissement lourd. Bourses et prêts étudiants à prévoir (connaissance générale).*\n\n📍 **Ingénieur d’Affaires** — bac+5 privé/public, **0-12 000 €/an** selon l’école · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.7669)\n*Pour toi : double compétence tech/commerce, souvent en alternance dès bac+3 (coût réduit).*\n\n---\n\n### **Plan C — Alternance : Coût nul + rémunération (0 € + salaire)**\n📍 **Toutes les formations ci-dessus en alternance** — contrat pro/apprentissage, **0 € de frais** + **600-1 500 €/mois** (salaire selon âge et année).\n*Pour toi : la voie la plus rentable financièrement, mais exigeante en organisation. Les IAE et écoles privées proposent des parcours en alternance (connaissance générale).*\n\n---\n\n**⚠ Attention aux pièges**\n- **Marketing trompeur** : certaines écoles privées affichent des \"frais réduits\" pour la 1ère année, puis augmentent fortement ensuite. Vérifie le **coût total sur 5 ans** (ex : 500 €/mois × 10 mois × 5 ans = 25 000 €).\n- **Sélectivité de l’alternance** : trouver une entreprise n’est pas garanti, surtout en 1ère année. Prépare un plan B (épargne, prêt).\n- **Logement** : un budget **500-1 000 €/mois** supplémentaire est à prévoir dans les grandes villes (Paris, Lyon, Bordeaux).\n\n---\n**Question pour toi :**\nAs-tu une préférence entre **réseau/prestige** (privé), **économie** (public), ou **expérience pro immédiate** (alternance) ? Cela peut affiner les options. *(Un conseiller en orientation [Psy-EN ou CIO](https://www.onisep.fr/Choisir-mes-etudes/Mon-orientation-en-region/Les-CIO-Centre-d-Information-et-d-Orientation) peut t’aider à comparer les contrats d’alternance.)*",
+  "elapsed_pipeline_s": 23.7,
+  "elapsed_fact_check_post_hoc_s": 5.05,
+  "elapsed_clarify_s": 2.35,
+  "elapsed_reformulate_s": 10.83,
+  "elapsed_retrieve_s": 0.51,
+  "elapsed_generate_s": 10.0,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 1,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "0 € (public)",
+      "stat_value": 0,
+      "stat_unit": "€",
+      "context": "coût total d’une école de commerce sur 5 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50 000 €+ (privé)",
+      "stat_value": 50000,
+      "stat_unit": "€",
+      "context": "coût total d’une école de commerce sur 5 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "200-600 €/an",
+      "stat_value": 200,
+      "stat_unit": "€/an",
+      "context": "formations publiques (IAE, universités)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "5 000-15 000 €/an",
+      "stat_value": 5000,
+      "stat_unit": "€/an",
+      "context": "écoles privées (hors alternance)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "243-601 €/an",
+      "stat_value": 243,
+      "stat_unit": "€/an",
+      "context": "Master en Management (IAE)",
+      "verdict": "verified",
+      "source_excerpt": "Master en Management (IAE) — bac+5 public, 243-601 €/an (droits universitaires), grade Master"
+    },
+    {
+      "stat_text": "~600 €/an",
+      "stat_value": 600,
+      "stat_unit": "€/an",
+      "context": "Licence + Master Langues et Commerce International",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8 000-15 000 €/an",
+      "stat_value": 8000,
+      "stat_unit": "€/an",
+      "context": "Diplôme d’École de Commerce (type ESC)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0-12 000 €/an",
+      "stat_value": 0,
+      "stat_unit": "€/an",
+      "context": "Ingénieur d’Affaires",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "600-1 500 €/mois",
+      "stat_value": 600,
+      "stat_unit": "€/mois",
+      "context": "salaire en alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "500-1 000 €/mois",
+      "stat_value": 500,
+      "stat_unit": "€/mois",
+      "context": "budget logement supplémentaire",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Coût total estimé pour 5 années d'études en école de commerce (frais de scolarité, années prépa incluses ou non) selon le catalogue Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : budget pour 5 ans en école de commerce, ancrage dans les données officielles."
+    },
+    {
+      "text": "Quels sont les frais annexes (logement, restauration, transports) pour un étudiant en école de commerce, selon les données CROUS et vie étudiante ?",
+      "target_corpus": "crous",
+      "priority": 2,
+      "rationale": "Complète le budget avec les coûts indirects (logement, vie quotidienne)."
+    },
+    {
+      "text": "Existe-t-il des aides financières, bourses ou dispositifs de financement spécifiques pour les étudiants en école de commerce ?",
+      "target_corpus": "multi",
+      "priority": 2,
+      "rationale": "Contexte utile pour anticiper les solutions de financement."
+    },
+    {
+      "text": "Salaire médian des jeunes diplômés d'école de commerce (niveau bac+5) selon les données INSEE et PCS, pour évaluer le retour sur investissement.",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Nice-to-have : perspective long terme sur la rentabilité des études."
+    },
+    {
+      "text": "Taux d'insertion professionnelle à 6, 12 et 18 mois pour les diplômés d'école de commerce (master), selon les données MESR.",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Contexte complémentaire sur l'employabilité post-diplôme."
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q14_passerelle_infirmier_RH",
+  "query_text": "Une amie infirmière souhaite passer à un poste en ressources humaines. Quelles passerelles existent ?",
+  "answer_text": "**TL;DR**\n1. Une infirmière peut se réorienter vers les RH, mais **pas en direct** : il faut valider des compétences en gestion, droit du travail ou psychologie.\n2. **3 chemins principaux** : formation courte (licence pro), VAE pour un diplôme RH, ou spécialisation en RH santé (plus simple).\n3. **Étape clé** : identifier si elle vise un poste opérationnel (recrutement) ou stratégique (GPEC) pour choisir la formation.\n\n---\n\n### **Plan A — Réaliste : Licence Pro RH en 1 an (alternance possible)**\n📍 **Licence Pro Métiers des RH** (ex : **Paris Nanterre**, **Lyon 2**, **Aix-Marseille**)\n— bac+3 public, **sélectivité modérée** (dossier + entretien), **alternance fréquente** · [exemple fiche ONISEP](https://www.onisep.fr/formation)\n*Pour elle : accessible avec son bac+3 infirmier (équivalence partielle). Spécialités \"RH et santé\" ou \"gestion des compétences\" idéales pour capitaliser sur son expérience soignante.*\n\n**Étapes concrètes** :\n1. **Valider ses acquis** : Demander une **attestation de compétences** à son employeur (ex : gestion d’équipes, formation de nouveaux soignants) pour appuyer sa candidature.\n2. **Postuler en licence pro** : Cibler les formations avec **modules \"RH en milieu hospitalier\"** (ex : **Licence Pro GRH Santé à Bordeaux**).\n3. **Alternance** : Trouver un contrat dans un **service RH d’un hôpital ou EHPAD** (son réseau médical est un atout).\n\n---\n\n### **Plan B — Ambitieux : VAE pour un titre RNCP RH (bac+5)**\n*(connaissance générale)*\n📍 **Titre RNCP \"Responsable en Gestion des Ressources Humaines\"** (ex : **CNAM**, **ESG RH**, **IFOCOP**)\n— bac+5, **VAE possible en 6-12 mois**, coût ~3 000-6 000€ (finançable via CPF/OPCO).\n*Pour elle : si elle a >3 ans d’expérience en encadrement (ex : infirmière cadre), la VAE permet d’obtenir un diplôme sans quitter son poste.*\n\n**Étapes clés** :\n1. **Audit de ses compétences** : Faire un **bilan de compétences** (finançable par Pôle Emploi ou son employeur) pour identifier les écarts avec le référentiel RNCP.\n2. **Dossier VAE** : Rassembler **preuves d’expérience** (fiches de poste, attestations de formation interne, projets menés).\n3. **Jury** : Préparer un **mémoire professionnel** sur un sujet RH lié à la santé (ex : gestion des pénuries de personnel soignant).\n\n**Attention** : La VAE exige une **expérience managériale avérée** (ex : coordination d’équipe). Sans cela, privilégier le Plan A.\n\n---\n### **Plan C — Spécialisation : RH en milieu hospitalier (formation courte)**\n*(connaissance générale)*\n📍 **DU \"Gestion des Ressources Humaines en Établissements de Santé\"** (ex : **Université Paris Cité**, **Montpellier**)\n— **Diplôme Universitaire (bac+3)**, **formation en 6-12 mois**, souvent en **cours du soir**.\n*Pour elle : la voie la plus rapide pour rester dans le secteur médical tout en basculant vers les RH. Coût : ~1 000-2 500€ (éligible CPF).*\n\n**Pourquoi ce plan ?**\n- **Passerelle douce** : Les DU sont conçus pour les **professionnels de santé** en reconversion.\n- **Réseau préservé** : Elle peut postuler en RH **dans son propre hôpital** après la formation.\n- **Moins théorique** : Focus sur **droit hospitalier**, **gestion des conflits en milieu soignant**, etc.\n\n---\n### **Calendriers et financements**\n| Étape               | Quand ?               | Coût estimé          | Financement possible               |\n|---------------------|-----------------------|----------------------|-------------------------------------|\n| Licence Pro (Plan A) | Rentrée sept. 2025    | 0-600€ (public)      | Alternance (rémunérée)              |\n| VAE (Plan B)        | Démarrage possible dès maintenant | 3 000-6 000€ | CPF, OPCO, Pôle Emploi (si chômage) |\n| DU (Plan C)         | Formations toute l’année | 1 000-2 500€ | CPF, employeur (DIF/CPF)           |\n\n---\n**Question pour elle** :\nSon choix dépend de **deux critères** :\n1. **Vitesse** : Veut-elle un poste RH **dès 2025** (→ Plan C) ou accepte-t-elle 1-2 ans de formation (→ Plan A/B) ?\n2. **Secteur** : Souhaite-t-elle **rester dans la santé** (→ Plan C ou A avec spécialisation) ou viser **tous secteurs** (→ Plan B) ?\n\n👤 *Pour affiner son projet, un RDV avec le **service formation de son hôpital** ou un **conseiller en évolution professionnelle (CEP)** est indispensable. Ces acteurs connaissent les dispositifs locaux (ex : partenariats avec des organismes de formation).*",
+  "elapsed_pipeline_s": 43.53,
+  "elapsed_fact_check_post_hoc_s": 3.0,
+  "elapsed_clarify_s": 2.1,
+  "elapsed_reformulate_s": 9.9,
+  "elapsed_retrieve_s": 6.47,
+  "elapsed_generate_s": 25.05,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "sélectivité modérée (dossier + entretien)",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "Licence Pro Métiers des RH (ex : Paris Nanterre, Lyon 2, Aix-Marseille)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "alternance fréquente",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "Licence Pro Métiers des RH (ex : Paris Nanterre, Lyon 2, Aix-Marseille)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "coût ~3 000-6 000€",
+      "stat_value": 3000,
+      "stat_unit": "€",
+      "context": "Titre RNCP 'Responsable en Gestion des Ressources Humaines' (ex : CNAM, ESG RH, IFOCOP)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "VAE possible en 6-12 mois",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "Titre RNCP 'Responsable en Gestion des Ressources Humaines' (ex : CNAM, ESG RH, IFOCOP)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "coût : ~1 000-2 500€",
+      "stat_value": 1000,
+      "stat_unit": "€",
+      "context": "DU 'Gestion des Ressources Humaines en Établissements de Santé' (ex : Université Paris Cité, Montpellier)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "formation en 6-12 mois",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "DU 'Gestion des Ressources Humaines en Établissements de Santé' (ex : Université Paris Cité, Montpellier)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles formations ou certifications RNCP en ressources humaines sont accessibles aux professionnels en reconversion, notamment pour une infirmière souhaitant évoluer vers les RH ? Mentionner les blocs de compétences valorisables.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : identifier les passerelles formationnelles pour une reconversion RH depuis un métier paramédical."
+    },
+    {
+      "text": "Quels sont les métiers des ressources humaines accessibles après une reconversion, notamment pour un profil issu du secteur médical ou paramédical ? Fiches ONISEP éditorialisées.",
+      "target_corpus": "metier",
+      "priority": 1,
+      "rationale": "Identifie les métiers RH cibles pour une infirmière en reconversion, avec des fiches métiers détaillées."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications RNCP en ressources humaines peuvent être validés via la VAE ou des formations courtes pour un professionnel en reconversion ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Complète la sub-query formation en ciblant les compétences certifiantes et la VAE pour une transition rapide."
+    },
+    {
+      "text": "Quelles sont les perspectives de recrutement cadres dans les ressources humaines d'ici 2030 (DARES Métiers 2030) pour un profil en reconversion ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte un éclairage sur la demande future en RH pour rassurer sur l'opportunité de la reconversion."
+    },
+    {
+      "text": "Quels sont les salaires médians dans les métiers des ressources humaines (INSEE SALAAN) pour un profil en reconversion, notamment en début de carrière ?",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Contexte utile pour évaluer la viabilité financière de la reconversion."
+    }
+  ]
+}

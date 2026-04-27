@@ -1,0 +1,134 @@
+{
+  "suite": "personas_v4",
+  "query_id": "lila_q1",
+  "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+  "answer_text": "**TL;DR**\n1. Une licence de lettres modernes ouvre à des métiers variés, mais souvent **hors du champ strict de la discipline** (communication, enseignement, culture).\n2. **Seul 10-15% des diplômés travaillent directement dans un domaine lié aux lettres** (recherche, édition) — la majorité se réoriente ou complète par une spécialisation (connaissance générale).\n3. **3 pistes concrètes** : enseignement (le plus direct), métiers du livre/édition (sélectifs), ou communication/culture (avec compétences complémentaires).\n\n---\n\n### **Plan A — Enseignement : le débouché \"naturel\" (mais saturé)**\n📍 **Master MEEF Lettres** (ex : [INSPÉ Paris](https://www.inspe-paris.fr/)) — bac+5 public, concours national (CAPES), **sélectivité élevée** (≈15% de reçus en 2024, connaissance générale).\n*Pour toi : si tu aimes transmettre, c’est la voie la plus directe, mais prépare-toi à un concours exigeant et à des affectations géographiquement contraintes.*\n\n### **Plan B — Métiers du livre et de l’édition : passionnant mais très sélectif**\n📍 **Master Édition** (ex : [Paris Cité](https://www.onisep.fr/http/redirection/formation/slug/FOR.10446)) ou **Master Sciences du Langage** ([fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10048)) — bac+5 public, **accès modéré** (30-50%), mais **marché du travail très compétitif** (stages indispensables).\n*Pour toi : idéal si tu vises l’édition, la traduction ou la médiation culturelle, mais il faudra multiplier les expériences (stages, bénévolat en librairies/festivals).*\n\n### **Plan C — Communication, culture, ou réorientation vers des compétences hybrides**\n*(connaissance générale)*\n- **Communication/Ressources humaines** : les licences de lettres sont appréciées pour la rédaction, l’analyse, et la gestion de projet (ex : chargé de communication, community manager). **Formations complémentaires** utiles : DU en digital, certifications en outils PAO (InDesign), ou écoles spécialisées (type [ISCOM](https://www.iscom.fr/)).\n- **Métiers de la culture** : médiation en bibliothèque, gestion de projet culturel (avec un **DU Métiers de la culture** ou une licence pro).\n- **Réorientation vers des masters pro** : ex : **Master Humanités Numériques** (croissance du secteur, compétences tech + lettres).\n\n---\n**⚠ Attention aux pièges**\n- **Mythe du \"débouché automatique\"** : une licence de lettres **seule** ne suffit presque jamais. **90% des diplômés doivent se spécialiser** (master, école, formations courtes) ou acquérir des compétences transverses (langues, numérique, gestion de projet).\n- **Précarité dans l’édition/culture** : les CDD et stages peu payés sont monnaie courante en début de carrière. Prévois un plan B financier.\n- **Concours de la fonction publique** : hors enseignement, les postes (bibliothèques, patrimoine) sont **très rares** et exigent souvent un master + concours (ex : concours de conservateur).\n\n---\n**Question pour toi :**\nQu’est-ce qui t’attire le plus dans les lettres modernes ?\n- **L’analyse texte/la transmission** → enseignement ou recherche (Plan A).\n- **Les mots et leur pouvoir** → édition, traduction, ou communication (Plan B/C).\n- **Un tremplin vers autre chose** → quelles compétences complémentaires es-tu prêt·e à acquérir (numérique, langues, gestion) ?",
+  "elapsed_pipeline_s": 22.33,
+  "elapsed_fact_check_post_hoc_s": 5.22,
+  "elapsed_clarify_s": 2.25,
+  "elapsed_reformulate_s": 8.61,
+  "elapsed_retrieve_s": 0.45,
+  "elapsed_generate_s": 11.02,
+  "fact_check_summary": {
+    "n_stats_total": 8,
+    "n_verified": 4,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "Seul 10-15% des diplômés travaillent directement dans un domaine lié aux lettres",
+      "stat_value": 10,
+      "stat_unit": "-15%",
+      "context": "Seul 10-15% des diplômés travaillent directement dans un domaine lié aux lettres (recherche, édition) — la majorité se réoriente ou complète par une spécialisation",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "≈15% de reçus en 2024",
+      "stat_value": 15,
+      "stat_unit": "%",
+      "context": "sélectivité élevée (≈15% de reçus en 2024, connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30-50%",
+      "stat_value": 30,
+      "stat_unit": "-50%",
+      "context": "accès modéré (30-50%)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.85",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_3ans: 0.85 (FICHE 1)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_6ans: 0.91 (FICHE 1)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_cdi: 0.83 (FICHE 1)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context": "Insertion pro : salaire_median_embauche: 2080 (FICHE 1)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "90% des diplômés doivent se spécialiser",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "Mythe du \"débouché automatique\" : une licence de lettres seule ne suffit presque jamais. 90% des diplômés doivent se spécialiser",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_competences_certif",
+    "_metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers accessibles après une licence de lettres modernes ? Fiches ONISEP détaillant les débouchés professionnels et parcours types.",
+      "target_corpus": "metier",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : débouchés métiers spécifiques aux lettres modernes."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle 6, 12 et 18 mois après un master en lettres ou sciences humaines ? Données MESR insertion pro.",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Apporte un contexte quantitatif sur l'insertion post-diplôme."
+    },
+    {
+      "text": "Quels blocs de compétences (RNCP) sont validés dans une licence de lettres modernes et quels métiers y sont associés ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Lien entre compétences acquises et débouchés métiers."
+    },
+    {
+      "text": "Quels sont les métiers en tension ou avec des postes à pourvoir d'ici 2030 dans le secteur des lettres et sciences humaines ? Données DARES Métiers 2030.",
+      "target_corpus": "metier_prospective",
+      "priority": 3,
+      "rationale": "Perspective prospective pour élargir les débouchés possibles."
+    },
+    {
+      "text": "Quelles sont les formations (master, écoles) recommandées après une licence de lettres modernes pour maximiser les débouchés professionnels ? Catalogue Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 3,
+      "rationale": "Pistes pour poursuivre les études après la licence."
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q05_blocs_VAE_partielle",
+  "query_text": "Comment valider un titre RNCP par VAE par bloc ?",
+  "answer_text": "**TL;DR**\n1. La VAE par bloc permet de valider un titre RNCP **partiellement**, en ciblant des compétences précises plutôt que le diplôme entier.\n2. **2 étapes clés** : identifier les blocs éligibles dans le référentiel RNCP, puis constituer un dossier de preuves par bloc.\n3. Idéal si vous avez une expérience **prolongée mais incomplète** (ex : 3 ans sur 5 requis) ou des compétences **segmentées**.\n\n---\n\n### **Plan A — VAE classique par bloc (pour un titre RNCP existant)**\n1. **Choisir un titre RNCP** découpé en blocs (ex : [Titre \"Responsable de projet\" (RNCP37689)](https://www.francecompetences.fr/recherche/rncp/37689/) → 3 blocs : gestion, pilotage, communication).\n2. **Déposer un dossier par bloc** auprès d’un certificateur (ex : CCI, AFPA, écoles privées). Chaque bloc validé donne un **certificat partiel**, cumulable sur 5 ans.\n   *Pour vous : solution flexible si votre expérience couvre 60-80% des compétences du titre.*\n   **Coût** : ~300-800€/bloc (variable selon certificateur) — (connaissance générale).\n\n---\n\n### **Plan B — VAE + formation complémentaire (blocs manquants)**\nSi certains blocs ne sont pas validables par expérience :\n- **Former les blocs manquants** via un organisme agréé (ex : GRETA, CNAM), puis présenter la VAE pour les blocs maîtrisés.\n- Exemple : Titre RNCP \"Développeur web\" (5 blocs) → vous validez 3 blocs par VAE, formez les 2 restants en 6 mois.\n  *Pour vous : optimise le temps si vous visez un titre complet rapidement.*\n\n---\n\n### **Plan C — Certificat de compétences (alternative si RNCP trop large)**\nSi le titre RNCP est trop éloigné de votre expérience :\n- **Valider un Certificat de Compétences Professionnelles (CCP)** (ex : [CCP \"Sécurité informatique\"](https://www.francecompetences.fr/)).\n- Moins prestigieux qu’un RNCP, mais **reconnu par les branches pro** et souvent **gratuit** via CPF ou Transition Pro.\n  *Pour vous : solution rapide (3-6 mois) pour officialiser des compétences ciblées.*\n\n---\n\n### **⚠ Attention aux pièges**\n- **Blocs \"indivisibles\"** : Certains titres RNCP (ex : santé, sécurité) imposent une validation **globale** — vérifiez le référentiel sur [France Compétences](https://www.francecompetences.fr/).\n- **Délais** : Un bloc validé a une durée de validité (souvent 5 ans). Passé ce délai, re-validation nécessaire.\n- **Certificateurs peu transparents** : Certains organismes privés facturent des **fraudes de \"pré-VAE\"** (ex : 1 500€ pour un audit \"obligatoire\"). **Exigez un devis détaillé** avant engagement.\n\n---\n**Question pour vous** :\nVotre objectif est-il de **compléter un diplôme existant** (ex : bac+2 → bac+3) ou d’**officialiser des compétences précises** pour un emploi cible ? *(La réponse change la stratégie blocs !)*",
+  "elapsed_pipeline_s": 19.25,
+  "elapsed_fact_check_post_hoc_s": 3.94,
+  "elapsed_clarify_s": 2.29,
+  "elapsed_reformulate_s": 9.43,
+  "elapsed_retrieve_s": 0.41,
+  "elapsed_generate_s": 7.12,
+  "fact_check_summary": {
+    "n_stats_total": 4,
+    "n_verified": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "300-800€/bloc",
+      "stat_value": 300,
+      "stat_unit": "€",
+      "context": "Coût : ~300-800€/bloc (variable selon certificateur) — (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "5 ans",
+      "stat_value": 5,
+      "stat_unit": "ans",
+      "context": "chaque bloc validé donne un certificat partiel, cumulable sur 5 ans.",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "60-80%",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "solution flexible si votre expérience couvre 60-80% des compétences du titre.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 500€",
+      "stat_value": 1500,
+      "stat_unit": "€",
+      "context": "Certains organismes privés facturent des fraudes de \"pré-VAE\" (ex : 1 500€ pour un audit \"obligatoire\").",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "financement_etudes",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "dispositif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles sont les étapes pour valider un titre RNCP par la VAE, spécifiquement par blocs de compétences ?",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : VAE et blocs de compétences RNCP."
+    },
+    {
+      "text": "Peut-on valider un titre RNCP partiellement par VAE, et quels sont les blocs de compétences éligibles ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Approfondit la question des blocs éligibles et de la validation partielle."
+    },
+    {
+      "text": "Quels sont les organismes ou centres agréés pour accompagner une VAE vers un titre RNCP ?",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Complète avec des infos pratiques sur les acteurs de la VAE."
+    },
+    {
+      "text": "Quels métiers ou secteurs professionnels reconnaissent les titres RNCP validés par VAE ?",
+      "target_corpus": "metier",
+      "priority": 3,
+      "rationale": "Contextualise l'utilité d'un titre RNCP pour un professionnel actif."
+    },
+    {
+      "text": "Quels sont les délais et coûts moyens pour une VAE menant à un titre RNCP ?",
+      "target_corpus": "multi",
+      "priority": 3,
+      "rationale": "Apporte des éléments concrets sur les aspects pratiques (délais, coûts)."
+    }
+  ]
+}

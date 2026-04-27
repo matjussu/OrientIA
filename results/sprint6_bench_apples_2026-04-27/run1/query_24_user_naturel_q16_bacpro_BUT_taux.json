@@ -1,0 +1,166 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q16_bacpro_BUT_taux",
+  "query_text": "Mon fils a un bac pro vente, peut-il intégrer un BUT et avec quelle chance de réussir ?",
+  "answer_text": "**TL;DR**\n1. Un bac pro vente permet **techniquement** d’intégrer un BUT, mais la sélectivité est forte (dossier + entretien).\n2. Les chances de réussite dépendent **beaucoup** de son niveau en français/maths et de sa motivation.\n3. **Alternatives réalistes** : BTS NDRC ou licence pro après le bac pro, puis BUT en admission parallèle.\n\n---\n\n### **Plan A — Réaliste : BTS NDRC (Négociation et Digitalisation de la Relation Client) puis BUT en admission parallèle**\n📍 **BTS NDRC** (partout en France) — bac+2 public/privé, **accessible** avec un bac pro vente, taux de réussite ~80% (connaissance générale).\n*Pour toi : transition naturelle depuis le bac pro, avec possibilité de poursuivre en BUT TC (Techniques de Commercialisation) après obtention.*\n\n📍 **BUT TC parcours Marketing et Management du Point de Vente** (ex : [IUT de Bordeaux](https://www.onisep.fr/http/redirection/formation/slug/FOR.7955)) — bac+3 public, **sélectif** (30-50% de taux d’accès), mais **ouvert aux bac pro avec un bon dossier** (notes en français/maths et stages valorisés).\n*Pour toi : si ton fils vise ce BUT directement après le bac pro, il devra compenser par des notes solides (12+ en français/maths) et un projet motivé en commerce/vente.*\n\n---\n### **Plan B — Ambitieux : BUT TC en admission directe post-bac pro**\n- **Conditions** : Dossier scolaire **très solide** (14+ de moyenne, surtout en français/maths) + **expérience professionnelle** (stages, jobs en vente).\n- **Atouts à mettre en avant** : son bac pro vente est un **plus** pour les parcours orientés management de point de vente (ex : grande distribution, retail).\n- **Risque** : Rejet possible si le dossier est moyen → avoir un **plan de secours** (BTS NDRC ou licence pro).\n\n---\n### **Plan C — Alternative : Licence pro ou école spécialisée après le bac pro**\n📍 **Licence pro Métiers du commerce** (ex : [Certificat RNCP du ministère de l’Éducation nationale](https://www.francecompetences.fr/recherche/rncp/)) — bac+3, **moins sélective** qu’un BUT, souvent en alternance (salaire + expérience).\n*Pour toi : idéal si ton fils veut **travailler vite** tout en continuant ses études. Exemples de métiers visés : chef de rayon, responsable de magasin.*\n\n📍 **Écoles spécialisées en vente/commerce** (ex : AFTEC, Ecoles de la CCI) — formations bac+2/3 en alternance, **accessibles** avec un bac pro.\n*Pour toi : bonne option si le public/privé classique ne lui convient pas, mais **coût variable** (certaines écoles privées peuvent être chères).*\n\n---\n### **⚠ Attention aux pièges**\n- **Sélectivité des BUT** : Même \"ouverts aux bac pro\", les IUT privilégient souvent les bac généraux/technos. Un dossier **moyen (10-12)** a peu de chances sans expérience pro solide.\n- **Écarts de niveau** : Le rythme en BUT est **beaucoup plus théorique** qu’en bac pro. Risque de décrochage si les bases en maths/français sont fragiles.\n- **Alternance = atout majeur** : Les formations en alternance (licences pro, écoles de commerce) **doublent les chances d’insertion** (connaissance générale) et financent les études.\n\n---\n**Question pour toi :**\nTon fils préfère-t-il **une formation courte et professionnelle** (BTS/licence pro) pour entrer vite sur le marché du travail, ou vise-t-il **un diplôme plus long** (BUT) pour accéder à des postes d’encadrement (chef de secteur, manager) ? Cela changera radicalement les options à prioriser.\n\n---\n👤 *Pour affiner son projet, un RDV avec le **Psy-EN de son lycée** ou un **conseiller du CIO** local sera précieux : ils connaissent les spécificités des formations près de chez vous et les dispositifs d’accompagnement (ex : cordées de la réussite pour les bac pro).*",
+  "elapsed_pipeline_s": 25.94,
+  "elapsed_fact_check_post_hoc_s": 7.88,
+  "elapsed_clarify_s": 2.11,
+  "elapsed_reformulate_s": 8.4,
+  "elapsed_retrieve_s": 0.43,
+  "elapsed_generate_s": 15.0,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 8,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux de réussite ~80%",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "BTS NDRC accessible avec un bac pro vente, taux de réussite ~80% (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux d’accès 30-50%",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "BUT TC parcours Marketing et Management du Point de Vente — sélectif (30-50% de taux d’accès).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "12+ de moyenne",
+      "stat_value": 12,
+      "stat_unit": "points",
+      "context": "Si ton fils vise ce BUT directement après le bac pro, il devra compenser par des notes solides (12+ en français/maths).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "14+ de moyenne",
+      "stat_value": 14,
+      "stat_unit": "points",
+      "context": "Conditions : Dossier scolaire très solide (14+ de moyenne, surtout en français/maths).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context": "Insertion pro du BUT techniques de commercialisation parcours marketing et management du point de vente.",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "Insertion pro du BUT techniques de commercialisation parcours marketing et management du point de vente.",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "Insertion pro du BUT techniques de commercialisation parcours marketing et management du point de vente.",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "Insertion pro du BUT techniques de commercialisation parcours marketing et management du point de vente.",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.73",
+      "stat_value": 73,
+      "stat_unit": "%",
+      "context": "Insertion pro de la licence pro Métiers du commerce.",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Insertion pro de la licence pro Métiers du commerce.",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.66",
+      "stat_value": 66,
+      "stat_unit": "%",
+      "context": "Insertion pro de la licence pro Métiers du commerce.",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1410",
+      "stat_value": 1410,
+      "stat_unit": "€",
+      "context": "Insertion pro de la licence pro Métiers du commerce.",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_metier",
+    "_formation",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_competences_certif",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels BUT (Bachelor Universitaire de Technologie) sont accessibles après un bac pro vente ? Liste des formations Parcoursup et ONISEP ouvertes aux bacheliers professionnels en commerce/vente.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : identifier les formations adaptées à un bac pro vente."
+    },
+    {
+      "text": "Taux de réussite en BUT pour les bacheliers professionnels mention vente : statistiques MESRI par spécialité et taux de réussite en L1 ou équivalent.",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 1,
+      "rationale": "Intent core : évaluer les chances de réussite concrètes."
+    },
+    {
+      "text": "Quels sont les métiers accessibles après un BUT dans le secteur commerce/vente ? Fiches ONISEP éditorialisées pour projection professionnelle.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte utile : visualiser les débouchés métiers post-BUT."
+    },
+    {
+      "text": "Blocs de compétences RNCP à valider pour réussir un BUT en commerce/vente : prérequis et attendus pour les bacheliers pros.",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Contexte utile : comprendre les compétences à mobiliser."
+    },
+    {
+      "text": "Marché de l'emploi dans le secteur commerce/vente pour les diplômés de BUT : perspectives recrutement cadres et non-cadres par région.",
+      "target_corpus": "multi",
+      "priority": 3,
+      "rationale": "Nice-to-have : contexte marché pour projection long terme."
+    }
+  ]
+}

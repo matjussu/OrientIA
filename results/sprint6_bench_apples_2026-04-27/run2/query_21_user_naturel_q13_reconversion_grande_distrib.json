@@ -1,0 +1,109 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q13_reconversion_grande_distrib",
+  "query_text": "Je travaille dans la grande distribution depuis 8 ans, je veux changer complètement de secteur. Par où commencer ?",
+  "answer_text": "**TL;DR**\n1. Une reconversion après 8 ans en grande distribution est tout à fait possible, mais nécessite une **stratégie étape par étape** pour limiter les risques financiers et valider ton projet.\n2. **Priorité absolue** : tester le nouveau secteur *avant* de quitter ton emploi (immersion, formations courtes, bénévolat).\n3. Les métiers en tension (tech, santé, transition écologique) offrent des passerelles accélérées — mais attention aux formations coûteuses sans débouchés garantis.\n\n---\n\n### **Plan A — Tester sans tout quitter : immersions et formations courtes (0-6 mois)**\n- **Immersion professionnelle** : Utilise ton **CPF** (Compte Personnel de Formation) pour financer des **stages d’observation** (ex : 1 semaine en ESAT pour le social, en startup pour le digital) ou des **MOOC certifiants** (ex : \"Les bases du code\" sur OpenClassrooms, \"Gestion de projet\" sur FUN-MOOC). *(connaissance générale)*\n  *Pour toi* : Zéro risque financier, validation concrète de ton attrait pour le secteur.\n- **Bénévolat/Associatif** : Engage-toi dans une association liée à ton secteur cible (ex : Emmaüs pour le social, La Fresque du Climat pour l’environnement). *(connaissance générale)*\n  *Pour toi* : Réseau + expérience terrain à mettre sur ton CV.\n- **Formations courtes qualifiantes** :\n  - **Titre RNCP niveau 5** (ex : \"Technicien en logistique durable\", 6 mois en alternance) via **AFPA** ou **GRETA**. *(connaissance générale)*\n  - **Certifications sectorielles** : CACES pour la logistique, SST (sauveteur secouriste) pour la santé, ou **Google Ateliers Numériques** (gratuit) pour le digital.\n  *Pour toi* : Diplômes reconnus par les employeurs, souvent **finançables à 100%** via CPF/Transition Pro.\n\n---\n\n### **Plan B — Reconversion structurée : formations longues avec filet de sécurité (6-24 mois)**\n- **Formations en alternance** (rémunérées) :\n  - **BTS/DUT** : Ex : **BTS NDRC** (Négociation Digitalisation Relation Client) pour le commerce, **BUT Carrières Sociales** pour le social. *(connaissance générale)*\n    *Pour toi* : Salaire (65-100% du SMIC selon âge), diplôme reconnu, **pas de frais de formation**.\n  - **Titres RNCP niveau 6** (bac+3) : Ex : \"Responsable de projet digital\" (Simplon.co, Wild Code School) en **alternance**. *(connaissance générale)*\n    *Pour toi* : Accès aux métiers tech (développeur, chef de projet) sans prérequis scientifique.\n- **Reprise d’études en présentiel** (si tu peux te permettre une baisse de revenus) :\n  - **Licences professionnelles** : Ex : **Licence Pro Métiers de l’informatique** (universités publiques, ~200€/an). *(connaissance générale)*\n    *Pour toi* : 1 an après un bac+2, **taux d’insertion ~90%** (source : enquêtes ministérielles, estimation marché).\n  - **Écoles spécialisées** : Ex : **Écoles de la 2e chance** (gratuit) pour les métiers manuels, ou **Écoles du numérique** (type 42, gratuites et sans prérequis). *(connaissance générale)*\n\n---\n### **Plan C — Créer ton emploi : entrepreneuriat ou freelance (flexible mais risqué)**\n- **Auto-entrepreneur** : Teste une activité complémentaire (ex : livraison de courses bio, création de contenu sur les réseaux sociaux pour les commerces locaux). *(connaissance générale)*\n  *Pour toi* : **0€ d’investissement** pour valider la viabilité, compatible avec ton emploi actuel.\n- **Coopératives d’activité** : Ex : **Coopaname** ou **Oxalis** pour lancer une activité (ex : conseil en organisation) avec un **filet social** (mutuelle, accompagnement). *(connaissance générale)*\n  *Pour toi* : Statut hybride (salarié + entrepreneur), idéal pour une transition progressive.\n- **Formations à l’entrepreneuriat** : **PEPITE** (Pôle Étudiant pour l’Innovation, dans les universités) ou **MOOC \"Devenir entrepreneur\"** (HEC via Coursera). *(connaissance générale)*\n\n---\n### **⚠ Attention aux pièges**\n- **Les formations privées coûteuses** (>3 000€) sans certification RNCP ou label d’État (ex : \"écoles de coaching\" non reconnues). Vérifie **toujours** sur [France Compétences](https://www.francecompetences.fr/) ou via ton **CPF**.\n- **Les reconversions \"passion\" non rentables** : Ex : métiers artistiques (musique, théâtre) ou sportifs sans débouchés locaux. **Valide la demande du marché** via [Pôle Emploi Métiers en tension](https://candidat.pole-emploi.fr/marche-du-travail/les-metiers-qui-recrutent).\n- **Quitter ton emploi sans filet** : **90% des reconversions réussies** passent par une phase de test (source : APEC, estimation marché). Utilise ton **Congé de Transition Professionnelle (CTP)** pour te former **sans perdre ton salaire**.\n\n---\n**Question pour toi** :\nQuel est le **premier secteur** qui t’attire aujourd’hui (tech, santé, environnement, artisanat…) ? Et es-tu prêt·e à accepter une **baisse de revenus temporaire** (ex : 1 500€/mois pendant 1 an) pour te former, ou préfères-tu une solution sans risque financier (alternance, immersions) ?",
+  "elapsed_pipeline_s": 27.49,
+  "elapsed_fact_check_post_hoc_s": 2.26,
+  "elapsed_clarify_s": 1.87,
+  "elapsed_reformulate_s": 8.58,
+  "elapsed_retrieve_s": 0.34,
+  "elapsed_generate_s": 16.69,
+  "fact_check_summary": {
+    "n_stats_total": 5,
+    "n_verified": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux d’insertion ~90%",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "Licences professionnelles : taux d’insertion ~90% (source : enquêtes ministérielles, estimation marché)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "65-100% du SMIC",
+      "stat_value": null,
+      "stat_unit": "SMIC",
+      "context": "BTS/DUT en alternance : Salaire (65-100% du SMIC selon âge)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0€ d’investissement",
+      "stat_value": 0,
+      "stat_unit": "€",
+      "context": "Auto-entrepreneur : 0€ d’investissement pour valider la viabilité",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": ">3 000€",
+      "stat_value": 3000,
+      "stat_unit": "€",
+      "context": "Formations privées coûteuses (>3 000€) sans certification RNCP ou label d’État",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "90% des reconversions réussies",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "90% des reconversions réussies passent par une phase de test (source : APEC, estimation marché)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "_metier_prospective",
+    "fap_region",
+    "_metier_prospective",
+    "fap_region",
+    "fap_region",
+    "_competences_certif",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Reconversion professionnelle : quelles formations courtes ou certifications RNCP sont accessibles sans diplôme préalable pour un profil issu de la grande distribution ?",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Ancrage essentiel pour identifier des parcours de formation adaptés à une reconversion sans prérequis stricts."
+    },
+    {
+      "text": "Quels sont les métiers porteurs à l'horizon 2030 (DARES Métiers 2030) qui recrutent en dehors du secteur de la grande distribution, avec des perspectives d'embauche régionales ?",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Cibler des métiers en tension pour maximiser les opportunités de reconversion."
+    },
+    {
+      "text": "Quels blocs de compétences (RNCP) sont les plus transférables depuis un poste en grande distribution vers d'autres secteurs d'activité ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Identifier les compétences existantes valorisables pour faciliter la transition."
+    },
+    {
+      "text": "Quels sont les secteurs ou métiers éditorialisés par l'ONISEP qui correspondent à une reconversion pour un profil avec 8 ans d'expérience en grande distribution ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporter un éclairage qualitatif sur les métiers adaptés à ce profil."
+    },
+    {
+      "text": "Marché de l'emploi cadres : quelles régions offrent les meilleures perspectives de recrutement pour une reconversion hors grande distribution ?",
+      "target_corpus": "apec_region",
+      "priority": 3,
+      "rationale": "Contextualiser géographiquement les opportunités pour un profil en reconversion."
+    }
+  ]
+}

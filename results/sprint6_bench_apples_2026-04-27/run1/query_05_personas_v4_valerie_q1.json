@@ -1,0 +1,181 @@
+{
+  "suite": "personas_v4",
+  "query_id": "valerie_q1",
+  "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+  "answer_text": "**TL;DR**\n1. Une année en école de commerce privée coûte **5 000 à 15 000 €** (hors grandes écoles), contre **0 à 600 €** pour une licence publique (frais d’inscription + vie étudiante).\n2. Le rapport qualité-prix dépend de ton projet : les licences pro publiques offrent une insertion rapide à moindre coût, les écoles privées misent sur des réseaux et une \"marque\" (connaissance générale).\n3. **Clarifie ton objectif** : veux-tu un diplôme reconnu rapidement (licence pro) ou un réseau élitiste (école privée) ?\n\n---\n\n### **Plan A — Licence publique : coût maîtrisé, insertion solide**\n📍 **Licence pro Métiers du commerce international** (ex : [Université de Strasbourg](https://www.onisep.fr/http/redirection/formation/slug/FOR.11370)) — **0 à 243 €/an** (droits nationaux 2024), bac+3 public, grade Licence.\n*Pour toi : idéal si tu veux un diplôme professionnel reconnu sans dette, avec des stages rémunérés (500-800 €/mois en moyenne — connaissance générale).*\n\n### **Plan B — École privée \"classique\" : 5k-15k€/an pour un réseau**\n*(connaissance générale)* Ex : **Bachelor en école de commerce** (type INSEEC, SKEMA) — **6 000 à 12 000 €/an**, bac+3/4, grade Licence. Certains bachelors à **15k€/an** (ex : ESCP Bachelor).\n*Pour toi : pertinent si tu vises un secteur où le réseau prime (luxe, conseil) et que ton budget le permet (prêts étudiants, famille).*\n\n### **Plan C — Alternance : 0 € + salaire**\n*(connaissance générale)* **Toutes les licences pro** (ex : [Technico-commercial](https://www.onisep.fr/http/redirection/formation/slug/FOR.11371)) et **certaines écoles privées** (ex : programme ingénieur d’affaires [en alternance](https://www.onisep.fr/http/redirection/formation/slug/FOR.7669)) — **gratuit + 600-1 200 €/mois** (salaire selon âge).\n*Pour toi : la meilleure option si tu veux éviter la dette ET acquérir de l’expérience.*\n\n---\n**⚠ Attention aux pièges**\n- **Marketing des écoles privées** : méfie-toi des promesses \"100% emploi\" — vérifie les **statistiques officielles** (ex : [insertion des licences pro](https://www.enseignementsup-recherche.gouv.fr/) via le ministère).\n- **Coût caché** : dans le privé, ajoute **1 000 à 3 000 €/an** pour la vie étudiante (logement, transports) — souvent sous-estimé.\n- **Valeur du diplôme** : une licence pro publique a la même reconnaissance qu’un bachelor privé **si le secteur ne exige pas un réseau élitiste** (ex : commerce international vs. finance de marché).\n\n---\n**Question pour toi :**\nTon choix dépend-il **prioritairement** du coût, du temps d’études, ou du prestige perçu du diplôme ? *(Exemple : une licence pro en alternance te donne un salaire + un diplôme en 1 an, contre 3-5 ans et 45k€ de dette pour une grande école.)*",
+  "elapsed_pipeline_s": 21.76,
+  "elapsed_fact_check_post_hoc_s": 9.04,
+  "elapsed_clarify_s": 2.17,
+  "elapsed_reformulate_s": 9.85,
+  "elapsed_retrieve_s": 0.77,
+  "elapsed_generate_s": 8.97,
+  "fact_check_summary": {
+    "n_stats_total": 14,
+    "n_verified": 5,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "5 000 à 15 000 €",
+      "stat_value": 5000,
+      "stat_unit": "€",
+      "context": "Une année en école de commerce privée coûte",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0 à 600 €",
+      "stat_value": 600,
+      "stat_unit": "€",
+      "context": "contre pour une licence publique (frais d’inscription + vie étudiante)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "243 €/an",
+      "stat_value": 243,
+      "stat_unit": "€",
+      "context": "Licence pro Métiers du commerce international — 0 à 243 €/an (droits nationaux 2024)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "500-800 €/mois",
+      "stat_value": 500,
+      "stat_unit": "€",
+      "context": "stages rémunérés en moyenne",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "6 000 à 12 000 €/an",
+      "stat_value": 6000,
+      "stat_unit": "€",
+      "context": "Bachelor en école de commerce — 6 000 à 12 000 €/an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "15k€/an",
+      "stat_value": 15000,
+      "stat_unit": "€",
+      "context": "Certains bachelors à 15k€/an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0 €",
+      "stat_value": 0,
+      "stat_unit": "€",
+      "context": "Alternance : 0 € + salaire",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "600-1 200 €/mois",
+      "stat_value": 600,
+      "stat_unit": "€",
+      "context": "salaire selon âge",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 000 à 3 000 €/an",
+      "stat_value": 1000,
+      "stat_unit": "€",
+      "context": "Coût caché : dans le privé, ajoute 1 000 à 3 000 €/an pour la vie étudiante",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "salaire_median_embauche pour licence pro (mentionné dans les fiches)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.86",
+      "stat_value": 0.86,
+      "stat_unit": null,
+      "context": "taux_emploi_3ans pour licence pro (mentionné dans les fiches)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": null,
+      "context": "taux_emploi_6ans pour licence pro (mentionné dans les fiches)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": null,
+      "context": "taux_cdi pour licence pro (mentionné dans les fiches)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context": "salaire_median_embauche pour diplôme du programme ingénieur d'affaires (mentionné dans les fiches)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "formation_france",
+    "formation_france",
+    "_formation",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Coût annuel moyen d'une année en école de commerce privée en France (frais de scolarité, frais annexes) selon le catalogue Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core sur le coût des écoles de commerce privées."
+    },
+    {
+      "text": "Coût annuel moyen d'une licence publique en France (frais d'inscription, frais annexes) selon le catalogue Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core sur le coût des licences publiques."
+    },
+    {
+      "text": "Comparaison des frais de scolarité entre écoles de commerce privées et licences publiques, incluant les aides financières possibles (bourses, exonérations).",
+      "target_corpus": "multi",
+      "priority": 2,
+      "rationale": "Apporte un contexte complémentaire sur les écarts de coût et les leviers de financement."
+    },
+    {
+      "text": "Salaire médian des diplômés d'écoles de commerce privées vs licences publiques à l'entrée sur le marché du travail (données INSEE ou APEC).",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Ajoute une dimension prospective sur le retour sur investissement."
+    },
+    {
+      "text": "Taux d'insertion professionnelle à 6, 12 et 18 mois pour les diplômés d'écoles de commerce privées et de licences publiques (données MESR).",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Complète avec des données sur l'employabilité post-diplôme."
+    }
+  ]
+}

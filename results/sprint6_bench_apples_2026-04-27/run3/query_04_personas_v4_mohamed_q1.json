@@ -1,0 +1,94 @@
+{
+  "suite": "personas_v4",
+  "query_id": "mohamed_q1",
+  "query_text": "Quels sont les principaux débouchés métier après un Bac pro cuisine par apprentissage ?",
+  "answer_text": "**TL;DR**\n1. Un Bac Pro Cuisine par apprentissage ouvre à des métiers **opérationnels** (cuisinier, commis) et des évolutions vers l’encadrement (chef de partie, gestion).\n2. **90% des diplômés** trouvent un emploi dans les 6 mois (secteur en tension), souvent en CDI (connaissance générale).\n3. **3 voies** : emploi direct (restaurants, collectivité), poursuite d’études (BP, BM), ou spécialisation (pâtisserie, traiteur).\n\n---\n\n### **Plan A — Emploi direct : métiers accessibles immédiatement**\n📍 **Cuisinier·e en restaurant traditionnel** (tous secteurs) — CDI fréquent, évolution vers chef de partie en 3-5 ans.\n📍 **Commis de cuisine en restauration collective** (écoles, hôpitaux, entreprises) — horaires réguliers, moins de pression qu’en restaurant.\n*Pour toi : idéal si tu veux un salaire rapidement (salaire médian embauche ~1 700€ brut — connaissance générale) et monter en compétences sur le terrain.*\n\n### **Plan B — Poursuite d’études : se spécialiser ou encadrer**\n📍 **Brevet Professionnel (BP) Arts de la cuisine** (1 an) — pour devenir chef de cuisine ou s’installer à son compte.\n📍 **Bac+2 : Brevet de Maîtrise (BM) Cuisinier** — gestion d’équipe et création de menus, souvent en alternance.\n*Pour toi : si tu vises un poste à responsabilités ou une installation indépendante, ces diplômes sont des accélérateurs (connaissance générale).*\n\n### **Plan C — Réorientation ou mobilité internationale**\n📍 **Certificats complémentaires** (ex : hygiène alimentaire, cuisine végétarienne) — pour se différencier.\n📍 **Programmes comme Erasmus Pro ou VIE** — travailler à l’étranger (hôtels, croisières) avec un Bac Pro.\n*Pour toi : utile si tu veux voyager ou te spécialiser dans un créneau porteur (ex : cuisine durable).*\n\n---\n⚠ **Attention aux pièges**\n- **Salaire de départ modéré** : ~1 500-1 800€ brut/mois en début de carrière (hors pourboires en restaurant — connaissance générale).\n- **Conditions physiques** : horaires décalés (soirs, week-ends), station debout prolongée — vérifie ta résistance à ce rythme.\n- **Évolutions lentes sans formation complémentaire** : sans BP/BM, le plafond est souvent \"chef de partie\" après 5-10 ans.\n\n---\n**Question pour toi :**\nPréfères-tu **entrer directement dans la vie active** (Plan A), **te former davantage pour encadrer** (Plan B), ou **explorer des niches** (cuisine bio, à l’étranger — Plan C) ? Cela dépend aussi de ton appétence pour les études après le Bac Pro.",
+  "elapsed_pipeline_s": 18.55,
+  "elapsed_fact_check_post_hoc_s": 1.77,
+  "elapsed_clarify_s": 1.95,
+  "elapsed_reformulate_s": 7.72,
+  "elapsed_retrieve_s": 1.84,
+  "elapsed_generate_s": 7.03,
+  "fact_check_summary": {
+    "n_stats_total": 3,
+    "n_verified": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "90% des diplômés trouvent un emploi dans les 6 mois",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "90% des diplômés trouvent un emploi dans les 6 mois (secteur en tension)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian embauche ~1 700€ brut",
+      "stat_value": 1700,
+      "stat_unit": "€ brut",
+      "context": "salaire médian embauche ~1 700€ brut — connaissance générale",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Salaire de départ modéré : ~1 500-1 800€ brut/mois",
+      "stat_value": 1650,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire de départ modéré : ~1 500-1 800€ brut/mois en début de carrière",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation_insertion",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_metier",
+    "formation_france"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers accessibles directement après un Bac pro cuisine obtenu par apprentissage dans le secteur de l'hôtellerie-restauration ?",
+      "target_corpus": "metier",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : débouchés métiers post-Bac pro cuisine."
+    },
+    {
+      "text": "Quels sont les postes à pourvoir en 2030 dans les métiers de la cuisine et de la restauration selon les projections DARES ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Ajoute une dimension prospective pour contextualiser les débouchés."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications RNCP sont validés par un Bac pro cuisine en apprentissage et quels métiers y sont associés ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Permet de lier compétences acquises et débouchés métiers."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle 6, 12 et 18 mois après un Bac pro cuisine en apprentissage dans le secteur de l'hôtellerie-restauration ?",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Donne une indication sur l'efficacité de la formation pour l'insertion."
+    },
+    {
+      "text": "Quelles sont les évolutions de carrière possibles après quelques années d'expérience dans les métiers de la cuisine (ex : chef de partie, chef cuisinier) ?",
+      "target_corpus": "metier",
+      "priority": 3,
+      "rationale": "Complète avec des perspectives d'évolution à moyen terme."
+    }
+  ]
+}

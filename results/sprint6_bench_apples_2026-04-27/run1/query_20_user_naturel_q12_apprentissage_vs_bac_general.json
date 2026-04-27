@@ -1,0 +1,174 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q12_apprentissage_vs_bac_general",
+  "query_text": "Mon fils de 17 ans hésite entre l'apprentissage et le bac général. Comment l'aider à décider ?",
+  "answer_text": "**TL;DR**\n1. **Apprentissage** = entrée rapide dans le monde pro avec un diplôme et un salaire, idéal si votre fils a un projet précis (mécanique, numérique, commerce, etc.) et préfère l’action à la théorie.\n2. **Bac général** = porte ouverte aux études longues (médecine, ingénierie, recherche, etc.), mais exige motivation pour les études et souvent un projet moins défini à 17 ans.\n3. **Clé pour décider** : son **envie de travailler tout de suite** (apprentissage) vs son **rêve de métier nécessitant des études longues** (bac général).\n\n---\n\n### **Plan A — S’il a une passion métiers manuels/techniques ou veut gagner en autonomie vite**\n**Exemples de voies en apprentissage** (connaissance générale) :\n- **CAP/Bac Pro** (2-3 ans) : métiers de l’artisanat (boulangerie, électricité), industrie (mécanique, usinage), ou numérique (réseaux, maintenance).\n- **BTS/BUT en alternance** (bac+2/3) : commerce, informatique, gestion — avec un salaire (600-1 200€/mois selon âge) et 0 frais de formation.\n*Pour lui* : Si il déteste les cours \"abstraits\" et veut un métier concret avec un revenu dès 18 ans, c’est la meilleure option. **Taux d’emploi** : ~70% à 6 mois pour les CAP/Bac Pro (source : Céreq, 2022 — connaissance générale).\n\n---\n\n### **Plan B — S’il envisage des études longues ou un métier nécessitant un bac+5**\n**Bac général + parcours classique** (connaissance générale) :\n- **Terminale générale** (spécialités à choisir selon ses points forts : SES pour l’éco, Maths/Physique pour l’ingénierie, SVT pour la santé, etc.).\n- **Puis** : licence (3 ans), école d’ingé/commerce (5 ans), ou fac de médecine (10 ans).\n*Pour lui* : Si il aime les matières scolaires, envisage un métier comme médecin, avocat, chercheur, ou ingénieur. **Attention** : le bac général seul ne suffit pas — il faudra enchaîner sur des études supérieures (sélectives pour beaucoup de filières).\n\n---\n### **Plan C — Compromis : un bac général + apprentissage après**\n**Exemple** (connaissance générale) :\n- Passer un **bac général** pour garder des portes ouvertes, puis intégrer un **BTS/BUT en alternance** post-bac (ex : BTS NDRC en commerce, BUT Informatique).\n- **Avantage** : il teste le monde pro *après* le bac, sans fermer de portes.\n*Pour lui* : Si il est indécis mais craint de \"rater sa vie\" en choisissant trop tôt.\n\n---\n### **⚠ Attention aux pièges**\n- **Apprentissage** :\n  - **Trouver un employeur** est obligatoire (certains secteurs — restauration, BTP — recrutent facilement, d’autres — numérique — sont plus compétitifs).\n  - **Salaire bas au début** (43% du SMIC à 17 ans, soit ~700€/mois — source : France Travail, 2024 — connaissance générale).\n- **Bac général** :\n  - **Décrochage** : 14% des étudiants quittent la fac sans diplôme (source : DEPP, 2023 — connaissance générale). Risque si il n’a pas de projet clair.\n  - **Coût des études longues** : une école d’ingé privée coûte 8 000-12 000€/an (hors alternance).\n\n---\n### **Comment trancher ? Posez-lui ces 3 questions**\n1. **« Veux-tu travailler *maintenant* (même à petit salaire) ou préfères-tu attendre 23-25 ans pour un métier mieux payé ? »**\n2. **« As-tu un métier précis en tête ? »** (Si oui → apprentissage dans ce domaine. Si non → bac général pour explorer.)\n3. **« Supporte-tu les cours théoriques toute la journée ? »** (Non → apprentissage.)\n\n---\n**👤 Pour aller plus loin**\n- **Test métiers** : [L’application \"La Bonne Boîte\"](https://labonneboite.pole-emploi.fr/) (Pôle Emploi) montre les entreprises qui recrutent en apprentissage près de chez vous.\n- **RDV orientation** : Le **Psy-EN** de son lycée ou un **conseiller France Travail** (ex-Pôle Emploi) peut affiner le choix avec des tests d’intérêts.\n- **Alternatives** : Les **lycées pro agricoles** ou **écoles de la 2e chance** offrent des parcours hybrides (théorie + pratique intense).\n\n---\n**Question pour vous** :\nEst-ce que votre fils a déjà **testé un métier** (stage, job d’été, rencontre avec un pro) ? Si non, c’est la priorité avant de choisir — l’apprentissage se vit, il ne se théorise pas.",
+  "elapsed_pipeline_s": 31.22,
+  "elapsed_fact_check_post_hoc_s": 10.25,
+  "elapsed_clarify_s": 3.45,
+  "elapsed_reformulate_s": 9.31,
+  "elapsed_retrieve_s": 0.5,
+  "elapsed_generate_s": 17.94,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 8,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "Taux d’emploi : ~70% à 6 mois pour les CAP/Bac Pro",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "Taux d’emploi à 6 mois pour les CAP/Bac Pro en apprentissage",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Salaire (600-1 200€/mois selon âge)",
+      "stat_value": null,
+      "stat_unit": "€/mois",
+      "context": "Salaire en apprentissage pour BTS/BUT en alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "43% du SMIC à 17 ans, soit ~700€/mois",
+      "stat_value": 43,
+      "stat_unit": "%",
+      "context": "Salaire minimal en apprentissage à 17 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "14% des étudiants quittent la fac sans diplôme",
+      "stat_value": 14,
+      "stat_unit": "%",
+      "context": "Taux de décrochage en fac",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "une école d’ingé privée coûte 8 000-12 000€/an (hors alternance)",
+      "stat_value": null,
+      "stat_unit": "€/an",
+      "context": "Coût des études en école d’ingénieur privée",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.73",
+      "stat_value": 73,
+      "stat_unit": "%",
+      "context": "Taux d’emploi à 3 ans pour l'encadrant technique d'insertion (FICHE 2)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Taux d’emploi à 6 ans pour l'encadrant technique d'insertion (FICHE 2)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.66",
+      "stat_value": 66,
+      "stat_unit": "%",
+      "context": "Taux de CDI pour l'encadrant technique d'insertion (FICHE 2)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1410",
+      "stat_value": 1410,
+      "stat_unit": "€",
+      "context": "Salaire médian à l'embauche pour l'encadrant technique d'insertion (FICHE 2)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Taux d’emploi à 3 ans pour le conseiller en insertion professionnelle (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.87",
+      "stat_value": 87,
+      "stat_unit": "%",
+      "context": "Taux d’emploi à 6 ans pour le conseiller en insertion professionnelle (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.76",
+      "stat_value": 76,
+      "stat_unit": "%",
+      "context": "Taux de CDI pour le conseiller en insertion professionnelle (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context": "Salaire médian à l'embauche pour le conseiller en insertion professionnelle (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "formation_insertion",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "_formation",
+    "_metier_prospective",
+    "formation_france",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les avantages et inconvénients de l'apprentissage par rapport au bac général pour un lycéen de 17 ans ? Données Parcoursup et ONISEP sur les taux de réussite, débouchés et poursuites d'études.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : comparaison apprentissage vs bac général avec des données concrètes."
+    },
+    {
+      "text": "Quels métiers ou secteurs recrutent le plus en 2030 selon la DARES ? Focus sur les opportunités pour les jeunes en formation initiale ou en apprentissage.",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte un éclairage prospectif sur les débouchés métiers pour éclairer le choix."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois après un bac général ou un diplôme obtenu via l'apprentissage (BUT, licence pro, etc.) ?",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Compare l'insertion pro des deux voies pour objectiver les choix."
+    },
+    {
+      "text": "Quels sont les salaires médians par PCS pour les jeunes diplômés issus d'un bac général vs ceux issus de l'apprentissage ? Données INSEE récentes.",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Ajoute une dimension financière pour nuancer la décision."
+    },
+    {
+      "text": "Quelles sont les compétences ou blocs de compétences RNCP les plus valorisés sur le marché du travail pour les jeunes de 17 ans en formation initiale ou en apprentissage ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Permet d'explorer les compétences clés à acquérir dans les deux voies."
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q13_reconversion_grande_distrib",
+  "query_text": "Je travaille dans la grande distribution depuis 8 ans, je veux changer complètement de secteur. Par où commencer ?",
+  "answer_text": "**TL;DR**\n1. Une reconversion après 8 ans en grande distribution est tout à fait possible, mais nécessite une **stratégie étape par étape** pour minimiser les risques financiers et maximiser les opportunités.\n2. Priorité absolue : **identifier un secteur porteur** qui correspond à tes compétences transférables (ex : logistique, commerce, gestion) *ou* à une passion latente (ex : numérique, santé, artisanat).\n3. **Ne quitte pas ton emploi avant** d’avoir validé une formation *et* un plan de financement (CPF, OPCO, alternance).\n\n---\n\n### **Plan A — Réaliste : Reconversion dans un secteur connexe (6-12 mois)**\n**(connaissance générale)**\n- **Métiers cibles** : Responsable logistique, chef de rayon spécialisé (ex : produits frais/bio), ou commercial B2B (ton expérience en gestion d’équipe et relation client est un atout).\n- **Formations courtes** :\n  - **Titre RNCP Niveau 5 (Bac+2)** en logistique ou commerce (ex : *AFT-IFTIM* ou *CNAM*), financable via **CPF** (Compte Personnel de Formation).\n  - **Certifications sectorielles** : CACES pour la logistique, ou *Certificat de Compétences en Entreprise (CCE)* pour le commerce.\n- **Pour toi** : Pas de rupture brutale — ces formations peuvent se faire **en alternance** (tu gardes un salaire) ou **en soirée/week-end**.\n\n---\n\n### **Plan B — Ambitieux : Pivot vers un secteur porteur (12-24 mois)**\n**(connaissance générale)**\n- **Secteurs en tension** (recrutement facilité) :\n  - **Numérique** : Technico-commercial en solutions IT (formation *Titre RNCP \"Responsable Commercial Grand Compte\"* + autodidaxie sur les bases du cloud).\n  - **Santé/Social** : Auxiliaire de puériculture ou moniteur éducateur (formations financées par les **OPCO** de la distribution, ex : *OPCO EP*).\n  - **Artisanat** : Boulangerie/pâtisserie (CAP en 1 an pour adultes, avec stages rémunérés).\n- **Formations clés** :\n  - **BUT (Bac+3)** en alternance : Ex : *BUT Gestion Logistique et Transport* (IUT) — **gratuit** et rémunéré.\n  - **Écoles spécialisées** : Ex : *École MS* (métiers du sport) si tu vises un BPJEPS, ou *Greta* pour des formations courtes qualifiantes.\n- **Pour toi** : Ces voies demandent un **investissement temps** (soirées/week-ends) mais offrent des **débouchés stables** avec des salaires souvent supérieurs à la grande distribution.\n\n---\n\n### **Plan C — Flexible : Tester avant de se lancer (3-6 mois)**\n**(connaissance générale)**\n1. **Immersion professionnelle** :\n   - Faire un **stage découverte** (1 semaine) via *Pôle Emploi* ou ton réseau LinkedIn dans le secteur visé.\n   - Participer à des **journées portes ouvertes** d’écoles (ex : *IUT*, *CFA*).\n2. **Valider tes compétences** :\n   - Passer un **bilan de compétences** (financé par *CPF* ou *OPCO*) pour identifier tes atouts transférables.\n   - Utiliser des **MOOC gratuits** (ex : *FUN-MOOC* pour le numérique, *Coursera* pour la gestion) avant de t’engager.\n3. **Solutions transitoires** :\n   - **Mobilité interne** : Postuler en interne sur des postes hybridant distribution et nouveau secteur (ex : responsable e-commerce pour un drive).\n   - **Création d’activité** : Tester un **micro-entrepreneuriat** (ex : vente de produits locaux en ligne) en parallèle de ton emploi.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Piège financier** : Une reconversion sans filet peut coûter cher. **Vérifie toujours** :\n  - Le reste à charge après utilisation du CPF (max 500-800€/an).\n  - Les aides régionales (ex : *Aide Individuelle à la Formation* en Île-de-France).\n- **Piège des formations \"mirages\"** : Méfie-toi des écoles privées promettant un \"diplôme en 3 mois\" sans RNCP ou certification reconnue. **Exige un numéro RNCP** (ex : RNCP35634) ou un label *Qualiopi*.\n- **Piège psychologique** : La peur de \"perdre 8 ans d’ancienneté\" est normale, mais **ton expérience est un atout** (gestion de stress, travail d’équipe, relation client). Ne la sous-estime pas dans ton CV de reconversion.\n\n---\n**Question pour toi** :\nAs-tu déjà une idée (même vague) du secteur qui t’attire, ou veux-tu d’abord explorer des pistes en fonction de **tes contraintes** (budget, mobilité, temps disponible) ? *(Exemples de contraintes à préciser : \"Je ne peux pas déménager\", \"Je veux garder un salaire pendant la formation\", \"Je cherche un métier manuel\".)*",
+  "elapsed_pipeline_s": 32.46,
+  "elapsed_fact_check_post_hoc_s": 1.1,
+  "elapsed_clarify_s": 1.7,
+  "elapsed_reformulate_s": 8.74,
+  "elapsed_retrieve_s": 0.52,
+  "elapsed_generate_s": 21.48,
+  "fact_check_summary": {
+    "n_stats_total": 2,
+    "n_verified": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "500-800€/an",
+      "stat_value": 500,
+      "stat_unit": "€/an",
+      "context": "Le reste à charge après utilisation du CPF (max 500-800€/an).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8 ans",
+      "stat_value": 8,
+      "stat_unit": "ans",
+      "context": "Une reconversion après 8 ans en grande distribution est tout à fait possible.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "_metier_prospective",
+    "fap_region",
+    "_competences_certif",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Reconversion professionnelle : quelles formations courtes ou certifications (RNCP/blocs de compétences) sont accessibles sans diplôme préalable pour un profil grande distribution ?",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Ancrage essentiel pour identifier des formations adaptées à un profil sans diplôme spécifique."
+    },
+    {
+      "text": "Quels sont les métiers en tension ou postes à pourvoir à l'horizon 2030 (DARES Métiers 2030) pour une reconversion hors secteur grande distribution ?",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Cible les opportunités futures pour éviter les secteurs saturés."
+    },
+    {
+      "text": "Quels blocs de compétences (RNCP) ou certifications sont les plus valorisés pour une reconversion vers des secteurs porteurs ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Complète la recherche de formations par des compétences ciblées."
+    },
+    {
+      "text": "Quels sont les secteurs ou métiers accessibles après 8 ans d'expérience en grande distribution, avec des exemples de parcours similaires ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporte un éclairage éditorialisé sur des reconversions réalistes."
+    },
+    {
+      "text": "Marché de l'emploi cadres par région : quelles perspectives de recrutement pour les profils en reconversion hors grande distribution ?",
+      "target_corpus": "apec_region",
+      "priority": 3,
+      "rationale": "Contexte utile pour évaluer la demande régionale en cadres."
+    }
+  ]
+}

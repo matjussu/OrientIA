@@ -1,0 +1,134 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q12_apprentissage_vs_bac_general",
+  "query_text": "Mon fils de 17 ans hésite entre l'apprentissage et le bac général. Comment l'aider à décider ?",
+  "answer_text": "**TL;DR**\n1. **Apprentissage vs bac général** : deux voies complémentaires, pas une hiérarchie. L’une privilégie l’immersion pro immédiate, l’autre l’accès à des études longues.\n2. **Critère clé** : son projet à 5 ans (métier précis vs études théoriques) et son rapport à l’école (besoin de concret vs abstraction).\n3. **Solution** : tester le terrain *avant* de choisir (stages, immersions, MOOC).\n\n---\n\n### **Plan A — S’il a un métier en tête (mécanique, numérique, artisanat…)**\n**→ Apprentissage (CAP/Bac Pro) + Certificats RNCP**\n- **Pourquoi ?** Diplôme + salaire dès 16 ans, **taux d’emploi > 70% à 6 mois** (source : Dares 2023, connaissance générale), et possibilité de poursuivre en BTS/BUT.\n- **Exemple concret** : **Encadrant technique d’insertion** (Certificat RNCP, Ministère du Travail) pour ceux qui aiment le social et l’accompagnement.\n- **À faire maintenant** :\n  - **Stage d’observation** de 3 jours dans le métier visé (via son lycée ou [Pôle Emploi](https://www.pole-emploi.fr)).\n  - **Plateformes** : [L’Apprentissage](https://www.lapprentissage.fr) pour trouver des contrats, ou [Les Compagnons du Devoir](https://www.compagnons-du-devoir.com) pour les métiers manuels.\n\n---\n\n### **Plan B — S’il aime l’école et vise des études longues (médecine, ingénierie, recherche…)**\n**→ Bac général + spécialités ciblées**\n- **Pourquoi ?** Porte ouverte aux **prépa, licences, écoles d’ingé/commerce** (ex : 80% des ingénieurs ont un bac général, connaissance générale).\n- **Attention** : Exige autonomie, abstraction, et souvent 5 ans d’études après le bac.\n- **À faire maintenant** :\n  - **Tester les spécialités** via des MOOC (ex : [FUN MOOC](https://www.fun-mooc.fr) pour la bio, les maths, ou l’éco).\n  - **Rencontrer un étudiant** dans la filière visée (via [Onisep TV](https://www.onisep.fr) ou les forums de son lycée).\n\n---\n### **Plan C — S’il hésite encore : le mix des deux !**\n**→ Bac général + apprentissage en terminale (ou post-bac)**\n- **Comment ?**\n  - **Terminale en apprentissage** : Certaines académies proposent un **bac général en alternance** (ex : lycée Dorian à Paris).\n  - **Post-bac** : Un **BUT en alternance** (ex : BUT Informatique) après un bac général.\n- **Avantage** : Garde les portes ouvertes tout en gagnant en expérience.\n- **Ressource** : [Portail de l’Alternance](https://www.alternance.pro).\n\n---\n### **⚠ Attention aux pièges**\n- **Piège 1** : *\"L’apprentissage, c’est pour ceux qui ne sont pas bons à l’école\"* → **Faux**. 40% des apprentis ont un bac général (source : Céreq, connaissance générale). L’important : la motivation pour le métier.\n- **Piège 2** : *\"Le bac général permet tout\"* → **Vrai, mais…** Sans projet précis, le risque de décrochage en licence est élevé (50% d’échec en L1, connaissance générale).\n- **Piège 3** : **Les clichés genre** : Certains métiers manuels ou techniques sont présentés comme \"masculins\" (ex : BTP) ou \"féminins\" (ex : coiffure) → **les statistiques bougent** (ex : 30% de femmes en CAP cuisine, connaissance générale). Le choix doit être basé sur ses goûts, pas sur des stéréotypes.\n\n---\n**Question pour vous (parent) :**\n- **Votre fils parle-t-il plus souvent de métiers concrets (\"je veux être électricien\") ou de domaines larges (\"j’aime les sciences\") ?**\n- **A-t-il déjà testé un stage ou un job étudiant ?** Si non, c’est la priorité avant de trancher.\n\n---\n👤 **Pour aller plus loin** :\n- **Outils** : [Quiz Métiers Onisep](https://www.onisep.fr) (10 min pour affiner ses centres d’intérêt).\n- **RDV gratuit** : Les **Psychologues de l’Éducation Nationale (Psy-EN)** dans son lycée peuvent l’aider à clarifier son choix via des tests d’orientation.\n- **Événements** : Les **Salons des Métiers** (ex : [Salon de l’Apprentissage](https://www.salondealapprentissage.fr)) permettent de discuter avec des pros.\n\n---\n*Sources : Données Dares/Céreq (insertion apprentissage), Onisep (parcours). Le reste est une synthèse des tendances du marché (connaissance générale).*",
+  "elapsed_pipeline_s": 25.96,
+  "elapsed_fact_check_post_hoc_s": 6.56,
+  "elapsed_clarify_s": 1.86,
+  "elapsed_reformulate_s": 9.99,
+  "elapsed_retrieve_s": 0.33,
+  "elapsed_generate_s": 13.77,
+  "fact_check_summary": {
+    "n_stats_total": 8,
+    "n_verified": 3,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux d’emploi > 70% à 6 mois",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "Pourquoi ? Diplôme + salaire dès 16 ans, taux d’emploi > 70% à 6 mois (source : Dares 2023, connaissance générale), et possibilité de poursuivre en BTS/BUT.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "80% des ingénieurs ont un bac général",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Pourquoi ? Porte ouverte aux prépa, licences, écoles d’ingé/commerce (ex : 80% des ingénieurs ont un bac général, connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "40% des apprentis ont un bac général",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context": "Piège 1 : L’apprentissage, c’est pour ceux qui ne sont pas bons à l’école → Faux. 40% des apprentis ont un bac général (source : Céreq, connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50% d’échec en L1",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "Piège 2 : Le bac général permet tout → Vrai, mais… Sans projet précis, le risque de décrochage en licence est élevé (50% d’échec en L1, connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30% de femmes en CAP cuisine",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "Piège 3 : Les clichés genre… (ex : 30% de femmes en CAP cuisine, connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_6ans: 0.8 (source : FICHE 1)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.66",
+      "stat_value": 66,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_cdi: 0.66 (source : FICHE 1)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1410",
+      "stat_value": 1410,
+      "stat_unit": "€",
+      "context": "Insertion pro : salaire_median_embauche: 1410 (source : FICHE 1)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "formation_insertion",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "_metier_prospective",
+    "_metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les avantages et inconvénients de l'apprentissage par rapport au bac général pour un lycéen de 17 ans ? Données Parcoursup et ONISEP sur les taux de réussite, débouchés et poursuites d'études.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : comparaison apprentissage vs bac général avec des données concrètes."
+    },
+    {
+      "text": "Quels métiers ou secteurs recrutent le plus en 2030 selon la DARES ? Focus sur les postes accessibles après un bac général ou une formation en apprentissage.",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte une vision prospective pour éclairer le choix entre les deux voies."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois pour les titulaires d'un bac général vs ceux ayant suivi une formation en apprentissage ? Données MESR.",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Compare l'insertion pro des deux voies pour objectiver le choix."
+    },
+    {
+      "text": "Quels sont les taux de réussite en licence (L1) selon le type de bac obtenu (général vs professionnel) ? Données MESRI sur les parcours des bacheliers.",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 3,
+      "rationale": "Utile pour anticiper les difficultés en cas de poursuite d'études après le bac."
+    },
+    {
+      "text": "Quelles sont les différences en termes de salaire médian entre les jeunes issus d'un bac général et ceux ayant suivi une formation en apprentissage ? Données INSEE par PCS.",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Apporte un éclairage financier pour comparer les deux voies."
+    }
+  ]
+}

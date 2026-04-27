@@ -1,0 +1,111 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q03_blocs_master_cyber",
+  "query_text": "Quelles compétences certifiées par un master en cybersécurité ?",
+  "answer_text": "**TL;DR**\n1. Un master en cybersécurité certifie des compétences techniques (audit, cryptographie, réponse aux incidents) **et** des compétences transverses (gestion de projet, conformité RGPD).\n2. Les certifications **SecNumEdu** (label ANSSI) et les titres RNCP associés sont les références officielles en France.\n3. Priorise les masters labellisés **SecNumEdu** pour une reconnaissance maximale sur le marché.\n\n---\n\n### **Plan A — Compétences techniques certifiées (cœur de métier)**\nLes masters en cybersécurité (notamment ceux labellisés **SecNumEdu** comme le [master mention Cybersécurité](https://www.onisep.fr/http/redirection/formation/slug/FOR.10254)) valident des compétences **exigeantes et recherchées** :\n- **Audit et tests d’intrusion** : maîtrise des outils (Nmap, Metasploit, Burp Suite) pour identifier des vulnérabilités (OWASP Top 10, CVE).\n- **Cryptographie appliquée** : protocoles (TLS, PGP), gestion des clés, attaques courantes (man-in-the-middle).\n- **Réponse aux incidents (SOC/CERT)** : analyse forensique, chaînes de remédiation, outils comme SIEM (Splunk, Wazuh).\n- **Sécurité des réseaux et systèmes** : durcissement (firewalls, IDS/IPS), architectures zero-trust, virtualisation sécurisée.\n*Pour toi* : Ces compétences sont **indispensables** pour des postes comme *Ingénieur SOC*, *Pentester* ou *RSSI adjoint*. Les recruteurs vérifient leur maîtrise via des **mises en situation** (CTF, labs pratiques) ou des certifications complémentaires (CEH, OSCP).\n\n---\n\n### **Plan B — Compétences transverses et gestion de projet**\nAu-delà de la technique, les masters certifient des compétences **organisationnelles et juridiques** :\n- **Conformité et cadre réglementaire** : RGPD, NIS 2, ISO 27001/27002, lois françaises (LPM, RGAA).\n- **Gestion des risques** : méthodologies (EBIOS Risk Manager, MEHARI), rédaction de politiques de sécurité (PSSI).\n- **Communication et sensibilisation** : formation des utilisateurs, rédaction de procédures, gestion de crise (ex : fuite de données).\n- **Anglais technique** : documentation, veille sur les menaces (rapports MITRE ATT&CK, bulletins CERT-FR).\n*Pour toi* : Ces compétences distinguent un *technicien* d’un *manager* en cybersécurité. Elles sont cruciales pour évoluer vers des postes comme *Consultant en conformité* ou *RSSI*.\n\n---\n### **Plan C — Certifications complémentaires (boosters de CV)**\nUn master en cybersécurité **ne suffit pas toujours** : les recruteurs regardent aussi les certifications **reconnues internationalement** (connaissance générale) :\n- **Offensives** : OSCP (pénétration testing), CEH (ethical hacking).\n- **Défensives** : CISSP (gestion globale), CISM (management), ISO 27001 Lead Auditor.\n- **Cloud/SOC** : CCSP (cloud security), GCIA (analyse d’intrusions).\n*Pour toi* : Ces certifs coûtent 500–3 000€ et demandent 100–400h de préparation. Priorise l’**OSCP** si tu vises le pentest, ou le **CISSP** pour du management.\n\n---\n### **⚠ Attention aux pièges**\n- **Master ≠ certifications** : Un diplôme labellisé **SecNumEdu** est un socle, mais sans certifications pro (OSCP, CISSP), ton CV sera moins compétitif face à des profils expérimentés.\n- **Spécialisation précoce** : Certains masters se concentrent sur un domaine (ex : cryptographie théorique). Vérifie que le programme couvre **à la fois l’offensif et le défensif** pour rester polyvalent.\n- **Alternance obligatoire ?** : Les masters en alternance (ex : [CS Cybersécurité](https://www.onisep.fr/http/redirection/formation/slug/FOR.8513)) offrent une expérience pro **mais limitent le choix des entreprises** (souvent des ESN). Pèse le pour/contre.\n\n---\n**Question pour toi** :\nTon projet vise-t-il plutôt **l’expertise technique pure** (pentest, SOC) ou **le management/la conformité** (RSSI, audit) ? Cela changera radicalement le choix des compétences à approfondir en master.",
+  "elapsed_pipeline_s": 37.69,
+  "elapsed_fact_check_post_hoc_s": 4.19,
+  "elapsed_clarify_s": 2.08,
+  "elapsed_reformulate_s": 6.81,
+  "elapsed_retrieve_s": 0.41,
+  "elapsed_generate_s": 28.39,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 4,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux_emploi_3ans: 0.85",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context": "Les masters en cybersécurité (notamment ceux labellisés SecNumEdu) valident des compétences exigeantes et recherchées.",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "Les masters en cybersécurité (notamment ceux labellisés SecNumEdu) valident des compétences exigeantes et recherchées.",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "Les masters en cybersécurité (notamment ceux labellisés SecNumEdu) valident des compétences exigeantes et recherchées.",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context": "Les masters en cybersécurité (notamment ceux labellisés SecNumEdu) valident des compétences exigeantes et recherchées.",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "500–3 000€",
+      "stat_value": 3000,
+      "stat_unit": "€",
+      "context": "Ces certifs coûtent 500–3 000€ et demandent 100–400h de préparation.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "100–400h",
+      "stat_value": 400,
+      "stat_unit": "heures",
+      "context": "Ces certifs coûtent 500–3 000€ et demandent 100–400h de préparation.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les blocs de compétences certifiés par les masters en cybersécurité selon le référentiel RNCP ?",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Cible directement les compétences certifiées via les blocs RNCP pour les masters en cybersécurité."
+    },
+    {
+      "text": "Quelles compétences spécifiques sont attendues pour les métiers de la cybersécurité selon les fiches ONISEP ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporte un complément éditorialisé sur les compétences métiers en cybersécurité."
+    },
+    {
+      "text": "Quels masters en cybersécurité sont référencés dans le catalogue Parcoursup ou ONISEP, et quels modules de formation couvrent-ils ?",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Permet de lier compétences et formations disponibles pour une vision concrète."
+    },
+    {
+      "text": "Quels sont les certifications ou blocs de compétences les plus demandés par les employeurs cadres en cybersécurité (marché APEC) ?",
+      "target_corpus": "apec_region",
+      "priority": 3,
+      "rationale": "Ajoute une dimension marché du travail pour contextualiser l'utilité des compétences."
+    }
+  ]
+}

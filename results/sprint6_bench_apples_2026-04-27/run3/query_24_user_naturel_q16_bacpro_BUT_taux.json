@@ -1,0 +1,152 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q16_bacpro_BUT_taux",
+  "query_text": "Mon fils a un bac pro vente, peut-il intégrer un BUT et avec quelle chance de réussir ?",
+  "answer_text": "**TL;DR**\n1. Oui, un bac pro vente permet de candidater en BUT, mais la sélection est **modérée à forte** selon les spécialités.\n2. Les chances de réussite dépendent du projet motivé, des notes en français/maths, et de l’adéquation avec la filière visée (ex : BUT TC plus adapté qu’un BUT informatique).\n3. **Priorité** : cibler des BUT en lien avec son expérience (commerce, gestion) et préparer un dossier solide (stages, lettres de motivation).\n\n---\n\n### **Plan A — Réaliste : BUT Techniques de Commercialisation (TC)**\n📍 **BUT TC parcours Marketing/Management** (ex : [IUT de Bordeaux](https://www.onisep.fr/http/redirection/formation/slug/FOR.7955)) — bac+3 public, **sélectivité ~30-50%** (connaissance générale), parcours adapté aux bacs pros commerce/vente.\n*Pour vous : la meilleure adéquation avec son bac pro vente. Taux de réussite correct (70-80% en 3 ans — connaissance générale) si motivation et accompagnement.*\n\n### **Plan B — Ambitieux : BUT GEA (Gestion des Entreprises)**\n📍 **BUT GEA** (disponible dans la plupart des IUT, ex : Toulouse, Lyon) — bac+3 public, sélectivité variable (20-40%), exige un bon niveau en maths/compta.\n*Pour vous : plus théorique, mais débouchés larges (comptabilité, RH). À viser si son dossier montre des capacités en gestion (ex : stages en compta).*\n\n### **Plan C — Alternative : BTS NDRC ou BUT en alternance**\n📍 **BTS Négociation et Digitalisation de la Relation Client (NDRC)** — bac+2, **sélectivité accessible** (50-70%), souvent en alternance.\n*Pour vous : si le rythme universitaires du BUT inquiète, l’alternance (BTS ou BUT) sécurise l’insertion pro avec un salaire.*\n\n---\n**⚠ Attention aux pièges**\n- **Marketing trompeur** : Certains BUT \"ouverts aux bacs pros\" ont des taux de réussite très bas pour ces profils (ex : BUT informatique). Vérifiez les stats par IUT sur [Parcoursup](https://www.parcoursup.fr).\n- **Décalage pédagogique** : Un bac pro prépare moins aux attentes théoriques de l’université. Anticipez un besoin de soutien (tutorat, méthodologie).\n- **Alternance ≠ facilité** : Les contrats sont compétitifs. Commencez les recherches **dès janvier** pour septembre.\n\n---\n**Question pour vous** :\nVotre fils vise-t-il plutôt **une insertion pro rapide** (BTS/alternance) ou **une poursuite d’études longue** (BUT → master) ? Cela change radicalement les filières à privilégier. *(Exemple : un BUT TC permet une licence pro ou un master, un BTS NDRC mène plus souvent à l’emploi direct.)*\n\n---\n👤 **Pour aller plus loin**, un rendez-vous avec le **Psy-EN de son lycée** ou un **conseiller du CIO** permettra d’affiner son projet en fonction de ses notes précises et de sa mobilité géographique. Les IUT organisent aussi des **journées portes ouvertes** (ex : [liste ici](https://www.iut.fr)) — un bon moyen de mesurer l’adéquation avec l’environnement.",
+  "elapsed_pipeline_s": 21.17,
+  "elapsed_fact_check_post_hoc_s": 7.41,
+  "elapsed_clarify_s": 2.13,
+  "elapsed_reformulate_s": 7.02,
+  "elapsed_retrieve_s": 0.64,
+  "elapsed_generate_s": 11.38,
+  "fact_check_summary": {
+    "n_stats_total": 11,
+    "n_verified": 4,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "sélectivité ~30-50%",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "BUT TC parcours Marketing/Management — sélectivité ~30-50%",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Taux de réussite correct (70-80% en 3 ans — connaissance générale)",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "BUT TC parcours Marketing/Management — taux de réussite correct (70-80% en 3 ans)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Taux de réussite correct (70-80% en 3 ans — connaissance générale)",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "BUT TC parcours Marketing/Management — taux de réussite correct (70-80% en 3 ans)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité 20-40%",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "BUT GEA — sélectivité variable (20-40%)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité 20-40%",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context": "BUT GEA — sélectivité variable (20-40%)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité 50-70%",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "BTS NDRC — sélectivité accessible (50-70%)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité 50-70%",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "BTS NDRC — sélectivité accessible (50-70%)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context": "BUT techniques de commercialisation parcours marketing et management du point de vente — taux_emploi_3ans: 0.86",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "BUT techniques de commercialisation parcours marketing et management du point de vente — taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "BUT techniques de commercialisation parcours marketing et management du point de vente — taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "BUT techniques de commercialisation parcours marketing et management du point de vente — salaire_median_embauche: 1740",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "voie_pre_bac"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "bac_pro_domaine",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels BUT (Bachelor Universitaire de Technologie) sont accessibles après un bac pro vente ? Liste des formations Parcoursup et ONISEP compatibles avec ce profil.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : identifier les formations adaptées à un bac pro vente."
+    },
+    {
+      "text": "Quels sont les taux de réussite en BUT pour les bacheliers professionnels, notamment en vente ou commerce ? Données MESRI sur les parcours bacheliers.",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 1,
+      "rationale": "Évaluer les chances de réussite en BUT pour ce profil."
+    },
+    {
+      "text": "Quels métiers ou secteurs professionnels ciblent les diplômés d'un BUT après un bac pro vente ? Fiches ONISEP éditorialisées.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporter un contexte métier pour motiver le choix du BUT."
+    },
+    {
+      "text": "Quels sont les blocs de compétences ou certifications RNCP à valider en priorité pour un bac pro vente souhaitant intégrer un BUT ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Compléter avec des conseils sur les compétences à renforcer."
+    }
+  ]
+}
