@@ -18,13 +18,14 @@ extension optionnelle activable via flag pipeline.
 1. **Prompts resserrés** "réponds seulement si source" — IMPLÉMENTÉ ICI
 2. **Critic loop** "relit + identifie + vérifie source ou retire" — IMPLÉMENTÉ
    dans `src/rag/critic_loop.py`
-3. **Structured output JSON** {claim, source} citations inline — backlog
-   Sprint 8 (modifs structurelles trop lourdes pour Action 3 délégation
-   max par jour)
+3. **Structured output JSON** {claim, source} citations inline — Sprint 7
+   Action 3b livre la **variante pragmatique R6** (citation inline 30min).
+   Vraie structured output JSON parser-friendly reste backlog Sprint 8
+   (~1-2j, modifs structurelles dans le générateur).
 
 ## Comportement v3.3 vs v3.2
 
-V3.3 strict = V3.2 + appendix avec 5 règles supplémentaires :
+V3.3 strict = V3.2 + appendix avec 6 règles supplémentaires :
 - R1 : aucun chiffre sans source identifiée dans les fiches
 - R2 : si chiffre estimé/connaissance générale → marqueur `(estimation)`
   obligatoire à proximité immédiate
@@ -35,6 +36,10 @@ V3.3 strict = V3.2 + appendix avec 5 règles supplémentaires :
   la fourchette + l'URL plutôt qu'un chiffre précis fabriqué
 - R5 : reformuler une stat plutôt que d'inventer si pas dans fiches
   (ex "des chiffres précis sont disponibles sur etudiant.gouv.fr")
+- **R6 (Sprint 7 Action 3b)** : format obligatoire `[Source: <nom fiche>]`
+  après chaque chiffre cité. Permet le parsing automatique post-hoc
+  pour la mesure du sourcage inline (variante pragmatique du Levier 3
+  structured output, sans modif structurelle du générateur)
 """
 from __future__ import annotations
 
@@ -114,6 +119,39 @@ fiches ne contiennent pas, NE PAS inventer un chiffre. À la place :
 - Indique explicitement la limite si aucune info n'est disponible :
   > "Je n'ai pas de chiffre précis pour cette question dans les sources
   > disponibles."
+
+### R6 — Format obligatoire `[Source: <nom fiche>]` après chaque chiffre
+
+Pour chaque chiffre/pourcentage/montant cité, **ajoute systématiquement
+un suffixe** au format :
+
+> `[Source: <nom de la fiche / type de la source>]`
+
+Le `<nom de la fiche / type de la source>` doit identifier la fiche
+ou le type de source utilisée. Exemples :
+- `[Source: DARES Métiers 2030]` — pour stats de fap_region DARES
+- `[Source: Inserjeunes BAC PRO gestion-administration ILE-DE-FRANCE]` —
+  pour insertion bac pro régionale
+- `[Source: CPF moncompteformation.gouv.fr]` — pour montants CPF
+- `[Source: Bourse CROUS etudiant.gouv.fr]` — pour bourses
+- `[Source: connaissance générale, estimation]` — si tu n'as pas de fiche
+  qui contient cette stat (combiné avec marqueur (estimation) R2)
+
+**Pourquoi** : ce format permet le **parsing automatique post-hoc** pour
+mesurer le sourcage inline. C'est une variante pragmatique du Levier 3
+structured output (la version JSON parser-friendly est backlog Sprint 8).
+
+**Exemple correct** :
+> Le taux d'emploi à 12 mois après un bac pro gestion-administration
+> est d'environ 37% [Source: Inserjeunes BAC PRO gestion-administration]
+> avec une poursuite d'études de 60% [Source: Inserjeunes].
+
+**Exemple incorrect** (chiffre sans `[Source:]`) :
+> Le taux d'emploi à 12 mois est d'environ 37%.
+
+Le format `[Source: ...]` ne remplace pas R1-R5 : il s'ajoute. Si tu n'as
+pas de fiche qui contient le chiffre (R3), tu marques
+`[Source: connaissance générale, estimation]` plutôt que de l'omettre.
 
 """
 

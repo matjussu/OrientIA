@@ -47,7 +47,7 @@ class TestSystemStrictExtendsV32:
 
 
 class TestAntiHalluRulesPresent:
-    """Les 5 règles anti-hallu (R1-R5) sont présentes dans le prompt."""
+    """Les 6 règles anti-hallu (R1-R6) sont présentes dans le prompt."""
 
     def test_r1_no_chiffre_without_source(self):
         assert "R1" in ANTI_HALLU_STRICT_APPENDIX
@@ -71,6 +71,50 @@ class TestAntiHalluRulesPresent:
     def test_r5_reformuler_plutot_inventer(self):
         assert "R5" in ANTI_HALLU_STRICT_APPENDIX
         assert "Reformuler" in ANTI_HALLU_STRICT_APPENDIX or "reformule" in ANTI_HALLU_STRICT_APPENDIX.lower()
+
+
+class TestR6InlineCitationSprint7Action3b:
+    """Sprint 7 Action 3b — R6 format obligatoire `[Source: ...]` après chaque chiffre.
+
+    Variante pragmatique du Levier 3 structured output JSON. La vraie
+    JSON parser-friendly reste backlog Sprint 8.
+    """
+
+    def test_r6_present_in_appendix(self):
+        assert "R6" in ANTI_HALLU_STRICT_APPENDIX
+        # Format obligatoire mentionné
+        assert "[Source:" in ANTI_HALLU_STRICT_APPENDIX
+
+    def test_r6_format_pattern_documented(self):
+        """Le format `[Source: <nom fiche>]` est explicit."""
+        assert "[Source: <nom" in ANTI_HALLU_STRICT_APPENDIX or "[Source:" in ANTI_HALLU_STRICT_APPENDIX
+
+    def test_r6_examples_present(self):
+        """Au moins 2-3 exemples concrets de citation pour aider le LLM."""
+        # Exemples d'identifiants de source
+        assert "DARES Métiers 2030" in ANTI_HALLU_STRICT_APPENDIX
+        assert "Inserjeunes" in ANTI_HALLU_STRICT_APPENDIX
+        assert "moncompteformation.gouv.fr" in ANTI_HALLU_STRICT_APPENDIX or "CPF" in ANTI_HALLU_STRICT_APPENDIX
+
+    def test_r6_estimation_marker_for_unsourced(self):
+        """R6 prévoit le cas pas-de-fiche : `[Source: connaissance générale, estimation]`."""
+        # Couvre la combinaison R2 + R6
+        assert "connaissance générale" in ANTI_HALLU_STRICT_APPENDIX
+
+    def test_r6_explicit_correct_incorrect_examples(self):
+        """R6 inclut un exemple correct ET incorrect pour clarifier le format attendu."""
+        appendix = ANTI_HALLU_STRICT_APPENDIX
+        assert "Exemple correct" in appendix
+        assert "Exemple incorrect" in appendix or "incorrect" in appendix.lower()
+
+    def test_r6_does_not_replace_r1_r5(self):
+        """R6 s'AJOUTE à R1-R5, ne les remplace pas."""
+        appendix = ANTI_HALLU_STRICT_APPENDIX
+        # R1-R5 toujours présents (non-régression Action 3 originale)
+        for r in ["R1", "R2", "R3", "R4", "R5"]:
+            assert r in appendix
+        # R6 explique sa relation aux autres
+        assert "ne remplace pas R1-R5" in appendix or "s'ajoute" in appendix.lower() or "s'AJOUTE" in appendix
 
 
 class TestCriticLoopInit:
