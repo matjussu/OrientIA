@@ -1,0 +1,37 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q06_blocs_savoir_faire_BTS_hotel",
+  "query_text": "Quels savoir-faire certifiés à la sortie d'un BTS hôtellerie-restauration ?",
+  "answer_text": "**TL;DR**\n1. Le **BTS Hôtellerie-Restauration** (option A, B ou C) certifie des compétences opérationnelles en gestion, service et production culinaire, avec une forte dimension terrain.\n2. Les savoir-faire validés sont **immédiatement exploitables** en entreprise, mais limités à des postes d’encadrement intermédiaire sans poursuite d’études.\n3. Pour monter en responsabilité (direction d’hôtel, gestion de restaurant), une **licence pro ou un bachelor** en 1 an post-BTS est souvent nécessaire.\n\n---\n\n### **Plan A — Compétences techniques certifiées (cœur du BTS)**\n*(connaissance générale)*\nLe BTS forme à **3 blocs de compétences clés** :\n- **Gestion et organisation** : élaboration de menus, gestion des coûts (food cost), planning des équipes, respect des normes HACCP.\n- **Service et accueil** : techniques de service en salle (option A), gestion des réservations, relation client multilingue (anglais obligatoire, +1 langue souvent exigée).\n- **Production culinaire** (option B) : maîtrise des techniques de cuisine professionnelle, gestion des stocks, création de recettes dans le respect des contraintes budgétaires.\n\n**Preuve concrète** : Le diplôme inclut **12 à 16 semaines de stage** (ou alternance) où ces compétences sont évaluées en situation réelle. Le jury final valide un **projet professionnel** (ex : création d’un concept de restaurant ou optimisation d’un service en hôtel).\n\n---\n\n### **Plan B — Compétences transversales (souvent sous-estimées)**\n*(connaissance générale)*\nAu-delà des savoir-faire métiers, le BTS certifie :\n- **Management d’équipe** : animation de briefings, résolution de conflits, formation des nouveaux arrivants.\n- **Outils digitaux** : utilisation des logiciels de réservation (ex : **Opera PMS**, **TheFork Manager**), gestion des réseaux sociaux pour la communication.\n- **Réglementation** : connaissances en droit du travail (conventions collectives HCR), normes d’hygiène, accessibilité PMR.\n\n**Atout différenciant** : Les titulaires sont **opérationnels dès l’embauche**, ce qui les rend attractifs pour les recruteurs (surtout en saison touristique).\n\n---\n\n### **Plan C — Limites et compléments à prévoir**\n*(connaissance générale)*\n- **Plafond de verre** : Sans poursuite d’études, les postes accessibles restent **superviseur·euse**, chef·fe de partie, ou adjoint·e de direction (salaire médian : ~22k€ brut/an en début de carrière — estimation marché).\n- **Évolutions possibles** :\n  - **Licence pro** (ex : *Licence pro Métiers de l’hôtellerie et du tourisme*, 1 an) pour viser des postes de **responsable d’établissement**.\n  - **Bachelor** (ex : *Bachelor en Management Hôtelier* à **Ferrières**, **Vatel**, ou **INSEEC**) pour accéder à des postes internationaux (salaire : ~30k€ après 3 ans — estimation marché).\n  - **Certifications complémentaires** : **WSET** (vin), **Certificat de Compétence en Entreprise (CCE)** pour la gestion, ou **TOEIC** (750+ demandé pour les postes à l’étranger).\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Marketing des écoles privées** : Certaines écoles post-BTS promettent des « diplômes internationaux » non reconnus par l’État. Vérifie toujours le **RNCP** (ex : RNCP35605 pour un bachelor valide).\n2. **Salaire vs charge de travail** : Les métiers de l’hôtellerie-restauration impliquent souvent des **horaires décalés** (soirées, week-ends) pour des salaires modestes en début de carrière. Pense à ton équilibre vie pro/perso.\n3. **Alternance obligatoire** dans certaines académies : Renseigne-toi dès la rentrée de terminale, car trouver un contrat peut être **très compétitif** (surtout en cuisine).\n\n---\n**Question pour toi** :\nTon projet est-il plutôt **opérationnel** (travailler rapidement sur le terrain) ou **managérial** (viser un poste de direction à moyen terme) ? Cela changera radicalement ton choix de poursuite d’études.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 53.05,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 2.26,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 3,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_region_diplome",
+    "_competences_certif",
+    "_competences_certif"
+  ]
+}

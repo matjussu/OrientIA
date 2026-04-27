@@ -1,0 +1,37 @@
+{
+  "suite": "voie_pre_bac_dedie",
+  "query_id": "voie_pre_bac_q02_cap_petite_enfance_apres",
+  "query_text": "Liste des CAP en petite enfance et social. Quelles débouchés après ?",
+  "answer_text": "**TL;DR**\n1. Les CAP en petite enfance et social ouvrent à des métiers **concrets et rapides** (1-2 ans d’études), mais avec des salaires modestes (~1 500-1 800€ brut/mois en début de carrière — connaissance générale).\n2. **Débouchés principaux** : crèches, écoles maternelles, Ehpad, services d’aide à domicile, ou concours de la fonction publique territoriale (catégorie C).\n3. **Stratégie clé** : commencer par un CAP pour entrer sur le marché du travail, puis compléter par un BP, un DE ou une VAE pour évoluer.\n\n---\n\n### **Plan A — CAP Petite Enfance (AEPE) : le plus polyvalent**\n📍 **CAP Accompagnant Éducatif Petite Enfance (AEPE)** (formations en lycées pro, CFA, GRETA dans toute la France)\n*Pour toi :* **Idéal pour travailler en crèche, école maternelle ou garde d’enfants à domicile** (assistante maternelle agréée). **Accès sans diplôme** (sous conditions) ou après une 3ᵉ. **Alternance possible** (rémunération + expérience).\n- **Débouchés** :\n  - Auxiliaire de puériculture (après concours interne ou VAE).\n  - ATSEM (sur concours externe après 1 an d’expérience).\n  - Assistante maternelle (après agrément départemental).\n- **Évolution** : Compléter par un **BP Educateur de Jeunes Enfants (EJE)** ou un **DE Auxiliaire de Puériculture** (en 1 an après le CAP).\n\n---\n\n### **Plan B — CAP Assistant Technique en Milieux Familial et Collectif (ATMFC) : social + logistique**\n📍 **CAP ATMFC** (formations en lycées pro, CFA — ex : Lyon, Bordeaux, Lille)\n*Pour toi :* **Pour allier aide aux personnes (enfants, personnes âgées) et gestion du quotidien** (repas, entretien des locaux). **Moins connu = moins de candidats** (meilleures chances d’intégration).\n- **Débouchés** :\n  - Agent des services hospitaliers (concours catégorie C).\n  - Aide à domicile pour personnes dépendantes (via des associations comme ADMR).\n  - Employé en Ehpad ou foyer logement.\n- **Évolution** : Poursuite vers un **BP Assistant de Responsable de Secteur** ou un **DE AES (Accompagnant Éducatif et Social)**.\n\n---\n\n### **Plan C — Autres CAP sociaux : niches avec moins de concurrence**\n📍 **CAP Agent de Prévention et de Médiation (APM)** (rare, quelques CFA — ex : Paris, Marseille)\n*Pour toi :* **Si tu aimes le contact social dans un cadre éducatif ou sécuritaire** (médiation en collège, prévention dans les quartiers). **Peu de places = cibler les CFA spécialisés**.\n- **Débouchés** :\n  - Médiateur social (après expérience).\n  - Agent de prévention dans les transports ou les mairies.\n- **Évolution** : Formation complémentaire en **BPJEPS** (animation) ou **DE Éducateur Spécialisé** (avec validation des acquis).\n\n📍 **CAP Services en Brasserie-Café (SBC)** (option \"service en salle\" avec module \"accueil clients fragiles\")\n*Pour toi :* **Si tu veux travailler dans la restauration avec une dimension sociale** (cafés associatifs, cantines scolaires). **Formation courte (1 an) et très demandée**.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Salaire** : Les métiers du CAP commencent souvent au **SMIC ou légèrement au-dessus** (sauf fonction publique territoriale après concours).\n- **Concours publics** : Les postes stables (ATSEM, auxiliaire de puériculture en hôpital) exigent de **passer des concours** (préparation nécessaire en plus du CAP).\n- **Évolution bloquée sans +** : Sans BP, DE ou VAE, les promotions sont limitées. **Prévoir un plan de formation continue** dès l’entrée dans le métier.\n\n---\n**Question pour toi :**\nQu’est-ce qui t’attire le plus : **le contact avec les enfants** (CAP AEPE), **l’aide aux personnes âgées/dépendantes** (CAP ATMFC), ou **un métier hybride** (ex : restauration + social) ? Cela peut affiner le choix entre les options.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 34.82,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 1.38,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 2,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation_insertion",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "_metier_prospective",
+    "_metier_prospective"
+  ]
+}

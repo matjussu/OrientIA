@@ -1,0 +1,38 @@
+{
+  "suite": "financement_dedie",
+  "query_id": "financement_q01_cpf_reconversion_dev",
+  "query_text": "Je suis salarié de 30 ans et je veux me reconvertir en développeur web. Mon CPF peut financer combien ?",
+  "answer_text": "**TL;DR**\n1. Votre CPF peut financer jusqu’à **500 à 800 €/an** (plafond cumulé ~5 800 € pour un salarié à temps plein), mais les formations certifiantes (RNCP) en développement web coûtent souvent **3 000 à 8 000 €**.\n2. **Solutions** : Combiner CPF + OPCO (financement employeur), VAE pour valider des acquis, ou formations en alternance (rémunérées).\n3. **Priorité** : Ciblez un **Titre RNCP niveau 5 (bac+2)** pour une reconnaissance immédiate sur le marché.\n\n---\n\n### **Plan A — Formation certifiante courte (3 à 12 mois) financée par CPF + OPCO**\n📍 **Titre RNCP \"Développeur web et web mobile\"** (niveau 5/bac+2) — [liste des organismes certifiés](https://www.francecompetences.fr/recherche/rncp/31114/)\n*Pour vous : Reconnu par l’État, éligible CPF (coût ~3 000–6 000 €). Exemples : Wild Code School, OpenClassrooms, Simplon. Vérifiez le reste à charge après mobilisation de vos droits (5 800 € max).*\n\n**Comment faire ?**\n- Vérifiez votre solde CPF sur [moncompteformation.gouv.fr](https://www.moncompteformation.gouv.fr).\n- Contactez votre **OPCO** (ex : Atlas, Opcommerce) pour un cofinancement (jusqu’à 100% si accord employeur).\n- Privilégiez les formations **en alternance** (contrat pro) pour garder un salaire.\n\n---\n\n### **Plan B — VAE (Validation des Acquis de l’Expérience) si vous avez déjà des compétences**\n📍 **VAE pour le Titre RNCP Développeur web** — [France VAE](https://www.francevae.fr/)\n*Pour vous : Si vous avez déjà codé (projets perso, freelance), la VAE permet d’obtenir le diplôme en **3 à 6 mois** sans formation, pour ~1 500–3 000 € (éligible CPF).*\n\n**Étapes clés** :\n1. **Dossier de recevabilité** (gratuit) via un organisme certificateur (ex : CNAM).\n2. **Accompagnement** (obligatoire, ~1 500 €, financé par CPF/OPCO).\n3. **Jury** : présentation d’un projet concret (ex : site portfolio).\n\n---\n### **Plan C — Reconversion longue avec diplôme (bac+3) en alternance**\n📍 **Licence Pro Métiers de l’informatique (parcours web)** — [exemple à l’IUT de Toulouse](https://www.iut-blagnac.fr/formation/licence-pro-metiers-de-linformatique/)\n*Pour vous : Diplôme d’État en **1 an après bac+2**, rémunéré en alternance (salaire ~60–80% du SMIC). Coût : 0 € (pris en charge par l’entreprise).*\n\n**Pour qui ?**\n- Si vous visez un poste **senior** ou une spécialisation (ex : full-stack, DevOps).\n- Nécessite de trouver une entreprise d’accueil (aide via Pôle Emploi ou les OPCO).\n\n---\n\n### **⚠ Attention aux pièges**\n- **Formations non-RNCP** : Certaines \"écoles\" privées (ex : \"bootcamps\" à 10 000 €) ne délivrent pas de diplôme reconnu. Vérifiez **always** le numéro RNCP sur [France Compétences](https://www.francecompetences.fr/).\n- **CPF insuffisant** : Le plafond de 5 800 € ne couvre souvent pas le coût total. Négociez un **abondement** avec votre employeur ou un prêt à taux zéro (ex : [Banque des Territoires](https://www.banquedesterritoires.fr/)).\n- **Alternance = engagement long** : Un contrat pro implique **12 à 24 mois** en entreprise. Assurez-vous de la compatibilité avec votre situation familiale/financière.\n\n---\n**Question pour vous** :\nAvez-vous déjà des compétences en code (HTML/CSS, JavaScript) ou partez-vous de zéro ? Cela change radicalement la stratégie (VAE vs formation longue).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 42.18,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 8.47,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 16,
+    "n_verified": 7,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 3,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "financement_etudes",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "voie",
+    "_formation",
+    "dispositif",
+    "_competences_certif",
+    "_formation",
+    "_competences_certif"
+  ]
+}

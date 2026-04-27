@@ -1,0 +1,36 @@
+{
+  "suite": "personas_v4",
+  "query_id": "valerie_q1",
+  "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+  "answer_text": "**TL;DR**\n1. Une année en école de commerce privée coûte **5 000 à 12 000 €** en moyenne, contre **0 à 600 €** pour une licence publique (hors bourses).\n2. Les écarts reflètent des modèles différents : public subventionné vs privé autofinancé.\n3. Des alternatives hybrides (licences pro, bachelors publics) existent pour limiter les coûts.\n\n---\n\n### **Plan A — Licence publique : coût quasi-nul**\n📍 **Licence pro Métiers du commerce international** (ex : [Université de Bordeaux](https://www.onisep.fr/http/redirection/formation/slug/FOR.11370))\n*Pour toi : 0 €/an (hors CVEC ~100 €) + accès à des bourses sur critères sociaux.*\n\n### **Plan B — École de commerce privée : budget élevé**\n📍 **Bachelor Commerce et Management à l’international** (ex : [ESC Pau](https://www.onisep.fr/http/redirection/formation/slug/FOR.8859))\n*Pour toi : 7 000 à 10 000 €/an (coût moyen en bachelor privé).*\n\n### **Plan C — Alternatives économiques**\n📍 **Licence pro Management des activités commerciales** (ex : [IUT de Toulouse](https://www.onisep.fr/http/redirection/formation/slug/FOR.11363))\n*Pour toi : 0 €/an en formation initiale, ou **gratuit + rémunéré** en alternance (contrat pro/apprentissage).*\n\n---\n**⚠ Attention aux pièges**\n- **Marketing** : certaines écoles privées affichent des \"frais réduits\" (ex : 5 000 €/an) mais omettent les coûts cachés (frais de dossier, voyages obligatoires).\n- **Rentabilité** : un diplôme privé n’est pas systématiquement mieux valorisé qu’un diplôme public (connaissance générale).\n\n**Question pour toi :** Privilégies-tu un diplôme reconnu à moindre coût, ou un réseau professionnel souvent associé aux écoles privées (mais avec un budget élevé) ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 19.05,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 6.17,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 6,
+    "n_verified_strict": 6,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation"
+  ]
+}

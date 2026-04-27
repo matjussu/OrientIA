@@ -1,0 +1,37 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q05_metiers_btp_recruter",
+  "query_text": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. Le BTP en Île-de-France recrute massivement pour la rénovation énergétique, les infrastructures des JO 2024, et le Grand Paris Express (métro).\n2. **Top 3 métiers porteurs d’ici 2030** : technicien en rénovation énergétique, chef de chantier BIM, conducteurs de travaux spécialisés tunnels.\n3. **Formations clés** : BTS/BUT + certifications (ex : CQP RGE) > diplômes longs. L’alternance est reine (80% des embauches — connaissance générale).\n\n---\n\n### **Plan A — Métiers en tension immédiate (2024-2026)**\n**1. Technicien en rénovation énergétique** (Île-de-France)\n- **Pourquoi ?** Obligation légale de rénovation des passoires thermiques (loi Climat 2021) + 50 000 logements franciliens à rénover/an (source : ADEME Île-de-France).\n- **Salaire** : 2 000–2 800€ brut/mois (débutant) → 3 500€+ avec expérience (connaissance générale).\n- **Formation** : **BTS Métiers du Géomètre-Topographe et de la Modélisation Numérique** (public, lycées franciliens) + **Certificat RGE** (1 mois). *Exemple* :\n  📍 **Lycée Le Corbusier (Aubervilliers)** — BTS public, 100% de taux d’insertion à 6 mois (source : ONISEP).\n  *Pour toi :* Accès sans bac+5, débouchés immédiats via alternance (contrats pro signés dès la 1ère année).\n\n**2. Chef de chantier BIM (Building Information Modeling)**\n- **Pourquoi ?** Tous les marchés publics franciliens exigent le BIM depuis 2023 (décret Tertiaire). Pénurie de 1 500 profils/an (source : FFB Île-de-France).\n- **Salaire** : 2 500–3 200€ brut/mois (connaissance générale).\n- **Formation** : **BUT Génie Civil** (parcours BIM) + **logiciels Revit/Navisworks** (autodidaxie possible).\n  📍 **IUT de Créteil** — BUT public, partenariats avec Vinci/Grand Paris Express.\n  *Pour toi :* Alternance obligatoire en année 3 → CDI garanti (taux : 92% — connaissance générale).\n\n---\n\n### **Plan B — Métiers d’avenir (2027-2030)**\n**1. Conducteur de travaux spécialisé tunnels/métro**\n- **Pourquoi ?** Grand Paris Express = 200 km de tunnels à creuser d’ici 2030 (source : Société du Grand Paris). Besoin en +40% de conducteurs de travaux souterrain.\n- **Salaire** : 3 000–4 000€ brut/mois (connaissance générale).\n- **Formation** : **Licence Pro Métiers du BTP** (parcours Génie Civil et Infrastructures) + expérience terrain.\n  📍 **Université Gustave Eiffel (Marne-la-Vallée)** — Licence Pro en alternance, partenariat avec Eiffage.\n  *Pour toi :* Exige 2-3 ans d’expérience préalable (commence par un BTS/BUT en alternance).\n\n**2. Responsable QSE (Qualité Sécurité Environnement)**\n- **Pourquoi ?** Normes RE2020 + enjeux sécurité sur chantiers géants (ex : village olympique). Poste transverse très demandé.\n- **Salaire** : 2 800–3 800€ brut/mois (connaissance générale).\n- **Formation** : **Master Pro QSE** (après BTS/BUT BTP) ou **certifications AFNOR**.\n  *Exemple en alternance* :\n  📍 **CFA BTP Île-de-France** — Formations courtes certifiantes (6-12 mois).\n  *Pour toi :* Idéal après 3 ans d’expérience terrain (ex : chef d’équipe).\n\n---\n\n### **Plan C — Passerelles et reconversion**\n- **Sans diplôme** : **Titre Pro Conducteur de Travaux** (1 an en centre AFPA, financé par Pôle Emploi/OPCO). *Exemple* :\n  📍 **AFPA Paris** — Formation gratuite pour demandeurs d’emploi, 85% de placement (connaissance générale).\n- **Avec bac+2 non-BTP** : **POEI (Préparation Opérationnelle à l’Emploi Individuelle)** pour devenir **chargé d’affaires** (6 mois, rémunérée).\n- **Pour les femmes** : Programmes dédiés comme **\"Les Elles du BTP\"** (mentorat + aides financières).\n\n---\n**⚠ Attention**\n1. **Évite les écoles privées non certifiées** : Certaines promettent des \"diplômes BTP en 6 mois\" sans reconnaissance OPQIBI (liste officielle : [www.opqibi.com](https://www.opqibi.com)).\n2. **Méfie-toi des salaires annoncés** : Les grilles syndicales (FFB) sont souvent supérieures à la réalité terrain (surtout en TPE).\n\n---\n**Question pour toi :**\nPréfères-tu un métier **manuel/terrain** (ex : technicien rénovation) ou **d’encadrement** (ex : chef de chantier) ? Cela change radicalement le parcours de formation (CAP/BTS vs bac+3/5).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 31.56,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 4.64,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 8,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 5,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "_competences_certif",
+    "_competences_certif"
+  ]
+}

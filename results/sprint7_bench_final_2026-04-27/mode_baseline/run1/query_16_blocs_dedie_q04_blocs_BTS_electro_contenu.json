@@ -1,0 +1,38 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q04_blocs_BTS_electro_contenu",
+  "query_text": "Contenu pédagogique du BTS électrotechnique : quels objectifs pédagogiques ?",
+  "answer_text": "**TL;DR**\n1. Le BTS Électrotechnique forme des techniciens capables de concevoir, installer et maintenir des systèmes électriques et connectés (smart grids, automatismes, énergies renouvelables).\n2. **Objectifs clés** : maîtrise des normes, gestion de projets, intervention sur des équipements industriels ou tertiaires.\n3. **Pour toi** : idéal si tu aimes le concret (câblage, dépannage) ET l’innovation (domotique, transition énergétique).\n\n---\n\n### **Plan A — Cœur de la formation : compétences techniques et réglementaires**\nLe BTS vise **3 piliers** (connaissance générale) :\n- **Conception** : dimensionner des installations (éclairage, chauffage, réseaux) via des logiciels (ex : AutoCAD, Dialux).\n- **Mise en œuvre** : câblage, raccordement, mise en service avec respect des normes (NF C 15-100, RT 2020).\n- **Maintenance** : diagnostic de pannes, optimisation énergétique, télégestion (ex : supervision via IoT).\n**Exemple concret** : réaliser l’installation électrique d’un bâtiment tertiaire avec des capteurs connectés pour réduire sa consommation.\n\n### **Plan B — Approfondissement : énergies renouvelables et smart grids**\n- **Enjeux actuels** : intégration des panneaux solaires, bornes de recharge, stockage d’énergie (batteries lithium-ion).\n- **Technologies connectées** : protocoles de communication (KNX, Modbus), cybersécurité des réseaux électriques (norme IEC 62443).\n- **Projets** : simuler la gestion d’un micro-réseau (smart grid) avec production locale et revente d’électricité.\n\n### **Plan C — Soft skills et insertion pro**\n- **Gestion de projet** : planifier un chantier, rédiger un dossier technique, communiquer avec clients et fournisseurs.\n- **Sécurité** : habilitations électriques (BS, BR, BC), prévention des risques (INRS).\n- **Débouchés** : technicien en bureau d’études, chargé d’affaires en efficacité énergétique, ou poursuite en licence pro (ex : **Licence Pro Métiers de l’électricité et de l’énergie**, RNCP 35637).\n\n---\n**⚠ Attention aux pièges**\n- **Marketing** : certaines écoles privées promettent des \"spécialisations IoT\" sans matériel adapté → vérifie les **plateaux techniques** (labos équipés en automatismes, tableaux électriques réels).\n- **Géographie** : les offres d’alternance sont concentrées dans les zones industrielles (Lyon, Toulouse, Nord) ou près des grands chantiers (BTP).\n- **Faux-ami** : ce BTS n’est **pas** une formation en électronique pure (circuits imprimés, robotique) → pour ça, vise plutôt un **BTS SN (Systèmes Numériques)**.\n\n**Question pour toi** : Préfères-tu travailler sur des **chantiers** (installation, dépannage) ou en **bureau d’études** (conception, plans) ? Cela orientera ton choix de stages/alternance.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 24.09,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 0.01,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 0,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_metier",
+    "_formation"
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "summary": {
+    "n_queries": 4,
+    "n_stats_total": 45,
+    "n_verified": 42,
+    "n_verified_strict": 39,
+    "n_verified_by_source": 3,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 0,
+    "pct_verified": 93.3,
+    "pct_verified_by_source_share": 7.1,
+    "pct_hallucinated": 0.0,
+    "verdict_unmute_axe4": "OUI"
+  },
+  "queries": [
+    {
+      "query_id": "financement_q01_cpf_reconversion_dev",
+      "axe_target": "axe4_financement",
+      "query_text": "Je suis salarié de 30 ans et je veux me reconvertir en développeur web. Mon CPF peut financer combien ?",
+      "answer_text": "**TL;DR**\n1. Votre CPF peut financer jusqu’à **500€ à 800€/an** pour une formation certifiante (plafond cumulé variable selon votre solde).\n2. Pour une reconversion en développeur web, visez des **titres RNCP** (niveau 5 ou 6) éligibles CPF, souvent en **3 à 12 mois**.\n3. L’alternance (Pro-A) ou la VAE peuvent compléter le financement et accélérer l’insertion.\n\n---\n\n### **Plan A — Formation courte certifiante (3-6 mois) éligible CPF**\n📍 **Titre RNCP Développeur Web (niveau 5)** — formations en ligne (OpenClassrooms, Simplon) ou en présentiel (AFPA, GRETA), **100% financé si solde CPF suffisant** (coût typique : 3 000-6 000€).\n*Pour vous : idéal si vous visez une entrée rapide sur le marché (junior en 6 mois) avec un titre reconnu par les employeurs.*\n\n### **Plan B — Parcours long certifiant (6-12 mois) avec alternance**\n📍 **Titre RNCP Concepteur Développeur d’Applications (niveau 6, bac+3/4)** — écoles comme **Wild Code School, 3W Academy, ou CNAM**, souvent en **alternance (Pro-A)** pour un salaire + prise en charge par l’OPCO de votre employeur actuel.\n*Pour vous : si vous pouvez négocier un temps partiel ou une rupture conventionnelle, l’alternance annule le coût et booste l’expérience pro.*\n\n### **Plan C — VAE ou formation modulaire (si expérience partielle)**\n📍 **Validation des Acquis de l’Expérience (VAE)** pour un titre RNCP — si vous avez déjà codé (même en autodidacte), un accompagnement VAE (finançable CPF) peut vous faire gagner 6 à 12 mois.\n*Pour vous : à explorer si vous avez des projets perso (GitHub) ou une expérience proche (ex : gestion de site WordPress).*\n\n---\n**⚠ Attention aux pièges**\n- **Formations non certifiantes** : méfiez-vous des bootcamps sans titre RNCP (ex : \"certificat\" maison) — vérifiez la fiche [France Compétences](https://www.francecompetences.fr) (recherchez le numéro RNCP).\n- **Solde CPF insuffisant** : si votre compte affiche < 500€, combinez avec un **CPF de transition professionnelle** (via votre OPCO) ou un **financement Pôle Emploi** (si chômage partiel).\n- **Promesses d’embauche** : aucune formation ne garantit un CDI. Ciblez les titres avec **>70% d’insertion** (ex : RNCP 31114 ou 34668 — connaissances générales).\n\n---\n**Question pour vous** :\nAvez-vous déjà codé (même en hobby) ou préférez-vous un parcours \"zéro base\" encadré ? Cela change radicalement le choix entre VAE, bootcamp intensif, ou formation longue.",
+      "elapsed_pipeline_s": 28.41,
+      "fact_check_summary": {
+        "n_stats_total": 3,
+        "n_verified": 1,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 1,
+        "n_with_disclaimer": 2,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "granularities_top_k": {
+        "voie": 1,
+        "dispositif": 1
+      }
+    },
+    {
+      "query_id": "financement_q02_bourse_crous_echelons",
+      "axe_target": "axe4_financement",
+      "query_text": "Comment fonctionnent les échelons de la bourse CROUS ? Combien je peux toucher ?",
+      "answer_text": "**TL;DR**\n1. La bourse CROUS est calculée sur **8 échelons** (0bis à 7), en fonction des revenus familiaux et de la distance entre domicile et lieu d’études.\n2. Montant 2024-2025 : **de 1 000 € à 6 000 €/an** (versés en 10 mensualités).\n3. **Simule ton éligibilité** sur [mesdroitssociaux.gouv.fr](https://www.mesdroitssociaux.gouv.fr) avant de faire ta demande.\n\n---\n\n### **Plan A — Bourse CROUS classique (échelons 0bis à 7)**\n**Montants 2024-2025** (connaissance générale) :\n- **Échelon 0bis** : 1 000 €/an (étudiants autonomes ou situations particulières).\n- **Échelon 1** : 1 700 €/an.\n- **Échelon 2** : 2 500 €/an.\n- **Échelon 3** : 3 300 €/an.\n- **Échelon 4** : 4 100 €/an.\n- **Échelon 5** : 4 800 €/an.\n- **Échelon 6** : 5 500 €/an.\n- **Échelon 7** : 6 000 €/an.\n\n*Pour toi* : L’échelon dépend **uniquement des revenus fiscaux 2023 de tes parents** (ou les tiens si tu es indépendant) et de ta situation (logement, distance). **Pas de notes ou de mérite académique**.\n\n---\n\n### **Plan B — Aides complémentaires (si bourse insuffisante)**\n1. **Aide à la mobilité** (CROUS) : **1 000 €/an** si tu déménages pour tes études (sous conditions de ressources).\n2. **Aide spécifique annuelle** : **jusqu’à 2 000 €** pour les étudiants en grande difficulté (dossier social à déposer au CROUS).\n3. **Erasmus+** : **200-500 €/mois** en plus de la bourse si tu pars à l’étranger.\n\n*Pour toi* : Ces aides s’**ajoutent** à la bourse de base. Exemple : échelon 4 (4 100 €) + mobilité (1 000 €) = **5 100 €/an**.\n\n---\n### **Plan C — Alternatives si non éligible à la bourse CROUS**\n- **Bourse de lycée** (si tu es en études supérieures **mais encore mineur** ou en classe prépa intégrée) : jusqu’à **900 €/an**.\n- **Aides locales** : Certaines régions (Île-de-France, Nouvelle-Aquitaine) ou villes (Paris, Lyon) proposent des compléments (**200-800 €/an**).\n- **Jobs étudiants** : Les universités proposent souvent des **contrats CIVIS** (6-12 mois, 500-800 €/mois) sans impact sur la bourse.\n\n*Pour toi* : Vérifie les dispositifs de **ta région** (ex : [Île-de-France](https://www.iledefrance.fr/aides-etudiants)).\n\n---\n### **⚠ Attention aux pièges**\n- **Délais** : La demande se fait **entre janvier et mai** pour la rentrée suivante (même si tu n’as pas encore tes résultats).\n- **Changement de situation** : Si tes revenus baissent en 2024 (chômage, divorce), fais une **demande de révision** en cours d’année.\n- **Logement** : La bourse est calculée en fonction de ton **lieu d’études**, pas de ton domicile familial. Un déménagement peut changer ton échelon.\n\n---\n**Question pour toi** :\nAs-tu déjà fait une **simulation officielle** sur [mesdroitssociaux.gouv.fr](https://www.mesdroitssociaux.gouv.fr) ? Si oui, quel échelon est estimé ? Sinon, veux-tu que je t’aide à interpréter les plafonds de revenus ?",
+      "elapsed_pipeline_s": 26.85,
+      "fact_check_summary": {
+        "n_stats_total": 16,
+        "n_verified": 16,
+        "n_verified_strict": 16,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 0,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "granularities_top_k": {
+        "dispositif": 5,
+        "voie": 1
+      }
+    },
+    {
+      "query_id": "financement_q03_handicap_etudes_aides",
+      "axe_target": "axe4_financement",
+      "query_text": "Mon fils a une RQTH et veut faire des études supérieures, quelles aides spécifiques existe-t-il ?",
+      "answer_text": "**TL;DR**\n1. Votre fils peut bénéficier d’aides financières, d’aménagements pédagogiques et d’un accompagnement personnalisé pour ses études supérieures.\n2. **3 leviers clés** : aides de l’AGEFIPH (jusqu’à 10 000€/an), accompagnement par les **Relais Handicap** des universités, et formations spécialisées (ex : **chargé d’accompagnement handicap**).\n3. **Première étape** : faire reconnaître son handicap auprès de la **MDPH** (Maison Départementale des Personnes Handicapées) pour débloquer les droits.\n\n---\n\n### **Plan A — Aides financières et matérielles (priorité)**\n📍 **Aides AGEFIPH** (national) — jusqu’à **10 000€/an** pour frais de scolarité, matériel adapté, transport, ou hébergement (ex : logiciels de transcription, interprète LSF).\n*Pour vous : à demander **dès l’inscription** via [agefiph.fr](https://www.agefiph.fr). Cumulable avec les bourses sur critères sociaux.*\n*(connaissance générale : montants indicatifs, à confirmer selon le projet)*\n\n📍 **Bourses spécifiques** — **Allocation d’Éducation de l’Adult Handicapé (AEAH)** si études en alternance, ou **complément handicap** pour les boursiers CROUS.\n*Pour vous : contactez la **MDPH** de votre département pour évaluer l’éligibilité.*\n\n---\n\n### **Plan B — Accompagnement pédagogique et humain**\n📍 **Relais Handicap des universités** (toutes les facs/écoles publiques) — **aménagements gratuits** : temps supplémentaire aux examens, cours en ligne, tuteurs, interprètes LSF.\n*Pour vous : prendre RDV **dès la pré-rentrée** avec le service handicap de l’établissement visé.*\n*(connaissance générale : obligatoire par loi 2005, mais qualité variable selon les universités)*\n\n📍 **Formation de Chargé/e d’accompagnement des étudiants en situation de handicap** (ex : **Université de Bordeaux**, **Lyon 2**) — **bac+3** pour travailler dans les services handicap des établissements.\n*Pour vous : si votre fils envisage un métier dans l’accompagnement, ces formations sont **accessibles avec un bac** et souvent en alternance.*\n\n---\n### **Plan C — Formations adaptées et passerelles**\n📍 **Formations en alternance avec accompagnement renforcé** — Ex : **BTS ou Bachelor en RH/Insertion** (avec tuteur dédié via **Cap Emploi** ou **AGEFIPH**).\n*Pour vous : idéal pour allier théorie, pratique, et revenu. Ex : **Certificat RNCP \"Assistant RH\"** (Fiche 6) en 1 an post-bac.*\n*(connaissance générale : l’alternance réduit le coût des études et facilite l’insertion)*\n\n📍 **Dispositif **PASERELLE** (Parcours d’Accès aux Études Supérieures pour Étudiants en Situation de Handicap)** — Certaines universités (ex : **Sorbonne Nouvelle**) proposent des **années de mise à niveau** avec soutien personnalisé.\n*Pour vous : solution si votre fils a besoin d’un **rythme adapté** avant d’intégrer une filière classique.*\n\n---\n### **⚠ Attention aux pièges**\n- **Délais administratifs** : La reconnaissance RQTH via la MDPH peut prendre **6 à 12 mois** — **anticipez** avant la rentrée.\n- **Inégalités entre établissements** : Les **écoles privées** ne sont pas toutes équipées pour l’accueil handicap (vérifiez les **labels \"Handi’Accueil\"**).\n- **Cumul des aides** : Certaines aides (AGEFIPH, CROUS) sont **compatibles**, mais avec des plafonds — faites une **simulation** avec un conseiller **Pôle Emploi** ou **MDPH**.\n\n---\n**Question pour vous** :\nVotre fils a-t-il déjà une idée du **domaine d’études** (santé, numérique, social…) ou du **type de formation** (courte/longue, alternance/classique) qui l’intéresse ? Cela peut aider à affiner les aides et aménagements prioritaires. *(Ex : un BTS en informatique n’aura pas les mêmes besoins qu’une licence de psycho.)*\n\n---\n👤 **Pour aller plus loin** :\n- **Contactez le numéro vert AGEFIPH** : 0 800 11 10 09 (gratuit, conseils personnalisés).\n- **Trouvez le Relais Handicap** de son futur établissement : [liste officielle](https://www.enseignementsup-recherche.gouv.fr/handicap).\n- **RDV avec un conseiller en insertion** (ex : **Cap Emploi**) pour monter un dossier solide.\n\n*(Sources : AGEFIPH 2024, loi n°2005-102, fiches RNCP Ministère du Travail. Les montants et dispositifs sont susceptibles d’évolution — vérifiez auprès des organismes cités.)*",
+      "elapsed_pipeline_s": 54.04,
+      "fact_check_summary": {
+        "n_stats_total": 10,
+        "n_verified": 9,
+        "n_verified_strict": 9,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 1,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "granularities_top_k": {
+        "dispositif": 1,
+        "voie": 1
+      }
+    },
+    {
+      "query_id": "financement_q04_ptp_reconversion_salarie",
+      "axe_target": "axe4_financement",
+      "query_text": "Le projet de transition professionnelle PTP, c'est pour qui exactement ? Salaire maintenu pendant la formation ?",
+      "answer_text": "**TL;DR**\n1. Le **Projet de Transition Professionnelle (PTP)** s’adresse aux **salariés en CDI** (ou CDD sous conditions) souhaitant se reconvertir ou monter en compétences, avec **au moins 24 mois d’ancienneté** (dont 12 mois dans l’entreprise actuelle).\n2. **Salaire maintenu à 100%** pendant la formation (plafonné à 2x le SMIC mensuel, soit ~3 100€ brut en 2026) si la formation est suivie **hors temps de travail**. En cas de formation **pendant le temps de travail**, maintien partiel (50-80% selon accord employeur).\n3. **Étape clé** : obtenir l’accord de l’employeur (refus possible, mais motivé) et choisir une formation **éligible** (certifiante, RNCP, ou reconnue par les branches pro).\n\n---\n\n### **Plan A — PTP classique : pour les salariés en CDI avec accord employeur**\n**Conditions strictes** (connaissance générale) :\n- **Public** : Salariés en CDI (ou CDD de +24 mois consécutifs, dont 4 mois dans l’entreprise actuelle).\n- **Ancienneté** : 24 mois **tous contrats confondus** (dont 12 mois dans l’entreprise actuelle).\n- **Formation** : Certifiante (RNCP, titre pro, CQP), **max 1 an** (1 200h max), en lien avec un **projet de reconversion ou d’évolution**.\n- **Financement** : OPCO de l’entreprise (ex : Atlas, AKTO) ou CPF si complément nécessaire.\n\n**Démarches** (connaissance générale) :\n1. **Identifier une formation éligible** (liste sur [Mon Compte Formation](https://www.moncompteformation.gouv.fr) ou via votre OPCO).\n2. **Faire une demande écrite** à l’employeur **au moins 60 jours avant** le début (120 jours si formation > 6 mois).\n3. **L’employeur a 30 jours** pour répondre. **Refus possible**, mais doit être justifié (ex : absence de remplacement, formation non prioritaire pour l’entreprise).\n4. **Si accord** : signature d’un **avenant au contrat** précisant modalités (maintien de salaire, durée, etc.).\n\n**Pour vous** : Idéal si vous êtes en CDI avec un employeur ouvert à la mobilité interne/externale. **Risque** : refus possible (surtout dans les PME/TPE).\n\n---\n\n### **Plan B — Pro-A : alternative si PTP refusé ou inéligible (CDD, intérim, chômeurs)**\n📍 **Pro-A (Reconversion ou Promotion par Alternance)** — Dispositif pour **demandeurs d’emploi, CDD, intérimaires**, avec **salaire en % du SMIC** (55-100% selon âge) + formation gratuite.\n*(connaissance générale)*\n\n**Conditions** :\n- **Public** : Chômeurs inscrits à Pôle Emploi **ou** salariés en CDD/intérim (pas d’ancienneté requise).\n- **Formation** : **Certifiante** (RNCP niveau 3 à 7), en alternance (contrat pro ou apprentissage).\n- **Rémunération** :\n  - **< 26 ans** : 55-65% du SMIC (~900-1 100€ net).\n  - **26+ ans** : 85-100% du SMIC (~1 300-1 700€ net).\n- **Durée** : 6 à 24 mois.\n\n**Pour vous** : Solution si vous êtes **exclu du PTP** (CDD, intérim) ou si votre employeur refuse. **Avantage** : pas besoin de son accord. **Inconvénient** : salaire réduit vs PTP.\n\n---\n### **Plan C — AREF / Allocation Formation Pôle Emploi : pour les chômeurs en formation longue**\n📍 **AREF (Aide au Retour à l’Emploi Formation)** — Pour **chômeurs** en formation **non rémunérée** (ex : AFPA, GRETA), avec **maintien partiel des allocations chômage** + prime de 500€/mois max.\n*(connaissance générale)*\n\n**Conditions** :\n- **Public** : Demandeurs d’emploi **indemnisés** (ARE) ou non (sous conditions de ressources).\n- **Formation** : **Non éligible à l’alternance**, mais certifiante (ex : titre pro RNCP).\n- **Financement** :\n  - **Maintien de l’ARE** (si éligible) + **prime de 500€/mois** (plafond).\n  - **Pas de salaire**, mais couverture partielle du manque à gagner.\n- **Durée** : Jusqu’à 24 mois (selon droits restants).\n\n**Pour vous** : Dernier recours si **ni PTP ni Pro-A** ne sont accessibles. **Attention** : revenus très inférieurs à un salaire classique.\n\n---\n### **⚠ Pièges à éviter**\n1. **PTP ≠ droit automatique** : L’employeur peut refuser (surtout dans les petites structures). **Préparez un argumentaire** (projet réaliste, bénéfice pour l’entreprise).\n2. **Formations éligibles** : Vérifiez que la formation est **RNCP ou reconnue par votre OPCO** (ex : un DU universitaire non certifiant = refus garanti).\n3. **Délais** : Comptez **3-6 mois** entre la demande et le début de la formation (démarches administratives + accord employeur).\n\n---\n**Question pour vous** :\n- Êtes-vous **en CDI avec 24 mois d’ancienneté** (PTP) ou plutôt **en CDD/chômage** (Pro-A/AREF) ?\n- Votre employeur est-il **ouvert à la mobilité** (clé pour le PTP) ou plutôt **réfractaire aux absences longues** ?\n- Préférez-vous une **formation courte et ciblée** (PTP) ou un **parcours plus long en alternance** (Pro-A) pour sécuriser un salaire ?\n\n---\n👤 **Pour un accompagnement personnalisé**, contactez :\n- Votre **OPCO** (liste [ici](https://travail-emploi.gouv.fr/formation-professionnelle/acteurs/opco)) pour valider l’éligibilité.\n- Un **conseiller Pôle Emploi** (si chômeur) ou le **service RH de votre entreprise**.\n- Les **CIO (Centres d’Information et d’Orientation)** pour affiner votre projet.",
+      "elapsed_pipeline_s": 43.35,
+      "fact_check_summary": {
+        "n_stats_total": 16,
+        "n_verified": 16,
+        "n_verified_strict": 14,
+        "n_verified_by_source": 2,
+        "n_with_disclaimer": 0,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "granularities_top_k": {
+        "dispositif": 3,
+        "voie": 1
+      }
+    }
+  ]
+}

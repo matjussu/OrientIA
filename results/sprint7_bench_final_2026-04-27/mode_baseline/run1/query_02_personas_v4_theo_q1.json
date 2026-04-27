@@ -1,0 +1,38 @@
+{
+  "suite": "personas_v4",
+  "query_id": "theo_q1",
+  "query_text": "Quelles passerelles existent après une L1/L2 de droit pour aller vers un BTS ou une école de commerce ?",
+  "answer_text": "**TL;DR**\n1. Après une L1/L2 de droit, **2 passerelles principales** : BTS en 1 an (accéléré) ou école de commerce via admissions parallèles.\n2. **Calendrier clé** : candidatures BTS dès janvier (Parcoursup), concours commerce entre mars et mai (Passerelle, Tremplin).\n3. **Stratégie gagnante** : valide ta L2 pour garder la porte ouverte aux masters, puis spécialise-toi en BTS ou commerce.\n\n---\n\n### **Plan A — Passerelle rapide : BTS en 1 an (accéléré)**\n📍 **BTS Assurance** (partout en France) — bac+2 public, **accès possible en 1 an** après L2 (validation d’acquis), 80% d’insertion pro · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.574)\n*Pour toi : idéal si tu veux un métier concret vite (courtier, gestionnaire de sinistres). Contacte les lycées dès maintenant pour valider ton éligibilité.*\n\n**Étapes concrètes** :\n1. **Décembre-janvier** : Candidate sur Parcoursup en cochant **\"Admission en 1 an\"** (certains BTS l’autorisent pour les L2).\n2. **Février** : Fais reconnaître tes crédits ECTS via une **demande de validation d’acquis** (dossier à envoyer au rectorat ou au lycée visé).\n3. **Septembre** : Intègre le BTS en **année intensive** (rythme soutenu, mais diplôme en 1 an).\n\n*(connaissance générale)* : Autres BTS accessibles : **BTS NDRC** (négociation relation client) ou **BTS Gestion de la PME**, souvent ouverts aux profils L2 avec motivation.\n\n---\n\n### **Plan B — Écoles de commerce : admissions parallèles (bac+3)**\n*(connaissance générale)* : Les écoles de commerce recrutent massivement **à bac+2/+3** via des concours spécifiques. Avec ta L2 de droit, tu peux viser :\n- **Concours Passerelle 1** (pour intégrer une école en 3e année, bac+3) : **15-20 écoles** (ex : Rennes SB, EM Strasbourg).\n- **Concours Tremplin 1** (accès à des écoles comme KEDGE, NEOMA) : **30-40% de taux d’admission** pour les profils universitaires motivés.\n\n**Étapes concrètes** :\n1. **Novembre-décembre** : Prépare les concours en **3-6 mois** (annales gratuites sur [concours-passerelle.fr](https://www.concours-passerelle.fr)).\n   - *Focus* : **TAGE MAGE** (logique/maths) + **TOEIC** (anglais) + **entretien de motivation** (ton parcours droit = atout pour les doubles compétences).\n2. **Mars-avril** : Passe les concours (frais ~200-300€, bourses possibles).\n3. **Septembre** : Intègre l’école en **3e année** (diplôme bac+5 en 2 ans).\n\n**Astuce** : Ton background en droit est un **plus** pour les spécialisations en **droit des affaires**, **compliance**, ou **management international**.\n\n---\n### **Plan C — Alternative flexible : Licence Pro + admission parallèle**\n*(connaissance générale)* : Si tu veux **combiner droit et commerce**, une **Licence Pro** (bac+3) en **1 an après ta L2** peut être un tremplin :\n- Exemples : **Licence Pro Métiers du notariat**, **Licence Pro Assurance-Banque-Finance** (recherche sur [trouvermonmaster.gouv.fr](https://www.trouvermonmaster.gouv.fr)).\n- **Avantage** : Diplôme pro en 1 an + possibilité de continuer en **master commerce** (via admissions parallèles) ou de travailler directement.\n\n**Étapes** :\n1. **Janvier-février** : Candidate sur **Parcoursup** (licences pro) ou **eCandidat** (pour les facs).\n2. **Juillet** : Si admis, valide ta L2 **en parallèle** (certains cursus acceptent les redoublants avec projet clair).\n3. **Septembre** : Commence ta Licence Pro, puis tente un **master commerce** l’année suivante.\n\n---\n### **⚠ Attention**\n- **Piège BTS** : Certains lycées refusent l’admission en 1 an sans **accord préalable** du rectorat. Contacte-les **avant de candidater**.\n- **Piège écoles de commerce** : Les frais de scolarité (8k-12k€/an) peuvent être un frein. Pense aux **bourses CROUS**, **alternance** (réduit les coûts), ou **écoles publiques** (IAE).\n\n---\n**Question pour toi** :\nPréfères-tu une **sortie pro rapide** (BTS/Licence Pro) ou un **diplôme bac+5** (école de commerce) avec un investissement plus long ? Ton choix dépend aussi de ton budget et de ta mobilité géographique.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 37.69,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 3.76,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 5,
+    "n_verified": 3,
+    "n_verified_strict": 3,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "parcours_bacheliers"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_parcours_bacheliers",
+    "_parcours_bacheliers",
+    "_parcours_bacheliers"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "suite": "voie_pre_bac_dedie",
+  "query_id": "voie_pre_bac_q01_bac_pro_industrie_liste",
+  "query_text": "Quels sont tous les bac pro dans le domaine industriel ? Mon fils en 3ème veut faire de la mécanique.",
+  "answer_text": "**TL;DR**\n1. Les **bacs pro industriels** couvrent la mécanique, l’électrotechnique, la maintenance, et la production. Ils se préparent en 3 ans après la 3ème, avec 22 semaines de stage en entreprise.\n2. Pour la **mécanique pure**, 2 options principales : **Bac Pro Technicien d’Usinage** (fabrication de pièces) ou **Bac Pro Maintenance des Équipements Industriels** (réparation).\n3. **Alternatives** : un CAP Mécanique en 2 ans (plus opérationnel) ou un bac pro en apprentissage (rémunéré).\n\n---\n\n### **Plan A — Bac Pro Mécanique (classique ou apprentissage)**\n📍 **Bac Pro Technicien d’Usinage** (lycées pros/publics) — bac+3, **100% en présentiel ou apprentissage**, taux d’insertion ~70% (connaissance générale).\n*Pour toi : idéal si ton fils aime fabriquer des pièces (tour, fraiseuse) et vise un emploi rapide en usine ou aérospatial.*\n→ Exemples d’établissements :\n- **Lycée des Métiers de l’Industrie (Lyon)** · [Annuaire ONISEP](https://www.onisep.fr)\n- **Lycée Professionnel Aristide Briand (Saint-Nazaire)** — forte demande en mécanique navale.\n\n📍 **Bac Pro Maintenance des Équipements Industriels (MEI)** — bac+3, **alternance possible**, débouchés en maintenance aéronautique/automobile.\n*Pour toi : mieux si il préfère réparer que fabriquer, avec un salaire médian ~1 800€ en début de carrière (connaissance générale).*\n\n---\n\n### **Plan B — CAP Mécanique (plus court, plus technique)**\n📍 **CAP Réparation des Carrosseries** ou **CAP Conducteur d’Installations de Production** — **2 ans**, 50% de temps en entreprise.\n*Pour toi : solution si ton fils veut un diplôme rapide et un métier manuel immédiat (ex : garagiste, opérateur machine).*\n→ **Avantage** : possibilité de continuer vers un bac pro en 1 an après le CAP.\n\n---\n\n### **Plan C — Alternatives si hésitation sur la mécanique pure**\n1. **Bac Pro Pilote de Ligne de Production** : pour travailler sur des chaînes automatisées (ex : agroalimentaire, pharmacie).\n2. **Bac Pro Aéronautique** (option systèmes) : si passion aviation, mais **sélectif** (dossier scolaire scrutiné).\n3. **Bac Pro Métiers de l’Électricité** : complémentaire à la mécanique (double compétence recherchée).\n\n---\n### **⚠ Attention aux pièges**\n- **Évite les écoles privées non contractuelles** : certains bacs pro \"spécialisés\" (ex : mécanique de compétition) coûtent 3 000€/an sans garantie d’emploi. Privilégie **l’enseignement public ou les CFA** (gratuit et rémunéré en apprentissage).\n- **Stages obligatoires** : 22 semaines sur 3 ans → vérifie que des entreprises locales (garages, usines) acceptent les mineurs.\n- **Poursuite d’études** : un bac pro permet un BTS (ex : BTS Mécanique), mais **seulement 30% des titulaires continuent** (la plupart entrent dans la vie active).\n\n---\n**Question pour toi :**\nTon fils a-t-il déjà une idée précise de son projet (ex : travailler dans l’aéronautique, l’automobile, ou une usine) ? Cela peut aider à choisir entre **usinage** (fabrication), **maintenance** (réparation), ou un **CAP plus court**. *(Un test d’orientation comme [Horizons21](https://horizons21.fr) peut aussi l’aider à affiner.)*\n\n---\n**👤 Pour aller plus loin**\n- **Trouver un lycée près de chez vous** : [Carte des formations ONISEP](https://www.onisep.fr/Trouver-ma-formation).\n- **Rencontrer des pros** : les forums métiers (ex : [Salon des Métiers de l’Industrie](https://www.industrie.gouv.fr)) permettent de discuter avec des mécaniciens.\n- **Alternative** : si ton fils est manuel mais hésite sur l’industrie, explore les **CAP Menuisier ou Électrotechnique** (même famille de compétences).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 33.93,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 2.11,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 4,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "metier_prospective",
+    "voie_pre_bac"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "fap_region",
+    "fap_region",
+    "bac_pro_domaine",
+    "fap_region",
+    "bac_pro_domaine"
+  ]
+}

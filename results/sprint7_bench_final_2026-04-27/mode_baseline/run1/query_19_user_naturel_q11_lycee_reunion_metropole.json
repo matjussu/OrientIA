@@ -1,0 +1,37 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q11_lycee_reunion_metropole",
+  "query_text": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options s'offrent à moi ?",
+  "answer_text": "**TL;DR**\n1. **Tu peux étudier le numérique en métropole** dès bac+1 ou après un bac+2/3 à La Réunion.\n2. **3 options concrètes** : BUT en métropole (accès direct), licence pro web à distance (alternance possible), ou licence locale + mobilité en master.\n3. **Budget et logistique** sont les points clés à anticiper (logement, aides comme les bourses sur critères sociaux).\n\n---\n\n### **Plan A — Réaliste : BUT en métropole (accès direct après le bac)**\n📍 **BUT Métiers du Multimédia et de l’Internet (MMI)** — **public, bac+3, grade Licence**, sélectivité modérée (30-60% selon IUT)\n*Exemples d’IUT en métropole :*\n- **IUT de Bobigny** (Paris) — [fiche Parcoursup](https://www.parcoursup.fr) *(connaissance générale : ~50% de taux d’accès, alternance possible en 3e année)*\n- **IUT de Bordeaux** — spécialité *Création numérique* *(connaissance générale : forte insertion pro, réseau local dynamique)*\n- **IUT de Lyon 1** — parcours *Développement web* *(connaissance générale : partenariats avec des entreprises comme Capgemini)*\n*Pour toi :* **Accessible avec un dossier moyen** (même sans mention au bac), formation polyvalente (code, design, gestion de projet) et **reconnue par les entreprises**. Logement étudiant à prévoir (CROUS, colocations).\n\n---\n\n### **Plan B — Flexible : Licence pro web à distance (alternance possible)**\n📍 **Licence pro métiers du numérique : conception, rédaction et réalisation web** — **bac+3, en alternance ou formation continue**\n*Exemples :*\n- **CNAM (Conservatoire National des Arts et Métiers)** — 100% à distance + stages *(connaissance générale : idéal si tu veux rester à La Réunion en partie)*\n- **Université de Limoges** — licence pro *Webmaster* en hybride *(connaissance générale : taux d’insertion ~70% à 6 mois)*\n*Pour toi :* **Solution si tu veux éviter un déménagement immédiat** ou combiner études et travail. L’alternance te permet d’être payé·e (~600-800€/mois en contrat pro).\n\n---\n### **Plan C — Étape par étape : Commencer à La Réunion, puis mobilité**\n📍 **Licence Maths-Info ou Info-Com à l’Université de La Réunion** — **bac+3 public, 100% accessible** *(sources : [Parcoursup Saint-Denis](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=27460) ou [MIASHS](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=26392))*\n*Pour toi :* **Peu sélective** (100% d’accès en 2025), coût quasi-nul (bourses possibles). Ensuite, **master en métropole** (ex : master *Informatique* à Toulouse ou *Numérique et Société* à Paris) avec les dispositifs de mobilité comme **Parcoursup Pass** ou les **échanges Erasmus**.\n\n---\n### **⚠ Attention aux pièges**\n- **Coût de la vie en métropole** : Compte **600-900€/mois** pour un studio (hors aides). Vérifie ton éligibilité aux [bourses CROUS](https://www.messervices.etudiant.gouv.fr/).\n- **Alternance = double projet** : Trouver une entreprise **avant** la rentrée est obligatoire pour certains BUT/licences pro. Prévois du temps pour les recherches (plateformes comme [l’Alternance.fr](https://www.lalternance.fr/)).\n- **Écoles privées** : Méfie-toi des formations type \"bachelor web\" à **8 000€/an** sans grade Licence/Master (ex : MyDigitalSchool). Privilégie le **public** ou les titres RNCP reconnus.\n\n---\n**Question pour toi :**\nEst-ce que tu préfères **partir tout de suite** (même avec un budget serré) ou **rester 1-2 ans à La Réunion** pour préparer ta mobilité financièrement ? *(Exemple : un BTS SIO en local + alternance peut te faire gagner de l’argent avant un BUT en métropole.)*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 31.75,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 3.57,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 1,
+    "n_verified_strict": 1,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "formation_france",
+    "_formation",
+    "formation_region_diplome",
+    "formation_france",
+    "formation_france",
+    "_formation",
+    "_formation"
+  ]
+}

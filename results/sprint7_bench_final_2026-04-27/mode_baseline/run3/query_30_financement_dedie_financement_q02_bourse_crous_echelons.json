@@ -1,0 +1,36 @@
+{
+  "suite": "financement_dedie",
+  "query_id": "financement_q02_bourse_crous_echelons",
+  "query_text": "Comment fonctionnent les échelons de la bourse CROUS ? Combien je peux toucher ?",
+  "answer_text": "**TL;DR**\n1. La bourse CROUS est calculée sur **8 échelons** (0 à 7) en fonction des revenus familiaux et de la distance entre domicile et lieu d’études.\n2. Montant 2024-2025 : **de 0€ (échelon 0bis) à 6 079€/an (échelon 7)** — versé en 10 mensualités.\n3. **Simule ton éligibilité** sur [mesdroitssociaux.gouv.fr](https://www.mesdroitssociaux.gouv.fr) avant de faire une demande.\n\n---\n\n### **Plan A — Bourse \"classique\" (échelons 1 à 7)**\n**Montants 2024-2025** (connaissance générale) :\n- **Échelon 0bis** : 0€ (seuil d’éligibilité non atteint)\n- **Échelon 1** : 1 084€/an → **Échelon 7** : 6 079€/an\n*Pour toi* : Si tes parents gagnent **moins de 35 000€/an** (pour un foyer de 2 enfants), tu peux prétendre à un échelon ≥1. La distance (déménagement ou non) augmente l’échelon.\n\n### **Plan B — Bourse échelon 0bis + aides complémentaires**\nMême si tu es **échelon 0bis** (0€ de bourse), tu peux cumuler :\n- **Aide à la mobilité** (200-1 000€/an si changement d’académie, source : CROUS)\n- **APL/ALS** (100-300€/mois selon logement, connaissance générale)\n*Pour toi* : Vérifie si tu es éligible à l’**aide à la mobilité Parcoursup** (500€ pour les néobacheliers changeant d’académie).\n\n### **Plan C — Situations spécifiques (alternance, reprise d’études, étranger)**\n- **Alternants** : Pas éligible à la bourse CROUS, mais **aide de 500€/an** pour les contrats <800€/mois (connaissance générale).\n- **Étudiants étrangers** : Éligible si **résident UE/EEE depuis +2 ans** ou titulaire d’un titre de séjour valide.\n- **Reprise d’études** : Pas de limite d’âge, mais revenus des **2 dernières années** pris en compte.\n\n---\n**⚠ Attention aux pièges**\n- **Délai** : Demande à faire **avant le 15 mai** pour la rentrée suivante (31 mai pour les redoublants).\n- **Changement de situation** : Un divorce ou chômage des parents en cours d’année ? **Fais une demande de révision** (formulaire sur [messervices.etudiant.gouv.fr](https://messervices.etudiant.gouv.fr)).\n- **Faux-ami** : La bourse n’est **pas automatique** même si tu l’as eue au lycée — les critères changent dans le supérieur.\n\n---\n**Question pour toi** :\nAs-tu déjà utilisé le **simulateur officiel** [mesdroitssociaux.gouv.fr](https://www.mesdroitssociaux.gouv.fr) ? Si oui, quel échelon estime-t-il pour toi ? *(Cela permet d’affiner les aides complémentaires.)*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 26.57,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 6.25,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 11,
+    "n_verified": 8,
+    "n_verified_strict": 8,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "financement_etudes"
+  ],
+  "granularities_top_k": [
+    "dispositif",
+    "voie",
+    "dispositif",
+    "dispositif",
+    "dispositif",
+    "dispositif",
+    "dispositif",
+    "dispositif"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "suite": "drom_dedie",
+  "query_id": "drom_q04_martinique_chomage_jeunes",
+  "query_text": "Le chômage des jeunes en Martinique est de combien ? Quels secteurs recrutent vraiment ?",
+  "answer_text": "**TL;DR**\n1. Le chômage des jeunes (15-29 ans) en Martinique atteint **~40%** (connaissance générale, estimation INSEE/DOM 2023), soit **2x la moyenne nationale**.\n2. **3 secteurs recrutent activement** : tourisme (hôtellerie-restauration), santé-social (EHPAD, aide à domicile), et BTP (reconstruction post-ouragans).\n3. **Pistes concrètes** : formations courtes qualifiantes (CAP à bac+2) + mobilité vers la Guyane ou l’Hexagone pour les profils tech/ingénierie.\n\n---\n\n### **Plan A — Secteurs porteurs en Martinique (embauche immédiate)**\n- **Tourisme** : 60% des offres d’emploi (connaissance générale, Pôle Emploi DOM 2024). Besoins criants en **serveurs, cuisiniers, agents d’accueil** (saisons haute déc. à avril).\n  *Pour toi* : **CAP/Bac Pro** en 1-2 ans (lycées pro de Ducos ou Lamentin) + CDD saisonniers → CDI.\n- **Santé-social** : Vieillissement de la population → **aides-soignants, auxiliaires de vie** (formations rémunérées via **AFPR** ou **POEI**).\n  *Pour toi* : **Diplôme d’État (DE) en 10-18 mois**, 100% d’insertion (connaissance générale, Céreq DOM).\n\n### **Plan B — Secteurs en tension avec formation (3-5 ans)**\n- **BTP/Énergies renouvelables** : Reconstruction post-**Fiona (2022)** + transition énergétique → **techniciens en solaire, électriciens, conducteurs de travaux**.\n  *Pour toi* : **BTS Travaux Publics** (Lycée Acajou, Le Lamentin) ou **BP Métiers de la piscine** (CFA Martinique), salaires **1 800-2 200€/mois** en sortie (connaissance générale, baromètre FFB DOM).\n- **Numérique** : Développement des **téléservices** (administration, banques) → **BTS SIO** (Lycée Joseph Gaillard) ou **formations Simplon.co** (gratuit, 6 mois).\n\n### **Plan C — Mobilité ou création d’activité**\n- **Guyane/Hexagone** : Secteurs **aéronautique (Guyane)** ou **tech (métropole)** recrutent des Martiniquais (aides à la mobilité via **Pôle Emploi DOM**).\n- **Entrepreneuriat** : Aides **ACRE** (exonérations charges) + **Bourse French Tech** pour les projets digitaux. Ex : **livraison de produits locaux** (circuits courts).\n\n---\n**⚠ Attention aux pièges**\n- **Formations longues sans débouchés locaux** : Évite les **licences générales** (droit, psycho) sans projet de mobilité — **taux de chômage >50%** pour ces diplômés en Martinique (connaissance générale, Céreq 2022).\n- **Salaire vs coût de la vie** : Un SMIC martiniquais (1 398€ net) couvre difficilement un loyer seul (500-700€/mois). **Logement intergénérationnel** ou colocation souvent nécessaires.\n- **Concurrence informelle** : 30% des emplois dans le **secteur non déclaré** (connaissance générale, INSEE 2023) — privilégie les contrats officiels pour cotiser (retraite, chômage).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **un métier manuel avec embauche rapide** (Plan A), **une formation technique de 2-3 ans** (Plan B), ou **un projet à l’extérieur/montage de boite** (Plan C) ? Cela peut affiner les pistes.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 32.06,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 2.98,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 8,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 4,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation_insertion",
+    "metier_prospective",
+    "territoire_drom"
+  ],
+  "granularities_top_k": [
+    "territoire",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "_metier_prospective",
+    "formation_region_diplome",
+    "_metier_prospective",
+    "formation_region_diplome"
+  ]
+}

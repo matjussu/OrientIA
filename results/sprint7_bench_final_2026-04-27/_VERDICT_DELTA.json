@@ -1,0 +1,168 @@
+{
+  "baseline_aggregate": {
+    "mode": "baseline",
+    "n_runs": 3,
+    "n_queries_per_run": 38,
+    "pct_verified": {
+      "mean": 30.8,
+      "std": 0.42,
+      "ic95": 1.03,
+      "per_run": [
+        30.5,
+        31.3,
+        30.7
+      ]
+    },
+    "pct_hallucinated": {
+      "mean": 16.8,
+      "std": 3.3,
+      "ic95": 8.19,
+      "per_run": [
+        13.9,
+        16.2,
+        20.4
+      ]
+    },
+    "avg_pipeline_s": {
+      "mean": 39.96,
+      "std": 2.76
+    },
+    "total_critic_modifications": 0,
+    "runs": [
+      {
+        "run": "run1",
+        "n_queries": 38,
+        "n_success": 38,
+        "n_total_stats": 331,
+        "n_verified": 101,
+        "n_verified_strict": 97,
+        "n_verified_by_source": 4,
+        "n_hallucinated": 46,
+        "n_with_disclaimer": 183,
+        "pct_verified": 30.5,
+        "pct_hallucinated": 13.9,
+        "pct_disclaimer": 55.3,
+        "avg_pipeline_s": 38.04,
+        "total_critic_modifications": 0
+      },
+      {
+        "run": "run2",
+        "n_queries": 38,
+        "n_success": 38,
+        "n_total_stats": 297,
+        "n_verified": 93,
+        "n_verified_strict": 91,
+        "n_verified_by_source": 2,
+        "n_hallucinated": 48,
+        "n_with_disclaimer": 156,
+        "pct_verified": 31.3,
+        "pct_hallucinated": 16.2,
+        "pct_disclaimer": 52.5,
+        "avg_pipeline_s": 43.12,
+        "total_critic_modifications": 0
+      },
+      {
+        "run": "run3",
+        "n_queries": 38,
+        "n_success": 38,
+        "n_total_stats": 319,
+        "n_verified": 98,
+        "n_verified_strict": 93,
+        "n_verified_by_source": 5,
+        "n_hallucinated": 65,
+        "n_with_disclaimer": 156,
+        "pct_verified": 30.7,
+        "pct_hallucinated": 20.4,
+        "pct_disclaimer": 48.9,
+        "avg_pipeline_s": 38.72,
+        "total_critic_modifications": 0
+      }
+    ]
+  },
+  "both_aggregate": {
+    "mode": "both",
+    "n_runs": 3,
+    "n_queries_per_run": 38,
+    "pct_verified": {
+      "mean": 29.4,
+      "std": 4.86,
+      "ic95": 12.07,
+      "per_run": [
+        24.4,
+        29.7,
+        34.1
+      ]
+    },
+    "pct_hallucinated": {
+      "mean": 25.6,
+      "std": 8.31,
+      "ic95": 20.65,
+      "per_run": [
+        31.0,
+        29.7,
+        16.0
+      ]
+    },
+    "avg_pipeline_s": {
+      "mean": 41.91,
+      "std": 17.41
+    },
+    "total_critic_modifications": 266,
+    "runs": [
+      {
+        "run": "run1",
+        "n_queries": 38,
+        "n_success": 38,
+        "n_total_stats": 361,
+        "n_verified": 88,
+        "n_verified_strict": 83,
+        "n_verified_by_source": 5,
+        "n_hallucinated": 112,
+        "n_with_disclaimer": 161,
+        "pct_verified": 24.4,
+        "pct_hallucinated": 31.0,
+        "pct_disclaimer": 44.6,
+        "avg_pipeline_s": 61.55,
+        "total_critic_modifications": 78
+      },
+      {
+        "run": "run2",
+        "n_queries": 38,
+        "n_success": 37,
+        "n_total_stats": 313,
+        "n_verified": 93,
+        "n_verified_strict": 80,
+        "n_verified_by_source": 13,
+        "n_hallucinated": 93,
+        "n_with_disclaimer": 127,
+        "pct_verified": 29.7,
+        "pct_hallucinated": 29.7,
+        "pct_disclaimer": 40.6,
+        "avg_pipeline_s": 35.82,
+        "total_critic_modifications": 87
+      },
+      {
+        "run": "run3",
+        "n_queries": 38,
+        "n_success": 38,
+        "n_total_stats": 343,
+        "n_verified": 117,
+        "n_verified_strict": 108,
+        "n_verified_by_source": 9,
+        "n_hallucinated": 55,
+        "n_with_disclaimer": 171,
+        "pct_verified": 34.1,
+        "pct_hallucinated": 16.0,
+        "pct_disclaimer": 49.9,
+        "avg_pipeline_s": 28.36,
+        "total_critic_modifications": 101
+      }
+    ]
+  },
+  "delta_pct_verified_mean": -1.4,
+  "delta_pct_hallucinated_mean": 8.8,
+  "delta_avg_pipeline_s": 1.95,
+  "total_elapsed_s": 11765.47,
+  "n_queries": 38,
+  "comparable_baseline_sprint56": "39.4% verified ± IC95 3.66pp / 17.9% halluc ± 3.90pp (24q figées)"
+}

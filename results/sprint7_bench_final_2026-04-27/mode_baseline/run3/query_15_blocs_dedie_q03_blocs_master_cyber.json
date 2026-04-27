@@ -1,0 +1,37 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q03_blocs_master_cyber",
+  "query_text": "Quelles compétences certifiées par un master en cybersécurité ?",
+  "answer_text": "**TL;DR**\n1. Un master en cybersécurité certifie des compétences **techniques** (sécurité des réseaux, cryptographie, réponse aux incidents) et **managériales** (gestion des risques, conformité RGPD).\n2. Les certifications professionnelles (CISSP, CEH, ISO 27001) sont souvent intégrées ou préparées en parallèle.\n3. Les métiers visés : RSSI, ingénieur sécurité, pentester — avec des salaires médians élevés (connaissance générale).\n\n---\n\n### **Plan A — Compétences techniques certifiées**\nUn master en cybersécurité valide des savoir-faire **opérationnels** :\n- **Sécurité des systèmes et réseaux** (pare-feu, IDS/IPS, durcissement des OS).\n- **Cryptographie et protection des données** (chiffrement, PKI, gestion des clés).\n- **Détection et réponse aux incidents** (forensique, SOC, analyse des logs).\n- **Tests d’intrusion** (pentesting, vulnérabilités web/applicatives).\n*Exemple* : Le **Master Cybersécurité** (ONISEP [lien](https://www.onisep.fr/http/redirection/formation/slug/FOR.10254)) forme à ces compétences, avec des projets concrets (ex : audit de sécurité, simulation de cyberattaques).\n\n---\n\n### **Plan B — Compétences managériales et réglementaires**\nLe master couvre aussi des **enjeux stratégiques** :\n- **Gestion des risques** (normes ISO 27001, analyse des menaces).\n- **Conformité légale** (RGPD, NIS2, obligations sectorielles comme la directive DORA pour la finance).\n- **Sensibilisation et gouvernance** (formation des utilisateurs, politiques de sécurité).\n*Pourquoi ?* Ces compétences sont critiques pour évoluer vers des postes comme **RSSI** (Responsable de la Sécurité des Systèmes d’Information), où la dimension managériale prime.\n\n---\n### **Plan C — Certifications professionnelles associées**\nLes masters sérieux préparent (ou incluent) des **certifications reconnues** :\n- **CISSP** (Certified Information Systems Security Professional) — standard international.\n- **CEH** (Certified Ethical Hacker) — pour le pentesting.\n- **ISO 27001 Lead Auditor** — pour la gestion des risques.\n- **OSCP** (Offensive Security Certified Professional) — très prisée en cybersécurité offensive.\n*(connaissance générale)* : Ces certifs boostent l’employabilité et sont souvent exigées par les recruteurs.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Master ≠ certifications** : Un diplôme ne remplace pas les certifs (ex : CISSP exige 5 ans d’expérience). Vérifie les prérequis.\n- **Spécialisation précoce** : Certains masters ciblent un domaine (ex : cybersécurité industrielle, cloud security). Choisis en fonction de ton projet.\n- **Alternance obligatoire ?** : Beaucoup de masters en cybersécurité sont en alternance (ex : CNAM, écoles d’ingé). Prépare un CV technique solide.\n\n---\n**Question pour toi** :\nVeux-tu te spécialiser dès le master (ex : sécurité cloud, IoT) ou garder un profil généraliste pour évoluer vers du management (type RSSI) ? *(Cela changera le choix des options et certifications à prioriser.)*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 28.36,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 0.0,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 0,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_competences_certif"
+  ]
+}

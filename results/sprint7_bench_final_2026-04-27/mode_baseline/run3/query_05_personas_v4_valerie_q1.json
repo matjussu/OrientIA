@@ -1,0 +1,36 @@
+{
+  "suite": "personas_v4",
+  "query_id": "valerie_q1",
+  "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+  "answer_text": "**TL;DR**\n1. Une année en école de commerce privée coûte **5 000 à 15 000 €** (hors top 5), contre **0 à 600 €** pour une licence publique.\n2. Les licences pro (bac+3) sont quasi gratuites (frais d’inscription uniquement), tandis que les écoles post-bac privées dépassent souvent **10 000 €/an**.\n3. Le coût n’est pas le seul critère : débouchés, sélectivité et reconnaissance diffèrent radicalement.\n\n---\n\n### **Plan A — Licence publique : coût quasi nul, reconnaissance d’État**\n📍 **Licence Droit** (ex : [Université Paris Cité](https://www.onisep.fr/http/redirection/formation/slug/FOR.9722)) — bac+3 public, **170 €/an** (frais d’inscription 2024), grade Licence.\n*Pour toi : idéal si tu veux un diplôme reconnu sans dette, avec possibilité de spécialisation en master (ex : droit des affaires).*\n\n📍 **Licence Pro Métiers du Commerce International** (ex : [IUT de Bordeaux](https://www.onisep.fr/http/redirection/formation/slug/FOR.11370)) — bac+3 public, **243 €/an**, alternance possible (rémunération ~600-800 €/mois).\n*Pour toi : formation pro proche des entreprises, avec un coût maîtrisé et un taux d’insertion élevé (connaissance générale).*\n\n---\n\n### **Plan B — École de commerce privée : investissement élevé, réseaux solides**\n- **Bachelor (bac+3)** : **6 000 à 12 000 €/an** (ex : INSEEC, PPA). Exige souvent un bon dossier (12+ de moyenne) et des concours (Sésame, Accès).\n- **Grande école (bac+5)** : **10 000 à 20 000 €/an** (ex : HEC, ESSEC, EDHEC), accessible après prépa ou admissions parallèles (bac+3).\n*Pour toi : si tu vises des postes à l’international ou des salaires élevés à terme, mais avec un risque de dette importante (connaissance générale).*\n\n**Exemple concret** : Un Bachelor à **KEDGE (Bordeaux)** coûte ~**9 500 €/an** (hors logement), contre **0 €** pour une licence pro en alternance dans la même ville.\n\n---\n### **Plan C — Alternatives hybrides : coût modéré, double compétence**\n- **Licence + école en admission parallèle** : Faire une licence publique (ex : économie-gestion), puis intégrer une école de commerce en **bac+3** via les concours **Passerelle** ou **Tremplin** (coût total réduit).\n- **Alternance en école privée** : Certaines écoles (ex : **ESG**, **INSEEC**) proposent des contrats pro/alternance, réduisant le coût à **0 €** (salaire couvert par l’entreprise).\n\n---\n### **⚠ Attention aux pièges**\n- **Marketing des écoles privées** : Méfie-toi des promesses \"100% emploi\" — vérifie les **taux d’insertion à 6 mois** (ex : [Céreq](https://www.cereq.fr)) et le **salaire médian** (souvent < 30k€ brut en début de carrière pour un bachelor, connaissance générale).\n- **Coût caché** : Logement (Paris = +800 €/mois), frais de vie, et **frais annexes** (voyages obligatoires, associations étudiantes) peuvent alourdir la note de **30 à 50%**.\n- **Sélectivité ≠ qualité** : Une école à **15k€/an** n’est pas forcément meilleure qu’une licence pro publique avec **90% d’insertion** (ex : [licences pro commerce](https://www.onisep.fr/http/redirection/formation/slug/FOR.11243)).\n\n---\n**Question pour toi** :\nPréfères-tu **minimiser les coûts** (licence publique + spécialisation après) ou **investir tôt** pour un réseau et une marque employable à l’international ? Et as-tu une idée de ton secteur cible (finance, marketing, droit, etc.) ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 32.67,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 7.56,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 16,
+    "n_verified": 3,
+    "n_verified_strict": 3,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 11,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation"
+  ]
+}

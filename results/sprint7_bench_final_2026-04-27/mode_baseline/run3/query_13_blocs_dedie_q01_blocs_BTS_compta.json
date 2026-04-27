@@ -1,0 +1,38 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q01_blocs_BTS_compta",
+  "query_text": "Quels blocs de compétences valide le BTS comptabilité ?",
+  "answer_text": "**TL;DR**\n1. Le BTS Comptabilité et Gestion valide **6 blocs de compétences** clés, alignés sur les attentes des métiers de la comptabilité et de la gestion.\n2. Ces blocs couvrent à la fois des savoirs techniques (comptabilité, fiscalité) et des compétences transversales (communication, digitalisation).\n3. Pour toi : si tu vises une insertion rapide, ces blocs te préparent directement aux tâches d’un assistant comptable ou gestionnaire. Pour une poursuite d’études, ils servent de socle pour des licences pro ou DCG.\n\n---\n\n### **Plan A — Les 6 blocs de compétences du BTS Comptabilité et Gestion**\n1. **Gestion comptable, fiscale et sociale** : Tenue des comptes, déclaration fiscale, paie, et obligations sociales.\n2. **Analyse et prévision de l’activité** : Tableaux de bord, budgets, et outils d’aide à la décision.\n3. **Gestion de la relation avec les clients et les fournisseurs** : Négociation, suivi des contrats, et communication professionnelle.\n4. **Organisation du travail et gestion des risques** : Processus administratifs, contrôle interne, et prévention des fraudes.\n5. **Intégration des outils numériques** : Logiciels de comptabilité (Sage, Ciel), traitement de données, et cybersécurité des données financières.\n6. **Culture économique, juridique et managériale** : Contexte légal des entreprises, droit du travail, et enjeux économiques.\n\n*(Source : [Référentiel officiel du BTS CG — ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10529), connaissance générale pour les exemples concrets)*\n\n---\n### **Plan B — Comment ces blocs s’appliquent en pratique ?**\n- **En entreprise** : Un titulaire de BTS CG peut gérer la paie (bloc 1), analyser les coûts (bloc 2), ou piloter un logiciel comptable (bloc 5) dès l’embauche.\n- **En poursuite d’études** : Ces blocs permettent des équivalences en **DCG** (Diplôme de Comptabilité et Gestion, bac+3) ou en **licence pro métiers de la comptabilité**, avec une spécialisation possible en audit ou contrôle de gestion.\n\n---\n### **Plan C — Alternatives si le BTS CG ne te correspond pas**\n- **Pour plus de technique pure** : Un **BUT GEA** (Gestion des Entreprises et des Administrations) avec parcours comptabilité, qui inclut des modules plus poussés en data analyse.\n- **Pour une approche plus digitale** : Un **BTS SIO** (Services Informatiques aux Organisations) option SLAM, avec une spécialisation en logiciels de gestion (ERP) — complémentaire au BTS CG.\n\n---\n**⚠ Attention aux pièges**\n- **Bloc 5 (numérique) souvent sous-estimé** : Les entreprises attendent une maîtrise des outils comme **Sage 100** ou **Excel avancé** — vérifie que ta formation les intègre concrètement.\n- **Bloc 3 (relation client) mal préparé** : Beaucoup de titulaires de BTS CG peinent en entretien sur des cas pratiques de négociation. Pratique via des stages ou des jeux de rôle.\n- **Poursuite d’études sélective** : Le DCG exige un bon niveau en droit et fiscalité (bloc 6). Si tu vises cette voie, renforce ces matières dès le BTS.\n\n---\n**Question pour toi** :\nCes blocs correspondent-ils à tes affinités (chiffres, relation client, outils numériques) ? Ou cherches-tu un diplôme avec un équilibre différent (ex : plus de management, moins de technique pure) ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 32.72,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 0.0,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 0,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_metier",
+    "_formation"
+  ]
+}

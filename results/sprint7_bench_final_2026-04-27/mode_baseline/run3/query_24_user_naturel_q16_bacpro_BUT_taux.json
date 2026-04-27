@@ -1,0 +1,38 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q16_bacpro_BUT_taux",
+  "query_text": "Mon fils a un bac pro vente, peut-il intégrer un BUT et avec quelle chance de réussir ?",
+  "answer_text": "**TL;DR**\n1. Un bac pro vente permet **légalement** d’accéder à un BUT, mais la sélectivité dépend du dossier et du parcours visé.\n2. Les chances de réussite sont **réelles** dans certains BUT (ex. techniques de commercialisation), mais **limitées** dans les filières scientifiques ou surchargées.\n3. **Stratégie clé** : cibler des BUT en lien avec son bac pro (commerce, gestion) et valoriser stages/expériences pro.\n\n---\n\n### **Plan A — Réaliste : BUT en lien avec le bac pro vente**\n📍 **BUT Techniques de Commercialisation** (ex. parcours *marketing et management du point de vente*) — bac+3 public, sélectivité modérée (~30-50% selon IUT), **adapté aux bacs pros commerce/vente** · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.7955)\n*Pour toi : le meilleur taux de réussite pour un bac pro vente, avec des passerelles claires vers des licences pro ou écoles de commerce post-BUT.*\n\n*(connaissance générale)* : Ce BUT est conçu pour accueillir des profils technos/pro, avec des remises à niveau en français/maths intégrées. Les IUT valorisent l’expérience pro (stages, alternance) — un atout pour un bac pro.\n\n---\n\n### **Plan B — Ambitieux : BUT hors domaine (ex. GEA, info) avec préparation**\n📍 **BUT Gestion des Entreprises et des Administrations (GEA)** — bac+3 public, sélectivité ~25-40%, **accessible mais exigeant en maths** · [exemple : IUT de Bordeaux](https://www.iut.u-bordeaux.fr)\n*Pour toi : possible si ton fils a de bons résultats en gestion/éco et accepte un rattrapage intensif en maths (MOOC, prépa summer school).*\n\n*(connaissance générale)* : Certains IUT proposent des **dispositifs d’accompagnement** pour bacs pros (ex. modules de mise à niveau). Contacter le **responsable pédagogique** de l’IUT visé pour évaluer la faisabilité.\n\n---\n### **Plan C — Alternative : Licence pro ou école spécialisée post-bac pro**\n📍 **Licence pro Métiers du commerce** (ex. *négociation relation client*) — bac+3 public/privé, **sélectivité ~60-80%**, **alternance fréquente** · [exemple ONISEP](https://www.onisep.fr)\n*Pour toi : voie plus sûre si le BUT semble trop théorique, avec un taux d’insertion pro élevé (~85% à 6 mois, connaissance générale).*\n\n*(connaissance générale)* : Les licences pro recrutent **prioritairement des bacs pros/techno** et offrent souvent des contrats d’apprentissage (salaire + diplôme). Exemples : **licence pro e-commerce**, **management des unités commerciales**.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Sélectivité variable** : Certains BUT (informatique, chimie) refusent quasi-systématiquement les bacs pros (sauf dossier exceptionnel). Vérifier les **statistiques par IUT** sur [Parcoursup](https://www.parcoursup.fr) (onglet \"Formations\" → \"Critères analysés\").\n- **Rythme exigeant** : Un BUT demande plus d’autonomie qu’un bac pro. Prévoir un **soutien en méthodologie** (ex. tutorats IUT, plateformes comme *Les Sherpas*).\n- **Alternance = atout majeur** : Les BUT en alternance (ex. TC) multiplient les chances d’admission **et** de réussite. Cibler les entreprises partenaires de l’IUT dès la candidature.\n\n---\n**Question pour toi** :\nTon fils vise-t-il un **métier précis** (ex. chef de rayon, chargé de clientèle) ou une **poursuite d’études longue** (école de commerce, master) ? Cela peut affiner le choix entre BUT, licence pro ou école spécialisée.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 31.26,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 5.97,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 4,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "_formation",
+    "formation_france",
+    "formation_france",
+    "_competences_certif",
+    "_competences_certif"
+  ]
+}

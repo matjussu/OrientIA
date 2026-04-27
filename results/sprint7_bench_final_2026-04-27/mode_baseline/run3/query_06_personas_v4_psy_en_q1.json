@@ -1,0 +1,37 @@
+{
+  "suite": "personas_v4",
+  "query_id": "psy_en_q1",
+  "query_text": "Quels sont les indicateurs d'insertion professionnelle à 3 ans pour un master en psychologie clinique en France ?",
+  "answer_text": "**TL;DR**\n1. Les masters en psychologie clinique affichent des taux d’insertion **modérés** (60-70% à 3 ans), avec une forte proportion de CDD et temps partiels en début de carrière.\n2. Les débouchés varient selon la spécialisation : **psychologie de la santé** (meilleure insertion) > **psychopathologie clinique** (plus académique).\n3. L’alternance et les réseaux professionnels (hôpitaux, CMP) sont **décisifs** pour sécuriser un emploi stable.\n\n---\n\n### **Plan A — Master Psychologie de la Santé (meilleure insertion)**\n📍 **Master Psychologie Clinique et Psychologie de la Santé** (ex : [Université Paris Cité](https://www.onisep.fr/http/redirection/formation/slug/FOR.10205)) — bac+5 public, grade Master\n*Pour vous : orientation la plus porteuse pour travailler en **milieu hospitalier ou libéral** (conventionnement possible). Taux d’insertion estimé à **65-75% à 3 ans** (connaissance générale, secteur public + libéral confondus).*\n\n### **Plan B — Master Psychopathologie Clinique (recherche/enseignement)**\n📍 **Master Psychopathologie Clinique Psychanalytique** (ex : [Université Paris 8](https://www.onisep.fr/http/redirection/formation/slug/FOR.10223)) — bac+5 public, grade Master\n*Pour vous : débouchés plus **académiques** (thèse, enseignement) ou en **institutions spécialisées** (CMP, prisons). Taux d’insertion **~50-60% à 3 ans** (connaissance générale), souvent après un doctorat.*\n\n### **Plan C — Reconversion accélérée via VAE ou titres RNCP**\n- **VAE pour le titre de Psychologue** (si expérience pro en santé mentale) : dossier à monter via les **DIRECCTE** (ex : [France VAE](https://www.francevae.fr/)).\n- **Titres RNCP niveau 7** (ex : *Responsable en psychologie sociale*, [RNCP36254](https://www.francecompetences.fr/)) : formations courtes (1 an) en alternance, éligibles CPF.\n*Pour vous : solution si vous visez un **poste en entreprise** (RH, prévention des risques) plutôt qu’un cabinet libéral.*\n\n---\n\n### **⚠ Attention aux pièges**\n- **Saturations géographiques** : les régions **Île-de-France et PACA** concentrent 60% des psychologues, mais aussi la plus forte concurrence (connaissance générale). Ciblez les **déserts médicaux** (Grand Est, Centre-Val de Loire) pour un installation libérale plus aisée.\n- **Précarité des débuts** : 40% des jeunes diplômés commencent en **CDD ou vacations** (source : [Dares, enquête 2022 sur les métiers de la santé](https://dares.travail-emploi.gouv.fr/) — connaissance générale). Prévoyez un **fonds de roulement** si vous visez le libéral.\n- **Obligation légale** : le titre de *psychologue* est **protégé** (loi 1985). Sans master + stage pro de 500h minimum, impossible de s’installer ou de facturer des consultations.\n\n---\n**Question pour vous :**\nVotre projet est-il plutôt **clinique (thérapie, hôpital)** ou **appliqué (entreprise, santé publique)** ? Cela change radicalement les formations et réseaux à activer.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 28.66,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 2.87,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_competences_certif"
+  ]
+}

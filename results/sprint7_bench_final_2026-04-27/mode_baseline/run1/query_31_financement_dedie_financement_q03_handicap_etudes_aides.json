@@ -1,0 +1,38 @@
+{
+  "suite": "financement_dedie",
+  "query_id": "financement_q03_handicap_etudes_aides",
+  "query_text": "Mon fils a une RQTH et veut faire des études supérieures, quelles aides spécifiques existe-t-il ?",
+  "answer_text": "**TL;DR**\n1. Votre fils peut bénéficier d’aménagements pédagogiques **et** d’aides financières spécifiques pour ses études supérieures.\n2. Deux leviers clés : **l’accompagnement humain dans l’établissement** (gratuit) + **les aides de l’AGEFIPH** (jusqu’à 10 000€/an sous conditions).\n3. **Action prioritaire** : faire reconnaître son handicap auprès du **médecin conseiller de l’enseignement supérieur** dès l’inscription.\n\n---\n\n### **Plan A — Accompagnement au quotidien dans l’établissement (gratuit)**\n📍 **Référent handicap de l’université/école** — présent dans **tous les établissements publics** (loi 2005).\n*Pour vous : ce contact unique organise les aménagements (temps supplémentaire aux examens, cours adaptés, interprète LSF, etc.).*\n→ **Première étape** : prendre RDV avec lui/elle **dès la pré-rentrée** via le [site du ministère](https://www.enseignementsup-recherche.gouv.fr/handicap).\n\n📍 **Accompagnant d’élèves en situation de handicap (AESH)** — pour les **BTS, licences, ou formations en présentiel** avec besoins d’assistance.\n*Pour vous : si votre fils a besoin d’un aide humaine (prise de notes, déplacement), l’Éducation nationale peut financer un AESH en milieu universitaire (sous conditions).*\n→ **Comment faire** : dossier à déposer via la [MDPH](https://www.mdph.fr/) **avant juin** pour la rentrée suivante.\n\n---\n\n### **Plan B — Aides financières ciblées (AGEFIPH et autres)**\n💰 **Aides de l’AGEFIPH** — jusqu’à **10 000€/an** pour frais de formation, matériel adapté, transport.\n*Pour vous : cumulable avec les bourses sur critères sociaux. Exemples couverts : logiciels spécialisés (Jaws, Dragon), ordinateur adapté, frais de transport.*\n→ **Conditions** : avoir une **RQTH valide** + formation éligible (liste sur [agefiph.fr](https://www.agefiph.fr/)).\n→ **Démarches** : dossier à déposer **3 mois avant le début de la formation**.\n\n💰 **Bourse spécifique \"handicap\"** — **complément de 30% à 50%** sur la bourse classique (CROUS).\n*Pour vous : si votre fils est boursier, cette majoration est automatique sur présentation de la RQTH.*\n\n---\n### **Plan C — Formations inclusives et dispositifs alternatifs**\n📍 **Licences \"Humanités\" ou \"Sciences et Humanités\"** — certaines universités proposent des **parcours aménagés** pour étudiants en situation de handicap (ex : [Licence Humanités, Paris Nanterre](https://www.onisep.fr/http/redirection/formation/slug/FOR.10826)).\n*Pour vous : ces filières ont souvent des **tutorats renforcés** et des équivalences pour les stages.*\n\n🔄 **Passerelle vers l’alternance** — l’AGEFIPH finance aussi les **contrats pro** (aide à l’employeur jusqu’à 4 000€).\n*Pour vous : idéal si votre fils préfère un rythme progressif (ex : BTS en alternance avec aménagements).*\n\n---\n### **⚠ Attention aux pièges**\n- **Délais administratifs** : les demandes (MDPH, AGEFIPH) prennent **3 à 6 mois**. Anticipez **dès maintenant**.\n- **Faux-amis** : certaines écoles privées facturent des \"fraits d’accompagnement handicap\" — **c’est illégal** (loi 2005). Signalez-le au [Défenseur des droits](https://www.defenseurdesdroits.fr/).\n- **Oubli des aménagements** : sans déclaration officielle au référent handicap, **aucun droit n’est appliqué**, même avec une RQTH.\n\n---\n**Question pour vous** :\nVotre fils a-t-il déjà identifié un **type de formation** (université, école, alternance) ou un **domaine d’études** ? Cela permet d’affiner les aides ciblées (ex : matériel spécifique pour les études scientifiques vs littéraires).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 62.83,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 5.38,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 9,
+    "n_verified_strict": 9,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "financement_etudes",
+    "formation",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_metier",
+    "dispositif",
+    "voie",
+    "_metier",
+    "_metier",
+    "_metier",
+    "_formation",
+    "_formation"
+  ]
+}

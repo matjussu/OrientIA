@@ -1,0 +1,37 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q04_blocs_BTS_electro_contenu",
+  "query_text": "Contenu pédagogique du BTS électrotechnique : quels objectifs pédagogiques ?",
+  "answer_text": "**TL;DR**\n1. Le BTS Électrotechnique forme des techniciens capables de concevoir, installer et maintenir des systèmes électriques.\n2. Il allie théorie (électronique, automatismes) et pratique (travaux en atelier/laboratoire).\n3. Deux options : **Plan A** pour une insertion rapide, **Plan B** pour une poursuite d’études, **Plan C** pour une spécialisation.\n\n---\n\n### **Plan A — Objectifs principaux (insertion pro directe)**\nLe BTS Électrotechnique vise à :\n- **Maîtriser les systèmes électriques** (réseaux, machines, automatismes) et les énergies renouvelables (solaire, éolien).\n- **Concevoir et dimensionner** des installations (bâtiments, industries) en respectant les normes (NF C 15-100, RT 2020).\n- **Intervenir sur le terrain** : dépannage, mise en service, maintenance préventive/corrective.\n- **Utiliser des outils numériques** (logiciels de CAO comme AutoCAD Electrical, outils de simulation).\n*(connaissance générale)*\n\n**Pour toi** : Idéal si tu veux un métier technique concret avec un diplôme en 2 ans.\n\n---\n\n### **Plan B — Poursuite d’études (approfondissement)**\nLe BTS permet de continuer vers :\n- **Licences pro** (ex : Métiers de l’électricité et de l’énergie, Automatismes et robotique).\n- **Écoles d’ingénieurs** (via admissions parallèles, ex : INSA, UT, écoles spécialisées comme l’**ENSE3**).\n- **BUT Génie Électrique** (pour un bac+3 avec plus de polyvalence).\n*(connaissance générale)*\n\n**Pour toi** : Si tu envisages un poste d’ingénieur ou de cadre, vise une licence pro ou une école post-BTS.\n\n---\n\n### **Plan C — Spécialisations possibles**\nDes modules optionnels ou certifications complémentaires permettent de se spécialiser en :\n- **Smart grids** et gestion intelligente de l’énergie.\n- **Cybersécurité des systèmes industriels** (croissance forte des besoins).\n- **Mobilité électrique** (bornes de recharge, véhicules).\n*(connaissance générale)*\n\n**Pour toi** : Pour te différencier, combine le BTS avec une certification (ex : **Habilitation Électrique BS/BE**, ou **TOSA AutoCAD**).\n\n---\n\n### **⚠ Attention aux pièges**\n- **Confusion avec le BUT GEII** : Le BTS est plus professionnel et moins théorique qu’un BUT Génie Électrique (qui prépare davantage à la poursuite d’études).\n- **Évolutions technologiques** : Le programme intègre de plus en plus l’**IoT** et la **transition énergétique** — vérifie que l’établissement propose des équipements récents (labos connectés, maquettes smart grid).\n- **Alternance obligatoire dans certains lycées** : Renseigne-toi sur les contrats d’apprentissage (salaire ~600-800€/mois en 1ère année).\n\n---\n**Question pour toi** :\nQuelle est ta priorité ? **Une insertion rapide** (Plan A), **un diplôme d’ingénieur à terme** (Plan B), ou **une spécialisation pointue** (Plan C) ? *(Cela déterminera le choix entre BTS classique, alternance, ou préparation à une poursuite d’études.)*\n\n---\n👤 Pour affiner ton projet, un RDV avec le **Psy-EN** de ton lycée ou un **CIO** (Centre d’Information et d’Orientation) te permettra de comparer les établissements près de chez toi.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 29.12,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 0.89,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 1,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_metier",
+    "_metier"
+  ]
+}

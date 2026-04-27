@@ -1,0 +1,38 @@
+{
+  "suite": "voie_pre_bac_dedie",
+  "query_id": "voie_pre_bac_q03_bac_pro_cyber_existe",
+  "query_text": "Est-ce qu'il existe un bac pro en cybersécurité ? Programme et débouchés ?",
+  "answer_text": "**TL;DR**\n1. **Il n'existe pas de bac pro dédié à la cybersécurité** (connaissance générale).\n2. Les formations en cybersécurité commencent à partir de **bac+2** (BTS, BUT) ou **bac+3** (licences pro).\n3. Si tu veux une voie pro courte, vise un **bac pro SN (Systèmes Numériques)** puis une spécialisation en cybersécurité après.\n\n---\n\n### **Plan A — Réaliste : Bac pro SN + spécialisation en cybersécurité**\n*(connaissance générale)*\n📍 **Bac pro SN (Systèmes Numériques)** — bac pro public, accessible après la 3ᵉ, spécialité *Réseaux et Sécurité* dans certains lycées.\n*Pour toi : voie pro la plus proche de la cybersécurité, avec des bases en réseaux et administration système. Après le bac pro, tu pourras enchaîner sur un BTS ou BUT cybersécurité.*\n\n### **Plan B — Ambitieux : BUT ou BTS cybersécurité en direct**\n📍 **BUT Réseaux et Télécommunications parcours Cybersécurité** ([fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8012)) — bac+3 public, sélectivité modérée, labellisé par l’État.\n*Pour toi : formation technique complète avec stages, débouchés sur des postes comme administrateur sécurité ou ingénieur junior.*\n\n📍 **Bachelor Développeur Informatique spécialité Cybersécurité** ([fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.12104)) — bac+2/3 privé ou public, sélectivité variable.\n*Pour toi : plus axé développement sécurisé, idéal si tu aimes coder. Vérifie le taux d’insertion et le coût (certains bachelors privés sont chers).*\n\n### **Plan C — Alternative : CAP puis bac pro SN**\n*(connaissance générale)*\n📍 **CAP Digital** (ex-CAP SEN) — bac-2 public, accessible dès 15 ans.\n*Pour toi : si tu veux une entrée progressive, ce CAP donne des bases en informatique avant de viser un bac pro SN.*\n\n---\n**⚠ Attention aux pièges**\n- **Marketing** : Méfie-toi des formations privées \"cybersécurité\" non reconnues par l’État (vérifie les labels comme [SecNumEdu](https://www.ssi.gouv.fr/agence/formations/secnumedu/)).\n- **Géographie** : Les BUT/BTS cybersécurité sont rares en région — vérifie les villes proposées sur [Parcoursup](https://www.parcoursup.fr).\n- **Faux-ami** : Un bac pro SN seul ne suffit pas pour travailler en cybersécurité → une spécialisation post-bac est **obligatoire**.\n\n---\n**Question pour toi :**\nPréfères-tu une voie **100% pro** (bac pro + spécialisation) ou une voie **plus théorique** (BTS/BUT avec stages) ? Ton choix dépendra aussi de ton niveau actuel en maths/informatique.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 38.73,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 5.13,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 8,
+    "n_verified": 4,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "voie_pre_bac"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_formation",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "bac_pro_domaine",
+    "_competences_certif",
+    "_formation"
+  ]
+}

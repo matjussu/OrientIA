@@ -1,0 +1,37 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q02_blocs_BUT_info_apprendre",
+  "query_text": "Que vais-je apprendre en BUT informatique ?",
+  "answer_text": "**TL;DR**\n1. Le BUT Informatique (bac+3) forme aux **fondamentaux techniques** (programmation, réseaux, bases de données) + **compétences professionnelles** (gestion de projet, travail en équipe).\n2. **3 parcours** au choix en 3ᵉ année : *Développement*, *Cybersécurité*, ou *Data*.\n3. **90% des diplômés** trouvent un emploi en CDI sous 6 mois (connaissance générale).\n\n---\n\n### **Plan A — Cœur du programme : les compétences techniques**\n*(connaissance générale)*\nEn BUT Informatique, tu maîtriseras :\n- **Langages** : Python, Java, C/C++, SQL, et frameworks web (React, Symfony).\n- **Systèmes & réseaux** : administration Linux/Windows, virtualisation, sécurité basique.\n- **Bases de données** : conception (Merise, UML), requêtes SQL, et Big Data (introduction).\n- **Projets concrets** : 600h de projets tuteurés (ex : création d’une appli mobile, site e-commerce).\n\n**Pour toi** : Idéal si tu veux un métier *opérationnel* rapidement (développeur, admin système) sans théories abstraites.\n\n---\n\n### **Plan B — Spécialisations en 3ᵉ année**\n*(connaissance générale)*\nTu choisiras **un parcours** parmi :\n1. **Développement logiciel** : approfondissement en algorithms, DevOps, et IA (introduction).\n2. **Cybersécurité** : cryptographie, tests d’intrusion, normes RGPD (certaines formations ont le label **SecNumEdu**).\n3. **Data** : analyse de données, machine learning basique, et visualisation (Tableau, Power BI).\n\n**Pour toi** : La spécialisation *Cybersécurité* est la plus porteuse (pénurie de talents), mais exige un goût pour les défis techniques.\n\n---\n### **Plan C — Alternatives si le BUT ne te convient pas**\n1. **BTS SIO** (bac+2) : plus court, axé *réseaux* ou *développement*, mais moins de théorie.\n   *Pour toi* : Si tu veux entrer vite sur le marché du travail (technicien supérieur).\n2. **Licence Informatique** (université) : plus théorique (maths, complexité algorithmique), mais ouvre aux masters recherche.\n   *Pour toi* : Si tu vises un poste d’ingénieur *recherche* ou un doctorat.\n\n---\n**⚠ Attention aux pièges**\n- **Marketing** : Certaines écoles privées proposent des \"Bachelor Informatique\" à 8 000€/an **sans le diplôme d’État** (BUT = **grade Licence** garanti).\n- **Géographie** : Les BUT en **alternance** sont rares en zone rurale (vérifie les offres sur [Parcoursup](https://www.parcoursup.fr) avec le filtre \"apprentissage\").\n- **Faux-ami** : Le BUT n’est **pas une prépa** pour les écoles d’ingé (même si des passerelles existent via les admissions parallèles).\n\n---\n**Question pour toi** :\nPréfères-tu un métier *technique pur* (code, réseaux) ou un rôle *hybride* (chef de projet, consultant) qui demande plus de soft skills ? *(Cela peut guider ton choix de parcours en 3ᵉ année.)*\n\n---\n👤 *Pour affiner ton projet, un RDV avec le **Psy-EN** de ton lycée ou le **SCUIO** de ta fac/future fac est indispensable.* Les formations en informatique évoluent vite (ex : montée de l’IA), et un professionnel peut t’aider à croiser tes aspirations avec les réalités locales du marché.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 41.21,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 1.6,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 3,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "formation_france",
+    "formation_france"
+  ]
+}

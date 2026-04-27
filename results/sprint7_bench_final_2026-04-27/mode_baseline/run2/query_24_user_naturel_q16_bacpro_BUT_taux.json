@@ -1,0 +1,38 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q16_bacpro_BUT_taux",
+  "query_text": "Mon fils a un bac pro vente, peut-il intégrer un BUT et avec quelle chance de réussir ?",
+  "answer_text": "**TL;DR**\n1. Un bac pro vente permet **techniquement** d’intégrer un BUT, mais la sélectivité et l’adéquation pédagogique varient fortement selon les spécialités.\n2. Les BUT **commerciaux** (ex : TC) sont les plus accessibles (taux d’accès ~20-40% pour les bacs pros motivés).\n3. La réussite dépendra de son **niveau en français/maths** et de sa capacité à suivre un rythme universitaire.\n\n---\n\n### **Plan A — Réaliste : BUT Techniques de Commercialisation (TC)**\n📍 **BUT TC parcours Marketing** (ex : [IUT de Bordeaux](https://www.onisep.fr/http/redirection/formation/slug/FOR.7955)) — bac+3 public, sélectivité modérée (20-40% pour bacs pros), **adaptation progressive** aux exigences théoriques.\n*Pour toi : le meilleur compromis pour un bac pro vente. Stages intégrés = atout pour l’insertion (taux emploi ~85% à 6 mois, connaissance générale).*\n\n### **Plan B — Ambitieux : BUT GEA (Gestion des Entreprises)**\n📍 **BUT GEA** (ex : IUT de Toulouse) — bac+3 public, sélectivité ~15-30% pour bacs pros, **exige un bon niveau en maths/compta**.\n*Pour toi : si ton fils a des facilités en gestion, c’est un tremplin vers des postes administratifs/commerciaux (salaire médian embauche ~1 800€, connaissance générale).*\n\n### **Plan C — Alternative : BTS NDRC ou MCO (moins théorique)**\n📍 **BTS Négociation et Digitalisation de la Relation Client (NDRC)** — bac+2 public/privé, **taux d’accès >50%** pour bacs pros vente, **rythme plus professionnel**.\n*Pour toi : si le BUT semble trop abstrait, le BTS offre une insertion rapide (70% en CDI à 2 ans, connaissance générale) + possibilité de poursuite en licence pro.*\n\n---\n**⚠ Attention aux pièges**\n- **Décalage pédagogique** : un bac pro → BUT demande un **effort accru en autonomie** (méthodologie, rédaction). Les IUT proposent souvent des **modules de remise à niveau** en L1.\n- **Sélectivité variable** : certains BUT (informatique, stats) ferment leurs portes aux bacs pros. Vise **uniquement les filières commerciales/gestion**.\n- **Alternance** : si le BUT est trop théorique, l’**alternance en BTS** (contrat pro) peut sécuriser le parcours (salaire + expérience).\n\n---\n**Question pour toi :**\nTon fils préfère-t-il **un diplôme court et pro (BTS)** ou un **parcours plus long mais avec un niveau bac+3 (BUT)** ? Son niveau en maths/français est-il solide (notes >12/20) ou fragile ? *(Cela déterminera si le BUT est envisageable sans décrochage.)*\n\n---\n👤 Pour affiner son projet, un RDV avec le **Psy-EN de son lycée** ou le **SCUIO de l’IUT visé** est indispensable : ils connaissent les **dispositifs d’accompagnement** pour bacs pros (ex : cordées de la réussite, tutorat).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 33.51,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 3.77,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 2,
+    "n_verified_strict": 2,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "formation_france",
+    "_formation"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "suite": "personas_v4",
+  "query_id": "psy_en_q1",
+  "query_text": "Quels sont les indicateurs d'insertion professionnelle à 3 ans pour un master en psychologie clinique en France ?",
+  "answer_text": "**TL;DR**\n1. Les masters en psychologie clinique affichent des taux d’insertion **modérés** à 3 ans, avec une forte polarisation entre secteurs public et privé.\n2. Environ **60-70% des diplômés** trouvent un emploi stable (CDI/CDD > 6 mois), mais souvent après des CDD ou des stages prolongés (connaissance générale).\n3. Le salaire médian à l’embauche se situe autour de **1 800-2 200€ brut/mois** (secteur public : concours obligatoires ; privé : cabinets, associations).\n\n---\n\n### **Plan A — Voie classique : Master + concours public (stabilité)**\n📍 **Master Psychologie Clinique** (ex : [Paris Cité](https://www.onisep.fr/http/redirection/formation/slug/FOR.10205)) — bac+5 public, **concours hospitaliers/territoriaux** pour les postes stables (psychologue clinicien en hôpital, CMP).\n*Pour vous :* Si vous visez la **sécurité de l’emploi**, préparez les concours (CAPES de psychologue, concours de la fonction publique hospitalière) *dès le M1*. Les postes en **secteur public** (hôpitaux, prisons, PMI) offrent des salaires **~2 000-2 500€ brut/mois** après titularisation (connaissance générale).\n\n---\n\n### **Plan B — Secteur privé/libéral : Installation progressive**\n📍 **Master Psychopathologie Clinique** (ex : [Lyon 2](https://www.onisep.fr/http/redirection/formation/slug/FOR.10223)) — bac+5 public, **orientation recherche ou libéral**.\n*Pour vous :* En **cabinet privé**, l’insertion prend **2-5 ans** (temps pour construire une patientèle). Salaire initial **~1 500-1 800€/mois** (connaissance générale), avec progression si spécialisation (TCC, neuropsychologie). Pensez à la **VAE** si vous avez déjà une expérience en santé mentale (ex : infirmier en psychiatrie) pour valider des crédits ECTS.\n\n---\n### **Plan C — Passerelles et alternatives**\n- **VAE/VAP** : Si vous avez **3 ans d’expérience** dans un métier connexe (éducateur spécialisé, infirmier, travailleur social), utilisez la **Validation des Acquis de l’Expérience** pour obtenir des équivalences en master (ex : [Cnam](https://www.cnam.fr)).\n- **Formations courtes certifiantes** (RNCP) : Pour une reconversion accélérée, visez un **DU de psychologie** (1 an, ex : DU de psychopathologie à Bordeaux) ou un **titre RNCP de psychopraticien** (attention : non régulé, vérifiez la reconnaissance par les assurances).\n- **Apprentissage adulte** : Certains masters proposent des **contrats de professionnalisation** pour les +26 ans (ex : master pro à Aix-Marseille). Rémunération **~60-80% du SMIC** pendant la formation.\n\n---\n### **⚠ Attention aux pièges**\n- **Secteur public = concours obligatoires** : Sans réussite aux concours (CAPES psycho, FPH), les postes stables sont inaccessibles. Prévoir **1-2 ans de préparation** en parallèle du master.\n- **Libéral = précarité initiale** : 70% des psychologues libéraux mettent **3 ans** à atteindre un revenu décent (source : [enquête APEPL 2022](https://www.apepl.fr), connaissance générale). Prévoir un **double emploi** les premières années.\n- **Diplômes non reconnus** : Méfiez-vous des formations privées en \"psychologie\" sans **grade master** ou **RNCP**. Vérifiez la liste des diplômes autorisant l’usage du titre de psychologue ([arrêté du 19 mai 2022](https://www.legifrance.gouv.fr)).\n\n---\n**Question pour vous :**\nVotre priorité est-elle la **stabilité rapide** (voies publiques, concours) ou l’**autonomie** (libéral, avec risque financier initial) ? Selon votre réponse, on peut affiner les formations cibles (ex : masters avec stages rémunérés vs masters recherche).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 35.51,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 3.53,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 2,
+    "n_verified_strict": 2,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_formation"
+  ]
+}

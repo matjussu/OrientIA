@@ -1,0 +1,37 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q13_reconversion_grande_distrib",
+  "query_text": "Je travaille dans la grande distribution depuis 8 ans, je veux changer complètement de secteur. Par où commencer ?",
+  "answer_text": "**TL;DR**\n1. Une reconversion après 8 ans en grande distribution est tout à fait possible, mais nécessite une **stratégie étape par étape** pour cibler un secteur porteur.\n2. Priorité : **identifier tes compétences transférables** (gestion d’équipe, logistique, relation client) et les **secteurs en tension** (tech, santé, transition écologique).\n3. Commence par un **bilan de compétences** (gratuit via Pôle Emploi ou APEC) pour affiner ton projet avant de te former.\n\n---\n\n### **Plan A — Réaliste : Reconversion vers un métier en tension avec des passerelles courtes**\n**(connaissance générale)**\n- **Cible des métiers accessibles sans diplôme long** : **logisticien** (certifications CACES, titre RNCP en 6-12 mois), **technico-commercial** (BTS NDRC en 1 an en alternance), ou **gestionnaire de paie** (titre RNCP accessible via AFPA/CEF).\n- **Pourquoi ?** Ces métiers recrutent massivement (surtout en logistique et vente B2B) et valorisent ton expérience terrain. Exemple : un **BTS Gestion des Transports et Logistique Associée (GTLA)** en alternance te permet de garder un salaire tout en te formant.\n- **Où ?** Formations courtes financées par **CPF** ou **Pro-A** (ex : **AFPA**, **GRETA**, **CNAM**). Ex : **Titre Professionnel Logisticien** (RNCP 35703) en 8 mois.\n\n---\n\n### **Plan B — Ambitieux : Pivoter vers un secteur porteur avec un bac+2/+3**\n**(connaissance générale)**\n- **Secteurs cibles** : **Informatique** (développeur web via **Wild Code School** ou **Simplon**, 6-12 mois), **Santé/Social** (DEAES pour devenir accompagnant médico-social, 1 an), ou **Énergies renouvelables** (BTS FED en alternance).\n- **Pourquoi ?** Ces domaines offrent des **salaires 20-30% plus élevés** que la grande distribution (estimation marché, connaissance générale) et des **débouchés stables**.\n- **Exemple concret** : Une **formation Développeur Web** (RNCP 31114) chez **OpenClassrooms** (finançable CPF) + stage de 6 mois peut déboucher sur un CDI à **30-35k€ brut/an** (estimation junior, connaissance générale).\n- **Attention** : Les formations en informatique exigent un **investissement personnel intense** (projets pratiques quotidiens). Teste ton appétence via des **MOOC gratuits** (ex : [France Université Numérique](https://www.fun-mooc.fr/)).\n\n---\n\n### **Plan C — Flexible : Valider ton projet avant de te lancer**\n**(connaissance générale)**\n- **Étape 1 : Immersion professionnelle** → Faire un **stage ou bénévolat** dans le secteur visé (ex : 1 semaine en ESAT pour le social, ou en startup pour le tech). Plateformes : [Les Entreprises pour la Cité](https://www.entreprises-cite.fr/), [Bénévolat.fr](https://www.benevolat.fr/).\n- **Étape 2 : VAE (Validation des Acquis de l’Expérience)** → Si tu as encadré des équipes, une VAE vers un **BP Responsable d’Unité Marchande** (RNCP 35569) peut te faire gagner 1 an de formation.\n- **Étape 3 : Alternance** → Signer un **contrat de professionnalisation** (pour les +26 ans) dans ton nouveau secteur : tu es payé·e tout en apprenant.\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Les formations privées coûteuses** : Méfie-toi des écoles promettant un \"diplôme en 3 mois\" à 8 000€ sans certification RNCP. Vérifie toujours le **répertoire RNCP** ([France Compétences](https://www.francecompetences.fr/)).\n2. **Le syndrome de l’imposteur** : Ton expérience en grande distribution est un **atout** (gestion du stress, polyvalence). Ne sous-estime pas tes soft skills.\n3. **Les reconversions \"trop\" ambitieuses** : Viser un métier comme **data scientist** sans bagage maths/statistiques est risqué. Préfère des passerelles comme **analyste logistique** (outils Excel/Tableau) pour commencer.\n\n---\n**Question pour toi** :\nAs-tu déjà une idée du **secteur** qui t’attire (tech, santé, environnement…) ou préfères-tu explorer en priorité les **métiers où ton expérience actuelle est valorisable** (logistique, management, vente) ? *(Cela changera radicalement les formations à te suggérer.)*\n\n---\n👤 **Pour aller plus loin** :\n- **Pôle Emploi** propose des **ateliers reconversion gratuits** (ex : [Mon Compte Formation](https://www.moncompteformation.gouv.fr/)).\n- **L’APEC** (pour les cadres) offre un **diagnostic métiers** en ligne : [APEC.fr](https://www.apec.fr/).\n- **Les CIO (Centres d’Information et d’Orientation)** reçoivent aussi les adultes : trouve le tien via [ONISEP](https://www.onisep.fr/).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 41.16,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 4.56,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "fap_region",
+    "_competences_certif",
+    "fap_region"
+  ]
+}

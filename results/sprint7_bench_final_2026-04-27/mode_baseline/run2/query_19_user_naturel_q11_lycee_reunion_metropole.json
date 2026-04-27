@@ -1,0 +1,38 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q11_lycee_reunion_metropole",
+  "query_text": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options s'offrent à moi ?",
+  "answer_text": "**TL;DR**\n1. **Oui, c’est tout à fait possible** : la métropole offre des formations numériques accessibles depuis La Réunion, avec des aides pour le logement et les transports.\n2. **Priorité** : vise des formations **publiques** (moins chères) et **sélectives mais pas élitistes** (taux d’accès 30-60%).\n3. **Logistique** : pense aux **résidences CROUS** (dossier à faire dès mars) et aux **bourses sur critères sociaux**.\n\n---\n\n### **Plan A — Réaliste : Licence Pro Métiers du Numérique (public, bac+3)**\n📍 **Licence Pro Conception, Rédaction et Réalisation Web** (disponible dans **plusieurs villes** comme **Lyon, Bordeaux, ou Nantes**) — bac+3 public, **sélectivité modérée** (~40-50% d’admis), **diplôme reconnu par l’État** · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11061)\n*Pour toi :* **Accessible avec un bac général/techno**, formation **concrète** (alternance possible) et **débouchés solides** (développeur web, designer UX).\n\n*(connaissance générale)* : Cette licence pro existe dans **au moins 20 IUT en métropole**. Exemples :\n- **Lyon 1** (alternance forte)\n- **Bordeaux Montaigne** (spécialisation contenu web)\n- **Nantes** (proximité avec les entreprises tech).\n\n---\n\n### **Plan B — Ambitieux : BUT Informatique (public, bac+3) ou École d’Ingé post-bac**\n📍 **BUT Informatique** (ex : **Paris, Toulouse, Rennes**) — bac+3 public, **sélectivité modérée** (30-60%), **diplôme grade Licence**, **alternance possible** · [exemple sur Parcoursup](https://www.parcoursup.fr)\n*Pour toi :* Si tu vises un **métier technique** (cybersécurité, data, dev), c’est **plus large** qu’une licence pro, avec **meilleurs salaires** à la sortie.\n\n*(connaissance générale)* : Autres options ambitieuses (si dossier solide) :\n- **Écoles d’ingé post-bac** (ex : **UTBM, INSA, Polytech**) : prévois **12+ de moyenne** et un **bon dossier scientifique**.\n- **Prépa scientifique** (si tu aimes les maths) → puis école d’ingé (ex : **Centrale, Mines**).\n\n---\n### **Plan C — Passerelle : BTS SIO en métropole + poursuite d’études**\n📍 **BTS SIO** (ex : **Lille, Strasbourg, Montpellier**) — bac+2 public, **sélectivité accessible** (>60%), **spécialisations en développement ou réseaux** · [fiche ONISEP](https://www.onisep.fr)\n*Pour toi :* **Solution rapide** pour entrer dans le numérique, avec **poursuite possible en licence pro ou école** (ex : **Epitech, SUPINFO**).\n\n*(connaissance générale)* : Avantages :\n- **Moins théorique** qu’un BUT, idéal si tu préfères **pratique/emploi rapide**.\n- **Beaucoup d’offres en alternance** (salaire + expérience).\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Logement** : Les **résidences CROUS** sont **saturées** (fais ta demande **dès mars** sur [messervices.etudiant.gouv.fr](https://messervices.etudiant.gouv.fr)).\n2. **Coût de la vie** : Prévois **600-800€/mois** (hors loyer) dans les grandes villes (Paris, Lyon). Les **aides** (bourse, APL) sont cruciales.\n3. **Alternance** : Certaines formations l’exigent → **trouve une entreprise avant de t’inscrire** (commence les recherches **dès l’été**).\n\n---\n**Question pour toi** :\n- **Préfères-tu une formation courte et pro (BTS/Licence Pro) ou un parcours plus long mais avec plus de débouchés (BUT/école d’ingé) ?**\n- **Es-tu prêt à déménager dans une ville précise, ou tu veux des options partout en métropole ?**\n\n👤 *Pour peaufiner ton projet, prends RDV avec le **Psy-EN de ton lycée** ou le **CIO de Saint-Denis** (ils connaissent bien les spécificités réunionnaises → métropole).*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 63.7,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 3.84,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 2,
+    "n_verified_strict": 2,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "formation_insertion",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "_formation",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "_metier_prospective",
+    "_metier_prospective"
+  ]
+}

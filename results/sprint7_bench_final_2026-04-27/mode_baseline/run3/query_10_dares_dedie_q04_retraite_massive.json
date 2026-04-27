@@ -1,0 +1,38 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q04_retraite_massive",
+  "query_text": "Quels métiers vont voir une retraite massive de leurs effectifs d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. D’ici 2030, les **métiers du secteur public** (santé, éducation, administration) et certains **métiers techniques industriels** subiront des départs massifs à la retraite (pyramide des âges déséquilibrée).\n2. Les **besoins en recrutement** concerneront aussi bien des **postes qualifiés** (ingénieurs, soignants) que des **métiers en tension** (BTP, transport).\n3. **Opportunité** : ces secteurs offrent des formations accessibles (du CAP au bac+5) et des **débouchés stables**, mais certains exigent une mobilité géographique ou des conditions physiques.\n\n---\n\n### **Plan A — Secteurs publics et santé : besoins critiques et formations courtes**\n**(connaissance générale)**\n- **Métiers concernés** :\n  - **Santé** : infirmiers (50% des effectifs auront +55 ans en 2030), aides-soignants, médecins généralistes (déserts médicaux).\n  - **Éducation** : enseignants (surtout en zones rurales), professeurs des écoles.\n  - **Administration** : agents territoriaux, policiers/militaires (renouvellement des effectifs).\n- **Pourquoi ?** :\n  - **Formations courtes et financées** : IFSI (3 ans pour infirmier, **100% d’insertion**), concours de la fonction publique (catégorie B accessible avec un bac).\n  - **Stabilité** : CDI, salaires indexés sur la grille publique, avantages sociaux.\n- **Piège** : conditions de travail parfois difficiles (horaires décalés en santé, charge administrative dans l’éducation).\n\n**Exemple concret** :\n- **Infirmier** : formation en 3 ans (bac+3), **salaire médian embauche ~2 000€ net** (source DREES 2023), **98% de taux d’emploi** (connaissance générale).\n- **Enseignant** : concours après une licence (bac+3), titularisation garantie.\n\n---\n\n### **Plan B — Industries et BTP : pénurie de main-d’œuvre qualifiée**\n**(connaissance générale)**\n- **Métiers concernés** :\n  - **BTP** : conducteurs de travaux, techniciens en génies climatique/électrique (40% des salariés ont +50 ans).\n  - **Industrie** : soudeurs, mécaniciens, techniciens de maintenance (automobile, aéronautique).\n  - **Énergie** : agents de réseau (EDF, Engie), techniciens en énergies renouvelables.\n- **Pourquoi ?** :\n  - **Formations professionnelles rapides** : CAP/BEP (2 ans), BTS (bac+2) avec **alternance rémunérée** (salaire ~600-1 200€/mois pendant la formation).\n  - **Salaire attractif** : un soudeur qualifié peut gagner **2 500-3 500€ net/mois** (connaissance générale) après 5 ans d’expérience.\n- **Piège** :\n  - Conditions physiques (BTP) ou géographiques (déménagements fréquents).\n  - **Stéréotypes de genre** : certains métiers (ex : BTP) restent très masculins (90% d’hommes), mais les entreprises recrutent activement des femmes (plans diversité).\n\n**Exemple concret** :\n- **Technicien de maintenance industrielle** : BTS en 2 ans (alternance possible), **taux d’emploi ~90%** (source Pôle Emploi 2023).\n\n---\n\n### **Plan C — Métiers émergents avec turnover élevé (numérique + transition écologique)**\n**(connaissance générale)**\n- **Métiers concernés** :\n  - **Numérique** : développeurs (démission massive des seniors), experts cybersécurité (pénurie chronique).\n  - **Transition écologique** : techniciens en recyclage, conseillers en rénovation énergétique (métiers neufs, peu de seniors).\n- **Pourquoi ?** :\n  - **Reconversion possible** : formations courtes (bootcamps de 3-6 mois en coding, certifications RNCP).\n  - **Secteurs porteurs** : salaires élevés (développeur junior ~2 500-3 000€ net), télétravail possible.\n- **Piège** :\n  - **Instabilité** : certains métiers du numérique (ex : community manager) sont saturés.\n  - **Formation continue obligatoire** (technos qui évoluent vite).\n\n**Exemple concret** :\n- **Développeur web** : formation en 6 mois (Wild Code School, Simplon), **salaire médian ~2 300€ net** (source Baromètre Malt 2023).\n\n---\n### **Attention aux pièges**\n- **Fausse bonne idée** : éviter les métiers en déclin malgré les départs (ex : caissiers, employés administratifs non qualifiés) → **automatisation** > besoin de remplacement.\n- **Géographie** : les besoins varient selon les régions (ex : déserts médicaux en zone rurale, pénurie de logements en Île-de-France → BTP).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **stabilité** (secteur public), **salaire rapide** (BTP/industrie), ou **flexibilité** (numérique) ? Ou veux-tu explorer des métiers hybrides (ex : data analyst dans la santé) ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 45.0,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 4.77,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "insee_salaire",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_competences_certif",
+    "_insee_salaire"
+  ]
+}

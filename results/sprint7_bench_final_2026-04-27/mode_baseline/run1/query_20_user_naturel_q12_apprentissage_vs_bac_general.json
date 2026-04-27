@@ -1,0 +1,37 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q12_apprentissage_vs_bac_general",
+  "query_text": "Mon fils de 17 ans hésite entre l'apprentissage et le bac général. Comment l'aider à décider ?",
+  "answer_text": "**TL;DR**\n1. **L’apprentissage** offre une insertion pro rapide et un salaire, mais limite les portes ouvertes vers des études longues.\n2. **Le bac général** garde toutes les options ouvertes (études longues, concours, réorientations), mais sans garantie d’emploi immédiat.\n3. **La clé** : son projet à 5 ans. S’il vise un métier précis accessible sans diplôme long (BTS, CAP), l’alternance est idéale. S’il hésite encore, le bac général sécurise son avenir.\n\n---\n\n### **Plan A — S’il a un métier précis en tête (et accessible en 2-3 ans)**\n**Exemples** : Mécanicien, coiffeur, électricien, développeur web (via BTS SIO), technicien de labo, etc.\n→ **L’apprentissage** (CAP, Bac Pro, BTS en alternance) est la meilleure option :\n- **Pourquoi ?** Il gagne un salaire (600-1000€/mois en 2024, connaissance générale), acquiert de l’expérience, et sort avec un diplôme *et* un réseau pro.\n- **Attention** : Vérifier que le métier visé recrute vraiment en alternance (ex : moins d’offres en alternance pour les métiers artistiques).\n- **Où chercher ?** Les CFA (Centres de Formation d’Apprentis) de sa région, ou les lycés pros avec sections en alternance.\n\n---\n\n### **Plan B — S’il hésite ou vise des études longues (médecine, ingénieur, commerce, etc.)**\n**Le bac général** (avec des spécialités adaptées) est plus sûr :\n- **Pourquoi ?** Il garde la possibilité de faire une prépa, une licence, ou un BUT/BTS *plus tard*. Beaucoup de formations post-bac (écoles d’ingé, commerce, santé) exigent un bac général.\n- **Exemple concret** : S’il choisit **Maths + Physique-Chimie + NSI** en Terminale, il peut encore viser une prépa scientifique, un BUT informatique, ou une licence de bio après le bac.\n- **Risque** : Sans projet clair, il peut se retrouver en fac sans motivation. **Solution** : L’orienter vers des **stages en 1ère/Terminale** pour tester des secteurs.\n\n---\n### **Plan C — Compromis : Un bac général *avec* de l’alternance intégrée**\nCertains lycées proposent des **bacs généraux + options pro** ou des **micro-immersions** en entreprise (ex : cordées de la réussite, stages obligatoires).\n- **Exemple** : Un bac général avec l’option **\"Défense et Sécurité\"** (pour viser la police/gendarmerie) ou **\"Santé-Social\"** (pour le paramédical).\n- **Avantage** : Il garde le bac général *tout en* découvrant un métier.\n- **Où ?** Se renseigner auprès de son **lycée actuel** ou du **CIO** (Centre d’Information et d’Orientation) de sa ville.\n\n---\n### **⚠ Attention aux pièges**\n1. **L’apprentissage n’est pas une \"voie de garage\"** : C’est un choix exigeant (rythme soutenu, responsabilité en entreprise). Si votre fils n’est pas motivé par le métier, le risque de décrochage est élevé.\n2. **Le bac général ≠ garantie de réussite** : Sans projet, il peut mener à des études longues sans débouché. **Solution** : L’inciter à faire des **tests métiers** (ex : [ONISEP](https://www.onisep.fr)) ou des **journées d’immersion** (via son lycée).\n3. **Les idées reçues** :\n   - *\"L’apprentissage, c’est pour ceux qui ne sont pas bons à l’école\"* → Faux. Beaucoup de BTS en alternance sont sélectifs (ex : BTS Cybersécurité).\n   - *\"Le bac général ouvre toutes les portes\"* → Vrai pour les études, mais pas pour l’emploi immédiat (sauf si il vise un concours comme la fonction publique).\n\n---\n**Question pour vous** :\nEst-ce que votre fils a déjà **testé concrètement** le métier qui l’attire (stage, job d’été, rencontre avec un pro) ? Si non, c’est la priorité avant de choisir. Sinon, quel est le **critère le plus important** pour lui entre :\n- **Gagner de l’argent tout de suite** (apprentissage) ?\n- **Garder le plus d’options possibles** (bac général) ?\n- **Équilibrer les deux** (Plan C) ?\n\n---\n👤 **Pour aller plus loin** :\nUn **conseiller d’orientation-psychologue (Psy-EN)** peut l’aider à affiner son choix via des tests d’intérêts et un bilan personnalisé. Prendre RDV via son lycée ou le [CIO le plus proche](https://www.onisep.fr/pres-de-chez-vous).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 46.65,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 0.81,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 1,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation_insertion",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "_metier_prospective",
+    "_metier_prospective",
+    "formation_france",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "formation_france"
+  ]
+}

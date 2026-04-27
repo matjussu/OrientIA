@@ -1,0 +1,38 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q13_reconversion_grande_distrib",
+  "query_text": "Je travaille dans la grande distribution depuis 8 ans, je veux changer complètement de secteur. Par où commencer ?",
+  "answer_text": "**TL;DR**\n1. Votre expérience en grande distribution est un atout transférable (gestion, relation client, logistique).\n2. Pour une reconversion réussie, combinez **formation courte + réseau + immersion progressive**.\n3. Priorité : identifier un secteur cible (environnement, numérique, social…) avant de choisir un parcours.\n\n---\n\n### **Plan A — Réaliste : Formation courte + validation des acquis (VAE)**\n📍 **Licence Pro Métiers de la Formation et du Conseil** (spécialité transitions agricoles/environnementales) — bac+3 public, accessible en VAE ou formation continue · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10474)\n*Pour vous : idéale si vous visez les métiers de l’accompagnement (conseiller en insertion, chargé de projet RSE). Durée : 1 an en alternance possible.*\n\n**Autres pistes courtes (connaissance générale)** :\n- **Titre RNCP niveau 5/6** (ex : \"Responsable de projet\" ou \"Chargé de développement durable\") via des organismes comme le **CNAM** ou **les GRETA** (formations pour adultes, souvent en alternance).\n- **Certifications sectorielles** : ex : **CQP** (Certificat de Qualification Professionnelle) dans la logistique verte ou le commerce équitable, si vous souhaitez rester proche de votre expérience tout en pivotant.\n\n---\n\n### **Plan B — Ambitieux : Passerelle vers un domaine porteur (numérique, santé, environnement)**\n*(connaissance générale)*\n1. **Numérique** :\n   - **Formations accélérées** : Le **Wagon** (bootcamp développement web, 9 semaines), **Simplon.co** (gratuit pour demandeurs d’emploi, métiers du code).\n   - **Métiers** : Technicien support, gestionnaire de données (avec une certification **TAE** ou **Google Data Analytics**).\n   - *Pour vous* : Salaire médian embauche ~2 000-2 500€ (estimation marché, connaissance générale). Secteur en tension = facilité d’insertion.\n\n2. **Environnement/Social** :\n   - **BPJEPS** (Brevet Professionnel de la Jeunesse, de l’Éducation Populaire et du Sport) pour devenir animateur environnement ou éducateur spécialisé.\n   - **Licence Pro Métiers de l’économie sociale et solidaire** (ex : à **Lyon 2** ou **Bordeaux**).\n   - *Pour vous* : Métiers avec sens, mais salaires souvent modestes (1 800-2 200€ brut en début de carrière).\n\n3. **Santé** :\n   - **Formations sanitaires et sociales** : DEAMP (aide médico-psychologique, 1 an), DEAS (auxiliaire de vie, 10-18 mois). Accès sur dossier + tests.\n   - *Attention* : Concours sélectifs pour certaines filières (ex : infirmier). Préparez-vous via des **prépa concours** (ex : **CNED**).\n\n---\n### **Plan C — Alternative : Immersion avant formation (moins risqué financièrement)**\n*(connaissance générale)*\n1. **Bénévolat/Service Civique** :\n   - Engagez-vous dans une association (ex : **Réseau Cocagne** pour l’insertion par le maraîchage, **Emmaüs** pour le réemploi) pour tester un secteur sans tout quitter.\n   - *Bonus* : Certains services civiques ouvrent droit à une **bourse de 600€/mois** et comptent comme expérience pro.\n\n2. **MOOC + Réseau** :\n   - Suivez un **MOOC** (ex : \"Les transitions énergétiques\" sur **FUN MOOC**) pour valider un intérêt avant de vous engager.\n   - Rejoignez des groupes **LinkedIn** (\"Reconversion professionnelle France\") ou **Meetup** pour rencontrer des reconvertis.\n\n3. **Bilan de compétences** :\n   - Finançable via **CPF** (Compte Personnel de Formation) ou **Pôle Emploi**. Objectif : identifier vos compétences transférables et secteurs cibles.\n   - *Exemple* : Votre gestion de rayon en grande distribution = compétences en **logistique**, **management d’équipe**, **relation client** → valorisables dans la supply chain durable ou le conseil.\n\n---\n### **⚠ Attention aux pièges**\n- **Piège financier** : Méfiez-vous des formations privées coûteuses (>5 000€) sans garantie d’emploi. Privilégiez les **formations publiques** (CNAM, GRETA, universités) ou certifiées **RNCP** (remboursables via CPF).\n- **Piège du \"tout quitter\"** : Testez le secteur cible (bénévolat, stage) avant de démissionner. La reconversion prend **6 à 24 mois** en moyenne (connaissance générale).\n- **Piège des prérequis cachés** : Certains métiers (ex : infirmier, développeur) exigent des **compétences techniques précises**. Vérifiez les **référentiels métiers** sur [France Compétences](https://www.francecompetences.fr/).\n\n---\n**Question pour vous** :\nQuel secteur vous attire le plus aujourd’hui (environnement, numérique, social, autre) ? Et êtes-vous prêt·e à accepter une baisse de salaire temporaire pour vous reconvertir ?\n\n---\n👤 Pour affiner votre projet, un **bilan de compétences** avec un conseiller en évolution professionnelle (CEP) ou un RDV au **CIO** (Centre d’Information et d’Orientation) est fortement recommandé. Ces services sont **gratuits** pour les actifs.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 43.96,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 6.7,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 4,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "_metier_prospective",
+    "fap_region",
+    "fap_region",
+    "_metier_prospective",
+    "fap_region",
+    "_formation",
+    "_competences_certif"
+  ]
+}

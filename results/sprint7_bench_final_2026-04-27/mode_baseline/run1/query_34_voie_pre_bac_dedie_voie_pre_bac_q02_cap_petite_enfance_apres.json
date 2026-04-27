@@ -1,0 +1,37 @@
+{
+  "suite": "voie_pre_bac_dedie",
+  "query_id": "voie_pre_bac_q02_cap_petite_enfance_apres",
+  "query_text": "Liste des CAP en petite enfance et social. Quelles débouchés après ?",
+  "answer_text": "**TL;DR**\n1. Les CAP **Petite Enfance** et **Accompagnant Éducatif Petite Enfance (AEPE)** sont les principaux diplômes de niveau 3 (CAP) pour travailler dans le social et la petite enfance.\n2. Débouchés : **crèches, écoles maternelles, centres de loisirs, aide à domicile** — souvent en CDD ou temps partiel au départ.\n3. Pour évoluer, une **poursuite d’études en bac pro ou BP** est quasi indispensable.\n\n---\n\n### **Plan A — CAP Petite Enfance (AEPE) : la voie classique**\n📍 **CAP Accompagnant Éducatif Petite Enfance (AEPE)** — Niveau 3 (CAP), 1-2 ans en lycée pro ou CFA, **gratuit en public** · [fiche ONISEP](https://www.onisep.fr/ressources/univers-formation/formation/cap-accompagnant-educatif-petite-enfance-aep)\n*Pour toi : le diplôme de référence pour travailler en crèche ou école maternelle, avec des débouchés stables mais souvent précaires (CDD, temps partiel).*\n\n**Débouchés directs (connaissance générale)** :\n- **Agent territorial spécialisé des écoles maternelles (ATSEM)** (après concours de la fonction publique territoriale).\n- **Auxiliaire de puériculture** (après formation complémentaire de 10-18 mois).\n- **Assistant(e) maternel(le)** (après agrément départemental).\n- **Animateur(trice) en centre de loisirs** (avec le BAFA en complément).\n\n---\n\n### **Plan B — CAP par alternance : insertion pro + rémunération**\n📍 **CAP AEPE en alternance** — Contrat d’apprentissage ou professionnalisation, **salaire ~500-800€/mois**, formation gratuite · [trouver un CFA](https://www.alternance.fr/)\n*Pour toi : idéal si tu veux un pied dans le milieu **sans frais** et avec une première expérience pro. Attention : l’employeur peut exiger le permis B (connaissance générale).*\n\n**Avantages** :\n- Rémunération pendant la formation.\n- Meilleurs taux d’insertion (70% en CDI/CDD dans les 6 mois — estimation marché, connaissance générale).\n- Possibilité de poursuivre en **BP (Brevet Professionnel) Jeunesse, Éducation et Animation** pour monter en grade.\n\n---\n\n### **Plan C — Poursuites d’études pour évoluer**\nSi tu veux **sortir des CDD et accéder à des postes mieux payés** (éducateur spécialisé, puéricultrice, etc.), envisage après ton CAP :\n1. **Bac Pro ASSP** (Accompagnement, Soins et Services à la Personne) — pour travailler en Ehpad ou à domicile.\n2. **BPJEPS** (Brevet Professionnel de la Jeunesse, de l’Éducation Populaire et du Sport) — pour devenir animateur(trice) en centre social.\n3. **Concours d’ATSEM** — pour un poste stable dans une école maternelle (salaire ~1 600€ net en début de carrière — estimation marché, connaissance générale).\n\n---\n### **⚠ Attention aux pièges**\n- **Précarité des débuts** : Beaucoup d’emplois en CDD ou temps partiel (60-70% des contrats — connaissance générale). Prépare-toi à cumuler les missions.\n- **Concours obligatoires** pour les postes stables (ATSEM, puéricultrice) — **sans concours, tu resteras en contrat précaire**.\n- **Permis B souvent exigé** en milieu rural ou pour les postes à domicile (connaissance générale).\n\n---\n**Question pour toi** :\nVeux-tu **t’insérer rapidement** (CAP + alternance) ou **viser un métier plus qualifié** (poursuite en bac pro/BP) ? Ton choix dépendra aussi de ta mobilité (permettre les déplacements pour les stages/emplois) et de ton projet à 5 ans (stabilité vs évolution).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 72.96,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 2.51,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 5,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation_insertion",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "_metier_prospective",
+    "formation_france",
+    "_metier_prospective",
+    "formation_france",
+    "formation_france"
+  ]
+}

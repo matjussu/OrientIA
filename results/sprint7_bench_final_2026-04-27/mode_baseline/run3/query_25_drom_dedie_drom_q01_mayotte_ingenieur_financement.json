@@ -1,0 +1,38 @@
+{
+  "suite": "drom_dedie",
+  "query_id": "drom_q01_mayotte_ingenieur_financement",
+  "query_text": "Je suis lycéen·ne à Mayotte et je veux faire une école d'ingénieur en métropole. Comment je peux financer ça ?",
+  "answer_text": "**TL;DR**\n1. **Oui, c’est possible** : des aides existent pour financer tes études d’ingénieur en métropole depuis Mayotte, mais il faut anticiper (logement, transport, frais de scolarité).\n2. **Priorité absolue** : les bourses sur critères sociaux (CROUS) + aides spécifiques DOM-TOM (ex : **PASSEPORT MOBILITÉ**).\n3. **Stratégie gagnante** : vise une **école publique** (frais ~0-600€/an) + alternance en 2e cycle pour être payé·e pendant tes études.\n\n---\n\n### **Plan A — Réaliste : École publique + bourses CROUS**\n📍 **Diplôme d’ingénieur de l’ENIM** (Metz) — bac+5 public, **frais ~600€/an**, habilité CTI · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.9936)\n*Pour toi : école accessible via Parcoursup (sélectivité modérée), avec **logements CROUS à ~200-300€/mois** et bourse sur critères sociaux (jusqu’à ~600€/mois).*\n\n**Comment financer ?**\n- **Bourse CROUS** : jusqu’à ~6 000€/an (échelon 6) si tes parents ont de faibles revenus. [Simulateur officiel](https://www.messervices.etudiant.gouv.fr/).\n- **Passeport Mobilité** (Région Mayotte) : **1 000€ à 2 000€** pour le billet d’avion + installation (à demander **avant ton départ**).\n- **Aide à la première installation (API)** : **500€** du CROUS pour les Outremers (dossier à faire dès ton admission).\n\n*(connaissance générale : ces aides sont cumulables !)*\n\n---\n\n### **Plan B — Ambitieux : École d’ingénieur en alternance**\n📍 **Diplôme d’ingénieur de l’ESTACA** (Paris/Laval) — bac+5 privé **mais gratuit en alternance**, spécialité aéronautique, habilité CTI · [site officiel](https://www.estaca.fr)\n*Pour toi : si tu trouves une entreprise partenaire, tu es **payé·e ~800-1 200€/mois** (sans frais de scolarité). Idéal après un BTS/DUT en métropole.*\n\n**Comment faire ?**\n1. Commence par un **BTS ou BUT** en métropole (ex : BUT Génie Mécanique) pour te rapprocher des entreprises.\n2. Postule en alternance dès la 2e ou 3e année d’école d’ingénieur.\n*(connaissance générale : l’alternance est très demandée en aéronautique/automobile !)*\n\n---\n### **Plan C — Filet de sécurité : Prépa + écoles avec frais réduits**\n📍 **CPGE TSI** (Lycée public en métropole) — 2 ans gratuites, puis concours pour écoles d’ingénieur publiques.\n*Pour toi : si tu veux éviter les frais de scolarité élevés, une prépa scientifique (TSI pour les bacs STI2D) te donne accès à des écoles comme l’**ENI** (frais ~0€) ou **Polytech** (~600€/an).*\n\n**Financement :**\n- **Bourse de lycée** (pour la prépa) + **logement en cité U** (~200€/mois).\n- **Jobs étudiants** (10h/semaine max) : restaurants universitaires, tutorat.\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Écoles privées hors alternance** : certaines coûtent **8 000€-12 000€/an** (ex : EPITA, ECE). Même avec bourse, le reste à charge est énorme.\n2. **Logement** : à Paris, un studio coûte **700-900€/mois** (contre 300-400€ en province). Privilégie les villes comme **Metz, Toulouse ou Nantes**.\n3. **Délais administratifs** : les aides (Passeport Mobilité, API) se demandent **3-6 mois avant la rentrée**. Ne tarde pas !\n\n---\n**Question pour toi :**\nEst-ce que tu préfères **partir dès la rentrée prochaine** (Plan A : école publique + bourses) ou **prendre le temps** de faire un BTS/DUT d’abord pour viser l’alternance (Plan B) ?\n\n---\n👤 *Pour peaufiner ton projet, prends RDV avec le·a **Psy-EN de ton lycée** ou le **CIO de Mayotte** (ils connaissent bien les aides locales).*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 34.64,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 12.48,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 18,
+    "n_verified": 12,
+    "n_verified_strict": 10,
+    "n_verified_by_source": 2,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "financement_etudes",
+    "formation",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "formation_france",
+    "formation_france",
+    "_formation",
+    "_formation",
+    "_formation",
+    "dispositif",
+    "voie"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q03_blocs_master_cyber",
+  "query_text": "Quelles compétences certifiées par un master en cybersécurité ?",
+  "answer_text": "**TL;DR**\n1. Un master en cybersécurité certifie des compétences techniques (défense, cryptographie, conformité) **et** des compétences transverses (gestion de crise, audit).\n2. Les certifications professionnelles (CISSP, CEH, ISO 27001) sont souvent intégrées ou préparées en parallèle — un atout clé pour l’employabilité.\n3. Le choix entre un master **académique** (recherche) ou **professionnel** (opérationnel) dépend de ton projet : labellisation **SecNumEdu** (ANSSI) = gage de qualité.\n\n---\n\n### **Plan A — Compétences techniques certifiées (cœur de métier)**\nUn master en cybersécurité valide des savoir-faire **exigeants et actualisés**, alignés sur les référentiels de l’ANSSI et du marché :\n- **Défense des infrastructures** : détection d’intrusions (IDS/IPS), réponse aux incidents (SOC), durcissement des systèmes (OS, réseaux).\n- **Cryptographie appliquée** : protocoles TLS, gestion des clés, attaques quantiques (post-quantum).\n- **Conformité et réglementation** : RGPD, NIS 2, normes ISO 27001/27002, obligations légales sectorielles (santé, finance).\n- **Analyse de risques** : méthodologies EBIOS Risk Manager, FAIR, cartographie des menaces.\n*(Source : [Master Cybersécurité ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10254))*\n\n**Pour toi** : Ces compétences sont **exigeantes en pratique** (labs, CTF) — vérifie que la formation inclut des projets concrets (ex : pentest légal, audit réel).\n\n---\n\n### **Plan B — Compétences transverses et certifications associées**\nAu-delà des compétences techniques, le master atteste de :\n- **Gestion de crise** : communication avec la direction, coordination avec les autorités (ANSSI, CERT), rédaction de rapports d’incident.\n- **Audit et conseil** : rédaction de politiques de sécurité (PSSI), accompagnement à la certification (ex : ISO 27001).\n- **Veille stratégique** : analyse des menaces émergentes (ransomware, supply chain attacks), participation à des communautés (CLUSIF, OWASP).\n*(connaissance générale : référentiels ANSSI et offres d’emploi RSSI 2024)*\n\n**Certifications intégrées ou préparées** (selon les masters) :\n- **CISSP** (gold standard pour les RSSI), **CEH** (pentest), **CISM** (management), **OSCP** (pratique offensive).\n- **SecNumAcadémie** (ANSSI) souvent exigée en prérequis.\n*Exemple : Le [Mastère Cybersécurité du Numérique](https://www.onisep.fr/http/redirection/formation/slug/FOR.3878) inclut une préparation CISSP.*\n\n**Pour toi** : Les certifications **coûtent cher en solo** (2k–6k€). Un master labellisé **SecNumEdu** (ANSSI) les intègre souvent — vérifie leur liste [ici](https://cyber.edu.fr).\n\n---\n\n### **Plan C — Compétences complémentaires (différenciation)**\nPour te démarquer, mise sur :\n1. **Double compétence** : cybersécurité **appliquée à un secteur** (santé, énergie, finance) via des modules spécialisés ou un stage ciblé.\n2. **Soft skills critiques** : pédagogie (former les équipes), résistance au stress (crises), éthique (dilemmes RGPD vs sécurité).\n3. **Reconnaissance internationale** : certains masters (ex : **MSc Cybersecurity** des universités partenaires de l’ANSSI) permettent de postuler à l’étranger avec des équivalences (ex : GCHQ au Royaume-Uni).\n*(connaissance générale : rapports (ISC)² 2023 sur les compétences manquantes)*\n\n**Pour toi** : Si tu vises l’international, cible un master **100% en anglais** avec des partenariats industriels (Thales, Airbus).\n\n---\n### **⚠ Attention aux pièges**\n- **Marketing vs réalité** : Méfie-toi des formations privées promettant \"10 certifications incluses\" sans préciser leur **valeur marché** (ex : CEH > CompTIA Security+).\n- **Académique vs pro** : Un master **recherche** (ex : cryptographie théorique) ne prépare pas aux certifications pratiques (CISSP) — vérifie l’orientation.\n- **Coût caché** : Les certifications externes (CISSP à 749$) ou les labs matériels (ex : equipment pour le forensique) peuvent ajouter **1k–3k€** au budget.\n\n---\n**Question pour toi** :\nTon objectif est-il de **manager une équipe sécurité** (RSSI → CISSP/CISM), de **techniciser** (pentest/forensique → OSCP/GFCA), ou de **rechercher** (doctorat en crypto) ? Cela change radicalement le choix du master.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 33.86,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 5.41,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 4,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_formation"
+  ]
+}

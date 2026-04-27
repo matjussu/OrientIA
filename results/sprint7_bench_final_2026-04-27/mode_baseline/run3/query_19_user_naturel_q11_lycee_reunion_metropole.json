@@ -1,0 +1,38 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q11_lycee_reunion_metropole",
+  "query_text": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options s'offrent à moi ?",
+  "answer_text": "**TL;DR**\n1. **Oui, c’est tout à fait possible** : la métropole offre des centaines de formations numériques accessibles depuis La Réunion, avec des aides spécifiques pour les DOM (bourses, logements).\n2. **Priorité** : vise des **BUT** (ex-MIAGE, MMI) ou **licences pro** en alternance (meilleur taux d’insertion), ou des écoles post-bac comme **Epitech** (privé mais sans concours).\n3. **Logistique clé** : anticipe les **dossiers sociaux** (CROUS, mobilité Outre-mer) et les **dates Parcoursup** (vœux jusqu’au 14 mars).\n\n---\n\n### **Plan A — Réaliste : BUT ou Licence Pro en alternance (public, gratuit, pro)**\n📍 **BUT MMI (Métiers du Multimédia et de l’Internet)** (ex : **Lyon, Bordeaux, Toulouse**)\n— Bac+3 public, **sélectivité modérée** (30-50% d’admis), **90% d’insertion pro** à 6 mois (connaissance générale).\n*Pour toi :* Parfait si tu aimes le **design web, le développement ou la communication digitale**. Alternance possible dès la 2e année.\n→ [Liste des BUT MMI en métropole](https://www.onisep.fr/http/redirection/formation/slug/FOR.11061) *(filtre par ville)*\n\n📍 **Licence Pro Métiers du Numérique** (ex : **Paris Nanterre, Aix-Marseille**)\n— Bac+3 public, **spécialisations** (cybersécurité, data, développement), **taux d’emploi ~85%** (connaissance générale).\n*Pour toi :* Idéal si tu veux une **formation courte et pro** après un BTS/DUT. Beaucoup d’offres en alternance.\n\n---\n### **Plan B — Ambitieux : Écoles d’ingé ou spécialisées (sélectif mais porteur)**\n📍 **Epitech** (13 campus : **Paris, Lille, Nice…**)\n— Bac+5 privé (8k€/an), **pas de bac requis** (admission sur dossier + piscine), **diplôme reconnu** (titre RNCP niveau 7).\n*Pour toi :* Si tu es **motivé·e par la tech pure** (code, IA, cyber) et prêt·e à bosser intensément. Bourses possibles pour les DOM.\n→ [Site Epitech](https://www.epitech.eu)\n\n📍 **Écoles d’ingénieurs post-bac** (ex : **INSA Lyon, UTBM**)\n— Bac+5 public, **sélectives** (10-20% d’admis), mais **accès possible via Parcoursup** avec un bon dossier (14+ de moyenne).\n*Pour toi :* Si tu vises un **diplôme d’ingé** (salaire médian ~38k€ en sortie, connaissance générale).\n\n---\n### **Plan C — Passerelle : BTS SIO à La Réunion → poursuite en métropole**\n📍 **BTS SIO (Services Informatiques aux Organisations)** (à **La Réunion**)\n— Bac+2 public, **peu sélectif**, puis **poursuite en licence pro ou BUT en métropole**.\n*Pour toi :* Solution si tu veux **rester 2 ans à La Réunion** avant de partir. Beaucoup de places en métropole pour les titulaires de BTS.\n\n---\n### **⚠ Attention aux pièges**\n- **Logement** : Les **résidences CROUS** sont saturées. Postule **dès maintenant** aux [aides mobilité Outre-mer](https://www.etudiant.gouv.fr/fr/aides-mobilite-outre-mer-1256).\n- **Coût de la vie** : Paris/Lyon = **800-1200€/mois** (contre 500€ à La Réunion). Prépare un budget.\n- **Alternance** : Certaines entreprises hésitent à prendre des étudiants DOM **sans réseau local**. Cible les **grandes boîtes** (Capgemini, Orange) qui ont des politiques diversité.\n\n---\n**Question pour toi :**\nPréfères-tu **une formation courte et pro** (BUT/licence pro) pour travailler vite, ou un **long cursus** (école d’ingé) pour viser des postes mieux payés plus tard ? *(Réfléchis aussi à ton budget et ta mobilité !)*\n\n---\n👤 *Pour peaufiner ton projet, prends RDV avec le **Psy-EN de ton lycée** ou le **CIO de Saint-Denis** : ils connaissent les spécificités DOM-métropole.*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 37.23,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 7.04,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 14,
+    "n_verified": 9,
+    "n_verified_strict": 9,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "formation_insertion",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "_formation",
+    "formation_france",
+    "_metier_prospective",
+    "_metier_prospective"
+  ]
+}

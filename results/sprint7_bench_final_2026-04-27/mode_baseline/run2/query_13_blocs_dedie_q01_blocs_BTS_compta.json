@@ -1,0 +1,38 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q01_blocs_BTS_compta",
+  "query_text": "Quels blocs de compétences valide le BTS comptabilité ?",
+  "answer_text": "**TL;DR**\n1. Le BTS Comptabilité et Gestion valide **4 blocs de compétences** clés, alignés sur les attentes des métiers de la comptabilité et de la gestion.\n2. Ces blocs couvrent à la fois des savoirs techniques (comptabilité, fiscalité) et des savoir-faire transversaux (communication, digitalisation).\n3. Chaque bloc est évalué séparément : une validation partielle est possible (ex : 2/4 blocs acquis = diplôme partiel).\n\n---\n\n### **Plan A — Les 4 blocs de compétences du BTS Comptabilité et Gestion**\nLe référentiel officiel (arrêté du 9 avril 2019) organise le diplôme en **4 blocs** :\n1. **Gestion comptable, fiscale et sociale** : Tenue des comptes, déclarations fiscales, paie, et obligations sociales.\n   *Exemples de tâches* : Établir un bilan, calculer les cotisations URSSAF, déclarer la TVA.\n2. **Contrôle et production de l’information financière** : Analyse des coûts, élaboration des états financiers (compte de résultat, tableau de flux).\n   *Exemples* : Calculer un seuil de rentabilité, préparer un rapport pour un audit.\n3. **Gestion des obligations fiscales et relations avec les administrations** : Maîtrise des procédures fiscales (impôt sur les sociétés, CFE) et des logiciels dédiés (ex : Ciel, Sage).\n4. **Analyse de la situation financière et proposition de solutions** : Diagnostic financier d’une entreprise, conseil en optimisation (trésorerie, investissements).\n\n📍 **Source officielle** : [Référentiel BTS CG — ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10529)\n\n*Pour toi* : Ces blocs reflètent les missions réelles d’un comptable en entreprise ou cabinet. Le bloc 4 (analyse) est particulièrement valorisé pour évoluer vers des postes de responsable.\n\n---\n\n### **Plan B — Validation partielle et équivalences**\n- **Validation par blocs** : Chaque bloc peut être validé indépendamment (ex : si tu échoues au bloc 3, tu conserves les autres).\n  *Utile pour* : Une reprise d’études ultérieure (ex : compléter un bloc manquant en VAE) ou une spécialisation (ex : bloc fiscal pour travailler en cabinet d’expertise).\n- **Équivalences** : Les blocs 1 et 2 correspondent aux compétences du **Titre Professionnel Comptable** (niveau bac+2, RNCP).\n  *Exemple* : Un titulaire du TP Comptable peut obtenir le BTS CG en validant seulement les blocs 3 et 4 (connaissance générale).\n\n---\n### **Plan C — Compétences transversales intégrées**\nLe BTS CG inclut aussi des **compétences non techniques** essentielles en entreprise :\n- **Digitalisation** : Utilisation des ERP (SAP, Oracle) et outils collaboratifs (ex : partage de fichiers sécurisés avec les clients).\n- **Communication professionnelle** : Rédaction de notes de synthèse, présentation orale de données financières.\n- **Anglais appliqué** : Vocabulaire comptable (ex : \"balance sheet\", \"VAT return\") pour travailler dans un contexte international.\n\n*Pour toi* : Ces compétences différencient le BTS CG d’une formation purement technique et ouvrent des portes vers des postes hybrides (ex : assistant comptable bilingue).\n\n---\n### **⚠ Attention aux pièges**\n- **Bloc 3 (fiscal) = le plus exigeant** : Échec fréquent à l’examen sur ce bloc (taux de réussite ~60% en 2023, estimation DEPP). Prévoyez un renforcement en droit fiscal.\n- **Logiciels payants** : Certains centres de formation imposent l’achat de licences (ex : Ciel Comptabilité ~200€/an). Vérifiez les coûts cachés avant inscription.\n- **Confusion avec le DCG** : Le BTS CG ne donne **pas** d’équivalences automatiques avec le Diplôme de Comptabilité et Gestion (DCG, bac+3). Pour poursuivre vers l’expertise comptable, une passerelle existe mais nécessite de repasser des unités du DCG (ex : UE1, UE4).\n\n---\n**Question pour toi** :\nAs-tu un projet précis en tête (cabinet d’expertise, service comptable en entreprise, indépendance) ? Cela peut aider à prioriser certains blocs pendant ta formation.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 42.2,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 4.82,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 4,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_metier",
+    "_formation"
+  ]
+}

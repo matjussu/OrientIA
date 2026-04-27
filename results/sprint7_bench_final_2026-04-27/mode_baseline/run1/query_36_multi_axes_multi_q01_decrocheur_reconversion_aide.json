@@ -1,0 +1,38 @@
+{
+  "suite": "multi_axes",
+  "query_id": "multi_q01_decrocheur_reconversion_aide",
+  "query_text": "J'ai 22 ans, j'ai abandonné la fac il y a 1 an, je n'ai pas de diplôme. Quelles aides pour reprendre une formation et quels débouchés ?",
+  "answer_text": "**TL;DR**\n1. Sans diplôme, des formations **courtes et financées** existent pour te relancer, avec des débouchés concrets en 6 à 12 mois.\n2. **Pôle Emploi** et les **Régions** sont tes principaux leviers pour un financement à 100% (sous conditions).\n3. Priorise les certifications **RNCP** (reconnues par l’État) pour éviter les formations \"bidon\".\n\n---\n\n### **Plan A — Formation rapide + emploi garanti (6-12 mois)**\n📍 **Formateur professionnel d’adultes** (partout en France) — **Certificat RNCP (bac+2)**, accessible sans diplôme via la **VAE** ou après une formation accélérée (ex : AFPA, GRETA).\n*Pour toi :* Débouchés stables (centres de formation, associations) avec un **salaire médian ~2 000€ brut** (source : France Compétences). Finançable à 100% via **Pôle Emploi** (AIF) ou **Compte Personnel de Formation (CPF)**.\n→ [Détails sur France Compétences](https://www.francecompetences.fr/)\n\n📍 **Conseiller en insertion professionnelle** — **Certificat RNCP (bac+2)**, formations en 6-12 mois (ex : CNAM, écoles agréées par les Régions).\n*Pour toi :* Métier en tension (missions locales, Pôle Emploi), **salaire ~1 800-2 200€ brut**. Financement possible via **Région** (ex : \"Qualif Emploi\" en Île-de-France) ou **CPF**.\n\n---\n\n### **Plan B — Formation longue + spécialisation (1-2 ans)**\n📍 **Licence pro \"Métiers de la formation et du conseil\"** (ex : Université de Toulouse) — **bac+3**, accessible via **validation des acquis (VAE)** ou après un bac+2.\n*Pour toi :* Si tu veux travailler dans l’accompagnement aux transitions (écologie, agriculture), mais exige un **projet professionnel précis** pour motiver ton dossier.\n→ [Fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10474)\n*Financement :* **Contrat de professionnalisation** (rémunéré) ou **Pro-A** (pour les demandeurs d’emploi).\n\n---\n### **Plan C — Emploi immédiat + formation en alternance**\n📍 **Encadrant technique d’insertion** — **Certificat RNCP (niveau bac)**, formations en 3-6 mois (ex : Écoles de la 2e Chance, EPIDE).\n*Pour toi :* **Embauche rapide** dans les chantiers d’insertion ou associations, avec un **salaire ~SMIC** en début de carrière. Idéal si tu veux **allier travail et formation**.\n\n---\n### **⚠ Attention aux pièges**\n- **Formations privées non-RNCP** : Certaines écoles promettent des diplômes \"reconnus\" sans valeur officielle. **Vérifie toujours le numéro RNCP** sur [France Compétences](https://www.francecompetences.fr/).\n- **\"100% financé\" sans détails** : Méfie-toi des organismes qui te demandent de payer des frais \"administratifs\". **Pôle Emploi et les Régions ne financent que les certifications RNCP**.\n- **L’alternance n’est pas magique** : Trouver un employeur peut prendre 3-6 mois. **Commence par un contrat court** (intérim, CDD) pour entrer dans le marché.\n\n---\n### **Étapes concrètes pour toi**\n1. **Fais un bilan gratuit** avec un conseiller Pôle Emploi ou une **Mission Locale** (si tu as < 26 ans) pour identifier tes droits.\n2. **Cible 2-3 formations RNCP** dans ton secteur géographique et compare leurs taux d’insertion (disponibles sur France Compétences).\n3. **Postule en parallèle** à des emplois en CDD/intérim dans le social ou l’insertion (ex : plateformes comme [Jobaviz](https://www.jobaviz.fr/)).\n\n**Question pour toi :**\nPréfères-tu une formation **courte pour un emploi rapide** (Plan A/C), ou un parcours plus long pour te spécialiser (Plan B) ? Ton choix dépendra aussi de ta mobilité géographique et de ton éligibilité aux aides.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 36.83,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 8.92,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 16,
+    "n_verified": 12,
+    "n_verified_strict": 12,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "financement_etudes",
+    "formation",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "voie",
+    "voie",
+    "voie",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_metier_prospective"
+  ]
+}

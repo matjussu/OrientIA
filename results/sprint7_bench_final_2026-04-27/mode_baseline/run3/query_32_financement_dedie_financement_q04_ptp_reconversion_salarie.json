@@ -1,0 +1,37 @@
+{
+  "suite": "financement_dedie",
+  "query_id": "financement_q04_ptp_reconversion_salarie",
+  "query_text": "Le projet de transition professionnelle PTP, c'est pour qui exactement ? Salaire maintenu pendant la formation ?",
+  "answer_text": "**TL;DR**\n1. Le **PTP (Projet de Transition Professionnelle)** est un dispositif pour **salariés en CDI** (ou CDD sous conditions) qui veulent se reconvertir **sans démissionner**, avec **salaire maintenu** (jusqu’à 100% du SMIC ou 80% du salaire antérieur selon cas).\n2. **Pas pour les indépendants, chômeurs ou étudiants** : alternatives existantes (ex : CPF, Pro-A, VAE).\n3. **Étapes clés** : accord de l’OPCO → formation certifiante (max 1 an) → retour en entreprise ou nouveau métier.\n\n---\n\n### **Plan A — PTP : pour qui et comment ?** *(connaissance générale)*\n**Public éligible** :\n- **Salariés en CDI** (ancienneté ≥ 24 mois, dont 12 mois dans l’entreprise actuelle).\n- **CDD** : sous conditions strictes (ex : 24 mois de CDD cumulés sur 5 ans, dont 4 mois dans l’entreprise actuelle).\n- **Secteurs prioritaires** : métiers en tension (ex : santé, numérique, transition écologique) souvent favorisés par les OPCO.\n\n**Salaire pendant la formation** :\n- **Maintenu à 100% du SMIC** (soit ~1 766€ brut/mois en 2024) **si formation ≤ 6 mois**.\n- **80% du salaire antérieur** (plafonné) si formation > 6 mois.\n- **Financement** : pris en charge par l’**OPCO** (ex : Atlas, AKTO) via le **CPF de transition**.\n\n**Démarches** :\n1. **Identifier une formation certifiante** (RNCP, CQP) liée à un métier porteur.\n2. **Obtenir l’accord de l’OPCO** (dossier à monter avec employeur + organisme de formation).\n3. **Signer un avenant au contrat de travail** (suspension pour formation).\n\n*Exemple concret* :\n📍 **Formateur professionnel d’adultes** (RNCP bac+2, Ministère du Travail) — éligible PTP si projet validé par l’OPCO.\n*Pour toi : idéal si tu es salarié(e) en CDI et veux basculer vers la formation/insertion.*\n\n---\n\n### **Plan B — Alternatives si tu n’es pas éligible au PTP**\n1. **Pro-A (Promotion par Alternance)** :\n   - Pour : **demandeurs d’emploi** ou **salariés en CDD/intérim** (pas besoin d’ancienneté).\n   - **Salaire** : % du SMIC selon âge (ex : 65% pour < 26 ans).\n   - **Formation** : certifications RNCP (ex : **Gestionnaire de paie**, bac+2).\n   - *Source : [France Compétences](https://www.francecompetences.fr/)*\n\n2. **VAE (Validation des Acquis de l’Expérience)** :\n   - Pour : **toute personne avec ≥ 1 an d’expérience** (même bénévole).\n   - **Coût** : gratuit si éligible au CPF, sinon ~1 000-3 000€ (aides possibles via Région/Pôle Emploi).\n   - *Exemple* : Obtenir le titre **Responsable de petite structure** (RNCP bac+2) via VAE.\n\n3. **CPF (Compte Personnel de Formation)** :\n   - Pour : **tous les actifs** (salariés, indépendants, chômeurs).\n   - **Budget** : ~500-800€/an cumulables (jusqu’à 800€ pour les non-qualifiés).\n   - *Attention* : ne couvre pas toujours 100% du coût (compléter avec OPCO ou Région).\n\n---\n### **Plan C — Cas particuliers et pièges à éviter**\n- **Indépendants/auto-entrepreneurs** :\n  → **Fonds d’assurance formation (FAF)** selon secteur (ex : FAFCEA pour les commerçants).\n  → **Pas de maintien de salaire** : prévoir épargne ou activité réduite.\n\n- **Chômeurs** :\n  → **POEI (Préparation Opérationnelle à l’Emploi Individuelle)** via Pôle Emploi : formation + allocation maintenue.\n  → **AIF (Aide Individuelle à la Formation)** : jusqu’à 1 000€ pour une certification.\n\n⚠ **Pièges fréquents** :\n- **Formations non éligibles** : vérifier la liste des certifications financées par ton OPCO ([exemple pour Atlas](https://www.opco-atlas.fr/)).\n- **Délais** : compter **3 à 6 mois** entre le dépôt du dossier et le début de la formation.\n\n---\n**Question pour toi** :\nEs-tu actuellement **salarié(e) en CDI** (→ PTP possible), **en recherche d’emploi** (→ Pro-A/POEI), ou **indépendant(e)** (→ FAF/VAE) ? Cela change radicalement les options.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 41.05,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 12.22,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 0,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 0,
+    "error": "JSON parse error: Expecting ',' delimiter: line 200 column 4 (char 8635). Raw: {\n  \"stats_extracted\": [\n    {\n      \"stat_text\": \"100% du SMIC\",\n      \"stat_value\": 100,\n      \"stat_unit\": \"%\",\n      \"context_in_response\": \"Salaire pendant la formation : maintenu à 100% du SMIC "
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "financement_etudes",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "dispositif",
+    "voie",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "dispositif"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q02_blocs_BUT_info_apprendre",
+  "query_text": "Que vais-je apprendre en BUT informatique ?",
+  "answer_text": "**TL;DR**\n1. Un **BUT Informatique** forme aux bases techniques (programmation, bases de données, réseaux) **et** à des spécialisations métiers (data, cybersécurité, cloud).\n2. Le programme est **équilibré** : 50% pratique (projets, stages), 50% théorie (algorithmes, maths appliquées).\n3. **3 parcours possibles** en 3ᵉ année : choisissez selon vos affinités (développement, data, ou systèmes/réseaux).\n\n---\n\n### **Plan A — Cœur du programme : les compétences techniques communes**\nEn BUT Informatique, vous maîtriserez **obligatoirement** :\n- **Langages de programmation** (Python, Java, C, SQL) et **développement web** (HTML/CSS, JavaScript).\n- **Bases de données** (modélisation, requêtes SQL, NoSQL).\n- **Réseaux et systèmes** (administration Linux/Windows, virtualisation, sécurité basique).\n- **Maths appliquées** (statistiques, algèbre booléenne) et **algorithmique** (complexité, structures de données).\n*(connaissance générale, tronc commun national validé par le PPN BUT Informatique 2021)*\n\n📍 **[BUT Informatique — Parcours AGED](Nantes)** — bac+3 public, **accès via Parcoursup** (taux >60% pour les bacs généraux/technos), **label Grade Licence** · [Fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.7996)\n*Pour vous : parcours idéal si vous visez la **data** ou l’analyse de données (Python avancé, SQL, visualisation).*\n\n---\n\n### **Plan B — Spécialisations en 3ᵉ année : choisissez votre voie**\nEn dernière année, **3 parcours nationaux** pour affiner votre expertise :\n1. **Réalisation d’applications** (développement logiciel, mobile, DevOps).\n2. **Administration, gestion et exploitation des données (AGED)** → **data science**, business intelligence, big data.\n3. **Cybersécurité et cloud** (sécurité des systèmes, hébergement, normes RGPD).\n*(connaissance générale, référentiel PPN BUT Informatique)*\n\n📍 **[BUT QLIO — Parcours Management de la Transformation Digitale](Lyon)** — bac+3 public, **alternance possible**, **débouchés en gestion de projets IT** · [Fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8544)\n*Pour vous : si vous préférez le **lien entre tech et management** (chefferie de projet, transformation numérique).*\n\n---\n### **Plan C — Ce que le BUT ne couvre pas (et les compléments possibles)**\n- **Limites** : Peu de **recherche fondamentale** (vs licence info) ou de **design UX/UI** (vs écoles spécialisées).\n- **Passerelles** :\n  - Après le BUT, **poursuite en école d’ingé** (via admissions parallèles) ou **master** (ex : MIAGE, cybersécurité).\n  - **Certifications complémentaires** (AWS, Cisco, Microsoft) pour booster votre CV.\n*(connaissance générale, enquêtes Céreq sur les parcours post-BUT)*\n\n---\n### **⚠ Attention aux pièges**\n- **Marketing** : Méfiez-vous des écoles privées promettant un \"BUT amélioré\" — le diplôme **public** est le seul reconnu par l’État (grade Licence).\n- **Géographie** : Tous les IUT ne proposent pas les **3 parcours**. Vérifiez les options sur [Parcoursup](https://www.parcoursup.fr) (ex : AGED rare en Corse).\n- **Faux-ami** : Un BUT n’est **pas une prépa** — pas de concours en fin de parcours, mais une insertion pro directe possible (taux d’emploi ~90% à 6 mois, source Céreq).\n\n---\n**Question pour vous** :\nPréférez-vous **coder** (parcours Réalisation), **analyser des données** (AGED), ou **sécuriser des systèmes** (Cybersécurité) ? Cela déterminera votre choix de parcours en 3ᵉ année.\n\n---\n👤 *Pour affiner votre projet, un RDV avec le **Psy-EN** de votre lycée ou le **SCUIO** de votre académie peut compléter ces informations.*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 29.09,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 3.62,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 5,
+    "n_verified": 3,
+    "n_verified_strict": 3,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_formation"
+  ]
+}

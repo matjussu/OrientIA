@@ -1,0 +1,37 @@
+{
+  "suite": "personas_v4",
+  "query_id": "mohamed_q1",
+  "query_text": "Quels sont les principaux débouchés métier après un Bac pro cuisine par apprentissage ?",
+  "answer_text": "**TL;DR**\n1. Un Bac pro Cuisine par apprentissage ouvre principalement à des métiers opérationnels en restauration, avec des évolutions possibles vers l’encadrement ou la spécialisation.\n2. **90% des diplômés** trouvent un emploi dans les 6 mois (connaissance générale, secteur en tension).\n3. **3 voies clés** : emploi direct (cuisinier), poursuite d’études (BP/BM), ou spécialisation (pâtisserie, traiteur).\n\n---\n\n### **Plan A — Emploi direct : Cuisinier en restauration**\n*(connaissance générale)*\n- **Métiers** : Commis/cuisinier en restaurant traditionnel, collective (cantines, Ehpad), ou hôtelière. Salaire débutant : **SMIC à 1 800€ brut** (selon taille de l’établissement).\n- **Atouts** : Diplôme **reconnu par les professionnels**, expérience terrain via l’apprentissage = atout majeur. **Taux d’insertion élevé** (secteur en pénurie de main-d’œuvre).\n- **Évolutions** : Chef de partie (2-3 ans d’expérience), puis chef de cuisine (5 ans+) ou gestionnaire (avec formation complémentaire).\n\n**Pour toi** : Idéal si tu veux **travailler rapidement** et gravir les échelons sur le terrain.\n\n---\n\n### **Plan B — Poursuite d’études : Se spécialiser ou monter en grade**\n*(connaissance générale)*\n- **Formations courtes** (1 an) :\n  - **BP Cuisinier** (niveau bac+2) : Approfondissement technique + gestion d’équipe. **Débouchés** : Chef de partie en restaurant gastronomique.\n  - **BM Cuisinier en dessert** (spécialisation pâtisserie/restaurant).\n- **Formations longues** (2 ans) :\n  - **BTS Hôtellerie-Restauration** (option cuisine) : Pour visiter des postes d’encadrement (chef de cuisine, responsable production).\n  - **Licence pro Métiers de la restauration** (ex : gestion, innovation culinaire).\n\n**Pour toi** : Si tu veux **élargir tes compétences** ou accéder à des postes à responsabilité plus vite.\n\n---\n### **Plan C — Réorientation ou création d’entreprise**\n*(connaissance générale)*\n- **Changer de cap** :\n  - **CAP Pâtissier** en 1 an (pour une double compétence).\n  - **Formation en sommellerie** ou **œnologie** (complémentaire en restauration haut de gamme).\n- **Entrepreneuriat** :\n  - **Traiteur indépendant** ou **food truck** (avec accompagnement type **chambre des métiers**).\n  - **Aides** : ACRE (exonération charges 1ère année), prêts à taux zéro pour les moins de 26 ans.\n\n**Pour toi** : Si tu es **attiré par l’autonomie** ou un autre univers culinaire (ex : boulangerie, chocolaterie).\n\n---\n### ⚠ **Attention aux pièges**\n- **Conditions de travail** : Horaires décalés (soirs, week-ends), pression en service — **teste le métier en stage avant de t’engager**.\n- **Salaire plafonné** sans évolution : Un cuisinier non cadre stagne souvent autour de **2 000€ brut** sans spécialisation (source : conventions collectives HCR).\n- **Alternance = contrat obligatoire** : Sans entreprise, pas de diplôme. **Anticipe la recherche** (démarches dès la 2nde pro).\n\n---\n**Question pour toi** :\nQu’est-ce qui t’attire le plus dans la cuisine : **le geste technique** (créer des plats), **l’encadrement d’équipe**, ou **la liberté d’entreprendre** ? *(Ta réponse peut affiner les options.)*\n\n---\n*Sources : Données marché de l’emploi (Pôle Emploi 2023, branches HCR) — le reste en synthèse.* *(connaissance générale)*.\n**Ressources utiles** :\n- [Fiche métier cuisinier (Pôle Emploi)](https://candidat.pole-emploi.fr/marche-du-travail/fiche-metier/cuisinier-cuisiniere)\n- [Listes des BP/BM après Bac Pro (ONISEP)](https://www.onisep.fr) *(recherche \"BP Cuisinier\")*.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 34.14,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 2.62,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 4,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_competences_certif",
+    "fap_region",
+    "_metier_prospective"
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "method": "Option A retrieval-side (corrélation, pas causalité — ablation ground truth manquante). Décomposition per-axe + per-mode.",
+  "modes": {
+    "baseline": {
+      "n_total_entries": 114,
+      "n_total_stats": 947,
+      "n_total_verified": 292,
+      "n_total_verified_strict": 281,
+      "n_total_verified_by_source": 11,
+      "n_total_halluc": 159,
+      "n_total_disclaimer": 495,
+      "pct_verified_global": 30.8,
+      "pct_halluc_global": 16.8,
+      "pct_by_source_share_of_verified": 3.8,
+      "total_critic_modifications": 0,
+      "axes_breakdown": {
+        "axe1_dares_re_agg": {
+          "n_queries_active": 22,
+          "n_stats_when_active": 191,
+          "n_verified_when_active": 14,
+          "n_halluc_when_active": 69,
+          "pct_queries_active": 19.3,
+          "pct_verified_when_active": 7.3,
+          "attribution_pp_estimate": 1.48,
+          "is_mute_candidate": false
+        },
+        "axe2_drom_territorial": {
+          "n_queries_active": 3,
+          "n_stats_when_active": 21,
+          "n_verified_when_active": 6,
+          "n_halluc_when_active": 4,
+          "pct_queries_active": 2.6,
+          "pct_verified_when_active": 28.6,
+          "attribution_pp_estimate": 0.63,
+          "is_mute_candidate": false
+        },
+        "axe3a_voie_pre_bac": {
+          "n_queries_active": 9,
+          "n_stats_when_active": 68,
+          "n_verified_when_active": 28,
+          "n_halluc_when_active": 8,
+          "pct_queries_active": 7.9,
+          "pct_verified_when_active": 41.2,
+          "attribution_pp_estimate": 2.96,
+          "is_mute_candidate": false
+        },
+        "axe3b_inserjeunes": {
+          "n_queries_active": 35,
+          "n_stats_when_active": 253,
+          "n_verified_when_active": 63,
+          "n_halluc_when_active": 32,
+          "pct_queries_active": 30.7,
+          "pct_verified_when_active": 24.9,
+          "attribution_pp_estimate": 6.65,
+          "is_mute_candidate": false
+        },
+        "axe4_financement": {
+          "n_queries_active": 22,
+          "n_stats_when_active": 230,
+          "n_verified_when_active": 120,
+          "n_halluc_when_active": 13,
+          "pct_queries_active": 19.3,
+          "pct_verified_when_active": 52.2,
+          "attribution_pp_estimate": 12.67,
+          "is_mute_candidate": false
+        }
+      }
+    },
+    "both": {
+      "n_total_entries": 114,
+      "n_total_stats": 1017,
+      "n_total_verified": 298,
+      "n_total_verified_strict": 271,
+      "n_total_verified_by_source": 27,
+      "n_total_halluc": 260,
+      "n_total_disclaimer": 459,
+      "pct_verified_global": 29.3,
+      "pct_halluc_global": 25.6,
+      "pct_by_source_share_of_verified": 9.1,
+      "total_critic_modifications": 266,
+      "axes_breakdown": {
+        "axe1_dares_re_agg": {
+          "n_queries_active": 21,
+          "n_stats_when_active": 196,
+          "n_verified_when_active": 10,
+          "n_halluc_when_active": 108,
+          "pct_queries_active": 18.4,
+          "pct_verified_when_active": 5.1,
+          "attribution_pp_estimate": 0.98,
+          "is_mute_candidate": false
+        },
+        "axe2_drom_territorial": {
+          "n_queries_active": 4,
+          "n_stats_when_active": 20,
+          "n_verified_when_active": 1,
+          "n_halluc_when_active": 14,
+          "pct_queries_active": 3.5,
+          "pct_verified_when_active": 5.0,
+          "attribution_pp_estimate": 0.1,
+          "is_mute_candidate": false
+        },
+        "axe3a_voie_pre_bac": {
+          "n_queries_active": 9,
+          "n_stats_when_active": 67,
+          "n_verified_when_active": 28,
+          "n_halluc_when_active": 11,
+          "pct_queries_active": 7.9,
+          "pct_verified_when_active": 41.8,
+          "attribution_pp_estimate": 2.75,
+          "is_mute_candidate": false
+        },
+        "axe3b_inserjeunes": {
+          "n_queries_active": 36,
+          "n_stats_when_active": 342,
+          "n_verified_when_active": 98,
+          "n_halluc_when_active": 100,
+          "pct_queries_active": 31.6,
+          "pct_verified_when_active": 28.7,
+          "attribution_pp_estimate": 9.64,
+          "is_mute_candidate": false
+        },
+        "axe4_financement": {
+          "n_queries_active": 26,
+          "n_stats_when_active": 324,
+          "n_verified_when_active": 157,
+          "n_halluc_when_active": 45,
+          "pct_queries_active": 22.8,
+          "pct_verified_when_active": 48.5,
+          "attribution_pp_estimate": 15.44,
+          "is_mute_candidate": false
+        }
+      }
+    }
+  },
+  "delta_both_vs_baseline": {
+    "delta_pct_verified": -1.5,
+    "delta_pct_halluc": 8.8,
+    "delta_n_by_source": 16,
+    "critic_modifs_in_both": 266
+  }
+}

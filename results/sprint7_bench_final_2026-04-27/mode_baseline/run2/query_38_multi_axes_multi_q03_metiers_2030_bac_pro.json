@@ -1,0 +1,38 @@
+{
+  "suite": "multi_axes",
+  "query_id": "multi_q03_metiers_2030_bac_pro",
+  "query_text": "Quels métiers vont recruter d'ici 2030 et qui sont accessibles avec un bac pro ?",
+  "answer_text": "**TL;DR**\n1. Les métiers accessibles avec un bac pro qui recruteront d’ici 2030 sont surtout dans les secteurs en tension : **transition écologique, santé/social, numérique basique, et logistique**.\n2. Priorité aux métiers **qualifiants en 6-24 mois** (CAP à bac+2) avec des débouchés concrets : 70-90% de taux d’insertion dans ces filières (connaissance générale).\n3. **3 pistes réalistes** : métiers du soin (sans diplôme médical), techniciens des énergies vertes, ou encadrement en insertion pro (avec une formation courte certifiante).\n\n---\n\n### **Plan A — Réaliste : Métiers en tension avec un bac pro + formation courte (6-24 mois)**\n📍 **Conseiller en insertion professionnelle** (France entière) — **Certificat RNCP (niveau bac+2)**, formation en 1 an, **75-85% d’insertion** (source : RNCP36701, données France Compétences).\n*Pour toi : Idéal si tu aimes le contact humain et l’accompagnement. Formations financées par Pôle Emploi/OPCO pour les demandeurs d’emploi ou alternance rémunérée (~600-800€/mois).*\n\n📍 **Technicien de maintenance en énergies renouvelables** (ex : solaire, éolien) — **CAP à bac pro + FC (Formation Complémentaire) en 6-12 mois**, **salaire médian embauche : 1 800-2 200€ brut** (estimation marché, connaissance générale).\n*Pour toi : Secteur en boom (+30% d’emplois d’ici 2030 selon l’ADEME). Recrutement facile en région (Grand Ouest, Occitanie, Hauts-de-France).*\n\n📍 **Aide-soignant / Auxiliaire de puériculture** — **Diplôme d’État (DE) en 10-18 mois**, **90% d’insertion**, salaire médian : 1 700€ brut (source : DREES 2023, connaissance générale).\n*Pour toi : Pas besoin du bac pour le DE aide-soignant (juste 17 ans + tests). Alternance possible avec des EHPAD ou hôpitaux qui paient la formation.*\n\n---\n### **Plan B — Ambitieux : Bac pro + spécialisation pour monter en grade**\nSi tu veux évoluer vers des postes d’**encadrement** (sans faire 5 ans d’études) :\n- **Encadrant technique d’insertion** (niveau bac) → **Certificat RNCP** en 1 an après expérience (ex : après 2 ans comme conseiller en insertion).\n  *Exemple :* 80% des encadrants viennent de la promo interne (source : Ministère du Travail, RNCP36702).\n- **Responsable logistique** (bac pro logistique + **Titre RNCP niveau 5** en 1-2 ans) : salaires à 2 500-3 000€ brut après 5 ans (connaissance générale).\n\n---\n### **Plan C — Passerelle : Reconversion ou création d’activité**\n- **Micro-entrepreneur dans les services à la personne** (ménage, jardinage, petit bricolage) : **pas de diplôme requis**, mais **aides à la création** (ACRE, ARCE). Revenus variables (1 500-2 500€/mois après 2 ans).\n- **Formations gratuites et certifiantes** via **les Écoles de la 2e Chance** ou **AFPA** (ex : **Agent de tri des déchets**, **Conducteur d’engins**).\n\n---\n⚠ **Attention aux pièges** :\n- **Évite les formations privées payantes** (ex : écoles de \"coaching\" ou \"webmarketing\") si tu n’as pas de garantie d’embauche : beaucoup promettent des débouchés sans preuve.\n- **Vérifie les labels** : privilégie les **Certificats RNCP** (reconnus par l’État) ou **Diplômes d’État** (DE). Les \"certifications\" sans RNCP ont peu de valeur.\n\n---\n**Question pour toi** :\nQu’est-ce qui te motive le plus : **un métier avec du contact humain** (insertion, soin), **un secteur porteur techno/écologie**, ou **l’autonomie** (entrepreneuriat) ? Cela peut affiner les formations à cibler.\n\n---\n👤 *Pour aller plus loin, un conseiller en évolution professionnelle (CEP) ou le SCUIO de ta région peut t’aider à identifier les formations financées près de chez toi.*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 34.27,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 9.38,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 14,
+    "n_verified": 6,
+    "n_verified_strict": 6,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "formation_insertion",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_metier_prospective",
+    "formation_france",
+    "_metier_prospective",
+    "_formation",
+    "formation_france",
+    "formation_france",
+    "fap_region"
+  ]
+}

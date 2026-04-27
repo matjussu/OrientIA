@@ -1,0 +1,38 @@
+{
+  "suite": "voie_pre_bac_dedie",
+  "query_id": "voie_pre_bac_q03_bac_pro_cyber_existe",
+  "query_text": "Est-ce qu'il existe un bac pro en cybersécurité ? Programme et débouchés ?",
+  "answer_text": "**TL;DR**\n1. **Oui**, il existe un **bac pro cybersécurité** (officiellement \"Cybersécurité, Informatique et Réseaux, Électronique\").\n2. **Programme** : sécurité des systèmes, administration réseau, cryptographie, droit du numérique, et stages en entreprise.\n3. **Débouchés** : technicien/ne en cybersécurité, administrateur/trice réseau, ou poursuite d’études en BTS/BUT.\n\n---\n\n### **Plan A — Bac Pro Cybersécurité (niveau bac, voie pro)**\n📍 **[Bac Pro Cybersécurité, Informatique et Réseaux, Électronique](https://www.onisep.fr/http/redirection/formation/slug/FOR.8727)** — Formation publique (lycée pro), gratuite, accessible après la 3ᵉ.\n*Pour toi* : Idéal si tu veux une **formation concrète avec stages** (22 semaines) et un diplôme reconnu par l’État pour entrer rapidement sur le marché du travail.\n\n**Programme clé** (source ONISEP) :\n- Sécurité des systèmes et réseaux (pare-feu, détection d’intrusions).\n- Administration des infrastructures (Windows/Linux).\n- Bases de la cryptographie et sensibilisation aux cybermenaces.\n- Droit et éthique du numérique.\n- **50% du temps en entreprise** (PFMP : périodes de formation en milieu professionnel).\n\n**Débouchés directs** :\n- Technicien/ne en cybersécurité (sociétés de services, PME).\n- Administrateur/trice réseau ou support informatique.\n- Poursuite d’études possible en **BTS SIO** (option SISR) ou **BUT Réseaux et Télécoms** (parcours cybersécurité).\n\n---\n\n### **Plan B — Poursuites d’études après le bac pro (niveau bac+2/bac+3)**\nSi tu veux **monter en compétences** après le bac pro :\n1. **BTS SIO option SISR** (sécurité et réseaux) :\n   - **2 ans** après le bac pro, **gratuit en public**.\n   - Débouchés : administrateur sécurité, technicien supérieur en cyber.\n   - *Exemple* : [BTS SIO](https://www.onisep.fr/formation/bts-services-informatiques-aux-organisations-sio/option-solutions-d-infrastructure-systemes-et-reseaux-sisr) (lien ONISEP générique — vérifie les établissements près de chez toi).\n\n2. **BUT Réseaux et Télécommunications (parcours cybersécurité)** :\n   - **3 ans** après le bac, **diplôme grade licence** (reconnu bac+3).\n   - **Sélectif** (dossier + entretien), mais accessible avec un bon bac pro.\n   - *Exemple* : [BUT R&T parcours cybersécurité](https://www.onisep.fr/http/redirection/formation/slug/FOR.8012) (IUT de **Cachan**, **Lannion**, ou **Toulouse**).\n\n---\n### **Plan C — Alternatives si le bac pro n’est pas près de chez toi**\n- **Certifications courtes** (connaissance générale) :\n  - **TAE (Titre d’Agent en Électronique)** avec option cybersécurité (1 an, AFPA).\n  - **Certifications CompTIA Security+** ou **Cisco CyberOps** (en autoformation ou via GRETA).\n  - *Pour toi* : Solution si tu veux **une entrée rapide** (6-12 mois) sans diplôme long.\n\n- **Écoles privées post-bac** (attention au coût) :\n  - Ex : **Bachelor Développeur Informatique (spé cybersécurité)** — [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.12104).\n  - *Pour toi* : Seulement si tu vises un **cursus long** (bac+3/5) et peux financer 5k-8k€/an.\n\n---\n### **⚠ Attention aux pièges**\n- **Géographie** : Le bac pro cybersécurité n’est pas proposé dans **tous les lycées pros**. Vérifie sur [l’ONISEP](https://www.onisep.fr) ou via ton **CIO** (Centre d’Information et d’Orientation) local.\n- **Marketing** : Méfie-toi des formations privées promettant un \"bac pro cybersécurité en 1 an\" — le diplôme **officiel** se prépare en **3 ans** après la 3ᵉ.\n- **Débouchés** : Avec *uniquement* le bac pro, les postes seront **techniques** (niveau technicien). Pour viser **ingénieur RSSI**, il faudra poursuivre jusqu’à bac+5 (connaissance générale).\n\n---\n**Question pour toi** :\nPréfères-tu une **formation courte et pro** (bac pro + travail immédiat), ou un **parcours plus long** (bac+3/5) pour accéder à des postes d’ingénieur ? Cela peut guider ton choix entre Plan A, B ou C.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 50.63,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 10.79,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 12,
+    "n_verified_strict": 12,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "metier_prospective",
+    "voie_pre_bac"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "bac_pro_domaine",
+    "_formation",
+    "_formation",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_formation",
+    "_formation"
+  ]
+}

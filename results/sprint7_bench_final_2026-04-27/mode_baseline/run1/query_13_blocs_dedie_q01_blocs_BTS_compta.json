@@ -1,0 +1,38 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q01_blocs_BTS_compta",
+  "query_text": "Quels blocs de compétences valide le BTS comptabilité ?",
+  "answer_text": "**TL;DR**\n1. Le BTS Comptabilité et Gestion (ex-BTS CG) valide **6 blocs de compétences** clés, alignés sur les besoins des métiers de la comptabilité et de la gestion.\n2. Ces blocs couvrent à la fois des compétences techniques (comptabilité, fiscalité) et transversales (communication, digitalisation).\n3. Chaque bloc est certifié séparément : une validation partielle est possible en cas d’abandon ou de reprise d’études.\n\n---\n\n### **Plan A — Les 6 blocs de compétences du BTS Comptabilité et Gestion (officiels, RNCP)**\nLe référentiel officiel (arrêté du 9 avril 2019) structure le BTS en **6 blocs**, chacun associant savoirs et savoir-faire professionnels :\n1. **Gestion des obligations comptables, fiscales et sociales** (tenue de comptabilité, déclarations fiscales, paie).\n2. **Analyse et prévision de l’activité** (tableaux de bord, budgets, coûts).\n3. **Fiabilisation de l’information et du système d’information comptable** (contrôles, outils numériques comme Ciel ou Sage).\n4. **Gestion des relations avec les tiers** (clients, fournisseurs, banques, administrations).\n5. **Communication interne et externe** (rédaction de notes, présentation de données).\n6. **Anglais appliqué à la comptabilité et la gestion** (vocabulaire professionnel, compréhension de documents).\n\n*Pour toi* : Ces blocs sont **modularisables** : si tu valides le BTS en totalité, tu obtiens le diplôme (niveau 5, bac+2). Sinon, les blocs validés restent acquis (ex : bloc 1 + bloc 3 = certificat partiel utilisable pour une VAE ou une poursuite en DCG).\n\n---\n### **Plan B — Poursuites d’études après validation des blocs**\nAvec un BTS CG complet (6/6 blocs) :\n- **DCG (Diplôme de Comptabilité et de Gestion, bac+3)** : accès direct en L2 (équivalences pour certains blocs).\n- **Licences pro** (ex : Licence pro Métiers de la comptabilité, **grade Licence**).\n- **Écoles de commerce** (via admissions parallèles, ex : IAE ou programmes bachelor).\n\n*Astuce* : Si tu valides seulement 3-4 blocs, mise sur une **licence pro en 1 an** (ex : Licence pro Gestion des organisations) ou une **formation en alternance** pour compléter.\n\n---\n### **Plan C — Alternatives si le BTS ne te convient pas**\n1. **Titre RNCP Comptable** (niveau 5, bac+2) : formations privées (ex : **Titre Comptable Gestionnaire** de l’AFTEC), souvent en alternance.\n   *Pour toi* : Plus flexible qu’un BTS, mais vérifie la reconnaissance RNCP (ex : [RNCP37989](https://www.francecompetences.fr)).\n2. **Certifications courtes** (ex : **Certificat de Compétence en Comptabilité** de la CCI) : pour valider un bloc spécifique (ex : paie) sans faire le BTS entier.\n   *Pour toi* : Idéal si tu es en reconversion ou que tu veux te spécialiser rapidement.\n\n---\n### **⚠ Attention aux pièges**\n- **Blocs ≠ UE** : Contrairement à la licence, les blocs du BTS ne sont pas des \"unités d’enseignement\" interchangeables avec d’autres diplômes. Ils sont **spécifiques au référentiel du BTS CG**.\n- **Alternance obligatoire ?** Non, mais **80% des étudiants en BTS CG** le font en alternance (connaissance générale) : un atout majeur pour l’insertion (taux d’emploi à 6 mois : ~70% — source Céreq, enquêtes insertion bac+2).\n- **Évolutions du référentiel** : Depuis 2019, le BTS CG intègre un **bloc digital** (outils comme Excel avancé, logiciels de gestion). Vérifie que ta formation propose bien des certifications associées (ex : **PIX** ou **TOEIC**).\n\n---\n**Question pour toi** :\nAs-tu déjà une idée du bloc qui t’intéresse le plus (ex : fiscalité, paie, analyse financière) ? Cela peut orienter ton choix entre un BTS complet, une licence pro ciblée, ou une certification courte.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 30.2,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 4.82,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 5,
+    "n_verified_strict": 5,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_metier",
+    "_formation"
+  ]
+}

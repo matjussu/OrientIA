@@ -1,0 +1,37 @@
+{
+  "suite": "drom_dedie",
+  "query_id": "drom_q01_mayotte_ingenieur_financement",
+  "query_text": "Je suis lycéen·ne à Mayotte et je veux faire une école d'ingénieur en métropole. Comment je peux financer ça ?",
+  "answer_text": "**TL;DR**\n1. **Oui, c’est possible** de financer tes études d’ingénieur en métropole depuis Mayotte, mais il faut combiner bourses, alternance et aides locales.\n2. **Priorité absolue** : la **bourse sur critères sociaux** (jusqu’à ~600€/mois) + les aides spécifiques à Mayotte (ex : bourse du Conseil départemental).\n3. **Solution la plus sûre** : une **école publique en alternance** (gratuite + salaire) ou une prépa avec internat (logement pris en charge).\n\n---\n\n### **Plan A — Réaliste : École publique + bourses + alternance**\n📍 **École d’ingénieurs publique en alternance** (ex : [ENIM Metz](https://www.onisep.fr/http/redirection/formation/slug/FOR.11187)) — bac+5, **gratuite**, diplôme d’État, salaire en contrat pro (~800-1200€/mois).\n*Pour toi :* **0€ de frais** + revenu mensuel. Parfait si tu veux un métier technique (industriel, BTP, énergie).\n\n**Comment financer ?**\n- **Bourse sur critères sociaux** (dossier à faire dès maintenant sur [messervices.etudiant.gouv.fr](https://messervices.etudiant.gouv.fr)) : jusqu’à **597€/mois** (échelon 5).\n- **Aide spécifique Mayotte** : bourse du Conseil départemental (jusqu’à **200€/mois** en plus, [site du CD976](https://www.cg976.fr)).\n- **Logement** : demande un **internat** (certaines écoles en ont) ou une **résidence CROUS** (loyer ~200-300€/mois, priorité si boursier).\n\n---\n\n### **Plan B — Ambitieux : Prépa + grande école (avec filet financier)**\n📍 **Prépa scientifique (CPGE)** dans un lycée avec internat (ex : Lyon, Toulouse) — **gratuite**, bourse possible.\n*Pour toi :* Si tu vises une **grande école** (Ponts et Chaussées, Centrale, etc.), la prépa est la voie royale. Mais il faut **très bon dossier** (14+ de moyenne).\n\n**Financement :**\n- Bourse lycée (jusqu’à **450€/mois** si tu es déjà boursier national).\n- **Internat** : ~200€/mois (contre ~500€ en logement seul).\n- Après la prépa : **école publique** (frais ~600€/an) + alternance en 2ème année.\n\n⚠ **Attention** :\n- Les **écoles privées** (type EPITA, ESILV) coûtent **8 000-12 000€/an** → **évite** sauf si tu as un soutien familial ou un prêt garanti.\n- Méfie-toi des écoles qui promettent \"100% d’emploi\" : vérifie leur **label CTI** ([liste officielle](https://www.cti-commission.fr)).\n\n---\n### **Plan C — Passerelle : Bachelor + école d’ingénieur en alternance**\n📍 **Bachelor technologie** (ex : [Bachelor Mobilité Intelligente](https://www.onisep.fr/http/redirection/formation/slug/FOR.10256)) — bac+3, **alternance possible**, frais réduits.\n*Pour toi :* Si ton dossier ne permet pas une prépa/école directe, ce diplôme te permet de **rebondir en école d’ingénieur en alternance** après.\n\n**Avantage** :\n- Coût **beaucoup plus bas** qu’une école privée (compte ~2 000-3 000€/an max).\n- **Alternance dès la 3ème année** = salaire + diplôme.\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées non labellisées** : Certaines écoles à Mayotte ou en métropole promettent un \"diplôme d’ingénieur\" sans **accréditation CTI** → **inutile** pour trouver un travail. Vérifie **toujours** [ici](https://www.cti-commission.fr).\n- **\"Prêts étudiants\" faciles** : Les banques proposent des prêts, mais **rembourser 500€/mois avec un salaire de jeune ingénieur**, c’est dur. Privilégie **bourses + alternance**.\n- **Logement** : À Paris, un studio coûte **700-900€/mois** → vise des villes **moins chères** (Lyon, Toulouse, Metz) ou un **internat**.\n\n---\n**Question pour toi :**\nEst-ce que tu as déjà une idée du **domaine d’ingénierie** qui t’intéresse (informatique, bâtiment, énergie…) ? Ça peut aider à cibler les écoles **les moins chères** et **les plus adaptées** à ton projet.\n\n👤 *Pour affiner ton projet et monter ton dossier bourse, prends RDV avec le **Psy-EN de ton lycée** ou le **CIO de Mayotte** (ils connaissent les aides locales).*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 35.37,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 8.83,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 16,
+    "n_verified": 7,
+    "n_verified_strict": 6,
+    "n_verified_by_source": 1,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "financement_etudes",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "voie",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "dispositif"
+  ]
+}

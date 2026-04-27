@@ -1,0 +1,37 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q01_postes_pourvoir_global",
+  "query_text": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+  "answer_text": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés sur **4 grands défis** : transition écologique, numérique, santé/silver économie, et souveraineté industrielle.\n2. Les **top 5 secteurs en tension** : énergies renouvelables, cybersécurité, data/IA, santé (personnes âgées), et maintenance industrielle 4.0.\n3. **Stratégie gagnante** : vise des compétences hybrides (ex : tech + écologie) ou des métiers en pénurie structurelle (ex : infirmier, technicien réseau).\n\n---\n\n### **Plan A — Métiers en explosion d’ici 2030 (sources : Dares 2023, France Stratégie, Céreq)**\n*(connaissance générale)*\n\n1. **Transition écologique** :\n   - **Technicien/ne en énergies renouvelables** (solaire, éolien, hydrogène) : +50 000 postes/an estimés (besoins en installation/maintenance).\n   - **Ingénieur/e en économie circulaire** : recyclage, éco-conception, gestion des déchets (salaire médian embauche : ~2 500€ brut).\n   - **Agronome spécialisé en agroécologie** : adaptation des exploitations aux normes environnementales.\n\n2. **Numérique & souveraineté tech** :\n   - **Expert/e en cybersécurité** (label SecNumEdu ANSSI) : 20 000 postes non pourvus en 2025 → **30 000 en 2030** (source : ANSSI).\n   - **Développeur/euse IA responsable** : focus sur l’IA \"frugale\" et éthique (rgpd, biais algorithmiques).\n   - **Administrateur/trice cloud souverain** (ex : plateformes françaises comme OVH).\n\n3. **Santé & silver économie** :\n   - **Infirmier/ère** : 80 000 départs à la retraite d’ici 2030 + vieillissement de la population (salaire médian : 2 000€ net, **CDI à 95%**).\n   - **Ergothérapeute spécialisé en gériatrie** : adaptation des logements pour les seniors.\n   - **Data analyst en santé** : croiser données médicales et IA pour la prévention.\n\n4. **Industrie 4.0** :\n   - **Technicien/ne de maintenance industrielle connectée** (robots, IoT) : **70% des entreprises peinent à recruter** (source : UIMM).\n   - **Opérateur/trice en fabrication additive** (impression 3D métallique).\n\n*Pour toi* : Ces métiers recrutent **sans diplôme long** (Bac+2/3 suffisent pour 60% d’entre eux) ou via l’alternance. Priorité aux formations labellisées (ex : SecNumEdu pour la cyber).\n\n---\n\n### **Plan B — Métiers émergents (moins connus mais forte croissance)**\n*(connaissance générale)*\n\n1. **Métiers hybrides tech + autre secteur** :\n   - **Bio-informaticien/ne** : croiser biologie et data pour la recherche médicale (ex : génomique).\n   - **Juriste en droit des données** : RGPD, propriété intellectuelle des algorithmes.\n   - **Urbaniste data** : optimiser les villes avec l’IA (mobilité, énergie).\n\n2. **Nouveaux besoins sociaux** :\n   - **Conseiller/ère en résilience climatique** : aider les collectivités à s’adapter aux canicules/inondations.\n   - **Psychologue spécialisé en santé mentale au travail** : burn-out, qualité de vie au travail (QVT).\n\n3. **Artisanat high-tech** :\n   - **Artisan du bâtiment bas-carbone** (isolation, matériaux biosourcés).\n   - **Réparateur/trice de véhicules électriques**.\n\n*Pour toi* : Ces métiers exigent souvent une **double compétence** (ex : bac+5 en droit + certif data). Idéal si tu aimes l’innovation et les défis transverses.\n\n---\n\n### **Plan C — Sectors à éviter (sauf passion) : surpopulation ou automatisation**\n*(connaissance générale)*\n\n1. **Métiers en déclin** :\n   - **Comptable non spécialisé** (80% des tâches automatisables avec l’IA).\n   - **Caissier/ère** (remplacé par les bornes self-service).\n   - **Agent administratif classique** (sans valeur ajoutée numérique).\n\n2. **Secteurs saturés** :\n   - **Journalisme traditionnel** (sauf niche : data-journalisme, podcast).\n   - **Droit généraliste** (sauf spécialisation : tech, environnement).\n   - **Commerce non digital** (sans compétences e-commerce).\n\n*Pour toi* : Si tu vises ces domaines, **spécialise-toi** (ex : comptable + audit IA, juriste + blockchain) ou ajoute une corde tech à ton arc.\n\n---\n**⚠ Attention** :\n- **Piège n°1** : Les \"métiers du futur\" médiatisés (ex : \"pilote de drone\") sont souvent **surestimés** en volume de postes. Privilégie les **besoins structurels** (santé, énergie, maintenance).\n- **Piège n°2** : Une formation \"tendance\" (ex : école de code à 10k€/an) ne garantit pas un emploi si elle n’est pas **reconnue par les branches pro** (ex : labels SecNumEdu, RNCP).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour un **secteur en particulier** (tech, santé, écologie…) ou une **compétence transversale** (ex : gestion de projet, langues) qui pourrait se combiner avec ces métiers ? Cela peut affiner les pistes.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 52.87,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 3.14,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "apec_region",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_apec_region",
+    "_apec_region"
+  ]
+}

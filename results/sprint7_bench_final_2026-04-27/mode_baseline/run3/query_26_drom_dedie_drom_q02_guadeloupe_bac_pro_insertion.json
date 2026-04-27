@@ -1,0 +1,38 @@
+{
+  "suite": "drom_dedie",
+  "query_id": "drom_q02_guadeloupe_bac_pro_insertion",
+  "query_text": "En Guadeloupe, est-ce que ça vaut le coup de faire un bac pro gestion administration ? Quelles débouchés ?",
+  "answer_text": "**TL;DR**\n1. Le **bac pro Gestion-Administration** en Guadeloupe ouvre à des postes administratifs locaux (secrétariat, comptabilité), mais avec des salaires modestes (~1 500-1 800€ brut/mois en début de carrière — connaissance générale).\n2. Pour **monter en compétences**, un **BUT GEA** (ex : IUT de Saint-Claude) est un meilleur tremplin vers des postes d’encadrement (comptable, responsable RH).\n3. Si tu vises une **insertion rapide**, le bac pro peut suffire ; si tu veux **évoluer**, vise au moins un bac+2/3.\n\n---\n\n### **Plan A — Insertion rapide : Bac pro Gestion-Administration**\n**Débouchés locaux** (connaissance générale) :\n- **Secrétaire administratif** (collectivités, PME, hôpitaux)\n- **Assistant comptable** (cabinets, entreprises)\n- **Agent administratif** (banques, assurances)\n*Salaire débutant* : ~1 500-1 800€ brut/mois (source : grilles conventionnelles Guadeloupe, connaissance générale).\n*Pour toi* : Idéal si tu veux travailler **immédiatement après le bac** sans poursuivre d’études.\n\n---\n\n### **Plan B — Évolution professionnelle : BUT GEA (IUT Saint-Claude)**\n📍 **BUT Gestion des Entreprises et des Administrations** (IUT Guadeloupe — Saint-Claude) — bac+3 public, **sélectivité 63%** (accessible), 70 places.\n[Fiche Parcoursup officielle](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11768&typeBac=0&originePc=0)\n*Pour toi* :\n- **61% des admis viennent d’un bac techno** (dont bac pro GA possible avec bon dossier).\n- **Débouchés** : Comptable, chargé de clientèle, responsable RH (salaire ~2 000-2 500€ brut/mois — connaissance générale).\n- **Poursuite d’études** : Possible en licence pro ou école de commerce (via admissions parallèles).\n\n---\n### **Plan C — Alternance : Certifications courtes + expérience**\n(connaissance générale)\n- **Titre professionnel** (ex : *Assistant de gestion PME-PMI*, financé par Pôle Emploi ou la Région).\n- **Alternance** : Contrat pro ou apprentissage en 1 an (ex : BTS Gestion en alternance).\n*Pour toi* : Solution si tu veux **allier rémunération et diplôme** sans faire 3 ans d’études.\n\n---\n### ⚠ **Attention aux pièges**\n- **Salaire limité** : Avec un bac pro seul, les postes administratifs en Guadeloupe sont souvent **peu rémunérateurs** (SMIC à 1,2x SMIC).\n- **Concurrence locale** : Les offres d’emploi en gestion sont **concentrées sur Basse-Terre/Pointe-à-Pitre** — mobilité parfois nécessaire.\n- **Évolution bloquée** : Sans bac+2/3, les promotions vers des postes d’encadrement sont **rares**.\n\n---\n**Question pour toi** :\nPréfères-tu **une insertion immédiate** (bac pro) ou **investir 3 ans** (BUT GEA) pour accéder à des postes mieux payés et plus stables ?\n\n---\n👤 *Pour affiner ton projet, un RDV avec le **Psy-EN de ton lycée** ou le **SCUIO de l’Université des Antilles** peut t’aider à identifier les formations en alternance disponibles localement.*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 32.75,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 6.41,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 6,
+    "n_verified_strict": 6,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "formation_insertion",
+    "territoire_drom"
+  ],
+  "granularities_top_k": [
+    "region_diplome",
+    "formation_region_diplome",
+    "formation_france",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "_formation",
+    "territoire"
+  ]
+}

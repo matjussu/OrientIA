@@ -1,0 +1,37 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q15_cout_ecole_commerce_5ans",
+  "query_text": "Combien faut-il prévoir financièrement pour 5 années d'études en école de commerce ?",
+  "answer_text": "**TL;DR**\n1. Le coût total d’une école de commerce sur 5 ans varie de **0 € (public)** à **50 000 €+ (privé)** selon le type d’établissement et le mode d’études.\n2. **Alternance = 0 € + salaire** (1 000–1 800 €/mois), **public = 200–600 €/an**, **privé = 8 000–15 000 €/an**.\n3. Budget à prévoir : **logement (300–800 €/mois)** et **frais de vie (200–400 €/mois)** en plus des frais de scolarité.\n\n---\n\n### **Plan A — Écoles publiques (bac+5) : 2 000–5 000 € sur 5 ans**\n📍 **IAE (Instituts d’Administration des Entreprises)** — [Réseau national](https://www.iae-france.fr)\n*Pour toi :* **200–600 €/an** (droits universitaires) + **sélectivité modérée** (dossier + score IAE Message). Ex : IAE Paris, Aix-Marseille.\n**Exemple concret** : [Master Finance (IAE Paris)](https://www.onisep.fr/http/redirection/formation/slug/FOR.12278) — **~3 000 €** pour 5 ans (hors vie quotidienne).\n\n📍 **Écoles universitaires de management (EUM)** — Ex : **IAE Gustave Eiffel**\n*Pour toi :* **Coût similaire aux IAE**, mais avec des partenariats entreprises forts pour l’alternance dès la L3.\n\n---\n### **Plan B — Écoles privées (bac+5) : 40 000–75 000 € sur 5 ans**\n📍 **Écoles de commerce post-prépa (HEC, ESSEC, ESCP, etc.)** — **15 000–20 000 €/an**\n*Pour toi :* **75 000 €+** sur 5 ans (hors vie quotidienne). Sélectivité extrême (concours BCE/ECRICOME).\n**Exemple** : [Diplôme Grande École (ESSEC)](https://www.essec.edu) — **~100 000 €** total (logement inclus à Cergy).\n\n📍 **Écoles post-bac (NEOMA, KEDGE, Audencia, etc.)** — **8 000–12 000 €/an**\n*Pour toi :* **40 000–60 000 €** sur 5 ans. Sélectivité modérée (dossier + oral).\n**Exemple** : [Programme Grande École (KEDGE)](https://www.kedge.edu) — **~50 000 €** total.\n\n---\n### **Plan C — Alternance (bac+3 à bac+5) : 0 € + salaire**\n📍 **BUT TC (Techniques de Commercialisation) ou Licence Pro Métiers du commerce** — **0 €** (frais pris en charge par l’entreprise) + **salaire (60–80% du SMIC)**.\n*Pour toi :* **Idéal pour financer ses études** tout en acquérant de l’expérience. Ex : [BUT TC (IUT de Bordeaux)](https://www.iut.u-bordeaux.fr).\n**Salaire estimé** : **1 000–1 800 €/mois** selon l’âge et le contrat (apprentissage/pro).\n\n📍 **Masters en alternance (IAE, écoles privées)** — **0 €** + salaire.\n*Pour toi :* **Les IAE proposent souvent des contrats pro** dès le M1. Ex : [Master Commerce International (IAE Lyon)](https://www.onisep.fr/http/redirection/formation/slug/FOR.3293).\n\n---\n### **Attention aux pièges**\n⚠ **1. Coûts cachés** : Logement (300–800 €/mois selon la ville), transports, assurance santé (~300 €/an), matériel (PC, logiciels). **Budget total annuel = frais de scolarité × 1,5** (connaissance générale).\n⚠ **2. Prêts étudiants** : Les banques prêtent jusqu’à **20 000–30 000 €** pour les écoles privées, mais avec un **remboursement sur 5–10 ans** après diplomation. **Taux d’endettement à surveiller** (ne doit pas dépasser 30% de tes futurs revenus).\n⚠ **3. Sélectivité ≠ qualité** : Une école à **15 000 €/an** n’est pas forcément meilleure qu’un IAE à **300 €/an**. Vérifie les **labels (grade Master, CGE, AACSB)** et les **taux d’insertion** (ex : [enquête CGE](https://www.cge.asso.fr)).\n\n---\n**Question pour toi :**\nQuel est ton critère prioritaire entre **coût**, **prestige du diplôme**, et **insertion pro rapide** ? Cela peut radicalement changer la stratégie (public vs privé vs alternance).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 51.58,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 12.84,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 0,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 0,
+    "error": "JSON parse error: Unterminated string starting at: line 228 column 31 (char 8306). Raw: {\n  \"stats_extracted\": [\n    {\n      \"stat_text\": \"0 € (public)\",\n      \"stat_value\": 0,\n      \"stat_unit\": \"€\",\n      \"context_in_response\": \"Le coût total d’une école de commerce sur 5 ans varie de "
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "financement_etudes",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "voie",
+    "dispositif"
+  ]
+}

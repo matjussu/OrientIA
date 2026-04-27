@@ -1,0 +1,37 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q02_blocs_BUT_info_apprendre",
+  "query_text": "Que vais-je apprendre en BUT informatique ?",
+  "answer_text": "**TL;DR**\n1. Un **BUT Informatique** forme aux bases de la programmation, des réseaux, des bases de données et de la cybersécurité, avec une forte dimension pratique (projets, stages, alternance).\n2. **3 parcours principaux** : développement logiciel, réseaux/télécoms, ou données/IA — à choisir en 2ᵉ année.\n3. **Diplôme pro et polyvalent** : 80% d’insertion à bac+3, avec possibilité de poursuite en école d’ingé ou master.\n\n---\n\n### **Plan A — Cœur du programme : les compétences techniques**\nEn BUT Informatique, tu acquerras :\n- **Développement** : langages (Python, Java, C), algorithmes, architecture logicielle *(connaissance générale)*.\n- **Réseaux et systèmes** : administration, virtualisation, sécurité (ex : pare-feu, chiffrement) — proche du parcours [BUT Réseaux et Télécoms](https://www.onisep.fr/http/redirection/formation/slug/FOR.8016).\n- **Données** : SQL, bases de données, initiation au *machine learning* (option selon parcours).\n- **Projets concrets** : 600h de projets sur 3 ans (ex : création d’applications, gestion de serveurs) *(connaissance générale)*.\n\n*Pour toi* : Idéal si tu veux un métier technique **sans te spécialiser trop tôt** (choix du parcours en L2).\n\n---\n\n### **Plan B — Spécialisations possibles (parcours types)**\n1. **Développement logiciel** : pour devenir *développeur full-stack*, expert en applications mobiles/web.\n2. **Réseaux et cybersécurité** : aligné sur le [BUT Réseaux et Télécoms](https://www.onisep.fr/http/redirection/formation/slug/FOR.8016) — débouchés en administration système ou *pentest*.\n3. **Data et IA** : bases en *data science*, traitement de données (complément possible avec un master).\n*(Sources : référentiels nationaux BUT, ONISEP)*\n\n*Pour toi* : Le parcours **création numérique** (ex : [BUT Métiers du Multimédia](https://www.onisep.fr/http/redirection/formation/slug/FOR.8008)) est une alternative si tu préfères le design interactif ou le jeu vidéo.\n\n---\n### **Plan C — Poursuites d’études et débouchés**\n- **Insertion directe** : 80% des diplômés trouvent un emploi en CDI à bac+3 (métiers : technicien réseau, développeur junior, administrateur base de données) *(estimation marché, connaissance générale)*.\n- **Poursuite d’études** :\n  - **Écoles d’ingénieurs** (via admissions parallèles : UT, INSA, Polytech).\n  - **Masters** : cybersécurité (ex : [SecNumEdu](https://www.ssi.gouv.fr/agence/formations/secnumedu/)), data science, ou cloud computing.\n- **Alternance** : possible dès la 2ᵉ année (salaire ~600-800€/mois).\n\n*Pour toi* : Un tremplin pour **monter en compétences** ou **entrer rapidement sur le marché du travail**.\n\n---\n### **⚠ Attention aux pièges**\n- **Sélectivité variable** : Certains IUT sont très demandés (ex : Paris, Grenoble). Vérifie les taux d’accès sur [Parcoursup](https://www.parcoursup.fr) (filtre \"BUT Informatique\").\n- **Rythme intense** : 30h de cours/semaine + projets — incompatible avec un job étudiant à temps plein *(connaissance générale)*.\n- **Faux-amis** : Un BUT ≠ une licence info (moins théorique, plus pro). Si tu vises la recherche, complète par un master.\n\n---\n**Question pour toi** :\nPréfères-tu **coder** (développement), **sécuriser** (réseaux/cyber), ou **analyser des données** (IA/data) ? Cela déterminera ton parcours en 2ᵉ année.\n\n👤 *Pour affiner ton projet, un RDV avec le Psy-EN de ton lycée ou le SCUIO de ta fac est complémentaire à cet outil.*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 26.82,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 6.09,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 4,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation"
+  ]
+}

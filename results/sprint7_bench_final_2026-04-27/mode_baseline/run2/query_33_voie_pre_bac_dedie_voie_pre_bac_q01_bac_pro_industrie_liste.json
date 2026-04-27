@@ -1,0 +1,37 @@
+{
+  "suite": "voie_pre_bac_dedie",
+  "query_id": "voie_pre_bac_q01_bac_pro_industrie_liste",
+  "query_text": "Quels sont tous les bac pro dans le domaine industriel ? Mon fils en 3ème veut faire de la mécanique.",
+  "answer_text": "**TL;DR**\n1. Les **bacs pro industriels** couvrent la mécanique, l’électrotechnique, la maintenance et la production. Ils se préparent en 3 ans après la 3ème, avec 22 semaines de stage en entreprise.\n2. Pour la **mécanique pure**, 3 options principales : **Mécanique**, **Technicien d’Usinage**, ou **Maintenance des Véhicules** (auto/moto/camion).\n3. **Choix clé** : orienter vers un bac pro *spécialisé* (ex : usinage) ou *polyvalent* (ex : maintenance) selon ses affinités (précision vs diversité).\n\n---\n\n### **Plan A — Bac Pro Mécanique (spécialisation directe)**\n📍 **Bac Pro Technicien en Chaudronnerie Industrielle** — *Public, en lycée pro ou CFA*\n*Pour lui : idéal s’il aime travailler les métaux (découpe, soudure, assemblage) pour des secteurs comme l’aéronautique ou l’énergie. 80% des diplômés trouvent un emploi en 6 mois (connaissance générale).*\n📍 **Bac Pro Technicien d’Usinage** — *Public, 22 semaines de stage*\n*Pour lui : parfait pour fabriquer des pièces mécaniques (tour, fraiseuse, CNC). Débouchés forts en sous-traitance industrielle (connaissance générale).*\n\n### **Plan B — Bac Pro Polyvalent (flexibilité)**\n📍 **Bac Pro Maintenance des Équipements Industriels (MEI)** — *Public, mix mécanique/électrique*\n*Pour lui : si il hésite entre mécanique et électricité. Maintenance de machines en usine (automatismes, pneumatique).*\n📍 **Bac Pro Maintenance des Véhicules (option A : Voitures Particulières)** — *Public, très demandé*\n*Pour lui : mécanique auto/moto, mais avec un côté \"service client\". 70% des diplômés sont embauchés en garage (connaissance générale).*\n\n### **Plan C — Alternatives Connexes (si hésitation)**\n📍 **Bac Pro Pilote de Ligne de Production** — *Public, gestion de machines en usine*\n*Pour lui : moins manuel, plus organisation/qualité. Pour un profil méthodique.*\n📍 **Bac Pro Aéronautique (option Systèmes)** — *Public, rare (lycées près des aéroports)*\n*Pour lui : mécanique appliquée aux avions/hélicoptères. Très sélectif (dossier + motivation).*\n\n---\n**⚠ Attention aux pièges**\n- **Évite les bacs pro \"génériques\"** (ex : \"Technicien en Réalisation de Produits Mécaniques\") sans spécialisation : moins attractifs pour les employeurs (connaissance générale).\n- **CFA vs Lycée pro** : en CFA (apprentissage), il est payé (~400-800€/mois en 1ère année) mais doit trouver une entreprise. En lycée pro, stages non rémunérés mais plus encadré.\n- **Poursuite d’études** : un bac pro permet un **BTS** (ex : BTS Conception des Processus de Réalisation de Produits), mais rare en licence pro sans mention Bien au bac.\n\n---\n**Question pour vous** :\nVotre fils préfère-t-il **fabriquer des pièces** (usinage/chaudronnerie), **réparer des machines** (maintenance), ou **assembler des systèmes complexes** (aéronautique/auto) ? Cela aidera à affiner entre spécialisation et polyvalence.\n\n---\n👤 Pour explorer les établissements près de chez vous ou discuter des qualités requises (minutie, résistance physique), un **conseiller d’orientation-psychologue (Psy-EN)** en collège ou un **CIO** (Centre d’Information et d’Orientation) pourra compléter ces pistes. Les **portes ouvertes des lycées pro** (mars-avril) sont aussi un bon moyen de voir les ateliers.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 37.76,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 3.71,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 4,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "voie_pre_bac"
+  ],
+  "granularities_top_k": [
+    "bac_pro_domaine",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "bac_pro_domaine",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif"
+  ]
+}

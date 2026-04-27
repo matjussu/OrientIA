@@ -1,0 +1,36 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q05_blocs_VAE_partielle",
+  "query_text": "Comment valider un titre RNCP par VAE par bloc ?",
+  "answer_text": "**TL;DR**\n1. La VAE par bloc permet de valider un titre RNCP **partiellement**, en ciblant des compétences précises plutôt que le diplôme entier.\n2. Chaque bloc correspond à un **ensemble cohérent de compétences** (ex : bloc \"Gestion de projet\" dans un titre RNCP Manager).\n3. **Étapes clés** : identifier les blocs éligibles, monter un dossier par bloc, passer un jury spécifique.\n\n---\n\n### **Plan A — Réaliste : VAE par bloc en 3 étapes**\n1. **Choisir un titre RNCP éligible** : vérifiez sur [France Compétences](https://www.francecompetences.fr) que le titre est bien **modularisable** (ex : RNCP36534 \"Responsable en cybersécurité\" propose 4 blocs distincts).\n2. **Monter un dossier par bloc** : pour chaque bloc visé, fournissez des **preuves d’expérience** (attestations employeur, productions professionnelles, certifications).\n3. **Passer devant un jury** : évaluation sur les compétences du bloc (entretien, mise en situation, dossier).\n*Pour vous : idéal si vous avez une expérience **ciblée** (ex : 3 ans en gestion de projet mais pas en management d’équipe).*\n\n### **Plan B — Ambitieux : VAE complète + blocs complémentaires**\n- Si vous visez le **titre entier** mais manquez quelques compétences, validez d’abord les blocs acquis, puis complétez par de la **formation courte** (ex : MOOC, certifications) pour les blocs restants.\n- Exemple : un titre RNCP \"Chef de projet digital\" (5 blocs) peut être validé en 2 temps (3 blocs par VAE + 2 blocs par formation).\n*Pour vous : solution optimale si votre expérience couvre **80% du titre**.*\n\n### **Plan C — Alternative : VAE + parcours hybride**\n- **Mix VAE et formation** : certains centres (CNAM, GRETA) proposent des parcours où vous validez **2-3 blocs par VAE** et suivez des cours pour les autres.\n- **Exemple concret** : le RNCP \"Développeur web\" (3 blocs) peut être obtenu en validant le bloc \"Back-end\" par VAE et en suivant un module \"Front-end\" en présentiel.\n*Pour vous : adapté si votre expérience est **partielle** ou si vous souhaitez monter en compétences.*\n\n---\n**⚠ Attention aux pièges**\n- **Blocs non éligibles** : tous les titres RNCP ne sont pas modularisables. Vérifiez la fiche du titre sur France Compétences (onglet \"Modalités d’accès\").\n- **Coût caché** : certains centres facturent des **frais de dossier par bloc** (500-1500€/bloc). Comparez les tarifs avant de choisir.\n- **Délais** : une VAE par bloc peut prendre **6 à 12 mois** (contre 3-6 mois pour une VAE complète). Anticipez si vous avez un projet pro urgent.\n\n---\n**Question pour vous** :\nVotre objectif est-il de **gagner du temps** (VAE par bloc) ou d’obtenir un **diplôme complet** (même avec un mix VAE/formation) ? Cela change radicalement la stratégie.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 60.73,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 1.46,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 3,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 3,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif"
+  ]
+}

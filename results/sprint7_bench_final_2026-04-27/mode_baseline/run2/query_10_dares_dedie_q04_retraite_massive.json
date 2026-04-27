@@ -1,0 +1,36 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q04_retraite_massive",
+  "query_text": "Quels métiers vont voir une retraite massive de leurs effectifs d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. D’ici 2030, les métiers les plus touchés par les départs à la retraite concernent surtout les secteurs **publics, industriels et techniques**, où les effectifs vieillissants sont nombreux.\n2. Priorité aux métiers **en tension** (besoin urgent de relève) : santé, BTP, énergie, enseignement, et certains métiers techniques (aéronautique, ferroviaire).\n3. Pour toi : si tu cherches une voie **stable et porteuse**, cible ces secteurs — mais vérifie aussi l’adéquation avec tes compétences et envies.\n\n---\n\n### **Plan A — Métiers en tension + retraite massive (priorité embauche)**\n1. **Santé et social** (connaissance générale)\n   - **Exemples** : Infirmiers, aides-soignants, médecins généralistes (départs massifs + pénurie structurelle).\n   - **Pourquoi ?** 50% des infirmiers auront +50 ans en 2030 (source DREES 2022). Besoin critique en EHPAD, hôpitaux, et territoires ruraux.\n   - **Pour toi** : Formations courtes (IFSI en 3 ans) ou longues (médecine), avec **emploi garanti** et salaires revalorisés (ex : 2 000–2 800€ net en début de carrière pour les infirmiers).\n\n2. **BTP et industrie** (connaissance générale)\n   - **Exemples** : Ouvriers qualifiés (électriciens, plombiers, charpentiers), conducteurs de travaux, techniciens de maintenance industrielle.\n   - **Pourquoi ?** 40% des salariés du BTP ont +50 ans (FFB 2023). Pénurie déjà visible (ex : 50 000 postes non pourvus en 2024).\n   - **Pour toi** : CAP/Bac Pro (2 ans) ou BTS (bac+2) en alternance = **salaire dès la formation** (1 200–1 800€/mois) + CDI quasi automatique.\n\n3. **Énergie et utilities** (connaissance générale)\n   - **Exemples** : Techniciens EDF/GDF (réseaux électriques, gaz), agents de maintenance nucléaire, ingénieurs en énergies renouvelables.\n   - **Pourquoi ?** 60% des agents EDF auront l’âge de partir d’ici 2030 (rapport Cour des Comptes 2021). Transition énergétique = besoins explosifs.\n   - **Pour toi** : BTS/DUT (ex : BTS Électrotechnique) ou écoles d’ingé (ex : INSA, Polytechnique pour le nucléaire) avec **salaire élevé** (2 500–3 500€ net en sortie d’école).\n\n---\n\n### **Plan B — Métiers publics et enseignement (stabilité + concours)**\n1. **Fonction publique territoriale et hospitalière** (connaissance générale)\n   - **Exemples** : Agents territoriaux (voirie, petite enfance), administratifs hospitaliers, pompiers.\n   - **Pourquoi ?** 1 fonctionnaire sur 2 partira à la retraite d’ici 2030 (DGAFP). Concours accessibles sans diplôme (catégorie C) ou avec bac+2 (catégorie B).\n   - **Pour toi** : Préparation aux concours via CNED ou GRETA (6–12 mois). Salaire moyen : 1 800–2 200€ net en début de carrière.\n\n2. **Enseignement (primaire/secondaire)** (connaissance générale)\n   - **Exemples** : Professeurs des écoles, profs de lycée technique (maths, physique, allemand).\n   - **Pourquoi ?** 40% des enseignants auront +55 ans en 2030 (DEPP). Manque criant dans les disciplines scientifiques et l’allemand.\n   - **Pour toi** : Licence + master MEEF (5 ans d’études), mais **recrutement facilité** dans l’académie de Versailles ou Créteil (besoins urgents).\n\n---\n\n### **Plan C — Métiers techniques méconnus (niche + haut salaire)**\n1. **Aéronautique et ferroviaire** (connaissance générale)\n   - **Exemples** : Mécaniciens aéronefs (Airbus, Safran), conducteurs de train (SNCF), techniciens en signalisation ferroviaire.\n   - **Pourquoi ?** 30–40% des effectifs ont +50 ans (rapports filières 2023). Salaire attractif (2 500–3 500€ net) + formations internalisées (ex : école SNCF).\n   - **Pour toi** : Bac Pro ou BTS (ex : BTS Aéronautique) + recrutement direct en entreprise.\n\n2. **Agriculture et agroéquipement** (connaissance générale)\n   - **Exemples** : Conducteurs d’engins agricoles, techniciens en machinisme, viticulteurs.\n   - **Pourquoi ?** 50% des agriculteurs auront +60 ans en 2030 (Chambres d’Agriculture). Besoin en **modernisation tech** (drones, GPS).\n   - **Pour toi** : CAPA/Bac Pro en 2 ans, avec **installation aidée** (prêts à taux zéro, terres subventionnées).\n\n---\n**⚠ Attention** : Ces métiers offrent une **stabilité**, mais certains impliquent des conditions physiques difficiles (BTP, santé) ou une mobilité géographique (enseignement, énergie). Pèse le **salaire vs qualité de vie** avant de choisir.\n\n**Question pour toi** :\nEst-ce que tu privilégies **la sécurité de l’emploi** (même si le métier est exigeant), **un salaire élevé** (même avec des études longues), ou **un équilibre vie pro/perso** (même si le secteur est moins en tension) ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 48.55,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 7.73,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 14,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 8,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective"
+  ]
+}

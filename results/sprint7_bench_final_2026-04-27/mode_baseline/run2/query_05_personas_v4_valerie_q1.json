@@ -1,0 +1,36 @@
+{
+  "suite": "personas_v4",
+  "query_id": "valerie_q1",
+  "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+  "answer_text": "**TL;DR**\n1. Une année en école de commerce privée coûte **8 000 € à 15 000 €** en moyenne (hors grandes écoles top 5), contre **0 € à 600 €** pour une licence publique (frais d’inscription + vie étudiante).\n2. Le coût réel dépend du statut (alternance = gratuité possible) et des aides (bourses, logements CROUS).\n3. Pour un budget serré, privilégiez les licences pro ou les IAE (publiques) avant de viser le privé.\n\n---\n\n### **Plan A — Public : Licence ou IAE (0 € à 600 €/an)**\n📍 **Licence pro Métiers du commerce international** (ex : [Université de Bordeaux](https://www.onisep.fr/http/redirection/formation/slug/FOR.11370)) — bac+3 public, **243 €/an** (frais d’inscription 2024-25) + ~300 €/mois vie étudiante.\n*Pour vous : formation professionnelle courte, avec stages rémunérés (500-800 €/mois).*\n\n📍 **IAE (Écoles Universitaires de Management)** — bac+3 à bac+5 public, **243 € à 3 800 €/an** (selon master). Ex : IAE Paris-Sorbonne.\n*Pour vous : équivalent école de commerce à coût réduit, avec réseaux pro solides.*\n\n---\n\n### **Plan B — Privé : Écoles de commerce (8 000 € à 15 000 €/an)**\n(Connaissance générale)\n- **Bachelor (bac+3)** : 7 000 € à 12 000 €/an (ex : INSEEC, SKEMA).\n- **Programme Grande École (bac+5)** : 10 000 € à 15 000 €/an (ex : Audencia, NEOMA), jusqu’à **20 000 €/an** pour HEC/ESSEC.\n*Pour vous : investissement lourd, mais ROI possible si salaire visé > 40k€/an (secteur finance, conseil). Alternance = gratuité + salaire (600-1 200 €/mois).*\n\n---\n\n### **Plan C — Alternatives hybrides (2 000 € à 6 000 €/an)**\n(Connaissance générale)\n- **Licences pro en alternance** : gratuites + salaire (ex : [Technico-commercial](https://www.onisep.fr/http/redirection/formation/slug/FOR.11371)).\n- **Écoles consulaires** (CCI) : 3 000 € à 6 000 €/an (ex : ESC Pau, EM Normandie).\n- **Formations à distance** (CNED, EAD) : 1 000 € à 3 000 €/an.\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Coût caché du privé** : frais de dossier (50-200 €), logement (500-900 €/mois en métropole), et matériel (ordinateur, logiciels).\n2. **Sélectivité des aides** : bourses sur critères sociaux (échelon 0 à 6) ne couvrent **pas** les frais de scolarité du privé (seulement la vie étudiante).\n3. **Marketing des classements** : une école \"classée top 10\" peut coûter 15k€/an sans garantie d’emploi (taux d’insertion à vérifier sur [Céreq](https://www.cereq.fr/)).\n\n---\n**Question pour vous :**\nQuel est votre budget annuel maximal (frais de scolarité + vie quotidienne) ? Cela déterminera si le privé est envisageable, ou si une licence pro/IAE en alternance serait plus adaptée.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 37.37,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 9.38,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 18,
+    "n_verified": 4,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 12,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation"
+  ]
+}

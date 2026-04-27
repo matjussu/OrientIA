@@ -1,0 +1,36 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q04_retraite_massive",
+  "query_text": "Quels métiers vont voir une retraite massive de leurs effectifs d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. D’ici 2030, les métiers les plus touchés par les départs à la retraite concernent surtout les secteurs **publics, industriels et techniques**, où les effectifs vieillissants sont nombreux.\n2. Trois domaines clés : **santé/soin** (infirmiers, médecins), **industrie/technique** (maintenance, BTP), et **fonction publique** (enseignants, policiers).\n3. Ces départs créeront des **opportunités d’embauche massives**, mais aussi des besoins en **formation accélérée** pour combler les postes.\n\n---\n\n### **Plan A — Métiers de la santé et du soin (besoins critiques)**\n**(connaissance générale)**\n- **Infirmiers, aides-soignants, médecins généralistes** :\n  - **Pourquoi ?** 50% des infirmiers auront +50 ans en 2030 (source DREES 2022). Pénurie déjà avérée dans les Ehpad et hôpitaux ruraux.\n  - **Opportunités** : CDI garantis, salaires revalorisés (ex : +18% pour les infirmiers depuis 2022), formations financées (ex : **IFSI** en 3 ans, accessible sans bac via VAE).\n  - **Piège** : Conditions de travail exigeantes (horaires décalés, stress). **Alternatives** : Métiers paramédicaux moins connus (ergothérapeute, podologue) avec moins de tension.\n\n- **Métiers du médico-social** :\n  - **Exemples** : Éducateurs spécialisés, assistants de service social.\n  - **Atout** : Recrutements massifs dans les collectivités territoriales (ex : départements).\n\n---\n\n### **Plan B — Métiers techniques et industriels (maintenance, BTP, énergie)**\n**(connaissance générale)**\n- **Techniciens de maintenance industrielle** :\n  - **Pourquoi ?** 40% des salariés du nucléaire et de la métallurgie partiront à la retraite (source France Stratégie 2023). Besoins en **chauffagistes, électriciens, techniciens de centrale**.\n  - **Formations** :\n    - **BTS Maintenance des Systèmes** (2 ans, lycées publics) → **taux d’emploi : ~90%** (connaissance générale).\n    - **Titre Pro Technicien de Maintenance** (1 an, AFPA) → **gratuit pour demandeurs d’emploi**.\n  - **Salaire** : 2 000–2 800€ brut/mois en début de carrière (estimation marché).\n\n- **BTP et génie civil** :\n  - **Métiers** : Conducteurs de travaux, géomètres, charpentiers.\n  - **Enjeu** : 200 000 départs prévus (FFB 2023). **Pénurie même pour les non-diplômés** (ex : manœuvres BTP, formables en 6 mois).\n  - **Passerelle** : **CAP + FCIL** (Formation Complémentaire d’Initiative Locale) pour monter en compétences.\n\n- **Énergéticiens** (nucléaire, renouvelables) :\n  - **Exemple** : Techniciens en éolien ou solaire → **formations courtes** (6–12 mois) via **GRETA** ou **CFA**.\n\n---\n\n### **Plan C — Fonction publique et métiers administratifs (stabilité garantie)**\n**(connaissance générale)**\n- **Enseignants (primaire/secondaire)** :\n  - **Chiffres** : 50 000 enseignants partiront d’ici 2030 (ministère de l’Éducation). **Concours moins sélectifs** dans certaines académies (ex : Créteil, Versailles).\n  - **Voie d’accès** : **Licence + Master MEEF** (4 ans après bac). **Alternatives** : Contractuels (sans concours, recrutement direct).\n\n- **Policiers, pompiers, administratifs territoriaux** :\n  - **Exemples** :\n    - **Gardien de la paix** : Concours accessible avec un bac (préparation en 1 an via **CNED**).\n    - **Agent territorial** (mairies, départements) : **Concours catégorie C** (niveau CAP/BEP).\n  - **Avantage** : **Stabilité, avantages sociaux**, mais salaires modestes (1 600–2 200€ net/mois).\n\n- **Métiers des transports** (SNCF, RATP) :\n  - **Postes** : Conducteurs de train, agents de maintenance. **Formations internes** rémunérées (ex : **École SNCF**).\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Formations privées coûteuses** : Certaines écoles promettent des \"diplômes rapides\" pour ces métiers en tension, mais sans reconnaissance officielle (ex : formations \"infirmier\" non agréées par l’ARS). **Vérifiez toujours le RNCP ou l’agrément étatique**.\n2. **Conditions de travail** : Les métiers en tension le sont souvent à cause de **contraintes fortes** (horaires, pénibilité). Ex : infirmiers de nuit, techniciens en centrale nucléaire (astreintes).\n\n---\n\n**Question pour toi :**\nCes métiers t’intéressent-ils pour leur **stabilité**, leur **impact social**, ou leur **accès rapide à l’emploi** ? Selon ta situation, privilégierais-tu une formation **courte et professionnelle** (Plan B) ou un parcours **long mais sécurisé** (Plan C, fonction publique) ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 32.64,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 3.59,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 5,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective"
+  ]
+}

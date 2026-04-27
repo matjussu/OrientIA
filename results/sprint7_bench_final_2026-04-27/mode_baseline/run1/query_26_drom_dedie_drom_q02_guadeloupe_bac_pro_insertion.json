@@ -1,0 +1,37 @@
+{
+  "suite": "drom_dedie",
+  "query_id": "drom_q02_guadeloupe_bac_pro_insertion",
+  "query_text": "En Guadeloupe, est-ce que ça vaut le coup de faire un bac pro gestion administration ? Quelles débouchés ?",
+  "answer_text": "**TL;DR**\n1. Le **bac pro Gestion-Administration** en Guadeloupe offre des débouchés locaux stables (administration, PME, tourisme), mais avec des salaires modestes (1 500–1 800 € brut/mois en début de carrière — connaissance générale).\n2. **Alternative forte** : les BTS tertiaires (Gestion, Comptabilité, Tourisme) boostent l’employabilité et ouvrent à des postes mieux rémunérés (2 000–2 500 € brut — connaissance générale).\n3. **Piste à explorer** : les métiers liés au tourisme (hôtellerie, gestion d’événements) sont porteurs en Guadeloupe, avec des formations courtes (BP, BTS).\n\n---\n\n### **Plan A — Réaliste : Bac pro Gestion-Administration + insertion locale**\n**Débouchés typiques** (connaissance générale) :\n- **Secteur public** : Agent administratif dans les mairies, hôpitaux, ou services de l’État (concours catégorie C).\n  *Exemples* : Adjoint administratif territorial, agent d’accueil.\n  *Salaire* : ~1 550 € brut/mois (début de carrière, source : grilles indiciaires fonction publique 2024).\n- **Secteur privé** : Assistant administratif dans les PME, cabinets comptables, ou structures touristiques (hôtels, agences).\n  *Salaire* : 1 500–1 800 € brut/mois (estimation marché local — connaissance générale).\n- **Avantage** : Formation **gratuite** en lycée public, stages en entreprise inclus.\n\n**Pour toi** : Idéal si tu veux un diplôme rapide (3 ans) et travailler **immédiatement** en Guadeloupe, sans projet de mobilité.\n\n---\n\n### **Plan B — Ambitieux : Poursuite d’études en BTS (2 ans après le bac pro)**\n**Formations adaptées** (connaissance générale) :\n- **BTS Gestion des PME** (Lycée Polyvalent de Pointe-Noire) : Gestion, comptabilité, relation client.\n  *Débouchés* : Assistant de gestion (2 000–2 300 € brut), créateur d’entreprise.\n- **BTS Tourisme** (Lycée de Baimbridge) : Gestion de projets touristiques, réservation, accueil.\n  *Débouchés* : Chargé d’accueil en office de tourisme, responsable d’hébergement (secteur porteur en Guadeloupe).\n- **BTS Comptabilité et Gestion** : Comptable junior (2 200–2 500 € brut).\n\n**Pour toi** : Si tu es prêt·e à étudier **2 ans de plus**, ces BTS triplent tes opportunités et salaires. **Alternance possible** (rémunération + expérience).\n\n---\n### **Plan C — Spécialisation touristique (secteur clé en Guadeloupe)**\n**Formations courtes et ciblées** (connaissance générale) :\n- **BP (Brevet Professionnel) Réceptionniste en hébergement touristique** (1 an après un bac pro) :\n  *Débouchés* : Réceptionniste en hôtel, résidences touristiques (1 800–2 200 € brut).\n- **Titre Pro Assistant de gestion touristique** (formations financées par Pôle Emploi ou la Région).\n  *Atout* : Réseau professionnel local fort (partenariats avec les acteurs du tourisme).\n\n**Pour toi** : Parfait si tu aimes le contact client et veux profiter de la **demande forte** dans le tourisme guadeloupéen.\n\n---\n### ⚠ **Attention aux pièges**\n- **Salaire limité** : Avec un bac pro seul, les postes administratifs en Guadeloupe paient souvent **au SMIC ou juste au-dessus** (connaissance générale). Pense à une poursuite d’études pour évoluer.\n- **Concurrence locale** : Les postes dans la fonction publique territoriale sont **très demandés** (peu de turn-over). Prépare-toi aux concours (catégorie C).\n- **Mobilité** : Si tu envisages de quitter la Guadeloupe, un bac pro seul sera **peu valorisé** hors du territoire. Un BTS ou une licence pro ouvre plus de portes en métropole.\n\n---\n**Question pour toi** :\nQu’est-ce qui prime pour toi ?\n- **Un emploi rapide** (bac pro + insertion locale) ?\n- **Un meilleur salaire** (poursuite en BTS) ?\n- **Un secteur dynamique** (tourisme) ?\n\n👤 *Pour affiner ton projet, un RDV avec le **Psy-EN de ton lycée** ou le **CIBC de Guadeloupe** (Centre d’Information et de Bilan de Compétences) peut t’aider à identifier les formations financées près de chez toi.*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 36.93,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 2.9,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation_insertion",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "region_diplome",
+    "_metier_prospective",
+    "fap_region"
+  ]
+}

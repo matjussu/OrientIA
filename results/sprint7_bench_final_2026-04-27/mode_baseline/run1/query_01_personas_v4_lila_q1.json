@@ -1,0 +1,37 @@
+{
+  "suite": "personas_v4",
+  "query_id": "lila_q1",
+  "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+  "answer_text": "**TL;DR**\n1. Une licence de lettres modernes ouvre à des métiers variés, mais souvent **hors du champ strict de la discipline** (enseignement, recherche, édition).\n2. **Seuls 10-15% des diplômés** travaillent directement dans un domaine lié aux lettres (connaissance générale) — la majorité se réoriente ou complète par une spécialisation.\n3. **3 pistes concrètes** : enseignement (le plus direct), métiers de la culture/édition (sélectifs), ou passerelles vers des secteurs porteurs (communication, fonction publique).\n\n---\n\n### **Plan A — Enseignement : le débouché \"naturel\" (mais saturé)**\n📍 **Master MEEF Lettres** (ex : [INSPÉ Paris](https://www.onisep.fr/http/redirection/formation/slug/FOR.10446)) — bac+5 public, concours **très sélectif** (10-15% de reçus au CAPES, connaissance générale).\n*Pour toi :* Si tu aimes transmettre, c’est la voie la plus logique, mais prépare-toi à un **concours exigeant** (épreuves écrites/orales + stage). Alternatives : professorat des écoles (CRPE) ou enseignement en lycée pro (CAPLP).\n\n### **Plan B — Culture, édition, médiation : des secteurs passionnants (mais précaires)**\n📍 **Master Édition** (ex : [Paris-Nanterre](https://www.onisep.fr/http/redirection/formation/slug/FOR.6749)) ou **Master Patrimoine** (ex : [Tours](https://www.onisep.fr/http/redirection/formation/slug/FOR.4659)) — bac+5 public, **sélectivité modérée** (30-50%).\n*Pour toi :* Pour travailler en bibliothèque, maison d’édition, ou médiation culturelle. **Attention** : ces secteurs recrutent peu (CDD/stages fréquents). Pense à l’**alternance** pour te différencier.\n\n### **Plan C — Passerelles vers des secteurs porteurs (communication, fonction publique, tech)**\n*(connaissance générale)*\n- **Communication/RH** : Complète par un **DU ou master pro** (ex : communication digitale, gestion de projet culturel). Les compétences rédactionnelles sont valorisées.\n- **Fonction publique** : Concours administratifs (catégorie B ou A) accessibles avec une licence + préparation.\n- **Tech/UX Writing** : Métier émergent (rédaction de contenus techniques, interfaces) — formations courtes en **rédaction web** ou **design d’information**.\n*Pour toi :* Si tu veux un salaire stable, ces passerelles sont plus sûres que les métiers \"traditionnels\" des lettres.\n\n---\n**⚠ Attention aux pièges**\n- **Précarité dans la culture/édition** : 60% des emplois sont en CDD ou intermittents (connaissance générale). Prépare un **plan B financier**.\n- **Concours enseignement** : Le CAPES de lettres a un **taux de réussite < 20%** (connaissance générale). Ne mise pas tout dessus sans filet.\n- **Doctorat** : Réservé aux passionnés de recherche — **débouchés très limités** (3% des docteurs en lettres trouvent un poste universitaires, source : [MENJS](https://www.enseignementsup-recherche.gouv.fr/)).\n\n---\n**Question pour toi :**\nQu’est-ce qui prime pour toi : **la passion pour la discipline** (même avec des revenus modestes), **la stabilité** (via une passerelle), ou **l’ouverture à l’international** (ex : enseignement du français à l’étranger) ? *(Un conseiller en orientation peut t’aider à affiner ce choix — prends RDV au CIO de ta ville.)*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 28.84,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 6.91,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 6,
+    "n_verified_strict": 6,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_metier_prospective"
+  ]
+}

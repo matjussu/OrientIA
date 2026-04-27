@@ -1,0 +1,39 @@
+{
+  "suite": "voie_pre_bac_dedie",
+  "query_id": "voie_pre_bac_q03_bac_pro_cyber_existe",
+  "query_text": "Est-ce qu'il existe un bac pro en cybersécurité ? Programme et débouchés ?",
+  "answer_text": "**TL;DR**\n1. **Il n'existe pas de bac pro dédié à la cybersécurité** (connaissance générale).\n2. Les métiers de la cybersécurité sont accessibles via des **formations bac+2 à bac+5**, avec des passerelles depuis des bacs pros en informatique.\n3. Voici 3 voies adaptées selon ton niveau actuel, avec leurs débouchés concrets.\n\n---\n\n### **Plan A — Bac pro informatique (réseau/système) + spécialisation cybersécurité**\n📍 **Bac pro SN (Systèmes Numériques)** — option RISC (Réseaux Informatiques et Systèmes Communicants)\n*Pour toi :* Si tu es en lycée ou en réorientation, ce bac pro te donne les bases réseaux/sécurité, puis tu peux continuer en BTS ou BUT cybersécurité.\n**Débouchés après +2/+3 ans** : Technicien cybersécurité, administrateur réseau sécurisé.\n*(connaissance générale : programme officiel [Éducation Nationale](https://eduscol.education.fr/))*\n\n---\n\n### **Plan B — BTS ou BUT cybersécurité (accès post-bac pro possible)**\n📍 **BTS SIO option SISR** (Sécurité et Réseaux) — bac+2 public, **sélectivité modérée** (30-60% selon académies)\n*Pour toi :* Avec un bac pro SN, tu peux candidater en BTS SIO (spécialisation sécurité possible en stage/projet). Débouchés : administrateur sécurité junior.\n📍 **BUT R&T parcours Cybersécurité** (Lyon, Toulouse, etc.) — bac+3 public, **label SecNumEdu** (reconnu par l’ANSSI)\n*Pour toi :* Si tu vises un niveau bac+3 avec une forte employabilité. Débouchés : ingénieur sécurité, RSSI adjoint.\n*[Fiche ONISEP BUT R&T](https://www.onisep.fr/http/redirection/formation/slug/FOR.8012)*\n\n---\n\n### **Plan C — Alternance dès bac+2 (sans diplôme supérieur)**\n*(connaissance générale)*\n**Certifications professionnelles** (ex : **TAE** de l’ANSSI, **Certificat Cybersécurité** via le GRETA ou AFPA) + **alternance** en entreprise.\n*Pour toi :* Si tu veux travailler rapidement (12-24 mois), avec un salaire dès la formation. Débouchés : technicien SOC (Centre Opérations Sécurité), analyste cyber junior.\n\n---\n### **⚠ Attention aux pièges**\n- **Pas de bac pro \"cybersécurité\"** : méfie-toi des formations privées qui promettent un diplôme \"bac pro cyber\" — elles n’existent pas (risque d’arnaque ou de diplôme non reconnu).\n- **Sélectivité des BUT/BTS** : même en public, certains BUT cybersécurité (ex : Paris) ont des taux < 20%. Vise des villes moins demandées (ex : Le Mans, Clermont-Ferrand).\n- **Alternance = contrat obligatoire** : sans entreprise signataire, tu ne peux pas commencer (prévois 3-6 mois de recherche).\n\n---\n**Question pour toi :**\nAs-tu déjà un bac (ou un projet de bac pro) en informatique ? Cela change radicalement les formations accessibles en cybersécurité. Si non, par où veux-tu commencer : lycée (bac pro), études supérieures (BTS/BUT), ou certification pro en alternance ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 26.28,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 8.79,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 8,
+    "n_verified_strict": 8,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "formation_insertion",
+    "voie_pre_bac"
+  ],
+  "granularities_top_k": [
+    "bac_pro_domaine",
+    "_formation",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_competences_certif",
+    "formation_france",
+    "formation_france"
+  ]
+}

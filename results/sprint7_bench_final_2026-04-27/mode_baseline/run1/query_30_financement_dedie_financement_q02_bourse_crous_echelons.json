@@ -1,0 +1,36 @@
+{
+  "suite": "financement_dedie",
+  "query_id": "financement_q02_bourse_crous_echelons",
+  "query_text": "Comment fonctionnent les échelons de la bourse CROUS ? Combien je peux toucher ?",
+  "answer_text": "**TL;DR**\n1. Les bourses CROUS (échelons 0 à 7) sont calculées selon les revenus familiaux et la distance entre domicile et lieu d’études.\n2. Montant 2024-2025 : de **1 000 €/an (échelon 0bis)** à **6 500 €/an (échelon 7)**.\n3. Simulation obligatoire sur [mesdroitssociaux.gouv.fr](https://www.mesdroitssociaux.gouv.fr) pour connaître ton échelon exact.\n\n---\n\n### **Plan A — Bourse classique (échelons 0 à 7)**\n**Montants 2024-2025** (connaissance générale) :\n- **Échelon 0bis** : 1 000 €/an (étudiants autonomes ou situations particulières)\n- **Échelon 1** : 1 700 €/an\n- **Échelon 2** : 2 500 €/an\n- **Échelon 3** : 3 300 €/an\n- **Échelon 4** : 4 100 €/an\n- **Échelon 5** : 4 900 €/an\n- **Échelon 6** : 5 700 €/an\n- **Échelon 7** : 6 500 €/an\n*Pour toi* : L’échelon dépend des **revenus fiscaux 2023** de tes parents (ou les tiens si autonome) et de ta **distance domicile-études** (3 critères : chez les parents, logement indépendant, ou éloignement > 250 km).\n\n---\n\n### **Plan B — Bourses spécifiques (mobilité, master, situations particulières)**\n- **Aide à la mobilité Parcoursup** : 500 € à 1 000 € si tu changes d’académie pour tes études (connaissance générale).\n- **Aide à la mobilité internationale** (Erasmus+) : 200 € à 500 €/mois selon la destination.\n- **Aide à la première installation** : 1 000 € pour les étudiants boursiers en logement indépendant (sous conditions).\n*Pour toi* : Ces aides s’**ajoutent** à la bourse de base si tu es éligible. Exemple : un échelon 4 + mobilité Parcoursup = 4 100 € + 1 000 €.\n\n---\n### **Plan C — Alternatives si non éligible à la bourse CROUS**\n- **Aides au logement** (APL/ALS) : jusqu’à **250 €/mois** selon ton loyer et ta situation (connaissance générale).\n- **Fonds sociaux d’urgence** : aides ponctuelles via ton établissement en cas de difficultés.\n- **Bourses régionales ou d’établissement** : certaines régions (Île-de-France, Occitanie…) ou écoles proposent des compléments.\n*Pour toi* : Même sans bourse CROUS, ces dispositifs peuvent réduire tes frais de **30 à 50%** (estimation).\n\n---\n### **⚠ Attention aux pièges**\n- **Délais** : La demande se fait **uniquement** via le [Dossier Social Étudiant (DSE)](https://www.messervices.etudiant.gouv.fr) entre **janvier et mai** pour la rentrée suivante. Pas de rattrapage possible.\n- **Revenus 2023** : Même si ta situation change en 2025 (ex : divorce des parents), c’est le **revenu fiscal 2023** qui compte pour 2025-2026.\n- **Logement** : Les APL sont **calculées sur ton loyer réel** — un studio à 600 € ne te donnera pas 250 € d’APL (exemple : 600 € → ~120 €/mois).\n\n---\n**Question pour toi** :\nAs-tu déjà fait une simulation sur [mesdroitssociaux.gouv.fr](https://www.mesdroitssociaux.gouv.fr) ? Si oui, quel échelon est estimé ? Sinon, veux-tu que je t’aide à identifier les pièces justificatives à préparer pour le DSE ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 35.03,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 6.83,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 6,
+    "n_verified_strict": 6,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "financement_etudes"
+  ],
+  "granularities_top_k": [
+    "dispositif",
+    "dispositif",
+    "voie",
+    "dispositif",
+    "dispositif",
+    "dispositif",
+    "dispositif",
+    "dispositif"
+  ]
+}

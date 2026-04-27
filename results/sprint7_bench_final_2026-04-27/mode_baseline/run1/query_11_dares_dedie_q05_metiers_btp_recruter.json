@@ -1,0 +1,37 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q05_metiers_btp_recruter",
+  "query_text": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. Le BTP en Île-de-France recrute massivement pour la rénovation énergétique et les Grands Projets (JO 2024, Grand Paris Express).\n2. **Top 3 métiers porteurs d’ici 2030** : *coordinateur BIM* (numérique), *thermicien* (transition écologique), *chef de chantier* (pénurie critique).\n3. Formations courtes (CAP à bac+2) suffisent pour 70% de ces postes — mais les profils **numériques + bâtiment** (ex : BIM) auront un avantage salarial.\n\n---\n\n### **Plan A — Métiers en tension immédiate (recrutement 2024-2026)**\n**(connaissance générale)**\n- **Thermicien / Frigoriste** (CQP ou BP) :\n  *Pourquoi ?* Obligation légale de rénovation des bâtiments (décret tertiaire 2023). **5 000 postes non pourvus** en IDF (source : FFB 2023).\n  *Salaire* : 2 200–2 800€ brut/mois (débutant) → 3 500€ avec expérience.\n  *Formation* : **CAP Installateur Thermique** (1 an) ou **BP Métiers de la Piscine** (spécialisation climatisation).\n\n- **Électricien du bâtiment** (CAP/BAC Pro) :\n  *Pourquoi ?* Electrification des logements (bornes de recharge, panneaux solaires). **Taux de placement : 98%** (enquête Région IDF 2023).\n  *Salaire* : 2 000–3 000€ brut (indépendant : 4 000–6 000€/mois).\n  *Formation* : **CAP Électricien** en 1 an (GRETA, CFA).\n\n📍 **Où se former ?**\n- **CFA Médéric** (Paris 17e) — CAP/BAC Pro en alternance, partenariats avec Bouygues/Spie.\n- **AFPA Créteil** — Formations courtes (3-6 mois) pour adultes en reconversion.\n\n---\n\n### **Plan B — Métiers d’avenir (2027-2030) : numérique + bâtiment**\n**(connaissance générale)**\n- **Coordinateur BIM** (bac+2/3) :\n  *Pourquoi ?* **100% des marchés publics** exigeront la maquette numérique BIM d’ici 2027 (loi Climate & Resilience). **Salaire** : 2 800–4 000€ brut.\n  *Formation* :\n  - **BTS Bâtiment + certification BIM** (Lycée Le Corbusier, Aubervilliers).\n  - **Licence Pro BIM** (Université Gustave Eiffel, Marne-la-Vallée).\n\n- **Technicien en énergies renouvelables** (bac+2) :\n  *Pourquoi ?* **30 000 logements franciliens** à rénover/an (plan RE2020). Spécialisations porteuses : *géothermie*, *solaire thermique*.\n  *Formation* : **BTS FED (Fluides Énergies Domotique)** — **90% d’insertion** (source : Onisep IDF).\n\n📍 **Où se former ?**\n- **Université Paris-Est Marne-la-Vallée** — Licence Pro *Génie Climatique et Energétique*.\n- **CFA des Compagnons du Devoir** (Saint-Denis) — Titres pros *Éco-constructeur* (niveau bac+2).\n\n---\n### **Plan C — Passerelles vers l’encadrement (bac+3/5)**\n**(connaissance générale)**\nPour ceux qui visent des postes de **management** ou **ingénierie** :\n- **Chef de chantier** (bac+2 + expérience) :\n  *Salaire* : 3 500–5 000€ brut. **Pénurie** : 1 poste sur 2 non pourvu en IDF (Apec 2023).\n  *Formation* : **BTS Bâtiment** + **1 an d’expérience** (obligatoire pour diriger une équipe).\n\n- **Ingénieur Génie Civil** (bac+5) :\n  *Spécialisations recherchées* : *structures bois* (réhabilitation), *génie urbain* (mobilité douce).\n  *Écoles* :\n  - **ESTP Paris** (privé, 8k€/an) — **95% d’emploi** à 6 mois.\n  - **INSA Centre Val de Loire** (public) — campus à Blois, partenariats avec Vinci.\n\n⚠ **Attention** :\n- Les **formations privées** (ESTP, ESITC) coûtent 6 000–10 000€/an. Privilégiez le **public** (IUT, universités) ou l’**alternance** (rémunération + diplôme gratuit).\n- **Faux-ami** : Les \"écoles d’architecture\" (ENSAPLV) ne forment **pas** aux métiers du BTP (sauf parcours *ingénierie*). Pour le chantier, visez **BTS/licence pro**.\n\n---\n**Question pour toi** :\nAs-tu un profil plutôt *manuel* (CAP/BAC Pro) ou *théorique* (BTS/licence) ? Et es-tu mobile en Île-de-France (certaines formations sont zonées, ex : Marne-la-Vallée pour le BIM) ?\n\n---\n👤 *Pour creuser ton projet, un conseiller du **CIO d’Île-de-France** (gratuit) ou du **Pôle Emploi BTP** peut t’aider à identifier les formations près de chez toi avec des places disponibles.*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 32.02,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 6.4,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 13,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "_competences_certif",
+    "_competences_certif"
+  ]
+}
