@@ -30,6 +30,10 @@ data/raw/*
 # sources INSEE territorial + France Travail. Mêmes raisons.
 !data/raw/domtom/
 !data/raw/domtom/*.json
+# Exception Sprint 8 W1 — corrections factuelles (5 erreurs persistantes
+# user_test_v3). Curé manuellement, tracké pour reproductibilité.
+!data/raw/corrections_factuelles/
+!data/raw/corrections_factuelles/*.json
 data/embeddings/*
 results/raw_responses/
 
