@@ -315,6 +315,7 @@ def generate(
     model: str = "mistral-medium-latest",
     temperature: float = 0.3,
     inject_user_level: bool = True,
+    system_prompt_override: str | None = None,
 ) -> str:
     """Generate an answer via Mistral.
 
@@ -322,6 +323,12 @@ def generate(
     guidance prefix derived from rule-based classification of the
     question. Disable only for A/B comparisons of the feature itself
     in benchmark harnesses — production should keep it on.
+
+    `system_prompt_override` (Sprint 7, 2026-04-27) optional override
+    of the system prompt. Default `None` = utilise `SYSTEM_PROMPT` v3.2
+    (non-régression Sprint 5/6 stricte). Pour activer v3.3 strict
+    (Sprint 7 Action 3), passer `SYSTEM_PROMPT_V33_STRICT` depuis
+    `src.prompt.system_strict`.
     """
     context = format_context(retrieved)
     guidance_parts: list[str] = []
@@ -332,11 +339,12 @@ def generate(
         guidance_parts.append(intent_to_format_guidance(intent))
     user_guidance = "\n\n".join(guidance_parts)
     user_prompt = build_user_prompt(context, question, user_guidance=user_guidance)
+    sys_prompt = system_prompt_override if system_prompt_override is not None else SYSTEM_PROMPT
     response = client.chat.complete(
         model=model,
         temperature=temperature,
         messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "system", "content": sys_prompt},
             {"role": "user", "content": user_prompt},
         ],
     )

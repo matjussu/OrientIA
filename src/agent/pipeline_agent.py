@@ -118,6 +118,10 @@ class AgentPipeline:
     enable_fact_check: bool = False  # opt-in pour Sprint 4 bench
     fact_check_max_claims: int = 5  # cap claims fact-check pour budget
     generation_model: str = "mistral-medium-latest"  # gen finale model
+    # Sprint 7 Action 3 — anti-hallu LLM
+    system_prompt_override: str | None = None  # None = SYSTEM_PROMPT v3.2 (default)
+    # Pour activer v3.3 strict (R1-R6) : passer SYSTEM_PROMPT_V33_STRICT
+    # depuis src.prompt.system_strict.
 
     def __post_init__(self) -> None:
         self.clarifier = ProfileClarifier(
@@ -270,6 +274,7 @@ class AgentPipeline:
                 query,
                 model=self.generation_model,
                 temperature=0.3,
+                system_prompt_override=self.system_prompt_override,
             )
             result.elapsed_generate_s = round(time.time() - t0, 2)
             result.answer_text = answer_text
