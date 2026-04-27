@@ -26,6 +26,10 @@ data/raw/*
 # artefact de build), donc tracké pour reproductibilité.
 !data/raw/financement/
 !data/raw/financement/*.json
+# Exception Sprint 6 axe 2 — corpus DROM-COM territorial curé depuis
+# sources INSEE territorial + France Travail. Mêmes raisons.
+!data/raw/domtom/
+!data/raw/domtom/*.json
 data/embeddings/*
 results/raw_responses/
 
