@@ -1,0 +1,37 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q14_passerelle_infirmier_RH",
+  "query_text": "Une amie infirmière souhaite passer à un poste en ressources humaines. Quelles passerelles existent ?",
+  "answer_text": "**TL;DR**\n1. Une infirmière peut se réorienter vers les RH, mais **pas en direct** : il faut valider des compétences en gestion/droit.\n2. **2 voies principales** : formation courte type licence pro (1 an) ou VAE pour un titre RH (6-12 mois).\n3. **Cible prioritaire** : les postes RH dans le secteur santé (hôpitaux, EHPAD, cliniques) où son expérience infirmière est un atout.\n\n---\n\n### **Plan A — Réaliste : Licence Pro RH en 1 an (formation continue ou alternance)**\n📍 **Licence Pro Métiers de la GRH** (ex : **Université Paris Nanterre** ou **IAE Lyon**) — bac+3 public, **sélectivité modérée** (dossier + entretien), **diplôme d'État** · [exemple fiche ONISEP](https://www.onisep.fr/formation)\n*Pour toi : adaptée si ton amie a déjà un bac+2 (DE infirmier = bac+3). Alternance possible pour financer et acquérir de l'expérience RH. Spécialisations \"GRH santé\" existent (ex : IAE de Bordeaux).*\n\n**Étapes clés** :\n1. **Valider son éligibilité** : son diplôme d'infirmière (DE) = bac+3 → elle peut postuler directement en licence pro (pas de mise à niveau).\n2. **Choisir une spécialisation santé** : certaines licences pro ciblent le secteur médical (ex : \"GRH des établissements sanitaires\").\n3. **Alternance** : signer un contrat avec un hôpital/EHPAD pour appliquer les cours en contexte réel (salaire + formation gratuite).\n\n---\n\n### **Plan B — Flexible : VAE pour un Titre RNCP RH (6-12 mois)**\n*(connaissance générale)*\n📍 **Titre RNCP \"Responsable en Gestion des Ressources Humaines\"** (ex : **CEF** ou **ESG**) — niveau bac+3/4, **accessible par VAE** (Validation des Acquis de l'Expérience), coût ~3 000-6 000€ (finançable via CPF).\n*Pour toi : idéal si elle a déjà géré des équipes (ex : infirmière cadre) ou formé des collègues. Dossier VAE à monter avec un accompagnateur (ex : GRETA, CCI).*\n\n**Étapes clés** :\n1. **Bilan de compétences** : identifier ses acquis transférables (gestion de planning, résolution de conflits, formation de nouveaux infirmiers).\n2. **Choisir un titre RNCP éligible** : ex. \"Chargé(e) de Ressources Humaines\" (RNCP 36255) ou \"Responsable RH\" (RNCP 34000).\n3. **Dossier VAE** : rédiger un livret détaillant son expérience (3 ans minimum requis) + entretien avec un jury. **Délai** : 6-12 mois.\n\n**⚠ Attention** :\n- La VAE est **exigeante en temps** (rédaction du livret + préparation à l'oral).\n- Certains titres RNCP privés sont **peu reconnus** : privilégier ceux délivrés par des organismes certifiés (ex : CNAM, CCI).\n\n---\n\n### **Plan C — Spécialisé : Double compétence RH + Santé (métiers hybrides)**\n*(connaissance générale)*\nSi elle souhaite **garder un lien avec le médical**, des postes hybrides existent :\n- **Chargée de recrutement médical** (pour des cabinets, cliniques) : formation courte en recrutement (ex : certificat \"Recruteur spécialisé santé\").\n- **Responsable formation en établissement de santé** : son expérience terrain est un atout pour concevoir des plans de formation.\n- **Consultante RH en qualité de vie au travail (QVT)** : spécialisation possible via un DU (Diplôme Universitaire) comme le **DU \"Santé et Travail\"** (ex : Université de Bordeaux).\n\n**Exemple de parcours** :\n1. **Certification courte** (3-6 mois) : ex. \"Gestion des compétences en santé\" (via **Fédération Hospitalière de France**).\n2. **Réseautage ciblé** : rejoindre des groupes LinkedIn comme \"RH Santé\" ou \"Management Hospitalier\".\n3. **Postuler en interne** : les hôpitaux/EHPAD recrutent souvent en priorité leur personnel pour des postes RH juniors.\n\n---\n### **Calendriers clés à respecter**\n| Étape               | Période          | Lien utile                                  |\n|---------------------|------------------|---------------------------------------------|\n| Candidature licence pro | **Mars-mai** (rentrée septembre) | [Parcoursup (formation continue)](https://www.parcoursup.fr) |\n| Dépôt dossier VAE   | **Toute l'année** (délai moyen : 6 mois) | [France VAE](https://www.francevae.fr) |\n| Alternance          | **Recrutement 3-6 mois avant la rentrée** | [Pôle Emploi Alternance](https://candidat.pole-emploi.fr/alternance) |\n\n---\n**Question pour toi** :\nSon objectif est-il de **quitter totalement le soin** pour des RH généralistes, ou de **rester dans le secteur santé** avec une casquette RH ? Cela change radicalement les formations à cibler (ex : licence pro \"GRH classique\" vs. \"GRH santé\").",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 41.81,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 4.89,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 11,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 11,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_metier_prospective",
+    "_competences_certif"
+  ]
+}

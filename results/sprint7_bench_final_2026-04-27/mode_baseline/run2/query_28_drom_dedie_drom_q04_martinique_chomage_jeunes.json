@@ -1,0 +1,38 @@
+{
+  "suite": "drom_dedie",
+  "query_id": "drom_q04_martinique_chomage_jeunes",
+  "query_text": "Le chômage des jeunes en Martinique est de combien ? Quels secteurs recrutent vraiment ?",
+  "answer_text": "**TL;DR**\n1. Le chômage des jeunes (15-24 ans) en Martinique atteint **~40%** (connaissance générale, estimation INSEE/Dares 2023), soit presque le double de la moyenne nationale (~20%).\n2. **3 secteurs recrutent activement** : tourisme (hôtellerie-restauration), santé-social (aides-soignants, infirmiers), et BTP (énergies renouvelables).\n3. **Piste concrète** : les formations courtes (CAP à bac+2) dans ces domaines offrent des débouchés rapides, souvent en alternance.\n\n---\n\n### **Plan A — Secteurs porteurs avec formations locales**\n📍 **Tourisme (hôtellerie/restauration)** — CAP Cuisine, BTS Tourisme (lycées de Fort-de-France)\n*Pour toi : embauche immédiate en saison haute, CDD/CDI possibles. Alternance fréquente (ex : hôtel Bakoua).*\n\n📍 **Santé-social** — DEAS (aide-soignant), DEAP (auxiliaire de puériculture) à l’IFSI de Martinique\n*Pour toi : pénurie de personnel → **100% d’insertion** (connaissance générale) en EHPAD/cliniques. Salaires ~1 600-1 900€ net (source : conventions collectives 2024).*\n\n📍 **BTP & énergies renouvelables** — CAP Électricien, BP Métiers de la piscine (CFP de Ducos)\n*Pour toi : chantiers de reconstruction post-ouragan et transition énergétique (solaire) créent des besoins.*\n\n---\n\n### **Plan B — Passerelles vers la France hexagonale**\n- **Métiers en tension nationaux** : conducteurs de travaux (BTP), infirmiers, développeurs web.\n  *Exemple :* Formation **AFPA** (gratuit pour demandeurs d’emploi) avec aides à la mobilité (ex : [programme \"Mobilité Outremers\"](https://www.pole-emploi.fr)).\n- **Secteur public** : concours de la Fonction publique territoriale (catégorie B/C) — **recrutement sans diplôme** pour certains postes (ex : agent administratif).\n\n---\n### **Plan C — Créer son emploi (alternative réaliste)**\n- **Auto-entrepreneuriat** : services à la personne (ménage, garde d’enfants), artisanat (réparation téléphone, coiffure à domicile).\n  *Aides :* **ACRE** (exonération partielle de charges) + **Nacre** (accompagnement).\n- **Agriculture** : maraîchage bio (demande locale forte), pêche — formations via la **Chambre d’Agriculture de Martinique**.\n\n---\n### **⚠ Attention aux pièges**\n- **Formations longues sans débouchés locaux** : évite les licences générales (droit, psycho) sans projet de mobilité — le marché martiniquais est petit.\n- **Secteurs saturés** : commerce de détail (peu de turn-over), administration (concours très compétitifs).\n- **Alternance** : certains employeurs abusent des contrats courts (ex : 6 mois non renouvelés) — privilégie les **entreprises labellisées** (ex : [réseau \"Entreprises Engagées\"](https://www.martinique.developpement-durable.gouv.fr)).\n\n---\n**Question pour toi :**\nAs-tu une préférence entre **un métier manuel avec embauche rapide** (BTP, santé) ou **un secteur nécessitant une formation plus longue mais avec évolution** (tourisme encadré, fonction publique) ? Cela peut orienter vers un CAP/BTS ou une licence pro.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 39.89,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 2.01,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 4,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "apec_region",
+    "formation_insertion",
+    "territoire_drom"
+  ],
+  "granularities_top_k": [
+    "territoire",
+    "_apec_region",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "_apec_region"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "suite": "personas_v4",
+  "query_id": "emma_q1",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "answer_text": "**TL;DR**\n1. Un développeur débutant post-M2 informatique gagne **entre 35k€ et 45k€ brut/an** en France (connaissance générale).\n2. L’écart dépend du secteur (ESN vs éditeur de logiciels), de la localisation (Île-de-France +10-15%), et du type de contrat (CDI vs alternance).\n3. L’alternance en M2 peut booster le salaire d’embauche (+5-10%) grâce à l’expérience pro acquise.\n\n---\n\n### **Plan A — Salaire médian réaliste (CDI classique)**\n**35k€–40k€ brut/an** (soit **2 200€–2 500€ net/mois**)\n- **Secteurs typiques** : ESN (SSII), startups, PME tech.\n- **Localisation** : Province ou petites villes (ex : Toulouse, Lyon, Nantes).\n- **Exemple concret** : Un diplômé de **Master Informatique Paris Cité** (grade Master) embauché en CDI touche en moyenne **2 080€ net/mois** (salaire médian, source Céreq Génération 2017 — *donnée vieillissante mais ordre de grandeur cohérent*).\n- **Pour toi** : Si tu vises un poste en développement logiciel ou web sans spécialisation pointue (cybersécurité, IA), ce fourchette est réaliste.\n\n---\n\n### **Plan B — Salaire élevé (secteurs porteurs + Île-de-France)**\n**40k€–45k€ brut/an** (soit **2 500€–2 800€ net/mois**)\n- **Secteurs clés** : Éditeurs de logiciels (ex : SAP, Dassault Systèmes), fintech, cybersécurité (avec label **SecNumEdu**), ou data science.\n- **Localisation** : **Île-de-France** (+10-15% vs province), ou métropoles tech (Lyon, Grenoble).\n- **Levier** : Une **alternance en M2** (ex : contrat pro avec une entreprise du CAC 40) peut justifier un salaire d’embauche à **42k€–45k€** grâce à l’expérience.\n- **Pour toi** : Si tu as une spécialisation (ex : **M2 Cybersécurité** avec certification ANSSI) ou une expérience en alternance, négocie dans cette fourchette.\n\n---\n### **Plan C — Optimisation (thèse CIFRE, freelance, étranger)**\n- **Thèse CIFRE** : **2 100€ net/mois** (brut ~33k€/an) + expérience R&D valorisable. Idéal si tu envisages une carrière en recherche ou dans des labos industriels.\n- **Freelance** : TJM débutant entre **350€ et 500€** (soit **42k€–60k€ brut/an** si 200 jours facturés), mais avec une instabilité initiale.\n- **Étranger** : **Suisse (60k€–70k€ brut)** ou **Allemagne (50k€–55k€)** pour les profils francophones. Pense aux contrats **Frontaliers** (Genève, Luxembourg).\n\n---\n\n### **⚠ Attention aux pièges**\n- **ESN vs Éditeur** : Une ESN (ex : Capgemini, Atos) paie souvent **5k€–10k€ de moins** qu’un éditeur de logiciels pour le même poste. Vérifie les grilles salariales sur **Glassdoor** ou **Welcome to the Jungle**.\n- **Alternance = expérience ≠ salaire garanti** : Un M2 en alternance ne garantit pas un CDI à 45k€ — cela dépend de la **taille de l’entreprise** et de ton **rôle** (ex : dev full-stack vs maintenance).\n- **Spécialisation = levier** : Sans compétence pointue (cloud, IA, cyber), tu resteras dans le bas de la fourchette. Pense aux **certifications** (AWS, OSCP, TensorFlow) pour te différencier.\n\n---\n**Question pour toi** :\nTon M2 inclut-il une spécialisation (cyber, data, embarqué) ou une alternance ? Cela peut faire varier ton salaire de **10 à 20%** à l’embauche. Si non, as-tu envisagé une **certification complémentaire** (ex : **AWS Certified Developer**) pour booster ta négociation ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 28.51,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 8.6,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 17,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 14,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "formation_france",
+    "formation_france"
+  ]
+}

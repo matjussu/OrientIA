@@ -1,0 +1,37 @@
+{
+  "suite": "personas_v4",
+  "query_id": "emma_q1",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "answer_text": "**TL;DR**\n1. Un développeur débutant post-M2 informatique en France gagne **entre 35k€ et 42k€ brut annuel** (médiane ~38k€) — hors primes et avantages.\n2. L’écart dépend du secteur (ESN vs éditeur de logiciels), de la localisation (Île-de-France +10-15%), et du type de contrat (CDI vs alternance prolongée).\n3. Pour maximiser ton salaire, cible les **éditeurs SaaS/IA** ou les **grands groupes tech** (banque, énergie), et négocie les primes (intéressement, télétravail).\n\n---\n\n### **Plan A — Salaire médian réaliste (CDI classique)**\n**35k€–38k€ brut/an** (soit **~2 300€–2 600€ net/mois**)\n- **Secteurs typiques** : ESN (SSII), PME du numérique, administrations.\n- **Localisation** : Province ou Île-de-France (hors Paris intra-muros).\n- **Exemples d’employeurs** : Capgemini, Atos, startups en scale-up, collectivités territoriales.\n*(connaissance générale, basée sur les baromètres APEC et Welcome to the Jungle 2023–2024)*\n\n---\n\n### **Plan B — Salaire haut de fourchette (profil recherché)**\n**38k€–45k€ brut/an** (soit **~2 600€–3 100€ net/mois**)\n- **Secteurs porteurs** :\n  - **Éditeurs de logiciels** (SaaS, cybersécurité, IA) : +10% vs ESN.\n  - **Grands groupes** (banque, énergie, aéronautique) : packages avec primes (jusqu’à 5k€/an).\n  - **Paris intra-muros** : +15% vs province (mais coût de la vie à soustraire).\n- **Compétences différenciantes** :\n  - Double compétence (ex : dev + data/IA, dev + cloud AWS/Azure).\n  - Expérience en alternance dans un secteur tendu (ex : santé, défense).\n*(connaissance générale, croisée avec les rapports Céreq et Glassdoor France)*\n\n---\n### **Plan C — Alternatives pour dépasser la fourchette**\n1. **Thèse CIFRE** (bac+8) :\n   - **Salaire** : ~2 100€ net/mois (brut ~32k€) pendant 3 ans, mais **CDI garanti à 45k€+** à la sortie (secteur R&D).\n   - **Pour toi** : Si tu vises la recherche appliquée ou un poste d’ingénieur expert.\n   *(connaissance générale, basée sur le dispositif ANRT 2024)*\n\n2. **Expatriation (Suisse, Luxembourg, Allemagne)** :\n   - **Salaire** : 60k€–80k€ brut/an en Suisse (Genève/Zurich), 45k€–55k€ au Luxembourg.\n   - **Pour toi** : Si tu es mobile et maîtrises l’anglais/allemand. Attention au coût de la vie.\n   *(connaissance générale, baromètre Michael Page Europe 2024)*\n\n3. **Freelance/Indépendant** :\n   - **TJM débutant** : 350€–500€/jour (soit ~40k€–70k€ brut/an si 200 jours facturés).\n   - **Pour toi** : Si tu as un réseau client et une spécialisation (ex : dev blockchain, devops).\n   *(connaissance générale, plateformes Malt et Comet)*\n\n---\n\n### **⚠ Attention aux pièges**\n- **ESN vs éditeur** : Une ESN peut proposer 38k€ brut, mais avec **turnover élevé** et missions moins stimulantes qu’en éditeur de logiciels.\n- **Primes variables** : Certains secteurs (banque, énergie) affichent 40k€ brut, mais **30% peuvent être des bonus non garantis**.\n- **Alternance prolongée** : Un contrat pro post-M2 à 28k€ brut n’est **pas une promotion** — vise un CDI direct.\n\n---\n**Question pour toi** :\nTon priorité est-elle le salaire brut, l’équilibre vie pro/perso, ou la montée en compétences rapide (même si ça signifie accepter 35k€ en éditeur pour décoller) ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 31.69,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 8.07,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 19,
+    "n_verified": 1,
+    "n_verified_strict": 1,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 18,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_formation"
+  ]
+}

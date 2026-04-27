@@ -1,0 +1,38 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q03_postes_aides_soignants",
+  "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. **Besoin massif** : La France devrait manquer de **200 000 à 300 000 aides-soignants d’ici 2030** (connaissance générale, projections Dares/INSEE).\n2. **Recrutements annuels** : Environ **50 000 postes à pourvoir par an** (départs en retraite + création de postes en EHPAD/domicile).\n3. **Opportunités** : Secteur en tension = **embauche rapide** (CDI souvent proposé dès la formation validée) et **évolutions possibles** (vers infirmier, cadre de santé).\n\n---\n\n### **Plan A — Se former rapidement (6-12 mois)**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** — Formation **gratuite en IFAS** (instituts publics) ou rémunérée en **apprentissage** (contrat pro).\n*Pour toi : Accès sans bac (concours ou sélection sur dossier), débouchés immédiats en EHPAD/hôpitaux.*\n→ **Exemple** : [IFAS de Lyon](https://www.ifas-lyon.fr) (formation en 10 mois).\n\n### **Plan B — Se spécialiser pour plus de stabilité**\n📍 **DEAS + Certification en gériatrie ou handicap** — Modules complémentaires (3-6 mois) pour cibler les **secteurs les plus recrutants** (EHPAD, SSIAD).\n*Pour toi : Salaire légèrement revalorisé (+5-10%) et postes moins physiques (ex : coordination d’équipe).*\n\n### **Plan C — Évoluer vers un métier paramédical**\n📍 **Passerelle DEAS → Diplôme d’Infirmier (DE)** — Après 3 ans d’expérience, accès à la **formation infirmière** (sans concours si VAP validée).\n*Pour toi : Pour ceux qui visent une carrière longue dans le soin, avec un salaire médian à **2 000€ net** (vs 1 600€ pour un aide-soignant).\n\n---\n**⚠ Attention aux pièges**\n- **Formations privées payantes** : Certaines écoles facturent **3 000-6 000€** le DEAS (vs **0€ en public**). Vérifie toujours le label **\"Financé par la Région\"** ou **\"Contrat d’apprentissage\"** sur [Parcoursup](https://www.parcoursup.fr).\n- **Conditions physiques** : Le métier exige de **soulever des patients**, travailler en horaires décalés (nuit/week-end). Testez en stage avant de s’engager.\n- **Salaire de départ** : SMIC ou légèrement au-dessus (1 500-1 700€ net) malgré la pénurie. Les revalorisations dépendent des **conventions collectives** (ex : hôpital public vs privé).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **le travail en EHPAD** (rythme stable, patients âgés), **l’hôpital** (urgence, équipe pluridisciplinaire) ou **le domicile** (autonomie, relation 1:1 avec les patients) ? Cela peut orienter ton choix de formation.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 20.74,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 5.28,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 7,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "_metier",
+    "_competences_certif"
+  ]
+}

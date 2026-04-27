@@ -1,0 +1,37 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q06_blocs_savoir_faire_BTS_hotel",
+  "query_text": "Quels savoir-faire certifiés à la sortie d'un BTS hôtellerie-restauration ?",
+  "answer_text": "**TL;DR**\n1. Le **BTS Hôtellerie-Restauration** (niveau bac+2) certifie des compétences opérationnelles en gestion, service, et production culinaire, avec une forte dimension terrain.\n2. Les savoir-faire clés : **gestion d’équipe, techniques de service, hygiène alimentaire, gestion commerciale, et langues étrangères** (notamment anglais professionnel).\n3. **3 voies pour les valoriser** : emploi direct (hôtels/restaurants), poursuite d’études (licences pro ou bachelor), ou spécialisation (sommellerie, événementiel).\n\n---\n\n### **Plan A — Compétences techniques certifiées (cœur du diplôme)**\n*(connaissance générale)*\nLe BTS forme à des **savoir-faire immédiatement exploitables** :\n- **Production culinaire** : maîtrise des techniques de cuisine (bases, gestion des coûts, création de menus), normées par le référentiel officiel (arrêté du 26/06/2017).\n- **Service et accueil** : gestion de la relation client (accueil, réservation, service en salle), avec modules sur les logiciels de réservation (ex : **Opera PMS**, **Amadeus**).\n- **Hygiène et sécurité** : certification **HACCP** (obligatoire pour manipuler des denrées), et **SST** (Sauveteur Secouriste du Travail) souvent incluse.\n- **Gestion opérationnelle** : élaboration de budgets, gestion des stocks, et analyse de la performance (outils type **Excel avancé** ou **logiciels métiers** comme **Micros**).\n- **Langues** : anglais professionnel (niveau B2 visé) + une 2ᵉ langue (espagnol, allemand, ou chinois selon les établissements).\n\n*Pour toi* : Ces compétences sont **reconnues par les conventions collectives** du secteur (ex : **Synhorcat**), ce qui facilite l’embauche en CDI dès la sortie.\n\n---\n\n### **Plan B — Compétences transversales (valorisables hors secteur)**\n*(connaissance générale)*\nLe diplôme atteste aussi de **savoir-être et compétences transférables** :\n- **Management d’équipe** : encadrement de brigades en cuisine ou en salle (utiles pour viser des postes de **chef de partie** ou **superviseur**).\n- **Adaptabilité** : gestion des pics d’activité (saisons touristiques, événements), appréciée dans l’événementiel ou la grande distribution.\n- **Relation client** : techniques de vente et fidélisation, applicables dans le luxe, le retail, ou même les services bancaires.\n- **Réseau professionnel** : stages obligatoires (12 à 16 semaines) qui ouvrent des portes via les **alumni** des écoles (ex : **Ferrandi Paris**, **Institut Paul Bocuse**).\n\n*Pour toi* : Ces atouts permettent de **rebondir vers des métiers connexes** (ex : **responsable événementiel**, **consultant en restauration collective**) avec une formation complémentaire courte.\n\n---\n\n### **Plan C — Certifications complémentaires (pour se différencier)**\n*(connaissance générale)*\nPour booster ton profil, vise des **certifications additionnelles** (souvent financées par le CPF ou en alternance) :\n1. **Certificat de spécialisation** :\n   - **Sommellerie** (WSET niveau 2 ou 3) ou **œnologie** (diplôme de l’**Université du Vin** à Suze-la-Rousse).\n   - **Pâtisserie professionnelle** (CAP en 1 an post-BTS, ex : **École Lenôtre**).\n2. **Logiciels métiers** :\n   - **Revenue Management** (certification **Duetto** ou **IDeaS**) pour les hôtels.\n   - **Gestion de projet événementiel** (logiciels **Eventbrite**, **Cvent**).\n3. **Langues** :\n   - **TOEIC 800+** pour travailler à l’international (croisières, chaînes hôtelières).\n   - **DELE** (espagnol) ou **HSK** (chinois) pour cibler des marchés porteurs (Amérique latine, Asie).\n\n*Pour toi* : Ces certifs **doublent le salaire d’embauche** (ex : +20% avec un WSET 3 en sommellerie — connaissance générale) et élargissent les débouchés à l’étranger.\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Salaire de départ** : Le SMIC est fréquent en début de carrière (sauf dans le luxe ou à l’étranger). Prévois une **mobilité géographique** pour évoluer rapidement.\n2. **Alternance obligatoire** : Certains BTS (ex : **BTS en alternance à l’Institut Vatel**) exigent un contrat pro dès la 1ʳᵉ année — **trouve ton entreprise avant de t’inscrire**.\n3. **Concurrence des diplômes étrangers** : Les employeurs privilégient souvent les **Bachelor internationaux** (ex : **Glion**, **Les Roches**) pour les postes à l’étranger. Une **double compétence** (ex : BTS + licence pro en management hôtelier) peut compenser.\n\n---\n**Question pour toi** :\nQuelle est ta priorité absolue à la sortie du BTS : **un emploi stable rapidement**, **une spécialisation** (sommellerie, événementiel…), ou **une poursuite d’études** pour viser un poste à responsabilité ? *(Cette réponse déterminera si tu dois cibler des établissements avec des partenariats forts en alternance, ou des BTS adossés à des licences pro.)*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 40.4,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 1.81,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 3,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "voie_pre_bac"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "bac_pro_domaine",
+    "_competences_certif"
+  ]
+}

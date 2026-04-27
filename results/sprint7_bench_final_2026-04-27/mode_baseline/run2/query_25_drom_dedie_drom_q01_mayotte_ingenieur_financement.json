@@ -1,0 +1,39 @@
+{
+  "suite": "drom_dedie",
+  "query_id": "drom_q01_mayotte_ingenieur_financement",
+  "query_text": "Je suis lycéen·ne à Mayotte et je veux faire une école d'ingénieur en métropole. Comment je peux financer ça ?",
+  "answer_text": "**TL;DR**\n1. **Oui, c’est possible** : des aides existent pour financer tes études d’ingénieur en métropole, même depuis Mayotte.\n2. **Priorité** : bourses sur critères sociaux (CROUS) + dispositifs spécifiques (mobilité, excellence).\n3. **Plan A** : vise une école publique (frais réduits) + alternance. **Plan B** : écoles privées avec bourses. **Plan C** : formations courtes (BTS/DUT) puis passerelle.\n\n---\n\n### **Plan A — Réaliste : École publique d’ingénieur + bourses + alternance**\n📍 **École Supérieure des Techniques Aéronautiques (ESTACA)** ([Campus Paris-Saclay](https://www.onisep.fr/http/redirection/formation/slug/FOR.12027)) — bac+5, **frais réduits** (2 500€/an en cycle ingénieur), **label CTI**.\n*Pour toi : accessible avec un bon dossier (12+ de moyenne), bourse CROUS possible (jusqu’à ~600€/mois), et alternance en 4e/5e année (salaire ~800-1200€/mois).*\n\n**Financement clé** :\n- **Bourse CROUS** (sur revenus familiaux) : [simulateur officiel](https://www.messervices.etudiant.gouv.fr/).\n- **Aide à la mobilité** (pour Mayotte → métropole) : jusqu’à **1 000€/an** via les régions ou le [CNOUS](https://www.cnous.fr/).\n- **Alternance** : 100% des frais pris en charge + salaire (contrat pro/apprentissage).\n\n---\n\n### **Plan B — Ambitieux : École privée avec bourses mérites**\n📍 **Écoles comme l’EPITA ou l’ESILV** (La Défense, Lyon) — bac+5, **frais élevés** (8 000-10 000€/an), mais **bourses internes** (jusqu’à 30% pour les mentions Bien/TB) et partenariats avec Mayotte (ex : [programme \"Talents des Outre-mer\"](https://www.enseignementsup-recherche.gouv.fr/)).\n*Pour toi : si tu vises l’excellence (14+ de moyenne), ces écoles offrent des aides ciblées. Exige un dossier solide et des concours (Puissance Alpha, Avenir).*\n\n**Financement complémentaire** :\n- **Prêts garantis par l’État** (0% d’intérêts) : jusqu’à **20 000€** sur 10 ans.\n- **Jobs étudiants** : 10h/semaine en métropole (SMIC ~700€/mois).\n\n---\n\n### **Plan C — Passerelle : Formation courte + montée en compétences**\n📍 **BTS/DUT en mécanique ou industrialisation** (ex : [TP Technicien Supérieur des Méthodes](https://www.onisep.fr/http/redirection/formation/slug/FOR.10327) ou [Licence Pro Métiers de l’Industrie](https://www.onisep.fr/http/redirection/formation/slug/FOR.11624)) — bac+2/3, **gratuit ou presque** (frais < 300€/an), **alternance possible dès bac+2**.\n*Pour toi : si le budget est trop serré, commence par un BTS/DUT en métropole (logement en cité U à ~200€/mois), puis intègre une école d’ingénieur en admissions parallèles (ex : INSA, UT).*\n\n**Exemple concret** :\n- **Année 1** : BTS à **Saint-Denis (La Réunion)** ou **Toulouse** (coût logistique réduit vs Mayotte → Paris).\n- **Année 3** : Admission en école d’ingénieur via **concours DUT-BTS** (ex : [Banque PT](https://www.banquept.fr/)).\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Coût caché du logement** : un studio à Paris coûte **700-900€/mois** (hors aides). Privilégie les villes comme **Toulouse, Nantes, ou Lyon** (loyers 400-600€).\n2. **Écoles privées sans label** : méfie-toi des formations à **10 000€+ sans accréditation CTI** (risque de diplôme non reconnu). Vérifie toujours sur [CTI Commission des Titres](https://www.cti-commission.fr/).\n3. **Délais Parcoursup** : les demandes de bourse CROUS se font **avant mai** (même si tu n’as pas encore tes résultats).\n\n---\n**Question pour toi** :\nEst-ce que tu préfères **viser directement une grande école** (Plan A/B) ou **commencer par une formation courte** (Plan C) pour réduire les risques financiers ? Et as-tu déjà regardé les **aides spécifiques à Mayotte** (ex : [Passeport Mobilité](https://www.jeunes.gouv.fr/)) ?\n\n---\n👤 *Pour peaufiner ton projet, prends RDV avec le **Psy-EN de ton lycée** ou le **CIO de Mamoudzou** — ils connaissent les dispositifs locaux (ex : partenariats avec des écoles métropoles).*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 41.23,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 12.99,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 0,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 0,
+    "error": "JSON parse error: Unterminated string starting at: line 198 column 31 (char 7939). Raw: {\n  \"stats_extracted\": [\n    {\n      \"stat_text\": \"frais réduits (2 500€/an en cycle ingénieur)\",\n      \"stat_value\": 2500,\n      \"stat_unit\": \"€/an\",\n      \"context_in_response\": \"École Supérieure de"
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "financement_etudes",
+    "formation",
+    "formation_insertion",
+    "insee_salaire"
+  ],
+  "granularities_top_k": [
+    "_insee_salaire",
+    "_formation",
+    "_formation",
+    "_formation",
+    "voie",
+    "_formation",
+    "_formation",
+    "formation_france"
+  ]
+}

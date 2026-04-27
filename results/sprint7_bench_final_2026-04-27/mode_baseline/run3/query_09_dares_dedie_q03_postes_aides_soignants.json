@@ -1,0 +1,38 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q03_postes_aides_soignants",
+  "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. Les besoins en aides-soignants en France sont **massifs** : entre 100 000 et 150 000 postes à pourvoir d’ici 2030 (connaissance générale).\n2. La pénurie est structurelle : vieillissement de la population + turnover élevé dans le secteur.\n3. **Opportunité concrète** : formations courtes (10-18 mois), débouchés immédiats, et passerelles vers infirmier possible.\n\n---\n\n### **Plan A — Voie directe : Formation certifiante en 1 an**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** — bac non obligatoire, formation gratuite en IFAS (instituts publics), 10-18 mois d’études.\n*Pour toi : solution la plus rapide pour intégrer le marché, avec **100% d’insertion** dans les 6 mois (source Dares, tendances secteur santé).*\n→ [Liste des IFAS par région](https://www.sante.gouv.fr/soins-et-maladies/formation-des-professionnels-de-sante/article/les-instituts-de-formation-d-aides-soignants-ifas)\n\n### **Plan B — Alternance : Rémunération + expérience**\n📍 **Contrat d’apprentissage ou de professionnalisation** — même diplôme DEAS, mais avec salaire (55-80% du SMIC selon âge) et emploi garanti à la sortie.\n*Pour toi : idéal si tu as besoin de revenus pendant la formation. Les EHPAD et cliniques recrutent **en urgence** des apprentis (connaissance générale).*\n\n### **Plan C — Passerelle vers infirmier (DEI)**\n📍 **Module complémentaire \"Aide-soignant → Infirmier\"** — après 3 ans d’expérience, accès accéléré à la formation infirmière (2 ans au lieu de 3).\n*Pour toi : stratégie gagnante si tu vises une évolution de carrière à moyen terme.*\n\n---\n**⚠ Attention aux pièges**\n- **Formations privées payantes** : certaines écoles proposent le DEAS à 5 000-8 000€/an, alors qu’il est **gratuit en public** (IFAS). Vérifie toujours le statut de l’organisme.\n- **Conditions physiques** : le métier exige port de charges, horaires décalés (nuit/week-end). **Teste en stage** avant de t’engager.\n- **Faux espoirs \"sans diplôme\"** : certaines offres promettent un emploi \"sans formation\" — illégal en France pour les postes régulés (aide-soignant = diplôme obligatoire).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **la vitesse d’accès à l’emploi** (Plan A), **la sécurité financière** (Plan B), ou **un projet d’évolution vers infirmier** (Plan C) ? Cela peut affiner les options.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 19.97,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 4.25,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 4,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 6,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "metier",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "_metier",
+    "_formation"
+  ]
+}

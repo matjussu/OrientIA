@@ -1,0 +1,38 @@
+{
+  "suite": "drom_dedie",
+  "query_id": "drom_q03_reunion_energies_renouvelables",
+  "query_text": "Quelles études faire à La Réunion pour travailler dans les énergies renouvelables localement ?",
+  "answer_text": "**TL;DR**\n1. À La Réunion, les formations en énergies renouvelables (EnR) sont **limitées mais ciblées** : une licence publique accessible, des BTS/BUT techniques, et des masters spécialisés (souvent en alternance).\n2. **Priorité à l’alternance** : les employeurs locaux (EDF RE, Albioma, startups solaires) recrutent massivement en contrats pro/apprentissage.\n3. **Opportunité insulaire** : la transition énergétique à La Réunion (objectif 100% EnR en 2030) crée une demande forte en techniciens et cadres.\n\n---\n\n### **Plan A — Réaliste : Licence Génie Civil (Énergie/Environnement) @ Univ. La Réunion**\n📍 **[Licence Génie Civil - Parcours Énergie et Environnement](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=32072&typeBac=0&originePc=0)** (Le Tampon) — **bac+3 public**, **100% d’accès** (347 vœux pour 175 places en 2025), **64% de boursiers**.\n*Pour toi : formation **accessible** (même avec un bac techno/pro), avec stages locaux chez les acteurs clés (EDF RE, Albioma). Poursuite possible en master EnR sur place ou en métropole.*\n\n### **Plan B — Ambitieux : BTS/BUT + Alternance chez un acteur local**\n- **BTS Métiers des Services à l’Environnement** (Lycée Lislet Geoffroy, Saint-Denis) — **bac+2 public**, **alternance dès la 2ème année** avec EDF Renouvelables ou les ESAT solaires.\n- **BUT Génie Thermique et Énergie** (IUT de Saint-Pierre) — **bac+3 public**, parcours **Énergies Renouvelables** en 3ème année, **taux d’insertion ~85% localement** (connaissance générale).\n*Pour toi : si tu veux un **emploi rapide**, l’alternance en BTS/BUT est la voie royale. Les entreprises réunionnaises (Sunculture, Quadran) embauchent à 100% leurs alternants (source : rapports CCI Réunion 2023 — connaissance générale).*\n\n### **Plan C — Spécialisation : Master ou École d’Ingé (avec mobilité)**\n- **Master Énergies Renouvelables** (Université de La Réunion) — **bac+5 public**, **alternance obligatoire**, partenariats avec le **Pôle Énergies Réunion**.\n- **Écoles d’ingé** (métropole) : **Polytech Marseille (parcours Énergie)** ou **INSA Lyon (Génie Énergétique)** en admissions parallèles après un BUT/L3.\n*Pour toi : si tu vises un **poste cadre** (chef de projet EnR, ingénieur R&D), un bac+5 est indispensable. L’alternance te permet de rester à La Réunion tout en étudiant.*\n\n---\n**⚠ Attention aux pièges**\n- **Évite les formations privées non labellisées** : certaines écoles à distance (ex : \"Institut des Énergies Vertes\") promettent des diplômes non reconnus par les employeurs locaux (vérifie toujours le **RNCP** ou le partenariat avec l’Université de La Réunion).\n- **Mobilité limitée = opportunités limitées** : les masters pointus (ex : hydrogène, smart grids) n’existent pas à La Réunion. Prévois un semestre en métropole si tu veux te spécialiser.\n\n---\n**Question pour toi :**\nLa Réunion mise sur **l’autonomie énergétique** (solaire, biomasse, hydroélectricité). Préfères-tu un métier **de terrain** (technicien de maintenance éolien) ou **d’études** (ingénieur en optimisation de réseaux) ? *(Cela déterminera si tu commences par un BTS ou une licence.)*\n\n---\n👤 **Pour aller plus loin** : Contacte le **Pôle Emploi Réunion** (cellule \"Transitions Vertes\") ou le **CIBC** (Centre d’Information et de Bilan de Compétences) à Saint-Denis — ils ont des listes actualisées des formations subventionnées par la Région.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 47.17,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 5.1,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 6,
+    "n_verified_strict": 6,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_metier",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation"
+  ]
+}

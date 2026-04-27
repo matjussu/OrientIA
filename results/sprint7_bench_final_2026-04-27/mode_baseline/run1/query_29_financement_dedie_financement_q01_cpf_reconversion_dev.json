@@ -1,0 +1,37 @@
+{
+  "suite": "financement_dedie",
+  "query_id": "financement_q01_cpf_reconversion_dev",
+  "query_text": "Je suis salarié de 30 ans et je veux me reconvertir en développeur web. Mon CPF peut financer combien ?",
+  "answer_text": "**TL;DR**\n1. Votre CPF peut financer jusqu’à **500-800€/an** (plafond cumulé à 800€ depuis 2024), mais une formation complète de développeur web coûte généralement **3 000 à 8 000€** (connaissance générale).\n2. **Solutions pour compléter le financement** : VAE, OPCO, Pôle Emploi (si transition), ou formations en alternance (rémunérées).\n3. **Priorité** : Choisir une formation **certifiante RNCP** (reconnue par l’État) pour maximiser l’employabilité et l’éligibilité au CPF.\n\n---\n\n### **Plan A — Formation courte certifiante (RNCP) + CPF + OPCO**\n📍 **Titre RNCP \"Développeur web et web mobile\"** (niveau bac+2) — **100% éligible CPF**, durée 6 à 12 mois, alternance possible.\n*Pour vous : Idéal si vous visez une insertion rapide. Exemples d’organismes : **Simplon (réseau national)**, **OpenClassrooms** (en ligne), ou **AFPA** (présentiel).*\n→ [Fiche officielle RNCP](https://www.francecompetences.fr/recherche/rncp/31114/) · [Détails ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.7774)\n\n**Financement** :\n- CPF (jusqu’à 800€) + **abondement OPCO** (votre employeur actuel peut compléter via son OPCO, ex : Atlas, Opco EP).\n- **Pôle Emploi** (si démission pour reconversion, sous conditions) : jusqu’à 100% du coût via l’AIF (Aide Individuelle à la Formation).\n\n---\n\n### **Plan B — Alternance (rémunération + diplôme gratuit)**\n📍 **BTS SIO (option SLAM)** ou **Titre RNCP en alternance** — **gratuit** (prise en charge par l’entreprise), salaire ~600-1 500€/mois (connaissance générale).\n*Pour vous : Parfait si vous pouvez vous libérer 3 jours/semaine pour un contrat pro. Exemples : **CFA AFTEC (Rennes)**, **Epitech (plusieurs villes)**.*\n→ Recherchez via [La Bonne Alternance](https://labonnealternance.pole-emploi.fr/).\n\n**Avantage** :\n- Aucun reste à charge.\n- Expérience pro immédiate (atout pour l’embauche).\n\n---\n\n### **Plan C — VAE (Validation des Acquis de l’Expérience)**\nSi vous avez déjà des compétences en **autodidacte** (projets perso, MOOC) :\n- **VAE pour le titre RNCP Développeur web** (coût ~1 000-2 000€, éligible CPF).\n- **Dossier à monter** avec preuves de compétences (GitHub, sites créés, attestations).\n→ [Service public VAE](https://www.service-public.fr/particuliers/vosdroits/F1319).\n\n---\n\n### **⚠ Attention aux pièges**\n- **Formations non-RNCP** : Certaines \"écoles\" privées promettent un diplôme sans reconnaissance État → **vérifiez le RNCP** (ex : [France Compétences](https://www.francecompetences.fr/)).\n- **Alternance = engagement long** : Un contrat pro dure 12-24 mois. Assurez-vous de la stabilité financière pendant cette période.\n- **CPF seul ne suffit pas** : 800€ couvrent rarement une formation complète. **Combiner avec OPCO/Pôle Emploi est essentiel**.\n\n---\n**Question pour vous** :\nAvez-vous déjà des bases en code (HTML/CSS, JavaScript) ou partez-vous de zéro ? Cela peut orienter vers une formation **accélérée** (bootcamp) ou **plus fondamentale** (BTS/alternance).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 33.63,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 8.69,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 7,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 3,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_formation"
+  ]
+}

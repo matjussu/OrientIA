@@ -1,0 +1,38 @@
+{
+  "suite": "multi_axes",
+  "query_id": "multi_q02_bac_pro_drom_metropole",
+  "query_text": "Je suis en bac pro maintenance en Guyane. Si je veux continuer en BTS en métropole, quelles aides à la mobilité ?",
+  "answer_text": "**TL;DR**\n1. **Oui, des aides existent** pour financer ton BTS en métropole depuis la Guyane (bourses, logement, transport).\n2. **Priorité au CROUS** (bourse sur critères sociaux + logement) + **Erasmus+** si stage à l’étranger.\n3. **Démarches urgentes** : contacte ton lycée (référent mobilité) et le CROUS de Guyane **dès maintenant** (délais serrés).\n\n---\n\n### **Plan A — Aides financières de base (obligatoire)**\n📍 **Bourse CROUS sur critères sociaux** (national) — jusqu’à **5 500€/an** (échelon 0bis à 7), logement en résidence CROUS (~200-400€/mois).\n*Pour toi : à demander **immédiatement** via [Dossier Social Étudiant (DSE)](https://www.messervices.etudiant.gouv.fr/) — même en BTS.*\n**→** *Exemple : un étudiant en BTS Maintenance à Lyon avec bourse échelon 5 touche ~300€/mois + logement CROUS.*\n\n📍 **Aide à la mobilité Parcoursup** (régionale) — **500€ à 2 000€** selon académies (ex : Île-de-France, Occitanie).\n*Pour toi : vérifie si ta future académie d’accueil propose cette aide (liste [ici](https://www.letudiant.fr/etudes/annuaire/les-aides-regionales-pour-les-etudiants.html)).*\n\n---\n\n### **Plan B — Aides spécifiques Guyane → Métropole**\n📍 **Bourse \"Mobilité Outremers\"** (Collectivité Territoriale de Guyane) — **jusqu’à 1 500€** pour frais de transport + installation.\n*Pour toi : contacte la [Direction de la Jeunesse et des Sports de Guyane](https://www.guyane.fr/) — dossier à déposer **avant juin**.*\n\n📍 **Erasmus+ (mobilité européenne)** — si ton BTS inclut un stage à l’étranger (ex : Allemagne, Espagne), **400-600€/mois** pendant 2-12 mois.\n*Pour toi : demande à ton futur établissement s’il a un partenariat Erasmus. Ex : [BTS Maintenance des Véhicules à Lyon](https://www.onisep.fr/http/redirection/formation/slug/FOR.12372) propose des stages Erasmus.*\n\n---\n\n### **Plan C — Solutions complémentaires (si besoin)**\n- **Prêt garanti par l’État** (0% d’intérêts) : jusqu’à **20 000€** remboursables après le diplôme ([site officiel](https://www.etudiant.gouv.fr/fr/pret-etudiant-garanti-par-l-etat-659)).\n- **Jobs étudiants** : les BTS en alternance (contrat pro/apprentissage) sont **rémunérés** (~600-800€/mois en 1re année).\n- **Associations** : la [Fondation Studely](https://www.studely.fr/) attribue des bourses pour les filières techniques.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Délais** : les demandes CROUS et régionales ferment souvent **fin mai**. Agis **maintenant**.\n- **Logement** : en métropole, les loyers sont **2 à 3 fois plus chers** qu’en Guyane (ex : 500€/mois pour un studio à Toulouse). Prévoyez un budget **logement + transport**.\n- **Faux amis** : certaines \"aides\" privées (ex : banques) sont des **prêts déguisés** avec intérêts. Privilégie toujours les dispositifs publics (CROUS, Région, Europe).\n\n---\n**Question pour toi :**\nAs-tu déjà une idée de la **ville ou de la région** où tu veux étudier ? Certaines académies (ex : Île-de-France) sont plus chères mais offrent plus d’aides, tandis que des villes comme **Toulouse, Lyon ou Nantes** ont un bon rapport coût/opportunités pour les BTS industriels.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 54.31,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 11.19,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 17,
+    "n_verified": 8,
+    "n_verified_strict": 8,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 9,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "crous",
+    "financement_etudes",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "voie",
+    "dispositif",
+    "_crous",
+    "_formation",
+    "dispositif",
+    "_crous",
+    "_crous",
+    "_formation"
+  ]
+}

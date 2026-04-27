@@ -1,0 +1,37 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q05_metiers_btp_recruter",
+  "query_text": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. Le BTP francilien va recruter massivement d’ici 2030, surtout sur les métiers liés à la **transition écologique** et à la **pénurie de main-d’œuvre qualifiée**.\n2. Top 3 des besoins : **éco-construction**, **rénovation énergétique**, et **gestion de chantiers digitalisés**.\n3. Formations courtes (CAP à bac+2) offrent des débouchés rapides, mais les bac+5 en ingénierie/management ciblent les postes à haute responsabilité.\n\n---\n\n### **Plan A — Métiers en tension immédiate (recrutement garanti, formations courtes)**\n**(connaissance générale)**\n📍 **Technicien en rénovation énergétique** (Île-de-France)\n— *Pour toi* : **CAP/Bac Pro** (1-2 ans) → **90% de taux d’emploi** (source : FFB 2023, estimation marché). Salaires débutants : **28-35k€ brut/an** (avec primes intempéries). *Exemples de formations* :\n- **CAP Métiers de l’isolation thermique** (Lycées pro franciliens, ex : [Lycée des Métiers du Bâtiment à Paris 15](https://www.ac-paris.fr))\n- **Bac Pro Métiers du froid et des énergies renouvelables** (alternance possible, rémunération ~600-800€/mois).\n\n📍 **Chef de chantier BTP (spécialisé bas carbone)**\n— *Pour toi* : **BTS Études et Économie de la Construction (EEC)** ou **BUT Génie Civil** (3 ans) → **salaire médian : 38k€ brut/an** (estimation marché). *Où se former* :\n- **IUT de Sénart-Fontainebleau** (BUT GC, alternance forte demande)\n- **CFA BTP Île-de-France** (contrats pro garantis avec grands groupes comme Bouygues ou Vinci).\n\n**Pourquoi ces métiers ?**\n- **Pénurie critique** : 40 000 postes non pourvus en 2024 en Île-de-France (source : Observatoire BTP).\n- **Subventions** : Aides de la Région pour les formations \"vertes\" (jusqu’à 500€/mois pour l’alternance).\n\n---\n\n### **Plan B — Métiers d’avenir (croissance forte, salaires élevés, bac+3 à bac+5)**\n**(connaissance générale)**\n📍 **Ingénieur en génie climatique / smart building** (Paris/Saclay)\n— *Pour toi* : **Écoles d’ingénieurs** (5 ans) ou **licences pro** (1 an après bac+2) → **salaire : 45-60k€ brut/an**. *Formations clés* :\n- **ESTP Paris** (spécialité Énergétique du Bâtiment, alternance possible)\n- **Licence Pro Métiers du BTP : Génie Climatique** (Université Paris-Est Marne-la-Vallée).\n\n📍 **BIM Manager** (Modélisation 3D des projets)\n— *Pour toi* : **Master ou titre RNCP** (ex : **Mastère Spécialisé BIM de l’ESITC Paris**) → **salaire : 50-70k€ brut/an**. *Atout* : Certifications **Autodesk Revit** ou **ArchiCAD** valorisées.\n\n**Pourquoi viser ces postes ?**\n- **Croissance +20% d’ici 2030** (source : APEC, estimation secteur).\n- **International** : Compétences exportables (Dubai, Suisse, Canada).\n\n---\n\n### **Plan C — Passerelles et reconversion (pour profils non techniques)**\n**(connaissance générale)**\n📍 **Chargé de projet QSE (Qualité Sécurité Environnement) dans le BTP**\n— *Pour toi* : **Licence pro ou master** en management QSE (ex : **Cnam Île-de-France**) → **salaire : 35-45k€ brut/an**. *Public cible* : Anciens commerciaux, administratifs, ou techniciens souhaitant évoluer vers l’encadrement.\n\n📍 **Conseiller en efficacité énergétique** (pour les bâtiments tertiaires)\n— *Pour toi* : **Formation courte certifiante** (ex : **CEE par l’ADEME**) + expérience terrain → **salaire : 30-40k€ brut/an**. *Bonus* : Métier compatible avec le télétravail partiel.\n\n**Pour qui ?**\n- **Reconversion** : Accessible via **VAE** (Validation des Acquis de l’Expérience) ou **POEI** (formation financée par Pôle Emploi).\n- **Flexibilité** : Postes souvent en **CDD ou intérim** en début de carrière (idéal pour tester).\n\n---\n### **⚠ Attention aux pièges**\n1. **Écoles privées coûteuses** : Certaines formations BTP privées (ex : **ESAIP**) coûtent **8 000-12 000€/an** sans garantie d’emploi. Privilégiez les **CFA publics** ou les **IUT** (frais < 500€/an).\n2. **Faux espoirs \"sans diplôme\"** : Les métiers non qualifiés (manœuvre) paient **SMIC** et offrent peu d’évolution. Mieux vaut un **CAP/Bac Pro** pour accéder aux postes pérennes.\n\n---\n**Question pour toi :**\nAs-tu déjà une expérience (stage, job) dans le bâtiment, ou cherches-tu une formation **from scratch** ? Cela peut orienter vers un **CAP accéléré** (6 mois) ou un **diplôme long** (ingénieur). *(Précise aussi si tu es mobile en grande couronne ou limité à Paris intra-muros.)*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 55.87,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 5.83,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 11,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "_competences_certif",
+    "_competences_certif"
+  ]
+}

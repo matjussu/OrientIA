@@ -1,0 +1,37 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q14_passerelle_infirmier_RH",
+  "query_text": "Une amie infirmière souhaite passer à un poste en ressources humaines. Quelles passerelles existent ?",
+  "answer_text": "**TL;DR**\n1. Une infirmière peut se réorienter vers les RH, mais **pas en direct** : il faut valider des acquis (VAE) ou suivre une formation complémentaire.\n2. **2 voies principales** : VAE pour un titre RNCP bac+2/3 (rapide), ou un master RH en admission parallèle (plus long, mais bac+5).\n3. **Étape clé** : identifier ses atouts transférables (gestion d’équipes, formation, droit du travail en santé) pour cibler la formation.\n\n---\n\n### **Plan A — Réaliste : VAE vers un titre RNCP bac+2/3 (6-12 mois)**\n📍 **[Certificat Assistant RH](https://www.onisep.fr/http/redirection/formation/slug/FOR.12100)** — bac+2, RNCP, accessible en VAE\n*Pour elle : valorise son expérience en gestion d’équipes (soins) et formation de nouveaux infirmiers. Coût ~2-3k€ (CPF utilisable).*\n\n**Étapes concrètes** :\n1. **Audit de positionnement** : Contacter un organisme certifié (ex : CNAM, GRETA) pour évaluer ses acquis (gratuit).\n2. **Dossier VAE** : Rédiger un livret détaillant ses missions RH *de fait* (plannings, conflits, formations internes).\n3. **Jury** : Passage devant un jury en 3-6 mois. Taux de réussite ~80% pour les professionnels expérimentés (connaissance générale).\n\n⚠ **Piège** : La VAE ne donne pas accès aux postes stratégiques (ex : recrutement senior). Idéal pour un poste d’assistante RH en santé (hôpitaux, EHPAD).\n\n---\n\n### **Plan B — Ambitieux : Master RH en admission parallèle (bac+3/4)**\n📍 **[Master GRH](https://www.onisep.fr/http/redirection/formation/slug/FOR.4997)** — bac+5 public (IAE), admission parallèle possible\n*Pour elle : si elle vise un poste de **manager RH**, un bac+5 est souvent exigé. Les IAE recrutent des profils expérimentés (dossier + entretien).*\n\n**Étapes concrètes** :\n1. **Prérequis** : Valider une licence (ex : AE ou L3 RH en 1 an via **validation des acquis professionnels — VAP**). Coût : ~200-500€/an en public.\n2. **Admission parallèle** : Postuler en M1/M2 GRH (IAE) avec son expérience + VAP. Ex : **IAE Paris** ou **Toulouse** (dossier à déposer entre mars et mai).\n3. **Alternance** : Trouver un contrat pro en RH (ex : dans un établissement de santé) pour financer la formation.\n\n**Exemple de parcours** :\n- **Année 1** : Licence AE par VAP (ex : [Cnam](https://www.cnam.fr)) + stage en RH.\n- **Année 2** : M1 GRH en alternance (salaire ~800-1200€/mois).\n- **Année 3** : M2 GRH spécialisé (ex : **droit du travail et santé**).\n\n---\n### **Plan C — Alternative : Formation courte + réseau santé**\n*(connaissance générale)*\nSi elle veut rester dans le **secteur médical** tout en basculant vers les RH :\n1. **Formation certifiante** : **DU Gestion des RH en santé** (ex : universités de Lyon ou Bordeaux, ~6 mois, 1-2k€).\n2. **Mobilité interne** : Postuler en interne à des postes hybrides (ex : *référente formation* dans son hôpital).\n3. **Réseau** : Rejoindre des groupes LinkedIn comme *\"RH Santé\"* ou l’**ANDRH** (association nationale des DRH).\n\n---\n**Pourquoi ces options ?**\n- **VAE (Plan A)** : Rapide, peu coûteuse, adaptée si elle veut un poste opérationnel vite.\n- **Master (Plan B)** : Indispensable pour manager des équipes ou travailler en entreprise privée.\n- **Spécialisation santé (Plan C)** : Moins de concurrence, valorise son expérience terrain.\n\n**Question pour elle** :\nEst-ce qu’elle vise un poste **opérationnel** (paie, contrats) ou **stratégique** (politique RH, recrutement) ? Cela change radicalement le parcours (VAE vs master).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 43.8,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 8.41,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 8,
+    "n_verified_strict": 8,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_competences_certif",
+    "_formation",
+    "_formation",
+    "_competences_certif",
+    "_formation",
+    "_formation",
+    "_competences_certif"
+  ]
+}

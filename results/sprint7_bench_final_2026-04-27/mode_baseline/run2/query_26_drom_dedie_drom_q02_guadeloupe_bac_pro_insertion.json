@@ -1,0 +1,37 @@
+{
+  "suite": "drom_dedie",
+  "query_id": "drom_q02_guadeloupe_bac_pro_insertion",
+  "query_text": "En Guadeloupe, est-ce que ça vaut le coup de faire un bac pro gestion administration ? Quelles débouchés ?",
+  "answer_text": "**TL;DR**\n1. Le bac pro Gestion-Administration en Guadeloupe ouvre des portes **rapides** vers l’emploi local (administration, comptabilité, secrétariat), mais avec des salaires modestes (~1 500-1 800€ net en début de carrière — connaissance générale).\n2. **Seulement 17% des détenteurs d’un bac pro poursuivent en études longues** (source : DEPP 2023) — la majorité entre directement sur le marché du travail.\n3. Pour maximiser tes options, combine-le avec une **mention Bien** et vise une poursuite en BTS (ex : BTS Gestion des PME) ou une licence pro.\n\n---\n\n### **Plan A — Réaliste : Insertion directe en Guadeloupe**\nLe bac pro Gestion-Administration est **adapté si tu veux travailler vite** après le bac, surtout dans :\n- **Secteur public** : agent administratif dans les mairies, hôpitaux, ou services de l’État (concours catégorie C).\n- **Secteur privé** : assistant administratif, comptable junior, ou gestionnaire de paie dans les PME locales (tourisme, commerce).\n*(connaissance générale : la Guadeloupe a un tissu de TPE/PME où ces profils sont recherchés, mais les salaires restent alignés sur le SMIC local ou légèrement au-dessus).*\n\n**Pour toi** : Idéal si tu privilégies **l’autonomie financière rapide** et que les études longues ne t’attirent pas.\n\n---\n\n### **Plan B — Ambitieux : Poursuite d’études courtes (BTS/BUT)**\nAvec une **mention Bien au bac pro**, tu peux viser :\n- **BTS Gestion des PME** (ex : [Lyée polyvalent de Baimbridge](https://www.onisep.fr)) → **90% d’insertion en 6 mois** (source : Céreq, moyenne nationale).\n- **BUT GEA** (Gestion des Entreprises et des Administrations) en métropole (peu d’offres en Guadeloupe, mais possible en mobilité).\n*(connaissance générale : ces diplômes boostent le salaire à ~1 900-2 200€ net et ouvrent des postes d’encadrement).*\n\n**Pour toi** : Si tu es prêt·e à **étudier 2 ans de plus**, ces voies multiplient tes opportunités.\n\n---\n### **Plan C — Alternative : Licence pro ou reconversion tech**\nLa **Licence pro Métiers de la comptabilité** (ex : [Université des Antilles](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39825&typeBac=0&originePc=0)) est accessible après un BTS et mène à des postes mieux payés (~2 000€ net).\n*(connaissance générale : la comptabilité est un secteur porteur en Guadeloupe, avec des cabinets en croissance).*\n\n**Autre piste** : Une **reconversion vers l’informatique** via une licence pro après le bac pro (ex : [Licence Informatique à l’Université des Antilles](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19626&typeBac=0&originePc=0)) — **salaire médian à 1 700€ net** (source : InserSup DEPP 2024), mais avec des débouchés plus larges (développement web, support IT).\n\n**Pour toi** : Si tu veux **changer de voie** sans perdre tes acquis en gestion.\n\n---\n### **⚠ Attention aux pièges**\n- **Salaire plafonné** : Sans poursuite d’études, les postes accessibles avec *uniquement* le bac pro paient souvent **au SMIC** (1 398€ net en 2024).\n- **Concurrence locale** : Les offres d’emploi en gestion/administration sont nombreuses, mais souvent **sous-qualifiées** (CDD ou temps partiel en début de carrière).\n- **Mobilité limitée** : Le diplôme est peu reconnu hors de la Caraïbe — difficile de travailler en métropole ou à l’étranger sans complément.\n\n---\n**Question pour toi** :\nQu’est-ce qui prime pour toi entre **stabilité rapide** (Plan A), **meilleur salaire à moyen terme** (Plan B), ou **changer de secteur** (Plan C) ? Et es-tu ouvert·e à une mobilité en métropole pour élargir tes options ?\n\n---\n👤 *Pour affiner ton projet, un RDV avec le·a Psy-EN de ton lycée ou le SCUIO de l’Université des Antilles peut t’aider à identifier les BTS/licences pro locales adaptées à ton profil.*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 44.5,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 3.71,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 1,
+    "n_verified_strict": 1,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "_formation",
+    "_formation"
+  ]
+}

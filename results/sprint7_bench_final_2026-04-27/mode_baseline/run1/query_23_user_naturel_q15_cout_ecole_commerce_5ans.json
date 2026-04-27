@@ -1,0 +1,38 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q15_cout_ecole_commerce_5ans",
+  "query_text": "Combien faut-il prévoir financièrement pour 5 années d'études en école de commerce ?",
+  "answer_text": "**TL;DR**\n1. Le coût total d’une école de commerce sur 5 ans varie de **0 €** (public) à **50 000 €+** (privé prestigieux).\n2. **Budget moyen** : 10 000–30 000 € pour une école privée classique, 0–5 000 € pour une formation publique (IAE, alternance).\n3. L’alternance (contrat pro/apprentissage) réduit souvent les frais à **0 €** et permet un salaire.\n\n---\n\n### **Plan A — Formation publique ou alternance : 0–5 000 €**\n📍 **IAE (Instituts d’Administration des Entreprises)** — bac+5 public, grade Master, **frais < 500 €/an** · [exemple IAE Paris](https://www.onisep.fr/http/redirection/formation/slug/FOR.9631)\n*Pour toi : idéal si tu veux un diplôme reconnu sans dette, avec possibilité d’alternance dès la L3/M1.*\n\n📍 **Écoles en alternance** (ex : CNAM, certaines écoles de commerce privées) — **0 € de frais** + salaire (600–1 500 €/mois).\n*Pour toi : solution gagnante si tu acceptes de travailler en parallèle.*\n\n---\n\n### **Plan B — École de commerce privée classique : 10 000–30 000 €**\n📍 **Écoles post-bac (type ESCE, INSEEC, SKEMA)** — 5 000–10 000 €/an, soit **25 000–50 000 €** sur 5 ans.\n*Pour toi : accessible avec un bon dossier, mais prévois un budget serré ou un prêt étudiant.*\n📍 **Écoles post-prépa (type NEOMA, Audencia)** — 12 000–15 000 €/an, soit **36 000–45 000 €** total.\n*Pour toi : prestige accru, mais coût élevé — bourses et alternance en M1/M2 aident.*\n\n---\n### **Plan C — Écoles d’élite (HEC, ESSEC, ESCP) : 50 000–80 000 €**\n📍 **Top 3 (HEC, ESSEC, ESCP)** — 20 000–25 000 €/an, soit **60 000–80 000 €** sur 3 ans (après prépa).\n*Pour toi : investissement lourd, mais ROI élevé (salaire médian embauche ~45–55k€ — connaissance générale). Bourses sur critères sociaux possibles.*\n\n---\n### **⚠ Attention aux pièges**\n- **Marketing trompeur** : certaines écoles privées affichent des \"frais réduits\" en 1re année, puis augmentent fortement en master.\n- **Coût caché** : logements (Paris/Lyon = +500–1 000 €/mois), déplacements, et matériel (ordinateur, logiciels).\n- **Alternance ≠ garantie** : trouver un contrat dépend de ton profil et du marché local.\n\n---\n**Question pour toi** : Privilégies-tu un diplôme **sans dette** (public/alternance), un **équilibre coût-prestige** (école privée classique), ou vises-tu le **top 3** malgré le coût ? *(Cela déterminera si tu dois cibler les IAE, les concours post-bac, ou une prépa.)*\n\n---\n👤 *Pour affiner ton projet et explorer les aides financières (bourses CROUS, prêts garantis, etc.), un RDV avec le Psy-EN de ton lycée ou le service orientation de ta fac/école est indispensable.*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 31.8,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 7.6,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 14,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 14,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "financement_etudes",
+    "formation",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "formation_france",
+    "voie",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "_formation",
+    "_formation"
+  ]
+}

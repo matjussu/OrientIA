@@ -1,0 +1,36 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q03_blocs_master_cyber",
+  "query_text": "Quelles compétences certifiées par un master en cybersécurité ?",
+  "answer_text": "**TL;DR**\n1. Un master en cybersécurité certifie des compétences **techniques** (pentest, SOC, cryptographie) et **managériales** (RGPD, gouvernance, gestion de crise).\n2. Les certifications professionnelles (CEH, CISSP, OSCP) sont souvent intégrées ou préparées en parallèle.\n3. L’employabilité dépend aussi de l’**expérience pratique** (stages, CTF, labs) — le diplôme seul ne suffit pas.\n\n---\n\n### **Plan A — Compétences techniques certifiées (cœur de métier)**\n*(connaissance générale)*\nUn master en cybersécurité valide des compétences **opérationnelles** :\n- **Détection/réponse** : analyse de logs (SIEM comme Splunk, Wazuh), gestion d’incidents (playbooks SOC).\n- **Offensive/Défensive** : tests d’intrusion (Metasploit, Burp Suite), durcissement de systèmes (CIS benchmarks, Ansible).\n- **Réseaux sécurisés** : configuration de pare-feux (Palo Alto, Fortinet), VPN, segmentation.\n- **Cryptographie appliquée** : PKI, chiffrement (AES, RSA), gestion des clés (HSM).\n- **Forensique** : analyse post-intrusion (autopsie disque avec Autopsy, mémoire volatile).\n*Exemple concret* : Un diplômé doit pouvoir **auditer un réseau** en 48h avec Nessus, puis rédiger un rapport de vulnérabilités priorisées (CVSS).\n\n---\n\n### **Plan B — Compétences managériales et réglementaires**\n*(connaissance générale)*\nLes masters incluent aussi des modules **stratégiques**, critiques pour évoluer vers des postes à responsabilité :\n- **Conformité** : RGPD (DPO), NIS2, ISO 27001 (audits, documentation).\n- **Gouvernance** : politiques de sécurité (PSSI), gestion des risques (EBIOS Risk Manager).\n- **Sensibilisation** : formation des utilisateurs (phishing simulations, bonnes pratiques).\n- **Droit** : responsabilité pénale (LGPD, loi française), contrats cloud (RGPD + clauses SCCs).\n*Astuce* : Ces compétences permettent de viser des postes **hybrides** (ex : *Consultant Cybersécurité* chez Big Four) avec des salaires ~10-20% plus élevés qu’un profil purement technique.\n\n---\n\n### **Plan C — Certifications complémentaires (indispensables en pratique)**\n*(connaissance générale)*\nLe master **ne remplace pas** les certifications reconnues par le marché. Les employeurs recherchent souvent :\n- **Niveau débutant** : *Certified Ethical Hacker (CEH)*, *CompTIA Security+*.\n- **Niveau confirmé** : *Offensive Security Certified Professional (OSCP)*, *CISSP* (pour le management).\n- **Spécialisations** : *Cloud Security (CCSP)*, *Industrie (GICSP)*, *Forensique (GCFA)*.\n*Stratégie* : Certains masters (ex : **SecNum Academy** labellisée ANSSI) préparent directement à ces certifs — vérifie le programme avant de choisir.\n\n---\n### **⚠ Attention aux pièges**\n1. **Diplôme ≠ emploi garanti** : Sans expérience (stages, bug bounty, labs comme Hack The Box), le master a peu de valeur. Les recruteurs regardent **d’abord** les projets GitHub ou write-ups de CTF.\n2. **Labels officiels** : Privilégie les masters **labellisés SecNumEdu** (ANSSI) ou accrédités par la **CGE** — les formations privées non labellisées peuvent coûter cher pour un réseau limité.\n3. **Salaire** : Un junior sortira rarement à plus de **35-40k€ brut/an** (même avec un bac+5) — les salaires élevés (>60k€) exigent 5+ ans d’expérience + certifications.\n\n---\n**Question pour toi** :\nQuelle spécialisation t’intéresse le plus ? **Technique pure** (pentest, forensique), **management** (RGPD, gouvernance), ou **recherche** (cryptographie, IA appliquée à la cyber) ? Cela déterminera le choix des options en master.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 53.14,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 1.63,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 3,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif"
+  ]
+}

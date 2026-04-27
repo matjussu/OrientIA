@@ -1,0 +1,38 @@
+{
+  "suite": "multi_axes",
+  "query_id": "multi_q01_decrocheur_reconversion_aide",
+  "query_text": "J'ai 22 ans, j'ai abandonné la fac il y a 1 an, je n'ai pas de diplôme. Quelles aides pour reprendre une formation et quels débouchés ?",
+  "answer_text": "**TL;DR**\n1. Sans diplôme et après un abandon d’études, des solutions existent : formations gratuites et rémunérées (via Pôle Emploi ou la Région), ou diplômes en 1 an pour rebondir.\n2. Les débouchés dépendent du secteur choisi (ex : numérique, santé, social) — certains métiers recrutent sans diplôme initial.\n3. **Priorité** : contacte un conseiller Pôle Emploi ou une Mission Locale *dès cette semaine* pour activer tes droits.\n\n---\n\n### **Plan A — Formation gratuite + rémunérée (dès maintenant)**\n📍 **Formations financées par Pôle Emploi ou la Région** (partout en France) — bac+2 en 6 à 12 mois, **100% gratuites**, souvent rémunérées (ARE ou rémunération région).\n*Pour toi : idéal si tu veux un diplôme rapide et un revenu. Exemples :*\n- **Titre Pro Développeur Web** (AFPA, Simplon) → métiers en tension (salaire médian embauche : ~2000€ brut, source : Céreq).\n- **Certificat RNCP Formateur professionnel d’adultes** (ex : GRETA) → débouchés dans l’insertion/formation (source : Fiche 4).\n*(connaissance générale : ces formations sont accessibles sans diplôme via des tests de motivation.)*\n\n**Comment faire ?**\n1. Inscris-toi sur [pole-emploi.fr](https://www.pole-emploi.fr) (même sans indemnités).\n2. Prends RDV avec un conseiller pour une **POEI** (Préparation Opérationnelle à l’Emploi Individuelle) ou un **CPF de transition**.\n3. Cible les **titres RNCP** (reconnus par l’État) via [Mon Compte Formation](https://www.moncompteformation.gouv.fr).\n\n---\n\n### **Plan B — Diplôme en 1 an (BTS, BP, etc.)**\n📍 **BTS en 1 an (accéléré)** ou **Brevet Professionnel** (lycées publics/privés) — bac+2, **gratuit en public**, sélectivité modérée (dossier + entretien).\n*Pour toi : si tu veux un diplôme \"classique\" sans repartir de zéro. Exemples :*\n- **BTS SIO** (informatique) → débouchés en support IT (salaire : ~1800-2200€ brut, estimation marché).\n- **BP Coiffure/Esthétique** → installation possible en libéral après 2 ans d’expérience.\n*(connaissance générale : certaines académies proposent des BTS en 1 an pour les décrocheurs — vérifie auprès des GRETA.)*\n\n**Comment faire ?**\n- Contacte le **CIO** (Centre d’Information et d’Orientation) de ta région pour les formations accélérées.\n- Postule via **Parcoursup** (rubrique \"Formation continue\") ou directement auprès des lycées.\n\n---\n\n### **Plan C — Alternance sans diplôme (immersion pro + salaire)**\n📍 **Contrats d’apprentissage ou de professionnalisation** — **salaire** (55-100% du SMIC selon âge), **pas de frais de formation**, débouchés concrets.\n*Pour toi : si tu préfères apprendre en travaillant. Secteurs porteurs :*\n- **BTP** (CAP Maçonnerie, Électricien) → pénurie de main-d’œuvre = embauche garantie (salaire : ~1600-2000€ brut en début de carrière).\n- **Logistique/Transport** (CACES, Titre Pro Conducteur Routier) → CDI fréquents après formation.\n*(connaissance générale : les entreprises recrutent des non-diplômés en alternance via les CFA — Centre de Formation d’Apprentis.)*\n\n**Comment faire ?**\n1. Cherche des offres sur [la Bonne Alternance](https://labonnealternance.pole-emploi.fr).\n2. Postule avec un CV même basique + lettre de motivation axée sur ta **volonté de rebondir**.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Écoles privées payantes** : Méfie-toi des formations à **plus de 3000€/an** sans garantie de diplôme reconnu (vérifie toujours le **RNCP** sur [France Compétences](https://www.francecompetences.fr)).\n- **\"Diplômes\" non reconnus** : Certains certificats (ex : \"coaching\", \"développement personnel\") n’ont **aucune valeur officielle** — privilégie les **titres RNCP** ou diplômes d’État.\n- **Délais** : Les formations gratuites financées par Pôle Emploi ont des **places limitées** — agis avant juin pour une rentrée en septembre.\n\n---\n**Question pour toi :**\nQu’est-ce qui te motive le plus aujourd’hui : **un métier précis** (ex : informatique, santé), **un diplôme rapide**, ou **un salaire immédiat** (via l’alternance) ? Cela déterminera la voie la plus adaptée.\n\n---\n👤 **Pour aller plus loin**, un conseiller en **Mission Locale** (si tu as moins de 26 ans) ou **Pôle Emploi** peut t’aider à monter un dossier solide. Leurs services sont **gratuits** et personnalisés.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 52.97,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 6.78,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 4,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "financement_etudes",
+    "formation",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "voie",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_formation",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective"
+  ]
+}

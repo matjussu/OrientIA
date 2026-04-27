@@ -1,0 +1,37 @@
+{
+  "suite": "personas_v4",
+  "query_id": "lila_q1",
+  "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+  "answer_text": "**TL;DR**\n1. Une licence de lettres modernes ouvre à des métiers variés, mais **peu sont accessibles directement après la licence** : la plupart exigent un bac+5 (master ou concours).\n2. **3 grands domaines** : enseignement (majoritaire), culture/médias, et fonctions transverses (communication, rédaction).\n3. **Stratégie clé** : vise un master professionnel ou un concours (CAPES, bibliothèques) pour concrétiser ton projet.\n\n---\n\n### **Plan A — Enseignement & Concours publics (débouchés majoritaires)**\n📍 **Master MEEF** (toute France) — bac+5 public, sélectivité modérée (dossier + oral), grade Master · [exemple : Master MEEF Lettres à Bordeaux](https://www.onisep.fr/http/redirection/formation/slug/FOR.10446)\n*Pour toi : la voie royale pour devenir professeur de lettres (collège/lycée) via le **CAPES**. 60% des diplômés de lettres modernes s’orientent vers l’enseignement (connaissance générale).*\n\n📍 **Concours des bibliothèques** (État) — bac+3 minimum (licence suffisante pour certains postes), concours écrit/oral · [détails sur devenir-bibliothécaire.fr](https://www.devenir-bibliothécaire.fr)\n*Pour toi : débouché méconnu mais stable (fonction publique). Exige une **spécialisation en master** (ex : [Master Humanités](https://www.onisep.fr/http/redirection/formation/slug/FOR.4659)) pour évoluer.*\n\n---\n\n### **Plan B — Métiers de la culture, de l’édition et des médias**\n📍 **Master Édition** (ex : **Paris Cité**) — bac+5 public, sélectivité élevée (dossier + stage), partenariats avec les maisons d’édition · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10456)\n*Pour toi : pour travailler dans l’édition (lecteur, assistant d’édition), **l’alternance est un plus**. Salaire médian embauche : ~1 800€ brut (connaissance générale).*\n\n📍 **Master Journalisme culturel** (ex : **Strasbourg**) — bac+5 public, sélectivité très élevée (concours), grade Master · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.6749)\n*Pour toi : si tu vises la critique littéraire ou le journalisme spécialisé. **Prévois un portfolio** (blog, contributions médias) en parallèle.*\n\n---\n📍 **Master Sciences du Langage** (ex : **Lyon 2**) — bac+5 public, sélectivité modérée, débouchés en linguistique appliquée · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10048)\n*Pour toi : pour des métiers techniques (lexicographie, traitement automatique des langues) ou l’enseignement du FLE (Français Langue Étrangère).*\n\n---\n\n### **Plan C — Passerelles vers des métiers transverses (sans bac+5)**\n- **Communication/Rédaction** : des licences pro (ex : *Métiers de l’information*) ou formations courtes (ex : **Certificat Voltaire**) permettent d’accéder à des postes de chargé de communication, rédacteur web. *Salaire médian : ~1 700€ brut (connaissance générale).*\n- **Formation complémentaire** : un **DU** (Diplôme Universitaire) en gestion de projet culturel (ex : **Sorbonne Nouvelle**) peut booster ton profil pour des postes en médiation culturelle.\n\n---\n\n⚠ **Attention aux pièges**\n- **Sans bac+5, les débouchés sont limités** : 70% des diplômés de lettres modernes poursuivent en master (connaissance générale). Une licence seule ne suffit pas pour la plupart des métiers visés.\n- **Précarité dans la culture** : les métiers de l’édition/journalisme sont souvent en CDD ou freelance (30-40% des contrats, connaissance générale).\n- **Concours publics = sécurité** : enseignement et bibliothèques offrent des CDI, mais exigent une préparation rigoureuse (annales, stages).\n\n---\n**Question pour toi :**\nQu’est-ce qui t’attire le plus : **transmettre** (enseignement), **créer/analyser** (édition, journalisme) ou **organiser** (communication culturelle) ? Cela déterminera ton choix de master.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 46.01,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 6.18,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 4,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_competences_certif",
+    "_competences_certif"
+  ]
+}

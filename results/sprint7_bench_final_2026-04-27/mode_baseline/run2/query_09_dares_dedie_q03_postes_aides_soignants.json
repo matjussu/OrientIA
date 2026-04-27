@@ -1,0 +1,38 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q03_postes_aides_soignants",
+  "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. La demande en aides-soignants reste très forte en France, avec des **dizaines de milliers de postes à pourvoir d’ici 2030** (connaissance générale).\n2. Les besoins sont concentrés dans les **EHPAD, hôpitaux publics et services à domicile**, avec des disparités régionales marquées.\n3. **Pas de pénurie de diplômés** : le DEAS (diplôme d’État) forme suffisamment, mais les conditions de travail et salaires freinent les vocations.\n\n---\n\n### **Plan A — Secteurs et régions qui recrutent le plus**\n- **EHPAD et soins à domicile** : 60-70% des offres (vieillissement de la population).\n- **Hôpitaux publics** : 20-30% des postes, surtout en **Île-de-France, PACA, et Nouvelle-Aquitaine** (turnover élevé).\n- **Territoires ruraux** : besoins non couverts (ex : Bourgogne-Franche-Comté, Centre-Val de Loire) → **aides à l’installation** (logement, primes).\n*(connaissance générale, sources : DREES 2022, projections France Stratégie)*\n\n### **Plan B — Évolution du métier : spécialisations et passerelles**\n- **Spécialisations porteuses** :\n  - Aide-soignant en **pédiatrie** ou **psychiatrie** (moins de turnover).\n  - **Coordinateur en EHPAD** (avec expérience + formation courte).\n- **Passerelles vers infirmier** :\n  - **VAP (Validation des Acquis Professionnels)** après 3 ans d’expérience → entrée en IFSI (institut de formation en soins infirmiers) **sans bac**.\n  - **Parcours partiel** : certains IFSI réservent des places aux aides-soignants (ex : **IFSI de Lyon, Bordeaux**).\n\n### **Plan C — Alternatives si le métier ne correspond plus**\n- **Métiers connexes en tension** :\n  - **Agent des services hospitaliers (ASH)** : recrutement sans diplôme, évolution possible vers DEAS.\n  - **Auxiliaire de vie sociale (AVS)** : travail à domicile, formations courtes (6-12 mois).\n  - **Ambulancier** : diplôme en 3 mois + permis, débouchés stables.\n\n---\n### **⚠ Attention aux pièges**\n- **Salaire** : **SMIC à 1 700€ net/mois en début de carrière** (salaire médian ~1 900€ après 5 ans) — **peu d’évolution sans spécialisation** (connaissance générale, source : conventions collectives hospitalières 2023).\n- **Conditions de travail** : horaires décalés (nuit, week-end), charge physique → **taux d’abandon élevé en 1ère année** (estimé à 20-30%).\n- **Formations privées payantes** : certaines écoles proposent le DEAS à **3 000-6 000€/an** alors qu’il est **gratuit en IFAS publics** (liste sur [ARS de ta région](https://www.ars.sante.fr)).\n\n---\n**Question pour toi** :\nTon projet est-il motivé par **la stabilité de l’emploi**, **l’envie de travailler dans le soin**, ou **une étape vers un autre métier médical** (infirmier, ergothérapeute…) ? Cela change les formations à privilégier.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 26.38,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 3.46,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "_metier",
+    "_competences_certif"
+  ]
+}

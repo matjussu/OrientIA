@@ -1,0 +1,38 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q13_reconversion_grande_distrib",
+  "query_text": "Je travaille dans la grande distribution depuis 8 ans, je veux changer complètement de secteur. Par où commencer ?",
+  "answer_text": "**TL;DR**\n1. Avec 8 ans d’expérience en grande distribution, vous avez des compétences transférables (gestion, relation client, organisation) valorisables dans d’autres secteurs.\n2. **Priorité** : identifier un métier qui vous motive *avant* de choisir une formation. Un bilan de compétences (gratuit via Pôle Emploi ou OPCO) est la première étape clé.\n3. **3 pistes concrètes** : insertion sociale (formations courtes certifiantes), métiers créatifs (graphisme), ou reconversion vers l’encadrement technique.\n\n---\n\n### **Plan A — Réorientation rapide vers les métiers de l’insertion ou de la formation**\n📍 **Formateur professionnel d’adultes** (France entière) — bac+2, certificat RNCP (niveau 5), formations financées par Pôle Emploi/OPCO · [fiche officielle](lien_ministere_travail)\n*Pour vous : valorise votre expérience terrain + pédagogie. Accès via VAE (Validation des Acquis de l’Expérience) possible.*\n\n📍 **Conseiller en insertion professionnelle** (France entière) — bac+2, certificat RNCP, alternance possible · [fiche officielle](lien_ministere_travail)\n*Pour vous : métiers en tension, débouchés stables (secteur public/associatif). Formation courte (6-12 mois).*\n\n---\n### **Plan B — Reconversion vers un métier créatif ou technique**\n📍 **Graphiste** (France entière) — bac+2, certificat RNCP, formations en ligne (AFPA, GRETA) ou écoles spécialisées · [fiche officielle](lien_ministere_travail)\n*Pour vous : si vous avez un portfolio (même amateur), l’alternance est accessible. Sinon, commencez par des formations courtes (ex : Canva Pro + certifications Adobe).*\n\n*(connaissance générale)* **Autres pistes** :\n- **Développeur web** (formations intensives type Wild Code School, Le Wagon) : bootcamps de 3-6 mois, financés par CPF.\n- **Gestion de projet** (certifications PMP, Scrum) : valorise votre expérience en management en grande distribution.\n\n---\n### **Plan C — Passerelle par la Validation des Acquis de l’Expérience (VAE)**\n*(connaissance générale)*\n1. **Faites un bilan de compétences** (gratuit via Pôle Emploi ou votre OPCO) pour cibler un métier précis.\n2. **VAE possible** pour obtenir un diplôme (ex : bac+2 en management) sans reprendre des études longues. Exemples :\n   - **Titre RNCP \"Responsable d’unité marchande\"** (votre expérience en grande distribution peut suffire).\n   - **Licence Pro Métiers de l’insertion** (via VAE partielle).\n3. **Testez le métier avant de vous engager** : bénévolat, stages courts, ou immersions via [Plateforme de l’Alternance](https://www.alternance.pro/).\n\n---\n### ⚠ **Attention aux pièges**\n- **Évitez les formations privées coûteuses** (>5 000 €) sans garantie de débouché. Privilégiez les certificats RNCP financés par Pôle Emploi/OPCO.\n- **Ne vous lancez pas sans projet clair** : une reconversion sans cible précise peut mener à des formations inutiles.\n- **Méfiez-vous des \"reconversions miracles\"** : les métiers comme data scientist ou expert cyber exigent des prérequis techniques solides (maths, programmation).\n\n---\n**Question pour vous** :\nQu’est-ce qui vous attire le plus aujourd’hui : **aider les autres** (insertion/formation), **créer** (graphisme/digital), ou **manager** (gestion de projet) ? Cela affinerait les options.\n\n---\n👤 *Pour un accompagnement personnalisé, prenez RDV avec un conseiller en évolution professionnelle (CEP) via [Mon Compte Formation](https://www.moncompteformation.gouv.fr/) ou votre OPCO. Ils peuvent financer votre bilan de compétences et votre formation.*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 37.34,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 12.39,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 0,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 0,
+    "error": "JSON parse error: Unterminated string starting at: line 180 column 31 (char 8274). Raw: {\n  \"stats_extracted\": [\n    {\n      \"stat_text\": \"8 ans d’expérience\",\n      \"stat_value\": 8,\n      \"stat_unit\": \"années\",\n      \"context_in_response\": \"expérience en grande distribution\",\n      \"is_"
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_competences_certif",
+    "_competences_certif",
+    "formation_france",
+    "_formation"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "suite": "personas_v4",
+  "query_id": "emma_q1",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "answer_text": "**TL;DR**\n1. Un développeur débutant post-M2 informatique gagne en moyenne **2 200 € brut/mois** (salaire médian embauche, hors primes).\n2. Les écarts sont forts selon la spécialisation (data/IA > web) et la localisation (Île-de-France +15-20%).\n3. L’alternance en M2 booste le salaire d’embauche (+10-15% typiquement).\n\n---\n\n### **Plan A — Développeur logiciel / web (profil généraliste)**\n**Salaire médian embauche** : **2 000–2 300 € brut/mois** (connaissance générale).\n*Pour toi :* Le plus accessible, mais concurrence forte sur les juniors. Pense à te spécialiser (backend, cloud) pour monter en salaire.\n\n### **Plan B — Data Scientist / Ingénieur IA (profil pointu)**\n**Salaire médian embauche** : **2 500–3 000 € brut/mois** (connaissance générale).\n*Pour toi :* Si ton M2 inclut ML/IA ou data engineering, vise ces postes. Les thèses CIFRE (2 300 € brut/mois + doctorat) sont aussi une piste.\n\n### **Plan C — Alternance en M2 + embauche dans la même boite**\n**Salaire post-alternance** : **2 400–2 800 € brut/mois** (connaissance générale).\n*Pour toi :* L’alternance réduit le risque \"junior\" et négocier son CDI en interne donne un avantage salarial.\n\n---\n⚠ **Attention aux pièges**\n- **Île-de-France vs régions** : Un même poste peut varier de **2 000 € (province)** à **2 600 € (Paris)** — vérifie les grilles locales.\n- **ESN vs entreprise finale** : Les ESN (SSII) paient souvent **10-15% de moins** qu’une embauche directe en entreprise (ex : 1 900 € vs 2 300 €).\n- **Primes variables** : Les bonus (intéressement, 13e mois) peuvent ajouter **10-20%** au package annuel, mais ne sont pas garantis.\n\n---\n**Question pour toi :**\nTon M2 a-t-il une spécialisation valorisable (cybersécurité, data, embarqué) ? Si oui, cible les offres qui mentionnent explicitement ces compétences — elles paient **200–500 € de plus** dès l’embauche.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 31.1,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 4.78,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "formation_france",
+    "formation_france"
+  ]
+}

@@ -1,0 +1,1438 @@
+{
+  "summary": {
+    "run": "run3",
+    "n_queries": 38,
+    "n_success": 38,
+    "n_total_stats": 319,
+    "n_verified": 98,
+    "n_verified_strict": 93,
+    "n_verified_by_source": 5,
+    "n_hallucinated": 65,
+    "n_with_disclaimer": 156,
+    "pct_verified": 30.7,
+    "pct_hallucinated": 20.4,
+    "pct_disclaimer": 48.9,
+    "avg_pipeline_s": 38.72,
+    "total_critic_modifications": 0
+  },
+  "queries": [
+    {
+      "suite": "personas_v4",
+      "query_id": "lila_q1",
+      "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+      "answer_text": "**TL;DR**\n1. Une licence de lettres modernes ouvre à des métiers variés, mais **peu sont accessibles directement après la licence** : la plupart exigent un bac+5 (master ou concours).\n2. **3 grands domaines** : enseignement (majoritaire), culture/médias, et fonctions transverses (communication, rédaction).\n3. **Stratégie clé** : vise un master professionnel ou un concours (CAPES, bibliothèques) pour concrétiser ton projet.\n\n---\n\n### **Plan A — Enseignement & Concours publics (débouchés majoritaires)**\n📍 **Master MEEF** (toute France) — bac+5 public, sélectivité modérée (dossier + oral), grade Master · [exemple : Master MEEF Lettres à Bordeaux](https://www.onisep.fr/http/redirection/formation/slug/FOR.10446)\n*Pour toi : la voie royale pour devenir professeur de lettres (collège/lycée) via le **CAPES**. 60% des diplômés de lettres modernes s’orientent vers l’enseignement (connaissance générale).*\n\n📍 **Concours des bibliothèques** (État) — bac+3 minimum (licence suffisante pour certains postes), concours écrit/oral · [détails sur devenir-bibliothécaire.fr](https://www.devenir-bibliothécaire.fr)\n*Pour toi : débouché méconnu mais stable (fonction publique). Exige une **spécialisation en master** (ex : [Master Humanités](https://www.onisep.fr/http/redirection/formation/slug/FOR.4659)) pour évoluer.*\n\n---\n\n### **Plan B — Métiers de la culture, de l’édition et des médias**\n📍 **Master Édition** (ex : **Paris Cité**) — bac+5 public, sélectivité élevée (dossier + stage), partenariats avec les maisons d’édition · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10456)\n*Pour toi : pour travailler dans l’édition (lecteur, assistant d’édition), **l’alternance est un plus**. Salaire médian embauche : ~1 800€ brut (connaissance générale).*\n\n📍 **Master Journalisme culturel** (ex : **Strasbourg**) — bac+5 public, sélectivité très élevée (concours), grade Master · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.6749)\n*Pour toi : si tu vises la critique littéraire ou le journalisme spécialisé. **Prévois un portfolio** (blog, contributions médias) en parallèle.*\n\n---\n📍 **Master Sciences du Langage** (ex : **Lyon 2**) — bac+5 public, sélectivité modérée, débouchés en linguistique appliquée · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10048)\n*Pour toi : pour des métiers techniques (lexicographie, traitement automatique des langues) ou l’enseignement du FLE (Français Langue Étrangère).*\n\n---\n\n### **Plan C — Passerelles vers des métiers transverses (sans bac+5)**\n- **Communication/Rédaction** : des licences pro (ex : *Métiers de l’information*) ou formations courtes (ex : **Certificat Voltaire**) permettent d’accéder à des postes de chargé de communication, rédacteur web. *Salaire médian : ~1 700€ brut (connaissance générale).*\n- **Formation complémentaire** : un **DU** (Diplôme Universitaire) en gestion de projet culturel (ex : **Sorbonne Nouvelle**) peut booster ton profil pour des postes en médiation culturelle.\n\n---\n\n⚠ **Attention aux pièges**\n- **Sans bac+5, les débouchés sont limités** : 70% des diplômés de lettres modernes poursuivent en master (connaissance générale). Une licence seule ne suffit pas pour la plupart des métiers visés.\n- **Précarité dans la culture** : les métiers de l’édition/journalisme sont souvent en CDD ou freelance (30-40% des contrats, connaissance générale).\n- **Concours publics = sécurité** : enseignement et bibliothèques offrent des CDI, mais exigent une préparation rigoureuse (annales, stages).\n\n---\n**Question pour toi :**\nQu’est-ce qui t’attire le plus : **transmettre** (enseignement), **créer/analyser** (édition, journalisme) ou **organiser** (communication culturelle) ? Cela déterminera ton choix de master.",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 46.01,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 6.18,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 9,
+        "n_verified": 4,
+        "n_verified_strict": 4,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 5,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "formation"
+      ],
+      "granularities_top_k": [
+        "_formation",
+        "_formation",
+        "_formation",
+        "_formation",
+        "_formation",
+        "_formation",
+        "_competences_certif",
+        "_competences_certif"
+      ]
+    },
+    {
+      "suite": "personas_v4",
+      "query_id": "theo_q1",
+      "query_text": "Quelles passerelles existent après une L1/L2 de droit pour aller vers un BTS ou une école de commerce ?",
+      "answer_text": "**TL;DR**\n1. **Droit → BTS** : possible en **1 an** via une **L2 validée** (admission sur dossier) ou en **2 ans** après une L1 (redoublement partiel). Cible les BTS **Négociation et Digitalisation de la Relation Client (NDRC)** ou **Gestion de la PME** pour rester proche du droit (contrats, gestion).\n2. **Droit → École de commerce** : **2 chemins** :\n   - **Admission parallèle en bachelor (bac+3)** après ta L2 (concours Passerelle/Tremplin).\n   - **Licence pro métiers du droit + spécialisation commerce** (ex : licence pro juridique et fiscale) pour bifurquer en master commerce.\n3. **Calendrier clé** : Dossiers à préparer **dès janvier** pour rentrées en septembre (BTS) ou mars (admissions parallèles).\n\n---\n\n### **Plan A — Passerelle rapide : BTS en 1 an (si L2 validée)**\n📍 **BTS NDRC** (Lyon, Bordeaux, Nantes…) — bac+2 public/privé, **sélectivité modérée** (dossier + entretien), **gratuit en public** · [fiche ONISEP](https://www.onisep.fr/ressources/univers-formation/formations/bts-negociation-et-digitalisation-de-la-relation-client-ndrc)\n*Pour toi : Idéal si tu veux un diplôme pro rapide. Modules \"droit des contrats\" utiles pour ton background. Alternance possible (salaire ~800€/mois — connaissance générale).*\n\n**Étapes :**\n1. **Valide ta L2 droit** (même avec compensation) → équivalence partielle pour entrer en **2ème année de BTS**.\n2. **Cible les BTS en lycées publics** (moins chers) ou **écoles privées sous contrat** (ex : **ESARC**).\n3. **Postule via Parcoursup** (volet \"formation continue\") ou **directement** auprès des établissements (hors Parcoursup pour certains BTS privés).\n4. **Prépare un CV + lettre** mettant en avant tes compétences en **rédaction juridique** (utile en négociation commerciale).\n\n**Exemple concret** :\n- **Lycée La Martinière-Diderot (Lyon)** : BTS NDRC avec option \"droit des affaires\" — **taux d’insertion 85%** (source : Céreq, enquêtes insertion 2022 — connaissance générale).\n- **ESARC (Paris, Bordeaux)** : BTS NDRC en alternance — **coût 0€** (prise en charge par l’entreprise).\n\n---\n\n### **Plan B — Rebond vers une école de commerce (bac+3/5)**\n#### **Option 1 : Bachelor en 3 ans (admission parallèle après L2)**\n📍 **Bachelor EGC** (Réseau national, ex : **EGC Rennes**) — bac+3, **sélectivité 40-50%**, **5 000€/an**, grade Licence · [site officiel](https://www.reseau-egc.fr)\n*Pour toi : Concours **Passerelle Bachelor** (épreuves : logique, anglais, entretien). Ton background droit est un + pour les matières \"droit des affaires\".*\n\n**Étapes :**\n1. **Prépare le concours Passerelle Bachelor** (inscriptions **janvier-mars**, concours **avril**).\n   - **Épreuves** : Test TAGE 2 (logique), TOEIC (anglais), entretien de motivation.\n   - **Coût** : ~100€ de frais de concours.\n2. **Mise à niveau** : Suis un **MOOC en comptabilité** (ex : Fun MOOC \"Gestion de projet\") pour combler l’écart avec les profils éco.\n3. **Alternance** : Possible en **3ème année** (salaire ~1 000€/mois — connaissance générale).\n\n#### **Option 2 : Licence pro + master commerce**\n📍 **Licence pro Métiers du droit et de la gestion** (ex : **Université Paris Nanterre**) — bac+3, **sélectivité 30%**, **gratuit** · [fiche ONISEP](https://www.onisep.fr/ressources/univers-formation/formations/licence-pro-metiers-du-droit-et-de-la-gestion)\n*Pour toi : Spécialisation en \"droit des affaires\" ou \"fiscalité\" pour bifurquer vers un master commerce (ex : master CCA).*\n\n**Étapes :**\n1. **Postule en L3 pro** via **eCandidat** (plateforme des universités) après ta L2.\n2. **Choisis une licence pro avec stages** (ex : **licence pro Juriste d’entreprise** à **Lyon 2**).\n3. **Poursuis en master commerce** (ex : **master Management et Administration des Entreprises** à **IAE**).\n\n---\n### **Plan C — Alternative : VAE ou double compétence**\nSi tu veux **éviter de perdre une année** ou **combiner droit et commerce** :\n1. **VAE (Validation des Acquis de l’Expérience)** :\n   - Si tu as **1 an d’expérience** (stage, job étudiant), tu peux valider des **blocs de compétences** d’un BTS ou bachelor.\n   - **Exemple** : VAE pour le **BTS MCO** (Management Commercial Opérationnel) via un **stage en vente**.\n   - **Coût** : ~2 000€ (prise en charge possible par Pôle Emploi ou OPCO).\n   - **Calendrier** : Dossier à déposer **avant juin** pour une VAE en 2025.\n\n2. **Double diplôme droit + commerce** :\n   - Certaines **écoles de commerce** proposent des **parcours hybrides** (ex : **EM Strasbourg** avec une **mineure en droit**).\n   - **Alternative** : Fais une **L3 droit** puis un **master en école de commerce** (ex : **master in Management** à **Audencia** via admissions parallèles).\n\n---\n### **⚠ Attention aux pièges**\n- **BTS privé hors contrat** : Certains coûtent **5 000€/an** sans garantie de qualité. Vérifie le **taux d’insertion** (exige >70% — connaissance générale) et le **label \"Qualité Français\"** (obligatoire pour les formations éligibles au CPF).\n- **Écoles de commerce post-bac** : Évite les **bachelors non reconnus par l’État** (vérifie le **grade Licence** sur le site du ministère).\n- **Perte d’année** : Une réorientation en BTS après L1 peut impliquer de **redoubler la 1ère année** si tu n’as pas assez de crédits ECTS. Solution : Valide ta L2 **même avec compensation** pour entrer directement en 2ème année.\n\n---\n**Question pour toi :**\n- **Veux-tu un diplôme rapide (BTS) pour entrer sur le marché du travail, ou vises-tu un bac+5 (école de commerce) pour évoluer vers des postes cadres ?**\n- **Es-tu mobile géographiquement ?** Certaines écoles/bachelors sont plus accessibles en province (ex : EGC dans le Grand Ouest).\n- **As-tu déjà une expérience pro (stage, job) ?** Cela peut débloquer une VAE ou une alternance.\n\n---\n👤 *Pour affiner ton projet, un RDV avec le **SCUIO** (Service Commun Universitaire d’Information et d’Orientation) de ta fac ou un **conseiller Pôle Emploi** (pour l’alternance/VAE) est indispensable.*",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 67.76,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 6.23,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 13,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 4,
+        "n_hallucinated": 9,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "parcours_bacheliers"
+      ],
+      "granularities_top_k": [
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_parcours_bacheliers",
+        "_parcours_bacheliers",
+        "_parcours_bacheliers",
+        "_parcours_bacheliers",
+        "_parcours_bacheliers"
+      ]
+    },
+    {
+      "suite": "personas_v4",
+      "query_id": "emma_q1",
+      "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+      "answer_text": "**TL;DR**\n1. Un développeur débutant post-M2 informatique en France gagne **entre 35k€ et 42k€ brut annuel** (médiane ~38k€) — hors primes et avantages.\n2. L’écart dépend du secteur (ESN vs éditeur de logiciels), de la localisation (Île-de-France +10-15%), et du type de contrat (CDI vs alternance prolongée).\n3. Pour maximiser ton salaire, cible les **éditeurs SaaS/IA** ou les **grands groupes tech** (banque, énergie), et négocie les primes (intéressement, télétravail).\n\n---\n\n### **Plan A — Salaire médian réaliste (CDI classique)**\n**35k€–38k€ brut/an** (soit **~2 300€–2 600€ net/mois**)\n- **Secteurs typiques** : ESN (SSII), PME du numérique, administrations.\n- **Localisation** : Province ou Île-de-France (hors Paris intra-muros).\n- **Exemples d’employeurs** : Capgemini, Atos, startups en scale-up, collectivités territoriales.\n*(connaissance générale, basée sur les baromètres APEC et Welcome to the Jungle 2023–2024)*\n\n---\n\n### **Plan B — Salaire haut de fourchette (profil recherché)**\n**38k€–45k€ brut/an** (soit **~2 600€–3 100€ net/mois**)\n- **Secteurs porteurs** :\n  - **Éditeurs de logiciels** (SaaS, cybersécurité, IA) : +10% vs ESN.\n  - **Grands groupes** (banque, énergie, aéronautique) : packages avec primes (jusqu’à 5k€/an).\n  - **Paris intra-muros** : +15% vs province (mais coût de la vie à soustraire).\n- **Compétences différenciantes** :\n  - Double compétence (ex : dev + data/IA, dev + cloud AWS/Azure).\n  - Expérience en alternance dans un secteur tendu (ex : santé, défense).\n*(connaissance générale, croisée avec les rapports Céreq et Glassdoor France)*\n\n---\n### **Plan C — Alternatives pour dépasser la fourchette**\n1. **Thèse CIFRE** (bac+8) :\n   - **Salaire** : ~2 100€ net/mois (brut ~32k€) pendant 3 ans, mais **CDI garanti à 45k€+** à la sortie (secteur R&D).\n   - **Pour toi** : Si tu vises la recherche appliquée ou un poste d’ingénieur expert.\n   *(connaissance générale, basée sur le dispositif ANRT 2024)*\n\n2. **Expatriation (Suisse, Luxembourg, Allemagne)** :\n   - **Salaire** : 60k€–80k€ brut/an en Suisse (Genève/Zurich), 45k€–55k€ au Luxembourg.\n   - **Pour toi** : Si tu es mobile et maîtrises l’anglais/allemand. Attention au coût de la vie.\n   *(connaissance générale, baromètre Michael Page Europe 2024)*\n\n3. **Freelance/Indépendant** :\n   - **TJM débutant** : 350€–500€/jour (soit ~40k€–70k€ brut/an si 200 jours facturés).\n   - **Pour toi** : Si tu as un réseau client et une spécialisation (ex : dev blockchain, devops).\n   *(connaissance générale, plateformes Malt et Comet)*\n\n---\n\n### **⚠ Attention aux pièges**\n- **ESN vs éditeur** : Une ESN peut proposer 38k€ brut, mais avec **turnover élevé** et missions moins stimulantes qu’en éditeur de logiciels.\n- **Primes variables** : Certains secteurs (banque, énergie) affichent 40k€ brut, mais **30% peuvent être des bonus non garantis**.\n- **Alternance prolongée** : Un contrat pro post-M2 à 28k€ brut n’est **pas une promotion** — vise un CDI direct.\n\n---\n**Question pour toi** :\nTon priorité est-elle le salaire brut, l’équilibre vie pro/perso, ou la montée en compétences rapide (même si ça signifie accepter 35k€ en éditeur pour décoller) ?",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 31.69,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 8.07,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 19,
+        "n_verified": 1,
+        "n_verified_strict": 1,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 18,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "formation"
+      ],
+      "granularities_top_k": [
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_formation",
+        "_formation"
+      ]
+    },
+    {
+      "suite": "personas_v4",
+      "query_id": "mohamed_q1",
+      "query_text": "Quels sont les principaux débouchés métier après un Bac pro cuisine par apprentissage ?",
+      "answer_text": "**TL;DR**\n1. Un Bac pro Cuisine par apprentissage ouvre à des métiers **opérationnels** en restauration (cuisinier, commis, chef de partie) et à des évolutions vers l’encadrement (chef de cuisine, gestion).\n2. **90% des diplômés** trouvent un emploi dans les 6 mois (secteur en tension), souvent en CDI, avec des salaires entre **1 700 € et 2 200 € brut/mois** en début de carrière (connaissance générale).\n3. **3 voies principales** : emploi direct, spécialisation (pâtisserie, traiteur), ou poursuite d’études (BP, BM, BTS).\n\n---\n\n### **Plan A — Emploi direct : métiers accessibles dès le diplôme**\n📍 **Cuisinier / Commis de cuisine** (restaurants, hôtels, collectivités)\n*Pour toi :* Poste le plus courant, embauche rapide (CDD/CDI), horaires décalés mais **débouchés garantis** (secteur en pénurie de main-d’œuvre).\n- **Évolution possible** : Chef de partie (2-3 ans d’expérience), puis chef de cuisine (5 ans+).\n- **Salaire** : 1 700–1 900 € brut/mois en début de carrière (connaissance générale).\n\n📍 **Cuisinier en restauration collective** (écoles, hôpitaux, entreprises)\n*Pour toi :* Horaires plus réguliers qu’en restaurant, mais salaires légèrement inférieurs (1 600–1 800 € brut).\n\n---\n\n### **Plan B — Spécialisation : se différencier pour monter en grade**\n📍 **CAP Pâtissier** (1 an en formation continue ou apprentissage)\n*Pour toi :* Complément idéal pour élargir tes compétences et viser des postes **mieux payés** (pâtissier : 1 900–2 200 € brut).\n- **Exemple de formation** : [CAP Pâtissier en alternance](https://www.onisep.fr) (recherche par région).\n\n📍 **BP Arts de la cuisine** (2 ans après le Bac pro)\n*Pour toi :* Pour devenir **chef de cuisine** plus rapidement, avec une reconnaissance professionnelle forte.\n\n---\n### **Plan C — Poursuite d’études : viser l’encadrement ou l’entrepreneuriat**\n📍 **BTS Gestion hôtelière-restauration** (2 ans, lycées hôteliers ou CFA)\n*Pour toi :* Si tu veux **gérer un restaurant** ou créer ton entreprise. Accès possible avec un bon dossier (moyenne > 12/20 en Bac pro).\n- **Débouchés** : Adjoint de direction, responsable de restauration, ou formation complémentaire en gestion.\n\n📍 **Brevet professionnel (BP) Cuisinier** (2 ans)\n*Pour toi :* Alternative au BTS pour ceux qui préfèrent **rester en cuisine** avec un niveau supérieur.\n\n---\n### **⚠ Attention aux pièges**\n- **Conditions de travail** : Horaires tardifs, week-ends et jours fériés travaillés (surtout en restaurant traditionnel).\n- **Salaire plafonné sans évolution** : Sans spécialisation ou gestion, les salaires stagnent autour de **2 000 € brut** après 10 ans (connaissance générale).\n- **Mobilité souvent nécessaire** : Les meilleurs postes (hôtels étoilés, restaurants gastronomiques) exigent de **changer de ville** (voire de pays).\n\n---\n**Question pour toi :**\nPréfères-tu **commencer à travailler tout de suite** (Plan A), te **spécialiser pour grimper plus vite** (Plan B), ou **viser un poste d’encadrement** avec des études longues (Plan C) ? 👤 *Pour affiner, un conseiller du CIO ou de ta chambre des métiers peut t’aider à identifier les formations près de chez toi.*",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 34.7,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 3.54,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 6,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 5,
+        "n_hallucinated": 1,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "metier_prospective"
+      ],
+      "granularities_top_k": [
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_metier_prospective",
+        "_metier_prospective",
+        "_competences_certif",
+        "fap_region"
+      ]
+    },
+    {
+      "suite": "personas_v4",
+      "query_id": "valerie_q1",
+      "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+      "answer_text": "**TL;DR**\n1. Une année en école de commerce privée coûte **5 000 à 15 000 €** (hors top 5), contre **0 à 600 €** pour une licence publique.\n2. Les licences pro (bac+3) sont quasi gratuites (frais d’inscription uniquement), tandis que les écoles post-bac privées dépassent souvent **10 000 €/an**.\n3. Le coût n’est pas le seul critère : débouchés, sélectivité et reconnaissance diffèrent radicalement.\n\n---\n\n### **Plan A — Licence publique : coût quasi nul, reconnaissance d’État**\n📍 **Licence Droit** (ex : [Université Paris Cité](https://www.onisep.fr/http/redirection/formation/slug/FOR.9722)) — bac+3 public, **170 €/an** (frais d’inscription 2024), grade Licence.\n*Pour toi : idéal si tu veux un diplôme reconnu sans dette, avec possibilité de spécialisation en master (ex : droit des affaires).*\n\n📍 **Licence Pro Métiers du Commerce International** (ex : [IUT de Bordeaux](https://www.onisep.fr/http/redirection/formation/slug/FOR.11370)) — bac+3 public, **243 €/an**, alternance possible (rémunération ~600-800 €/mois).\n*Pour toi : formation pro proche des entreprises, avec un coût maîtrisé et un taux d’insertion élevé (connaissance générale).*\n\n---\n\n### **Plan B — École de commerce privée : investissement élevé, réseaux solides**\n- **Bachelor (bac+3)** : **6 000 à 12 000 €/an** (ex : INSEEC, PPA). Exige souvent un bon dossier (12+ de moyenne) et des concours (Sésame, Accès).\n- **Grande école (bac+5)** : **10 000 à 20 000 €/an** (ex : HEC, ESSEC, EDHEC), accessible après prépa ou admissions parallèles (bac+3).\n*Pour toi : si tu vises des postes à l’international ou des salaires élevés à terme, mais avec un risque de dette importante (connaissance générale).*\n\n**Exemple concret** : Un Bachelor à **KEDGE (Bordeaux)** coûte ~**9 500 €/an** (hors logement), contre **0 €** pour une licence pro en alternance dans la même ville.\n\n---\n### **Plan C — Alternatives hybrides : coût modéré, double compétence**\n- **Licence + école en admission parallèle** : Faire une licence publique (ex : économie-gestion), puis intégrer une école de commerce en **bac+3** via les concours **Passerelle** ou **Tremplin** (coût total réduit).\n- **Alternance en école privée** : Certaines écoles (ex : **ESG**, **INSEEC**) proposent des contrats pro/alternance, réduisant le coût à **0 €** (salaire couvert par l’entreprise).\n\n---\n### **⚠ Attention aux pièges**\n- **Marketing des écoles privées** : Méfie-toi des promesses \"100% emploi\" — vérifie les **taux d’insertion à 6 mois** (ex : [Céreq](https://www.cereq.fr)) et le **salaire médian** (souvent < 30k€ brut en début de carrière pour un bachelor, connaissance générale).\n- **Coût caché** : Logement (Paris = +800 €/mois), frais de vie, et **frais annexes** (voyages obligatoires, associations étudiantes) peuvent alourdir la note de **30 à 50%**.\n- **Sélectivité ≠ qualité** : Une école à **15k€/an** n’est pas forcément meilleure qu’une licence pro publique avec **90% d’insertion** (ex : [licences pro commerce](https://www.onisep.fr/http/redirection/formation/slug/FOR.11243)).\n\n---\n**Question pour toi** :\nPréfères-tu **minimiser les coûts** (licence publique + spécialisation après) ou **investir tôt** pour un réseau et une marque employable à l’international ? Et as-tu une idée de ton secteur cible (finance, marketing, droit, etc.) ?",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 32.67,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 7.56,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 16,
+        "n_verified": 3,
+        "n_verified_strict": 3,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 11,
+        "n_hallucinated": 2,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "formation"
+      ],
+      "granularities_top_k": [
+        "_formation",
+        "_formation",
+        "_formation",
+        "_formation",
+        "_formation",
+        "_formation",
+        "_formation",
+        "_formation"
+      ]
+    },
+    {
+      "suite": "personas_v4",
+      "query_id": "psy_en_q1",
+      "query_text": "Quels sont les indicateurs d'insertion professionnelle à 3 ans pour un master en psychologie clinique en France ?",
+      "answer_text": "**TL;DR**\n1. Les masters en psychologie clinique affichent des taux d’insertion **modérés** (60-70% à 3 ans), avec une forte proportion de CDD et temps partiels en début de carrière.\n2. Les débouchés varient selon la spécialisation : **psychologie de la santé** (meilleure insertion) > **psychopathologie clinique** (plus académique).\n3. L’alternance et les réseaux professionnels (hôpitaux, CMP) sont **décisifs** pour sécuriser un emploi stable.\n\n---\n\n### **Plan A — Master Psychologie de la Santé (meilleure insertion)**\n📍 **Master Psychologie Clinique et Psychologie de la Santé** (ex : [Université Paris Cité](https://www.onisep.fr/http/redirection/formation/slug/FOR.10205)) — bac+5 public, grade Master\n*Pour vous : orientation la plus porteuse pour travailler en **milieu hospitalier ou libéral** (conventionnement possible). Taux d’insertion estimé à **65-75% à 3 ans** (connaissance générale, secteur public + libéral confondus).*\n\n### **Plan B — Master Psychopathologie Clinique (recherche/enseignement)**\n📍 **Master Psychopathologie Clinique Psychanalytique** (ex : [Université Paris 8](https://www.onisep.fr/http/redirection/formation/slug/FOR.10223)) — bac+5 public, grade Master\n*Pour vous : débouchés plus **académiques** (thèse, enseignement) ou en **institutions spécialisées** (CMP, prisons). Taux d’insertion **~50-60% à 3 ans** (connaissance générale), souvent après un doctorat.*\n\n### **Plan C — Reconversion accélérée via VAE ou titres RNCP**\n- **VAE pour le titre de Psychologue** (si expérience pro en santé mentale) : dossier à monter via les **DIRECCTE** (ex : [France VAE](https://www.francevae.fr/)).\n- **Titres RNCP niveau 7** (ex : *Responsable en psychologie sociale*, [RNCP36254](https://www.francecompetences.fr/)) : formations courtes (1 an) en alternance, éligibles CPF.\n*Pour vous : solution si vous visez un **poste en entreprise** (RH, prévention des risques) plutôt qu’un cabinet libéral.*\n\n---\n\n### **⚠ Attention aux pièges**\n- **Saturations géographiques** : les régions **Île-de-France et PACA** concentrent 60% des psychologues, mais aussi la plus forte concurrence (connaissance générale). Ciblez les **déserts médicaux** (Grand Est, Centre-Val de Loire) pour un installation libérale plus aisée.\n- **Précarité des débuts** : 40% des jeunes diplômés commencent en **CDD ou vacations** (source : [Dares, enquête 2022 sur les métiers de la santé](https://dares.travail-emploi.gouv.fr/) — connaissance générale). Prévoyez un **fonds de roulement** si vous visez le libéral.\n- **Obligation légale** : le titre de *psychologue* est **protégé** (loi 1985). Sans master + stage pro de 500h minimum, impossible de s’installer ou de facturer des consultations.\n\n---\n**Question pour vous :**\nVotre projet est-il plutôt **clinique (thérapie, hôpital)** ou **appliqué (entreprise, santé publique)** ? Cela change radicalement les formations et réseaux à activer.",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 28.66,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 2.87,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 6,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 4,
+        "n_hallucinated": 2,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "formation"
+      ],
+      "granularities_top_k": [
+        "_competences_certif",
+        "_competences_certif",
+        "_formation",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_formation",
+        "_competences_certif"
+      ]
+    },
+    {
+      "suite": "dares_dedie",
+      "query_id": "q01_postes_pourvoir_global",
+      "query_text": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+      "answer_text": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés sur **4 grands défis** : transition écologique, numérique, santé/silver économie, et souveraineté industrielle.\n2. Les **top 5 secteurs en tension** : énergies renouvelables, cybersécurité, data/IA, santé (personnes âgées), et maintenance industrielle 4.0.\n3. **Stratégie gagnante** : vise des compétences hybrides (ex : tech + écologie) ou des métiers en pénurie structurelle (ex : infirmier, technicien réseau).\n\n---\n\n### **Plan A — Métiers en explosion d’ici 2030 (sources : Dares 2023, France Stratégie, Céreq)**\n*(connaissance générale)*\n\n1. **Transition écologique** :\n   - **Technicien/ne en énergies renouvelables** (solaire, éolien, hydrogène) : +50 000 postes/an estimés (besoins en installation/maintenance).\n   - **Ingénieur/e en économie circulaire** : recyclage, éco-conception, gestion des déchets (salaire médian embauche : ~2 500€ brut).\n   - **Agronome spécialisé en agroécologie** : adaptation des exploitations aux normes environnementales.\n\n2. **Numérique & souveraineté tech** :\n   - **Expert/e en cybersécurité** (label SecNumEdu ANSSI) : 20 000 postes non pourvus en 2025 → **30 000 en 2030** (source : ANSSI).\n   - **Développeur/euse IA responsable** : focus sur l’IA \"frugale\" et éthique (rgpd, biais algorithmiques).\n   - **Administrateur/trice cloud souverain** (ex : plateformes françaises comme OVH).\n\n3. **Santé & silver économie** :\n   - **Infirmier/ère** : 80 000 départs à la retraite d’ici 2030 + vieillissement de la population (salaire médian : 2 000€ net, **CDI à 95%**).\n   - **Ergothérapeute spécialisé en gériatrie** : adaptation des logements pour les seniors.\n   - **Data analyst en santé** : croiser données médicales et IA pour la prévention.\n\n4. **Industrie 4.0** :\n   - **Technicien/ne de maintenance industrielle connectée** (robots, IoT) : **70% des entreprises peinent à recruter** (source : UIMM).\n   - **Opérateur/trice en fabrication additive** (impression 3D métallique).\n\n*Pour toi* : Ces métiers recrutent **sans diplôme long** (Bac+2/3 suffisent pour 60% d’entre eux) ou via l’alternance. Priorité aux formations labellisées (ex : SecNumEdu pour la cyber).\n\n---\n\n### **Plan B — Métiers émergents (moins connus mais forte croissance)**\n*(connaissance générale)*\n\n1. **Métiers hybrides tech + autre secteur** :\n   - **Bio-informaticien/ne** : croiser biologie et data pour la recherche médicale (ex : génomique).\n   - **Juriste en droit des données** : RGPD, propriété intellectuelle des algorithmes.\n   - **Urbaniste data** : optimiser les villes avec l’IA (mobilité, énergie).\n\n2. **Nouveaux besoins sociaux** :\n   - **Conseiller/ère en résilience climatique** : aider les collectivités à s’adapter aux canicules/inondations.\n   - **Psychologue spécialisé en santé mentale au travail** : burn-out, qualité de vie au travail (QVT).\n\n3. **Artisanat high-tech** :\n   - **Artisan du bâtiment bas-carbone** (isolation, matériaux biosourcés).\n   - **Réparateur/trice de véhicules électriques**.\n\n*Pour toi* : Ces métiers exigent souvent une **double compétence** (ex : bac+5 en droit + certif data). Idéal si tu aimes l’innovation et les défis transverses.\n\n---\n\n### **Plan C — Sectors à éviter (sauf passion) : surpopulation ou automatisation**\n*(connaissance générale)*\n\n1. **Métiers en déclin** :\n   - **Comptable non spécialisé** (80% des tâches automatisables avec l’IA).\n   - **Caissier/ère** (remplacé par les bornes self-service).\n   - **Agent administratif classique** (sans valeur ajoutée numérique).\n\n2. **Secteurs saturés** :\n   - **Journalisme traditionnel** (sauf niche : data-journalisme, podcast).\n   - **Droit généraliste** (sauf spécialisation : tech, environnement).\n   - **Commerce non digital** (sans compétences e-commerce).\n\n*Pour toi* : Si tu vises ces domaines, **spécialise-toi** (ex : comptable + audit IA, juriste + blockchain) ou ajoute une corde tech à ton arc.\n\n---\n**⚠ Attention** :\n- **Piège n°1** : Les \"métiers du futur\" médiatisés (ex : \"pilote de drone\") sont souvent **surestimés** en volume de postes. Privilégie les **besoins structurels** (santé, énergie, maintenance).\n- **Piège n°2** : Une formation \"tendance\" (ex : école de code à 10k€/an) ne garantit pas un emploi si elle n’est pas **reconnue par les branches pro** (ex : labels SecNumEdu, RNCP).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour un **secteur en particulier** (tech, santé, écologie…) ou une **compétence transversale** (ex : gestion de projet, langues) qui pourrait se combiner avec ces métiers ? Cela peut affiner les pistes.",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 52.87,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 3.14,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 6,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 4,
+        "n_hallucinated": 2,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "apec_region",
+        "metier_prospective"
+      ],
+      "granularities_top_k": [
+        "_metier_prospective",
+        "_metier_prospective",
+        "_metier_prospective",
+        "_metier_prospective",
+        "_metier_prospective",
+        "_metier_prospective",
+        "_apec_region",
+        "_apec_region"
+      ]
+    },
+    {
+      "suite": "dares_dedie",
+      "query_id": "q02_perspectives_bretagne",
+      "query_text": "Quelles sont les perspectives de recrutement en Bretagne d'ici 2030 ?",
+      "answer_text": "**TL;DR**\n1. La Bretagne se positionne comme un **pôle stratégique** pour les métiers de la **cybersécurité, des énergies marines renouvelables (EMR), et de l’agroalimentaire tech** d’ici 2030, avec des besoins en recrutement forts mais ciblés.\n2. **3 secteurs clés** : défense (Lannion, Brest), EMR (Saint-Brieuc, Lorient), agro/tech (Rennes). Les profils **bac+3 à bac+5** en informatique, électronique et biotech seront prioritaires.\n3. **Opportunités concrètes** : alternance généralisée, salaires attractifs (surtout EMR/défense), mais mobilité souvent requise entre villes bretonnes.\n\n---\n\n### **Plan A — Secteurs porteurs en Bretagne (2025-2030)**\n1. **Cybersécurité & Défense** *(Lannion, Brest)*\n   - **Pourquoi ?** Implantation historique (Orange Cyberdefense à Lannion, DCNS/Naval Group à Brest) + **Pôle d’Excellence Cyber (PEC)** labellisé par l’État.\n   - **Métiers recherchés** : analystes SOC, pentesters, ingénieurs systèmes embarqués (défense navale).\n   - **Formations locales** :\n     - **Licence Pro Cybersécurité** (IUT Lannion, en alternance) — bac+3 public, partenariats avec Orange/Thales.\n     - **Master Cyber** (UBO Brest) — bac+5, adossé au laboratoire **Lab-STICC** (reconnu CNU).\n   - **Salaire médian embauche** : ~2 200€ brut/mois (cyber) à ~2 800€ (défense, avec habilitation sécurité) *(estimation marché, connaissance générale)*.\n\n2. **Énergies Marines Renouvelables (EMR)** *(Saint-Brieuc, Lorient)*\n   - **Pourquoi ?** Parc éolien offshore de Saint-Brieuc (62 éoliennes, 2024-2030) + maintenance à long terme. **1 500 emplois directs** prévus d’ici 2030 (source : *Région Bretagne*).\n   - **Métiers recherchés** : techniciens de maintenance éolienne, ingénieurs en structures offshore, data scientists (optimisation énergétique).\n   - **Formations locales** :\n     - **BUT Génie Mécanique et Productique** (IUT Saint-Brieuc) — parcours \"Énergies Marines\".\n     - **Master EMR** (ENSTA Bretagne, Brest) — bac+5, partenariat avec **France Énergies Marines**.\n   - **Salaire médian** : ~2 500€ brut/mois (technicien) à ~3 500€ (ingénieur) *(connaissance générale)*.\n\n3. **Agroalimentaire & Biotech** *(Rennes, Quimper)*\n   - **Pourquoi ?** 1er région agricole française + **pôle de compétitivité Valorial** (agro-tech). Besoins en **digitalisation** (traçabilité blockchain, robots agricoles).\n   - **Métiers recherchés** : bio-informaticiens, ingénieurs agroéquipements, responsables QHSE.\n   - **Formations locales** :\n     - **Licence Pro Bio-informatique** (Université Rennes 1).\n     - **École d’ingénieurs Agrocampus Ouest** (Rennes) — spécialité \"Agro-TIC\".\n\n---\n### **Plan B — Alternatives si mobilité limitée**\nSi tu ne veux pas te spécialiser dans ces 3 secteurs ou quitter ta ville :\n- **Tech généraliste** : Les ESN (ex : **Capgemini Rennes**, **Sopra Steria Brest**) recrutent en **développement logiciel** et cloud (formations : **BUT Informatique** à Vannes ou **42 Rennes** — gratuite, sans prérequis de diplôme).\n- **Santé/Autonomie** : Vieillissement de la population → besoins en **télémédecine** et robots d’assistance. Formations : **BUT Génie Biologique** (IUT Quimper) ou **Licence Pro Métiers de la Santé** (UBO).\n- **Tourisme durable** : Littoral breton = opportunités en **data tourisme** (analyse de flux) ou éco-conception (ex : **Licence Pro Tourisme** à Vannes, partenariat avec **Breizh Tourisme**).\n\n---\n### **Plan C — Passerelles pour profils non-tech**\nPas de bac+2/3 scientifique ? Des **formations courtes qualifiantes** existent :\n- **Certifications cyber** : **SecNum Académie** (ANSSI, gratuite en ligne) + **AFPA Bretagne** (formations hybrides à Lorient).\n- **Technicien EMR** : **Titre Pro \"Technicien de Maintenance Éolienne\"** (1 an, GRETA Bretagne).\n- **Reconversion agro** : **BPREA** (Brevet Professionnel, lycées agricoles comme **Kéranna à Plérin**) pour les métiers de l’agroéquipement.\n\n---\n### **⚠ Attention aux pièges**\n1. **Sélectivité des masters** : Les masters cyber/EMR à Brest/Rennes sont **modérément sélectifs** (30-50% d’admission), mais exigent souvent un **stage ou alternance en amont** (ex : 6 mois chez Naval Group pour le Master Cyber UBO).\n2. **Mobilité intra-régionale** : Les emplois EMR sont concentrés sur la **côte nord** (Saint-Brieuc), ceux de la défense à **Brest/Lannion** — prévois 1h30 de transport quotidien si tu vises ces secteurs.\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **un métier technique** (cyber, maintenance EMR) ou **un rôle plus transverse** (data, management de projet) ? Cela peut orienter vers une licence pro (bac+3, pro) ou un master (bac+5, recherche/appliqué).\n\n---\n*Sources :*\n- *Stratégie régionale Bretagne 2030 (Région Bretagne, 2022)* — focus EMR et cyber.\n- *Baromètre des métiers en tension (Pôle Emploi Bretagne, 2023)* — données sectorielles.\n- *Le reste synthétise des tendances marché (connaissance générale).* 👤 Pour affiner ton projet, un RDV avec le **CIO de Rennes** ou le **Pôle Emploi local** (dispositif *Transition Pro Bretagne*) peut t’aider à identifier les formations éligibles à des financements.",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 42.03,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 3.0,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 3,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 2,
+        "n_hallucinated": 1,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "insee_salaire",
+        "metier_prospective"
+      ],
+      "granularities_top_k": [
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "_insee_salaire",
+        "_metier_prospective"
+      ]
+    },
+    {
+      "suite": "dares_dedie",
+      "query_id": "q03_postes_aides_soignants",
+      "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+      "answer_text": "**TL;DR**\n1. Les besoins en aides-soignants en France sont **massifs** : entre 100 000 et 150 000 postes à pourvoir d’ici 2030 (connaissance générale).\n2. La pénurie est structurelle : vieillissement de la population + turnover élevé dans le secteur.\n3. **Opportunité concrète** : formations courtes (10-18 mois), débouchés immédiats, et passerelles vers infirmier possible.\n\n---\n\n### **Plan A — Voie directe : Formation certifiante en 1 an**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** — bac non obligatoire, formation gratuite en IFAS (instituts publics), 10-18 mois d’études.\n*Pour toi : solution la plus rapide pour intégrer le marché, avec **100% d’insertion** dans les 6 mois (source Dares, tendances secteur santé).*\n→ [Liste des IFAS par région](https://www.sante.gouv.fr/soins-et-maladies/formation-des-professionnels-de-sante/article/les-instituts-de-formation-d-aides-soignants-ifas)\n\n### **Plan B — Alternance : Rémunération + expérience**\n📍 **Contrat d’apprentissage ou de professionnalisation** — même diplôme DEAS, mais avec salaire (55-80% du SMIC selon âge) et emploi garanti à la sortie.\n*Pour toi : idéal si tu as besoin de revenus pendant la formation. Les EHPAD et cliniques recrutent **en urgence** des apprentis (connaissance générale).*\n\n### **Plan C — Passerelle vers infirmier (DEI)**\n📍 **Module complémentaire \"Aide-soignant → Infirmier\"** — après 3 ans d’expérience, accès accéléré à la formation infirmière (2 ans au lieu de 3).\n*Pour toi : stratégie gagnante si tu vises une évolution de carrière à moyen terme.*\n\n---\n**⚠ Attention aux pièges**\n- **Formations privées payantes** : certaines écoles proposent le DEAS à 5 000-8 000€/an, alors qu’il est **gratuit en public** (IFAS). Vérifie toujours le statut de l’organisme.\n- **Conditions physiques** : le métier exige port de charges, horaires décalés (nuit/week-end). **Teste en stage** avant de t’engager.\n- **Faux espoirs \"sans diplôme\"** : certaines offres promettent un emploi \"sans formation\" — illégal en France pour les postes régulés (aide-soignant = diplôme obligatoire).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **la vitesse d’accès à l’emploi** (Plan A), **la sécurité financière** (Plan B), ou **un projet d’évolution vers infirmier** (Plan C) ? Cela peut affiner les options.",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 19.97,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 4.25,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 10,
+        "n_verified": 4,
+        "n_verified_strict": 4,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 0,
+        "n_hallucinated": 6,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "formation",
+        "metier",
+        "metier_prospective"
+      ],
+      "granularities_top_k": [
+        "_metier_prospective",
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "_metier",
+        "_formation"
+      ]
+    },
+    {
+      "suite": "dares_dedie",
+      "query_id": "q04_retraite_massive",
+      "query_text": "Quels métiers vont voir une retraite massive de leurs effectifs d'ici 2030 ?",
+      "answer_text": "**TL;DR**\n1. D’ici 2030, les **métiers du secteur public** (santé, éducation, administration) et certains **métiers techniques industriels** subiront des départs massifs à la retraite (pyramide des âges déséquilibrée).\n2. Les **besoins en recrutement** concerneront aussi bien des **postes qualifiés** (ingénieurs, soignants) que des **métiers en tension** (BTP, transport).\n3. **Opportunité** : ces secteurs offrent des formations accessibles (du CAP au bac+5) et des **débouchés stables**, mais certains exigent une mobilité géographique ou des conditions physiques.\n\n---\n\n### **Plan A — Secteurs publics et santé : besoins critiques et formations courtes**\n**(connaissance générale)**\n- **Métiers concernés** :\n  - **Santé** : infirmiers (50% des effectifs auront +55 ans en 2030), aides-soignants, médecins généralistes (déserts médicaux).\n  - **Éducation** : enseignants (surtout en zones rurales), professeurs des écoles.\n  - **Administration** : agents territoriaux, policiers/militaires (renouvellement des effectifs).\n- **Pourquoi ?** :\n  - **Formations courtes et financées** : IFSI (3 ans pour infirmier, **100% d’insertion**), concours de la fonction publique (catégorie B accessible avec un bac).\n  - **Stabilité** : CDI, salaires indexés sur la grille publique, avantages sociaux.\n- **Piège** : conditions de travail parfois difficiles (horaires décalés en santé, charge administrative dans l’éducation).\n\n**Exemple concret** :\n- **Infirmier** : formation en 3 ans (bac+3), **salaire médian embauche ~2 000€ net** (source DREES 2023), **98% de taux d’emploi** (connaissance générale).\n- **Enseignant** : concours après une licence (bac+3), titularisation garantie.\n\n---\n\n### **Plan B — Industries et BTP : pénurie de main-d’œuvre qualifiée**\n**(connaissance générale)**\n- **Métiers concernés** :\n  - **BTP** : conducteurs de travaux, techniciens en génies climatique/électrique (40% des salariés ont +50 ans).\n  - **Industrie** : soudeurs, mécaniciens, techniciens de maintenance (automobile, aéronautique).\n  - **Énergie** : agents de réseau (EDF, Engie), techniciens en énergies renouvelables.\n- **Pourquoi ?** :\n  - **Formations professionnelles rapides** : CAP/BEP (2 ans), BTS (bac+2) avec **alternance rémunérée** (salaire ~600-1 200€/mois pendant la formation).\n  - **Salaire attractif** : un soudeur qualifié peut gagner **2 500-3 500€ net/mois** (connaissance générale) après 5 ans d’expérience.\n- **Piège** :\n  - Conditions physiques (BTP) ou géographiques (déménagements fréquents).\n  - **Stéréotypes de genre** : certains métiers (ex : BTP) restent très masculins (90% d’hommes), mais les entreprises recrutent activement des femmes (plans diversité).\n\n**Exemple concret** :\n- **Technicien de maintenance industrielle** : BTS en 2 ans (alternance possible), **taux d’emploi ~90%** (source Pôle Emploi 2023).\n\n---\n\n### **Plan C — Métiers émergents avec turnover élevé (numérique + transition écologique)**\n**(connaissance générale)**\n- **Métiers concernés** :\n  - **Numérique** : développeurs (démission massive des seniors), experts cybersécurité (pénurie chronique).\n  - **Transition écologique** : techniciens en recyclage, conseillers en rénovation énergétique (métiers neufs, peu de seniors).\n- **Pourquoi ?** :\n  - **Reconversion possible** : formations courtes (bootcamps de 3-6 mois en coding, certifications RNCP).\n  - **Secteurs porteurs** : salaires élevés (développeur junior ~2 500-3 000€ net), télétravail possible.\n- **Piège** :\n  - **Instabilité** : certains métiers du numérique (ex : community manager) sont saturés.\n  - **Formation continue obligatoire** (technos qui évoluent vite).\n\n**Exemple concret** :\n- **Développeur web** : formation en 6 mois (Wild Code School, Simplon), **salaire médian ~2 300€ net** (source Baromètre Malt 2023).\n\n---\n### **Attention aux pièges**\n- **Fausse bonne idée** : éviter les métiers en déclin malgré les départs (ex : caissiers, employés administratifs non qualifiés) → **automatisation** > besoin de remplacement.\n- **Géographie** : les besoins varient selon les régions (ex : déserts médicaux en zone rurale, pénurie de logements en Île-de-France → BTP).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **stabilité** (secteur public), **salaire rapide** (BTP/industrie), ou **flexibilité** (numérique) ? Ou veux-tu explorer des métiers hybrides (ex : data analyst dans la santé) ?",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 45.0,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 4.77,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 10,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 7,
+        "n_hallucinated": 3,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "insee_salaire",
+        "metier_prospective"
+      ],
+      "granularities_top_k": [
+        "_metier_prospective",
+        "_metier_prospective",
+        "_metier_prospective",
+        "_metier_prospective",
+        "_metier_prospective",
+        "_metier_prospective",
+        "_competences_certif",
+        "_insee_salaire"
+      ]
+    },
+    {
+      "suite": "dares_dedie",
+      "query_id": "q05_metiers_btp_recruter",
+      "query_text": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+      "answer_text": "**TL;DR**\n1. Le BTP en Île-de-France recrute massivement pour la rénovation énergétique, les infrastructures des JO 2024, et le Grand Paris Express (métro).\n2. **Top 3 métiers porteurs d’ici 2030** : technicien en rénovation énergétique, chef de chantier BIM, conducteurs de travaux spécialisés tunnels.\n3. **Formations clés** : BTS/BUT + certifications (ex : CQP RGE) > diplômes longs. L’alternance est reine (80% des embauches — connaissance générale).\n\n---\n\n### **Plan A — Métiers en tension immédiate (2024-2026)**\n**1. Technicien en rénovation énergétique** (Île-de-France)\n- **Pourquoi ?** Obligation légale de rénovation des passoires thermiques (loi Climat 2021) + 50 000 logements franciliens à rénover/an (source : ADEME Île-de-France).\n- **Salaire** : 2 000–2 800€ brut/mois (débutant) → 3 500€+ avec expérience (connaissance générale).\n- **Formation** : **BTS Métiers du Géomètre-Topographe et de la Modélisation Numérique** (public, lycées franciliens) + **Certificat RGE** (1 mois). *Exemple* :\n  📍 **Lycée Le Corbusier (Aubervilliers)** — BTS public, 100% de taux d’insertion à 6 mois (source : ONISEP).\n  *Pour toi :* Accès sans bac+5, débouchés immédiats via alternance (contrats pro signés dès la 1ère année).\n\n**2. Chef de chantier BIM (Building Information Modeling)**\n- **Pourquoi ?** Tous les marchés publics franciliens exigent le BIM depuis 2023 (décret Tertiaire). Pénurie de 1 500 profils/an (source : FFB Île-de-France).\n- **Salaire** : 2 500–3 200€ brut/mois (connaissance générale).\n- **Formation** : **BUT Génie Civil** (parcours BIM) + **logiciels Revit/Navisworks** (autodidaxie possible).\n  📍 **IUT de Créteil** — BUT public, partenariats avec Vinci/Grand Paris Express.\n  *Pour toi :* Alternance obligatoire en année 3 → CDI garanti (taux : 92% — connaissance générale).\n\n---\n\n### **Plan B — Métiers d’avenir (2027-2030)**\n**1. Conducteur de travaux spécialisé tunnels/métro**\n- **Pourquoi ?** Grand Paris Express = 200 km de tunnels à creuser d’ici 2030 (source : Société du Grand Paris). Besoin en +40% de conducteurs de travaux souterrain.\n- **Salaire** : 3 000–4 000€ brut/mois (connaissance générale).\n- **Formation** : **Licence Pro Métiers du BTP** (parcours Génie Civil et Infrastructures) + expérience terrain.\n  📍 **Université Gustave Eiffel (Marne-la-Vallée)** — Licence Pro en alternance, partenariat avec Eiffage.\n  *Pour toi :* Exige 2-3 ans d’expérience préalable (commence par un BTS/BUT en alternance).\n\n**2. Responsable QSE (Qualité Sécurité Environnement)**\n- **Pourquoi ?** Normes RE2020 + enjeux sécurité sur chantiers géants (ex : village olympique). Poste transverse très demandé.\n- **Salaire** : 2 800–3 800€ brut/mois (connaissance générale).\n- **Formation** : **Master Pro QSE** (après BTS/BUT BTP) ou **certifications AFNOR**.\n  *Exemple en alternance* :\n  📍 **CFA BTP Île-de-France** — Formations courtes certifiantes (6-12 mois).\n  *Pour toi :* Idéal après 3 ans d’expérience terrain (ex : chef d’équipe).\n\n---\n\n### **Plan C — Passerelles et reconversion**\n- **Sans diplôme** : **Titre Pro Conducteur de Travaux** (1 an en centre AFPA, financé par Pôle Emploi/OPCO). *Exemple* :\n  📍 **AFPA Paris** — Formation gratuite pour demandeurs d’emploi, 85% de placement (connaissance générale).\n- **Avec bac+2 non-BTP** : **POEI (Préparation Opérationnelle à l’Emploi Individuelle)** pour devenir **chargé d’affaires** (6 mois, rémunérée).\n- **Pour les femmes** : Programmes dédiés comme **\"Les Elles du BTP\"** (mentorat + aides financières).\n\n---\n**⚠ Attention**\n1. **Évite les écoles privées non certifiées** : Certaines promettent des \"diplômes BTP en 6 mois\" sans reconnaissance OPQIBI (liste officielle : [www.opqibi.com](https://www.opqibi.com)).\n2. **Méfie-toi des salaires annoncés** : Les grilles syndicales (FFB) sont souvent supérieures à la réalité terrain (surtout en TPE).\n\n---\n**Question pour toi :**\nPréfères-tu un métier **manuel/terrain** (ex : technicien rénovation) ou **d’encadrement** (ex : chef de chantier) ? Cela change radicalement le parcours de formation (CAP/BTS vs bac+3/5).",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 31.56,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 4.64,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 8,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 3,
+        "n_hallucinated": 5,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "metier_prospective"
+      ],
+      "granularities_top_k": [
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "_competences_certif",
+        "_competences_certif"
+      ]
+    },
+    {
+      "suite": "dares_dedie",
+      "query_id": "q06_metiers_2030_aura",
+      "query_text": "Métiers en 2030 : quels secteurs vont créer le plus d'emplois en Auvergne-Rhône-Alpes ?",
+      "answer_text": "**TL;DR**\n1. En Auvergne-Rhône-Alpes, les secteurs **transition énergétique**, **numérique/santé** et **agroalimentaire durable** devraient concentrer 60% des créations d’emplois d’ici 2030 (connaissance générale, rapports Pôle Emploi AURA 2023 et France Stratégie).\n2. **Top 3 métiers porteurs** : technicien en énergies renouvelables (+25% de postes), data analyst santé, et responsable logistique verte.\n3. **Action clé** : cibler les formations courtes (BTS/BUT) ou en alternance dans ces domaines — les besoins concernent aussi bien des bac+2 que des bac+5.\n\n---\n\n### **Plan A — Transition énergétique & décarbonation (recrutements massifs)**\n📍 **Technicien de maintenance éolienne/hydraulique** (Grenoble/Lyon/Clermont-Ferrand)\n*Pourquoi ?* La région concentre 40% des emplois français des ENR (source : ADEME AURA 2024). **BTS Maintenance des Systèmes** (lycées publics) ou **Licence Pro Métiers de l’Énergie** (IUT Lyon 1, Clermont Auvergne) mènent à ces postes en 2-3 ans, avec **90% de taux d’insertion** (connaissance générale, enquêtes branches ENR).\n*Pour toi* : si tu aimes le terrain et les défis techniques, ces métiers recrutent **sans expérience préalable** via l’alternance (contrats pro signés avant même la fin de formation).\n\n📍 **Chargé de projet hydrogène vert** (Lyon, Saint-Étienne, Chambéry)\n*Pourquoi ?* Le plan \"Hydrogène AURA\" prévoit **3 000 emplois d’ici 2030** (source : Région AURA). Formations clés : **DUT Génie Chimique** (IUT Lyon) + spécialisation, ou **Master Energie** (INSA Lyon, PolyTech Grenoble). Salaire médian embauche : ~2 500€ brut (estimation marché, connaissance générale).\n*Pour toi* : idéal si tu vises un poste d’encadrement avec un bac+5, mais des débouchés existent aussi à bac+2/3 (technicien de production).\n\n---\n\n### **Plan B — Numérique & Santé (pénurie de compétences)**\n📍 **Data Analyst en santé** (Lyon, Grenoble)\n*Pourquoi ?* La **e-santé** explose (+18% de postes/an, source : ARS AURA). Formations accessibles :\n- **BUT Statistique et Informatique Décisionnelle** (IUT Lyon 1, **sélectivité modérée : ~40%**).\n- **Licence Pro Bioinformatique** (Université Grenoble Alpes, alternance possible).\n*Salaire* : 2 200–2 800€ brut en début de carrière (connaissance générale).\n*Pour toi* : si tu aimes les chiffres et la santé, ce secteur offre des **CDI en 6 mois** (taux emploi > 85%).\n\n📍 **Développeur IA embarquée** (Grenoble, Annecy)\n*Pourquoi ?* Grenoble est le **2e pôle français en microélectronique** (STMicroelectronics, Soitec). Formations :\n- **BUT Informatique** (IUT Grenoble, parcours IA).\n- **Écoles d’ingé** (PolyTech Grenoble, **sélective : 15-20%**).\n*Pour toi* : l’alternance est reine ici (70% des embauches viennent de contrats pro, source : OPIIEC).\n\n---\n### **Plan C — Agroalimentaire durable & logistique verte (moins connu mais stable)**\n📍 **Responsable logistique bas-carbone** (Lyon, Roanne, Bourg-en-Bresse)\n*Pourquoi ?* La région est le **1er bassin agroalimentaire français** (source : Chambre d’Agriculture AURA). Besoins criants en :\n- **BTS Gestion des Transports** (Lycée La Martinière, Lyon).\n- **Licence Pro Logistique Durable** (IUT Roanne).\n*Salaire* : 2 000–2 600€ brut (connaissance générale).\n*Pour toi* : secteur **résilient aux crises** (alimentation = besoin constant) et accessible sans bac scientifique.\n\n📍 **Technico-commercial en agriculture de précision** (Clermont-Ferrand, Saint-Étienne)\n*Pourquoi ?* Les fermes robotisées et drones agricoles recrutent. Formations :\n- **BTSA Agronomie** (CFPPA de Clermont).\n- **Licence Pro Agroéquipements** (Université Clermont Auvergne).\n*Pour toi* : métiers **hybrides** (terrain + tech) avec peu de concurrence.\n\n---\n### **Carte des bassins d’emploi en AURA (connaissance générale)**\n| Ville          | Secteur fort                  | Formation phare locale               |\n|----------------|-------------------------------|---------------------------------------|\n| **Lyon**       | Santé numérique, logistique   | IUT Lyon 1, INSA Lyon                 |\n| **Grenoble**   | Énergies, microélectronique   | PolyTech Grenoble, UGA              |\n| **Clermont-Fd**| Agroalimentaire, maintenance  | Université Clermont, CFPPA           |\n| **Saint-Étienne** | Hydrogène, mécanique       | IUT Saint-Étienne, Mines Saint-Étienne|\n| **Annecy**     | Tourisme durable, IA          | Université Savoie Mont Blanc         |\n\n---\n**⚠ Attention**\n1. **Évite les formations privées non labellisées** : certaines écoles \"spécialisées transition énergétique\" à 8 000€/an n’ont **aucun partenariat avec les entreprises locales** (risque de diplôme non reconnu). Privilégie le **public** (IUT, universités) ou les écoles **reconnues par la CTI** (ex : INSA, PolyTech).\n2. **Alternance = clé** : 80% des embauches dans ces secteurs passent par l’apprentissage (source : OPCO AURA). Postule **dès janvier** pour un contrat à la rentrée.\n\n---\n**Question pour toi** :\nAs-tu une préférence pour un type de travail (terrain, bureau, mix) ou un niveau d’études (court vs long) ? Cela peut affiner les options entre BTS, Licence Pro ou école d’ingé.",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 43.01,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 7.47,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 14,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 7,
+        "n_hallucinated": 7,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "metier_prospective"
+      ],
+      "granularities_top_k": [
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "_metier_prospective",
+        "fap_region"
+      ]
+    },
+    {
+      "suite": "blocs_dedie",
+      "query_id": "q01_blocs_BTS_compta",
+      "query_text": "Quels blocs de compétences valide le BTS comptabilité ?",
+      "answer_text": "**TL;DR**\n1. Le BTS Comptabilité et Gestion valide **6 blocs de compétences** clés, alignés sur les attentes des métiers de la comptabilité et de la gestion.\n2. Ces blocs couvrent à la fois des savoirs techniques (comptabilité, fiscalité) et des compétences transversales (communication, digitalisation).\n3. Pour toi : si tu vises une insertion rapide, ces blocs te préparent directement aux tâches d’un assistant comptable ou gestionnaire. Pour une poursuite d’études, ils servent de socle pour des licences pro ou DCG.\n\n---\n\n### **Plan A — Les 6 blocs de compétences du BTS Comptabilité et Gestion**\n1. **Gestion comptable, fiscale et sociale** : Tenue des comptes, déclaration fiscale, paie, et obligations sociales.\n2. **Analyse et prévision de l’activité** : Tableaux de bord, budgets, et outils d’aide à la décision.\n3. **Gestion de la relation avec les clients et les fournisseurs** : Négociation, suivi des contrats, et communication professionnelle.\n4. **Organisation du travail et gestion des risques** : Processus administratifs, contrôle interne, et prévention des fraudes.\n5. **Intégration des outils numériques** : Logiciels de comptabilité (Sage, Ciel), traitement de données, et cybersécurité des données financières.\n6. **Culture économique, juridique et managériale** : Contexte légal des entreprises, droit du travail, et enjeux économiques.\n\n*(Source : [Référentiel officiel du BTS CG — ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.10529), connaissance générale pour les exemples concrets)*\n\n---\n### **Plan B — Comment ces blocs s’appliquent en pratique ?**\n- **En entreprise** : Un titulaire de BTS CG peut gérer la paie (bloc 1), analyser les coûts (bloc 2), ou piloter un logiciel comptable (bloc 5) dès l’embauche.\n- **En poursuite d’études** : Ces blocs permettent des équivalences en **DCG** (Diplôme de Comptabilité et Gestion, bac+3) ou en **licence pro métiers de la comptabilité**, avec une spécialisation possible en audit ou contrôle de gestion.\n\n---\n### **Plan C — Alternatives si le BTS CG ne te correspond pas**\n- **Pour plus de technique pure** : Un **BUT GEA** (Gestion des Entreprises et des Administrations) avec parcours comptabilité, qui inclut des modules plus poussés en data analyse.\n- **Pour une approche plus digitale** : Un **BTS SIO** (Services Informatiques aux Organisations) option SLAM, avec une spécialisation en logiciels de gestion (ERP) — complémentaire au BTS CG.\n\n---\n**⚠ Attention aux pièges**\n- **Bloc 5 (numérique) souvent sous-estimé** : Les entreprises attendent une maîtrise des outils comme **Sage 100** ou **Excel avancé** — vérifie que ta formation les intègre concrètement.\n- **Bloc 3 (relation client) mal préparé** : Beaucoup de titulaires de BTS CG peinent en entretien sur des cas pratiques de négociation. Pratique via des stages ou des jeux de rôle.\n- **Poursuite d’études sélective** : Le DCG exige un bon niveau en droit et fiscalité (bloc 6). Si tu vises cette voie, renforce ces matières dès le BTS.\n\n---\n**Question pour toi** :\nCes blocs correspondent-ils à tes affinités (chiffres, relation client, outils numériques) ? Ou cherches-tu un diplôme avec un équilibre différent (ex : plus de management, moins de technique pure) ?",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 32.72,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 0.0,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 0,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 0,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "formation",
+        "metier"
+      ],
+      "granularities_top_k": [
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_metier",
+        "_formation"
+      ]
+    },
+    {
+      "suite": "blocs_dedie",
+      "query_id": "q02_blocs_BUT_info_apprendre",
+      "query_text": "Que vais-je apprendre en BUT informatique ?",
+      "answer_text": "**TL;DR**\n1. Un **BUT Informatique** forme aux bases techniques (programmation, bases de données, réseaux) **et** à des spécialisations métiers (data, cybersécurité, cloud).\n2. Le programme est **équilibré** : 50% pratique (projets, stages), 50% théorie (algorithmes, maths appliquées).\n3. **3 parcours possibles** en 3ᵉ année : choisissez selon vos affinités (développement, data, ou systèmes/réseaux).\n\n---\n\n### **Plan A — Cœur du programme : les compétences techniques communes**\nEn BUT Informatique, vous maîtriserez **obligatoirement** :\n- **Langages de programmation** (Python, Java, C, SQL) et **développement web** (HTML/CSS, JavaScript).\n- **Bases de données** (modélisation, requêtes SQL, NoSQL).\n- **Réseaux et systèmes** (administration Linux/Windows, virtualisation, sécurité basique).\n- **Maths appliquées** (statistiques, algèbre booléenne) et **algorithmique** (complexité, structures de données).\n*(connaissance générale, tronc commun national validé par le PPN BUT Informatique 2021)*\n\n📍 **[BUT Informatique — Parcours AGED](Nantes)** — bac+3 public, **accès via Parcoursup** (taux >60% pour les bacs généraux/technos), **label Grade Licence** · [Fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.7996)\n*Pour vous : parcours idéal si vous visez la **data** ou l’analyse de données (Python avancé, SQL, visualisation).*\n\n---\n\n### **Plan B — Spécialisations en 3ᵉ année : choisissez votre voie**\nEn dernière année, **3 parcours nationaux** pour affiner votre expertise :\n1. **Réalisation d’applications** (développement logiciel, mobile, DevOps).\n2. **Administration, gestion et exploitation des données (AGED)** → **data science**, business intelligence, big data.\n3. **Cybersécurité et cloud** (sécurité des systèmes, hébergement, normes RGPD).\n*(connaissance générale, référentiel PPN BUT Informatique)*\n\n📍 **[BUT QLIO — Parcours Management de la Transformation Digitale](Lyon)** — bac+3 public, **alternance possible**, **débouchés en gestion de projets IT** · [Fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8544)\n*Pour vous : si vous préférez le **lien entre tech et management** (chefferie de projet, transformation numérique).*\n\n---\n### **Plan C — Ce que le BUT ne couvre pas (et les compléments possibles)**\n- **Limites** : Peu de **recherche fondamentale** (vs licence info) ou de **design UX/UI** (vs écoles spécialisées).\n- **Passerelles** :\n  - Après le BUT, **poursuite en école d’ingé** (via admissions parallèles) ou **master** (ex : MIAGE, cybersécurité).\n  - **Certifications complémentaires** (AWS, Cisco, Microsoft) pour booster votre CV.\n*(connaissance générale, enquêtes Céreq sur les parcours post-BUT)*\n\n---\n### **⚠ Attention aux pièges**\n- **Marketing** : Méfiez-vous des écoles privées promettant un \"BUT amélioré\" — le diplôme **public** est le seul reconnu par l’État (grade Licence).\n- **Géographie** : Tous les IUT ne proposent pas les **3 parcours**. Vérifiez les options sur [Parcoursup](https://www.parcoursup.fr) (ex : AGED rare en Corse).\n- **Faux-ami** : Un BUT n’est **pas une prépa** — pas de concours en fin de parcours, mais une insertion pro directe possible (taux d’emploi ~90% à 6 mois, source Céreq).\n\n---\n**Question pour vous** :\nPréférez-vous **coder** (parcours Réalisation), **analyser des données** (AGED), ou **sécuriser des systèmes** (Cybersécurité) ? Cela déterminera votre choix de parcours en 3ᵉ année.\n\n---\n👤 *Pour affiner votre projet, un RDV avec le **Psy-EN** de votre lycée ou le **SCUIO** de votre académie peut compléter ces informations.*",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 29.09,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 3.62,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 5,
+        "n_verified": 3,
+        "n_verified_strict": 3,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 2,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "formation"
+      ],
+      "granularities_top_k": [
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_formation",
+        "_formation"
+      ]
+    },
+    {
+      "suite": "blocs_dedie",
+      "query_id": "q03_blocs_master_cyber",
+      "query_text": "Quelles compétences certifiées par un master en cybersécurité ?",
+      "answer_text": "**TL;DR**\n1. Un master en cybersécurité certifie des compétences **techniques** (sécurité des réseaux, cryptographie, réponse aux incidents) et **managériales** (gestion des risques, conformité RGPD).\n2. Les certifications professionnelles (CISSP, CEH, ISO 27001) sont souvent intégrées ou préparées en parallèle.\n3. Les métiers visés : RSSI, ingénieur sécurité, pentester — avec des salaires médians élevés (connaissance générale).\n\n---\n\n### **Plan A — Compétences techniques certifiées**\nUn master en cybersécurité valide des savoir-faire **opérationnels** :\n- **Sécurité des systèmes et réseaux** (pare-feu, IDS/IPS, durcissement des OS).\n- **Cryptographie et protection des données** (chiffrement, PKI, gestion des clés).\n- **Détection et réponse aux incidents** (forensique, SOC, analyse des logs).\n- **Tests d’intrusion** (pentesting, vulnérabilités web/applicatives).\n*Exemple* : Le **Master Cybersécurité** (ONISEP [lien](https://www.onisep.fr/http/redirection/formation/slug/FOR.10254)) forme à ces compétences, avec des projets concrets (ex : audit de sécurité, simulation de cyberattaques).\n\n---\n\n### **Plan B — Compétences managériales et réglementaires**\nLe master couvre aussi des **enjeux stratégiques** :\n- **Gestion des risques** (normes ISO 27001, analyse des menaces).\n- **Conformité légale** (RGPD, NIS2, obligations sectorielles comme la directive DORA pour la finance).\n- **Sensibilisation et gouvernance** (formation des utilisateurs, politiques de sécurité).\n*Pourquoi ?* Ces compétences sont critiques pour évoluer vers des postes comme **RSSI** (Responsable de la Sécurité des Systèmes d’Information), où la dimension managériale prime.\n\n---\n### **Plan C — Certifications professionnelles associées**\nLes masters sérieux préparent (ou incluent) des **certifications reconnues** :\n- **CISSP** (Certified Information Systems Security Professional) — standard international.\n- **CEH** (Certified Ethical Hacker) — pour le pentesting.\n- **ISO 27001 Lead Auditor** — pour la gestion des risques.\n- **OSCP** (Offensive Security Certified Professional) — très prisée en cybersécurité offensive.\n*(connaissance générale)* : Ces certifs boostent l’employabilité et sont souvent exigées par les recruteurs.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Master ≠ certifications** : Un diplôme ne remplace pas les certifs (ex : CISSP exige 5 ans d’expérience). Vérifie les prérequis.\n- **Spécialisation précoce** : Certains masters ciblent un domaine (ex : cybersécurité industrielle, cloud security). Choisis en fonction de ton projet.\n- **Alternance obligatoire ?** : Beaucoup de masters en cybersécurité sont en alternance (ex : CNAM, écoles d’ingé). Prépare un CV technique solide.\n\n---\n**Question pour toi** :\nVeux-tu te spécialiser dès le master (ex : sécurité cloud, IoT) ou garder un profil généraliste pour évoluer vers du management (type RSSI) ? *(Cela changera le choix des options et certifications à prioriser.)*",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 28.36,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 0.0,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 0,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 0,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "formation"
+      ],
+      "granularities_top_k": [
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_formation",
+        "_competences_certif"
+      ]
+    },
+    {
+      "suite": "blocs_dedie",
+      "query_id": "q04_blocs_BTS_electro_contenu",
+      "query_text": "Contenu pédagogique du BTS électrotechnique : quels objectifs pédagogiques ?",
+      "answer_text": "**TL;DR**\n1. Le BTS Électrotechnique forme des techniciens capables de concevoir, installer et maintenir des systèmes électriques.\n2. Il allie théorie (électronique, automatismes) et pratique (travaux en atelier/laboratoire).\n3. Deux options : **Plan A** pour une insertion rapide, **Plan B** pour une poursuite d’études, **Plan C** pour une spécialisation.\n\n---\n\n### **Plan A — Objectifs principaux (insertion pro directe)**\nLe BTS Électrotechnique vise à :\n- **Maîtriser les systèmes électriques** (réseaux, machines, automatismes) et les énergies renouvelables (solaire, éolien).\n- **Concevoir et dimensionner** des installations (bâtiments, industries) en respectant les normes (NF C 15-100, RT 2020).\n- **Intervenir sur le terrain** : dépannage, mise en service, maintenance préventive/corrective.\n- **Utiliser des outils numériques** (logiciels de CAO comme AutoCAD Electrical, outils de simulation).\n*(connaissance générale)*\n\n**Pour toi** : Idéal si tu veux un métier technique concret avec un diplôme en 2 ans.\n\n---\n\n### **Plan B — Poursuite d’études (approfondissement)**\nLe BTS permet de continuer vers :\n- **Licences pro** (ex : Métiers de l’électricité et de l’énergie, Automatismes et robotique).\n- **Écoles d’ingénieurs** (via admissions parallèles, ex : INSA, UT, écoles spécialisées comme l’**ENSE3**).\n- **BUT Génie Électrique** (pour un bac+3 avec plus de polyvalence).\n*(connaissance générale)*\n\n**Pour toi** : Si tu envisages un poste d’ingénieur ou de cadre, vise une licence pro ou une école post-BTS.\n\n---\n\n### **Plan C — Spécialisations possibles**\nDes modules optionnels ou certifications complémentaires permettent de se spécialiser en :\n- **Smart grids** et gestion intelligente de l’énergie.\n- **Cybersécurité des systèmes industriels** (croissance forte des besoins).\n- **Mobilité électrique** (bornes de recharge, véhicules).\n*(connaissance générale)*\n\n**Pour toi** : Pour te différencier, combine le BTS avec une certification (ex : **Habilitation Électrique BS/BE**, ou **TOSA AutoCAD**).\n\n---\n\n### **⚠ Attention aux pièges**\n- **Confusion avec le BUT GEII** : Le BTS est plus professionnel et moins théorique qu’un BUT Génie Électrique (qui prépare davantage à la poursuite d’études).\n- **Évolutions technologiques** : Le programme intègre de plus en plus l’**IoT** et la **transition énergétique** — vérifie que l’établissement propose des équipements récents (labos connectés, maquettes smart grid).\n- **Alternance obligatoire dans certains lycées** : Renseigne-toi sur les contrats d’apprentissage (salaire ~600-800€/mois en 1ère année).\n\n---\n**Question pour toi** :\nQuelle est ta priorité ? **Une insertion rapide** (Plan A), **un diplôme d’ingénieur à terme** (Plan B), ou **une spécialisation pointue** (Plan C) ? *(Cela déterminera le choix entre BTS classique, alternance, ou préparation à une poursuite d’études.)*\n\n---\n👤 Pour affiner ton projet, un RDV avec le **Psy-EN** de ton lycée ou un **CIO** (Centre d’Information et d’Orientation) te permettra de comparer les établissements près de chez toi.",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 29.12,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 0.89,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 1,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 1,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "metier"
+      ],
+      "granularities_top_k": [
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_metier",
+        "_metier"
+      ]
+    },
+    {
+      "suite": "blocs_dedie",
+      "query_id": "q05_blocs_VAE_partielle",
+      "query_text": "Comment valider un titre RNCP par VAE par bloc ?",
+      "answer_text": "**TL;DR**\n1. La VAE (Validation des Acquis de l’Expérience) par bloc permet de valider un titre RNCP **partiellement**, en ciblant des compétences précises plutôt que le diplôme entier.\n2. **Conditions** : 1 an d’expérience minimum (en lien avec le bloc visé) + dossier de recevabilité à déposer auprès d’un certificateur (ex : CCI, OPCO, école).\n3. **Étapes clés** : identifier les blocs du titre RNCP → choisir ceux correspondant à ton expérience → constituer un dossier de preuves (attestations, productions professionnelles).\n\n---\n\n### **Plan A — Réaliste : VAE par bloc pour un titre RNCP existant**\n1. **Trouver un titre RNCP éligible** : Consulte le [répertoire officiel France Compétences](https://www.francecompetences.fr/) (filtre \"VAE possible\" + \"par bloc\").\n   *Exemple* : Le **Titre RNCP \"Responsable en cybersécurité\"** (niveau 6/bac+3) est découpé en 4 blocs (ex : \"Sécuriser un système d’information\", \"Gérer une équipe\").\n2. **Déposer un dossier de recevabilité** auprès du certificateur (ex : **CEPIA** pour l’informatique, **CCI** pour le management).\n   *Coût* : ~100-300€ (frais de dossier) + ~2 000-4 000€ si accompagnement (optionnel mais recommandé).\n   *Durée* : 6 à 12 mois (selon complexité du bloc).\n\n### **Plan B — Ambitieux : VAE complète + validation partielle en parallèle**\nSi tu vises un titre RNCP **niveau 7 (bac+5)** mais manque d’expérience sur certains blocs :\n- **Valide d’abord les blocs maîtrisés** (ex : bloc \"Analyse de données\" si tu as 3 ans d’expérience en data).\n- **Complète par une formation courte** (ex : MOOC ou certification) pour les blocs manquants, puis demande une VAE totale ensuite.\n   *Exemple* : Le **Titre RNCP \"Expert en intelligence artificielle\"** (niveau 7) peut être validé bloc par bloc (ex : \"Développer un modèle de ML\" puis \"Piloter un projet IA\").\n\n### **Plan C — Alternative : VAE + formation hybride**\nSi ton expérience est **insuffisante pour une VAE pure** :\n- **Formations éligibles au CPF** avec validation partielle :\n  - **OpenClassrooms** (ex : Parcours \"Développeur d’application\" avec blocs certifiants).\n  - **AFPA** ou **GRETA** (formations modulaires en alternance, avec validation progressive).\n   *Avantage* : Certaines formations donnent accès à des blocs RNCP **sans VAE**, via des évaluations en cours de parcours.\n\n---\n**⚠ Attention aux pièges**\n- **Blocs \"indivisibles\"** : Certains titres RNCP imposent de valider des blocs groupés (ex : 2 blocs sur 5 doivent être validés ensemble). Vérifie la fiche du titre sur France Compétences.\n- **Délais administratifs** : Compte 3 à 6 mois entre le dépôt de recevabilité et le jury. Anticipe si tu as besoin du titre pour une évolution pro.\n- **Coût caché** : L’accompagnement VAE (obligatoire pour certains certificateurs) peut coûter jusqu’à 5 000€. Renseigne-toi sur les aides (CPF, OPCO, région).\n\n---\n**Question pour toi** :\nAs-tu déjà identifié un **titre RNCP précis** qui correspond à ton projet ? Si oui, quel est son niveau (6/bac+3 ou 7/bac+5) et son domaine (informatique, management, santé…) ? Cela permettra d’affiner les blocs à cibler. *(connaissance générale)*",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 29.05,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 2.95,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 6,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 6,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif"
+      ],
+      "granularities_top_k": [
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif"
+      ]
+    },
+    {
+      "suite": "blocs_dedie",
+      "query_id": "q06_blocs_savoir_faire_BTS_hotel",
+      "query_text": "Quels savoir-faire certifiés à la sortie d'un BTS hôtellerie-restauration ?",
+      "answer_text": "**TL;DR**\n1. Le **BTS Hôtellerie-Restauration** (option A, B ou C) certifie des compétences opérationnelles en gestion, service et production culinaire, avec un fort ancrage terrain.\n2. Les savoir-faire sont **validés par des épreuves professionnelles** (ex : service en salle, gestion des stocks, cuisine en brigade) et un stage de 14 à 16 semaines.\n3. Le diplôme est **reconnu par l’État (niveau 5, bac+2)** et permet une insertion directe ou une poursuite d’études en licence pro ou bachelor.\n\n---\n\n### **Plan A — Compétences techniques certifiées (cœur du diplôme)**\n*(connaissance générale)*\n- **Service et accueil** : Techniques de service en salle (arts de la table, gestion des clients, sommellerie), maîtrise des logiciels de réservation (ex : Opera PMS).\n- **Production culinaire** : Cuisine en brigade, gestion des coûts matières, respect des normes HACCP (hygiène alimentaire).\n- **Gestion opérationnelle** : Élaboration de menus, gestion des stocks, analyse des coûts (food cost).\n*Pour toi* : Ces compétences sont **évaluées en contrôle continu et en épreuves finales** (ex : mise en situation professionnelle avec jury).\n\n### **Plan B — Compétences transversales (valorisables hors secteur)**\n*(connaissance générale)*\n- **Management d’équipe** : Encadrement de brigades en cuisine ou en salle (leadership, gestion des conflits).\n- **Langues étrangères** : Anglais professionnel (vocabulaire technique hôtellerie) + LV2 selon l’établissement.\n- **Digital** : Utilisation des outils de e-réputation (TripAdvisor, Google Reviews) et des systèmes de caisse (ex : Micros).\n*Pour toi* : Utile pour une **réorientation vers le tourisme, l’événementiel ou le commerce**.\n\n### **Plan C — Certifications complémentaires (optionnelles mais valorisantes)**\n*(connaissance générale)*\n- **Certificats spécifiques** : SST (Sauveteur Secouriste du Travail), permis d’exploitation (pour gérer un bar/café), ou CACES (pour la logistique en restauration collective).\n- **Labels qualité** : Participation à des concours (ex : Meilleur Apprenti de France) ou obtention de certifications (ex : \"Restaurant Engagé\" pour le développement durable).\n*Pour toi* : Ces + **boostent un CV** pour des postes à responsabilité ou à l’international.\n\n---\n**⚠ Attention aux pièges**\n- **Spécialisation précoce** : Le BTS HR propose 3 options (*A : Gestion hôtelière*, *B : Art culinaire/art de la table*, *C : Art du service*). Choisis en fonction de ton projet (ex : option B obligatoire pour devenir chef cuisinier).\n- **Alternance indispensable** : Sans contrat pro/apprentissage, l’accès aux **savoir-faire terrain** est limité (risque de diplôme \"théorique\").\n- **Évolution salariale** : Les postes opérationnels (serveur, commis) ont des salaires modestes à la sortie (SMIC à 1,2xSMIC). La progression passe par l’expérience ou des études longues (ex : bachelor en management hôtelier).\n\n---\n**Question pour toi** :\nTon objectif est-il une **insertion rapide** (ex : chef de partie, responsable de salle) ou une **poursuite d’études** (ex : licence pro événementiel, école hôtelière comme Vatel) ? Cela change les compétences à mettre en avant pendant ta formation.",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 37.48,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 1.43,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 2,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 2,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "formation_insertion"
+      ],
+      "granularities_top_k": [
+        "formation_france",
+        "formation_france",
+        "formation_france",
+        "formation_france",
+        "formation_france",
+        "formation_region_diplome",
+        "_competences_certif",
+        "_competences_certif"
+      ]
+    },
+    {
+      "suite": "user_naturel",
+      "query_id": "q11_lycee_reunion_metropole",
+      "query_text": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options s'offrent à moi ?",
+      "answer_text": "**TL;DR**\n1. **Oui, c’est tout à fait possible** : la métropole offre des centaines de formations numériques accessibles depuis La Réunion, avec des aides spécifiques pour les DOM (bourses, logements).\n2. **Priorité** : vise des **BUT** (ex-MIAGE, MMI) ou **licences pro** en alternance (meilleur taux d’insertion), ou des écoles post-bac comme **Epitech** (privé mais sans concours).\n3. **Logistique clé** : anticipe les **dossiers sociaux** (CROUS, mobilité Outre-mer) et les **dates Parcoursup** (vœux jusqu’au 14 mars).\n\n---\n\n### **Plan A — Réaliste : BUT ou Licence Pro en alternance (public, gratuit, pro)**\n📍 **BUT MMI (Métiers du Multimédia et de l’Internet)** (ex : **Lyon, Bordeaux, Toulouse**)\n— Bac+3 public, **sélectivité modérée** (30-50% d’admis), **90% d’insertion pro** à 6 mois (connaissance générale).\n*Pour toi :* Parfait si tu aimes le **design web, le développement ou la communication digitale**. Alternance possible dès la 2e année.\n→ [Liste des BUT MMI en métropole](https://www.onisep.fr/http/redirection/formation/slug/FOR.11061) *(filtre par ville)*\n\n📍 **Licence Pro Métiers du Numérique** (ex : **Paris Nanterre, Aix-Marseille**)\n— Bac+3 public, **spécialisations** (cybersécurité, data, développement), **taux d’emploi ~85%** (connaissance générale).\n*Pour toi :* Idéal si tu veux une **formation courte et pro** après un BTS/DUT. Beaucoup d’offres en alternance.\n\n---\n### **Plan B — Ambitieux : Écoles d’ingé ou spécialisées (sélectif mais porteur)**\n📍 **Epitech** (13 campus : **Paris, Lille, Nice…**)\n— Bac+5 privé (8k€/an), **pas de bac requis** (admission sur dossier + piscine), **diplôme reconnu** (titre RNCP niveau 7).\n*Pour toi :* Si tu es **motivé·e par la tech pure** (code, IA, cyber) et prêt·e à bosser intensément. Bourses possibles pour les DOM.\n→ [Site Epitech](https://www.epitech.eu)\n\n📍 **Écoles d’ingénieurs post-bac** (ex : **INSA Lyon, UTBM**)\n— Bac+5 public, **sélectives** (10-20% d’admis), mais **accès possible via Parcoursup** avec un bon dossier (14+ de moyenne).\n*Pour toi :* Si tu vises un **diplôme d’ingé** (salaire médian ~38k€ en sortie, connaissance générale).\n\n---\n### **Plan C — Passerelle : BTS SIO à La Réunion → poursuite en métropole**\n📍 **BTS SIO (Services Informatiques aux Organisations)** (à **La Réunion**)\n— Bac+2 public, **peu sélectif**, puis **poursuite en licence pro ou BUT en métropole**.\n*Pour toi :* Solution si tu veux **rester 2 ans à La Réunion** avant de partir. Beaucoup de places en métropole pour les titulaires de BTS.\n\n---\n### **⚠ Attention aux pièges**\n- **Logement** : Les **résidences CROUS** sont saturées. Postule **dès maintenant** aux [aides mobilité Outre-mer](https://www.etudiant.gouv.fr/fr/aides-mobilite-outre-mer-1256).\n- **Coût de la vie** : Paris/Lyon = **800-1200€/mois** (contre 500€ à La Réunion). Prépare un budget.\n- **Alternance** : Certaines entreprises hésitent à prendre des étudiants DOM **sans réseau local**. Cible les **grandes boîtes** (Capgemini, Orange) qui ont des politiques diversité.\n\n---\n**Question pour toi :**\nPréfères-tu **une formation courte et pro** (BUT/licence pro) pour travailler vite, ou un **long cursus** (école d’ingé) pour viser des postes mieux payés plus tard ? *(Réfléchis aussi à ton budget et ta mobilité !)*\n\n---\n👤 *Pour peaufiner ton projet, prends RDV avec le **Psy-EN de ton lycée** ou le **CIO de Saint-Denis** : ils connaissent les spécificités DOM-métropole.*",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 37.23,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 7.04,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 14,
+        "n_verified": 9,
+        "n_verified_strict": 9,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 5,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "formation",
+        "formation_insertion",
+        "metier_prospective"
+      ],
+      "granularities_top_k": [
+        "_formation",
+        "formation_france",
+        "formation_france",
+        "formation_france",
+        "_formation",
+        "formation_france",
+        "_metier_prospective",
+        "_metier_prospective"
+      ]
+    },
+    {
+      "suite": "user_naturel",
+      "query_id": "q12_apprentissage_vs_bac_general",
+      "query_text": "Mon fils de 17 ans hésite entre l'apprentissage et le bac général. Comment l'aider à décider ?",
+      "answer_text": "**TL;DR**\n1. Le choix entre apprentissage et bac général dépend de **son projet concret** (métier précis vs études longues) et de **son mode d’apprentissage** (pratique vs théorique).\n2. L’apprentissage offre un diplôme + salaire + expérience, mais limite les réorientations ultérieures. Le bac général garde des portes ouvertes, mais sans garantie d’emploi.\n3. **Étape clé** : lui faire tester les deux via des immersions (stages, journées portes ouvertes en lycée pro/CFA).\n\n---\n\n### **Plan A — S’il a un métier précis en tête (et aime le concret)**\n**Apprentissage** (CAP, bac pro, BTS en alternance) :\n- **Pourquoi ?** Diplôme + salaire (600-1000€/mois) + expérience pro valorisée. Idéal pour les métiers en tension (BTP, numérique, santé, industrie).\n- **Exemples** : Bac pro Cybersécurité (lycées publics), BTS SIO en alternance (entreprises locales).\n- **Attention** : Engagement sur 2-3 ans avec un employeur. Réorientation difficile vers des études longues après.\n*(connaissance générale)*\n\n---\n\n### **Plan B — S’il vise des études longues ou hésite sur son projet**\n**Bac général + spécialités adaptées** :\n- **Pourquoi ?** Garde toutes les options ouvertes (prépa, fac, écoles). Choix des spécialités clé : ex **NSI + Maths** pour l’informatique, **SES + HGGSP** pour le droit/sciences sociales.\n- **Flexibilité** : Possibilité de bifurquer vers un BTS/BUT après le bac si changement d’avis.\n- **Risque** : Pas de garantie d’emploi sans poursuite d’études (master, école).\n*(connaissance générale)*\n\n---\n### **Plan C — Mix des deux : Alternance après le bac général**\n**Parcours hybride** :\n1. Passer un **bac général** (pour garder des options).\n2. En Terminale, postuler à des **BUT ou licences pro en alternance** (ex : BUT Informatique, Licence pro Métiers du numérique).\n- **Avantage** : Combine théorie (bac général) et pratique (alternance post-bac).\n- **Exemple** : Après un bac général avec spécialité NSI, intégrer un BUT Réseaux et Télécoms en alternance.\n*(connaissance générale)*\n\n---\n\n### **⚠ Attention aux pièges**\n- **Apprentissage** : Certains CFA/employeurs profitent des apprentis (tâches inintéressantes, rupture de contrat). **Vérifier les avis sur l’entreprise et le taux de réussite du CFA** (données disponibles sur [la carte des CFA](https://www.alternance.pro/)).\n- **Bac général** : Sans projet clair, risque de décrochage en fac (taux d’échec en L1 ~60% — connaissance générale). **Prévoir un plan B** (ex : BTS en parallèle).\n- **Pression sociale** : Éviter les phrases comme *« L’apprentissage, c’est pour ceux qui ne sont pas faits pour les études »* — **les deux voies mènent à des réussites différentes**.\n\n---\n### **Outils pour l’aider à trancher**\n1. **Tester en vrai** :\n   - **Pour l’apprentissage** : Faire un stage d’observation en entreprise (1 semaine) + visiter un CFA.\n   - **Pour le bac général** : Assister à des cours en Terminale (demander au lycée) ou suivre un MOOC (ex : [FUN MOOC](https://www.fun-mooc.fr/) sur les métiers).\n2. **Rencontres** :\n   - Discuter avec des apprentis (via le réseau de son lycée ou les salons comme [l’Alternance Day](https://www.alternance-day.fr/)).\n   - Échanger avec des étudiants en bac général (forums comme [JeVeuxEtudierEnFrance](https://www.jeveuxetudierenfrance.fr/)).\n3. **Outils officiels** :\n   - [Onisep : Fiches métiers](https://www.onisep.fr/) (filtrer par « accessible sans bac » ou « bac+5 »).\n   - [La Bonne Boite](https://labonneboite.pole-emploi.fr/) : métiers qui recrutent en alternance près de chez lui.\n\n---\n**Question pour vous** :\nQuel est **son critère n°1** parmi ces 3 ?\n- **Gagner de l’argent rapidement** (→ apprentissage).\n- **Garder le plus de portes ouvertes** (→ bac général).\n- **Éviter l’échec** (→ mixer bac général + alternance post-bac).\n\n---\n👤 **Pour aller plus loin**, un entretien avec le **Psy-EN de son lycée** ou un conseiller du **CIO** (Centre d’Information et d’Orientation) peut l’aider à clarifier ses motivations. Les coordonnées sont disponibles sur [l’ONISEP](https://www.onisep.fr/).",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 36.17,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 1.46,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 2,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 2,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "formation_insertion",
+        "metier_prospective"
+      ],
+      "granularities_top_k": [
+        "formation_france",
+        "_metier_prospective",
+        "_metier_prospective",
+        "formation_france",
+        "_metier_prospective",
+        "_metier_prospective",
+        "_metier_prospective",
+        "formation_france"
+      ]
+    },
+    {
+      "suite": "user_naturel",
+      "query_id": "q13_reconversion_grande_distrib",
+      "query_text": "Je travaille dans la grande distribution depuis 8 ans, je veux changer complètement de secteur. Par où commencer ?",
+      "answer_text": "**TL;DR**\n1. Avec 8 ans d’expérience en grande distribution, vous avez des compétences transférables (gestion, relation client, organisation) valorisables dans d’autres secteurs.\n2. **Priorité** : identifier un métier qui vous motive *avant* de choisir une formation. Un bilan de compétences (gratuit via Pôle Emploi ou OPCO) est la première étape clé.\n3. **3 pistes concrètes** : insertion sociale (formations courtes certifiantes), métiers créatifs (graphisme), ou reconversion vers l’encadrement technique.\n\n---\n\n### **Plan A — Réorientation rapide vers les métiers de l’insertion ou de la formation**\n📍 **Formateur professionnel d’adultes** (France entière) — bac+2, certificat RNCP (niveau 5), formations financées par Pôle Emploi/OPCO · [fiche officielle](lien_ministere_travail)\n*Pour vous : valorise votre expérience terrain + pédagogie. Accès via VAE (Validation des Acquis de l’Expérience) possible.*\n\n📍 **Conseiller en insertion professionnelle** (France entière) — bac+2, certificat RNCP, alternance possible · [fiche officielle](lien_ministere_travail)\n*Pour vous : métiers en tension, débouchés stables (secteur public/associatif). Formation courte (6-12 mois).*\n\n---\n### **Plan B — Reconversion vers un métier créatif ou technique**\n📍 **Graphiste** (France entière) — bac+2, certificat RNCP, formations en ligne (AFPA, GRETA) ou écoles spécialisées · [fiche officielle](lien_ministere_travail)\n*Pour vous : si vous avez un portfolio (même amateur), l’alternance est accessible. Sinon, commencez par des formations courtes (ex : Canva Pro + certifications Adobe).*\n\n*(connaissance générale)* **Autres pistes** :\n- **Développeur web** (formations intensives type Wild Code School, Le Wagon) : bootcamps de 3-6 mois, financés par CPF.\n- **Gestion de projet** (certifications PMP, Scrum) : valorise votre expérience en management en grande distribution.\n\n---\n### **Plan C — Passerelle par la Validation des Acquis de l’Expérience (VAE)**\n*(connaissance générale)*\n1. **Faites un bilan de compétences** (gratuit via Pôle Emploi ou votre OPCO) pour cibler un métier précis.\n2. **VAE possible** pour obtenir un diplôme (ex : bac+2 en management) sans reprendre des études longues. Exemples :\n   - **Titre RNCP \"Responsable d’unité marchande\"** (votre expérience en grande distribution peut suffire).\n   - **Licence Pro Métiers de l’insertion** (via VAE partielle).\n3. **Testez le métier avant de vous engager** : bénévolat, stages courts, ou immersions via [Plateforme de l’Alternance](https://www.alternance.pro/).\n\n---\n### ⚠ **Attention aux pièges**\n- **Évitez les formations privées coûteuses** (>5 000 €) sans garantie de débouché. Privilégiez les certificats RNCP financés par Pôle Emploi/OPCO.\n- **Ne vous lancez pas sans projet clair** : une reconversion sans cible précise peut mener à des formations inutiles.\n- **Méfiez-vous des \"reconversions miracles\"** : les métiers comme data scientist ou expert cyber exigent des prérequis techniques solides (maths, programmation).\n\n---\n**Question pour vous** :\nQu’est-ce qui vous attire le plus aujourd’hui : **aider les autres** (insertion/formation), **créer** (graphisme/digital), ou **manager** (gestion de projet) ? Cela affinerait les options.\n\n---\n👤 *Pour un accompagnement personnalisé, prenez RDV avec un conseiller en évolution professionnelle (CEP) via [Mon Compte Formation](https://www.moncompteformation.gouv.fr/) ou votre OPCO. Ils peuvent financer votre bilan de compétences et votre formation.*",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 37.34,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 12.39,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 0,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 0,
+        "n_hallucinated": 0,
+        "error": "JSON parse error: Unterminated string starting at: line 180 column 31 (char 8274). Raw: {\n  \"stats_extracted\": [\n    {\n      \"stat_text\": \"8 ans d’expérience\",\n      \"stat_value\": 8,\n      \"stat_unit\": \"années\",\n      \"context_in_response\": \"expérience en grande distribution\",\n      \"is_"
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "formation",
+        "formation_insertion"
+      ],
+      "granularities_top_k": [
+        "_competences_certif",
+        "_formation",
+        "_formation",
+        "_formation",
+        "_competences_certif",
+        "_competences_certif",
+        "formation_france",
+        "_formation"
+      ]
+    },
+    {
+      "suite": "user_naturel",
+      "query_id": "q14_passerelle_infirmier_RH",
+      "query_text": "Une amie infirmière souhaite passer à un poste en ressources humaines. Quelles passerelles existent ?",
+      "answer_text": "**TL;DR**\n1. Une infirmière peut se réorienter vers les RH **sans tout reprendre à zéro** : ses compétences (gestion d’équipes, réglementation, écoute) sont transférables.\n2. **3 voies principales** : formation courte certifiante (bac+2), licence pro RH (bac+3), ou VAE pour valider son expérience.\n3. **Calendrier clé** : les rentrées en formation ont lieu en septembre/octobre (dossiers à déposer dès avril-mai).\n\n---\n\n### **Plan A — Réaliste : Certificat RNCP \"Assistant RH\" (bac+2, 1 an)**\n📍 **Assistant ressources humaines** (Certificat RNCP, Ministère du Travail) — Formation courte (12-18 mois), accessible sans prérequis de diplôme, **finançable via CPF** ou OPCO (ex : FAF.PM pour les infirmières).\n*Pour ton amie : Idéal pour un premier pas en RH avec un **taux d’insertion de 78% à 6 mois** (source : France Compétences, RNCP36123).*\n**Étapes** :\n1. **Valider son projet** : Stage d’immersion de 1-2 semaines en service RH (via son réseau hospitalier ou plateformes comme [Les Entreprises pour la Cité](https://www.entreprises-cite.fr/)).\n2. **Choisir un organisme** : CNFDI, CNAM, ou GRETA (formations **100% à distance** possibles).\n3. **Financement** : Utiliser son **Compte Personnel de Formation (CPF)** (crédits accumulés en tant qu’infirmière) ou demander un **Projet de Transition Professionnelle (PTP)** via Transitions Pro.\n\n---\n\n### **Plan B — Ambitieux : Licence Pro RH (bac+3, 1 an après validation des acquis)**\n📍 **Licence Professionnelle Métiers des RH** (ex : **Université Paris Nanterre** ou **Lyon 2**) — Formation publique (gratuite), **sélective** (dossier + entretien), accessible via **validation des acquis professionnels (VAP)**.\n*Pour ton amie : Permet de viser des postes de **chargé(e) de recrutement** ou **responsable formation** (salaire médian : 2 200€ brut/mois, source : APEC 2023).*\n**Étapes** :\n1. **VAP (Validation des Acquis Professionnels)** : Dossier à déposer **avant juin** pour une rentrée en septembre. Son expérience d’infirmière (gestion de planning, conflits, formation des nouveaux) compte comme **équivalence partielle**.\n   - *Exemple* : Licence Pro RH de **Nanterre** (VAP possible avec 3 ans d’expérience pro) — [fiche officielle](https://www.parisnanterre.fr/).\n2. **Alternance** : Trouver un contrat pro dans un service RH (hôpitaux, cliniques, Ehpad ont des besoins !).\n3. **Spécialisation** : Choisir un parcours **RH santé/social** (ex : **Université de Bordeaux**) pour capitaliser sur son expérience médicale.\n\n---\n### **Plan C — Flexible : VAE pour un diplôme RH (sans quitter son poste)**\n*(connaissance générale)*\n**VAE (Validation des Acquis de l’Expérience)** : Ton amie peut obtenir un **diplôme RH (bac+2 ou bac+3) en 6-12 mois** sans suivre de cours, en prouvant que ses compétences d’infirmière couvrent une partie du référentiel RH.\n**Exemples de diplômes accessibles** :\n- **Titre RNCP \"Responsable RH\"** (niveau bac+3) via des organismes comme **CEF** ou **IGS**.\n- **DU (Diplôme Universitaire) RH et Santé** (ex : **Université de Montpellier**).\n**Étapes** :\n1. **Identifier le diplôme cible** : Comparer les **référentiels de compétences** (ex : [RNCP36123 pour Assistant RH](https://www.francecompetences.fr/)) avec son expérience.\n2. **Dossier VAE** : Rédiger un **livret de compétences** (aide possible via un **conseiller VAE** de son OPCO ou de la région).\n3. **Jury** : Passage devant un jury (taux de réussite : ~80% pour les candidats bien préparés, source : DEPP 2022).\n\n---\n### **Calendrier clé à respecter**\n| Étape               | Période          | Action concrète                                  |\n|---------------------|------------------|--------------------------------------------------|\n| **Immersion**       | Janvier-mars     | Stage d’observation en RH (2 semaines).         |\n| **Financement**     | Avril-mai        | Demande CPF/PTP ou dossier VAP.                  |\n| **Candidatures**    | Mai-juin         | Dépôt des dossiers (Licence Pro, VAE, certificats).|\n| **Rentrée**         | Septembre/octobre | Début de la formation ou parcours VAE.           |\n\n---\n### **Pièges à éviter**\n⚠ **1. Les formations privées coûteuses** : Certaines écoles privées (ex : **ESGRH**) proposent des bac+5 RH à **8 000€/an** sans garantie d’insertion. Privilégier le **public** (licences pro) ou les certificats **RNCP financés par le CPF**.\n⚠ **2. Sous-estimer son expérience** : Une infirmière a déjà des compétences RH (gestion des conflits, application des conventions collectives, formation des équipes). **Ne pas repartir de zéro** : capitaliser sur la VAP/VAE.\n\n---\n**Question pour ton amie** :\nEst-ce qu’elle vise **un poste opérationnel rapidement** (Plan A : certificat RNCP) ou **une évolution à moyen terme** avec un diplôme bac+3 (Plan B : licence pro) ? Son choix dépendra aussi de son **temps disponible** (VAE si elle veut rester en poste) ou de sa **mobilité** (certaines licences pro sont en présentiel).",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 39.4,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 4.27,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 8,
+        "n_verified": 4,
+        "n_verified_strict": 4,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 1,
+        "n_hallucinated": 3,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "formation",
+        "metier"
+      ],
+      "granularities_top_k": [
+        "_competences_certif",
+        "_formation",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_metier"
+      ]
+    },
+    {
+      "suite": "user_naturel",
+      "query_id": "q15_cout_ecole_commerce_5ans",
+      "query_text": "Combien faut-il prévoir financièrement pour 5 années d'études en école de commerce ?",
+      "answer_text": "**TL;DR**\n1. Le coût total sur 5 ans en école de commerce varie de **0€ (public)** à **50 000€+ (privé)** selon le type d'école et le mode d'études.\n2. L'alternance réduit drastiquement les frais (salaire + prise en charge par l'entreprise).\n3. Budget moyen estimé : **15 000–30 000€** pour une école privée classique (hors top 5).\n\n---\n\n### **Plan A — Public ou alternance : coût minimal (0–5 000€)**\n📍 **IAE (Instituts d'Administration des Entreprises)** — bac+5 public, grade Master, frais d'inscription ~250–600€/an · [exemple IAE Paris](https://www.onisep.fr/http/redirection/formation/slug/FOR.12278)\n*Pour toi : solution la plus économique, sélective (dossier + score IAE Message). Alternance possible dès bac+3.*\n\n📍 **Licence pro Commerce International** — bac+3 public, gratuite (boursiers exemptés de frais) · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11370)\n*Pour toi : si tu vises un bac+3, coût quasi-nul + stages rémunérés (~600–1 000€/mois).*\n\n**Coût total estimé** :\n- **0–2 000€** (public + bourses)\n- **0€** en alternance (l’entreprise paie les frais de formation + salaire).\n\n---\n\n### **Plan B — Écoles privées classiques (15 000–30 000€)**\n📍 **Bachelor Finance (bac+3) + Master (bac+5)** — écoles type **ESDESCA, INSEEC, SKEMA** · [exemple Bachelor Finance](https://www.onisep.fr/http/redirection/formation/slug/FOR.10902)\n*Pour toi : frais annuels 6 000–10 000€. Budget total ~30 000€ sur 5 ans (hors alternance).*\n\n📍 **Écoles post-bac (type ESG, PPA)** — bac+5 en 5 ans, frais ~7 000–9 000€/an.\n*Pour toi : coût total ~35 000€, mais admissions parallèles possibles en bac+3 pour réduire la durée.*\n\n**Coût total estimé** :\n- **15 000–30 000€** (sans alternance)\n- **5 000–10 000€** si alternance sur 2–3 ans (salaire ~800–1 500€/mois déduit).\n\n---\n### **Plan C — Top 5 (HEC, ESSEC, etc.) ou international (50 000€+)**\n📍 **HEC, ESSEC, ESCP** — bac+5, frais ~15 000–20 000€/an (hors logement/vie étudiante).\n*Pour toi : budget total **75 000–100 000€** sur 5 ans. Bourses sur critères sociaux (ex : HEC ~20% des élèves bénéficiaires).*\n\n📍 **Écoles à l’étranger (LSE, Bocconi)** — frais ~20 000–30 000€/an + coût de la vie.\n*Pour toi : investissement lourd, mais ROI élevé si carrière internationale.*\n\n**Coût total estimé** :\n- **50 000–100 000€** (sans alternance)\n- **30 000–50 000€** avec alternance (rare en top 5, plus courant en M2).\n\n---\n### **⚠ Attention aux pièges**\n- **Marketing des \"écoles low-cost\"** : certaines écoles privées affichent des frais bas (3 000–5 000€/an) mais ont des taux d’insertion faibles ou des diplômes non reconnus (vérifie le **grade Master** ou le label **CGE**).\n- **Coût caché de la vie étudiante** : compte **500–1 000€/mois** (logement, transport, nourriture) en plus des frais de scolarité, surtout à Paris.\n- **Alternance ≠ garantie** : trouver un contrat dépend de ton profil et du marché. Prévois un plan B (prêt étudiant, job étudiant).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **sécurité financière (public/alternance)** ou **prestige (top 5, même à crédit)** ? Ou cherches-tu un équilibre entre les deux ?\n\n---\n👤 *Pour un projet personnalisé, un conseiller en orientation (Psy-EN, CIO) peut t’aider à affiner tes choix en fonction de ton budget et de tes notes.*",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 38.29,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 11.04,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 24,
+        "n_verified": 5,
+        "n_verified_strict": 5,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 19,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "financement_etudes",
+        "formation"
+      ],
+      "granularities_top_k": [
+        "voie",
+        "_formation",
+        "_formation",
+        "_formation",
+        "_formation",
+        "_formation",
+        "_formation",
+        "_formation"
+      ]
+    },
+    {
+      "suite": "user_naturel",
+      "query_id": "q16_bacpro_BUT_taux",
+      "query_text": "Mon fils a un bac pro vente, peut-il intégrer un BUT et avec quelle chance de réussir ?",
+      "answer_text": "**TL;DR**\n1. Un bac pro vente permet **légalement** d’accéder à un BUT, mais la sélectivité dépend du dossier et du parcours visé.\n2. Les chances de réussite sont **réelles** dans certains BUT (ex. techniques de commercialisation), mais **limitées** dans les filières scientifiques ou surchargées.\n3. **Stratégie clé** : cibler des BUT en lien avec son bac pro (commerce, gestion) et valoriser stages/expériences pro.\n\n---\n\n### **Plan A — Réaliste : BUT en lien avec le bac pro vente**\n📍 **BUT Techniques de Commercialisation** (ex. parcours *marketing et management du point de vente*) — bac+3 public, sélectivité modérée (~30-50% selon IUT), **adapté aux bacs pros commerce/vente** · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.7955)\n*Pour toi : le meilleur taux de réussite pour un bac pro vente, avec des passerelles claires vers des licences pro ou écoles de commerce post-BUT.*\n\n*(connaissance générale)* : Ce BUT est conçu pour accueillir des profils technos/pro, avec des remises à niveau en français/maths intégrées. Les IUT valorisent l’expérience pro (stages, alternance) — un atout pour un bac pro.\n\n---\n\n### **Plan B — Ambitieux : BUT hors domaine (ex. GEA, info) avec préparation**\n📍 **BUT Gestion des Entreprises et des Administrations (GEA)** — bac+3 public, sélectivité ~25-40%, **accessible mais exigeant en maths** · [exemple : IUT de Bordeaux](https://www.iut.u-bordeaux.fr)\n*Pour toi : possible si ton fils a de bons résultats en gestion/éco et accepte un rattrapage intensif en maths (MOOC, prépa summer school).*\n\n*(connaissance générale)* : Certains IUT proposent des **dispositifs d’accompagnement** pour bacs pros (ex. modules de mise à niveau). Contacter le **responsable pédagogique** de l’IUT visé pour évaluer la faisabilité.\n\n---\n### **Plan C — Alternative : Licence pro ou école spécialisée post-bac pro**\n📍 **Licence pro Métiers du commerce** (ex. *négociation relation client*) — bac+3 public/privé, **sélectivité ~60-80%**, **alternance fréquente** · [exemple ONISEP](https://www.onisep.fr)\n*Pour toi : voie plus sûre si le BUT semble trop théorique, avec un taux d’insertion pro élevé (~85% à 6 mois, connaissance générale).*\n\n*(connaissance générale)* : Les licences pro recrutent **prioritairement des bacs pros/techno** et offrent souvent des contrats d’apprentissage (salaire + diplôme). Exemples : **licence pro e-commerce**, **management des unités commerciales**.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Sélectivité variable** : Certains BUT (informatique, chimie) refusent quasi-systématiquement les bacs pros (sauf dossier exceptionnel). Vérifier les **statistiques par IUT** sur [Parcoursup](https://www.parcoursup.fr) (onglet \"Formations\" → \"Critères analysés\").\n- **Rythme exigeant** : Un BUT demande plus d’autonomie qu’un bac pro. Prévoir un **soutien en méthodologie** (ex. tutorats IUT, plateformes comme *Les Sherpas*).\n- **Alternance = atout majeur** : Les BUT en alternance (ex. TC) multiplient les chances d’admission **et** de réussite. Cibler les entreprises partenaires de l’IUT dès la candidature.\n\n---\n**Question pour toi** :\nTon fils vise-t-il un **métier précis** (ex. chef de rayon, chargé de clientèle) ou une **poursuite d’études longue** (école de commerce, master) ? Cela peut affiner le choix entre BUT, licence pro ou école spécialisée.",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 31.26,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 5.97,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 10,
+        "n_verified": 4,
+        "n_verified_strict": 4,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 6,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "formation",
+        "formation_insertion"
+      ],
+      "granularities_top_k": [
+        "formation_france",
+        "formation_france",
+        "formation_france",
+        "_formation",
+        "formation_france",
+        "formation_france",
+        "_competences_certif",
+        "_competences_certif"
+      ]
+    },
+    {
+      "suite": "drom_dedie",
+      "query_id": "drom_q01_mayotte_ingenieur_financement",
+      "query_text": "Je suis lycéen·ne à Mayotte et je veux faire une école d'ingénieur en métropole. Comment je peux financer ça ?",
+      "answer_text": "**TL;DR**\n1. **Oui, c’est possible** : des aides existent pour financer tes études d’ingénieur en métropole depuis Mayotte, mais il faut anticiper (logement, transport, frais de scolarité).\n2. **Priorité absolue** : les bourses sur critères sociaux (CROUS) + aides spécifiques DOM-TOM (ex : **PASSEPORT MOBILITÉ**).\n3. **Stratégie gagnante** : vise une **école publique** (frais ~0-600€/an) + alternance en 2e cycle pour être payé·e pendant tes études.\n\n---\n\n### **Plan A — Réaliste : École publique + bourses CROUS**\n📍 **Diplôme d’ingénieur de l’ENIM** (Metz) — bac+5 public, **frais ~600€/an**, habilité CTI · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.9936)\n*Pour toi : école accessible via Parcoursup (sélectivité modérée), avec **logements CROUS à ~200-300€/mois** et bourse sur critères sociaux (jusqu’à ~600€/mois).*\n\n**Comment financer ?**\n- **Bourse CROUS** : jusqu’à ~6 000€/an (échelon 6) si tes parents ont de faibles revenus. [Simulateur officiel](https://www.messervices.etudiant.gouv.fr/).\n- **Passeport Mobilité** (Région Mayotte) : **1 000€ à 2 000€** pour le billet d’avion + installation (à demander **avant ton départ**).\n- **Aide à la première installation (API)** : **500€** du CROUS pour les Outremers (dossier à faire dès ton admission).\n\n*(connaissance générale : ces aides sont cumulables !)*\n\n---\n\n### **Plan B — Ambitieux : École d’ingénieur en alternance**\n📍 **Diplôme d’ingénieur de l’ESTACA** (Paris/Laval) — bac+5 privé **mais gratuit en alternance**, spécialité aéronautique, habilité CTI · [site officiel](https://www.estaca.fr)\n*Pour toi : si tu trouves une entreprise partenaire, tu es **payé·e ~800-1 200€/mois** (sans frais de scolarité). Idéal après un BTS/DUT en métropole.*\n\n**Comment faire ?**\n1. Commence par un **BTS ou BUT** en métropole (ex : BUT Génie Mécanique) pour te rapprocher des entreprises.\n2. Postule en alternance dès la 2e ou 3e année d’école d’ingénieur.\n*(connaissance générale : l’alternance est très demandée en aéronautique/automobile !)*\n\n---\n### **Plan C — Filet de sécurité : Prépa + écoles avec frais réduits**\n📍 **CPGE TSI** (Lycée public en métropole) — 2 ans gratuites, puis concours pour écoles d’ingénieur publiques.\n*Pour toi : si tu veux éviter les frais de scolarité élevés, une prépa scientifique (TSI pour les bacs STI2D) te donne accès à des écoles comme l’**ENI** (frais ~0€) ou **Polytech** (~600€/an).*\n\n**Financement :**\n- **Bourse de lycée** (pour la prépa) + **logement en cité U** (~200€/mois).\n- **Jobs étudiants** (10h/semaine max) : restaurants universitaires, tutorat.\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Écoles privées hors alternance** : certaines coûtent **8 000€-12 000€/an** (ex : EPITA, ECE). Même avec bourse, le reste à charge est énorme.\n2. **Logement** : à Paris, un studio coûte **700-900€/mois** (contre 300-400€ en province). Privilégie les villes comme **Metz, Toulouse ou Nantes**.\n3. **Délais administratifs** : les aides (Passeport Mobilité, API) se demandent **3-6 mois avant la rentrée**. Ne tarde pas !\n\n---\n**Question pour toi :**\nEst-ce que tu préfères **partir dès la rentrée prochaine** (Plan A : école publique + bourses) ou **prendre le temps** de faire un BTS/DUT d’abord pour viser l’alternance (Plan B) ?\n\n---\n👤 *Pour peaufiner ton projet, prends RDV avec le·a **Psy-EN de ton lycée** ou le **CIO de Mayotte** (ils connaissent bien les aides locales).*",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 34.64,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 12.48,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 18,
+        "n_verified": 12,
+        "n_verified_strict": 10,
+        "n_verified_by_source": 2,
+        "n_with_disclaimer": 5,
+        "n_hallucinated": 1,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "financement_etudes",
+        "formation",
+        "formation_insertion"
+      ],
+      "granularities_top_k": [
+        "_formation",
+        "formation_france",
+        "formation_france",
+        "_formation",
+        "_formation",
+        "_formation",
+        "dispositif",
+        "voie"
+      ]
+    },
+    {
+      "suite": "drom_dedie",
+      "query_id": "drom_q02_guadeloupe_bac_pro_insertion",
+      "query_text": "En Guadeloupe, est-ce que ça vaut le coup de faire un bac pro gestion administration ? Quelles débouchés ?",
+      "answer_text": "**TL;DR**\n1. Le **bac pro Gestion-Administration** en Guadeloupe ouvre à des postes administratifs locaux (secrétariat, comptabilité), mais avec des salaires modestes (~1 500-1 800€ brut/mois en début de carrière — connaissance générale).\n2. Pour **monter en compétences**, un **BUT GEA** (ex : IUT de Saint-Claude) est un meilleur tremplin vers des postes d’encadrement (comptable, responsable RH).\n3. Si tu vises une **insertion rapide**, le bac pro peut suffire ; si tu veux **évoluer**, vise au moins un bac+2/3.\n\n---\n\n### **Plan A — Insertion rapide : Bac pro Gestion-Administration**\n**Débouchés locaux** (connaissance générale) :\n- **Secrétaire administratif** (collectivités, PME, hôpitaux)\n- **Assistant comptable** (cabinets, entreprises)\n- **Agent administratif** (banques, assurances)\n*Salaire débutant* : ~1 500-1 800€ brut/mois (source : grilles conventionnelles Guadeloupe, connaissance générale).\n*Pour toi* : Idéal si tu veux travailler **immédiatement après le bac** sans poursuivre d’études.\n\n---\n\n### **Plan B — Évolution professionnelle : BUT GEA (IUT Saint-Claude)**\n📍 **BUT Gestion des Entreprises et des Administrations** (IUT Guadeloupe — Saint-Claude) — bac+3 public, **sélectivité 63%** (accessible), 70 places.\n[Fiche Parcoursup officielle](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11768&typeBac=0&originePc=0)\n*Pour toi* :\n- **61% des admis viennent d’un bac techno** (dont bac pro GA possible avec bon dossier).\n- **Débouchés** : Comptable, chargé de clientèle, responsable RH (salaire ~2 000-2 500€ brut/mois — connaissance générale).\n- **Poursuite d’études** : Possible en licence pro ou école de commerce (via admissions parallèles).\n\n---\n### **Plan C — Alternance : Certifications courtes + expérience**\n(connaissance générale)\n- **Titre professionnel** (ex : *Assistant de gestion PME-PMI*, financé par Pôle Emploi ou la Région).\n- **Alternance** : Contrat pro ou apprentissage en 1 an (ex : BTS Gestion en alternance).\n*Pour toi* : Solution si tu veux **allier rémunération et diplôme** sans faire 3 ans d’études.\n\n---\n### ⚠ **Attention aux pièges**\n- **Salaire limité** : Avec un bac pro seul, les postes administratifs en Guadeloupe sont souvent **peu rémunérateurs** (SMIC à 1,2x SMIC).\n- **Concurrence locale** : Les offres d’emploi en gestion sont **concentrées sur Basse-Terre/Pointe-à-Pitre** — mobilité parfois nécessaire.\n- **Évolution bloquée** : Sans bac+2/3, les promotions vers des postes d’encadrement sont **rares**.\n\n---\n**Question pour toi** :\nPréfères-tu **une insertion immédiate** (bac pro) ou **investir 3 ans** (BUT GEA) pour accéder à des postes mieux payés et plus stables ?\n\n---\n👤 *Pour affiner ton projet, un RDV avec le **Psy-EN de ton lycée** ou le **SCUIO de l’Université des Antilles** peut t’aider à identifier les formations en alternance disponibles localement.*",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 32.75,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 6.41,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 9,
+        "n_verified": 6,
+        "n_verified_strict": 6,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 3,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "formation",
+        "formation_insertion",
+        "territoire_drom"
+      ],
+      "granularities_top_k": [
+        "region_diplome",
+        "formation_region_diplome",
+        "formation_france",
+        "formation_region_diplome",
+        "formation_region_diplome",
+        "formation_region_diplome",
+        "_formation",
+        "territoire"
+      ]
+    },
+    {
+      "suite": "drom_dedie",
+      "query_id": "drom_q03_reunion_energies_renouvelables",
+      "query_text": "Quelles études faire à La Réunion pour travailler dans les énergies renouvelables localement ?",
+      "answer_text": "**TL;DR**\n1. À La Réunion, les formations en énergies renouvelables (EnR) sont **peu nombreuses mais ciblées** : un BUT ou une école d’ingénieur localement, ou des formations courtes (BTS, licences pro) avec des partenariats industriels.\n2. Le secteur recrute surtout des **techniciens (bac+2/3)** pour l’installation/maintenance et des **ingénieurs (bac+5)** pour la conception/gestion de projets.\n3. **Priorise les formations avec stages en entreprise locale** (ex : Alizé, EDF Renouvelables, SARA) pour un emploi direct après le diplôme.\n\n---\n\n### **Plan A — Formation courte et pro (bac+2/3) : pour un emploi rapide**\n📍 **BUT Génie Thermique et Énergie (GTE)** (Saint-Pierre, Université de La Réunion) — bac+3 public, parcours *Énergies Renouvelables et Efficacité Énergétique*, **alternance possible** · [fiche ONISEP](https://www.onisep.fr)\n*Pour toi : idéal si tu veux un métier technique (technicien en solaire, éolien, biomasse) avec un diplôme reconnu localement. Taux d’insertion ~80% dans les EnR à La Réunion (connaissance générale).*\n\n📍 **Licence Pro Métiers de l’Électricité et des Énergies Renouvelables** (Le Tampon, Université de La Réunion) — bac+3 public, **en alternance**, partenariats avec Alizé et EDF · [fiche officielle](https://www.univ-reunion.fr)\n*Pour toi : parfaite pour une spécialisation en 1 an après un BTS ou BUT, avec un emploi garanti via l’alternance (secteur en tension).*\n\n---\n\n### **Plan B — Formation longue (bac+5) : pour encadrer des projets ou innover**\n📍 **École d’Ingénieurs ESIROI (Bâtiment et Énergie)** (Saint-Denis) — bac+5 public, **diplôme d’ingénieur CTI**, spécialité *Énergies Renouvelables et Maîtrise de l’Énergie* · [fiche Parcoursup](https://www.parcoursup.fr)\n*Pour toi : si tu vises un poste de chef de projet ou d’ingénieur R&D (ex : centrale solaire, smart grids). **Sélective** (dossier + entretien), mais **gratuite** et très bien vue des employeurs locaux (EDF, SARA).*\n\n*(connaissance générale)* : L’**ESIROI** est la seule école d’ingénieurs à La Réunion avec une spécialité dédiée aux EnR. Son réseau local est un atout majeur pour les stages/emplois.\n\n---\n### **Plan C — Alternatives si tu veux te former autrement**\n1. **BTS FED (Fluides, Énergies, Domotique)** (Lycée Lislet Geoffroy, Saint-Denis) — bac+2 public, **option \"Énergies Renouvelables\"** · [fiche ONISEP](https://www.onisep.fr)\n   *Pour toi : solution si tu sors de bac pro/techno. Complète avec une licence pro ensuite pour monter en compétences.*\n\n2. **Formations courtes certifiantes** (ex : **Qualit’ENR** ou **AFPA**) — **quelques semaines à 6 mois**, financées par Pôle Emploi ou la Région.\n   *Pour toi : si tu es en reconversion ou veux une qualification rapide (ex : installateur photovoltaïque).*\n\n---\n\n### **⚠ Attention aux pièges**\n- **Marketing des écoles privées** : Méfie-toi des formations privées coûteuses (ex : écoles \"spécialisées EnR\" à 5k€/an) sans partenariat local avéré. Privilégie le **public** (Université de La Réunion, lycées pros).\n- **Débouchés réels** : Le secteur recrute, mais surtout en **maintenance/installation** (bac+2/3). Les postes d’ingénieurs (bac+5) sont moins nombreux et souvent réservés aux profils expérimentés.\n- **Mobilité limitée** : Les compétences en EnR à La Réunion sont très **locales** (biomasse canne à sucre, solaire, éolien offshore). Une formation hors de l’île peut compliquer ton insertion sur place.\n\n---\n**Question pour toi :**\nAs-tu déjà un niveau d’études (bac, bac+2, etc.) ou un domaine précis qui t’intéresse (technique, gestion de projet, recherche) ? Cela peut affiner les options. *(Sinon, les formations ci-dessus couvrent tous les profils !)*",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 43.74,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 3.88,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 5,
+        "n_verified": 4,
+        "n_verified_strict": 4,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 1,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "formation",
+        "metier"
+      ],
+      "granularities_top_k": [
+        "_metier",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_competences_certif",
+        "_formation"
+      ]
+    },
+    {
+      "suite": "drom_dedie",
+      "query_id": "drom_q04_martinique_chomage_jeunes",
+      "query_text": "Le chômage des jeunes en Martinique est de combien ? Quels secteurs recrutent vraiment ?",
+      "answer_text": "**TL;DR**\n1. Le chômage des jeunes (15-29 ans) en Martinique atteint **~40%** (connaissance générale, estimation INSEE/DOM 2023), soit **2x la moyenne nationale**.\n2. **3 secteurs recrutent activement** : tourisme (hôtellerie-restauration), santé-social (EHPAD, aide à domicile), et BTP (reconstruction post-ouragans).\n3. **Pistes concrètes** : formations courtes qualifiantes (CAP à bac+2) + mobilité vers la Guyane ou l’Hexagone pour les profils tech/ingénierie.\n\n---\n\n### **Plan A — Secteurs porteurs en Martinique (embauche immédiate)**\n- **Tourisme** : 60% des offres d’emploi (connaissance générale, Pôle Emploi DOM 2024). Besoins criants en **serveurs, cuisiniers, agents d’accueil** (saisons haute déc. à avril).\n  *Pour toi* : **CAP/Bac Pro** en 1-2 ans (lycées pro de Ducos ou Lamentin) + CDD saisonniers → CDI.\n- **Santé-social** : Vieillissement de la population → **aides-soignants, auxiliaires de vie** (formations rémunérées via **AFPR** ou **POEI**).\n  *Pour toi* : **Diplôme d’État (DE) en 10-18 mois**, 100% d’insertion (connaissance générale, Céreq DOM).\n\n### **Plan B — Secteurs en tension avec formation (3-5 ans)**\n- **BTP/Énergies renouvelables** : Reconstruction post-**Fiona (2022)** + transition énergétique → **techniciens en solaire, électriciens, conducteurs de travaux**.\n  *Pour toi* : **BTS Travaux Publics** (Lycée Acajou, Le Lamentin) ou **BP Métiers de la piscine** (CFA Martinique), salaires **1 800-2 200€/mois** en sortie (connaissance générale, baromètre FFB DOM).\n- **Numérique** : Développement des **téléservices** (administration, banques) → **BTS SIO** (Lycée Joseph Gaillard) ou **formations Simplon.co** (gratuit, 6 mois).\n\n### **Plan C — Mobilité ou création d’activité**\n- **Guyane/Hexagone** : Secteurs **aéronautique (Guyane)** ou **tech (métropole)** recrutent des Martiniquais (aides à la mobilité via **Pôle Emploi DOM**).\n- **Entrepreneuriat** : Aides **ACRE** (exonérations charges) + **Bourse French Tech** pour les projets digitaux. Ex : **livraison de produits locaux** (circuits courts).\n\n---\n**⚠ Attention aux pièges**\n- **Formations longues sans débouchés locaux** : Évite les **licences générales** (droit, psycho) sans projet de mobilité — **taux de chômage >50%** pour ces diplômés en Martinique (connaissance générale, Céreq 2022).\n- **Salaire vs coût de la vie** : Un SMIC martiniquais (1 398€ net) couvre difficilement un loyer seul (500-700€/mois). **Logement intergénérationnel** ou colocation souvent nécessaires.\n- **Concurrence informelle** : 30% des emplois dans le **secteur non déclaré** (connaissance générale, INSEE 2023) — privilégie les contrats officiels pour cotiser (retraite, chômage).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **un métier manuel avec embauche rapide** (Plan A), **une formation technique de 2-3 ans** (Plan B), ou **un projet à l’extérieur/montage de boite** (Plan C) ? Cela peut affiner les pistes.",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 32.06,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 2.98,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 8,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 4,
+        "n_hallucinated": 4,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "formation_insertion",
+        "metier_prospective",
+        "territoire_drom"
+      ],
+      "granularities_top_k": [
+        "territoire",
+        "formation_region_diplome",
+        "formation_region_diplome",
+        "formation_region_diplome",
+        "_metier_prospective",
+        "formation_region_diplome",
+        "_metier_prospective",
+        "formation_region_diplome"
+      ]
+    },
+    {
+      "suite": "financement_dedie",
+      "query_id": "financement_q01_cpf_reconversion_dev",
+      "query_text": "Je suis salarié de 30 ans et je veux me reconvertir en développeur web. Mon CPF peut financer combien ?",
+      "answer_text": "**TL;DR**\n1. Votre CPF peut financer jusqu’à **500 à 800 €/an** (plafond cumulé ~5 800 € pour un salarié à temps plein), mais les formations certifiantes (RNCP) en développement web coûtent souvent **3 000 à 8 000 €**.\n2. **Solutions** : Combiner CPF + OPCO (financement employeur), VAE pour valider des acquis, ou formations en alternance (rémunérées).\n3. **Priorité** : Ciblez un **Titre RNCP niveau 5 (bac+2)** pour une reconnaissance immédiate sur le marché.\n\n---\n\n### **Plan A — Formation certifiante courte (3 à 12 mois) financée par CPF + OPCO**\n📍 **Titre RNCP \"Développeur web et web mobile\"** (niveau 5/bac+2) — [liste des organismes certifiés](https://www.francecompetences.fr/recherche/rncp/31114/)\n*Pour vous : Reconnu par l’État, éligible CPF (coût ~3 000–6 000 €). Exemples : Wild Code School, OpenClassrooms, Simplon. Vérifiez le reste à charge après mobilisation de vos droits (5 800 € max).*\n\n**Comment faire ?**\n- Vérifiez votre solde CPF sur [moncompteformation.gouv.fr](https://www.moncompteformation.gouv.fr).\n- Contactez votre **OPCO** (ex : Atlas, Opcommerce) pour un cofinancement (jusqu’à 100% si accord employeur).\n- Privilégiez les formations **en alternance** (contrat pro) pour garder un salaire.\n\n---\n\n### **Plan B — VAE (Validation des Acquis de l’Expérience) si vous avez déjà des compétences**\n📍 **VAE pour le Titre RNCP Développeur web** — [France VAE](https://www.francevae.fr/)\n*Pour vous : Si vous avez déjà codé (projets perso, freelance), la VAE permet d’obtenir le diplôme en **3 à 6 mois** sans formation, pour ~1 500–3 000 € (éligible CPF).*\n\n**Étapes clés** :\n1. **Dossier de recevabilité** (gratuit) via un organisme certificateur (ex : CNAM).\n2. **Accompagnement** (obligatoire, ~1 500 €, financé par CPF/OPCO).\n3. **Jury** : présentation d’un projet concret (ex : site portfolio).\n\n---\n### **Plan C — Reconversion longue avec diplôme (bac+3) en alternance**\n📍 **Licence Pro Métiers de l’informatique (parcours web)** — [exemple à l’IUT de Toulouse](https://www.iut-blagnac.fr/formation/licence-pro-metiers-de-linformatique/)\n*Pour vous : Diplôme d’État en **1 an après bac+2**, rémunéré en alternance (salaire ~60–80% du SMIC). Coût : 0 € (pris en charge par l’entreprise).*\n\n**Pour qui ?**\n- Si vous visez un poste **senior** ou une spécialisation (ex : full-stack, DevOps).\n- Nécessite de trouver une entreprise d’accueil (aide via Pôle Emploi ou les OPCO).\n\n---\n\n### **⚠ Attention aux pièges**\n- **Formations non-RNCP** : Certaines \"écoles\" privées (ex : \"bootcamps\" à 10 000 €) ne délivrent pas de diplôme reconnu. Vérifiez **always** le numéro RNCP sur [France Compétences](https://www.francecompetences.fr/).\n- **CPF insuffisant** : Le plafond de 5 800 € ne couvre souvent pas le coût total. Négociez un **abondement** avec votre employeur ou un prêt à taux zéro (ex : [Banque des Territoires](https://www.banquedesterritoires.fr/)).\n- **Alternance = engagement long** : Un contrat pro implique **12 à 24 mois** en entreprise. Assurez-vous de la compatibilité avec votre situation familiale/financière.\n\n---\n**Question pour vous** :\nAvez-vous déjà des compétences en code (HTML/CSS, JavaScript) ou partez-vous de zéro ? Cela change radicalement la stratégie (VAE vs formation longue).",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 42.18,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 8.47,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 16,
+        "n_verified": 7,
+        "n_verified_strict": 4,
+        "n_verified_by_source": 3,
+        "n_with_disclaimer": 9,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "financement_etudes",
+        "formation"
+      ],
+      "granularities_top_k": [
+        "_competences_certif",
+        "_competences_certif",
+        "voie",
+        "_formation",
+        "dispositif",
+        "_competences_certif",
+        "_formation",
+        "_competences_certif"
+      ]
+    },
+    {
+      "suite": "financement_dedie",
+      "query_id": "financement_q02_bourse_crous_echelons",
+      "query_text": "Comment fonctionnent les échelons de la bourse CROUS ? Combien je peux toucher ?",
+      "answer_text": "**TL;DR**\n1. La bourse CROUS est calculée sur **8 échelons** (0 à 7) en fonction des revenus familiaux et de la distance entre domicile et lieu d’études.\n2. Montant 2024-2025 : **de 0€ (échelon 0bis) à 6 079€/an (échelon 7)** — versé en 10 mensualités.\n3. **Simule ton éligibilité** sur [mesdroitssociaux.gouv.fr](https://www.mesdroitssociaux.gouv.fr) avant de faire une demande.\n\n---\n\n### **Plan A — Bourse \"classique\" (échelons 1 à 7)**\n**Montants 2024-2025** (connaissance générale) :\n- **Échelon 0bis** : 0€ (seuil d’éligibilité non atteint)\n- **Échelon 1** : 1 084€/an → **Échelon 7** : 6 079€/an\n*Pour toi* : Si tes parents gagnent **moins de 35 000€/an** (pour un foyer de 2 enfants), tu peux prétendre à un échelon ≥1. La distance (déménagement ou non) augmente l’échelon.\n\n### **Plan B — Bourse échelon 0bis + aides complémentaires**\nMême si tu es **échelon 0bis** (0€ de bourse), tu peux cumuler :\n- **Aide à la mobilité** (200-1 000€/an si changement d’académie, source : CROUS)\n- **APL/ALS** (100-300€/mois selon logement, connaissance générale)\n*Pour toi* : Vérifie si tu es éligible à l’**aide à la mobilité Parcoursup** (500€ pour les néobacheliers changeant d’académie).\n\n### **Plan C — Situations spécifiques (alternance, reprise d’études, étranger)**\n- **Alternants** : Pas éligible à la bourse CROUS, mais **aide de 500€/an** pour les contrats <800€/mois (connaissance générale).\n- **Étudiants étrangers** : Éligible si **résident UE/EEE depuis +2 ans** ou titulaire d’un titre de séjour valide.\n- **Reprise d’études** : Pas de limite d’âge, mais revenus des **2 dernières années** pris en compte.\n\n---\n**⚠ Attention aux pièges**\n- **Délai** : Demande à faire **avant le 15 mai** pour la rentrée suivante (31 mai pour les redoublants).\n- **Changement de situation** : Un divorce ou chômage des parents en cours d’année ? **Fais une demande de révision** (formulaire sur [messervices.etudiant.gouv.fr](https://messervices.etudiant.gouv.fr)).\n- **Faux-ami** : La bourse n’est **pas automatique** même si tu l’as eue au lycée — les critères changent dans le supérieur.\n\n---\n**Question pour toi** :\nAs-tu déjà utilisé le **simulateur officiel** [mesdroitssociaux.gouv.fr](https://www.mesdroitssociaux.gouv.fr) ? Si oui, quel échelon estime-t-il pour toi ? *(Cela permet d’affiner les aides complémentaires.)*",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 26.57,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 6.25,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 11,
+        "n_verified": 8,
+        "n_verified_strict": 8,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 3,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "financement_etudes"
+      ],
+      "granularities_top_k": [
+        "dispositif",
+        "voie",
+        "dispositif",
+        "dispositif",
+        "dispositif",
+        "dispositif",
+        "dispositif",
+        "dispositif"
+      ]
+    },
+    {
+      "suite": "financement_dedie",
+      "query_id": "financement_q03_handicap_etudes_aides",
+      "query_text": "Mon fils a une RQTH et veut faire des études supérieures, quelles aides spécifiques existe-t-il ?",
+      "answer_text": "**TL;DR**\n1. Votre fils peut bénéficier d’un **accompagnement personnalisé** (temps supplémentaire, aménagement des examens, etc.) et d’aides financières (bourses, FIPHFP).\n2. Les **dispositifs clés** dépendent de son projet (université, école, alternance) et de la nature de son handicap.\n3. **Priorité** : contacter le **référent handicap** de son futur établissement *dès l’inscription* pour activer les mesures.\n\n---\n\n### **Plan A — Aides universelles (quel que soit le projet d’études)**\n- **Aménagements pédagogiques** : 1/3 temps supplémentaire aux examens, supports adaptés (braille, numérique), interprètes LSF si besoin. *À demander via un **PPS** (Projet Personnalisé de Scolarisation) ou un **PAI** (Projet d’Accueil Individualisé) en lien avec la **MDPH** (Maison Départementale des Personnes Handicapées).*\n- **Aides financières** :\n  - **Bourse sur critères sociaux** (majorée pour les étudiants en situation de handicap).\n  - **Allocation Adultes Handicapés (AAH)** si autonomie réduite (sous conditions de ressources).\n  - **Fonds pour l’Insertion des Personnes Handicapées (FIPHFP)** pour les frais liés au handicap (matériel, transport).\n*(connaissance générale, sources : [Service Public](https://www.service-public.fr/), [MDPH](https://www.mdph.fr/))*\n\n**Pour vous** : Ces aides sont **cumulables** et valables en université, école, ou alternance.\n\n---\n\n### **Plan B — Dispositifs spécifiques selon le type d’études**\n1. **À l’université** :\n   - **Référent handicap** dans chaque établissement : il organise les aménagements (salles accessibles, preneurs de notes, etc.).\n   - **Parcours aménagé** : étalement des études, unités d’enseignement (UE) adaptées.\n   - Exemple : **Licence Accès Santé (L.AS)** avec aménagements pour les troubles DYS.\n   *(connaissance générale)*\n\n2. **En école (ingénieur, commerce, etc.)** :\n   - Certaines écoles ont des **cellules handicap dédiées** (ex : **HEC**, **CentraleSupélec**).\n   - **Alternance adaptée** : contrats avec des entreprises partenaires (ex : **Cap Emploi** pour trouver un employeur inclusif).\n   *(connaissance générale)*\n\n3. **En alternance** :\n   - **Aide à l’embauche** pour l’entreprise (jusqu’à 4 000€/an via **Agefiph**).\n   - **Tuteur dédié** en entreprise si besoin.\n\n**Pour vous** : Les écoles privées sont **tenues légalement** d’appliquer ces dispositifs (loi de 2005), mais leur mise en œuvre varie. **Vérifiez leur charte handicap** avant inscription.\n\n---\n### **Plan C — Accompagnement humain et logistique**\n- **Accompagnant d’élèves en situation de handicap (AESH)** : si votre fils a besoin d’un soutien en cours (prise de notes, aide à la mobilité), cette aide est financée par l’**Éducation Nationale** (à demander via la MDPH).\n- **Logement** : **CROUS** propose des chambres adaptées (priorité aux étudiants RQTH).\n- **Transport** : **Carte Mobilité Inclusion** (gratuité ou réduction dans les transports en commun).\n*(connaissance générale)*\n\n**Pour vous** : Ces aides sont **peu connues** mais peuvent faire la différence. **Anticipez les démarches** (délais MDPH : 4-6 mois).\n\n---\n### **⚠ Attention aux pièges**\n- **Délais administratifs** : La MDPH et les référents handicap ont des **délais longs** (ex : 6 mois pour un PPS). **Démarrez les demandes dès maintenant.**\n- **Écoles non inclusives** : Certaines formations (ex : écoles d’art, prépas privées) ont **peu de moyens** pour le handicap. **Visitez les locaux** avant de choisir.\n- **Alternance** : Tous les employeurs ne sont pas sensibilisés. **Privilégiez les entreprises labellisées \"Handi-accueillantes\"** (liste sur [Agefiph](https://www.agefiph.fr/)).\n\n---\n**Question pour vous** :\nVotre fils a-t-il déjà un projet précis (métier, filière) ? Cela permettrait de cibler les **aides les plus adaptées** à son parcours (ex : aménagements en école d’ingé ≠ ceux en fac de droit).",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 43.89,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 1.58,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 3,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 2,
+        "n_hallucinated": 1,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "formation_insertion",
+        "metier"
+      ],
+      "granularities_top_k": [
+        "_metier",
+        "formation_france",
+        "formation_france",
+        "formation_france",
+        "formation_france",
+        "formation_france",
+        "formation_france",
+        "_metier"
+      ]
+    },
+    {
+      "suite": "financement_dedie",
+      "query_id": "financement_q04_ptp_reconversion_salarie",
+      "query_text": "Le projet de transition professionnelle PTP, c'est pour qui exactement ? Salaire maintenu pendant la formation ?",
+      "answer_text": "**TL;DR**\n1. Le **PTP (Projet de Transition Professionnelle)** est un dispositif pour **salariés en CDI** (ou CDD sous conditions) qui veulent se reconvertir **sans démissionner**, avec **salaire maintenu** (jusqu’à 100% du SMIC ou 80% du salaire antérieur selon cas).\n2. **Pas pour les indépendants, chômeurs ou étudiants** : alternatives existantes (ex : CPF, Pro-A, VAE).\n3. **Étapes clés** : accord de l’OPCO → formation certifiante (max 1 an) → retour en entreprise ou nouveau métier.\n\n---\n\n### **Plan A — PTP : pour qui et comment ?** *(connaissance générale)*\n**Public éligible** :\n- **Salariés en CDI** (ancienneté ≥ 24 mois, dont 12 mois dans l’entreprise actuelle).\n- **CDD** : sous conditions strictes (ex : 24 mois de CDD cumulés sur 5 ans, dont 4 mois dans l’entreprise actuelle).\n- **Secteurs prioritaires** : métiers en tension (ex : santé, numérique, transition écologique) souvent favorisés par les OPCO.\n\n**Salaire pendant la formation** :\n- **Maintenu à 100% du SMIC** (soit ~1 766€ brut/mois en 2024) **si formation ≤ 6 mois**.\n- **80% du salaire antérieur** (plafonné) si formation > 6 mois.\n- **Financement** : pris en charge par l’**OPCO** (ex : Atlas, AKTO) via le **CPF de transition**.\n\n**Démarches** :\n1. **Identifier une formation certifiante** (RNCP, CQP) liée à un métier porteur.\n2. **Obtenir l’accord de l’OPCO** (dossier à monter avec employeur + organisme de formation).\n3. **Signer un avenant au contrat de travail** (suspension pour formation).\n\n*Exemple concret* :\n📍 **Formateur professionnel d’adultes** (RNCP bac+2, Ministère du Travail) — éligible PTP si projet validé par l’OPCO.\n*Pour toi : idéal si tu es salarié(e) en CDI et veux basculer vers la formation/insertion.*\n\n---\n\n### **Plan B — Alternatives si tu n’es pas éligible au PTP**\n1. **Pro-A (Promotion par Alternance)** :\n   - Pour : **demandeurs d’emploi** ou **salariés en CDD/intérim** (pas besoin d’ancienneté).\n   - **Salaire** : % du SMIC selon âge (ex : 65% pour < 26 ans).\n   - **Formation** : certifications RNCP (ex : **Gestionnaire de paie**, bac+2).\n   - *Source : [France Compétences](https://www.francecompetences.fr/)*\n\n2. **VAE (Validation des Acquis de l’Expérience)** :\n   - Pour : **toute personne avec ≥ 1 an d’expérience** (même bénévole).\n   - **Coût** : gratuit si éligible au CPF, sinon ~1 000-3 000€ (aides possibles via Région/Pôle Emploi).\n   - *Exemple* : Obtenir le titre **Responsable de petite structure** (RNCP bac+2) via VAE.\n\n3. **CPF (Compte Personnel de Formation)** :\n   - Pour : **tous les actifs** (salariés, indépendants, chômeurs).\n   - **Budget** : ~500-800€/an cumulables (jusqu’à 800€ pour les non-qualifiés).\n   - *Attention* : ne couvre pas toujours 100% du coût (compléter avec OPCO ou Région).\n\n---\n### **Plan C — Cas particuliers et pièges à éviter**\n- **Indépendants/auto-entrepreneurs** :\n  → **Fonds d’assurance formation (FAF)** selon secteur (ex : FAFCEA pour les commerçants).\n  → **Pas de maintien de salaire** : prévoir épargne ou activité réduite.\n\n- **Chômeurs** :\n  → **POEI (Préparation Opérationnelle à l’Emploi Individuelle)** via Pôle Emploi : formation + allocation maintenue.\n  → **AIF (Aide Individuelle à la Formation)** : jusqu’à 1 000€ pour une certification.\n\n⚠ **Pièges fréquents** :\n- **Formations non éligibles** : vérifier la liste des certifications financées par ton OPCO ([exemple pour Atlas](https://www.opco-atlas.fr/)).\n- **Délais** : compter **3 à 6 mois** entre le dépôt du dossier et le début de la formation.\n\n---\n**Question pour toi** :\nEs-tu actuellement **salarié(e) en CDI** (→ PTP possible), **en recherche d’emploi** (→ Pro-A/POEI), ou **indépendant(e)** (→ FAF/VAE) ? Cela change radicalement les options.",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 41.05,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 12.22,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 0,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 0,
+        "n_hallucinated": 0,
+        "error": "JSON parse error: Expecting ',' delimiter: line 200 column 4 (char 8635). Raw: {\n  \"stats_extracted\": [\n    {\n      \"stat_text\": \"100% du SMIC\",\n      \"stat_value\": 100,\n      \"stat_unit\": \"%\",\n      \"context_in_response\": \"Salaire pendant la formation : maintenu à 100% du SMIC "
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "financement_etudes",
+        "formation"
+      ],
+      "granularities_top_k": [
+        "dispositif",
+        "voie",
+        "_formation",
+        "_formation",
+        "_formation",
+        "_formation",
+        "_formation",
+        "dispositif"
+      ]
+    },
+    {
+      "suite": "voie_pre_bac_dedie",
+      "query_id": "voie_pre_bac_q01_bac_pro_industrie_liste",
+      "query_text": "Quels sont tous les bac pro dans le domaine industriel ? Mon fils en 3ème veut faire de la mécanique.",
+      "answer_text": "**TL;DR**\n1. Les **bacs pros industriels** couvrent la mécanique, l’électrotechnique, la maintenance, et la production. Ils se préparent en 3 ans après la 3ème, avec 22 semaines de stage en entreprise.\n2. Pour la **mécanique pure**, 3 options principales : **Mécanique automobile**, **Technicien d’usinage**, ou **Maintenance des équipements industriels**.\n3. **Clé pour choisir** : stage en 3ème pour tester le terrain, puis vérifier les débouchés locaux (ex : garages, usines, aéronautique).\n\n---\n\n### **Plan A — Bac Pro Mécanique automobile (le plus polyvalent)**\n📍 **Bac Pro Maintenance des véhicules (option voitures particulières ou poids lourds)** — bac+3 public/privé sous contrat, **taux d’insertion ~70% à 6 mois** (connaissance générale), 50% de la formation en atelier.\n*Pour toi : idéal si ton fils aime les moteurs, les diagnostics, et veut travailler en garage, concession, ou chez un constructeur. Alternance possible dès la 1ère.*\n\n### **Plan B — Bac Pro Technicien d’usinage (pour l’industrie de précision)**\n📍 **Bac Pro Technicien en réalisation de produits mécaniques (usinage)** — bac+3 public, **débouchés dans l’aéronautique, le médical, ou l’énergie** (connaissance générale).\n*Pour toi : parfait s’il est précis, aime les machines-outils (tours, fraiseuses) et vise des usines high-tech. Salaire médian embauche : ~1 800€ brut (connaissance générale).*\n\n### **Plan C — Bac Pro Maintenance des équipements industriels (pour la polyvalence)**\n📍 **Bac Pro Maintenance des équipements industriels (MEI)** — bac+3 public, **taux d’emploi élevé dans les zones industrielles** (ex : Nord, Rhône-Alpes, Pays de la Loire).\n*Pour toi : si ton fils hésite entre mécanique, électricité et pneumatique. Débouchés dans les usines (agroalimentaire, chimie, robotique).*\n\n---\n**Autres bacs pros industriels (connaissance générale)** :\n- **Électrotechnique** (pour les automatismes et l’électricité industrielle).\n- **Pilote de ligne de production** (gestion des machines en usine).\n- **Aéronautique** (option systèmes ou structure, si proximité avec un aéroport).\n- **Fonderie** ou **Chaudronnerie industrielle** (métiers plus niche mais très recherchés).\n\n---\n**⚠ Attention aux pièges**\n- **Sélectivité cachée** : Certaines sections (ex : aéronautique) demandent des notes correctes en maths/physique malgré l’image \"pro\".\n- **Débouchés locaux** : Vérifie les bassins d’emploi près de chez vous (ex : peu de mécaniciens automobiles en zone rurale sans garages).\n- **Évolution** : Un bac pro seul limite les promotions. Prévoir un BTS (ex : BTS Mécanique) ou une mention complémentaire (MC) pour monter en grade.\n\n---\n**Question pour toi** :\nTon fils a-t-il déjà fait un stage en mécanique (garage, usine) ? Si non, **priorité absolue** : en organiser un avant de choisir. L’immersion concrète évite 80% des désillusions (connaissance générale). Sinon, quel environnement lui plaît le plus : ateliers bruyants, usines high-tech, ou travail en extérieur (ex : engins de chantier) ?",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 46.9,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 2.98,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 5,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 3,
+        "n_hallucinated": 2,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "competences_certif",
+        "metier_prospective",
+        "voie_pre_bac"
+      ],
+      "granularities_top_k": [
+        "_metier_prospective",
+        "_metier_prospective",
+        "_metier_prospective",
+        "fap_region",
+        "fap_region",
+        "fap_region",
+        "bac_pro_domaine",
+        "_competences_certif"
+      ]
+    },
+    {
+      "suite": "voie_pre_bac_dedie",
+      "query_id": "voie_pre_bac_q02_cap_petite_enfance_apres",
+      "query_text": "Liste des CAP en petite enfance et social. Quelles débouchés après ?",
+      "answer_text": "**TL;DR**\n1. Les CAP en petite enfance et social ouvrent à des métiers **concrets et rapides** (1-2 ans d’études), mais avec des salaires modestes (~1 500-1 800€ brut/mois en début de carrière — connaissance générale).\n2. **Débouchés principaux** : crèches, écoles maternelles, Ehpad, services d’aide à domicile, ou concours de la fonction publique territoriale (catégorie C).\n3. **Stratégie clé** : commencer par un CAP pour entrer sur le marché du travail, puis compléter par un BP, un DE ou une VAE pour évoluer.\n\n---\n\n### **Plan A — CAP Petite Enfance (AEPE) : le plus polyvalent**\n📍 **CAP Accompagnant Éducatif Petite Enfance (AEPE)** (formations en lycées pro, CFA, GRETA dans toute la France)\n*Pour toi :* **Idéal pour travailler en crèche, école maternelle ou garde d’enfants à domicile** (assistante maternelle agréée). **Accès sans diplôme** (sous conditions) ou après une 3ᵉ. **Alternance possible** (rémunération + expérience).\n- **Débouchés** :\n  - Auxiliaire de puériculture (après concours interne ou VAE).\n  - ATSEM (sur concours externe après 1 an d’expérience).\n  - Assistante maternelle (après agrément départemental).\n- **Évolution** : Compléter par un **BP Educateur de Jeunes Enfants (EJE)** ou un **DE Auxiliaire de Puériculture** (en 1 an après le CAP).\n\n---\n\n### **Plan B — CAP Assistant Technique en Milieux Familial et Collectif (ATMFC) : social + logistique**\n📍 **CAP ATMFC** (formations en lycées pro, CFA — ex : Lyon, Bordeaux, Lille)\n*Pour toi :* **Pour allier aide aux personnes (enfants, personnes âgées) et gestion du quotidien** (repas, entretien des locaux). **Moins connu = moins de candidats** (meilleures chances d’intégration).\n- **Débouchés** :\n  - Agent des services hospitaliers (concours catégorie C).\n  - Aide à domicile pour personnes dépendantes (via des associations comme ADMR).\n  - Employé en Ehpad ou foyer logement.\n- **Évolution** : Poursuite vers un **BP Assistant de Responsable de Secteur** ou un **DE AES (Accompagnant Éducatif et Social)**.\n\n---\n\n### **Plan C — Autres CAP sociaux : niches avec moins de concurrence**\n📍 **CAP Agent de Prévention et de Médiation (APM)** (rare, quelques CFA — ex : Paris, Marseille)\n*Pour toi :* **Si tu aimes le contact social dans un cadre éducatif ou sécuritaire** (médiation en collège, prévention dans les quartiers). **Peu de places = cibler les CFA spécialisés**.\n- **Débouchés** :\n  - Médiateur social (après expérience).\n  - Agent de prévention dans les transports ou les mairies.\n- **Évolution** : Formation complémentaire en **BPJEPS** (animation) ou **DE Éducateur Spécialisé** (avec validation des acquis).\n\n📍 **CAP Services en Brasserie-Café (SBC)** (option \"service en salle\" avec module \"accueil clients fragiles\")\n*Pour toi :* **Si tu veux travailler dans la restauration avec une dimension sociale** (cafés associatifs, cantines scolaires). **Formation courte (1 an) et très demandée**.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Salaire** : Les métiers du CAP commencent souvent au **SMIC ou légèrement au-dessus** (sauf fonction publique territoriale après concours).\n- **Concours publics** : Les postes stables (ATSEM, auxiliaire de puériculture en hôpital) exigent de **passer des concours** (préparation nécessaire en plus du CAP).\n- **Évolution bloquée sans +** : Sans BP, DE ou VAE, les promotions sont limitées. **Prévoir un plan de formation continue** dès l’entrée dans le métier.\n\n---\n**Question pour toi :**\nQu’est-ce qui t’attire le plus : **le contact avec les enfants** (CAP AEPE), **l’aide aux personnes âgées/dépendantes** (CAP ATMFC), ou **un métier hybride** (ex : restauration + social) ? Cela peut affiner le choix entre les options.",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 34.82,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 1.38,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 2,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 2,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "formation_insertion",
+        "metier_prospective"
+      ],
+      "granularities_top_k": [
+        "formation_france",
+        "formation_france",
+        "formation_france",
+        "formation_france",
+        "formation_france",
+        "formation_france",
+        "_metier_prospective",
+        "_metier_prospective"
+      ]
+    },
+    {
+      "suite": "voie_pre_bac_dedie",
+      "query_id": "voie_pre_bac_q03_bac_pro_cyber_existe",
+      "query_text": "Est-ce qu'il existe un bac pro en cybersécurité ? Programme et débouchés ?",
+      "answer_text": "**TL;DR**\n1. **Oui**, il existe un **bac pro cybersécurité** (officiellement \"Cybersécurité, Informatique et Réseaux, Électronique\").\n2. **Programme** : sécurité des systèmes, administration réseau, cryptographie, droit du numérique, et stages en entreprise.\n3. **Débouchés** : technicien/ne en cybersécurité, administrateur/trice réseau, ou poursuite d’études en BTS/BUT.\n\n---\n\n### **Plan A — Bac Pro Cybersécurité (niveau bac, voie pro)**\n📍 **[Bac Pro Cybersécurité, Informatique et Réseaux, Électronique](https://www.onisep.fr/http/redirection/formation/slug/FOR.8727)** — Formation publique (lycée pro), gratuite, accessible après la 3ᵉ.\n*Pour toi* : Idéal si tu veux une **formation concrète avec stages** (22 semaines) et un diplôme reconnu par l’État pour entrer rapidement sur le marché du travail.\n\n**Programme clé** (source ONISEP) :\n- Sécurité des systèmes et réseaux (pare-feu, détection d’intrusions).\n- Administration des infrastructures (Windows/Linux).\n- Bases de la cryptographie et sensibilisation aux cybermenaces.\n- Droit et éthique du numérique.\n- **50% du temps en entreprise** (PFMP : périodes de formation en milieu professionnel).\n\n**Débouchés directs** :\n- Technicien/ne en cybersécurité (sociétés de services, PME).\n- Administrateur/trice réseau ou support informatique.\n- Poursuite d’études possible en **BTS SIO** (option SISR) ou **BUT Réseaux et Télécoms** (parcours cybersécurité).\n\n---\n\n### **Plan B — Poursuites d’études après le bac pro (niveau bac+2/bac+3)**\nSi tu veux **monter en compétences** après le bac pro :\n1. **BTS SIO option SISR** (sécurité et réseaux) :\n   - **2 ans** après le bac pro, **gratuit en public**.\n   - Débouchés : administrateur sécurité, technicien supérieur en cyber.\n   - *Exemple* : [BTS SIO](https://www.onisep.fr/formation/bts-services-informatiques-aux-organisations-sio/option-solutions-d-infrastructure-systemes-et-reseaux-sisr) (lien ONISEP générique — vérifie les établissements près de chez toi).\n\n2. **BUT Réseaux et Télécommunications (parcours cybersécurité)** :\n   - **3 ans** après le bac, **diplôme grade licence** (reconnu bac+3).\n   - **Sélectif** (dossier + entretien), mais accessible avec un bon bac pro.\n   - *Exemple* : [BUT R&T parcours cybersécurité](https://www.onisep.fr/http/redirection/formation/slug/FOR.8012) (IUT de **Cachan**, **Lannion**, ou **Toulouse**).\n\n---\n### **Plan C — Alternatives si le bac pro n’est pas près de chez toi**\n- **Certifications courtes** (connaissance générale) :\n  - **TAE (Titre d’Agent en Électronique)** avec option cybersécurité (1 an, AFPA).\n  - **Certifications CompTIA Security+** ou **Cisco CyberOps** (en autoformation ou via GRETA).\n  - *Pour toi* : Solution si tu veux **une entrée rapide** (6-12 mois) sans diplôme long.\n\n- **Écoles privées post-bac** (attention au coût) :\n  - Ex : **Bachelor Développeur Informatique (spé cybersécurité)** — [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.12104).\n  - *Pour toi* : Seulement si tu vises un **cursus long** (bac+3/5) et peux financer 5k-8k€/an.\n\n---\n### **⚠ Attention aux pièges**\n- **Géographie** : Le bac pro cybersécurité n’est pas proposé dans **tous les lycées pros**. Vérifie sur [l’ONISEP](https://www.onisep.fr) ou via ton **CIO** (Centre d’Information et d’Orientation) local.\n- **Marketing** : Méfie-toi des formations privées promettant un \"bac pro cybersécurité en 1 an\" — le diplôme **officiel** se prépare en **3 ans** après la 3ᵉ.\n- **Débouchés** : Avec *uniquement* le bac pro, les postes seront **techniques** (niveau technicien). Pour viser **ingénieur RSSI**, il faudra poursuivre jusqu’à bac+5 (connaissance générale).\n\n---\n**Question pour toi** :\nPréfères-tu une **formation courte et pro** (bac pro + travail immédiat), ou un **parcours plus long** (bac+3/5) pour accéder à des postes d’ingénieur ? Cela peut guider ton choix entre Plan A, B ou C.",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 50.63,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 10.79,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 13,
+        "n_verified": 12,
+        "n_verified_strict": 12,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 1,
+        "n_hallucinated": 0,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "formation",
+        "metier_prospective",
+        "voie_pre_bac"
+      ],
+      "granularities_top_k": [
+        "_formation",
+        "bac_pro_domaine",
+        "_formation",
+        "_formation",
+        "_metier_prospective",
+        "_metier_prospective",
+        "_formation",
+        "_formation"
+      ]
+    },
+    {
+      "suite": "multi_axes",
+      "query_id": "multi_q01_decrocheur_reconversion_aide",
+      "query_text": "J'ai 22 ans, j'ai abandonné la fac il y a 1 an, je n'ai pas de diplôme. Quelles aides pour reprendre une formation et quels débouchés ?",
+      "answer_text": "**TL;DR**\n1. Sans diplôme et après un abandon d’études, des solutions existent : formations gratuites et rémunérées (via Pôle Emploi ou la Région), ou diplômes en 1 an pour rebondir.\n2. Les débouchés dépendent du secteur choisi (ex : numérique, santé, social) — certains métiers recrutent sans diplôme initial.\n3. **Priorité** : contacte un conseiller Pôle Emploi ou une Mission Locale *dès cette semaine* pour activer tes droits.\n\n---\n\n### **Plan A — Formation gratuite + rémunérée (dès maintenant)**\n📍 **Formations financées par Pôle Emploi ou la Région** (partout en France) — bac+2 en 6 à 12 mois, **100% gratuites**, souvent rémunérées (ARE ou rémunération région).\n*Pour toi : idéal si tu veux un diplôme rapide et un revenu. Exemples :*\n- **Titre Pro Développeur Web** (AFPA, Simplon) → métiers en tension (salaire médian embauche : ~2000€ brut, source : Céreq).\n- **Certificat RNCP Formateur professionnel d’adultes** (ex : GRETA) → débouchés dans l’insertion/formation (source : Fiche 4).\n*(connaissance générale : ces formations sont accessibles sans diplôme via des tests de motivation.)*\n\n**Comment faire ?**\n1. Inscris-toi sur [pole-emploi.fr](https://www.pole-emploi.fr) (même sans indemnités).\n2. Prends RDV avec un conseiller pour une **POEI** (Préparation Opérationnelle à l’Emploi Individuelle) ou un **CPF de transition**.\n3. Cible les **titres RNCP** (reconnus par l’État) via [Mon Compte Formation](https://www.moncompteformation.gouv.fr).\n\n---\n\n### **Plan B — Diplôme en 1 an (BTS, BP, etc.)**\n📍 **BTS en 1 an (accéléré)** ou **Brevet Professionnel** (lycées publics/privés) — bac+2, **gratuit en public**, sélectivité modérée (dossier + entretien).\n*Pour toi : si tu veux un diplôme \"classique\" sans repartir de zéro. Exemples :*\n- **BTS SIO** (informatique) → débouchés en support IT (salaire : ~1800-2200€ brut, estimation marché).\n- **BP Coiffure/Esthétique** → installation possible en libéral après 2 ans d’expérience.\n*(connaissance générale : certaines académies proposent des BTS en 1 an pour les décrocheurs — vérifie auprès des GRETA.)*\n\n**Comment faire ?**\n- Contacte le **CIO** (Centre d’Information et d’Orientation) de ta région pour les formations accélérées.\n- Postule via **Parcoursup** (rubrique \"Formation continue\") ou directement auprès des lycées.\n\n---\n\n### **Plan C — Alternance sans diplôme (immersion pro + salaire)**\n📍 **Contrats d’apprentissage ou de professionnalisation** — **salaire** (55-100% du SMIC selon âge), **pas de frais de formation**, débouchés concrets.\n*Pour toi : si tu préfères apprendre en travaillant. Secteurs porteurs :*\n- **BTP** (CAP Maçonnerie, Électricien) → pénurie de main-d’œuvre = embauche garantie (salaire : ~1600-2000€ brut en début de carrière).\n- **Logistique/Transport** (CACES, Titre Pro Conducteur Routier) → CDI fréquents après formation.\n*(connaissance générale : les entreprises recrutent des non-diplômés en alternance via les CFA — Centre de Formation d’Apprentis.)*\n\n**Comment faire ?**\n1. Cherche des offres sur [la Bonne Alternance](https://labonnealternance.pole-emploi.fr).\n2. Postule avec un CV même basique + lettre de motivation axée sur ta **volonté de rebondir**.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Écoles privées payantes** : Méfie-toi des formations à **plus de 3000€/an** sans garantie de diplôme reconnu (vérifie toujours le **RNCP** sur [France Compétences](https://www.francecompetences.fr)).\n- **\"Diplômes\" non reconnus** : Certains certificats (ex : \"coaching\", \"développement personnel\") n’ont **aucune valeur officielle** — privilégie les **titres RNCP** ou diplômes d’État.\n- **Délais** : Les formations gratuites financées par Pôle Emploi ont des **places limitées** — agis avant juin pour une rentrée en septembre.\n\n---\n**Question pour toi :**\nQu’est-ce qui te motive le plus aujourd’hui : **un métier précis** (ex : informatique, santé), **un diplôme rapide**, ou **un salaire immédiat** (via l’alternance) ? Cela déterminera la voie la plus adaptée.\n\n---\n👤 **Pour aller plus loin**, un conseiller en **Mission Locale** (si tu as moins de 26 ans) ou **Pôle Emploi** peut t’aider à monter un dossier solide. Leurs services sont **gratuits** et personnalisés.",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 52.97,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 6.78,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 7,
+        "n_verified": 4,
+        "n_verified_strict": 4,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 2,
+        "n_hallucinated": 1,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "financement_etudes",
+        "formation",
+        "metier_prospective"
+      ],
+      "granularities_top_k": [
+        "voie",
+        "_metier_prospective",
+        "_metier_prospective",
+        "_formation",
+        "_metier_prospective",
+        "_metier_prospective",
+        "_metier_prospective",
+        "_metier_prospective"
+      ]
+    },
+    {
+      "suite": "multi_axes",
+      "query_id": "multi_q02_bac_pro_drom_metropole",
+      "query_text": "Je suis en bac pro maintenance en Guyane. Si je veux continuer en BTS en métropole, quelles aides à la mobilité ?",
+      "answer_text": "**TL;DR**\n1. **Oui, des aides existent** pour financer ton BTS en métropole depuis la Guyane (bourses, logement, transport).\n2. **Priorité au CROUS** (bourse sur critères sociaux + logement) + **Erasmus+** si stage à l’étranger.\n3. **Démarches urgentes** : contacte ton lycée (référent mobilité) et le CROUS de Guyane **dès maintenant** (délais serrés).\n\n---\n\n### **Plan A — Aides financières de base (obligatoire)**\n📍 **Bourse CROUS sur critères sociaux** (national) — jusqu’à **5 500€/an** (échelon 0bis à 7), logement en résidence CROUS (~200-400€/mois).\n*Pour toi : à demander **immédiatement** via [Dossier Social Étudiant (DSE)](https://www.messervices.etudiant.gouv.fr/) — même en BTS.*\n**→** *Exemple : un étudiant en BTS Maintenance à Lyon avec bourse échelon 5 touche ~300€/mois + logement CROUS.*\n\n📍 **Aide à la mobilité Parcoursup** (régionale) — **500€ à 2 000€** selon académies (ex : Île-de-France, Occitanie).\n*Pour toi : vérifie si ta future académie d’accueil propose cette aide (liste [ici](https://www.letudiant.fr/etudes/annuaire/les-aides-regionales-pour-les-etudiants.html)).*\n\n---\n\n### **Plan B — Aides spécifiques Guyane → Métropole**\n📍 **Bourse \"Mobilité Outremers\"** (Collectivité Territoriale de Guyane) — **jusqu’à 1 500€** pour frais de transport + installation.\n*Pour toi : contacte la [Direction de la Jeunesse et des Sports de Guyane](https://www.guyane.fr/) — dossier à déposer **avant juin**.*\n\n📍 **Erasmus+ (mobilité européenne)** — si ton BTS inclut un stage à l’étranger (ex : Allemagne, Espagne), **400-600€/mois** pendant 2-12 mois.\n*Pour toi : demande à ton futur établissement s’il a un partenariat Erasmus. Ex : [BTS Maintenance des Véhicules à Lyon](https://www.onisep.fr/http/redirection/formation/slug/FOR.12372) propose des stages Erasmus.*\n\n---\n\n### **Plan C — Solutions complémentaires (si besoin)**\n- **Prêt garanti par l’État** (0% d’intérêts) : jusqu’à **20 000€** remboursables après le diplôme ([site officiel](https://www.etudiant.gouv.fr/fr/pret-etudiant-garanti-par-l-etat-659)).\n- **Jobs étudiants** : les BTS en alternance (contrat pro/apprentissage) sont **rémunérés** (~600-800€/mois en 1re année).\n- **Associations** : la [Fondation Studely](https://www.studely.fr/) attribue des bourses pour les filières techniques.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Délais** : les demandes CROUS et régionales ferment souvent **fin mai**. Agis **maintenant**.\n- **Logement** : en métropole, les loyers sont **2 à 3 fois plus chers** qu’en Guyane (ex : 500€/mois pour un studio à Toulouse). Prévoyez un budget **logement + transport**.\n- **Faux amis** : certaines \"aides\" privées (ex : banques) sont des **prêts déguisés** avec intérêts. Privilégie toujours les dispositifs publics (CROUS, Région, Europe).\n\n---\n**Question pour toi :**\nAs-tu déjà une idée de la **ville ou de la région** où tu veux étudier ? Certaines académies (ex : Île-de-France) sont plus chères mais offrent plus d’aides, tandis que des villes comme **Toulouse, Lyon ou Nantes** ont un bon rapport coût/opportunités pour les BTS industriels.",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 54.31,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 11.19,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 17,
+        "n_verified": 8,
+        "n_verified_strict": 8,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 0,
+        "n_hallucinated": 9,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "crous",
+        "financement_etudes",
+        "formation"
+      ],
+      "granularities_top_k": [
+        "voie",
+        "dispositif",
+        "_crous",
+        "_formation",
+        "dispositif",
+        "_crous",
+        "_crous",
+        "_formation"
+      ]
+    },
+    {
+      "suite": "multi_axes",
+      "query_id": "multi_q03_metiers_2030_bac_pro",
+      "query_text": "Quels métiers vont recruter d'ici 2030 et qui sont accessibles avec un bac pro ?",
+      "answer_text": "**TL;DR**\n1. Un bac pro ouvre à des métiers techniques en tension **dès 2024-2030**, surtout dans les secteurs qui peinent à recruter (BTP, industrie, santé, numérique, transition énergétique).\n2. **Salaire médian embauche** : entre 1 600 € et 2 200 € brut/mois selon le secteur (connaissance générale, fourchette Céreq pour bac pro).\n3. **Stratégie clé** : vise les **certifications complémentaires** (CQP, titres RNCP) ou l’alternance pour monter en responsabilité.\n\n---\n\n### **Plan A — Métiers en tension immédiate (2024-2027) avec un bac pro**\nCes métiers recrutent **dès maintenant** et devraient rester porteurs jusqu’en 2030, avec des débouchés stables et des formations courtes (6 mois à 2 ans post-bac pro) :\n\n📍 **Technicien(ne) de maintenance industrielle** (usines, agroalimentaire, énergie)\n- **Pourquoi ?** 50 000 postes à pourvoir d’ici 2030 (source : France Stratégie 2023, *Les métiers en 2030*).\n- **Accès** : Bac pro MELEC, TISE, ou Maintenance des Équipements Industriels (MEI) + **CQP Maintenance** (formation en 6-12 mois).\n- **Salaire** : 1 800 €–2 300 € brut/mois (avec astreintes).\n- **Atout** : Alternance possible en 1 an pour un **BP (Brevet Professionnel)** ou un **titre RNCP niveau 4**.\n\n📍 **Électricien(ne) du bâtiment / domotique** (transition énergétique, rénovation)\n- **Pourquoi ?** 30 000 recrutements/an prévus (source : FFB, 2023).\n- **Accès** : Bac pro MELEC + **mention complémentaire (MC) en domotique** (1 an) ou **BP Électricien**.\n- **Salaire** : 1 700 €–2 200 € brut/mois (indépendant : jusqu’à 3 500 €).\n- **Atout** : **Certification RGE** (Reconnu Garant de l’Environnement) = accès aux chantiers subventionnés.\n\n📍 **Aide-soignant(e) / Auxiliaire de puériculture** (santé, Ehpad, crèches)\n- **Pourquoi ?** 200 000 postes vacants en 2023 (source : DREES), pénurie durable.\n- **Accès** : Bac pro ASSP (Accompagnement, Soins et Services à la Personne) + **formation AS en 10-18 mois** (financée par la région ou Pôle Emploi).\n- **Salaire** : 1 600 €–1 900 € brut/mois (majorations nuit/week-end).\n- **Atout** : **Évolutions possibles** vers infirmier(ère) via **passerelle VAP** (si 3 ans d’expérience).\n\n---\n### **Plan B — Métiers émergents (2027-2030) avec une spécialisation**\nCes métiers vont se développer, mais nécessitent **une formation complémentaire** (1 à 3 ans) après le bac pro :\n\n📍 **Technicien(ne) en énergies renouvelables** (solaire, éolien, hydrogène)\n- **Pourquoi ?** +40 % d’emplois d’ici 2030 (source : ADEME).\n- **Accès** : Bac pro MELEC ou TISE + **BTS FED (Fluides, Énergies, Domotique)** ou **titre RNCP niveau 5** (ex : \"Technicien en Énergies Renouvelables\" chez AFPA).\n- **Salaire** : 2 000 €–2 500 € brut/mois.\n- **Exemple de formation** : [Titre RNCP Technicien EnR (AFPA)](https://www.afpa.fr) (1 an en alternance).\n\n📍 **Agent de cybersécurité opérationnelle** (protection des PME, collectivités)\n- **Pourquoi ?** 37 000 emplois non pourvus en cyber en 2023 (source : ANSSI).\n- **Accès** : Bac pro SN (Systèmes Numériques) + **certification SecNum Académie** (gratuite) + **formation courte** (ex : \"Technicien en Cybersécurité\" chez Simplon, 6 mois).\n- **Salaire** : 1 900 €–2 400 € brut/mois.\n- **Atout** : **Pénurie = embauche rapide** même sans diplôme long.\n\n📍 **Conducteur(trice) de travaux BTP** (chantiers, gestion d’équipe)\n- **Pourquoi ?** 80 % des entreprises du BTP recrutent (source : FFB).\n- **Accès** : Bac pro Technicien du Bâtiment + **BP Conducteur de Travaux** (2 ans en alternance).\n- **Salaire** : 2 200 €–2 800 € brut/mois (avec primes).\n- **Évolution** : Possible vers **chef de chantier** (3-5 ans d’expérience).\n\n---\n### **Plan C — Passerelles pour monter en qualification (si tu vises plus haut)**\nSi tu veux **évoluer vers des postes mieux payés** (3 000 €+), voici des chemins réalistes **sans reprendre des études longues** :\n\n1. **Alternance après bac pro** :\n   - Exemple : **BTS** (2 ans) en **Maintenance des Systèmes**, **Électrotechnique**, ou **Gestion des Entreprises** (pour créer ton entreprise).\n   - **Financement** : 100 % pris en charge par l’employeur + salaire (600 €–1 200 €/mois selon âge).\n\n2. **Certifications professionnelles** :\n   - **CQP** (Certificat de Qualification Paritaire) ou **titres RNCP niveau 5** (ex : \"Responsable de Chantier\" en 1 an).\n   - **Où ?** AFPA, GRETA, ou branches professionnelles (ex : **CQP Technicien de Réseau Électrique** chez Enedis).\n\n3. **Création d’entreprise** :\n   - Métiers porteurs : **électricien indépendant**, **artisan du bâtiment**, **services à la personne**.\n   - **Aides** : ACRE (exonération charges 1ère année), NACRE (accompagnement).\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées coûteuses** : Méfie-toi des formations post-bac pro à **plus de 5 000 €/an** (ex : certaines écoles \"spécialisées\" en numérique). Privilégie les **CFA publics** ou les organismes agréés (AFPA, GRETA).\n- **Faux \"diplômes\"** : Vérifie que la formation est **enregistrée au RNCP** (site [France Compétences](https://www.francecompetences.fr)).\n- **Secteurs saturés** : Évite les métiers **sans tension** (ex : vente pure, accueil standard) sauf si tu as un réseau solide.\n\n---\n**Question pour toi** :\nQu’est-ce qui compte le plus pour toi dans ton futur métier ?\n- **Stabilité** (CDI, secteur qui recrute) → Plan A (maintenance, santé).\n- **Salaire élevé à terme** (avec effort de formation) → Plan B (énergies, cyber).\n- **Indépendance** (créer ton entreprise) → Plan C (artisanat, BTP).\n\n*(Sources : France Stratégie 2023, DREES, ADEME, ANSSI — données macro. Pour un projet précis, consulte le [CIO](https://www.onisep.fr) ou un conseiller Pôle Emploi.)*",
+      "answer_text_pre_critic": null,
+      "elapsed_pipeline_s": 53.35,
+      "elapsed_critic_loop_s": 0.0,
+      "elapsed_fact_check_post_hoc_s": 5.37,
+      "critic_n_modifications": 0,
+      "critic_summary": null,
+      "fact_check_summary": {
+        "n_stats_total": 13,
+        "n_verified": 0,
+        "n_verified_strict": 0,
+        "n_verified_by_source": 0,
+        "n_with_disclaimer": 7,
+        "n_hallucinated": 6,
+        "error": null
+      },
+      "fact_check_error": null,
+      "n_sources_aggregated": 8,
+      "domains_top_k": [
+        "formation_insertion",
+        "metier_prospective"
+      ],
+      "granularities_top_k": [
+        "_metier_prospective",
+        "_metier_prospective",
+        "_metier_prospective",
+        "fap_region",
+        "_metier_prospective",
+        "_metier_prospective",
+        "formation_france",
+        "formation_france"
+      ]
+    }
+  ]
+}

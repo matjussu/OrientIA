@@ -1,0 +1,37 @@
+{
+  "suite": "financement_dedie",
+  "query_id": "financement_q03_handicap_etudes_aides",
+  "query_text": "Mon fils a une RQTH et veut faire des études supérieures, quelles aides spécifiques existe-t-il ?",
+  "answer_text": "**TL;DR**\n1. Votre fils peut bénéficier d’un **accompagnement personnalisé** (temps supplémentaire, aménagement des examens, etc.) et d’aides financières (bourses, FIPHFP).\n2. Les **dispositifs clés** dépendent de son projet (université, école, alternance) et de la nature de son handicap.\n3. **Priorité** : contacter le **référent handicap** de son futur établissement *dès l’inscription* pour activer les mesures.\n\n---\n\n### **Plan A — Aides universelles (quel que soit le projet d’études)**\n- **Aménagements pédagogiques** : 1/3 temps supplémentaire aux examens, supports adaptés (braille, numérique), interprètes LSF si besoin. *À demander via un **PPS** (Projet Personnalisé de Scolarisation) ou un **PAI** (Projet d’Accueil Individualisé) en lien avec la **MDPH** (Maison Départementale des Personnes Handicapées).*\n- **Aides financières** :\n  - **Bourse sur critères sociaux** (majorée pour les étudiants en situation de handicap).\n  - **Allocation Adultes Handicapés (AAH)** si autonomie réduite (sous conditions de ressources).\n  - **Fonds pour l’Insertion des Personnes Handicapées (FIPHFP)** pour les frais liés au handicap (matériel, transport).\n*(connaissance générale, sources : [Service Public](https://www.service-public.fr/), [MDPH](https://www.mdph.fr/))*\n\n**Pour vous** : Ces aides sont **cumulables** et valables en université, école, ou alternance.\n\n---\n\n### **Plan B — Dispositifs spécifiques selon le type d’études**\n1. **À l’université** :\n   - **Référent handicap** dans chaque établissement : il organise les aménagements (salles accessibles, preneurs de notes, etc.).\n   - **Parcours aménagé** : étalement des études, unités d’enseignement (UE) adaptées.\n   - Exemple : **Licence Accès Santé (L.AS)** avec aménagements pour les troubles DYS.\n   *(connaissance générale)*\n\n2. **En école (ingénieur, commerce, etc.)** :\n   - Certaines écoles ont des **cellules handicap dédiées** (ex : **HEC**, **CentraleSupélec**).\n   - **Alternance adaptée** : contrats avec des entreprises partenaires (ex : **Cap Emploi** pour trouver un employeur inclusif).\n   *(connaissance générale)*\n\n3. **En alternance** :\n   - **Aide à l’embauche** pour l’entreprise (jusqu’à 4 000€/an via **Agefiph**).\n   - **Tuteur dédié** en entreprise si besoin.\n\n**Pour vous** : Les écoles privées sont **tenues légalement** d’appliquer ces dispositifs (loi de 2005), mais leur mise en œuvre varie. **Vérifiez leur charte handicap** avant inscription.\n\n---\n### **Plan C — Accompagnement humain et logistique**\n- **Accompagnant d’élèves en situation de handicap (AESH)** : si votre fils a besoin d’un soutien en cours (prise de notes, aide à la mobilité), cette aide est financée par l’**Éducation Nationale** (à demander via la MDPH).\n- **Logement** : **CROUS** propose des chambres adaptées (priorité aux étudiants RQTH).\n- **Transport** : **Carte Mobilité Inclusion** (gratuité ou réduction dans les transports en commun).\n*(connaissance générale)*\n\n**Pour vous** : Ces aides sont **peu connues** mais peuvent faire la différence. **Anticipez les démarches** (délais MDPH : 4-6 mois).\n\n---\n### **⚠ Attention aux pièges**\n- **Délais administratifs** : La MDPH et les référents handicap ont des **délais longs** (ex : 6 mois pour un PPS). **Démarrez les demandes dès maintenant.**\n- **Écoles non inclusives** : Certaines formations (ex : écoles d’art, prépas privées) ont **peu de moyens** pour le handicap. **Visitez les locaux** avant de choisir.\n- **Alternance** : Tous les employeurs ne sont pas sensibilisés. **Privilégiez les entreprises labellisées \"Handi-accueillantes\"** (liste sur [Agefiph](https://www.agefiph.fr/)).\n\n---\n**Question pour vous** :\nVotre fils a-t-il déjà un projet précis (métier, filière) ? Cela permettrait de cibler les **aides les plus adaptées** à son parcours (ex : aménagements en école d’ingé ≠ ceux en fac de droit).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 43.89,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 1.58,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 3,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation_insertion",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_metier",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "_metier"
+  ]
+}

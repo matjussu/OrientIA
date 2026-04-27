@@ -1,0 +1,36 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q05_blocs_VAE_partielle",
+  "query_text": "Comment valider un titre RNCP par VAE par bloc ?",
+  "answer_text": "**TL;DR**\n1. La VAE (Validation des Acquis de l’Expérience) par bloc permet de valider un titre RNCP **partiellement**, en ciblant des compétences précises plutôt que le diplôme entier.\n2. **Conditions** : 1 an d’expérience minimum (en lien avec le bloc visé) + dossier de recevabilité à déposer auprès d’un certificateur (ex : CCI, OPCO, école).\n3. **Étapes clés** : identifier les blocs du titre RNCP → choisir ceux correspondant à ton expérience → constituer un dossier de preuves (attestations, productions professionnelles).\n\n---\n\n### **Plan A — Réaliste : VAE par bloc pour un titre RNCP existant**\n1. **Trouver un titre RNCP éligible** : Consulte le [répertoire officiel France Compétences](https://www.francecompetences.fr/) (filtre \"VAE possible\" + \"par bloc\").\n   *Exemple* : Le **Titre RNCP \"Responsable en cybersécurité\"** (niveau 6/bac+3) est découpé en 4 blocs (ex : \"Sécuriser un système d’information\", \"Gérer une équipe\").\n2. **Déposer un dossier de recevabilité** auprès du certificateur (ex : **CEPIA** pour l’informatique, **CCI** pour le management).\n   *Coût* : ~100-300€ (frais de dossier) + ~2 000-4 000€ si accompagnement (optionnel mais recommandé).\n   *Durée* : 6 à 12 mois (selon complexité du bloc).\n\n### **Plan B — Ambitieux : VAE complète + validation partielle en parallèle**\nSi tu vises un titre RNCP **niveau 7 (bac+5)** mais manque d’expérience sur certains blocs :\n- **Valide d’abord les blocs maîtrisés** (ex : bloc \"Analyse de données\" si tu as 3 ans d’expérience en data).\n- **Complète par une formation courte** (ex : MOOC ou certification) pour les blocs manquants, puis demande une VAE totale ensuite.\n   *Exemple* : Le **Titre RNCP \"Expert en intelligence artificielle\"** (niveau 7) peut être validé bloc par bloc (ex : \"Développer un modèle de ML\" puis \"Piloter un projet IA\").\n\n### **Plan C — Alternative : VAE + formation hybride**\nSi ton expérience est **insuffisante pour une VAE pure** :\n- **Formations éligibles au CPF** avec validation partielle :\n  - **OpenClassrooms** (ex : Parcours \"Développeur d’application\" avec blocs certifiants).\n  - **AFPA** ou **GRETA** (formations modulaires en alternance, avec validation progressive).\n   *Avantage* : Certaines formations donnent accès à des blocs RNCP **sans VAE**, via des évaluations en cours de parcours.\n\n---\n**⚠ Attention aux pièges**\n- **Blocs \"indivisibles\"** : Certains titres RNCP imposent de valider des blocs groupés (ex : 2 blocs sur 5 doivent être validés ensemble). Vérifie la fiche du titre sur France Compétences.\n- **Délais administratifs** : Compte 3 à 6 mois entre le dépôt de recevabilité et le jury. Anticipe si tu as besoin du titre pour une évolution pro.\n- **Coût caché** : L’accompagnement VAE (obligatoire pour certains certificateurs) peut coûter jusqu’à 5 000€. Renseigne-toi sur les aides (CPF, OPCO, région).\n\n---\n**Question pour toi** :\nAs-tu déjà identifié un **titre RNCP précis** qui correspond à ton projet ? Si oui, quel est son niveau (6/bac+3 ou 7/bac+5) et son domaine (informatique, management, santé…) ? Cela permettra d’affiner les blocs à cibler. *(connaissance générale)*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 29.05,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 2.95,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif"
+  ]
+}

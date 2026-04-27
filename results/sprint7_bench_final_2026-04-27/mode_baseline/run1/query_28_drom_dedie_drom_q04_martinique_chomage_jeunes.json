@@ -1,0 +1,38 @@
+{
+  "suite": "drom_dedie",
+  "query_id": "drom_q04_martinique_chomage_jeunes",
+  "query_text": "Le chômage des jeunes en Martinique est de combien ? Quels secteurs recrutent vraiment ?",
+  "answer_text": "**TL;DR**\n1. Le chômage des jeunes en Martinique est **autour de 40-45%** (connaissance générale, estimation 2023-2024), soit près du double de la moyenne nationale.\n2. Les secteurs qui recrutent activement : **tourisme, santé/social, BTP, et agriculture/agroalimentaire** (besoins structurels).\n3. Pour une insertion rapide, privilégiez les formations courtes (BTS, BUT) dans ces domaines ou les dispositifs locaux (ex : *Contrat Initiative Emploi Jeunes*).\n\n---\n\n### **Plan A — Secteurs porteurs en Martinique (embauche immédiate)**\n- **Tourisme/hôtellerie-restauration** : 30% des offres d’emploi locales (connaissance générale). Besoins en *réceptionnistes, cuisiniers, guides touristiques*.\n  *Pour vous* : BTS Tourisme (lycée Acajou) ou CAP Cuisine en alternance.\n- **Santé/social** : pénurie d’*aides-soignants, infirmiers, éducateurs spécialisés* (vieillissement de la population + déserts médicaux).\n  *Pour vous* : DEAS (Diplôme d’État d’Aide-Soignant) en 1 an, ou BUT Carrières Sociales à l’**Université des Antilles**.\n\n### **Plan B — Secteurs en tension avec formations qualifiantes**\n- **BTP** : chantiers de reconstruction post-ouragan et logements sociaux → besoins en *techniciens, conducteurs de travaux*.\n  *Pour vous* : BTS Bâtiment ou Titre Pro Électricien (GRETA Martinique).\n- **Agriculture/agroalimentaire** : filières banane, rhum, et maraîchage bio → *techniciens agricoles, logistique*.\n  *Pour vous* : BPREA (Brevet Professionnel Responsable d’Exploitation Agricole) ou licence pro Agroéquipements.\n\n### **Plan C — Passerelles vers l’emploi (dispositifs locaux)**\n- **Contrat Initiative Emploi Jeunes (CIEJ)** : subvention pour les employeurs (jusqu’à 47% du SMIC pris en charge). Cible les **moins de 26 ans**.\n- **Service Civique** : missions dans l’environnement ou l’éducation (580€/mois + formation).\n- **Écoles de la 2e chance** (ex : *École Régionale du Numérique*) : formations gratuites en *développement web* ou *cybersécurité* (débouchés en télétravail).\n\n---\n**⚠ Attention aux pièges**\n- **Évite les formations longues sans débouchés locaux** : ex : licences générales en lettres ou psychologie (sauf projet de poursuite d’études en métropole).\n- **Méfiez-vous des promesses d’emploi \"garanti\"** dans le privé : vérifiez les taux d’insertion réels (ex : demandez les chiffres au **CARIF-OREF Martinique**).\n- **Salaire vs coût de la vie** : un SMIC en Martinique (1 398€ net) couvre difficilement un logement seul (loyer moyen : 500-700€). Pensez *colocation* ou *logement social* (demande via la **SLM**).\n\n---\n**Question pour vous** :\nVotre priorité est-elle **un emploi rapide** (Plan A), **une formation avec perspectives d’évolution** (Plan B), ou **un tremplin vers la métropole/étranger** (ex : tourisme de luxe) ? Cela peut affiner les options.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 34.56,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 6.87,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 11,
+    "n_verified": 4,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "apec_region",
+    "formation",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "formation_region_diplome",
+    "_apec_region",
+    "_formation"
+  ]
+}

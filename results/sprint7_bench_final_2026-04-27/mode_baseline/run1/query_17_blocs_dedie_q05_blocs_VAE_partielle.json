@@ -1,0 +1,37 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q05_blocs_VAE_partielle",
+  "query_text": "Comment valider un titre RNCP par VAE par bloc ?",
+  "answer_text": "**TL;DR**\n1. La VAE par bloc permet de valider un titre RNCP **partiellement**, en ciblant des compétences précises plutôt que le diplôme entier.\n2. **3 étapes clés** : identification des blocs éligibles → constitution du dossier → évaluation par un jury.\n3. Idéal pour les professionnels expérimentés qui manquent de temps pour une formation complète.\n\n---\n\n### **Plan A — VAE classique par bloc (procédure standard)**\n**Pour qui** : Salariés, indépendants ou bénévoles avec **au moins 1 an d’expérience** en lien avec le bloc visé.\n**Comment faire** :\n- **Étape 1** : Choisir un titre RNCP éligible à la VAE par bloc (ex : [RNCP36376 \"Responsable en cybersécurité\"](https://www.francecompetences.fr/recherche/rncp/36376/)) et identifier les blocs de compétences correspondants à votre expérience.\n- **Étape 2** : Déposer un **dossier de recevabilité** (livret 1) auprès d’un certificateur (ex : CNAM, AFPA, écoles privées labellisées).\n- **Étape 3** : Préparer un **dossier de validation** (livret 2) avec preuves (attestations employeur, productions professionnelles, témoignages) et passer un entretien avec un jury.\n**Coût** : ~100–500€ par bloc (variable selon le certificateur). Pris en charge par le CPF, OPCO, ou Pôle Emploi sous conditions.\n*(connaissance générale)*\n\n---\n\n### **Plan B — VAE par bloc + formation complémentaire (hybride)**\n**Pour qui** : Ceux qui ont **une expérience partielle** et veulent combler les écarts avec une formation courte.\n**Comment faire** :\n- Valider **1 ou 2 blocs par VAE**, puis suivre une formation certifiante pour les blocs manquants (ex : un bloc \"Gestion de projet\" via un MOOC ou un certificat professionnel).\n- Exemple : Le **Titre RNCP \"Chef de projet digital\"** (niveau 6) peut être validé bloc par bloc, avec des formations ciblées sur [OpenClassrooms](https://openclassrooms.com/) ou via des GRETA.\n**Avantage** : Réduction du temps et du coût vs une VAE complète.\n*(connaissance générale)*\n\n---\n### **Plan C — VAE par bloc en alternance (pour les actifs en poste)**\n**Pour qui** : Salariés ou demandeurs d’emploi en **reconversion** avec un employeur prêt à soutenir le projet.\n**Comment faire** :\n- Signer un **contrat de professionnalisation** ou un **Pro-A** (Transition Pro) avec une entreprise, en ciblant la validation de blocs spécifiques du titre RNCP.\n- L’entreprise et l’OPCO financent la préparation à la VAE (ex : accompagnement par un organisme comme [Agefos PME](https://www.agefos-pme.com/)).\n**Exemple** : Un technicien informatique pourrait valider le bloc \"Sécurité des systèmes\" du **RNCP \"Administrateur infrastructure\"** (niveau 6) en alternance.\n*(connaissance générale)*\n\n---\n### **⚠ Attention aux pièges**\n- **Blocs non cumulables** : Certains titres RNCP imposent de valider des blocs dans un ordre précis (ex : bloc 1 avant bloc 2). Vérifiez les **référentiels officiels** sur [France Compétences](https://www.francecompetences.fr/).\n- **Délais administratifs** : Comptez **6 à 12 mois** entre le dépôt du livret 1 et la validation finale. Anticipez si le titre est un prérequis pour un emploi ou une évolution.\n- **Coût caché** : L’accompagnement par un organisme (obligatoire pour certains certificateurs) peut coûter **500–2000€** en plus des frais de dossier.\n\n---\n**Question pour vous** :\nAvez-vous déjà identifié un **titre RNCP précis** que vous visez ? Si oui, quel est son numéro (ex : RNCP36376) ? Je peux vous aider à vérifier son éligibilité à la VAE par bloc. *(connaissance générale)*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 20.64,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 1.99,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 4,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "financement_etudes"
+  ],
+  "granularities_top_k": [
+    "dispositif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif"
+  ]
+}

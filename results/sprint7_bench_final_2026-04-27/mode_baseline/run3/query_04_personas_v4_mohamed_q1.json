@@ -1,0 +1,37 @@
+{
+  "suite": "personas_v4",
+  "query_id": "mohamed_q1",
+  "query_text": "Quels sont les principaux débouchés métier après un Bac pro cuisine par apprentissage ?",
+  "answer_text": "**TL;DR**\n1. Un Bac pro Cuisine par apprentissage ouvre à des métiers **opérationnels** en restauration (cuisinier, commis, chef de partie) et à des évolutions vers l’encadrement (chef de cuisine, gestion).\n2. **90% des diplômés** trouvent un emploi dans les 6 mois (secteur en tension), souvent en CDI, avec des salaires entre **1 700 € et 2 200 € brut/mois** en début de carrière (connaissance générale).\n3. **3 voies principales** : emploi direct, spécialisation (pâtisserie, traiteur), ou poursuite d’études (BP, BM, BTS).\n\n---\n\n### **Plan A — Emploi direct : métiers accessibles dès le diplôme**\n📍 **Cuisinier / Commis de cuisine** (restaurants, hôtels, collectivités)\n*Pour toi :* Poste le plus courant, embauche rapide (CDD/CDI), horaires décalés mais **débouchés garantis** (secteur en pénurie de main-d’œuvre).\n- **Évolution possible** : Chef de partie (2-3 ans d’expérience), puis chef de cuisine (5 ans+).\n- **Salaire** : 1 700–1 900 € brut/mois en début de carrière (connaissance générale).\n\n📍 **Cuisinier en restauration collective** (écoles, hôpitaux, entreprises)\n*Pour toi :* Horaires plus réguliers qu’en restaurant, mais salaires légèrement inférieurs (1 600–1 800 € brut).\n\n---\n\n### **Plan B — Spécialisation : se différencier pour monter en grade**\n📍 **CAP Pâtissier** (1 an en formation continue ou apprentissage)\n*Pour toi :* Complément idéal pour élargir tes compétences et viser des postes **mieux payés** (pâtissier : 1 900–2 200 € brut).\n- **Exemple de formation** : [CAP Pâtissier en alternance](https://www.onisep.fr) (recherche par région).\n\n📍 **BP Arts de la cuisine** (2 ans après le Bac pro)\n*Pour toi :* Pour devenir **chef de cuisine** plus rapidement, avec une reconnaissance professionnelle forte.\n\n---\n### **Plan C — Poursuite d’études : viser l’encadrement ou l’entrepreneuriat**\n📍 **BTS Gestion hôtelière-restauration** (2 ans, lycées hôteliers ou CFA)\n*Pour toi :* Si tu veux **gérer un restaurant** ou créer ton entreprise. Accès possible avec un bon dossier (moyenne > 12/20 en Bac pro).\n- **Débouchés** : Adjoint de direction, responsable de restauration, ou formation complémentaire en gestion.\n\n📍 **Brevet professionnel (BP) Cuisinier** (2 ans)\n*Pour toi :* Alternative au BTS pour ceux qui préfèrent **rester en cuisine** avec un niveau supérieur.\n\n---\n### **⚠ Attention aux pièges**\n- **Conditions de travail** : Horaires tardifs, week-ends et jours fériés travaillés (surtout en restaurant traditionnel).\n- **Salaire plafonné sans évolution** : Sans spécialisation ou gestion, les salaires stagnent autour de **2 000 € brut** après 10 ans (connaissance générale).\n- **Mobilité souvent nécessaire** : Les meilleurs postes (hôtels étoilés, restaurants gastronomiques) exigent de **changer de ville** (voire de pays).\n\n---\n**Question pour toi :**\nPréfères-tu **commencer à travailler tout de suite** (Plan A), te **spécialiser pour grimper plus vite** (Plan B), ou **viser un poste d’encadrement** avec des études longues (Plan C) ? 👤 *Pour affiner, un conseiller du CIO ou de ta chambre des métiers peut t’aider à identifier les formations près de chez toi.*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 34.7,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 3.54,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_competences_certif",
+    "fap_region"
+  ]
+}

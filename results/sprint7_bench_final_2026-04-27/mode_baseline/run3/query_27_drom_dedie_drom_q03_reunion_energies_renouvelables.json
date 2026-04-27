@@ -1,0 +1,38 @@
+{
+  "suite": "drom_dedie",
+  "query_id": "drom_q03_reunion_energies_renouvelables",
+  "query_text": "Quelles études faire à La Réunion pour travailler dans les énergies renouvelables localement ?",
+  "answer_text": "**TL;DR**\n1. À La Réunion, les formations en énergies renouvelables (EnR) sont **peu nombreuses mais ciblées** : un BUT ou une école d’ingénieur localement, ou des formations courtes (BTS, licences pro) avec des partenariats industriels.\n2. Le secteur recrute surtout des **techniciens (bac+2/3)** pour l’installation/maintenance et des **ingénieurs (bac+5)** pour la conception/gestion de projets.\n3. **Priorise les formations avec stages en entreprise locale** (ex : Alizé, EDF Renouvelables, SARA) pour un emploi direct après le diplôme.\n\n---\n\n### **Plan A — Formation courte et pro (bac+2/3) : pour un emploi rapide**\n📍 **BUT Génie Thermique et Énergie (GTE)** (Saint-Pierre, Université de La Réunion) — bac+3 public, parcours *Énergies Renouvelables et Efficacité Énergétique*, **alternance possible** · [fiche ONISEP](https://www.onisep.fr)\n*Pour toi : idéal si tu veux un métier technique (technicien en solaire, éolien, biomasse) avec un diplôme reconnu localement. Taux d’insertion ~80% dans les EnR à La Réunion (connaissance générale).*\n\n📍 **Licence Pro Métiers de l’Électricité et des Énergies Renouvelables** (Le Tampon, Université de La Réunion) — bac+3 public, **en alternance**, partenariats avec Alizé et EDF · [fiche officielle](https://www.univ-reunion.fr)\n*Pour toi : parfaite pour une spécialisation en 1 an après un BTS ou BUT, avec un emploi garanti via l’alternance (secteur en tension).*\n\n---\n\n### **Plan B — Formation longue (bac+5) : pour encadrer des projets ou innover**\n📍 **École d’Ingénieurs ESIROI (Bâtiment et Énergie)** (Saint-Denis) — bac+5 public, **diplôme d’ingénieur CTI**, spécialité *Énergies Renouvelables et Maîtrise de l’Énergie* · [fiche Parcoursup](https://www.parcoursup.fr)\n*Pour toi : si tu vises un poste de chef de projet ou d’ingénieur R&D (ex : centrale solaire, smart grids). **Sélective** (dossier + entretien), mais **gratuite** et très bien vue des employeurs locaux (EDF, SARA).*\n\n*(connaissance générale)* : L’**ESIROI** est la seule école d’ingénieurs à La Réunion avec une spécialité dédiée aux EnR. Son réseau local est un atout majeur pour les stages/emplois.\n\n---\n### **Plan C — Alternatives si tu veux te former autrement**\n1. **BTS FED (Fluides, Énergies, Domotique)** (Lycée Lislet Geoffroy, Saint-Denis) — bac+2 public, **option \"Énergies Renouvelables\"** · [fiche ONISEP](https://www.onisep.fr)\n   *Pour toi : solution si tu sors de bac pro/techno. Complète avec une licence pro ensuite pour monter en compétences.*\n\n2. **Formations courtes certifiantes** (ex : **Qualit’ENR** ou **AFPA**) — **quelques semaines à 6 mois**, financées par Pôle Emploi ou la Région.\n   *Pour toi : si tu es en reconversion ou veux une qualification rapide (ex : installateur photovoltaïque).*\n\n---\n\n### **⚠ Attention aux pièges**\n- **Marketing des écoles privées** : Méfie-toi des formations privées coûteuses (ex : écoles \"spécialisées EnR\" à 5k€/an) sans partenariat local avéré. Privilégie le **public** (Université de La Réunion, lycées pros).\n- **Débouchés réels** : Le secteur recrute, mais surtout en **maintenance/installation** (bac+2/3). Les postes d’ingénieurs (bac+5) sont moins nombreux et souvent réservés aux profils expérimentés.\n- **Mobilité limitée** : Les compétences en EnR à La Réunion sont très **locales** (biomasse canne à sucre, solaire, éolien offshore). Une formation hors de l’île peut compliquer ton insertion sur place.\n\n---\n**Question pour toi :**\nAs-tu déjà un niveau d’études (bac, bac+2, etc.) ou un domaine précis qui t’intéresse (technique, gestion de projet, recherche) ? Cela peut affiner les options. *(Sinon, les formations ci-dessus couvrent tous les profils !)*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 43.74,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 3.88,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 5,
+    "n_verified": 4,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_metier",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation"
+  ]
+}

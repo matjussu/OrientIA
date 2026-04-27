@@ -1,0 +1,36 @@
+{
+  "suite": "personas_v4",
+  "query_id": "lila_q1",
+  "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+  "answer_text": "**TL;DR**\n1. Une licence de lettres modernes ouvre à des métiers variés, mais souvent **hors du cadre strict de la discipline** (communication, enseignement, culture).\n2. **Seul 1 débouché sur 5 est directement lié aux lettres** (ex : enseignement) — les autres exigent des compétences complémentaires (numérique, gestion, langues).\n3. **L’insertion dépend de ta spécialisation en master** : choisissez-le en fonction d’un projet précis (recherche, édition, médiation…).\n\n---\n\n### **Plan A — Débouchés directs (20% des diplômés)**\n📍 **Enseignement (professeur de lettres, FLE)** — Concours de l’Éducation nationale (CAPES, agrégation) ou enseignement à l’étranger (Alliances françaises).\n*Pour toi : si tu aimes transmettre, vise un **master MEEF** (ex : [INSPÉ](https://www.education.gouv.fr)) ou un **master FLE** ([exemple](https://www.onisep.fr/http/redirection/formation/slug/FOR.4160)).*\n📍 **Édition / Librairie** — Correcteur, assistant d’édition, libraire (avec stages ou formations courtes en PAO).\n*Pour toi : complète par un **master Édition** (ex : [Paris-Nanterre](https://www.onisep.fr/http/redirection/formation/slug/FOR.10446)) ou un **DUT Métiers du livre** en parallèle.*\n\n### **Plan B — Débouchés avec spécialisation (50% des diplômés)**\n📍 **Communication / Médiation culturelle** — Chargé de communication, médiateur en bibliothèque/musée, community manager (avec compétences numériques).\n*Pour toi : associe ta licence à un **master Pro Communication** ou un **DU en gestion de projets culturels** (ex : [Sorbonne Nouvelle](https://www.onisep.fr/http/redirection/formation/slug/FOR.6749)).*\n📍 **Journalisme / Rédaction** — Pigiste, rédacteur web, journaliste (avec école de journalisme ou portfolio solide).\n*Pour toi : vise une **école reconnue** (CFJ, ESJ) ou un **master Journalisme** (ex : [Strasbourg](https://www.onisep.fr/http/redirection/formation/slug/FOR.10048)) après la licence.*\n\n### **Plan C — Reconversion ou passerelles (30% des diplômés)**\n📍 **Fonction publique** — Concours administratifs (catégorie B ou A, ex : attaché territorial) après une **prépa concours** (CNED, IPAG).\n*Pour toi : les lettres forment à la rédaction et à l’analyse, atouts pour les concours.*\n📍 **Formation complémentaire courte** — Certifications en **gestion de projet**, **UX writing**, ou **traduction spécialisée** (via AFPA, GRETA, ou CNAM).\n*Pour toi : idéal si tu veux bifurquer vers le numérique ou l’international sans repartir de zéro.*\n\n---\n**⚠ Attention aux pièges**\n- **Mythe du \"débouché automatique\"** : Sans master ou spécialisation, le taux de chômage des licences de lettres est **~15% à 18 mois** (source : Céreq, 2022 — connaissance générale). **Un projet précis est indispensable.**\n- **Salaire** : Les métiers directs (enseignement, édition) paient **~1 800–2 200€ brut/mois en début de carrière** (salaire médian — connaissance générale). Les bifurcations (communication, fonction publique) montent à **2 500–3 000€** avec expérience.\n- **Concours saturés** : Le CAPES de lettres a un **taux de réussite < 20%** (source : DEPP). Prépare-toi à plusieurs tentatives ou à une alternative (FLE, privé).\n\n---\n**Question pour toi :**\nQu’est-ce qui t’attire le plus dans les lettres modernes ?\n- **L’analyse textuelle** → enseignement/recherche (Plan A).\n- **L’écriture créative** → édition/journalisme (Plan B).\n- **La polyvalence** → communication/fonction publique (Plan C).\n*(Ton choix déterminera le master à privilégier.)*\n\n---\n👤 Pour affiner ton projet, un RDV avec le **SCUIO de ta fac** ou un **conseiller Pôle Emploi** (pour les passerelles pro) est vivement recommandé. Les lettres offrent des atouts transférables, mais leur valorisation demande une stratégie claire.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 47.77,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 10.66,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 16,
+    "n_verified": 8,
+    "n_verified_strict": 8,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation"
+  ]
+}

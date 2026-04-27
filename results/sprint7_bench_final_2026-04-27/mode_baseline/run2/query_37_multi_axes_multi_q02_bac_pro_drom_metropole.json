@@ -1,0 +1,37 @@
+{
+  "suite": "multi_axes",
+  "query_id": "multi_q02_bac_pro_drom_metropole",
+  "query_text": "Je suis en bac pro maintenance en Guyane. Si je veux continuer en BTS en métropole, quelles aides à la mobilité ?",
+  "answer_text": "**TL;DR**\n1. **Oui, des aides existent** pour les lycéens de Guyane souhaitant étudier en métropole, mais elles sont limitées et souvent conditionnées à des critères sociaux.\n2. **Priorité** : le **logement** (coût élevé en métropole) et le **transport** (billets d’avion).\n3. **Agis vite** : certaines aides ont des délais courts (ex : avant le bac).\n\n---\n\n### **Plan A — Aides publiques nationales (prioritaires)**\n📍 **Bourse sur critères sociaux (BCS)** — [Gérée par les CROUS](https://www.messervices.etudiant.gouv.fr/)\n*Pour toi : jusqu’à **~600€/mois** (échelon 5) si revenus familiaux < 30k€/an. **Dossier à faire dès maintenant** (même avant l’affectation en BTS).*\n📍 **Aide à la mobilité Parcoursup** — 500€ (forfait unique) pour les boursiers acceptant une formation hors académie d’origine.\n*Pour toi : **Automatique** si tu es boursier et admis en métropole via Parcoursup. Pas de démarche supplémentaire.*\n\n📍 **Allocation de Rentrée Étudiante (ARE)** — ~200€/an (Guyane uniquement, mais utile pour financer le départ).\n*Pour toi : à demander **avant ton départ** auprès de la Région Guyane.*\n\n---\n\n### **Plan B — Aides locales et dispositifs ciblés**\n📍 **Collectivité Territoriale de Guyane (CTG)** — Bourses spécifiques pour la mobilité (ex : **1 000€ à 2 500€/an** selon ressources).\n*Pour toi : contacte **dès que possible** le [Service Jeunesse de la CTG](https://www.ctguyane.fr/) — délais longs.*\n📍 **Fonds Social Lycéen (FSL)** — Aide exceptionnelle pour le **premier billet d’avion** (jusqu’à 800€).\n*Pour toi : à demander **via ton lycée** avant la fin de l’année scolaire.*\n\n📍 **Résidences CROUS prioritaires** — Certains CROUS (ex : Paris, Bordeaux) réservent des places pour les **étudiants ultramarins**.\n*Pour toi : coche la case « étudiant ultramarin » dans ton **Dossier Social Étudiant (DSE)**.*\n\n---\n### **Plan C — Solutions complémentaires (si les aides ne suffisent pas)**\n- **Jobs étudiants** : Secteurs en tension (restauration, logistique) recrutent sans expérience en métropole. **Salaire ~1 000€/mois** (connaissance générale).\n- **Alternance** : Certains BTS en métropole proposent des contrats d’apprentissage (logement + salaire pris en charge). *Ex : BTS Maintenance des Systèmes (ex-SN) en Île-de-France.*\n- **Associations** : **Fondation pour les Études en France (FEF)** ou **AFEV** aident ponctuellement (aides au logement, mentorat).\n\n---\n### **⚠ Attention aux pièges**\n- **Logement** : Un studio en métropole coûte **500€–800€/mois** (hors Paris). **Prévois un garant** (ou utilise [Visale](https://www.visale.fr/) si tu as <30 ans).\n- **Délais** : Les aides de la CTG ou du FSL ont des **dates limites strictes** (souvent avant juillet).\n- **Faux espoirs** : Certaines écoles privées en métropole promettent des « aides internes »… mais ce sont souvent des **prêts déguisés**. Vérifie toujours les conditions.\n\n---\n**Question pour toi** :\nAs-tu déjà une idée des **villes ou régions** en métropole qui t’intéressent ? Certaines aides (ex : résidences CROUS) dépendent de ta destination, et le coût de la vie varie énormément (ex : Paris vs Lille).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 34.43,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 5.4,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 8,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 7,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation_insertion",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "_metier_prospective",
+    "fap_region"
+  ]
+}

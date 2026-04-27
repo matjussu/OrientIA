@@ -1,0 +1,38 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q04_blocs_BTS_electro_contenu",
+  "query_text": "Contenu pédagogique du BTS électrotechnique : quels objectifs pédagogiques ?",
+  "answer_text": "**TL;DR**\n1. Le BTS Électrotechnique forme des techniciens capables de concevoir, installer et maintenir des systèmes électriques (industriels, tertiaires, énergies renouvelables).\n2. **3 piliers pédagogiques** : techniques (schémas, normes), pratiques (ateliers, chantiers-école), et gestion de projet.\n3. **Débouchés concrets** : technicien de maintenance, chargé d’affaires en électricité, ou poursuite en licence pro/école d’ingé.\n\n---\n\n### **Plan A — Cœur de la formation : compétences techniques et pratiques**\nLe BTS vise **l’autonomie professionnelle** via :\n- **Conception** : dimensionnement d’installations (logements, usines), respect des normes (NF C 15-100, RE2020).\n- **Réalisation** : câblage, mise en service, diagnostic de pannes (40% du temps en ateliers avec matériel industriel).\n- **Maintenance** : dépannage, optimisation énergétique, et gestion des risques électriques (habilitation BS/BR).\n*(connaissance générale, référentiel officiel Éducation Nationale 2021)*\n\n📍 **BTS Électrotechnique** — bac+2 public/privé, accessible sans sélection stricte (dossier + entretien parfois).\n*Pour toi : idéal si tu aimes le concret (manipulations, terrain) et vises une insertion rapide. Alternance possible dès la 1ère année.*\n[Détails officiels ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.269)\n\n---\n\n### **Plan B — Spécialisations et projets**\n- **Enjeux contemporains** : modules dédiés aux énergies renouvelables (solaire, éolien), smart grids, et efficacité énergétique (obligatoire depuis 2020).\n- **Gestion de projet** : apprentissage des outils (Gantt, devis) et travail en équipe (ex : projet de fin d’études sur une installation complète).\n- **Stages** : 8 à 10 semaines en entreprise (obligatoires), souvent pré-embauchantes dans les PME locales.\n*(connaissance générale, enquêtes branches professionnelles FIEEC 2023)*\n\n---\n### **Plan C — Poursuites d’études et passerelles**\n- **Licences pro** : ex *Licence Pro Métiers de l’électricité et de l’énergie* (1 an) pour se spécialiser (ex : domotique, réseaux intelligents).\n- **Écoles d’ingénieurs** : admissions parallèles en 3ème année (ex : INSA, Polytech) via concours ou dossier pour les meilleurs profils.\n- **Certifications complémentaires** : habilitations électriques (BS, BR, BC), ou CQP *Technicien en énergies renouvelables*.\n*(connaissance générale, rapports Céreq sur insertions bac+2)*\n\n---\n### **⚠ Attention aux pièges**\n- **Marketing des écoles privées** : certaines promettent \"100% d’insertion\" avec des frais >5k€/an — vérifie les taux réels sur [InserSup](https://www.enseignementsup-recherche.gouv.fr/).\n- **Alternance obligatoire ?** Non, mais **80% des emplois** visés exigent une expérience terrain (source : Pôle Emploi 2023). Sans alternance, stage impératif.\n- **Faux-ami** : ce n’est pas un BTS \"informatique\" — l’électronique et la programmation (PLC, Arduino) y sont limitées (10% du programme).\n\n---\n**Question pour toi** :\nPréfères-tu une formation **polyvalente** (BTS classique) ou axée sur un secteur précis (ex : énergies renouvelables via une licence pro ensuite) ? Ton choix dépendra aussi de ton appétence pour le terrain (chantiers) vs le bureau (conception).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 37.29,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 4.77,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 4,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "formation_france",
+    "_competences_certif"
+  ]
+}

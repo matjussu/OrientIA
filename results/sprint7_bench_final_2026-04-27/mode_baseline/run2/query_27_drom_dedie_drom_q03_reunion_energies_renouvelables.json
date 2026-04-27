@@ -1,0 +1,37 @@
+{
+  "suite": "drom_dedie",
+  "query_id": "drom_q03_reunion_energies_renouvelables",
+  "query_text": "Quelles études faire à La Réunion pour travailler dans les énergies renouvelables localement ?",
+  "answer_text": "**TL;DR**\n1. À La Réunion, les formations en énergies renouvelables (EnR) vont du **bac pro au bac+5**, avec des débouchés locaux concrets (solaire, éolien, biomasse).\n2. **L’ESIROI** (bac+5) est la référence locale pour l’ingénierie EnR, mais des parcours plus courts (bac+2/3) existent pour des métiers techniques.\n3. Le secteur recrute : priorité aux compétences terrain (installation, maintenance) et à l’ancrage régional (réseaux pro locaux).\n\n---\n\n### **Plan A — Réaliste : Technicien EnR (bac à bac+3) pour un accès rapide au marché local**\n📍 **Certificat Technicien en énergies renouvelables** ([La Réunion](https://www.onisep.fr/http/redirection/formation/slug/FOR.11873)) — bac, formation publique, **accès direct après la 3ᵉ** · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11873)\n*Pour toi : idéal si tu veux un métier manuel (pose de panneaux solaires, maintenance éolienne) avec un diplôme en 1-2 ans. Salaire embauche ~1 600-1 900€ brut (connaissance générale).*\n\n📍 **BUT Génie Thermique et Énergie (parcours EnR)** — bac+3 public, **sélectivité modérée** (dossier + entretien), stages en entreprises locales · [fiche Parcoursup](https://www.parcoursup.fr)\n*Pour toi : pour encadrer des chantiers ou travailler en bureau d’études, avec un diplôme reconnu nationalement.*\n\n---\n\n### **Plan B — Ambitieux : Ingénieur EnR (bac+5) pour encadrer des projets**\n📍 **Diplôme d’ingénieur ESIROI spécialité Bâtiment et Énergie** ([Saint-Denis](https://www.onisep.fr/http/redirection/formation/slug/FOR.11873)) — bac+5 public, **grade Master**, **sélectif** (dossier + concours/entretien), partenariats avec EDF Renouvelables et Albioma · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11873)\n*Pour toi : si tu vises un poste de chef de projet ou d’ingénieur R&D dans les EnR, avec un salaire ~2 500-3 000€ brut à l’embauche (connaissance générale). Prévois un bac+2 scientifique (DUT/BTS) pour intégrer le cycle ingénieur.*\n\n---\n### **Plan C — Passerelle : Alternance + réseaux locaux**\n- **Alternance dès bac+2** : Les entreprises réunionnaises (ex : **Quadran Energies**, **Akuo Energy**) recrutent en contrat pro pour des techniciens supérieurs. Cible les **licences pro Métiers des EnR** (ex : Université de La Réunion) pour allier théorie et expérience terrain.\n- **Réseaux** : Rejoins des associations comme **Énergie Partagée** ou participe aux **salons Soluten** (La Réunion) pour rencontrer des employeurs.\n\n---\n**⚠ Attention aux pièges**\n- **Marketing des écoles privées** : Méfie-toi des formations payantes (>5k€/an) promettant \"100% d’embauche\" — privilégie le public (ESIROI, IUT) ou les certifications RNCP reconnues par les branches pro (ex : **Qualit’ENR**).\n- **Débouchés réels** : Le solaire et la biomasse dominent à La Réunion (peu d’éolien offshore). Vérifie les offres sur [Pôle Emploi Réunion](https://www.pole-emploi.fr/region/la-reunion) pour cibler les compétences demandées.\n\n---\n**Question pour toi :**\nPréfères-tu un métier **terrain** (technicien, installation) avec un diplôme court, ou un poste **d’encadrement** (ingénieur, bureau d’études) qui demande 5 ans d’études ? Ton choix dépend aussi de ta mobilité : certaines formations (ex : ESIROI) imposent des stages en métropole.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 59.0,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 8.99,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 8,
+    "n_verified_strict": 8,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_competences_certif",
+    "_formation"
+  ]
+}

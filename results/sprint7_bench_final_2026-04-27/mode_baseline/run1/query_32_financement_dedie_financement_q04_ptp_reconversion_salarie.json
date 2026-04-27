@@ -1,0 +1,37 @@
+{
+  "suite": "financement_dedie",
+  "query_id": "financement_q04_ptp_reconversion_salarie",
+  "query_text": "Le projet de transition professionnelle PTP, c'est pour qui exactement ? Salaire maintenu pendant la formation ?",
+  "answer_text": "**TL;DR**\n1. Le **PTP** (Projet de Transition Professionnelle) s’adresse aux **salariés en CDI** (ou CDD sous conditions) souhaitant se reconvertir, avec **au moins 24 mois d’ancienneté** (consécutifs ou non).\n2. **Salaire maintenu à 100%** pendant la formation (via *Transitions Pro*), sous réserve d’acceptation par l’OPCO de votre branche.\n3. **Étape clé** : valider votre éligibilité AVANT de choisir une formation (délai : 2-3 mois avant le début).\n\n---\n\n### **Pour qui exactement ?** *(connaissance générale)*\n- **Public cible** :\n  - Salariés **en CDI** (ou CDD de ≥12 mois si renouvellement).\n  - **24 mois d’ancienneté** minimum (tous employeurs confondus).\n  - **Projet réaliste** : la formation doit mener à un métier en tension ou correspondre à un besoin identifié (ex : pénurie de compétences dans le secteur visé).\n- **Exclus** :\n  - Indépendants, fonctionnaires, demandeurs d’emploi (autres dispositifs : CPF, Pôle Emploi).\n  - Salariés en période d’essai ou en préavis de licenciement.\n\n### **Salaire pendant la formation** *(connaissance générale)*\n- **Maintien à 100%** de votre salaire brut (plafonné à 2x le SMIC si salaire élevé).\n- **Financement** :\n  - Pris en charge par **Transitions Pro** (ex-Fongecif), via les fonds de la *formation professionnelle continue*.\n  - **Condition** : accord préalable de l’**OPCO** (Opérateur de Compétences) de votre branche.\n- **Durée** :\n  - Jusqu’à **1 an** (renouvelable sous conditions exceptionnelles).\n  - Formation **à temps plein** ou **partiel** (avec accord de l’employeur pour un temps partiel).\n\n### **Étapes clés pour y accéder** *(connaissance générale)*\n1. **Vérifier son éligibilité** :\n   - Contacter votre **OPCO** ou le service RH de votre entreprise.\n   - Utiliser le [simulateur officiel](https://www.moncompteformation.gouv.fr) (onglet \"Transitions Pro\").\n2. **Choisir une formation certifiante** :\n   - Priorité aux titres **RNCP** (ex : *Conseiller en insertion professionnelle*, *Formateur professionnel d’adultes* — voir fiches 3 et 4).\n   - Éviter les formations non reconnues (risque de refus de financement).\n3. **Monter le dossier** :\n   - **Délai** : 2-3 mois avant le début de la formation (dossier à déposer via votre OPCO).\n   - Pièces clés : devis de la formation, projet professionnel argumenté, accord de principe de l’employeur (si temps partiel).\n4. **Validation** :\n   - Réponse sous **1 mois** (acceptation ou refus motivé).\n\n---\n### **Alternatives si vous n’êtes pas éligible au PTP**\n- **Demandeurs d’emploi** :\n  - **AIF (Aide Individuelle à la Formation)** via Pôle Emploi (financement partiel).\n  - **POEI** (Préparation Opérationnelle à l’Emploi Individuelle) pour les métiers en tension.\n- **Indépendants/auto-entrepreneurs** :\n  - **CPF** (Compte Personnel de Formation) + abondement possible par votre région.\n- **Fonctionnaires** :\n  - **CIF-CD** (Congé de Formation Professionnelle) ou dispositifs spécifiques à la fonction publique.\n\n---\n**⚠ Attention**\n- **Piège n°1** : Certaines formations privées abusent du label \"éligible PTP\" sans garantie de financement. Toujours vérifier auprès de votre OPCO **avant** de s’engager.\n- **Piège n°2** : Un refus de l’employeur pour un temps partiel pendant la formation peut bloquer le projet (sauf si formation en dehors des heures de travail).\n\n---\n**Question pour vous** :\nVotre situation actuelle correspond-elle au CDI avec 24 mois d’ancienneté ? Si non, quel est votre statut (demandeur d’emploi, indépendant, etc.) pour orienter vers l’alternative adaptée ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 33.57,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 8.13,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 7,
+    "n_verified_strict": 7,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "financement_etudes",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "dispositif",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "voie",
+    "voie"
+  ]
+}

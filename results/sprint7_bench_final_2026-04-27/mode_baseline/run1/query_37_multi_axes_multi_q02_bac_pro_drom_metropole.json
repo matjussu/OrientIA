@@ -1,0 +1,38 @@
+{
+  "suite": "multi_axes",
+  "query_id": "multi_q02_bac_pro_drom_metropole",
+  "query_text": "Je suis en bac pro maintenance en Guyane. Si je veux continuer en BTS en métropole, quelles aides à la mobilité ?",
+  "answer_text": "**TL;DR**\n1. En tant qu’élève en bac pro maintenance en Guyane, des aides existent pour financer un BTS en métropole, mais les démarches sont strictes et les places limitées.\n2. **Priorité** : le dispositif *\"Aide à la mobilité Parcoursup\"* (bourses + logement) et les aides régionales guyanaises.\n3. **Alternative** : les BTS en Guyane avec stages en métropole, ou l’apprentissage (réseau des CFA).\n\n---\n\n### **Plan A — Aides nationales : Parcoursup + CROUS**\n- **Aide à la mobilité Parcoursup** (jusqu’à **1 000€/an**) : réservée aux boursiers sur critères sociaux, avec priorité aux DOM.\n  - **Logement** : Demande un **logement CROUS** en métropole via le *Dossier Social Étudiant (DSE)* dès janvier (places très limitées pour les DOM).\n  - **Bourse sur critères sociaux** : Montant majoré pour les DOM (échelon 0bis à 7).\n  *(connaissance générale : [lien officiel Parcoursup mobilité](https://www.parcoursup.fr/))*\n\n- **Pour toi** : Si tu es boursier, cette voie est la plus directe. **Délai critique** : complète ton DSE avant **mi-mai** pour la rentrée suivante.\n\n---\n\n### **Plan B — Aides régionales (Guyane) + partenariats**\n- **Collectivité Territoriale de Guyane (CTG)** :\n  - **Bourse mobilité** (jusqu’à **1 500€/an**) pour les formations non disponibles en Guyane (ex : BTS Maintenance Véhicules légers).\n  - **Convention avec des lycées métropolitains** : Certains BTS en métropole réservent des places aux Guyanais (ex : Lyon, Bordeaux).\n  *(connaissance générale : contacter la [Direction de l’Éducation de la CTG](https://www.guyane.fr/))*\n\n- **Pour toi** : Vérifie si ton BTS visé est éligible (liste mise à jour chaque année). **Piège** : les aides sont attribuées sous condition de retour en Guyane après le diplôme (obligation morale, pas toujours légale).\n\n---\n### **Plan C — Alternatives sans déménagement**\n1. **BTS en Guyane + stages en métropole** :\n   - Ex : **BTS Maintenance des Véhicules** au *Lycée Melkior-Garré* (Cayenne) avec des stages en concession métropolitaine (partenariats Renault, Toyota).\n   *(Source : [ONISEP Guyane](https://www.onisep.fr/http/redirection/formation/slug/FOR.12237))*\n   - **Pour toi** : Moins coûteux, mais réseau pro limité localement.\n\n2. **Apprentissage en métropole** :\n   - Les **CFA (Centres de Formation d’Apprentis)** métropolitains recrutent des Guyanais (ex : CFA de l’Automobile à Paris).\n   - **Aide** : *Prime à l’apprentissage* (jusqu’à **6 000€/an** pour les employeurs, ce qui facilite ton embauche).\n   *(connaissance générale : [Portail de l’Alternance](https://www.alternance.pro/))*\n\n---\n\n### **⚠ Attention aux pièges**\n- **Délais serrés** : Les demandes d’aides (Parcoursup, CTG) se font **entre janvier et mai** pour la rentrée de septembre. Un dossier en retard = pas d’aide.\n- **Coût réel** : Même avec une bourse, prévois **300-500€/mois** pour la vie quotidienne en métropole (hors logement CROUS).\n- **Faux-ami** : Certaines écoles privées en métropole promettent des \"aides\"… qui sont en réalité des prêts à rembourser. **Exige toujours un écrit officiel** (ex : convention CTG ou CROUS).\n\n---\n**Question pour toi** :\nAs-tu déjà ciblé une ville ou un BTS en particulier en métropole ? Cela peut changer les aides disponibles (ex : Paris vs province = coûts très différents). Si non, veux-tu privilégier **la proximité avec ton domaine (mécanique)** ou **l’insertion pro après le diplôme** ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 50.68,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 5.44,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 4,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "financement_etudes",
+    "formation",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "_formation",
+    "formation_france",
+    "voie",
+    "dispositif"
+  ]
+}

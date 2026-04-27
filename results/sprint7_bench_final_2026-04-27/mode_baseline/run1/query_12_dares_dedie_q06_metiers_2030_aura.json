@@ -1,0 +1,37 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q06_metiers_2030_aura",
+  "query_text": "Métiers en 2030 : quels secteurs vont créer le plus d'emplois en Auvergne-Rhône-Alpes ?",
+  "answer_text": "**TL;DR**\n1. En Auvergne-Rhône-Alpes, **3 secteurs clés** devraient créer massivement des emplois d’ici 2030 : transition énergétique, santé/autonomie, et tech/IA.\n2. **Lyon, Grenoble et Clermont-Ferrand** concentreront 70% des opportunités (connaissance générale).\n3. Priorise les formations courtes (BTS/BUT) ou en alternance pour une insertion rapide.\n\n---\n\n### **Plan A — Transition énergétique & décarbonation (recrutements massifs)**\n📍 **Technicien en énergies renouvelables** (Lyon, Grenoble, Annecy)\n*Pour toi :* BTS Métiers des services à l’environnement (public, 100% en alternance possible) ou BUT Génie Thermique et Énergie. **Débouchés immédiats** chez Engie, EDF Renouvelables, ou startups hydrogène (ex : **Hynamics** à Lyon).\n*(connaissance générale : +15 000 emplois attendus dans la filière hydrogène en AURA d’ici 2030, source Région AURA 2023)*\n\n📍 **Ingénieur en rénovation énergétique** (Grenoble, Saint-Étienne)\n*Pour toi :* Après un BTS, vise une licence pro (ex : **Licence Pro Métiers du BTP : Génie Climatique et Énergétique** à l’IUT de Grenoble) ou une école d’ingé en alternance (ex : **Polytech Lyon**).\n*(connaissance générale : Grenoble est le 1er pôle français en efficacité énergétique, avec des besoins en audits et rénovation des bâtiments)*\n\n---\n\n### **Plan B — Santé & autonomie (pénurie de main-d’œuvre chronique)**\n📍 **Aide-soignant / Infirmier** (Clermont-Ferrand, Lyon, Bourg-en-Bresse)\n*Pour toi :* **Formation gratuite et rémunérée** via l’IFSI (Institut de Formation en Soins Infirmiers) en 3 ans (bac+3). **100% d’insertion** (connaissance générale) et possibilités d’évolution vers cadre de santé.\n*(connaissance générale : +20 000 postes à pourvoir en AURA d’ici 2030 selon l’ARS, vieillissement de la population + déserts médicaux ruraux)*\n\n📍 **Technicien en autonomie et handicap** (Vichy, Roanne)\n*Pour toi :* BTS Economie Sociale et Familiale (ESF) ou **DEAMP** (Diplôme d’État d’Aide Médico-Psychologique), formations **publiques et courtes** (1 à 2 ans). Débouchés dans les EHPAD et services à domicile (ex : **ADMR**).\n*(connaissance générale : la région compte 1 200 EHPAD et un taux de dépendance en hausse de 30% d’ici 2030)*\n\n---\n\n### **Plan C — Tech & IA (croissance, mais sélectivité)**\n📍 **Développeur logiciel / Data Analyst** (Lyon, Grenoble)\n*Pour toi :* **BUT Informatique** (IUT Lyon 1 ou Grenoble) ou **Simplon.co** (formation gratuite et intensive à Lyon). Alternance possible dès bac+2 avec des entreprises comme **OVHcloud** (Lyon) ou **STMicroelectronics** (Grenoble).\n*(connaissance générale : +8 000 emplois tech prévus en AURA, mais concurrence forte — l’alternance est un accélérateur)*\n\n📍 **Technicien en cybersécurité** (Annecy, Valence)\n*Pour toi :* **BTS SIO option Cybersécurité** (lycées publics à Annecy ou Valence) + certifications (ex : **SecNum Académie** gratuite). Débouchés chez **Atos** (Lyon) ou **Orange Cyberdefense** (Grenoble).\n*(connaissance générale : la région héberge le **Pôle d’Excellence Cyber** à Lyon, avec un besoin croissant en profils techniques)*\n\n---\n\n### **Carte des bassins d’emploi en AURA (connaissance générale)**\n- **Lyon** : Pôle tech (La Part-Dieu) + santé (Hôpitaux Civils).\n- **Grenoble** : Énergie (CEA, Schneider Electric) + microélectronique (STMicro).\n- **Clermont-Ferrand** : Santé (CHU) + agroalimentaire (Limagrain).\n- **Annecy/Chambéry** : Tourisme + cybersécurité (pôle **Alpes Cyber**).\n- **Saint-Étienne** : Rénovation industrielle (anciens sites miniers).\n\n**Piège à éviter** : Les formations privées en tech (ex : **Wild Code School**, **42 Lyon**) sont souvent chères (6 000–10 000€/an) sans garantie d’emploi. Privilégie le **public** (IUT, universités) ou les dispositifs gratuits (Simplon, AFPA).\n\n---\n**Question pour toi :**\nAs-tu une préférence pour un secteur en particulier (énergie, santé, tech) ? Ou veux-tu des précisions sur les **formations en alternance** près de chez toi (précise ta ville si possible) ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 38.49,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 5.52,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 8,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 8,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "apec_region",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "_apec_region",
+    "_metier_prospective"
+  ]
+}

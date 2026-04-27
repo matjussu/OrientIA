@@ -1,0 +1,37 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q06_blocs_savoir_faire_BTS_hotel",
+  "query_text": "Quels savoir-faire certifiés à la sortie d'un BTS hôtellerie-restauration ?",
+  "answer_text": "**TL;DR**\n1. Le **BTS Hôtellerie-Restauration** (option A, B ou C) certifie des compétences opérationnelles en gestion, service et production culinaire, avec un fort ancrage terrain.\n2. Les savoir-faire sont **validés par des épreuves professionnelles** (ex : service en salle, gestion des stocks, cuisine en brigade) et un stage de 14 à 16 semaines.\n3. Le diplôme est **reconnu par l’État (niveau 5, bac+2)** et permet une insertion directe ou une poursuite d’études en licence pro ou bachelor.\n\n---\n\n### **Plan A — Compétences techniques certifiées (cœur du diplôme)**\n*(connaissance générale)*\n- **Service et accueil** : Techniques de service en salle (arts de la table, gestion des clients, sommellerie), maîtrise des logiciels de réservation (ex : Opera PMS).\n- **Production culinaire** : Cuisine en brigade, gestion des coûts matières, respect des normes HACCP (hygiène alimentaire).\n- **Gestion opérationnelle** : Élaboration de menus, gestion des stocks, analyse des coûts (food cost).\n*Pour toi* : Ces compétences sont **évaluées en contrôle continu et en épreuves finales** (ex : mise en situation professionnelle avec jury).\n\n### **Plan B — Compétences transversales (valorisables hors secteur)**\n*(connaissance générale)*\n- **Management d’équipe** : Encadrement de brigades en cuisine ou en salle (leadership, gestion des conflits).\n- **Langues étrangères** : Anglais professionnel (vocabulaire technique hôtellerie) + LV2 selon l’établissement.\n- **Digital** : Utilisation des outils de e-réputation (TripAdvisor, Google Reviews) et des systèmes de caisse (ex : Micros).\n*Pour toi* : Utile pour une **réorientation vers le tourisme, l’événementiel ou le commerce**.\n\n### **Plan C — Certifications complémentaires (optionnelles mais valorisantes)**\n*(connaissance générale)*\n- **Certificats spécifiques** : SST (Sauveteur Secouriste du Travail), permis d’exploitation (pour gérer un bar/café), ou CACES (pour la logistique en restauration collective).\n- **Labels qualité** : Participation à des concours (ex : Meilleur Apprenti de France) ou obtention de certifications (ex : \"Restaurant Engagé\" pour le développement durable).\n*Pour toi* : Ces + **boostent un CV** pour des postes à responsabilité ou à l’international.\n\n---\n**⚠ Attention aux pièges**\n- **Spécialisation précoce** : Le BTS HR propose 3 options (*A : Gestion hôtelière*, *B : Art culinaire/art de la table*, *C : Art du service*). Choisis en fonction de ton projet (ex : option B obligatoire pour devenir chef cuisinier).\n- **Alternance indispensable** : Sans contrat pro/apprentissage, l’accès aux **savoir-faire terrain** est limité (risque de diplôme \"théorique\").\n- **Évolution salariale** : Les postes opérationnels (serveur, commis) ont des salaires modestes à la sortie (SMIC à 1,2xSMIC). La progression passe par l’expérience ou des études longues (ex : bachelor en management hôtelier).\n\n---\n**Question pour toi** :\nTon objectif est-il une **insertion rapide** (ex : chef de partie, responsable de salle) ou une **poursuite d’études** (ex : licence pro événementiel, école hôtelière comme Vatel) ? Cela change les compétences à mettre en avant pendant ta formation.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 37.48,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 1.43,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 2,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_region_diplome",
+    "_competences_certif",
+    "_competences_certif"
+  ]
+}

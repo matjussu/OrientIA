@@ -1,0 +1,38 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q12_apprentissage_vs_bac_general",
+  "query_text": "Mon fils de 17 ans hésite entre l'apprentissage et le bac général. Comment l'aider à décider ?",
+  "answer_text": "**TL;DR**\n1. **L’apprentissage** offre une insertion pro rapide et un salaire, mais limite les portes ouvertes vers des études longues.\n2. **Le bac général** garde plus d’options (études supérieures, réorientation), mais sans garantie d’emploi immédiat.\n3. **La clé** : son projet à 5 ans (métier précis vs exploration) et son rapport à l’école (théorie vs pratique).\n\n---\n\n### **Plan A — S’il a un métier précis en tête (et aime le concret)**\n📍 **Apprentissage** (CAP/Bac Pro/BP) — bac ou bac+2, rémunéré (30-80% du SMIC), contrat pro garanti\n*Pour lui : idéal si il vise un métier manuel, commercial ou technique (ex : graphiste, conseiller commercial) et veut gagner en autonomie vite. Exemples :*\n- **Graphiste** (bac+2, RNCP) : création visuelle en agence/entreprise *(connaissance générale)*\n- **Conseiller commercial** (bac, RNCP) : vente, relation client *(connaissance générale)*\n\n**Comment faire** :\n- Cibler un **CAP/Bac Pro** dans son domaine (ex : Bac Pro Métiers du commerce pour la vente).\n- Chercher des offres sur [La Bonne Alternance](https://labonnealternance.pole-emploi.fr/) ou via les CFA locaux.\n\n---\n\n### **Plan B — S’il veut garder des portes ouvertes (études longues, réorientation)**\n📍 **Bac général** — 3 ans, passage obligatoire pour la fac, les écoles (ingé, commerce, santé…)\n*Pour lui : nécessaire si il envisage des études supérieures (médecine, droit, informatique…) ou hésite encore sur son projet. Le bac général permet aussi de faire un **BTS/BUT en post-bac** (ex : BUT MMI pour le design numérique) si il veut un mix théorie/pratique.*\n\n**Comment faire** :\n- Choisir des **spécialités larges** en 1ère (ex : SES + Maths + LLCE pour garder des options).\n- En terminale, affiner avec des **options pro** (ex : droit et grands enjeux du monde contemporain pour le juridique).\n\n---\n### **Plan C — Compromis : Bac techno ou pro + poursuite d’études**\n📍 **Bac technologique (STMG, STI2D…)** ou **Bac Pro + BTS** — bac+2, mix école/entreprise\n*Pour lui : si il veut un diplôme pro *sans fermer la porte* aux études. Exemples :*\n- **Bac Pro Gestion-Administration** → BTS NDRC (commerce) → licence pro.\n- **Bac Techno STMG** → BUT GEA (gestion) → école de commerce.\n\n**Avantage** : il peut tester le terrain en stage/alternance *avant* de s’engager dans un long cursus.\n\n---\n### **⚠ Attention aux pièges**\n- **Apprentissage** : certains métiers (ex : conseiller commercial) exigent une grande résistance au stress et aux objectifs. *Vérifier son tempérament.*\n- **Bac général** : sans projet clair, risque de décrochage en fac (taux d’échec ~60% en L1, *connaissance générale*).\n- **Faux compromis** : un Bac Pro \"pour voir\" peut fermer des portes (ex : difficile d’accéder à une licence générale après).\n\n---\n**Question pour vous (parent) :**\nEst-ce que votre fils a déjà **testé concrètement** le métier qui l’attire (stage, job d’été, rencontre pro) ? Si non, proposez-lui d’en faire un *avant* de choisir : c’est le meilleur test pour trancher entre théorie et pratique.\n\n---\n👤 *Pour aller plus loin, un RDV avec le **Psy-EN** de son lycée ou un **conseiller en évolution professionnelle (CEP)** peut l’aider à clarifier son projet. Les missions locales proposent aussi des ateliers \"découverte des métiers\" pour les 16-25 ans.*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 76.77,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 12.77,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 0,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 0,
+    "error": "JSON parse error: Unterminated string starting at: line 171 column 7 (char 8163). Raw: {\n  \"stats_extracted\": [\n    {\n      \"stat_text\": \"30-80% du SMIC\",\n      \"stat_value\": 30,\n      \"stat_unit\": \"% du SMIC\",\n      \"context_in_response\": \"rémunération en apprentissage (CAP/Bac Pro/BP)"
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "formation_insertion",
+    "parcours_bacheliers"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "formation_france",
+    "_parcours_bacheliers",
+    "_parcours_bacheliers"
+  ]
+}

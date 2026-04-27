@@ -1,0 +1,37 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q15_cout_ecole_commerce_5ans",
+  "query_text": "Combien faut-il prévoir financièrement pour 5 années d'études en école de commerce ?",
+  "answer_text": "**TL;DR**\n1. Le coût total sur 5 ans en école de commerce varie de **0€ (public)** à **50 000€+ (privé)** selon le type d'école et le mode d'études.\n2. L'alternance réduit drastiquement les frais (salaire + prise en charge par l'entreprise).\n3. Budget moyen estimé : **15 000–30 000€** pour une école privée classique (hors top 5).\n\n---\n\n### **Plan A — Public ou alternance : coût minimal (0–5 000€)**\n📍 **IAE (Instituts d'Administration des Entreprises)** — bac+5 public, grade Master, frais d'inscription ~250–600€/an · [exemple IAE Paris](https://www.onisep.fr/http/redirection/formation/slug/FOR.12278)\n*Pour toi : solution la plus économique, sélective (dossier + score IAE Message). Alternance possible dès bac+3.*\n\n📍 **Licence pro Commerce International** — bac+3 public, gratuite (boursiers exemptés de frais) · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11370)\n*Pour toi : si tu vises un bac+3, coût quasi-nul + stages rémunérés (~600–1 000€/mois).*\n\n**Coût total estimé** :\n- **0–2 000€** (public + bourses)\n- **0€** en alternance (l’entreprise paie les frais de formation + salaire).\n\n---\n\n### **Plan B — Écoles privées classiques (15 000–30 000€)**\n📍 **Bachelor Finance (bac+3) + Master (bac+5)** — écoles type **ESDESCA, INSEEC, SKEMA** · [exemple Bachelor Finance](https://www.onisep.fr/http/redirection/formation/slug/FOR.10902)\n*Pour toi : frais annuels 6 000–10 000€. Budget total ~30 000€ sur 5 ans (hors alternance).*\n\n📍 **Écoles post-bac (type ESG, PPA)** — bac+5 en 5 ans, frais ~7 000–9 000€/an.\n*Pour toi : coût total ~35 000€, mais admissions parallèles possibles en bac+3 pour réduire la durée.*\n\n**Coût total estimé** :\n- **15 000–30 000€** (sans alternance)\n- **5 000–10 000€** si alternance sur 2–3 ans (salaire ~800–1 500€/mois déduit).\n\n---\n### **Plan C — Top 5 (HEC, ESSEC, etc.) ou international (50 000€+)**\n📍 **HEC, ESSEC, ESCP** — bac+5, frais ~15 000–20 000€/an (hors logement/vie étudiante).\n*Pour toi : budget total **75 000–100 000€** sur 5 ans. Bourses sur critères sociaux (ex : HEC ~20% des élèves bénéficiaires).*\n\n📍 **Écoles à l’étranger (LSE, Bocconi)** — frais ~20 000–30 000€/an + coût de la vie.\n*Pour toi : investissement lourd, mais ROI élevé si carrière internationale.*\n\n**Coût total estimé** :\n- **50 000–100 000€** (sans alternance)\n- **30 000–50 000€** avec alternance (rare en top 5, plus courant en M2).\n\n---\n### **⚠ Attention aux pièges**\n- **Marketing des \"écoles low-cost\"** : certaines écoles privées affichent des frais bas (3 000–5 000€/an) mais ont des taux d’insertion faibles ou des diplômes non reconnus (vérifie le **grade Master** ou le label **CGE**).\n- **Coût caché de la vie étudiante** : compte **500–1 000€/mois** (logement, transport, nourriture) en plus des frais de scolarité, surtout à Paris.\n- **Alternance ≠ garantie** : trouver un contrat dépend de ton profil et du marché. Prévois un plan B (prêt étudiant, job étudiant).\n\n---\n**Question pour toi** :\nAs-tu une préférence entre **sécurité financière (public/alternance)** ou **prestige (top 5, même à crédit)** ? Ou cherches-tu un équilibre entre les deux ?\n\n---\n👤 *Pour un projet personnalisé, un conseiller en orientation (Psy-EN, CIO) peut t’aider à affiner tes choix en fonction de ton budget et de tes notes.*",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 38.29,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 11.04,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 24,
+    "n_verified": 5,
+    "n_verified_strict": 5,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 19,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "financement_etudes",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "voie",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "suite": "financement_dedie",
+  "query_id": "financement_q02_bourse_crous_echelons",
+  "query_text": "Comment fonctionnent les échelons de la bourse CROUS ? Combien je peux toucher ?",
+  "answer_text": "**TL;DR**\n1. La bourse CROUS est calculée sur **8 échelons** (0bis à 7), en fonction des revenus familiaux et de la distance entre domicile et lieu d’études.\n2. Montant 2024-2025 : **de 1 000 € à 6 000 €/an** (versés en 10 mensualités).\n3. **Simule ton éligibilité** sur [mesdroitssociaux.gouv.fr](https://www.mesdroitssociaux.gouv.fr) avant de faire une demande.\n\n---\n\n### **Plan A — Comprendre les échelons et les montants**\nLes échelons dépendent du **revenu fiscal de référence** (avis d’imposition 2023 pour 2024-2025) et de l’éloignement géographique :\n- **Échelon 0bis** : ~1 000 €/an (revenus très modestes, étudiant vivant chez ses parents).\n- **Échelon 1 à 7** : de **1 700 € à 6 000 €/an** (ex : échelon 5 = ~4 500 €/an pour un étudiant en logement indépendant).\n*(connaissance générale, barème 2024-2025)*\n\n**Pour toi** : Vérifie ton échelon exact via le **simulateur officiel** (lien ci-dessus) — les seuils changent chaque année.\n\n---\n\n### **Plan B — Maximiser ta bourse (critères clés)**\n3 leviers pour augmenter ton échelon ou ton montant :\n1. **Logement indépendant** : +2 à 3 échelons vs. « chez les parents ».\n2. **Bourse \"sur critères sociaux\" + mobilité** : Cumule avec l’[aide à la mobilité CROUS](https://www.etudiant.gouv.fr/) (jusqu’à 1 000 €/an si stage/érasmus).\n3. **Demi-part fiscale** : Si tes parents te déclarent à charge, leurs revenus divisés par 1,5 peuvent te faire passer à l’échelon supérieur.\n*(connaissance générale, règles CROUS 2024)*\n\n**Pour toi** : Un étudiant en colocation à 300 km de chez ses parents (revenus < 30k€/an) touche souvent **l’échelon 4 ou 5** (~3 500-4 500 €/an).\n\n---\n### **Plan C — Alternatives si refus ou montant insuffisant**\n- **Aides locales** : Certaines régions (ex : Île-de-France avec le *Pass’Région*) ou villes (ex : *Fonds de solidarité étudiant* à Lyon) complètent la bourse CROUS.\n- **Jobs étudiants** : Les **contrats en alternance** (rémunération 55-100% du SMIC) ou les **missions en freelance** (ex : cours particuliers) sont cumulables avec la bourse (sous conditions).\n- **Urgence** : Le **Fonds national d’aide d’urgence (FNAU)** peut débloquer jusqu’à 1 700 € en cas de crise (démarches via le CROUS).\n\n**Pour toi** : Si tu es boursier échelon 0bis, explore **les aides au logement (APL)** — jusqu’à 250 €/mois en plus.\n\n---\n### **⚠ Attention aux pièges**\n- **Délais** : La demande se fait **entre janvier et mai** pour l’année universitaire suivante (même si tu n’as pas encore tes résultats).\n- **Changement de situation** : Un divorce parental ou une perte d’emploi en cours d’année **ne modifie pas** ton échelon (sauf demande exceptionnelle avec justificatifs).\n- **Erreurs de déclaration** : Une erreur sur ton dossier (ex : mauvaise case cochée pour le logement) peut te faire **perdre 1 000 €/an**. Relis-le avec un conseiller CROUS.\n\n---\n**Question pour toi** :\nAs-tu déjà fait une simulation sur [mesdroitssociaux.gouv.fr](https://www.mesdroitssociaux.gouv.fr) ? Si oui, quel échelon ressort — et est-ce que le montant couvre tes besoins (loyer, transports, etc.) ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 38.97,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 5.85,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 8,
+    "n_verified_strict": 8,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "financement_etudes",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "dispositif",
+    "dispositif",
+    "dispositif",
+    "voie",
+    "dispositif",
+    "dispositif",
+    "dispositif",
+    "_formation"
+  ]
+}

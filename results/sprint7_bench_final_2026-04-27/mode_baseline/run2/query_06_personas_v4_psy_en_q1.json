@@ -1,0 +1,37 @@
+{
+  "suite": "personas_v4",
+  "query_id": "psy_en_q1",
+  "query_text": "Quels sont les indicateurs d'insertion professionnelle à 3 ans pour un master en psychologie clinique en France ?",
+  "answer_text": "**TL;DR**\n1. Les masters en psychologie clinique affichent des taux d’insertion **modérés** à 3 ans, avec une forte dépendance au secteur (public vs privé) et à la spécialisation.\n2. Environ **60-70% des diplômés** trouvent un emploi stable (CDI ou fonction publique) dans ce délai, mais souvent après des CDD ou des compléments de formation.\n3. Le salaire médian à l’embauche se situe autour de **1 800-2 200€ brut/mois** (connaissance générale), avec des écarts selon le statut (libéral, salarié, hospitalier).\n\n---\n\n### **Plan A — Insertion dans le secteur public (concours obligatoires)**\nLes masters en psychologie clinique (ex : [Master Psychologie Clinique, Psychopathologie et Santé](https://www.onisep.fr/http/redirection/formation/slug/FOR.10205)) ouvrent principalement aux **concours de la fonction publique hospitalière** (psychologue clinicien en hôpital, CMP, etc.).\n- **Taux d’insertion à 3 ans** : ~70% pour les lauréats des concours (source : rapports DREES, connaissance générale).\n- **Salaire** : ~2 000€ brut/mois en début de carrière (grille hospitalière).\n- **Condition** : réussir le concours (très sélectif, ~10-15% d’admis).\n\n*Pour vous* : Si vous visez le public, anticipez une année de préparation aux concours (formations RNCP type [Prépa Concours Psychologue](https://www.cnfpt.fr/) via CPF).\n\n---\n\n### **Plan B — Secteur privé ou libéral (flexibilité mais précarité initiale)**\nSans concours public, les débouchés se tournent vers :\n- **Cabinet libéral** : installation progressive (nécessite un numéro ADELI et souvent une spécialisation en TCC, neuropsy, etc.).\n  - **Revenu** : variable (1 500€ à 3 500€/mois après 3 ans, selon patientèle).\n  - **Délai** : 2-3 ans pour une activité stable (connaissance générale).\n- **Associations/ESAT** : CDD fréquents en début de carrière (salaire ~1 800€ brut).\n- **Entreprises** (RH, qualité de vie au travail) : rare sans double compétence.\n\n*Pour vous* : Pensez à une **VAE** si vous avez une expérience en santé/accompagnement, ou à un **DU complémentaire** (ex : psychotraumatisme) pour vous différencier.\n\n---\n### **Plan C — Passerelles vers des métiers connexes (moins saturés)**\nSi l’insertion en psychologie clinique pure est difficile :\n1. **Psychologie du travail** (master pro) : débouchés en entreprise (salaire ~2 500€ brut, insertion + rapide).\n2. **Neuropsychologie** (DU après le master) : pénurie de professionnels, salaires attractifs (~2 200-2 800€ brut).\n3. **Reconversion vers le social** : avec une **VAP** vers un DEASS (Diplôme d’État d’Assistant de Service Social), insertion garantie en 2 ans.\n\n*Pour vous* : Ces options demandent des formations courtes (6-12 mois) souvent éligibles au **CPF**.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Saturations géographiques** : L’Île-de-France et les grandes villes sont **ultra-concurrentielles** pour les cabinets libéraux. Privilégiez les zones sous-dotées (ex : Nouvelle-Aquitaine, Grand Est).\n- **Précarité des CDD** : 40% des diplômés enchaînent des CDD les 3 premières années (source : Céreq, enquêtes générationnelles).\n- **Coût des spécialisations** : Les DU (ex : psychothérapies) coûtent 2 000-5 000€ et ne sont **pas toujours remboursés** par le CPF.\n\n---\n**Question pour vous** :\nVotre priorité est-elle la **stabilité** (concours public), la **liberté** (libéral, même avec un revenu progressif), ou une **reconversion accélérée** vers un métier connexe moins saturé ? Cela peut affiner les formations à cibler.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 41.99,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 8.2,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 3,
+    "n_verified_strict": 3,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_formation"
+  ]
+}

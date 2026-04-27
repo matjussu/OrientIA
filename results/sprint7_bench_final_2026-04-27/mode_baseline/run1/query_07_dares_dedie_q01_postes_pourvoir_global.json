@@ -1,0 +1,37 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q01_postes_pourvoir_global",
+  "query_text": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+  "answer_text": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 secteurs clés** : transition écologique, santé/autonomie, numérique, et industries de pointe.\n2. **Top 5 des familles de métiers en tension** : énergies renouvelables, soins aux personnes âgées, cybersécurité/data, maintenance industrielle 4.0, et agriculture durable.\n3. **Stratégie gagnante** : vise des compétences hybrides (ex : tech + santé, ou écologie + gestion) pour te différencier.\n\n---\n\n### **Plan A — Secteurs en explosion (recrutements massifs prévus)**\n1. **Transition écologique et énergies renouvelables** (connaissance générale)\n   - *Métiers phares* : Technicien·ne en énergies renouvelables (solaire, éolien), ingénieur·e en efficacité énergétique, chef·fe de projet hydrogène.\n   - *Pourquoi ?* : Objectif neutralité carbone 2050 → **500 000 emplois créés d’ici 2030** (source : Stratégie Nationale Bas-Carbone 2024).\n   - *Formations clés* : BTS Métiers des services à l’environnement, licences pro en gestion des énergies, écoles d’ingénieurs (ex : Mines ParisTech avec parcours énergie).\n\n2. **Santé et autonomie (vieillissement + pénuries)** (connaissance générale)\n   - *Métiers phares* : Infirmier·ère spécialisé·e en gériatrie, ergothérapeute, aide-soignant·e en EHPAD, coordinateur·trice de parcours santé.\n   - *Chiffres* : **800 000 départs à la retraite prévus dans le secteur d’ici 2030** (DREES 2023) + besoin accru lié au papy-boom.\n   - *Formations* : IFSI (Institut de Formation en Soins Infirmiers), BUT Carrières sociales (parcours gérontologie), licences pro métiers de la santé.\n\n---\n\n### **Plan B — Numérique et industries 4.0 (pénuries structurelles)**\n1. **Cybersécurité et data science** (connaissance générale)\n   - *Métiers phares* : Analyste SOC (Security Operations Center), expert·e en IA responsable, data scientist spécialisé·e santé/énergie.\n   - *Pourquoi ?* : **30 000 postes non pourvus en cybersécurité en 2024** (ANSSI), et la demande explose avec l’IA et les réglementations (RGPD, NIS2).\n   - *Formations* : BUT Informatique (parcours cybersécurité), masters labellisés **SecNumEdu** (ex : Master Cybersécurité de l’Université de Limoges), écoles d’ingénieurs (ex : ESIEA, UT Compiègne).\n\n2. **Maintenance industrielle et robotique** (connaissance générale)\n   - *Métiers phares* : Technicien·ne de maintenance 4.0, roboticien·ne industriel·le, pilote de drones pour inspection d’infrastructures.\n   - *Contexte* : Relocalisation industrielle + automatisation → **besoin de 150 000 technicien·nes supérieurs d’ici 2030** (France Industrie).\n   - *Formations* : BTS Maintenance des systèmes, licences pro robotique, écoles d’ingénieurs avec spécialisation industrie du futur (ex : Arts et Métiers).\n\n---\n\n### **Plan C — Métiers émergents (niche mais forte croissance)**\n1. **Agriculture durable et agroécologie** (connaissance générale)\n   - *Métiers phares* : Agronome en permaculture, technicien·ne en agroéquipements connectés, consultant·e en transition alimentaire.\n   - *Pourquoi ?* : Plan France 2030 vise **30% d’agriculture bio** → besoin de profils hybrides (tech + écologie).\n   - *Formations* : BTSA Agronomie, licences pro en agroécologie (ex : Université de Rennes 1), écoles d’ingénieurs agronomes (ex : AgroParisTech).\n\n2. **Métiers de la rénovation énergétique** (connaissance générale)\n   - *Métiers phares* : Chef·fe de chantier en rénovation bas carbone, auditeur·trice énergétique, artisan·e spécialisé·e en matériaux biosourcés.\n   - *Chiffres* : **200 000 emplois à créer** pour tenir les objectifs de rénovation des bâtiments (ADEME 2023).\n   - *Formations* : CAP/Bac Pro Métiers du bâtiment (avec spécialisation rénovation), licences pro en éco-construction.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Évite les formations \"trop génériques\"** : un BTS NDRC (Négociation Digitalisation Relation Client) sans spécialisation aura du mal à percer face à des profils tech ou écolos ciblés.\n- **Méfie-toi des écoles privées coûteuses** (>8k€/an) dans ces secteurs : beaucoup de formations publiques (BTS, BUT, licences pro) mènent aux mêmes débouchés avec un diplôme reconnu par l’État.\n\n---\n**Question pour toi** :\nAs-tu une appétence particulière pour l’un de ces secteurs (tech, santé, écologie, industrie) ? Ou préfères-tu explorer des métiers hybrides qui combinent plusieurs domaines (ex : data + santé, ou écologie + gestion) ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 44.82,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 4.94,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 6,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "apec_region",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_apec_region",
+    "_metier_prospective"
+  ]
+}

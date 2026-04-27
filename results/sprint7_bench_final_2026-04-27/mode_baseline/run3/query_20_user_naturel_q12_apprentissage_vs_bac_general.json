@@ -1,0 +1,37 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q12_apprentissage_vs_bac_general",
+  "query_text": "Mon fils de 17 ans hésite entre l'apprentissage et le bac général. Comment l'aider à décider ?",
+  "answer_text": "**TL;DR**\n1. Le choix entre apprentissage et bac général dépend de **son projet concret** (métier précis vs études longues) et de **son mode d’apprentissage** (pratique vs théorique).\n2. L’apprentissage offre un diplôme + salaire + expérience, mais limite les réorientations ultérieures. Le bac général garde des portes ouvertes, mais sans garantie d’emploi.\n3. **Étape clé** : lui faire tester les deux via des immersions (stages, journées portes ouvertes en lycée pro/CFA).\n\n---\n\n### **Plan A — S’il a un métier précis en tête (et aime le concret)**\n**Apprentissage** (CAP, bac pro, BTS en alternance) :\n- **Pourquoi ?** Diplôme + salaire (600-1000€/mois) + expérience pro valorisée. Idéal pour les métiers en tension (BTP, numérique, santé, industrie).\n- **Exemples** : Bac pro Cybersécurité (lycées publics), BTS SIO en alternance (entreprises locales).\n- **Attention** : Engagement sur 2-3 ans avec un employeur. Réorientation difficile vers des études longues après.\n*(connaissance générale)*\n\n---\n\n### **Plan B — S’il vise des études longues ou hésite sur son projet**\n**Bac général + spécialités adaptées** :\n- **Pourquoi ?** Garde toutes les options ouvertes (prépa, fac, écoles). Choix des spécialités clé : ex **NSI + Maths** pour l’informatique, **SES + HGGSP** pour le droit/sciences sociales.\n- **Flexibilité** : Possibilité de bifurquer vers un BTS/BUT après le bac si changement d’avis.\n- **Risque** : Pas de garantie d’emploi sans poursuite d’études (master, école).\n*(connaissance générale)*\n\n---\n### **Plan C — Mix des deux : Alternance après le bac général**\n**Parcours hybride** :\n1. Passer un **bac général** (pour garder des options).\n2. En Terminale, postuler à des **BUT ou licences pro en alternance** (ex : BUT Informatique, Licence pro Métiers du numérique).\n- **Avantage** : Combine théorie (bac général) et pratique (alternance post-bac).\n- **Exemple** : Après un bac général avec spécialité NSI, intégrer un BUT Réseaux et Télécoms en alternance.\n*(connaissance générale)*\n\n---\n\n### **⚠ Attention aux pièges**\n- **Apprentissage** : Certains CFA/employeurs profitent des apprentis (tâches inintéressantes, rupture de contrat). **Vérifier les avis sur l’entreprise et le taux de réussite du CFA** (données disponibles sur [la carte des CFA](https://www.alternance.pro/)).\n- **Bac général** : Sans projet clair, risque de décrochage en fac (taux d’échec en L1 ~60% — connaissance générale). **Prévoir un plan B** (ex : BTS en parallèle).\n- **Pression sociale** : Éviter les phrases comme *« L’apprentissage, c’est pour ceux qui ne sont pas faits pour les études »* — **les deux voies mènent à des réussites différentes**.\n\n---\n### **Outils pour l’aider à trancher**\n1. **Tester en vrai** :\n   - **Pour l’apprentissage** : Faire un stage d’observation en entreprise (1 semaine) + visiter un CFA.\n   - **Pour le bac général** : Assister à des cours en Terminale (demander au lycée) ou suivre un MOOC (ex : [FUN MOOC](https://www.fun-mooc.fr/) sur les métiers).\n2. **Rencontres** :\n   - Discuter avec des apprentis (via le réseau de son lycée ou les salons comme [l’Alternance Day](https://www.alternance-day.fr/)).\n   - Échanger avec des étudiants en bac général (forums comme [JeVeuxEtudierEnFrance](https://www.jeveuxetudierenfrance.fr/)).\n3. **Outils officiels** :\n   - [Onisep : Fiches métiers](https://www.onisep.fr/) (filtrer par « accessible sans bac » ou « bac+5 »).\n   - [La Bonne Boite](https://labonneboite.pole-emploi.fr/) : métiers qui recrutent en alternance près de chez lui.\n\n---\n**Question pour vous** :\nQuel est **son critère n°1** parmi ces 3 ?\n- **Gagner de l’argent rapidement** (→ apprentissage).\n- **Garder le plus de portes ouvertes** (→ bac général).\n- **Éviter l’échec** (→ mixer bac général + alternance post-bac).\n\n---\n👤 **Pour aller plus loin**, un entretien avec le **Psy-EN de son lycée** ou un conseiller du **CIO** (Centre d’Information et d’Orientation) peut l’aider à clarifier ses motivations. Les coordonnées sont disponibles sur [l’ONISEP](https://www.onisep.fr/).",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 36.17,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 1.46,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 2,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation_insertion",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "_metier_prospective",
+    "_metier_prospective",
+    "formation_france",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "formation_france"
+  ]
+}

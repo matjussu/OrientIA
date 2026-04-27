@@ -1,0 +1,38 @@
+{
+  "suite": "financement_dedie",
+  "query_id": "financement_q01_cpf_reconversion_dev",
+  "query_text": "Je suis salarié de 30 ans et je veux me reconvertir en développeur web. Mon CPF peut financer combien ?",
+  "answer_text": "**TL;DR**\n1. Votre CPF peut financer jusqu’à **500-800€/an** (plafond cumulé à ~5 800€ pour un salarié à temps plein), mais les formations éligibles varient en coût et durée.\n2. Pour une reconversion en **développeur web**, privilégiez les **titres RNCP** (reconnus par l’État) ou les **bachelors en alternance** (financés par l’OPCO).\n3. **Priorité** : valider un projet concret (ex : portfolio GitHub) avant de choisir une formation — certaines sont éligibles CPF, d’autres non.\n\n---\n\n### **Plan A — Formation courte et reconnue (RNCP) avec CPF**\n📍 **Titre RNCP \"Développeur web et web mobile\"** (niveau bac+2) — **100% éligible CPF**, durée 6 à 12 mois, **coût ~3 000-6 000€** (finançable intégralement si solde CPF suffisant).\n*Pour vous : idéal si vous visez une insertion rapide. Exemples d’organismes agréés : [Simplon](https://simplon.co/), [OpenClassrooms](https://openclassrooms.com/) (en ligne), ou les GRETA publics.*\n**→** [Fiche officielle RNCP](https://www.francecompetences.fr/recherche/formation/)\n\n### **Plan B — Bachelor en alternance (bac+3) sans reste à charge**\n📍 **Bachelor Développeur Web** (ex : **Epitech**, **Webtech Institute**, ou **IAE**) — **3 ans en alternance**, **gratuit** (rémunéré via contrat pro), titre RNCP ou grade Licence.\n*Pour vous : si vous pouvez vous permettre 6 mois de formation initiale avant l’alternance. L’alternance est la meilleure option pour allier expérience et diplôme sans utiliser votre CPF.*\n**→** [Exemple ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.8092)\n\n### **Plan C — Autodidaxie + validation par l’expérience (VAE)**\n- **MOOC gratuits** (ex : [The Odin Project](https://www.theodinproject.com/), [freeCodeCamp](https://www.freecodecamp.org/)) + **portfolio GitHub** pour postuler en junior.\n- **VAE (Validation des Acquis de l’Expérience)** : si vous avez déjà des compétences (ex : sites perso, freelance), obtenez le **titre RNCP sans formation** via un jury. Coût : ~1 500-3 000€ (éligible CPF).\n*Pour vous : si vous avez déjà des bases techniques et voulez éviter les cours.*\n\n---\n### **⚠ Attention aux pièges**\n- **Formations privées non-RNCP** : certaines écoles promettent un \"diplôme développeur\" sans reconnaissance officielle (ex : certifications internes). Vérifiez **toujours** le numéro RNCP sur [France Compétences](https://www.francecompetences.fr/).\n- **CPF insuffisant** : si votre solde est <3 000€, combinez avec **Pôle Emploi** (AIF) ou **votre OPCO** (ex : Atlas, AKTO). Un conseiller peut monter un dossier mixte.\n- **Alternance = engagement long** : un contrat pro implique 1 à 3 ans en entreprise. Assurez-vous que le rythme (ex : 3 semaines entreprise/1 semaine cours) est compatible avec votre situation familiale.\n\n---\n**Question pour vous :**\nAvez-vous déjà codé (même en amateur) ou souhaitez-vous une formation **100% encadrée** ? Cela change radicalement le choix entre autodidaxie (Plan C), formation courte (Plan A), ou alternance (Plan B).\n\n---\n👤 **Pour affiner votre projet**, un entretien avec un **conseiller en évolution professionnelle (CEP)** — gratuit via Pôle Emploi ou votre OPCO — est fortement recommandé. Ils peuvent simuler un financement mixte CPF/OPCO et valider l’éligibilité exacte de votre dossier.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 49.77,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 7.86,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 11,
+    "n_verified": 10,
+    "n_verified_strict": 8,
+    "n_verified_by_source": 2,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "financement_etudes",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_competences_certif",
+    "dispositif",
+    "_competences_certif",
+    "voie",
+    "_competences_certif",
+    "_formation"
+  ]
+}

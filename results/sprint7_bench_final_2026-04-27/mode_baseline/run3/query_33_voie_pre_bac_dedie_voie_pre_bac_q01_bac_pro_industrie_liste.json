@@ -1,0 +1,38 @@
+{
+  "suite": "voie_pre_bac_dedie",
+  "query_id": "voie_pre_bac_q01_bac_pro_industrie_liste",
+  "query_text": "Quels sont tous les bac pro dans le domaine industriel ? Mon fils en 3ème veut faire de la mécanique.",
+  "answer_text": "**TL;DR**\n1. Les **bacs pros industriels** couvrent la mécanique, l’électrotechnique, la maintenance, et la production. Ils se préparent en 3 ans après la 3ème, avec 22 semaines de stage en entreprise.\n2. Pour la **mécanique pure**, 3 options principales : **Mécanique automobile**, **Technicien d’usinage**, ou **Maintenance des équipements industriels**.\n3. **Clé pour choisir** : stage en 3ème pour tester le terrain, puis vérifier les débouchés locaux (ex : garages, usines, aéronautique).\n\n---\n\n### **Plan A — Bac Pro Mécanique automobile (le plus polyvalent)**\n📍 **Bac Pro Maintenance des véhicules (option voitures particulières ou poids lourds)** — bac+3 public/privé sous contrat, **taux d’insertion ~70% à 6 mois** (connaissance générale), 50% de la formation en atelier.\n*Pour toi : idéal si ton fils aime les moteurs, les diagnostics, et veut travailler en garage, concession, ou chez un constructeur. Alternance possible dès la 1ère.*\n\n### **Plan B — Bac Pro Technicien d’usinage (pour l’industrie de précision)**\n📍 **Bac Pro Technicien en réalisation de produits mécaniques (usinage)** — bac+3 public, **débouchés dans l’aéronautique, le médical, ou l’énergie** (connaissance générale).\n*Pour toi : parfait s’il est précis, aime les machines-outils (tours, fraiseuses) et vise des usines high-tech. Salaire médian embauche : ~1 800€ brut (connaissance générale).*\n\n### **Plan C — Bac Pro Maintenance des équipements industriels (pour la polyvalence)**\n📍 **Bac Pro Maintenance des équipements industriels (MEI)** — bac+3 public, **taux d’emploi élevé dans les zones industrielles** (ex : Nord, Rhône-Alpes, Pays de la Loire).\n*Pour toi : si ton fils hésite entre mécanique, électricité et pneumatique. Débouchés dans les usines (agroalimentaire, chimie, robotique).*\n\n---\n**Autres bacs pros industriels (connaissance générale)** :\n- **Électrotechnique** (pour les automatismes et l’électricité industrielle).\n- **Pilote de ligne de production** (gestion des machines en usine).\n- **Aéronautique** (option systèmes ou structure, si proximité avec un aéroport).\n- **Fonderie** ou **Chaudronnerie industrielle** (métiers plus niche mais très recherchés).\n\n---\n**⚠ Attention aux pièges**\n- **Sélectivité cachée** : Certaines sections (ex : aéronautique) demandent des notes correctes en maths/physique malgré l’image \"pro\".\n- **Débouchés locaux** : Vérifie les bassins d’emploi près de chez vous (ex : peu de mécaniciens automobiles en zone rurale sans garages).\n- **Évolution** : Un bac pro seul limite les promotions. Prévoir un BTS (ex : BTS Mécanique) ou une mention complémentaire (MC) pour monter en grade.\n\n---\n**Question pour toi** :\nTon fils a-t-il déjà fait un stage en mécanique (garage, usine) ? Si non, **priorité absolue** : en organiser un avant de choisir. L’immersion concrète évite 80% des désillusions (connaissance générale). Sinon, quel environnement lui plaît le plus : ateliers bruyants, usines high-tech, ou travail en extérieur (ex : engins de chantier) ?",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 46.9,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 2.98,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 5,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 3,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective",
+    "voie_pre_bac"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "bac_pro_domaine",
+    "_competences_certif"
+  ]
+}

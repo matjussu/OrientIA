@@ -1,0 +1,38 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q16_bacpro_BUT_taux",
+  "query_text": "Mon fils a un bac pro vente, peut-il intégrer un BUT et avec quelle chance de réussir ?",
+  "answer_text": "**TL;DR**\n1. Oui, un bac pro vente permet de candidater en BUT, mais les chances d’admission varient fortement selon la filière et le dossier.\n2. Les BUT tertiaires (GEA, TC, MMI) sont plus accessibles que les BUT scientifiques/techniques.\n3. La réussite dépendra de son niveau en français/maths et de sa motivation à combler les écarts avec les bacs généraux.\n\n---\n\n### **Plan A — Réaliste : BUT tertiaires (Gestion, Commerce, Communication)**\n📍 **BUT GEA (Gestion des Entreprises et des Administrations)** — bac+3 public, sélectivité modérée (30-60%), parcours adaptés aux bacs pros (ex : parcours \"Gestion Comptable et Financière\") · [fiche ONISEP](https://www.onisep.fr)\n*Pour toi : le plus aligné avec un bac pro vente. Taux d’admission correct pour les profils motivés (connaissance générale).*\n\n📍 **BUT TC (Techniques de Commercialisation)** — bac+3 public, sélectivité 40-50%, parcours \"Marketing Digital\" ou \"Négociation Relation Client\" · [fiche ONISEP](https://www.onisep.fr)\n*Pour toi : valorise son expérience commerciale. Alternance possible dès la 2e année (connaissance générale).*\n\n📍 **BUT MMI (Métiers du Multimédia et de l’Internet)** — bac+3 public, sélectivité 50-60%, parcours \"Stratégie de Communication Numérique\" · [fiche ONISEP](https://www.onisep.fr)\n*Pour toi : si il a un intérêt pour le digital. Moins saturé que les BUT informatiques (connaissance générale).*\n\n---\n### **Plan B — Ambitieux : BUT avec remises à niveau (sélectifs mais jouables)**\n📍 **BUT BUT GC-CD (Génie Civil – Construction Durable)** — bac+3 public, sélectivité 20-30%, parcours \"Économie de la Construction\" · [fiche ONISEP](https://www.onisep.fr)\n*Pour toi : possible si il a un bon niveau en maths et suit une **année de mise à niveau** (ex : [DU Tremplin à l’IUT](https://www.iut.fr) — connaissance générale).*\n\n📍 **BUT STID (Statistique et Informatique Décisionnelle)** — bac+3 public, sélectivité 15-25%, parcours \"Data Visualisation\" · [fiche ONISEP](https://www.onisep.fr)\n*Pour toi : très sélectif pour un bac pro, mais des **IUT proposent des dispositifs d’accompagnement** (ex : tutorat renforcé). À tenter si il vise la data (connaissance générale).*\n\n---\n### **Plan C — Alternatives si le BUT est trop difficile**\n- **BTS NDRC (Négociation et Digitalisation de la Relation Client)** — bac+2 public/privé, sélectivité accessible (60-80%), **passerelle vers BUT TC en 2e année** (connaissance générale).\n- **École de commerce post-bac** (ex : [Bachelor EGC](https://www.reseau-egc.fr)) — bac+3 privé (5-8k€/an), admissions sur dossier/entretien, **alternance possible dès la 1re année** (connaissance générale).\n\n---\n### **⚠ Attention aux pièges**\n- **Sélectivité variable selon l’IUT** : certains BUT (informatique, chimie) refusent quasi-systématiquement les bacs pros. Viser les filières **tertiaires** ou **hybrides** (ex : BUT Carrières Juridiques).\n- **Écarts à combler** : un bac pro vente ne couvre pas les attendus en maths/physique des BUT scientifiques. Prévoir un **stage de pré-rentrée** ou un **MOOC** (ex : [FUN MOOC](https://www.fun-mooc.fr)).\n- **Alternance = atout** : les BUT en alternance (contrat pro/apprentissage) **doublent les chances d’admission** pour les bacs pros (connaissance générale).\n\n---\n**Question pour toi :**\nTon fils a-t-il un projet précis (commerce, gestion, digital) ou cherche-t-il avant tout un diplôme \"passe-partout\" ? Cela peut aider à affiner entre BUT GEA (polyvalent) et BUT TC (spécialisé vente). 👤 Pour un accompagnement sur mesure, un RDV avec le **Psy-EN de son lycée** ou un **conseiller du CIO** est vivement recommandé.",
+  "answer_text_pre_critic": null,
+  "elapsed_pipeline_s": 33.85,
+  "elapsed_critic_loop_s": 0.0,
+  "elapsed_fact_check_post_hoc_s": 3.79,
+  "critic_n_modifications": 0,
+  "critic_summary": null,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation_insertion",
+    "voie_pre_bac"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "bac_pro_domaine",
+    "_competences_certif"
+  ]
+}

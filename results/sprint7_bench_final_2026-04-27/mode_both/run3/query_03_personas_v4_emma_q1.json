@@ -1,0 +1,37 @@
+{
+  "suite": "personas_v4",
+  "query_id": "emma_q1",
+  "query_text": "Quel est le salaire moyen d'un développeur débutant post M2 informatique en France ?",
+  "answer_text": "**TL;DR**\n1. Un développeur débutant post-M2 informatique gagne en moyenne **2 000 à 2 500 € brut/mois** en France (estimation).\n2. L’alternance et les spécialisations (IA, cybersécurité) boostent ce salaire (+10 à 20% estimation).\n3. Les écarts régionaux sont forts : Île-de-France (+15% estimation) vs provinces.\n\n---\n\n### **Plan A — Développeur généraliste (salaire médian)**\n📍 **2 000–2 300 € brut/mois** (estimation)\n*Pour toi : base réaliste pour un M2 sans spécialisation pointue. Pistes : ESN (ex : Capgemini), startups.*\n\n### **Plan B — Spécialisation valorisée (salaire supérieur)**\n📍 **2 500–3 000 € brut/mois** (estimation)\n*Pour toi : vise l’IA, la data science ou la cybersécurité (ex : [Master Technologies de l’Information](https://www.onisep.fr/http/redirection/formation/slug/FOR.4855)). L’alternance en M2 peut aussi augmenter l’offre.*\n\n### **Plan C — Alternance ou thèse CIFRE (salaire + expérience)**\n📍 **1 800–2 200 € brut/mois en alternance** (estimation) ou **2 100–2 600 € brut/mois en thèse CIFRE** (source [ANRT](https://www.anrt.asso.fr/fr/cifre-809))\n*Pour toi : l’alternance te donne 1 an d’expérience + réseau ; la CIFRE combine salaire et doctorat (si recherche t’intéresse).*\n\n---\n**⚠ Attention aux pièges**\n- **ESN vs entreprise finale** : les salaires en ESN sont souvent inférieurs de 10-15% à ceux des boîtes tech (FAANG, scale-ups) (estimation).\n- **Région** : un salaire parisien (2 500 €) équivaut à 2 000 € en province (coût de la vie ajusté estimation).\n- **Négociation** : les grilles salariales des grandes entreprises sont fixes ; les startups offrent plus de flexibilité (mais moins de stabilité) (estimation).\n\n**Question pour toi** : Privilégies-tu la stabilité (ESN/grand groupe), l’innovation (startup), ou un domaine porteur (IA/cyber) pour justifier un salaire plus élevé ?",
+  "answer_text_pre_critic": "**TL;DR**\n1. Un développeur débutant post-M2 informatique gagne en moyenne **2 000 à 2 500 € brut/mois** en France (connaissance générale).\n2. L’alternance et les spécialisations (IA, cybersécurité) boostent ce salaire (+10 à 20%).\n3. Les écarts régionaux sont forts : Île-de-France (+15%) vs provinces.\n\n---\n\n### **Plan A — Développeur généraliste (salaire médian)**\n📍 **2 000–2 300 € brut/mois** (connaissance générale)\n*Pour toi : base réaliste pour un M2 sans spécialisation pointue. Pistes : ESN (ex : Capgemini), startups.*\n\n### **Plan B — Spécialisation valorisée (salaire supérieur)**\n📍 **2 500–3 000 € brut/mois** (connaissance générale)\n*Pour toi : vise l’IA, la data science ou la cybersécurité (ex : [Master Technologies de l’Information](https://www.onisep.fr/http/redirection/formation/slug/FOR.4855)). L’alternance en M2 peut aussi augmenter l’offre.*\n\n### **Plan C — Alternance ou thèse CIFRE (salaire + expérience)**\n📍 **1 800–2 200 € brut/mois en alternance** (connaissance générale) ou **2 100–2 600 € brut/mois en thèse CIFRE** (source [ANRT](https://www.anrt.asso.fr/fr/cifre-809))\n*Pour toi : l’alternance te donne 1 an d’expérience + réseau ; la CIFRE combine salaire et doctorat (si recherche t’intéresse).*\n\n---\n**⚠ Attention aux pièges**\n- **ESN vs entreprise finale** : les salaires en ESN sont souvent inférieurs de 10-15% à ceux des boîtes tech (FAANG, scale-ups).\n- **Région** : un salaire parisien (2 500 €) équivaut à 2 000 € en province (coût de la vie ajusté).\n- **Négociation** : les grilles salariales des grandes entreprises sont fixes ; les startups offrent plus de flexibilité (mais moins de stabilité).\n\n**Question pour toi** : Privilégies-tu la stabilité (ESN/grand groupe), l’innovation (startup), ou un domaine porteur (IA/cyber) pour justifier un salaire plus élevé ?",
+  "elapsed_pipeline_s": 21.52,
+  "elapsed_critic_loop_s": 3.55,
+  "elapsed_fact_check_post_hoc_s": 7.73,
+  "critic_n_modifications": 10,
+  "critic_summary": "Tous les chiffres non sourcés dans les fiches officielles ont été marqués comme (estimation) : 2 000 à 2 500 €, +10 à 20%, +15%, 2 000–2 300 €, 2 500–3 000 €, 1 800–2 200 €, 10-15%, 2 500 €, 2 000 €. Les chiffres sourcés (thèse CIFRE) ont été conservés.",
+  "fact_check_summary": {
+    "n_stats_total": 14,
+    "n_verified": 4,
+    "n_verified_strict": 4,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 10,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_formation"
+  ]
+}
