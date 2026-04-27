@@ -1,10 +1,10 @@
-"""Tests pour `scripts/sprint7_queries.py` — bench enrichi 36q balanced.
+"""Tests pour `scripts/sprint7_queries.py` — bench enrichi 38q balanced.
 
 Vérifie :
 - 14 nouvelles queries (DROM + financement + voie pré-bac + multi-axes)
 - Balance par axe (chaque axe Sprint 6 a au moins 2-3 queries dédiées)
 - Pas de leakage évident (queries en langage user-naturel)
-- Combine baseline 22q + nouvelles → 36 queries totales
+- Combine baseline 24q + nouvelles → 38 queries totales (option C Jarvis)
 """
 from __future__ import annotations
 
@@ -14,7 +14,8 @@ from scripts.sprint7_queries import (
     VOIE_PRE_BAC_QUERIES,
     MULTI_AXES_QUERIES,
     build_sprint7_queries,
-    select_baseline_subset_22q,
+    select_baseline_subset_22q,  # DEPRECATED alias → renvoie 24q
+    select_baseline_subset_24q,
     get_query_count_per_axis_target,
 )
 
@@ -96,10 +97,10 @@ class TestBalancePerAxis:
 
 
 class TestBuildSprint7Queries:
-    """Vérifie l'intégration avec la baseline."""
+    """Vérifie l'intégration avec la baseline 24q (option C Jarvis cross-check)."""
 
-    def _make_baseline_22q(self):
-        """Mock des 22 queries baseline Sprint 5/6."""
+    def _make_baseline_24q(self):
+        """Mock des 24 queries baseline Sprint 5/6 strictes (option C)."""
         baseline = []
         for i in range(6):
             baseline.append({"id": f"persona_q{i+1}", "suite": "personas_v4", "text": f"persona {i+1}"})
@@ -107,26 +108,27 @@ class TestBuildSprint7Queries:
             baseline.append({"id": f"dares_q{i+1:02d}", "suite": "dares_dedie", "text": f"dares {i+1}"})
         for i in range(6):
             baseline.append({"id": f"blocs_q{i+1:02d}", "suite": "blocs_dedie", "text": f"blocs {i+1}"})
-        for i in range(4):
+        for i in range(6):  # q11-q16 strict Sprint 5/6
             baseline.append({"id": f"user_naturel_q{i+11}", "suite": "user_naturel", "text": f"user {i+1}"})
         return baseline
 
-    def test_build_returns_36_queries(self):
-        baseline = self._make_baseline_22q()
+    def test_build_returns_38_queries(self):
+        """24 baseline + 14 nouvelles = 38 (option C Jarvis cross-check)."""
+        baseline = self._make_baseline_24q()
         out = build_sprint7_queries(baseline)
-        assert len(out) == 36
+        assert len(out) == 38
 
     def test_build_preserves_baseline_queries(self):
-        """Non-régression : les 22 baseline queries ne sont pas modifiées."""
-        baseline = self._make_baseline_22q()
+        """Non-régression : les 24 baseline queries ne sont pas modifiées."""
+        baseline = self._make_baseline_24q()
         out = build_sprint7_queries(baseline)
-        # Les 22 premières doivent être les baseline
-        assert out[:22] == baseline
+        # Les 24 premières doivent être les baseline
+        assert out[:24] == baseline
 
     def test_build_appends_new_queries_after_baseline(self):
-        baseline = self._make_baseline_22q()
+        baseline = self._make_baseline_24q()
         out = build_sprint7_queries(baseline)
-        new_part = out[22:]
+        new_part = out[24:]
         assert len(new_part) == 14
         # Suites Sprint 7 présentes
         suites = {q["suite"] for q in new_part}
@@ -136,10 +138,14 @@ class TestBuildSprint7Queries:
         assert "multi_axes" in suites
 
 
-class TestSelectBaselineSubset22q:
-    """Vérifie la sélection baseline figée."""
+class TestSelectBaselineSubset24q:
+    """Vérifie la sélection baseline 24q figée stricte Sprint 5/6.
 
-    def test_returns_22_queries(self):
+    Sprint 7 Action 2 patch (option C) : préserve la comparabilité directe
+    mean Sprint 7 vs mean Sprint 5/6 baseline 39,4% ± IC95 3,66pp.
+    """
+
+    def test_returns_24_queries(self):
         # Mock unified queries
         all_qs = []
         for i in range(18):
@@ -155,8 +161,27 @@ class TestSelectBaselineSubset22q:
         for i in range(10):
             all_qs.append({"id": f"user_naturel_q{i+11}", "suite": "user_naturel", "text": f"user {i+1}"})
 
-        subset = select_baseline_subset_22q(all_qs)
-        assert len(subset) == 22
+        subset = select_baseline_subset_24q(all_qs)
+        assert len(subset) == 24
+
+    def test_user_naturel_q11_to_q16(self):
+        """User-naturel : q11-q16 (6 queries) — strict Sprint 5/6."""
+        all_qs = []
+        for i in range(10):
+            all_qs.append({"id": f"user_naturel_q{i+11}", "suite": "user_naturel", "text": "..."})
+        # Add minimal others pour avoir un set complet
+        for i in range(6):
+            all_qs.append({"id": f"persona_{i}_q1", "suite": "personas_v4", "text": "..."})
+        for i in range(6):
+            all_qs.append({"id": f"dares_q{i+1:02d}", "suite": "dares_dedie", "text": "..."})
+        for i in range(6):
+            all_qs.append({"id": f"blocs_q{i+1:02d}", "suite": "blocs_dedie", "text": "..."})
+
+        subset = select_baseline_subset_24q(all_qs)
+        user_naturel_ids = [q["id"] for q in subset if q["suite"] == "user_naturel"]
+        assert len(user_naturel_ids) == 6
+        assert user_naturel_ids[0] == "user_naturel_q11"
+        assert user_naturel_ids[5] == "user_naturel_q16"
 
     def test_personas_filter_q1_only(self):
         """Personas : seulement les queries qui finissent par _q1."""
@@ -165,7 +190,7 @@ class TestSelectBaselineSubset22q:
             {"id": "p1_q2", "suite": "personas_v4", "text": "..."},
             {"id": "p2_q1", "suite": "personas_v4", "text": "..."},
         ]
-        subset = select_baseline_subset_22q(all_qs)
+        subset = select_baseline_subset_24q(all_qs)
         ids = [q["id"] for q in subset]
         assert "p1_q1" in ids
         assert "p2_q1" in ids

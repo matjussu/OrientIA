@@ -1,8 +1,14 @@
-"""Sprint 7 — Bench enrichi 36 queries balanced (Action 2).
+"""Sprint 7 — Bench enrichi 38 queries balanced (Action 2).
 
-Étend le bench Sprint 5/6 (24 queries) à **36 queries balanced** pour
+Étend le bench Sprint 5/6 (24 queries) à **38 queries balanced** pour
 mesurer correctement les 5 axes Sprint 6 (DARES re-agg / DROM territorial
 / voie pré-bac / Inserjeunes / financement) qui étaient sous-représentés.
+
+**Patch méthodo Jarvis cross-check (option C)** : la baseline 24q
+Sprint 5/6 est **strictement préservée** (6 personas + 6 DARES + 6 blocs
++ 6 user_naturel) pour garantir la **comparabilité directe** mean
+Sprint 7 vs mean Sprint 5/6 baseline 39,4% ± IC95 3,66pp. Les 14 nouvelles
+queries Sprint 7 s'ajoutent SANS retirer aucune query baseline.
 
 ## Méthodologie (rappel discipline scientifique R3)
 
@@ -14,7 +20,7 @@ l'évaluation des nouveaux axes** :
   par Sprint 7 Action 1)
 
 Sprint 7 Action 2 corrige ce biais en ajoutant 14 queries ciblant
-explicitement les 5 axes + multi-axes, **sans casser les 22 queries
+explicitement les 5 axes + multi-axes, **sans casser les 24 queries
 de baseline** qui restent figées comme référence parallèle.
 
 ## Composition
@@ -24,12 +30,12 @@ de baseline** qui restent figées comme référence parallèle.
 | personas_v4 (q1) | 6 | Sprint 5 baseline | FIGÉE |
 | dares_dedie (q01-06) | 6 | Sprint 5 baseline | FIGÉE |
 | blocs_dedie (q01-06) | 6 | Sprint 5 baseline | FIGÉE |
-| user_naturel (q11-14) | 4 | Sprint 5 baseline | FIGÉE |
+| user_naturel (q11-16) | 6 | Sprint 5 baseline | FIGÉE |
 | **NEW drom_dedie** | 4 | Sprint 7 | nouveau |
 | **NEW financement_dedie** | 4 | Sprint 7 | nouveau (Action 1 unmute) |
 | **NEW voie_pre_bac_dedie** | 3 | Sprint 7 | nouveau |
 | **NEW multi_axes** | 3 | Sprint 7 | queries cross-axes |
-| **TOTAL** | **36** | — | 22 figées + 14 nouvelles |
+| **TOTAL** | **38** | — | 24 figées + 14 nouvelles |
 
 ## Critère anti-leakage
 
@@ -172,15 +178,17 @@ MULTI_AXES_QUERIES: list[dict[str, Any]] = [
 
 
 def build_sprint7_queries(baseline_queries: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Combine la baseline 22q figée + les 14 nouvelles queries Sprint 7.
+    """Combine la baseline 24q figée + les 14 nouvelles queries Sprint 7.
 
     Args:
-        baseline_queries: les 22 queries figées Sprint 5/6 (filtrer le set
-            unifié : 6 personas_v4 q1 + 6 dares_dedie + 6 blocs_dedie + 4
-            user_naturel q11-q14).
+        baseline_queries: les 24 queries figées Sprint 5/6 (filtrer le set
+            unifié via `select_baseline_subset_24q` : 6 personas_v4 q1 +
+            6 dares_dedie + 6 blocs_dedie + 6 user_naturel q11-q16).
 
     Returns:
-        36 queries = 22 baseline (figées) + 14 nouvelles Sprint 7.
+        38 queries = 24 baseline (figées strictement Sprint 5/6) + 14
+        nouvelles Sprint 7. Comparabilité directe mean Sprint 7 vs
+        mean Sprint 5/6 baseline figée 39,4% préservée.
     """
     out: list[dict[str, Any]] = list(baseline_queries)
     out.extend(DROM_QUERIES)
@@ -190,12 +198,15 @@ def build_sprint7_queries(baseline_queries: list[dict[str, Any]]) -> list[dict[s
     return out
 
 
-def select_baseline_subset_22q(all_queries: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Sélectionne le subset 22q figé Sprint 5/6 depuis l'ensemble unifié.
+def select_baseline_subset_24q(all_queries: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Sélectionne le subset 24q figé Sprint 5/6 depuis l'ensemble unifié.
 
-    Pattern identique au `_select_balanced_subset` du bench Sprint 5/6
-    mais user_naturel limité à 4 queries (q11-q14) au lieu de 6, pour
-    laisser de la place aux 14 queries Sprint 7 sans dépasser 36.
+    Pattern identique au `_select_balanced_subset` du bench Sprint 5/6 :
+    6 personas q1 + 6 dares + 6 blocs + 6 user_naturel = 24q.
+
+    Sprint 7 Action 2 patch (option C Jarvis cross-check) : conservation
+    stricte des 24q baseline pour garantir la comparabilité directe
+    mean Sprint 7 vs mean Sprint 5/6 baseline 39,4% ± IC95 3,66pp.
     """
     by_suite: dict[str, list[dict[str, Any]]] = {}
     for q in all_queries:
@@ -205,8 +216,19 @@ def select_baseline_subset_22q(all_queries: list[dict[str, Any]]) -> list[dict[s
     personas = [q for q in by_suite.get("personas_v4", []) if q["id"].endswith("_q1")][:6]
     dares = by_suite.get("dares_dedie", [])[:6]
     blocs = by_suite.get("blocs_dedie", [])[:6]
-    user_naturel = by_suite.get("user_naturel", [])[:4]  # q11-q14
+    user_naturel = by_suite.get("user_naturel", [])[:6]  # q11-q16 (Sprint 5/6 strict)
     return personas + dares + blocs + user_naturel
+
+
+# Alias backward compat (Sprint 7 Action 2 patch — option C)
+# Garde l'ancien nom mais redirige vers la version 24q correcte.
+def select_baseline_subset_22q(all_queries: list[dict[str, Any]]) -> list[dict[str, Any]]:  # noqa: D103
+    """DEPRECATED Sprint 7 Action 2 patch — utilise `select_baseline_subset_24q`.
+
+    Conservé pour compat tests anciens, mais renvoie 24q (option C Jarvis
+    cross-check : préserver baseline Sprint 5/6 strict pour comparabilité).
+    """
+    return select_baseline_subset_24q(all_queries)
 
 
 def get_query_count_per_axis_target() -> dict[str, int]:
