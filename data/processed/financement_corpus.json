@@ -1,0 +1,432 @@
+[
+  {
+    "id": "financement_dispositif:bourse_crous_sup",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "bourse_crous_sup",
+    "nom": "Bourse sur critères sociaux CROUS — enseignement supérieur",
+    "organisme": "CROUS",
+    "voies": [
+      "initial"
+    ],
+    "source_officielle": "https://www.etudiant.gouv.fr/fr/les-bourses-sur-criteres-sociaux-2317",
+    "text": "Financement — Bourse sur critères sociaux CROUS — enseignement supérieur | Organisme : CROUS | Public cible : Étudiants post-bac (BTS, BUT, Licence, Master, doctorat, écoles d'ingénieurs/commerce reconnues) | Concerne : formation initiale (lycée, post-bac jusqu'au diplôme) | Montants annuels approximatifs : 1080-5965€ (2024-2025) | Conditions principales : Revenus du foyer fiscal en-dessous d'un plafond (7 échelons 0bis à 7) ; Âge max 28 ans à l'inscription en 1ère année ; Études dans un établissement habilité à recevoir des boursiers | Demande : Dossier social étudiant (DSE) à constituer entre janvier et mai sur etudiant.gouv.fr pour la rentrée suivante | À noter : Compatible avec autres aides (logement APL, aide à la mobilité internationale) | Source officielle (montant exact année en cours) : https://www.etudiant.gouv.fr/fr/les-bourses-sur-criteres-sociaux-2317"
+  },
+  {
+    "id": "financement_dispositif:aide_mobilite_master",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "aide_mobilite_master",
+    "nom": "Aide à la mobilité Master",
+    "organisme": "Ministère de l'Enseignement supérieur",
+    "voies": [
+      "initial"
+    ],
+    "source_officielle": "https://www.etudiant.gouv.fr/fr/aide-la-mobilite-en-master-2",
+    "text": "Financement — Aide à la mobilité Master | Organisme : Ministère de l'Enseignement supérieur | Public cible : Étudiants boursiers CROUS qui changent de région entre la Licence et le Master | Concerne : formation initiale (lycée, post-bac jusqu'au diplôme) | Montant approximatif : forfait 1000€ (2024-2025) | Conditions principales : Avoir obtenu sa Licence en France ; S'inscrire en Master dans une autre région académique ; Être boursier CROUS (échelon 0bis à 7) | Demande : Sur etudiant.gouv.fr (espace MesServices) | Source officielle (montant exact année en cours) : https://www.etudiant.gouv.fr/fr/aide-la-mobilite-en-master-2"
+  },
+  {
+    "id": "financement_dispositif:aide_mobilite_internationale",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "aide_mobilite_internationale",
+    "nom": "Aide à la mobilité internationale (CROUS / Erasmus+)",
+    "organisme": "CROUS + Union Européenne (Erasmus+)",
+    "voies": [
+      "initial"
+    ],
+    "source_officielle": "https://www.etudiant.gouv.fr/fr/laide-la-mobilite-internationale-1003",
+    "text": "Financement — Aide à la mobilité internationale (CROUS / Erasmus+) | Organisme : CROUS + Union Européenne (Erasmus+) | Public cible : Étudiants en mobilité d'études ou de stage à l'étranger | Concerne : formation initiale (lycée, post-bac jusqu'au diplôme) | Montants mensuels approximatifs : 280-450€ ; Variable selon zone (1, 2, 3) et durée | Conditions principales : Mobilité d'au moins 2 mois (parfois 3 selon programme) ; Validation pédagogique préalable de l'établissement ; Pour Erasmus+ : mobilité dans un pays programme ou partenaire | À noter : Cumulable avec la bourse CROUS sur critères sociaux | Source officielle (montant exact année en cours) : https://www.etudiant.gouv.fr/fr/laide-la-mobilite-internationale-1003"
+  },
+  {
+    "id": "financement_dispositif:bourse_lycee",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "bourse_lycee",
+    "nom": "Bourse de lycée (collégiens et lycéens)",
+    "organisme": "Ministère de l'Éducation Nationale",
+    "voies": [
+      "initial"
+    ],
+    "source_officielle": "https://www.education.gouv.fr/les-bourses-de-college-et-de-lycee-12116",
+    "text": "Financement — Bourse de lycée (collégiens et lycéens) | Organisme : Ministère de l'Éducation Nationale | Public cible : Élèves au lycée général, technologique ou professionnel (CAP, BAC PRO, mentions complémentaires) | Concerne : formation initiale (lycée, post-bac jusqu'au diplôme) | Montants annuels approximatifs : 460-1086€ (2025-2026) ; 6 échelons selon revenus | Conditions principales : Plafond de revenus du foyer fiscal (variable selon échelon 1 à 6) ; Élève scolarisé dans un établissement public ou privé sous contrat | Demande : Demande à formuler chaque année (campagne avril-octobre selon académie) via le portail Scolarité-Services | À noter : Cumulable avec prime à l'internat, prime d'équipement (BAC PRO/CAP industriels), bourse au mérite | Source officielle (montant exact année en cours) : https://www.education.gouv.fr/les-bourses-de-college-et-de-lycee-12116"
+  },
+  {
+    "id": "financement_dispositif:prime_equipement_bac_pro",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "prime_equipement_bac_pro",
+    "nom": "Prime d'équipement bac pro / CAP",
+    "organisme": "Ministère de l'Éducation Nationale",
+    "voies": [
+      "initial"
+    ],
+    "source_officielle": "https://www.service-public.fr/particuliers/vosdroits/F1010",
+    "text": "Financement — Prime d'équipement bac pro / CAP | Organisme : Ministère de l'Éducation Nationale | Public cible : Élèves boursiers en 1ère année de CAP, BAC PRO ou Brevet des métiers d'art (BMA) dans des spécialités industrielles imposant un équipement coûteux | Concerne : formation initiale (lycée, post-bac jusqu'au diplôme) | Montant approximatif : forfait 341.71€ (2024-2025) | Conditions principales : Être boursier de lycée ; Inscrit en 1ère année dans une spécialité éligible (mécanique, BTP, électronique, etc.) | Demande : Versée automatiquement par l'établissement | Source officielle (montant exact année en cours) : https://www.service-public.fr/particuliers/vosdroits/F1010"
+  },
+  {
+    "id": "financement_dispositif:cpf",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "cpf",
+    "nom": "Compte Personnel de Formation (CPF)",
+    "organisme": "Caisse des Dépôts (gestion) / Ministère du Travail (cadre)",
+    "voies": [
+      "continue",
+      "reconversion"
+    ],
+    "source_officielle": "https://www.moncompteformation.gouv.fr/",
+    "text": "Financement — Compte Personnel de Formation (CPF) | Organisme : Caisse des Dépôts (gestion) / Ministère du Travail (cadre) | Public cible : Toute personne active de 16 ans et plus (salariés, demandeurs d'emploi, indépendants, agents publics) | Concerne : formation continue (salariés, agents publics, indépendants), reconversion professionnelle (changement de métier) | Montants annuels approximatifs : 500€/an ; plafond 5000€ ; non-qualifiés 800€/an ; plafond non-qualifiés 8000€ | Conditions principales : Abondement automatique annuel sur compte CPF (proportionnel temps de travail) ; Utilisable sur formations certifiantes inscrites au RNCP (Répertoire National des Certifications Professionnelles) ou Répertoire spécifique ; Reste à charge participation 100€ depuis mai 2024 (sauf cas spécifiques : abondement employeur, demandeur d'emploi) | Demande : Compte personnel sur moncompteformation.gouv.fr | À noter : Mobilisable pour VAE (Validation des Acquis), bilan de compétences, permis B (poids lourds), création/reprise d'entreprise | Source officielle (montant exact année en cours) : https://www.moncompteformation.gouv.fr/"
+  },
+  {
+    "id": "financement_dispositif:cej",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "cej",
+    "nom": "Contrat d'engagement jeune (CEJ)",
+    "organisme": "Mission Locale ou France Travail (Pôle Emploi)",
+    "voies": [
+      "continue",
+      "reconversion"
+    ],
+    "source_officielle": "https://travail-emploi.gouv.fr/emploi-et-insertion/cej",
+    "text": "Financement — Contrat d'engagement jeune (CEJ) | Organisme : Mission Locale ou France Travail (Pôle Emploi) | Public cible : Jeunes 16-25 ans (jusqu'à 29 ans pour personnes en situation de handicap), sans emploi ni formation, en difficulté d'insertion | Concerne : formation continue (salariés, agents publics, indépendants), reconversion professionnelle (changement de métier) | Montants mensuels approximatifs : max 528€ ; Sous conditions de ressources et de parcours | Conditions principales : Accompagnement intensif (15-20h/semaine d'activités professionnelles) ; Durée 6 à 12 mois renouvelable ; Engagement à se former / chercher activement | Demande : Contact Mission Locale (16-25 ans) ou France Travail (jeunes diplômés cherchant emploi) | À noter : Remplace l'ancienne Garantie Jeunes depuis mars 2022. Allocation mensuelle modulée selon ressources | Source officielle (montant exact année en cours) : https://travail-emploi.gouv.fr/emploi-et-insertion/cej"
+  },
+  {
+    "id": "financement_dispositif:afe_pole_emploi",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "afe_pole_emploi",
+    "nom": "Aide au retour à l'emploi formation (AREF) / Allocation formation Pôle Emploi",
+    "organisme": "France Travail (Pôle Emploi)",
+    "voies": [
+      "continue",
+      "reconversion"
+    ],
+    "source_officielle": "https://www.francetravail.fr/candidat/en-formation/mes-aides-financieres/laide-au-retour-a-lemploi-formation.html",
+    "text": "Financement — Aide au retour à l'emploi formation (AREF) / Allocation formation Pôle Emploi | Organisme : France Travail (Pôle Emploi) | Public cible : Demandeurs d'emploi indemnisés en formation validée par France Travail | Concerne : formation continue (salariés, agents publics, indépendants), reconversion professionnelle (changement de métier) | Montant : Maintien de l'allocation chômage (ARE) au taux journalier habituel pendant la formation | Conditions principales : Formation validée dans le PPAE (Projet Personnalisé d'Accès à l'Emploi) ; Durée formation < durée droits ARE restants | Demande : Espace personnel France Travail | Source officielle (montant exact année en cours) : https://www.francetravail.fr/candidat/en-formation/mes-aides-financieres/laide-au-retour-a-lemploi-formation.html"
+  },
+  {
+    "id": "financement_dispositif:agepi",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "agepi",
+    "nom": "Aide à la garde d'enfants pour parent isolé (AGEPI)",
+    "organisme": "France Travail (Pôle Emploi)",
+    "voies": [
+      "continue",
+      "reconversion"
+    ],
+    "source_officielle": "https://www.francetravail.fr/candidat/en-formation/mes-aides-financieres/aide-a-la-garde-denfants-pour-pa.html",
+    "text": "Financement — Aide à la garde d'enfants pour parent isolé (AGEPI) | Organisme : France Travail (Pôle Emploi) | Public cible : Parents isolés (élevant seuls leur(s) enfant(s) de moins de 10 ans), en formation ou reprise d'emploi | Concerne : formation continue (salariés, agents publics, indépendants), reconversion professionnelle (changement de métier) | Montant approximatif : 130-400€ ; Forfait selon nombre d'enfants et durée hebdo activité | Conditions principales : Être en formation ou reprise d'emploi ; Au moins 1 enfant de moins de 10 ans à charge ; Demande dans les 60 jours suivant le début formation/emploi | Source officielle (montant exact année en cours) : https://www.francetravail.fr/candidat/en-formation/mes-aides-financieres/aide-a-la-garde-denfants-pour-pa.html"
+  },
+  {
+    "id": "financement_dispositif:ptp_transitions_pro",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "ptp_transitions_pro",
+    "nom": "Projet de transition professionnelle (PTP)",
+    "organisme": "Transitions Pro (associations régionales paritaires)",
+    "voies": [
+      "reconversion"
+    ],
+    "source_officielle": "https://www.transitionspro.fr/",
+    "text": "Financement — Projet de transition professionnelle (PTP) | Organisme : Transitions Pro (associations régionales paritaires) | Public cible : Salariés CDI/CDD ayant 24 mois d'ancienneté (12 mois dans l'entreprise actuelle), souhaitant changer de métier | Concerne : reconversion professionnelle (changement de métier) | Montant : Maintien du salaire à 100% pendant la formation (jusqu'à 1 an), prise en charge frais formation | Conditions principales : Projet de reconversion validé par le Transitions Pro régional ; Formation certifiante inscrite RNCP ; Demande à transmettre 4 mois avant le début de la formation | Demande : Dossier en ligne sur le site du Transitions Pro de votre région | À noter : Successeur du CIF (Congé Individuel de Formation) depuis 2019. Accord employeur nécessaire pour le maintien de poste | Source officielle (montant exact année en cours) : https://www.transitionspro.fr/"
+  },
+  {
+    "id": "financement_dispositif:vae",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "vae",
+    "nom": "Validation des acquis de l'expérience (VAE)",
+    "organisme": "Ministère du Travail / France VAE (portail unique)",
+    "voies": [
+      "continue",
+      "reconversion"
+    ],
+    "source_officielle": "https://vae.gouv.fr/",
+    "text": "Financement — Validation des acquis de l'expérience (VAE) | Organisme : Ministère du Travail / France VAE (portail unique) | Public cible : Toute personne avec au moins 1 an d'expérience (professionnelle, bénévole, syndicale) liée à la certification visée | Concerne : formation continue (salariés, agents publics, indépendants), reconversion professionnelle (changement de métier) | Montant approximatif : Frais d'accompagnement VAE pris en charge selon dispositif | Conditions principales : 1 an d'expérience minimum en lien avec le diplôme/titre visé ; Diplôme ou certification inscrit au RNCP | Demande : France VAE (portail unique) ou directement auprès du certificateur | À noter : Réforme 2023 : portail unique France VAE, accompagnement gratuit jusqu'à 24h, pris en charge sur le CPF ou par OPCO | Source officielle (montant exact année en cours) : https://vae.gouv.fr/"
+  },
+  {
+    "id": "financement_dispositif:proa",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "proa",
+    "nom": "Pro-A (reconversion ou promotion par alternance)",
+    "organisme": "OPCO (Opérateurs de compétences)",
+    "voies": [
+      "reconversion"
+    ],
+    "source_officielle": "https://travail-emploi.gouv.fr/formation-professionnelle/pro-a",
+    "text": "Financement — Pro-A (reconversion ou promotion par alternance) | Organisme : OPCO (Opérateurs de compétences) | Public cible : Salariés CDI/CDD à temps plein ou partiel, ayant un niveau de qualification < licence, souhaitant évoluer ou changer de métier en alternance | Concerne : reconversion professionnelle (changement de métier) | Montant : Frais formation pris en charge à 100% par l'OPCO, salaire maintenu pendant les heures de formation | Conditions principales : Formation certifiante listée par l'accord de branche ; Au moins 24 mois d'ancienneté dans l'entreprise ; Niveau de diplôme actuel < licence (sauf cas branche le permet) | Demande : Via l'employeur et l'OPCO de la branche | Source officielle (montant exact année en cours) : https://travail-emploi.gouv.fr/formation-professionnelle/pro-a"
+  },
+  {
+    "id": "financement_dispositif:afdas",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "afdas",
+    "nom": "AFDAS — Opérateur de Compétences (OPCO) Culture / Médias / Loisirs / Sport",
+    "organisme": "AFDAS",
+    "voies": [
+      "continue",
+      "reconversion"
+    ],
+    "source_officielle": "https://www.afdas.com/",
+    "text": "Financement — AFDAS — Opérateur de Compétences (OPCO) Culture / Médias / Loisirs / Sport | Organisme : AFDAS | Public cible : Salariés et indépendants des secteurs : spectacle vivant, cinéma, audiovisuel, presse, édition, communication, télécoms, publicité, sport, loisirs | Concerne : formation continue (salariés, agents publics, indépendants), reconversion professionnelle (changement de métier) | Montant : Variable selon dispositif : Plan de développement compétences employeur, CPF abondé, Pro-A, alternance | Conditions principales : Salarié ou indépendant des branches couvertes ; Cotisation employeur à l'AFDAS | À noter : Couvre les intermittents du spectacle (régime spécifique d'indemnisation chômage) — formation et aide au maintien | Source officielle (montant exact année en cours) : https://www.afdas.com/"
+  },
+  {
+    "id": "financement_dispositif:constructys",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "constructys",
+    "nom": "Constructys — OPCO BTP (Bâtiment, Travaux Publics, Négoce des matériaux)",
+    "organisme": "Constructys",
+    "voies": [
+      "continue",
+      "reconversion"
+    ],
+    "source_officielle": "https://www.constructys.fr/",
+    "text": "Financement — Constructys — OPCO BTP (Bâtiment, Travaux Publics, Négoce des matériaux) | Organisme : Constructys | Public cible : Salariés des entreprises du Bâtiment et Travaux Publics, du négoce de matériaux de construction | Concerne : formation continue (salariés, agents publics, indépendants), reconversion professionnelle (changement de métier) | Montant : Variable selon dispositif (alternance, Pro-A, plan compétences, CPF) | Source officielle (montant exact année en cours) : https://www.constructys.fr/"
+  },
+  {
+    "id": "financement_dispositif:akto",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "akto",
+    "nom": "Akto — OPCO services à forte intensité de main-d'œuvre",
+    "organisme": "Akto",
+    "voies": [
+      "continue",
+      "reconversion"
+    ],
+    "source_officielle": "https://www.akto.fr/",
+    "text": "Financement — Akto — OPCO services à forte intensité de main-d'œuvre | Organisme : Akto | Public cible : Salariés des branches : propreté, hôtellerie-restauration, intérim, sécurité privée, prévention/sécurité, casinos, autres services | Concerne : formation continue (salariés, agents publics, indépendants), reconversion professionnelle (changement de métier) | Source officielle (montant exact année en cours) : https://www.akto.fr/"
+  },
+  {
+    "id": "financement_dispositif:aide_apprenti_permis",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "aide_apprenti_permis",
+    "nom": "Aide au permis B pour apprentis",
+    "organisme": "État (via le Centre de Formation d'Apprentis)",
+    "voies": [
+      "initial"
+    ],
+    "source_officielle": "https://www.service-public.fr/particuliers/vosdroits/F34053",
+    "text": "Financement — Aide au permis B pour apprentis | Organisme : État (via le Centre de Formation d'Apprentis) | Public cible : Apprentis de 18 ans et plus, en cours de formation en CFA | Concerne : formation initiale (lycée, post-bac jusqu'au diplôme) | Montant approximatif : forfait 500€ (2024-2025) | Conditions principales : Avoir 18 ans et plus ; Être en cours de formation en CFA ; Engagé dans le passage du permis B | Demande : Dossier auprès du CFA | Source officielle (montant exact année en cours) : https://www.service-public.fr/particuliers/vosdroits/F34053"
+  },
+  {
+    "id": "financement_dispositif:agefiph",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "agefiph",
+    "nom": "AGEFIPH — Aides à la formation et à l'insertion des personnes en situation de handicap",
+    "organisme": "AGEFIPH (Association de gestion du fonds pour l'insertion professionnelle des personnes handicapées)",
+    "voies": [
+      "handicap",
+      "reconversion"
+    ],
+    "source_officielle": "https://www.agefiph.fr/",
+    "text": "Financement — AGEFIPH — Aides à la formation et à l'insertion des personnes en situation de handicap | Organisme : AGEFIPH (Association de gestion du fonds pour l'insertion professionnelle des personnes handicapées) | Public cible : Personnes ayant une Reconnaissance de la Qualité de Travailleur Handicapé (RQTH), en projet d'insertion professionnelle ou en formation | Concerne : formation et insertion en situation de handicap, reconversion professionnelle (changement de métier) | Montant : Variable selon dispositif : aide à l'apprentissage (jusqu'à 6000€ pour l'employeur), aide à la formation, prestations spécifiques (aménagement poste, transport adapté) | Conditions principales : Avoir une RQTH ou être bénéficiaire de l'obligation d'emploi (BOETH) ; Projet professionnel validé | Demande : Espace personnel sur agefiph.fr ou via Cap Emploi | À noter : Cap Emploi (réseau de 98 structures) accompagne les RQTH dans leur projet professionnel | Source officielle (montant exact année en cours) : https://www.agefiph.fr/"
+  },
+  {
+    "id": "financement_dispositif:fiphfp",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "fiphfp",
+    "nom": "FIPHFP — Fonds pour l'insertion des personnes handicapées dans la fonction publique",
+    "organisme": "FIPHFP",
+    "voies": [
+      "handicap"
+    ],
+    "source_officielle": "https://www.fiphfp.fr/",
+    "text": "Financement — FIPHFP — Fonds pour l'insertion des personnes handicapées dans la fonction publique | Organisme : FIPHFP | Public cible : Agents de la fonction publique en situation de handicap, candidats au concours fonction publique | Concerne : formation et insertion en situation de handicap | Montant : Aides ciblées : aménagement poste, formation, accompagnement pour les concours fonction publique | Source officielle (montant exact année en cours) : https://www.fiphfp.fr/"
+  },
+  {
+    "id": "financement_dispositif:rsa_jeune",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "rsa_jeune",
+    "nom": "Revenu de solidarité active (RSA) jeunes 18-24 ans",
+    "organisme": "CAF (Caisse d'Allocations Familiales)",
+    "voies": [
+      "reconversion"
+    ],
+    "source_officielle": "https://www.service-public.fr/particuliers/vosdroits/F19778",
+    "text": "Financement — Revenu de solidarité active (RSA) jeunes 18-24 ans | Organisme : CAF (Caisse d'Allocations Familiales) | Public cible : Jeunes 18-24 ans ayant travaillé au moins 2 ans (3214 heures) au cours des 3 dernières années, en difficulté | Concerne : reconversion professionnelle (changement de métier) | Montants mensuels approximatifs : Revalorisé chaque année au 1er avril | Conditions principales : 18-24 ans ; 2 ans d'activité professionnelle minimum (3214 heures) ; Résidence stable et régulière en France | À noter : RSA classique à partir de 25 ans (sans condition d'activité préalable) | Source officielle (montant exact année en cours) : https://www.service-public.fr/particuliers/vosdroits/F19778"
+  },
+  {
+    "id": "financement_dispositif:aide_paje",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "aide_paje",
+    "nom": "Prime à la naissance / PreParE pour étudiants parents",
+    "organisme": "CAF",
+    "voies": [
+      "initial"
+    ],
+    "source_officielle": "https://www.caf.fr/",
+    "text": "Financement — Prime à la naissance / PreParE pour étudiants parents | Organisme : CAF | Public cible : Étudiants parents de jeunes enfants | Concerne : formation initiale (lycée, post-bac jusqu'au diplôme) | À noter : Prestations CAF (PAJE, allocations familiales, aide au logement APL) restent dues pendant les études — vérifier compatibilité avec bourse CROUS | Source officielle (montant exact année en cours) : https://www.caf.fr/"
+  },
+  {
+    "id": "financement_dispositif:aide_mobilite_parcoursup",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "aide_mobilite_parcoursup",
+    "nom": "Aide à la mobilité Parcoursup (changement académie après bac)",
+    "organisme": "Ministère de l'Enseignement supérieur",
+    "voies": [
+      "initial"
+    ],
+    "source_officielle": "https://www.etudiant.gouv.fr/fr/aide-la-mobilite-parcoursup-2",
+    "text": "Financement — Aide à la mobilité Parcoursup (changement académie après bac) | Organisme : Ministère de l'Enseignement supérieur | Public cible : Néo-bacheliers boursiers qui acceptent un vœu Parcoursup hors de leur académie | Concerne : formation initiale (lycée, post-bac jusqu'au diplôme) | Montant approximatif : forfait 500€ (2024-2025) | Conditions principales : Bachelier de l'année ; Boursier CROUS (échelons 0bis à 7) ou équivalent ; Accepter un vœu hors de son académie de bac | Source officielle (montant exact année en cours) : https://www.etudiant.gouv.fr/fr/aide-la-mobilite-parcoursup-2"
+  },
+  {
+    "id": "financement_dispositif:aide_premiere_installation",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "aide_premiere_installation",
+    "nom": "Aide à la première installation (CROUS)",
+    "organisme": "CROUS",
+    "voies": [
+      "initial"
+    ],
+    "source_officielle": "https://www.etudiant.gouv.fr/fr/le-logement-etudiant-65",
+    "text": "Financement — Aide à la première installation (CROUS) | Organisme : CROUS | Public cible : Étudiants éligibles aux logements CROUS qui s'installent dans une nouvelle ville pour leurs études | Concerne : formation initiale (lycée, post-bac jusqu'au diplôme) | Montant : Variable selon situation, avance du dépôt de garantie possible (Visale, Loca-Pass) | Source officielle (montant exact année en cours) : https://www.etudiant.gouv.fr/fr/le-logement-etudiant-65"
+  },
+  {
+    "id": "financement_dispositif:visale",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "visale",
+    "nom": "Visale — Garantie locative gratuite",
+    "organisme": "Action Logement",
+    "voies": [
+      "initial",
+      "continue"
+    ],
+    "source_officielle": "https://www.visale.fr/",
+    "text": "Financement — Visale — Garantie locative gratuite | Organisme : Action Logement | Public cible : Étudiants, jeunes 18-30 ans, salariés en début de contrat, alternants — locataires du parc privé ou public | Concerne : formation initiale (lycée, post-bac jusqu'au diplôme), formation continue (salariés, agents publics, indépendants) | Montant : Garantie loyers impayés gratuite (alternative à un garant physique). Couvre jusqu'à 36 mensualités | Conditions principales : Locataire du parc privé ou public (hors logement Crous) ; Bail dans les 6 mois suivant l'obtention du visa Visale | Demande : Sur visale.fr (visa à activer avant signature bail) | Source officielle (montant exact année en cours) : https://www.visale.fr/"
+  },
+  {
+    "id": "financement_dispositif:apl_etudiant",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "dispositif",
+    "dispositif_id": "apl_etudiant",
+    "nom": "Aides au logement (APL, ALF, ALS) — étudiants",
+    "organisme": "CAF",
+    "voies": [
+      "initial",
+      "continue"
+    ],
+    "source_officielle": "https://www.caf.fr/allocataires/aides-et-demarches/conditions-d-attribution/logement",
+    "text": "Financement — Aides au logement (APL, ALF, ALS) — étudiants | Organisme : CAF | Public cible : Étudiants locataires d'un logement éligible (résidence universitaire, parc privé, foyer) | Concerne : formation initiale (lycée, post-bac jusqu'au diplôme), formation continue (salariés, agents publics, indépendants) | Montant : Variable selon ressources étudiant, loyer, zone géographique. Simulateur disponible sur caf.fr | Conditions principales : Logement décent et conventionné (pour APL) ; Étudiant avec ressources sous plafond (déclaration annuelle) | Demande : caf.fr (compte personnel) | À noter : Cumulables avec bourse CROUS sur critères sociaux | Source officielle (montant exact année en cours) : https://www.caf.fr/allocataires/aides-et-demarches/conditions-d-attribution/logement"
+  },
+  {
+    "id": "financement_voie:continue",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "voie",
+    "voie": "continue",
+    "voie_label": "formation continue (salariés, agents publics, indépendants)",
+    "n_dispositifs": 10,
+    "dispositifs_ids": [
+      "cpf",
+      "cej",
+      "afe_pole_emploi",
+      "agepi",
+      "vae",
+      "afdas",
+      "constructys",
+      "akto",
+      "visale",
+      "apl_etudiant"
+    ],
+    "text": "Dispositifs de financement pour formation continue (salariés, agents publics, indépendants) | 10 dispositifs principaux disponibles | Liste : Compte Personnel de Formation (CPF) (Caisse des Dépôts (gestion) / Ministère du Travail (cadre)) ; Contrat d'engagement jeune (CEJ) (Mission Locale ou France Travail (Pôle Emploi)) ; Aide au retour à l'emploi formation (AREF) / Allocation formation Pôle Emploi (France Travail (Pôle Emploi)) ; Aide à la garde d'enfants pour parent isolé (AGEPI) (France Travail (Pôle Emploi)) ; Validation des acquis de l'expérience (VAE) (Ministère du Travail / France VAE (portail unique)) ; AFDAS (AFDAS) ; Constructys (Constructys) ; Akto (Akto) ; Visale (Action Logement) ; Aides au logement (APL, ALF, ALS) (CAF) | Pour le détail montant, conditions et démarches de chaque dispositif, voir la source officielle correspondante."
+  },
+  {
+    "id": "financement_voie:handicap",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "voie",
+    "voie": "handicap",
+    "voie_label": "formation et insertion en situation de handicap",
+    "n_dispositifs": 2,
+    "dispositifs_ids": [
+      "agefiph",
+      "fiphfp"
+    ],
+    "text": "Dispositifs de financement pour formation et insertion en situation de handicap | 2 dispositifs principaux disponibles | Liste : AGEFIPH (AGEFIPH (Association de gestion du fonds pour l'insertion professionnelle des personnes handicapées)) ; FIPHFP (FIPHFP) | Pour le détail montant, conditions et démarches de chaque dispositif, voir la source officielle correspondante."
+  },
+  {
+    "id": "financement_voie:initial",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "voie",
+    "voie": "initial",
+    "voie_label": "formation initiale (lycée, post-bac jusqu'au diplôme)",
+    "n_dispositifs": 11,
+    "dispositifs_ids": [
+      "bourse_crous_sup",
+      "aide_mobilite_master",
+      "aide_mobilite_internationale",
+      "bourse_lycee",
+      "prime_equipement_bac_pro",
+      "aide_apprenti_permis",
+      "aide_paje",
+      "aide_mobilite_parcoursup",
+      "aide_premiere_installation",
+      "visale",
+      "apl_etudiant"
+    ],
+    "text": "Dispositifs de financement pour formation initiale (lycée, post-bac jusqu'au diplôme) | 11 dispositifs principaux disponibles | Liste : Bourse sur critères sociaux CROUS (CROUS) ; Aide à la mobilité Master (Ministère de l'Enseignement supérieur) ; Aide à la mobilité internationale (CROUS / Erasmus+) (CROUS + Union Européenne (Erasmus+)) ; Bourse de lycée (collégiens et lycéens) (Ministère de l'Éducation Nationale) ; Prime d'équipement bac pro / CAP (Ministère de l'Éducation Nationale) ; Aide au permis B pour apprentis (État (via le Centre de Formation d'Apprentis)) ; Prime à la naissance / PreParE pour étudiants parents (CAF) ; Aide à la mobilité Parcoursup (changement académie après bac) (Ministère de l'Enseignement supérieur) ; Aide à la première installation (CROUS) (CROUS) ; Visale (Action Logement) ; Aides au logement (APL, ALF, ALS) (CAF) | Pour le détail montant, conditions et démarches de chaque dispositif, voir la source officielle correspondante."
+  },
+  {
+    "id": "financement_voie:reconversion",
+    "domain": "financement_etudes",
+    "source": "financement_dispositifs_curated",
+    "granularity": "voie",
+    "voie": "reconversion",
+    "voie_label": "reconversion professionnelle (changement de métier)",
+    "n_dispositifs": 12,
+    "dispositifs_ids": [
+      "cpf",
+      "cej",
+      "afe_pole_emploi",
+      "agepi",
+      "ptp_transitions_pro",
+      "vae",
+      "proa",
+      "afdas",
+      "constructys",
+      "akto",
+      "agefiph",
+      "rsa_jeune"
+    ],
+    "text": "Dispositifs de financement pour reconversion professionnelle (changement de métier) | 12 dispositifs principaux disponibles | Liste : Compte Personnel de Formation (CPF) (Caisse des Dépôts (gestion) / Ministère du Travail (cadre)) ; Contrat d'engagement jeune (CEJ) (Mission Locale ou France Travail (Pôle Emploi)) ; Aide au retour à l'emploi formation (AREF) / Allocation formation Pôle Emploi (France Travail (Pôle Emploi)) ; Aide à la garde d'enfants pour parent isolé (AGEPI) (France Travail (Pôle Emploi)) ; Projet de transition professionnelle (PTP) (Transitions Pro (associations régionales paritaires)) ; Validation des acquis de l'expérience (VAE) (Ministère du Travail / France VAE (portail unique)) ; Pro-A (reconversion ou promotion par alternance) (OPCO (Opérateurs de compétences)) ; AFDAS (AFDAS) ; Constructys (Constructys) ; Akto (Akto) ; AGEFIPH (AGEFIPH (Association de gestion du fonds pour l'insertion professionnelle des personnes handicapées)) ; Revenu de solidarité active (RSA) jeunes 18-24 ans (CAF (Caisse d'Allocations Familiales)) | Pour le détail montant, conditions et démarches de chaque dispositif, voir la source officielle correspondante."
+  }
+]
