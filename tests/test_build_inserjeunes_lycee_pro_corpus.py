@@ -6,10 +6,12 @@ import json
 import pytest
 
 from src.collect.build_inserjeunes_lycee_pro_corpus import (
+    MIN_RECORDS_PER_TRIPLET,
     _avg,
     _get_taux_emploi,
     _slug,
     aggregate_by_formation,
+    aggregate_by_formation_region_diplome,
     aggregate_by_region_diplome,
     build_corpus,
     save_corpus,
@@ -184,13 +186,110 @@ class TestAggregateByRegionDiplome:
         assert all(r["granularity"] == "region_diplome" for r in out)
 
 
+class TestAggregateByFormationRegionDiplomeSprint7:
+    """Sprint 7 Action 4 — granularité 3 (libellé × type × région) avec
+    filter MIN_RECORDS_PER_TRIPLET pour éviter dilution top-K."""
+
+    def test_min_records_constant_value(self):
+        """Le seuil par défaut est 15 (sweet spot 2 004 cells sur vrai data,
+        cohérent target Sprint 5 P1.4 ≤2000)."""
+        assert MIN_RECORDS_PER_TRIPLET == 15
+
+    def test_filter_below_min_records_returns_empty(self, inserjeunes_sample):
+        """Sample a 1-record-per-triplet → tous filtrés avec min_records=15."""
+        out = aggregate_by_formation_region_diplome(inserjeunes_sample)
+        # 5 couples (libellé, type, région) distincts dans sample mais tous 1 record
+        assert out == []
+
+    def test_filter_below_min_records_with_explicit_min(self, inserjeunes_sample):
+        """min_records=1 → tous les couples passent."""
+        out = aggregate_by_formation_region_diplome(inserjeunes_sample, min_records=1)
+        # 5 couples valides (record vide ignoré pour libellé vide) :
+        # macon×CAP×HDF, macon×CAP×IDF, cuisine×CAP×HDF, gestion×BAC PRO×HDF, gestion×BAC PRO×IDF
+        assert len(out) == 5
+        ids = {r["id"] for r in out}
+        assert "inserjeunes_formation_region:cap:macon:hauts-de-france" in ids
+        assert "inserjeunes_formation_region:cap:macon:ile-de-france" in ids
+
+    def test_passes_filter_with_enough_records(self):
+        """Couple avec ≥15 cohortes (default) → cell créée."""
+        records = [
+            {
+                "libelle_formation": "macon", "type_diplome": "CAP",
+                "region": "HAUTS-DE-FRANCE",
+                "taux_emploi": {"6m": None, "12m": 0.5 + i * 0.02, "18m": None, "24m": 0.6},
+                "taux_poursuite_etudes": 0.10,
+            }
+            for i in range(16)  # ≥15 records pour passer le filter
+        ]
+        out = aggregate_by_formation_region_diplome(records)
+        assert len(out) == 1
+        cell = out[0]
+        assert cell["granularity"] == "formation_region_diplome"
+        assert cell["libelle_formation"] == "macon"
+        assert cell["type_diplome"] == "CAP"
+        assert cell["region"] == "HAUTS-DE-FRANCE"
+        assert cell["n_records"] == 16
+
+    def test_no_aggregation_just_avg(self):
+        """Test l'agrégation par moyenne pondérée (pas SUM). Avec min_records=1."""
+        records = [
+            {
+                "libelle_formation": "test", "type_diplome": "BAC PRO",
+                "region": "BRETAGNE",
+                "taux_emploi": {"12m": 0.40, "24m": None},
+                "taux_poursuite_etudes": None,
+            }
+            for _ in range(5)
+        ] + [{
+            "libelle_formation": "test", "type_diplome": "BAC PRO",
+            "region": "BRETAGNE",
+            "taux_emploi": {"12m": 0.60, "24m": None},
+            "taux_poursuite_etudes": None,
+        }]
+        out = aggregate_by_formation_region_diplome(records, min_records=1)
+        assert len(out) == 1
+        # 5×0.40 + 1×0.60 / 6 = 2.6/6 ≈ 0.4333
+        assert out[0]["taux_emploi_12m_moyen"] == pytest.approx(0.4333, abs=0.001)
+
+    def test_skips_records_with_missing_field(self):
+        """Records avec libellé/type/région vide sont ignorés."""
+        records = [
+            {"libelle_formation": "", "type_diplome": "CAP", "region": "HDF",
+             "taux_emploi": None, "taux_poursuite_etudes": None},
+        ] * 10
+        out = aggregate_by_formation_region_diplome(records)
+        assert out == []
+
+    def test_text_includes_libelle_diplome_region(self):
+        records = [
+            {
+                "libelle_formation": "cuisine", "type_diplome": "CAP",
+                "region": "OCCITANIE",
+                "taux_emploi": {"12m": 0.6, "24m": 0.7},
+                "taux_poursuite_etudes": 0.2,
+            }
+            for _ in range(16)  # ≥15 pour passer le filter par défaut
+        ]
+        out = aggregate_by_formation_region_diplome(records)
+        assert len(out) == 1
+        text = out[0]["text"]
+        assert "cuisine" in text
+        assert "CAP" in text
+        assert "OCCITANIE" in text
+        assert "Inserjeunes" in text
+
+
 def test_build_corpus_combines(inserjeunes_sample):
     corpus = build_corpus(inserjeunes_sample)
     # 3 cells formation_france + 4 cells region_diplome = 7
+    # (granularité 3 filtré par MIN_RECORDS_PER_TRIPLET=5 sur sample 1-record-per-triplet)
     assert len(corpus) == 7
     assert all(c["domain"] == "formation_insertion" for c in corpus)
     assert all(c["source"] == "inserjeunes_lycee_pro" for c in corpus)
     granularities = {c["granularity"] for c in corpus}
+    # Sprint 7 Action 4 : granularité 3 ajoutée mais filtrée sur sample petit
+    # (pour vrai data avec ≥5 cohortes par couple, granularité 3 sera présente)
     assert granularities == {"formation_france", "region_diplome"}
 
 
