@@ -1,0 +1,542 @@
+# Rapport de test utilisateur — OrientIA v3 (post-Sprint 7)
+
+*Test comparatif v2 vs v3, mêmes 5 profils, mêmes 10 questions. Source : `results/user_test_v3/answers_to_show.md` (généré le 2026-04-27).*
+
+-----
+
+## Synthèse exécutive (avant le détail par profil)
+
+**Trois progrès nets** que les 5 profils ont relevés indépendamment :
+
+1. **Périgueux/Perpignan corrigé** en Q6 (pas de “3h30” hallucinée). Q6 raccourcie de 448 → 311 mots.
+1. **ECN supprimé** en Q7, remplacé par la nomenclature correcte DFGSM/DFASM.
+1. **Q4 plus courte et propre** (411 → 374 mots), Plan A/B/C non imposé.
+
+**Trois régressions ou erreurs nouvelles** identifiées :
+
+1. **Liens cassés Q8** : les “fiches” PASS Sorbonne et Montpellier pointent vers `github.com/matjussu/OrientIA/blob/main/results/user_test_v3/Paris` et `.../Montpellier`. Bug technique majeur, visible au premier clic.
+1. **Tableau Q9 cassé** : la mise en forme du Markdown est rompue à mi-tableau (puces qui s’invitent à l’intérieur des cellules). Régression UX.
+1. **“Concours en candidat libre” pour orthophonie en Q10** : l’orthophonie est passée sur Parcoursup en 2020, le concours d’entrée traditionnel n’existe plus. Nouvelle erreur factuelle structurante.
+
+**Erreurs persistantes** signalées au tour 1, **non corrigées** :
+
+- “Bac S” cité en Q7 (supprimé depuis 2021).
+- “Concours Tremplin/Passerelle” présenté comme accès à HEC en Q1 (HEC recrute via AST).
+- VAE en Q5 présentée comme accessible “après 3 ans d’expérience pro même en droit” pour entrer en master info (faux).
+- Coûts EPITA en Q3 à 8 500 €/an (réalité ~10 500 €).
+- Coût BBA INSEEC en Q1 à 10 k€/an (réalité 12-14 k€/an).
+
+**Verdict global du tour 2** : la base s’améliore, mais le mélange de corrections et de régressions ne change pas le **plancher de fiabilité** suffisamment pour modifier les recommandations d’usage faites au tour 1. Léo lit plus, Catherine reste en alerte, Dominique maintient la même conclusion. Détail ci-dessous.
+
+-----
+
+# Profil 1 — Léo, 17 ans (lycéen terminale)
+
+## Profil rappel
+
+Léo, 17 ans, terminale générale, lycée Jean Moulin Lyon 5e. Maths + SES, moyenne ~12,8. Hésite éco / commerce / BUT info-com. Sa meuf veut médecine, pas lui. Au tour 1, **décrochait à mi-réponse** sur la moitié des questions et critiquait fort la longueur, les codes (M1812, RNCP, cod_aff_form), et l’absence de question sur lui avant la réponse.
+
+## Évaluation par question (v3) avec colonne d’évolution vs v2
+
+|Q# |Clair |Utile |Confiance|Lu en entier ?  |Évolution vs v2                                                                                                                                                                                                                                                        |
+|---|------|------|---------|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|Q1 |4 (+1)|4 (=) |3 (=)    |Oui             |Plan C BUT TC ajouté = utile, c’est mon plan B perso. “Emploi garanti (connaissance générale)” : trop confiant, mais ok l’idée. Pas d’amélioration sur le truc des concours Tremplin/Passerelle/AST que je comprends toujours pas.                                     |
+|Q2 |4 (+2)|4 (+1)|3 (=)    |Oui             |**Vraie progression**. C’est plus structuré (BUT puis Master puis Hybride), je sens la logique. Et surtout la question finale me demande mon NIVEAU, c’est exactement ce qui manquait.                                                                                 |
+|Q3 |3 (-1)|3 (+1)|3 (=)    |Oui             |Tableau plus clair, mais “Exemple de parcours : Prépa MP → ENSEIRB → Thales” c’est bien ! Ça me rend la chose concrète. Par contre les codes type M1812 dont je me plaignais ont disparu, mais la sélectivité ENSEIRB “<20%” en “connaissance générale” me fait douter.|
+|Q4 |5 (=) |4 (=) |4 (=)    |Oui             |Plus court, propre. Cool.                                                                                                                                                                                                                                              |
+|Q5 |2 (=) |2 (=) |2 (=)    |Non             |646 mots, c’est plus long qu’avant (554 en v2). **Régression pure pour moi.** Y a 4 plateformes dans le Plan A/B (eCandidat, France-IOI, FreeCodeCamp, CS50)… je sature.                                                                                               |
+|Q6 |4 (+1)|4 (+1)|3 (=)    |Oui             |**Plus court et net**. La question finale est claire.                                                                                                                                                                                                                  |
+|Q7 |2 (=) |3 (=) |2 (=)    |Non             |574 mots = plus long qu’avant (488 en v2). On me parle de “DFGSM → DFASM → 3e cycle” : c’est quoi ces sigles encore ? Au moins les “ECN” ont disparu d’après ce que je comprends.                                                                                      |
+|Q8 |3 (-1)|4 (=) |2 (-2)   |Oui mais bizarre|**Le truc des liens cassés**. Je clique sur “PASS Sorbonne Université” et ça m’envoie sur github point com… un truc de code. C’est sérieux ? Au tour précédent ça marchait.                                                                                            |
+|Q9 |2 (-2)|3 (=) |3 (=)    |Diagonale       |**Le tableau est cassé**. Y a des puces qui s’invitent au milieu des cellules, on lit plus rien. Au tour 1 le tableau était propre, là c’est de la bouillie.                                                                                                           |
+|Q10|3 (+1)|2 (=) |2 (=)    |Non             |Plan B “concours en candidat libre” : aucune idée de si c’est vrai. Plan C cite orthoptiste ET orthoprothésiste : déjà 2 métiers que je connaissais pas. C’est bien fournit mais c’est dense.                                                                          |
+
+## Questions ouvertes
+
+### 1. Les chiffres t’ont-ils aidé ou noyé ?
+
+Toujours pareil que la dernière fois : les **taux de sélectivité simples (28%, 36%, 38%)** je gère, c’est concret. Les “30% des internes en burn-out” ou “40% des étudiants se réorientent en L1” en Q4 et Q7, ça commence à faire des stats partout, j’ai l’impression de lire un rapport DEPP au lieu d’un truc qui m’aide à choisir.
+
+Bon point : **plus de “+28% de vœux”, “+59%”, “-17pp”** apparemment, c’était les trucs les plus relous au tour 1. Si c’est volontaire, bien joué.
+
+### 2. La longueur
+
+Mitigé.
+
+- **Mieux** : Q4 (374), Q6 (311), Q1 (378). Je lis en entier sans souffrir.
+- **Pire** : Q5 (646 vs 554), Q7 (574 vs 488), Q3 (509 vs ~600 mais toujours dense).
+
+Si je devais résumer : on a poli les questions courtes et on a laissé déraper les questions à cas multiples (réorientation, médecine). Or ce sont justement les plus compliquées où **l’élève a besoin du résumé le plus serré**. C’est un peu paradoxal.
+
+### 3. Confiance
+
+Globalement un cran en dessous du tour 1, à cause des **liens cassés en Q8**. Si je clique et que ça m’amène sur GitHub, je me dis que tout l’outil est mal codé, du coup je doute aussi des chiffres qui sont à côté. C’est un effet plus large qu’un seul bug : **un lien cassé infecte la confiance des données voisines**.
+
+### 4. Vs ChatGPT
+
+Toujours mieux pour les liens Parcoursup directs (en dehors de Q8 cassée). Toujours moins bien sur la fluidité. Mais cette fois, **ChatGPT m’aurait probablement pas envoyé un faux lien**. Sur la question des concours d’orthophonie en Q10, ChatGPT en 2026 connaît bien le passage Parcoursup-only, là OrientIA me parle de “concours en candidat libre” qui me semble louche.
+
+### 5. Ce qui manque
+
+Toujours :
+
+- Une vraie question sur **moi** **avant** la première réponse longue.
+- Des coûts cumulés (pas juste “10k€/an”).
+- Au moins un signal **“cette école on évite”** en clair.
+
+Nouveau cette fois :
+
+- **Quand un lien ne marche pas, dis-le-moi**. Mieux : ne génère pas de fausse URL. C’est pire que pas d’URL du tout.
+
+### 6. Mention trends
+
+J’en ai vu beaucoup moins ce tour-ci, et c’est tant mieux. Ça allège.
+
+### 7. Tu utiliserais ce truc ?
+
+**Oui, encore plus volontiers que la dernière fois pour les questions simples** (Q4, Q6, Q1). Mais **moins pour les questions complexes** (Q5, Q7, Q10) où je décroche. Et **pas du tout après avoir vu un faux lien**, parce que ça met le doute partout.
+
+## Observations libres
+
+- La question d’ouverture en Q2 (“quel est ton niveau actuel ?”) est exactement ce que je demandais au tour 1. **Bravo.** Mais elle arrive **après 488 mots de réponse**, c’est moitié inversé : il faudrait poser la question avant, pas après.
+- Plus de codes ROME / RNCP / cod_aff_form visibles. **Bonne nouvelle.**
+- L’exemple de parcours en Q3 (“Prépa MP → ENSEIRB → Thales”) est exactement le genre de truc concret qui m’aide. **Plus de ça partout.**
+- Plan C “BUT TC” en Q1 enfin une voie réaliste pour 11 de moyenne. Cool.
+
+### Verdict global Léo (tour 2)
+
+**Net progrès sur les questions courtes, recul sur les questions longues, et un nouveau problème de liens cassés qui plombe la confiance.** Q2, Q4, Q6 sont vraiment passées de “pénible” à “lisible”. Q5, Q7, Q9 sont passées de “pénible” à “encore pire ou cassé”.
+
+**Reco pour le créateur (vue Léo)** : continue de raccourcir les questions de réorientation et de médecine de la même manière que tu as raccourci Q4 et Q6. Et **vérifie tes liens automatiquement** avant de servir une réponse — un faux lien = la confiance dans tout l’outil descend d’un cran.
+
+-----
+
+# Profil 2 — Sarah, 20 ans (étudiante L2 LEA, en réorientation)
+
+## Profil rappel
+
+Sarah, 20 ans, L2 LEA anglais-espagnol Lyon 2, S3 à 10,3, envisage de basculer vers com/marketing digital. **Au tour 1**, ressentait du **mépris implicite** pour la réorientation, avait relevé les erreurs ECN/EDN, bac S supprimé, Périgueux 3h30 fausse, et la VAE/VAP confondue.
+
+## Évaluation par question (v3) avec colonne d’évolution
+
+|Q# |Clair |Utile |Confiance|Lu en entier ?|Évolution vs v2                                                                                                                                                                                                                                                                                                                                                                        |
+|---|------|------|---------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|Q1 |4 (=) |2 (=) |3 (=)    |Partiel       |Tremplin/Passerelle pour HEC : **erreur persistante**. Ces concours visent NEOMA, KEDGE, Grenoble — pas HEC. Pour HEC c’est l’AST. Tour 1, Dominique l’avait noté ; pas corrigé.                                                                                                                                                                                                       |
+|Q2 |4 (+1)|3 (=) |3 (=)    |Oui           |Plus structuré, plus pédagogique. La question d’ouverture finale (“quel est ton niveau actuel ?”) est bonne. Mais elle arrive trop tard.                                                                                                                                                                                                                                               |
+|Q3 |4 (=) |1 (=) |3 (=)    |Oui           |Pas ma vie, mais propre. EPITA “8 500 €/an” : **erreur persistante**, en réalité 10 500 €.                                                                                                                                                                                                                                                                                             |
+|Q4 |5 (=) |4 (=) |4 (=)    |Oui           |Bien. La phrase “universités privées (ex : universités catholiques) jusqu’à 3 000-8 000 €/an” est encore floue (l’UCO est plutôt 3-4k, certaines facultés cathos sont à 7k).                                                                                                                                                                                                           |
+|Q5 |3 (=) |3 (+1)|1 (-1)   |Oui           |**Sujet plus structuré qu’avant** (3 plans clairs : licence pro / école d’info / double compétence). Mais **VAE encore présentée comme accessible “après 3 ans d’expérience pro (même en droit)” pour entrer en master info** → factuellement **faux**, et c’est le même type d’erreur que j’avais signalé au tour 1. **Régression de confiance** parce que le bug n’a pas été corrigé.|
+|Q6 |4 (+1)|3 (+1)|4 (+2)   |Oui           |**Vraie amélioration**. Plus de Périgueux à 3h30 ! Mention nette de Toulouse 1h30 et Montpellier 1h45 (cohérent géographiquement). Format raccourci.                                                                                                                                                                                                                                   |
+|Q7 |3 (=) |3 (+1)|2 (=)    |Oui           |ECN supprimés ✓, DFGSM/DFASM corrects. **Mais “Bac S/ST2S recommandé”** : le bac S n’existe plus depuis 2021, **erreur persistante** signalée au tour 1. Dans la même réponse, on cite la “DEPP 2023” comme source, donc l’outil a accès à des sources récentes — il n’y a pas d’excuse.                                                                                               |
+|Q8 |2 (-2)|3 (-1)|1 (-3)   |Partiel       |**Catastrophe technique**. Les “fiches officielles” PASS Sorbonne et Montpellier sont des liens vers `github.com/matjussu/OrientIA/blob/main/results/user_test_v3/Paris` (et `/Montpellier`). Probablement un bug de templating dans le RAG. Mais pour moi qui clique : **rupture de confiance immédiate**.                                                                            |
+|Q9 |2 (-2)|2 (-1)|3 (=)    |Cassé         |**Tableau cassé en cours de rendu** (les “Points forts” et “Points faibles” cassent la structure et listent dehors). Au tour 1 le tableau était propre. **Régression UX**. Sur le fond, salaires un peu plus précis (~2 000 € infirmier, ~2 200 € kiné).                                                                                                                               |
+|Q10|3 (=) |2 (-1)|1 (-2)   |Oui           |**Nouvelle erreur grave** : “concours en candidat libre” en Plan B. **L’orthophonie est passée sur Parcoursup en 2020**, plus de concours traditionnel. Et le **lien ONISEP `FOR.372` est utilisé pour 3 formations différentes** (L3 santé, orthoptiste, orthoprothésiste) → hallucination de RAG.                                                                                    |
+
+## Questions ouvertes
+
+### 1. Les chiffres t’ont-ils aidé ou noyé ?
+
+Comme la dernière fois : les chiffres Parcoursup sont utiles, les “(connaissance générale)” sont source de doute. **Nouveauté v3** : moins de mentions de tendance (”+X%”), c’est moins anxiogène, je l’apprécie.
+
+**Mais nouveau bruit** : on m’envoie des chiffres comme “salaire médian embauche ~2 000 € brut” en Q5 sans dire de quel référentiel ça vient. Au tour 1, l’outil disait “InserSup DEPP 2024” parfois, là c’est plus flou. **Régression de sourcing.**
+
+### 2. La longueur
+
+Variable selon les questions. Q4 et Q6 sont passées en mode bonne longueur. Q5 a empiré (646 mots, c’est juste trop). Pour mon profil “réorientation L2”, c’est exactement la question qui devait être la mieux travaillée. Et c’est celle qui a le plus mal vieilli.
+
+### 3. Confiance
+
+**Cran en dessous du tour 1.** Trois raisons :
+
+1. Les **liens cassés en Q8** : c’est pas une fausse info, c’est l’infrastructure qui dysfonctionne. C’est plus grave qu’une approximation.
+1. Le **tableau cassé en Q9** : pareil, c’est de la dette technique visible en sortie.
+1. Les **erreurs signalées au tour 1 et non corrigées** (bac S, Tremplin/Passerelle pour HEC, VAE/VAP) : ça veut dire que mon feedback n’a pas été remonté, ou que le système n’arrive pas à corriger ces points-là spécifiquement.
+
+L’amélioration sur la **distance Périgueux/Perpignan** (Q6) prouve que les corrections passent quand l’équipe les vise. Donc soit les autres erreurs n’ont pas été ciblées, soit elles sont structurellement difficiles à corriger via le RAG. Ça serait utile de savoir lequel des deux.
+
+### 4. Vs ChatGPT
+
+Sur la question Q10 spécifiquement (orthophonie passée Parcoursup), je suis **plutôt sûre** qu’un ChatGPT 2025+ donnerait la bonne info, parce que c’est documenté partout depuis la réforme de 2020. Le fait qu’OrientIA me sorte “concours en candidat libre” en 2026, c’est inquiétant : ça suggère que la base de connaissance générale n’est pas vraiment à jour côté santé.
+
+Sur le reste, OrientIA garde l’avantage des liens Parcoursup spécifiques (quand ils marchent).
+
+### 5. Ce qui manque
+
+Pareil que tour 1 :
+
+- Mode “réorientation bac+1/+2/+3” assumé.
+- Distinction VAE / VAP / dispense de diplôme proprement faite.
+- Reconnaissance des passerelles européennes / Erasmus pour les bilingues.
+
+Nouveau :
+
+- **Quand l’outil ne sait pas, qu’il dise “je ne sais pas”** plutôt qu’inventer un lien GitHub ou un concours qui n’existe plus.
+
+### 6. Mention trends
+
+Beaucoup moins présentes ce tour-ci, c’est plus calme à lire. Bon réflexe.
+
+### 7. Tu utiliserais ce truc ?
+
+**Avec encore plus de méfiance qu’au tour 1.** L’outil a progressé sur le formel (longueur, tendances) mais a régressé sur l’**infrastructure** (liens, tableau, sourcing). En tant qu’étudiante en réorientation qui ne sait pas tout, **je peux pas distinguer un lien légitime d’un faux lien** au premier coup d’œil — donc je ne peux pas faire confiance à l’outil pour me servir mes ressources.
+
+Je l’ouvrirais probablement pour comparer avec ChatGPT ou avec une recherche manuelle, jamais en source primaire.
+
+## Observations libres
+
+- **Le pattern “ECN→DFGSM corrigé / Bac S non corrigé”** dans la même réponse Q7 est étrange : si la réforme R2C est bien intégrée dans la base, comment se fait-il que la suppression du bac S, qui est plus ancienne (2021 vs 2023), ne le soit pas ? **Hypothèse** : la correction du R2C a été faite via une règle ad-hoc, pas via une mise à jour de la connaissance générale. Si oui, c’est de la patch-correction et il y a probablement plein d’autres erreurs du même type non détectées.
+- Le **fait que la même fiche ONISEP `FOR.372`** soit utilisée pour 3 formations différentes en Q10 est un signal clair que le RAG s’accroche à des slugs qui ne correspondent pas. Sans doute un problème dans la fonction de sélection de la fiche citée. À examiner techniquement.
+- Le tableau Q9 cassé est la régression la plus visible : un parent qui ouvre l’outil pour la première fois sur cette question voit une mise en page malformée et ferme. **À fixer en priorité**.
+
+### Verdict global Sarah (tour 2)
+
+**Mieux sur certains points (Q6, Q4 stables, Q2 progresse, Q10 plus structurée), pire sur l’infrastructure (Q8 liens cassés, Q9 tableau cassé), stable ailleurs.** Les corrections ciblées passent (Périgueux), les erreurs non ciblées persistent (bac S, VAE, Tremplin/Passerelle pour HEC). Une nouvelle erreur grave introduite (concours candidat libre orthophonie) suggère que la base de connaissances santé n’est pas régulièrement mise à jour.
+
+**Reco pour le créateur (vue Sarah)** : ajoute un audit ciblé sur les erreurs déjà signalées au tour 1 (boucle de feedback). Et **investigue les liens cassés en Q8 + le tableau cassé en Q9** : ce sont des bugs techniques que tu peux probablement corriger en quelques heures avec un impact massif sur la confiance.
+
+-----
+
+# Profil 3 — Thomas, 23 ans (M1 finance, vise PM fintech)
+
+## Profil rappel
+
+Thomas, 23 ans, M1 Ingénierie Financière à Dauphine, alternance banque d’inv. **Au tour 1**, hypothèse que l’outil n’est pas pour lui ; conclusion confirmée : “outil de formation, pas de métier”. Cherche du métier (trajectoires, salaires 5-10 ans, bifurcation par expérience).
+
+## Évaluation par question (v3) avec colonne d’évolution
+
+|Q# |Clair |Utile |Confiance|Lu en entier ?|Évolution vs v2                                                                                                                                                                                                                                                                                                                        |
+|---|------|------|---------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|Q1 |4 (+1)|2 (+1)|3 (=)    |Partiel       |Plan C BUT TC ajouté = bonne ouverture vers une voie pro. “Emploi garanti” reste une affirmation forte sans source.                                                                                                                                                                                                                    |
+|Q2 |4 (+1)|3 (+1)|3 (=)    |Oui           |Plus structuré (entrée → ingénierie → management), mais toujours zéro **trajectoire de métier 5-10 ans**. RSSI mentionné mais sans description ; salaire **non donné** cette fois (régression vs v2 où on avait ~38-42k€).                                                                                                             |
+|Q3 |4 (=) |3 (+1)|3 (=)    |Oui           |Tableau plus net, “Exemple de parcours” très bien (Prépa MP → ENSEIRB → Thales / Bachelor en alternance → Synacktiv). **C’est exactement le format métier qui me parle**. Si on l’étend ailleurs, ça change beaucoup.                                                                                                                  |
+|Q4 |5 (=) |3 (=) |4 (=)    |Oui           |Stable.                                                                                                                                                                                                                                                                                                                                |
+|Q5 |3 (=) |1 (=) |1 (-1)   |Diagonal      |**VAE après 3 ans en droit pour entrer en master info** : déontologiquement faux. Quelqu’un qui ferait ce plan se ferait éconduire au comité de validation. Erreur signalée tour 1 et reproduite.                                                                                                                                      |
+|Q6 |3 (+1)|1 (=) |3 (+1)   |Oui           |Plus court, propre, mais toujours pas de lien avec le bassin d’emploi local Perpignan/PACA. Question parc à thème versus question métier.                                                                                                                                                                                              |
+|Q7 |3 (=) |3 (+1)|2 (=)    |Oui           |DFGSM/DFASM corrects. Mention burn-out 30% et désertification médicale = **vraie ouverture sur la dimension métier**, c’est une nouveauté positive. Études à l’étranger (Roumanie, Hongrie) + EVC pour retour en France : **bonne couverture**, manque seulement les chiffres (combien de Français y vont, taux de retour, succès EVC).|
+|Q8 |3 (-1)|4 (=) |1 (-3)   |Partiel       |**Liens cassés**. Pour un public adulte, c’est le signal “outil pas robuste, je passe à autre chose”.                                                                                                                                                                                                                                  |
+|Q9 |3 (-1)|4 (+1)|3 (=)    |Cassé         |Le tableau est cassé visuellement. Mais **sur le fond**, plus de précisions : revenus libéraux 3 000-6 000 €/mois pour kiné, charges, salariés vs libéraux différenciés. **Vraie progression métier**. Dommage que le rendu soit cassé : si c’était propre, ce serait une des meilleures réponses du corpus.                           |
+|Q10|3 (=) |3 (+1)|2 (=)    |Oui           |Plan C “orthoptiste / orthoprothésiste” = vraie ouverture sur des métiers proches. Mais le Plan B “concours en candidat libre” est inexact (concours supprimé en 2020). Et le même `FOR.372` pour 3 fiches = bug.                                                                                                                      |
+
+## Questions ouvertes
+
+### 1. Les chiffres t’ont-ils aidé ou noyé ?
+
+**Petite progression sur le métier** : Q9 introduit la distinction salarié/libéral et donne une fourchette de revenus libéraux, ce qui est exactement le genre de chose que je voulais voir au tour 1. Q3 mentionne des fourchettes de salaires d’alternant (“~1 000-1 300 €/mois”). Q7 ajoute la dimension “désertification médicale” et “burn-out 30% des internes”.
+
+**Mais toujours rien sur les trajectoires 5-10-20 ans**, ni sur les bifurcations par expérience. Quand on parle d’orthophoniste en Q10, on dit “salaire médian embauche ~1 800 €” mais rien sur ce que devient un ortho à 10 ans d’exercice (la plupart sont en libéral à des revenus 2 500-3 500 €/mois nets selon l’INSEE). Le manque est en train d’être colmaté en surface, pas dans la profondeur.
+
+### 2. La longueur
+
+Toujours trop pour un public adulte. Mais raccourci sur Q6 (+) et stable sur Q1, Q3. Le problème n’a pas vraiment été pris en main pour mon segment.
+
+### 3. Confiance
+
+**Plus basse qu’au tour 1**, exactement pour les raisons que Sarah a donné : les liens cassés et le tableau cassé sont des défauts d’**infrastructure**, pas d’opinion. Quand un outil de production sort une URL invalide, ça veut dire que la couche de validation n’est pas en place. Je travaille en banque, pour nous c’est rédhibitoire.
+
+### 4. Vs ChatGPT
+
+ChatGPT pour ma question réelle (PM fintech à 25 ans) reste plus utile. ChatGPT peut me dire “trajectoire APM → PM → Senior PM → Director, fourchettes salaires Paris-Londres”, il connaît Lenny’s Newsletter et les frameworks PM. OrientIA reste calé sur la formation.
+
+**Mais** je note : Q9 amorce timidement la dimension métier (libéral, charges, plafond salarial public). Si on étend cette logique aux autres réponses, on a un outil potentiellement intéressant pour **bac+3/+4 qui veulent comprendre le marché**, pas que les bac-3 qui veulent choisir une formation.
+
+### 5. Ce qui manque
+
+Pareil que tour 1 :
+
+- Trajectoires métier longue durée.
+- Voies non-diplômantes (bootcamps, reconversions entreprise).
+- Indicateurs qualité de vie (burn-out, charge mentale) — **partiellement ajouté en Q7 sur la médecine, à étendre**.
+
+### 6. Mention trends
+
+Moins présentes, OK.
+
+### 7. Tu utiliserais ce truc ?
+
+Pour mon usage perso, toujours non. **Mais cette fois, je verrais une utilité** pour des collègues plus jeunes (alternants, stagiaires bac+3) qui hésitent sur leur première spécialisation. Q3 avec ses “exemples de parcours” est exactement ce que je leur ferais lire.
+
+## Observations libres
+
+- L’introduction des **“exemples de parcours”** en Q3 (Prépa MP → ENSEIRB → Thales) est la plus belle innovation du tour 2. **À étendre partout.** C’est le point pivot entre formation et métier.
+- L’introduction de la **dimension burn-out / désertification** en Q7 est aussi un bon signal. Continue dans cette direction sur Q9 (charge physique infirmière), Q10 (saturation libérale ortho), etc.
+- Disparition partielle des **chiffres de salaire** en Q2 (avant : ~38-42 k€/an en sortie, maintenant rien). C’est une régression. La précision était utile.
+- **Test important** que je suggère : Q1 mentionne “Tremplin/Passerelle pour HEC” alors que Q5 mentionne “EPITA via concours AST”. L’outil sait donc que **AST est le bon nom** pour les admissions sur titre. Pourquoi ne l’applique-t-il pas à HEC ? Soit c’est un bug logique, soit le RAG associe “HEC + admission parallèle” à un faux pattern. À investiguer.
+
+### Verdict global Thomas (tour 2)
+
+**Premiers pas vers un outil métier en Q3 (exemples de parcours), Q7 (burn-out, désertification), Q9 (libéral vs salarié). Mais ces avancées sont noyées dans des régressions techniques (liens, tableau) et des erreurs persistantes (VAE, AST/Tremplin).** L’outil pourrait commencer à servir un public bac+3/+4 si la logique des “exemples de parcours” était systématisée et si le sourcing était plus rigoureux.
+
+**Reco pour le créateur (vue Thomas)** : généralise le format **“Exemple de parcours réel : [étapes] → [métier final + entreprise type] + [salaire d’entrée et à 5-10 ans]”** dans toutes les réponses à enjeu professionnel. C’est le différenciateur le plus net que tu as introduit ce tour-ci. Et **fixe la cohérence interne** : si l’outil sait dire AST pour EPITA, il doit le savoir aussi pour HEC.
+
+-----
+
+# Profil 4 — Catherine, 52 ans (parent d’Hugo, terminale)
+
+## Profil rappel
+
+Catherine, 52 ans, RH PME nantaise, fils Hugo en terminale spé Maths + Physique-Chimie, moyenne 14, vise école d’ingénieur post-prépa. **Au tour 1**, avait relevé 6 erreurs factuelles vérifiables, coûts privés sous-estimés, “ne laisserais pas Hugo seul utiliser ça”.
+
+## Évaluation par question (v3) avec colonne d’évolution
+
+|Q# |Clair |Utile |Confiance|Lu en entier ?    |Évolution vs v2                                                                                                                                                                                                                                                                                                                                                                                      |
+|---|------|------|---------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|Q1 |4 (=) |3 (=) |3 (=)    |Oui               |Tremplin/Passerelle pour HEC : **erreur persistante**. BBA INSEEC à “10 k€/an” : toujours sous-estimé (12-14 k€).                                                                                                                                                                                                                                                                                    |
+|Q2 |4 (+1)|3 (=) |3 (=)    |Oui               |Plus pédagogique. La phrase “vérifie toujours les labels sur France Compétences” est précieuse pour un parent.                                                                                                                                                                                                                                                                                       |
+|Q3 |4 (=) |4 (=) |2 (-1)   |Oui               |EPITA “8 500 €/an” : **erreur persistante**, j’avais calculé 10 500 €/an au tour 1. **Et “9 500 €/an pour le cycle ingénieur”** : c’est en fait jusqu’à 12 800 €/an pour la dernière année. **Coûts toujours sous-estimés de 15-25 %**. Pour un parent qui fait son budget, c’est le défaut le plus grave.                                                                                           |
+|Q4 |5 (=) |4 (=) |4 (=)    |Oui               |Plus court et clair. Bonne réponse, je m’en sers comme repère.                                                                                                                                                                                                                                                                                                                                       |
+|Q5 |3 (=) |2 (=) |2 (=)    |Oui               |Pas notre situation, mais je lis pour audit : VAE encore présentée comme accessible “après 3 ans d’expérience pro même en droit” → factuellement faux. **Erreur persistante**.                                                                                                                                                                                                                       |
+|Q6 |4 (+1)|3 (=) |4 (+2)   |Oui               |**Périgueux corrigé** ✓. Plus de fausse distance. C’est rassurant : ça prouve qu’une correction est possible.                                                                                                                                                                                                                                                                                        |
+|Q7 |3 (=) |3 (=) |2 (=)    |Oui               |ECN→DFGSM ✓. **Mais “Bac S/ST2S recommandé”** : Hugo n’a pas pu faire de bac S, ce bac n’existe plus pour sa génération. **Erreur persistante** signalée au tour 1. Pour un parent, c’est un signal alarmant : l’outil parle d’un système qui n’existe plus.                                                                                                                                         |
+|Q8 |2 (-2)|3 (-1)|1 (-3)   |En vigilance      |**Liens cassés**. Quand je clique sur “PASS Sorbonne Université” et que ça m’envoie sur GitHub, c’est le moment où je ferme l’outil. Pour un parent, **c’est plus grave qu’une erreur factuelle** : ça signe l’amateurisme technique.                                                                                                                                                                |
+|Q9 |2 (-2)|3 (-1)|3 (=)    |Oui mais difficile|**Tableau cassé** dans le rendu : la rangée “Points forts” mélange les colonnes, on lit plus rien. Au tour 1 c’était clean. **Régression UX majeure**.                                                                                                                                                                                                                                               |
+|Q10|2 (=) |2 (=) |1 (-1)   |Partiel           |“Concours en candidat libre” pour orthophonie : **nouvelle erreur factuelle grave** signalée par Sarah aussi. Le concours d’entrée traditionnel a été supprimé en 2020 (Parcoursup). Et le **même lien `FOR.372`** sert pour L3 santé, orthoptiste, orthoprothésiste — visiblement une hallucination de RAG. Pour un parent, ça veut dire que **les liens “officiels” affichés ne sont pas fiables**.|
+
+## Questions ouvertes
+
+### 1. Les chiffres t’ont-ils aidé ou noyé ?
+
+Aidé dans l’ensemble pour les sélectivités. **Mais le plus important pour moi en tant que parent — les coûts — reste le maillon faible.** EPITA à 8 500 €/an, INSEEC à 10 k€/an : sous-estimés systématiquement de 15-25 %. Je l’avais signalé au tour 1, ce n’est pas corrigé.
+
+Pour donner un ordre de grandeur de l’impact : si une famille planifie un cursus EPITA à 8 500 × 5 = **42 500 €** alors qu’en réalité c’est plutôt **52-60 k€** sur 5 ans (avec progression annuelle), l’erreur est de l’ordre de **10-18 k€**. Pour une famille moyenne, c’est un prêt étudiant supplémentaire ou un changement de plan structurel. **Je continue à dire que c’est l’erreur la plus pénalisante de l’outil.**
+
+### 2. La longueur
+
+Améliorée sur Q4, Q6, Q1. Stable ailleurs. Q5 toujours trop dense.
+
+### 3. Confiance
+
+**En baisse**. Au tour 1, j’avais 6 erreurs factuelles. Au tour 2, j’en compte :
+
+- Persistantes : Tremplin/Passerelle (Q1), VAE (Q5), bac S (Q7), coûts privés (Q1, Q3) → **4 maintenues**
+- Corrigées : Périgueux/Perpignan (Q6), ECN→DFGSM (Q7) → **2 corrigées**
+- Nouvelles : liens GitHub cassés (Q8), tableau Q9 cassé, “concours en candidat libre” ortho (Q10), `FOR.372` réutilisé 3 fois → **4 nouvelles**
+
+Solde net : **=0**, mais avec un changement de nature : on est passé de “erreurs factuelles d’expert” à “défauts d’infrastructure visibles à l’œil nu”. Ces derniers détruisent la confiance plus vite parce qu’ils sont auto-évidents (un parent peut voir un lien cassé sans savoir si l’orthophonie passe par concours).
+
+### 4. Vs ChatGPT
+
+OrientIA garde l’avantage **quand ses liens marchent**. Quand ils ne marchent pas (Q8), l’avantage disparaît. ChatGPT n’a pas l’autorité des fiches Parcoursup, mais il n’invente pas non plus de fausses URLs.
+
+### 5. Ce qui manque
+
+Toujours :
+
+- **Coûts cumulés sur le cursus**, pas annuels.
+- Bourses détaillées et conditions.
+- Disclaimer d’ouverture sur les limites de l’outil.
+
+Nouveau :
+
+- **Validation automatique des URL avant rendu**. Pour un outil qui se positionne en source d’information aux familles, **c’est un minimum**.
+
+### 6. Mention trends
+
+Moins présentes ce tour. Bon point.
+
+### 7. Tu utiliserais ce truc ?
+
+**Position inchangée par rapport au tour 1 : non en autonomie pour un mineur, oui pour ma préparation personnelle, avec vérification croisée systématique.** L’amélioration sur Périgueux est un signal positif (corrections possibles), mais les nouvelles régressions techniques (liens, tableau) repoussent le moment où je laisserais Hugo l’utiliser seul.
+
+Pour Hugo qui veut tester ce soir : je lui dirai “ouvre-le, mais dès que tu cliques sur un lien et que ça semble bizarre, viens me voir”. C’est exactement ce qu’on ne devrait pas avoir à dire à un ado de 17 ans qui prépare ses vœux Parcoursup.
+
+## Observations libres
+
+- **Bonne nouvelle** : Périgueux/Perpignan corrigé. Ça prouve que les remontées d’erreur sont prises en compte au moins partiellement.
+- **Mauvaise nouvelle** : 4 erreurs sur 6 du tour 1 ne sont pas corrigées. Ça suggère que la majorité du feedback de tour 1 n’a pas été appliquée. Soit techniquement difficile, soit non priorisé.
+- **Nouveauté inquiétante** : un parent voit immédiatement les liens GitHub cassés en Q8. C’est l’un des défauts les plus visibles de toute la batterie.
+- L’absence de **disclaimer en ouverture** (“cet outil n’est pas un substitut à un conseiller humain, vérifiez toujours les informations critiques”) reste un manque déontologique. Tour 1 et tour 2.
+- **Bon réflexe maintenu** : Psy-EN/CIO/SCUIO mentionné en fin de la plupart des réponses. Préserver.
+
+### Verdict global Catherine (tour 2)
+
+**Stagnation : 2 corrections, 4 erreurs persistantes, 4 nouvelles régressions. Je ne change pas mon évaluation du tour 1 : pas d’usage autonome pour Hugo, usage personnel sous vigilance.** Le potentiel d’amélioration existe (cf. Périgueux corrigé), mais le rythme de correction n’est pas en phase avec le rythme d’introduction de nouvelles régressions.
+
+**Reco pour le créateur (vue Catherine), priorité absolue** : avant tout autre développement, fixe les **3 défauts d’infrastructure** : liens GitHub cassés en Q8 (probablement un bug de templating sur `{{ ville }}` qui ne se résout pas), tableau cassé en Q9, et le `FOR.372` répété en Q10. Ces 3 bugs, **un parent les voit en 30 secondes**, et un seul suffit à fermer l’outil. **Priorité haute** : finis le travail factuel commencé sur Périgueux et ECN, en attaquant bac S, Tremplin/Passerelle pour HEC, VAE/VAP, et **les coûts privés en valeurs réelles 2025-2026**.
+
+-----
+
+# Profil 5 — Dominique, 55 ans (Psy-EN, audit professionnel)
+
+## Profil rappel
+
+Dominique, 55 ans, Psy-EN spécialité EDO, 22 ans d’exercice. **Au tour 1**, avait conclu : “non recommandable à un mineur en autonomie”, “outil de soutien pour pro ou usage supervisé”. Avait priorisé : audit factuel + signalétique des sources, exploration du projet, couverture filières, déontologie d’ouverture vers humain.
+
+## Évaluation par question (v3) avec colonne d’évolution
+
+|Q# |Clair |Utile |Confiance|Lu en entier ?|Évolution vs v2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|---|------|------|---------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|Q1 |4 (+1)|3 (=) |2 (=)    |Oui           |**Erreur déontologique majeure persistante** : Tremplin/Passerelle attribués à HEC, alors que ces concours visent ESC Grenoble, NEOMA, KEDGE. HEC recrute via le concours **AST**. Erreur structurante qui peut envoyer un dossier dans la mauvaise file.                                                                                                                                                                                                                                                                                                                                                              |
+|Q2 |4 (+1)|4 (+1)|3 (=)    |Oui           |Vraie progression structurelle (technique → ingénierie → management). La logique pédagogique apparaît. **Mais “80% des formations bac+3/5 cyber proposent l’alternance” (connaissance générale)** : chiffre non sourcé, à vérifier.                                                                                                                                                                                                                                                                                                                                                                                    |
+|Q3 |4 (=) |4 (=) |3 (=)    |Oui           |**L’introduction des “exemples de parcours” est une bonne pratique pédagogique** (Prépa MP → ENSEIRB → Thales). À encourager.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|Q4 |5 (=) |4 (=) |4 (=)    |Oui           |Stable, propre. La meilleure réponse du corpus pour la 2e fois consécutive.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|Q5 |3 (=) |2 (=) |1 (=)    |Oui           |**Erreur déontologique persistante** : “VAE après 3 ans d’expérience pro (même en droit)” pour entrer en master info. La VAE exige une expérience **liée au diplôme visé** (art. L613-3 et L613-4 du Code de l’éducation). Reconduire cette erreur après signalement au tour 1 = problème de gouvernance qualité.                                                                                                                                                                                                                                                                                                      |
+|Q6 |4 (+1)|3 (+1)|4 (+2)   |Oui           |**Distance Périgueux/Perpignan corrigée** ✓. Démontre qu’une correction ciblée est techniquement possible.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|Q7 |3 (=) |3 (=) |2 (=)    |Oui           |**ECN→DFGSM correct** : amélioration ciblée. **Mais “Bac S/ST2S recommandé”** : le bac S n’existe plus depuis 2021. **Erreur persistante** signalée au tour 1. Et “Médecin militaire à Lyon (École de Santé des Armées)” : c’est juste, mais l’admission militaire passe aussi par un dossier complet et un examen médical lourd, non mentionné.                                                                                                                                                                                                                                                                       |
+|Q8 |2 (-2)|3 (-1)|1 (-3)   |Audit         |**Régression d’infrastructure majeure**. Les “fiches officielles” pointent vers `github.com/matjussu/OrientIA/.../Paris` et `/Montpellier`. Probable bug de template (variable de ville non résolue, ou interpolation cassée). **À fixer en P0**. Pour un Psy-EN, c’est l’argument définitif contre la diffusion à mineur sans encadrement.                                                                                                                                                                                                                                                                            |
+|Q9 |2 (-2)|3 (=) |3 (=)    |Audit         |**Tableau Markdown cassé** dans le rendu (les listes “Points forts” rompent la grille). Au tour 1 le tableau était propre. **Régression UX**. **Sur le fond** : amélioration de la dimension métier (libéral vs salarié, charges, plafond public).                                                                                                                                                                                                                                                                                                                                                                     |
+|Q10|2 (-1)|2 (-1)|1 (-2)   |Audit         |**Trois erreurs accumulées** : (1) Plan B “Concours en candidat libre” pour orthophonie : le concours d’entrée traditionnel a été supprimé en 2020, l’orthophonie est passée sur Parcoursup avec sélection sur dossier + entretien. (2) Le lien ONISEP `FOR.372` est utilisé 3 fois pour 3 formations différentes (L3 sciences santé, orthoptiste, orthoprothésiste) : hallucination de RAG sur le slug. (3) “Orthoprothésiste bac+2 en 1 an après bac+2” : formulation logiquement contradictoire (bac+2 en 1 an post-bac+2 ?), confond probablement avec le BTS Prothésiste-Orthésiste qui se fait en 3 ans post-bac.|
+
+## Questions ouvertes
+
+### 1. Les chiffres t’ont-ils aidé ou noyé ?
+
+L’apport Parcoursup est toujours la valeur différenciante de l’outil. La “(connaissance générale)” reste mal signalée et mélange faits, opinions, et inventions. **L’audit factuel demandé en P1 au tour 1 n’a manifestement pas été fait de manière systématique**, seulement par patches ciblés.
+
+L’introduction de chiffres “métier” (burn-out 30% des internes en Q7, revenus libéraux kiné 3 000-6 000 €/mois en Q9) est une bonne nouvelle qualitative, mais sans sourcing rigoureux ces chiffres restent en zone grise.
+
+### 2. La longueur
+
+Q4, Q6, Q1 sont passées en mode lisible. Q5, Q7, Q9, Q10 restent excessives, et Q5 a même empiré (646 mots). Cela suggère que la règle “150-300 mots” annoncée dans le SYSTEM_PROMPT v3.2 n’est pas appliquée uniformément, ou qu’un correctif a relâché la contrainte sur les questions complexes. Du point de vue cognitif adolescent, **Q5 et Q7 sont au-dessus du seuil de décrochage**.
+
+### 3. Confiance
+
+**Globalement en baisse** par rapport au tour 1, pour les raisons techniques signalées par les autres profils (liens cassés, tableau cassé, hallucination de slug). En tant qu’auditeur, ces défauts d’infrastructure sont **plus problématiques** que les erreurs factuelles, parce qu’ils :
+
+1. **Sont publics et auto-évidents** (un mineur les voit aussi).
+1. **Suggèrent un manque de pipeline de validation** avant diffusion.
+1. **Détruisent par contagion** la confiance dans les éléments adjacents corrects.
+
+Un Psy-EN qui montrerait l’outil à un collègue verrait les liens cassés en 10 secondes et conclurait à un manque de robustesse, indépendamment du contenu.
+
+### 4. Vs ChatGPT
+
+ChatGPT 2026 a vraisemblablement intégré la réforme R2C (ECN→EDN, qu’OrientIA a aussi corrigée), la suppression du bac S (que OrientIA n’a pas corrigée), et le passage de l’orthophonie sur Parcoursup en 2020 (que OrientIA n’a pas corrigée). Sur ces trois points historiques, **ChatGPT serait probablement plus à jour qu’OrientIA**. C’est un constat préoccupant pour un outil dont la promesse est l’expertise française vérifiée.
+
+L’avantage différenciant d’OrientIA — les liens Parcoursup directs — est neutralisé en Q8 par les liens GitHub cassés.
+
+### 5. Ce qui manque
+
+Reprends mes recommandations du tour 1 :
+
+- **P1 (factuel)** : audit factuel complet, signalétique claire des sources. **Partiellement fait** sur Q6 et Q7 (R2C). Pas fait sur Q1 (Tremplin/Passerelle pour HEC), Q5 (VAE), Q7 (bac S), Q10 (orthophonie/Parcoursup). À reprendre systématiquement, pas par patches.
+- **P2 (pédagogique)** : phase exploratoire avant réponse. **Pas fait**. Q1 répond direct, Q7 répond direct, Q8 répond direct. La question d’ouverture finale est conservée mais elle arrive **après** la réponse, donc elle ne sert pas à explorer le projet, juste à le valider après-coup.
+- **P3 (couverture)** : filières manquantes (agricole, artistique, fonction publique, formation adulte). **Pas fait** sur ce corpus.
+- **P4 (déontologie)** : disclaimer d’ouverture. **Pas fait**.
+
+### 6. Mention trends
+
+Réduction notable des “+X%, -Ypp” dans le corpus v3. **Bonne pratique acquise**, à conserver.
+
+### 7. Tu utiliserais ce truc ?
+
+**Recommandation professionnelle inchangée** : pas en autonomie pour un mineur. Usage de soutien pro acceptable, sous condition que l’utilisateur professionnel sache lire-critique. Diffusion publique large prématurée tant que les défauts d’infrastructure (liens, tableau, slug répété) ne sont pas corrigés et que les erreurs factuelles structurantes (concours d’orthophonie, bac S, Tremplin/Passerelle pour HEC, VAE/VAP) ne sont pas adressées.
+
+## Observations libres
+
+### Lecture de la note de version
+
+L’en-tête du fichier v3 mentionne :
+
+- “30,8 % verified ± IC95 1,03pp” en mode Baseline,
+- “+7,4pp gain solide vs Sprint 6”,
+- “gap résiduel -8,6pp vs baseline figée Sprint 5”.
+
+C’est une métrique de **précision factuelle automatisée** que je trouve à la fois rassurante (l’équipe surveille la qualité) et inquiétante (à 30,8 % de “verified by official source”, **environ 70 % des affirmations ne sont pas vérifiées par source officielle**). Pour un outil destiné au grand public en orientation, **30 % de couverture vérifiée n’est pas un seuil acceptable** ; il faudrait viser au minimum 70-80 % avant déploiement large.
+
+C’est aussi cohérent avec ce que je vois dans les réponses : la structure progresse (longueur, mentions de tendances réduites, exemples de parcours), la conformité aux sources officielles plafonne. Le travail à faire est de monter le **plancher factuel**, pas le **plafond pédagogique**.
+
+### Hypothèse technique sur les liens cassés en Q8
+
+Les “fiches officielles” en Q8 prennent la forme :
+
+```
+[PASS Sorbonne Université](https://github.com/matjussu/OrientIA/blob/main/results/user_test_v3/Paris)
+```
+
+Cela suggère un **bug d’interpolation de variable** : le template attendait probablement une URL résolue depuis une variable contenant la ville, et le générateur a interprété `Paris` comme un chemin relatif au repo en cours d’exécution, peut-être par concaténation avec le `BASE_URL` du process. **À investiguer dans la couche de templating ou dans le post-processing du RAG.**
+
+### Hypothèse technique sur `FOR.372` répété en Q10
+
+Le slug ONISEP `FOR.372` est utilisé pour :
+
+1. “L3 Sciences pour la Santé Rennes” (Plan A)
+1. “Certificat d’orthoptiste” (Plan C, point 1)
+1. “Certificat d’orthoprothésiste” (Plan C, point 2)
+
+**Hypothèse** : la fonction de récupération de fiche ONISEP retourne un slug par défaut (`FOR.372`) quand aucune correspondance n’est trouvée, et le LLM compose ensuite trois mentions différentes sur le même lien. C’est une faille classique de pipeline RAG sans filet : l’absence de match doit aboutir à une absence de citation, pas à une citation par défaut. **À fixer en P0**.
+
+### Verdict professionnel Dominique (tour 2)
+
+**La structure pédagogique progresse sur certains aspects** (mentions de tendance réduites, exemples de parcours en Q3, dimension métier en Q7 et Q9, longueur Q4/Q6/Q1) **mais les défauts critiques signalés au tour 1 restent en place ou s’aggravent** : audit factuel systématique non fait, phase exploratoire absente, couverture filières inchangée, disclaimer d’ouverture absent. **À cela s’ajoutent trois nouvelles régressions techniques** (liens cassés Q8, tableau cassé Q9, hallucination de slug Q10) qui dégradent visiblement la robustesse de l’infrastructure.
+
+**Recommandations professionnelles, ordre de priorité (mise à jour du tour 1)** :
+
+1. **P0 (bloquante, action en jours)** :
+   a. Bug d’interpolation de ville en Q8 (liens GitHub cassés).
+   b. Bug de format du tableau en Q9.
+   c. Bug de slug ONISEP par défaut en Q10.
+   *Ces 3 bugs sont indépendants du contenu. Les laisser en production = signal d’amateurisme.*
+1. **P1 (haute, action en semaines)** :
+   a. Audit factuel exhaustif et signalétique des sources, **en attaquant en priorité les erreurs déjà signalées au tour 1 et non corrigées** (bac S supprimé, Tremplin/Passerelle pour HEC, VAE/VAP, coûts écoles privées).
+   b. Mise à jour de la base santé : suppression du concours traditionnel d’orthophonie depuis 2020, suppression du bac S depuis 2021, terminologie R2C complète (déjà partiellement faite, à étendre).
+1. **P2 (moyenne, action en trimestres)** :
+   a. Phase exploratoire en début de réponse pour les questions larges (Q1 “HEC ?”, Q7 “devenir médecin”, Q5 “réorientation”).
+   b. Couverture des filières absentes (enseignement agricole, artistique, fonction publique, formation adulte).
+   c. Disclaimer d’ouverture sur les limites de l’outil.
+1. **P3 (préservation des acquis)** :
+   a. Maintenir les **exemples de parcours** introduits en Q3, à étendre.
+   b. Maintenir la **dimension métier** (burn-out, désertification, libéral vs salarié) introduite en Q7 et Q9.
+   c. Maintenir la **réduction des mentions de tendance** acquise.
+
+**Conclusion d’audit** : l’outil progresse de manière non monotone — certains axes avancent, d’autres reculent, certains bugs signalés perdurent. Le score automatisé “30,8 % verified” reflète bien le constat humain : trop d’affirmations non vérifiables. **Recommandation de diffusion publique à mineurs : toujours non en autonomie** ; usage en accompagnement humain reste possible, sous condition que les 3 bugs P0 soient corrigés rapidement.
+
+-----
+
+# Synthèse comparative v2 → v3
+
+## Vue d’ensemble par profil
+
+|Profil      |Verdict tour 1                                    |Verdict tour 2                                                                                    |Évolution       |
+|------------|--------------------------------------------------|--------------------------------------------------------------------------------------------------|----------------|
+|Léo 17      |Lit pas en entier, codes incompréhensibles        |Lit mieux Q2/Q4/Q6, décroche encore Q5/Q7, perd confiance par liens cassés                        |Mitigé          |
+|Sarah 20    |Mépris implicite réorientation, erreurs factuelles|Q5 mieux structurée, mais VAE pas corrigée, liens et tableau cassés, nouvelle erreur ortho        |Stable bas      |
+|Thomas 23   |Outil formation pas métier                        |Premiers pas métier (exemples parcours, burn-out, libéral), mais noyés dans régressions techniques|Progrès partiels|
+|Catherine 52|6 erreurs, pas pour Hugo seul                     |2 corrigées, 4 persistantes, 4 nouvelles régressions                                              |Stagnation      |
+|Dominique 55|Pas en autonomie pour mineur                      |Recommandation inchangée + 3 nouveaux bugs P0 à fixer                                             |Inchangé        |
+
+## Erreurs persistantes (signalées tour 1, non corrigées tour 2)
+
+1. **“Concours Tremplin/Passerelle” pour HEC** en Q1. HEC = AST.
+1. **VAE pour entrer en master info après 3 ans en droit** en Q5. La VAE exige expérience liée au diplôme.
+1. **“Bac S/ST2S recommandé”** en Q7. Le bac S n’existe plus depuis 2021.
+1. **Coût EPITA “8 500 €/an”** en Q3. Réalité ~10 500 €/an.
+1. **Coût BBA INSEEC “10 k€/an”** en Q1. Réalité 12-14 k€/an.
+
+## Corrections effectuées (tour 2)
+
+1. **Distance Périgueux/Perpignan** corrigée en Q6 (plus de “3h30” hallucinée).
+1. **ECN remplacés par DFGSM/DFASM** en Q7 (réforme R2C 2023 intégrée).
+1. **Mentions de tendance réduites** (”+28%”, “-17pp”, etc. moins fréquentes).
+1. **Q4 et Q6 raccourcies** (411→374 mots et 448→311 mots).
+1. **Plan A/B/C non imposé en Q4** (préservation du tour 1).
+
+## Nouvelles régressions (tour 2)
+
+1. **Liens cassés en Q8** : URLs `github.com/matjussu/.../Paris` et `.../Montpellier` au lieu de fiches Parcoursup. Bug de templating.
+1. **Tableau Markdown cassé en Q9** : structure rompue à mi-tableau.
+1. **“Concours en candidat libre” pour orthophonie en Q10** : faux depuis 2020 (passage Parcoursup).
+1. **Slug ONISEP `FOR.372` réutilisé 3 fois en Q10** pour 3 formations différentes : hallucination de slug par défaut.
+1. **Q5 allongée** (554 → 646 mots) au lieu d’être raccourcie.
+1. **Salaires ingénieur cyber disparus en Q2** (38-42 k€/an mentionnés au tour 1, absents au tour 2).
+
+## Innovations positives (tour 2)
+
+1. **Exemples de parcours réels** en Q3 (Prépa MP → ENSEIRB → Thales). À étendre partout.
+1. **Dimension métier** (burn-out 30% internes en Q7, libéral vs salarié et fourchette 3-6 k€/mois en Q9).
+1. **Question d’ouverture sur le niveau** en Q2 (mais arrive trop tard, en fin de réponse).
+1. **Plan C BUT TC** en Q1 (vraie alternative pour 11 de moyenne).
+1. **Métiers proches** en Q10 (orthoptiste, orthoprothésiste).
+
+## Reco priorisée pour le tour 3
+
+|Priorité|Action                                                                               |Effort estimé            |Impact                         |
+|--------|-------------------------------------------------------------------------------------|-------------------------|-------------------------------|
+|P0      |Fixer interpolation de ville Q8 + tableau Q9 + slug par défaut Q10                   |1-3 jours dev            |Élimine 3 défauts auto-évidents|
+|P0      |Boucler la liste des erreurs de tour 1 et trier non corrigées                        |0,5 jour                 |Reprise méthodique             |
+|P1      |Audit factuel : bac S, Tremplin/Passerelle/AST, VAE/VAP, coûts privés réels 2025-2026|2-3 jours avec conseiller|Élève le plancher de fiabilité |
+|P1      |Étendre les “exemples de parcours” Q3 à toutes les questions de comparaison/réalisme |1 semaine                |Différenciateur métier         |
+|P2      |Phase exploratoire avant réponse sur questions larges                                |1-2 jours prompt eng     |Posture pédagogique            |
+|P2      |Calibration longueur Q5/Q7/Q10 (objectif 250-350 mots, pas 600+)                     |0,5 jour prompt          |Lisibilité Léo                 |
+|P3      |Disclaimer d’ouverture sur limites de l’outil pour mineurs                           |1 heure                  |Déontologie                    |
+
+**Conclusion d’ensemble** : l’outil n’est pas dans une trajectoire de régression — il y a de vrais progrès sur la pédagogie, la longueur de certaines questions, la dimension métier, et la suppression de certaines erreurs ciblées. Mais le **rythme de correction des erreurs persistantes** est insuffisant, et le **rythme d’introduction de nouveaux bugs d’infrastructure** trop élevé. Pour atteindre un seuil “recommandable à un mineur en autonomie”, il faut soit (1) accepter un cycle de 2-3 sprints supplémentaires de stabilisation factuelle et technique, soit (2) repositionner l’outil en “compagnon d’orientation supervisé par un adulte” et l’assumer dans l’UX dès l’ouverture.
