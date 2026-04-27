@@ -18,19 +18,29 @@ pro a besoin de stats d'insertion par spécialité et par région. C'est
 exactement le **gap data identifié dans le verdict Sprint 5 §4 P1**
 (60% claims unsupported = sources insuffisantes).
 
-## Stratégie aggregation (~700 cells, Sprint 6 axe 3b)
+## Stratégie aggregation (~2000 cells, Sprint 7 Action 4 amplification)
 
 Re-aggregation des 132 124 records granulaires (1 par
-établissement × formation × cohorte) en cells retrievable :
+établissement × formation × cohorte) en cells retrievable, 3 niveaux :
 
 - 1 cell par **(libellé formation × type diplôme × France)** —
-  vue nationale par spécialité (~600-700 cells, `granularity: "formation_france"`)
+  vue nationale par spécialité (~600 cells, `granularity: "formation_france"`)
 - 1 cell par **(région × type diplôme)** — vue régionale agrégée
-  (~17 régions × 7 types ~ 110 cells max, `granularity: "region_diplome"`)
+  (~110 cells, `granularity: "region_diplome"`)
+- **NEW Sprint 7** : 1 cell par **(libellé × type diplôme × région)** —
+  granularité fine pour queries territoriales spécifiques
+  (~1500 cells avec filter ≥`MIN_RECORDS_PER_TRIPLET=5` cohortes,
+  `granularity: "formation_region_diplome"`)
 
-Total cible ~700-800 cells (vs verdict Sprint 5 P1.4 cible ~1500-2000 —
-on reste plus ciblé pour éviter la dilution top-K, la 3e granularité
-(libellé × type × région) est en backlog Sprint 7 si gap résiduel mesuré).
+Total cible ~2200 cells (vs verdict Sprint 5 P1.4 cible 1500-2000).
+Sprint 6 axe 3b livrait 689 cells (granularités 1+2). Sprint 7 Action 4
+amplifie via la granularité 3 — diagnostiquée comme axe star Sprint 6
+(7.63pp attribution corrélationnelle).
+
+Le filtre `>=MIN_RECORDS_PER_TRIPLET` couples (libellé×type×région) évite la
+dilution top-K sur les couples très rares (<5 cohortes mesurées). Pour
+les couples rares, la cell région_diplome (granularité 2) reste
+disponible pour fournir un signal régional moins précis.
 
 Le `domain` est `formation_insertion` pour permettre intent classifier
 de cibler ces cells lors de queries insertion bac pro.
@@ -49,6 +59,22 @@ from typing import Any
 
 RAW_PATH = Path("data/processed/inserjeunes_lycee_pro.json")
 CORPUS_PATH = Path("data/processed/inserjeunes_lycee_pro_corpus.json")
+
+# Sprint 7 Action 4 — seuil minimum de cohortes par couple
+# (libellé × type × région) pour l'agrégation granularité 3.
+#
+# Calibration : sur 132k records → 5 077 couples distincts.
+# - min_records=5  : 4 079 cells (trop dilué top-K, risque masquer
+#   formation_france Sprint 6 axe star)
+# - min_records=10 : 2 701 cells (acceptable mais surdimensionné vs
+#   target P1.4 verdict Sprint 5)
+# - min_records=15 : **2 004 cells** (cible Sprint 5 P1.4 ≤2000 ✓)
+# - min_records=20 : 1 621 cells (perd des couples moyennement peuplés)
+#
+# 15 = sweet spot statistique : représente ~5 ans × 3 lycées ou ~15 ans
+# × 1 lycée minimum. Couples filtrés (<15) restent couverts par
+# region_diplome (granularité 2) qui agrège tous les couples par région.
+MIN_RECORDS_PER_TRIPLET: int = 15
 
 
 def _slug(text: str) -> str:
@@ -210,12 +236,87 @@ def aggregate_by_region_diplome(records: list[dict[str, Any]]) -> list[dict[str,
     return out
 
 
+def aggregate_by_formation_region_diplome(
+    records: list[dict[str, Any]],
+    min_records: int = MIN_RECORDS_PER_TRIPLET,
+) -> list[dict[str, Any]]:
+    """1 cell par (libellé × type_diplome × région) — granularité 3 fine.
+
+    Sprint 7 Action 4 — amplification axe 3b star Sprint 6 (7.63pp
+    attribution corrélationnelle). Filter `min_records` pour éviter
+    la dilution top-K sur couples très rares (<5 cohortes).
+
+    Pour les couples filtrés (rares), les cells `region_diplome`
+    (granularité 2) restent disponibles pour fournir un signal
+    régional moins précis mais toujours utilisable.
+    """
+    by_key: dict[tuple[str, str, str], list[dict]] = defaultdict(list)
+    for r in records:
+        libelle = (r.get("libelle_formation") or "").strip()
+        diplome = (r.get("type_diplome") or "").strip()
+        region = (r.get("region") or "").strip()
+        if not libelle or not diplome or not region:
+            continue
+        by_key[(libelle, diplome, region)].append(r)
+
+    out: list[dict[str, Any]] = []
+    for (libelle, diplome, region), rows in sorted(by_key.items()):
+        n_records = len(rows)
+        if n_records < min_records:
+            continue  # filter dilution top-K
+
+        emploi_12m = _avg([_get_taux_emploi(r, "12m") for r in rows])
+        emploi_24m = _avg([_get_taux_emploi(r, "24m") for r in rows])
+        poursuite = _avg([
+            r.get("taux_poursuite_etudes")
+            for r in rows
+            if isinstance(r.get("taux_poursuite_etudes"), (int, float))
+        ])
+
+        n_with_emploi = sum(
+            1 for r in rows
+            if _get_taux_emploi(r, "12m") is not None or _get_taux_emploi(r, "24m") is not None
+        )
+
+        parts = [
+            f"Insertion {diplome} — {libelle} en {region}",
+            f"Établissements/cohortes mesurés : {n_records}",
+        ]
+        if emploi_12m is not None:
+            parts.append(f"Taux d'emploi 12 mois : {emploi_12m * 100:.1f}% (en {region})")
+        if emploi_24m is not None:
+            parts.append(f"Taux d'emploi 24 mois : {emploi_24m * 100:.1f}%")
+        if poursuite is not None:
+            parts.append(f"Taux de poursuite d'études : {poursuite * 100:.1f}%")
+        if n_with_emploi == 0:
+            parts.append("Note : statistiques d'insertion non disponibles pour ce couple (cohortes récentes ou effectifs trop faibles)")
+        parts.append("Source : Inserjeunes (DEPP/Éducation Nationale), open data")
+
+        out.append({
+            "id": f"inserjeunes_formation_region:{_slug(diplome)}:{_slug(libelle)}:{_slug(region)}",
+            "domain": "formation_insertion",
+            "source": "inserjeunes_lycee_pro",
+            "granularity": "formation_region_diplome",
+            "libelle_formation": libelle,
+            "type_diplome": diplome,
+            "region": region,
+            "n_records": n_records,
+            "n_with_emploi_data": n_with_emploi,
+            "taux_emploi_12m_moyen": round(emploi_12m, 4) if emploi_12m is not None else None,
+            "taux_emploi_24m_moyen": round(emploi_24m, 4) if emploi_24m is not None else None,
+            "taux_poursuite_etudes_moyen": round(poursuite, 4) if poursuite is not None else None,
+            "text": " | ".join(parts),
+        })
+    return out
+
+
 def build_corpus(records: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     if records is None:
         records = load_raw()
     out: list[dict[str, Any]] = []
     out.extend(aggregate_by_formation(records))
     out.extend(aggregate_by_region_diplome(records))
+    out.extend(aggregate_by_formation_region_diplome(records))
     return out
 
 
