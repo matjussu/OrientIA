@@ -16,13 +16,19 @@ famille professionnelle (FAP 98 codes) × région métropolitaine.
 en 2025 sort en 2028-2030. La question "quels métiers vont recruter
 quand je sortirai" n'est adressable qu'avec cette source.
 
-## Stratégie aggregation (~110 cells)
+## Stratégie aggregation (~1190 cells, Sprint 6 enrichissement)
 
 - 1 cell par **FAP × France** (98 cells, France entière aggregé sur les
-  13 régions) — vue par métier
+  13 régions) — vue par métier (`granularity: "fap"`)
 - 1 cell par **région × top FAP locaux** (13 cells) — vue régionale
+  (`granularity: "region"`)
+- 1 cell par **couple (FAP, région)** (~1080 cells, granulaire) — vue
+  croisée (`granularity: "fap_region"`, ajoutée Sprint 6 pour combler
+  le gap data identifié dans le verdict Sprint 5 §4 P1)
 
-Total ~110 cells (vs 1 080 raw → 10× réduction de dilution top-K).
+Total ~1190 cells (vs 1 080 raw → cohabitation 3 niveaux d'agrégation
+permet à l'intent classifier + reranker de cibler la bonne granularité
+selon la query).
 
 Pattern dual-output (cohérent PR #57 parcours / PR #67 Phase B) :
 - `data/processed/dares_metiers_2030.json` (raw 1 080 records granulaires)
@@ -165,6 +171,7 @@ def aggregate_by_fap(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
             "id": f"dares_fap:{code}",
             "domain": "metier_prospective",
             "source": "dares_metiers_2030",
+            "granularity": "fap",
             "code_fap": code,
             "fap_libelle": libelle,
             "effectifs_2019_total_milliers": round(eff, 1),
@@ -241,6 +248,7 @@ def aggregate_by_region(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
             "id": f"dares_region:{_slug(region)}",
             "domain": "metier_prospective",
             "source": "dares_metiers_2030",
+            "granularity": "region",
             "region": region,
             "effectifs_2019_total_milliers": round(eff_total, 1),
             "postes_a_pourvoir_total_milliers": round(postes_total, 1),
@@ -253,12 +261,94 @@ def aggregate_by_region(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return out
 
 
+def aggregate_by_fap_region(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """1 cell par couple (FAP, région) — vue granulaire croisée.
+
+    Ajoutée Sprint 6 (2026-04-27) pour combler le gap data identifié
+    dans le verdict Sprint 5 §4 P1 (60% claims unsupported = gap data).
+    Le couple croisé préserve le grain du record raw, sans SUM ni
+    moyenne, permettant à l'intent classifier de cibler une réponse
+    précise sur "métier X dans région Y".
+    """
+    out: list[dict[str, Any]] = []
+    for r in records:
+        code = r.get("code_fap") or ""
+        region = r.get("region") or ""
+        if not code or not region:
+            continue
+        libelle = r.get("fap_libelle") or ""
+
+        eff = r.get("effectifs_2019_milliers") or 0
+        postes = r.get("postes_a_pourvoir_milliers") or 0
+        creations = r.get("creations_destructions_milliers") or 0
+        departs = r.get("departs_fin_carriere_milliers") or 0
+        debutants = r.get("jeunes_debutants_milliers") or 0
+        spec = r.get("indice_specificite")
+        tension = r.get("niveau_tension_2019") or ""
+
+        parts = [
+            f"Métier 2030 (DARES) — {libelle} en {region} (FAP {code})",
+            f"Effectifs 2019 régionaux : {int(eff * 1000):,} personnes".replace(",", " "),
+        ]
+        if postes:
+            parts.append(
+                f"Postes à pourvoir 2019-2030 : {int(postes * 1000):,} postes en {region}".replace(",", " ")
+            )
+        if creations:
+            sign = "+" if creations >= 0 else ""
+            parts.append(
+                f"Créations/destructions nettes : {sign}{int(creations * 1000):,} postes".replace(",", " ")
+            )
+        if departs:
+            parts.append(
+                f"Départs en fin de carrière : {int(departs * 1000):,}".replace(",", " ")
+            )
+        if debutants:
+            sign = "+" if debutants >= 0 else ""
+            parts.append(
+                f"Jeunes débutants attendus : {sign}{int(debutants * 1000):,}".replace(",", " ")
+            )
+        if spec is not None:
+            if spec >= 1.5:
+                spec_label = f"métier sur-représenté en {region} (×{spec:.2f} vs France)"
+            elif spec <= 0.7:
+                spec_label = f"métier sous-représenté en {region} (×{spec:.2f} vs France)"
+            else:
+                spec_label = f"présence proche de la moyenne France (×{spec:.2f})"
+            parts.append(spec_label)
+        if tension and tension != "hors champ":
+            tension_label = {"1": "très faible", "2": "faible", "3": "moyen",
+                             "4": "fort", "5": "très fort"}.get(tension, tension)
+            parts.append(f"Niveau de tension 2019 : {tension_label}")
+        parts.append(f"Source : DARES Métiers en 2030, {region}")
+
+        out.append({
+            "id": f"dares_fap_region:{code}:{_slug(region)}",
+            "domain": "metier_prospective",
+            "source": "dares_metiers_2030",
+            "granularity": "fap_region",
+            "code_fap": code,
+            "fap_libelle": libelle,
+            "region": region,
+            "effectifs_2019_milliers": round(eff, 1),
+            "postes_a_pourvoir_milliers": round(postes, 1),
+            "creations_destructions_milliers": round(creations, 1),
+            "departs_fin_carriere_milliers": round(departs, 1),
+            "jeunes_debutants_milliers": round(debutants, 1),
+            "indice_specificite": round(spec, 2) if spec is not None else None,
+            "niveau_tension_2019": tension,
+            "text": " | ".join(parts),
+        })
+    return out
+
+
 def build_corpus(records: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     if records is None:
         records = load_raw()
     out: list[dict[str, Any]] = []
     out.extend(aggregate_by_fap(records))
     out.extend(aggregate_by_region(records))
+    out.extend(aggregate_by_fap_region(records))
     return out
 
 
