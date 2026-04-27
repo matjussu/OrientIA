@@ -1,0 +1,20 @@
+{
+  "query_id": "financement_q01_cpf_reconversion_dev",
+  "axe_target": "axe4_financement",
+  "query_text": "Je suis salarié de 30 ans et je veux me reconvertir en développeur web. Mon CPF peut financer combien ?",
+  "answer_text": "**TL;DR**\n1. Votre CPF peut financer jusqu’à **500€ à 800€/an** pour une formation certifiante (plafond cumulé variable selon votre solde).\n2. Pour une reconversion en développeur web, visez des **titres RNCP** (niveau 5 ou 6) éligibles CPF, souvent en **3 à 12 mois**.\n3. L’alternance (Pro-A) ou la VAE peuvent compléter le financement et accélérer l’insertion.\n\n---\n\n### **Plan A — Formation courte certifiante (3-6 mois) éligible CPF**\n📍 **Titre RNCP Développeur Web (niveau 5)** — formations en ligne (OpenClassrooms, Simplon) ou en présentiel (AFPA, GRETA), **100% financé si solde CPF suffisant** (coût typique : 3 000-6 000€).\n*Pour vous : idéal si vous visez une entrée rapide sur le marché (junior en 6 mois) avec un titre reconnu par les employeurs.*\n\n### **Plan B — Parcours long certifiant (6-12 mois) avec alternance**\n📍 **Titre RNCP Concepteur Développeur d’Applications (niveau 6, bac+3/4)** — écoles comme **Wild Code School, 3W Academy, ou CNAM**, souvent en **alternance (Pro-A)** pour un salaire + prise en charge par l’OPCO de votre employeur actuel.\n*Pour vous : si vous pouvez négocier un temps partiel ou une rupture conventionnelle, l’alternance annule le coût et booste l’expérience pro.*\n\n### **Plan C — VAE ou formation modulaire (si expérience partielle)**\n📍 **Validation des Acquis de l’Expérience (VAE)** pour un titre RNCP — si vous avez déjà codé (même en autodidacte), un accompagnement VAE (finançable CPF) peut vous faire gagner 6 à 12 mois.\n*Pour vous : à explorer si vous avez des projets perso (GitHub) ou une expérience proche (ex : gestion de site WordPress).*\n\n---\n**⚠ Attention aux pièges**\n- **Formations non certifiantes** : méfiez-vous des bootcamps sans titre RNCP (ex : \"certificat\" maison) — vérifiez la fiche [France Compétences](https://www.francecompetences.fr) (recherchez le numéro RNCP).\n- **Solde CPF insuffisant** : si votre compte affiche < 500€, combinez avec un **CPF de transition professionnelle** (via votre OPCO) ou un **financement Pôle Emploi** (si chômage partiel).\n- **Promesses d’embauche** : aucune formation ne garantit un CDI. Ciblez les titres avec **>70% d’insertion** (ex : RNCP 31114 ou 34668 — connaissances générales).\n\n---\n**Question pour vous** :\nAvez-vous déjà codé (même en hobby) ou préférez-vous un parcours \"zéro base\" encadré ? Cela change radicalement le choix entre VAE, bootcamp intensif, ou formation longue.",
+  "elapsed_pipeline_s": 28.41,
+  "fact_check_summary": {
+    "n_stats_total": 3,
+    "n_verified": 1,
+    "n_verified_strict": 0,
+    "n_verified_by_source": 1,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "granularities_top_k": {
+    "voie": 1,
+    "dispositif": 1
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "query_id": "financement_q02_bourse_crous_echelons",
+  "axe_target": "axe4_financement",
+  "query_text": "Comment fonctionnent les échelons de la bourse CROUS ? Combien je peux toucher ?",
+  "answer_text": "**TL;DR**\n1. La bourse CROUS est calculée sur **8 échelons** (0bis à 7), en fonction des revenus familiaux et de la distance entre domicile et lieu d’études.\n2. Montant 2024-2025 : **de 1 000 € à 6 000 €/an** (versés en 10 mensualités).\n3. **Simule ton éligibilité** sur [mesdroitssociaux.gouv.fr](https://www.mesdroitssociaux.gouv.fr) avant de faire ta demande.\n\n---\n\n### **Plan A — Bourse CROUS classique (échelons 0bis à 7)**\n**Montants 2024-2025** (connaissance générale) :\n- **Échelon 0bis** : 1 000 €/an (étudiants autonomes ou situations particulières).\n- **Échelon 1** : 1 700 €/an.\n- **Échelon 2** : 2 500 €/an.\n- **Échelon 3** : 3 300 €/an.\n- **Échelon 4** : 4 100 €/an.\n- **Échelon 5** : 4 800 €/an.\n- **Échelon 6** : 5 500 €/an.\n- **Échelon 7** : 6 000 €/an.\n\n*Pour toi* : L’échelon dépend **uniquement des revenus fiscaux 2023 de tes parents** (ou les tiens si tu es indépendant) et de ta situation (logement, distance). **Pas de notes ou de mérite académique**.\n\n---\n\n### **Plan B — Aides complémentaires (si bourse insuffisante)**\n1. **Aide à la mobilité** (CROUS) : **1 000 €/an** si tu déménages pour tes études (sous conditions de ressources).\n2. **Aide spécifique annuelle** : **jusqu’à 2 000 €** pour les étudiants en grande difficulté (dossier social à déposer au CROUS).\n3. **Erasmus+** : **200-500 €/mois** en plus de la bourse si tu pars à l’étranger.\n\n*Pour toi* : Ces aides s’**ajoutent** à la bourse de base. Exemple : échelon 4 (4 100 €) + mobilité (1 000 €) = **5 100 €/an**.\n\n---\n### **Plan C — Alternatives si non éligible à la bourse CROUS**\n- **Bourse de lycée** (si tu es en études supérieures **mais encore mineur** ou en classe prépa intégrée) : jusqu’à **900 €/an**.\n- **Aides locales** : Certaines régions (Île-de-France, Nouvelle-Aquitaine) ou villes (Paris, Lyon) proposent des compléments (**200-800 €/an**).\n- **Jobs étudiants** : Les universités proposent souvent des **contrats CIVIS** (6-12 mois, 500-800 €/mois) sans impact sur la bourse.\n\n*Pour toi* : Vérifie les dispositifs de **ta région** (ex : [Île-de-France](https://www.iledefrance.fr/aides-etudiants)).\n\n---\n### **⚠ Attention aux pièges**\n- **Délais** : La demande se fait **entre janvier et mai** pour la rentrée suivante (même si tu n’as pas encore tes résultats).\n- **Changement de situation** : Si tes revenus baissent en 2024 (chômage, divorce), fais une **demande de révision** en cours d’année.\n- **Logement** : La bourse est calculée en fonction de ton **lieu d’études**, pas de ton domicile familial. Un déménagement peut changer ton échelon.\n\n---\n**Question pour toi** :\nAs-tu déjà fait une **simulation officielle** sur [mesdroitssociaux.gouv.fr](https://www.mesdroitssociaux.gouv.fr) ? Si oui, quel échelon est estimé ? Sinon, veux-tu que je t’aide à interpréter les plafonds de revenus ?",
+  "elapsed_pipeline_s": 26.85,
+  "fact_check_summary": {
+    "n_stats_total": 16,
+    "n_verified": 16,
+    "n_verified_strict": 16,
+    "n_verified_by_source": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "granularities_top_k": {
+    "dispositif": 5,
+    "voie": 1
+  }
+}
