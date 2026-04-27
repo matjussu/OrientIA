@@ -1,0 +1,141 @@
+{
+  "suite": "personas_v4",
+  "query_id": "mohamed_q1",
+  "query_text": "Quels sont les principaux débouchés métier après un Bac pro cuisine par apprentissage ?",
+  "answer_text": "**TL;DR**\n1. Un Bac pro Cuisine par apprentissage ouvre à des métiers **opérationnels** en restauration, avec une insertion rapide mais des salaires modestes en début de carrière.\n2. **3 voies principales** : cuisine (60% des débouchés), gestion/restauration (20%), ou spécialisation (pâtisserie, traiteur).\n3. **Évolution possible** vers des postes à responsabilité (chef de partie, gestionnaire) avec expérience ou formations complémentaires.\n\n---\n\n### **Plan A — Débouchés directs (insertion immédiate)**\n**(connaissance générale)**\n- **Cuisinier·e en restauration traditionnelle/collective** (restaurants, cantines, hôpitaux) :\n  *Salaire débutant* : ~1 600–1 900€ brut/mois (source : conventions collectives HCR, 2024).\n  *Pour toi* : Poste le plus accessible, mais horaires décalés (soir/week-end) et pression en service.\n- **Commis de cuisine** en hôtel-restaurant (étoilé ou chaîne) :\n  *Pour toi* : Tremplin pour monter en grade (chef de partie en 3–5 ans) si mobilité géographique acceptée.\n\n---\n\n### **Plan B — Évolution avec expérience/formations courtes**\n**(connaissance générale)**\n- **Chef·fe de partie** ou **second·e de cuisine** après 3–5 ans d’expérience :\n  *Salaire* : 2 000–2 500€ brut/mois. Exige souvent une **formation complémentaire** (CAP Pâtissier, BP Arts de la cuisine).\n- **Responsable de restauration collective** (entreprises, Ehpad) :\n  *Pour toi* : Moins de pression qu’en restaurant, mais gestion d’équipe et normes d’hygiène strictes.\n- **Traiteur indépendant** (après expérience) :\n  *Attention* : Requiert un **stage de préparation à l’installation** (obligatoire pour s’inscrire à la Chambre des Métiers) + capital de départ (~10–20k€).\n\n---\n### **Plan C — Passerelles vers d’autres secteurs**\n**(connaissance générale)**\n- **Formations courtes pour se spécialiser** :\n  - **CAP Pâtissier** (1 an) ou **MC Cuisinier en desserts de restaurant** → salaire +200–300€/mois.\n  - **BP Arts de la table** pour viser la restauration haut de gamme.\n  *Pour toi* : Finançable via **Compte Personnel de Formation (CPF)** si tu as travaillé après le bac pro.\n- **Reconversion vers l’hôtellerie** :\n  - **BTS Gestion hôtelière** (en 2 ans après le bac pro) pour viser des postes de **maître d’hôtel** ou **responsable hébergement**.\n  *Salaire* : 2 000–2 800€ brut/mois après diplôme.\n- **Métiers connexes** :\n  - **Livraison de repas premium** (pour des traiteurs ou plateformes comme **Natoo**).\n  - **Animateur·trice culinaire** (en grande surface ou ateliers) — requiert un **bon relationnel**.\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Salaire et conditions de travail** :\n   Les débutants en restauration traditionnelle gagnent souvent **le SMIC** (1 766€ brut en 2024). Les horaires (coupures, nuits) et le stress en service sont fréquents.\n2. **Concurrence et turnover** :\n   Le secteur recrute, mais les postes qualifiés (chef·fe de cuisine) sont **très compétitifs** sans expérience ou réseau.\n3. **Formations privées coûteuses** :\n   Méfie-toi des écoles promettant un « CAP accéléré » ou des « diplômes internationaux » à **5 000–10 000€/an**. Privilégie les **CFP publics** (gratuits) ou les **CFA** (rémunérés en apprentissage).\n\n---\n**Question pour toi** :\nQu’est-ce qui t’attire le plus : **la créativité en cuisine** (restaurant, traiteur), **la stabilité** (restauration collective), ou **l’autonomie** (installation à ton compte) ? Cela peut orienter vers des formations complémentaires ciblées.",
+  "elapsed_pipeline_s": 23.85,
+  "elapsed_fact_check_post_hoc_s": 4.1,
+  "elapsed_clarify_s": 2.05,
+  "elapsed_reformulate_s": 8.78,
+  "elapsed_retrieve_s": 0.39,
+  "elapsed_generate_s": 12.62,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 0,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~1 600–1 900€ brut/mois",
+      "stat_value": 1600,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire débutant pour cuisinier·e en restauration traditionnelle/collective",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 766€ brut",
+      "stat_value": 1766,
+      "stat_unit": "€ brut",
+      "context": "SMIC en 2024",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 000–2 500€ brut/mois",
+      "stat_value": 2250,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire pour chef·fe de partie ou second·e de cuisine",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+200–300€/mois",
+      "stat_value": 250,
+      "stat_unit": "€/mois",
+      "context": "Augmentation de salaire après CAP Pâtissier ou MC Cuisinier en desserts de restaurant",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 000–2 800€ brut/mois",
+      "stat_value": 2400,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire après BTS Gestion hôtelière",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "5 000–10 000€/an",
+      "stat_value": 7500,
+      "stat_unit": "€/an",
+      "context": "Coût des formations privées coûteuses",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10–20k€",
+      "stat_value": 15000,
+      "stat_unit": "€",
+      "context": "Capital de départ pour traiteur indépendant",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "60%",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "Part des débouchés en cuisine",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "20%",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "Part des débouchés en gestion/restauration",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_competences_certif",
+    "fap_region",
+    "_metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers accessibles directement après un Bac pro cuisine obtenu par apprentissage dans le secteur de l'hôtellerie-restauration ?",
+      "target_corpus": "metier",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : débouchés métiers spécifiques après Bac pro cuisine."
+    },
+    {
+      "text": "Quels sont les postes à pourvoir en 2030 dans les métiers de la cuisine et de la restauration selon les projections DARES ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte une vision prospective des débouchés dans le secteur."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications RNCP sont validés par un Bac pro cuisine en apprentissage et quels métiers y sont associés ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Lie compétences acquises et métiers cibles via RNCP."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle 6 et 12 mois après un Bac pro cuisine en apprentissage dans l'hôtellerie-restauration ?",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Contexte complémentaire sur l'insertion post-diplôme."
+    },
+    {
+      "text": "Quelles formations complémentaires (CAP, BP, MC) sont recommandées après un Bac pro cuisine pour accéder à des postes spécialisés en restauration ?",
+      "target_corpus": "formation",
+      "priority": 3,
+      "rationale": "Ouvre des pistes pour évoluer vers des métiers plus spécialisés."
+    }
+  ]
+}

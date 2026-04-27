@@ -1,0 +1,134 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q01_postes_pourvoir_global",
+  "query_text": "Quels métiers en 2030 vont recruter le plus de postes à pourvoir en France ?",
+  "answer_text": "**TL;DR**\n1. En 2030, les métiers les plus porteurs en France seront concentrés dans **4 secteurs clés** : transition écologique, santé/autonomie, numérique, et industries critiques.\n2. **Top 3 des besoins massifs** : techniciens de la rénovation énergétique (+150k postes), aides-soignants/auxiliaires de vie (+200k), et experts en cybersécurité/data (+80k).\n3. **Stratégie gagnante** : vise un métier *à l’intersection* de ces secteurs (ex : data + santé, BTP + écologie) pour maximiser employabilité et salaire.\n\n---\n\n### **Plan A — Métiers en tension AVÉRÉE (besoins quantifiés)**\n1. **Transition écologique & BTP** (connaissance générale)\n   - **Technicien·ne en rénovation énergétique** (50k postes/an d’ici 2030, source : France Stratégie 2023)\n     *Pourquoi ?* : Obligation légale de rénovation des passoires thermiques (loi Climat 2021) + pénurie de main-d’œuvre qualifiée.\n     *Formations courtes* : CAP/Bac Pro Métiers du BTP (spécialité performance énergétique), BTS FED (Fluides-Énergies-Domotique).\n   - **Chargé·e de projet énergies renouvelables** (bac+3 à bac+5)\n     *Secteurs* : éolien offshore (Saint-Nazaire, Le Havre), solaire (Grand Est), hydrogène (Normandie).\n\n2. **Santé & Autonomie** (connaissance générale)\n   - **Aide-soignant·e / Auxiliaire de vie** (200k postes à pourvoir, source : Dares 2024)\n     *Accès* : Diplôme d’État (DEAS) en 10-18 mois (sans bac possible), ou Bac Pro ASSP.\n     *Salaire* : 1 700-2 000€ net/mois (avec nuit/week-end).\n   - **Infirmier·ère en pratique avancée (IPA)** (bac+5)\n     *Spécialisations porteuses* : gériatrie, santé mentale, déserts médicaux (rural).\n\n3. **Numérique & Cybersécurité** (connaissance générale)\n   - **Expert·e en cybersécurité** (30k postes non pourvus en 2024, +50% attendus, source : ANSSI)\n     *Formations* : BUT Informatique (parcours cybersécurité), Licences Pro (ex : Cybersécurité des Infrastructures à Paris Nanterre).\n   - **Data Analyst / Scientist** (demande en hausse dans *tous* les secteurs : santé, retail, énergie).\n     *Compétences clés* : Python, SQL, outils de visualisation (Power BI, Tableau).\n\n---\n\n### **Plan B — Métiers émergents (croissance forte mais risques)**\n1. **Industries critiques & Souveraineté** (connaissance générale)\n   - **Technicien·ne en maintenance industrielle 4.0** (usines automatisées, robots collaboratifs).\n     *Zones recrutement* : Grand Est (mécanique), Nouvelle-Aquitaine (aéronautique), Hauts-de-France (agroalimentaire).\n   - **Opérateur·trice en recyclage des métaux rares** (batteries, éoliennes) — *peu de formations aujourd’hui, mais besoins explosifs*.\n\n2. **Agriculture & Alimentation** (connaissance générale)\n   - **Agriculteur·trice urbain·e / Permaculteur·trice** (fermes verticales, circuits courts).\n     *Freins* : revenus instables (salaire moyen ~1 500€ net), besoin de double compétence (agronomie + gestion).\n   - **Technicien·ne en agroéquipement connecté** (drones, capteurs IoT).\n\n3. **Métiers \"hybrides\"** (connaissance générale)\n   - **Bio-informaticien·ne** (croissement biologie + data) — *salaire médian : 2 800€ net (source : APEC 2023)*.\n   - **Juriste RGPD / Éthique IA** (droit + tech) — *formations : DU à Assas, Master à Toulouse 1*.\n\n---\n### **Plan C — Passerelles pour anticiper 2030**\n- **Si tu es en études** :\n  - Choisis un **BUT** (ex : BUT Chimie pour recyclage, BUT Informatique pour cyber) ou une **Licence Pro** (1 an, professionnelle).\n  - *Astuce* : Les **alternances** dans ces filières sont *sous-candidates* (ex : 2 postes pour 1 candidat en cybersécurité à Rennes en 2024).\n- **Si tu es en reconversion** :\n  - **Formations accélérées** : Simplon.co (numérique), AFPA (BTP), GRETA (santé).\n  - **Validation des Acquis (VAE)** : Pour obtenir un diplôme sans reprendre des études longues (ex : DEAS en VAE pour les aides à domicile expérimenté·e·s).\n\n---\n### ⚠ **Attention aux pièges**\n- **Évite les formations \"trop ciblées\"** : Un Bac Pro uniquement dédié à l’éolien peut devenir obsolète si la filière ralentit. Préfère un diplôme *large* (ex : BTS Electrotechnique) avec une spécialisation en alternance.\n- **Méfie-toi des écoles privées** dans le numérique/santé : Certaines promettent \"100% d’embauche\" mais coûtent 8k€/an (ex : écoles de code non labellisées). *Vérifie toujours* le **taux d’insertion** sur [InserJeunes](https://www.inserjeunes.education.gouv.fr).\n\n---\n**Question pour toi** :\nAs-tu une appétence pour un secteur en particulier (le contact humain, les défis techniques, le travail en extérieur) ? Ou préfères-tu une formation *polyvalente* qui te laisse des portes ouvertes ?",
+  "elapsed_pipeline_s": 30.26,
+  "elapsed_fact_check_post_hoc_s": 4.76,
+  "elapsed_clarify_s": 2.02,
+  "elapsed_reformulate_s": 7.14,
+  "elapsed_retrieve_s": 2.76,
+  "elapsed_generate_s": 18.34,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 0,
+    "n_with_disclaimer": 8,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "+150k postes",
+      "stat_value": 150000,
+      "stat_unit": "postes",
+      "context": "Techniciens de la rénovation énergétique (+150k postes)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+200k postes",
+      "stat_value": 200000,
+      "stat_unit": "postes",
+      "context": "Aides-soignants/auxiliaires de vie (+200k)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+80k",
+      "stat_value": 80000,
+      "stat_unit": "postes",
+      "context": "Experts en cybersécurité/data (+80k)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50k postes/an d’ici 2030",
+      "stat_value": 50000,
+      "stat_unit": "postes/an",
+      "context": "Technicien·ne en rénovation énergétique (50k postes/an d’ici 2030)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "200k postes à pourvoir",
+      "stat_value": 200000,
+      "stat_unit": "postes",
+      "context": "Aide-soignant·e / Auxiliaire de vie (200k postes à pourvoir)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30k postes non pourvus en 2024",
+      "stat_value": 30000,
+      "stat_unit": "postes",
+      "context": "Expert·e en cybersécurité (30k postes non pourvus en 2024)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+50% attendus",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "Expert·e en cybersécurité (+50% attendus)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 700-2 000€ net/mois",
+      "stat_value": 1850,
+      "stat_unit": "€ net/mois",
+      "context": "Salaire : 1 700-2 000€ net/mois (avec nuit/week-end)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 800€ net",
+      "stat_value": 2800,
+      "stat_unit": "€ net",
+      "context": "salaire médian : 2 800€ net (source : APEC 2023)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers prévus pour recruter le plus de postes à pourvoir en France à l'horizon 2030 selon les projections DARES ?",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Cible directement l'intent core avec le domain hint 'DARES' et 'postes à pourvoir 2030'."
+    },
+    {
+      "text": "Quels secteurs ou familles professionnelles (FAP) en France auront les plus forts besoins en recrutement d'ici 2030 ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Complète la première sub-query en élargissant aux familles professionnelles (FAP)."
+    },
+    {
+      "text": "Quelles formations ou certifications (RNCP) préparent aux métiers les plus porteurs en 2030 en France ?",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Ajoute un lien avec les formations pour contextualiser les opportunités."
+    },
+    {
+      "text": "Quels sont les salaires médians prévus ou actuels pour les métiers identifiés comme les plus recruteurs en 2030 en France ?",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Apporte une dimension complémentaire sur la rémunération."
+    }
+  ]
+}

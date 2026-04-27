@@ -1,0 +1,206 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q15_cout_ecole_commerce_5ans",
+  "query_text": "Combien faut-il prévoir financièrement pour 5 années d'études en école de commerce ?",
+  "answer_text": "**TL;DR**\n1. Le coût total d’une école de commerce sur 5 ans varie de **0 € (public)** à **50 000 €+ (privé)** selon le type d’établissement et le mode de financement.\n2. L’alternance réduit drastiquement les frais (salaire + prise en charge par l’entreprise).\n3. Budget moyen estimé : **5 000–15 000 €/an** en privé hors alternance (connaissance générale).\n\n---\n\n### **Plan A — Public / Alternance : coût minimal (0–5 000 € total)**\n📍 **IAE (ex : IAE Paris-Sorbonne)** — bac+5 public, grade Master, ~300 €/an de frais + 200 € de CVEC · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.7669)\n*Pour toi : solution la plus économique, avec possibilité d’alternance (salaire ~800–1 500 €/mois en M1/M2).*\n\n📍 **Diplôme d’études supérieures en management (ex : CNAM)** — bac+5 public, ~2 500 €/an en formation continue · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.9926)\n*Pour toi : idéal pour une reprise d’études ou un projet en parallèle d’un emploi.*\n\n---\n\n### **Plan B — Privé classique : budget moyen (25 000–50 000 € total)**\n📍 **Écoles de commerce post-bac (ex : NEOMA, KEDGE)** — bac+5 privé, **8 000–12 000 €/an** (hors alternance), labels CGE/grade Master · [exemple ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11729)\n*Pour toi : investissement élevé, mais réseaux alumni et salaires à la sortie (~35–45k€ brut en début de carrière — connaissance générale).*\n\n📍 **Spécialisations (finance, international)** — ex : **ESCP (MSc in Management)** ~15 000 €/an · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.12278)\n*Pour toi : coût justifié si visée internationale (classements FT), mais exige un budget solide ou des bourses (CROUS, fondations).*\n\n---\n### **Plan C — Optimisation financière : alternance + bourses**\n- **Alternance** : 100 % des frais pris en charge par l’entreprise + salaire (60–100 % du SMIC selon âge).\n  *Ex : tous les diplômes bac+5 cités ci-dessus sont éligibles.*\n- **Bourses** : Critères sociaux (CROUS jusqu’à ~6 000 €/an), meritocratiques (fondations comme la Fondation Rainbow Bridge pour les femmes), ou régionales.\n- **Mobilité** : Certaines écoles (ex : EM Strasbourg) coûtent **30 % moins cher** qu’à Paris pour un diplôme équivalent (connaissance générale).\n\n---\n**⚠ Attention aux pièges**\n- **Marketing des \"écoles low-cost\"** : Méfie-toi des formations privées à < 3 000 €/an sans label **CGE** ou **grade Master** — risque de diplôme non reconnu.\n- **Coûts cachés** : Prévois **3 000–5 000 €/an** supplémentaires (logement, voyages obligatoires, vie associative) dans les écoles privées.\n- **Alternance = engagement pro** : Contrat de 12–24 mois → difficile de changer de voie en cours de route.\n\n---\n**Question pour toi :**\nAs-tu une préférence entre **réseau/prestige** (budget élevé) ou **flexibilité financière** (public/alternance) ? Et es-tu mobile géographiquement (certaines écoles sont bien moins chères en province) ?",
+  "elapsed_pipeline_s": 27.82,
+  "elapsed_fact_check_post_hoc_s": 8.1,
+  "elapsed_clarify_s": 2.28,
+  "elapsed_reformulate_s": 7.08,
+  "elapsed_retrieve_s": 0.3,
+  "elapsed_generate_s": 18.16,
+  "fact_check_summary": {
+    "n_stats_total": 18,
+    "n_verified": 4,
+    "n_with_disclaimer": 14,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "0 € (public)",
+      "stat_value": 0,
+      "stat_unit": "€",
+      "context": "coût total d’une école de commerce sur 5 ans varie de 0 € (public)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50 000 €+ (privé)",
+      "stat_value": 50000,
+      "stat_unit": "€",
+      "context": "coût total d’une école de commerce sur 5 ans varie jusqu’à 50 000 €+ (privé)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "5 000–15 000 €/an",
+      "stat_value": 5000,
+      "stat_unit": "€/an",
+      "context": "Budget moyen estimé : 5 000–15 000 €/an en privé hors alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~300 €/an",
+      "stat_value": 300,
+      "stat_unit": "€/an",
+      "context": "IAE (ex : IAE Paris-Sorbonne) — bac+5 public, grade Master, ~300 €/an de frais",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "200 €",
+      "stat_value": 200,
+      "stat_unit": "€",
+      "context": "IAE (ex : IAE Paris-Sorbonne) — bac+5 public, grade Master, ~300 €/an de frais + 200 € de CVEC",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~2 500 €/an",
+      "stat_value": 2500,
+      "stat_unit": "€/an",
+      "context": "Diplôme d’études supérieures en management (ex : CNAM) — bac+5 public, ~2 500 €/an en formation continue",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8 000–12 000 €/an",
+      "stat_value": 8000,
+      "stat_unit": "€/an",
+      "context": "Écoles de commerce post-bac (ex : NEOMA, KEDGE) — bac+5 privé, 8 000–12 000 €/an (hors alternance)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~35–45k€ brut",
+      "stat_value": 35,
+      "stat_unit": "k€ brut",
+      "context": "salaires à la sortie (~35–45k€ brut en début de carrière — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~15 000 €/an",
+      "stat_value": 15000,
+      "stat_unit": "€/an",
+      "context": "ESCP (MSc in Management) ~15 000 €/an",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "60–100 % du SMIC",
+      "stat_value": 60,
+      "stat_unit": "% du SMIC",
+      "context": "Alternance : salaire (60–100 % du SMIC selon âge)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "CROUS jusqu’à ~6 000 €/an",
+      "stat_value": 6000,
+      "stat_unit": "€/an",
+      "context": "Bourses : Critères sociaux (CROUS jusqu’à ~6 000 €/an)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30 % moins cher",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "Certaines écoles (ex : EM Strasbourg) coûtent 30 % moins cher qu’à Paris pour un diplôme équivalent",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "3 000–5 000 €/an",
+      "stat_value": 3000,
+      "stat_unit": "€/an",
+      "context": "Prévois 3 000–5 000 €/an supplémentaires (logement, voyages obligatoires, vie associative)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "800–1 500 €/mois",
+      "stat_value": 800,
+      "stat_unit": "€/mois",
+      "context": "alternance (salaire ~800–1 500 €/mois en M1/M2)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context": "salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_excerpt": "salaire_median_embauche: 2080"
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context": "taux_emploi_3ans: 0.85",
+      "verdict": "verified",
+      "source_excerpt": "taux_emploi_3ans: 0.85"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context": "taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_excerpt": "taux_emploi_6ans: 0.91"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context": "taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_excerpt": "taux_cdi: 0.83"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Coût total estimé pour 5 années d'études en école de commerce (frais de scolarité, frais annexes, année par année) selon le catalogue Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : estimation financière des études en école de commerce."
+    },
+    {
+      "text": "Aides financières disponibles (bourses, prêts, exonérations) pour les étudiants en école de commerce, incluant les dispositifs Crous et partenaires.",
+      "target_corpus": "crous",
+      "priority": 2,
+      "rationale": "Complète la réponse avec des solutions pour réduire les coûts."
+    },
+    {
+      "text": "Salaire médian des jeunes diplômés d'écoles de commerce (niveau bac+5) selon les données INSEE et APEC, par région si disponible.",
+      "target_corpus": "insee_salaire",
+      "priority": 2,
+      "rationale": "Apporte un contexte sur le retour sur investissement."
+    },
+    {
+      "text": "Taux d'insertion professionnelle à 6, 12 et 18 mois des diplômés d'écoles de commerce (niveau master), données MESR.",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Contexte utile pour évaluer la rentabilité des études."
+    }
+  ]
+}

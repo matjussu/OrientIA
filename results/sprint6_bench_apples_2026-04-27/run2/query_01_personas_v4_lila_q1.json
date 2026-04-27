@@ -1,0 +1,133 @@
+{
+  "suite": "personas_v4",
+  "query_id": "lila_q1",
+  "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+  "answer_text": "**TL;DR**\n1. Une licence de lettres modernes ouvre à des métiers variés, mais **peu sont accessibles directement après la licence** : la plupart exigent un bac+5 (master).\n2. **3 grands domaines** : enseignement (majoritaire), culture/médias, et métiers du livre (édition, bibliothèques).\n3. **Poursuite d’études quasi obligatoire** pour se spécialiser et booster son employabilité.\n\n---\n\n### **Plan A — Enseignement (le débouché le plus direct)**\n📍 **Master MEEF (Métiers de l’Enseignement)** — bac+5 public, sélectivité modérée (30-60% selon académies), grade Master délivré par l’État · [fiche ONISEP MEEF](https://www.onisep.fr/http/redirection/formation/slug/FOR.10446)\n*Pour toi : si tu aimes transmettre, c’est la voie la plus sécurisée (concours CAPES après le master). Salaire : ~2000€ net en début de carrière (source : Éducation nationale).*\n\n**Autres pistes dans l’enseignement** :\n- **Professeur des écoles** (via concours CRPE après un master MEEF 1er degré).\n- **Enseignant en lycée** (CAPES de lettres modernes après un master MEEF 2nd degré).\n- **Formateur pour adultes** (avec une spécialisation en FLE — Français Langue Étrangère).\n\n---\n\n### **Plan B — Culture, Médias & Communication (avec spécialisation en master)**\n*(connaissance générale)*\n*Pour toi : si tu es créatif·ve et mobile, ces métiers sont accessibles, mais **très compétitifs** sans réseau ou stages.*\n- **Métiers du livre** :\n  - **Éditeur·trice** ou **chargé·e de production éditoriale** (master pro en édition requis, ex : [Master Sciences du Langage](https://www.onisep.fr/http/redirection/formation/slug/FOR.10048) avec parcours édition).\n  - **Bibliothécaire** ou **documentaliste** (concours de la fonction publique ou master en sciences de l’information).\n- **Médias & Communication** :\n  - **Journaliste** (école reconnue par la CPNEJ ou master pro en journalisme — **salaire précaire en début de carrière**).\n  - **Chargé·e de communication** (master en communication + stages indispensables).\n  - **Rédacteur·trice web** ou **community manager** (portfolios et compétences numériques requises).\n\n---\n### **Plan C — Réorientation ou Double Compétence (pour élargir les options)**\n*(connaissance générale)*\n*Pour toi : si tu veux éviter la précarité ou explorer d’autres secteurs, une double compétence est un atout majeur.*\n- **Double licence lettres + info/com** :\n  - Ex : **Lettres + Informatique** (pour travailler en **UX writing**, **rédaction technique**, ou **gestion de projets culturels numériques**).\n  - **Lettres + Langues** (pour les métiers de la traduction spécialisée ou du tourisme culturel).\n- **Formations courtes professionnalisantes** :\n  - **BUT Métiers du Livre** (pour l’édition ou les bibliothèques, en 3 ans après la licence).\n  - **Certifications en rédaction web** (ex : OpenClassrooms) pour monter en compétences rapidement.\n- **Concours administratifs** :\n  - Catégorie B (ex : **secrétaire administratif·ve**) ou A (ex : **attaché·e territorial·e**) avec une préparation en parallèle.\n\n---\n### **⚠ Attention aux pièges**\n- **Précarité dans les métiers culturels** : les secteurs de l’édition, du journalisme et de la communication recrutent souvent en CDD ou freelance. **Un master + stages sont indispensables** pour se différencier.\n- **Concours de l’Éducation nationale** : le nombre de postes au CAPES varie chaque année (ex : **~3000 postes en 2024 pour les lettres**, mais forte concurrence). Vérifie les [statistiques du ministère](https://www.education.gouv.fr/) avant de t’engager.\n- **Filières privées coûteuses** : méfie-toi des écoles de journalisme/communication privées non reconnues par l’État (coût : 5 000€ à 10 000€/an pour des débouchés incertains).\n\n---\n**Question pour toi :**\nQu’est-ce qui t’attire le plus : **transmettre** (enseignement), **créer** (édition/médias), ou **organiser** (communication/culture) ? Et es-tu prêt·e à poursuivre jusqu’en bac+5 pour sécuriser ton projet ?",
+  "elapsed_pipeline_s": 23.35,
+  "elapsed_fact_check_post_hoc_s": 4.93,
+  "elapsed_clarify_s": 2.1,
+  "elapsed_reformulate_s": 9.55,
+  "elapsed_retrieve_s": 0.37,
+  "elapsed_generate_s": 11.32,
+  "fact_check_summary": {
+    "n_stats_total": 8,
+    "n_verified": 4,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "30-60%",
+      "stat_value": 30,
+      "stat_unit": "%",
+      "context": "sélectivité modérée (30-60% selon académies)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~2000€ net",
+      "stat_value": 2000,
+      "stat_unit": "€",
+      "context": "Salaire : ~2000€ net en début de carrière (source : Éducation nationale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~3000 postes",
+      "stat_value": 3000,
+      "stat_unit": "postes",
+      "context": "le nombre de postes au CAPES varie chaque année (ex : ~3000 postes en 2024 pour les lettres",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "5 000€ à 10 000€/an",
+      "stat_value": 5000,
+      "stat_unit": "€/an",
+      "context": "coût : 5 000€ à 10 000€/an pour des débouchés incertains",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context": "taux_emploi_3ans: 0.85",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context": "taux_emploi_6ans: 0.91",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context": "taux_cdi: 0.83",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context": "salaire_median_embauche: 2080",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_competences_certif",
+    "_formation",
+    "_formation",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers accessibles après une licence de lettres modernes ? Fiches ONISEP détaillées sur les débouchés en lettres et sciences humaines.",
+      "target_corpus": "metier",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : débouchés métiers spécifiques après une licence de lettres modernes."
+    },
+    {
+      "text": "Quelles formations (master, écoles spécialisées) poursuivre après une licence de lettres modernes ? Catalogue Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Ancrage essentiel pour un étudiant en L3 : quelles poursuites d'études après la licence."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle 6 à 18 mois après un master en lettres ou sciences humaines ? Données MESR insertion pro.",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Contexte utile : insertion post-master pour évaluer la pertinence des débouchés."
+    },
+    {
+      "text": "Quels sont les métiers en tension ou en croissance d'ici 2030 dans le secteur des lettres et sciences humaines ? Données DARES Métiers 2030.",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Perspective prospective pour élargir les horizons métiers."
+    },
+    {
+      "text": "Quels sont les blocs de compétences RNCP à valider pour se spécialiser dans les métiers de l'édition ou de la culture après une licence de lettres ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Optionnel : focus sur les compétences certifiantes pour des métiers ciblés."
+    }
+  ]
+}

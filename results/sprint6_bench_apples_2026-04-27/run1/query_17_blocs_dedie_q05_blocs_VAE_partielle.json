@@ -1,0 +1,111 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q05_blocs_VAE_partielle",
+  "query_text": "Comment valider un titre RNCP par VAE par bloc ?",
+  "answer_text": "**TL;DR**\n1. La VAE par blocs permet de valider un titre RNCP **partiellement**, en ciblant des compétences précises plutôt que le diplôme entier.\n2. Processus : **identification des blocs → dossier de recevabilité → évaluation (jury ou mise en situation)**.\n3. Idéal pour les professionnels expérimentés qui manquent de temps ou de preuves pour une VAE complète.\n\n---\n\n### **Plan A — VAE par blocs : étapes clés (connaissance générale)**\n1. **Choisir un titre RNCP éligible** : Vérifiez sur [France Compétences](https://www.francecompetences.fr) que le titre est bien découpé en blocs de compétences (ex : \"Bloc 1 : Gestion de projet\", \"Bloc 2 : Analyse data\").\n2. **Déposer un dossier de recevabilité** : À envoyer au certificateur (ex : CCI, école, branche professionnelle) avec :\n   - CV détaillé + preuves d’expérience (attestations employeur, productions professionnelles).\n   - Justificatif de 1 an d’expérience **liée au(x) bloc(s) visé(s)**.\n3. **Évaluation** :\n   - **Par le jury** : entretien + analyse de vos preuves.\n   - **Ou mise en situation** (cas pratique, simulation) si le bloc le requiert.\n4. **Validation** : Si réussie, vous obtenez une **attestation partielle** (valable 5 ans). Cumulez les blocs pour le titre complet.\n\n*Pour vous :* Solution flexible si vous visez une **montée en compétences ciblée** (ex : un bloc en cybersécurité pour un admin système) ou si votre expérience couvre seulement une partie du titre.\n\n---\n\n### **Plan B — VAE complète : quand la visée est le diplôme entier**\nSi votre expérience couvre **80%+ des compétences du titre**, optez pour une VAE classique (tous blocs validés en une fois).\n- **Avantage** : Obtention directe du diplôme (ex : RNCP \"Expert en cybersécurité\" niveau 7).\n- **Risque** : Rejet si un bloc manque cruellement. Dans ce cas, la VAE par blocs est un **filet de sécurité**.\n- **Exemple** : Un technicien réseau avec 10 ans d’expérience pourrait valider le titre RNCP \"Responsable infrastructure systèmes et réseaux\" (niveau 6) en une fois.\n\n*Pour vous :* À privilégier si votre parcours est **large et documenté** (ex : plusieurs postes en lien avec le titre).\n\n---\n\n### **Plan C — Alternatives si la VAE par blocs est impossible**\n1. **Formation modulaire** : Certains organismes (CNAM, GRETA) proposent des parcours par blocs **sans VAE**, avec validation progressive (ex : certifications PIX, blocs de compétences en data).\n2. **Classe VAE** : Certaines régions financent des accompagnements collectifs pour monter son dossier (ex : [VAE Île-de-France](https://www.iledefrance.fr/vae)).\n3. **Reconversion via Pro-A** : Si vous êtes salarié, le dispositif **Projet de Transition Professionnelle (PTP)** peut financer une formation **complémentaire aux blocs manquants**.\n\n*Pour vous :* Si votre expérience est **trop fragmentée** ou si le titre visé n’est pas découpé en blocs.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Blocs \"indivisibles\"** : Certains titres RNCP ont des blocs **liés** (ex : bloc \"Management\" et bloc \"Stratégie\" doivent être validés ensemble). Vérifiez la fiche RNCP avant de candidater.\n- **Coût caché** : La VAE par blocs peut multiplier les frais (ex : 300€/bloc × 4 blocs = 1200€). Certains certificateurs offrent des tarifs dégressifs.\n- **Délais** : Comptez **6 à 12 mois** pour valider tous les blocs d’un titre (contre 3-6 mois pour une VAE complète réussie).\n\n---\n**Question pour vous** :\nAvez-vous déjà identifié **un titre RNCP précis** et les blocs qui correspondent à votre expérience ? Si non, quel domaine visez-vous (tech, santé, management…) ? Je peux vous aider à affiner la recherche.",
+  "elapsed_pipeline_s": 21.19,
+  "elapsed_fact_check_post_hoc_s": 2.55,
+  "elapsed_clarify_s": 1.87,
+  "elapsed_reformulate_s": 6.48,
+  "elapsed_retrieve_s": 0.93,
+  "elapsed_generate_s": 11.91,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "1 an d’expérience",
+      "stat_value": 1,
+      "stat_unit": "an",
+      "context": "Justificatif de 1 an d’expérience liée au(x) bloc(s) visé(s).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "5 ans",
+      "stat_value": 5,
+      "stat_unit": "ans",
+      "context": "valable 5 ans",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "80%+",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Si votre expérience couvre 80%+ des compétences du titre",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "6 à 12 mois",
+      "stat_value": 6,
+      "stat_unit": "mois",
+      "context": "Comptez 6 à 12 mois pour valider tous les blocs d’un titre",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "3-6 mois",
+      "stat_value": 3,
+      "stat_unit": "mois",
+      "context": "contre 3-6 mois pour une VAE complète réussie",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "300€/bloc × 4 blocs = 1200€",
+      "stat_value": 300,
+      "stat_unit": "€/bloc",
+      "context": "La VAE par blocs peut multiplier les frais (ex : 300€/bloc × 4 blocs = 1200€).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "financement_etudes"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "dispositif",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles sont les étapes pour valider un titre RNCP par la VAE, spécifiquement par blocs de compétences ?",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "La query cible directement les blocs de compétences RNCP, corpus spécialisé pour ce type de démarche."
+    },
+    {
+      "text": "Peut-on obtenir un titre RNCP complet en validant uniquement certains blocs de compétences via la VAE ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Complète la première sub-query en clarifiant la possibilité de valider partiellement un titre RNCP."
+    },
+    {
+      "text": "Quels sont les organismes ou centres agréés pour accompagner une VAE visant un titre RNCP par blocs ?",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Apporte un complément pratique en ciblant les acteurs de la formation."
+    },
+    {
+      "text": "Quels sont les métiers ou secteurs professionnels concernés par la validation de blocs de compétences RNCP via la VAE ?",
+      "target_corpus": "metier",
+      "priority": 3,
+      "rationale": "Contextualise la démarche en lien avec les métiers, utile mais non essentiel."
+    }
+  ]
+}

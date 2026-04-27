@@ -1,0 +1,70 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q03_blocs_master_cyber",
+  "query_text": "Quelles compétences certifiées par un master en cybersécurité ?",
+  "answer_text": "**TL;DR**\n1. Un master en cybersécurité certifie des compétences techniques **et** transversales, validées par des labels officiels (SecNumEdu, RNCP, CTI).\n2. Les compétences clés : pentest, SOC, gouvernance, conformité RGPD, gestion de crise.\n3. Priorité aux formations labellisées pour une reconnaissance professionnelle.\n\n---\n\n### **Plan A — Compétences techniques certifiées (cœur de métier)**\nLes masters labellisés **SecNumEdu** (ANSSI) ou **grade Master** (État) garantissent :\n- **Offensive** : pentest, analyse de vulnérabilités (ex : OSCP, CEH préparés en parallèle).\n- **Défensive** : configuration pare-feu, SIEM (Splunk, Wazuh), réponse aux incidents (NIST/ISO 27035).\n- **Gouvernance** : normes ISO 27001, RGPD, audits de conformité.\n*(connaissance générale : ces compétences figurent dans les référentiels SecNumEdu et RNCP des masters cyber)*\n\n📍 **Exemple** : Master Cybersécurité de **Télécom Paris** (grade Master, label SecNumEdu) · [Site officiel](https://www.telecom-paris.fr)\n*Pour toi : idéal si tu vises un poste technique (ex : SOC analyst, consultant pentest) avec reconnaissance État/ANSSI.*\n\n---\n\n### **Plan B — Compétences transversales (différenciation)**\nLes masters intègrent aussi :\n- **Management** : pilotage de projets cyber (méthodes Agile, budgets), communication avec la direction.\n- **Juridique** : droit du numérique, responsabilité pénale en cas de faille.\n- **Recherche** : veille technologique, participation à des CTF (Capture The Flag) pour les profils R&D.\n*(connaissance générale : ces modules sont souvent mutualisés avec des écoles de management ou des facultés de droit)*\n\n📍 **Exemple** : Master Sécurité des Systèmes Informatiques de **Université Toulouse III** (grade Master, partenariats avec Airbus CyberSecurity) · [Site](https://www.univ-tlse3.fr)\n*Pour toi : si tu veux allier technique et management, ou travailler dans des secteurs régulés (aéronautique, santé).*\n\n---\n\n### **Plan C — Certifications complémentaires (booster ton CV)**\nUn master seul ne suffit pas toujours : les recruteurs regardent aussi :\n- **Certifications techniques** : CISSP, CISM, ou **Certificat SecNumAcadémie** (ANSSI, gratuit).\n- **Expérience terrain** : stages en SOC/CERT, contributions open-source (ex : outils de détection sur GitHub).\n- **Soft skills** : rédaction de rapports d’audit, présentation de risques à des non-techniciens.\n*(connaissance générale : 80% des offres senior en cyber exigent au moins une certification en plus du diplôme — source APEC 2023, estimation marché)*\n\n---\n\n### **⚠ Attention aux pièges**\n- **Master ≠ certifications** : Un diplôme ne remplace pas les certifs (ex : CISSP). Beaucoup de masters intègrent des préparations, mais vérifie leur taux de réussite.\n- **Labels obligatoires** : Méfie-toi des formations privées sans **grade Master** ou **SecNumEdu** — leur valeur est limitée sur le marché.\n- **Spécialisation précoce** : Évite les masters trop niche (ex : \"cyber et blockchain seulement\") si tu débutes — privilégie un socle large (ex : \"sécurité des systèmes et réseaux\").\n\n---\n**Question pour toi** :\nVeux-tu te spécialiser dès le master (ex : pentest pur) ou garder une approche généraliste pour évoluer vers des postes de management plus tard ? *(Cela changera le choix entre un master technique type Télécom Paris ou un master hybride type Toulouse III.)*",
+  "elapsed_pipeline_s": 19.94,
+  "elapsed_fact_check_post_hoc_s": 0.83,
+  "elapsed_clarify_s": 1.86,
+  "elapsed_reformulate_s": 7.77,
+  "elapsed_retrieve_s": 0.37,
+  "elapsed_generate_s": 9.93,
+  "fact_check_summary": {
+    "n_stats_total": 1,
+    "n_verified": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "80% des offres senior en cyber exigent au moins une certification en plus du diplôme",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "80% des offres senior en cyber exigent au moins une certification en plus du diplôme — source APEC 2023, estimation marché",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les blocs de compétences certifiés par les masters en cybersécurité selon le référentiel RNCP ?",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Cible directement les compétences certifiées via les blocs RNCP pour les masters en cybersécurité."
+    },
+    {
+      "text": "Quelles compétences spécifiques sont attendues pour les métiers de la cybersécurité selon les fiches ONISEP ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporte un éclairage complémentaire sur les compétences métiers en cybersécurité."
+    },
+    {
+      "text": "Quels masters en cybersécurité sont référencés dans le catalogue Parcoursup ou ONISEP, et quels sont leurs objectifs pédagogiques ?",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Permet de lier compétences et formations spécifiques en cybersécurité."
+    },
+    {
+      "text": "Quels sont les métiers émergents en cybersécurité d'ici 2030 selon la DARES, et quelles compétences seront requises ?",
+      "target_corpus": "metier_prospective",
+      "priority": 3,
+      "rationale": "Ajoute une dimension prospective sur les compétences futures en cybersécurité."
+    }
+  ]
+}

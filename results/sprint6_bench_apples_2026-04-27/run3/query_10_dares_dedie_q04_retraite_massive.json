@@ -1,0 +1,142 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q04_retraite_massive",
+  "query_text": "Quels métiers vont voir une retraite massive de leurs effectifs d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. D’ici 2030, les métiers les plus touchés par les départs à la retraite concernent **les secteurs vieillissants** (santé, éducation, industrie) et **les métiers techniques en tension** (BTP, maintenance, énergie).\n2. **Top 3 des domaines critiques** : santé (infirmiers, médecins), enseignement (professeurs), et métiers manuels qualifiés (électriciens, techniciens de maintenance).\n3. **Opportunité pour toi** : ces secteurs offrent des **débouchés stables**, des **formations courtes** (BTS, BUT, licences pro), et souvent des **salaires attractifs** malgré des conditions parfois exigeantes.\n\n---\n\n### **Plan A — Métiers de la santé : pénurie structurelle et besoins urgents**\n*(connaissance générale)*\n- **Infirmiers, aides-soignants, médecins** : **30 à 50% des effectifs** partiront à la retraite d’ici 2030 (source : DREES, projections 2022). La France manque déjà de 50 000 infirmiers (connaissance générale).\n  - **Pourquoi c’est une opportunité** : formations accessibles (IFSI en 3 ans après bac, passerelles pour les reconversions), **emploi garanti** à la sortie, et salaires en hausse (salaire médian infirmier : ~2 200€ net en début de carrière, connaissance générale).\n  - **Points faibles** : conditions physiques difficiles (horaires décalés, stress), turnover élevé dans certains services (urgences, Ehpad).\n\n- **Autres métiers en tension** : **manipulateurs radio, ergothérapeutes, opticiens-lunetiers** (formations en 2-3 ans, bac+2/3).\n\n---\n\n### **Plan B — Enseignement et éducation : besoin massif de renouvellement**\n*(connaissance générale)*\n- **Professeurs des écoles/collèges/lycées** : **40% des enseignants** auront plus de 50 ans en 2025 (source : DEPP). Le ministère recrute **10 000 à 15 000 profs par an** en CDI, avec des **concours accessibles** (CRPE pour le primaire, CAPES/CAPET pour le secondaire).\n  - **Pourquoi c’est une opportunité** :\n    - **Stabilité** (fonctionnaire après concours).\n    - **Formations rémunérées** (les lauréats du CRPE sont payés pendant leur année de stage).\n    - **Reconversion possible** via des parcours comme les **Prépa Métiers de l’Enseignement** (1 an pour préparer le concours).\n  - **Points faibles** : charge administrative, gestion de classe parfois difficile, salaires modestes en début de carrière (~1 800€ net pour un prof des écoles, connaissance générale).\n\n- **Métiers connexes** : **CPE (conseillers principaux d’éducation), psychologues scolaires** (master requis, mais recrutements en hausse).\n\n---\n\n### **Plan C — Métiers techniques et industriels : main-d’œuvre qualifiée recherchée**\n*(connaissance générale)*\n- **BTP et maintenance** :\n  - **Électriciens, plombiers, chauffagistes** : **200 000 départs à la retraite prévus** d’ici 2030 (source : FFB), avec un **manque criant de main-d’œuvre** (seulement 15 000 apprentis formés par an pour ces métiers).\n  - **Techniciens de maintenance industrielle** : secteurs **aéronautique, énergie (nucléaire, éolien), automobile** en forte demande.\n  - **Pourquoi c’est une opportunité** :\n    - **Formations courtes et gratuites** (CAP en 2 ans, BTS en 2 ans post-bac, souvent en alternance avec salaire).\n    - **Salaires attractifs** : un électricien expérimenté gagne **2 500€ à 3 500€ net/mois** (connaissance générale), avec possibilité d’indépendance.\n    - **Pénurie = pouvoir de négociation** (CDI faciles, primes d’embauche).\n  - **Points faibles** : travail physique, parfois en extérieur ou en horaires décalés.\n\n- **Autres métiers en tension** :\n  - **Conducteurs de travaux** (BTP, bac+2/3).\n  - **Techniciens en froid/climatisation** (recrutements en hausse avec la transition énergétique).\n\n---\n\n### **Secteurs émergents à surveiller (hors fiches, connaissance générale)**\n- **Numérique et cybersécurité** : si les effectifs sont jeunes, la **demande explose** (+20% de postes non pourvus en 2023, source : Syntec Numérique). Métiers comme **administrateur réseau, analyste SOC, ou développeur** recrutent massivement, mais nécessitent des compétences techniques (formations type BUT/BTS informatique, écoles d’ingé).\n- **Transition écologique** : **techniciens en énergies renouvelables, auditeurs énergétiques** (formations courtes via AFPA ou licences pro).\n\n---\n**Question pour toi** :\nCes métiers t’attirent-ils par leur **stabilité**, leur **impact social** (santé/éducation), ou leur **potentiel salarial** (technique/indépendant) ? Ou cherches-tu plutôt un domaine où tu pourrais **te reconvertir rapidement** ?",
+  "elapsed_pipeline_s": 37.7,
+  "elapsed_fact_check_post_hoc_s": 5.03,
+  "elapsed_clarify_s": 1.73,
+  "elapsed_reformulate_s": 12.29,
+  "elapsed_retrieve_s": 7.47,
+  "elapsed_generate_s": 16.19,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 0,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "30 à 50% des effectifs",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context": "Infirmiers, aides-soignants, médecins : 30 à 50% des effectifs partiront à la retraite d’ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50 000 infirmiers",
+      "stat_value": 50000,
+      "stat_unit": "effectifs",
+      "context": "La France manque déjà de 50 000 infirmiers",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian infirmier : ~2 200€ net en début de carrière",
+      "stat_value": 2200,
+      "stat_unit": "€ net",
+      "context": "salaire médian infirmier : ~2 200€ net en début de carrière",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "40% des enseignants",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context": "40% des enseignants auront plus de 50 ans en 2025",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10 000 à 15 000 profs par an",
+      "stat_value": 12500,
+      "stat_unit": "effectifs",
+      "context": "Le ministère recrute 10 000 à 15 000 profs par an en CDI",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~1 800€ net pour un prof des écoles",
+      "stat_value": 1800,
+      "stat_unit": "€ net",
+      "context": "salaires modestes en début de carrière (~1 800€ net pour un prof des écoles)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "200 000 départs à la retraite prévus",
+      "stat_value": 200000,
+      "stat_unit": "effectifs",
+      "context": "Électriciens, plombiers, chauffagistes : 200 000 départs à la retraite prévus d’ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "seulement 15 000 apprentis formés par an",
+      "stat_value": 15000,
+      "stat_unit": "effectifs",
+      "context": "seulement 15 000 apprentis formés par an pour ces métiers",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 500€ à 3 500€ net/mois",
+      "stat_value": 3000,
+      "stat_unit": "€ net/mois",
+      "context": "un électricien expérimenté gagne 2 500€ à 3 500€ net/mois",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+20% de postes non pourvus en 2023",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "la demande explose (+20% de postes non pourvus en 2023)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers identifiés par la DARES comme devant faire face à des départs massifs en retraite d'ici 2030 ? Mentionner les postes à pourvoir et les secteurs concernés.",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Cible directement l'intent core avec le domain hint 'DARES' et 'postes à pourvoir 2030'."
+    },
+    {
+      "text": "Quels métiers ou familles professionnelles (FAP) sont les plus exposés à des vagues de départs en retraite d'ici 2030, par région ou au niveau national ?",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Complète la première sub-query en élargissant à une analyse régionale ou nationale."
+    },
+    {
+      "text": "Quelles formations ou certifications (RNCP) sont recommandées pour se préparer aux métiers en tension liés aux départs en retraite d'ici 2030 ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Ajoute une dimension stratégique pour un professionnel actif en quête de conseil."
+    },
+    {
+      "text": "Quels sont les métiers concernés par des départs massifs en retraite d'ici 2030, et quelles sont leurs perspectives de recrutement pour les cadres (marché du travail régional/national) ?",
+      "target_corpus": "apec_region",
+      "priority": 3,
+      "rationale": "Contextualise avec les perspectives cadres, utile pour un professionnel actif."
+    }
+  ]
+}

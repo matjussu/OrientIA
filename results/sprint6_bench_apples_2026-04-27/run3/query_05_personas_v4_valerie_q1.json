@@ -1,0 +1,222 @@
+{
+  "suite": "personas_v4",
+  "query_id": "valerie_q1",
+  "query_text": "Quel est le coût moyen d'une année d'école de commerce privée par rapport à une licence publique ?",
+  "answer_text": "**TL;DR**\n1. Une année en école de commerce privée coûte **5 000 à 15 000 €** en moyenne, contre **0 à 600 €** pour une licence publique (frais d’inscription + CVEC).\n2. Les licences pro publiques (ex : commerce international) sont **10 à 20 fois moins chères** que les BBA/bachelors privés, pour des débouchés comparables à bac+3.\n3. Le privé justifie son prix par des labels (grade Licence/Master), des réseaux alumni, et des partenariats entreprises — mais ce n’est pas un gage automatique d’insertion.\n\n---\n\n### **Plan A — Économique : Licences publiques (0-600 €/an)**\n📍 **Licence pro Métiers du commerce international** (disponible dans **plus de 50 IUT** en France) — bac+3 public, **~243 €/an** (droits 2024-25) + 100 € CVEC · [fiche ONISEP](https://www.onisep.fr/http/redirection/formation/slug/FOR.11370)\n*Pour toi : idéal pour un budget serré, avec stages obligatoires (6 à 12 mois) et taux d’insertion ~80% (connaissance générale).*\n\n📍 **Licence Droit ou Administration publique** (ex : **Paris 1 Panthéon-Sorbonne**) — bac+3 public, **~372 €/an** (licence classique) · [fiche ONISEP Droit](https://www.onisep.fr/http/redirection/formation/slug/FOR.9722)\n*Pour toi : coût minimal, mais moins professionnalisant qu’une licence pro (poursuite en master souvent nécessaire).*\n\n---\n\n### **Plan B — Intermédiaire : Écoles publiques ou privées à coût maîtrisé (3 000-8 000 €/an)**\n*(connaissance générale — fiches non disponibles pour ces cas)*\n- **IAE (écoles universitaires de management)** : ~3 000-6 000 €/an pour un **bachelor** (ex : IAE Gustave Eiffel), avec diplôme grade Licence.\n- **BUT TC (Techniques de Commercialisation)** : ~0-600 €/an en public (IUT), mais moins \"prestigieux\" qu’une école de commerce.\n- **Écoles consulaires (CCI)** : ~5 000-8 000 €/an (ex : **ESCEN**, **INSEEC BBA** en région), avec alternance possible (coût réduit pour l’étudiant).\n\n---\n\n### **Plan C — Investissement élevé : Écoles de commerce privées (8 000-15 000 €/an)**\n*(connaissance générale — exemples hors fiches)*\n- **BBA INSEEC/ESCE/SKEMA** : ~10 000-12 000 €/an, grade Licence, réseaux internationaux.\n- **Bachelors des \"grandes écoles\"** (ex : **NEOMA, KEDGE**) : ~12 000-15 000 €/an, accès à leurs masters (grade Master).\n- **Justification du prix** : labels (CGE, grade Licence/Master), stages à l’étranger, salons de recrutement dédiés. **Mais** : l’insertion dépend aussi de ton projet (un BBA à 12k€/an ne garantit pas un salaire à 40k€ sortante).\n\n---\n\n### **⚠ Attention aux pièges**\n1. **Marketing des \"frais réduits\"** : Certaines écoles privées affichent 6 000 €/an... mais ajoutent 2 000 € de \"frais de vie étudiante obligatoires\" (voyages, logiciels). **Vérifie toujours le coût total** (cf. contrats d’inscription).\n2. **Alternance ≠ gratuité** : En école privée, l’alternance couvre souvent les frais de scolarité... mais pas toujours (ex : **3 000 € restants à charge** dans certains BBA). Relis les clauses.\n3. **Privée ≠ publique en insertion** : Une licence pro publique (ex : technico-commercial) peut avoir **mieux placé** qu’un BBA privé moyen (source : enquêtes Céreq, connaissance générale).\n\n---\n**Question pour toi** :\nTon choix dépend-il avant tout du **budget**, du **prestige du diplôme**, ou des **débouchés concrets** (secteur, salaire, mobilité) ? Si tu vises un métier précis (ex : acheteur international, juriste d’entreprise), je peux t’aider à affiner les formations **les plus rentables** pour ce projet.",
+  "elapsed_pipeline_s": 24.21,
+  "elapsed_fact_check_post_hoc_s": 9.78,
+  "elapsed_clarify_s": 2.09,
+  "elapsed_reformulate_s": 8.28,
+  "elapsed_retrieve_s": 1.67,
+  "elapsed_generate_s": 12.16,
+  "fact_check_summary": {
+    "n_stats_total": 20,
+    "n_verified": 5,
+    "n_with_disclaimer": 15,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "5 000 à 15 000 €",
+      "stat_value": 5000,
+      "stat_unit": "€",
+      "context": "Une année en école de commerce privée coûte",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0 à 600 €",
+      "stat_value": 600,
+      "stat_unit": "€",
+      "context": "contre pour une licence publique (frais d’inscription + CVEC)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10 à 20 fois moins chères",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "Les licences pro publiques (ex : commerce international) sont",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~243 €/an",
+      "stat_value": 243,
+      "stat_unit": "€",
+      "context": "Licence pro Métiers du commerce international — bac+3 public,",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "100 € CVEC",
+      "stat_value": 100,
+      "stat_unit": "€",
+      "context": "Licence pro Métiers du commerce international — bac+3 public, ~243 €/an (droits 2024-25) +",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~80%",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "taux d’insertion",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "~372 €/an",
+      "stat_value": 372,
+      "stat_unit": "€",
+      "context": "Licence Droit ou Administration publique (ex : Paris 1 Panthéon-Sorbonne) — bac+3 public,",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "3 000-6 000 €/an",
+      "stat_value": 3000,
+      "stat_unit": "€",
+      "context": "IAE (écoles universitaires de management) :",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~3 000-6 000 €/an",
+      "stat_value": 3000,
+      "stat_unit": "€",
+      "context": "IAE (écoles universitaires de management) : ~3 000-6 000 €/an pour un bachelor (ex : IAE Gustave Eiffel), avec diplôme grade Licence.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~0-600 €/an",
+      "stat_value": 600,
+      "stat_unit": "€",
+      "context": "BUT TC (Techniques de Commercialisation) :",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~5 000-8 000 €/an",
+      "stat_value": 5000,
+      "stat_unit": "€",
+      "context": "Écoles consulaires (CCI) :",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~10 000-12 000 €/an",
+      "stat_value": 10000,
+      "stat_unit": "€",
+      "context": "BBA INSEEC/ESCE/SKEMA :",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~12 000-15 000 €/an",
+      "stat_value": 12000,
+      "stat_unit": "€",
+      "context": "Bachelors des \"grandes écoles\" (ex : NEOMA, KEDGE) :",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "6 000 €/an",
+      "stat_value": 6000,
+      "stat_unit": "€",
+      "context": "Certaines écoles privées affichent",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 000 €",
+      "stat_value": 2000,
+      "stat_unit": "€",
+      "context": "mais ajoutent de \"frais de vie étudiante obligatoires\" (voyages, logiciels).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "3 000 € restants à charge",
+      "stat_value": 3000,
+      "stat_unit": "€",
+      "context": "En école privée, l’alternance couvre souvent les frais de scolarité... mais pas toujours (ex :",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0.86",
+      "stat_value": 0.86,
+      "stat_unit": null,
+      "context": "taux_emploi_3ans",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": null,
+      "context": "taux_emploi_6ans",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": null,
+      "context": "taux_cdi",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "salaire_median_embauche",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Coût moyen annuel d'une année en école de commerce privée en France (frais de scolarité, frais annexes) selon les données Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core sur le coût des écoles de commerce privées."
+    },
+    {
+      "text": "Coût moyen annuel d'une licence publique en France (frais d'inscription, frais annexes) selon les données Parcoursup et ONISEP.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core sur le coût des licences publiques pour comparaison."
+    },
+    {
+      "text": "Comparaison des frais de vie étudiante (logement, restauration, transports) entre une école de commerce privée et une licence publique, données CROUS.",
+      "target_corpus": "crous",
+      "priority": 2,
+      "rationale": "Ajoute un contexte complémentaire sur les coûts indirects."
+    },
+    {
+      "text": "Salaire médian à l'embauche après une école de commerce privée vs après une licence publique, données INSEE et APEC par région.",
+      "target_corpus": "multi",
+      "priority": 3,
+      "rationale": "Apporte une perspective financière post-diplôme pour enrichir la comparaison."
+    }
+  ]
+}

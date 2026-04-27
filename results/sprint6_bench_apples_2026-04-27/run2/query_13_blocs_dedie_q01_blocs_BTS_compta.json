@@ -1,0 +1,81 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q01_blocs_BTS_compta",
+  "query_text": "Quels blocs de compétences valide le BTS comptabilité ?",
+  "answer_text": "**TL;DR**\n1. Le **BTS Comptabilité et Gestion** (ex-BTS CG) valide des blocs de compétences en **comptabilité, fiscalité, gestion, et outils numériques**, alignés sur le référentiel officiel de l’Éducation nationale.\n2. Ces blocs sont **obligatoires pour l’obtention du diplôme** et correspondent à des **situations professionnelles clés** (ex : clôture des comptes, déclaration fiscale).\n3. Si tu cherches une alternative plus spécialisée ou flexible, des passerelles existent vers des diplômes comme le DCG ou des certifications professionnelles.\n\n---\n\n### **Plan A — Réaliste : Blocs de compétences du BTS Comptabilité et Gestion (BTS CG)**\nLe BTS CG (renommé en 2023) valide **4 blocs principaux** (connaissance générale, référentiel officiel 2024) :\n1. **Gestion comptable et fiscale** : Tenue des comptes, déclarations fiscales, analyse financière.\n2. **Gestion des obligations sociales** : Paie, déclarations sociales, droit du travail.\n3. **Analyse et prévision de l’activité** : Tableaux de bord, budgets, outils d’aide à la décision.\n4. **Fiabilisation de l’information et système d’information comptable** : Logiciels (Sage, Ciel), contrôle interne, dématérialisation.\n\n*Pour toi* : Ces blocs couvrent **l’ensemble des missions d’un assistant comptable ou collaborateur en cabinet**, avec une forte employabilité en PME/TPE.\n\n---\n\n### **Plan B — Ambitieux : Poursuite vers le DCG (Diplôme de Comptabilité et Gestion, bac+3)**\nLe **DCG** (grade Licence) approfondit ces blocs et en ajoute 7 autres (droit des sociétés, audit, anglais des affaires, etc.).\n- **Avantage** : Accès aux métiers d’**expertise comptable** (après DSCG) ou à des postes à responsabilité en entreprise.\n- **Sélectivité** : Accessible après un BTS CG avec mention Bien, ou via Parcoursup (taux d’accès ~40-60% selon les académies — connaissance générale).\n\n*Pour toi* : Idéal si tu vises **un salaire plus élevé** (médian embauche ~2 200€ brut pour un DCG vs ~1 800€ pour un BTS — source Céreq 2022) ou une évolution vers l’expertise.\n\n---\n\n### **Plan C — Alternatives : Certifications professionnelles ou spécialisations**\nSi le BTS/DCG ne te convient pas, des **certifications courtes** (3 à 12 mois) valident des blocs ciblés :\n- **Certificat de Compétence en Entreprise (CCE)** : Blocs \"Paie\" ou \"Comptabilité clients/fournisseurs\" (ex : CCE du Conservatoire National des Arts et Métiers).\n- **Titres RNCP** : Ex : **Titre RNCP \"Comptable\" (niveau 5)** du CNAM, avec blocs modulaire (comptabilité, fiscalité, logiciels).\n- **Formations en alternance** : Certaines écoles privées (ex : **ESARC**, **ENCO**) proposent des parcours avec validation par blocs (coût : ~3 000-6 000€/an, mais rémunération en alternance).\n\n*Pour toi* : Solution pour **entrer rapidement sur le marché du travail** (6-12 mois) ou se spécialiser (ex : paie uniquement).\n\n---\n\n### **⚠ Attention aux pièges**\n- **Marketing des écoles privées** : Méfie-toi des formations promettant une \"validation des blocs en accéléré\" sans reconnaissance par l’État (vérifie toujours le **RNCP** ou le **répertoire spécifique**).\n- **Alternance obligatoire** : Le BTS CG en alternance exige un contrat avec une entreprise — **démarre tes recherches 6 mois avant la rentrée**.\n- **Équivalences partielles** : Certains blocs du BTS CG sont reconnus pour des dispenses en DCG (ex : bloc \"Comptabilité\" = UE9 du DCG), mais **pas automatiquement** — vérifie les textes officiels ([site de l’Ordre des Experts-Comptables](https://www.experts-comptables.fr)).\n\n---\n**Question pour toi** :\nEst-ce que tu cherches une formation **large** (BTS CG) pour garder des options, ou une **spécialisation rapide** (certification) pour entrer vite dans la vie active ? Et as-tu envisagé l’alternance ?",
+  "elapsed_pipeline_s": 21.51,
+  "elapsed_fact_check_post_hoc_s": 2.18,
+  "elapsed_clarify_s": 2.05,
+  "elapsed_reformulate_s": 5.32,
+  "elapsed_retrieve_s": 0.22,
+  "elapsed_generate_s": 13.93,
+  "fact_check_summary": {
+    "n_stats_total": 3,
+    "n_verified": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux d’accès ~40-60% selon les académies",
+      "stat_value": "40-60",
+      "stat_unit": "%",
+      "context": "Sélectivité : Accessible après un BTS CG avec mention Bien, ou via Parcoursup (taux d’accès ~40-60% selon les académies — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian embauche ~2 200€ brut pour un DCG vs ~1 800€ pour un BTS",
+      "stat_value": "2200",
+      "stat_unit": "€ brut",
+      "context": "Idéal si tu vises un salaire plus élevé (médian embauche ~2 200€ brut pour un DCG vs ~1 800€ pour un BTS — source Céreq 2022)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "coût : ~3 000-6 000€/an",
+      "stat_value": "3000-6000",
+      "stat_unit": "€/an",
+      "context": "Solution pour entrer rapidement sur le marché du travail (6-12 mois) ou se spécialiser (ex : paie uniquement). (coût : ~3 000-6 000€/an, mais rémunération en alternance).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_metier",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les blocs de compétences RNCP associés au BTS Comptabilité et Gestion ? Détail des compétences certifiées par ce diplôme.",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Intent core : identifier les blocs de compétences spécifiques au BTS Comptabilité via le RNCP."
+    },
+    {
+      "text": "Fiche éditorialisée ONISEP du BTS Comptabilité et Gestion : missions, débouchés et compétences attendues.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte complémentaire sur le métier et les compétences associées au diplôme."
+    },
+    {
+      "text": "Quelles formations en comptabilité et gestion (BTS, BUT, licences) proposent des blocs de compétences similaires au BTS Comptabilité ?",
+      "target_corpus": "formation",
+      "priority": 3,
+      "rationale": "Élargir aux alternatives de formation pour comparer les compétences validées."
+    }
+  ]
+}

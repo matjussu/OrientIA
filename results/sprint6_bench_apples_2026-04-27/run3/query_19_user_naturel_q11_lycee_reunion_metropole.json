@@ -1,0 +1,174 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q11_lycee_reunion_metropole",
+  "query_text": "Je suis lycéen à La Réunion, j'aimerais étudier le numérique en métropole. Quelles options s'offrent à moi ?",
+  "answer_text": "**TL;DR**\n1. **Oui, c’est tout à fait possible** : la métropole offre des formations publiques accessibles et gratuites en numérique.\n2. **2 voies principales** : BUT (bac+3 court et pro) ou licence pro (spécialisation web/multimédia).\n3. **Priorité** : vise des villes avec des IUT/universités bien notées (ex : Toulouse, Lyon, Rennes) et des aides au logement (CROUS).\n\n---\n\n### **Plan A — Réaliste : BUT Métiers du Multimédia et de l’Internet (bac+3 public, gratuit)**\n📍 **BUT MMI parcours Création Numérique** (ex : **IUT de Toulouse**, **IUT Lyon 1**, **IUT de Rennes**) — bac+3 public, **sélectivité modérée** (30-60% sur Parcoursup), **diplôme reconnu par l’État** · [Exemple : fiche ONISEP IUT Toulouse](https://www.onisep.fr/http/redirection/formation/slug/FOR.8008)\n*Pour toi : idéal pour allier théorie et pratique (design, dev web, vidéo), avec stages en entreprise. Logement CROUS possible (bourses sur critères sociaux).*\n\n**Autres villes avec ce BUT** (connaissance générale) :\n- **Bordeaux** (IUT Bordeaux Montaigne), **Strasbourg**, **Montpellier**, **Lille** → toutes ont des IUT publics avec ce parcours. *Astuce* : filtre \"Formation en présentiel\" + \"BUT MMI\" sur [Parcoursup](https://www.parcoursup.fr) pour voir les places disponibles.\n\n---\n\n### **Plan B — Spécialisé : Licence Pro Web (bac+3 en 1 an après un bac+2)**\n📍 **Licence Pro Métiers du Numérique : Conception, Rédaction et Réalisation Web** (ex : **Université de La Rochelle**, **Université d’Aix-Marseille**, **Université de Lorraine**) — bac+3 public, **sélectivité accessible** (>50%), **diplôme pro avec stages** · [Exemple : fiche ONISEP La Rochelle](https://www.onisep.fr/http/redirection/formation/slug/FOR.11061)\n*Pour toi : si tu aimes le code (HTML/CSS, JavaScript) et la création de sites. À faire après un BTS SIO ou un BUT MMI (année de spécialisation).*\n\n**Alternative** (connaissance générale) :\n- **Licence Pro Design Web** (ex : **Université de Poitiers**) ou **Licence Pro E-Commerce** (pour mixer tech et marketing).\n\n---\n\n### **Plan C — Alternatives si dossier faible ou besoin de flexibilité**\n1. **BTS SIO (Services Informatiques aux Organisations)** en métropole (ex : **Lycée polyvalent de Grenoble**, **Lycée Dorian à Paris**) :\n   - **Public, gratuit**, sélectivité **accessible** (>60%).\n   - *Pour toi* : bonne porte d’entrée pour ensuite faire une licence pro (Plan B). [Trouve des lycées sur l’ONISEP](https://www.onisep.fr).\n2. **Écoles privées en alternance** (ex : **MyDigitalSchool**, **Epitech**) :\n   - **Coût** : 0€ si contrat d’apprentissage (salaire + formation payée par l’entreprise).\n   - *Attention* : sélectivité variable, vérifie les **taux d’insertion** (demande les chiffres au CIO).\n\n---\n\n### **⚠ Attention aux pièges**\n- **Logement** : Les loyers en métropole peuvent être chers (500-800€/mois). *Solution* : demande un **logement CROUS** (dossier social étudiant à remplir **avant mai**).\n- **Sélectivité cachée** : Certaines licences pro ou BUT ont des **entretiens** ou des **tests** en plus du dossier. *Exemple* : l’IUT de Paris demande souvent un oral.\n- **Écoles privées** : Méfie-toi des formations à **8 000€/an** sans alternance. *Vérifie* toujours si le diplôme est **reconnu par l’État** (RNCP).\n\n---\n**Question pour toi** :\nEst-ce que tu préfères une formation **large** (BUT MMI pour explorer plusieurs métiers du numérique) ou **spécialisée dès maintenant** (licence pro web/dev) ? Et as-tu une région préférée en métropole (pour le logement/logistique) ?\n\n---\n👤 *Pour affiner ton projet, prends RDV avec le **Psy-EN de ton lycée** ou le **CIO de La Réunion** (ils connaissent bien les spécificités des étudiants ultramarins en métropole).*",
+  "elapsed_pipeline_s": 35.14,
+  "elapsed_fact_check_post_hoc_s": 8.45,
+  "elapsed_clarify_s": 1.87,
+  "elapsed_reformulate_s": 11.07,
+  "elapsed_retrieve_s": 12.0,
+  "elapsed_generate_s": 10.2,
+  "fact_check_summary": {
+    "n_stats_total": 13,
+    "n_verified": 8,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "sélectivité modérée (30-60% sur Parcoursup)",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "BUT MMI parcours Création Numérique (ex : IUT de Toulouse, IUT Lyon 1, IUT de Rennes)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité accessible (>50%)",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "Licence Pro Métiers du Numérique : Conception, Rédaction et Réalisation Web (ex : Université de La Rochelle, Université d’Aix-Marseille, Université de Lorraine)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "sélectivité accessible (>60%)",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "BTS SIO (Services Informatiques aux Organisations) en métropole (ex : Lycée polyvalent de Grenoble, Lycée Dorian à Paris)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "500-800€/mois",
+      "stat_value": null,
+      "stat_unit": "€/mois",
+      "context": "Les loyers en métropole peuvent être chers",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8 000€/an",
+      "stat_value": 8000,
+      "stat_unit": "€/an",
+      "context": "Méfiant des formations à 8 000€/an sans alternance",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context": "Insertion pro de la licence pro mention métiers du numérique : conception, rédaction et réalisation web",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "Insertion pro de la licence pro mention métiers du numérique : conception, rédaction et réalisation web",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "Insertion pro de la licence pro mention métiers du numérique : conception, rédaction et réalisation web",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "Insertion pro de la licence pro mention métiers du numérique : conception, rédaction et réalisation web",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context": "Insertion pro du BUT métiers du multimédia et de l'internet parcours création numérique",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "Insertion pro du BUT métiers du multimédia et de l'internet parcours création numérique",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "Insertion pro du BUT métiers du multimédia et de l'internet parcours création numérique",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "Insertion pro du BUT métiers du multimédia et de l'internet parcours création numérique",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "formation_insertion",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "_formation",
+    "formation_france",
+    "_formation",
+    "_metier_prospective",
+    "_metier_prospective",
+    "fap_region",
+    "_metier_prospective"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles formations en numérique (BUT, BTS, licences, écoles spécialisées) sont accessibles via Parcoursup pour un lycéen de Terminale à La Réunion souhaitant étudier en métropole ? Inclure les critères de sélection et les taux d'accès.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : découvrir les filières numériques accessibles post-bac en métropole via Parcoursup."
+    },
+    {
+      "text": "Quels sont les métiers du numérique les plus porteurs en métropole et à La Réunion d'ici 2030 selon les projections DARES ? Focus sur les postes à pourvoir et les compétences requises.",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte un éclairage prospectif pour orienter le choix de filière."
+    },
+    {
+      "text": "Quels sont les taux de réussite en L1 pour les bacheliers de La Réunion en filières numériques (informatique, MIASHS, etc.) en métropole ? Impact de la mention au bac sur la réussite.",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 2,
+      "rationale": "Contexte utile pour évaluer les chances de réussite en licence."
+    },
+    {
+      "text": "Quelles sont les conditions de vie étudiante (logement, restos universitaires, aides financières) pour un étudiant de La Réunion en métropole ? Focus sur les dispositifs spécifiques aux ultramarins.",
+      "target_corpus": "crous",
+      "priority": 3,
+      "rationale": "Nice-to-have pour anticiper les aspects pratiques et financiers."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle 6 et 12 mois après un BUT ou une licence en numérique en métropole ? Comparaison avec les masters.",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Contexte complémentaire sur l'employabilité post-diplôme."
+    }
+  ]
+}

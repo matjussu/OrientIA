@@ -1,0 +1,62 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q06_blocs_savoir_faire_BTS_hotel",
+  "query_text": "Quels savoir-faire certifiés à la sortie d'un BTS hôtellerie-restauration ?",
+  "answer_text": "**TL;DR**\n1. Un **BTS Hôtellerie-Restauration** (option A, B ou C) certifie des compétences opérationnelles en gestion, service et production culinaire, avec une forte dimension terrain.\n2. Les savoir-faire sont **validés par des épreuves professionnelles** (ex : service en salle, cuisine en temps limité) et un stage de 12 à 16 semaines.\n3. Le diplôme est **reconnu par l’État (niveau 5, bac+2)** et permet une insertion directe ou une poursuite d’études en licence pro ou bachelor.\n\n---\n\n### **Plan A — Savoir-faire techniques (cœur du diplôme)**\n*(connaissance générale)*\n- **Option A (Gestion hôtelière)** : Réservation (logiciels comme *Amadeus*), yield management, gestion des équipes, normes d’hygiène (HACCP), accueil multilingue (anglais + 1 langue souvent exigée).\n- **Option B (Service)** : Techniques de service (à l’assiette, au guéridon), gestion des conflits clients, œnologie de base, mise en place de salles (normes luxuries/hôtels 4-5*).\n- **Option C (Cuisine)** : Maîtrise des bases culinaires (sauces mères, découpes), gestion des stocks, respect des fiches techniques, cuisine en brigade (hiérarchie et timing).\n\n**Pour toi** : Ces compétences sont **évaluées en CCF** (Contrôle en Cours de Formation) et en épreuves finales avec des jurys professionnels.\n\n---\n\n### **Plan B — Savoir-être et compétences transverses**\n*(connaissance générale)*\n- **Soft skills** : Résistance au stress (services en heure de pointe), travail d’équipe (brigade en cuisine), adaptabilité (horaires décalés, clients exigeants).\n- **Gestion administrative** : Facturation, utilisation de logiciels de caisse (*Micros*, *Sage*), déclaration de TVA pour les petits établissements.\n- **Réglementation** : Normes d’accessibilité (ERP), droit du travail (conventions collectives HCR), sécurité incendie.\n\n**Pour toi** : Ces compétences sont **aussi notées** lors des stages (évaluation par le tuteur professionnel).\n\n---\n### **Plan C — Certifications complémentaires intégrées**\n*(connaissance générale)*\nLe BTS inclut souvent des **certificats obligatoires ou recommandés** :\n- **SST** (Sauveteur Secouriste du Travail) — obligatoire en entreprise.\n- **Hygiène alimentaire** (formation HACCP) — exigée pour manipuler des denrées.\n- **Permis d’exploitation** (pour gérer un débardeur ou un hôtel) — parfois préparé en option.\n- **Certifications langues** (TOEIC, DELE) — valorisées pour l’international (ex : croisières, chaînes hôtelières).\n\n**Pour toi** : Ces certifs sont un **plus pour l’embauche** et peuvent être financées via le CPF après le diplôme.\n\n---\n### **⚠ Attention aux pièges**\n1. **Spécialisation précoce** : Le BTS forme à des **métiers précis** (réceptionniste, chef de partie, maître d’hôtel). Une reconversion hors secteur nécessite une formation complémentaire.\n2. **Alternance obligatoire dans certains lycées** : Vérifie si ton établissement impose l’alternance (contrat pro/apprentissage) — cela limite les places pour les étudiants en formation initiale.\n3. **Concurrence des titres professionnels** : Certains employeurs (ex : fast-food haut de gamme) privilégient des **titres RNCP en 1 an** (ex : *Manager en restauration collective*) pour des postes similaires. Compare les débouchés locaux.\n\n---\n**Question pour toi** :\nAs-tu déjà une idée du **type d’établissement** qui t’intéresse (hôtel indépendant, chaîne internationale, restauration gastronomique, traiteur) ? Cela peut orienter vers une option (A, B ou C) plus adaptée.\n\n---\n*Sources : Référentiel officiel du BTS Hôtellerie-Restauration (BO 2019) — le reste en synthèse. Pour des données locales (taux d’insertion par académies), consulte le [site de l’ONISEP](https://www.onisep.fr).* 👤 *Un RDV avec le Psy-EN ou un professionnel du secteur (via le réseau des anciens élèves) t’aidera à affiner ton projet.*",
+  "elapsed_pipeline_s": 21.72,
+  "elapsed_fact_check_post_hoc_s": 0.0,
+  "elapsed_clarify_s": 2.13,
+  "elapsed_reformulate_s": 7.17,
+  "elapsed_retrieve_s": 1.46,
+  "elapsed_generate_s": 10.94,
+  "fact_check_summary": {
+    "n_stats_total": 0,
+    "n_verified": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "formation_france",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les blocs de compétences certifiés RNCP à la validation d'un BTS en hôtellerie-restauration ? Détail des savoir-faire et certifications associées.",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Cible directement l'intent core : savoir-faire certifiés via RNCP pour ce diplôme."
+    },
+    {
+      "text": "Fiche métier ONISEP : quelles compétences et missions pour les diplômés d'un BTS hôtellerie-restauration ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Complète avec une vision éditorialisée des compétences attendues dans le métier."
+    },
+    {
+      "text": "Quels sont les parcours de formation (Parcoursup/ONISEP) pour un BTS hôtellerie-restauration ? Focus sur les attendus et débouchés.",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Ancrage dans le catalogue de formations pour contextualiser le diplôme."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle 6 et 12 mois après un BTS hôtellerie-restauration (données MESR) ?",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Ajoute une dimension insertion pour évaluer l'utilité des compétences certifiées."
+    }
+  ]
+}

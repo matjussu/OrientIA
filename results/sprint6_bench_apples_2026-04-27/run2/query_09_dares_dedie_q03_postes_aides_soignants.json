@@ -1,0 +1,114 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q03_postes_aides_soignants",
+  "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. **Besoin massif** : la France devrait manquer de **100 000 à 150 000 aides-soignants d’ici 2030** (connaissance générale, projections DREES/DARES).\n2. **Recrutements annuels** : ~**30 000 à 50 000 postes à pourvoir par an** (renouvellement + créations), avec des pics en EHPAD et hôpitaux publics.\n3. **Opportunités concrètes** : formations accélérées (6 à 18 mois), embauches sans diplôme via la VAE, et salaires revalorisés (smic + primes).\n\n---\n\n### **Plan A — Voie directe : Formation diplômante (DEAS)**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** — Formation en **10-18 mois** (public/privé), **100% financée** si contrat d’apprentissage ou Pro-A. **Débouchés immédiats** : 90%+ d’insertion (connaissance générale, enquêtes régionales ARS).\n*Pour toi : Idéal si tu veux un métier stable rapidement, avec des passerelles vers infirmier (via VAP ou concours interne).*\n\n### **Plan B — Voie accélérée : VAE ou emploi sans diplôme**\n- **Validation des Acquis de l’Expérience (VAE)** : Possible après **1 an d’expérience** en tant qu’agent des services hospitaliers (ASH) ou auxiliaire de vie.\n- **Recrutement sans diplôme** : Certains EHPAD/hôpitaux embauchent en **CDD/CDI avec formation interne** (ex : « contrat de professionnalisation »).\n*Pour toi : Solution si tu as déjà travaillé dans le soin ou si tu veux tester le métier avant de t’engager en formation.*\n\n### **Plan C — Spécialisation ou mobilité**\n- **Spécialisations** : Aide-soignant en **bloc opératoire**, **pédiatrie**, ou **gériatrie** (formations courtes post-DEAS, +5-10% de salaire).\n- **Mobilité géographique** : **Besoins critiques** en Outre-mer, zones rurales (ex : Bretagne, Nouvelle-Aquitaine), avec **primes d’installation** (jusqu’à 4 000€).\n*Pour toi : Pour évoluer ou cibler des postes moins concurrencés.*\n\n---\n**⚠ Attention aux pièges**\n- **Formations privées payantes** : Certaines écoles facturent **3 000-6 000€** pour le DEAS — vérifie le **financement OPCO** ou Pôle Emploi avant de t’inscrire.\n- **Conditions de travail** : Turnovers élevés dans certains EHPAD (surcharge, horaires décalés) — renseigne-toi sur les **établissements labellisés \"Qualité de Vie au Travail\"** (ex : liste ARS).\n- **Évolution bloquée sans DEAS** : Sans diplôme, tu resteras limité aux postes d’**ASH** (salaire ~1 600€ net) ou **auxiliaire de vie** (smic).\n\n---\n**Question pour toi** :\nAs-tu déjà une expérience dans le soin (bénévolat, famille, emploi) ? Cela peut débloquer des **formations raccourcies** ou des **embauches directes**. Sinon, préfères-tu une formation **classique (DEAS)** ou une entrée **par l’emploi (VAE/contrat pro)** ?",
+  "elapsed_pipeline_s": 20.1,
+  "elapsed_fact_check_post_hoc_s": 4.07,
+  "elapsed_clarify_s": 1.99,
+  "elapsed_reformulate_s": 5.75,
+  "elapsed_retrieve_s": 0.52,
+  "elapsed_generate_s": 11.84,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 6,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "100 000 à 150 000 aides-soignants d’ici 2030",
+      "stat_value": 125000,
+      "stat_unit": "aides-soignants",
+      "context": "la France devrait manquer de 100 000 à 150 000 aides-soignants d’ici 2030",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "30 000 à 50 000 postes à pourvoir par an",
+      "stat_value": 40000,
+      "stat_unit": "postes",
+      "context": "~30 000 à 50 000 postes à pourvoir par an",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "90%+ d’insertion",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "Débouchés immédiats : 90%+ d’insertion",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 an d’expérience",
+      "stat_value": 1,
+      "stat_unit": "an",
+      "context": "Possible après 1 an d’expérience en tant qu’agent des services hospitaliers (ASH) ou auxiliaire de vie",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "3 000-6 000€",
+      "stat_value": 4500,
+      "stat_unit": "€",
+      "context": "Certaines écoles facturent 3 000-6 000€ pour le DEAS",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 600€ net",
+      "stat_value": 1600,
+      "stat_unit": "€",
+      "context": "salaire ~1 600€ net pour les postes d’ASH",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "4 000€",
+      "stat_value": 4000,
+      "stat_unit": "€",
+      "context": "primes d’installation jusqu’à 4 000€",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "_metier",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Nombre de postes à pourvoir pour les aides-soignants d'ici 2030 selon les projections DARES Métiers 2030.",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Intent core : demande explicite sur les postes à pourvoir 2030, activant le domain hint 'DARES'."
+    },
+    {
+      "text": "Fiche métier ONISEP détaillée pour les aides-soignants : missions, secteur d'activité et perspectives d'emploi.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte complémentaire sur le métier pour enrichir la réponse."
+    },
+    {
+      "text": "Quels sont les blocs de compétences RNCP associés aux formations d'aide-soignant ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Lien indirect avec les besoins en compétences pour les postes futurs."
+    }
+  ]
+}

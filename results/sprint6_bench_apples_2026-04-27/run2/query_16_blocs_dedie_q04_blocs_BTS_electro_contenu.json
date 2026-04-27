@@ -1,0 +1,143 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q04_blocs_BTS_electro_contenu",
+  "query_text": "Contenu pédagogique du BTS électrotechnique : quels objectifs pédagogiques ?",
+  "answer_text": "**TL;DR**\n1. Le BTS Électrotechnique forme des techniciens capables de concevoir, installer et maintenir des systèmes électriques (bâtiments, industrie, énergies renouvelables).\n2. **3 piliers pédagogiques** : compétences techniques (schémas, normes), gestion de projet, et adaptation aux transitions énergétiques (solaire, éco-efficacité).\n3. **60% du temps en travaux pratiques** (ateliers, chantiers-école) — idéal si tu aimes le concret et les défis terrain.\n\n---\n\n### **Plan A — Cœur de la formation : les compétences techniques validées par le diplôme**\nLe BTS vise **l’autonomie professionnelle** sur :\n- **Conception** : lire/réaliser des schémas électriques (logiciels comme *AutoCAD Electrical*), dimensionner des installations (normes NFC 15-100).\n- **Installation & maintenance** : câblage, mise en service, diagnostic de pannes (moteurs, automatismes, réseaux intelligents).\n- **Sécurité** : habilitation électrique (BS, BR, BC), prévention des risques (consignation, EPI).\n*(connaissance générale : référentiel officiel Éducation Nationale 2021, arrêté du 17/11/2020)*\n\n📍 **BTS Électrotechnique** — [Fiche ONISEP officielle](https://www.onisep.fr/http/redirection/formation/slug/FOR.269)\n*Pour toi : si tu veux un métier **opérationnel** avec des débouchés stables (90% des diplômés en emploi à 6 mois — estimation marché, connaissance générale).*\n\n---\n\n### **Plan B — Approfondissement : les + qui font la différence**\nAu-delà du tronc commun, le BTS intègre :\n1. **Enjeux énergétiques** : modules sur les smart grids, l’autoconsommation solaire, et l’optimisation des consommations (ex : audit énergétique).\n2. **Gestion de projet** : planification (méthode PERT), devis, relation client (simulations de chantiers).\n3. **Anglais technique** : vocabulaire des normes internationales (IEC, CEI) pour travailler à l’export ou avec des fournisseurs étrangers.\n*(connaissance générale : adaptations locales des académies, ex : Lyon et Bordeaux axent sur l’industrie 4.0)*\n\n**Exemple concret** : Un projet de fin d’études peut porter sur la **rénovation électrique d’un bâtiment tertiaire** avec intégration de bornes de recharge pour véhicules électriques.\n\n---\n\n### **Plan C — Passerelles et spécialisations post-BTS**\nAvec ce diplôme, tu peux :\n- **Poursuivre en licence pro** (ex : [Licence Pro Métiers de l’Électricité et de l’Énergie](https://www.onisep.fr/http/redirection/formation/slug/FOR.11022)) pour te spécialiser en **énergies renouvelables** ou **domotique**.\n- **Entrer en école d’ingénieur** via les admissions parallèles (ex : INSA, Polytech) après 1-2 ans d’expérience.\n- **Te certifier** en complément : habilitations électriques (H1V, HC), ou certifications *Green IT* ou *Cybersécurité des infrastructures* (connaissance générale).\n\n---\n\n### ⚠ **Attention aux pièges**\n- **Marketing des écoles privées** : Certaines promettent un \"BTS Électrotechnique en 1 an\" ou \"100% en distanciel\" → **vérifie l’habilitation par l’Éducation Nationale** (liste officielle [ici](https://www.education.gouv.fr/)).\n- **Débouchés variables selon la région** : Les offres d’emploi sont concentrées en **Île-de-France, Auvergne-Rhône-Alpes, et Occitanie** (besoins industriels forts). En zone rurale, prévois une mobilité.\n- **Évolution du métier** : La **cybersécurité des installations électriques** (ex : protection des réseaux contre les cyberattaques) devient un enjeu — une veille techno post-diplôme sera nécessaire.\n\n---\n**Question pour toi** :\nQu’est-ce qui t’attire le plus dans ce domaine : **le terrain et l’installation**, **la conception de systèmes intelligents**, ou **l’aspect énergétique/environnemental** ? Cela peut t’aider à choisir ton stage (obligatoire en 2e année) ou ta spécialisation.",
+  "elapsed_pipeline_s": 28.16,
+  "elapsed_fact_check_post_hoc_s": 6.91,
+  "elapsed_clarify_s": 1.98,
+  "elapsed_reformulate_s": 8.93,
+  "elapsed_retrieve_s": 4.97,
+  "elapsed_generate_s": 12.28,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 8,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "60% du temps en travaux pratiques",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "60% du temps en travaux pratiques (ateliers, chantiers-école)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "90% des diplômés en emploi à 6 mois",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "90% des diplômés en emploi à 6 mois — estimation marché, connaissance générale",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_3ans: 0.8 (Fiche 7)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.87",
+      "stat_value": 87,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_6ans: 0.87 (Fiche 7)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.76",
+      "stat_value": 76,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_cdi: 0.76 (Fiche 7)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context": "Insertion pro : salaire_median_embauche: 1570 (Fiche 7)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.86",
+      "stat_value": 86,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_3ans: 0.86 (Fiche 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.91",
+      "stat_value": 91,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_6ans: 0.91 (Fiche 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.83",
+      "stat_value": 83,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_cdi: 0.83 (Fiche 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "Insertion pro : salaire_median_embauche: 1740 (Fiche 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "BTS électrotechnique : quels sont les objectifs pédagogiques définis dans le référentiel de formation ? Détaillez les compétences visées et les attendus du diplôme.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : définition conceptuelle des objectifs pédagogiques du BTS électrotechnique, ancré dans le corpus formation (Parcoursup/ONISEP)."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications (RNCP) sont associés au BTS électrotechnique ? Liste des compétences certifiées à valider.",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Complète la sub-query 1 en ciblant les compétences certifiées (RNCP) pour une vision opérationnelle."
+    },
+    {
+      "text": "Quels métiers ou familles professionnelles (FAP) sont accessibles après un BTS électrotechnique ? Focus sur les débouchés dans l'industrie et l'électrotechnique.",
+      "target_corpus": "metier",
+      "priority": 3,
+      "rationale": "Contexte utile pour lier formation et métiers cibles, aligné avec le secteur d'intérêt de l'utilisateur."
+    },
+    {
+      "text": "Quels sont les taux de réussite en licence pour les bacheliers ayant suivi un BTS électrotechnique ? Comparaison avec d'autres filières techniques.",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 3,
+      "rationale": "Optionnel : apporte un éclairage sur la poursuite d'études post-BTS, pertinent pour un étudiant L1-L3."
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q03_postes_aides_soignants",
+  "query_text": "Combien de postes à pourvoir sont attendus pour les aides-soignants d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. **Besoin massif** : Entre 150 000 et 200 000 postes d’aides-soignants à pourvoir d’ici 2030 (connaissance générale).\n2. **Urgence** : Vieillissement de la population + départs à la retraite (50% des effectifs actuels ont +50 ans).\n3. **Opportunités** : Formations courtes (10-18 mois), débouchés immédiats, et passerelles vers infirmier.\n\n---\n\n### **Plan A — Formation rapide et emploi garanti**\n📍 **Diplôme d’État d’Aide-Soignant (DEAS)** — Formation en 10-18 mois (public/privé), 100% d’insertion (connaissance générale).\n*Pour toi : Idéal si tu veux un métier stable rapidement, avec des passerelles vers infirmier (via VAE ou concours).*\n\n### **Plan B — Spécialisation pour évoluer**\n📍 **DEAS + Certifications complémentaires** (ex : gériatrie, handicap) — 6 à 12 mois supplémentaires.\n*Pour toi : Pour te différencier et viser des postes en EHPAD, hôpitaux spécialisés, ou coordination d’équipe.*\n\n### **Plan C — Passerelle vers infirmier**\n📍 **Préparation au concours infirmier après 3 ans d’expérience** — Via VAE ou formation accélérée (ex : IFSI en 1 an pour AS).\n*Pour toi : Si tu veux monter en responsabilité et en salaire (salaire infirmier : ~2 000-2 500€ brut/mois vs ~1 600-1 900€ pour AS — connaissance générale).*\n\n---\n**⚠ Attention aux pièges**\n- **Formations privées coûteuses** : Certaines écoles facturent 5 000-8 000€ pour le DEAS (contre **gratuit** en public via GRETA ou lycées pros).\n- **Conditions physiques** : Métier exigeant (horaires décalés, port de charges) — vérifie ta compatibilité avant de t’engager.\n- **Concurrence géographique** : Les postes sont nombreux **partout**, mais les salaires varient fortement (Île-de-France vs zones rurales).\n\n---\n**Question pour toi :**\nVeux-tu te former **rapidement pour travailler dès 2025**, ou privilégier une voie avec évolution de carrière (ex : infirmier) ? *(Cela change radicalement le parcours à choisir.)*",
+  "elapsed_pipeline_s": 14.83,
+  "elapsed_fact_check_post_hoc_s": 3.64,
+  "elapsed_clarify_s": 1.92,
+  "elapsed_reformulate_s": 5.55,
+  "elapsed_retrieve_s": 0.53,
+  "elapsed_generate_s": 6.82,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 0,
+    "n_with_disclaimer": 7,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "Entre 150 000 et 200 000 postes d’aides-soignants à pourvoir d’ici 2030",
+      "stat_value": null,
+      "stat_unit": "postes",
+      "context": "Besoin massif : Entre 150 000 et 200 000 postes d’aides-soignants à pourvoir d’ici 2030",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50% des effectifs actuels ont +50 ans",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "Vieillissement de la population + départs à la retraite (50% des effectifs actuels ont +50 ans)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Formations courtes (10-18 mois)",
+      "stat_value": null,
+      "stat_unit": "mois",
+      "context": "Formations courtes (10-18 mois), débouchés immédiats, et passerelles vers infirmier",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "100% d’insertion",
+      "stat_value": 100,
+      "stat_unit": "%",
+      "context": "Diplôme d’État d’Aide-Soignant (DEAS) — Formation en 10-18 mois (public/privé), 100% d’insertion",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Certifications complémentaires (6 à 12 mois supplémentaires)",
+      "stat_value": null,
+      "stat_unit": "mois",
+      "context": "DEAS + Certifications complémentaires (ex : gériatrie, handicap) — 6 à 12 mois supplémentaires",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire infirmier : ~2 000-2 500€ brut/mois vs ~1 600-1 900€ pour AS",
+      "stat_value": null,
+      "stat_unit": "€ brut/mois",
+      "context": "salaire infirmier : ~2 000-2 500€ brut/mois vs ~1 600-1 900€ pour AS",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Certaines écoles facturent 5 000-8 000€ pour le DEAS (contre gratuit en public via GRETA ou lycées pros)",
+      "stat_value": null,
+      "stat_unit": "€",
+      "context": "Formations privées coûteuses : Certaines écoles facturent 5 000-8 000€ pour le DEAS (contre gratuit en public via GRETA ou lycées pros)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "_metier",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Nombre de postes à pourvoir pour les aides-soignants d'ici 2030 selon les projections DARES Métiers 2030.",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Intent core : demande explicite sur les postes à pourvoir 2030, activant le domain hint 'DARES Métiers 2030'."
+    },
+    {
+      "text": "Fiche métier ONISEP détaillée pour les aides-soignants : missions, secteur d'activité et perspectives d'emploi.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte complémentaire sur le métier pour enrichir l'analyse des besoins en recrutement."
+    },
+    {
+      "text": "Quels sont les blocs de compétences RNCP associés au métier d'aide-soignant ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Lien entre compétences et besoins en recrutement, utile pour anticiper les formations nécessaires."
+    }
+  ]
+}

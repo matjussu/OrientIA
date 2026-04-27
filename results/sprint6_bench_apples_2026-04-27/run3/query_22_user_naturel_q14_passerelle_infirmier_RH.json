@@ -1,0 +1,101 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q14_passerelle_infirmier_RH",
+  "query_text": "Une amie infirmière souhaite passer à un poste en ressources humaines. Quelles passerelles existent ?",
+  "answer_text": "**TL;DR**\n1. Une infirmière peut se réorienter vers les RH via des passerelles adaptées, en valorisant son expérience terrain (gestion d’équipes, formation, dialogue social).\n2. **3 chemins principaux** : formation courte certifiante (bac+3), licence pro RH en alternance, ou VAE pour un titre RNCP.\n3. **Calendrier clé** : rentrées en septembre (dossiers à déposer avant mai/juin) ou formations en continu (ex : CNAM).\n\n---\n\n### **Plan A — Réaliste : Formation courte certifiante (6-12 mois) + expérience terrain**\n**(connaissance générale)**\n- **Étape 1** : **Certificat en RH** (ex : **Titre RNCP \"Chargé de développement RH\"** niveau bac+3, accessible sans prérequis stricts). Exemples :\n  - **CNAM** (Paris/Lyon) : formation en présentiel ou à distance, coût ~2 000-4 000€ (finançable via CPF).\n  - **AFPA** ou **GRETA** : certifications courtes (ex : \"Gestion administrative du personnel\").\n  *Pour toi : idéal pour tester le secteur sans quitter son poste (formations en soir/week-end).*\n- **Étape 2** : **Postuler en interne** (ex : poste de *référente formation* ou *assistante RH* dans son établissement de santé), ou en externe dans des ESAT, Ehpad, ou cliniques (secteur médical recherche des profils hybrides).\n- **Atout** : Son expérience d’infirmière est un **plus** pour les RH en santé (compréhension des enjeux terrain, gestion des plannings, dialogue avec les soignants).\n\n---\n\n### **Plan B — Ambitieux : Licence Pro RH en alternance (bac+3 en 1 an)**\n**(connaissance générale)**\n- **Étape 1** : **Licence Pro \"Métiers des RH\"** (ex : **Université Paris Nanterre**, **IAE Lyon**, ou **Université de Bordeaux**). Admission sur dossier + entretien (valoriser son expérience pro).\n  - **Alternance obligatoire** : contrat pro ou apprentissage (salaire ~60-80% du SMIC).\n  - **Exemple** : **Licence Pro GRH de l’IAE Gustave Eiffel** (Champs-sur-Marne) — taux d’insertion ~85% (connaissance générale).\n  *Pour toi : si elle vise un poste de *chargée de recrutement* ou *responsable formation*, c’est le meilleur tremplin.*\n- **Étape 2** : **Poursuite en master RH** (ex : **IAE**) si elle souhaite évoluer vers des postes stratégiques (ex : *DRH adjoint*).\n- **Calendrier** : Candidatures via **eCandidat** (universités) ou **Parcoursup** (pour les licences pro en alternance) entre **mars et mai**.\n\n---\n### **Plan C — Flexible : VAE (Validation des Acquis de l’Expérience) pour un titre RNCP**\n**(connaissance générale)**\n- **Étape 1** : **Identifier un titre RNCP compatible** avec son expérience (ex : **\"Responsable en gestion des ressources humaines\"** — RNCP36386, niveau bac+3).\n- **Étape 2** : **Dossier VAE** (livret 1 + livret 2) à déposer auprès d’un certificateur (ex : **CNAM**, **Conservatoire National des Arts et Métiers**).\n  - **Coût** : ~3 000-5 000€ (finançable via CPF ou OPCO).\n  - **Durée** : 6-12 mois (accompagnement possible).\n  *Pour toi : solution si elle a déjà des missions RH informelles (ex : gestion des plannings, formation des nouveaux).*\n- **Étape 3** : **Postuler avec le titre obtenu** (ex : postes de *chargée de missions RH* en établissement de santé).\n\n---\n### **Points de vigilance**\n1. **Secteur cible** : Les RH en **santé/medico-social** (Ehpad, cliniques) valorisent davantage son expérience d’infirmière que les RH généralistes (ex : grande distribution).\n2. **Financement** : Vérifier les droits CPF (compte personnel de formation) ou les aides régionales (ex : **Transition Pro**).\n3. **Réseau** : Rejoindre des groupes LinkedIn comme *\"RH Santé\"* ou *\"Infirmières en reconversion\"* pour des offres ciblées.\n\n---\n**Question pour toi :**\nSon objectif est-il plutôt **opérationnel** (paie, recrutement) ou **stratégique** (politique sociale, qualité de vie au travail) ? Cela changera le choix entre une licence pro (Plan B) ou une VAE + expérience terrain (Plan C).",
+  "elapsed_pipeline_s": 24.24,
+  "elapsed_fact_check_post_hoc_s": 2.36,
+  "elapsed_clarify_s": 2.32,
+  "elapsed_reformulate_s": 9.97,
+  "elapsed_retrieve_s": 0.55,
+  "elapsed_generate_s": 11.38,
+  "fact_check_summary": {
+    "n_stats_total": 4,
+    "n_verified": 0,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "coût ~2 000-4 000€",
+      "stat_value": 3000,
+      "stat_unit": "€",
+      "context": "formation en présentiel ou à distance, coût ~2 000-4 000€ (finançable via CPF)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire ~60-80% du SMIC",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "Alternance obligatoire : contrat pro ou apprentissage (salaire ~60-80% du SMIC)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux d’insertion ~85%",
+      "stat_value": 85,
+      "stat_unit": "%",
+      "context": "Licence Pro GRH de l’IAE Gustave Eiffel (Champs-sur-Marne) — taux d’insertion ~85% (connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "coût ~3 000-5 000€",
+      "stat_value": 4000,
+      "stat_unit": "€",
+      "context": "Coût : ~3 000-5 000€ (finançable via CPF ou OPCO)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "insee_salaire"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_insee_salaire"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles formations ou certifications RNCP en ressources humaines sont accessibles aux professionnels en reconversion, notamment pour une infirmière souhaitant évoluer vers ce secteur ?",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : identifier les passerelles formationnelles pour une reconversion en RH."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications (RNCP) en ressources humaines peuvent être validés pour une transition professionnelle depuis un métier paramédical comme infirmière ?",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Active les blocs RNCP pour une validation partielle ou totale des compétences en RH."
+    },
+    {
+      "text": "Quels sont les métiers des ressources humaines accessibles après une reconversion, notamment pour un profil issu du secteur paramédical ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Apporte une vision éditorialisée des métiers RH adaptés à une reconversion."
+    },
+    {
+      "text": "Quelles sont les perspectives de recrutement cadres en ressources humaines par région, et quels postes sont les plus porteurs pour une reconversion ?",
+      "target_corpus": "apec_region",
+      "priority": 2,
+      "rationale": "Contextualise le marché de l'emploi RH pour une insertion post-reconversion."
+    },
+    {
+      "text": "Quels sont les salaires médians dans les métiers des ressources humaines (PCS INSEE) pour un professionnel en reconversion, notamment depuis un secteur paramédical ?",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Apporte une indication financière complémentaire pour évaluer la reconversion."
+    }
+  ]
+}

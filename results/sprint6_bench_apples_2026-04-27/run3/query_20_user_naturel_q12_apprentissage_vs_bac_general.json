@@ -1,0 +1,166 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q12_apprentissage_vs_bac_general",
+  "query_text": "Mon fils de 17 ans hésite entre l'apprentissage et le bac général. Comment l'aider à décider ?",
+  "answer_text": "**TL;DR**\n1. **L’apprentissage** offre une insertion rapide et un salaire, mais limite les études longues.\n2. **Le bac général** garde toutes les portes ouvertes (études longues, concours), mais sans garantie d’emploi immédiat.\n3. **Le compromis** : un bac pro ou techno en alternance (ex : BTS en apprentissage) pour allier diplôme et expérience.\n\n---\n\n### **Plan A — Priorité à l’emploi et à l’autonomie**\n**Apprentissage (CAP/Bac Pro)** :\n- **Pourquoi ?** Salaire dès 17 ans (30-80% du SMIC selon âge), diplôme + expérience pro, taux d’emploi élevé (70% à 6 mois — connaissance générale).\n- **Pour qui ?** Si votre fils a un projet métier précis (mécanique, bâtiment, commerce) et veut gagner en indépendance financière.\n- **Exemple concret** : CAP Cuisine ou Bac Pro Commerce en alternance → CDI possible dès 19 ans.\n\n---\n\n### **Plan B — Priorité aux études longues et à la flexibilité**\n**Bac général** :\n- **Pourquoi ?** Accès à toutes les filières (médecine, ingénierie, droit…) et aux concours (grandes écoles, fonction publique).\n- **Pour qui ?** S’il hésite encore sur son métier, aime les matières théoriques, ou vise un diplôme bac+5.\n- **Attention** : Sans projet clair, risque de décrochage en fac (50% d’échec en L1 — connaissance générale). À coupler avec un **projet professionnel exploratoire** (stages, MOOC).\n\n---\n\n### **Plan C — Le meilleur des deux mondes**\n**Bac technologique ou professionnel en apprentissage** :\n- **Exemples** :\n  - **Bac Pro Gestion-Administration** (alternance possible) → poursuite en BTS Comptabilité.\n  - **BTS SIO (informatique) en apprentissage** : diplôme bac+2 + salaire + possibilité de continuer en licence pro.\n- **Avantage** : Diplôme reconnu + expérience, avec une porte de sortie vers des études courtes ou longues.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Apprentissage** :\n  - Contrat = engagement (difficile de changer de voie en cours de route).\n  - Salaire attractif… mais reste bas les premières années (400-800€/mois net — connaissance générale).\n- **Bac général** :\n  - Sans spécialités cohérentes (ex : Maths + Physique pour l’ingénierie), les portes des filières sélectives se ferment.\n  - **Risque** : \"Bac général par défaut\" → désorientation en post-bac.\n\n---\n### **Comment trancher ? Posez-lui ces 3 questions**\n1. **Préfère-t-il** :\n   - Gagner de l’argent et apprendre un métier **maintenant** ?\n   - Garder des options ouvertes pour **plus tard** ?\n2. **A-t-il** déjà une idée précise de ce qu’il **ne veut pas** faire ? (Ex : \"Pas de bureau\" → apprentissage manuel.)\n3. **Est-il prêt** à étudier 5 ans de plus après le bac ? (Si non, l’apprentissage est plus sûr.)\n\n---\n**👤 Pour aller plus loin** :\n- **Tester l’apprentissage** : Faire un stage de 3ème dans le secteur qui l’attire (ex : garage, restaurant) pour valider son choix.\n- **Explorer le bac général** : Utiliser [Horizons21](https://www.horizons21.fr) (outil officiel) pour simuler des combinaisons de spécialités.\n- **Alternative** : Un **bac techno (STMG, STI2D)** en lycée pro avec des périodes en entreprise (ex : sections \"micro-lycées\").\n\n---\n*Sources : Données Dares sur l’insertion des apprentis (2023) — le reste en synthèse (connaissance générale).*",
+  "elapsed_pipeline_s": 23.75,
+  "elapsed_fact_check_post_hoc_s": 8.05,
+  "elapsed_clarify_s": 1.93,
+  "elapsed_reformulate_s": 11.14,
+  "elapsed_retrieve_s": 0.51,
+  "elapsed_generate_s": 10.17,
+  "fact_check_summary": {
+    "n_stats_total": 12,
+    "n_verified": 8,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "Salaire dès 17 ans (30-80% du SMIC selon âge)",
+      "stat_value": null,
+      "stat_unit": "pourcentage du SMIC",
+      "context": "Salaire dès 17 ans (30-80% du SMIC selon âge), diplôme + expérience pro, taux d’emploi élevé (70% à 6 mois — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux d’emploi élevé (70% à 6 mois — connaissance générale)",
+      "stat_value": 70,
+      "stat_unit": "%",
+      "context": "taux d’emploi élevé (70% à 6 mois — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50% d’échec en L1 — connaissance générale",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "Sans projet clair, risque de décrochage en fac (50% d’échec en L1 — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Salaire attractif… mais reste bas les premières années (400-800€/mois net — connaissance générale)",
+      "stat_value": null,
+      "stat_unit": "euros/mois net",
+      "context": "Salaire attractif… mais reste bas les premières années (400-800€/mois net — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.73",
+      "stat_value": 73,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_3ans\": 0.73, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_6ans\": 0.8, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.66",
+      "stat_value": 66,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_cdi\": 0.66, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1410",
+      "stat_value": 1410,
+      "stat_unit": "euros",
+      "context": "Insertion pro : {\"salaire_median_embauche\": 1410, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_3ans\": 0.8, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.87",
+      "stat_value": 87,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_emploi_6ans\": 0.87, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.76",
+      "stat_value": 76,
+      "stat_unit": "%",
+      "context": "Insertion pro : {\"taux_cdi\": 0.76, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1570",
+      "stat_value": 1570,
+      "stat_unit": "euros",
+      "context": "Insertion pro : {\"salaire_median_embauche\": 1570, ...}",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation",
+    "formation_insertion",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_metier_prospective",
+    "_formation",
+    "_metier_prospective",
+    "formation_france",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les avantages et inconvénients de l'apprentissage par rapport au bac général pour un lycéen de 17 ans ? Données Parcoursup et ONISEP sur les taux de réussite, débouchés et poursuites d'études.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : comparaison apprentissage vs bac général avec des données concrètes."
+    },
+    {
+      "text": "Quels métiers ou secteurs recrutent le plus en 2030 selon la DARES ? Focus sur les opportunités pour les jeunes en formation initiale ou en apprentissage.",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte un éclairage prospectif sur les débouchés métiers pour éclairer le choix."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle à 6, 12 et 18 mois après un bac général ou un diplôme obtenu via l'apprentissage (BUT, licence pro, etc.) ?",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Compare l'insertion pro des deux voies pour objectiver les choix."
+    },
+    {
+      "text": "Quels sont les salaires médians par PCS pour les jeunes diplômés issus d'un bac général vs ceux issus de l'apprentissage ? Données INSEE récentes.",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Ajoute une dimension financière pour nuancer la décision."
+    },
+    {
+      "text": "Quelles sont les compétences ou blocs de compétences RNCP les plus valorisés sur le marché du travail pour les jeunes de 17 ans en fonction de leur choix (bac général ou apprentissage) ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Permet d'anticiper les compétences à acquérir dans chaque voie."
+    }
+  ]
+}

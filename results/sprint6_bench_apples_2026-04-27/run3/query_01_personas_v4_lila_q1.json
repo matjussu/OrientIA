@@ -1,0 +1,148 @@
+{
+  "suite": "personas_v4",
+  "query_id": "lila_q1",
+  "query_text": "Quels sont les principaux débouchés après une licence de lettres modernes ?",
+  "answer_text": "**TL;DR**\n1. Une licence de lettres modernes ouvre à des métiers de l’enseignement, de la culture, de l’édition, et de la communication, mais **l’insertion directe est modérée** (44-56% d’emploi à 12 mois, salaire médian ~1 750€ net).\n2. **Poursuite d’études en master (bac+5) est la voie majoritaire** pour accéder à des postes plus qualifiés (professeur, bibliothécaire, chargé de communication).\n3. **Alternatives concrètes** : valorise tes compétences transversales (rédaction, analyse) dans des secteurs porteurs comme le numérique ou le journalisme.\n\n---\n\n### **Plan A — Poursuite d’études (voie majoritaire)**\n📍 **Master Lettres** (ex: [Master Lettres à la Sorbonne](https://www.onisep.fr/http/redirection/formation/slug/FOR.10456)) — bac+5 public, accessible après une L3.\n*Pour toi : indispensable pour enseigner (CAPES/Agrégation) ou viser des postes en médiation culturelle, édition. Taux d’insertion bien supérieur à bac+3.*\n\n📍 **Master Métiers du Livre/Édition** (ex: [Master LLCER à Lille](https://www.onisep.fr/http/redirection/formation/slug/FOR.11146)) — bac+5, débouchés en édition, bibliothèques, librairies.\n*Pour toi : si tu aimes les livres, c’est un secteur niche mais passionnant (concours bibliothécaire, métiers de l’édition).*\n\n---\n### **Plan B — Insertion professionnelle directe (secteurs porteurs)**\n- **Métiers de la culture** : Médiateur culturel, assistant d’édition, chargé de communication (associations, musées). *Salaire débutant : ~1 700-1 900€ net (connaissance générale).*\n- **Rédaction/Journalisme** : Rédacteur web, journaliste (avec spécialisation en master pro). *Pense aux écoles de journalisme (CUEJ, EJCAM) en admission parallèle.*\n- **Fonction publique** : Concours administratifs (catégorie B) accessibles avec une licence (ex: secrétaire administratif).\n\n---\n### **Plan C — Réorientation vers des compétences hybrides (valorisantes)**\n- **Double compétence lettres + numérique** : Formation en **rédaction web/SEO**, **UX writing**, ou **communication digitale** (ex: certifications OpenClassrooms, licences pro métiers du numérique). *Secteur en tension, salaires plus attractifs (~2 000-2 500€ net en début de carrière — connaissance générale).*\n- **Enseignement à l’étranger** : Professeur de français langue étrangère (FLE) via des formations courtes (Alliance Française).\n\n---\n**⚠ Attention aux pièges**\n- **Salaire et précarité** : Les métiers \"traditionnels\" (enseignement, édition) sont souvent sous-payés ou en CDD. Prépare un plan B (ex: double compétence).\n- **Concours publics** : L’enseignement (CAPES) ou la fonction publique exigent une préparation rigoureuse (et souvent un master).\n- **Marketing des écoles privées** : Méfie-toi des formations payantes promettant des \"débouchés assurés\" en communication/culture — vérifie leurs taux d’insertion réels (ex: [InserSup DEPP](https://www.enseignementsup-recherche.gouv.fr/)).\n\n---\n**Question pour toi :**\nQu’est-ce qui t’attire le plus : **transmettre** (enseignement), **créer** (édition/rédaction), ou **analyser** (recherche, médiation culturelle) ? Cela peut t’aider à cibler un master ou une spécialisation.",
+  "elapsed_pipeline_s": 38.64,
+  "elapsed_fact_check_post_hoc_s": 6.67,
+  "elapsed_clarify_s": 1.76,
+  "elapsed_reformulate_s": 9.75,
+  "elapsed_retrieve_s": 16.74,
+  "elapsed_generate_s": 10.38,
+  "fact_check_summary": {
+    "n_stats_total": 10,
+    "n_verified": 6,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 2,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "44-56% d’emploi à 12 mois",
+      "stat_value": 44,
+      "stat_unit": "%",
+      "context": "l’insertion directe est modérée (44-56% d’emploi à 12 mois, salaire médian ~1 750€ net)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian ~1 750€ net",
+      "stat_value": 1750,
+      "stat_unit": "€ net",
+      "context": "l’insertion directe est modérée (44-56% d’emploi à 12 mois, salaire médian ~1 750€ net)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 700-1 900€ net",
+      "stat_value": 1700,
+      "stat_unit": "€ net",
+      "context": "Salaire débutant : ~1 700-1 900€ net (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~2 000-2 500€ net",
+      "stat_value": 2000,
+      "stat_unit": "€ net",
+      "context": "Secteur en tension, salaires plus attractifs (~2 000-2 500€ net en début de carrière — connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0.86",
+      "stat_value": 0.86,
+      "stat_unit": "",
+      "context": "Taux d’emploi 3 ans : 0.86 (source Céreq, Generation 2017)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.91",
+      "stat_value": 0.91,
+      "stat_unit": "",
+      "context": "Taux d’emploi 6 ans : 0.91 (source Céreq, Generation 2017)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.83",
+      "stat_value": 0.83,
+      "stat_unit": "",
+      "context": "Taux de CDI : 0.83 (source Céreq, Generation 2017)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "1740",
+      "stat_value": 1740,
+      "stat_unit": "€",
+      "context": "Salaire médian à l’embauche : 1740€ (source Céreq, Generation 2017)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.85",
+      "stat_value": 0.85,
+      "stat_unit": "",
+      "context": "Taux d’emploi 3 ans : 0.85 (source Céreq, Generation 2017)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "2080",
+      "stat_value": 2080,
+      "stat_unit": "€",
+      "context": "Salaire médian à l’embauche : 2080€ (source Céreq, Generation 2017)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers accessibles après une licence de lettres modernes ? Fiches ONISEP détaillées sur les débouchés en lettres et sciences humaines.",
+      "target_corpus": "metier",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : débouchés métiers spécifiques après une licence de lettres modernes."
+    },
+    {
+      "text": "Quels sont les secteurs professionnels et postes à pourvoir d'ici 2030 pour les diplômés en lettres et sciences humaines ? Données DARES Métiers 2030.",
+      "target_corpus": "metier_prospective",
+      "priority": 2,
+      "rationale": "Apporte une vision prospective sur les débouchés à moyen terme."
+    },
+    {
+      "text": "Quels masters ou formations post-licence de lettres modernes permettent une insertion professionnelle rapide ? Taux d'insertion 6/12/18 mois post-diplôme.",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Complète avec des données concrètes sur l'insertion après un master lié."
+    },
+    {
+      "text": "Quels sont les blocs de compétences ou certifications (RNCP) utiles pour se spécialiser après une licence de lettres modernes ?",
+      "target_corpus": "competences_certif",
+      "priority": 3,
+      "rationale": "Optionnel : explore les compétences à valoriser pour se différencier."
+    },
+    {
+      "text": "Quels sont les taux de réussite en licence de lettres modernes selon le bac d'origine ? Données MESRI pour anticiper les parcours.",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 3,
+      "rationale": "Optionnel : contexte sur la réussite en licence pour évaluer la faisabilité."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q06_blocs_savoir_faire_BTS_hotel",
+  "query_text": "Quels savoir-faire certifiés à la sortie d'un BTS hôtellerie-restauration ?",
+  "answer_text": "**TL;DR**\n1. Le **BTS Hôtellerie-Restauration** forme à des compétences opérationnelles et managériales, certifiées par un diplôme d’État (niveau bac+2).\n2. Les savoir-faire validés couvrent **service, cuisine, gestion, et relation client**, avec des certifications complémentaires possibles (hygiène, langues, logiciels métiers).\n3. **3 axes clés** : techniques (savoir-faire concrets), managériaux (encadrement), et transversaux (langues, digital).\n\n---\n\n### **Plan A — Savoir-faire techniques (cœur du diplôme)**\n*(connaissance générale)*\n- **Service en salle** : Techniques de service (à la française, à l’anglaise), gestion des réservations, œnologie basique, et normes d’hygiène (HACCP — *obligatoire et certifiant*).\n- **Cuisine** : Maîtrise des bases culinaires (découpes, cuissons, dressage), gestion des stocks, et respect des fiches techniques.\n- **Hébergement** : Réception, gestion des chambres (logiciels comme *Opera PMS*), et protocoles de nettoyage.\n**Certification associée** : Le diplôme lui-même valide ces compétences, mais des **attestations complémentaires** (ex : *SST* pour les premiers secours, *Certificat de Qualification Professionnelle* en sommellerie) peuvent être obtenues en parallèle.\n\n---\n\n### **Plan B — Savoir-faire managériaux et organisationnels**\n*(connaissance générale)*\n- **Gestion d’équipe** : Planification des services, gestion des conflits, et leadership en brigade (cuisine) ou en salle.\n- **Gestion économique** : Calcul des coûts matières, élaboration de menus rentables, et bases de comptabilité (logiciels comme *Ciel* ou *EBP*).\n- **Marketing et relation client** : Fidélisation, gestion des avis en ligne, et techniques de vente additionnelle.\n**Certification associée** : Modules comme le *Titre Professionnel Manager en Hôtellerie-Restauration* (niveau bac+3) peuvent compléter le BTS pour ceux visant des postes d’encadrement.\n\n---\n### **Plan C — Savoir-faire transversaux (atouts différenciants)**\n*(connaissance générale)*\n- **Langues étrangères** : Anglais professionnel obligatoire (niveau B1/B2 visé), + une 2ème langue (espagnol, allemand, ou chinois pour les établissements haut de gamme).\n- **Digital** : Maîtrise des outils de réservation (*Booking.com*, *Amadeus*), réseaux sociaux (community management basique), et logiciels de caisse (*Micros*, *Lightspeed*).\n- **Développement durable** : Gestion des déchets, circuits courts, et labels éco-responsables (ex : *Clef Verte* pour l’hébergement).\n**Certifications complémentaires** :\n  - *TOEIC* ou *Bright* pour les langues (souvent exigé à l’embauche dans les chaînes internationales).\n  - *Certificat Voltaire* pour le français professionnel (utile pour les postes en contact client).\n\n---\n### **⚠ Attention aux pièges**\n1. **Certifications \"obligatoires\" vs. optionnelles** :\n   - L’*HACCP* et le *SST* sont **indispensables** pour travailler, mais ne sont pas toujours incluses dans le BTS (à vérifier avec l’établissement).\n   - Les certifications langues/digital (TOEIC, TOSA) sont **fortement recommandées** mais rarement fournies par la formation : budget à prévoir (~200-500€/certif).\n2. **Spécialisation précoce** :\n   Le BTS couvre **tous les métiers** (cuisine, service, hébergement). Une spécialisation (ex : pâtisserie, sommellerie) nécessitera une **formation complémentaire** (CAP, CQP, ou licence pro).\n3. **Reconnaissance à l’étranger** :\n   Le BTS est un diplôme **français** — pour travailler hors UE, des équivalences ou formations locales (ex : *NVQ* au Royaume-Uni) peuvent être exigées.\n\n---\n**Question pour toi** :\nTon projet est-il plutôt tourné vers **l’opérationnel** (cuisine, service), **le management** (direction d’établissement), ou **l’international** (chaînes hôtelières, croisières) ? Cela peut orienter le choix de tes certifications complémentaires.",
+  "elapsed_pipeline_s": 23.61,
+  "elapsed_fact_check_post_hoc_s": 0.75,
+  "elapsed_clarify_s": 2.06,
+  "elapsed_reformulate_s": 7.97,
+  "elapsed_retrieve_s": 1.37,
+  "elapsed_generate_s": 12.21,
+  "fact_check_summary": {
+    "n_stats_total": 1,
+    "n_verified": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~200-500€/certif",
+      "stat_value": 200,
+      "stat_unit": "€",
+      "context": "budget à prévoir pour les certifications langues/digital (TOEIC, TOSA)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les blocs de compétences certifiés RNCP à la sortie d'un BTS Management en Hôtellerie-Restauration ? Détail des savoir-faire validés par bloc.",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Intent core : savoir-faire certifiés liés à un diplôme spécifique (BTS). Cible directement les blocs RNCP."
+    },
+    {
+      "text": "Fiche métier ONISEP : quelles compétences et savoir-faire sont attendus pour les métiers accessibles après un BTS Hôtellerie-Restauration ?",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte complémentaire : compétences métiers associées aux débouchés du BTS."
+    },
+    {
+      "text": "Quels sont les parcours de formation post-BTS en hôtellerie-restauration (licences pro, bachelor) et leurs blocs de compétences RNCP ?",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Contexte utile : prolongements possibles et leurs certifications."
+    },
+    {
+      "text": "Marché du travail cadres en hôtellerie-restauration : quelles compétences sont les plus recherchées par les recruteurs (données APEC) ?",
+      "target_corpus": "apec_region",
+      "priority": 3,
+      "rationale": "Nice-to-have : adéquation compétences marché pour les postes cadres."
+    }
+  ]
+}

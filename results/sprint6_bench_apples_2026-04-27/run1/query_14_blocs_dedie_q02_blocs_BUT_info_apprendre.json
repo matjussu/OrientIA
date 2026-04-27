@@ -1,0 +1,129 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q02_blocs_BUT_info_apprendre",
+  "query_text": "Que vais-je apprendre en BUT informatique ?",
+  "answer_text": "**TL;DR**\n1. Un **BUT Informatique** forme aux bases techniques (programmation, réseaux, bases de données) **et** à des spécialisations métiers (data, cybersécurité, cloud).\n2. Le programme alterne cours théoriques, projets concrets et stages (22-26 semaines sur 3 ans).\n3. **90% des diplômés** trouvent un emploi en CDI sous 6 mois (connaissance générale, marché tendu).\n\n---\n\n### **Plan A — Cœur du programme : les compétences techniques**\nEn BUT Informatique, tu maîtriseras :\n- **Développement** : Python, Java, C#, frameworks web (React, Symfony) — *connaissance générale, référentiels PPP 2021*.\n- **Infrastructure** : administration systèmes (Linux/Windows), réseaux (Cisco), virtualisation.\n- **Data** : SQL, modélisation de bases de données, introduction au *machine learning* (en parcours spécialisés).\n- **Cybersécurité** : bases de la protection des données, normes RGPD, tests d’intrusion (parcours dédiés).\n*Exemple concret* : En [BUT Informatique parcours AGED](https://www.onisep.fr/http/redirection/formation/slug/FOR.7996), tu gères des projets de *data visualisation* pour des entreprises locales (source ONISEP).\n\n---\n\n### **Plan B — Pédagogie : comment tu apprendras**\n- **50% de pratique** : projets en équipe (ex : créer une appli mobile pour une collectivité), challenges hackathons.\n- **Stages** : 2 stages obligatoires (10-12 semaines en 2ᵉ année, 12-16 semaines en 3ᵉ année), souvent rémunérés (~600€/mois en moyenne, connaissance générale).\n- **Alternance possible** : certains IUT proposent des contrats pro dès la 2ᵉ année (salaire ~800-1200€/mois).\n*Astuce* : Les IUT partenaires des clusters numériques (ex : French Tech) offrent des missions plus qualifiantes.\n\n---\n### **Plan C — Débouchés et poursuites d’études**\n- **Insertion pro directe** : 90% en CDI sous 6 mois (connaissance générale), métiers visés :\n  - Développeur full-stack (salaire médian embauche : ~2 200€ brut, source Céreq 2022).\n  - Administrateur systèmes/réseaux.\n  - Technicien cybersécurité (avec spécialisation).\n- **Poursuites d’études** :\n  - **Écoles d’ingé** (via admissions parallèles : UT, INSA, EPITA) — *prévoir un bon dossier (14+ de moyenne en BUT)*.\n  - **Masters** : MIAGE, data science, ou [BUT qualité logistique parcours management digital](https://www.onisep.fr/http/redirection/formation/slug/FOR.8544) pour pivoter vers l’industrie 4.0.\n\n---\n### **⚠ Attention aux pièges**\n- **Sélectivité masquée** : Certains parcours (ex : cybersécurité) filtrent en 2ᵉ année sur résultats — vise 12+ de moyenne pour les options compétitives.\n- **Alternance = double charge** : 35h entreprise + cours = rythme intense. Évite si tu as des contraintes personnelles fortes.\n- **Faux-ami \"facile\"** : Le BUT n’est pas un \"BTS bis\" — le niveau maths/algo exige un bon niveau en terminale (spé maths recommandée).\n\n---\n**Question pour toi** :\nQu’est-ce qui t’attire le plus : **coder des solutions** (développement), **protéger des systèmes** (cybersécurité), ou **analyser des données** (data) ? Cela déterminera ton parcours en 2ᵉ année.\n\n👤 *Pour affiner ton projet, un RDV avec le Psy-EN de ton lycée ou le SCUIO de ton IUT peut t’aider à choisir entre les parcours.*",
+  "elapsed_pipeline_s": 20.75,
+  "elapsed_fact_check_post_hoc_s": 5.91,
+  "elapsed_clarify_s": 1.9,
+  "elapsed_reformulate_s": 6.55,
+  "elapsed_retrieve_s": 0.22,
+  "elapsed_generate_s": 12.07,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 0,
+    "n_with_disclaimer": 2,
+    "n_hallucinated": 7,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "90% des diplômés trouvent un emploi en CDI sous 6 mois",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "90% des diplômés trouvent un emploi en CDI sous 6 mois (connaissance générale, marché tendu)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "22-26 semaines de stages sur 3 ans",
+      "stat_value": 22,
+      "stat_unit": "semaines",
+      "context": "Le programme alterne cours théoriques, projets concrets et stages (22-26 semaines sur 3 ans)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10-12 semaines en 2ᵉ année",
+      "stat_value": 10,
+      "stat_unit": "semaines",
+      "context": "Stages : 2 stages obligatoires (10-12 semaines en 2ᵉ année, 12-16 semaines en 3ᵉ année)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "12-16 semaines en 3ᵉ année",
+      "stat_value": 12,
+      "stat_unit": "semaines",
+      "context": "Stages : 2 stages obligatoires (10-12 semaines en 2ᵉ année, 12-16 semaines en 3ᵉ année)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~600€/mois en moyenne",
+      "stat_value": 600,
+      "stat_unit": "€/mois",
+      "context": "souvent rémunérés (~600€/mois en moyenne, connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire ~800-1200€/mois",
+      "stat_value": 800,
+      "stat_unit": "€/mois",
+      "context": "certains IUT proposent des contrats pro dès la 2ᵉ année (salaire ~800-1200€/mois)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian embauche : ~2 200€ brut",
+      "stat_value": 2200,
+      "stat_unit": "€ brut",
+      "context": "Développeur full-stack (salaire médian embauche : ~2 200€ brut, source Céreq 2022)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "14+ de moyenne en BUT",
+      "stat_value": 14,
+      "stat_unit": "/20",
+      "context": "prévoir un bon dossier (14+ de moyenne en BUT)",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "50% de pratique",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "50% de pratique : projets en équipe",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_formation",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les enseignements, compétences et matières abordés dans un Bachelor Universitaire de Technologie (BUT) en informatique ? Détail des programmes et blocs de formation prévus.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : définition conceptuelle du BUT informatique, aligné sur le corpus formation (Parcoursup/ONISEP)."
+    },
+    {
+      "text": "Quels blocs de compétences RNCP sont associés aux diplômes de BUT informatique ? Liste des certifications et compétences validables.",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Complète la définition par les compétences certifiées (RNCP), utile pour l'intent conceptuel."
+    },
+    {
+      "text": "Quels métiers et débouchés professionnels sont visés par un BUT informatique ? Perspectives d'insertion et secteurs d'activité.",
+      "target_corpus": "metier",
+      "priority": 3,
+      "rationale": "Contexte complémentaire sur les métiers cibles, nice-to-have pour une vision globale."
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q01_blocs_BTS_compta",
+  "query_text": "Quels blocs de compétences valide le BTS comptabilité ?",
+  "answer_text": "**TL;DR**\n1. Le **BTS Comptabilité et Gestion** (ex-BTS CG) valide des compétences en **comptabilité, fiscalité, gestion et analyse financière**, avec une forte dimension pratique (logiciels, paie, contrôle de gestion).\n2. Ces blocs sont alignés sur les **attendus du marché** (cabinet, entreprise, administration) et préparent à des certifications professionnelles (ex : DCG).\n3. Voici 3 voies pour exploiter ces compétences, selon ton projet.\n\n---\n\n### **Plan A — Insertion directe : Métiers accessibles avec le BTS**\nLe BTS valide **4 blocs principaux** (connaissance générale) :\n- **Comptabilité et fiscalité** : tenue de livres, déclarations fiscales, normes IFRS/PCG.\n- **Gestion et analyse** : budgets, tableaux de bord, coûts de revient.\n- **Outils professionnels** : maîtrise des logiciels (Sage, Ciel, Excel avancé), dématérialisation.\n- **Environnement juridique et social** : droit des sociétés, paie, réglementation sociale.\n\n*Pour toi* : Ces compétences permettent d’accéder à des postes comme **comptable junior, assistant de gestion, ou collaborateur en cabinet** (salaire médian embauche : ~1 800€ brut — estimation marché, connaissance générale).\n\n---\n\n### **Plan B — Poursuite d’études : Approfondissement des blocs**\nPour **élargir ou spécialiser** ces compétences :\n- **DCG (Diplôme de Comptabilité et Gestion, bac+3)** : approfondit la fiscalité internationale, l’audit, et la consolidation (équivalence partielle avec le BTS).\n- **Licence pro Métiers de la comptabilité** : modules en contrôle de gestion ou comptabilité publique.\n- **Écoles de commerce (via admissions parallèles)** : pour basculer vers la finance d’entreprise.\n\n*Pour toi* : Le DCG est la voie royale pour devenir **expert-comptable** (5 ans d’études au total) ou **responsable financier**.\n\n---\n### **Plan C — Reconversion ou hybridation : Compétences transférables**\nLes blocs du BTS compta sont utiles dans des métiers connexes (connaissance générale) :\n- **Data analyst financier** : croiser compta + outils data (Power BI, SQL).\n- **Conseiller en gestion de patrimoine** : après une formation complémentaire en banque/assurance.\n- **Création d’entreprise** : gestion administrative et fiscale de son activité.\n\n*Pour toi* : Idéal si tu veux **quitter la compta pure** tout en capitalisant sur ton expertise.\n\n---\n### **⚠ Attention aux pièges**\n- **Logiciels obsolètes** : Certains BTS enseignent des outils peu utilisés en entreprise (ex : EBP vs Sage/Ciel). Vérifie les **partenariats avec des cabinets** pour des stages sur logiciels pros.\n- **Spécialisation trop tôt** : Un BTS seul limite l’évolution vers des postes stratégiques (ex : directeur financier). Pense **DCG ou licence pro** pour monter en grade.\n- **Alternance obligatoire** dans certains établissements : assure-toi que ton rythme (2 semaines entreprise/2 semaines cours) est compatible avec ta situation.\n\n---\n**Question pour toi** :\nVeux-tu **appliquer ces compétences rapidement** (Plan A), les **approfondir** (Plan B), ou les **combiner avec un autre domaine** (Plan C) ? Si tu hésites, précise ton secteur de prédilection (cabinet, entreprise, indépendant) pour affiner.",
+  "elapsed_pipeline_s": 20.32,
+  "elapsed_fact_check_post_hoc_s": 0.76,
+  "elapsed_clarify_s": 2.71,
+  "elapsed_reformulate_s": 5.79,
+  "elapsed_retrieve_s": 0.54,
+  "elapsed_generate_s": 11.27,
+  "fact_check_summary": {
+    "n_stats_total": 1,
+    "n_verified": 0,
+    "n_with_disclaimer": 1,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "salaire médian embauche : ~1 800€ brut",
+      "stat_value": 1800,
+      "stat_unit": "€ brut",
+      "context": "salaire médian embauche : ~1 800€ brut — estimation marché, connaissance générale",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_metier",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les blocs de compétences RNCP associés au BTS Comptabilité et Gestion ? Détail des compétences certifiées par ce diplôme.",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Intent core : identifier les blocs de compétences spécifiques au BTS Comptabilité via le RNCP."
+    },
+    {
+      "text": "Fiche éditorialisée ONISEP du BTS Comptabilité et Gestion : missions, débouchés et compétences attendues.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte complémentaire sur le métier et les compétences générales du BTS."
+    },
+    {
+      "text": "Quelles formations en comptabilité et gestion (BTS, BUT, licences) sont accessibles sur Parcoursup ou ONISEP pour un étudiant en bac+2 ?",
+      "target_corpus": "formation",
+      "priority": 3,
+      "rationale": "Nice-to-have : vue d'ensemble des formations similaires pour comparaison."
+    }
+  ]
+}

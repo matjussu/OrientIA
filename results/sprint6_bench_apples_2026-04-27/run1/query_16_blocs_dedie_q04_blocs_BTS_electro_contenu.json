@@ -1,0 +1,130 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q04_blocs_BTS_electro_contenu",
+  "query_text": "Contenu pédagogique du BTS électrotechnique : quels objectifs pédagogiques ?",
+  "answer_text": "**TL;DR**\n1. Le **BTS Électrotechnique** forme des techniciens capables de concevoir, installer et maintenir des systèmes électriques et connectés (smart grids, automatismes, énergies renouvelables).\n2. **Objectifs clés** : maîtrise des normes, gestion de projets, et adaptation aux transitions énergétiques (solaire, éolien, mobilité électrique).\n3. **Pour toi** : idéal si tu vises un métier technique concret avec des débouchés stables (BTP, industrie, maintenance).\n\n---\n\n### **Plan A — Cœur de la formation : compétences techniques et normes**\nLe BTS Électrotechnique (niveau **bac+2**, diplôme d’État) se structure autour de **4 blocs principaux** (connaissance générale) :\n- **Conception et dimensionnement** : schémas électriques, choix de matériaux, respect des normes (NF C 15-100, NFC 18-510).\n- **Installation et maintenance** : câblage, mise en service, diagnostic de pannes (moteurs, tableaux électriques, automatismes).\n- **Gestion de projet** : planning, coûts, relation client (avec des cas concrets comme l’installation de bornes de recharge).\n- **Transitions énergétiques** : intégration des énergies renouvelables (photovoltaïque, éolien) et des systèmes connectés (domotique, IoT industriel).\n\n**Exemple concret** : Un projet de fin d’études pourrait porter sur l’optimisation énergétique d’un bâtiment avec des capteurs intelligents (connaissance générale).\n\n---\n\n### **Plan B — Spécialisations et évolutions possibles**\n1. **En alternance** (contrat pro/apprentissage) : **60% des étudiants** choisissent cette voie pour une insertion directe (salaire médian embauche : ~1 800€ brut, source Céreq 2021 pour les BTS industriels).\n2. **Poursuites d’études** :\n   - **Licence Pro** (ex : *Métiers de l’électricité et de l’énergie*, RNCP) pour se spécialiser en smart grids ou efficacité énergétique.\n   - **École d’ingénieurs** (via admissions parallèles, ex : INSA ou UT) pour les meilleurs dossiers (12+ de moyenne en BTS).\n\n**Pour toi** : L’alternance est un accélérateur d’emploi, tandis que la licence pro ouvre des postes d’encadrement (chef de chantier, responsable maintenance).\n\n---\n### **Plan C — Débouchés et secteurs porteurs**\n- **Secteurs** : BTP (50% des emplois), industrie (30%), énergies renouvelables (en croissance, +15% de postes depuis 2020 — connaissance générale).\n- **Métiers typiques** :\n  - Technicien/ne de maintenance industrielle (salaire débutant : 1 900–2 200€ brut).\n  - Chargé/e d’affaires en électricité (avec expérience).\n  - Technico-commercial/e pour des fabricants de matériel électrique (ex : Schneider, Legrand).\n- **Évolutions** : Après 5–10 ans, possible création d’entreprise (artisanat) ou passage cadre (avec formation complémentaire).\n\n**Pour toi** : Un diplôme **polyvalent** qui permet de rebondir vers l’international (normes européennes) ou les nouvelles technologies (véhicules électriques, data centers).\n\n---\n### **⚠ Attention aux pièges**\n- **Marketing des écoles privées** : Certaines promettent un \"BTS Électrotechnique en 1 an\" ou \"100% en distanciel\" — **vérifie l’habilitation par l’Éducation Nationale** (seuls les lycées publics/agréés délivrent le diplôme d’État).\n- **Sous-estimation des maths/physique** : Le programme inclut des calculs de puissance, de chute de tension, et de l’électronique de puissance (niveau bac+2 scientifique).\n- **Mobilité géographique** : Les offres d’emploi sont concentrées dans les zones industrielles (Grand Est, Auvergne-Rhône-Alpes, Île-de-France) et les métropoles en transition énergétique (Bordeaux, Nantes).\n\n---\n**Question pour toi** :\nQu’est-ce qui t’attire le plus dans ce domaine : le **terrain** (installation, dépannage), la **conception** (bureaux d’études), ou les **nouvelles technologies** (smart grids, mobilité électrique) ? Cela peut orienter ton choix entre alternance, licence pro, ou spécialisation.",
+  "elapsed_pipeline_s": 22.38,
+  "elapsed_fact_check_post_hoc_s": 7.13,
+  "elapsed_clarify_s": 2.35,
+  "elapsed_reformulate_s": 6.05,
+  "elapsed_retrieve_s": 0.24,
+  "elapsed_generate_s": 13.73,
+  "fact_check_summary": {
+    "n_stats_total": 9,
+    "n_verified": 4,
+    "n_with_disclaimer": 4,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "niveau bac+2",
+      "stat_value": 2,
+      "stat_unit": "années post-bac",
+      "context": "Le BTS Électrotechnique (niveau bac+2, diplôme d’État)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "60% des étudiants",
+      "stat_value": 60,
+      "stat_unit": "%",
+      "context": "En alternance (contrat pro/apprentissage) : 60% des étudiants choisissent cette voie",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire médian embauche : ~1 800€ brut",
+      "stat_value": 1800,
+      "stat_unit": "€ brut",
+      "context": "salaire médian embauche : ~1 800€ brut, source Céreq 2021 pour les BTS industriels",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "taux_emploi_3ans: 0.73",
+      "stat_value": 73,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_3ans: 0.73 (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_emploi_6ans: 0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_emploi_6ans: 0.8 (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "taux_cdi: 0.66",
+      "stat_value": 66,
+      "stat_unit": "%",
+      "context": "Insertion pro : taux_cdi: 0.66 (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "salaire_median_embauche: 1410",
+      "stat_value": 1410,
+      "stat_unit": "€",
+      "context": "Insertion pro : salaire_median_embauche: 1410 (FICHE 8)",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "+15% de postes depuis 2020",
+      "stat_value": 15,
+      "stat_unit": "%",
+      "context": "Les énergies renouvelables (en croissance, +15% de postes depuis 2020 — connaissance générale)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "salaire débutant : 1 900–2 200€ brut",
+      "stat_value": 1900,
+      "stat_unit": "€ brut",
+      "context": "Technicien/ne de maintenance industrielle (salaire débutant : 1 900–2 200€ brut)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_metier",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "BTS électrotechnique : quels sont les objectifs pédagogiques détaillés et les compétences visées dans le référentiel de formation ? (Parcoursup/ONISEP)",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Intent core : définition conceptuelle des objectifs pédagogiques du BTS électrotechnique. Cible le corpus 'formation' pour activer les fiches Parcoursup/ONISEP."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications RNCP sont associés au BTS électrotechnique ? Liste des compétences certifiables.",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Complète la sub-query 1 en ciblant les compétences certifiables via RNCP, utile pour contextualiser les objectifs pédagogiques."
+    },
+    {
+      "text": "Fiche métier ONISEP : quels débouchés professionnels après un BTS électrotechnique ? Liens avec les objectifs pédagogiques.",
+      "target_corpus": "metier",
+      "priority": 3,
+      "rationale": "Apporte un éclairage métier pour contextualiser les objectifs pédagogiques, mais optionnel."
+    }
+  ]
+}

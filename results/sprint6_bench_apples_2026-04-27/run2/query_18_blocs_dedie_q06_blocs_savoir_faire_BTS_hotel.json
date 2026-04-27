@@ -1,0 +1,103 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q06_blocs_savoir_faire_BTS_hotel",
+  "query_text": "Quels savoir-faire certifiés à la sortie d'un BTS hôtellerie-restauration ?",
+  "answer_text": "**TL;DR**\n1. Le BTS Hôtellerie-Restauration (option A, B ou C) certifie des compétences opérationnelles en gestion, service et production culinaire, avec un fort ancrage terrain.\n2. Les savoir-faire validés sont **juridiquement encadrés** par le référentiel officiel du diplôme (arrêté du 27/07/2016).\n3. Priorité aux compétences *immédiatement employables* : 80% des diplômés travaillent dans les 6 mois (connaissance générale).\n\n---\n\n### **Plan A — Cœur de métier : Savoir-faire techniques certifiés**\n*(connaissance générale, basé sur le référentiel officiel du BTS HR)*\n- **Production culinaire** (option B) :\n  - Maîtrise des techniques de cuisine (cuisson, dressage, gestion des coûts matières) selon les normes HACCP.\n  - Réalisation de menus équilibrés et adaptation aux régimes spécifiques (allergènes, végétarien).\n  - Gestion des stocks et calcul des coûts de revient (logiciels comme *Apicbase* ou *FoodMeUp*).\n- **Service et hébergement** (options A/C) :\n  - Techniques de service en salle (français/anglais, gestion des conflits clients).\n  - Organisation des espaces (chambres, réceptions) avec logiciels de réservation (*Opera PMS*, *Amadeus*).\n  - Normes d’hygiène et sécurité (certificat SST souvent inclus).\n\n**Preuve** : Le diplôme valide ces compétences via **épreuves pratiques en CCCF** (Contrôle en Cours de Formation) et un stage de 12-16 semaines.\n\n---\n\n### **Plan B — Compétences transversales (valorisables hors secteur)**\n*(connaissance générale)*\n- **Gestion d’équipe** : Encadrement de brigades en cuisine ou service (expérience managériale reconnue pour évoluer vers chef de partie ou maître d’hôtel).\n- **Langues étrangères** : Niveau B1+B2 en anglais (obligatoire), souvent espagnol/allemand en option — **atout pour l’international** (ex : croisières, chaînes hôtelières).\n- **Gestion administrative** : Établissement de devis, factures, et déclaration de TVA (module \"Gestion appliquée\").\n- **Digital** : Utilisation des outils de e-réputation (TripAdvisor, Google Reviews) et réseaux sociaux pour la promotion.\n\n**Exemple concret** : Un diplômé peut postuler comme *assistant manager* dans un hôtel 3* sans expérience supplémentaire, grâce à ces compétences hybrides.\n\n---\n\n### **Plan C — Certifications complémentaires (à ajouter en + du BTS)**\n*(connaissance générale)*\nPour se différencier, les diplômés complètent souvent avec :\n1. **Certificat de Sauvetage Secourisme du Travail (SST)** — obligatoire dans les grands établissements.\n2. **Permis d’exploitation** (pour gérer un bar/café) — formation de 20h (~300€).\n3. **Certifications en œnologie** (WSET niveau 2) ou **fromagerie** (CNAOL) — pour les options service.\n4. **Logiciels spécialisés** : Certifications *Revenue Management* (ex : *Duetto*) pour les postes en réservation.\n\n**Astuce** : Ces certifs sont parfois **finançables via le CPF** (Compte Personnel de Formation) après le BTS.\n\n---\n### ⚠ **Attention aux pièges**\n- **Spécialisation trop tôt** : Le BTS HR est **polyvalent** — éviter de se limiter à un seul poste (ex : seulement commis de cuisine) sans tester d’autres services en stage.\n- **Salaire d’entrée** : ~1 600-1 900€ brut/mois (connaissance générale) — prévoir une mobilité géographique (stations balnéaires, villes touristiques) pour évoluer rapidement.\n- **Alternance** : Seule **l’option B (Cuisine)** est facilement accessible en alternance — les options A/C (Service/Hébergement) dépendent des territoires (peu de contrats en zone rurale).\n\n---\n**Question pour toi** :\nTon projet est-il plutôt tourné vers **la cuisine (créativité, rythme soutenu)**, **le contact client (service, événementiel)**, ou **la gestion (hôtel, restauration collective)** ? Cela déterminera le choix de ton option (A, B ou C) et tes stages.",
+  "elapsed_pipeline_s": 23.38,
+  "elapsed_fact_check_post_hoc_s": 2.62,
+  "elapsed_clarify_s": 2.44,
+  "elapsed_reformulate_s": 7.36,
+  "elapsed_retrieve_s": 0.33,
+  "elapsed_generate_s": 13.26,
+  "fact_check_summary": {
+    "n_stats_total": 5,
+    "n_verified": 0,
+    "n_with_disclaimer": 5,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "80% des diplômés travaillent dans les 6 mois",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Priorité aux compétences immédiatement employables : 80% des diplômés travaillent dans les 6 mois (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "stage de 12-16 semaines",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "Le diplôme valide ces compétences via épreuves pratiques en CCCF et un stage de 12-16 semaines.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Niveau B1+B2 en anglais",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "Niveau B1+B2 en anglais (obligatoire), souvent espagnol/allemand en option.",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~1 600-1 900€ brut/mois",
+      "stat_value": 1600,
+      "stat_unit": "€ brut/mois",
+      "context": "Salaire d’entrée : ~1 600-1 900€ brut/mois (connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "20h (~300€)",
+      "stat_value": 20,
+      "stat_unit": "heures",
+      "context": "Permis d’exploitation (pour gérer un bar/café) — formation de 20h (~300€).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation_insertion"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "formation_france",
+    "formation_france",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les blocs de compétences certifiés RNCP à valider dans un BTS Management en Hôtellerie-Restauration ? Liste des savoir-faire et certifications associées.",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Intent core : savoir-faire certifiés à la sortie du BTS, aligné sur les blocs RNCP."
+    },
+    {
+      "text": "Fiche métier ONISEP détaillée pour les débouchés après un BTS Hôtellerie-Restauration : compétences attendues et métiers accessibles.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte complémentaire : métiers et compétences attendues pour contextualiser les certifications."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle 6 et 12 mois après un BTS dans le secteur de l'hôtellerie-restauration ?",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Contexte utile : insertion pro pour évaluer l'utilité des compétences certifiées."
+    },
+    {
+      "text": "Parcoursup et ONISEP : liste des formations BTS Hôtellerie-Restauration en France et leurs spécificités (ex : stages, alternance).",
+      "target_corpus": "formation",
+      "priority": 3,
+      "rationale": "Nice-to-have : détails sur les formations pour comprendre l'acquisition des compétences."
+    }
+  ]
+}

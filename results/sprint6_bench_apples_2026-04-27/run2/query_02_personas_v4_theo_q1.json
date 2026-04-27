@@ -1,0 +1,117 @@
+{
+  "suite": "personas_v4",
+  "query_id": "theo_q1",
+  "query_text": "Quelles passerelles existent après une L1/L2 de droit pour aller vers un BTS ou une école de commerce ?",
+  "answer_text": "**TL;DR**\n1. Après une L1/L2 de droit, **les passerelles vers un BTS sont limitées** (niveau bac+2 < bac+1/2), mais **les écoles de commerce sont accessibles** via admissions parallèles ou licences pro.\n2. **Étape clé** : valider ta L2 pour viser une **L3 pro** (bac+3) ou un **Bachelor** (bac+3/4) en commerce, puis intégrer un master/école en bac+4/5.\n3. **Calendrier** : candidatures en **janvier-mars** pour les admissions parallèles (concours Passerelle/Tremplin), ou **avril-juin** pour les licences pro.\n\n---\n\n### **Plan A — Réaliste : Licence pro ou Bachelor en 1 an (bac+3)**\n**Étape 1** : Termine ta L2 droit (même en rattrapage).\n**Étape 2** : Postule en **licence pro métiers du commerce** (ex : *Licence pro Commerce et Distribution* à **Lyon 2** ou **Paris Nanterre**) ou en **Bachelor** (ex : *Bachelor EGC* en réseau public, ~3k€/an).\n- **Admission** : sur dossier (notes L1/L2 + CV/motivation). Sélectivité modérée (~40-60% d’admis).\n- **Débouchés** : chef de projet, chargé de clientèle, ou poursuite en master commerce (IAE, écoles).\n**Étape 3** : Après le bac+3, vise un **master en école de commerce** via les admissions parallèles (concours **Passerelle 1** ou **Tremplin 1**).\n\n📍 **Licence pro Commerce et Distribution** (Lyon) — bac+3 public, admission sur dossier · [exemple ONISEP](https://www.onisep.fr)\n*Pour toi : solution la plus rapide et économique pour rebondir vers le commerce.*\n\n---\n\n### **Plan B — Ambitieux : École de commerce post-bac+2 (concours)**\n**Étape 1** : Valide ta L2 avec **au moins 12/20 de moyenne** (viser 14+ pour les meilleures écoles).\n**Étape 2** : Passe les **concours d’admissions parallèles en bac+2** :\n- **Concours TEAM** (pour intégrer un **Programme Grande École en 3 ans**, ex : *KEDGE, NEOMA*).\n- **Concours SESAME** (pour des BBA en 4 ans, ex : *EM Normandie*).\n- **Sélectivité** : 10-30% d’admis (préparation intensive requise).\n**Étape 3** : Si admis, obtiens un **diplôme grade master** (bac+5) en 3 ans.\n⚠ **Coût** : 8k-12k€/an en privé — prévois bourses (CROUS, écoles) ou alternance dès la 3ème année.\n\n📍 **Programme Grande École via TEAM** (Bordeaux, KEDGE) — bac+5 privé, grade master, sélectivité ~20% · [site officiel](https://www.kedge.edu)\n*Pour toi : si tu vises un réseau pro solide et peux financer 3 ans d’école.*\n\n---\n### **Plan C — Alternative : BTS en 1 an (accéléré) ou VAE**\n*(connaissance générale)*\n- **BTS en 1 an** : Certaines écoles privées proposent des **BTS accélérés** (ex : *BTS NDRC* ou *BTS MCO*) pour les bac+2. **Coût** : 4k-6k€/an, sélectivité faible.\n  - **Exemple** : *ESARC* (réseau national) — attention à la reconnaissance du diplôme (vérifier le **RNCP**).\n- **VAE (Validation des Acquis)** : Si tu as une expérience pro (même stage), tu peux valider un **BTS par VAE** en 6-12 mois. **Gratuit** si éligible CPF.\n  - **Démarche** : Contacte un **GRETA** ou la **CCI** de ta région.\n\n---\n### **Calendrier clé à retenir**\n| Étape               | Période          | Action                                  |\n|---------------------|------------------|-----------------------------------------|\n| **Janvier-mars**    | Bac+2            | Candidatures licences pro / concours TEAM/SESAME |\n| **Avril-juin**      | Bac+2            | Candidatures BTS accélérés ou VAE       |\n| **Septembre**       | Bac+3            | Rentrée en licence pro ou école         |\n\n---\n**Question pour toi** :\nPréfères-tu une **voie courte et pro** (licence pro/BTS) pour entrer vite sur le marché du travail, ou un **parcours long en école de commerce** (bac+5) pour viser des postes cadres ? Ton budget et ta mobilité géographique (déménager ou non) vont aussi jouer — as-tu déjà une idée là-dessus ?",
+  "elapsed_pipeline_s": 23.92,
+  "elapsed_fact_check_post_hoc_s": 2.7,
+  "elapsed_clarify_s": 2.47,
+  "elapsed_reformulate_s": 9.86,
+  "elapsed_retrieve_s": 0.42,
+  "elapsed_generate_s": 11.16,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~3k€/an",
+      "stat_value": 3000,
+      "stat_unit": "€/an",
+      "context": "Coût annuel d'un Bachelor EGC en réseau public",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~40-60% d’admis",
+      "stat_value": 40,
+      "stat_unit": "%",
+      "context": "Sélectivité modérée pour une licence pro métiers du commerce",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "10-30% d’admis",
+      "stat_value": 10,
+      "stat_unit": "%",
+      "context": "Sélectivité des concours d’admissions parallèles en bac+2 (TEAM, SESAME)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8k-12k€/an",
+      "stat_value": 8000,
+      "stat_unit": "€/an",
+      "context": "Coût annuel en école de commerce privée (Programme Grande École)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "~20%",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "Sélectivité du Programme Grande École via TEAM (ex : KEDGE)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "4k-6k€/an",
+      "stat_value": 4000,
+      "stat_unit": "€/an",
+      "context": "Coût annuel d'un BTS accéléré en école privée (ex : ESARC)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "parcours_bacheliers"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_parcours_bacheliers",
+    "_parcours_bacheliers",
+    "_parcours_bacheliers",
+    "_parcours_bacheliers",
+    "_competences_certif",
+    "_parcours_bacheliers"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles sont les passerelles possibles après une L1 ou L2 de droit pour intégrer un BTS dans les domaines du commerce ou de la gestion ? Préciser les conditions d'admission et les spécialités recommandées.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : réorientation vers BTS après L1/L2 de droit."
+    },
+    {
+      "text": "Quelles écoles de commerce ou programmes en commerce/gestion acceptent des étudiants issus d'une L1 ou L2 de droit ? Modalités d'admission (concours, admissions parallèles, etc.).",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : réorientation vers écoles de commerce après L1/L2 de droit."
+    },
+    {
+      "text": "Quels sont les blocs de compétences ou certifications RNCP à valider pour faciliter une réorientation vers le commerce ou la gestion après une L1/L2 de droit ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Apporte des éléments sur les compétences à acquérir pour une réorientation réussie."
+    },
+    {
+      "text": "Quels sont les taux de réussite en licence pour les bacheliers souhaitant se réorienter vers le commerce ou la gestion après une L1/L2 de droit ?",
+      "target_corpus": "parcours_bacheliers",
+      "priority": 3,
+      "rationale": "Contexte utile pour évaluer la faisabilité d'une réorientation."
+    },
+    {
+      "text": "Quelles sont les perspectives d'insertion professionnelle après un BTS ou une école de commerce pour un étudiant issu d'une L1/L2 de droit ? Taux d'insertion à 6, 12 et 18 mois.",
+      "target_corpus": "insertion_pro",
+      "priority": 2,
+      "rationale": "Apporte un éclairage sur les débouchés post-formation."
+    }
+  ]
+}

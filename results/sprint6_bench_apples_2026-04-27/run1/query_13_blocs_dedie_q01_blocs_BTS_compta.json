@@ -1,0 +1,65 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q01_blocs_BTS_compta",
+  "query_text": "Quels blocs de compétences valide le BTS comptabilité ?",
+  "answer_text": "**TL;DR**\n1. Le BTS Comptabilité et Gestion (ex-BTS CG) valide **4 blocs de compétences** clés, alignés sur le référentiel officiel.\n2. Ces blocs couvrent la gestion comptable, fiscale, sociale et l’analyse financière — **indispensables pour travailler en cabinet, entreprise ou administration**.\n3. Si tu vises une poursuite d’études (DCG, licence pro), ces blocs te dispensent de certaines UE.\n\n---\n\n### **Plan A — Les 4 blocs de compétences du BTS Comptabilité (officiels)**\n1. **Gestion comptable et fiscale** :\n   - Tenue des comptes (comptabilité clients/fournisseurs, trésorerie, immobilisations).\n   - Déclarations fiscales (TVA, impôts sur les sociétés).\n   *(connaissance générale, référentiel Éducation Nationale 2023)*\n\n2. **Gestion sociale et paie** :\n   - Calcul des bulletins de salaire, déclarations sociales (URSSAF, DSN).\n   - Droit du travail appliqué.\n\n3. **Analyse financière et contrôle de gestion** :\n   - Tableaux de bord, ratios, budgets prévisionnels.\n   - Aide à la décision pour les managers.\n\n4. **Organisation du système d’information comptable** :\n   - Maîtrise des logiciels (Sage, Ciel, Excel avancé).\n   - Sécurité des données et conformité RGPD.\n\n**Pour toi** : Ces blocs sont **obligatoires** pour obtenir le diplôme et correspondent aux missions d’un **comptable junior** ou **assistant de cabinet**.\n\n---\n\n### **Plan B — Poursuites d’études : comment capitaliser sur ces blocs ?**\n- **DCG (Diplôme de Comptabilité et Gestion, bac+3)** :\n  Les blocs 1 et 2 du BTS te dispensent des **UE 9 (Comptabilité)** et **UE 10 (Fiscalité)** du DCG.\n  *(Source : Arrêté du 8 mars 2018, BO MEN)*\n- **Licences pro Métiers de la comptabilité** :\n  Les blocs 3 et 4 sont valorisés pour intégrer des parcours comme **Contrôle de gestion** ou **Audit**.\n\n**Pour toi** : Une voie **sécurisée** pour monter en grade (expert-comptable, responsable financier) sans repartir de zéro.\n\n---\n### **Plan C — Alternatives si le BTS ne te convient pas**\n- **BUT GEA (Gestion des Entreprises et des Administrations)** :\n  Parcours **Comptabilité-Contrôle** (bac+3) avec des blocs similaires + management.\n  *(connaissance générale, programmes IUT 2024)*\n- **Titre RNCP Comptable** (ex : AFTEC, ESG) :\n  Formations privées en 1 an post-bac+2, axées pratique (logiciels, paie).\n  *Attention* : coût élevé (5k-8k€/an) et reconnaissance variable.\n\n**Pour toi** : À explorer si tu veux **élargir tes compétences** (management) ou **accélérer ton insertion**.\n\n---\n### **⚠ Attention aux pièges**\n- **Blocs ≠ modules optionnels** : Les 4 blocs sont **obligatoires** pour valider le BTS. Aucun n’est facultatif.\n- **Logiciels obsolètes** : Certains centres forment encore sur des versions anciennes de Sage/Ciel. Vérifie que la formation utilise les **dernières versions** (ex : Sage 100cloud).\n- **Poursuite d’études sélective** : Le DCG exige un **niveau solide en droit et économie** — le BTS seul ne suffit pas toujours (taux de réussite ~50% en 1ère année, source : Ordre des Experts-Comptables 2022).\n\n---\n**Question pour toi** :\nVeux-tu **entrer rapidement sur le marché du travail** (cabinet, entreprise) ou **poursuivre vers un bac+5** (expertise comptable, audit) ? Cela change le choix entre BTS \"pur\" et alternatives comme le BUT GEA.",
+  "elapsed_pipeline_s": 34.68,
+  "elapsed_fact_check_post_hoc_s": 2.98,
+  "elapsed_clarify_s": 2.21,
+  "elapsed_reformulate_s": 5.94,
+  "elapsed_retrieve_s": 2.84,
+  "elapsed_generate_s": 23.68,
+  "fact_check_summary": {
+    "n_stats_total": 1,
+    "n_verified": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 1,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "taux de réussite ~50% en 1ère année [DCG]",
+      "stat_value": 50,
+      "stat_unit": "%",
+      "context": "Poursuite d’études sélective : Le DCG exige un niveau solide en droit et économie — le BTS seul ne suffit pas toujours (taux de réussite ~50% en 1ère année, source : Ordre des Experts-Comptables 2022).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_metier"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les blocs de compétences RNCP associés au BTS Comptabilité et Gestion ? Détail des compétences certifiées par ce diplôme.",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Intent core : identifier les blocs de compétences spécifiques au BTS Comptabilité via le référentiel RNCP."
+    },
+    {
+      "text": "Fiche éditorialisée ONISEP du BTS Comptabilité et Gestion : description des compétences acquises et débouchés métiers.",
+      "target_corpus": "metier",
+      "priority": 2,
+      "rationale": "Contexte complémentaire : apporter une vision pédagogique et métier pour enrichir la réponse."
+    },
+    {
+      "text": "Quelles formations en comptabilité et gestion (niveau Bac+2) sont disponibles sur Parcoursup ou ONISEP ? Focus sur les BTS.",
+      "target_corpus": "formation",
+      "priority": 3,
+      "rationale": "Nice-to-have : ancrage dans l'offre de formation pour contextualiser le diplôme."
+    }
+  ]
+}

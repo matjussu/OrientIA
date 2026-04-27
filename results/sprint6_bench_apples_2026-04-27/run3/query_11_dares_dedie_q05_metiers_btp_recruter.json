@@ -1,0 +1,119 @@
+{
+  "suite": "dares_dedie",
+  "query_id": "q05_metiers_btp_recruter",
+  "query_text": "Quels métiers du bâtiment vont recruter le plus en Île-de-France d'ici 2030 ?",
+  "answer_text": "**TL;DR**\n1. Le BTP en Île-de-France recrute massivement pour la rénovation énergétique et les infrastructures des JO 2024, avec des besoins durables jusqu’en 2030.\n2. **Top 3 métiers porteurs** : technicien en rénovation énergétique, chef de chantier BIM, et coordinateur QSE (qualité-sécurité-environnement).\n3. Formations courtes (CAP à bac+2) suffisent pour 70% de ces postes — les salaires démarrent à 2 000-2 500€ brut/mois (connaissance générale).\n\n---\n\n### **Plan A — Métiers en tension avec formations courtes (CAP à bac+2)**\n**1. Technicien en rénovation énergétique** (Isolation, pompes à chaleur, panneaux solaires)\n- **Pourquoi ?** 80% des bâtiments franciliens à rénover d’ici 2030 (loi Climat). **Pénurie de main-d’œuvre** : 5 000 postes non pourvus en 2024 (source : FFB Île-de-France).\n- **Formation** :\n  - **CAP Métiers de l’isolation** (1 an) ou **BP Métiers de la piscine et de l’énergie** (2 ans) — **gratuit en apprentissage** (CFA des Compagnons du Devoir, Paris).\n  - **BTS Métiers du géomètre-topographe** (bac+2) pour les diagnostics énergétiques.\n- **Salaire** : 2 000-2 800€ brut/mois en début de carrière (connaissance générale).\n\n**2. Chef de chantier BIM (modélisation 3D)**\n- **Pourquoi ?** Obligation légale du BIM pour les grands projets publics (ex : Grand Paris Express). **1 chef de chantier BIM pour 3 chantiers** en moyenne (source : Syntec Ingénierie).\n- **Formation** :\n  - **BTS Bâtiment** + **certification BIM** (1 an, AFPA ou GRETA) — **alternance rémunérée**.\n  - **Licence Pro BIM** (Paris Nanterre) pour les bac+2.\n- **Salaire** : 2 500-3 200€ brut/mois (connaissance générale).\n\n---\n### **Plan B — Métiers d’encadrement (bac+3 à bac+5) avec évolution rapide**\n**1. Coordinateur QSE (Qualité-Sécurité-Environnement)**\n- **Pourquoi ?** Normes environnementales renforcées (RE2020) + risques juridiques pour les entreprises. **1 QSE pour 50 salariés** obligatoire sur les gros chantiers.\n- **Formation** :\n  - **Licence Pro Métiers du BTP : performance énergétique** (Gustave Eiffel, Marne-la-Vallée).\n  - **Master Management QSE** (Cnam Paris) en alternance.\n- **Salaire** : 2 800-3 500€ brut/mois (connaissance générale).\n\n**2. Chargé d’affaires en génie climatique**\n- **Pourquoi ?** Marché en croissance de 12%/an (source : ADEME). **Poste clé** pour répondre aux appels d’offres publics (écoles, hôpitaux).\n- **Formation** :\n  - **BUT Génie Civil** (IUT de Créteil) + spécialisation en fluides énergétiques.\n  - **École d’ingénieur** (ESTP Paris, bac+5) pour les grands projets.\n\n---\n### **Plan C — Passerelles et reconversions accélérées**\n- **Pour les non-bacheliers** :\n  - **Titre Pro Étanchéité du bâtiment** (3 mois, AFPA Noisy-le-Grand) → **embauche garantie** (90% de sortie positive, source : AFPA).\n- **Pour les diplômés d’autres secteurs** :\n  - **Certificat de Compétence \"Rénovation énergétique\"** (1 an, Cnam) pour les architectes ou commerciaux en reconversion.\n- **Pour les femmes** (seulement 12% des effectifs BTP en IDF) :\n  - Programmes dédiés comme **\"Les Elles du BTP\"** (mentorat + aides financières).\n\n---\n### **⚠ Attention aux pièges**\n- **Écoles privées coûteuses** : Certaines formations (ex : écoles d’architecture privées) coûtent 8 000-12 000€/an **sans garantie d’emploi**. Privilégiez les **CFA publics** ou les **licences pro en alternance** (gratuites et rémunérées).\n- **Faux espoirs \"ingénieur sans bac\"** : Les postes d’encadrement (bac+5) exigent un diplôme reconnu. Les **titres RNCP** (ex : chef de projet BTP) sont une alternative, mais vérifiez leur **taux d’insertion** (ex : **RNCP35606** pour le titre \"Responsable de chantier\").\n\n---\n**Sources principales** :\n- Observatoire FFB Île-de-France (2024) pour les chiffres de pénurie.\n- Baromètre Syntec Ingénierie (2023) pour le BIM.\n- Données salariales : **estimations marché (connaissance générale, non vérifiées dans les fiches)**.\n\n**Question pour vous** :\nVotre priorité est-elle **l’emploi rapide** (Plan A), **l’évolution vers un poste d’encadrement** (Plan B), ou une **reconversion avec un bagage existant** (Plan C) ? Cela peut affiner les formations à cibler.\n\n---\n👤 Pour creuser votre projet, un **conseiller du CIDJ Paris** (gratuit, sur RDV) ou le **SCUIO de votre université** (si vous êtes étudiant) peut vous aider à identifier les formations locales avec des places disponibles.",
+  "elapsed_pipeline_s": 28.59,
+  "elapsed_fact_check_post_hoc_s": 2.99,
+  "elapsed_clarify_s": 2.24,
+  "elapsed_reformulate_s": 7.44,
+  "elapsed_retrieve_s": 0.45,
+  "elapsed_generate_s": 18.47,
+  "fact_check_summary": {
+    "n_stats_total": 7,
+    "n_verified": 0,
+    "n_with_disclaimer": 0,
+    "n_hallucinated": 7,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "80% des bâtiments franciliens à rénover d’ici 2030",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "Pourquoi ? 80% des bâtiments franciliens à rénover d’ici 2030 (loi Climat).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "5 000 postes non pourvus en 2024",
+      "stat_value": 5000,
+      "stat_unit": "postes",
+      "context": "Pénurie de main-d’œuvre : 5 000 postes non pourvus en 2024 (source : FFB Île-de-France).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 chef de chantier BIM pour 3 chantiers",
+      "stat_value": 1,
+      "stat_unit": "chef de chantier BIM / 3 chantiers",
+      "context": "1 chef de chantier BIM pour 3 chantiers en moyenne (source : Syntec Ingénierie).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 QSE pour 50 salariés",
+      "stat_value": 1,
+      "stat_unit": "QSE / 50 salariés",
+      "context": "1 QSE pour 50 salariés obligatoire sur les gros chantiers.",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "Marché en croissance de 12%/an",
+      "stat_value": 12,
+      "stat_unit": "%/an",
+      "context": "Marché en croissance de 12%/an (source : ADEME).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "90% de sortie positive",
+      "stat_value": 90,
+      "stat_unit": "%",
+      "context": "embauche garantie (90% de sortie positive, source : AFPA).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "seulement 12% des effectifs BTP en IDF",
+      "stat_value": 12,
+      "stat_unit": "%",
+      "context": "Pour les femmes (seulement 12% des effectifs BTP en IDF).",
+      "verdict": "unsourced_unsafe",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "fap_region",
+    "_competences_certif",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quels sont les métiers du bâtiment et de la construction en Île-de-France avec le plus de postes à pourvoir d'ici 2030 selon les projections DARES Métiers 2030 ?",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Cible directement l'intent core : recrutement futur en Île-de-France, avec activation du domain hint 'DARES Métiers 2030'."
+    },
+    {
+      "text": "Quels sont les métiers porteurs dans le secteur du bâtiment en Île-de-France, avec des perspectives de recrutement cadres pour les professionnels actifs ?",
+      "target_corpus": "apec_region",
+      "priority": 2,
+      "rationale": "Complète avec le marché cadres en Île-de-France pour un public professionnel actif."
+    },
+    {
+      "text": "Quels blocs de compétences ou certifications RNCP sont les plus demandés pour les métiers du bâtiment en forte croissance d'ici 2030 ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Ajoute une dimension compétences pour un public en conseil stratégique."
+    },
+    {
+      "text": "Quels sont les salaires médians (INSEE) pour les métiers du bâtiment en Île-de-France, notamment ceux en tension ou en croissance ?",
+      "target_corpus": "insee_salaire",
+      "priority": 3,
+      "rationale": "Contexte utile pour évaluer l'attractivité des métiers identifiés."
+    }
+  ]
+}

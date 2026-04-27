@@ -1,0 +1,110 @@
+{
+  "suite": "blocs_dedie",
+  "query_id": "q05_blocs_VAE_partielle",
+  "query_text": "Comment valider un titre RNCP par VAE par bloc ?",
+  "answer_text": "**TL;DR**\n1. La VAE par bloc permet de valider un titre RNCP en plusieurs étapes, sans tout repasser.\n2. Chaque bloc correspond à un ensemble de compétences, validé séparément (expérience pro, formation, évaluation).\n3. **Étapes clés** : identifier le titre RNCP visé → choisir les blocs → constituer un dossier par bloc → évaluation (jury ou certificateur).\n\n---\n\n### **Plan A — Réaliste : VAE classique par blocs (pour salariés/expérimentés)**\n1. **Choisir un titre RNCP** éligible à la VAE par blocs (ex : RNCP35634 \"Responsable cybersécurité\").\n   - Vérifier la fiche RNCP sur [France Compétences](https://www.francecompetences.fr) : rubrique \"Modalités d’accès\" → \"VAE possible par bloc\".\n2. **Sélectionner 1 à 3 blocs** (ex : \"Gestion des risques\" ou \"Sécurité des systèmes\") en fonction de ton expérience.\n3. **Dossier par bloc** : preuves d’activité (fiches de poste, attestations employeur, productions professionnelles).\n4. **Évaluation** : jury ou certificateur valide chaque bloc indépendamment. **Coût** : ~100-300€/bloc (variable selon certificateur).\n   *(connaissance générale)*\n\n*Pour toi* : Idéal si tu as **au moins 1 an d’expérience** dans le domaine visé et que tu veux avancer progressivement.\n\n---\n\n### **Plan B — Ambitieux : VAE accélérée avec accompagnement**\n- **Accompagnement par un organisme agréé** (ex : CNAM, AFPA, GRETA) pour monter les dossiers et préparer l’oral.\n  - **Avantage** : taux de réussite +20% (estimation, connaissance générale).\n  - **Coût** : 1 500–3 000€ (finançable via CPF, OPCO, ou Pôle Emploi).\n- **Cibler des blocs \"transverses\"** (ex : \"Management d’équipe\" dans un titre RNCP informatique) pour valider des compétences réutilisables.\n- **Délai** : 6 à 12 mois (contre 2-3 ans en autodidacte).\n\n*Pour toi* : Si tu veux **maximiser tes chances** et as un budget ou un CPF utilisable.\n\n---\n\n### **Plan C — Alternative : Formation + VAE hybride**\n- **Suivre une formation certifiante** (ex : OpenClassrooms, Simplon) **en parallèle de la VAE** pour combler les blocs manquants.\n  - Exemple : valider le bloc \"Développement sécurisé\" via une formation, puis les autres blocs par VAE.\n- **Avantage** : réduit le risque de rejet partiel du dossier.\n- **Inconvénient** : coût et temps supplémentaires.\n\n*Pour toi* : Si ton expérience est **partielle** ou que tu veux sécuriser ta validation.\n\n---\n\n### **⚠ Attention aux pièges**\n- **Blocs \"indivisibles\"** : Certains titres RNCP imposent de valider des blocs groupés (ex : 2 blocs sur 5 doivent être présentés ensemble). Vérifie la fiche RNCP.\n- **Délais administratifs** : Compte **3 à 6 mois** entre dépôt du dossier et résultat (retards fréquents en 2024, connaissance générale).\n- **Rejet partiel** : Un bloc refusé = pas de remboursement. Privilégie les blocs où tu as **des preuves solides** (attestations, réalisations concrètes).\n\n---\n**Question pour toi** :\nAs-tu déjà identifié un **titre RNCP précis** que tu veux valider ? Si oui, partage son numéro (ex : RNCP35634) pour que je t’aide à décrypter ses blocs. Sinon, quel est ton **domaine d’expérience** (informatique, santé, management…) ? Cela permettra de cibler les titres adaptés.",
+  "elapsed_pipeline_s": 19.81,
+  "elapsed_fact_check_post_hoc_s": 2.84,
+  "elapsed_clarify_s": 1.91,
+  "elapsed_reformulate_s": 5.96,
+  "elapsed_retrieve_s": 0.58,
+  "elapsed_generate_s": 11.36,
+  "fact_check_summary": {
+    "n_stats_total": 6,
+    "n_verified": 0,
+    "n_with_disclaimer": 6,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "~100-300€/bloc",
+      "stat_value": 100,
+      "stat_unit": "€",
+      "context": "Coût : ~100-300€/bloc (variable selon certificateur).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "+20%",
+      "stat_value": 20,
+      "stat_unit": "%",
+      "context": "Avantage : taux de réussite +20% (estimation, connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "1 500–3 000€",
+      "stat_value": 1500,
+      "stat_unit": "€",
+      "context": "Coût : 1 500–3 000€ (finançable via CPF, OPCO, ou Pôle Emploi).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "6 à 12 mois",
+      "stat_value": 6,
+      "stat_unit": "mois",
+      "context": "Délai : 6 à 12 mois (contre 2-3 ans en autodidacte).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2-3 ans",
+      "stat_value": 2,
+      "stat_unit": "ans",
+      "context": "Délai : 6 à 12 mois (contre 2-3 ans en autodidacte).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "3 à 6 mois",
+      "stat_value": 3,
+      "stat_unit": "mois",
+      "context": "Compte 3 à 6 mois entre dépôt du dossier et résultat (retards fréquents en 2024, connaissance générale).",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif"
+  ],
+  "granularities_top_k": [
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif",
+    "_competences_certif"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles sont les étapes pour valider un titre RNCP par la VAE, spécifiquement par blocs de compétences ?",
+      "target_corpus": "competences_certif",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : VAE et blocs de compétences RNCP."
+    },
+    {
+      "text": "Quels sont les titres RNCP éligibles à une validation par blocs de compétences via la VAE ?",
+      "target_corpus": "formation",
+      "priority": 2,
+      "rationale": "Complète avec la liste des titres accessibles par VAE."
+    },
+    {
+      "text": "Quelles sont les conditions préalables pour engager une VAE par blocs de compétences sur un titre RNCP ?",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Apporte des précisions sur les prérequis pour la VAE."
+    },
+    {
+      "text": "Existe-t-il des organismes ou des dispositifs d'accompagnement pour la VAE par blocs de compétences RNCP ?",
+      "target_corpus": "multi",
+      "priority": 3,
+      "rationale": "Nice-to-have : ressources d'accompagnement pour la VAE."
+    }
+  ]
+}

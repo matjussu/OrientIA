@@ -1,0 +1,198 @@
+{
+  "suite": "user_naturel",
+  "query_id": "q13_reconversion_grande_distrib",
+  "query_text": "Je travaille dans la grande distribution depuis 8 ans, je veux changer complètement de secteur. Par où commencer ?",
+  "answer_text": "**TL;DR**\n1. Avec 8 ans d’expérience en grande distribution, vous avez des **compétences transférables** (gestion d’équipe, relation client, organisation) valorisables dans d’autres secteurs.\n2. **Deux voies prioritaires** : formations courtes certifiantes (6-12 mois) pour un métier précis, ou bilan de compétences pour identifier un projet aligné avec vos motivations.\n3. **Commencez par un point d’étape** : rencontre avec un conseiller en évolution professionnelle (CEP) **gratuit** pour affiner votre projet.\n\n---\n\n### **Plan A — Transition rapide : Formations courtes certifiantes (6-12 mois)**\n📍 **Conseiller en insertion professionnelle** (Certificat RNCP bac+2) — **Ministère du Travail**\n*Pour vous :* Valorise votre expérience terrain en accompagnement (ex : clients en difficulté → publics en insertion). **Finançable via CPF** ou Transition Pro. **Débouchés** : missions locales, associations, Pôle Emploi.\n*(Source : RNCP — Ministère du Travail)*\n\n📍 **Formateur professionnel d’adultes** (Certificat RNCP bac+2) — **Ministère du Travail**\n*Pour vous :* Transforme votre expertise métier (ex : gestion de rayon) en compétences pédagogiques pour former des adultes. **Alternance possible** (salaire + diplôme).\n\n---\n### **Plan B — Réorientation structurée : Bilan de compétences + formation longue (1-2 ans)**\n- **Bilan de compétences** (gratuit via CEP ou OPCO) : identifiez un secteur qui vous motive (ex : social, numérique, logistique) et les formations adaptées.\n- **Exemples de reconversions courantes** depuis la grande distribution (connaissance générale) :\n  - **Logistique/Supply Chain** : BTS GTLA (bac+2) ou Licence Pro Métiers de la Logistique.\n  - **Ressources Humaines** : Titre RNCP \"Chargé de recrutement\" (bac+3, accessible sans bac).\n  - **Numérique** : Certifications en gestion de projet (ex : Chef de projet digital, RNCP bac+3).\n\n---\n### **Plan C — Passerelle douce : Engagement bénévole + VAE**\n- **Bénévolat** dans une association (ex : Restos du Cœur, Emmaüs) pour tester un secteur (social, environnement) sans quitter votre emploi.\n- **Validation des Acquis de l’Expérience (VAE)** : Obtenez un diplôme (ex : **Responsable de petite structure**, RNCP bac+2) en capitalisant sur vos 8 ans d’expérience. **Coût : ~100-500€** (contre 5k-10k€ pour une formation classique).\n\n---\n### **⚠ Attention aux pièges**\n- **Formations privées coûteuses** : Méfiez-vous des écoles promettant un \"nouveau métier en 3 mois\" pour 8 000€+ (ex : écoles de coaching non RNCP). **Privilégiez les certifications RNCP** (reconnues par l’État).\n- **Salaire initial** : Une reconversion peut impliquer une baisse de revenu temporaire (ex : 1 800€ brut en début de carrière dans le social vs 2 200€ en grande distribution). **Anticipez avec un budget prévisionnel**.\n- **Secteurs saturés** : Évitez les métiers en tension relative (ex : graphiste freelance sans réseau) sans validation préalable via des stages ou rencontres pros.\n\n---\n**Question pour vous :**\nQu’est-ce qui prime pour vous dans ce changement ?\n1️⃣ **Un métier avec du sens** (social, environnement) même si le salaire baisse ?\n2️⃣ **Un secteur porteur** (numérique, logistique) avec des débouchés stables ?\n3️⃣ **Une transition progressive** (VAE, bénévolat) pour limiter les risques ?\n\n---\n👤 *Pour un accompagnement personnalisé, prenez RDV avec un **Conseiller en Évolution Professionnelle (CEP)** via [Mon Compte Formation](https://www.moncompteformation.gouv.fr) ou votre OPCO. Gratuit et sans engagement.*",
+  "elapsed_pipeline_s": 26.55,
+  "elapsed_fact_check_post_hoc_s": 8.49,
+  "elapsed_clarify_s": 2.14,
+  "elapsed_reformulate_s": 10.92,
+  "elapsed_retrieve_s": 0.39,
+  "elapsed_generate_s": 13.09,
+  "fact_check_summary": {
+    "n_stats_total": 16,
+    "n_verified": 7,
+    "n_with_disclaimer": 9,
+    "n_hallucinated": 0,
+    "error": null
+  },
+  "fact_check_stats": [
+    {
+      "stat_text": "8 ans d’expérience",
+      "stat_value": 8,
+      "stat_unit": "années",
+      "context": "Avec 8 ans d’expérience en grande distribution",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "6-12 mois",
+      "stat_value": null,
+      "stat_unit": "mois",
+      "context": "formations courtes certifiantes (6-12 mois)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "gratuit",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "rencontre avec un conseiller en évolution professionnelle (CEP) gratuit",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "bac+2",
+      "stat_value": null,
+      "stat_unit": null,
+      "context": "Conseiller en insertion professionnelle (Certificat RNCP bac+2)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "0.73",
+      "stat_value": 73,
+      "stat_unit": "%",
+      "context": "taux_emploi_3ans: 0.73",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.8",
+      "stat_value": 80,
+      "stat_unit": "%",
+      "context": "taux_emploi_3ans: 0.8",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.87",
+      "stat_value": 87,
+      "stat_unit": "%",
+      "context": "taux_emploi_6ans: 0.87",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.66",
+      "stat_value": 66,
+      "stat_unit": "%",
+      "context": "taux_cdi: 0.66",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "1410",
+      "stat_value": 1410,
+      "stat_unit": "€",
+      "context": "salaire_median_embauche: 1410",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.73, \"taux_emploi_6ans\": 0.8, \"taux_cdi\": 0.66, \"salaire_median_embauche\": 1410, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "0.76",
+      "stat_value": 76,
+      "stat_unit": "%",
+      "context": "taux_cdi: 0.76",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "1570",
+      "stat_value": 1570,
+      "stat_unit": "€",
+      "context": "salaire_median_embauche: 1570",
+      "verdict": "verified",
+      "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.8, \"taux_emploi_6ans\": 0.87, \"taux_cdi\": 0.76, \"salaire_median_embauche\": 1570, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+    },
+    {
+      "stat_text": "1 800€ brut",
+      "stat_value": 1800,
+      "stat_unit": "€ brut",
+      "context": "Salaire initial : 1 800€ brut en début de carrière dans le social",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "2 200€ brut",
+      "stat_value": 2200,
+      "stat_unit": "€ brut",
+      "context": "vs 2 200€ en grande distribution",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "8 000€+",
+      "stat_value": 8000,
+      "stat_unit": "€",
+      "context": "écoles promettant un \"nouveau métier en 3 mois\" pour 8 000€+",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "5k-10k€",
+      "stat_value": null,
+      "stat_unit": "€",
+      "context": "contre 5k-10k€ pour une formation classique",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    },
+    {
+      "stat_text": "100-500€",
+      "stat_value": null,
+      "stat_unit": "€",
+      "context": "Coût : ~100-500€ (contre 5k-10k€ pour une formation classique)",
+      "verdict": "unsourced_with_disclaimer",
+      "source_excerpt": null
+    }
+  ],
+  "fact_check_error": null,
+  "n_sources_aggregated": 8,
+  "domains_top_k": [
+    "competences_certif",
+    "formation",
+    "metier_prospective"
+  ],
+  "granularities_top_k": [
+    "_formation",
+    "_formation",
+    "_formation",
+    "_formation",
+    "_competences_certif",
+    "_metier_prospective",
+    "_metier_prospective",
+    "_formation"
+  ],
+  "sub_queries": [
+    {
+      "text": "Quelles formations courtes ou certifiantes permettent une reconversion professionnelle depuis la grande distribution vers un autre secteur ? Prioriser les formations accessibles sans diplôme préalable ou avec expérience professionnelle.",
+      "target_corpus": "formation",
+      "priority": 1,
+      "rationale": "Couvre l'intent core : identifier des formations adaptées à une reconversion depuis la grande distribution."
+    },
+    {
+      "text": "Quels sont les métiers porteurs en 2030 (DARES) qui recrutent dans des secteurs éloignés de la grande distribution, avec des perspectives d'embauche régionales ?",
+      "target_corpus": "metier_prospective",
+      "priority": 1,
+      "rationale": "Identifie les métiers en tension pour une reconversion ciblée et prospective."
+    },
+    {
+      "text": "Quels blocs de compétences (RNCP) sont les plus transférables depuis un parcours en grande distribution vers d'autres secteurs ? Exemples de certifications utiles pour une reconversion.",
+      "target_corpus": "competences_certif",
+      "priority": 2,
+      "rationale": "Valorise les compétences existantes et identifie des certifications complémentaires."
+    },
+    {
+      "text": "Quels sont les secteurs qui offrent les meilleures perspectives de recrutement pour des cadres en reconversion, par région ? Données APEC sur le marché du travail cadres.",
+      "target_corpus": "apec_region",
+      "priority": 2,
+      "rationale": "Apporte un éclairage sur les opportunités régionales pour les profils expérimentés."
+    },
+    {
+      "text": "Quels sont les taux d'insertion professionnelle (6 à 18 mois) pour les formations courtes ou certifiantes ciblant une reconversion ? Données MESR pour master/BUT.",
+      "target_corpus": "insertion_pro",
+      "priority": 3,
+      "rationale": "Évalue l'efficacité des formations en termes d'insertion post-reconversion."
+    }
+  ]
+}
