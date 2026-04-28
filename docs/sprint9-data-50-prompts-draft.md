@@ -1,54 +1,56 @@
-# Draft 50 prompts diversifiés — OrientIA Sprint 9-data
+# Draft v2 — 50 prompts diversifiés OrientIA Sprint 9-data
 
-**Statut** : draft Jarvis pour validation Matteo. Lecture mobile-friendly via GitHub.
+**Statut** : v2 consolidée avec retours Matteo intégrés (28/04 11:05 Telegram). Lecture mobile-friendly via GitHub.
 **Date** : 28 avril 2026
 **Référence ADR** : `08-Decisions/2026-04-28-orientia-pivot-pipeline-agentique-claude.md` (vault Obsidian)
 
 ---
 
-## 📍 Contexte (pour reprendre le fil)
+## 🔄 Changelog v1 → v2
 
-Ce matin (28/04), brainstorming intensif Telegram a abouti à un **pivot stratégique majeur** d'OrientIA : passage de "Q&A documentaire RAG" à **"conseiller IA conversationnel"**. 9 décisions tranchées (D1-D9) dans l'ADR :
+**Modifs structurelles intégrées suite review Matteo** :
 
-- **D1** : Pas de fine-tuning pour le 25/05 (raisons : fige les connaissances, deadline tendue, risque catastrophic forgetting)
-- **D2** : Architecture multi-agents hiérarchique (Coordinator + Empathic + Analyst + Synthesizer)
-- **D3** : Génération 1000 Q&A via pipeline agentique Claude (offline, one-shot)
-- **D4** : Validation humaine sample 100 cas (drop Phase 5 LLM Mistral local impossible)
-- **D5** : Stack 3 LLMs à 3 positions optimales (Claude génération / Mistral 7B local impossible / Mistral Medium inférence)
-- **D6** : Few-shot dynamique via RAG retrieval
-- **D7** : Eval framework HEART adapté à l'orientation
-- **D8** : Surveillance nocturne par Jarvis pendant la génération
-- **D9** : Mémoire utilisateur cross-session reportée à Sprint 11
+✅ **3 nouveaux profils ajoutés** (catégorie G nouvelle) :
+- **G1** — Décrocheur 16-18 ans (Missions Locales / E2C / SMV)
+- **G2** — Neuroatypique DYS/TDAH (craint amphis / évaluations écrites longues)
+- **G3** — Rural / Agricole (auto-censure "grandes écoles c'est pour Paris" + transport + logement)
 
-**Sprint 9 décomposé en 2 ordres** :
+✅ **2 fusions** (libère 2 slots) :
+- **A1 + A7 → A1** "Scientifique cherche voies post-bac appliquées/hybrides"
+- **B9 + C5 → B9** "Dilemme ROI continuer études vs marché direct"
 
-- **Ordre 1/2 — Sprint 9-archi** : refonte multi-agents hiérarchique. ✅ **LIVRÉ par Claudette en 3,5h** (PR #100). Audit cross-check Jarvis : GO MERGE.
-- **Ordre 2/2 — Sprint 9-data** : génération **1000 Q&A "réponses parfaites de conseiller"** via pipeline agentique 4 phases (research WebSearch → draft Opus 4.7 → self-critique → refine), lancée en background nuit 28-29.
+✅ **Sources priority enrichies** :
+- **Alternance/CFA** (A5, C3) : ajout `alternance.emploi.gouv.fr` + `1jeune1solution.gouv.fr`
+- **Handicap** (A9, E3) : ajout `MonParcoursHandicap.gouv.fr` (vs ONISEP seul)
+- **Fonction Publique** (D3) : ajout `Place de l'Emploi Public` + `Choisir le service public` (vs ENA/CNFPT seul)
 
-**Ce document** = la **config 50 prompts diversifiés** qui pilote la génération des 1000 Q&A. Chaque prompt génère 20 cas → 50 × 20 = 1000 cas Q&A.
+✅ **Tone tutoiement/vouvoiement recadré** :
+- **Tutoiement par défaut** jusqu'à 24/25 ans (ton bienveillant/coach)
+- **Vouvoiement uniquement** pour requêtes statutaires/corporate : **C8** (expat retour), **D3** (Fonction Publique), **D7** (MBA), **D8** (VAE)
+- Tous les autres profils 22-25 (C1, C2, C3, C4, C5→fusion, C6, C7) → tutoiement (proximité coach)
 
----
+✅ **Questions seed → 5-6 par prompt** (au lieu de 3) + **intégration questions réelles user_test_v3** (cf annexe ci-dessous, 10 questions test set + variantes phrasings humains)
 
-## 🎯 Ce qu'on attend de toi
-
-**Tu lis, tu identifies les trous**. Pas valider en aveugle. Spécifiquement :
-
-1. **Quels profils manquent ?** (rural, dys/TDAH, étudiants étrangers réfugiés, premier emploi sans diplôme, LGBT, sportifs amateurs, etc.)
-2. **Sources priority à corriger ?** (tu connais peut-être mieux APEC/OPCO/RNCP que mes intuitions)
-3. **Personas redondants à fusionner ?** (j'ai 3 prompts terminale spé maths-physique → potentielle redondance)
-4. **Tone (tutoiement/vouvoiement) adapté ?** (notamment sur les profils 22-25 où c'est pas tranché)
-5. **Questions seed assez diverses ?** (3 par prompt, je propose éventuellement passer à 5-7 pour ancrer mieux la diversité des 17 variations à générer)
+**Math final** : 50 - 2 (fusions) + 3 (G) = **51 prompts × 20 itérations ≈ 1020 cas Q&A**
 
 ---
 
-## 🚨 Mes auto-critiques honnêtes (angles morts identifiés en relisant)
+## 📍 Contexte (rappel pour reprendre le fil)
 
-1. **Couverture rurale faible** : prompts majoritairement urbains/IDF/grandes villes. Étudiants ruraux mal servis dans le dataset.
-2. **Troubles dys (DYS, TDAH) absents** : zéro prompt, manqué.
-3. **Étudiants étrangers en France** : trop léger (juste E6, 1 prompt). Sous-représenté.
-4. **Sur-représentation cas standards** : terminale spé maths-physique apparaît 3 fois (A1/A2/A7). Redondance.
-5. **Pas d'ancrage sur user_test_v3 réel** : on a 5 profils humains qui ont testé v3, leurs vraies questions auraient dû alimenter mes prompts. **Angle mort important — j'aurais dû les incorporer en amont.**
-6. **Questions seed seulement 3 par prompt** : sub-agents Opus doivent générer 17 autres variations. Risque divergence qualité. Pourrait être 5-7 seeds.
+Pivot stratégique majeur OrientIA tranché ce matin (brainstorming Telegram 06:09→09:21) : **Q&A documentaire RAG → conseiller IA conversationnel**. 9 décisions ADR (D1-D9) + Sprint 9 décomposé en 2 ordres (Ordre 1/2 archi LIVRÉ par Claudette PR #100 + Ordre 2/2 data = ce draft + génération nuit 28-29 via Task tool sub-agents Opus 4.7).
+
+**Couverture** des 3 axes scope OrientIA 17-25 :
+
+| Catégorie | # prompts | # cas | % couverture |
+|-----------|-----------|-------|--------------|
+| **A.** Lycéens post-bac | 9 (- A7 fusionné) | 180 | 17,6% |
+| **B.** Étudiants en réorientation | 10 (B9 enrichi par fusion C5) | 200 | 19,6% |
+| **C.** Actifs jeunes 22-25 | 7 (- C5 fusionné dans B9) | 140 | 13,7% |
+| **D.** Master + débouchés pro | 8 | 160 | 15,7% |
+| **E.** Cas familiaux/sociaux | 8 | 160 | 15,7% |
+| **F.** Méta-questions conseil | 6 | 120 | 11,8% |
+| **G.** Profils non-cadre classique | 3 (NOUVEAU) | 60 | 5,9% |
+| **Total** | **51** | **1020** | **100%** |
 
 ---
 
@@ -56,54 +58,41 @@ Ce matin (28/04), brainstorming intensif Telegram a abouti à un **pivot straté
 
 ```yaml
 ID: A1
-Catégorie: Lycéen post-bac
-Persona: 17 ans, lycée public banlieue parisienne, profil scientifique solide
-Context: Hésite prépa MPSI vs alternatives concrètes
-Constraints: [region:idf, budget:moderate, famille:pousse_prepa, valeurs:concret]
+Catégorie: Lycéen post-bac (Axe 1)
+Persona: 17 ans, lycée public, profil scientifique solide
+Context: Hésite voies post-bac scientifiques appliquées/hybrides
+Constraints: [region:variable, budget:moderate, valeurs:concret_hybride]
 Tone: tutoiement
-Sources priority: ONISEP > Parcoursup > InserJeunes
-Questions seed (3 sur 20 à générer par sub-agent Opus):
-  - "Je suis en terminale spé maths-physique mais je sature, alternatives à la prépa ?"
+Sources priority: ONISEP > Parcoursup > InserJeunes > France Compétences
+Questions seed (5-6 par prompt, à étendre par Claudette en YAML):
+  - "Je sature de maths abstraites, alternatives concrètes à la prépa MPSI ?"
   - "Quelles écoles d'ingénieur post-bac valent le coup vs prépa ?"
-  - "Est-ce que je trahis mes profs si j'évite la prépa ?"
+  - "Bio-info, finance quant, jeu vidéo : quelles voies post-bac précises ?"
+  - "[Question test set v3 Q2] Quelles sont les meilleures formations en cybersécurité en France ?"
+  - "[Variante phrasing humain] Bon en code mais CS classique me lasse, y'a quoi d'autre ?"
 ```
 
-Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par variation depuis les seeds, pour atteindre 20 cas par prompt × 50 prompts = 1000 cas Q&A.
+**📌 Note pour Claudette (conversion YAML)** : pour chaque prompt, étendre les 3 seeds actuelles à 5-6 en intégrant :
+- 1-2 questions test set v3 si match (cf annexe)
+- 1-2 variantes phrasing humain (argot, abréviations, syntaxe relaxée — inspiré Léo 17 / Sarah 20 / Thomas 23 / Catherine 52 / Dominique 48)
+- Conserver les seeds originaux comme variantes formelles
 
 ---
 
-## 📊 Distribution catégorielle
+## A. Lycéens post-bac (9 prompts) — Axe 1
 
-| Catégorie | # prompts | # cas | % couverture |
-|-----------|-----------|-------|--------------|
-| **A.** Lycéens post-bac | 10 | 200 | 20% |
-| **B.** Étudiants en réorientation | 10 | 200 | 20% |
-| **C.** Actifs jeunes 22-25 | 8 | 160 | 16% |
-| **D.** Master + débouchés pro | 8 | 160 | 16% |
-| **E.** Cas familiaux/sociaux | 8 | 160 | 16% |
-| **F.** Méta-questions conseil | 6 | 120 | 12% |
-| **Total** | **50** | **1000** | **100%** |
-
-**Couverture des 3 axes scope OrientIA 17-25** :
-- **Axe 1** (Lycéen post-bac) : 20% (A) + 4% (E1, E2, E3, E5) ≈ **24%**
-- **Axe 2** (Réorientation) : 20% (B) + 8% (C1-C3) ≈ **28%**
-- **Axe 3** (Master + débouchés pro) : 8% (C4-C8) + 16% (D) ≈ **24%**
-- **Transversal** (E + F) ≈ **24%**
-
----
-
-## A. Lycéens post-bac (10 prompts) — Axe 1
-
-### A1 — Terminale spé maths/physique, alternatives à la prépa
-**Persona** : 17 ans, lycée public banlieue parisienne, profil scientifique solide
-**Context** : Hésite prépa MPSI vs alternatives concrètes (BUT, écoles ingé post-bac, bachelors)
-**Constraints** : `region:idf`, `budget:moderate`, `famille:pousse_prepa`, `valeurs:concret`
+### A1 — Scientifique cherche voies post-bac appliquées/hybrides ⚠️ FUSION A1+A7
+**Persona** : 17 ans, terminale spé maths-physique ou maths/code, lycée public/privé, profil scientifique solide mais **pas attiré par prépa MPSI / CS pure**
+**Context** : Cherche alternatives concrètes (BUT, écoles ingé post-bac, bachelors, formations hybrides bio-info / finance quant / jeu vidéo / robotique)
+**Constraints** : `region:variable`, `budget:moderate`, `valeurs:concret_hybridation`, `style:non-mainstream`
 **Tone** : tutoiement
-**Sources priority** : ONISEP (alternatives prépa), Parcoursup (BUT GEII/GMP/MMI, écoles ingé post-bac), InserJeunes (taux insertion BUT vs prépa→école)
+**Sources priority** : ONISEP (alternatives prépa, formations hybrides), Parcoursup (BUT, écoles ingé post-bac), InserJeunes (insertion BUT vs prépa→école), France Compétences
 **Questions seed** :
 - "Je suis en terminale spé maths-physique mais je sature des maths abstraites, alternatives concrètes à la prépa MPSI ?"
 - "Quelles écoles d'ingénieur post-bac valent le coup vs prépa ?"
-- "Est-ce que je trahis mes profs si j'évite la prépa ?"
+- "Bio-info, finance quant, jeu vidéo : quelles voies post-bac précises ?"
+- "[Test set v3 Q2] Quelles sont les meilleures formations en cybersécurité en France ?"
+- "[Test set v3 Q3] Compare ENSEIRB-MATMECA et EPITA pour la cybersécurité"
 
 ### A2 — Terminale spé SES-HG, indécis multi-domaines
 **Persona** : 17 ans, lycée public province, profil littéraire scientifique solide
@@ -115,6 +104,7 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 - "Je hésite entre éco-gestion, droit et sciences-po, comment choisir ?"
 - "Sciences-Po Paris ou IEP région, quelle différence concrète ?"
 - "Pour un profil SES-HG, quel master pro paie mieux à 5 ans : droit ou éco ?"
+- "[Test set v3 Q1] J'ai 11 de moyenne en terminale générale, est-ce que je peux intégrer HEC ?"
 
 ### A3 — Terminale spé lettres, peur de débouchés
 **Persona** : 17 ans, lycée privé sous contrat, passion écriture/littérature
@@ -143,7 +133,7 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 **Context** : Diplôme en poche, hésite continuer (BTS/CFA) vs entrer marché direct
 **Constraints** : `région:variable`, `budget:bas`, `urgent:faim_indépendance`, `valeurs:travail_concret`
 **Tone** : tutoiement, direct
-**Sources priority** : France Travail (insertion bac pro), CFA (apprentissage post-bac pro), DARES (taux emploi 6 mois post-bac pro), OPCO (aides reconversion)
+**Sources priority** : France Travail (insertion bac pro), **`alternance.emploi.gouv.fr`** (ajout v2), **`1jeune1solution.gouv.fr`** (ajout v2), CFA (apprentissage post-bac pro), DARES (taux emploi 6 mois post-bac pro), OPCO (aides reconversion)
 **Questions seed** :
 - "Je sors d'un bac pro commerce, je continue en BTS ou je tente direct le marché ?"
 - "Si je continue en alternance, comment trouver une entreprise ?"
@@ -158,20 +148,11 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 **Questions seed** :
 - "J'aime le soin mais PASS/LAS me terrorise, quelles alternatives santé ?"
 - "Infirmier, kiné, ostéo : quelles différences concrètes au quotidien ?"
-- "Si j'échoue PASS, quelle plan B sérieux ?"
+- "[Test set v3 Q7] Je veux devenir médecin, comment faire ?"
+- "[Test set v3 Q8] J'ai 12 de moyenne générale en terminale, est-ce que j'ai mes chances en PASS ?"
+- "[Test set v3 Q9] Compare devenir infirmier et kinésithérapeute : études, salaires, débouchés."
 
-### A7 — Terminale spé maths, fort en code, pas inspiré CS
-**Persona** : 17 ans, lycée public/privé, profil tech mais ras-le-bol "tout monde fait CS"
-**Context** : Bon en code mais cherche autre chose (bio-info, finance quant, robotique appliquée, jeu vidéo, hardware)
-**Constraints** : `région:variable`, `budget:moderate`, `valeurs:hybridation_disciplines`, `style:non-mainstream`
-**Tone** : tutoiement, curieux
-**Sources priority** : ONISEP (bio-info, génie biomédical), Parcoursup (formations hybrides math-bio, finance quant), écoles spécifiques (ENS, MIASHS), recherche
-**Questions seed** :
-- "Je suis bon en code mais CS pure me lasse, quelles formations hybrides existent ?"
-- "Bio-info, finance quant, jeu vidéo : quelles voies post-bac précises ?"
-- "Est-ce que ces niches ont vraiment des débouchés ou c'est marketing ?"
-
-### A8 — Terminale boursière échelon élevé, mobilité limitée
+### A8 — Terminale boursière échelon élevé, mobilité limitée *(renumérotation : ex-A8)*
 **Persona** : 17 ans, lycée public, boursière échelon 6-7
 **Context** : Études supérieures uniquement viables si proche domicile (Bordeaux/Toulouse/Lyon/Lille selon perso) + bourses
 **Constraints** : `région:hors_idf_proche_lycée`, `budget:très_bas`, `bourse:échelon_6_7`, `mobilité:max_50km`, `valeurs:emploi_rapide`
@@ -187,7 +168,7 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 **Context** : Études sup possibles mais besoin d'établissements accessibles + accompagnement
 **Constraints** : `région:variable`, `budget:moderate`, `handicap:moteur`, `valeurs:accessibilité`, `mobilité:transports_adaptés`
 **Tone** : tutoiement, attentionné
-**Sources priority** : ONISEP (handicap études sup), Parcoursup (accompagnement spécifique handicap), MDPH, AGEFIPH (insertion pro), témoignages associations étudiants handicapés
+**Sources priority** : **`MonParcoursHandicap.gouv.fr`** (ajout v2 — plateforme État principale MDPH/études), ONISEP handicap, AGEFIPH (insertion pro), MDPH, témoignages associations étudiants handicapés
 **Questions seed** :
 - "Je suis en fauteuil, quelles études sup sont vraiment accessibles ?"
 - "Quels aménagements obtenir pour les concours et examens ?"
@@ -218,6 +199,7 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 - "Ma L1 droit ne se passe pas bien, je veux changer mais j'ai peur de perdre une année"
 - "Quelles passerelles existent du droit vers d'autres formations sans repartir de zéro ?"
 - "Un BUT après L1 droit ratée, c'est crédible ?"
+- "[Test set v3 Q5] Je suis en L2 droit et je veux me réorienter vers l'informatique, comment ?"
 
 ### B2 — L1 PASS échec, pas refaire médecine
 **Persona** : 18-19 ans, fin L1 PASS, échec ou écœurement
@@ -229,6 +211,7 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 - "J'ai raté PASS, je ne veux pas refaire LAS, quelles options ?"
 - "Quelles formations valorisent vraiment ma L1 PASS pour les passerelles ?"
 - "Comment se reconstruire psychologiquement après un échec PASS ?"
+- "[Test set v3 Q10] Je suis en L2 psychologie et je veux me réorienter vers l'orthophonie, comment ?"
 
 ### B3 — L1 STAPS, blessure, plan B
 **Persona** : 19 ans, L1 STAPS, blessure sportive empêche pratique intense
@@ -296,114 +279,105 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 - "Quitter l'ingénieur après 1 an, équivalences vers la fac ou un BUT ?"
 - "Y a-t-il vraiment un stigmate à quitter l'école d'ingé ?"
 
-### B9 — Sortie BTS, continuer ou marché ?
-**Persona** : 20 ans, fin BTS (CMI, MUC, NDRC, Comptabilité, etc.)
-**Context** : BTS validé, hésite continuer en licence pro / BUT 3 / école / vs entrer le marché direct
-**Constraints** : `région:variable`, `budget:moderate`, `valeurs:emploi_efficace`, `concret:CV_2_ans_théorie`
+### B9 — Dilemme ROI continuer études vs marché direct ⚠️ FUSION B9+C5
+**Persona** : 20-22 ans, fin de cursus court (BTS / BUT / LP en alternance, commerce/RH/finance/IT/comptabilité)
+**Context** : Diplôme bac+2 ou bac+3 + 1 an d'expérience pro alternance, hésite continuer (LP ou master selon niveau) vs entrée marché direct (avec proposition d'embauche fréquente)
+**Constraints** : `région:variable`, `budget:moderate`, `valeurs:gain_court_terme_vs_long_terme`, `marché:tendances_secteur`
 **Tone** : tutoiement, pragmatique
-**Sources priority** : France Travail (BTS taux insertion), Parcoursup (LP, BUT 3 passerelle), DARES (continuation BTS+1an gain salaire), témoignages BTS→entreprise direct
+**Sources priority** : APEC (gains carrière), DARES (LP/BTS/master ROI), France Travail (insertion BTS/BUT), témoignages anciens alternants, écoles cibles spécifiques
 **Questions seed** :
 - "J'ai mon BTS commerce, je continue en LP ou je tente le marché direct ?"
+- "Ma boîte d'alternance veut m'embaucher, mais un master ferait-il vraiment la différence ?"
 - "BTS+LP+1 an, gain salarial réel à 5 ans ?"
-- "Quels recruteurs valorisent le BTS seul vs LP ?"
+- "Master en alternance + emploi, c'est faisable concrètement ?"
+- "Combien je perds réellement à pas faire le master, à 5 ans ?"
 
-### B10 — Fin alternance L3 pro, master ou job ?
-**Persona** : 21-22 ans, fin licence pro alternance (RH, marketing, comptabilité, IT, etc.)
-**Context** : Diplôme bac+3 + 1 an d'expérience pro alternance, hésite master (souvent en école) vs entrée directe
+### B10 — Fin alternance L3 pro vers master *(prompt original B10 conservé)*
+**Persona** : 21-22 ans, fin licence pro alternance (RH, marketing, comptabilité, IT, etc.) avec ambition master poussée
+**Context** : Diplôme bac+3 + 1 an d'expérience pro, vise master en école ou alternance, dilemma ROI long terme
 **Constraints** : `région:variable`, `budget:moderate_high (école master payante)`, `valeurs:retours_invest`, `marché:tendances_secteur`
 **Tone** : tutoiement, pragmatique
 **Sources priority** : APEC (fin LP→emploi), DARES (LP vs master ROI), écoles cibles spécifiques, France Travail
 **Questions seed** :
-- "Ma LP alternance finie, master ou job direct, quel ROI à 5-10 ans ?"
-- "Master en alternance pour cumuler les 2, c'est possible et où ?"
 - "Si je vise un master, lequel et quelle école pour mon profil LP ?"
+- "Master spécialisé externe (HEC, ESSEC) après mon LP : ça vaut le coup ?"
+- "Master en alternance vs initial pour un profil LP ?"
 
 ---
 
-## C. Actifs jeunes 22-25 (8 prompts) — Axe 2+3
+## C. Actifs jeunes 22-25 (7 prompts — C5 fusionné dans B9) — Axe 2+3
 
-### C1 — 22 ans BAC+2 reconversion vers tech (dev)
+### C1 — 22 ans BAC+2 reconversion vers tech (dev) — TUTOIEMENT (recadré v2)
 **Persona** : 22 ans, BTS ou DUT/BUT non-tech (commerce, gestion, etc.), 1-2 ans pro, veut basculer dev
 **Context** : Auto-formé en code (HTML/CSS/JS), envisage formation pro courte (bootcamp) ou retour études
 **Constraints** : `région:variable`, `budget:à_financer`, `urgence:reconversion_rapide`, `valeurs:carrière_tech`
-**Tone** : vouvoiement, professionnel
-**Sources priority** : France Travail (formations dev), Pôle Emploi (CPF), bootcamps (Le Wagon, 42, Holberton), OPCO (aides reconversion), DARES (insertion dev junior)
+**Tone** : tutoiement (recadré v2 : proximité coach pour profil 22 ans en reconversion)
+**Sources priority** : France Travail (formations dev), Pôle Emploi (CPF), bootcamps (Le Wagon, 42, Holberton), OPCO (aides reconversion), DARES (insertion dev junior), **`1jeune1solution.gouv.fr`** (ajout v2)
 **Questions seed** :
 - "J'ai un BTS commerce, je veux devenir dev, bootcamp ou licence pro ?"
 - "Le 42 vs Le Wagon vs licence pro info : quel choix pour mon profil ?"
 - "Quelles aides financières pour reconversion vers le dev quand je travaille ?"
 
-### C2 — 24 ans bac+5 commerce reconversion santé
+### C2 — 24 ans bac+5 commerce reconversion santé — TUTOIEMENT (recadré v2)
 **Persona** : 24 ans, master école de commerce, 1-2 ans pro, lassée du commerce
 **Context** : Veut basculer dans le sanitaire/social mais pas envie de refaire 5 ans d'études
 **Constraints** : `région:idf_ou_grande_ville`, `budget:moderate (épargnée)`, `valeurs:utilité_humaine`, `pression:famille_questionne_changement`
-**Tone** : vouvoiement
+**Tone** : tutoiement (recadré v2 : 24 ans en reconversion = proximité coach)
 **Sources priority** : ONISEP (sanitaire-social bac+5 inclu reconversion), Parcoursup (IFSI/IFCS post-master), VAE pour santé, France Travail (cadre de santé)
 **Questions seed** :
 - "J'ai un master commerce mais je veux travailler dans la santé, par où commencer ?"
 - "VAE pour devenir cadre de santé sans refaire 3 ans IFSI, c'est faisable ?"
 - "Coordinateur santé / médico-social, ça correspond à mon profil bac+5 commerce ?"
 
-### C3 — 23 ans CAP coiffure, reprendre études
+### C3 — 23 ans CAP coiffure, reprendre études — TUTOIEMENT (recadré v2)
 **Persona** : 23 ans, CAP coiffure + 5 ans pro, veut élargir compétences
 **Context** : Bonne pratique mais veut entrepreneuriat (ouvrir salon) ou reconversion management
 **Constraints** : `région:variable`, `budget:bas (à financer)`, `valeurs:autonomie_pro`, `urgence:projet_à_5_ans`
-**Tone** : vouvoiement, pratique
-**Sources priority** : OPCO (CAP→BP→BTS via VAE), Pôle Emploi (création entreprise), CMA (chambres des métiers), France Travail (BMA, BMS)
+**Tone** : tutoiement (recadré v2)
+**Sources priority** : OPCO (CAP→BP→BTS via VAE), Pôle Emploi (création entreprise), CMA (chambres des métiers), France Travail (BMA, BMS), **`alternance.emploi.gouv.fr`** (ajout v2)
 **Questions seed** :
 - "J'ai un CAP coiffure depuis 5 ans, comment ouvrir mon propre salon ?"
 - "Quelles formations courtes pour devenir gérante de salon vs simple coiffeuse ?"
 - "BP coiffure VAE vs BTS coiffure : quelle valeur ajoutée concrète ?"
 
-### C4 — 25 ans master sciences ne trouve pas job, pivot
+### C4 — 25 ans master sciences ne trouve pas job, pivot — TUTOIEMENT (recadré v2)
 **Persona** : 25 ans, master 2 sciences (bio, chimie, physique), 1 an galère
 **Context** : Marché labo/recherche très saturé, doctorat impossible (pas de financement), veut pivot vers data ou industrie pharma management
 **Constraints** : `région:variable`, `budget:bas (galère)`, `émotion:épuisement`, `valeurs:domaine_scientifique_si_possible`
-**Tone** : vouvoiement, motivant
+**Tone** : tutoiement (recadré v2 : profil 25 ans en galère = proximité coach motivante)
 **Sources priority** : APEC (master sciences→industrie), DARES (cadres industrie pharma/cosmétique), France Compétences (RNCP science→management), formations data conversion
 **Questions seed** :
 - "Mon master 2 bio ne trouve pas de boulot, comment pivoter sans repartir à zéro ?"
 - "Data analyst pour profil sciences, quelles formations courtes ?"
 - "Industrie pharma management vs labo public, quelles formations valorisent mon profil ?"
 
-### C5 — 22 ans alternance terminée, master ou job ?
-**Persona** : 22 ans, fin LP alternance (commerce, RH, finance), proposition embauche
-**Context** : Embauche possible mais master pourrait booster carrière à 5-10 ans, dilemma classique
-**Constraints** : `région:variable`, `budget:revenu_disponible_actuel`, `valeurs:gain_rapide_vs_long_terme`
-**Tone** : tutoiement, dilemmatique
-**Sources priority** : APEC (gains carrière master vs LP), DARES (insertion LP vs LP+master), témoignages anciens alternants, écoles
-**Questions seed** :
-- "Ma boîte d'alternance veut m'embaucher, mais un master ferait-il vraiment la diff ?"
-- "Master en alternance + emploi, c'est faisable concrètement ?"
-- "Combien je perds réellement à pas faire le master, à 5 ans ?"
-
-### C6 — 24 ans burn-out boîte, sabbatical reconversion
+### C6 — 24 ans burn-out boîte, sabbatical reconversion — TUTOIEMENT (recadré v2)
 **Persona** : 24 ans, 2-3 ans en cabinet conseil/finance, burn-out
 **Context** : Pause récupération, cherche pivot vers domaine moins toxique mais pas perdre les acquis bac+5
 **Constraints** : `région:variable`, `budget:épargne_à_dépenser`, `émotion:rare_décision_émotionnelle`, `valeurs:équilibre_vie`
-**Tone** : vouvoiement, doux
-**Sources priority** : France Travail (gestion stress reconversion), PEC sabbatical, BTP profilo coaching, Pôle Emploi formations
+**Tone** : tutoiement, doux (recadré v2 : proximité coach essentielle pour burn-out)
+**Sources priority** : France Travail (gestion stress reconversion), PEC sabbatical, Pôle Emploi formations
 **Questions seed** :
 - "J'ai burn-out après 2 ans en cabinet, comment me reconvertir sans perdre mon CV ?"
 - "Année sabbatique pour réorientation : conseils pratiques ?"
 - "Métiers à fort sens et bon équilibre vie pro/perso pour profil bac+5 ?"
 
-### C7 — 23 ans étudiant doctoral arrêté, pivot industrie
+### C7 — 23 ans étudiant doctoral arrêté, pivot industrie — TUTOIEMENT (recadré v2)
 **Persona** : 23 ans, doctorat 1ère ou 2e année arrêté (épuisement, financement coupé, ras-le-bol)
 **Context** : Excellent niveau scientifique, mais doctorat ne va pas finir, marché industrie attractif
 **Constraints** : `région:variable`, `budget:bas (post-bourse_thèse)`, `valeurs:application_concrète`
-**Tone** : vouvoiement, valorisant
+**Tone** : tutoiement, valorisant (recadré v2)
 **Sources priority** : APEC (docteurs/chercheurs→industrie), DARES (parcours docteurs), forum L'Étudiant, ABG (Association Bernard Grégory)
 **Questions seed** :
 - "J'arrête mon doctorat, comment valoriser mes 2 ans de recherche en industrie ?"
 - "Industrie pharma / cosmétique / agro : quelles entreprises recrutent les ex-doctorants ?"
 - "Quelle est la différence salariale doctorat fini vs arrêté en début de carrière industrie ?"
 
-### C8 — 25 ans expat retour France, équivalences
+### C8 — 25 ans expat retour France, équivalences — VOUVOIEMENT (statutaire)
 **Persona** : 25 ans, BAC+5 obtenu à l'étranger (UK, US, Canada), retour France
 **Context** : Diplôme étranger non automatiquement reconnu en France, démarches complexes
 **Constraints** : `région:idf_ou_grande_ville`, `budget:moderate`, `valeurs:carrière_continuité`, `urgence:job_dans_3_mois`
-**Tone** : vouvoiement, structuré
+**Tone** : **vouvoiement, structuré** (justifié v2 : démarches administratives statutaires)
 **Sources priority** : Campus France, ENIC-NARIC (équivalences), APEC (recrutement profils internationaux), France Compétences (équivalences RNCP)
 **Questions seed** :
 - "J'ai un master UK, comment je le fais reconnaître en France pour le marché du travail ?"
@@ -418,7 +392,7 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 **Persona** : 21-22 ans, fin L3 (lettres, sciences, éco, droit), choix master imminent
 **Context** : Master recherche vs master pro vs école spécialisée, vs alternance, vs gap year
 **Constraints** : `région:variable`, `budget:moderate`, `valeurs:long_terme_carrière`, `dispersion:trop_options`
-**Tone** : vouvoiement, méthodique
+**Tone** : tutoiement, méthodique
 **Sources priority** : Parcoursup (Mon Master), APEC, DARES (master pro vs recherche insertion), école+alternance
 **Questions seed** :
 - "L3 droit, master pro ou recherche, lequel paie plus à 5 ans ?"
@@ -429,19 +403,19 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 **Persona** : 22 ans, fin M1 école de commerce généraliste, choix M2 spécialisation
 **Context** : Spé finance vs marketing vs RH vs entrepreneuriat, ou alors mastère spé externe
 **Constraints** : `région:idf_lyon`, `budget:élevé (école payante)`, `valeurs:carrière_top_tier`, `pression:promo_compétitive`
-**Tone** : vouvoiement, ambitieux
-**Sources priority** : APEC (master commerce spé→carrière), Linkedln (alumni écoles), DARES (gains spécialisation), Top 5 mastères spé France
+**Tone** : tutoiement, ambitieux
+**Sources priority** : APEC (master commerce spé→carrière), LinkedIn (alumni écoles), DARES (gains spécialisation), Top 5 mastères spé France
 **Questions seed** :
 - "M1 commerce, je vise quelle spé pour le meilleur ROI à 5-10 ans ?"
 - "Mastère spécialisé externe (HEC, ESSEC) après mon école : ça vaut le coup ?"
 - "Finance vs entrepreneuriat à 5 ans : taux de succès et risques réels ?"
 
-### D3 — RNCP Bac+5 reconversion vers fonction publique
+### D3 — RNCP Bac+5 reconversion vers fonction publique — VOUVOIEMENT (statutaire)
 **Persona** : 27 ans, BAC+5 secteur privé, veut reconversion fonction publique
 **Context** : Lassé du privé (pression, mobilité), cherche stabilité publique, hésite catégorie A vs B vs concours spécialisé
 **Constraints** : `région:variable`, `budget:moderate`, `valeurs:stabilité_utilité_publique`, `marché:concours_2026_2027`
-**Tone** : vouvoiement, pragmatique
-**Sources priority** : Fonction publique (concours catégorie A), CNFPT, ENA/ENS PSL Saclay, France Travail (intégration FP), DARES (FP vs privé carrière)
+**Tone** : **vouvoiement, pragmatique** (justifié v2 : statutaire concours)
+**Sources priority** : **`Place de l'Emploi Public`** (ajout v2 — référence catégories B + concours), **`Choisir le service public`** (ajout v2 — concrets concours), Fonction publique (catégorie A), CNFPT, ENA/ENS PSL Saclay, France Travail (intégration FP), DARES (FP vs privé carrière)
 **Questions seed** :
 - "Avec mon bac+5, quels concours fonction publique sont les plus pertinents ?"
 - "Catégorie A vs B : différences concrètes (salaire, missions, mobilité) ?"
@@ -451,7 +425,7 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 **Persona** : 24 ans, école d'ingé sortie diplômée, hésite mastère spé pour différenciation
 **Context** : Mastère spécialisé (data science, finance, sustainability) après école d'ingé classique : vrai gain ou marketing ?
 **Constraints** : `région:idf`, `budget:élevé (mastère payant 12-25k€)`, `valeurs:carrière_dual_compétence`
-**Tone** : vouvoiement, critique
+**Tone** : tutoiement, critique (24 ans, recadré v2)
 **Sources priority** : APEC (gains mastère spé), CGE (Conférence Grandes Écoles), témoignages anciens, classements indépendants
 **Questions seed** :
 - "Mastère spé data science après école d'ingé, ROI réel sur 5 ans ?"
@@ -462,7 +436,7 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 **Persona** : 23 ans, fin master 2 sciences/sciences sociales, choix doctorat ou industrie direct
 **Context** : Excellent dossier, tentation académique mais marché concours universitaires bouché
 **Constraints** : `région:variable`, `budget:à_financer (bourse_thèse)`, `valeurs:passion_recherche_vs_pragmatisme`
-**Tone** : vouvoiement, analytique
+**Tone** : tutoiement, analytique (23 ans, recadré v2)
 **Sources priority** : ABG (Bernard Grégory), CNRS (recrutement chercheurs), APEC (carrière docteurs), DARES (recrutements universités 2026)
 **Questions seed** :
 - "Doctorat vs industrie direct, quel choix pour bon profil sciences ?"
@@ -473,29 +447,29 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 **Persona** : 22 ans, fin licence sciences-po IEP, choix master Sciences-Po Paris vs école commerce M2
 **Context** : Profil ambition publique mais hésite vers business + cosmopolite
 **Constraints** : `région:idf`, `budget:très_élevé`, `valeurs:influence_société_vs_business`, `pression:réseau_à_construire`
-**Tone** : vouvoiement, stratégique
+**Tone** : tutoiement, stratégique (22 ans, recadré v2)
 **Sources priority** : APEC, Sciences-Po Paris (carrières alumni), HEC/ESSEC/ESCP carrières alumni, DARES (gain salarial à 10 ans)
 **Questions seed** :
 - "Sciences-Po Paris master ou HEC/ESSEC : carrière + salaire à 10 ans ?"
 - "Si je vise haute fonction publique, Sciences-Po est-il indispensable ?"
 - "École commerce + Sciences-Po (en MS), réaliste à mon stade ?"
 
-### D7 — MBA jeune (25 ans), intérêt
+### D7 — MBA jeune (25 ans), intérêt — VOUVOIEMENT (corporate)
 **Persona** : 25 ans, 3 ans pro post-école commerce, veut booster carrière via MBA
 **Context** : MBA accélèrent réseau et salaire mais coût (60-130k€) et opportunité (1-2 ans hors marché)
 **Constraints** : `région:idf_lyon_us_uk`, `budget:très_élevé (prêt étudiant)`, `valeurs:carrière_internationale`
-**Tone** : vouvoiement, business
+**Tone** : **vouvoiement, business** (justifié v2 : statutaire corporate haut niveau)
 **Sources priority** : APEC (MBA carrière), classements MBA (FT, QS), témoignages alumni MBA français
 **Questions seed** :
 - "MBA à 25 ans, est-ce trop tôt pour un retour optimal ?"
 - "INSEAD vs HEC vs Stanford à 25 ans : ROI estimé sur 10 ans ?"
 - "Prêt étudiant 100k€ pour MBA, comment évaluer si ça vaut le coup pour mon profil ?"
 
-### D8 — Validation acquis (VAE) bac+5 sans master
+### D8 — Validation acquis (VAE) bac+5 sans master — VOUVOIEMENT (statutaire)
 **Persona** : 30 ans, 5 ans pro, veut Bac+5 via VAE sans refaire école
 **Context** : Marché demande Bac+5 pour postes seniors, pratique l'expérience nécessite validation formelle
 **Constraints** : `région:variable`, `budget:moderate (VAE coût modéré)`, `urgence:promotion_à_5_ans`, `valeurs:reconnaissance_diplôme`
-**Tone** : vouvoiement, structuré
+**Tone** : **vouvoiement, structuré** (justifié v2 : 30 ans + statutaire VAE)
 **Sources priority** : France VAE, France Compétences (RNCP), CNED, France Travail (VAE accompagnement)
 **Questions seed** :
 - "VAE master en RH, comment ça marche concrètement et combien de temps ?"
@@ -506,11 +480,11 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 
 ## E. Cas familiaux/sociaux (8 prompts) — Transversal
 
-### E1 — Parent angoissé 1er enfant Parcoursup
+### E1 — Parent angoissé 1er enfant Parcoursup — VOUVOIEMENT (parent)
 **Persona** : Parent ~45 ans, premier enfant en terminale, méconnaissance Parcoursup
 **Context** : Veut accompagner son enfant sans le pousser, hésite informer/éduquer/rassurer
 **Constraints** : `parent_côté`, `budget:variable`, `valeurs:réussite_enfant_sans_pression`, `méconnaissance:filières_actuelles`
-**Tone** : vouvoiement, attentionné
+**Tone** : vouvoiement, attentionné (justifié : profil parent 45 ans)
 **Sources priority** : Parcoursup (parents), CIDJ (parents), ONISEP (parents)
 **Questions seed** :
 - "Mon enfant fait Parcoursup, comment l'accompagner sans le stresser ?"
@@ -522,7 +496,7 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 **Context** : Très limitée géographiquement (proche domicile), budget zéro
 **Constraints** : `région:proche_lycée`, `budget:très_bas`, `bourse:échelon_7`, `mobilité:transports_publics`
 **Tone** : tutoiement, valorisant
-**Sources priority** : CROUS (bourses + logement), Pôle Emploi (formations financées), associations (École Z, Frateli, etc.), France Travail (apprentissage payé)
+**Sources priority** : CROUS (bourses + logement), Pôle Emploi (formations financées), associations (École Z, Frateli, etc.), France Travail (apprentissage payé), **`1jeune1solution.gouv.fr`** (ajout v2)
 **Questions seed** :
 - "Boursière échelon 7, comment financer mes études supérieures sans bouger ?"
 - "Apprentissage rémunéré post-bac, quelles aides cumulables ?"
@@ -532,8 +506,8 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 **Persona** : 18-22 ans, handicap moteur (visible/non-visible)
 **Context** : Études sup envisageables mais besoin écoles accessibles + accompagnement humain
 **Constraints** : `handicap:moteur`, `région:variable`, `valeurs:autonomie_dignité`, `mobilité:transports_adaptés`
-**Tone** : vouvoiement, attentionné
-**Sources priority** : ONISEP handicap, AGEFIPH, MDPH, témoignages associations étudiants handicapés
+**Tone** : tutoiement, attentionné (recadré v2 : 18-22 ans tutoiement coach)
+**Sources priority** : **`MonParcoursHandicap.gouv.fr`** (ajout v2 — plateforme État principale), ONISEP handicap, AGEFIPH, MDPH, témoignages associations étudiants handicapés
 **Questions seed** :
 - "Quelles écoles d'ingénieur sont vraiment accessibles aux étudiants en fauteuil ?"
 - "Comment obtenir un assistant pédagogique en master ?"
@@ -561,11 +535,11 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 - "BTS/BUT garantissent vraiment plus de sécurité ?"
 - "Si je fais une licence puis master, le risque de chômage est-il vraiment plus élevé ?"
 
-### E6 — Étudiant migrant équivalences diplôme étranger
+### E6 — Étudiant migrant équivalences diplôme étranger — VOUVOIEMENT (statutaire)
 **Persona** : 19-23 ans, diplôme étranger (sub-saharien, Maghreb, Asie, Europe Est), arrivée France
 **Context** : Veut continuer études en France, équivalences complexes, démarches administratives lourdes
 **Constraints** : `pays_origine:variable`, `région:idf_ou_grande_ville`, `budget:bas`, `urgence:visa_étudiant`
-**Tone** : vouvoiement, structuré
+**Tone** : vouvoiement, structuré (justifié : démarches statutaires lourdes)
 **Sources priority** : Campus France (équivalences pays origine), ENIC-NARIC, CROUS (aides étudiants étrangers), DAEU (diplôme accès études universitaires)
 **Questions seed** :
 - "J'ai un diplôme étranger, comment je le fais reconnaître pour entrer à la fac française ?"
@@ -603,7 +577,7 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 **Context** : Recherche profit + alignement intérêt, parfois en conflit
 **Constraints** : `région:variable`, `valeurs:rentabilité_vs_passion`, `style:franc_du_collier`
 **Tone** : tutoiement, équilibré
-**Sources priority** : APEC (salaires par métier), DARES (rémunérations sectorielles), France Travail (top métiers payés), Linkedln Salary Insights
+**Sources priority** : APEC (salaires par métier), DARES (rémunérations sectorielles), France Travail (top métiers payés), LinkedIn Salary Insights
 **Questions seed** :
 - "J'aime les sciences humaines mais je veux 4000€/mois à 30 ans, c'est conciliable ?"
 - "Pour un profil littéraire, quels métiers paient le plus à 5 ans d'expérience ?"
@@ -614,11 +588,13 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 **Context** : Préfère apprendre par la pratique, terrain, application
 **Constraints** : `région:variable`, `valeurs:concret_terrain`, `style:hands_on`
 **Tone** : tutoiement, direct
-**Sources priority** : ONISEP (alternance, BUT, BTS), Parcoursup (formations terrain), France Travail (apprentissage), CFA
+**Sources priority** : ONISEP (alternance, BUT, BTS), Parcoursup (formations terrain), France Travail (apprentissage), CFA, **`alternance.emploi.gouv.fr`** (ajout v2)
 **Questions seed** :
 - "Je déteste les cours magistraux et la théorie, quelles formations sont 100% terrain ?"
 - "L'apprentissage est-il vraiment plus concret que les études classiques ?"
 - "Quelles études supérieures intègrent vraiment la pratique dès la 1ère année ?"
+- "[Test set v3 Q4] C'est quoi une licence universitaire en France ?"
+- "[Test set v3 Q6] Quelles bonnes formations existent à Perpignan ?"
 
 ### F3 — "Quelle est la voie qui paie le plus en sortie d'école ?"
 **Persona** : 18-22 ans, ambition financière forte, prêt à investir énergie
@@ -666,10 +642,81 @@ Les **17 autres questions** seront générées par les sub-agents Opus 4.7 par v
 
 ---
 
-## ✅ Prochaines étapes après tes retours
+## G. Profils non-cadre classique (3 prompts NOUVEAUX v2) — Transversal
 
-1. **Tu m'envoies tes retours via Telegram** : trous identifiés / prompts à fusionner / sources à corriger / autres remarques
-2. **Je consolide** le draft (intégration de tes retours + ajout user_test_v3 questions réelles si tu m'autorises)
-3. **Conversion en YAML** par Claudette dans le repo OrientIA (`config/diverse_prompts_50.yaml`)
-4. **Dispatch Ordre 2/2** Sprint 9-data cet après-midi
-5. **Lancement génération nuit 28-29** via Task tool sub-agents Opus 4.7
+### G1 — Décrocheur 16-18 ans (NOUVEAU v2)
+**Persona** : 16-18 ans, sorti du système scolaire sans diplôme, perdu, souvent en rupture familiale ou sociale
+**Context** : Pas de diplôme, parfois domicile instable. Cherche un cadre qui réintègre (Missions Locales, École de la 2e Chance, Service Militaire Volontaire) avec accompagnement humain fort
+**Constraints** : `âge:16_18`, `diplôme:aucun`, `émotion:rupture_perte_repères`, `urgence:réintégration`, `mobilité:limitée_souvent`
+**Tone** : tutoiement, soutien direct (pas paternaliste)
+**Sources priority** : **Missions Locales** (réseau national), **`reseau-e2c.fr`** (École de la 2e Chance), **SMV** (Service Militaire Volontaire), **`1jeune1solution.gouv.fr`**, France Travail (Garantie Jeunes / Contrat d'Engagement Jeune)
+**Questions seed** :
+- "J'ai arrêté l'école à 16 ans, qu'est-ce que je peux faire maintenant ?"
+- "Mission Locale, E2C, SMV : c'est quoi la différence concrètement ?"
+- "Sans diplôme, comment je peux gagner ma vie en repartant ?"
+- "[Phrasing brut] J'sais pas où aller, tout le monde dit que je suis foutu"
+- "Le Service Militaire Volontaire, ça paie vraiment et ça donne quoi à la fin ?"
+
+### G2 — Neuroatypique DYS / TDAH (NOUVEAU v2)
+**Persona** : 17-25 ans, capacités intellectuelles solides MAIS DYS (dyslexie, dysorthographie, dyscalculie) ou TDAH
+**Context** : Craint le système universitaire classique (amphis bondés bruyants, évaluations écrites longues, prise de notes rapide). Cherche écoles à fort accompagnement, contrôle continu, ou pédagogie alternative
+**Constraints** : `neuroatypie:dys_ou_tdah`, `âge:17_25`, `valeurs:accompagnement_humain`, `craintes:amphis_bondés_évaluations_chronométrées`
+**Tone** : tutoiement, déculpabilisant (les neuroatypiques entendent souvent qu'ils "ne s'appliquent pas")
+**Sources priority** : **`MonParcoursHandicap.gouv.fr`** (RQTH étudiant + aménagements), MDPH (tiers temps + secrétariat), ONISEP (formations adaptées), **Fédération Française des DYS**, témoignages associations (HyperSupers TDAH France, Apedys), **écoles pédagogie active** (Steiner-Waldorf supérieur, Mons en Bareul, etc.)
+**Questions seed** :
+- "Je suis TDAH, comment survivre à la fac sans me cramer ?"
+- "Dyslexique, quels aménagements je peux demander en école d'ingé ?"
+- "Quelles formations sup ont vraiment un suivi adapté pour DYS / TDAH ?"
+- "Tiers temps aux examens, c'est automatique ou faut le demander où ?"
+- "[Phrasing brut] J'ai un cerveau qui marche pas comme les autres, tout le monde me dit de m'appliquer mais ça suffit pas"
+
+### G3 — Rural / Agricole isolé (NOUVEAU v2)
+**Persona** : 17 ans, lycée rural département isolé (Creuse, Lozère, Cantal, Ariège, Aveyron, etc.), grande exploitation agricole familiale ou village 500 habitants
+**Context** : **Auto-censure forte** ("les grandes écoles c'est pour Paris, pas pour moi"), **transport** (pas de permis, pas de gare proche), **logement métropole inconnu**. Souvent 1ère génération étudiante de la famille
+**Constraints** : `région:rural_isolé`, `transport:pas_permis`, `budget:bas`, `auto_censure:fort`, `1ère_génération_étudiante:probable`
+**Tone** : tutoiement, valorisant explicitement (anti auto-censure)
+**Sources priority** : **`1jeune1solution.gouv.fr`** (mobilité rurale), CROUS (logement métropole), associations dédiées (**Cordées de la Réussite**, **Frateli**, **Article 1**), Parcoursup (filières rurales/agricoles), ONISEP (témoignages 1ère génération étudiante), France Travail (aides mobilité rurale → métropole)
+**Questions seed** :
+- "Je suis dans un village de 500 habitants, comment je fais pour étudier à Paris ou Toulouse ?"
+- "Mes parents ont une ferme, est-ce que je dois reprendre l'exploitation ou partir étudier ?"
+- "Sciences-Po Paris pour quelqu'un de rural, c'est vraiment possible ?"
+- "Comment payer le permis ET le logement étudiant, c'est trop cher en cumul"
+- "[Phrasing brut] Personne dans ma famille n'a fait d'études, j'ai peur de pas y arriver à la fac"
+- "[Test set v3 Q6] Quelles bonnes formations existent à Perpignan ?"
+
+---
+
+## 📌 Annexe — Mapping questions test set user_test_v3 vers prompts cibles
+
+Les 10 questions du test set v3 (`results/user_test_v3/answers_to_show.md`) ont été testées par les 5 profils humains (Léo 17, Sarah 20, Thomas 23, Catherine 52, Dominique 48). À intégrer comme seeds réelles dans les prompts ci-dessous lors de la conversion YAML par Claudette :
+
+| # | Question test set | Prompts cibles | Remarques retours humains |
+|---|-------------------|----------------|---------------------------|
+| Q1 | "J'ai 11 de moyenne en terminale générale, est-ce que je peux intégrer HEC ?" | A2 | Léo +1 sur clarté tour 2. Sarah note erreur persistante "Tremplin/Passerelle" pour HEC |
+| Q2 | "Quelles sont les meilleures formations en cybersécurité en France ?" | A1 (fusion) | Léo +2 clarté, "vraie progression" |
+| Q3 | "Compare ENSEIRB-MATMECA et EPITA pour la cybersécurité" | A1 (fusion) | Tableau apprécié, mais "EPITA 8 500€/an" erreur (réalité 10 500€) |
+| Q4 | "C'est quoi une licence universitaire en France ?" | F2 | Léo et Sarah : "plus court et propre v3" |
+| Q5 | "Je suis en L2 droit et je veux me réorienter vers l'informatique, comment ?" | B1 | 646 mots = trop long. VAE persistance erreur signalée |
+| Q6 | "Quelles bonnes formations existent à Perpignan ?" | G3 (rural), A8 (boursier proximité) | "Périgueux 3h30 hallucination corrigée v3" |
+| Q7 | "Je veux devenir médecin, comment faire ?" | A6 | "Bac S supprimé persiste" (depuis 2021) |
+| Q8 | "J'ai 12 de moyenne générale en terminale, est-ce que j'ai mes chances en PASS ?" | A6 | Bug technique : "liens cassés vers github.com" |
+| Q9 | "Compare devenir infirmier et kinésithérapeute" | A6, B2 | Tableau cassé en cours de rendu = régression UX |
+| Q10 | "Je suis en L2 psychologie et je veux me réorienter vers l'orthophonie, comment ?" | B2 | Erreur grave : "concours candidat libre" alors qu'orthophonie sur Parcoursup depuis 2020 |
+
+**Phrasings humains à embarquer** (depuis profils Léo 17, Sarah 20) pour les seeds "argot/angoisse brute" :
+
+- Léo (lycéen) : "ma meuf veut médecine pas moi", "j'sais pas où aller", "Tremplin/Passerelle/AST que je comprends toujours pas", "C'est sérieux ? Au tour précédent ça marchait"
+- Sarah (L2 LEA réo) : "Ma L2 langues va nulle part j'ai envie de tout plaquer", "j'peux pas distinguer un lien légitime d'un faux", "tout le monde dit que ça mène à rien"
+- Thomas (M1 finance, 23) : "M1 finance, fintech vs banque traditionnelle pour la suite ?"
+- Catherine (52, parent) : "Mon fils va sur Parcoursup, c'est moi qui panique plus que lui"
+
+---
+
+## ✅ Prochaines étapes après ta validation finale v2
+
+1. **Tu valides cette v2 sur Telegram** → je ferme le loop avec Claudette
+2. **Conversion en YAML par Claudette** dans le repo OrientIA (`config/diverse_prompts_50.yaml`) lors de l'Ordre 2/2
+   - Étend les seeds à 5-6 par prompt en intégrant les questions test set v3 + phrasings humains (cf annexe)
+3. **Dispatch Ordre 2/2** Sprint 9-data cet après-midi
+4. **Lancement génération nuit 28-29** via Task tool sub-agents Opus 4.7
+5. **Surveillance Jarvis nuit + report matin 7h**
