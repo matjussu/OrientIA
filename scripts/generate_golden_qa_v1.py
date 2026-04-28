@@ -88,12 +88,20 @@ MAX_CONSECUTIVE_429 = 10  # stop condition
 SCORE_KEEP_THRESHOLD = 85
 SCORE_FLAG_THRESHOLD = 70
 
-# Détection 429 / rate limit dans stderr/stdout subprocess
+# Détection 429 / rate limit / quota Claude Max plan dans stderr/stdout subprocess
+# (la CLI `claude --print` peut exit en signalant des limites de plusieurs façons :
+#  HTTP 429 standard, message "out of extra usage" Claude Max, "limit reached", etc.)
 _RATE_LIMIT_PATTERNS = [
     re.compile(r"\brate[-_ ]?limit", re.IGNORECASE),
     re.compile(r"\b429\b"),
     re.compile(r"\bquota exceeded", re.IGNORECASE),
     re.compile(r"\btoo many requests", re.IGNORECASE),
+    # Claude Max plan limits (signature observée 2026-04-28 dryrun v2 :
+    # "You're out of extra usage · resets 5:40pm (Europe/Paris)")
+    re.compile(r"\bout of (?:extra )?usage", re.IGNORECASE),
+    re.compile(r"\busage limit", re.IGNORECASE),
+    re.compile(r"\b(?:5-?hour|monthly) limit", re.IGNORECASE),
+    re.compile(r"\bresets? (?:at )?\d", re.IGNORECASE),  # "resets 5:40pm" / "resets at 17h"
 ]
 
 # Cap pour ne pas exploser la taille du JSONL
@@ -323,7 +331,29 @@ RÉPONSE PARFAITE de conseiller bienveillant :
 - INTERDIT : reco prescriptive ("tu devrais"). Toujours 3 options pondérées
 - Question finale d'exploration qui rend le choix à l'utilisateur·ice
 - Tone strictement {prompt_config['tone']}
-- Si une info chiffrée n'est pas dans les sources retrievées Phase 1, marquer (estimation, connaissance générale)
+
+INTERDICTION STRICTE de chiffres précis (tarif, salaire, %, durée, taux d'insertion, sélectivité, places concours, années, mensualité, montant aide, score moyen) non EXPLICITEMENT présents dans les sources de la Phase 1 WebSearch.
+
+Si une donnée chiffrée n'est pas dans les sources Phase 1 retrievées, remplace-la par une notion QUALITATIVE :
+- "frais de scolarité ~10 500€/an" → "frais élevés (école privée de commerce)"
+- "taux d'insertion 90%" → "très bonne insertion documentée"
+- "salaire moyen 2 000€ brut/mois" → "salaire de débutant standard"
+- "sélectivité ~28%" → "sélectivité modérée"
+- "9 mois de césure" → "césure de quelques mois à 1 an"
+
+NE JAMAIS écrire un nombre (avec %, €, ans, mois, mensuel, points, places, etc.) sans vérifier qu'il est dans le research Phase 1. En cas de doute, **registre qualitatif obligatoire**.
+
+Cette règle est plus stricte que l'ancien estimation marker : on retire complètement les chiffres non sourcés au lieu de les flagger "(estimation)". Raison : Mistral en inférence finale peut perdre le marker `(estimation)` et propager des faux chiffres en confiance — éviter le risque à la racine.
+
+LISIBILITÉ MOBILE OBLIGATOIRE :
+- Lecteur cible : 17-25 ans sur smartphone, souvent angoissé (Parcoursup, réorientation)
+- Format obligatoire :
+  - 1-2 phrases reformulation/active listening en ouverture
+  - 3 pistes en BULLET POINTS COURTS (max 2-3 phrases par piste, pas de paragraphe long)
+  - 1 phrase question finale d'exploration
+- Limite totale : **250-350 mots maximum**
+- Sauts de ligne entre pistes pour respiration
+- Densité = ennemi du lecteur stressé. Bloc texte massif INTERDIT.
 
 Output JSON STRICT :
 {{

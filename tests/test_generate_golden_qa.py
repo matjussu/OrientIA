@@ -159,6 +159,15 @@ class TestRateLimitDetection:
         "Too Many Requests",
         "rate-limit hit",
         "rate_limit",
+        # Claude Max plan signatures (patterns ajoutés post-incident dry-run v2
+        # quand le quota a hit avec message "You're out of extra usage · resets 5:40pm")
+        "You're out of extra usage · resets 5:40pm (Europe/Paris)",
+        "out of usage",
+        "Approaching usage limit",
+        "5-hour limit reached",
+        "monthly limit reached",
+        "resets at 17h00",
+        "resets 5:40pm",
     ])
     def test_detects_rate_limit_in_stderr(self, text):
         assert gqa.is_rate_limit_error(text, "") is True
@@ -408,6 +417,72 @@ class TestCallClaudeWithRetry:
         parsed = json.loads(result)
         assert "score_total" in parsed
         assert isinstance(parsed["score_total"], int)
+
+
+# ───────────────────── Phase 2 prompt content (anti-régression patch v2) ─────
+
+
+class TestPhase2DraftPromptContent:
+    """Vérifie que le prompt Phase 2 inclut les directives critiques :
+    anti-chiffres non sourcés (modif Matteo msg 2807, post-dryrun v1) +
+    lisibilité mobile obligatoire (250-350 mots, bullets, sauts ligne).
+
+    Stratégie test : mock `call_claude_with_retry`, capture le prompt
+    construit par `phase2_draft`, asserte présence des marqueurs.
+    """
+
+    def test_prompt_contains_interdiction_stricte_chiffres(
+        self, sample_prompt_config, cfg_minimal
+    ):
+        retry_stats = gqa.RetryStats()
+        captured: dict = {}
+
+        def fake_call(prompt, cfg, stats, allowed_tools=None):
+            captured["prompt"] = prompt
+            return '{"question": "Q", "answer": "A"}'
+
+        with patch.object(gqa, "call_claude_with_retry", side_effect=fake_call):
+            gqa.phase2_draft(
+                sample_prompt_config,
+                "research result text",
+                sample_prompt_config["questions_seed"][0],
+                cfg_minimal,
+                retry_stats,
+            )
+
+        assert "INTERDICTION STRICTE de chiffres précis" in captured["prompt"]
+        # Sample des exemples qualitatif → vérifier au moins 1 transformation
+        assert "→" in captured["prompt"]
+        assert "registre qualitatif obligatoire" in captured["prompt"]
+        # Justification anti-marker estimation (raison du durcissement)
+        assert "Mistral en inférence finale peut perdre le marker" in captured["prompt"]
+
+    def test_prompt_contains_lisibilite_mobile_obligatoire(
+        self, sample_prompt_config, cfg_minimal
+    ):
+        retry_stats = gqa.RetryStats()
+        captured: dict = {}
+
+        def fake_call(prompt, cfg, stats, allowed_tools=None):
+            captured["prompt"] = prompt
+            return '{"question": "Q", "answer": "A"}'
+
+        with patch.object(gqa, "call_claude_with_retry", side_effect=fake_call):
+            gqa.phase2_draft(
+                sample_prompt_config,
+                "research result text",
+                sample_prompt_config["questions_seed"][0],
+                cfg_minimal,
+                retry_stats,
+            )
+
+        assert "LISIBILITÉ MOBILE OBLIGATOIRE" in captured["prompt"]
+        assert "smartphone" in captured["prompt"]
+        # Limite mots explicit (250-350 max)
+        assert "250-350 mots" in captured["prompt"]
+        # Bullet points obligatoires + sauts ligne respiration
+        assert "BULLET POINTS COURTS" in captured["prompt"]
+        assert "Bloc texte massif INTERDIT" in captured["prompt"]
 
 
 # ───────────────────── 4-phase orchestration end-to-end ─────────────────
