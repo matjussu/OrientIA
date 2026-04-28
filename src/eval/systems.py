@@ -218,3 +218,40 @@ class ClaudeBaseline(System):
             messages=[{"role": "user", "content": question}],
         )
         return response.content[0].text
+
+
+# --- Sprint 9 — Hiérarchique multi-agents conseiller (pivot 2026-04-28) ---
+#
+# Préserve structurellement le bench Mode Baseline +7,4pp Sprint 7 :
+# le SynthesizerAgent embed AgentPipeline TEL QUEL (pattern strangler fig).
+# Le mode `single_shot=True` bypass la règle 3 tours pour la compat bench.
+# Cf ADR `08-Decisions/2026-04-28-orientia-pivot-pipeline-agentique-claude.md`.
+
+class HierarchicalSystem(System):
+    """Sprint 9 conseiller conversationnel — wrapper bench compat.
+
+    Pour le bench non-régression, `respond_single_shot()` route directement
+    vers SynthesizerAgent (qui embed AgentPipeline) puis EmpathicAgent
+    re-emballe en posture conseiller. Le pct_verified factuel est
+    structurellement préservé car le retrieval + génération sous-jacents
+    sont identiques au Mode Baseline OurRagSystem.
+
+    L'EmpathicAgent ajoute une couche conversationnelle (reformulation +
+    posture) qui peut allonger la réponse et changer le ton — c'est le
+    signal positif attendu en mode conseiller.
+    """
+
+    name = "hierarchical_v1"
+
+    def __init__(self, coordinator):
+        from src.agents.hierarchical import Coordinator
+        if not isinstance(coordinator, Coordinator):
+            raise TypeError(
+                "HierarchicalSystem expects a Coordinator instance "
+                "(src.agents.hierarchical.Coordinator)."
+            )
+        self.coordinator = coordinator
+
+    def answer(self, qid: str, question: str) -> str:
+        result = self.coordinator.respond_single_shot(question)
+        return result.response_text
