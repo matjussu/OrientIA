@@ -123,7 +123,18 @@ class GenerateConfig:
     target: int | None = None
     filter_prompt_id: str | None = None
     max_iterations: int | None = None
+    # Modèle global (legacy compat tests v1+v2). Si non-None ET les 3 flags
+    # phase-specific en dessous restent à None, utilisé pour toutes les phases.
     model: str | None = None
+    # Stratégie hybride v3 (Sprint 9-data Levier 1) — 3 modèles selon criticité
+    # phase. Si None, fallback sur `model` (legacy) puis sur le default CLI
+    # session côté `claude --print`.
+    # Phase 1 research WebSearch : recherche factuelle suffit, Haiku économique
+    # Phase 2 draft : créativité conseiller user-facing → Opus qualité top
+    # Phase 3+4 fusion critique+refine : refine reste user-facing → Opus
+    model_research: str | None = None
+    model_draft: str | None = None
+    model_critique_refine: str | None = None
     rate_limit_delay: float = DEFAULT_RATE_LIMIT_DELAY
     max_retries: int = DEFAULT_MAX_RETRIES
     timeout_s: int = DEFAULT_TIMEOUT_S
@@ -210,10 +221,18 @@ def call_claude_with_retry(
     cfg: GenerateConfig,
     retry_stats: RetryStats,
     allowed_tools: list[str] | None = None,
+    model: str | None = None,
 ) -> str:
-    """Subprocess avec backoff exponentiel sur 429. Raise RuntimeError sur fail définitif."""
+    """Subprocess avec backoff exponentiel sur 429. Raise RuntimeError sur fail définitif.
+
+    Le `model` arg explicite (Sprint 9-data v3 stratégie hybride) override le
+    `cfg.model` legacy. Permet d'utiliser un modèle phase-specific sans casser
+    la compat tests v1+v2 qui passent uniquement par cfg.model.
+    """
     if cfg.dry_run_no_subprocess:
         return _fake_response_for_debug(prompt)
+
+    effective_model = model if model is not None else cfg.model
 
     for attempt in range(cfg.max_retries + 1):
         if _shutdown_event.is_set():
@@ -222,7 +241,7 @@ def call_claude_with_retry(
         stdout, stderr, rc = call_claude_subprocess(
             prompt,
             allowed_tools=allowed_tools,
-            model=cfg.model,
+            model=effective_model,
             timeout_s=cfg.timeout_s,
         )
 
@@ -262,13 +281,24 @@ def _fake_response_for_debug(prompt: str) -> str:
     plutôt que par mots-clés du contenu, pour éviter les faux-positifs (ex
     Phase 2 prompt mentionnant 'Phase 1' dans une instruction).
     """
+    # v3 fusion Phase 3+4 : prompt contient ET score_total ET answer_refined
+    # → return un objet unifié (priorité haute, check en premier)
     has_score = '"score_total"' in prompt and '"scores_par_axe"' in prompt
     has_answer_refined = '"answer_refined"' in prompt
     has_qa_pair = (
         '"question"' in prompt and '"answer"' in prompt and not has_answer_refined
     )
 
+    if has_score and has_answer_refined:
+        # v3 fusion critique+refine — output combiné
+        return (
+            '{"score_total": 90, "scores_par_axe": {"factuelle": 22, "posture": 23, '
+            '"coherence": 23, "hallucination": 22}, "corrections_suggérées": "RAS — fake debug v3 fusion", '
+            '"decision_recommandée": "keep", "question": "Q fake refined", '
+            '"answer_refined": "A fake refined v3 fusion"}'
+        )
     if has_score:
+        # v1+v2 critique standalone (legacy compat tests)
         return '{"score_total": 90, "scores_par_axe": {"factuelle": 22, "posture": 23, "coherence": 23, "hallucination": 22}, "corrections_suggérées": "RAS — fake debug", "decision_recommandée": "keep"}'
     if has_answer_refined:
         return '{"question": "Q fake", "answer_refined": "A fake refined"}'
@@ -281,7 +311,67 @@ def _fake_response_for_debug(prompt: str) -> str:
 # ────────────────────────────── 4-phase pipeline ────────────────────────
 
 
-def phase1_research(prompt_config: dict, cfg: GenerateConfig, retry_stats: RetryStats) -> str:
+class Phase1Cache:
+    """Cache thread-safe Phase 1 research par `prompt_id` (Sprint 9-data v3 Levier 2).
+
+    51 prompts × 20 itérations = 1020 calls Phase 1 sans cache. Avec cache
+    par prompt_id (research factuel stable pour un persona donné), seul le
+    premier hit fait l'appel. **-969 calls économisés**.
+
+    Pattern double-checked locking : compute en dehors du lock pour ne pas
+    bloquer les autres threads pendant le research (~30s). Tolère 1 race
+    de double-compute par prompt_id par session (max 51 doubles, négligeable
+    vs gain). Le 2nd compute est jeté, le premier reste cached.
+    """
+
+    def __init__(self) -> None:
+        self._cache: dict[str, str] = {}
+        self._lock = threading.Lock()
+
+    def get(self, prompt_id: str) -> str | None:
+        with self._lock:
+            return self._cache.get(prompt_id)
+
+    def get_or_compute(self, prompt_id: str, compute_fn) -> tuple[str, bool]:
+        """Retourne (research_text, cache_hit_bool).
+
+        cache_hit=True si retourné depuis cache (skip compute).
+        cache_hit=False si compute_fn vient d'être appelée et résultat stocké.
+        """
+        with self._lock:
+            cached = self._cache.get(prompt_id)
+            if cached is not None:
+                return cached, True
+        # Compute hors lock pour ne pas bloquer
+        result = compute_fn()
+        with self._lock:
+            existing = self._cache.get(prompt_id)
+            if existing is not None:
+                # Race condition tolérée : un autre thread a écrit en parallèle.
+                # On garde le premier (existing), on jette `result`.
+                return existing, True
+            self._cache[prompt_id] = result
+            return result, False
+
+    def __len__(self) -> int:
+        with self._lock:
+            return len(self._cache)
+
+
+def phase1_research(
+    prompt_config: dict,
+    cfg: GenerateConfig,
+    retry_stats: RetryStats,
+    cache: Phase1Cache | None = None,
+) -> tuple[str, bool]:
+    """Phase 1 research avec cache optionnel par prompt_id.
+
+    Si `cache` est None, ancien comportement (call à chaque iter).
+    Si `cache` est fourni, lookup d'abord, compute miss only.
+
+    Returns:
+        (research_text, cache_hit) — cache_hit=True si skipped via cache.
+    """
     sources_str = "\n  - ".join(prompt_config["sources_priority"])
     prompt = f"""Pour ce persona : {prompt_config['persona']}
 Et ce contexte : {prompt_config['context']}
@@ -297,9 +387,20 @@ Output : 3-5 sources factuelles datées, chaque source au format :
 - Extrait clé : ... (1-2 phrases factuelles)
 
 Réponds UNIQUEMENT avec ces sources, pas de préambule, pas de markdown autour."""
-    return call_claude_with_retry(
-        prompt, cfg, retry_stats, allowed_tools=["WebSearch", "WebFetch"]
-    )
+
+    def _compute() -> str:
+        return call_claude_with_retry(
+            prompt,
+            cfg,
+            retry_stats,
+            allowed_tools=["WebSearch", "WebFetch"],
+            model=cfg.model_research or cfg.model,
+        )
+
+    if cache is None:
+        return _compute(), False
+
+    return cache.get_or_compute(prompt_config["id"], _compute)
 
 
 def phase2_draft(
@@ -362,16 +463,33 @@ Output JSON STRICT :
 }}
 
 Réponds UNIQUEMENT avec ce JSON, pas de préambule, pas de markdown autour."""
-    return call_claude_with_retry(prompt, cfg, retry_stats)
+    return call_claude_with_retry(prompt, cfg, retry_stats, model=cfg.model_draft or cfg.model)
 
 
-def phase3_critique(
+def phase34_critique_refine(
     draft_raw: str,
     prompt_config: dict,
     cfg: GenerateConfig,
     retry_stats: RetryStats,
 ) -> str:
-    prompt = f"""Tu es un évaluateur qualité Q&A orientation. Évalue cette Q&A :
+    """Sprint 9-data v3 Levier 3 — fusion Phase 3 (critique 4 axes) + Phase 4
+    (refine intégrant corrections) en 1 seul call → -1020 calls vs pipeline
+    4 phases séparées.
+
+    Le LLM produit en 1 output JSON unique :
+    - scores_par_axe + score_total (rôle Phase 3)
+    - corrections_suggérées + decision_recommandée (rôle Phase 3)
+    - answer_refined avec corrections appliquées (rôle Phase 4)
+
+    Trade-off : un seul prompt doit faire 2 jobs (évaluer + réécrire). Plus
+    long contextuel mais 1 appel au lieu de 2. Net usage budget économique.
+    """
+    prompt = f"""Tu es À LA FOIS évaluateur qualité Q&A orientation ET expert orientation. Tu fais 2 choses dans le MÊME output :
+
+1. Évaluer la Q&A draft sur 4 axes /25 chacun (total /100)
+2. Réécrire la réponse en intégrant tes propres corrections suggérées
+
+DRAFT À ÉVALUER ET RÉÉCRIRE :
 
 {draft_raw}
 
@@ -379,7 +497,7 @@ Profil cible attendu :
 - Persona : {prompt_config['persona']}
 - Tone attendu : {prompt_config['tone']}
 
-Évalue sur 4 axes (chacun /25, total /100) :
+## Étape 1 — Évaluation 4 axes /25 (total /100)
 
 1. Pertinence factuelle (formation existe vraiment, infos justes, pas de chiffre inventé hors sources) /25
 2. Posture conseiller (questions ouvertes, non-jugement, reformulation présente, 3 options pondérées non-prescriptives) /25
@@ -388,11 +506,18 @@ Profil cible attendu :
 
 Pénalités lourdes (-10 sur l'axe correspondant) :
 - "Tu devrais faire X" (prescriptif au lieu de pondéré)
-- Reco au tour 1 sans questionnement préalable (rare mais signal)
+- Reco au tour 1 sans questionnement préalable
 - Slug ONISEP/Parcoursup factice
 - Tone mismatch (ex: vouvoiement attendu, tutoiement produit)
 
-Output JSON STRICT :
+## Étape 2 — Réécriture corrigée
+
+Réécris la réponse en intégrant TOUTES les corrections suggérées que tu identifies. Préserve la question originale (ne pas la modifier). Préserve le ton et la structure conseiller (reformulation + 3 options pondérées + question finale).
+
+Si la draft est déjà excellente (score >=90), réécris-la quand même (légères variations pour normaliser le style) plutôt que de la copier.
+
+## Output JSON STRICT (1 SEUL objet, pas de markdown autour)
+
 {{
   "score_total": <int 0-100>,
   "scores_par_axe": {{
@@ -401,40 +526,16 @@ Output JSON STRICT :
     "coherence": <int 0-25>,
     "hallucination": <int 0-25>
   }},
-  "corrections_suggérées": "<text 1-3 phrases courtes>",
-  "decision_recommandée": "<keep|flag|drop>"
+  "corrections_suggérées": "<text 1-3 phrases courtes — ce que tu as corrigé>",
+  "decision_recommandée": "<keep|flag|drop>",
+  "question": "<question préservée du draft>",
+  "answer_refined": "<réponse réécrite avec corrections appliquées>"
 }}
 
-Réponds UNIQUEMENT avec ce JSON."""
-    return call_claude_with_retry(prompt, cfg, retry_stats)
-
-
-def phase4_refine(
-    draft_raw: str,
-    critique_raw: str,
-    cfg: GenerateConfig,
-    retry_stats: RetryStats,
-) -> str:
-    prompt = f"""Tu es un expert orientation. Voici une Q&A initialement produite :
-
-DRAFT :
-{draft_raw}
-
-Voici les corrections suggérées par l'évaluateur :
-
-CRITIQUE :
-{critique_raw}
-
-Réécris la réponse en intégrant TOUTES les corrections suggérées. Préserve la question originale (ne pas la modifier). Préserve le ton et la structure conseiller (reformulation + 3 options pondérées + question finale).
-
-Output JSON STRICT :
-{{
-  "question": "...",
-  "answer_refined": "..."
-}}
-
-Réponds UNIQUEMENT avec ce JSON."""
-    return call_claude_with_retry(prompt, cfg, retry_stats)
+Réponds UNIQUEMENT avec ce JSON, pas de préambule."""
+    return call_claude_with_retry(
+        prompt, cfg, retry_stats, model=cfg.model_critique_refine or cfg.model
+    )
 
 
 # ────────────────────────────── JSONL appender ─────────────────────────
@@ -523,8 +624,17 @@ def generate_qa(
     iteration_idx: int,
     cfg: GenerateConfig,
     retry_stats: RetryStats,
+    phase1_cache: Phase1Cache | None = None,
 ) -> dict:
-    """Orchestre les 4 phases pour 1 (prompt_id, iteration_idx). Retourne le record JSONL."""
+    """Orchestre les phases pour 1 (prompt_id, iteration_idx).
+
+    v3 stratégie hybride (Sprint 9-data) :
+    - Phase 1 research : Haiku 4.5 (cfg.model_research) + cache par prompt_id
+    - Phase 2 draft : Opus 4.7 (cfg.model_draft)
+    - Phase 3+4 fusion (critique + refine) : Opus 4.7 (cfg.model_critique_refine)
+
+    Si `phase1_cache` est None, ancien comportement (call à chaque iter).
+    """
     t0 = time.time()
     seeds = prompt_config["questions_seed"]
     question_seed = seeds[iteration_idx % len(seeds)]
@@ -535,32 +645,50 @@ def generate_qa(
         "question_seed": question_seed,
         "category": prompt_config["category"],
         "axe_couvert": prompt_config["axe_couvert"],
-        "model": cfg.model,
+        "models": {
+            "research": cfg.model_research or cfg.model,
+            "draft": cfg.model_draft or cfg.model,
+            "critique_refine": cfg.model_critique_refine or cfg.model,
+        },
         "started_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
     }
 
     try:
-        # Phase 1 — Research WebSearch
-        research = phase1_research(prompt_config, cfg, retry_stats)
+        # Phase 1 — Research WebSearch (avec cache prompt_id si fourni)
+        research, cache_hit = phase1_research(prompt_config, cfg, retry_stats, phase1_cache)
+        record["research_cache_hit"] = cache_hit
 
-        # Phase 2 — Draft
+        # Phase 2 — Draft persona conseiller
         draft_raw = phase2_draft(prompt_config, research, question_seed, cfg, retry_stats)
         draft = parse_json_safe(draft_raw)
 
-        # Phase 3 — Self-critique
-        critique_raw = phase3_critique(draft_raw, prompt_config, cfg, retry_stats)
-        critique = parse_json_safe(critique_raw)
-        score = int(critique.get("score_total", 0)) if critique else 0
+        # Phase 3+4 fusion — critique 4 axes + refine en 1 call
+        cr_raw = phase34_critique_refine(draft_raw, prompt_config, cfg, retry_stats)
+        cr = parse_json_safe(cr_raw)
+        score = int(cr.get("score_total", 0)) if cr else 0
 
-        # Phase 4 — Refinement
-        refined_raw = phase4_refine(draft_raw, critique_raw, cfg, retry_stats)
-        refined = parse_json_safe(refined_raw)
+        # Extraction des 2 sous-objets pour préserver le schema JSONL existant
+        # (compat tools et tests qui lisent record["critique"] et record["final_qa"])
+        if cr:
+            critique = {
+                "score_total": cr.get("score_total"),
+                "scores_par_axe": cr.get("scores_par_axe"),
+                "corrections_suggérées": cr.get("corrections_suggérées"),
+                "decision_recommandée": cr.get("decision_recommandée"),
+            }
+            final_qa = {
+                "question": cr.get("question"),
+                "answer_refined": cr.get("answer_refined"),
+            }
+        else:
+            critique = {"raw": cr_raw[:_RAW_FALLBACK_CAP]}
+            final_qa = {"raw": cr_raw[:_RAW_FALLBACK_CAP]}
 
         record.update({
             "research_sources_text": research[:_RESEARCH_TEXT_CAP],
             "draft": draft or {"raw": draft_raw[:_RAW_FALLBACK_CAP]},
-            "critique": critique or {"raw": critique_raw[:_RAW_FALLBACK_CAP]},
-            "final_qa": refined or {"raw": refined_raw[:_RAW_FALLBACK_CAP]},
+            "critique": critique,
+            "final_qa": final_qa,
             "score_total": score,
             "decision": decision_from_score(score),
             "elapsed_s": round(time.time() - t0, 1),
@@ -595,7 +723,20 @@ def parse_cli() -> GenerateConfig:
     p.add_argument("--max-iterations", type=int, default=None,
                    help="Override iterations_per_prompt YAML metadata")
     p.add_argument("--model", type=str, default=None,
-                   help="Modèle Claude (claude-opus-4-7 / opus-4.7 / drop pour default)")
+                   help="Modèle Claude global (legacy v1+v2). claude-opus-4-7 / opus-4.7 / drop pour default. "
+                        "Override par --model-research / --model-draft / --model-critique-refine si fournis.")
+    # Stratégie hybride v3 (Sprint 9-data Levier 1) — 3 modèles selon criticité
+    p.add_argument("--model-research", type=str, default=None,
+                   help="Modèle Phase 1 research WebSearch (v3 stratégie hybride). "
+                        "Recherche factuelle suffit, défault Haiku (économie usage). "
+                        "Ex : claude-haiku-4-5")
+    p.add_argument("--model-draft", type=str, default=None,
+                   help="Modèle Phase 2 draft persona conseiller (v3 stratégie hybride). "
+                        "Créativité conseiller user-facing, défault Opus (qualité top). "
+                        "Ex : claude-opus-4-7")
+    p.add_argument("--model-critique-refine", type=str, default=None,
+                   help="Modèle Phase 3+4 fusion critique+refine (v3 stratégie hybride). "
+                        "Refine reste user-facing, défault Opus. Ex : claude-opus-4-7")
     p.add_argument("--rate-limit-delay", type=float, default=DEFAULT_RATE_LIMIT_DELAY,
                    help=f"Délai entre calls subprocess (s, défaut {DEFAULT_RATE_LIMIT_DELAY})")
     p.add_argument("--max-retries", type=int, default=DEFAULT_MAX_RETRIES,
@@ -614,6 +755,9 @@ def parse_cli() -> GenerateConfig:
         filter_prompt_id=args.filter_prompt_id,
         max_iterations=args.max_iterations,
         model=args.model,
+        model_research=args.model_research,
+        model_draft=args.model_draft,
+        model_critique_refine=args.model_critique_refine,
         rate_limit_delay=args.rate_limit_delay,
         max_retries=args.max_retries,
         timeout_s=args.timeout_s,
@@ -652,8 +796,11 @@ def main() -> int:
     print(f"==> generate_golden_qa_v1.py")
     print(f"    config: {cfg.yaml_config_path}")
     print(f"    output: {cfg.output_jsonl}")
-    print(f"    parallel: {cfg.parallel}, model: {cfg.model or '(default)'}, "
-          f"rate_limit_delay: {cfg.rate_limit_delay}s, max_retries: {cfg.max_retries}")
+    print(f"    parallel: {cfg.parallel}, rate_limit_delay: {cfg.rate_limit_delay}s, "
+          f"max_retries: {cfg.max_retries}")
+    print(f"    models: research={cfg.model_research or cfg.model or '(default)'} | "
+          f"draft={cfg.model_draft or cfg.model or '(default)'} | "
+          f"critique-refine={cfg.model_critique_refine or cfg.model or '(default)'}")
     if cfg.dry_run_no_subprocess:
         print("    ⚠️  --dry-run-no-subprocess : NO real subprocess, fake responses")
 
@@ -671,13 +818,14 @@ def main() -> int:
         return 0
 
     retry_stats = RetryStats()
+    phase1_cache = Phase1Cache()  # v3 Levier 2 — cache research par prompt_id
     counts: dict[str, int] = {"keep": 0, "flag": 0, "drop": 0}
     errors_count = 0
     t_start = time.time()
 
     with ThreadPoolExecutor(max_workers=cfg.parallel) as pool:
         futures = {
-            pool.submit(generate_qa, pc, ii, cfg, retry_stats): (pc["id"], ii)
+            pool.submit(generate_qa, pc, ii, cfg, retry_stats, phase1_cache): (pc["id"], ii)
             for pc, ii in jobs_to_run
         }
 

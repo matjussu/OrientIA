@@ -419,6 +419,243 @@ class TestCallClaudeWithRetry:
         assert isinstance(parsed["score_total"], int)
 
 
+# ───────────────────── Phase1Cache (Sprint 9-data v3 Levier 2) ──────────────
+
+
+class TestPhase1Cache:
+    """Cache thread-safe Phase 1 research par prompt_id.
+
+    51 prompts × 20 iterations sans cache = 1020 calls. Avec cache,
+    ~51 calls (1 par prompt_id), soit -969 calls (~-95% Phase 1).
+    """
+
+    def test_get_or_compute_first_call_misses_then_caches(self):
+        cache = gqa.Phase1Cache()
+        compute_calls = []
+
+        def compute():
+            compute_calls.append(1)
+            return "research result"
+
+        result, hit = cache.get_or_compute("A1", compute)
+        assert result == "research result"
+        assert hit is False
+        assert len(compute_calls) == 1
+        assert len(cache) == 1
+
+    def test_get_or_compute_second_call_returns_cached(self):
+        cache = gqa.Phase1Cache()
+        compute_calls = []
+
+        def compute():
+            compute_calls.append(1)
+            return "research result"
+
+        # First call : miss + compute
+        cache.get_or_compute("A1", compute)
+        # Second call : hit, no recompute
+        result, hit = cache.get_or_compute("A1", compute)
+        assert result == "research result"
+        assert hit is True
+        assert len(compute_calls) == 1  # compute called only once
+
+    def test_get_or_compute_different_prompt_ids_dont_collide(self):
+        cache = gqa.Phase1Cache()
+
+        result_a, _ = cache.get_or_compute("A1", lambda: "research A1")
+        result_b, _ = cache.get_or_compute("B2", lambda: "research B2")
+
+        assert result_a == "research A1"
+        assert result_b == "research B2"
+        assert len(cache) == 2
+
+    def test_thread_safety_single_compute_under_concurrent_access(self):
+        """Sous accès concurrent au même prompt_id, le compute peut être
+        appelé 1-N fois (race condition tolérée), mais le résultat retourné
+        doit être consistent (même valeur) et le cache doit avoir 1 entrée."""
+        cache = gqa.Phase1Cache()
+        results = []
+        compute_calls = threading.Lock()
+        compute_count = [0]
+
+        def compute():
+            with compute_calls:
+                compute_count[0] += 1
+            time.sleep(0.05)  # simule research lent
+            return f"research call {compute_count[0]}"
+
+        def worker():
+            result, _ = cache.get_or_compute("A1", compute)
+            results.append(result)
+
+        import time
+        threads = [threading.Thread(target=worker) for _ in range(10)]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join()
+
+        # Tous les threads ont retourné la même valeur (premier writer wins)
+        assert len(set(results)) == 1, f"Expected 1 unique result, got {set(results)}"
+        # Cache a 1 entrée pour A1
+        assert len(cache) == 1
+        # Compute appelé au moins 1 fois (au plus N fois en cas de race totale)
+        assert 1 <= compute_count[0] <= 10
+
+
+# ───────────────────── Phase 3+4 fusion (Sprint 9-data v3 Levier 3) ──────────
+
+
+class TestPhase34CritiqueRefineFusion:
+    """Fusion Phase 3 (critique 4 axes) + Phase 4 (refine) en 1 call.
+    -1020 calls vs pipeline 4 phases. Output JSON unifié contient :
+    score_total + scores_par_axe + corrections + decision + question + answer_refined.
+    """
+
+    def test_fusion_prompt_contains_combined_schema_markers(
+        self, sample_prompt_config, cfg_minimal
+    ):
+        """Le prompt fusion doit demander un output JSON contenant À LA FOIS
+        les champs de critique (score_total, scores_par_axe) ET les champs
+        de refine (question, answer_refined)."""
+        retry_stats = gqa.RetryStats()
+        captured = {}
+
+        def fake_call(prompt, cfg, stats, allowed_tools=None, model=None):
+            captured["prompt"] = prompt
+            return '{"score_total": 88, "answer_refined": "..."}'
+
+        with patch.object(gqa, "call_claude_with_retry", side_effect=fake_call):
+            gqa.phase34_critique_refine(
+                "draft text", sample_prompt_config, cfg_minimal, retry_stats
+            )
+
+        prompt = captured["prompt"]
+        # Critique markers
+        assert '"score_total"' in prompt
+        assert '"scores_par_axe"' in prompt
+        assert '"corrections_suggérées"' in prompt
+        assert '"decision_recommandée"' in prompt
+        # Refine markers
+        assert '"answer_refined"' in prompt
+        # Marker "1 SEUL output JSON" ou équivalent — la fusion doit être explicite
+        assert ("MÊME output" in prompt) or ("1 SEUL" in prompt) or ("1 seul" in prompt)
+
+    def test_fusion_uses_critique_refine_model(
+        self, sample_prompt_config, cfg_minimal
+    ):
+        """Le fusion call utilise cfg.model_critique_refine (pas cfg.model_research/draft)."""
+        cfg_minimal.model_critique_refine = "claude-opus-4-7"
+        cfg_minimal.model_research = "claude-haiku-4-5"
+        cfg_minimal.model_draft = "claude-opus-4-7"
+        retry_stats = gqa.RetryStats()
+        captured = {}
+
+        def fake_call(prompt, cfg, stats, allowed_tools=None, model=None):
+            captured["model"] = model
+            return '{"score_total": 88}'
+
+        with patch.object(gqa, "call_claude_with_retry", side_effect=fake_call):
+            gqa.phase34_critique_refine(
+                "draft", sample_prompt_config, cfg_minimal, retry_stats
+            )
+
+        assert captured["model"] == "claude-opus-4-7"
+
+    def test_fusion_output_parsable_extracts_score_and_refined(self):
+        """Le parsing du record généré par generate_qa avec output fusion doit
+        extraire score_total ET answer_refined dans les bons sous-objets."""
+        # Test indirect via parse_json_safe (utilisé par generate_qa)
+        fusion_output = (
+            '{"score_total": 88, '
+            '"scores_par_axe": {"factuelle": 22, "posture": 22, "coherence": 22, "hallucination": 22}, '
+            '"corrections_suggérées": "RAS", "decision_recommandée": "keep", '
+            '"question": "Q refined", "answer_refined": "A refined"}'
+        )
+        parsed = gqa.parse_json_safe(fusion_output)
+        assert parsed["score_total"] == 88
+        assert parsed["answer_refined"] == "A refined"
+        assert parsed["scores_par_axe"]["factuelle"] == 22
+
+
+# ───────────────────── 3 model flags hybrid (Sprint 9-data v3 Levier 1) ──────
+
+
+class TestHybridModelFlags:
+    """3 flags --model-research / --model-draft / --model-critique-refine pour
+    stratégie hybride économie usage Claude Max (Haiku research + Opus draft+refine)."""
+
+    def test_phase1_research_uses_model_research(
+        self, sample_prompt_config, cfg_minimal
+    ):
+        cfg_minimal.model_research = "claude-haiku-4-5"
+        retry_stats = gqa.RetryStats()
+        captured = {}
+
+        def fake_call(prompt, cfg, stats, allowed_tools=None, model=None):
+            captured["model"] = model
+            captured["allowed_tools"] = allowed_tools
+            return "research text"
+
+        with patch.object(gqa, "call_claude_with_retry", side_effect=fake_call):
+            gqa.phase1_research(sample_prompt_config, cfg_minimal, retry_stats)
+
+        assert captured["model"] == "claude-haiku-4-5"
+        assert captured["allowed_tools"] == ["WebSearch", "WebFetch"]
+
+    def test_phase2_draft_uses_model_draft(
+        self, sample_prompt_config, cfg_minimal
+    ):
+        cfg_minimal.model_draft = "claude-opus-4-7"
+        cfg_minimal.model_research = "claude-haiku-4-5"
+        retry_stats = gqa.RetryStats()
+        captured = {}
+
+        def fake_call(prompt, cfg, stats, allowed_tools=None, model=None):
+            captured["model"] = model
+            return '{"question": "Q", "answer": "A"}'
+
+        with patch.object(gqa, "call_claude_with_retry", side_effect=fake_call):
+            gqa.phase2_draft(
+                sample_prompt_config, "research", "seed q", cfg_minimal, retry_stats
+            )
+
+        assert captured["model"] == "claude-opus-4-7"
+
+    def test_legacy_model_falls_back_when_phase_specific_none(
+        self, sample_prompt_config, cfg_minimal
+    ):
+        """Backwards compat : si les 3 phase-specific sont None mais cfg.model
+        fourni, toutes les phases utilisent cfg.model (comportement v1+v2)."""
+        cfg_minimal.model = "claude-opus-4-7"
+        cfg_minimal.model_research = None
+        cfg_minimal.model_draft = None
+        cfg_minimal.model_critique_refine = None
+        retry_stats = gqa.RetryStats()
+        captured_models = []
+
+        def fake_call(prompt, cfg, stats, allowed_tools=None, model=None):
+            captured_models.append(model)
+            if "score_total" in prompt:
+                return '{"score_total": 88}'
+            if "Cherche" in prompt:
+                return "research text"
+            return '{"question": "Q", "answer": "A"}'
+
+        with patch.object(gqa, "call_claude_with_retry", side_effect=fake_call):
+            gqa.phase1_research(sample_prompt_config, cfg_minimal, retry_stats)
+            gqa.phase2_draft(
+                sample_prompt_config, "research", "seed q", cfg_minimal, retry_stats
+            )
+            gqa.phase34_critique_refine(
+                "draft", sample_prompt_config, cfg_minimal, retry_stats
+            )
+
+        # Toutes les 3 phases ont utilisé cfg.model legacy
+        assert all(m == "claude-opus-4-7" for m in captured_models)
+        assert len(captured_models) == 3
+
+
 # ───────────────────── Phase 2 prompt content (anti-régression patch v2) ─────
 
 
@@ -437,8 +674,9 @@ class TestPhase2DraftPromptContent:
         retry_stats = gqa.RetryStats()
         captured: dict = {}
 
-        def fake_call(prompt, cfg, stats, allowed_tools=None):
+        def fake_call(prompt, cfg, stats, allowed_tools=None, model=None):
             captured["prompt"] = prompt
+            captured["model"] = model
             return '{"question": "Q", "answer": "A"}'
 
         with patch.object(gqa, "call_claude_with_retry", side_effect=fake_call):
@@ -463,8 +701,9 @@ class TestPhase2DraftPromptContent:
         retry_stats = gqa.RetryStats()
         captured: dict = {}
 
-        def fake_call(prompt, cfg, stats, allowed_tools=None):
+        def fake_call(prompt, cfg, stats, allowed_tools=None, model=None):
             captured["prompt"] = prompt
+            captured["model"] = model
             return '{"question": "Q", "answer": "A"}'
 
         with patch.object(gqa, "call_claude_with_retry", side_effect=fake_call):
