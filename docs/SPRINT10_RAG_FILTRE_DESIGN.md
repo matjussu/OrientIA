@@ -1,12 +1,33 @@
 # Sprint 10 — RAG filtré métadonnées (chantier C, design ADR)
 
-**Statut** : DRAFT — en attente review Matteo + audit Jarvis avant impl complète
+**Statut** : ✅ **v1 LIVRÉ** (8.1→8.5 done, dual-audit Jarvis GO sans réserve)
 **Auteur** : Claudette
-**Date** : 2026-04-29
+**Date** : 2026-04-29 (livraison v1 même jour que kickoff)
 **Ordre Jarvis** : `2026-04-29-0700c-claudette-orientia-sprint10-rag-filtre-metadonnees`
 **Branche** : `feat/sprint10-rag-filtre-metadonnees` (basée sur main post-PR #100 commit `00dadd8`)
+**PR** : #102 (3 commits cumul : kickoff design + skeleton, mastère=Bac+6 fix, plug pipeline §8.3-§8.4)
 **Dépendances amont** : PR #100 (AnalystAgent mergé) ✅
-**Dépendances aval** : chantier B (textualisation ONISEP/RNCP avec frontmatter) — mock pour tests v1, finalisation après B
+**Dépendances aval** : chantier B (textualisation ONISEP/RNCP avec frontmatter) → PR #103 livré v1.1 (102 ONISEP + 6590 RNCP ACTIVE)
+
+---
+
+## Changelog v1 livré 2026-04-29
+
+| Étape | Statut | Commit | Tests |
+|---|---|---|---|
+| §8.1 Module `metadata_filter.py` skeleton | ✅ | `4fe1f32` | 81 verts |
+| §8.2 `extract_filter_from_profile` + lookups | ✅ | `4fe1f32` | (idem) |
+| Fix Master/Mastère=Bac+6 (correction Matteo) | ✅ | `3ab41fc` | 86 verts cumul (5 nouveaux) |
+| §8.3 Plug `apply_metadata_filter` dans pipeline | ✅ | `a64eb84` | 11 nouveaux verts |
+| §8.4 Auto-expansion `k×3 → ×10` | ✅ | `a64eb84` | (idem, dans tests intégration) |
+| §8.5 Documentation README + ADR | ✅ | (ce commit) | — |
+
+**Verdict tests cumul** : 11 (pipeline integration) + 86 (filter unit) = 97 nouveaux cas, suite globale 1706 verts, 0 régression.
+
+**Audit Jarvis cumul** :
+1. Kickoff design + skeleton (§8.1+§8.2) → GO sans réserve, 6 points review tranchés techniquement
+2. Fix mastère=6 sur les 2 chantiers (B + C) cohérent → GO sans réserve
+3. Plug pipeline §8.3+§8.4 (commit local a64eb84) → GO sans réserve avant push
 
 ---
 
@@ -391,18 +412,27 @@ Le filter consomme ces frontmatter via `fiche` dict avec keys `region`, `niveau`
 
 ---
 
-## 10. Validation Matteo attendue avant implémentation §8.3+
+## 10. Validation Matteo / arbitrage Jarvis (clos 2026-04-29)
 
-Ce design est en DRAFT. Points spécifiques à valider :
+Les 6 points du design ont été tous arbitrés techniquement par Jarvis lors de l'audit kickoff (cf message 0700c GO sans réserve). Pas de blocage Matteo.
 
-1. **Choix Option B (post-FAISS)** vs Option C (IndexIDMap + IDSelector) — OK pour v1 minimal viable ?
-2. **Asymétrie defensive** §5.2 (alternance/secteur stricts vs region/niveau/budget souples) — correct ou faut-il un strict_mode unifié ?
-3. **Schéma 5 critères v1** complet ou faut-il ajouter mobilite/prerequis_diplome dès v1 ?
-4. **k_expanded × 3 avec MAX × 10** — ratios à ajuster ?
-5. **Plug derrière flag opt-in `use_metadata_filter=False`** — accepté ou plug direct (force activé) ?
-6. **Mapping INTERESTS_TO_SECTORS** : qui maintient la table, comment est enrichie (manuel review logs / auto via embeddings sim) ?
+| Point | Verdict | Notes |
+|---|---|---|
+| 1. Option B (post-FAISS) vs Option C (IndexIDMap) | ✅ Option B | v1 minimal viable, à réviser si corpus >10k fiches |
+| 2. Asymétrie defensive vs strict_mode unifié | ✅ Asymétrie acceptée | Sémantique métier correcte. À surveiller F+G post-chantier B (faux négatifs réels). Strict_mode opt-in v2 si recall pose pb |
+| 3. Schéma 5 critères v1 vs ajouter mobilite/prerequis_diplome | ✅ 5 critères suffisant | Mobilité redondant avec region (national pass-through). Prerequis_diplome plus complexe, repousser v2 |
+| 4. k_expanded × 3 avec MAX × 10 | ✅ Ratios acceptés | Mesure empirique requise F+G : si >30% questions hit MAX → réviser |
+| 5. Flag opt-in `use_metadata_filter=False` | ✅ Accepté | Cohérent backward compat + A/B test |
+| 6. Maintien `INTERESTS_TO_SECTORS` | ✅ Manuel v1 | Enrichissement v2 via embeddings clustering sur intérêts non-mappés observés en logs |
 
-→ Audit Jarvis attendu sur ce design avant de basculer en exécution §8.3 (impl pipeline).
+### Reco mesure F+G post-livraison (Jarvis audit kickoff)
+
+Run F+G doit mesurer A/B avec/sans `use_metadata_filter` :
+- Recall sur 32 dev set (gates : >10pp baisse → réviser asymétrie ou schéma)
+- Distribution fiches avec frontmatter incomplet → faux négatifs réels asymétrie alternance/secteur
+- `k_expanded` effectif moyen via `pipeline.last_filter_stats` (combien d'expansions × 3 / × 6 / × 10 hit en pratique)
+
+Gates : >10pp recall ou >30% questions hit MAX_K_MULTIPLIER → réviser asymétrie ou schéma critères.
 
 ---
 
@@ -416,4 +446,4 @@ Ce design est en DRAFT. Points spécifiques à valider :
 
 ---
 
-*Doc préparée par Claudette le 2026-04-29 sous l'ordre 0700c. DRAFT — en attente review Matteo + audit Jarvis avant implémentation §8.3+ (plug pipeline).*
+*Doc préparée par Claudette le 2026-04-29 sous l'ordre 0700c. v1 livré le 2026-04-29 : §8.1 → §8.5 done, dual-audit Jarvis GO sans réserve, 1706 tests cumul verts. Activation production via `OrientIAPipeline(..., use_metadata_filter=True)` derrière feature flag config (v1.1 future).*

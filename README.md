@@ -35,6 +35,19 @@ To ensure the LLM (Mistral Medium) adheres to guidance ethics, the prompt is str
 3.  **Output Schema:** Standardized JSON-like structure for every recommended program (Source, Access Rate, Status, Cost).
 4.  **Guardrails:** Redirection for out-of-scope queries or psychological distress.
 
+### 4. Metadata Filter (Sprint 10, opt-in)
+A precision-oriented post-FAISS filter restricting the candidate pool to programs matching the user's hard constraints (region, level, alternance, budget, sector) before the generator step. The criteria are extracted automatically from the AnalystAgent's `profile_delta` (Sprint 9-archi), so no extra NLU layer is needed.
+
+* **Schema (5 criteria, all optional):** `region`, `niveau_min`/`niveau_max` (Bac+N range), `alternance` (bool), `budget_max` (€/year), `secteur` (list of canonical sectors).
+* **Architecture:** Post-FAISS / pre-MMR. FAISS retrieves `k × INITIAL_K_MULTIPLIER` (=3), reranker boosts, then `apply_metadata_filter` prunes. Auto-expansion `k × 2` up to `k × MAX_K_MULTIPLIER` (=10) if the filtered pool is smaller than `top_k_sources`.
+* **Defensive vs strict matching:** `region` / `niveau` / `budget` adopt a defensive pass-through (a program with missing metadata is *included* — formations without published cost or location info shouldn't be excluded a priori). `alternance` and `secteur` are strict (a program without `alternance: true/false` is *excluded* when the user explicitly demands alternance).
+* **Backward-compat:** `OrientIAPipeline(use_metadata_filter=False)` by default. Run F+G results remain reproducible without configuration changes. Activate via `OrientIAPipeline(..., use_metadata_filter=True)` and pass `criteria=extract_filter_from_profile(profile_delta)` to `.answer()`.
+* **Observability:** `pipeline.last_filter_stats` dict after each `.answer()` call exposes `filter_active`, `k_initial`/`k_final`, `n_retrieved`, `n_after_filter`, `expansions`, `hit_max` — used to instrument the F+G recall A/B measurements.
+
+Frontmatter consumed by the filter is produced by the `scripts/textualize_formations.py` pipeline (Sprint 10 chantier B), which converts ONISEP and RNCP source records into Markdown documents with structured frontmatter.
+
+Design ADR: `docs/SPRINT10_RAG_FILTRE_DESIGN.md`.
+
 ---
 
 ## Evaluation Framework: LLM-as-a-Judge
