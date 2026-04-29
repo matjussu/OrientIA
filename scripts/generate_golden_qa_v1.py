@@ -85,7 +85,11 @@ DEFAULT_TIMEOUT_S = 300
 RATE_LIMIT_BACKOFF_BASE = 2.0
 MAX_CONSECUTIVE_429 = 10  # stop condition
 
-SCORE_KEEP_THRESHOLD = 85
+# Boundaries v3.1 (ordre 1011 nuit2-prep, recos Matteo review Phase 1) :
+# keep ≥ 82 (vs 85 v3) — frontière 82-84 jugée trop sévère vu samples qualité.
+# La nuit 1 a montré un cluster solide de 9 fiches scorées 78-84 ("flag")
+# qui sont qualitativement similaires aux keep — Matteo recalibre +3 points.
+SCORE_KEEP_THRESHOLD = 82
 SCORE_FLAG_THRESHOLD = 70
 
 # Détection 429 / rate limit / quota Claude Max plan dans stderr/stdout subprocess
@@ -440,18 +444,35 @@ RÉPONSE PARFAITE de conseiller bienveillant :
 - Question finale d'exploration qui rend le choix à l'utilisateur·ice
 - Tone strictement {prompt_config['tone']}
 
-INTERDICTION STRICTE de chiffres précis (tarif, salaire, %, durée, taux d'insertion, sélectivité, places concours, années, mensualité, montant aide, score moyen) non EXPLICITEMENT présents dans les sources de la Phase 1 WebSearch.
+⚠️ RÈGLE ABSOLUE ANTI-HALLUCINATION CHIFFRÉE (v3.1) ⚠️
 
-Si une donnée chiffrée n'est pas dans les sources Phase 1 retrievées, remplace-la par une notion QUALITATIVE :
-- "frais de scolarité ~10 500€/an" → "frais élevés (école privée de commerce)"
-- "taux d'insertion 90%" → "très bonne insertion documentée"
-- "salaire moyen 2 000€ brut/mois" → "salaire de débutant standard"
-- "sélectivité ~28%" → "sélectivité modérée"
+JAMAIS DE CHIFFRES PRÉCIS NON SOURCÉS PHASE 1 RESEARCH.
+
+EXEMPLES STRICTEMENT INTERDITS sans source explicite Phase 1 :
+- DATES DE CONCOURS PRÉCISES (ex "écrits avril 2026", "résultats juin 2026")
+- NOMBRES DE PLACES (ex "150 places", "promo de 30")
+- TAUX D'ADMISSION/SÉLECTIVITÉ EN % (ex "28% sélectivité", "1 sur 4")
+- COÛTS PRÉCIS EN € (ex "10 500€/an", "1 200€/mois")
+- DURÉES PRÉCISES (ex "9 mois de césure", "stage de 6 semaines")
+- TAUX D'INSERTION EN % (ex "90% insertion à 6 mois", "85% en CDI")
+- SALAIRES PRÉCIS (ex "2 000€ brut", "moyenne 35k€")
+
+TERMES QUALITATIFS OBLIGATOIRES en remplacement :
+- "écrits avril 2026" → "au printemps" / "en fin d'année scolaire"
+- "150 places" → "places limitées" / "promotion réduite"
+- "28% sélectif" → "très sélectif" / "sélectivité modérée"
+- "10 500€/an" → "frais élevés (école privée de commerce)"
 - "9 mois de césure" → "césure de quelques mois à 1 an"
+- "90% insertion" → "très bonne insertion documentée"
+- "salaire moyen 2 000€" → "salaire de débutant standard"
+
+INTERDICTION STRICTE de chiffres précis (tarif, salaire, %, durée, taux d'insertion, sélectivité, places concours, années, mensualité, montant aide, score moyen) non EXPLICITEMENT présents dans les sources de la Phase 1 WebSearch.
 
 NE JAMAIS écrire un nombre (avec %, €, ans, mois, mensuel, points, places, etc.) sans vérifier qu'il est dans le research Phase 1. En cas de doute, **registre qualitatif obligatoire**.
 
 Cette règle est plus stricte que l'ancien estimation marker : on retire complètement les chiffres non sourcés au lieu de les flagger "(estimation)". Raison : Mistral en inférence finale peut perdre le marker `(estimation)` et propager des faux chiffres en confiance — éviter le risque à la racine.
+
+Vérifie chaque chiffre dans ta réponse : est-il textuellement dans le research Phase 1 ci-dessus ? Si NON → remplace par formulation qualitative.
 
 LISIBILITÉ MOBILE OBLIGATOIRE :
 - Lecteur cible : 17-25 ans sur smartphone, souvent angoissé (Parcoursup, réorientation)

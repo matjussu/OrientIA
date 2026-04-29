@@ -129,16 +129,33 @@ class TestYAMLConfig:
 
 
 class TestDecisionPolicy:
+    """Boundaries v3.1 (ordre 1011 nuit2-prep) : keep ≥ 82, flag 70-81, drop < 70.
+
+    Recalibration Matteo +3 points sur seuil keep : samples nuit 1 score
+    82-84 jugés qualitativement similaires aux 85+, frontière trop sévère."""
+
+    def test_score_82_keeps(self):
+        """v3.1 nouvelle frontière keep — 82 = limite basse."""
+        assert gqa.decision_from_score(82) == "keep"
+
     def test_score_85_keeps(self):
+        """Régression : ancien seuil keep reste valide (82 ≤ 85)."""
         assert gqa.decision_from_score(85) == "keep"
 
-    def test_score_84_flags(self):
-        assert gqa.decision_from_score(84) == "flag"
+    def test_score_81_flags(self):
+        """v3.1 : 81 = limite haute flag (vs flag 84 sous v3)."""
+        assert gqa.decision_from_score(81) == "flag"
+
+    def test_score_84_keeps_v3_1(self):
+        """v3.1 : 84 passe maintenant en keep (vs flag sous v3)."""
+        assert gqa.decision_from_score(84) == "keep"
 
     def test_score_70_flags(self):
+        """Frontière flag basse inchangée."""
         assert gqa.decision_from_score(70) == "flag"
 
     def test_score_69_drops(self):
+        """Frontière drop inchangée."""
         assert gqa.decision_from_score(69) == "drop"
 
     def test_score_100_keeps(self):
@@ -146,6 +163,11 @@ class TestDecisionPolicy:
 
     def test_score_0_drops(self):
         assert gqa.decision_from_score(0) == "drop"
+
+    def test_thresholds_constants(self):
+        """v3.1 constants explicit : SCORE_KEEP_THRESHOLD=82, SCORE_FLAG_THRESHOLD=70."""
+        assert gqa.SCORE_KEEP_THRESHOLD == 82
+        assert gqa.SCORE_FLAG_THRESHOLD == 70
 
 
 # ───────────────────── Rate limit detection ─────────────────────
@@ -722,6 +744,45 @@ class TestPhase2DraftPromptContent:
         # Bullet points obligatoires + sauts ligne respiration
         assert "BULLET POINTS COURTS" in captured["prompt"]
         assert "Bloc texte massif INTERDIT" in captured["prompt"]
+
+    def test_prompt_v3_1_majuscules_anti_hallu_block(
+        self, sample_prompt_config, cfg_minimal
+    ):
+        """v3.1 (nuit 2 prep, ordre 1011) : bloc MAJUSCULES TLDR au top
+        de la section anti-hallu pour emphase Mistral inférence finale.
+
+        Reco Matteo via Jarvis : 'Termes qualitatifs OBLIGATOIRES'.
+        Bloc liste les 7 catégories chiffres interdits + 7 remplacements
+        qualitatifs explicites avec exemples de la review Phase 1."""
+        retry_stats = gqa.RetryStats()
+        captured: dict = {}
+
+        def fake_call(prompt, cfg, stats, allowed_tools=None, model=None):
+            captured["prompt"] = prompt
+            return '{"question": "Q", "answer": "A"}'
+
+        with patch.object(gqa, "call_claude_with_retry", side_effect=fake_call):
+            gqa.phase2_draft(
+                sample_prompt_config,
+                "research result text",
+                sample_prompt_config["questions_seed"][0],
+                cfg_minimal,
+                retry_stats,
+            )
+
+        # Bloc MAJ TLDR
+        assert "RÈGLE ABSOLUE ANTI-HALLUCINATION CHIFFRÉE" in captured["prompt"]
+        assert "JAMAIS DE CHIFFRES PRÉCIS NON SOURCÉS PHASE 1" in captured["prompt"]
+        # Catégories interdits (échantillon)
+        assert "DATES DE CONCOURS PRÉCISES" in captured["prompt"]
+        assert "TAUX D'ADMISSION/SÉLECTIVITÉ" in captured["prompt"]
+        # Remplacements qualitatifs explicites
+        assert "TERMES QUALITATIFS OBLIGATOIRES" in captured["prompt"]
+        assert "au printemps" in captured["prompt"]
+        assert "très sélectif" in captured["prompt"]
+        assert "places limitées" in captured["prompt"]
+        # Vérification finale (auto-checking ligne explicite)
+        assert "Vérifie chaque chiffre dans ta réponse" in captured["prompt"]
 
 
 # ───────────────────── 4-phase orchestration end-to-end ─────────────────

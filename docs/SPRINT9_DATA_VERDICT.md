@@ -545,3 +545,84 @@ Capitalisé dans `~/projets/.claude/memory/feedback_audit_propagation_exception.
 Les 45 Q&A `keep` + `flag` (`data/golden_qa/golden_qa_v1.jsonl`) sont **valides et exploitables** — la qualité de génération du pipeline 4 phases n'est pas en cause, seulement le shutdown asymétrique. Décision relance nuit 2 (drops-only OU complète) reste en attente de Matteo (post-review sample humain).
 
 PR #101 reste **draft** post-fix : ne sera promote ready-for-review qu'après validation expérimentale du fix sur petit échantillon contrôlé.
+
+---
+
+## 13. Préparation nuit 2 — recalibration v3.1 (ordre 1011)
+
+**Date** : 2026-04-29 10:11 — ordre Jarvis `2026-04-29-1011-claudette-orientia-sprint9-data-nuit2-prep`.
+**Contexte** : review humaine Matteo Phase 1 (07:52) sur les 45 Q&A keep+flag nuit 1.
+
+### 13.1 Diagnostic Phase 0 — distribution drops réseau vs qualité
+
+Exécuté avant toute modification prompt. Résultat :
+
+| Type erreur | Count | % |
+|---|---|---|
+| `Stop condition (>10 consecutive 429)` | 973 | **99.8%** |
+| `Loop exhausted (max_retries épuisés sans crossing MAX)` | 2 | 0.2% |
+| **Quality drops (score<70 sans erreur)** | **0** | **0.0%** |
+
+**Distribution temporelle** :
+
+| Tranche | Keep+Flag | Drops | Interprétation |
+|---|---|---|---|
+| 23h | 23 | 0 | Pipeline démarre, quota OK |
+| 00h | 22 | 177 | Grillage commence vers minuit |
+| 01h | 0 | 367 | Burnout complet (workers en flight grillent quota) |
+| 02h | 0 | 365 | Absorption silencieuse continue (bug stop condition) |
+| 03h | 0 | 66 | Pipeline finit par s'arrêter |
+
+**Conclusion Phase 0** : le bug stop condition propagation (fixé par §12.3 du présent ADR) est la cause UNIQUE des 975 drops. Le rendement réel HORS quota grillé fenêtre 23h-00h = **45/45 keep+flag = 100% utilisable**. Sur le pipeline qualité, **aucune fiche n'a été drop pour score < 70 sans erreur**.
+
+### 13.2 Phase 1 minimal — prompt v3.1 anti-hallucination
+
+**Décision** : vu 99.8% drops réseau (>>70% seuil), Phase 1 simplifiée selon recos Matteo qualitatives basiques uniquement (pas de renforcement programmatique trace research / regex post-draft, ROI faible vu 0 drop qualité historiquement).
+
+Modification `phase2_draft` dans `scripts/generate_golden_qa_v1.py` : ajout d'un bloc TLDR MAJUSCULES en haut de la section anti-hallucination existante, listant 7 catégories de chiffres interdits + 7 remplacements qualitatifs explicites + ligne explicite de vérification finale.
+
+Test ajouté : `test_prompt_v3_1_majuscules_anti_hallu_block` valide la présence des marqueurs critiques (RÈGLE ABSOLUE, JAMAIS, TERMES QUALITATIFS OBLIGATOIRES, exemples remplacements, ligne vérification).
+
+### 13.3 Phase 2 — recalibration boundaries scoring
+
+Boundaries scoring `decision_from_score()` modifiées :
+
+| Décision | v3 (avant) | v3.1 (après) |
+|---|---|---|
+| `keep` | score ≥ **85** | score ≥ **82** |
+| `flag` | 70 ≤ score < 85 | 70 ≤ score < 82 |
+| `drop` | score < 70 | score < 70 (inchangé) |
+
+**Justification** : la review Matteo Phase 1 identifie un cluster solide de 9 fiches scorées 78-84 (`flag`) qui sont qualitativement similaires aux `keep` ≥ 85 (notamment les 5 fiches scorées 84). La frontière 84/85 est jugée trop sévère côté axe `hallucination` (axe le plus faible nuit 1 à 19.7/25 mean). Recalibration +3 points sur seuil keep.
+
+**Mécaniquement appliqué à la nuit 1** : 5 fiches score=84 passent flag → keep → **41 keep + 4 flag = 45 utilisables** (inchangé en nombre, mais redistribution interne) + frontière plus inclusive pour nuit 2.
+
+Tests `TestDecisionPolicy` mis à jour avec 3 nouveaux cas (score 82 keeps / 84 keeps v3.1 / 81 flags) + assertion explicite `SCORE_KEEP_THRESHOLD == 82`.
+
+### 13.4 Phase 3 — mini-test validation pré-nuit 2
+
+Configuration mini-test (à venir post-commit Phase 1+2) :
+- 5-10 Q&A sur prompt_id A1 + B1 + C1 (3 catégories : lyceen_post_bac + etudiant_reorientation + actif_jeune)
+- `--parallel 2 --rate-limit-delay 2.0` (config nuit 2 conservative quota)
+- Output JSONL séparé `data/golden_qa/minitest_v3_1_2026-04-29.jsonl` (ne pas écraser nuit 1)
+- Validations attendues :
+  - Rendement ≥ 70% (target Jarvis), idéal ≥ 90% (estimation post-fix bug + v3.1)
+  - 0 chiffre fantaisiste dans les paragraphes (vérification spot-check + script grep)
+  - Distribution boundaries v3.1 cohérente (score moyen ≥ 84 attendu)
+
+### 13.5 Phase 4 — nuit 2 drops-only (23h post-validation Phase 3)
+
+`bash scripts/launch_qa_gen_nuit.sh` avec :
+- `--parallel 2` (vs 5 nuit 1, économie quota)
+- `--rate-limit-delay 2.0` (vs 1.0 nuit 1, lissage)
+- Skip records existants automatique via `existing_keys()` du ThreadSafeJsonlAppender → ne pas régénérer les 45 keep+flag nuit 1 préservés
+- Output sur `data/golden_qa/golden_qa_v1.jsonl` en append-only (les 45 nuit 1 + nouveaux records nuit 2)
+
+**Rendement estimé nuit 2** : 850-950 keep+flag sur 975 jobs = **~88-97%** (prediction Jarvis cohérente avec estimation 90%+ post-fix bug + v3.1).
+
+### 13.6 Lien chantiers Sprint 10 mergés ce matin
+
+- PR #103 mergée 10:12 (`4eaf50e`) : 6692 fiches textualisées ONISEP+RNCP en `data/textualized/` — utilisables comme corpus enrichi pour Sprint 10 retrieval.
+- PR #102 mergée 10:12 (`9848749`) : RAG filtré métadonnées avec frontmatter consommable + auto-expansion k×3→×10. Activation prod via flag config.
+
+Les nouveaux Q&A nuit 2 pourront être re-indexés FAISS et tester l'impact du metadata_filter sur les questions à contraintes (région/niveau/alternance/budget). Run F+G mesure A/B prévu après nuit 2.
