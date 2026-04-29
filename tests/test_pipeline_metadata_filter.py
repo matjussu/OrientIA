@@ -62,11 +62,20 @@ def _wrap_retrieved(fiches: list[dict]) -> list[dict]:
 
 
 class TestBackwardCompatibility:
-    def test_use_metadata_filter_false_default(self, fake_fiches):
-        """Sans flag à True, comportement v1 strict (pas de filter même si
-        criteria fourni)."""
+    def test_use_metadata_filter_TRUE_default_chantier_C_activation(self, fake_fiches):
+        """Sprint 10 chantier C activation : default `use_metadata_filter=True`
+        (vs False v1). Backward compat strict préservée via path v1 dans
+        `_retrieve_and_filter` quand `criteria=None`."""
         pipe = OrientIAPipeline(client=MagicMock(), fiches=fake_fiches)
-        assert pipe.use_metadata_filter is False
+        assert pipe.use_metadata_filter is True
+
+    def test_explicit_opt_out_disables_filter_even_with_criteria(self, fake_fiches):
+        """Opt-out explicite `use_metadata_filter=False` désactive le filter
+        même si criteria fourni (utile pour A/B test sans filter)."""
+        pipe = OrientIAPipeline(
+            client=MagicMock(), fiches=fake_fiches,
+            use_metadata_filter=False,
+        )
         pipe.index = MagicMock()
 
         with patch("src.rag.pipeline.retrieve_top_k", return_value=_wrap_retrieved(fake_fiches)):
@@ -77,8 +86,27 @@ class TestBackwardCompatibility:
                         criteria=FilterCriteria(region="occitanie"),
                     )
 
-        # Le filter ne s'est PAS appliqué : on a tous les 6 (k_eff = k = 30 effectif)
+        # Le filter ne s'est PAS appliqué malgré criteria fourni
         assert pipe.last_filter_stats["filter_active"] is False
+        assert pipe.last_filter_stats["expansions"] == 0
+
+    def test_default_true_with_criteria_none_remains_v1_path(self, fake_fiches):
+        """Backward compat critique chantier C activation : avec default True
+        ET criteria=None (call-site existant Run F+G), le path v1 strict est
+        toujours pris. Aucune régression sur les eval scripts existants
+        qui font `pipeline.answer(question)` sans criteria."""
+        pipe = OrientIAPipeline(client=MagicMock(), fiches=fake_fiches)
+        assert pipe.use_metadata_filter is True  # default chantier C
+        pipe.index = MagicMock()
+
+        with patch("src.rag.pipeline.retrieve_top_k", return_value=_wrap_retrieved(fake_fiches)):
+            with patch("src.rag.pipeline.rerank", side_effect=lambda r, *a, **k: r):
+                with patch("src.rag.pipeline.generate", return_value="answer"):
+                    pipe.answer("question sans criteria")  # call-site Run F+G typique
+
+        # Path v1 strict pris : pas de filter actif, pas d'expansions
+        assert pipe.last_filter_stats["filter_active"] is False
+        assert pipe.last_filter_stats["criteria_empty"] is True
         assert pipe.last_filter_stats["expansions"] == 0
 
     def test_criteria_none_no_filter_applied(self, pipeline_with_index, fake_fiches):
