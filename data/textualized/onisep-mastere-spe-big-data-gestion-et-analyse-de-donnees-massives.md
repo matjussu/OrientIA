@@ -3,7 +3,7 @@ id: onisep-mastere-spe-big-data-gestion-et-analyse-de-donnees-massives
 source: onisep
 title: "mastère spé. Big Data : gestion et analyse de données massives"
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, data_science]

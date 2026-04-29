@@ -3,7 +3,7 @@ id: onisep-40234
 source: onisep
 title: mastère spé. Expert Big Data Engineer
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, data_science]

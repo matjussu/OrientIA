@@ -3,7 +3,7 @@ id: onisep-38434
 source: onisep
 title: mastère spé. cybersécurité du numérique
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, securite]

@@ -3,7 +3,7 @@ id: onisep-38140
 source: onisep
 title: mastère spé. architecte réseaux et cybersécurité
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, securite]

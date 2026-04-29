@@ -3,7 +3,7 @@ id: onisep-mastere-spe-data-sciences-pour-l-ingenierie
 source: onisep
 title: "mastère spé. Data Sciences pour l'ingénierie"
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, data_science]

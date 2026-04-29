@@ -3,7 +3,7 @@ id: onisep-mastere-spe-cybersecurite-centralesupelec-imt-atlantique-bre
 source: onisep
 title: mastère spé. cybersécurité (CentraleSupélec - IMT Atlantique Bretagne-Pays de la Loire)
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, securite]

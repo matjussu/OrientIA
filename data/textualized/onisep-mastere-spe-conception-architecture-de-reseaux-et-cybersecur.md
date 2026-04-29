@@ -3,7 +3,7 @@ id: onisep-mastere-spe-conception-architecture-de-reseaux-et-cybersecur
 source: onisep
 title: "mastère spé. conception, architecture de réseaux et cybersécurité"
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, securite]

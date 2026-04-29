@@ -3,7 +3,7 @@ id: onisep-master-of-science-in-data-science
 source: onisep
 title: Master of Science in Data Science
 region: null
-niveau: null
+niveau: 5
 alternance: null
 budget: null
 secteur: [informatique, data_science]

@@ -3,7 +3,7 @@ id: onisep-36855
 source: onisep
 title: mastère spé. cybersécurité des infrastructures et des données
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, securite]

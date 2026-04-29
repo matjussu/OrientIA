@@ -3,7 +3,7 @@ id: onisep-mastere-spe-geo-data-management-for-energy-mix
 source: onisep
 title: mastère spé. Geo Data Management for Energy mix
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, data_science]

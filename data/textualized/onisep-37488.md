@@ -3,7 +3,7 @@ id: onisep-37488
 source: onisep
 title: CS cybersécurité
 region: null
-niveau: null
+niveau: 5
 alternance: null
 budget: null
 secteur: [informatique, securite]

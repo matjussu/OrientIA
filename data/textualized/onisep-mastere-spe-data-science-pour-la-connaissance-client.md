@@ -3,7 +3,7 @@ id: onisep-mastere-spe-data-science-pour-la-connaissance-client
 source: onisep
 title: mastère spé. Data Science pour la connaissance client
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, data_science]

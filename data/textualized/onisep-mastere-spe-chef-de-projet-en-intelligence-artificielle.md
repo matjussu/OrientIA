@@ -3,7 +3,7 @@ id: onisep-mastere-spe-chef-de-projet-en-intelligence-artificielle
 source: onisep
 title: mastère spé. chef de projet en intelligence artificielle
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, data_science]

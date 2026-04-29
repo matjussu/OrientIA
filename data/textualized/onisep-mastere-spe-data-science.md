@@ -3,7 +3,7 @@ id: onisep-mastere-spe-data-science
 source: onisep
 title: mastère spé. Data Science
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, data_science]

@@ -3,7 +3,7 @@ id: onisep-37489
 source: onisep
 title: "bac pro cybersécurité, informatique et réseaux, électronique"
 region: null
-niveau: null
+niveau: 0
 alternance: null
 budget: null
 secteur: [informatique, securite]

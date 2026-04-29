@@ -3,7 +3,7 @@ id: onisep-mastere-spe-cybersecurite-isen-yncrea-mediterranee
 source: onisep
 title: mastère spé. cybersécurité (ISEN Yncréa Méditerranée)
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, securite]

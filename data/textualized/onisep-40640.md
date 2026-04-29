@@ -3,7 +3,7 @@ id: onisep-40640
 source: onisep
 title: mastère spé. expert en cybersécurité
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, securite]

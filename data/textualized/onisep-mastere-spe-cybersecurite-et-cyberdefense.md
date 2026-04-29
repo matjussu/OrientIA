@@ -3,7 +3,7 @@ id: onisep-mastere-spe-cybersecurite-et-cyberdefense
 source: onisep
 title: mastère spé. cybersécurité et cyberdéfense
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, securite]

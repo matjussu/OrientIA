@@ -3,7 +3,7 @@ id: onisep-40235
 source: onisep
 title: mastère spé. ingénieur en intelligence artificielle
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, data_science]

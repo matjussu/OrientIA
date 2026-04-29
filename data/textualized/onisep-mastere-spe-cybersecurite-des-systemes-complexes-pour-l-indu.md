@@ -3,7 +3,7 @@ id: onisep-mastere-spe-cybersecurite-des-systemes-complexes-pour-l-indu
 source: onisep
 title: "mastère spé. cybersécurité des systèmes complexes pour l'Industrie et la Défense (Centrale Méditerranée - EAE)"
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, securite]

@@ -3,7 +3,7 @@ id: onisep-mastere-spe-ingenierie-de-la-cybersecurite-cybersecurity-eng
 source: onisep
 title: mastère spé. ingénierie de la cybersécurité - Cybersecurity Engineering
 region: null
-niveau: null
+niveau: 6
 alternance: null
 budget: null
 secteur: [informatique, securite]
