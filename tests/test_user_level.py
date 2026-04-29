@@ -168,14 +168,18 @@ def test_guidance_reconversion_respects_experience():
 
 def test_build_user_prompt_accepts_guidance_prefix():
     """Tier 2.2 integration: build_user_prompt must accept an optional
-    user_guidance parameter and prepend it to the final prompt."""
+    user_guidance parameter and prepend it to the final prompt.
+
+    Sprint 11 P0 (2026-04-29) — `<fiches_rag>` XML balises remplacent
+    « Voici les données de référence » dans le user prompt (best practice
+    anti-injection cohérent avec préfixe Strict Grounding)."""
     from src.prompt.system import build_user_prompt
     result = build_user_prompt(
         "CTX", "Q", user_guidance="Profil détecté : TEST_MARKER."
     )
     assert "TEST_MARKER" in result
     # Guidance must appear before the data reference block
-    assert result.index("TEST_MARKER") < result.index("Voici les données")
+    assert result.index("TEST_MARKER") < result.index("<fiches_rag>")
 
 
 def test_build_user_prompt_backward_compat_no_guidance():
