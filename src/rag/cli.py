@@ -85,6 +85,9 @@ def parse_cli() -> argparse.Namespace:
                    help="Si fourni, logger output structuré JSON")
     p.add_argument("--top-k-sources", type=int, default=10,
                    help="Nombre de fiches passées au generator (défaut 10)")
+    p.add_argument("--interactive", "-i", action="store_true",
+                   help="Mode REPL interactif avec history session in-memory "
+                        "(Sprint 11 P0 Item 2). Sortie via /quit ou Ctrl+D.")
     return p.parse_args()
 
 
@@ -95,10 +98,76 @@ def build_criteria(args: argparse.Namespace) -> FilterCriteria | None:
     return criteria if not criteria.is_empty() else None
 
 
+def run_interactive_repl(pipeline: OrientIAPipeline, args: argparse.Namespace,
+                         criteria: FilterCriteria | None) -> int:
+    """Sprint 11 P0 Item 2 — REPL interactif avec history session in-memory.
+
+    Capture history user/assistant alternés, ré-injecte au call suivant pour
+    permettre suivi de tiroirs ("Oui Plan A" → développe). Pas de persistance
+    disque v1 (out of scope, à voir Sprint 11+ avec session storage).
+
+    Sortie via /quit, /exit, /q ou Ctrl+D / Ctrl+C.
+    Commandes :
+        /reset    — vide history (recommence stateless)
+        /history  — affiche history courante
+    """
+    print(f"\n{'=' * 70}")
+    print("OrientIA REPL interactif — buffer mémoire short-term")
+    print("Tape ta question, /quit pour sortir, /reset pour vider history.")
+    print('=' * 70)
+
+    history: list[dict] = []
+    turn = 1
+
+    while True:
+        try:
+            print()
+            user_input = input(f"[Tour {turn}] » ").strip()
+        except (EOFError, KeyboardInterrupt):
+            print("\n👋 À bientôt !")
+            break
+
+        if not user_input:
+            continue
+        if user_input in ("/quit", "/exit", "/q"):
+            print("👋 À bientôt !")
+            break
+        if user_input == "/reset":
+            history = []
+            turn = 1
+            print("🔄 History vidée, retour stateless.")
+            continue
+        if user_input == "/history":
+            print(f"📜 History courante ({len(history)} messages) :")
+            for i, msg in enumerate(history, 1):
+                preview = msg["content"][:80].replace("\n", " ")
+                print(f"  {i}. [{msg['role']}] {preview}{'...' if len(msg['content']) > 80 else ''}")
+            continue
+
+        t_start = time.time()
+        answer, top = pipeline.answer(
+            user_input,
+            top_k_sources=args.top_k_sources,
+            criteria=criteria,
+            history=history if history else None,  # None plutôt que [] pour passer le path v1 si vide
+        )
+        elapsed_ms = (time.time() - t_start) * 1000
+
+        print(f"\n--- RÉPONSE (t={elapsed_ms:.0f}ms, {len(top)} sources) ---")
+        print(answer)
+
+        # Append à history pour le tour suivant
+        history.append({"role": "user", "content": user_input})
+        history.append({"role": "assistant", "content": answer})
+        turn += 1
+
+    return 0
+
+
 def main() -> int:
     args = parse_cli()
     question = args.question or args.question_flag
-    if not question:
+    if not question and not args.interactive:
         question = "Quelles sont les meilleures formations en cybersécurité en France ?"
 
     cfg = load_config()
@@ -127,6 +196,10 @@ def main() -> int:
         return 1
 
     criteria = build_criteria(args)
+
+    # Sprint 11 P0 Item 2 — dispatch REPL si --interactive
+    if args.interactive:
+        return run_interactive_repl(pipeline, args, criteria)
 
     print(f"\n{'=' * 70}")
     print(f"QUESTION: {question}")

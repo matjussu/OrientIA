@@ -317,6 +317,7 @@ def generate(
     inject_user_level: bool = True,
     system_prompt_override: str | None = None,
     golden_qa_prefix: str | None = None,
+    history: list[dict] | None = None,
 ) -> str:
     """Generate an answer via Mistral.
 
@@ -337,6 +338,13 @@ def generate(
     Quand fourni, append au system prompt — la Q&A devient référence
     comportementale, les fiches du retrieved restent seules sources
     factuelles autorisées. Default `None` = backward compat strict.
+
+    `history` (Sprint 11 P0 Item 2, 2026-04-29) optional buffer de la
+    conversation précédente pour permettre le suivi de tiroir
+    ("Oui Plan A" → développe ce qui a été dit). Format Mistral compliant :
+    `[{"role": "user"|"assistant", "content": str}, ...]`. Injecté
+    entre system prompt et user current. Default `None`/empty = no-op
+    (backward compat strict pour Run F+G + serving stateless).
     """
     context = format_context(retrieved)
     guidance_parts: list[str] = []
@@ -354,12 +362,21 @@ def generate(
         # injections — le few-shot avec instruction "IGNORE écoles/chiffres
         # exemple" doit être system pour maximiser le respect.
         sys_prompt = sys_prompt + "\n\n" + golden_qa_prefix
+
+    # Sprint 11 P0 Item 2 — buffer mémoire short-term
+    # Construction messages array : system → history (user/assistant alternés) → user current
+    messages: list[dict] = [{"role": "system", "content": sys_prompt}]
+    if history:
+        for msg in history:
+            role = msg.get("role")
+            content = msg.get("content")
+            if role in ("user", "assistant") and isinstance(content, str) and content:
+                messages.append({"role": role, "content": content})
+    messages.append({"role": "user", "content": user_prompt})
+
     response = client.chat.complete(
         model=model,
         temperature=temperature,
-        messages=[
-            {"role": "system", "content": sys_prompt},
-            {"role": "user", "content": user_prompt},
-        ],
+        messages=messages,
     )
     return response.choices[0].message.content
