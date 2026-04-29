@@ -316,6 +316,7 @@ def generate(
     temperature: float = 0.3,
     inject_user_level: bool = True,
     system_prompt_override: str | None = None,
+    golden_qa_prefix: str | None = None,
 ) -> str:
     """Generate an answer via Mistral.
 
@@ -329,6 +330,13 @@ def generate(
     (non-régression Sprint 5/6 stricte). Pour activer v3.3 strict
     (Sprint 7 Action 3), passer `SYSTEM_PROMPT_V33_STRICT` depuis
     `src.prompt.system_strict`.
+
+    `golden_qa_prefix` (Sprint 10 chantier D, 2026-04-29) optional
+    Q&A Golden Dynamic Few-Shot prefix avec **séparation stricte
+    Comment/Quoi** (cf `OrientIAPipeline._build_few_shot_prefix`).
+    Quand fourni, append au system prompt — la Q&A devient référence
+    comportementale, les fiches du retrieved restent seules sources
+    factuelles autorisées. Default `None` = backward compat strict.
     """
     context = format_context(retrieved)
     guidance_parts: list[str] = []
@@ -340,6 +348,12 @@ def generate(
     user_guidance = "\n\n".join(guidance_parts)
     user_prompt = build_user_prompt(context, question, user_guidance=user_guidance)
     sys_prompt = system_prompt_override if system_prompt_override is not None else SYSTEM_PROMPT
+    if golden_qa_prefix:
+        # Append au system prompt avec séparateur clair. Mistral honore
+        # plus strictement les system instructions que les user-side
+        # injections — le few-shot avec instruction "IGNORE écoles/chiffres
+        # exemple" doit être system pour maximiser le respect.
+        sys_prompt = sys_prompt + "\n\n" + golden_qa_prefix
     response = client.chat.complete(
         model=model,
         temperature=temperature,
