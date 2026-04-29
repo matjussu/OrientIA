@@ -61,8 +61,14 @@ INTERESTS_TO_SECTORS: dict[str, list[str]] = {
 }
 
 
-# Patterns niveau_scolaire → (niveau_min, niveau_max). Bac+N (1-5).
+# Patterns niveau_scolaire → (niveau_min, niveau_max). Bac+N (0-6).
 # Ordre matter : on prend le 1er match.
+#
+# CORRECTION Matteo via Jarvis 2026-04-29 : Mastère Spécialisé (MS) ≠ Master.
+# - Master = diplôme national Bac+5 (M1+M2)
+# - Mastère Spécialisé (MS) = label CGE post-Master, **Bac+6**
+# Mastère pattern AVANT master pour éviter que `master` matche "mastere"
+# via préfixe partagé (regex left-to-right).
 NIVEAU_PATTERNS: list[tuple[re.Pattern[str], tuple[int, int]]] = [
     (re.compile(r"^(seconde|premiere)", re.IGNORECASE), (1, 3)),
     (re.compile(r"^terminale", re.IGNORECASE), (1, 5)),
@@ -70,6 +76,9 @@ NIVEAU_PATTERNS: list[tuple[re.Pattern[str], tuple[int, int]]] = [
     (re.compile(r"^(l2|bac\+?2|bts|but)", re.IGNORECASE), (2, 5)),
     (re.compile(r"^(l3|bac\+?3|licence)", re.IGNORECASE), (3, 5)),
     (re.compile(r"^(m1|bac\+?4)", re.IGNORECASE), (4, 5)),
+    # Mastère Spé / MS / Bac+6 — formation ciblée niveau 6 (cycle court post-Master)
+    (re.compile(r"^(mastere|mastère|ms\b|bac\+?6)", re.IGNORECASE), (6, 6)),
+    # Master / M2 / Bac+5 — diplôme national, distinct du Mastère
     (re.compile(r"^(m2|bac\+?5|master)", re.IGNORECASE), (5, 5)),
     (re.compile(r"^(actif|professionnel|salarie|reconversion)", re.IGNORECASE), (2, 5)),
 ]

@@ -99,6 +99,11 @@ class TestInferNiveauRange:
             ("Bac+4 mécanique", (4, 5)),
             ("m2_recherche", (5, 5)),
             ("master_data_science", (5, 5)),
+            # Mastère Spécialisé = Bac+6 (correction Matteo 2026-04-29)
+            ("mastere_spe_cybersecurite", (6, 6)),
+            ("mastère_spécialisé_data", (6, 6)),
+            ("MS cybersécurité", (6, 6)),
+            ("Bac+6 finance", (6, 6)),
             ("actif_marketing", (2, 5)),
             ("professionnel_RH_reconversion", (2, 5)),
             ("salarie_industrie", (2, 5)),
@@ -106,6 +111,19 @@ class TestInferNiveauRange:
     )
     def test_known_patterns(self, niveau_scolaire, expected):
         assert infer_niveau_range(niveau_scolaire) == expected
+
+    def test_mastere_vs_master_distinction(self):
+        """Régression critique : 'mastère' (CGE label, Bac+6) ne doit
+        JAMAIS être confondu avec 'master' (diplôme national, Bac+5).
+
+        Cette distinction a été insistée par Matteo 2026-04-29 — erreur
+        factuelle qu'un retrieval mal calibré ferait passer en silence."""
+        # Mastère → 6
+        assert infer_niveau_range("mastere_spe_X") == (6, 6)
+        assert infer_niveau_range("mastère_spécialisé") == (6, 6)
+        # Master → 5
+        assert infer_niveau_range("master_data") == (5, 5)
+        assert infer_niveau_range("m2_finance") == (5, 5)
 
     def test_unknown_pattern_returns_none(self):
         assert infer_niveau_range("xyz_random_thing") == (None, None)
