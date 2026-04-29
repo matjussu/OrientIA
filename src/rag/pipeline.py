@@ -129,6 +129,7 @@ class OrientIAPipeline:
         k: int = 30,
         top_k_sources: int = 10,
         criteria: FilterCriteria | None = None,
+        history: list[dict] | None = None,
     ) -> tuple[str, list[dict]]:
         """Génère une réponse depuis FAISS + rerank + MMR + generator.
 
@@ -137,6 +138,11 @@ class OrientIAPipeline:
         `apply_metadata_filter` post-rerank (avec auto-expansion k §8.4 si
         trop restrictif). Sinon comportement strictement identique à v1.
 
+        Sprint 11 P0 Item 2 : argument `history` opt-in pour buffer mémoire
+        short-term (suivi de tiroirs "Oui Plan A" → développe). Format
+        Mistral compliant `[{"role": "user"|"assistant", "content": str}]`.
+        Default `None`/empty = stateless v1 (pas de régression Run F+G).
+
         Args:
             question: requête utilisateur.
             k: nombre initial de candidats FAISS (défaut 30 — preserved
@@ -144,6 +150,8 @@ class OrientIAPipeline:
             top_k_sources: nombre de sources passées au generator.
             criteria: FilterCriteria (Sprint 10 §8.3). None ou is_empty() →
                 pas de filter (backward compat).
+            history: list[{role, content}] de la conversation précédente
+                (Sprint 11 P0 Item 2). None/[] = stateless.
         """
         if self.index is None:
             raise RuntimeError("Pipeline not built — call build_index() or load_index_from() first.")
@@ -178,6 +186,7 @@ class OrientIAPipeline:
             self.client, top, question,
             model=self.model,
             golden_qa_prefix=golden_qa_prefix,
+            history=history,
         )
         # Validator v1 + UX Policy (Gate J+6) : si un validator est fourni,
         # on valide puis on applique la policy hybride α+β. La signature
