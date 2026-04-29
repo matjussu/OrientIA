@@ -1,4 +1,4 @@
-"""Test serving end-to-end OrientIA — Sprint 10 chantier E.
+"""Test serving end-to-end OrientIA — Sprint 10 chantier E + Sprint 11 P0 Item 3.
 
 Lance 10 questions post-bac diverses via OrientIAPipeline + capture pour
 chacune :
@@ -8,8 +8,10 @@ chacune :
 - Mesures empiriques : latence breakdown, filter stats
 
 Calcule ensuite :
-- Pollution rate : entités de la Q&A Golden citées dans la réponse Mistral
-  mais ABSENTES des 10 fiches RAG (= pollution potentielle Comment→Quoi)
+- Faithfulness LLM-Judge (Sprint 11 P0 Item 3) : VERDICT FIDELE/INFIDELE +
+  liste éléments non sourcés + justification 1-2 phrases via claude-haiku-4-5
+  subprocess. Remplace l'ancien regex pollution naïf saturé sur ce corpus
+  (cf docs/sprint11-P0-item3-bench-judge-vs-regex-2026-04-29.md).
 - Filter saturation : % questions hit_max + distribution n_after_filter
 - Latence breakdown : t_total_ms p50/p90/max
 
@@ -18,10 +20,14 @@ réponses lisibles pour audit qualitatif Matteo+Jarvis.
 
 Usage : `PYTHONPATH=. python3 scripts/test_serving_e2e.py`
 
-Coût Mistral API estimé : 10 questions × ~$0.05-0.10 = ~$0.50-1.00.
-ETA : ~5-10 min wall-clock (chaque .answer() prend 5-30s avec Mistral medium).
+Coût estimé :
+- Mistral API : 10 questions × ~$0.05-0.10 = ~$0.50-1.00.
+- LLM-Judge Haiku : 10 × ~$0.001 = ~$0.01 (négligeable).
+ETA : ~10-15 min wall-clock (Mistral 5-30s + Judge ~30s par question).
 
-Spec ordre Jarvis : 2026-04-29-1146-claudette-orientia-sprint10-finalisation-rag-complet (chantier E).
+Spec ordres Jarvis :
+- 2026-04-29-1146-claudette-orientia-sprint10-finalisation-rag-complet (chantier E)
+- 2026-04-29-2055-claudette-orientia-sprint11-P0-item3-llm-judge-faithfulness (Item 3)
 """
 from __future__ import annotations
 
@@ -35,6 +41,7 @@ from mistralai.client import Mistral
 from src.config import load_config
 from src.rag.metadata_filter import FilterCriteria
 from src.rag.pipeline import OrientIAPipeline
+from scripts.judge_faithfulness import judge_faithfulness
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -156,7 +163,12 @@ def run_one_question(pipeline: OrientIAPipeline, question: str, criteria: Filter
                     golden_qa_record = m
                     break
 
-        pollution = measure_pollution(answer, top, golden_qa_record)
+        # Sprint 11 P0 Item 3 : judge_faithfulness remplace le regex naïf
+        # measure_pollution() (saturé 73-97% sur ce corpus, signal mort).
+        # Cf docs/sprint11-P0-item3-bench-judge-vs-regex-2026-04-29.md.
+        fiches_for_judge = [item.get("fiche") or {} for item in top]
+        verdict = judge_faithfulness(question, answer, fiches_for_judge)
+        faithfulness = verdict.to_dict()
 
         return {
             "question": question,
@@ -166,7 +178,7 @@ def run_one_question(pipeline: OrientIAPipeline, question: str, criteria: Filter
             "filter_stats": last_filter_stats,
             "golden_qa": last_golden_qa,
             "golden_qa_record_question": (golden_qa_record or {}).get("question_seed"),
-            "pollution": pollution,
+            "faithfulness": faithfulness,
             "error": None,
         }
     except Exception as e:
@@ -186,7 +198,9 @@ def render_md_report(results: list[dict]) -> str:
 
     # Stats agrégées
     latencies = [r["t_total_ms"] for r in valid_results]
-    pollutions = [r.get("pollution", {}).get("pollution_rate", 0) for r in valid_results]
+    judge_scores = [r.get("faithfulness", {}).get("score", 0.5) for r in valid_results]
+    judge_flagged = sum(1 for s in judge_scores if s < 0.5)
+    judge_latencies = [r.get("faithfulness", {}).get("latency_ms", 0) for r in valid_results]
     filter_hits_max = sum(1 for r in valid_results if r.get("filter_stats", {}).get("hit_max"))
     filter_n_after = [r.get("filter_stats", {}).get("n_after_filter", 0) for r in valid_results]
     golden_qa_matched = sum(1 for r in valid_results if r.get("golden_qa", {}).get("matched"))
@@ -226,20 +240,24 @@ def render_md_report(results: list[dict]) -> str:
             "",
         ]
 
-    # Pollution
+    # Faithfulness Judge (Sprint 11 P0 Item 3 — remplace l'ancien regex pollution naïf)
+    judge_score_med = sorted(judge_scores)[len(judge_scores) // 2] if judge_scores else 0
+    judge_lat_med = sorted(judge_latencies)[len(judge_latencies) // 2] if judge_latencies else 0
     parts += [
-        "### Alerte 4 — Pollution Q&A Golden → Mistral (mesure empirique)",
+        "### Alerte 4 — Faithfulness LLM-Judge (Sprint 11 P0 Item 3)",
         "",
-        f"- Pollution rate moyenne : **{sum(pollutions) / len(pollutions) * 100:.1f}%** des entités citées en réponse",
-        f"- Pollution rate médiane : {sorted(pollutions)[len(pollutions) // 2] * 100:.1f}%",
-        f"- Pollution rate max : {max(pollutions) * 100:.1f}%",
+        f"- Score faithfulness moyen : **{sum(judge_scores) / len(judge_scores):.2f}** (1.0 = totalement fidèle, 0.0 = très infidèle)",
+        f"- Score médian : {judge_score_med:.2f}",
+        f"- Réponses flagées (score < 0.5) : **{judge_flagged}/{len(valid_results)}**",
+        f"- Latence judge médiane : {judge_lat_med}ms (subprocess `claude --print --model claude-haiku-4-5`)",
         "",
-        "Méthode : pour chaque réponse Mistral, extraction des entités (noms propres, acronymes, montants, pourcentages, dates précises) → comparaison avec le content des 10 fiches RAG. Entités présentes dans Mistral mais ABSENTES des fiches = pollution potentielle (probablement Q&A Golden ou hallu).",
+        "Méthode : pour chaque réponse Mistral, appel `judge_faithfulness(question, answer, fiches)` (claude-haiku-4-5) qui produit VERDICT FIDELE/INFIDELE + liste d'éléments non sourcés + justification 1-2 phrases. Remplace l'ancien regex pollution naïf saturé sur ce corpus (cf bench A/B `docs/sprint11-P0-item3-bench-judge-vs-regex-2026-04-29.md`).",
         "",
-        "**Décision data-driven** :",
-        "- Si <5% pollution → pattern IGNORE actuel suffit, pas de post-filter Sprint 11",
-        "- Si 5-15% → ajouter post-filter regex Sprint 11",
-        "- Si >15% → urgent + investigation prompt design",
+        "**Lecture du score** :",
+        "- ≥ 0.8 : fidèle (peu/pas d'affirmations non sourcées)",
+        "- 0.5 ≤ score < 0.8 : zone grise (juge fidèle mais notes ou inverse)",
+        "- < 0.5 : flagué (au moins 1 affirmation factuelle non sourcée)",
+        "- 0.5 strict : parse error / timeout — caller décide quoi en faire",
         "",
     ]
 
@@ -285,11 +303,13 @@ def render_md_report(results: list[dict]) -> str:
             continue
 
         # Mesures
+        f_data = r.get("faithfulness", {})
         parts.append(f"**Mesures** : t_total={r['t_total_ms']}ms | "
                      f"filter n_after={r.get('filter_stats', {}).get('n_after_filter', '?')} "
                      f"expansions={r.get('filter_stats', {}).get('expansions', '?')} "
                      f"hit_max={r.get('filter_stats', {}).get('hit_max', False)} | "
-                     f"pollution_rate={r.get('pollution', {}).get('pollution_rate', 0) * 100:.0f}%")
+                     f"faithfulness={f_data.get('score', 0.5):.2f} "
+                     f"({f_data.get('raw_verdict', '?')})")
         parts.append("")
 
         # Q&A Golden matched
@@ -318,11 +338,18 @@ def render_md_report(results: list[dict]) -> str:
             parts.append(f"  {j}. **{nom[:80]}** — {etab[:50]} {ville} (niveau {niveau}) [score={src.get('score', 0):.3f}]")
         parts.append("")
 
-        # Pollution flag si présente
-        pollution = r.get("pollution", {})
-        polluted = pollution.get("polluted_entities", [])
-        if polluted:
-            parts.append(f"⚠️  **Entités polluées détectées** ({len(polluted)}) : {', '.join(polluted[:8])}{' ...' if len(polluted) > 8 else ''}")
+        # Faithfulness flagged elements + justification
+        f_data = r.get("faithfulness", {})
+        flagged = f_data.get("flagged_entities", [])
+        if flagged:
+            parts.append(f"⚠️  **Affirmations flaguées par juge** ({len(flagged)}) :")
+            for el in flagged[:5]:
+                parts.append(f"   - {str(el)[:200]}")
+            if len(flagged) > 5:
+                parts.append(f"   - ... ({len(flagged) - 5} autres)")
+            justif = f_data.get("justification", "")
+            if justif:
+                parts.append(f"   - **Justification juge** : {justif[:300]}")
             parts.append("")
 
         parts.append("---")
@@ -363,9 +390,11 @@ def main() -> int:
         if result.get("error"):
             print(f"    ❌ {result['error']}")
         else:
+            f_data = result.get('faithfulness', {})
             print(f"    ✅ t={result['t_total_ms']}ms | "
                   f"filter n_after={result.get('filter_stats', {}).get('n_after_filter', '?')} | "
-                  f"pollution={result.get('pollution', {}).get('pollution_rate', 0) * 100:.0f}%")
+                  f"faithfulness={f_data.get('score', 0.5):.2f} ({f_data.get('raw_verdict', '?')}, "
+                  f"{f_data.get('latency_ms', 0)}ms judge)")
         results.append(result)
 
     # Sauvegarder raw results JSONL
