@@ -45,7 +45,7 @@ class OrientIAPipeline:
         mmr_lambda: float = DEFAULT_LAMBDA,
         use_intent: bool = False,
         validator: Validator | None = None,
-        use_metadata_filter: bool = False,
+        use_metadata_filter: bool = True,
         use_golden_qa: bool = False,
         golden_qa_index_path: str | None = None,
         golden_qa_meta_path: str | None = None,
@@ -67,12 +67,28 @@ class OrientIAPipeline:
         # un validator est fourni. `last_policy_result` expose le verdict +
         # la réponse finale (peut avoir remplacé l'answer si Policy.BLOCK).
         self.last_policy_result: PolicyResult | None = None
-        # Sprint 10 chantier C §8.3 — RAG filtré métadonnées (opt-in).
-        # False par défaut = backward compat strict (run F+G results
-        # reproductibles). True = active le pipeline post-FAISS filter
-        # avec auto-expansion k. Doit s'accompagner de fiches avec
-        # frontmatter consommable (région/niveau/alternance/budget/secteur)
-        # — chantier B textualisation ONISEP/RNCP.
+        # Sprint 10 chantier C — RAG filtré métadonnées.
+        #
+        # Sprint 10 chantier C v1 (PR #102 mergée 10:12) : `False` par défaut.
+        # Sprint 10 chantier C activation (cette PR) : **`True` par défaut**.
+        #
+        # Le default change parce que :
+        # 1. Chantier B (PR #105) a normalisé les frontmatter cross-corpus :
+        #    secteur 86.7%, budget 55.4%, alternance 36.5% du corpus 55k
+        #    couverts. Le filter peut maintenant opérer significativement
+        #    (vs quasi-inactif avant B).
+        # 2. Backward compat préservée : `_retrieve_and_filter()` prend le
+        #    path v1 strict quand `criteria=None` (cf ligne ~170), même avec
+        #    `use_metadata_filter=True`. Les call-sites Run F+G qui font
+        #    `pipeline.answer(question)` sans criteria continuent à opérer
+        #    en comportement v1 strict — Run F+G reproductible sans
+        #    configuration explicite.
+        # 3. Pour les nouveaux usages avec criteria (chantier E CLI / serving
+        #    prod), pas besoin de penser à set le flag — défaut "filter
+        #    available, à activer via criteria explicit".
+        #
+        # Pour explicit opt-out (ex: A/B test sans filter), passer
+        # `use_metadata_filter=False`.
         self.use_metadata_filter = use_metadata_filter
         # Stats du dernier `.answer(criteria=...)` — utiles pour audit
         # F+G (combien d'expansions ont été nécessaires, recall pré/post
