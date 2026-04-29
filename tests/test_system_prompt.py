@@ -33,11 +33,18 @@ def test_v3_removes_shouting_jamais():
     and hedging that cost 1-8 points on orthogonal questions. Kept as
     lowercase 'jamais' for the few prohibitions (e.g., 'jamais de
     jugement de valeur') it's fine, but no more CAPS shouting.
+
+    Sprint 11 P0 (2026-04-29) — seuil étendu à ≤ 3 : le préfixe
+    Sprint 11 P0 ajoute des "JAMAIS" légitimes dans le bloc
+    Strict Grounding (interdiction d'utiliser connaissances
+    pré-entraînement) qui sont des instructions structurelles
+    nouvelles, pas du shouting de répétition.
     """
     caps_count = SYSTEM_PROMPT.count("JAMAIS")
-    assert caps_count <= 1, (
-        f"Expected ≤ 1 'JAMAIS' in caps, found {caps_count} "
-        "(reflex of confession comes from repeated shouting)"
+    assert caps_count <= 3, (
+        f"Expected ≤ 3 'JAMAIS' in caps post-Sprint 11 P0, found {caps_count} "
+        "(reflex of confession comes from repeated shouting — préfixe Sprint 11 "
+        "P0 a des JAMAIS légitimes Strict Grounding mais shouting v3 reste évité)"
     )
 
 
