@@ -176,6 +176,105 @@ def test_clean_explicit_advice_only():
 
 
 # ============================================================================
+# 2-bis. GÉNÉRALISATION HORS-WHITELIST — valide que le juge mobilise sa propre
+# connaissance (pas seulement les faits injectés dans le prompt). Tests post-
+# recadrage Jarvis 2026-04-29 20:27.
+# ============================================================================
+
+@skip_real
+@pytest.mark.xfail(
+    strict=True,
+    reason=(
+        "LIMITATION DOCUMENTÉE Haiku 4.5 — accepte le framing de la question. "
+        "Quand l'utilisateur affirme implicitement 'Je suis en Première STG' (série supprimée "
+        "depuis 2012, devenue STMG), Haiku joue le jeu et n'invalide pas la prémisse, même si "
+        "sa connaissance le permettrait. Le verdict sort FIDELE car la réponse, prise dans le "
+        "framing, est cohérente. Cette limitation affecte aussi Q10 chantier E indirectement "
+        "(détecté pour autres raisons : stats non sourcées). Strict=True pour signaler si Haiku "
+        "s'améliore. Cf verdict §5 + propositions Item 4 / Sprint 11 P1."
+    ),
+)
+def test_generalization_first_stg_obsolete_xfail_framing_acceptance():
+    """Première STG : série supprimée depuis 2012 (rénovation Bac techno → STMG).
+    Pas dans le prompt. Documenté comme limitation Haiku (framing acceptance).
+    """
+    question = "Je suis en Première STG, est-ce que je peux faire HEC ?"
+    answer = (
+        "La Première STG mène naturellement à la Terminale STG, puis à des prépas ECT "
+        "pour intégrer HEC. Les profs préviennent que c'est difficile mais accessible "
+        "avec un bon dossier."
+    )
+    fiches = [{
+        "id": "parcoursup-X",
+        "nom": "Classe Préparatoire Économique et Commerciale Technologique (ECT)",
+        "etablissement": "Lycée Y",
+        "type_diplome": "CPGE",
+    }]
+    verdict = judge_faithfulness(question, answer, fiches)
+    assert verdict.error is None, f"Subprocess error: {verdict.error}"
+    assert verdict.raw_verdict == "INFIDELE", (
+        f"Expected INFIDELE (Première STG supprimée depuis 2012, devenue STMG), "
+        f"got {verdict.raw_verdict}. Justification: {verdict.justification}."
+    )
+    assert verdict.score < 0.5
+
+
+@skip_real
+def test_generalization_dut_replaced_by_but():
+    """DUT remplacé par le BUT (Bachelor Universitaire de Technologie) en 2021.
+    Pas dans le prompt. Haiku doit savoir que le DUT bac+2 n'existe plus depuis la rentrée 2021.
+    """
+    question = "Je veux faire un DUT Informatique en 2 ans, c'est possible ?"
+    answer = (
+        "Oui, le DUT Informatique se fait en 2 ans après le bac, dans un IUT. "
+        "Il y a 26 IUT en France qui proposent ce DUT, par exemple l'IUT de Lannion."
+    )
+    fiches = [{
+        "id": "parcoursup-X",
+        "nom": "BUT Informatique",
+        "etablissement": "IUT de Lannion",
+        "type_diplome": "BUT",
+        "duree": "3 ans",
+    }]
+    verdict = judge_faithfulness(question, answer, fiches)
+    assert verdict.error is None, f"Subprocess error: {verdict.error}"
+    # Haiku doit catcher : le DUT bac+2 n'existe plus, le BUT bac+3 l'a remplacé en 2021
+    assert verdict.raw_verdict == "INFIDELE", (
+        f"Expected INFIDELE (DUT bac+2 remplacé par BUT bac+3 en 2021), "
+        f"got {verdict.raw_verdict}. Justification: {verdict.justification}. "
+        f"Si rate : limitation Haiku à documenter."
+    )
+    assert verdict.score < 0.5
+
+
+@skip_real
+def test_generalization_invented_diploma_flagged():
+    """Diplôme totalement inventé : 'Master Pro Excellence Numérique Agréé (MPENA)'
+    n'existe nulle part. Haiku doit le flagger comme non sourcé (test négatif).
+    """
+    question = "Quelles études après le bac pour devenir développeur ?"
+    answer = (
+        "Une option excellente est le Master Pro Excellence Numérique Agréé (MPENA), "
+        "un diplôme bac+5 reconnu par l'État qui forme aux métiers du dev en 5 ans. "
+        "Il est proposé par 12 universités françaises avec un taux d'insertion de 96%."
+    )
+    fiches = [{
+        "id": "parcoursup-X",
+        "nom": "Licence Informatique",
+        "etablissement": "Université de Lille",
+        "type_diplome": "Licence",
+    }]
+    verdict = judge_faithfulness(question, answer, fiches)
+    assert verdict.error is None, f"Subprocess error: {verdict.error}"
+    # MPENA n'existe pas + chiffres non sourcés → INFIDELE
+    assert verdict.raw_verdict == "INFIDELE", (
+        f"Expected INFIDELE (MPENA est un diplôme inventé), "
+        f"got {verdict.raw_verdict}. Justification: {verdict.justification}."
+    )
+    assert verdict.score < 0.5
+
+
+# ============================================================================
 # 3. EDGE CASES — fallback graceful sans crash, sans appel réseau
 # ============================================================================
 

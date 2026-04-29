@@ -40,11 +40,14 @@ DEFAULT_TIMEOUT_S = 120
 DEFAULT_MAX_FICHES = 5
 DEFAULT_FICHE_MAX_CHARS = 800
 
-# Prompt v2 (retenu après itération empirique sur ground truth, voir
-# docs/sprint11-P0-item3-llm-judge-faithfulness-2026-04-29.md §3 — variantes essayées).
+# Prompt v1 minimal — purement sémantique, mobilise la connaissance externe du
+# juge (knowledge cutoff janv 2026 couvre largement les faits français publics).
+# Itération post-recadrage Jarvis 2026-04-29 20:27 : v2 (qui injectait une
+# whitelist de faits officiels = ground truth déguisée) abandonné car biaisait
+# le test de faithfulness. Cf docs/sprint11-P0-item3-llm-judge-faithfulness-2026-04-29.md §2.
 JUDGE_PROMPT_TEMPLATE = """Tu es un évaluateur de qualité factuelle pour un système RAG d'orientation académique en France.
 
-OBJECTIF : repérer les AFFIRMATIONS FACTUELLES (pas les conseils) non sourcées dans les fiches.
+OBJECTIF : repérer les AFFIRMATIONS FACTUELLES (pas les conseils) non sourcées dans les fiches OU contradictoires avec les faits réels du système éducatif français.
 
 QUESTION : {question}
 
@@ -56,25 +59,19 @@ FICHES SOURCES ({n_fiches} premières) :
 
 CRITÈRES D'ÉVALUATION :
 
-1. **Affirmations factuelles** (à vérifier) :
+1. **Affirmations factuelles à vérifier** :
    - Procédures d'admission ("concours", "sur dossier", "Parcoursup")
    - Existence de diplômes/écoles nommés
-   - Faits historiques datés (suppression filière, fusion diplôme, réforme)
-   - Chiffres précis (taux, places, salaires, années)
+   - Faits historiques datés (suppression de filière, fusion de diplôme, réforme du bac)
+   - Chiffres précis (taux d'admission, nombre de places, salaires, années)
 
 2. **Sont OK même si pas dans fiches** :
-   - Conseils ("prépare ton dossier", "soigne ton projet motivé")
-   - Énoncés marqués "(connaissance générale)"
-   - Liens et URLs
-   - Recommandations méthodologiques
+   - Conseils méthodologiques ("prépare ton dossier", "soigne ton projet motivé")
+   - Énoncés marqués "(connaissance générale)" explicitement
+   - Liens et URLs (l'URL elle-même)
+   - Recommandations sur la démarche
 
-3. **Cas particulier — connaissance officielle française** :
-   Tu peux te baser sur ta connaissance pour valider/invalider :
-   - Réforme bac 2021 : séries L/ES/S supprimées (remplacées par spécialités)
-   - DEAMP supprimé en 2016 (fusionné en DEAES)
-   - IFSI : admission Parcoursup sur dossier depuis 2019 (pas de concours post-bac)
-   - PASS/L.AS : concours fin L1 (pas post-bac)
-   Si une affirmation contredit ces faits → flagger même si l'absence dans fiches semble OK.
+3. **Mobilise ta propre connaissance** du système éducatif français pour évaluer la véracité des affirmations factuelles. Si une affirmation est démentie par ce que tu sais des réformes, fusions de diplômes, procédures d'admission, etc. → flagger même si l'absence dans fiches semble OK.
 
 FORMAT DE RÉPONSE (STRICT, rien d'autre) :
 VERDICT: FIDELE | INFIDELE
