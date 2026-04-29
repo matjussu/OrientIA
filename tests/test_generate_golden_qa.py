@@ -313,6 +313,59 @@ class TestThreadSafeJsonlAppender:
         appender = gqa.ThreadSafeJsonlAppender(path)
         assert appender.existing_keys() == set()
 
+    # ─────── Sprint 9-data nuit 2 — drops-only mode (skip_decisions) ───────
+
+    def test_existing_keys_default_skips_all_decisions(self, tmp_path):
+        """Backward compat : sans skip_decisions, retourne TOUTES les clés (incl. drops)."""
+        path = tmp_path / "out.jsonl"
+        appender = gqa.ThreadSafeJsonlAppender(path)
+        appender.append({"prompt_id": "A1", "iteration": 0, "decision": "keep"})
+        appender.append({"prompt_id": "A1", "iteration": 1, "decision": "flag"})
+        appender.append({"prompt_id": "B2", "iteration": 0, "decision": "drop"})
+        appender.append({"prompt_id": "C3", "iteration": 0, "decision": "drop"})
+        keys = appender.existing_keys()
+        assert keys == {("A1", 0), ("A1", 1), ("B2", 0), ("C3", 0)}
+
+    def test_existing_keys_skip_decisions_keep_only(self, tmp_path):
+        """skip_decisions=['keep'] : seuls les keep sont skipped, les flag/drop refaits."""
+        path = tmp_path / "out.jsonl"
+        appender = gqa.ThreadSafeJsonlAppender(path)
+        appender.append({"prompt_id": "A1", "iteration": 0, "decision": "keep"})
+        appender.append({"prompt_id": "A1", "iteration": 1, "decision": "flag"})
+        appender.append({"prompt_id": "B2", "iteration": 0, "decision": "drop"})
+        keys = appender.existing_keys(skip_decisions=["keep"])
+        assert keys == {("A1", 0)}, "Seul keep doit rester dans existing (à skip au resume)"
+
+    def test_existing_keys_skip_decisions_keep_flag_nuit2_mode(self, tmp_path):
+        """Cas nuit 2 : skip_decisions=['keep', 'flag'] → drops sont vus comme à refaire."""
+        path = tmp_path / "out.jsonl"
+        appender = gqa.ThreadSafeJsonlAppender(path)
+        # Simu nuit 1 : 36 keep + 9 flag + 975 drops (sample 5/5/5 pour test)
+        for i in range(5):
+            appender.append({"prompt_id": "A1", "iteration": i, "decision": "keep"})
+        for i in range(5):
+            appender.append({"prompt_id": "A2", "iteration": i, "decision": "flag"})
+        for i in range(5):
+            appender.append({"prompt_id": "B1", "iteration": i, "decision": "drop"})
+
+        # Mode nuit 2 : skip uniquement keep+flag
+        keys = appender.existing_keys(skip_decisions=["keep", "flag"])
+        # 10 valides skipped, 5 drops absents = à refaire
+        assert len(keys) == 10
+        assert ("A1", 0) in keys  # keep skipped
+        assert ("A2", 0) in keys  # flag skipped
+        assert ("B1", 0) not in keys, "Drops ne doivent PAS être dans existing (à refaire nuit 2)"
+
+    def test_existing_keys_skip_decisions_records_without_decision_field(self, tmp_path):
+        """Edge : record sans champ 'decision' (dryrun debug, error early-exit) → exclu si filter actif."""
+        path = tmp_path / "out.jsonl"
+        appender = gqa.ThreadSafeJsonlAppender(path)
+        appender.append({"prompt_id": "A1", "iteration": 0, "decision": "keep"})
+        appender.append({"prompt_id": "X9", "iteration": 0})  # pas de champ decision
+        keys = appender.existing_keys(skip_decisions=["keep", "flag"])
+        # X9 n'a pas decision='keep' ou 'flag' → pas skip → pas dans existing → sera refait
+        assert keys == {("A1", 0)}
+
     def test_concurrent_append_no_corruption(self, tmp_path):
         path = tmp_path / "out.jsonl"
         appender = gqa.ThreadSafeJsonlAppender(path)

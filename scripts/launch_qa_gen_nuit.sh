@@ -18,6 +18,9 @@
 #   QA_MODEL=claude-opus-4-7    # legacy v1+v2 (utilisé si phase-specific vides)
 #   QA_RATE_DELAY=2.0           # délai entre calls subprocess (v3 sage)
 #   QA_MAX_RETRIES=3            # retries sur 429 + Claude Max plan signatures
+#   QA_SKIP_DECISIONS=keep,flag # mode drops-only nuit 2+ : skip uniquement
+#                                 les valides du JSONL existant, refait les drops.
+#                                 Default vide = comportement original.
 #
 # Logs : logs/golden_qa_gen_v1_YYYYMMDD_HHMMSS.log
 # Output : data/golden_qa/golden_qa_v1.jsonl (append-only, resumable)
@@ -48,6 +51,7 @@ QA_MODEL="${QA_MODEL:-}"
 
 QA_RATE_DELAY="${QA_RATE_DELAY:-2.0}"
 QA_MAX_RETRIES="${QA_MAX_RETRIES:-3}"
+QA_SKIP_DECISIONS="${QA_SKIP_DECISIONS:-}"
 
 TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
 LOG_FILE="logs/golden_qa_gen_v1_${TIMESTAMP}.log"
@@ -95,6 +99,12 @@ if [[ -n "$QA_MODEL" ]]; then
     MODEL_FLAGS="$MODEL_FLAGS --model $QA_MODEL"
 fi
 
+# Mode drops-only nuit 2+ : propage --skip-decisions si fourni
+SKIP_DECISIONS_FLAG=""
+if [[ -n "$QA_SKIP_DECISIONS" ]]; then
+    SKIP_DECISIONS_FLAG="--skip-decisions $QA_SKIP_DECISIONS"
+fi
+
 CMD="cd '$REPO_DIR' && \
 source .venv/bin/activate && \
 python scripts/generate_golden_qa_v1.py \
@@ -105,6 +115,7 @@ python scripts/generate_golden_qa_v1.py \
     --rate-limit-delay $QA_RATE_DELAY \
     --max-retries $QA_MAX_RETRIES \
     $MODEL_FLAGS \
+    $SKIP_DECISIONS_FLAG \
     2>&1 | tee $LOG_FILE; \
 echo '==> EXIT \$?' | tee -a $LOG_FILE"
 
@@ -113,6 +124,7 @@ echo "    parallel: $QA_PARALLEL, target: $QA_TARGET"
 echo "    models : research=$QA_MODEL_RESEARCH | draft=$QA_MODEL_DRAFT | critique-refine=$QA_MODEL_CRITIQUE_REFINE"
 [[ -n "$QA_MODEL" ]] && echo "    legacy --model: $QA_MODEL (fallback)"
 echo "    rate_limit_delay: ${QA_RATE_DELAY}s, max_retries: $QA_MAX_RETRIES"
+[[ -n "$QA_SKIP_DECISIONS" ]] && echo "    🌙 skip-decisions: $QA_SKIP_DECISIONS (mode drops-only)"
 echo "    log: $LOG_FILE"
 echo "    output: $OUTPUT_JSONL"
 echo

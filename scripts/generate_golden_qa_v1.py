@@ -143,6 +143,11 @@ class GenerateConfig:
     max_retries: int = DEFAULT_MAX_RETRIES
     timeout_s: int = DEFAULT_TIMEOUT_S
     dry_run_no_subprocess: bool = False  # debug : no subprocess, fake responses
+    # Mode drops-only nuit 2+ : si fourni, ne skip au resume QUE les records
+    # dont decision ∈ skip_decisions. Permet de relancer uniquement les drops
+    # (passer ["keep", "flag"]) sans perdre les valides nuit précédente.
+    # None = comportement original (skip TOUT ce qui est dans le JSONL).
+    skip_decisions: list[str] | None = None
 
 
 @dataclass
@@ -589,11 +594,17 @@ class ThreadSafeJsonlAppender:
             with self.path.open("a", encoding="utf-8") as f:
                 f.write(line + "\n")
 
-    def existing_keys(self) -> set[tuple]:
+    def existing_keys(self, skip_decisions: list[str] | None = None) -> set[tuple]:
         """Retourne l'ensemble des (prompt_id, iteration) déjà présents.
 
         Utilisé pour le checkpointing : skip les jobs déjà faits au resume.
         Tolère les lignes JSON invalides (skip silencieusement, log).
+
+        Args:
+            skip_decisions: si fourni, ne retient dans l'ensemble que les records
+                dont `decision` ∈ skip_decisions. Permet le mode drops-only nuit 2+ :
+                passer ["keep", "flag"] = skip uniquement les valides, refait les drops.
+                Default None = comportement original (skip TOUT ce qui est dans le JSONL).
         """
         keys: set[tuple] = set()
         if not self.path.exists() or self.path.stat().st_size == 0:
@@ -605,6 +616,9 @@ class ThreadSafeJsonlAppender:
                     continue
                 try:
                     rec = json.loads(line)
+                    if skip_decisions is not None:
+                        if rec.get("decision") not in skip_decisions:
+                            continue
                     keys.add((rec.get("prompt_id"), rec.get("iteration")))
                 except json.JSONDecodeError:
                     continue
@@ -781,7 +795,15 @@ def parse_cli() -> GenerateConfig:
                    help=f"Timeout subprocess (s, défaut {DEFAULT_TIMEOUT_S})")
     p.add_argument("--dry-run-no-subprocess", action="store_true",
                    help="Debug : remplace subprocess par fake responses (no API)")
+    p.add_argument("--skip-decisions", type=str, default=None,
+                   help="Liste séparée par virgule des decisions à skip au resume "
+                        "(ex 'keep,flag'). Mode drops-only nuit 2+ : permet de "
+                        "relancer uniquement les drops sans perdre les valides "
+                        "des runs précédents. Default = skip TOUT ce qui est dans le JSONL.")
     args = p.parse_args()
+    skip_decisions = None
+    if args.skip_decisions:
+        skip_decisions = [d.strip() for d in args.skip_decisions.split(",") if d.strip()]
 
     return GenerateConfig(
         yaml_config_path=args.config,
@@ -798,6 +820,7 @@ def parse_cli() -> GenerateConfig:
         max_retries=args.max_retries,
         timeout_s=args.timeout_s,
         dry_run_no_subprocess=args.dry_run_no_subprocess,
+        skip_decisions=skip_decisions,
     )
 
 
@@ -923,10 +946,12 @@ def main() -> int:
     jobs = build_jobs(yaml_data, cfg)
 
     appender = ThreadSafeJsonlAppender(cfg.output_jsonl)
-    existing = appender.existing_keys()
+    existing = appender.existing_keys(skip_decisions=cfg.skip_decisions)
     jobs_to_run = [(p, i) for p, i in jobs if (p["id"], i) not in existing]
 
-    print(f"    jobs total: {len(jobs)}, déjà fait: {len(existing)}, à exécuter: {len(jobs_to_run)}")
+    if cfg.skip_decisions is not None:
+        print(f"    🌙 Mode drops-only : skip uniquement decisions ∈ {cfg.skip_decisions}")
+    print(f"    jobs total: {len(jobs)}, déjà fait (skip): {len(existing)}, à exécuter: {len(jobs_to_run)}")
 
     return run_pipeline(cfg, jobs_to_run, appender)
 
