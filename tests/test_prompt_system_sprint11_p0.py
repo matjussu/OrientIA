@@ -235,3 +235,75 @@ class TestOverridePathForRunFG:
         # Mais préfixe la révoque explicitement (priorité haut du prompt)
         prefix_part = SYSTEM_PROMPT[:len(SYSTEM_PROMPT_SPRINT11_P0_PREFIX)]
         assert "RÉVOQUÉE" in prefix_part or "révoque" in prefix_part.lower()
+
+
+# ──────────────────── (g) DIRECTIVE 4 — format adaptatif multi-tour (Item 2 v2) ────────────────────
+
+
+class TestDirective4FormatAdaptatif:
+    """DIRECTIVE 4 ajoutée par Item 2 v2 enrichi (Matteo recadrage 2026-04-29) :
+    le format Règles 1-2-3 ne s'applique qu'au PREMIER tour. Multi-tour =
+    adaptation conversationnelle selon l'intent du user."""
+
+    def test_directive_4_section_present(self):
+        assert "DIRECTIVE 4" in SYSTEM_PROMPT_SPRINT11_P0_PREFIX
+        assert "FORMAT SELON CONTEXTE CONVERSATION" in SYSTEM_PROMPT_SPRINT11_P0_PREFIX
+
+    def test_directive_4_premier_tour_only_for_rules_123(self):
+        """Le bloc Règles 1-2-3 explicitement scopé au premier tour."""
+        prefix = SYSTEM_PROMPT_SPRINT11_P0_PREFIX
+        assert "PREMIER tour" in prefix
+        # "UNIQUEMENT" présent dans le contexte de la directive
+        assert "UNIQUEMENT" in prefix
+
+    def test_directive_4_followup_developpe_piste(self):
+        """Cas user "Oui Plan A" → développer la piste, pas nouveau A/B/C."""
+        prefix = SYSTEM_PROMPT_SPRINT11_P0_PREFIX
+        # Exemples de phrases user typiques
+        assert "Oui le Plan A" in prefix or "détaille le BTS" in prefix
+        # Action : DÉVELOPPE
+        assert "DÉVELOPPE" in prefix
+        # Anti-pattern : pas de nouveau Plan A/B/C
+        assert "Pas de nouveau Plan A/B/C" in prefix
+
+    def test_directive_4_nouvelle_question_re_trigger(self):
+        """Cas user nouvelle question orientation → re-trigger Règles 1-2-3."""
+        prefix = SYSTEM_PROMPT_SPRINT11_P0_PREFIX
+        assert "nouvelle question d'orientation" in prefix
+        assert "Re-applique" in prefix
+
+    def test_directive_4_question_factuelle_courte(self):
+        """Cas user question factuelle précise → réponse courte directe."""
+        prefix = SYSTEM_PROMPT_SPRINT11_P0_PREFIX
+        assert "question factuelle" in prefix
+        assert "DIRECTEMENT et brièvement" in prefix
+        assert "1-3 phrases" in prefix
+        # Fallback "je n'ai pas l'information" mentionné explicitement
+        assert "je n'ai pas l'information" in prefix.lower()
+
+    def test_directive_4_revisite_sujet_precedent(self):
+        """Cas user revient sur sujet précédent → conversationnel."""
+        prefix = SYSTEM_PROMPT_SPRINT11_P0_PREFIX
+        assert "revient sur un sujet précédent" in prefix or "revenons au" in prefix
+        assert "conversationnellement" in prefix
+
+    def test_directive_4_summary_conversationnel_contextuel(self):
+        """Le résumé final dit explicitement 'sois CONVERSATIONNEL et CONTEXTUEL'."""
+        prefix = SYSTEM_PROMPT_SPRINT11_P0_PREFIX
+        assert "CONVERSATIONNEL" in prefix
+        assert "CONTEXTUEL" in prefix
+        # Et "outil pour démarrer" (vs règle mécanique)
+        assert "outil" in prefix.lower() or "OUTIL" in prefix
+
+
+class TestDirectiveCount4DirectivesNow:
+    def test_4_directives_present(self):
+        """Le préfixe contient maintenant 4 directives prioritaires (vs 3 v1)."""
+        prefix = SYSTEM_PROMPT_SPRINT11_P0_PREFIX
+        for n in (1, 2, 3, 4):
+            assert f"DIRECTIVE {n}" in prefix, f"DIRECTIVE {n} manquante"
+
+    def test_caduque_4_directives_mentioned(self):
+        """Footer mentionne '4 directives' (cohérence)."""
+        prefix = SYSTEM_PROMPT_SPRINT11_P0_PREFIX
+        assert "4 directives" in prefix

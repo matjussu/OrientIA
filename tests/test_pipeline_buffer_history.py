@@ -296,3 +296,99 @@ class TestGenerateHistoryDirect:
         assert len(msgs) == 4  # system + 2 history + user
         assert msgs[1]["role"] == "user" and msgs[1]["content"] == "Hello"
         assert msgs[2]["role"] == "assistant" and msgs[2]["content"] == "Hi"
+
+
+# ─────────────────── (e) DIRECTIVE 4 format adaptatif — Item 2 v2 enrichi ───────────────────
+
+
+class TestFormatAdaptatifMultiTour:
+    """Tests E2E intégration : vérifient que les 4 cas de DIRECTIVE 4 sont
+    bien transmis à Mistral via le system prompt + history. Mistral est
+    mocké — on vérifie que le prompt construit (system + messages array)
+    contient les instructions de format adaptatif appropriées."""
+
+    def test_format_adaptatif_followup_detail_piste_no_new_plan(self, pipeline_mock, fake_fiches):
+        """Cas user "Oui Plan A" → vérifier que la DIRECTIVE 4 (FORMAT
+        SELON CONTEXTE CONVERSATION) est dans le system prompt envoyé
+        à Mistral, ET que l'history avec le précédent Plan A/B/C est
+        bien injectée pour permettre à Mistral de comprendre le contexte."""
+        captured = {}
+
+        def fake_complete(model, temperature, messages):
+            captured["messages"] = messages
+            r = MagicMock()
+            r.choices = [MagicMock(message=MagicMock(content="developpé Plan A"))]
+            return r
+
+        pipeline_mock.client.chat.complete = fake_complete
+
+        # Tour 1 simulé : user demande alternatives, assistant répond Plan A/B/C
+        history = [
+            {"role": "user", "content": "Je veux faire de l'info, alternatives prépa MPSI ?"},
+            {"role": "assistant", "content": (
+                "**TL;DR** : 3 voies post-bac scientifiques alternatives à la prépa.\n"
+                "**Plan A** — BUT Informatique en 3 ans (concret, alternance possible).\n"
+                "**Plan B** — Licence Math-Info à l'université.\n"
+                "**Plan C** — École d'ingénieur post-bac (prépa intégrée).\n"
+                "Lequel des 3 te parle le plus, qu'on creuse ensemble ?"
+            )},
+        ]
+
+        with patch("src.rag.pipeline.retrieve_top_k", return_value=_wrap(fake_fiches)):
+            with patch("src.rag.pipeline.rerank", side_effect=lambda r, *a, **k: r):
+                pipeline_mock.answer("Oui le Plan A", history=history)
+
+        msgs = captured["messages"]
+
+        # Le system prompt contient DIRECTIVE 4 avec instruction "DÉVELOPPE"
+        sys_msg = next(m for m in msgs if m["role"] == "system")
+        assert "DIRECTIVE 4" in sys_msg["content"]
+        assert "DÉVELOPPE" in sys_msg["content"]
+        assert "Pas de nouveau Plan A/B/C" in sys_msg["content"]
+
+        # L'history est bien dans messages array (pas dans system)
+        history_assistant_msg = next(
+            (m for m in msgs if m["role"] == "assistant" and "Plan A" in m["content"]),
+            None,
+        )
+        assert history_assistant_msg is not None, (
+            "Le précédent message assistant avec Plan A/B/C doit être dans messages array"
+        )
+
+        # User message courant contient bien "Oui le Plan A"
+        last_user_msg = msgs[-1]
+        assert last_user_msg["role"] == "user"
+        assert "Oui le Plan A" in last_user_msg["content"]
+
+    def test_format_adaptatif_factual_question_short_answer_instruction(self, pipeline_mock, fake_fiches):
+        """Cas user "frais BTS MCO ?" → vérifier que DIRECTIVE 4 instruit
+        Mistral à répondre 1-3 phrases directement (pas de format Règles 1-2-3)."""
+        captured = {}
+
+        def fake_complete(model, temperature, messages):
+            captured["messages"] = messages
+            r = MagicMock()
+            r.choices = [MagicMock(message=MagicMock(content="Réponse courte"))]
+            return r
+
+        pipeline_mock.client.chat.complete = fake_complete
+
+        history = [
+            {"role": "user", "content": "BTS Management Commercial Opérationnel ?"},
+            {"role": "assistant", "content": "Le BTS MCO est un BTS post-bac en 2 ans, formation publique gratuite ou alternance possible."},
+        ]
+
+        with patch("src.rag.pipeline.retrieve_top_k", return_value=_wrap(fake_fiches)):
+            with patch("src.rag.pipeline.rerank", side_effect=lambda r, *a, **k: r):
+                pipeline_mock.answer("Quels frais pour BTS MCO ?", history=history)
+
+        msgs = captured["messages"]
+        sys_msg = next(m for m in msgs if m["role"] == "system")
+
+        # DIRECTIVE 4 mentionne "question factuelle" et "1-3 phrases"
+        assert "question factuelle" in sys_msg["content"]
+        assert "1-3 phrases" in sys_msg["content"]
+        assert "DIRECTEMENT et brièvement" in sys_msg["content"]
+
+        # Fallback "Je n'ai pas l'information" présent (Strict Grounding cohérent)
+        assert "je n'ai pas l'information" in sys_msg["content"].lower()
