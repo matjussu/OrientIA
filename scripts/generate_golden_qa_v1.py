@@ -253,6 +253,13 @@ def call_claude_with_retry(
         if is_rate_limit_error(stderr, stdout):
             consecutive = retry_stats.record_429()
             if consecutive > MAX_CONSECUTIVE_429:
+                # Set d'abord, raise ensuite : l'event est l'autorité d'arrêt
+                # thread-safe (visible par tous les workers du pool dès leur
+                # prochaine itération ligne ~238). L'exception peut être
+                # absorbée par un try/except parent — l'event, lui, ne peut
+                # pas être "oublié" silencieusement (cf bug nuit 28-29 : 975
+                # drops parce que generate_qa avalait le RuntimeError).
+                _shutdown_event.set()
                 raise RuntimeError(
                     f"Stop condition: {consecutive} consecutive 429 — abort "
                     "(reduce --parallel or wait Claude Max quota reset)"
@@ -695,6 +702,14 @@ def generate_qa(
             "error": None,
         })
     except Exception as e:
+        # Defense in depth : les RuntimeError "Stop condition" levées par
+        # call_claude_with_retry doivent remonter (pas être absorbées en
+        # record drop). Le set _shutdown_event côté call_claude_with_retry
+        # reste l'autorité primaire — ce filtre est belt & suspenders pour
+        # garantir que la stack trace remonte au main loop, lequel break
+        # la boucle as_completed et appelle pool.shutdown(cancel_futures=True).
+        if isinstance(e, RuntimeError) and "Stop condition" in str(e):
+            raise
         record.update({
             "error": f"{type(e).__name__}: {e}",
             "decision": "drop",
@@ -788,31 +803,19 @@ def build_jobs(yaml_data: dict, cfg: GenerateConfig) -> list[tuple[dict, int]]:
     return jobs
 
 
-def main() -> int:
-    cfg = parse_cli()
-    signal.signal(signal.SIGINT, _signal_handler)
-    signal.signal(signal.SIGTERM, _signal_handler)
+def run_pipeline(
+    cfg: GenerateConfig,
+    jobs_to_run: list[tuple[dict, int]],
+    appender: "ThreadSafeJsonlAppender",
+) -> int:
+    """Boucle d'exécution principale (extrait de main() pour testabilité).
 
-    print(f"==> generate_golden_qa_v1.py")
-    print(f"    config: {cfg.yaml_config_path}")
-    print(f"    output: {cfg.output_jsonl}")
-    print(f"    parallel: {cfg.parallel}, rate_limit_delay: {cfg.rate_limit_delay}s, "
-          f"max_retries: {cfg.max_retries}")
-    print(f"    models: research={cfg.model_research or cfg.model or '(default)'} | "
-          f"draft={cfg.model_draft or cfg.model or '(default)'} | "
-          f"critique-refine={cfg.model_critique_refine or cfg.model or '(default)'}")
-    if cfg.dry_run_no_subprocess:
-        print("    ⚠️  --dry-run-no-subprocess : NO real subprocess, fake responses")
-
-    yaml_data = yaml.safe_load(cfg.yaml_config_path.read_text(encoding="utf-8"))
-    jobs = build_jobs(yaml_data, cfg)
-
-    appender = ThreadSafeJsonlAppender(cfg.output_jsonl)
-    existing = appender.existing_keys()
-    jobs_to_run = [(p, i) for p, i in jobs if (p["id"], i) not in existing]
-
-    print(f"    jobs total: {len(jobs)}, déjà fait: {len(existing)}, à exécuter: {len(jobs_to_run)}")
-
+    Exit codes :
+    - 0 : succès normal
+    - 2 : error_rate > 30% (signal investigation)
+    - 3 : shutdown event détecté pendant l'exécution (signal arrêt brutal :
+          quota grillé, SIGINT/SIGTERM, ou stop condition consecutive 429)
+    """
     if not jobs_to_run:
         print("==> Rien à faire (tous les jobs déjà présents dans le JSONL).")
         return 0
@@ -838,6 +841,11 @@ def main() -> int:
                 rec = fut.result()
             except Exception as e:
                 errors_count += 1
+                # Si stop condition détectée via exception remontée par
+                # generate_qa (defense in depth #2), set l'event pour que
+                # l'itération suivante break proprement.
+                if isinstance(e, RuntimeError) and "Stop condition" in str(e):
+                    _shutdown_event.set()
                 print(f"[{i}/{len(jobs_to_run)}] ERROR future: {type(e).__name__}: {e}",
                       flush=True)
                 continue
@@ -863,12 +871,43 @@ def main() -> int:
     print(f"    Final counts: {counts}, errors: {errors_count}")
     print(f"    Retry stats: {retry_stats.snapshot()}")
 
-    # Exit non-zéro si trop d'erreurs (pour signal Jarvis surveillance nuit)
+    if _shutdown_event.is_set():
+        print("⚠️  Shutdown event détecté — arrêt brutal (quota grillé, "
+              "SIGINT/SIGTERM, ou stop condition consecutive 429).")
+        return 3
     error_rate = errors_count / max(len(jobs_to_run), 1)
     if error_rate > 0.30:
         print(f"⚠️  Error rate {error_rate:.1%} > 30% — investigation requise.")
         return 2
     return 0
+
+
+def main() -> int:
+    cfg = parse_cli()
+    signal.signal(signal.SIGINT, _signal_handler)
+    signal.signal(signal.SIGTERM, _signal_handler)
+
+    print(f"==> generate_golden_qa_v1.py")
+    print(f"    config: {cfg.yaml_config_path}")
+    print(f"    output: {cfg.output_jsonl}")
+    print(f"    parallel: {cfg.parallel}, rate_limit_delay: {cfg.rate_limit_delay}s, "
+          f"max_retries: {cfg.max_retries}")
+    print(f"    models: research={cfg.model_research or cfg.model or '(default)'} | "
+          f"draft={cfg.model_draft or cfg.model or '(default)'} | "
+          f"critique-refine={cfg.model_critique_refine or cfg.model or '(default)'}")
+    if cfg.dry_run_no_subprocess:
+        print("    ⚠️  --dry-run-no-subprocess : NO real subprocess, fake responses")
+
+    yaml_data = yaml.safe_load(cfg.yaml_config_path.read_text(encoding="utf-8"))
+    jobs = build_jobs(yaml_data, cfg)
+
+    appender = ThreadSafeJsonlAppender(cfg.output_jsonl)
+    existing = appender.existing_keys()
+    jobs_to_run = [(p, i) for p, i in jobs if (p["id"], i) not in existing]
+
+    print(f"    jobs total: {len(jobs)}, déjà fait: {len(existing)}, à exécuter: {len(jobs_to_run)}")
+
+    return run_pipeline(cfg, jobs_to_run, appender)
 
 
 if __name__ == "__main__":

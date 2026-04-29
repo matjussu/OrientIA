@@ -813,3 +813,106 @@ class TestBuildJobs:
         cfg_minimal.target = 7
         jobs = gqa.build_jobs(yaml_data, cfg_minimal)
         assert len(jobs) == 7
+
+
+# ─────────────────── Stop condition propagation (Sprint 9-data fix nuit 28-29) ─────────
+
+
+class TestStopConditionPropagation:
+    """Anti-régression : propagation stop condition consecutive 429.
+
+    Bug nuit 28-29 (Sprint 9-data nuit 1) : `call_claude_with_retry` levait
+    `RuntimeError("Stop condition")` correctement quand consecutive 429
+    dépasse `MAX_CONSECUTIVE_429`, MAIS sans set `_shutdown_event`. Le
+    `try/except Exception` de `generate_qa` absorbait ensuite l'exception en
+    record `decision="drop"`. Conséquence : event jamais set, workers
+    parallèles en flight continuaient à appeler `claude --print`, quota Max
+    grillé sur 975 drops vs 36 keep + 9 flag.
+
+    Fix (4 assertions) :
+    (a) `call_claude_with_retry` set `_shutdown_event` AVANT raise — l'event
+        est l'autorité d'arrêt thread-safe, pas l'exception (absorbable).
+    (b) Workers en flight short-circuit AVANT subprocess quand event set.
+    (c) `generate_qa` re-raise les RuntimeError "Stop condition" via marker
+        (defense in depth, garantie même si le fix (a) régresse).
+    (d) `run_pipeline` retourne exit code != 0 quand event set
+        (signal cron / surveillance Jarvis : distingue arrêt brutal quota
+        d'une fin normale).
+    """
+
+    def test_a_call_claude_with_retry_sets_shutdown_event_on_stop_condition(
+        self, cfg_minimal
+    ):
+        retry_stats = gqa.RetryStats()
+        for _ in range(gqa.MAX_CONSECUTIVE_429):
+            retry_stats.record_429()
+        assert not gqa._shutdown_event.is_set()
+
+        with patch.object(gqa, "call_claude_subprocess",
+                          return_value=("", "rate limit", 1)):
+            with pytest.raises(RuntimeError, match="Stop condition"):
+                gqa.call_claude_with_retry("test", cfg_minimal, retry_stats)
+
+        assert gqa._shutdown_event.is_set(), (
+            "_shutdown_event doit être set quand stop condition déclenche, "
+            "sinon les workers en parallèle continuent à griller le quota "
+            "même si l'exception est absorbée par un try/except parent."
+        )
+
+    def test_b_workers_short_circuit_when_shutdown_event_already_set(
+        self, cfg_minimal
+    ):
+        retry_stats = gqa.RetryStats()
+        gqa._shutdown_event.set()
+
+        with patch.object(gqa, "call_claude_subprocess") as mock_subprocess:
+            with pytest.raises(RuntimeError, match="shutdown"):
+                gqa.call_claude_with_retry("test", cfg_minimal, retry_stats)
+
+        mock_subprocess.assert_not_called()
+
+    def test_c_generate_qa_re_raises_stop_condition_marker(
+        self, sample_prompt_config, cfg_minimal
+    ):
+        retry_stats = gqa.RetryStats()
+        with patch.object(
+            gqa, "phase1_research",
+            side_effect=RuntimeError(
+                "Stop condition: 11 consecutive 429 — abort"
+            ),
+        ):
+            with pytest.raises(RuntimeError, match="Stop condition"):
+                gqa.generate_qa(sample_prompt_config, 0, cfg_minimal, retry_stats)
+
+    def test_c_bis_generate_qa_still_absorbs_other_runtime_errors(
+        self, sample_prompt_config, cfg_minimal
+    ):
+        retry_stats = gqa.RetryStats()
+        with patch.object(
+            gqa, "phase1_research",
+            side_effect=RuntimeError("research crashed for unrelated reason"),
+        ):
+            rec = gqa.generate_qa(sample_prompt_config, 0, cfg_minimal, retry_stats)
+        assert rec["error"] is not None
+        assert "research crashed" in rec["error"]
+        assert rec["decision"] == "drop"
+        assert not gqa._shutdown_event.is_set()
+
+    def test_d_run_pipeline_returns_nonzero_when_shutdown_event_set(
+        self, cfg_minimal, tmp_path, sample_prompt_config
+    ):
+        cfg_minimal.dry_run_no_subprocess = True
+        cfg_minimal.output_jsonl = tmp_path / "out.jsonl"
+        cfg_minimal.parallel = 1
+
+        gqa._shutdown_event.set()
+
+        appender = gqa.ThreadSafeJsonlAppender(cfg_minimal.output_jsonl)
+        jobs = [(sample_prompt_config, i) for i in range(3)]
+
+        exit_code = gqa.run_pipeline(cfg_minimal, jobs, appender)
+
+        assert exit_code != 0, (
+            "Pipeline doit retourner exit code != 0 quand shutdown event "
+            "déclenché — distingue 'arrêt brutal quota' de 'fin normale'."
+        )

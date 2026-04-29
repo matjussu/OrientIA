@@ -437,3 +437,111 @@ livrera l'eval HEART + sample humain élargi.
 `2026-04-28-1130-claudette-orientia-sprint9-data-pipeline-agentique-1000qa`.
 ADR pivot référence : `2026-04-28-orientia-pivot-pipeline-agentique-claude.md` (vault Obsidian).
 Source draft v2 : `docs/sprint9-data-50-prompts-draft.md` (commit `ab0ab3d`).*
+
+---
+
+## 12. Bilan nuit 1 (28-29/04) + bug stop condition propagation
+
+### 12.1 Stats honnêtes nuit 1
+
+Lancement 22h le 28/04 → arrêt vers 05h32 le 29/04 (~7h30 d'exécution).
+
+| Décision | Compte | % du target (1020) |
+|---|---|---|
+| `keep` (score ≥ 85) | **36** | 3.5% |
+| `flag` (70 ≤ score < 85) | **9** | 0.9% |
+| `drop` (score < 70 OU erreur) | **975** | 95.6% |
+| **Total traité** | **1020** | 100% |
+
+**Rendement utilisable** : 45 Q&A (keep + flag) sur 1020 = **4.4%**.
+
+Le rendement attendu sur dry-run A1 × 5 était 100% keep (5/5 score ≥ 85). Le delta massif vient d'un bug technique de propagation, pas d'une dégradation qualité du pipeline.
+
+### 12.2 Root cause technique
+
+Pendant la nuit, le quota Claude Max a été grillé tôt. À partir de ce moment, chaque appel `claude --print` retournait du 429 (`rate limit exceeded`).
+
+Le code de `call_claude_with_retry` (`scripts/generate_golden_qa_v1.py`) avait une stop condition : après `MAX_CONSECUTIVE_429 = 10` 429 consécutifs, il levait :
+
+```python
+raise RuntimeError(f"Stop condition: {consecutive} consecutive 429 — abort ...")
+```
+
+**Bug** : cette `RuntimeError` était immédiatement absorbée par le `try/except Exception` de `generate_qa` (ligne 697 pré-fix), qui la transformait silencieusement en `record["error"] = "RuntimeError: Stop condition..."` + `decision="drop"`. Conséquences :
+
+1. `_shutdown_event` jamais set (l'event était l'autorité d'arrêt thread-safe pour les workers parallèles, vérifié ligne 238 avant chaque subprocess).
+2. Les 5 workers en flight (parallel=5) continuaient à appeler `claude --print` après chaque erreur, accumulant des 429 indéfiniment.
+3. Le main loop voyait des records `drop` arriver normalement et continuait à itérer sur `as_completed`.
+
+Résultat : 975 jobs traités en mode "loop infini sur 429", chacun consommant ~3 retries avant de fail → ~3000 appels subprocess inutiles, quota brûlé.
+
+### 12.3 Fix appliqué (commit 2026-04-29)
+
+Ordre Jarvis : `2026-04-29-0625-claudette-orientia-fix-bug-stop-condition-propagation`.
+
+**Trois changements minimaux** :
+
+1. **`call_claude_with_retry` (autorité primaire)** — set `_shutdown_event` AVANT raise quand consecutive > MAX :
+
+   ```python
+   if consecutive > MAX_CONSECUTIVE_429:
+       _shutdown_event.set()  # fix : event = autorité d'arrêt thread-safe
+       raise RuntimeError(f"Stop condition: ...")
+   ```
+
+   L'event ne peut pas être absorbé par un try/except parent ; il est visible par tous les workers du pool dès leur prochaine itération.
+
+2. **`generate_qa` (defense in depth)** — filter exception sur marker :
+
+   ```python
+   except Exception as e:
+       if isinstance(e, RuntimeError) and "Stop condition" in str(e):
+           raise  # re-raise au lieu d'absorber
+       record.update({"error": ..., "decision": "drop", ...})
+   ```
+
+   Belt & suspenders : même si le fix #1 régresse, l'exception remonte au main loop.
+
+3. **`run_pipeline()` extrait de `main()`** — exit code 3 distinctif sur shutdown détecté :
+
+   ```python
+   if _shutdown_event.is_set():
+       print("⚠️  Shutdown event détecté — arrêt brutal...")
+       return 3  # vs 0 normal, vs 2 error_rate > 30%
+   ```
+
+   Signal cron / surveillance Jarvis : distingue arrêt brutal quota d'une fin normale ou erreur métier.
+
+**Tests anti-régression** : `TestStopConditionPropagation` (5 cas, tous verts) :
+- (a) `_shutdown_event` set immédiatement quand consecutive 429 dépasse seuil
+- (b) Workers en flight short-circuit avant subprocess quand event set
+- (c) `generate_qa` re-raise les RuntimeError "Stop condition"
+- (c-bis) Régression : autres RuntimeError toujours absorbées en drop record
+- (d) `run_pipeline` retourne exit code != 0 sur shutdown event
+
+Suite globale : 1652 verts, 0 régression. Test file : 80 verts (75 baseline + 5).
+
+### 12.4 Leçon capitalisée
+
+Pattern bug : **exception levée par fonction utilitaire absorbée par try/except parent silencieux**.
+
+Anti-pattern à scanner systématiquement dans tout pipeline async/parallèle :
+
+```python
+# WRONG — l'exception meurt silencieusement
+try:
+    ...
+except Exception as e:
+    record["error"] = str(e)  # log, no re-raise
+    return record
+```
+
+Règle applicable : pour un signal d'arrêt critique (quota, panic, shutdown), **utiliser un état partagé thread-safe (event/flag) PLUS l'exception**, pas l'exception seule. L'exception est un signal local ; l'event est l'autorité globale.
+
+Capitalisé dans `~/projets/.claude/memory/feedback_audit_propagation_exception.md` (créé 2026-04-28 par Claudette) — règle "audit propagation exception E2E systématique avant tout pipeline parallélisé".
+
+### 12.5 Impact utilisable
+
+Les 45 Q&A `keep` + `flag` (`data/golden_qa/golden_qa_v1.jsonl`) sont **valides et exploitables** — la qualité de génération du pipeline 4 phases n'est pas en cause, seulement le shutdown asymétrique. Décision relance nuit 2 (drops-only OU complète) reste en attente de Matteo (post-review sample humain).
+
+PR #101 reste **draft** post-fix : ne sera promote ready-for-review qu'après validation expérimentale du fix sur petit échantillon contrôlé.
