@@ -1,31 +1,38 @@
 """Textualisation ONISEP/RNCP → markdown avec frontmatter — Sprint 10 chantier B.
 
-Lit `data/raw/onisep_formations.json` (102 fiches data_ia + cyber), génère
+Lit `data/raw/onisep_formations.json` (102 fiches data_ia + cyber) ET
+`data/raw/rncp/export-fiches-csv-2026-04-23.zip` (filtré ACTIVE), génère
 pour chacune un .md avec frontmatter consommable par chantier C (RAG filtré
 métadonnées) + paragraphe naturel 200-500 mots.
 
-Usage : python3 scripts/textualize_formations.py
-Output : data/textualized/onisep_<slug>.md (102 fichiers)
+Usage :
+  python3 scripts/textualize_formations.py                    # both (default)
+  python3 scripts/textualize_formations.py --source onisep    # ONISEP only
+  python3 scripts/textualize_formations.py --source rncp      # RNCP only
+
+Output : `data/textualized/onisep-<slug>.md` (tiret) + `data/textualized/rncp-<numero>.md`.
 
 Spec ordre Jarvis : 2026-04-29-0700b-claudette-orientia-sprint10-textualisation-onisep-rncp.
 
-Scope v1 : ONISEP uniquement. RNCP zip (`data/raw/rncp/export-fiches-csv-2026-04-23.zip`)
-en v1.1 (commit séparé après audit Jarvis sur ONISEP).
-
-Anti-hallucination : tous les chiffres du paragraphe sortent du JSON source.
+Anti-hallucination : tous les chiffres du paragraphe sortent du source.
 Aucun chiffre inventé (vérifié par tests).
 """
 from __future__ import annotations
 
+import argparse
+import csv
 import json
 import re
 import unicodedata
+import zipfile
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
 INPUT_JSON = ROOT / "data" / "raw" / "onisep_formations.json"
+INPUT_RNCP_ZIP = ROOT / "data" / "raw" / "rncp" / "export-fiches-csv-2026-04-23.zip"
+RNCP_STANDARD_CSV_NAME = "export_fiches_CSV_Standard_2026_04_22.csv"
 OUTPUT_DIR = ROOT / "data" / "textualized"
 
 
@@ -46,6 +53,55 @@ DUREE_PATTERNS: list[tuple[re.Pattern[str], int]] = [
     (re.compile(r"^(\d+)\s*(mois)$", re.IGNORECASE), 1),
     (re.compile(r"^(\d+)\s*(semestre|semestres)$", re.IGNORECASE), 6),
 ]
+
+
+# Inférence niveau Bac+N depuis type_diplome (utilisé en fallback quand
+# `niveau` source est None — fix réserve audit Jarvis + correction Matteo :
+# 18/21 mastères ONISEP avaient niveau:null parce que la source JSON ne
+# les renseigne pas).
+#
+# CORRECTION Matteo via Jarvis 2026-04-29 : Mastère Spécialisé (MS) ≠ Master.
+# - Master = diplôme national Bac+5 (M1+M2), universités, État
+# - Mastère Spécialisé (MS) = label privé Conférence des Grandes Écoles,
+#   post-Master, **Bac+6**, formation pro 1 an écoles commerce/ingé
+#
+# Patterns ordonnés (plus spécifique d'abord). Mastère AVANT Master pour
+# priorité (sinon `master` regex matche "mastere" via préfixe).
+TYPE_DIPLOME_TO_NIVEAU: list[tuple[re.Pattern[str], int]] = [
+    # Bac+6 — Mastère Spécialisé (CGE), distinct du Master national
+    (re.compile(r"mastère|mastere", re.IGNORECASE), 6),
+    (re.compile(r"\bms\b", re.IGNORECASE), 6),  # acronyme MS = Mastère Spé
+    (re.compile(r"bac\+?6", re.IGNORECASE), 6),
+    # Bac+5 — Master national, ingénieur, MSc, MBA, certif spé
+    (re.compile(r"\bmaster\s+of\s+science\b", re.IGNORECASE), 5),
+    (re.compile(r"\bm(aster|sc)\b", re.IGNORECASE), 5),
+    (re.compile(r"diplôme d['']ingénieur|ingenieur|ingénieur", re.IGNORECASE), 5),
+    (re.compile(r"\bmba\b", re.IGNORECASE), 5),
+    (re.compile(r"certificat de spécialisation|certificat de specialisation", re.IGNORECASE), 5),
+    # Bac+3 — Bachelor, Licence, BUT
+    (re.compile(r"\bbachelor\b|\blicence\b", re.IGNORECASE), 3),
+    (re.compile(r"\bbut\b", re.IGNORECASE), 3),
+    # Bac+2 — BTS, DUT
+    (re.compile(r"\bbts\b|\bdut\b", re.IGNORECASE), 2),
+    # Bac (niveau 0 sur Bac+N) — bac pro, bac général
+    (re.compile(r"baccalauréat|baccalaureat|\bbac pro", re.IGNORECASE), 0),
+]
+
+
+# Mapping Nomenclature Europe (niveau certif) → Bac+N pour RNCP.
+# Cf https://www.francecompetences.fr/recherche-de-certification/
+# NIV3 = CAP/BEP (avant bac), NIV4 = Bac, NIV5 = Bac+2, NIV6 = Bac+3,
+# NIV7 = Bac+5, NIV8 = Doctorat. Notre échelle s'arrête à Bac+5 (5),
+# donc NIV8 mappé à 5 (lossy mais cohérent avec les patterns AnalystAgent
+# côté metadata_filter chantier C).
+NIVEAU_EUROPE_TO_BAC_PLUS_N: dict[str, int] = {
+    "NIV3": 0,
+    "NIV4": 0,
+    "NIV5": 2,
+    "NIV6": 3,
+    "NIV7": 5,
+    "NIV8": 5,
+}
 
 
 # ───────────────────── Datatypes ──────────────────────
@@ -132,6 +188,43 @@ def parse_niveau(niveau_raw: str | None) -> int | None:
     return None
 
 
+def infer_niveau_from_type(type_diplome: str | None, fiche_name: str | None = None) -> int | None:
+    """Fallback : infère le niveau Bac+N depuis `type_diplome` (et optionellement
+    `fiche_name`) quand le champ niveau source est manquant.
+
+    Returns None si aucun pattern ne matche.
+    """
+    candidates: list[str] = []
+    if type_diplome:
+        candidates.append(type_diplome)
+    if fiche_name:
+        candidates.append(fiche_name)
+    for text in candidates:
+        for pattern, niveau in TYPE_DIPLOME_TO_NIVEAU:
+            if pattern.search(text):
+                return niveau
+    return None
+
+
+def parse_niveau_with_fallback(
+    niveau_raw: str | None,
+    type_diplome: str | None = None,
+    fiche_name: str | None = None,
+) -> int | None:
+    """Essaie parse_niveau d'abord ; si None, fallback infer_niveau_from_type."""
+    direct = parse_niveau(niveau_raw)
+    if direct is not None:
+        return direct
+    return infer_niveau_from_type(type_diplome, fiche_name)
+
+
+def parse_niveau_europe(niveau_europe: str | None) -> int | None:
+    """RNCP `'NIV7'` → 5 (Bac+5), `'NIV5'` → 2, etc. None / unknown → None."""
+    if not niveau_europe:
+        return None
+    return NIVEAU_EUROPE_TO_BAC_PLUS_N.get(niveau_europe.strip().upper())
+
+
 def parse_duree_mois(duree_raw: str | None) -> int | None:
     """'2 ans' → 24, '6 mois' → 6, '4 semestres' → 24, None → None."""
     if not duree_raw:
@@ -165,12 +258,20 @@ def textualize_onisep_fiche(raw: dict[str, Any]) -> TextualizedFiche:
     Anti-hallucination : aucun chiffre n'est inventé. Les seuls nombres dans
     le paragraphe sont `niveau` (bac+N), `duree_mois` (calculé depuis duree
     raw), et `rncp` (ID code).
+
+    v1.1 fix réserve audit Jarvis : si niveau source est None, fallback
+    infer_niveau_from_type(type_diplome, fiche_name) — récupère 20/21
+    fiches niveau:null cas mastère / cert spé / MSc / bac pro.
     """
     nom = raw.get("nom") or "formation sans nom"
     type_dip = raw.get("type_diplome") or ""
     duree_raw = raw.get("duree") or ""
     duree_mois = parse_duree_mois(duree_raw)
-    niveau = parse_niveau(raw.get("niveau"))
+    niveau = parse_niveau_with_fallback(
+        raw.get("niveau"),
+        type_diplome=type_dip,
+        fiche_name=nom,
+    )
     rncp_id = raw.get("rncp") or None
     secteurs = domaine_to_secteurs(raw.get("domaine"))
     url = raw.get("url_onisep") or None
@@ -283,11 +384,151 @@ def _build_paragraph_onisep(
     return " ".join(parts)
 
 
-# ───────────────────── Main ──────────────────────
+# ───────────────────── RNCP → TextualizedFiche ──────────────────────
+
+
+def textualize_rncp_fiche(raw: dict[str, str]) -> TextualizedFiche:
+    """Mappe une row RNCP Standard CSV vers TextualizedFiche.
+
+    Champs CSV utilisés : Numero_Fiche / Intitule / Abrege_Intitule /
+    Nomenclature_Europe_Niveau / Nomenclature_Europe_Intitule /
+    Accessible_Nouvelle_Caledonie / Accessible_Polynesie_Francaise / Actif /
+    Type_Enregistrement.
+
+    Limitations v1.1 :
+    - region : null (pas dans Standard CSV — disponible dans Partenaires.csv,
+      à exploiter v1.2 avec join coûteux 31 MB)
+    - alternance : null (pas dans Standard, possiblement dans Voix d'Accès)
+    - budget : null (pas dans RNCP — c'est par établissement, hors source)
+    - secteur : null v1.1 (lookup nomenclature NSF requis, defer v1.2)
+    - duree_mois : null v1.1 (pas dans Standard ; à dériver de Voix d'Accès)
+    """
+    numero = (raw.get("Numero_Fiche") or "").strip()
+    intitule = (raw.get("Intitule") or "formation RNCP sans intitulé").strip()
+    abrege = (raw.get("Abrege_Intitule") or "").strip()
+    niveau_eu = raw.get("Nomenclature_Europe_Niveau") or ""
+    niveau = parse_niveau_europe(niveau_eu)
+    type_enreg = (raw.get("Type_Enregistrement") or "").strip()
+    accessible_nc = (raw.get("Accessible_Nouvelle_Caledonie") or "").strip().lower() == "oui"
+    accessible_pf = (raw.get("Accessible_Polynesie_Francaise") or "").strip().lower() == "oui"
+
+    # numero == "RNCP181" ; on extrait "181" pour le frontmatter rncp
+    rncp_short = re.sub(r"^RNCP", "", numero, flags=re.IGNORECASE) or numero
+
+    fid = f"rncp-{rncp_short}" if rncp_short else f"rncp-{_slugify(intitule)}"
+
+    paragraph = _build_paragraph_rncp(
+        intitule=intitule,
+        abrege=abrege,
+        niveau_eu_label=raw.get("Nomenclature_Europe_Intitule") or "",
+        rncp_short=rncp_short,
+        type_enreg=type_enreg,
+        accessible_nc=accessible_nc,
+        accessible_pf=accessible_pf,
+    )
+
+    return TextualizedFiche(
+        id=fid,
+        source="rncp",
+        title=intitule,
+        region=None,  # absent Standard CSV
+        niveau=niveau,
+        alternance=None,  # absent Standard CSV
+        budget=None,  # absent RNCP (par établissement)
+        secteur=None,  # NSF lookup requis (v1.2)
+        duree_mois=None,  # absent Standard CSV (Voix d'Accès)
+        rncp=rncp_short,
+        url=f"https://www.francecompetences.fr/recherche/rncp/{rncp_short}/" if rncp_short else None,
+        paragraph=paragraph,
+    )
+
+
+def _build_paragraph_rncp(
+    *,
+    intitule: str,
+    abrege: str,
+    niveau_eu_label: str,
+    rncp_short: str,
+    type_enreg: str,
+    accessible_nc: bool,
+    accessible_pf: bool,
+) -> str:
+    """Génère paragraph naturel sobre depuis row RNCP Standard.
+
+    Anti-hallu : aucun chiffre invented. Source numbers possibles :
+    - rncp_short (code numérique)
+    - niveau (depuis NIV3-NIV8 mappé)
+    - "Niveau N" depuis label europe (texte natif source)
+    """
+    parts: list[str] = []
+
+    # Phrase 1 — identification certif
+    if abrege:
+        parts.append(f"Le {abrege} « {intitule} » est une certification professionnelle référencée au Répertoire National des Certifications Professionnelles (RNCP).")
+    else:
+        parts.append(f"« {intitule} » est une certification professionnelle référencée au RNCP.")
+
+    # Phrase 2 — niveau européen (cité tel quel depuis source)
+    if niveau_eu_label:
+        parts.append(f"Elle correspond au {niveau_eu_label} du cadre européen des certifications.")
+
+    # Phrase 3 — type d'enregistrement (qualité de reconnaissance)
+    if type_enreg:
+        parts.append(f"Type d'enregistrement : {type_enreg}.")
+
+    # Phrase 4 — code RNCP (cité tel quel)
+    if rncp_short:
+        parts.append(
+            f"Cette certification est inscrite sous le numéro RNCP {rncp_short}, "
+            f"ce qui atteste de sa reconnaissance officielle par l'État français."
+        )
+
+    # Phrase 5 — accessibilité DROM-COM (utile pour métadonnées région)
+    drom_clauses = []
+    if accessible_nc:
+        drom_clauses.append("Nouvelle-Calédonie")
+    if accessible_pf:
+        drom_clauses.append("Polynésie française")
+    if drom_clauses:
+        parts.append(
+            f"Cette certification est accessible en {' et '.join(drom_clauses)} "
+            f"selon France Compétences."
+        )
+
+    # Phrase 6 — invitation France Compétences pour info à jour
+    parts.append(
+        "Pour les informations à jour sur les voies d'accès, les blocs de "
+        "compétences, les certificateurs et les passerelles, consulter la "
+        "fiche officielle France Compétences (lien en frontmatter)."
+    )
+
+    return " ".join(parts)
+
+
+# ───────────────────── Loaders ──────────────────────
 
 
 def load_onisep(path: Path = INPUT_JSON) -> list[dict[str, Any]]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_rncp_active(zip_path: Path = INPUT_RNCP_ZIP) -> list[dict[str, str]]:
+    """Lit le RNCP Standard CSV depuis le zip et filtre `Actif='ACTIVE'`.
+
+    Évite l'extraction physique du CSV (lecture in-memory via zipfile).
+    Retourne la liste des dicts row pour les fiches actives uniquement.
+    """
+    if not zip_path.exists():
+        raise FileNotFoundError(f"RNCP zip absent : {zip_path}")
+    rows = []
+    with zipfile.ZipFile(zip_path) as z:
+        with z.open(RNCP_STANDARD_CSV_NAME) as f:
+            text = f.read().decode("utf-8")
+    reader = csv.DictReader(text.splitlines(), delimiter=";")
+    for row in reader:
+        if (row.get("Actif") or "").strip().upper() == "ACTIVE":
+            rows.append(row)
+    return rows
 
 
 def write_textualized(fiches: list[TextualizedFiche], output_dir: Path = OUTPUT_DIR) -> int:
@@ -320,26 +561,50 @@ def dedupe_ids(fiches: list[TextualizedFiche]) -> list[TextualizedFiche]:
 
 
 def main() -> int:
-    if not INPUT_JSON.exists():
-        print(f"⚠️  Input manquant : {INPUT_JSON}")
-        return 1
+    parser = argparse.ArgumentParser(description="Textualisation ONISEP/RNCP → markdown frontmatter.")
+    parser.add_argument(
+        "--source",
+        choices=["onisep", "rncp", "both"],
+        default="both",
+        help="Sources à textualiser (défaut: both)",
+    )
+    args = parser.parse_args()
 
-    raw_fiches = load_onisep()
-    print(f"==> {len(raw_fiches)} fiches ONISEP chargées")
+    all_textualized: list[TextualizedFiche] = []
 
-    textualized = [textualize_onisep_fiche(r) for r in raw_fiches]
-    textualized = dedupe_ids(textualized)
-    written = write_textualized(textualized)
+    if args.source in ("onisep", "both"):
+        if not INPUT_JSON.exists():
+            print(f"⚠️  ONISEP input manquant : {INPUT_JSON}")
+            return 1
+        raw_onisep = load_onisep()
+        print(f"==> {len(raw_onisep)} fiches ONISEP chargées")
+        textualized_onisep = [textualize_onisep_fiche(r) for r in raw_onisep]
+        all_textualized.extend(textualized_onisep)
+
+    if args.source in ("rncp", "both"):
+        if not INPUT_RNCP_ZIP.exists():
+            print(f"⚠️  RNCP zip manquant : {INPUT_RNCP_ZIP}")
+            return 1
+        raw_rncp = load_rncp_active()
+        print(f"==> {len(raw_rncp)} fiches RNCP ACTIVE chargées (filter Actif=ACTIVE)")
+        textualized_rncp = [textualize_rncp_fiche(r) for r in raw_rncp]
+        all_textualized.extend(textualized_rncp)
+
+    all_textualized = dedupe_ids(all_textualized)
+    written = write_textualized(all_textualized)
     print(f"==> {written} fichiers .md écrits dans {OUTPUT_DIR}")
 
-    # Stats sanity
-    with_rncp = sum(1 for f in textualized if f.rncp)
-    with_niveau = sum(1 for f in textualized if f.niveau is not None)
-    with_secteur = sum(1 for f in textualized if f.secteur)
-    print(f"    - avec RNCP : {with_rncp}")
-    print(f"    - avec niveau parsé : {with_niveau}")
-    print(f"    - avec secteur mappé : {with_secteur}")
-    print(f"    - total IDs uniques : {len(set(f.id for f in textualized))}")
+    # Stats sanity par source
+    onisep_count = sum(1 for f in all_textualized if f.source == "onisep")
+    rncp_count = sum(1 for f in all_textualized if f.source == "rncp")
+    with_rncp_field = sum(1 for f in all_textualized if f.rncp)
+    with_niveau = sum(1 for f in all_textualized if f.niveau is not None)
+    with_secteur = sum(1 for f in all_textualized if f.secteur)
+    print(f"    - ONISEP : {onisep_count} | RNCP : {rncp_count}")
+    print(f"    - avec rncp field : {with_rncp_field}")
+    print(f"    - avec niveau parsé : {with_niveau} ({100*with_niveau/max(len(all_textualized),1):.1f}%)")
+    print(f"    - avec secteur mappé : {with_secteur} ({100*with_secteur/max(len(all_textualized),1):.1f}%)")
+    print(f"    - total IDs uniques : {len(set(f.id for f in all_textualized))}")
     return 0
 
 
