@@ -340,14 +340,23 @@ class TestDirective1V5Scaffolding:
                              "attributions institutionnelles", "faits historiques"):
             assert type_factuel in prefix, f"Type factuel manquant : {type_factuel}"
 
-    def test_balises_xml_brouillon_reponse_finale(self):
-        """v5 instruit Mistral à utiliser balises XML <brouillon> + <reponse_finale> (idée 2 Matteo)."""
+    def test_balises_xml_REMOVED_v5b(self):
+        """Sous-étape 4 v5b : balises XML retirées (hypothèse coupable format dégradé v5).
+
+        Doit ABSENCE des instructions <brouillon>/<reponse_finale> dans le prompt
+        prefix. Le strip XML reste en place dans generator.py comme no-op
+        backward safe (au cas où Mistral utiliserait quand même les balises sur
+        signal d'un prompt futur).
+        """
         prefix = SYSTEM_PROMPT_SPRINT11_P0_PREFIX
-        assert "<brouillon>" in prefix and "</brouillon>" in prefix
-        assert "<reponse_finale>" in prefix and "</reponse_finale>" in prefix
-        # Documentation explicite de la séparation comportementale (pas technique)
-        assert "COMPORTEMENTALE" in prefix
-        assert "un seul appel modèle" in prefix
+        # v5b : balises XML retirées (cause probable format -22pp Sous-étape 3)
+        assert "<brouillon>" not in prefix
+        assert "</brouillon>" not in prefix
+        assert "<reponse_finale>" not in prefix
+        assert "</reponse_finale>" not in prefix
+        # Section instruction structure XML retirée
+        assert "STRUCTURE DE RÉPONSE OBLIGATOIRE" not in prefix
+        assert "BALISES XML" not in prefix
 
     def test_v4_keywords_backward_compat_preserved(self):
         """v5 préserve les keywords v4 pour backward compat tests existants."""

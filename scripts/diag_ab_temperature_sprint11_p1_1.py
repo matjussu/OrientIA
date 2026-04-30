@@ -83,12 +83,20 @@ def measure_format_compliance(answer: str) -> dict:
 # ---------- Ignorance check (q piège uniquement) ----------
 
 IGNORANCE_OK_PATTERNS = [
-    re.compile(r"je n'ai pas (cette|ces|l')\s*information", re.IGNORECASE),
+    # v2 Sous-étape 4.1 fix : pattern étendu pour matcher "d'information",
+    # "de l'information", "aucune information" — cas réels Mistral non
+    # couverts par v1. Cf bug Q11 v5 (faith=1.00 IGNORANCE PARFAITE
+    # comportement réel mais classifié PARTIAL_FUZZY par regex v1).
+    re.compile(r"je n'ai (?:pas|aucune)\s*(?:cette|ces|l'|d'|de\s+(?:l'|cette|ces)?)?\s*informations?", re.IGNORECASE),
     re.compile(r"ne (figure|apparaît|figurent|apparaissent) pas dans (les|mes) (sources|fiches)", re.IGNORECASE),
     re.compile(r"non disponible dans les fiches", re.IGNORECASE),
     re.compile(r"je ne (sais|connais) pas (le nombre|le nom|exactement|précis)", re.IGNORECASE),
     re.compile(r"information.{0,30}n'est pas disponible.{0,50}sources", re.IGNORECASE),
     re.compile(r"non.{0,20}sourc[ée]", re.IGNORECASE),
+    # Cas Mistral réel observé Q11 v5 : "Je n'ai pas d'information sur l'IFSI..."
+    re.compile(r"pas d'information sur", re.IGNORECASE),
+    # Wording fréquent : "ne sont pas couvertes par les fiches"
+    re.compile(r"(ne sont|n'est) pas couvert[esé]+ par les fiches", re.IGNORECASE),
 ]
 IGNORANCE_OK_SUGGEST_PATTERNS = [
     re.compile(r"vérifie sur (onisep|parcoursup|chu|cio)", re.IGNORECASE),
