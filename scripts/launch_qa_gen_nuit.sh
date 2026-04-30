@@ -105,6 +105,13 @@ if [[ -n "$QA_SKIP_DECISIONS" ]]; then
     SKIP_DECISIONS_FLAG="--skip-decisions $QA_SKIP_DECISIONS"
 fi
 
+LIFECYCLE_LOG="logs/qa_gen_lifecycle_${TIMESTAMP}.json"
+
+# Sprint 9 nuit 3 : trap-like lifecycle capture (apprentissage capitalisé
+# `feedback_long_running_jobs.md` post-incident silent stop nuit 2 H+5).
+# Capture exit code + cause + records produits dans un fichier JSON
+# lisible directement au matin (vs tail log long). Jarvis check via
+# session-resume au réveil.
 CMD="cd '$REPO_DIR' && \
 source .venv/bin/activate && \
 python scripts/generate_golden_qa_v1.py \
@@ -117,7 +124,17 @@ python scripts/generate_golden_qa_v1.py \
     $MODEL_FLAGS \
     $SKIP_DECISIONS_FLAG \
     2>&1 | tee $LOG_FILE; \
-echo '==> EXIT \$?' | tee -a $LOG_FILE"
+EXIT_CODE=\$?; \
+RECORDS=\$(wc -l < $OUTPUT_JSONL 2>/dev/null || echo 0); \
+TS=\$(date -Iseconds); \
+case \$EXIT_CODE in \
+    0) CAUSE=success ;; \
+    130) CAUSE=SIGINT_Ctrl_C ;; \
+    143) CAUSE=SIGTERM ;; \
+    *) CAUSE=error_code_\$EXIT_CODE ;; \
+esac; \
+printf '{\"timestamp\":\"%s\",\"exit_code\":%s,\"cause\":\"%s\",\"records_total\":%s,\"log_file\":\"%s\"}\n' \"\$TS\" \"\$EXIT_CODE\" \"\$CAUSE\" \"\$RECORDS\" \"$LOG_FILE\" > $LIFECYCLE_LOG; \
+echo \"==> EXIT \$EXIT_CODE | CAUSE \$CAUSE | RECORDS \$RECORDS | lifecycle: $LIFECYCLE_LOG\" | tee -a $LOG_FILE"
 
 echo "==> Lancement tmux session 'qa-gen' (Sprint 9-data v3 stratégie hybride)"
 echo "    parallel: $QA_PARALLEL, target: $QA_TARGET"
@@ -126,6 +143,7 @@ echo "    models : research=$QA_MODEL_RESEARCH | draft=$QA_MODEL_DRAFT | critiqu
 echo "    rate_limit_delay: ${QA_RATE_DELAY}s, max_retries: $QA_MAX_RETRIES"
 [[ -n "$QA_SKIP_DECISIONS" ]] && echo "    🌙 skip-decisions: $QA_SKIP_DECISIONS (mode drops-only)"
 echo "    log: $LOG_FILE"
+echo "    lifecycle JSON: $LIFECYCLE_LOG (capture exit code + cause + records au matin)"
 echo "    output: $OUTPUT_JSONL"
 echo
 
