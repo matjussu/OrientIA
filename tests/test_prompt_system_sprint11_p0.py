@@ -307,3 +307,86 @@ class TestDirectiveCount4DirectivesNow:
         """Footer mentionne '4 directives' (cohérence)."""
         prefix = SYSTEM_PROMPT_SPRINT11_P0_PREFIX
         assert "4 directives" in prefix
+
+
+class TestDirective1V5Scaffolding:
+    """Sprint 11 P1.1 Phase 2 — Directive 1 v5 scaffolding + few-shots + balises XML."""
+
+    def test_obligation_check_2_etapes_present(self):
+        """v5 ajoute clause OBLIGATION en MAJUSCULES + check 2 étapes (idée 3 Matteo)."""
+        prefix = SYSTEM_PROMPT_SPRINT11_P0_PREFIX
+        assert "OBLIGATION" in prefix
+        assert "Étape 1" in prefix and "VÉRIFICATION SOURCE" in prefix
+        assert "Étape 2" in prefix and "REFORMULATION QUALITATIVE" in prefix
+
+    def test_few_shots_4_exemples_concrets(self):
+        """v5 contient 4 exemples ❌→✅ couvrant chiffres + écoles + masters + codes."""
+        prefix = SYSTEM_PROMPT_SPRINT11_P0_PREFIX
+        # Au moins 4 paires INTERDIT/ATTENDU
+        assert prefix.count("❌ INTERDIT") >= 4
+        assert prefix.count("✅ ATTENDU") >= 4
+        # Cas couverts (Q5/Q7/Q9/Q10 issues récurrentes Item 4)
+        assert "IFSI de Lille" in prefix
+        assert "Master Droit International" in prefix
+        assert "Salaire médian sortie LEA" in prefix
+        assert "L.AS Sciences pour la Santé" in prefix
+
+    def test_scope_elargi_tous_types_factuels(self):
+        """v5 scope élargi : pas seulement chiffres, aussi écoles/codes/dates/procédures."""
+        prefix = SYSTEM_PROMPT_SPRINT11_P0_PREFIX
+        assert "SCOPE ÉLARGI" in prefix
+        # Mention explicit des types couverts au-delà des chiffres
+        for type_factuel in ("noms d'écoles", "codes Parcoursup", "modalités d'admission",
+                             "attributions institutionnelles", "faits historiques"):
+            assert type_factuel in prefix, f"Type factuel manquant : {type_factuel}"
+
+    def test_balises_xml_brouillon_reponse_finale(self):
+        """v5 instruit Mistral à utiliser balises XML <brouillon> + <reponse_finale> (idée 2 Matteo)."""
+        prefix = SYSTEM_PROMPT_SPRINT11_P0_PREFIX
+        assert "<brouillon>" in prefix and "</brouillon>" in prefix
+        assert "<reponse_finale>" in prefix and "</reponse_finale>" in prefix
+        # Documentation explicite de la séparation comportementale (pas technique)
+        assert "COMPORTEMENTALE" in prefix
+        assert "un seul appel modèle" in prefix
+
+    def test_v4_keywords_backward_compat_preserved(self):
+        """v5 préserve les keywords v4 pour backward compat tests existants."""
+        prefix = SYSTEM_PROMPT_SPRINT11_P0_PREFIX
+        # v4 keywords
+        assert "EXCLUSIVEMENT" in prefix
+        assert "STRICTEMENT INTERDIT" in prefix
+        assert "Je n'ai pas l'information" in prefix
+        assert "RÉVOQUÉE" in prefix
+
+
+class TestGeneratorStripBrouillon:
+    """Sprint 11 P1.1 Phase 2 — strip XML <reponse_finale> dans generator post-call."""
+
+    def test_strip_reponse_finale_when_balises_present(self):
+        """Si Mistral utilise les balises, regex extrait uniquement <reponse_finale>."""
+        from src.rag.generator import _RE_REPONSE_FINALE
+        content = (
+            "<brouillon>\n- IFSI Lille ✓ (cf fiche)\n- chiffres ✗ (qualitatif)\n</brouillon>\n\n"
+            "<reponse_finale>\n**TL;DR**\n1. Voici la réponse user.\n</reponse_finale>"
+        )
+        m = _RE_REPONSE_FINALE.search(content)
+        assert m is not None
+        extracted = m.group(1).strip()
+        assert "TL;DR" in extracted
+        assert "brouillon" not in extracted.lower()
+
+    def test_strip_fallback_when_balises_absentes(self):
+        """Si Mistral ignore les balises, regex retourne None — generator fallback raw."""
+        from src.rag.generator import _RE_REPONSE_FINALE
+        content = "**TL;DR**\nRéponse directe sans balises."
+        m = _RE_REPONSE_FINALE.search(content)
+        assert m is None
+
+    def test_strip_tolerant_balises_case_insensitive_multiline(self):
+        """Regex tolérante : casse insensible + multiline DOTALL."""
+        from src.rag.generator import _RE_REPONSE_FINALE
+        content = "<REPONSE_FINALE>\n  contenu sur\n  plusieurs lignes\n</REPONSE_FINALE>"
+        m = _RE_REPONSE_FINALE.search(content)
+        assert m is not None
+        assert "contenu sur" in m.group(1)
+        assert "plusieurs lignes" in m.group(1)
