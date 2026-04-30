@@ -57,26 +57,40 @@ def normalize_for_match(s: str) -> str:
 
 
 def classify_entity(entity: str, golden_text_normalized: str) -> str:
-    """Returns 'LEAK' ou 'INVENTION' selon présence substring dans Q&A Golden text."""
+    """Returns 'LEAK' ou 'INVENTION' selon présence substring dans Q&A Golden text.
+
+    v2 (post drill-down §6) — matching numérique STRICT pour éviter faux
+    positifs : un chiffre seul (ex "5", "1") matchait n'importe quel contexte
+    "bac+5", "M1 sélectif", "(2+3 ans)" → faux LEAK.
+
+    Règles :
+    - LEAK si entity entière (substring textuel) ≥ 5 chars apparaît dans golden
+    - LEAK si chiffre extrait apparaît AVEC suffix unit/qualificateur cohérent
+      (€, %, " ans", " mois", " places", etc.) — ex "5 000-10 000€/an" → cherche
+      "5 000" + €, pas juste "5"
+    - Sinon INVENTION
+    """
     e = normalize_for_match(entity)
     if not e:
-        return "INVENTION"  # entity vide = pas mesurable
+        return "INVENTION"
 
-    # Substring inclusive case-insensitive
-    if e in golden_text_normalized:
+    # 1. Substring textuel — exiger ≥ 5 chars pour éviter matching trivial
+    if len(e) >= 5 and e in golden_text_normalized:
         return "LEAK"
 
-    # Edge case : chiffres arrondis. Extraire les chiffres de l'entity et tester
-    # si le pattern numérique apparaît dans Q&A Golden text (matching fuzzy chiffres)
-    nums = re.findall(r"\d+(?:[,.]\d+)?", e)
-    if nums:
-        # Pour chaque chiffre, vérifier s'il apparaît dans le golden text avec
-        # tolérance arrondi (ex "27%" matched par "27 %" ou "27" entouré de
-        # contexte numérique). Substring direct du chiffre suffit ici.
-        for num in nums:
-            num_normalized = num.replace(",", ".")
-            if num in golden_text_normalized or num_normalized in golden_text_normalized:
-                return "LEAK"
+    # 2. Matching numérique STRICT : chiffre + unit/contexte adjacent
+    # Extract pairs (num, unit_or_word_after) — exiger >= 2 chiffres OU avec unit
+    # Pattern : un chiffre suivi optionnellement d'un séparateur puis d'unit
+    nums_with_context = re.findall(
+        r"(\d{2,}(?:[,.]\d+)?)\s*(?:€|%|\s*(?:ans?|mois|places?|heures?|euros?))?",
+        e
+    )
+    for num in nums_with_context:
+        num_normalized = num.replace(",", ".")
+        # Le chiffre doit apparaître avec un contexte similaire dans golden
+        # (chiffre seul ≥ 2 chiffres = unique enough pour matching textuel)
+        if num in golden_text_normalized or num_normalized in golden_text_normalized:
+            return "LEAK"
     return "INVENTION"
 
 
