@@ -178,3 +178,44 @@ class AnalystAgent:
             # Passthrough non-bloquant — l'AnalystAgent ne doit jamais
             # casser la conversation. Profile reste tel quel ce tour.
             return {}
+
+    def analyze_for_routing(
+        self,
+        session: Session,
+        user_query: str | None = None,
+    ):
+        """Sprint 12 Axe 2 (A2) — produit un `ProfileState` Pydantic
+        enum-routable depuis la session.
+
+        Pipeline :
+        1. `update_profile(session)` — flow Sprint 9 préservé bit-à-bit
+            (function-calling Mistral `update_session_profile` tool).
+        2. Application du delta via `session.profile.merge_update()`
+            (side effect cohérent avec semantics `update_profile`).
+        3. `derive_profile_state(session, user_query)` — mapping
+            déterministe libre-forme → enums (cf
+            `src/axe2/profile_mapping.py`).
+
+        Args:
+            session : la session courante (mutée — profil enrichi).
+            user_query : la query du tour courant. Si None, dérivée
+                depuis `session.latest_user_message()`.
+
+        Returns:
+            `ProfileState` (Pydantic) prêt à être consommé par
+            l'orchestrateur Sonnet 4.5 Phase 1. Pas de fallback magique
+            sur erreur Mistral : si `update_profile` retourne {} (passthrough
+            non-bloquant), on dérive ProfileState depuis le profile
+            existant en session (potentiellement OTHER_OR_UNKNOWN /
+            UNKNOWN si jamais updaté).
+
+        Note design : import lazy de `derive_profile_state` pour éviter
+        couplage circulaire à l'import — analyst_agent.py reste isolable
+        de src.axe2 si jamais on extrait le module.
+        """
+        from src.axe2.profile_mapping import derive_profile_state
+
+        delta = self.update_profile(session)
+        if delta:
+            session.profile.merge_update(delta)
+        return derive_profile_state(session, user_query)
