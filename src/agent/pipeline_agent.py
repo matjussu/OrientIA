@@ -6,16 +6,28 @@ Pipeline agentique complet qui chaîne les 3 tools agentiques (Sprints 1-3)
 ```
 query
   → ProfileClarifier (Sprint 1, cacheable)
+  → [golden_mode] Bridge Profile → ProfileState typed (Sprint 12 A2)
+  → [golden_mode] FilterCriteria dérivé pour metadata filter
   → QueryReformuler (Sprint 2, sub-queries multi-corpus)
   → Retrieval FAISS par sub-query (parallel via parallel_map Sprint 3)
+    → [enable_metadata_filter] apply_metadata_filter wrap
   → Aggregation cross-corpus (dedupe + top-N)
-  → Génération finale Mistral (streaming via Sprint 3 wrapper, ou non pour bench)
-  → (optionnel) FetchStatFromSource sur claims chiffrés post-gen
+  → Génération finale Mistral
+    → [golden_mode] system_prompt_v4 (4 directives Sprint 11 P0)
+    → [golden_mode] golden_qa_prefix (Q&A Golden cap 1 example)
+    → [golden_mode] history (buffer N=3 short-term)
+  → enable_post_process (Sprint 8 W1, déjà actif)
+  → enable_fact_check FetchStatFromSource (Sprint 4)
+  → [enable_backstop_b] annotate_response (Sprint 11 P1.1 soft)
   → AgentAnswer
 ```
 
 Architecture cible bench Sprint 4 vs baseline figée 39.4% verified /
 17.9% halluc (PR #75 baseline).
+
+Sprint 12 axe 2 (golden pipeline 2026-05-01) — extension du pipeline
+pour fusion agentic Sprint 1-4 + acquis Sprint 9-12. Voir
+`docs/GOLDEN_PIPELINE_PLAN.md`.
 
 Cf ADR-051 + verdicts Sprints 1-3 dans `docs/`.
 """
@@ -41,7 +53,15 @@ from src.agent.tools.fetch_stat_from_source import (
     StatVerification,
 )
 from src.rag.generator import generate
+from src.rag.metadata_filter import FilterCriteria, apply_metadata_filter
 from src.rag.retriever import retrieve_top_k
+
+# Note : `src.axe2.profile_mapping` + `src.axe2.contracts` sont importés
+# lazily (méthode `answer()`) pour briser le circular import via
+# `src.agents.hierarchical.coordinator` → `src.agent.pipeline_agent`. Le
+# bridge A2 reste optionnel (golden_mode opt-in) donc late binding OK.
+# Les annotations type `ProfileState` dans les dataclasses restent en
+# string-form grâce à `from __future__ import annotations`.
 
 
 @dataclass
@@ -61,7 +81,15 @@ class AgentAnswer:
     elapsed_retrieve_s: float = 0.0
     elapsed_generate_s: float = 0.0
     elapsed_fact_check_s: float = 0.0
+    elapsed_backstop_b_s: float = 0.0  # Sprint 12 axe 2 golden
     cache_hit_profile: bool = False
+    # Sprint 12 axe 2 golden — typed profile state (None si golden_mode=False).
+    profile_state: ProfileState | None = None
+    # Sprint 12 axe 2 golden — nb sources filtrées par metadata_filter
+    # (-1 si filter pas activé). Permet de tracer l'impact du filtering.
+    metadata_filter_filtered_count: int = -1
+    # Sprint 12 axe 2 golden — flag annotations Backstop B appliquées.
+    backstop_b_applied: bool = False
     error: str | None = None
 
     def to_dict(self, include_sources: bool = False) -> dict:
@@ -105,10 +133,10 @@ class AgentAnswer:
 
 @dataclass
 class AgentPipeline:
-    """Orchestrateur agentique end-to-end Sprint 4."""
+    """Orchestrateur agentique end-to-end Sprint 4 (étendu Sprint 12 golden)."""
 
     client: Mistral
-    fiches: list[dict]  # phaseD index data (54 297 cells)
+    fiches: list[dict]  # phaseD index data (54 297 cells) ou golden corpus (61 657)
     index: Any  # faiss.IndexFlatL2 — loaded externally
     profile_cache: LRUCache | None = None
     sub_query_top_k: int = 6  # top-K par sub-query (6 × ~5 sub-queries = ~30 candidates)
@@ -128,6 +156,37 @@ class AgentPipeline:
     # Post-process déterministe non-LLM (≠ critic loop Sprint 7 OFF par
     # défaut), ne risque pas de régression LLM-driven.
 
+    # ---- Sprint 12 axe 2 golden pipeline (2026-05-01) ----
+    # Cf docs/GOLDEN_PIPELINE_PLAN.md étape 3.
+    enable_metadata_filter: bool = False
+    """Wrap `retrieve_top_k` avec `apply_metadata_filter` quand un
+    `ProfileState` typé est dérivé du `Profile`. Le `FilterCriteria` est
+    produit par `derive_filter_criteria_from_profile_state()` (region +
+    niveau range + secteur). No-op si profil donne `FilterCriteria` vide."""
+
+    golden_qa_prefix: str | None = None
+    """Q&A Golden cap 1 example pré-construit (Sprint 10 chantier D),
+    injecté en prefix du system prompt de la génération finale. None =
+    pas de Q&A Golden (default). Le caller construit le prefix
+    déterministiquement (typiquement via le générateur Q&A Golden)."""
+
+    enable_backstop_b: bool = False
+    """Active le post-process Backstop B soft (`src/backstop/soft_annotator`)
+    qui annote les chiffres non-sourcés sans les effacer. En série après
+    `FetchStatFromSource` (FetchStat in-loop top-N + Backstop annote
+    les claims chiffrés restants). Voir Sprint 11 P1.1 PR #113."""
+
+    backstop_b_corpus_index: Any | None = None
+    """Pré-construit `CorpusFactIndex` (`src/backstop/soft_annotator`)
+    pour cross-ref des chiffres dans le corpus golden. Réutilisable cross-
+    queries pour amortir le coût de construction. None et
+    `enable_backstop_b=True` → l'index est construit lazy à la 1ʳᵉ query."""
+
+    history_buffer_size: int = 0
+    """Capacité du buffer mémoire short-term (cap N derniers tours
+    user+assistant). 0 = disabled (single-turn, default). Plan golden
+    pipeline : N=3 derniers tours injectés via `generate(history=...)`."""
+
     def __post_init__(self) -> None:
         self.clarifier = ProfileClarifier(
             client=self.client, cache=self.profile_cache,
@@ -138,6 +197,51 @@ class AgentPipeline:
         else:
             self.fact_checker = None
 
+        # Sprint 12 axe 2 golden — buffer mémoire short-term (turn history).
+        # Stocke list[{"role": str, "content": str}] format Mistral.
+        self._history_buffer: list[dict] = []
+
+        # Sprint 12 axe 2 golden — `FilterCriteria` courant pour wrap retrieve.
+        # Posé en début d'`answer()` quand enable_metadata_filter=True, lu
+        # par `_retrieve_for_subquery` (évite de muter la signature interne).
+        self._current_filter_criteria: FilterCriteria | None = None
+
+        # Sprint 12 axe 2 golden — lazy CorpusFactIndex pour Backstop B.
+        self._backstop_b_index_cache = self.backstop_b_corpus_index
+
+    def add_turn_to_history(self, user_msg: str, assistant_msg: str) -> None:
+        """Append un tour au buffer mémoire short-term (cap `history_buffer_size`).
+
+        Format Mistral : list[{"role": "user"|"assistant", "content": str}].
+        Si `history_buffer_size == 0`, no-op (mémoire désactivée).
+        """
+        if self.history_buffer_size <= 0:
+            return
+        self._history_buffer.append({"role": "user", "content": user_msg})
+        self._history_buffer.append({"role": "assistant", "content": assistant_msg})
+        # Cap = history_buffer_size derniers TOURS (chacun = 1 user + 1 assistant
+        # = 2 messages). On garde donc 2*N messages.
+        max_messages = 2 * self.history_buffer_size
+        if len(self._history_buffer) > max_messages:
+            self._history_buffer = self._history_buffer[-max_messages:]
+
+    def _get_backstop_index(self) -> Any:
+        """Retourne le `CorpusFactIndex` pré-construit, ou raise si manquant.
+
+        Le caller (e.g. `src/eval/systems.py`) doit construire l'index via
+        `CorpusFactIndex.from_unified_json(corpus_path)` puis le passer au
+        constructeur via `backstop_b_corpus_index=`. On évite la dépendance
+        path filesystem dans `AgentPipeline` (anti-coupling) et on amortit
+        le coût build cross-queries.
+        """
+        if self._backstop_b_index_cache is None:
+            raise ValueError(
+                "enable_backstop_b=True mais backstop_b_corpus_index non fourni. "
+                "Construire via CorpusFactIndex.from_unified_json(corpus_path) "
+                "puis passer en config AgentPipeline."
+            )
+        return self._backstop_b_index_cache
+
     def _retrieve_for_subquery(self, sub_query: SubQuery) -> dict:
         """Retrieve top-K depuis FAISS pour une sub-query.
 
@@ -145,14 +249,31 @@ class AgentPipeline:
         dans phaseD). Le rerank du domain_hint Sprint 1+ se fait au
         niveau aggregation. Pour MVP Sprint 4, on prend top-K L2 brut
         par sub-query, on dédupe à l'aggregation.
+
+        Sprint 12 axe 2 golden — si `enable_metadata_filter=True` ET
+        `_current_filter_criteria` set en début d'`answer()`, on retrieve
+        top-K large (×2) puis on applique `apply_metadata_filter` puis on
+        trim à `sub_query_top_k`. Garde `sub_query_top_k` candidates
+        finaux malgré le filter (compromis perf : 2×K embeds vs résultat
+        amputé). No-op si criteria.is_empty().
         """
+        criteria = self._current_filter_criteria
+        filter_active = (
+            self.enable_metadata_filter
+            and criteria is not None
+            and not criteria.is_empty()
+        )
+        # Sur-retrieve quand filter actif pour absorber les drops post-filter.
+        retrieve_k = self.sub_query_top_k * 2 if filter_active else self.sub_query_top_k
         retrieved = retrieve_top_k(
             self.client,
             self.index,
             self.fiches,
             sub_query.text,
-            k=self.sub_query_top_k,
+            k=retrieve_k,
         )
+        if filter_active:
+            retrieved = apply_metadata_filter(retrieved, criteria)[: self.sub_query_top_k]
         return {
             "sub_query_id": id(sub_query),  # référence Python (dispo dans plan.sub_queries)
             "sub_query_text": sub_query.text,
@@ -240,6 +361,23 @@ class AgentPipeline:
                 # Si latence quasi-nulle = cache hit
                 result.cache_hit_profile = result.elapsed_clarify_s < 0.1
 
+            # Sprint 12 axe 2 golden — bridge Profile → ProfileState typed +
+            # FilterCriteria dérivé pour metadata filter wrap. Coût $0
+            # (pure-function déterministe), exécuté seulement si feature opt-in.
+            # Late import : évite circular via src.agents.hierarchical.
+            if self.enable_metadata_filter and profile is not None:
+                from src.axe2.profile_mapping import (
+                    derive_filter_criteria_from_profile_state,
+                    profile_to_profile_state,
+                )
+                profile_state = profile_to_profile_state(profile)
+                result.profile_state = profile_state
+                self._current_filter_criteria = (
+                    derive_filter_criteria_from_profile_state(profile_state)
+                )
+            else:
+                self._current_filter_criteria = None
+
             # Étape 2 : QueryReformuler
             t0 = time.time()
             plan = self.reformuler.reformulate(query, profile)
@@ -270,8 +408,17 @@ class AgentPipeline:
             # Étape 4 : Aggregation
             sources_agg = self._aggregate_sources(sub_query_retrievals)
             result.sources_aggregated = sources_agg
+            # Sprint 12 axe 2 golden — télémétrie metadata filter (nb sources
+            # finales agrégées si filter actif, -1 sinon). Sert au bench A/B
+            # pour mesurer l'impact du filtering sur le retrieval.
+            if (
+                self.enable_metadata_filter
+                and self._current_filter_criteria is not None
+                and not self._current_filter_criteria.is_empty()
+            ):
+                result.metadata_filter_filtered_count = len(sources_agg)
 
-            # Étape 5 : Génération finale
+            # Étape 5 : Génération finale (golden-aware)
             t0 = time.time()
             answer_text = generate(
                 self.client,
@@ -280,6 +427,10 @@ class AgentPipeline:
                 model=self.generation_model,
                 temperature=0.3,
                 system_prompt_override=self.system_prompt_override,
+                # Sprint 12 axe 2 golden — Q&A Golden cap 1 example +
+                # buffer mémoire short-term (cap N tours).
+                golden_qa_prefix=self.golden_qa_prefix,
+                history=list(self._history_buffer) if self._history_buffer else None,
             )
             result.elapsed_generate_s = round(time.time() - t0, 2)
 
@@ -320,6 +471,29 @@ class AgentPipeline:
                     fact_results = []
                 result.fact_check_results = fact_results
                 result.elapsed_fact_check_s = round(time.time() - t0, 2)
+
+            # Sprint 12 axe 2 golden — Étape 7 : Backstop B soft post-process.
+            # En série après FetchStatFromSource (FetchStat in-loop top-N
+            # vérifie quelques claims, Backstop annote les chiffres restants
+            # non-sourcés sans les effacer + ajoute le disclaimer global).
+            # Skip si fact-check est explicitement OFF — même architecture
+            # complémentaire que prévue dans le plan.
+            if self.enable_backstop_b:
+                t0 = time.time()
+                try:
+                    from src.backstop import annotate_response
+                    corpus_idx = self._get_backstop_index()
+                    annotated = annotate_response(result.answer_text, corpus_idx)
+                    result.answer_text = annotated
+                    result.backstop_b_applied = True
+                except Exception as bs_err:
+                    # Backstop B est non-bloquant (post-process best-effort) :
+                    # une erreur ici ne doit pas faire échouer la query.
+                    result.backstop_b_applied = False
+                    # Trace dans `error` uniquement si pas d'erreur amont.
+                    if not result.error:
+                        result.error = f"backstop_b_warning: {type(bs_err).__name__}: {bs_err}"
+                result.elapsed_backstop_b_s = round(time.time() - t0, 2)
 
         except Exception as e:
             result.error = f"{type(e).__name__}: {e}"

@@ -7,6 +7,19 @@ structuré) en `ProfileState` (Axe 2, enum-routable). **Déterministe,
 pure-function, $0 supplémentaire** — pas d'appel Mistral, on capitalise
 le travail déjà fait par `AnalystAgent.update_profile()`.
 
+Sprint 12 axe 2 golden pipeline (2026-05-01) — extension du bridge :
+
+- `profile_to_profile_state(profile)` : bridge complémentaire depuis le
+    `Profile` Sprint 1 (`src/agent/tools/profile_clarifier.py`, dataclass
+    str-based) vers `ProfileState` (Pydantic v2 enum-based). Les valeurs
+    str du clarifier matchent déjà les valeurs des enums Pydantic
+    (cf. `src/axe2/contracts.py` "Values empruntées à profile_clarifier"),
+    donc le mapping est essentiellement un cast str → enum avec fallback.
+- `derive_filter_criteria_from_profile_state(ps)` : produit un
+    `FilterCriteria` (`src/rag/metadata_filter.py`) à partir d'un
+    `ProfileState`. Permet de wrapper `retrieve_top_k` quand un profil
+    typé est disponible (golden pipeline étape 3).
+
 ## Choix design
 
 - **Mapping rules string-based** (regex / startswith) sur
@@ -34,6 +47,7 @@ from __future__ import annotations
 import re
 import unicodedata
 
+from src.agent.tools.profile_clarifier import Profile
 from src.agents.hierarchical.session import Session
 from src.axe2.contracts import (
     AgeGroup,
@@ -41,6 +55,7 @@ from src.axe2.contracts import (
     IntentType,
     ProfileState,
 )
+from src.rag.metadata_filter import FilterCriteria, infer_niveau_range, infer_secteurs
 
 
 # ---------- niveau_scolaire → EducationLevel ----------
@@ -321,4 +336,103 @@ def derive_profile_state(
         region=profile.region,
         urgent_concern=urgent_concern,
         confidence=float(profile.confidence or 0.0),
+    )
+
+
+# ---------- profile_to_profile_state — bridge Sprint 1 Profile → A1 ProfileState ----------
+
+
+def _str_to_enum(value: str | None, enum_cls: type, fallback) -> object:
+    """Cast str → enum membre, fallback gracieux si valeur absente/invalide."""
+    if not value:
+        return fallback
+    try:
+        return enum_cls(value)
+    except ValueError:
+        return fallback
+
+
+def profile_to_profile_state(profile: Profile) -> ProfileState:
+    """Bridge `Profile` Sprint 1 (dataclass str-based) → `ProfileState` Pydantic A1.
+
+    Les valeurs str du `Profile` clarifier (Sprint 1) ont été reprises bit-à-bit
+    dans les enums Pydantic v2 de `src/axe2/contracts.py` (cf. commentaire
+    "Values empruntées à src/agent/tools/profile_clarifier.py Sprint 1"), donc
+    le bridge est essentiellement un cast str → enum avec fallback gracieux.
+
+    Used by golden pipeline (`AgentPipeline.answer()` étape 3) pour produire
+    un `ProfileState` typé routable consommable par `apply_metadata_filter`
+    sans avoir à instancier une `Session` Sprint 9 (anti-coupling).
+
+    Args:
+        profile: `Profile` Sprint 1 produit par `ProfileClarifier.clarify()`.
+
+    Returns:
+        `ProfileState` typed enum-routable. Les champs str non reconnus
+        tombent sur `OTHER_OR_UNKNOWN` / `UNKNOWN` / `OTHER` (transparence).
+    """
+    return ProfileState(
+        age_group=_str_to_enum(profile.age_group, AgeGroup, AgeGroup.OTHER_OR_UNKNOWN),
+        education_level=_str_to_enum(profile.education_level, EducationLevel, EducationLevel.UNKNOWN),
+        intent_type=_str_to_enum(profile.intent_type, IntentType, IntentType.OTHER),
+        sector_interest=list(profile.sector_interest or []),
+        region=profile.region,
+        urgent_concern=bool(profile.urgent_concern),
+        confidence=float(profile.confidence or 0.0),
+    )
+
+
+# ---------- derive_filter_criteria_from_profile_state ----------
+
+
+# Map EducationLevel enum → (niveau_min, niveau_max) niveau scolaire numérique
+# pour FilterCriteria. Cohérent avec NIVEAU_PATTERNS de metadata_filter.py.
+# 0 = bac, +1..+8 = bac+N, -1 = infra-bac.
+_EDUCATION_LEVEL_TO_NIVEAU_RANGE: dict[EducationLevel, tuple[int | None, int | None]] = {
+    EducationLevel.INFRA_BAC: (-1, 0),
+    EducationLevel.TERMINALE: (0, 2),  # Terminale → cible bac → bac+2 (BTS, BUT, prepa)
+    EducationLevel.BAC_OBTENU: (0, 3),
+    EducationLevel.BAC_PLUS_1: (1, 3),
+    EducationLevel.BAC_PLUS_2: (2, 3),
+    EducationLevel.BAC_PLUS_3: (3, 5),
+    EducationLevel.BAC_PLUS_4: (4, 5),
+    EducationLevel.BAC_PLUS_5: (5, 8),
+    EducationLevel.BAC_PLUS_8_DOCTORAT: (5, 8),
+    EducationLevel.PROFESSIONNEL_ACTIF: (None, None),  # pas de range : reconversion ouverte
+    EducationLevel.UNKNOWN: (None, None),
+}
+
+
+def derive_filter_criteria_from_profile_state(ps: ProfileState) -> FilterCriteria:
+    """Produit un `FilterCriteria` (metadata_filter.py) depuis un `ProfileState`.
+
+    Les critères sont dérivés conservativement :
+    - `region` : copié direct si renseigné
+    - `niveau_min/max` : mapping `EducationLevel` → range numérique
+      (table déterministe `_EDUCATION_LEVEL_TO_NIVEAU_RANGE`)
+    - `secteur` : `infer_secteurs(ps.sector_interest)` réutilise la table
+      INTERESTS_TO_SECTORS de metadata_filter.py (anti-réinvention)
+    - `alternance`, `budget_max` : non dérivables d'un `ProfileState` (les
+      contraintes terrain libre-forme Sprint 9 ne sont pas dans le contract A1)
+
+    Si tous les critères dérivés sont None/[], le `FilterCriteria` retourné
+    est vide → `apply_metadata_filter` est un no-op (préserve toute la liste).
+
+    Args:
+        ps: `ProfileState` typé.
+
+    Returns:
+        `FilterCriteria` exploitable par `apply_metadata_filter`.
+    """
+    niveau_min, niveau_max = _EDUCATION_LEVEL_TO_NIVEAU_RANGE.get(
+        ps.education_level, (None, None)
+    )
+    secteur = infer_secteurs(ps.sector_interest) if ps.sector_interest else None
+    return FilterCriteria(
+        region=ps.region,
+        niveau_min=niveau_min,
+        niveau_max=niveau_max,
+        alternance=None,
+        budget_max=None,
+        secteur=secteur,
     )

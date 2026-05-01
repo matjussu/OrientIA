@@ -29,12 +29,16 @@ from src.axe2.contracts import (
     ProfileState,
 )
 from src.axe2.profile_mapping import (
+    derive_filter_criteria_from_profile_state,
     derive_profile_state,
     infer_intent_type,
     infer_urgent_concern,
     map_niveau_scolaire_to_age_group,
     map_niveau_scolaire_to_education_level,
+    profile_to_profile_state,
 )
+from src.agent.tools.profile_clarifier import Profile
+from src.rag.metadata_filter import FilterCriteria
 
 
 # =============================================================================
@@ -378,3 +382,200 @@ class TestAnalyzeForRouting:
         ps = agent.analyze_for_routing(session)
         assert ps.age_group == AgeGroup.OTHER_OR_UNKNOWN
         assert ps.education_level == EducationLevel.UNKNOWN
+
+
+# =============================================================================
+# Sprint 12 axe 2 golden pipeline — bridge Profile (Sprint 1) → ProfileState
+# =============================================================================
+
+
+class TestProfileToProfileState:
+    """Bridge `Profile` Sprint 1 (str-based) → `ProfileState` Pydantic A1."""
+
+    def test_full_known_values_map_to_enums(self):
+        profile = Profile(
+            age_group="lyceen_terminale",
+            education_level="terminale",
+            intent_type="orientation_initiale",
+            sector_interest=["informatique", "santé"],
+            region="Île-de-France",
+            urgent_concern=True,
+            confidence=0.85,
+        )
+        ps = profile_to_profile_state(profile)
+        assert ps.age_group == AgeGroup.LYCEEN_TERMINALE
+        assert ps.education_level == EducationLevel.TERMINALE
+        assert ps.intent_type == IntentType.ORIENTATION_INITIALE
+        assert ps.sector_interest == ["informatique", "santé"]
+        assert ps.region == "Île-de-France"
+        assert ps.urgent_concern is True
+        assert ps.confidence == 0.85
+
+    def test_unknown_values_fallback_to_other_unknown(self):
+        profile = Profile(
+            age_group="not_a_real_group",
+            education_level="unknown_level",
+            intent_type="weird_intent",
+            sector_interest=[],
+            confidence=0.5,
+        )
+        ps = profile_to_profile_state(profile)
+        assert ps.age_group == AgeGroup.OTHER_OR_UNKNOWN
+        assert ps.education_level == EducationLevel.UNKNOWN
+        assert ps.intent_type == IntentType.OTHER
+
+    def test_empty_strings_fallback(self):
+        profile = Profile(
+            age_group="",
+            education_level="",
+            intent_type="",
+            sector_interest=[],
+        )
+        ps = profile_to_profile_state(profile)
+        assert ps.age_group == AgeGroup.OTHER_OR_UNKNOWN
+        assert ps.education_level == EducationLevel.UNKNOWN
+        assert ps.intent_type == IntentType.OTHER
+
+    def test_returns_pydantic_model(self):
+        profile = Profile(
+            age_group="bachelier_general",
+            education_level="bac_obtenu",
+            intent_type="decouverte_filieres",
+            sector_interest=["numérique"],
+        )
+        ps = profile_to_profile_state(profile)
+        assert isinstance(ps, ProfileState)
+
+    def test_all_age_group_values_match_enum(self):
+        """Garde-fou : si une valeur du clarifier diverge des enums, fail."""
+        from src.agent.tools.profile_clarifier import VALID_AGE_GROUPS
+        for value in VALID_AGE_GROUPS:
+            profile = Profile(
+                age_group=value,
+                education_level="unknown",
+                intent_type="other",
+                sector_interest=[],
+            )
+            ps = profile_to_profile_state(profile)
+            assert ps.age_group.value == value, (
+                f"VALID_AGE_GROUPS contient '{value}' qui ne matche pas AgeGroup enum — drift Sprint 1↔A1"
+            )
+
+    def test_all_education_level_values_match_enum(self):
+        from src.agent.tools.profile_clarifier import VALID_EDUCATION_LEVELS
+        for value in VALID_EDUCATION_LEVELS:
+            profile = Profile(
+                age_group="other_or_unknown",
+                education_level=value,
+                intent_type="other",
+                sector_interest=[],
+            )
+            ps = profile_to_profile_state(profile)
+            assert ps.education_level.value == value, (
+                f"VALID_EDUCATION_LEVELS contient '{value}' qui ne matche pas EducationLevel — drift"
+            )
+
+    def test_all_intent_type_values_match_enum(self):
+        from src.agent.tools.profile_clarifier import VALID_INTENT_TYPES
+        for value in VALID_INTENT_TYPES:
+            profile = Profile(
+                age_group="other_or_unknown",
+                education_level="unknown",
+                intent_type=value,
+                sector_interest=[],
+            )
+            ps = profile_to_profile_state(profile)
+            assert ps.intent_type.value == value, (
+                f"VALID_INTENT_TYPES contient '{value}' qui ne matche pas IntentType — drift"
+            )
+
+    def test_does_not_mutate_input_profile(self):
+        profile = Profile(
+            age_group="lyceen_terminale",
+            education_level="terminale",
+            intent_type="orientation_initiale",
+            sector_interest=["info"],
+            confidence=0.7,
+        )
+        before = profile.to_dict()
+        profile_to_profile_state(profile)
+        assert profile.to_dict() == before
+
+
+class TestDeriveFilterCriteriaFromProfileState:
+    """Produit `FilterCriteria` exploitable par `apply_metadata_filter`."""
+
+    def test_terminal_with_region_and_sector(self):
+        ps = ProfileState(
+            age_group=AgeGroup.LYCEEN_TERMINALE,
+            education_level=EducationLevel.TERMINALE,
+            intent_type=IntentType.ORIENTATION_INITIALE,
+            sector_interest=["informatique"],
+            region="Île-de-France",
+        )
+        c = derive_filter_criteria_from_profile_state(ps)
+        assert isinstance(c, FilterCriteria)
+        assert c.region == "Île-de-France"
+        assert c.niveau_min == 0
+        assert c.niveau_max == 2
+        assert c.alternance is None
+        assert c.budget_max is None
+        # secteur dérivé via infer_secteurs (peut être None si "informatique"
+        # n'est pas dans INTERESTS_TO_SECTORS — ce qu'on accepte)
+        # On vérifie juste que le format est bon
+        assert c.secteur is None or isinstance(c.secteur, list)
+
+    def test_unknown_education_level_yields_no_niveau_range(self):
+        ps = ProfileState(
+            age_group=AgeGroup.OTHER_OR_UNKNOWN,
+            education_level=EducationLevel.UNKNOWN,
+            intent_type=IntentType.OTHER,
+            sector_interest=[],
+        )
+        c = derive_filter_criteria_from_profile_state(ps)
+        assert c.niveau_min is None
+        assert c.niveau_max is None
+
+    def test_empty_profile_state_yields_empty_criteria(self):
+        ps = ProfileState(
+            age_group=AgeGroup.OTHER_OR_UNKNOWN,
+            education_level=EducationLevel.UNKNOWN,
+            intent_type=IntentType.OTHER,
+            sector_interest=[],
+            region=None,
+        )
+        c = derive_filter_criteria_from_profile_state(ps)
+        assert c.is_empty(), "ProfileState vide doit produire FilterCriteria vide (no-op apply_metadata_filter)"
+
+    def test_doctorat_yields_high_niveau_range(self):
+        ps = ProfileState(
+            age_group=AgeGroup.ETUDIANT_MASTER,
+            education_level=EducationLevel.BAC_PLUS_8_DOCTORAT,
+            intent_type=IntentType.RECONVERSION_PRO,
+            sector_interest=[],
+        )
+        c = derive_filter_criteria_from_profile_state(ps)
+        assert c.niveau_min == 5
+        assert c.niveau_max == 8
+
+    def test_professionnel_actif_no_niveau_range(self):
+        """Reconversion ouverte : pas de range pour permettre exploration large."""
+        ps = ProfileState(
+            age_group=AgeGroup.PROFESSIONNEL_ACTIF,
+            education_level=EducationLevel.PROFESSIONNEL_ACTIF,
+            intent_type=IntentType.RECONVERSION_PRO,
+            sector_interest=[],
+        )
+        c = derive_filter_criteria_from_profile_state(ps)
+        assert c.niveau_min is None
+        assert c.niveau_max is None
+
+    def test_returns_filter_criteria_instance(self):
+        ps = ProfileState(
+            age_group=AgeGroup.BACHELIER_GENERAL,
+            education_level=EducationLevel.BAC_OBTENU,
+            intent_type=IntentType.DECOUVERTE_FILIERES,
+            sector_interest=[],
+        )
+        c = derive_filter_criteria_from_profile_state(ps)
+        assert isinstance(c, FilterCriteria)
