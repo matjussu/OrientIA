@@ -54,6 +54,10 @@ data/processed/formations_multi_corpus_phaseC_blocs.json
 data/processed/france_comp_blocs_corpus.json
 data/processed/inserjeunes_lycee_pro.json
 data/processed/insersup_insertion.json
+# Sprint 12 axe 2 — corpus combined Golden Pipeline (cf
+# scripts/build_formations_golden_corpus.py). 98 MB, régénérable en <1s
+# depuis les 3 corpora sources ci-dessus.
+data/processed/formations_golden_pipeline.json
 
 # Runtime logs
 logs/
