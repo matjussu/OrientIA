@@ -8,12 +8,13 @@ Système RAG spécialisé pour l'orientation académique et professionnelle fran
 
 ## À lire en premier (par ordre de priorité)
 
-1. **`docs/STRATEGIE_VISION_2026-04-16.md`** — vision V2 + 4 axes d'attaque + roadmap. Source de vérité stratégique.
-2. **`docs/SESSION_HANDOFF.md`** — état projet à un instant T (mis à jour à chaque sprint). Source de vérité opérationnelle.
-3. **`docs/DECISION_LOG.md`** — 15+ ADR (Architecture Decision Records) avec rationale. Le *pourquoi* de chaque choix.
-4. **`docs/METHODOLOGY.md`** — protocole reproductible benchmark (rubric, blinding, dev/test split).
-5. **`README.md`** — pitch projet (focus narrative INRIA, à actualiser avec V2).
-6. **`results/run_F_robust/ANALYSIS_TRIPLE_LAYER.md`** — résultats définitifs Run F+G.
+1. **🔴 `docs/GOLDEN_PIPELINE_PLAN.md`** (NEW 2026-05-01) — **Plan séquencé pipeline canonical** = fusion agentic Sprint 1-4 + acquis Sprint 9-12 + Backstop B soft Sprint 11 P1.1. Direction active Sprint 12 axe 2 post-pivot stratégique 2026-05-01. Lecture obligatoire avant toute modif `src/agent/`, `src/rag/pipeline.py`, `src/eval/systems.py`.
+2. **`docs/STRATEGIE_VISION_2026-04-16.md`** — vision V2 + 4 axes d'attaque + roadmap. Source de vérité stratégique.
+3. **`docs/SESSION_HANDOFF.md`** — état projet à un instant T (mis à jour à chaque sprint). Source de vérité opérationnelle.
+4. **`docs/DECISION_LOG.md`** — 15+ ADR (Architecture Decision Records) avec rationale. Le *pourquoi* de chaque choix.
+5. **`docs/METHODOLOGY.md`** — protocole reproductible benchmark (rubric, blinding, dev/test split).
+6. **`README.md`** — pitch projet (focus narrative INRIA, à actualiser avec V2).
+7. **`results/run_F_robust/ANALYSIS_TRIPLE_LAYER.md`** — résultats définitifs Run F+G.
 
 ---
 
