@@ -100,9 +100,157 @@ def test_fiche_to_text_vague_b3_no_metiers_line_when_debouches_empty():
     assert "Métiers possibles" not in text
 
 
+# ---------- Sprint 12 D5 — _format_insertion_pro schéma InserSup ----------
+
+from src.rag.embeddings import _format_insertion_pro
+
+
+def test_format_insertion_pro_insersup_complet():
+    """Cas standard InserSup MESR : taux + salaires + sortants tous remplis."""
+    ip = {
+        "source": "insersup",
+        "cohorte": "2021",
+        "taux_emploi_12m": 78.0,
+        "taux_emploi_18m": 81.8,
+        "taux_emploi_stable_12m": 65.7,
+        "salaire_median_12m": 1850,
+        "salaire_median_30m": 2070,
+        "nombre_sortants": 247,
+        "granularite": "discipline",
+        "disclaimer": "agrégation discipline INFORMATIQUE",
+        "source_url": "https://...",
+    }
+    out = _format_insertion_pro(ip)
+    assert out is not None
+    assert out.startswith("Insertion pro (source InserSup MESR, 2021, discipline détaillée) :")
+    assert "taux emploi 12 mois : 78%" in out
+    assert "taux emploi 18 mois : 82%" in out  # 81.8 → 82
+    assert "taux emploi stable 12 mois : 66%" in out  # 65.7 → 66
+    assert "salaire médian net 12 mois : 1850€" in out
+    assert "salaire médian net 30 mois : 2070€" in out
+    assert "247 sortants suivis" in out
+
+
+def test_format_insertion_pro_insersup_granularite_agregat():
+    """Granularité 'type_diplome_agrege' affiche libellé approprié (vs 'discipline')."""
+    ip = {
+        "source": "insersup",
+        "cohorte": "2020",
+        "taux_emploi_12m": 65.0,
+        "granularite": "type_diplome_agrege",
+    }
+    out = _format_insertion_pro(ip)
+    assert out is not None
+    assert "agrégat type de diplôme établissement" in out
+    assert "65%" in out
+
+
+def test_format_insertion_pro_insersup_partiel_12m_only():
+    """Cas où seul taux emploi 12m est connu (autres None) → fragment unique."""
+    ip = {
+        "source": "insersup",
+        "cohorte": "2022",
+        "taux_emploi_12m": 80.0,
+        "granularite": "discipline",
+    }
+    out = _format_insertion_pro(ip)
+    assert out is not None
+    assert "taux emploi 12 mois : 80%" in out
+    # Pas de fragments fantômes pour les champs absents
+    assert "salaire" not in out
+    assert "sortants" not in out
+
+
+def test_format_insertion_pro_insersup_tous_zeros_returns_none():
+    """Si tous les champs valeur sont None ou non-numériques → None
+    (pas de pollution avec sections vides)."""
+    ip = {
+        "source": "insersup",
+        "cohorte": "2021",
+        "granularite": "discipline",
+    }
+    assert _format_insertion_pro(ip) is None
+
+
+def test_format_insertion_pro_insersup_dispatch_priorite_source():
+    """Quand source='insersup' explicite, le dispatch prend la branche
+    InserSup même si des clés Céreq sont aussi présentes (priorité source)."""
+    ip = {
+        "source": "insersup",
+        "cohorte": "2021",
+        "taux_emploi_12m": 70.0,
+        # Clés Céreq présentes par accident, mais source dicte
+        "taux_emploi_3ans": 0.85,
+        "salaire_median_embauche": 1900,
+        "granularite": "discipline",
+    }
+    out = _format_insertion_pro(ip)
+    assert out is not None
+    assert out.startswith("Insertion pro (source InserSup MESR")
+    # La branche Céreq aurait écrit "Insertion pro (source Céreq, ...)"
+    assert "Céreq" not in out
+
+
+def test_fiche_to_text_includes_insersup_insertion_pro_section():
+    """Smoke test bout-en-bout : fiche avec insertion_pro source insersup
+    voit sa section apparaître dans le texte embedded."""
+    fiche = {
+        "nom": "Master Cyber",
+        "etablissement": "Université Paris-Saclay",
+        "ville": "Saclay",
+        "insertion_pro": {
+            "source": "insersup",
+            "cohorte": "2021",
+            "taux_emploi_12m": 92.0,
+            "salaire_median_12m": 2200,
+            "granularite": "discipline",
+        },
+    }
+    text = fiche_to_text(fiche)
+    assert "Insertion pro (source InserSup MESR" in text
+    assert "92%" in text
+    assert "2200€" in text
+
+
+def test_format_insertion_pro_cereq_branch_preserved():
+    """Régression : Céreq schéma toujours fonctionnel (préservation acquis)."""
+    ip = {
+        "source": "cereq",
+        "cohorte": "2020",
+        "taux_emploi_3ans": 0.85,
+        "taux_emploi_6ans": 0.92,
+        "taux_cdi": 0.78,
+        "salaire_median_embauche": 1850,
+    }
+    out = _format_insertion_pro(ip)
+    assert out is not None
+    assert "Céreq" in out
+    assert "85%" in out  # 0.85 → 85%
+    assert "1850€" in out
+
+
+def test_format_insertion_pro_cfa_branch_preserved():
+    """Régression : CFA Inserjeunes schéma toujours fonctionnel."""
+    ip = {
+        "source": "inserjeunes_cfa",
+        "annee": "2024",
+        "taux_emploi_6m": 0.62,
+        "taux_emploi_12m": 0.75,
+        "taux_emploi_18m": 0.81,
+    }
+    out = _format_insertion_pro(ip)
+    assert out is not None
+    assert "Inserjeunes CFA" in out
+    assert "62%" in out
+
+
 def test_fiche_to_text_vague_b3_excludes_profil_admis():
     """profil_admis stays out of embedding (numbers pollute similarity).
-    This is the separation-of-concerns principle from DATA_SCHEMA_V2."""
+    This is the separation-of-concerns principle from DATA_SCHEMA_V2.
+
+    Note Sprint 12 D5 : ce test passe sur la branche D5 (qui n'a pas
+    encore le D1 reversal). Sera supprimé / remplacé quand D1 mergé
+    sur main et que D5 est rebased dessus."""
     fiche = {
         "nom": "F", "etablissement": "E", "ville": "V",
         "profil_admis": {

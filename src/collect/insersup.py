@@ -376,3 +376,98 @@ def attach_insertion(
         }
 
     return fiches
+
+
+# ---------- Sprint 12 D5 — exposition au RAG ----------
+
+INSERSUP_SOURCE_URL = (
+    "https://www.data.gouv.fr/datasets/insertion-professionnelle-"
+    "des-diplomes-des-etablissements-denseignement-superieur-dispositif-insersup"
+)
+
+
+def attach_to_insertion_pro(
+    fiches: list[dict],
+    csv_path: str | Path,
+) -> tuple[list[dict], dict]:
+    """Sprint 12 D5 — variante de `attach_insertion` qui écrit dans
+    `insertion_pro` (compatible dispatch RAG `_format_insertion_pro`).
+
+    Schema écrit (avec `source='insersup'` explicite pour dispatch dans
+    `src.rag.embeddings._format_insertion_pro`) :
+
+        fiche['insertion_pro'] = {
+            'source': 'insersup',
+            'cohorte': '2021',
+            'taux_emploi_12m': 78.0,           # %
+            'taux_emploi_stable_12m': 65.7,    # % (CDI/CDD>6m)
+            'taux_emploi_18m': 81.8,           # %
+            'salaire_median_12m': 1850,        # € net mensuel ETP
+            'salaire_median_30m': 2070,        # € net mensuel ETP
+            'nombre_sortants': 247,
+            'granularite': 'discipline' | 'type_diplome_agrege',
+            'disclaimer': '...',
+            'source_url': '...',
+        }
+
+    Politique d'overwrite : InserSup > Céreq pour les fiches niveau
+    master/LP/DUT (plus granulaire, source officielle MESR par
+    établissement). Tracé dans audit_stats.
+
+    Returns:
+        (fiches_enrichies, audit_stats) où audit_stats contient :
+        - matched : nb fiches enrichies
+        - unmatched_no_uai : nb fiches sans cod_uai (pas matchables)
+        - unmatched_no_match : nb fiches avec cod_uai mais pas trouvé
+        - overwritten_cereq : nb fiches avec Céreq préexistant remplacé
+        - overwritten_cfa : nb fiches avec CFA préexistant remplacé
+    """
+    p = Path(csv_path)
+    audit = {
+        "matched": 0,
+        "unmatched_no_uai": 0,
+        "unmatched_no_match": 0,
+        "overwritten_cereq": 0,
+        "overwritten_cfa": 0,
+    }
+    if not p.exists():
+        return fiches, audit
+
+    idx = load_insersup_aggregated(p)
+
+    for fiche in fiches:
+        snapshot, granularite = _match_fiche_to_insersup(fiche, idx)
+        if snapshot is None:
+            if not fiche.get("cod_uai"):
+                audit["unmatched_no_uai"] += 1
+            else:
+                audit["unmatched_no_match"] += 1
+            continue
+
+        # Trace overwrite si insertion_pro préexistant (pour audit honnête)
+        existing = fiche.get("insertion_pro")
+        if isinstance(existing, dict):
+            existing_source = (existing.get("source") or "").lower()
+            if existing_source == "cereq":
+                audit["overwritten_cereq"] += 1
+            elif existing_source == "inserjeunes_cfa":
+                audit["overwritten_cfa"] += 1
+
+        ip = {
+            "source": "insersup",
+            "cohorte": snapshot.get("cohorte"),
+            "taux_emploi_12m": snapshot.get("taux_emploi_12m"),
+            "taux_emploi_stable_12m": snapshot.get("taux_emploi_stable_12m"),
+            "salaire_median_12m": snapshot.get("salaire_median_12m_mensuel_net"),
+            "taux_emploi_18m": snapshot.get("taux_emploi_18m"),
+            "salaire_median_30m": snapshot.get("salaire_median_30m_mensuel_net"),
+            "nombre_sortants": snapshot.get("nombre_sortants"),
+            "granularite": granularite,
+            "disclaimer": _build_disclaimer(fiche, granularite),
+            "source_url": INSERSUP_SOURCE_URL,
+        }
+        # Skip None values pour éviter pollution embedding avec "null"
+        fiche["insertion_pro"] = {k: v for k, v in ip.items() if v is not None}
+        audit["matched"] += 1
+
+    return fiches, audit

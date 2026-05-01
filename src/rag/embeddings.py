@@ -25,7 +25,7 @@ def _safe_pct(val, arrondi: bool = True) -> str | None:
 def _format_insertion_pro(ip: dict) -> str | None:
     """Formate le dict `insertion_pro` en verbatim embedding-friendly.
 
-    Supporte 2 schémas hétérogènes (v3 ADR-046-bis) :
+    Supporte 3 schémas hétérogènes (v3 ADR-046-bis + Sprint 12 D5) :
 
     **Schéma Céreq** (source='cereq', 32 704 fiches, majoritairement Parcoursup/
     MonMaster enrichies par `attach_cereq_insertion`) :
@@ -38,6 +38,11 @@ def _format_insertion_pro(ip: dict) -> str | None:
          part_poursuite_etudes, part_emploi_6m, part_autres_situations,
          source, annee}
 
+    **Schéma InserSup** (source='insersup', Sprint 12 D5, master/LP/DUT) :
+        {taux_emploi_12m, taux_emploi_18m, taux_emploi_stable_12m,
+         salaire_median_12m, salaire_median_30m, nombre_sortants,
+         cohorte, granularite, disclaimer, source}
+
     Retourne une string concaténée (verbatim narratif) ou None si pas de data
     exploitable. Objectif : rendre les stats **retrievables** via l'embedding
     (au lieu d'être ignorées comme dans la baseline v2).
@@ -46,6 +51,57 @@ def _format_insertion_pro(ip: dict) -> str | None:
         return None
     source = (ip.get("source") or "").lower()
     fragments: list[str] = []
+
+    # Sprint 12 D5 — Schéma InserSup (master/LP/DUT MESR par UAI+discipline)
+    # Dispatch en tête : source explicite, plus prioritaire que pattern de
+    # clés (Céreq/CFA fallback ensuite).
+    if source == "insersup":
+        cohorte = ip.get("cohorte") or "cohorte récente"
+        granularite = ip.get("granularite")
+
+        # Valeurs déjà en pourcentage (pas ratio 0-1) → format direct sans
+        # _safe_pct (qui multiplie ×100). Conserve cohérence avec audit
+        # InserSup CSV (e.g. 78.0 = 78%).
+        def _pct_int(v) -> str | None:
+            if not isinstance(v, (int, float)):
+                return None
+            try:
+                return f"{int(round(float(v)))}%"
+            except (ValueError, TypeError):
+                return None
+
+        t12 = _pct_int(ip.get("taux_emploi_12m"))
+        t18 = _pct_int(ip.get("taux_emploi_18m"))
+        ts12 = _pct_int(ip.get("taux_emploi_stable_12m"))
+        sal12 = ip.get("salaire_median_12m")
+        sal30 = ip.get("salaire_median_30m")
+        n_sortants = ip.get("nombre_sortants")
+
+        if t12:
+            fragments.append(f"taux emploi 12 mois : {t12}")
+        if t18:
+            fragments.append(f"taux emploi 18 mois : {t18}")
+        if ts12:
+            fragments.append(f"taux emploi stable 12 mois : {ts12}")
+        if isinstance(sal12, (int, float)):
+            fragments.append(f"salaire médian net 12 mois : {int(sal12)}€")
+        if isinstance(sal30, (int, float)):
+            fragments.append(f"salaire médian net 30 mois : {int(sal30)}€")
+        if isinstance(n_sortants, (int, float)) and n_sortants > 0:
+            fragments.append(f"{int(n_sortants)} sortants suivis")
+
+        if fragments:
+            granularite_libelle = (
+                "discipline détaillée"
+                if granularite == "discipline"
+                else "agrégat type de diplôme établissement"
+            )
+            return (
+                f"Insertion pro (source InserSup MESR, {cohorte}, "
+                f"{granularite_libelle}) : "
+                + " — ".join(fragments)
+            )
+        return None
 
     # Schéma Céreq (insertion à 3 et 6 ans, agrégé par niveau+domaine)
     if "taux_emploi_3ans" in ip or "taux_emploi_6ans" in ip:
