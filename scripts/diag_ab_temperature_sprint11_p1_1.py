@@ -97,6 +97,14 @@ IGNORANCE_OK_PATTERNS = [
     re.compile(r"pas d'information sur", re.IGNORECASE),
     # Wording fréquent : "ne sont pas couvertes par les fiches"
     re.compile(r"(ne sont|n'est) pas couvert[esé]+ par les fiches", re.IGNORECASE),
+    # v3 Sous-étape 0 (ordre 2026-05-01-1334) — formulations observées Q11 v5b
+    # réelle non couvertes par v2 :
+    #   "Les fiches fournies ne concernent **pas l'IFSI de Lille**"
+    #   "Je n'ai **aucune donnée** sur le nombre d'admis..."
+    # Patterns calés sur exemples réels (Apprentissage #4 méta : tester
+    # avec exemples réels variés AVANT déployer).
+    re.compile(r"aucune\s+(?:donn[ée]es?|statistiques?|pr[ée]cisions?|d[ée]tails?|info\b)", re.IGNORECASE),
+    re.compile(r"ne\s+(?:concernent|couvrent|incluent|contiennent|portent\s+sur)\s+pas\s+(?:l['']|le\s|la\s|les\s|cette\s|ces\s|d['']|de\s)", re.IGNORECASE),
 ]
 IGNORANCE_OK_SUGGEST_PATTERNS = [
     re.compile(r"vérifie sur (onisep|parcoursup|chu|cio)", re.IGNORECASE),
