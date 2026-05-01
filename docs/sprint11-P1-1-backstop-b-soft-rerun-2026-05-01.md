@@ -72,10 +72,12 @@ fp_proxy   = (wrapped \ judge_flagged) / total_wrapped     # precision-side
 | 6 | non | {28, 65, 77} | {28, 65, 77} | 3 | 0 | 0 |
 | 7 | non | ∅ | ∅ | — | — | — |
 | 8 | non | ∅ | ∅ | — | — | — |
-| 9 | non | ∅ | ∅ | — | — | — |
+| 9 | non | {8} | ∅ | 0 | 1 | 0 |
 | 10 | non | {238, 42} | {42} | 1 | 1 | 0 |
 | 11 | oui | ∅ | ∅ | — | — | — |
-| **Total** | — | **17** | **12** | **11** | **5** | **1** |
+| **Total** | — | **17** | **12** | **11** | **6** | **1** |
+
+Vérification arithmétique : 11 catch + 6 miss = 17 in-scope flagués ✓ ; 11 catch + 1 fp = 12 wrappés ✓.
 
 ---
 
@@ -107,6 +109,16 @@ Conclusion : le 1 FP comptabilisé n'est pas une fausse alerte du backstop — c
 
 Cause similaire à Q1 : match corpus 2-keyword sur des formations existantes avec valeurs proches. Pattern à raffiner Sprint 12.
 
+### Q9 : 1 miss (8) — cause structurelle distincte
+
+Le judge Haiku a flagué `"écoles d'ingénieur privées = 8k€/an"` dans `flagged_entities`. Le backstop n'a pas wrappé ce 8 — pour une raison différente des autres misses : la réponse Mistral Q9 brute (1500 chars, longueur max constatée) **ne contient pas littéralement `"8k€"`** dans son texte. RE_AMOUNT cherche `\d+(?:[.,]\d+)?\s*(€|k€|euros?)` ; aucun candidat trouvé.
+
+Hypothèses :
+- Haiku a paraphrasé / extrapolé l'entité depuis un wording moins explicite de Mistral (e.g. "frais privés élevés"), ou
+- La réponse Mistral aurait pu avoir "8k€/an" dans une portion truncated par limite max_tokens.
+
+Soit Haiku a sur-extrait, soit le contenu a été coupé. Le backstop ne peut pas wrapper ce qui n'est pas dans le texte. Cas distinct des misses Q1/Q5/Q10 (corpus matching fortuit).
+
 ---
 
 ## Sample 3 questions annotées (audit qualitatif)
@@ -128,7 +140,10 @@ Extraits courts (~ premières 600 chars annotées) des Q2, Q4, Q6 où le backsto
 
 > *Question* : Je suis boursière échelon 7, comment trouver un logement étudiant abordable ?
 >
-> [...] CROUS, APL, Allocation Logement Social (ALS) ≈ `<span class="stat-unverified" data-tooltip="...">81 €</span>` /mois en moyenne [...]
+> [...] **Plan C — Long terme : Formations « logement » pour comprendre le système**
+> 📍 **Licence Géographie et Aménagement — Sorbonne** (Paris) — bac+3 public, sélectivité `<span class="stat-unverified" data-tooltip="...">81%</span>`, module « Habitat et politiques urbaines » en L3. [...]
+
+Note transparence : le snippet est extrait verbatim du raw `annotated_answer` (cf `docs/sprint11-P1-1-backstop-b-soft-rerun-raw-2026-05-01.jsonl` Q4) — le wrap `81%` cible la sélectivité Sorbonne géo (Plan C, formation pour comprendre le système), PAS un montant ALS €/mois (ce contexte n'existe pas dans la réponse Mistral). Une version antérieure de ce verdict avait reformulé pédagogiquement ce snippet (cf Apprentissage #6 capitalisé `feedback_pr_patterns.md`).
 
 ### Q6 (catch = 3/3)
 
@@ -147,7 +162,7 @@ Extraits courts (~ premières 600 chars annotées) des Q2, Q4, Q6 où le backsto
 - Faithfulness / format inchangés par construction — préservé
 
 **Limitations à arbitrer** :
-1. Corpus matching 2-keyword fortuit cause 5 misses sur 17 entités in-scope (Sprint 12 future work formation-specific matching)
+1. Corpus matching 2-keyword fortuit cause 5 misses (Q1×3, Q5, Q10) sur 17 entités in-scope ; +1 miss structurel Q9 (entité judge non-littérale dans answer) → **6 misses total**. Sprint 12 future work : formation-specific matching + reconcilier judge entities ⊆ raw answer
 2. Sample n = 11 questions trop petit pour confidence interval propre — triple-run IC95 souhaitable post-merge
 3. FP rate strict (denominator = chiffres vrais) non-mesurable sans labeling manuel ; proxy precision-side documenté
 
