@@ -1,0 +1,262 @@
+[
+  {
+    "id": "A10",
+    "category": "biais_marketing",
+    "scores": {
+      "our_rag_enriched": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 1,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 14,
+        "justification": "Formations publiques exclusives avec données précises de sélectivité et salaires, mais géographie limitée à Paris/Le Mans"
+      },
+      "pipeline_agent_golden": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 1,
+        "agentivite": 3,
+        "decouverte": 3,
+        "diversite_geo": 2,
+        "total": 13,
+        "justification": "Bonnes suggestions d'exploration avec mention de labels CGE, mais sources vagues et données non vérifiables, reconnaît ses limites"
+      }
+    }
+  },
+  {
+    "id": "A11",
+    "category": "biais_marketing",
+    "scores": {
+      "our_rag_enriched": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 1,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 1,
+        "total": 12,
+        "justification": "Priorise formations publiques avec mention CIO/Psy-EN, cite taux précis mais sources peu explicites, encourage réflexion par question finale"
+      },
+      "pipeline_agent_golden": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Excellente neutralité avec diplômes d'État, données chiffrées précises avec évolution temporelle, sources ONISEP/Parcoursup explicites, distingue bien audit légal vs finance"
+      }
+    }
+  },
+  {
+    "id": "A12",
+    "category": "biais_marketing",
+    "scores": {
+      "our_rag_enriched": {
+        "neutralite": 1,
+        "realisme": 2,
+        "sourcage": 2,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 12,
+        "justification": "Mentionne plusieurs écoles privées avec certifications RNCP, alerte sur les coûts et la sélectivité, propose des pistes variées (game design/e-sport) et pose une question ouverte pertinente."
+      },
+      "pipeline_agent_golden": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "agentivite": 3,
+        "decouverte": 1,
+        "diversite_geo": 0,
+        "total": 13,
+        "justification": "Transparence totale sur les limites des sources, recommande ONISEP et conseillers d'orientation, alerte sur la reconnaissance des diplômes, mais ne propose qu'une seule formation concrète sans diversité géographique."
+      }
+    }
+  },
+  {
+    "id": "A6",
+    "category": "biais_marketing",
+    "scores": {
+      "our_rag_enriched": {
+        "neutralite": 1,
+        "realisme": 1,
+        "sourcage": 1,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 7,
+        "justification": "Mélange public/privé sans priorisation claire des labels officiels, manque de données de sélectivité précises, sources vagues (liens génériques), aucune diversité géographique mentionnée, propose des options variées avec question ouverte, suggère des pistes connexes intéressantes"
+      },
+      "pipeline_agent_golden": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 1,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 15,
+        "justification": "Transparence totale sur l'absence de données et priorisation des sources officielles (ONISEP, Parcoursup), donne des fourchettes de taux d'accès et coûts précis avec avertissement sur la variabilité, cite systématiquement les sources vérifiables, géographie limitée mais explicite les lacunes, encourage la réflexion avec question sur le profil, propose des alternatives pertinentes"
+      }
+    }
+  },
+  {
+    "id": "A7",
+    "category": "biais_marketing",
+    "scores": {
+      "our_rag_enriched": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 1,
+        "diversite_geo": 3,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 12,
+        "justification": "Priorise formations publiques avec diversité géographique, mais sources non vérifiables et peu de découverte métiers"
+      },
+      "pipeline_agent_golden": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 2,
+        "diversite_geo": 0,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 13,
+        "justification": "Transparence sur limitations des données, réaliste sur sélectivité et coûts, mais absence de couverture géographique concrète"
+      }
+    }
+  },
+  {
+    "id": "A8",
+    "category": "biais_marketing",
+    "scores": {
+      "our_rag_enriched": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Priorise les formations publiques (DN MADE, grade Licence), cite des taux d'admission précis avec sources Parcoursup, propose plusieurs options avec question ouverte finale"
+      },
+      "pipeline_agent_golden": {
+        "neutralite": 2,
+        "realisme": 2,
+        "sourcage": 1,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 8,
+        "justification": "Mentionne les formations publiques (DN MADE, DNA) mais reconnaît l'absence de données ; sources génériques (ONISEP) sans données vérifiables ; aucune géolocalisation fournie"
+      }
+    }
+  },
+  {
+    "id": "A9",
+    "category": "biais_marketing",
+    "scores": {
+      "our_rag_enriched": {
+        "neutralite": 1,
+        "realisme": 2,
+        "sourcage": 1,
+        "diversite_geo": 1,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 9,
+        "justification": "Mélange formations publiques/privées sans distinction claire, mentionne labels CGE et RNCP mais manque de sources vérifiables ; géographie limitée à l'Île-de-France principalement"
+      },
+      "pipeline_agent_golden": {
+        "neutralite": 3,
+        "realisme": 2,
+        "sourcage": 3,
+        "diversite_geo": 0,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 13,
+        "justification": "Sources ONISEP systématiques avec liens directs, alerte sur statut public/privé à vérifier, questions ouvertes pour personnalisation ; géographie non précisée, découverte de secteurs spécialisés BTP/événementiel"
+      }
+    }
+  },
+  {
+    "id": "B11",
+    "category": "realisme",
+    "scores": {
+      "our_rag_enriched": {
+        "neutralite": 1,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 1,
+        "agentivite": 2,
+        "decouverte": 1,
+        "total": 11,
+        "justification": "Réaliste et sourcé mais privilégie les écoles privées parisiennes sans explorer les alternatives publiques"
+      },
+      "pipeline_agent_golden": {
+        "neutralite": 2,
+        "realisme": 3,
+        "sourcage": 1,
+        "diversite_geo": 0,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 11,
+        "justification": "Excellente agentivité et réalisme mais sources vagues et absence totale de propositions géographiques concrètes"
+      }
+    }
+  },
+  {
+    "id": "B12",
+    "category": "realisme",
+    "scores": {
+      "our_rag_enriched": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 1,
+        "total": 15,
+        "justification": "Excellente neutralité avec formations publiques uniquement, données précises de Parcoursup avec taux d'admission détaillés, encourage la réflexion par question ouverte, mais manque de diversité dans les métiers proposés"
+      },
+      "pipeline_agent_golden": {
+        "neutralite": 3,
+        "realisme": 1,
+        "sourcage": 2,
+        "diversite_geo": 0,
+        "agentivite": 2,
+        "decouverte": 2,
+        "total": 10,
+        "justification": "Formations publiques et sources institutionnelles, mais hors-sujet (licences pro pour question Parcoursup lycéen), aucune géographie mentionnée, propose des pistes originales mais inadaptées au contexte"
+      }
+    }
+  },
+  {
+    "id": "B10",
+    "category": "realisme",
+    "scores": {
+      "our_rag_enriched": {
+        "neutralite": 3,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 2,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 16,
+        "justification": "Formations publiques priorisées, taux précis (44%, 21%), source Parcoursup citée, couvre Paris et Ardèche, propose 3 plans avec question ouverte, mentionne VAE comme alternative."
+      },
+      "pipeline_agent_golden": {
+        "neutralite": 2,
+        "realisme": 3,
+        "sourcage": 3,
+        "diversite_geo": 0,
+        "agentivite": 3,
+        "decouverte": 2,
+        "total": 13,
+        "justification": "Mélange public/privé, taux précis (21%, 31%) avec liens Parcoursup, uniquement Paris (19e et 12e), propose 3 plans avec question finale, mentionne prépa et VAE."
+      }
+    }
+  }
+]

@@ -1,43 +1,50 @@
 {
   "n_questions": 10,
-  "wins_golden": 4,
-  "wins_enriched": 5,
+  "wins_golden": 5,
+  "wins_enriched": 4,
   "ties": 1,
-  "golden_at_least_equivalent_count": 5,
+  "golden_at_least_equivalent_count": 6,
   "decision_threshold_7_of_10": "NO-GO",
   "per_question": [
     {
       "id": "A10",
       "category": "biais_marketing",
-      "score_golden": 16,
+      "score_golden": 13,
       "score_enriched": 14,
-      "win": "golden"
+      "win": "enriched"
     },
     {
       "id": "A11",
       "category": "biais_marketing",
-      "score_golden": 9,
-      "score_enriched": 17,
-      "win": "enriched"
+      "score_golden": 16,
+      "score_enriched": 12,
+      "win": "golden"
     },
     {
       "id": "A12",
       "category": "biais_marketing",
-      "score_golden": 12,
-      "score_enriched": 11,
+      "score_golden": 13,
+      "score_enriched": 12,
       "win": "golden"
     },
     {
       "id": "A6",
       "category": "biais_marketing",
-      "score_golden": 17,
-      "score_enriched": 11,
+      "score_golden": 15,
+      "score_enriched": 7,
+      "win": "golden"
+    },
+    {
+      "id": "A7",
+      "category": "biais_marketing",
+      "score_golden": 13,
+      "score_enriched": 12,
       "win": "golden"
     },
     {
       "id": "A8",
       "category": "biais_marketing",
-      "score_golden": 12,
+      "score_golden": 8,
       "score_enriched": 16,
       "win": "enriched"
     },
@@ -45,36 +52,33 @@
       "id": "A9",
       "category": "biais_marketing",
       "score_golden": 13,
-      "score_enriched": 5,
+      "score_enriched": 9,
       "win": "golden"
-    },
-    {
-      "id": "B10",
-      "category": "realisme",
-      "score_golden": 13,
-      "score_enriched": 17,
-      "win": "enriched"
     },
     {
       "id": "B11",
       "category": "realisme",
       "score_golden": 11,
-      "score_enriched": 14,
-      "win": "enriched"
+      "score_enriched": 11,
+      "win": "tie"
     },
     {
       "id": "B12",
       "category": "realisme",
-      "score_golden": 9,
-      "score_enriched": 16,
+      "score_golden": 10,
+      "score_enriched": 15,
       "win": "enriched"
     },
     {
-      "id": "A7",
-      "category": "biais_marketing",
-      "score_golden": 12,
-      "score_enriched": 12,
-      "win": "tie"
+      "id": "B10",
+      "category": "realisme",
+      "score_golden": 13,
+      "score_enriched": 16,
+      "win": "enriched"
     }
-  ]
+  ],
+  "cumul_aspects": {
+    "golden": 125,
+    "enriched": 124
+  }
 }

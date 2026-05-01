@@ -53,7 +53,11 @@ from src.agent.tools.fetch_stat_from_source import (
     StatVerification,
 )
 from src.rag.generator import generate
-from src.rag.metadata_filter import FilterCriteria, apply_metadata_filter
+from src.rag.metadata_filter import (
+    FilterCriteria,
+    apply_metadata_boost,
+    apply_metadata_filter,
+)
 from src.rag.retriever import retrieve_top_k
 
 # Note : `src.axe2.profile_mapping` + `src.axe2.contracts` sont importés
@@ -159,10 +163,27 @@ class AgentPipeline:
     # ---- Sprint 12 axe 2 golden pipeline (2026-05-01) ----
     # Cf docs/GOLDEN_PIPELINE_PLAN.md étape 3.
     enable_metadata_filter: bool = False
-    """Wrap `retrieve_top_k` avec `apply_metadata_filter` quand un
-    `ProfileState` typé est dérivé du `Profile`. Le `FilterCriteria` est
-    produit par `derive_filter_criteria_from_profile_state()` (region +
-    niveau range + secteur). No-op si profil donne `FilterCriteria` vide."""
+    """Sprint 12 axe 2 v2 (2026-05-01) — sémantique passée de filter strict
+    à **boost score soft** (×`metadata_boost_factor`).
+
+    Quand `True` ET `ProfileState` typé dérivé du `Profile`, applique
+    `apply_metadata_boost()` post-retrieve : les fiches matchant le
+    `FilterCriteria` voient leur score multiplié par `metadata_boost_factor`
+    (default 1.3), les autres restent à leur score d'origine. Pas de drop.
+
+    Motivation du switch : bench validation étape 4 a montré que le filter
+    strict tuait l'aspect `diversite_geo` (-11 cumul vs enriched, golden
+    monopolisait 1 région). Le boost soft préserve la diversité.
+
+    No-op si `FilterCriteria` vide ou `metadata_boost_factor=1.0`. Le flag
+    legacy filter strict reste accessible via `metadata_filter_mode="strict"`
+    (à wirer si besoin A/B futur — non implémenté MVP)."""
+
+    metadata_boost_factor: float = 1.3
+    """Multiplicateur de score appliqué aux fiches matchant `FilterCriteria`
+    quand `enable_metadata_filter=True`. Default 1.3 (Sprint 12 v2).
+    Cible : remonter `diversite_geo` golden de 5 → 12+ sans tuer la
+    pertinence profil. 1.0 = no-op équivalent à `enable_metadata_filter=False`."""
 
     golden_qa_prefix: str | None = None
     """Q&A Golden cap 1 example pré-construit (Sprint 10 chantier D),
@@ -250,30 +271,36 @@ class AgentPipeline:
         niveau aggregation. Pour MVP Sprint 4, on prend top-K L2 brut
         par sub-query, on dédupe à l'aggregation.
 
-        Sprint 12 axe 2 golden — si `enable_metadata_filter=True` ET
-        `_current_filter_criteria` set en début d'`answer()`, on retrieve
-        top-K large (×2) puis on applique `apply_metadata_filter` puis on
-        trim à `sub_query_top_k`. Garde `sub_query_top_k` candidates
-        finaux malgré le filter (compromis perf : 2×K embeds vs résultat
-        amputé). No-op si criteria.is_empty().
+        Sprint 12 axe 2 v2 (2026-05-01) — si `enable_metadata_filter=True` ET
+        `_current_filter_criteria` set, applique `apply_metadata_boost()`
+        post-retrieve : boost ×`metadata_boost_factor` (default 1.3) sur les
+        fiches matchant le profil, **aucun drop**. Les K candidats de retour
+        sont les `sub_query_top_k` originaux re-triés. No-op si
+        `criteria.is_empty()` ou `metadata_boost_factor=1.0`.
+
+        Différence vs étape 4 (filter strict) : pas de sur-retrieve ×2, plus
+        économique en API embed calls car aucun candidat n'est droppé. Le
+        re-tri par score boosté préserve la diversité géographique
+        (cf bench validation étape 6).
         """
         criteria = self._current_filter_criteria
-        filter_active = (
+        boost_active = (
             self.enable_metadata_filter
             and criteria is not None
             and not criteria.is_empty()
+            and self.metadata_boost_factor != 1.0
         )
-        # Sur-retrieve quand filter actif pour absorber les drops post-filter.
-        retrieve_k = self.sub_query_top_k * 2 if filter_active else self.sub_query_top_k
         retrieved = retrieve_top_k(
             self.client,
             self.index,
             self.fiches,
             sub_query.text,
-            k=retrieve_k,
+            k=self.sub_query_top_k,
         )
-        if filter_active:
-            retrieved = apply_metadata_filter(retrieved, criteria)[: self.sub_query_top_k]
+        if boost_active:
+            retrieved = apply_metadata_boost(
+                retrieved, criteria, boost_factor=self.metadata_boost_factor
+            )
         return {
             "sub_query_id": id(sub_query),  # référence Python (dispo dans plan.sub_queries)
             "sub_query_text": sub_query.text,

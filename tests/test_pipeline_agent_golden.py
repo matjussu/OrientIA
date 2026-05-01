@@ -170,61 +170,154 @@ class TestHistoryBuffer:
         assert roles == ["user", "assistant", "user", "assistant"]
 
 
-# ---- TestRetrieveWithMetadataFilter -----------------------------------------
+# ---- TestRetrieveWithMetadataBoost (Sprint 12 axe 2 v2) --------------------
 
 
-class TestRetrieveWithMetadataFilter:
-    """`_retrieve_for_subquery` wrap retrieve_top_k avec apply_metadata_filter
-    quand `_current_filter_criteria` est set."""
+class TestRetrieveWithMetadataBoost:
+    """Sprint 12 axe 2 v2 — `_retrieve_for_subquery` applique `apply_metadata_boost`
+    quand `_current_filter_criteria` set ET `enable_metadata_filter=True`.
+
+    Différence étape 4 (strict) → étape 6 (boost soft) :
+    - Pas d'over-retrieve ×2 (k=sub_query_top_k tel quel)
+    - Pas de drop : tous les candidats préservés, seulement boost score sur match
+    - `apply_metadata_boost` appelé au lieu de `apply_metadata_filter`
+    """
 
     @patch("src.agent.pipeline_agent.retrieve_top_k")
-    def test_no_filter_when_criteria_none(self, mock_retrieve, mock_client, fake_fiches, fake_retrieved):
+    def test_no_boost_when_criteria_none(self, mock_retrieve, mock_client, fake_fiches, fake_retrieved):
         mock_retrieve.return_value = fake_retrieved
         p = _build_pipeline(mock_client, fake_fiches)
         p._current_filter_criteria = None  # explicit
-        sq = SubQuery(text="x", target_corpus="formations", priority=1.0)
+        sq = SubQuery(text="x", target_corpus="formation", priority=2)
         result = p._retrieve_for_subquery(sq)
-        # k = sub_query_top_k (pas ×2)
         assert mock_retrieve.call_args.kwargs["k"] == p.sub_query_top_k
         assert result["retrieved"] == fake_retrieved
 
     @patch("src.agent.pipeline_agent.retrieve_top_k")
-    def test_no_filter_when_disabled(self, mock_retrieve, mock_client, fake_fiches, fake_retrieved):
+    def test_no_boost_when_disabled(self, mock_retrieve, mock_client, fake_fiches, fake_retrieved):
         mock_retrieve.return_value = fake_retrieved
         p = _build_pipeline(mock_client, fake_fiches, enable_metadata_filter=False)
         from src.rag.metadata_filter import FilterCriteria
         p._current_filter_criteria = FilterCriteria(region="Île-de-France")  # set mais flag OFF
-        sq = SubQuery(text="x", target_corpus="formations", priority=1.0)
+        sq = SubQuery(text="x", target_corpus="formation", priority=2)
         result = p._retrieve_for_subquery(sq)
         assert mock_retrieve.call_args.kwargs["k"] == p.sub_query_top_k
         assert result["retrieved"] == fake_retrieved
 
     @patch("src.agent.pipeline_agent.retrieve_top_k")
-    @patch("src.agent.pipeline_agent.apply_metadata_filter")
-    def test_filter_applied_when_active(self, mock_filter, mock_retrieve, mock_client, fake_fiches, fake_retrieved):
-        mock_retrieve.return_value = fake_retrieved * 2  # ×2 pour over-retrieve
-        mock_filter.return_value = fake_retrieved[:1]  # filter laisse 1 résultat
+    @patch("src.agent.pipeline_agent.apply_metadata_boost")
+    def test_boost_applied_when_active(self, mock_boost, mock_retrieve, mock_client, fake_fiches, fake_retrieved):
+        # Sprint 12 v2 : k=sub_query_top_k normal (pas ×2), boost soft.
+        mock_retrieve.return_value = fake_retrieved
+        mock_boost.return_value = list(reversed(fake_retrieved))  # ordre changé pour vérifier le re-tri
         from src.rag.metadata_filter import FilterCriteria
         p = _build_pipeline(mock_client, fake_fiches, enable_metadata_filter=True)
         p._current_filter_criteria = FilterCriteria(region="Île-de-France")
-        sq = SubQuery(text="x", target_corpus="formations", priority=1.0)
+        sq = SubQuery(text="x", target_corpus="formation", priority=2)
         result = p._retrieve_for_subquery(sq)
-        # k = sub_query_top_k × 2 (over-retrieve pour absorber drops)
-        assert mock_retrieve.call_args.kwargs["k"] == p.sub_query_top_k * 2
-        # filter appelé avec criteria
-        mock_filter.assert_called_once()
-        assert result["retrieved"] == fake_retrieved[:1]
+        assert mock_retrieve.call_args.kwargs["k"] == p.sub_query_top_k
+        # boost appelé avec criteria + boost_factor
+        mock_boost.assert_called_once()
+        call_kwargs = mock_boost.call_args.kwargs
+        assert call_kwargs["boost_factor"] == p.metadata_boost_factor
+        # Le retour est celui de apply_metadata_boost (re-trié)
+        assert result["retrieved"] == list(reversed(fake_retrieved))
 
     @patch("src.agent.pipeline_agent.retrieve_top_k")
-    def test_no_filter_when_criteria_empty(self, mock_retrieve, mock_client, fake_fiches, fake_retrieved):
+    def test_no_boost_when_criteria_empty(self, mock_retrieve, mock_client, fake_fiches, fake_retrieved):
         mock_retrieve.return_value = fake_retrieved
         from src.rag.metadata_filter import FilterCriteria
         p = _build_pipeline(mock_client, fake_fiches, enable_metadata_filter=True)
         p._current_filter_criteria = FilterCriteria()  # vide → is_empty() True
-        sq = SubQuery(text="x", target_corpus="formations", priority=1.0)
+        sq = SubQuery(text="x", target_corpus="formation", priority=2)
         result = p._retrieve_for_subquery(sq)
         assert mock_retrieve.call_args.kwargs["k"] == p.sub_query_top_k
         assert result["retrieved"] == fake_retrieved
+
+    @patch("src.agent.pipeline_agent.retrieve_top_k")
+    def test_no_boost_when_factor_one(self, mock_retrieve, mock_client, fake_fiches, fake_retrieved):
+        """boost_factor=1.0 → no-op équivalent à enable_metadata_filter=False."""
+        mock_retrieve.return_value = fake_retrieved
+        from src.rag.metadata_filter import FilterCriteria
+        p = _build_pipeline(
+            mock_client, fake_fiches,
+            enable_metadata_filter=True,
+            metadata_boost_factor=1.0,  # no-op
+        )
+        p._current_filter_criteria = FilterCriteria(region="Île-de-France")
+        sq = SubQuery(text="x", target_corpus="formation", priority=2)
+        result = p._retrieve_for_subquery(sq)
+        assert result["retrieved"] == fake_retrieved
+
+
+class TestBoostPreservesDiversite:
+    """Sprint 12 axe 2 v2 garde-fou — `apply_metadata_boost` n'amende JAMAIS
+    la liste de candidats (pas de drop).
+
+    Cible : prévenir la régression `diversite_geo` -11 observée étape 4
+    avec `apply_metadata_filter` strict. Le boost soft doit préserver tous
+    les candidats régionaux variés ; seul le re-tri par score change.
+    """
+
+    def test_diversite_geo_preservee_question_nationale(self):
+        """Sur une query nationale (criteria=region=IDF), tous les candidats
+        régionaux sont conservés ; seuls les matchs IDF sont boostés."""
+        from src.rag.metadata_filter import FilterCriteria, apply_metadata_boost
+        retrieved = [
+            {"score": 0.90, "fiche": {"id": "f1", "region": "île-de-france", "nom": "École IDF 1"}},
+            {"score": 0.85, "fiche": {"id": "f2", "region": "occitanie", "nom": "École Toulouse"}},
+            {"score": 0.80, "fiche": {"id": "f3", "region": "auvergne-rhône-alpes", "nom": "École Lyon"}},
+            {"score": 0.75, "fiche": {"id": "f4", "region": "île-de-france", "nom": "École IDF 2"}},
+            {"score": 0.70, "fiche": {"id": "f5", "region": "bretagne", "nom": "École Rennes"}},
+        ]
+        criteria = FilterCriteria(region="Île-de-France")
+        boosted = apply_metadata_boost(retrieved, criteria, boost_factor=1.3)
+        # Aucun drop
+        assert len(boosted) == 5
+        # IDs préservés (set)
+        assert {it["fiche"]["id"] for it in boosted} == {"f1", "f2", "f3", "f4", "f5"}
+        # 2 boostés (IDF), 3 non
+        boosted_ids = {it["fiche"]["id"] for it in boosted if it.get("_boosted")}
+        assert boosted_ids == {"f1", "f4"}
+        # Scores boostés ×1.3
+        f1 = next(it for it in boosted if it["fiche"]["id"] == "f1")
+        assert f1["score"] == pytest.approx(0.90 * 1.3)
+        # Scores non-boostés intacts
+        f2 = next(it for it in boosted if it["fiche"]["id"] == "f2")
+        assert f2["score"] == 0.85
+        # Re-tri : f1 (0.90×1.3=1.17) en tête, f4 (0.75×1.3=0.975) avant f2 (0.85)
+        assert boosted[0]["fiche"]["id"] == "f1"
+        assert boosted[1]["fiche"]["id"] == "f4"
+
+    def test_no_match_preserves_all_unboosted(self):
+        """Si AUCUNE fiche ne match (ex region IDF sur fiches Bretagne uniquement),
+        toutes les fiches restent à leur score d'origine — l'utilisateur n'est
+        jamais privé du retrieval brut FAISS."""
+        from src.rag.metadata_filter import FilterCriteria, apply_metadata_boost
+        retrieved = [
+            {"score": 0.90, "fiche": {"id": "f1", "region": "bretagne"}},
+            {"score": 0.80, "fiche": {"id": "f2", "region": "occitanie"}},
+        ]
+        criteria = FilterCriteria(region="Île-de-France")
+        boosted = apply_metadata_boost(retrieved, criteria, boost_factor=1.3)
+        assert len(boosted) == 2
+        assert all(not it.get("_boosted") for it in boosted)
+        # Ordre + scores intacts
+        assert boosted[0]["fiche"]["id"] == "f1"
+        assert boosted[0]["score"] == 0.90
+        assert boosted[1]["score"] == 0.80
+
+    def test_empty_criteria_returns_input_unchanged(self):
+        from src.rag.metadata_filter import FilterCriteria, apply_metadata_boost
+        retrieved = [{"score": 0.5, "fiche": {"id": "f1"}}]
+        boosted = apply_metadata_boost(retrieved, FilterCriteria(), boost_factor=1.3)
+        assert boosted == retrieved
+
+    def test_boost_factor_one_returns_input_unchanged(self):
+        from src.rag.metadata_filter import FilterCriteria, apply_metadata_boost
+        retrieved = [{"score": 0.5, "fiche": {"id": "f1", "region": "île-de-france"}}]
+        boosted = apply_metadata_boost(retrieved, FilterCriteria(region="Île-de-France"), boost_factor=1.0)
+        assert boosted == retrieved
 
 
 # ---- TestAnswerEnableMetadataFilter -----------------------------------------
