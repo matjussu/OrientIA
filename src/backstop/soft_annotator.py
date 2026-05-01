@@ -77,6 +77,41 @@ CONTEXT_KEYWORDS_STAT_FIN = {
 TOLERANCE_PCT_POINTS = 0.5     # 38.5 % matche 38 % ± 0.5 pp
 TOLERANCE_AMOUNT_RATIO = 0.05  # 5 % d'écart relatif sur montants
 
+# Entity keyword threshold — au moins ce nombre de tokens entité doivent
+# apparaître dans la fenêtre contextuelle pour considérer le fact corpus
+# comme "supporté". Diag bench v5b a montré qu'un seul keyword (e.g.
+# "paris" ou "ingenieur") suffit à matcher des centaines de facts dans
+# un corpus de 141k entrées → faux supports systémiques. Seuil ≥ 2 +
+# stopwords génériques élimine cette pollution.
+ENTITY_OVERLAP_THRESHOLD = 2
+
+# Stopwords génériques — tokens fréquents dans corpus formations FR qui
+# ne sont pas discriminants pour identifier une école spécifique. Source :
+# diag top tokens corpus formations_unified.json (top 25 + common French
+# words + niveaux/types génériques).
+STOPWORDS_ENTITY = frozenset({
+    # Termes génériques formation/établissement
+    "ecole", "lycee", "universite", "institut", "faculte", "departement",
+    "centre", "campus", "site", "etablissement", "formation",
+    "professionnel", "professionnelle", "general", "generale",
+    "specifique", "specifiques", "annexe", "regional", "regionale",
+    # Niveaux/diplômes
+    "bac", "ans", "annee", "premier", "deuxieme", "premiere",
+    "licence", "master", "doctorat", "mastere", "bts", "but", "dut",
+    "diplome", "cursus", "parcours", "cycle", "ipag",
+    # Domaines très fréquents (top corpus diag)
+    "gestion", "sante", "informatique", "electronique", "management",
+    "production", "services", "reseaux", "infirmier", "infirmiere",
+    "ifsi", "pass", "iut", "droit", "eco", "economie", "commerce",
+    # Géographique super-fréquents
+    "paris", "saint", "sainte", "france",
+    # Articles/prépositions courts (résiduels après split)
+    "des", "les", "une", "aux", "par", "sur", "pour", "dans", "avec",
+    "ave",
+    # Autres
+    "acces", "admission", "admissions",
+})
+
 # Régex chiffres ciblés.
 RE_PCT = re.compile(r"\b(\d+(?:[.,]\d+)?)\s*%", re.IGNORECASE)
 RE_AMOUNT = re.compile(
@@ -192,9 +227,16 @@ class CorpusFactIndex:
 
     @staticmethod
     def _extract_entity_keywords(entry: dict) -> frozenset[str]:
-        """Token bag depuis nom + établissement + ville + domaine. Filtre
-        stopwords courts (≤2 caractères) pour éviter les matches
-        triviaux ('a', 'la')."""
+        """Token bag DISCRIMINANT depuis nom + établissement + ville +
+        domaine. Filtre :
+        - longueur ≥ 3 (élimine articles courts)
+        - stopwords génériques formation FR (cf STOPWORDS_ENTITY)
+
+        L'objectif est qu'un fact corpus n'ait que des tokens
+        identifiants (e.g. "epf", "cachan") pas des tokens génériques
+        (e.g. "ecole", "ingenieur") qui matcheraient n'importe quelle
+        réponse parlant d'écoles d'ingé.
+        """
         fields = ("nom", "etablissement", "ville", "domaine")
         tokens: set[str] = set()
         for f in fields:
@@ -203,7 +245,7 @@ class CorpusFactIndex:
                 continue
             norm = _normalize(val)
             for tok in re.split(r"[^a-z0-9]+", norm):
-                if len(tok) >= 3:
+                if len(tok) >= 3 and tok not in STOPWORDS_ENTITY:
                     tokens.add(tok)
         return frozenset(tokens)
 
@@ -232,8 +274,12 @@ class CorpusFactIndex:
                 continue
             if abs(fact.value - value) > tol:
                 continue
-            # Value match — vérifier contexte entité
-            if any(kw in norm_window for kw in fact.entity_keywords):
+            # Value match — vérifier contexte entité avec seuil overlap
+            # ≥ ENTITY_OVERLAP_THRESHOLD (cf diag bench v5b : un seul
+            # keyword génère des faux supports systémiques sur corpus
+            # 141k facts).
+            overlap = sum(1 for kw in fact.entity_keywords if kw in norm_window)
+            if overlap >= ENTITY_OVERLAP_THRESHOLD:
                 return True
         return False
 

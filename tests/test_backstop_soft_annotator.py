@@ -104,9 +104,9 @@ class TestSupportedByCorpus:
         out = annotate_response(answer, corpus)
         assert not _is_annotated(out, "1.7k€")
 
-    def test_chiffre_avec_etablissement_seul_sans_ville(self, corpus):
-        # Match sur "epf" seul (1 keyword suffit)
-        answer = "Pour l'EPF, on annonce 95% de taux d'admission."
+    def test_chiffre_avec_deux_tokens_etablissement(self, corpus):
+        # Match sur "epf" + "cachan" (≥ 2 tokens entité) → supporté
+        answer = "Pour l'EPF Cachan, on annonce 95% de taux d'admission."
         out = annotate_response(answer, corpus)
         assert not _is_annotated(out, "95%")
 
