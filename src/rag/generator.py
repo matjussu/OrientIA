@@ -1,3 +1,5 @@
+import re
+
 from mistralai.client import Mistral
 from src.prompt.system import SYSTEM_PROMPT, build_user_prompt
 from src.rag.intent import classify_intent, intent_to_format_guidance
@@ -379,4 +381,18 @@ def generate(
         temperature=temperature,
         messages=messages,
     )
-    return response.choices[0].message.content
+    content = response.choices[0].message.content
+    # Sprint 11 P1.1 v5 — strip brouillon XML balises si détectées.
+    # Format attendu : <brouillon>...</brouillon>\n<reponse_finale>...</reponse_finale>
+    # Tolérant : si Mistral n'utilise pas les balises (Q simple, fallback,
+    # consigne ignorée), retourne le content brut.
+    m = _RE_REPONSE_FINALE.search(content)
+    if m:
+        return m.group(1).strip()
+    return content
+
+
+_RE_REPONSE_FINALE = re.compile(
+    r"<reponse_finale>\s*(.*?)\s*</reponse_finale>",
+    re.DOTALL | re.IGNORECASE,
+)

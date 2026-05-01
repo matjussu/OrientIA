@@ -130,6 +130,7 @@ class OrientIAPipeline:
         top_k_sources: int = 10,
         criteria: FilterCriteria | None = None,
         history: list[dict] | None = None,
+        temperature: float = 0.3,
     ) -> tuple[str, list[dict]]:
         """Génère une réponse depuis FAISS + rerank + MMR + generator.
 
@@ -187,6 +188,7 @@ class OrientIAPipeline:
             model=self.model,
             golden_qa_prefix=golden_qa_prefix,
             history=history,
+            temperature=temperature,
         )
         # Validator v1 + UX Policy (Gate J+6) : si un validator est fourni,
         # on valide puis on applique la policy hybride α+β. La signature

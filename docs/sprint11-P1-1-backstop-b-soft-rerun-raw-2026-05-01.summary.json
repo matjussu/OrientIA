@@ -1,0 +1,247 @@
+{
+  "n_questions": 11,
+  "total_judge_flagged_numerics": 17,
+  "total_wrapped": 12,
+  "total_catch": 11,
+  "total_fp_proxy": 1,
+  "catch_rate": 0.6471,
+  "fp_rate_precision_proxy": 0.0833,
+  "disclaimer_pct": 1.0,
+  "per_question": [
+    {
+      "qid": 1,
+      "is_piege": false,
+      "judge_flagged_numerics": [
+        "10",
+        "27",
+        "95"
+      ],
+      "wrapped_numerics": [
+        "65"
+      ],
+      "catch": [],
+      "miss": [
+        "10",
+        "27",
+        "95"
+      ],
+      "fp": [
+        "65"
+      ],
+      "n_judge_flagged": 3,
+      "n_wrapped": 1,
+      "n_catch": 0,
+      "n_miss": 3,
+      "n_fp": 1,
+      "disclaimer_present": true
+    },
+    {
+      "qid": 2,
+      "is_piege": false,
+      "judge_flagged_numerics": [
+        "23",
+        "75"
+      ],
+      "wrapped_numerics": [
+        "23",
+        "75"
+      ],
+      "catch": [
+        "23",
+        "75"
+      ],
+      "miss": [],
+      "fp": [],
+      "n_judge_flagged": 2,
+      "n_wrapped": 2,
+      "n_catch": 2,
+      "n_miss": 0,
+      "n_fp": 0,
+      "disclaimer_present": true
+    },
+    {
+      "qid": 3,
+      "is_piege": false,
+      "judge_flagged_numerics": [],
+      "wrapped_numerics": [],
+      "catch": [],
+      "miss": [],
+      "fp": [],
+      "n_judge_flagged": 0,
+      "n_wrapped": 0,
+      "n_catch": 0,
+      "n_miss": 0,
+      "n_fp": 0,
+      "disclaimer_present": true
+    },
+    {
+      "qid": 4,
+      "is_piege": false,
+      "judge_flagged_numerics": [
+        "81"
+      ],
+      "wrapped_numerics": [
+        "81"
+      ],
+      "catch": [
+        "81"
+      ],
+      "miss": [],
+      "fp": [],
+      "n_judge_flagged": 1,
+      "n_wrapped": 1,
+      "n_catch": 1,
+      "n_miss": 0,
+      "n_fp": 0,
+      "disclaimer_present": true
+    },
+    {
+      "qid": 5,
+      "is_piege": false,
+      "judge_flagged_numerics": [
+        "27",
+        "6",
+        "700",
+        "800",
+        "95"
+      ],
+      "wrapped_numerics": [
+        "27",
+        "6",
+        "700",
+        "95"
+      ],
+      "catch": [
+        "27",
+        "6",
+        "700",
+        "95"
+      ],
+      "miss": [
+        "800"
+      ],
+      "fp": [],
+      "n_judge_flagged": 5,
+      "n_wrapped": 4,
+      "n_catch": 4,
+      "n_miss": 1,
+      "n_fp": 0,
+      "disclaimer_present": true
+    },
+    {
+      "qid": 6,
+      "is_piege": false,
+      "judge_flagged_numerics": [
+        "28",
+        "65",
+        "77"
+      ],
+      "wrapped_numerics": [
+        "28",
+        "65",
+        "77"
+      ],
+      "catch": [
+        "28",
+        "65",
+        "77"
+      ],
+      "miss": [],
+      "fp": [],
+      "n_judge_flagged": 3,
+      "n_wrapped": 3,
+      "n_catch": 3,
+      "n_miss": 0,
+      "n_fp": 0,
+      "disclaimer_present": true
+    },
+    {
+      "qid": 7,
+      "is_piege": false,
+      "judge_flagged_numerics": [],
+      "wrapped_numerics": [],
+      "catch": [],
+      "miss": [],
+      "fp": [],
+      "n_judge_flagged": 0,
+      "n_wrapped": 0,
+      "n_catch": 0,
+      "n_miss": 0,
+      "n_fp": 0,
+      "disclaimer_present": true
+    },
+    {
+      "qid": 8,
+      "is_piege": false,
+      "judge_flagged_numerics": [],
+      "wrapped_numerics": [],
+      "catch": [],
+      "miss": [],
+      "fp": [],
+      "n_judge_flagged": 0,
+      "n_wrapped": 0,
+      "n_catch": 0,
+      "n_miss": 0,
+      "n_fp": 0,
+      "disclaimer_present": true
+    },
+    {
+      "qid": 9,
+      "is_piege": false,
+      "judge_flagged_numerics": [
+        "8"
+      ],
+      "wrapped_numerics": [],
+      "catch": [],
+      "miss": [
+        "8"
+      ],
+      "fp": [],
+      "n_judge_flagged": 1,
+      "n_wrapped": 0,
+      "n_catch": 0,
+      "n_miss": 1,
+      "n_fp": 0,
+      "disclaimer_present": true
+    },
+    {
+      "qid": 10,
+      "is_piege": false,
+      "judge_flagged_numerics": [
+        "238",
+        "42"
+      ],
+      "wrapped_numerics": [
+        "42"
+      ],
+      "catch": [
+        "42"
+      ],
+      "miss": [
+        "238"
+      ],
+      "fp": [],
+      "n_judge_flagged": 2,
+      "n_wrapped": 1,
+      "n_catch": 1,
+      "n_miss": 1,
+      "n_fp": 0,
+      "disclaimer_present": true
+    },
+    {
+      "qid": 11,
+      "is_piege": true,
+      "judge_flagged_numerics": [],
+      "wrapped_numerics": [],
+      "catch": [],
+      "miss": [],
+      "fp": [],
+      "n_judge_flagged": 0,
+      "n_wrapped": 0,
+      "n_catch": 0,
+      "n_miss": 0,
+      "n_fp": 0,
+      "disclaimer_present": true
+    }
+  ]
+}
