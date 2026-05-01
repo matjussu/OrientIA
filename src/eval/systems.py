@@ -255,3 +255,76 @@ class HierarchicalSystem(System):
     def answer(self, qid: str, question: str) -> str:
         result = self.coordinator.respond_single_shot(question)
         return result.response_text
+
+
+# ============================================================================
+# Sprint 12 axe 2 — Golden Pipeline System (étape 4 bench validation)
+# ============================================================================
+# Plan : docs/GOLDEN_PIPELINE_PLAN.md
+# Bench triangulaire comparatif : `pipeline_agent_golden` vs `our_rag_enriched`
+# sur 10q hold-out. Critère succès : golden ≥ enriched sur 7/10 questions.
+
+
+class PipelineAgentGoldenSystem(System):
+    """Sprint 12 axe 2 — Golden Pipeline (`AgentPipeline` golden mode).
+
+    Fusionne en un seul pipeline canonical :
+    - Orchestration agentic Sprint 1-4 (3 tools mistral-large + cohabitation
+      multi-corpus + fact-check in-loop + citation verbatim)
+    - Données enrichies Sprint 9-12 (corpus 61 657 fiches combined formations
+      + dares + rncp_blocs, profil_admis, metadata filter, 4 directives prompt)
+    - Anti-hallu post-process Sprint 11 P1.1 (Backstop B soft optionnel en
+      série après FetchStatFromSource)
+
+    Le Q&A Golden cap 1 example est construit dynamiquement par question via
+    un `OrientIAPipeline` minimal (helper `_maybe_build_golden_qa_prefix`).
+    Hack pragmatique pour MVP étape 4 — refactor possible dans un module
+    dédié `src/agent/golden_qa_provider.py` si la pattern est réutilisé.
+    """
+
+    name = "pipeline_agent_golden"
+
+    def __init__(
+        self,
+        agent_pipeline,  # src.agent.pipeline_agent.AgentPipeline
+        qa_helper_pipeline: OrientIAPipeline | None = None,
+    ):
+        """Args:
+            agent_pipeline: `AgentPipeline` configuré golden mode (corpus
+                combined + index golden + flags `enable_metadata_filter`,
+                `enable_backstop_b`, `enable_fact_check`,
+                `history_buffer_size=3`, `backstop_b_corpus_index` pré-construit).
+            qa_helper_pipeline: optionnel `OrientIAPipeline(use_golden_qa=True,
+                golden_qa_index_path=..., golden_qa_meta_path=...)` dont seul
+                `_maybe_build_golden_qa_prefix(question)` est invoqué pour
+                produire le prefix dynamic (cap 1 example top-1 retrieve).
+                None → pas de Q&A Golden injection (fallback silencieux).
+        """
+        self.agent_pipeline = agent_pipeline
+        self.qa_helper = qa_helper_pipeline
+
+    def answer(self, qid: str, question: str) -> str:
+        # 1. Build dynamic golden_qa_prefix via OrientIAPipeline helper
+        # (top-1 retrieve sur l'index Q&A Golden, séparation Comment/Quoi
+        # déjà respectée dans `_build_few_shot_prefix`).
+        if self.qa_helper is not None:
+            try:
+                prefix = self.qa_helper._maybe_build_golden_qa_prefix(question)
+                self.agent_pipeline.golden_qa_prefix = prefix
+            except Exception:
+                # Q&A helper failure non-bloquant : pas de prefix injecté,
+                # le pipeline tourne sans le few-shot reference.
+                self.agent_pipeline.golden_qa_prefix = None
+
+        # 2. Generate via AgentPipeline (golden mode)
+        result = self.agent_pipeline.answer(question)
+
+        # 3. Update history buffer pour next turn (multi-turn aware, cap N).
+        if (
+            self.agent_pipeline.history_buffer_size > 0
+            and result.answer_text
+            and not result.error
+        ):
+            self.agent_pipeline.add_turn_to_history(question, result.answer_text)
+
+        return result.answer_text
