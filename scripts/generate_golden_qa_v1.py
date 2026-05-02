@@ -85,6 +85,14 @@ DEFAULT_TIMEOUT_S = 300
 RATE_LIMIT_BACKOFF_BASE = 2.0
 MAX_CONSECUTIVE_429 = 10  # stop condition
 
+# Pivot 2026-05-02 (ordre Jarvis 1402 — Matteo Telegram 3053) : P3+P4
+# fusion critique+refine passe d'Opus 4.7 → Sonnet 4.6 pour économie tokens
+# sur le quota Claude Max plan partagé. Risque qualité accepté + audité
+# empiriquement post-run. P1 (Haiku research) et P2 (Opus draft) inchangés
+# — la créativité du draft reste user-facing top quality.
+# Override possible via --model-critique-refine si rollback nécessaire.
+DEFAULT_MODEL_CRITIQUE_REFINE = "claude-sonnet-4-6"
+
 # Boundaries v3.1 (ordre 1011 nuit2-prep, recos Matteo review Phase 1) :
 # keep ≥ 82 (vs 85 v3) — frontière 82-84 jugée trop sévère vu samples qualité.
 # La nuit 1 a montré un cluster solide de 9 fiches scorées 78-84 ("flag")
@@ -132,10 +140,11 @@ class GenerateConfig:
     model: str | None = None
     # Stratégie hybride v3 (Sprint 9-data Levier 1) — 3 modèles selon criticité
     # phase. Si None, fallback sur `model` (legacy) puis sur le default CLI
-    # session côté `claude --print`.
+    # session côté `claude --print` (P1+P2) ou DEFAULT_MODEL_CRITIQUE_REFINE (P3+P4).
     # Phase 1 research WebSearch : recherche factuelle suffit, Haiku économique
     # Phase 2 draft : créativité conseiller user-facing → Opus qualité top
-    # Phase 3+4 fusion critique+refine : refine reste user-facing → Opus
+    # Phase 3+4 fusion critique+refine : Sonnet 4.6 par défaut depuis pivot
+    # 2026-05-02 (économie tokens, cf DEFAULT_MODEL_CRITIQUE_REFINE)
     model_research: str | None = None
     model_draft: str | None = None
     model_critique_refine: str | None = None
@@ -567,7 +576,8 @@ Si la draft est déjà excellente (score >=90), réécris-la quand même (légè
 
 Réponds UNIQUEMENT avec ce JSON, pas de préambule."""
     return call_claude_with_retry(
-        prompt, cfg, retry_stats, model=cfg.model_critique_refine or cfg.model
+        prompt, cfg, retry_stats,
+        model=cfg.model_critique_refine or cfg.model or DEFAULT_MODEL_CRITIQUE_REFINE,
     )
 
 
@@ -670,10 +680,12 @@ def generate_qa(
 ) -> dict:
     """Orchestre les phases pour 1 (prompt_id, iteration_idx).
 
-    v3 stratégie hybride (Sprint 9-data) :
+    v3 stratégie hybride (Sprint 9-data) + pivot 2026-05-02 :
     - Phase 1 research : Haiku 4.5 (cfg.model_research) + cache par prompt_id
     - Phase 2 draft : Opus 4.7 (cfg.model_draft)
-    - Phase 3+4 fusion (critique + refine) : Opus 4.7 (cfg.model_critique_refine)
+    - Phase 3+4 fusion (critique + refine) : Sonnet 4.6 par défaut depuis le
+      pivot 2026-05-02 (DEFAULT_MODEL_CRITIQUE_REFINE) — économie tokens.
+      Override possible via cfg.model_critique_refine.
 
     Si `phase1_cache` est None, ancien comportement (call à chaque iter).
     """
@@ -690,7 +702,9 @@ def generate_qa(
         "models": {
             "research": cfg.model_research or cfg.model,
             "draft": cfg.model_draft or cfg.model,
-            "critique_refine": cfg.model_critique_refine or cfg.model,
+            "critique_refine": (
+                cfg.model_critique_refine or cfg.model or DEFAULT_MODEL_CRITIQUE_REFINE
+            ),
         },
         "started_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
     }
@@ -786,7 +800,9 @@ def parse_cli() -> GenerateConfig:
                         "Ex : claude-opus-4-7")
     p.add_argument("--model-critique-refine", type=str, default=None,
                    help="Modèle Phase 3+4 fusion critique+refine (v3 stratégie hybride). "
-                        "Refine reste user-facing, défault Opus. Ex : claude-opus-4-7")
+                        "Défaut DEFAULT_MODEL_CRITIQUE_REFINE = claude-sonnet-4-6 "
+                        "depuis pivot 2026-05-02 (économie tokens). "
+                        "Override Opus rollback : --model-critique-refine claude-opus-4-7")
     p.add_argument("--rate-limit-delay", type=float, default=DEFAULT_RATE_LIMIT_DELAY,
                    help=f"Délai entre calls subprocess (s, défaut {DEFAULT_RATE_LIMIT_DELAY})")
     p.add_argument("--max-retries", type=int, default=DEFAULT_MAX_RETRIES,
