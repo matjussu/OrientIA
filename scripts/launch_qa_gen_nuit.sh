@@ -124,7 +124,7 @@ python scripts/generate_golden_qa_v1.py \
     $MODEL_FLAGS \
     $SKIP_DECISIONS_FLAG \
     2>&1 | tee $LOG_FILE; \
-EXIT_CODE=\$?; \
+EXIT_CODE=\${PIPESTATUS[0]}; \
 RECORDS=\$(wc -l < $OUTPUT_JSONL 2>/dev/null || echo 0); \
 TS=\$(date -Iseconds); \
 case \$EXIT_CODE in \
