@@ -41,6 +41,15 @@ INDEX_PATH = "data/embeddings/formations_unified.index"
 GOLDEN_QA_INDEX_PATH = "data/embeddings/golden_qa.index"
 GOLDEN_QA_META_PATH = "data/processed/golden_qa_meta.json"
 
+# Sprint 12 axe 2 — Golden Pipeline corpus combined assembly (cf
+# scripts/build_formations_golden_corpus.py + scripts/embed_golden_pipeline.py).
+# Constantes opt-in : non utilisées par défaut tant que le wiring
+# pipeline_agent.py (étape 3) ne les consomme pas. Coexistent avec FICHES_PATH /
+# INDEX_PATH legacy pour préserver le système ``our_rag_enriched`` (rollback
+# safety net + bench α-comparatif).
+GOLDEN_PIPELINE_FICHES_PATH = "data/processed/formations_golden_pipeline.json"
+GOLDEN_PIPELINE_INDEX_PATH = "data/embeddings/formations_golden_pipeline.index"
+
 
 def _format_fiche_summary(item: dict) -> str:
     """Render compact d'une fiche pour stdout."""

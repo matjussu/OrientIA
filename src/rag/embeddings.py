@@ -319,6 +319,36 @@ def fiche_to_text(fiche: dict) -> str:
     return " | ".join(parts)
 
 
+def corpus_item_to_text(item: dict) -> str:
+    """Sprint 12 axe 2 — route un item du corpus combined Golden vers son formatter natif.
+
+    Le golden pipeline fusionne 3 corpora hétérogènes annotés par le champ
+    ``corpus`` (cf. ``scripts/build_formations_golden_corpus.py``) :
+
+    - ``formations_unified`` : fiches Parcoursup-style → délègue à
+      ``fiche_to_text()`` (préserve toute la logique stats v3 + profil_admis D1).
+    - ``dares`` : entrées DARES Métiers 2030 → renvoie le champ ``text``
+      déjà préformaté lors de la collecte (cf. ``src/collect/build_dares_corpus.py``).
+    - ``rncp_blocs`` : fiches RNCP blocs → renvoie le champ ``text``
+      déjà préformaté (cf. ``src/collect/build_france_comp_blocs_corpus.py``).
+
+    Items sans champ ``corpus`` (legacy ``formations_unified.index`` Sprint 9-12)
+    tombent dans la branche par défaut, qui délègue à ``fiche_to_text()`` pour
+    backward-compat. L'index ``formations_golden_pipeline.index`` (étape 2)
+    porte exclusivement des items avec ``corpus`` posé.
+    """
+    corpus = item.get("corpus")
+    if corpus in ("dares", "rncp_blocs"):
+        text = item.get("text") or ""
+        if not text:
+            raise ValueError(
+                f"item corpus={corpus} id={item.get('id')!r} n'a pas de champ 'text' préformaté"
+            )
+        return text
+    # Default branch : formations_unified (annoté ou legacy sans champ corpus).
+    return fiche_to_text(item)
+
+
 def embed_texts(client: Mistral, texts: list[str]) -> list[list[float]]:
     response = client.embeddings.create(model=EMBED_MODEL, inputs=texts)
     return [d.embedding for d in response.data]

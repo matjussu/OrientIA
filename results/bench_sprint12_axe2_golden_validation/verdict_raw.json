@@ -1,0 +1,80 @@
+{
+  "n_questions": 10,
+  "wins_golden": 3,
+  "wins_enriched": 6,
+  "ties": 1,
+  "golden_at_least_equivalent_count": 4,
+  "decision_threshold_7_of_10": "NO-GO",
+  "per_question": [
+    {
+      "id": "A10",
+      "category": "biais_marketing",
+      "score_golden": 12,
+      "score_enriched": 14,
+      "win": "enriched"
+    },
+    {
+      "id": "A11",
+      "category": "biais_marketing",
+      "score_golden": 13,
+      "score_enriched": 11,
+      "win": "golden"
+    },
+    {
+      "id": "A7",
+      "category": "biais_marketing",
+      "score_golden": 9,
+      "score_enriched": 13,
+      "win": "enriched"
+    },
+    {
+      "id": "A8",
+      "category": "biais_marketing",
+      "score_golden": 12,
+      "score_enriched": 14,
+      "win": "enriched"
+    },
+    {
+      "id": "B11",
+      "category": "realisme",
+      "score_golden": 11,
+      "score_enriched": 13,
+      "win": "enriched"
+    },
+    {
+      "id": "B12",
+      "category": "realisme",
+      "score_golden": 12,
+      "score_enriched": 14,
+      "win": "enriched"
+    },
+    {
+      "id": "A12",
+      "category": "biais_marketing",
+      "score_golden": 12,
+      "score_enriched": 8,
+      "win": "golden"
+    },
+    {
+      "id": "A9",
+      "category": "biais_marketing",
+      "score_golden": 12,
+      "score_enriched": 12,
+      "win": "tie"
+    },
+    {
+      "id": "A6",
+      "category": "biais_marketing",
+      "score_golden": 14,
+      "score_enriched": 7,
+      "win": "golden"
+    },
+    {
+      "id": "B10",
+      "category": "realisme",
+      "score_golden": 11,
+      "score_enriched": 14,
+      "win": "enriched"
+    }
+  ]
+}

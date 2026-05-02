@@ -306,3 +306,54 @@ def apply_metadata_filter(
     if criteria.is_empty():
         return fiches_with_score
     return [item for item in fiches_with_score if _matches(item.get("fiche") or {}, criteria)]
+
+
+def apply_metadata_boost(
+    fiches_with_score: list[dict[str, Any]],
+    criteria: FilterCriteria,
+    boost_factor: float = 1.3,
+) -> list[dict[str, Any]]:
+    """Sprint 12 axe 2 v2 — boost soft alternatif à apply_metadata_filter.
+
+    Multiplie le score des items matchant `criteria` par `boost_factor` et
+    re-trie l'ensemble par score desc. **Aucun drop** : tous les candidats
+    restent dans la liste retournée.
+
+    Motivation : bench validation Sprint 12 étape 4 a révélé que
+    `apply_metadata_filter` strict tuait l'aspect `diversite_geo` (-11 cumul
+    sur 10q, golden 5 vs enriched 16) en réduisant les candidats à une seule
+    région inférée du profil. Le boost soft préserve la diversité tout en
+    nudgeant vers les fiches profil-cohérentes.
+
+    Args:
+        fiches_with_score: liste retrievée FAISS au format
+            `[{"score": float, "fiche": {...}}, ...]`.
+        criteria: FilterCriteria — combien de critères posés détermine le
+            niveau de match (boolean AND : un item match si TOUS les
+            critères posés sont satisfaits, comme `apply_metadata_filter`).
+        boost_factor: multiplicateur du score pour les matches. ≥1.0 attendu
+            (1.0 = no-op, 1.3 = défaut Sprint 12 v2). Si <1.0 → pénalisation
+            (cas rare, à éviter sauf intention explicite).
+
+    Returns:
+        Nouvelle liste (immutable input — chaque item est shallow-copy si
+        boosté). Re-triée par score desc. Items boostés portent un flag
+        `_boosted: True` pour audit/télémétrie.
+
+    No-op cases :
+    - `criteria.is_empty()` → return `list(input)` (re-tri préservé naturel)
+    - `boost_factor == 1.0` → idem
+    """
+    if criteria.is_empty() or boost_factor == 1.0:
+        return list(fiches_with_score)
+    boosted: list[dict[str, Any]] = []
+    for item in fiches_with_score:
+        if _matches(item.get("fiche") or {}, criteria):
+            new_item = dict(item)
+            new_item["score"] = float(new_item.get("score", 0.0)) * boost_factor
+            new_item["_boosted"] = True
+            boosted.append(new_item)
+        else:
+            boosted.append(item)
+    boosted.sort(key=lambda it: it.get("score", 0.0), reverse=True)
+    return boosted
