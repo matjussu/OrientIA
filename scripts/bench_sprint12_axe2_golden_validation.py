@@ -65,7 +65,12 @@ from mistralai.client import Mistral
 from src.agent.pipeline_agent import AgentPipeline
 from src.config import load_config
 from src.eval.judge import judge_all
-from src.eval.systems import OurRagSystem, PipelineAgentGoldenSystem
+from src.eval.systems import (
+    MistralWithCustomPromptSystem,
+    OurRagSystem,
+    PipelineAgentGoldenSystem,
+)
+from src.prompt.system import SYSTEM_PROMPT
 from src.rag.embeddings import corpus_item_to_text
 from src.rag.index import load_index
 from src.rag.pipeline import OrientIAPipeline
@@ -133,7 +138,11 @@ def build_golden_system(client: Mistral) -> PipelineAgentGoldenSystem:
         fiches=golden_fiches,
         index=golden_index,
         # Sprint 12 axe 2 golden flags
-        enable_metadata_filter=True,
+        # Étape 7 Test 1 (2026-05-02) : metadata_filter=False pour apple-to-apple
+        # avec our_rag_enriched qui ne passe jamais criteria à pipeline.answer()
+        # (cf OurRagSystem.answer() ligne 53 src/eval/systems.py — bench v1+v2
+        # biaisé : golden subissait filter strict/boost, enriched pas en pratique).
+        enable_metadata_filter=False,
         enable_backstop_b=True,
         backstop_b_corpus_index=corpus_fact_index,
         enable_fact_check=True,
@@ -332,13 +341,21 @@ def main() -> int:
 
     questions = load_hold_out_questions()
 
-    # Build both systems
+    # Build all 3 systems (étape 7 test 1 — bench triangulaire)
     enriched_system = build_enriched_system(mistral)
     golden_system = build_golden_system(mistral)
+    # mistral_v3_2_no_rag : SYSTEM_PROMPT v3.2 (default = v4 préfixe Sprint 11
+    # P0 + corps v3.2) sans RAG context. Baseline pour isoler l'apport du RAG.
+    no_rag_system = MistralWithCustomPromptSystem(
+        client=mistral,
+        system_prompt=SYSTEM_PROMPT,
+        name="mistral_v3_2_no_rag",
+    )
 
     systems = {
         "our_rag_enriched": enriched_system,
         "pipeline_agent_golden": golden_system,
+        "mistral_v3_2_no_rag": no_rag_system,
     }
 
     # Generate

@@ -21,12 +21,16 @@ def selectivite_qualitative(taux: float | None) -> str:
 
 
 def _fiche_header(i: int, f: dict) -> str:
-    nom = (f.get("nom") or "").strip()
-    etab = (f.get("etablissement") or "").strip()
-    ville = (f.get("ville") or "").strip()
-    dept = (f.get("departement") or "").strip()
-    niveau = (f.get("niveau") or "").strip()
-    statut = (f.get("statut") or "Inconnu").strip()
+    # Sprint 12 axe 2 (2026-05-02) — cast str() avant .strip() pour gérer
+    # les corpus hétérogènes (combined formations_unified + dares + rncp_blocs)
+    # où certains items ont des champs numériques (niveau RNCP int, etc.).
+    # Les fiches formations_unified canon ont des str ; le cast est no-op.
+    nom = str(f.get("nom") or "").strip()
+    etab = str(f.get("etablissement") or "").strip()
+    ville = str(f.get("ville") or "").strip()
+    dept = str(f.get("departement") or "").strip()
+    niveau = str(f.get("niveau") or "").strip()
+    statut = str(f.get("statut") or "Inconnu").strip()
 
     loc = ville
     if dept:
