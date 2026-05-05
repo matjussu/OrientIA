@@ -246,6 +246,45 @@ SELECT_FIELD_PATTERNS: list[tuple[re.Pattern[str], str, str]] = [
         "duree",
         "durée de la formation",
     ),
+    # Sprint refonte 2026-05-05 — patterns manquants identifiés par forensic
+    # Q14 ("taux insertion 18 mois Master Droit Intl Assas") qui ne matchait
+    # AUCUN pattern existant. Ajout pour couvrir les questions factuelles
+    # pointues sur l'insertion et la volumétrie Parcoursup.
+    #
+    # Insertion à N mois — schéma CFA Inserjeunes (taux_emploi_6m/12m/18m/24m)
+    # et générique. Distingue de "taux d'emploi à 3/6 ans" (Céreq) déjà couverts.
+    (
+        re.compile(r"\btaux\s+(?:d['e]\s*)?(?:insertion|emploi)\s+(?:a|au\s+bout\s+de\s+)?\s*6\s+mois?", re.IGNORECASE),
+        "insertion_pro.taux_emploi_6m",
+        "taux d'insertion à 6 mois",
+    ),
+    (
+        re.compile(r"\btaux\s+(?:d['e]\s*)?(?:insertion|emploi)\s+(?:a|au\s+bout\s+de\s+)?\s*12\s+mois?", re.IGNORECASE),
+        "insertion_pro.taux_emploi_12m",
+        "taux d'insertion à 12 mois",
+    ),
+    (
+        re.compile(r"\btaux\s+(?:d['e]\s*)?(?:insertion|emploi)\s+(?:a|au\s+bout\s+de\s+)?\s*18\s+mois?", re.IGNORECASE),
+        "insertion_pro.taux_emploi_18m",
+        "taux d'insertion à 18 mois",
+    ),
+    (
+        re.compile(r"\btaux\s+(?:d['e]\s*)?(?:insertion|emploi)\s+(?:a|au\s+bout\s+de\s+)?\s*24\s+mois?", re.IGNORECASE),
+        "insertion_pro.taux_emploi_24m",
+        "taux d'insertion à 24 mois",
+    ),
+    # Volumétrie Parcoursup — voeux et candidats, exposés dans
+    # admission.volumes.* sur les fiches Parcoursup (10 536 fiches sur 55 606).
+    (
+        re.compile(r"\bcombien\s+(?:de\s+|d['e]\s*)?(?:vœux|voeux|candidats?\s+ont\s+postule|candidatures?)", re.IGNORECASE),
+        "admission.volumes.voeux_totaux",
+        "nombre de vœux Parcoursup",
+    ),
+    (
+        re.compile(r"\bnombre\s+(?:de\s+|d['e]\s*)?(?:vœux|voeux|candidatures?)", re.IGNORECASE),
+        "admission.volumes.voeux_totaux",
+        "nombre de vœux Parcoursup",
+    ),
 ]
 
 
@@ -543,6 +582,49 @@ def format_select_response(
     )
 
 
+# ──────────────────────── Garde anti-stale ────────────────────────
+
+
+def _fiche_is_stale(fiche: dict, max_age_months: int = 18) -> bool:
+    """Détecte si une fiche est trop ancienne pour servir un SELECT.
+
+    Lit `fiche.collected_at` (dict source → date ISO "YYYY-MM-DD") et
+    prend la date la plus récente parmi les sources. Si cette date est
+    antérieure à `today - max_age_months`, la fiche est considérée stale.
+
+    Sprint refonte 2026-05-05 — évite de servir des taux Parcoursup 2024
+    sur une question 2025 (cf rapport expert : "fraîcheur > 18 mois pollue").
+    Cron refresh automation prévu Phase D7 — garde manuelle en attendant.
+
+    Returns True si stale (le SELECT doit fallback unifié).
+    Returns False si fiche fraîche OU si collected_at absent (legacy safe).
+    """
+    collected_at = fiche.get("collected_at")
+    if not isinstance(collected_at, dict) or not collected_at:
+        return False  # legacy fiche sans tracking → on laisse passer
+
+    from datetime import date, datetime
+
+    most_recent: date | None = None
+    for source_date_str in collected_at.values():
+        if not isinstance(source_date_str, str):
+            continue
+        try:
+            d = datetime.strptime(source_date_str[:10], "%Y-%m-%d").date()
+        except (ValueError, TypeError):
+            continue
+        if most_recent is None or d > most_recent:
+            most_recent = d
+
+    if most_recent is None:
+        return False  # aucune date parseable → safe default
+
+    today = date.today()
+    # Approximation : 1 mois = 30.44 jours (365.25/12)
+    age_days = (today - most_recent).days
+    return age_days > (max_age_months * 30.44)
+
+
 # ──────────────────────── End-to-end orchestrator ────────────────────────
 
 
@@ -612,6 +694,27 @@ def try_select_or_none(
             fuzzy_score=score,
             field_key=field_key,
             reason="select_ambiguous",
+        )
+
+    # 3.5. Garde anti-stale (Sprint refonte 2026-05-05) — refuser le SELECT
+    # si la fiche source date de plus de 18 mois. Évite de servir des taux
+    # Parcoursup 2024 sur une question 2025 (cas où la fiche n'a pas été
+    # rafraîchie). Cron refresh prévu Phase D7 — en attendant, garde manuelle.
+    if _fiche_is_stale(fiche, max_age_months=18):
+        return SelectResult(
+            text=format_unknown_response(
+                missing_field=field_label,
+                near_match=(
+                    f"J'ai trouvé la fiche **{fiche.get('nom') or '?'}** "
+                    f"mais la donnée source date de plus de 18 mois — "
+                    f"vérifie le chiffre actualisé sur Parcoursup ou ONISEP."
+                ),
+            ),
+            via_select=False,
+            matched_fiche_id=str(fiche.get("id") or fiche.get("nom") or ""),
+            fuzzy_score=score,
+            field_key=field_key,
+            reason="select_stale_fiche",
         )
 
     # 4. Field extraction avec INVALID_VALUES guard
