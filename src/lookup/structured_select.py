@@ -54,7 +54,13 @@ FUZZY_THRESHOLD = 85
 
 # Si plusieurs fiches matchent ≥ FUZZY_THRESHOLD avec un écart < ce
 # nombre de points, on considère le match ambigu → demande précision.
-AMBIGUITY_DELTA = 5
+# Sprint refonte 2026-05-05 : abaissé de 5 à 2 après pré-filtrage par
+# ville. Sur 55k fiches le filtrage ville réduit déjà massivement le bruit
+# (top match devient correct), et l'ambiguity check ne sert plus qu'à
+# distinguer les cas où plusieurs ÉCOLES distinctes (etab différent) à la
+# même ville matchent bien — auquel cas on veut quand même demander précision.
+# Le grouping (etab, ville) protège des fiches multi-voies de la même école.
+AMBIGUITY_DELTA = 2
 
 # Critique expert #4b (2026-05-03) — mots discriminateurs métier qui DOIVENT
 # matcher dans la fiche cible si présents dans la query, sinon match suspect.
@@ -327,12 +333,23 @@ _STOPWORDS = frozenset({
     "fac", "diplome", "cursus",
     # mots-clés de field detection (à filtrer pour ne pas polluer fuzzy)
     "taux", "accès", "acces", "selectivite", "sélectivité", "selectivité",
-    "places", "place", "candidats", "voeux", "vœux", "inscrits",
-    "salaire", "salaires", "rémunération", "remuneration", "gagne",
-    "frais", "coût", "cout", "tarif", "cotisation",
+    "places", "place", "candidats", "candidatures", "voeux", "vœux", "inscrits",
+    "salaire", "salaires", "rémunération", "remuneration", "gagne", "gagner",
+    "frais", "coût", "cout", "tarif", "cotisation", "scolarité", "scolarite",
     "emploi", "insertion", "cdi", "réussite", "reussite", "admission",
     "median", "médian", "moyen", "moyenne", "annuel", "annuelle", "net",
     "brut",
+    # Sources / plateformes — Sprint refonte 2026-05-05 (forensic S1 :
+    # "Parcoursup" et "2025" parasitent l'extract_entity → top match
+    # devient une fiche RNCP générique "Cybersécurité")
+    "parcoursup", "onisep", "rncp", "monmaster", "lba",
+    "officiel", "officielle", "fiche", "fiches",
+    "postule", "postuler", "postulé", "postulent",
+    "mois", "mois?",
+    # Prépositions de causalité/temps qui parasitent ("après EPITA" → match
+    # ECAM Lyon car "après" garde puis fuzzy bouffe "EPITA" sur des bouts)
+    "apres", "après", "post", "depuis", "avant", "pendant", "durant",
+    "sortie", "sortir", "fin",
 })
 
 # Liste des villes courantes (réutilise la liste intent.py)
@@ -366,6 +383,10 @@ def extract_entity_simple(question: str) -> Entity:
     for tok in raw_tokens:
         low = tok.lower()
         if low in _STOPWORDS:
+            continue
+        # Sprint refonte 2026-05-05 — skip purs nombres (années 2024/2025/2026,
+        # codes ROME M18xx, etc.) qui parasitent le formation_name.
+        if tok.isdigit():
             continue
         if low in _FRENCH_CITIES:
             ville = ville or tok  # garde le premier match
@@ -424,8 +445,26 @@ def lookup_formation(entity: Entity, fiches: list[dict]) -> tuple[dict | None, f
     # Tokens query (sans stopwords) pour la garde discriminateur
     query_tokens = [t for t in re.findall(r"\w+", query) if t.lower() not in _STOPWORDS]
 
+    # Sprint refonte 2026-05-05 — pré-filtrage par ville quand fournie.
+    # Sur 55k fiches dont beaucoup RNCP génériques sans ville, le fuzzy
+    # global est bruité (top match était "Cybersécurité" RNCP sans etab/
+    # ville pour query "EFREI Bordeaux Cybersécurité"). Filtrer d'abord
+    # par ville réduit le bruit massivement et garantit que les top
+    # matches sont des fiches Parcoursup/MonMaster vraiment localisées.
+    # Si aucune fiche ne match la ville → return None (évite hallu sur
+    # fiche hors-ville).
+    fiches_filtered = fiches
+    if entity.ville:
+        ville_lower = entity.ville.lower().strip()
+        fiches_filtered = [
+            f for f in fiches
+            if ville_lower in (f.get("ville") or "").lower().strip()
+        ]
+        if not fiches_filtered:
+            return None, 0.0, False
+
     # rapidfuzz.process.extract pour les top matches
-    candidates = [(i, _fiche_searchable_text(f)) for i, f in enumerate(fiches)]
+    candidates = [(i, _fiche_searchable_text(f)) for i, f in enumerate(fiches_filtered)]
 
     # Score chaque candidate avec WRatio (robuste aux variations)
     results = process.extract(
@@ -451,18 +490,36 @@ def lookup_formation(entity: Entity, fiches: list[dict]) -> tuple[dict | None, f
             if score < FUZZY_THRESHOLD:
                 break
             if _query_discriminators_match_fiche(query_tokens, text):
-                return fiches[idx], score, False
+                return fiches_filtered[idx], score, False
         # Aucun candidat ne matche le discriminateur → reject (None, conservatif)
         return None, top_score, False
 
-    # Détection ambiguité : 2e match aussi ≥ FUZZY_THRESHOLD avec score proche
+    # Détection ambiguité (Sprint refonte 2026-05-05 — fix bottleneck SELECT) :
+    # Une fiche multi-voies (ex EFREI Bordeaux Bachelor cyber × 5 fiches
+    # Parcoursup pour 5 voies d'admission) déclencherait ambiguous=True
+    # naïvement (top_score 90 / second 89 / écart < AMBIGUITY_DELTA), alors
+    # qu'il s'agit de la MÊME école sous variants de voie. On vérifie donc
+    # que les top matches pointent sur des écoles DISTINCTES (etab, ville).
+    # Si tous partagent etab+ville → pas ambigu, prendre le best.
     ambiguous = False
-    if len(results) > 1:
-        _, second_score, _ = results[1]
-        if second_score >= FUZZY_THRESHOLD and (top_score - second_score) < AMBIGUITY_DELTA:
+    top_school = (
+        (fiches_filtered[top_idx].get("etablissement") or "").strip().lower(),
+        (fiches_filtered[top_idx].get("ville") or "").strip().lower(),
+    )
+    for _, score, idx in results[1:]:
+        if score < FUZZY_THRESHOLD:
+            break
+        if (top_score - score) >= AMBIGUITY_DELTA:
+            break
+        other_school = (
+            (fiches_filtered[idx].get("etablissement") or "").strip().lower(),
+            (fiches_filtered[idx].get("ville") or "").strip().lower(),
+        )
+        if other_school != top_school:
             ambiguous = True
+            break
 
-    return fiches[top_idx], top_score, ambiguous
+    return fiches_filtered[top_idx], top_score, ambiguous
 
 
 # ──────────────────────── Field extraction with INVALID_VALUES guard ────────────────────────
