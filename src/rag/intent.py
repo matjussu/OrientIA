@@ -26,6 +26,14 @@ INTENT_DECOUVERTE = "decouverte"
 INTENT_CONCEPTUAL = "conceptual"
 INTENT_GENERAL = "general"
 
+# Chantier 2 (2026-05-03) — questions factuelles pointues sur une formation
+# nommée. Quand détecté ET entité reconnue ET fuzzy_score ≥ 85 → bypass RAG
+# via SELECT structuré sur formations.json (cf src/lookup/structured_select).
+# Sinon (ambigu, multi-match, confidence basse) → fallback RAG normal.
+# Argument démo INRIA : « les chiffres viennent toujours d'un lookup, jamais
+# d'une génération. Zéro hallu chiffres par construction. »
+INTENT_FACTUAL_POINTED = "factual_pointed"
+
 
 # --- ADR-049 : domain hints orthogonaux (multi-corpus reranker) ---
 # Hints additifs (parallèles aux INTENT_*) qui détectent quand une query
@@ -61,6 +69,11 @@ _CONFIGS: dict[str, IntentConfig] = {
     INTENT_PASSERELLES: IntentConfig(top_k_sources=10, mmr_lambda=0.6),
     INTENT_DECOUVERTE:  IntentConfig(top_k_sources=12, mmr_lambda=0.3),
     INTENT_CONCEPTUAL:  IntentConfig(top_k_sources=4,  mmr_lambda=0.9),
+    # factual_pointed bypasse normalement le RAG (SELECT structuré).
+    # Mais si le SELECT échoue (entité ambiguë, fuzzy<85, field absent),
+    # fallback RAG avec top-k réduit (3-5) et MMR forte (la question
+    # cible une seule formation, pas besoin de diversité).
+    INTENT_FACTUAL_POINTED: IntentConfig(top_k_sources=5, mmr_lambda=0.9),
 }
 
 
@@ -96,6 +109,34 @@ _PATTERNS_COMPARAISON_NORM = [
     re.compile(r"\bvaut[\s-]il\s+mieux\b"),
     re.compile(r"\bplutot que\b"),
     re.compile(r"\bmieux\s+(?:que|entre)\b"),
+]
+
+
+# Chantier 2 (2026-05-03) — patterns questions factuelles pointues.
+# La question demande UN chiffre/fait précis sur UNE formation/école nommée.
+# Si match → SELECT structuré (lookup déterministe, zero hallu chiffres).
+# Patterns conservatifs : doit explicitement mentionner un champ chiffré
+# (taux, sélectivité, salaire, places, frais, etc.) ET ressembler à une
+# question pointue (pas une demande d'orientation générale).
+_PATTERNS_FACTUAL_POINTED = [
+    # "Quel est le taux d'accès de [formation]"
+    re.compile(r"\bquel(?:le)?\s+(?:est\s+)?(?:le\s+)?(?:taux|pourcentage)\s+(?:d['e]\s*)?(?:acces|admission|reussite|insertion|emploi|cdi)"),
+    # "C'est quoi la sélectivité de X"
+    re.compile(r"\b(?:c['e]\s*est\s+quoi|quel(?:le)?\s+est)\s+(?:la\s+)?(?:selectivit|tension|cote)"),
+    # "Combien de places à X"
+    re.compile(r"\bcombien\s+(?:de\s+)?places?\b"),
+    # "Combien de candidats X"
+    re.compile(r"\bcombien\s+(?:de\s+)?(?:candidat|voeux|inscrit)"),
+    # "Quel salaire après X" (formation nommée, pas générique)
+    re.compile(r"\b(?:quel\s+(?:est\s+)?(?:le\s+)?)?salaire\s+(?:median|moyen|annuel|net|brut|de\s+(?:sortie|debut))"),
+    # "Combien gagne un sortant X"
+    re.compile(r"\bcombien\s+gagne\b"),
+    # "Quels frais à X" / "Coût de X"
+    re.compile(r"\b(?:quel(?:s|les)?\s+(?:sont\s+(?:les\s+)?)?|combien\s+coute|cout\s+(?:de\s+(?:la|l['e]\s*))?)?\s*(?:frais|cout|tarif|cotisation)\s+(?:de|d['e]\s*|annuel)"),
+    # "Le taux de X est-il" / "Quel est le X de la formation Y"
+    re.compile(r"\b(?:taux|nombre)\s+(?:de\s+|d['e]\s*)?[a-z]+\s+(?:est|de\s+(?:la|l['e]\s*))"),
+    # Questions formelles "X taux d'accès", "Y sélectivité 2025"
+    re.compile(r"\btaux\s+d['e]\s*(?:acces|admission|reussite|insertion|emploi|cdi)\s+(?:pour|de|d['e]\s*|du|au)"),
 ]
 # Detected on the ORIGINAL question (case-sensitive) — catches the
 # "EPITA ou EPITECH" / "INSA et CENTRALE" pattern where both sides
@@ -412,6 +453,16 @@ def classify_intent(question: str) -> str:
 
     norm = _strip_accents(question.lower())
 
+    # Chantier 2 (2026-05-03) : factual_pointed PRIORITÉ HAUTE — questions
+    # qui demandent UN chiffre/fait précis sur UNE formation. Si match,
+    # le router pipeline tentera un SELECT structuré (lookup déterministe,
+    # zero hallu). Doit dominer comparaison car « taux d'accès EFREI vs
+    # ESEA » est techniquement une comparaison mais doit aussi déclencher
+    # le SELECT (le router décidera si comparaison ou single-lookup selon
+    # le nombre d'entités extraites).
+    if any(p.search(norm) for p in _PATTERNS_FACTUAL_POINTED):
+        return INTENT_FACTUAL_POINTED
+
     # Specific patterns first — order matters where intents could
     # overlap (e.g. a comparison between two cities should still be
     # classified as comparaison, not geographic).
@@ -491,6 +542,14 @@ _FORMAT_GUIDANCE: dict[str, str] = {
         "Type de question détecté : générale. Structure en Plan A/B/C "
         "condensé (1-2 lignes par plan). Termine par une section "
         "« Attention aux pièges » (1-3 puces)."
+    ),
+    INTENT_FACTUAL_POINTED: (
+        "Type de question détecté : factuelle pointue. Cette question "
+        "vise UN chiffre / UN fait précis sur UNE formation nommée. "
+        "Réponds DIRECTEMENT et brièvement (1-2 phrases) en citant la "
+        "source exacte. Si l'info n'est pas dans <fiches_rag>, applique "
+        "le fallback unifié « Je n'ai pas l'information sur [X] dans "
+        "mes sources vérifiées » — NE FABRIQUE PAS un chiffre plausible."
     ),
 }
 

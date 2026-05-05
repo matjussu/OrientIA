@@ -53,6 +53,24 @@ _CORPUS_PENALTY = 0.10
 _LAYER3_PENALTY = 0.05  # warning layer3 = mêmme pondération que WARN rule
 
 
+# Allowlist des intents qui justifient un appel layer3 LLM Mistral Small
+# (~$0.001/call, +2-4s latence). Skip layer3 sur les intents purement
+# textuels (passerelles/decouverte/conceptual/general) où :
+#   - les hallus layer3-detectables (chiffres fabriqués, distances, coûts
+#     privés sous-estimés) sont rares,
+#   - le coût LLM n'est pas justifié.
+# Activé en Sprint refonte (2026-05-05) post-forensic du bench
+# audit_post_chantiers révélant que layer3 désactivé masque les hallus
+# textuelles type "label CTI bac+3" / "à 2h en train de Toulouse".
+# Comportement quand `intent=None` : run layer3 si dispo (legacy safe default).
+LAYER3_INTENTS: frozenset[str] = frozenset({
+    "factual_pointed",  # questions chiffrées sur école nommée
+    "geographic",       # multi-filtres géographiques (ville/région)
+    "comparaison",      # comparaison entre formations
+    "realisme",         # projection accessibilité (% mentions/prestige)
+})
+
+
 class Validator:
     """Orchestrateur règles + corpus-check + (optionnel) couche 3 LLM souverain.
 
@@ -77,15 +95,31 @@ class Validator:
         self.corpus_sim_threshold = corpus_sim_threshold
         self.layer3 = layer3
 
-    def validate(self, answer: str) -> ValidatorResult:
+    def validate(
+        self,
+        answer: str,
+        intent: str | None = None,
+    ) -> ValidatorResult:
+        """Valide une réponse pipeline.
+
+        Args:
+            answer: réponse texte du générateur
+            intent: intent classé (`factual_pointed`, `passerelles`, etc.) —
+                si fourni, gate l'appel layer3 LLM via `LAYER3_INTENTS`
+                allowlist. Si None : comportement legacy (run layer3 si dispo).
+        """
         rule_violations = apply_rules(answer)
         corpus_warnings = check_claims_in_corpus(
             answer, self.fiches, threshold=self.corpus_sim_threshold
         )
-        # Couche 3 optionnelle (V2). Si pas de client → return [] graceful.
+        # Couche 3 optionnelle (V2). Skip si :
+        #  - layer3 non instancié (mode déterministe pur), OU
+        #  - intent fourni ET hors LAYER3_INTENTS (économie coût/latence).
+        # Si client instancié sans intent : run layer3 (legacy safe default).
         layer3_warnings: list[Layer3Warning] = []
         if self.layer3 is not None:
-            layer3_warnings = self.layer3.check(answer)
+            if intent is None or intent in LAYER3_INTENTS:
+                layer3_warnings = self.layer3.check(answer)
         # V4 : règles de PRÉSENCE — flag si topic sans info obligatoire
         presence_warnings = check_presence(answer)
 
@@ -125,3 +159,92 @@ class Validator:
         if presence_warnings:
             score -= 0.05 * len(presence_warnings)
         return max(0.0, min(1.0, score))
+
+
+def extract_failed_claims(result: ValidatorResult) -> list[str]:
+    """Extrait les claims échoués pour le retry-with-hint loop (chantier 1.B).
+
+    Récupère les `matched_text` / `claim` des violations et warnings qui
+    indiquent qu'une affirmation factuelle de la réponse n'est pas sourcée
+    ou contredit les sources. Retourne une liste de strings courts utilisable
+    pour construire un hint block réinjecté dans le contexte au tour 2.
+
+    Priorité :
+      1. corpus_warnings (claim explicite vs corpus → fort signal d'invention)
+      2. layer3_warnings (LLM-judge dit infidèle)
+      3. rule_violations BLOCKING (terminologie obsolète, hallu connue)
+      4. presence_warnings (info obligatoire manquante)
+
+    Returns:
+        list[str] des claims problématiques (max ~10 pour ne pas saturer le hint).
+        Retourne [] si la réponse est propre (aucune action retry nécessaire).
+    """
+    claims: list[str] = []
+
+    # 1. Corpus warnings — priorité haute (claim absent du corpus = invention)
+    for w in result.corpus_warnings:
+        claim_text = (w.claim or "").strip()
+        if claim_text and claim_text not in claims:
+            claims.append(claim_text)
+
+    # 2. Layer3 warnings — LLM-judge a flagué
+    for lw in result.layer3_warnings:
+        claim_text = (lw.claim or "").strip()
+        if claim_text and claim_text not in claims:
+            claims.append(claim_text)
+
+    # 3. Rule violations BLOCKING (terminologie obsolète notamment)
+    for v in result.rule_violations:
+        if v.severity == Severity.BLOCKING:
+            matched = (v.matched_text or "").strip()
+            if matched and matched not in claims:
+                claims.append(f"{matched} ({v.rule_id})")
+
+    # 4. Presence warnings — infos manquantes
+    for pw in result.presence_warnings:
+        # PresenceWarning a `missing_pattern_label` et `message`
+        label = getattr(pw, "missing_pattern_label", None) or ""
+        if label and label not in claims:
+            claims.append(f"info manquante : {label}")
+
+    # Cap à 10 pour ne pas saturer le hint (le LLM décroche au-delà).
+    return claims[:10]
+
+
+def format_hint_block(failed_claims: list[str]) -> str:
+    """Construit le hint block à réinjecter dans le user prompt au tour 2.
+
+    Pattern : liste les claims problématiques + instruction explicite de les
+    retirer ou de basculer sur le fallback unifié si l'info manque.
+
+    Args:
+        failed_claims: output de `extract_failed_claims()`.
+
+    Returns:
+        String formatée pour append au user prompt. Empty string si pas de claims.
+    """
+    if not failed_claims:
+        return ""
+
+    lines = [
+        "",
+        "─── HINT RETRY (chantier 1.B) — claims à corriger ───",
+        "",
+        "Ta réponse précédente contenait des affirmations factuelles non "
+        "sourcées dans les fiches retrievées. Reformule en :",
+        "  - retirant les claims listés ci-dessous (ou en les remplaçant par "
+        "une formulation qualitative non précise),",
+        "  - OU en utilisant le format de fallback unifié « Je n'ai pas "
+        "l'information [précise sur X] dans mes sources vérifiées » si l'info "
+        "manque vraiment.",
+        "",
+        "Claims problématiques :",
+    ]
+    for i, claim in enumerate(failed_claims, 1):
+        # Tronquer les claims très longs pour clarté
+        snippet = claim if len(claim) <= 200 else claim[:197] + "..."
+        lines.append(f"  {i}. {snippet}")
+    lines.append("")
+    lines.append("Ne reproduis PAS ces claims dans ta nouvelle réponse.")
+    lines.append("─────────────────────────────────────────────────────")
+    return "\n".join(lines)

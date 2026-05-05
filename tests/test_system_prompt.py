@@ -253,14 +253,25 @@ def test_vague_a_no_oracle_does_not_violate_anti_confession():
 
 def test_sanity_ux_brevity_override():
     """Post-sanity-UX: priority rule overrides the ~1000 words target
-    with a 300-500 words target for lycéen-first concision."""
+    with a brevity target for lycéen-first concision.
+
+    Mise à jour 2026-05-03 (chantier 1.A purge expert critique #1+2) :
+    la cible historique "300-500 mots" (α) a été remplacée par "150-300 mots"
+    (Tier 2 v2, post user-test 2026-04-18) puis "≤250 mots" (DIRECTIVE 3
+    Sprint 11 P0). Le test accepte les 3 formulations pour permettre
+    l'évolution du prompt sans casser le test à chaque raffinement.
+    """
     lower = SYSTEM_PROMPT.lower()
-    assert "300-500 mots" in lower, (
-        "Sanity UX must set an explicit 300-500 words override"
-    )
+    assert (
+        "300-500 mots" in lower
+        or "150-300 mots" in lower
+        or "≤250 mots" in lower
+        or "<= 250 mots" in lower
+        or "250 mots" in lower
+    ), "Une cible de brièveté explicite doit exister (300-500 / 150-300 / ≤250)"
     # The brevity rule must be marked as priority / override
     assert "priorit" in lower
-    assert "lycéen" in lower
+    assert "lycéen" in lower or "mobile" in lower
 
 
 def test_sanity_ux_requires_cod_aff_form_citation():

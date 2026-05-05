@@ -26,7 +26,12 @@ from src.validator.corpus_check import (
     check_formation_exists,
     check_claims_in_corpus,
 )
-from src.validator.validator import Validator, ValidatorResult
+from src.validator.validator import (
+    Validator,
+    ValidatorResult,
+    extract_failed_claims,
+    format_hint_block,
+)
 from src.validator.policy import Policy, PolicyResult, apply_policy
 from src.validator.layer3 import Layer3Validator, Layer3Warning
 from src.validator.presence import PresenceWarning, check_presence, PRESENCE_RULES
@@ -35,6 +40,8 @@ from src.validator.phase_projet import append_phase_projet, detect_high_stakes_t
 __all__ = [
     "Validator",
     "ValidatorResult",
+    "extract_failed_claims",
+    "format_hint_block",
     "Violation",
     "Severity",
     "RULES",

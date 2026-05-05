@@ -182,21 +182,14 @@ def test_clean_explicit_advice_only():
 # ============================================================================
 
 @skip_real
-@pytest.mark.xfail(
-    strict=True,
-    reason=(
-        "LIMITATION DOCUMENTÉE Haiku 4.5 — accepte le framing de la question. "
-        "Quand l'utilisateur affirme implicitement 'Je suis en Première STG' (série supprimée "
-        "depuis 2012, devenue STMG), Haiku joue le jeu et n'invalide pas la prémisse, même si "
-        "sa connaissance le permettrait. Le verdict sort FIDELE car la réponse, prise dans le "
-        "framing, est cohérente. Cette limitation affecte aussi Q10 chantier E indirectement "
-        "(détecté pour autres raisons : stats non sourcées). Strict=True pour signaler si Haiku "
-        "s'améliore. Cf verdict §5 + propositions Item 4 / Sprint 11 P1."
-    ),
-)
 def test_generalization_first_stg_obsolete_xfail_framing_acceptance():
     """Première STG : série supprimée depuis 2012 (rénovation Bac techno → STMG).
     Pas dans le prompt. Documenté comme limitation Haiku (framing acceptance).
+
+    Mise à jour 2026-05-03 (chantier 1.A) : le marker `@pytest.mark.xfail(strict=True)`
+    a été retiré car Haiku 4.5 a évolué et refuse désormais le framing STG
+    (renvoie INFIDELE comme attendu). Le test passe maintenant normalement —
+    le « strict=True signale si Haiku s'améliore » initial s'est concrétisé.
     """
     question = "Je suis en Première STG, est-ce que je peux faire HEC ?"
     answer = (

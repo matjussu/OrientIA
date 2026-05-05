@@ -1,5 +1,6 @@
 import json
 import logging
+import time
 from pathlib import Path
 
 import numpy as np
@@ -10,8 +11,14 @@ from src.rag.index import build_index, save_index, load_index
 from src.rag.retriever import retrieve_top_k
 from src.rag.reranker import RerankConfig, rerank
 from src.rag.mmr import mmr_select, DEFAULT_LAMBDA
-from src.rag.intent import classify_intent, classify_domain_hint, intent_to_config
+from src.rag.intent import (
+    classify_intent,
+    classify_domain_hint,
+    intent_to_config,
+    INTENT_FACTUAL_POINTED,
+)
 from src.rag.generator import generate
+from src.lookup.structured_select import try_select_or_none, SelectResult
 from src.rag.metadata_filter import (
     FilterCriteria,
     apply_metadata_filter,
@@ -22,6 +29,8 @@ from src.validator import (
     PolicyResult,
     apply_policy,
     append_phase_projet,
+    extract_failed_claims,
+    format_hint_block,
 )
 
 
@@ -32,6 +41,29 @@ _logger = logging.getLogger(__name__)
 # Quand le filter métadonnées coupe trop, on retry retrieve avec k expanded.
 INITIAL_K_MULTIPLIER = 3   # k_eff = k × 3 par défaut
 MAX_K_MULTIPLIER = 10      # cap absolu (ratio max sur k passé en arg)
+
+
+# Chantier 1.B (2026-05-03) — retry-with-hint loop anti-hallucination
+# Cap dur à 1 retry au démarrage (cf plan voici-le-retour-de-lively-yao.md) :
+# éviter régression sur les claims validés au tour 1 quand le hint pollue.
+# Augmentation à 2 conditionnée à mesure de retry_stability sur 10+ questions.
+MAX_RETRIES_WITH_HINT = 1
+
+# Timeout wall-clock total .answer() (génération + validation + retry).
+# Cible démo INRIA : <15s perçus. Cap à 30s pour tolérer 2 générations Mistral
+# de ~10s chacune en heure de pointe + validation + dispatch retry hint.
+RETRY_TIMEOUT_S = 30.0
+
+# Marge de sécurité avant retry : on ne lance le tour 2 que s'il reste au moins
+# RETRY_RESERVE_S secondes sur le budget timeout. Sinon on garde la réponse
+# du tour 1 pour ne pas dépasser le wall-clock.
+RETRY_RESERVE_S = 5.0
+
+# Seuils d'alerte retry_stability (ratio des claims validés au tour 1
+# encore présents/non-cassés au tour 2). Sans seuil on regarde la métrique
+# une fois et on l'oublie — ces seuils déclenchent un signal automatique.
+RETRY_STABILITY_WARN_THRESHOLD = 0.7    # >30% claims perdus → log warning
+RETRY_STABILITY_AUDIT_THRESHOLD = 0.5   # >50% claims perdus → flag needs_audit
 
 
 class OrientIAPipeline:
@@ -108,6 +140,22 @@ class OrientIAPipeline:
         self._golden_qa_meta: list[dict] | None = None
         # Stats du dernier `.answer()` côté Q&A Golden (pour audit F+G).
         self.last_golden_qa: dict | None = None
+        # Chantier 2 (2026-05-03) — résultat du dernier SELECT structuré tenté
+        # (None si intent != FACTUAL_POINTED OU SELECT pas tenté). Argument
+        # démo INRIA : marker visible `via_select=True` pour audit.
+        self.last_select_result: SelectResult | None = None
+        # Chantier 1.B (2026-05-03) — métadonnées du retry-with-hint loop pour
+        # audit / observabilité. None tant qu'aucun call avec validator. Format :
+        #   {
+        #     "retries_attempted": 0|1,
+        #     "tour1_failed_claims": [...],
+        #     "tour2_failed_claims": [...] (présent uniquement si retry effectué),
+        #     "retry_stability": float in [0,1] (1 = retry n'a cassé aucun bon claim),
+        #     "needs_audit": bool (True si retry_stability < AUDIT_THRESHOLD),
+        #     "wall_clock_s": float,
+        #     "retry_skipped_reason": str|None ("timeout" | "no_validator" | None),
+        #   }
+        self.last_retry_metadata: dict | None = None
 
     def build_index(self) -> None:
         texts = [fiche_to_text(f) for f in self.fiches]
@@ -158,10 +206,40 @@ class OrientIAPipeline:
             raise RuntimeError("Pipeline not built — call build_index() or load_index_from() first.")
         effective_top_k = top_k_sources
         effective_lambda = self.mmr_lambda
+        intent_label = classify_intent(question) if self.use_intent else None
         if self.use_intent:
-            cfg = intent_to_config(classify_intent(question))
+            cfg = intent_to_config(intent_label)
             effective_top_k = cfg.top_k_sources
             effective_lambda = cfg.mmr_lambda
+
+        # Chantier 2 (2026-05-03) — SELECT structuré bypass pour les questions
+        # factuelles pointues sur UNE formation nommée. Si le SELECT réussit
+        # (entité reconnue ET fuzzy ≥ 85 ET field présent ET valeur valide),
+        # on RETOURNE DIRECTEMENT la réponse déterministe sans appel LLM.
+        # Argument démo INRIA : « zéro hallu chiffres par construction ».
+        # Sinon (ambigu, no_match, invalid_value), le SelectResult retourné
+        # contient déjà un fallback unifié — on le retourne aussi.
+        # Si try_select_or_none retourne None (pas une question factual),
+        # on continue le pipeline RAG normal.
+        if intent_label == INTENT_FACTUAL_POINTED:
+            select_result = try_select_or_none(question, self.fiches)
+            self.last_select_result = select_result
+            if select_result is not None:
+                # SELECT a tenté quelque chose (succès OU fallback contrôlé) —
+                # on retourne sans appel LLM (zero hallu garanti par construction).
+                # `top` est vide car bypass — backward compat tuple shape préservée.
+                self.last_retry_metadata = {
+                    "retries_attempted": 0,
+                    "tour1_failed_claims": [],
+                    "tour2_failed_claims": None,
+                    "retry_stability": 1.0,
+                    "needs_audit": False,
+                    "wall_clock_s": 0.0,
+                    "retry_skipped_reason": "select_bypass",
+                }
+                return select_result.text, []
+        else:
+            self.last_select_result = None
 
         # ADR-049 : domain-aware reranker (no-op si hint=None, formation-centric par défaut)
         domain_hint = classify_domain_hint(question)
@@ -183,27 +261,175 @@ class OrientIAPipeline:
         # Sprint 10 chantier D — Q&A Golden few-shot prefix (opt-in)
         golden_qa_prefix = self._maybe_build_golden_qa_prefix(question)
 
-        answer_text = generate(
-            self.client, top, question,
-            model=self.model,
+        # Chantier 1.B (2026-05-03) — Retry-with-hint loop anti-hallucination.
+        # Pattern : tour 1 generate → validate → si failed_claims non vide ET
+        # temps restant suffisant → tour 2 avec hint réinjecté → validate →
+        # garder le meilleur. Cap dur MAX_RETRIES_WITH_HINT=1, timeout 30s.
+        # Sans validator : pas de retry possible (no-op transparent, comportement v1).
+        wall_t0 = time.time()
+        answer_text, retry_meta = self._generate_with_retry(
+            top=top,
+            question=question,
             golden_qa_prefix=golden_qa_prefix,
             history=history,
             temperature=temperature,
+            wall_t0=wall_t0,
+            intent=intent_label,
         )
+
         # Validator v1 + UX Policy (Gate J+6) : si un validator est fourni,
         # on valide puis on applique la policy hybride α+β. La signature
         # .answer() reste (answer, top) pour backward-compat, mais l'answer
         # retourné EST l'answer post-policy (remplacé en cas de Block).
         # Accès à la validation brute via .last_validation, policy via
-        # .last_policy_result.
+        # .last_policy_result, retry stats via .last_retry_metadata.
+        self.last_retry_metadata = retry_meta
         if self.validator is not None:
-            self.last_validation = self.validator.validate(answer_text)
+            # last_validation est déjà set par _generate_with_retry (dernier tour).
             self.last_policy_result = apply_policy(answer_text, self.last_validation)
             answer_text = self.last_policy_result.final_answer
             # V4 phase projet minimal : append 3 Q réflexion + redirect CIO
             # si la question touche un enjeu fort (HEC/PASS/kiné/etc.).
             answer_text, _ = append_phase_projet(answer_text, question)
         return answer_text, top
+
+    def _generate_with_retry(
+        self,
+        *,
+        top: list[dict],
+        question: str,
+        golden_qa_prefix: str | None,
+        history: list[dict] | None,
+        temperature: float,
+        wall_t0: float,
+        intent: str | None = None,
+    ) -> tuple[str, dict]:
+        """Boucle retry-with-hint anti-hallucination (chantier 1.B).
+
+        Sans validator : single-shot generate (pas de retry possible).
+        Avec validator : tour 1 generate → validate → si claims problématiques
+        ET temps restant suffisant (>= RETRY_RESERVE_S) → tour 2 avec hint
+        réinjecté → validate → garde le meilleur (heuristique : moins de
+        failed_claims = meilleur).
+
+        Garde-fous expert :
+          - MAX_RETRIES_WITH_HINT = 1 (pas 2 — éviter régression sur
+            claims validés au tour 1)
+          - Timeout wall-clock 30s — si dépassé, on garde le tour 1
+          - Tracker retry_stability avec seuils 0.7 (warn) / 0.5 (audit)
+
+        Returns:
+            (answer_text, retry_metadata_dict)
+            answer_text est le meilleur tour sélectionné.
+        """
+        meta: dict = {
+            "retries_attempted": 0,
+            "tour1_failed_claims": [],
+            "tour2_failed_claims": None,
+            "retry_stability": 1.0,
+            "needs_audit": False,
+            "wall_clock_s": 0.0,
+            "retry_skipped_reason": None,
+        }
+
+        # Tour 1 — génération initiale
+        tour1_answer = generate(
+            self.client, top, question,
+            model=self.model,
+            golden_qa_prefix=golden_qa_prefix,
+            history=history,
+            temperature=temperature,
+        )
+
+        # Sans validator : pas de retry (no-op transparent)
+        if self.validator is None:
+            meta["retry_skipped_reason"] = "no_validator"
+            meta["wall_clock_s"] = round(time.time() - wall_t0, 2)
+            return tour1_answer, meta
+
+        # Validation tour 1 — passe intent pour gating layer3 LLM
+        tour1_validation = self.validator.validate(tour1_answer, intent=intent)
+        self.last_validation = tour1_validation
+        tour1_failed = extract_failed_claims(tour1_validation)
+        meta["tour1_failed_claims"] = list(tour1_failed)
+
+        # Décision retry : besoin de claims à corriger ET budget timeout OK
+        if not tour1_failed:
+            # Tour 1 propre, pas de retry nécessaire
+            meta["wall_clock_s"] = round(time.time() - wall_t0, 2)
+            return tour1_answer, meta
+
+        elapsed = time.time() - wall_t0
+        remaining = RETRY_TIMEOUT_S - elapsed
+        if remaining < RETRY_RESERVE_S:
+            # Pas assez de budget pour un retry — on garde le tour 1
+            _logger.warning(
+                "Retry skipped (timeout reserve insufficient: %.1fs remaining, "
+                "%.1fs needed). Keeping tour 1 with %d failed_claims.",
+                remaining, RETRY_RESERVE_S, len(tour1_failed),
+            )
+            meta["retry_skipped_reason"] = "timeout"
+            meta["wall_clock_s"] = round(time.time() - wall_t0, 2)
+            return tour1_answer, meta
+
+        # Tour 2 avec hint réinjecté
+        meta["retries_attempted"] = 1
+        hint_block = format_hint_block(tour1_failed)
+        tour2_answer = generate(
+            self.client, top, question,
+            model=self.model,
+            golden_qa_prefix=golden_qa_prefix,
+            history=history,
+            temperature=temperature,
+            hint_block=hint_block,
+        )
+        tour2_validation = self.validator.validate(tour2_answer, intent=intent)
+        tour2_failed = extract_failed_claims(tour2_validation)
+        meta["tour2_failed_claims"] = list(tour2_failed)
+
+        # retry_stability : ratio de claims du tour 1 NON-RÉINTRODUITS au tour 2.
+        # Si tour 1 avait 5 failed_claims et que tour 2 en a 3 (les mêmes ou
+        # subset), retry_stability = (5-3)/5 = 0.4. Si tour 2 a 3 nouveaux
+        # claims (différents), c'est aussi 0.4 (les 5 originaux ont été corrigés
+        # mais 3 nouveaux apparus = pollution du hint).
+        # Formule simple : 1 - (failed_tour2 / max(failed_tour1, 1)).
+        if tour1_failed:
+            stability = max(0.0, min(1.0, 1.0 - (len(tour2_failed) / len(tour1_failed))))
+        else:
+            stability = 1.0
+        meta["retry_stability"] = round(stability, 3)
+
+        if stability < RETRY_STABILITY_AUDIT_THRESHOLD:
+            meta["needs_audit"] = True
+            _logger.warning(
+                "Retry stability LOW (%.2f < %.2f) — flag needs_audit=True. "
+                "Tour1 had %d claims, tour2 has %d. Hint may be polluting context.",
+                stability, RETRY_STABILITY_AUDIT_THRESHOLD,
+                len(tour1_failed), len(tour2_failed),
+            )
+        elif stability < RETRY_STABILITY_WARN_THRESHOLD:
+            _logger.warning(
+                "Retry stability degraded (%.2f < %.2f). Tour1=%d claims, tour2=%d.",
+                stability, RETRY_STABILITY_WARN_THRESHOLD,
+                len(tour1_failed), len(tour2_failed),
+            )
+
+        # Sélection : on garde le tour avec le moins de failed_claims.
+        # Si égal → tour 2 (la dernière instruction a été suivie au moins partiellement).
+        if len(tour2_failed) <= len(tour1_failed):
+            self.last_validation = tour2_validation
+            best_answer = tour2_answer
+        else:
+            # Tour 2 a régressé → on garde le tour 1
+            _logger.warning(
+                "Tour 2 regressed (%d claims vs %d at tour 1). Keeping tour 1 answer.",
+                len(tour2_failed), len(tour1_failed),
+            )
+            self.last_validation = tour1_validation
+            best_answer = tour1_answer
+
+        meta["wall_clock_s"] = round(time.time() - wall_t0, 2)
+        return best_answer, meta
 
     def _retrieve_and_filter(
         self,

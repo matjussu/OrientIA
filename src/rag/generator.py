@@ -320,6 +320,7 @@ def generate(
     system_prompt_override: str | None = None,
     golden_qa_prefix: str | None = None,
     history: list[dict] | None = None,
+    hint_block: str = "",
 ) -> str:
     """Generate an answer via Mistral.
 
@@ -356,7 +357,9 @@ def generate(
         intent = classify_intent(question)
         guidance_parts.append(intent_to_format_guidance(intent))
     user_guidance = "\n\n".join(guidance_parts)
-    user_prompt = build_user_prompt(context, question, user_guidance=user_guidance)
+    user_prompt = build_user_prompt(
+        context, question, user_guidance=user_guidance, hint_block=hint_block,
+    )
     sys_prompt = system_prompt_override if system_prompt_override is not None else SYSTEM_PROMPT
     if golden_qa_prefix:
         # Append au system prompt avec séparateur clair. Mistral honore
