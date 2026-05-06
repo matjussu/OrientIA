@@ -2745,3 +2745,94 @@ black-box, INRIA reproductible.
 - ADR-001 souveraineté Mistral
 - Décision Sprints 2-4 : ADR à compléter au fil de l'eau pour chaque
   tool concret (`QueryReformuler`, `FetchStatFromSource`).
+
+---
+
+## ADR-052 — Critic loop conservé en `src/experimental/`, décision finale conditionnée à un bench Sprint 7.5 d'ablation (2026-05-06)
+
+### Context
+
+Refonte produit niveau 2 (cf `~/.claude/plans/niveau-d-ambition-2-...`),
+Phase 3 du plan. Le `critic_loop` (Sprint 7 Action 3, commit `c920a9a`)
+est un module LLM-judge 2-pass qui relit les réponses du pipeline et
+réécrit les chiffres non-sourcés en `(estimation)` ou les retire. Pattern
+"style rewriter" 2-passes — proche conceptuellement du STYLE REWRITER
+du schéma cible Matteo, mais via réécriture LLM (vs few-shot statique).
+
+Reverté en pratique au commit `ec4516b` (Sprint 7 verdict, 2026-04-27)
+sur la base de 38q × 3 runs IC95 :
+
+| Métrique | Baseline (critic OFF) | Both (v3.3 strict + critic ON) |
+|---|---|---|
+| pct_verified | **30.8%** ± IC95 1.03pp | 29.3% ± 12.07pp |
+| pct_halluc | 16.8% ± 8.19pp | **25.6%** ± 20.65pp |
+| Latency | 38.04s | 41.91s |
+| Stabilité IC95 | 1.03pp | **12.07pp (×11.7 plus instable)** |
+
+Décomposition par axe dans `docs/SPRINT7_VERDICT.md` :
+- Axe 2 DROM territorial : 28.6% → 5.0% = **-23.6pp (cassé par critic)**
+- Axe 1 DARES : 7.3% → 5.1% (régression)
+- 266 modifications critic appliquées au total, effet net négatif documenté
+
+Le pattern "R3 revert" est reproduit à Sprint 5, Sprint 6 et Sprint 7 :
+double signal honnête, pas de hype. La relecture LLM empire l'hallu nette
+parce que le LLM réécrit en inventant pour combler.
+
+### Decision
+
+Conserver `critic_loop.py` dans `src/experimental/critic_loop.py` (déplacé
+en Phase 1 du plan refonte, commit `91d129b`). **Pas de suppression**, mais
+**pas de réintroduction en pipeline production tant qu'un Sprint 7.5
+d'ablation Strict-only vs Critic-only n'a pas isolé le coupable**.
+
+### Rationale
+
+1. **Garder l'option ouverte** : le verdict Sprint 7 a testé Mode Both
+   (v3.3 strict + critic ON). Critic seul (sans v3.3 strict) n'a jamais
+   été mesuré. Possibilité (faible mais existante) que critic seul soit
+   net positif.
+2. **Pas de dette de contexte non-nécessaire** : le module est dans
+   `experimental/` avec ce ADR pointant explicitement le revert. Future
+   Claude session lit l'ADR et comprend pourquoi le module n'est pas
+   activé.
+3. **Replacement déjà en prod** : `src/rag/post_process.py` (Sprint 8 W1,
+   commit `19f3514`) est branché en Phase 2 du plan refonte. Couvre les
+   cas pratiques de hallu (URLs github.com inventées, slugs ONISEP
+   `FOR.XXXX` fabriqués, tableaux markdown cassés) **de façon déterministe
+   et sans risque LLM destructif**.
+4. **Coût d'opportunité** : pour produit niveau 2 dans 5-7 jours
+   (refonte 2026-05-06), pas le temps de Sprint 7.5 d'ablation. Décision
+   reportée à un futur sprint d'investigation dédié.
+
+### Alternatives considérées
+
+1. **Enterrer définitivement** (`git rm`) : rejetée — option ouverte au
+   cas où Sprint 7.5 montre un effet positif isolé. Coût conserver = 0
+   (module dans `experimental/`, n'impacte pas le pipeline prod).
+2. **Réactiver dans factory en mode `enable_critic_loop: bool = False`
+   opt-in** : rejetée — pas de raison d'exposer un flag dont la valeur
+   `True` est mesurée comme régression. Risque qu'un futur dev l'active
+   sans relire le verdict Sprint 7.
+
+### Critères de réouverture
+
+Un futur Sprint 7.5 d'ablation devra mesurer (∈ ordre) :
+1. Critic-only (v3.2 baseline + critic ON) vs Baseline pure → isole
+   l'effet critic seul.
+2. Strict-only (v3.3 strict + critic OFF) vs Baseline pure → isole
+   l'effet v3.3 strict.
+3. Si **Critic-only montre un gain net stable** (pct_verified +X pp,
+   pct_halluc inchangé ou diminué, IC95 < 5pp) sur 30q × 3 runs, alors
+   réouvrir cet ADR en `Decision: réintroduire critic_loop opt-in`.
+
+### Liens
+
+- Verdict Sprint 7 R3 revert : `docs/SPRINT7_VERDICT.md` + commit
+  `ec4516b feat(sprint7-verdict): bench × 2 modes final + verdict honnête R3 revert`
+- Replacement déterministe : `src/rag/post_process.py` (Sprint 8 W1,
+  commit `19f3514`), branché en pipeline production via factory
+  (Phase 2 refonte, commit `5cd3643`)
+- Code archivé : `src/experimental/critic_loop.py` (ex `src/rag/critic_loop.py`,
+  déplacé Phase 1 refonte, commit `91d129b`)
+- Plan refonte produit niveau 2 :
+  `~/.claude/plans/niveau-d-ambition-2-oui-glowing-alpaca.md`
