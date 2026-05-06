@@ -3,7 +3,6 @@ from __future__ import annotations
 
 from src.rag.fallback_response import (
     DEFAULT_SUGGESTION,
-    FallbackResponse,
     format_out_of_scope_response,
     format_unknown_response,
 )
@@ -72,23 +71,3 @@ class TestFormatOutOfScopeResponse:
         assert "formations Bac+5 et insertion pro" in out
 
 
-class TestFallbackResponseDataclass:
-    def test_basic_construction(self):
-        fr = FallbackResponse(
-            text="dummy",
-            reason="validator_block",
-            missing_field="taux EFREI",
-        )
-        assert fr.text == "dummy"
-        assert fr.reason == "validator_block"
-        assert fr.missing_field == "taux EFREI"
-        assert fr.near_match is None
-
-    def test_immutable_frozen(self):
-        """Le dataclass est frozen pour audit traceable (pas de mutation post-creation)."""
-        fr = FallbackResponse(text="t", reason="rag_empty")
-        try:
-            fr.text = "modified"  # type: ignore[misc]
-            assert False, "FallbackResponse should be frozen"
-        except AttributeError:
-            pass  # Expected — frozen dataclass blocks mutation

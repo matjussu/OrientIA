@@ -1,6 +1,6 @@
 """Run the Claude judge on the blinded benchmark responses.
 
-DO NOT RUN until src/eval/run_real.py has produced
+DO NOT RUN until src/eval/run_real_full.py has produced
 results/raw_responses/responses_blind.json.
 
 Usage:
@@ -24,7 +24,7 @@ def main():
     if not Path(BLIND_RESPONSES_PATH).exists():
         raise RuntimeError(
             f"Expected {BLIND_RESPONSES_PATH} but it doesn't exist. "
-            f"Run `python -m src.eval.run_real` first."
+            f"Run `python -m src.eval.run_real_full` first."
         )
 
     cfg = load_config()

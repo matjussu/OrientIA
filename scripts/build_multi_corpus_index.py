@@ -59,7 +59,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from src.config import load_config  # noqa: E402
 from src.rag.embeddings import embed_texts_batched  # noqa: E402
-from src.rag.multi_corpus import (  # noqa: E402
+from src.experimental.multi_corpus import (  # noqa: E402
     DEFAULT_CORPUS_PATHS,
     MultiCorpusLoader,
 )

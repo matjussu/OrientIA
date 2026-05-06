@@ -31,25 +31,12 @@ hors-scope).
 """
 from __future__ import annotations
 
-from dataclasses import dataclass
-
 
 DEFAULT_SUGGESTION = (
     "Vérifie sur Parcoursup officiel (parcoursup.fr), ONISEP "
     "(onisep.fr) ou prends RDV avec le Psy-EN de ton lycée / le "
     "SCUIO de ta fac / le CIO le plus proche."
 )
-
-
-@dataclass(frozen=True)
-class FallbackResponse:
-    """Wrapper transparent pour différencier un fallback unifié d'une
-    réponse normale dans les logs et l'audit (chantier 5 monitoring)."""
-
-    text: str
-    reason: str  # 'validator_block' | 'retry_exhausted' | 'select_no_match' | 'rag_empty' | 'out_of_scope' | 'select_invalid_value'
-    missing_field: str | None = None
-    near_match: str | None = None
 
 
 def format_unknown_response(

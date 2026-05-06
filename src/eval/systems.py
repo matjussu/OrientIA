@@ -82,29 +82,6 @@ class MistralRawSystem(System):
         return response.choices[0].message.content
 
 
-class ChatGPTRecordedSystem(System):
-    """Pre-recorded ChatGPT responses loaded from a JSON file.
-
-    The file must have a `_metadata` key (ignored by answer()) and one
-    key per question id (e.g., 'A1', 'B3', 'H2'). The user manually
-    records the 32 responses by pasting each question into chat.openai.com
-    and copying the reply.
-
-    DEPRECATED in Phase F.2: replaced by OpenAIBaseline which calls the
-    GPT-4o API directly for fair, reproducible comparison. Kept for
-    backward compatibility with Run 6-10 archives.
-    """
-    name = "chatgpt_recorded"
-
-    def __init__(self, path: str | Path):
-        self.data = json.loads(Path(path).read_text(encoding="utf-8"))
-
-    def answer(self, qid: str, question: str) -> str:
-        if qid not in self.data or qid == "_metadata":
-            raise KeyError(f"No recorded ChatGPT response for {qid}")
-        return self.data[qid]
-
-
 # --- Phase F.2 — 7-system baseline matrix ---
 #
 # To make the comparison scientifically defensible (Phase E showed Run 10's

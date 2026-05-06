@@ -333,7 +333,7 @@ def generate(
     of the system prompt. Default `None` = utilise `SYSTEM_PROMPT` v3.2
     (non-régression Sprint 5/6 stricte). Pour activer v3.3 strict
     (Sprint 7 Action 3), passer `SYSTEM_PROMPT_V33_STRICT` depuis
-    `src.prompt.system_strict`.
+    `src.experimental.system_strict`.
 
     `golden_qa_prefix` (Sprint 10 chantier D, 2026-04-29) optional
     Q&A Golden Dynamic Few-Shot prefix avec **séparation stricte

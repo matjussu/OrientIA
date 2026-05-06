@@ -1,4 +1,8 @@
-"""Tests `src/rag/multi_corpus.py` — loader unifié pour les 4 corpus."""
+"""Tests `src/experimental/multi_corpus.py` — loader unifié pour les 4 corpus.
+
+Module déplacé en src/experimental/ le 2026-05-06 (refonte produit niveau 2,
+Phase 1 tri sec) car non branché côté retriever du pipeline production.
+À promouvoir vers src/rag/ une fois branché par la factory."""
 from __future__ import annotations
 
 import json
@@ -6,7 +10,7 @@ from pathlib import Path
 
 import pytest
 
-from src.rag.multi_corpus import (
+from src.experimental.multi_corpus import (
     DEFAULT_CORPUS_PATHS,
     Corpus,
     MultiCorpusLoader,

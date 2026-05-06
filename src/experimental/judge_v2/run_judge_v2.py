@@ -11,7 +11,7 @@ running the pipeline's retrieve + rerank stages (no chat.complete call
 them during the initial benchmark run.
 
 Usage:
-    python -m src.eval.run_judge_v2
+    python -m src.experimental.judge_v2.run_judge_v2
 
 Outputs:
     results/scores/blind_scores_v2.json
@@ -25,7 +25,7 @@ from anthropic import Anthropic
 from mistralai.client import Mistral
 
 from src.config import load_config
-from src.eval.judge_v2 import apply_fact_check_to_blind
+from src.experimental.judge_v2.judge_v2 import apply_fact_check_to_blind
 from src.eval.fact_check_claude import claude_fact_check_score
 from src.rag.pipeline import OrientIAPipeline
 from src.rag.retriever import retrieve_top_k
