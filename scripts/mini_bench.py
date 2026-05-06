@@ -100,6 +100,31 @@ def make_strict_v4_pipeline(client: Mistral, fiches: list[dict]) -> OrientIAPipe
     return pipeline
 
 
+def make_strict_v4_large_pipeline(client: Mistral, fiches: list[dict]) -> OrientIAPipeline:
+    """Étape 2 itération — strict v4 + Mistral Large pour la génération.
+
+    Hypothèse : Mistral Large suit plus strictement le contrat v4 (less
+    extrapolation hors-source) ET génère des réponses plus concises (limite
+    la verbosité +82% mesurée en v4-medium). Trade-off coût ~10× par token.
+    """
+    if not golden_qa_artifacts_present():
+        print(
+            "[mini_bench] WARNING: Golden QA artifacts absents — few-shot "
+            "désactivé pour ce run (fallback gracieux)."
+        )
+    pipeline = make_production_pipeline(
+        client, fiches,
+        enable_validator=True,
+        enable_layer3=False,
+        enable_golden_qa=True,
+        enable_post_process=True,
+        enable_strict_v4=True,
+        model="mistral-large-latest",  # ← upgrade modèle
+    )
+    _load_index_or_fail(pipeline)
+    return pipeline
+
+
 def _load_index_or_fail(pipeline: OrientIAPipeline) -> None:
     """Charge l'index FAISS depuis INDEX_PATH ou raise (build coûteux refusé)."""
     if INDEX_PATH.exists():
@@ -313,11 +338,12 @@ def main() -> None:
     parser.add_argument(
         "--config",
         type=str,
-        choices=["baseline", "production", "strict_v4"],
+        choices=["baseline", "production", "strict_v4", "strict_v4_large"],
         default="baseline",
         help="baseline = pipeline run_real_full (use_mmr+use_intent only). "
              "production = via factory (validator + golden_qa + post_process). "
              "strict_v4 = production + contrat strict v4 (FactCard JSON sources). "
+             "strict_v4_large = strict_v4 + Mistral Large pour génération. "
              "Default: baseline (Phase 0 reproductible).",
     )
     parser.add_argument(
@@ -340,7 +366,9 @@ def main() -> None:
     fiches = json.loads(FICHES_PATH.read_text(encoding="utf-8"))
     print(f"[mini_bench] loaded {len(fiches)} fiches")
 
-    if args.config == "strict_v4":
+    if args.config == "strict_v4_large":
+        pipeline = make_strict_v4_large_pipeline(client, fiches)
+    elif args.config == "strict_v4":
         pipeline = make_strict_v4_pipeline(client, fiches)
     elif args.config == "production":
         pipeline = make_phase2_pipeline(client, fiches)
