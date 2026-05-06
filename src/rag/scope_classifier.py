@@ -238,6 +238,14 @@ class ScopeClassifier:
             )
 
         try:
+            # Bug fix Étape 2 (2026-05-06) : timeout dédié court (5s).
+            # Le client Mistral global a un timeout 120s. Sans override ici,
+            # un ReadTimeout sur Mistral Small fait stagner le ScopeClassifier
+            # 120s et fallback in_scope → pipeline complet déclenché à tort
+            # sur une question hors scope (S1 cuisine 128s, S3 blague 127s,
+            # U2 distress indirect 129s observés en Étape 2 bench).
+            # Cap à 5s : si l'API met plus, on dégrade en in_scope (le pipeline
+            # gère honnêtement). Mistral Small répond normalement <2s.
             resp = self.client.chat.complete(
                 model=self.model,
                 max_tokens=200,
@@ -246,10 +254,11 @@ class ScopeClassifier:
                     {"role": "user", "content": question},
                 ],
                 response_format={"type": "json_object"},
+                timeout_ms=self.timeout_ms,
             )
             text = resp.choices[0].message.content or ""
         except Exception as e:
-            # Mode dégradé : LLM down → default in_scope (graceful)
+            # Mode dégradé : LLM down ou timeout → default in_scope (graceful)
             return ScopeResult(
                 label="in_scope",
                 reason=f"LLM error, default in_scope: {type(e).__name__}",

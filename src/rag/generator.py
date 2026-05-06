@@ -2,6 +2,7 @@ import re
 
 from mistralai.client import Mistral
 from src.prompt.system import SYSTEM_PROMPT, build_user_prompt
+from src.rag.fact_card import format_sources_for_llm
 from src.rag.intent import classify_intent, intent_to_format_guidance
 from src.rag.user_level import classify_user_level, level_to_guidance
 
@@ -310,6 +311,42 @@ def format_context(results: list[dict]) -> str:
     return "\n\n".join(blocks)
 
 
+def _build_user_prompt_strict_v4(
+    sources_json: str,
+    question: str,
+    golden_qa_prefix: str | None = None,
+) -> str:
+    """User prompt v4 strict — JSON tabulaire <sources> + question.
+
+    Pas de prose retrouvée. Le LLM voit explicitement les chiffres et les
+    `null`. Le contrat dans SYSTEM_PROMPT_V4_STRICT impose la fidélité.
+
+    Args:
+        sources_json: output de `format_sources_for_llm(top_sources)`
+        question: la question utilisateur·ice originale
+        golden_qa_prefix: si fourni, exemple Q&A Golden injecté EN AMONT
+            (référence ton/structure UNIQUEMENT, contrat le rappelle)
+    """
+    parts = []
+    if golden_qa_prefix:
+        # Le préfixe Golden contient déjà l'avertissement "IGNORE écoles/chiffres".
+        # On le met ici en user side pour que le LLM le voie en contexte de la question.
+        parts.append(golden_qa_prefix)
+        parts.append("---")
+    parts.append("<sources>")
+    parts.append(sources_json)
+    parts.append("</sources>")
+    parts.append("")
+    parts.append(f"Question utilisateur·ice : {question}")
+    parts.append("")
+    parts.append(
+        "Réponds en respectant le contrat strict : chiffres uniquement depuis "
+        "`<sources>`, citations `[source SX]`, formations identifiées uniquement "
+        "celles présentes, refus honnête si information non disponible."
+    )
+    return "\n".join(parts)
+
+
 def generate(
     client: Mistral,
     retrieved: list[dict],
@@ -321,6 +358,7 @@ def generate(
     golden_qa_prefix: str | None = None,
     history: list[dict] | None = None,
     hint_block: str = "",
+    use_strict_v4: bool = False,
 ) -> str:
     """Generate an answer via Mistral.
 
@@ -348,25 +386,45 @@ def generate(
     `[{"role": "user"|"assistant", "content": str}, ...]`. Injecté
     entre system prompt et user current. Default `None`/empty = no-op
     (backward compat strict pour Run F+G + serving stateless).
+
+    `use_strict_v4` (Étape 2 refonte 2026-05-06) bascule sur le contrat
+    v4 strict : SYSTEM_PROMPT_V4_STRICT + user prompt JSON `<sources>`
+    typé via FactCard. Coupe la prose libre, force le LLM à n'utiliser
+    que les chiffres explicitement listés. Default `False` = comportement
+    v3.2 historique préservé. Quand `True`, `system_prompt_override`,
+    `inject_user_level` et `hint_block` sont IGNORÉS (le contrat v4 a
+    sa propre orchestration).
     """
-    context = format_context(retrieved)
-    guidance_parts: list[str] = []
-    if inject_user_level:
-        level = classify_user_level(question)
-        guidance_parts.append(level_to_guidance(level).tone_instruction)
-        intent = classify_intent(question)
-        guidance_parts.append(intent_to_format_guidance(intent))
-    user_guidance = "\n\n".join(guidance_parts)
-    user_prompt = build_user_prompt(
-        context, question, user_guidance=user_guidance, hint_block=hint_block,
-    )
-    sys_prompt = system_prompt_override if system_prompt_override is not None else SYSTEM_PROMPT
-    if golden_qa_prefix:
-        # Append au system prompt avec séparateur clair. Mistral honore
-        # plus strictement les system instructions que les user-side
-        # injections — le few-shot avec instruction "IGNORE écoles/chiffres
-        # exemple" doit être system pour maximiser le respect.
-        sys_prompt = sys_prompt + "\n\n" + golden_qa_prefix
+    if use_strict_v4:
+        # Branche v4 strict : pas de prose retrieved, JSON tabulaire seul.
+        from src.prompt.system_v4_strict import SYSTEM_PROMPT_V4_STRICT
+        sources_json = format_sources_for_llm(retrieved, max_sources=10)
+        user_prompt = _build_user_prompt_strict_v4(
+            sources_json, question, golden_qa_prefix=golden_qa_prefix,
+        )
+        sys_prompt = SYSTEM_PROMPT_V4_STRICT
+        # Pas de golden_qa_prefix sur le system (on l'a injecté côté user pour
+        # que le LLM le voie ATTACHÉ au contexte fact). Pas de hint_block en v4
+        # (le contrat strict n'utilise pas le retry-with-hint pattern v3.2).
+    else:
+        context = format_context(retrieved)
+        guidance_parts: list[str] = []
+        if inject_user_level:
+            level = classify_user_level(question)
+            guidance_parts.append(level_to_guidance(level).tone_instruction)
+            intent = classify_intent(question)
+            guidance_parts.append(intent_to_format_guidance(intent))
+        user_guidance = "\n\n".join(guidance_parts)
+        user_prompt = build_user_prompt(
+            context, question, user_guidance=user_guidance, hint_block=hint_block,
+        )
+        sys_prompt = system_prompt_override if system_prompt_override is not None else SYSTEM_PROMPT
+        if golden_qa_prefix:
+            # Append au system prompt avec séparateur clair. Mistral honore
+            # plus strictement les system instructions que les user-side
+            # injections — le few-shot avec instruction "IGNORE écoles/chiffres
+            # exemple" doit être system pour maximiser le respect.
+            sys_prompt = sys_prompt + "\n\n" + golden_qa_prefix
 
     # Sprint 11 P0 Item 2 — buffer mémoire short-term
     # Construction messages array : system → history (user/assistant alternés) → user current

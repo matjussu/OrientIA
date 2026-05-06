@@ -73,6 +73,8 @@ def make_production_pipeline(
     enable_post_process: bool = True,
     # Étape 1 refonte 2026-05-06 — ScopeClassifier amont (in_scope/out_of_scope/urgent)
     enable_scope_classifier: bool = True,
+    # Étape 2 refonte 2026-05-06 — contrat strict v4 (FactCard JSON + SYSTEM_PROMPT_V4_STRICT)
+    enable_strict_v4: bool = False,
     # Retrieval / generation tuning (rarement override)
     use_mmr: bool = True,
     use_intent: bool = True,
@@ -144,6 +146,7 @@ def make_production_pipeline(
         golden_qa_meta_path=gqa_meta,
         enable_post_process=enable_post_process,
         scope_classifier=scope_classifier,
+        use_strict_v4=enable_strict_v4,
     )
 
 

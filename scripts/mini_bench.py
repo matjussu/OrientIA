@@ -70,6 +70,31 @@ def make_phase2_pipeline(client: Mistral, fiches: list[dict]) -> OrientIAPipelin
         enable_layer3=False,  # off pour mesure cost/latency contrôlée
         enable_golden_qa=True,
         enable_post_process=True,
+        enable_strict_v4=False,  # explicit : v4 OFF en production (default)
+    )
+    _load_index_or_fail(pipeline)
+    return pipeline
+
+
+def make_strict_v4_pipeline(client: Mistral, fiches: list[dict]) -> OrientIAPipeline:
+    """Étape 2 refonte — pipeline strict v4 (FactCard JSON + SYSTEM_PROMPT_V4_STRICT).
+
+    Mêmes garde-fous que production (validator, post_process, scope) MAIS le
+    generator utilise le contrat WHAT/HOW : prose libre des fiches REMPLACÉE
+    par tableau JSON tabulaire `<sources>` typé via FactCard. Le LLM ne peut
+    citer que ce qui est explicitement dans le tableau."""
+    if not golden_qa_artifacts_present():
+        print(
+            "[mini_bench] WARNING: Golden QA artifacts absents — few-shot "
+            "désactivé pour ce run (fallback gracieux)."
+        )
+    pipeline = make_production_pipeline(
+        client, fiches,
+        enable_validator=True,
+        enable_layer3=False,
+        enable_golden_qa=True,
+        enable_post_process=True,
+        enable_strict_v4=True,  # ← bascule sur le contrat v4
     )
     _load_index_or_fail(pipeline)
     return pipeline
@@ -288,10 +313,11 @@ def main() -> None:
     parser.add_argument(
         "--config",
         type=str,
-        choices=["baseline", "production"],
+        choices=["baseline", "production", "strict_v4"],
         default="baseline",
         help="baseline = pipeline run_real_full (use_mmr+use_intent only). "
              "production = via factory (validator + golden_qa + post_process). "
+             "strict_v4 = production + contrat strict v4 (FactCard JSON sources). "
              "Default: baseline (Phase 0 reproductible).",
     )
     parser.add_argument(
@@ -314,7 +340,9 @@ def main() -> None:
     fiches = json.loads(FICHES_PATH.read_text(encoding="utf-8"))
     print(f"[mini_bench] loaded {len(fiches)} fiches")
 
-    if args.config == "production":
+    if args.config == "strict_v4":
+        pipeline = make_strict_v4_pipeline(client, fiches)
+    elif args.config == "production":
         pipeline = make_phase2_pipeline(client, fiches)
     else:
         pipeline = make_baseline_pipeline(client, fiches)
@@ -324,7 +352,8 @@ def main() -> None:
         f"use_mmr={pipeline.use_mmr}, use_intent={pipeline.use_intent}, "
         f"validator={pipeline.validator is not None}, "
         f"use_golden_qa={pipeline.use_golden_qa}, "
-        f"enable_post_process={pipeline.enable_post_process})"
+        f"enable_post_process={pipeline.enable_post_process}, "
+        f"use_strict_v4={pipeline.use_strict_v4})"
     )
 
     # Load questions
@@ -401,6 +430,7 @@ def main() -> None:
                 "use_golden_qa": pipeline.use_golden_qa,
                 "validator_attached_to_pipeline": pipeline.validator is not None,
                 "enable_post_process": pipeline.enable_post_process,
+                "use_strict_v4": pipeline.use_strict_v4,
                 "model": pipeline.model,
             },
             "n_unimodal_processed": len(unimodal_results),

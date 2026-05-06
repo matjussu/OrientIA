@@ -85,6 +85,7 @@ class OrientIAPipeline:
         golden_qa_meta_path: str | None = None,
         enable_post_process: bool = False,
         scope_classifier: ScopeClassifier | None = None,
+        use_strict_v4: bool = False,
     ):
         self.client = client
         self.fiches = fiches
@@ -172,6 +173,11 @@ class OrientIAPipeline:
         # != in_scope. None par défaut = backward compat (toutes questions traitées).
         self.scope_classifier = scope_classifier
         self.last_scope_result: ScopeResult | None = None
+        # Étape 2 refonte (2026-05-06) — contrat strict v4 WHAT/HOW.
+        # Quand True, la génération utilise SYSTEM_PROMPT_V4_STRICT + JSON
+        # tabulaire <sources> via FactCard au lieu de la prose libre v3.2.
+        # False par défaut = backward compat (v3.2 + retry-with-hint préservés).
+        self.use_strict_v4 = use_strict_v4
 
     def build_index(self) -> None:
         texts = [fiche_to_text(f) for f in self.fiches]
@@ -392,6 +398,7 @@ class OrientIAPipeline:
             golden_qa_prefix=golden_qa_prefix,
             history=history,
             temperature=temperature,
+            use_strict_v4=self.use_strict_v4,
         )
 
         # Sans validator : pas de retry (no-op transparent)
@@ -426,6 +433,10 @@ class OrientIAPipeline:
             return tour1_answer, meta
 
         # Tour 2 avec hint réinjecté
+        # Note (Étape 2 refonte) : en mode strict_v4, le hint_block est ignoré
+        # par generate() car le contrat v4 a sa propre logique de refus honnête.
+        # Le retry tour 2 reste utile pour donner au LLM une 2e chance après
+        # validator feedback (mais il n'y a pas de hint injecté en v4).
         meta["retries_attempted"] = 1
         hint_block = format_hint_block(tour1_failed)
         tour2_answer = generate(
@@ -435,6 +446,7 @@ class OrientIAPipeline:
             history=history,
             temperature=temperature,
             hint_block=hint_block,
+            use_strict_v4=self.use_strict_v4,
         )
         tour2_validation = self.validator.validate(tour2_answer, intent=intent)
         tour2_failed = extract_failed_claims(tour2_validation)
