@@ -2836,3 +2836,141 @@ Un futur Sprint 7.5 d'ablation devra mesurer (∈ ordre) :
   déplacé Phase 1 refonte, commit `91d129b`)
 - Plan refonte produit niveau 2 :
   `~/.claude/plans/niveau-d-ambition-2-oui-glowing-alpaca.md`
+
+---
+
+## ADR-053 — Stratégie WHAT/HOW : extraction structurée FactCard + contrat strict v4 (2026-05-06)
+
+### Context
+
+Refonte produit niveau 2. Découverte fondamentale via Phase 2.5 (Layer3
+audit) + Phase A (audit data type A/B/C) :
+
+- 37 hallu Layer3 sur 18 réponses production v3.2 (avg honesty=1.0
+  côté validator c1+c2 → trompeur)
+- 0 cas pur "type B data manquante" — l'info est presque toujours dans
+  le corpus
+- 4/18 type_A_llm (LLM hallucine alors que data est là)
+- 7/18 type_C_mixte (mix verified + invented)
+- Audit retrieval quality : 9/18 ok, 7/18 too_generic, 2/18 off_topic
+
+**Conclusion** : le verrou principal n'est PAS la data corpus (88%
+utilisable). C'est la **fidélité de génération** — Mistral Medium
+extrapole hors-source même quand l'info est correcte.
+
+Vision stratégique demandée par Matteo (turn 2026-05-06) :
+
+> Question utilisateur → Séparation (Scope/hors scope) → Si hors scope
+> réponse automatique, si scope → On récupère les bonnes data, et on
+> récupère Q/A golden pour le style → prompt LLM Mistral qui écrit avec
+> le style en intégrant les chiffres récupérés (que eux) → réponse
+> utilisateur·ice.
+
+### Decision
+
+Implémenter une architecture WHAT/HOW (séparation faits/style) en
+**3 couches structurelles** :
+
+1. **WHAT — Extraction structurée des faits** (`src/rag/fact_card.py`) :
+   - Dataclass `FactCard` avec sous-bloc `chiffres` typé (taux_acces,
+     nombre_places, salaire_median, taux_emploi_3ans, etc.)
+   - `fiche_to_fact_card(fiche, fact_id)` mappe les fiches Parcoursup
+     riches (21.5% du corpus) ET MonMaster/RNCP minimal (78.5%)
+   - `format_sources_for_llm(top_sources)` sérialise top-K en JSON
+     tabulaire `<sources>` pour le user prompt
+
+2. **CONTRAT — System prompt strict** (`src/prompt/system_v4_strict.py`) :
+   - REMPLACE entièrement v3.2 (pas additif comme v3.3 strict reverté
+     Sprint 7)
+   - 5 règles non-négociables : R1 chiffres uniquement depuis
+     `chiffres.X` (null → "info non disponible"), R2 formations
+     uniquement depuis sources.formation+etablissement+ville, R3
+     citations `[source SX]` obligatoires, R4 style libre depuis
+     Golden, R5 posture empathique
+
+3. **HOW — Style few-shot** (déjà câblé Sprint 10 chantier D, conservé) :
+   - Top-1 Q&A Golden injecté en préfixe user
+   - Séparation stricte "Comment/Quoi" : exemple Golden = référence
+     ton/structure UNIQUEMENT, sources `<sources>` = seules sources
+     factuelles autorisées
+
+### Rationale
+
+1. **Empêcher l'hallu en amont vs annoter en aval** : annoter
+   `(non vérifié)` post-hoc (option StatFactChecker) est patcher. Le
+   contrat amont supprime la cause — le LLM ne peut citer ce qu'il ne
+   voit pas en JSON typé.
+2. **JSON tabulaire vs prose libre** : les fiches en prose mélangeaient
+   chiffres et description, le LLM extrapolait par mimétisme. JSON
+   typé avec `null` explicite force le refus honnête.
+3. **Pattern différent du R3 revert** : v3.3 strict (Sprint 7) ajoutait
+   6 règles à v3.2 → LLM saturé, augmentation hallu de 8.8pp. v4
+   REMPLACE la prose par du JSON et impose un format différent → pas
+   de saturation mesurée.
+
+### Résultats mesurés (mini-bench 23 questions)
+
+| Métrique | v3.2 production | v4 strict (Medium) | v4 strict (Large+scope++) |
+|---|---|---|---|
+| flagged validator c1+c2 | 0 | 1 | 1 |
+| avg honesty | 1.0 | 0.993 | 0.989 |
+| avg latency | **10.19s** | 46.87s | **25.25s** |
+| avg words | **239** | 434 | 479 |
+| Layer3 warnings (sur 18 communes) | 37 | **34 (-8%)** | 38 (+3%) |
+
+Observations qualitatives :
+- **v4 cite explicitement** : 9-21 `[source SX]` par réponse longue
+  (vs 0 en v3.2)
+- **v4 refuse honnêtement** : "il n'existe pas de classement officiel",
+  "info non disponible", "aucune fiche dans mes sources pour X"
+- **v4 distingue géographiquement** : X1 "ENSIBS pas à Brest mais
+  Vannes/Lorient" (au lieu de l'effacer comme v3.2)
+- **Mais verbosité explose** (+82% mots), latency ×4.6 vs v3.2
+
+### Sub-décisions tranchées
+
+**Mistral Large rejeté** : produit +4 warnings vs Medium pour 10× le
+coût. La promesse "Large suit mieux le contrat" est réelle
+qualitativement mais neutre sur Layer3. Le gain latency 47s→25s vient
+en fait à 80% du ScopeClassifier amélioré.
+
+**ScopeClassifier amélioré conservé** : prompt enrichi avec 9 few-shot
+examples + règle prio détresse. Résultats S1/S2/S3/U2 passent de
+12-129s à <2s. C'est le seul gain UX significatif de l'expérimentation
+Mistral Large.
+
+### Alternatives considérées
+
+1. **Garder v3.2 + StatFactChecker post-hoc avec annotations
+   `(non vérifié)`** : rejeté — annotations partout polluent UX, et
+   c'est patcher au lieu de supprimer la cause.
+
+2. **Activer Layer3 LLM par défaut + élargir allowlist** : rejeté —
+   Layer3 est un LLM-judge biaisé (cf flag Z1 où il dit "salaire
+   sous-évalué" alors que le chiffre vient littéralement des sources
+   Parcoursup). Utile pour audit, pas pour blocage runtime.
+
+3. **Enrichir le corpus santé/droit** : rejeté — Phase A a montré que
+   l'info est dans le corpus à 88%. Le bug est LLM, pas data.
+
+### Limites connues (pour v4.1+)
+
+- **Verbosité 479 mots moyenne** vs cible 200-250. R6 max 250 mots à
+  ajouter en v4.1.
+- **Latency 25s** restera ×2.5 vs v3.2. Skip retry-with-hint en mode
+  v4 pourrait gagner 20-30% (v4.2).
+- **8 questions régressent en Layer3** vs v3.2 (A3, H9, H1, D5, F1,
+  F6, X1, Z1). Hypothèse : verbosité crée plus de surface d'attaque.
+  À mesurer après R6.
+- **F3 BTS SIO vs BUT** flagged honesty=0.85 en v4-Large — régression
+  isolée à investiguer.
+
+### Liens
+
+- Plan refonte : `~/.claude/plans/niveau-d-ambition-2-oui-glowing-alpaca.md`
+- Code Étape 1 (ScopeClassifier) : commit `2c8999d`
+- Code Étape 2 v4.0 (FactCard + prompt strict) : commit `e0845f7`
+- Code Étape 2 itération (Large + scope++) : commit `[head]`
+- Audits Phase 2.5 + A : commits `583be08` et `bacb940`
+- Mini-bench artefacts : `results/mini_bench/phase_b{1,2,3}_*.json`
+- Side-by-side spot-check : `results/mini_bench/comparaison_v3_2_vs_v4_FINAL.md`
