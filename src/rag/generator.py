@@ -397,8 +397,10 @@ def generate(
     """
     if use_strict_v4:
         # Branche v4 strict : pas de prose retrieved, JSON tabulaire seul.
+        # v4.1 (2026-05-06) : top-5 sources au lieu de top-10 (réduit input
+        # tokens + force le LLM à se concentrer sur les sources pertinentes).
         from src.prompt.system_v4_strict import SYSTEM_PROMPT_V4_STRICT
-        sources_json = format_sources_for_llm(retrieved, max_sources=10)
+        sources_json = format_sources_for_llm(retrieved, max_sources=5)
         user_prompt = _build_user_prompt_strict_v4(
             sources_json, question, golden_qa_prefix=golden_qa_prefix,
         )
@@ -437,11 +439,18 @@ def generate(
                 messages.append({"role": role, "content": content})
     messages.append({"role": "user", "content": user_prompt})
 
-    response = client.chat.complete(
-        model=model,
-        temperature=temperature,
-        messages=messages,
-    )
+    # v4.1 (2026-05-06) : cap dur output tokens en mode strict v4 pour faire
+    # respecter R6 max 250 mots. 250 mots ≈ 350-400 tokens en français.
+    # On met 400 pour laisser une marge sans laisser le LLM s'étaler. En v3.2
+    # legacy, pas de cap pour préserver le comportement historique.
+    api_kwargs: dict = {
+        "model": model,
+        "temperature": temperature,
+        "messages": messages,
+    }
+    if use_strict_v4:
+        api_kwargs["max_tokens"] = 400
+    response = client.chat.complete(**api_kwargs)
     content = response.choices[0].message.content
     # Sprint 11 P1.1 v5 — strip brouillon XML balises si détectées.
     # Format attendu : <brouillon>...</brouillon>\n<reponse_finale>...</reponse_finale>

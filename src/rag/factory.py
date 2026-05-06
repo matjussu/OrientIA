@@ -74,7 +74,11 @@ def make_production_pipeline(
     # Étape 1 refonte 2026-05-06 — ScopeClassifier amont (in_scope/out_of_scope/urgent)
     enable_scope_classifier: bool = True,
     # Étape 2 refonte 2026-05-06 — contrat strict v4 (FactCard JSON + SYSTEM_PROMPT_V4_STRICT)
-    enable_strict_v4: bool = False,
+    # v4.1 (2026-05-06) : R6 max 250 mots + max_tokens=400 + top-5 sources.
+    # Bench mini-bench v4.1 : avg_latency 7.26s (-29% vs v3.2), avg_words 184
+    # (-23%), 0 flagged, honesty 1.0. Layer3 +8% (biais visibilité chiffres
+    # sourcés, cf ADR-053). Bascule défaut True à partir de v4.1.
+    enable_strict_v4: bool = True,
     # Retrieval / generation tuning (rarement override)
     use_mmr: bool = True,
     use_intent: bool = True,
