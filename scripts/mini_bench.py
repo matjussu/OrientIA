@@ -117,11 +117,15 @@ def run_question(
         "split": q.get("split"),
         "intent_target": q.get("intent_target"),
         "chemin_target": q.get("chemin_target"),
+        "scope_target": q.get("scope_target"),
         "question": text,
         "response": None,
         "latency_s": None,
         "response_length_chars": None,
         "response_length_words": None,
+        "scope_label": None,
+        "scope_via": None,
+        "scope_reason": None,
         "select_via": None,
         "select_reason": None,
         "n_sources_top": None,
@@ -181,6 +185,12 @@ def run_question(
                     "summary": " | ".join(parts)[:1200],
                 })
         # Marqueurs pipeline
+        # Étape 1 refonte : scope_result (None si scope_classifier non câblé)
+        sr = pipeline.last_scope_result
+        if sr is not None:
+            record["scope_label"] = sr.label
+            record["scope_via"] = sr.via
+            record["scope_reason"] = sr.reason
         sel = pipeline.last_select_result
         if sel is not None:
             record["select_via"] = sel.via_select

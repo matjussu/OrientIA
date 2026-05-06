@@ -24,6 +24,7 @@ from src.rag.metadata_filter import (
     apply_metadata_filter,
 )
 from src.rag.post_process import post_process_answer
+from src.rag.scope_classifier import ScopeClassifier, ScopeResult
 from src.validator import (
     Validator,
     ValidatorResult,
@@ -83,6 +84,7 @@ class OrientIAPipeline:
         golden_qa_index_path: str | None = None,
         golden_qa_meta_path: str | None = None,
         enable_post_process: bool = False,
+        scope_classifier: ScopeClassifier | None = None,
     ):
         self.client = client
         self.fiches = fiches
@@ -164,6 +166,12 @@ class OrientIAPipeline:
         # Stats du dernier appel exposées via `last_post_process_stats`.
         self.enable_post_process = enable_post_process
         self.last_post_process_stats: dict | None = None
+        # Étape 1 refonte (2026-05-06) — ScopeClassifier amont du pipeline.
+        # Si fourni, classifie chaque question en {in_scope, out_of_scope, urgent}
+        # AVANT tout retrieve/generate. Court-circuit avec réponse pré-écrite si
+        # != in_scope. None par défaut = backward compat (toutes questions traitées).
+        self.scope_classifier = scope_classifier
+        self.last_scope_result: ScopeResult | None = None
 
     def build_index(self) -> None:
         texts = [fiche_to_text(f) for f in self.fiches]
@@ -212,6 +220,34 @@ class OrientIAPipeline:
         """
         if self.index is None:
             raise RuntimeError("Pipeline not built — call build_index() or load_index_from() first.")
+
+        # Étape 1 refonte (2026-05-06) — Scope classification AMONT.
+        # Court-circuit avec réponse pré-écrite si question hors-scope ou urgent.
+        # Cette gate est PRÉ-pipeline : aucun appel retrieve/generate si non in_scope.
+        if self.scope_classifier is not None:
+            scope_res = self.scope_classifier.classify(question)
+            self.last_scope_result = scope_res
+            if scope_res.label != "in_scope":
+                # Reset les marqueurs pipeline (backward compat consumers)
+                self.last_select_result = None
+                self.last_validation = None
+                self.last_policy_result = None
+                self.last_retry_metadata = {
+                    "retries_attempted": 0,
+                    "tour1_failed_claims": [],
+                    "tour2_failed_claims": None,
+                    "retry_stability": 1.0,
+                    "needs_audit": False,
+                    "wall_clock_s": 0.0,
+                    "retry_skipped_reason": f"scope_{scope_res.label}",
+                }
+                self.last_filter_stats = None
+                self.last_golden_qa = None
+                self.last_post_process_stats = None
+                return scope_res.pre_written_response or "", []
+        else:
+            self.last_scope_result = None
+
         effective_top_k = top_k_sources
         effective_lambda = self.mmr_lambda
         intent_label = classify_intent(question) if self.use_intent else None

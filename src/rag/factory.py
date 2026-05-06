@@ -45,6 +45,7 @@ from pathlib import Path
 from mistralai.client import Mistral
 
 from src.rag.pipeline import OrientIAPipeline
+from src.rag.scope_classifier import ScopeClassifier
 from src.validator import Validator
 from src.validator.layer3 import Layer3Validator
 
@@ -70,6 +71,8 @@ def make_production_pipeline(
     golden_qa_meta_path: str | None = None,
     # Post-process déterministe (Sprint 8 Wave 1)
     enable_post_process: bool = True,
+    # Étape 1 refonte 2026-05-06 — ScopeClassifier amont (in_scope/out_of_scope/urgent)
+    enable_scope_classifier: bool = True,
     # Retrieval / generation tuning (rarement override)
     use_mmr: bool = True,
     use_intent: bool = True,
@@ -115,6 +118,10 @@ def make_production_pipeline(
             layer3=layer3,
         )
 
+    scope_classifier: ScopeClassifier | None = None
+    if enable_scope_classifier:
+        scope_classifier = ScopeClassifier(client=client)
+
     # Résolution paths Golden QA : si flag activé mais paths non fournis,
     # utiliser les défauts. Le pipeline lazy-loadera au 1er .answer() — si
     # les fichiers n'existent pas, fallback gracieux (warning + skip few-shot).
@@ -136,6 +143,7 @@ def make_production_pipeline(
         golden_qa_index_path=gqa_idx,
         golden_qa_meta_path=gqa_meta,
         enable_post_process=enable_post_process,
+        scope_classifier=scope_classifier,
     )
 
 
