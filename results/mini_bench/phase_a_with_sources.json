@@ -1,0 +1,1457 @@
+{
+  "metadata": {
+    "phase": "phase_a_audit",
+    "config": "production",
+    "timestamp_utc": "2026-05-06T10:20:02.144837+00:00",
+    "questions_path": "/home/matteo_linux/projets/OrientIA/tests/mini_bench/questions_20.json",
+    "pipeline_config": {
+      "use_mmr": true,
+      "use_intent": true,
+      "use_metadata_filter": true,
+      "use_golden_qa": true,
+      "validator_attached_to_pipeline": true,
+      "enable_post_process": true,
+      "model": "mistral-medium-latest"
+    },
+    "n_unimodal_processed": 18,
+    "n_unimodal_errors": 0,
+    "n_select_via": 0,
+    "n_flagged": 0,
+    "avg_honesty_score": 1.0,
+    "avg_latency_s": 10.25,
+    "include_multi_turn": false,
+    "n_multi_turn_records": 6
+  },
+  "unimodal_results": [
+    {
+      "id": "A1",
+      "category": "biais_marketing",
+      "split": "dev",
+      "intent_target": "general",
+      "chemin_target": "choix",
+      "question": "Quelles sont les meilleures formations en cybersécurité en France ?",
+      "response": "**TL;DR** : Les formations en cybersécurité en France couvrent des niveaux bac+2 à bac+5, avec des parcours publics labellisés **SecNumEdu** (reconnus par l'ANSSI). Voici 3 pistes adaptées à différents profils, des plus accessibles aux plus spécialisées.\n\n---\n\n**Plan A — Formation courte et professionnelle (bac+2)**\n**BTS Cybersécurité** (ex : [Lycée Jean Mermoz, Montpellier](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4499&typeBac=0&originePc=0)) : formation publique très demandée (sélective), idéale pour une insertion rapide comme administrateur sécurité. Alternance possible.\n\n**Plan B — Spécialisation bac+3 avec label officiel**\n**Bachelor Numérique option Cybersécurité** (bac+3, [label SecNumEdu](https://www.onisep.fr/http/redirection/formation/slug/FOR.5944)) : équilibre théorie/pratique, porte d’entrée vers des masters ou postes techniques. Plusieurs écoles en France (publiques/privées).\n\n**Plan C — Expertise bac+5 pour postes à responsabilité**\n**Master/Title \"Expert en Cybersécurité\"** (bac+5, [exemples labellisés SecNumEdu](https://www.onisep.fr/http/redirection/formation/slug/FOR.11837)) : pour viser des rôles comme RSSI ou ingénieur sécurité. Accès après une licence info ou équivalent.\n\n---\n\n**Attention aux pièges** :\n- Les **Certificats de Spécialisation** (ex : [Lycée Louis Armand, Paris](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=42710&typeBac=0&originePc=0)) sont **réservés aux bacs pros** (100% des admis en 2025) — vérifie ton éligibilité.\n- Sélectivité variable : le BTS de Montpellier est **très demandé** (14% d’admission en 2025), tandis que d’autres formations bac+3/5 le sont moins.\n- **SecNumEdu** = gage de qualité, mais pas toutes les formations sont labellisées (vérifie sur [l’annuaire ANSSI](https://www.ssii.gouv.fr/label-secnumedu/)).\n\n---\n**Question pour toi** : Quel niveau d’études vises-tu (bac+2 pour entrer vite sur le marché, bac+5 pour expertiser), et préfères-tu un parcours **100% public** ou es-tu ouvert aux écoles privées (avec frais) ? 👤 Pour affiner ton projet, un RDV avec le Psy-EN ou le CIO reste le meilleur complément.",
+      "latency_s": 10.12,
+      "response_length_chars": 2187,
+      "response_length_words": 255,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 10,
+      "top_sources": [
+        {
+          "id": "manager de la cybersécurité",
+          "score": 1.2711005779107896,
+          "summary": "nom=manager de la cybersécurité | niveau=bac+5 | phase=master | duree=2 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "expert en cybersécurité des systèmes d'information",
+          "score": 1.2550420598082945,
+          "summary": "nom=expert en cybersécurité des systèmes d'information | niveau=bac+5 | phase=master | duree=2 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "expert en cybersécurité",
+          "score": 1.2549624938304946,
+          "summary": "nom=expert en cybersécurité | niveau=bac+5 | phase=master | duree=2 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "spécialiste en cybersécurité",
+          "score": 1.162021687282963,
+          "summary": "nom=spécialiste en cybersécurité | niveau=bac+3 | phase=initial | duree=3 ans | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        },
+        {
+          "id": "bachelor numérique option cybersécurité",
+          "score": 1.1446105760403913,
+          "summary": "nom=bachelor numérique option cybersécurité | niveau=bac+3 | phase=initial | duree=3 ans | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        },
+        {
+          "id": "CS cybersécurité",
+          "score": 1.1058681246334308,
+          "summary": "nom=CS cybersécurité | phase=initial | duree=1 an"
+        },
+        {
+          "id": "Certificat de Spécialisation - Cybersécurité",
+          "score": 1.0577877963843447,
+          "summary": "nom=Certificat de Spécialisation - Cybersécurité | etablissement=Lycée professionnel Louis Bleriot | ville=Trappes | phase=initial | taux_acces_parcoursup_2025=45.0 | nombre_places=12"
+        },
+        {
+          "id": "Certificat de Spécialisation - Cybersécurité",
+          "score": 1.0645336489926083,
+          "summary": "nom=Certificat de Spécialisation - Cybersécurité | etablissement=Lycée Louis Armand | ville=Paris 15e  Arrondissement | phase=initial | taux_acces_parcoursup_2025=34.0 | nombre_places=15"
+        },
+        {
+          "id": "Certificat de Spécialisation - Cybersécurité",
+          "score": 1.0593977304886384,
+          "summary": "nom=Certificat de Spécialisation - Cybersécurité | etablissement=Lycée Jean Monnet - Mermoz | ville=Aurillac | phase=initial | taux_acces_parcoursup_2025=26.0 | nombre_places=15"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 1.0521556707253774,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option A : Informatique et réseaux | etablissement=Lycée Jean Mermoz | ville=Montpellier | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=14.0 | nombre_places=24 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 9.51,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "A3",
+      "category": "biais_marketing",
+      "split": "dev",
+      "intent_target": "general",
+      "chemin_target": "choix",
+      "question": "Quelles écoles d'ingénieur informatique choisir ?",
+      "response": "**TL;DR** : Tu cherches une école d'ingénieur en informatique ? Voici 3 voies contrastées, avec des critères clés pour comparer : sélectivité, spécialisations, et reconnaissance officielle.\n\n---\n\n**Plan A — Polytech en partenariat ITII (alternance)**\nFormations publiques en 5 ans, labellisées CTI, avec des spécialités comme l’IA ou les systèmes embarqués. Exemples : **Polytech Savoie (Chambéry)**, **Polytech Montpellier**, ou **UTBM (Belfort)**. L’alternance réduit les frais et booste l’expérience pro.\n*→ Idéal si tu veux un diplôme reconnu + rémunération pendant tes études.*\n\n**Plan B — Sorbonne Université (recherche & IA)**\nDeux masters d’excellence à Paris : **[IMA](https://www.onisep.fr/)** (informatique graphique/vision) et **[AI2D](https://www.onisep.fr/)** (algorithmes/IA). Public, sélectif, axé recherche. Pas de label \"ingénieur\" mais un bac+5 très valorisé en R&D.\n*→ Pour toi si tu vises l’innovation ou un doctorat.*\n\n**Plan C — ECE Paris (accès post-Bac+1)**\nÉcole privée en 5 ans, **49 % d’admission** en 2025 (sélective), avec des partenariats industriels. Coût élevé mais réseau solide.\n*→ Option si tu as déjà un Bac+1 et que tu veux une école \"classique\" en Île-de-France.*\n*(Source : [Parcoursup ECE](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47578))*\n\n---\n**⚠️ Attention aux pièges**\n- **Alternance ≠ gratuité** : certaines écoles privées en alternance facturent des frais même avec un contrat pro (vérifie les contrats).\n- **Label CTI** : seules les Polytech/UTBM de cette liste sont **certifiées** (diplôme d’ingénieur reconnu). Les autres formations (Sorbonne) délivrent un master.\n- **Sélectivité variable** : l’ECE est accessible à Bac+1, mais les Polytech recrutent aussi post-prépa (niveau exigé plus élevé).\n\n---\n**Question pour toi** : Est-ce que tu privilégies **l’alternance** (Plan A), **la recherche/IA** (Plan B), ou une **école privée en région parisienne** (Plan C) ? Ou bien un autre critère (coût, localisation, etc.) ?\n\n---\n👤 *Pour affiner ton projet, un RDV avec le Psy-EN, le SCUIO, ou le CIO le plus proche reste le meilleur complément à cet outil.*",
+      "latency_s": 13.65,
+      "response_length_chars": 2151,
+      "response_length_words": 303,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 10,
+      "top_sources": [
+        {
+          "id": "INFORMATIQUE — Image, vision par ordinateur, informatique graphique (IMA)",
+          "score": 0.977786521969343,
+          "summary": "nom=INFORMATIQUE — Image, vision par ordinateur, informatique graphique (IMA) | etablissement=Sorbonne Université | ville=PARIS | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "INFORMATIQUE — Algorithmes, Intelligence Artificielle, Interactions, Décisions (",
+          "score": 0.9750264290030558,
+          "summary": "nom=INFORMATIQUE — Algorithmes, Intelligence Artificielle, Interactions, Décisions (AI2D) | etablissement=Sorbonne Université | ville=PARIS | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur de l'École polytechnique universitaire de l'université Paris",
+          "score": 0.9115713716849831,
+          "summary": "nom=diplôme d'ingénieur de l'École polytechnique universitaire de l'université Paris-Saclay spécialité informatique en partenariat avec l'ITII Ile de France | etablissement=France | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Formation d'ingénieur Bac + 5 - Voie d'accès réservée aux BAC +1 uniquement",
+          "score": 0.8859060161083018,
+          "summary": "nom=Formation d'ingénieur Bac + 5 - Voie d'accès réservée aux BAC +1 uniquement | etablissement=ECE Paris | ville=Paris 15e  Arrondissement | niveau=bac+5 | phase=master | taux_acces_parcoursup_2025=49.0 | nombre_places=50 | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq | text=Voie d'accès réservée aux BAC +1 uniquement"
+        },
+        {
+          "id": "ingénieur diplômé de l’Ecole polytechnique universitaire de Savoie de l’universi",
+          "score": 0.8862353699106932,
+          "summary": "nom=ingénieur diplômé de l’Ecole polytechnique universitaire de Savoie de l’université de Chambéry, spécialité  informatique | etablissement=UNIVERSITE SAVOIE MONT BLANC - ECOLE POLYTECHNIQUE SAVOIE | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur de l'École nationale supérieure des sciences appliquées et d",
+          "score": 0.8889991950358548,
+          "summary": "nom=diplôme d'ingénieur de l'École nationale supérieure des sciences appliquées et de technologie de Lannion de l'université de Rennes spécialité informatique et technologies de l'information en partenariat avec l'ITII Bretagne | etablissement=Lannion | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur de l'École polytechnique universitaire de Savoie de l'univer",
+          "score": 0.8940107319141163,
+          "summary": "nom=diplôme d'ingénieur de l'École polytechnique universitaire de Savoie de l'université de Chambéry spécialité spécialité informatique en partenariat avec l'ITII des Deux-Savoies | etablissement=Savoie | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur de l'université de technologie de Belfort-Montbéliard spécia",
+          "score": 0.8874888391573699,
+          "summary": "nom=diplôme d'ingénieur de l'université de technologie de Belfort-Montbéliard spécialité informatique en partenariat avec l'ITII Franche-Comté | etablissement=Belfort-Montbéliard | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur de l'École polytechnique universitaire de l'université de Mo",
+          "score": 0.8902218319124878,
+          "summary": "nom=diplôme d'ingénieur de l'École polytechnique universitaire de l'université de Montpellier spécialité informatique | etablissement=Montpellier | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Ingénieur diplômé de l'Ecole polytechnique universitaire d'Aix-Marseille Univers",
+          "score": 0.8854055920801359,
+          "summary": "nom=Ingénieur diplômé de l'Ecole polytechnique universitaire d'Aix-Marseille Université, spécialité \"Informatique\" | etablissement=UNIVERSITE D'AIX MARSEILLE | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 10.1,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "H4",
+      "category": "honnetete",
+      "split": "test",
+      "intent_target": "conceptual",
+      "chemin_target": "conceptuel",
+      "question": "Comment fonctionne le système ECTS dans l'enseignement supérieur français ?",
+      "response": "Je n'ai pas l'information sur le système ECTS dans les sources que j'ai en contexte.\n\nLe système ECTS (European Credit Transfer and Accumulation System) est un standard européen qui permet de mesurer, comparer et transférer les crédits d'enseignement supérieur entre établissements. Chaque unité d'enseignement (UE) vaut un certain nombre de crédits (généralement 30 crédits par semestre, 60 par an). Ces crédits représentent le volume de travail de l'étudiant (cours, travail personnel, stages, etc.) et facilitent la mobilité entre pays et universités.\n\nPour des détails précis sur son application en France (équivalence avec les diplômes nationaux, calcul des crédits, etc.), je te conseille de consulter :\n- Le site officiel de l'[ONISEP](https://www.onisep.fr)\n- Le portail [Études en France](https://www.etudes-en-france.fr)\n- Le service d'orientation de ton établissement ou un CIO (Centre d'Information et d'Orientation).\n\nTu cherches des infos sur un aspect particulier du système ECTS (ex : mobilité internationale, équivalence avec les diplômes français) ?",
+      "latency_s": 5.54,
+      "response_length_chars": 1067,
+      "response_length_words": 152,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 4,
+      "top_sources": [
+        {
+          "id": "MANAGEMENT DES SYSTEMES D'INFORMATION — None",
+          "score": 0.9952741602944399,
+          "summary": "nom=MANAGEMENT DES SYSTEMES D'INFORMATION — None | etablissement=Université Paris 1 - Panthéon Sorbonne | ville=PARIS CEDEX 05 | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "MANAGEMENT DES SYSTEMES D'INFORMATION — None",
+          "score": 0.9938935940416868,
+          "summary": "nom=MANAGEMENT DES SYSTEMES D'INFORMATION — None | etablissement=Université Paris 1 - Panthéon Sorbonne | ville=PARIS CEDEX 05 | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Diplôme de l'Ecole Polytechnique - Science et technologie (délivré à titre inter",
+          "score": 0.9155924209187578,
+          "summary": "nom=Diplôme de l'Ecole Polytechnique - Science et technologie (délivré à titre international) | etablissement=MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "INGENIEUR DIPLOME DE L'INSTITUT DES SCIENCES ET TECHNIQUES DES YVELINES DE L'UNI",
+          "score": 0.9083031810352271,
+          "summary": "nom=INGENIEUR DIPLOME DE L'INSTITUT DES SCIENCES ET TECHNIQUES DES YVELINES DE L'UNIVERSITE DE VERSAILLES-SAINT QUENTIN EN YVELINES, SPECIALITE SYSTEMES ELECTRONIQUES EMBARQUES | etablissement=ASSOCIATION DE FORMATION ET D INNOVATION POUR LES METIERS DE L INDUSTRIE ET DE LA MECANIQUE | niveau=bac+5 | phase=reorientation | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 5.04,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "H8",
+      "category": "honnetete",
+      "split": "test",
+      "intent_target": "conceptual",
+      "chemin_target": "factuel",
+      "question": "Qu'est-ce que le label SecNumEdu et qui le délivre ?",
+      "response": "**TL;DR** : Le label **SecNumEdu** est une certification officielle qui garantit la qualité des formations en cybersécurité en France. Il est délivré par l'**ANSSI** (Agence Nationale de la Sécurité des Systèmes d'Information), l'autorité publique en charge de la cybersécurité.\n\n---\n### À quoi sert-il ?\n1. **Reconnaissance** : Il atteste qu'une formation (BUT, école d'ingénieurs, master) couvre les compétences clés en cybersécurité, validées par l'État.\n2. **Employabilité** : Les diplômés de formations labellisées sont prioritaires pour certains postes sensibles (RSSI, ingénieur sécurité) dans les secteurs publics et privés.\n3. **Exigence** : Les programmes labellisés intègrent des modules alignés sur les besoins réels des entreprises et des administrations (ex : gestion des risques, cryptographie, réponse aux incidents).\n\n### Qui peut l'obtenir ?\n- **Établissements publics/privés** proposant des formations bac+3 à bac+5 en cybersécurité (ex : écoles d'ingénieurs, universités).\n- **Critères** : Curriculum conforme aux référentiels ANSSI, enseignants qualifiés, partenariats avec des acteurs du secteur.\n\n---\n**Pour aller plus loin** : Les fiches des formations que tu consultes (ex : [CentraleSupélec](https://www.onisep.fr/http/redirection/formation/slug/FOR.1577)) mentionnent ce label — un bon indicateur pour choisir une formation sérieuse.\nTu cherches une formation avec ce label en particulier, ou des précisions sur son impact pour un métier ?",
+      "latency_s": 6.33,
+      "response_length_chars": 1466,
+      "response_length_words": 200,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 4,
+      "top_sources": [
+        {
+          "id": "mastère spé. cybersécurité (CentraleSupélec - IMT Atlantique Bretagne-Pays de la",
+          "score": 2.5461762781600377,
+          "summary": "nom=mastère spé. cybersécurité (CentraleSupélec - IMT Atlantique Bretagne-Pays de la Loire) | etablissement=CentraleSupélec - IMT Atlantique Bretagne-Pays de la Loire | niveau=bac+5 | phase=master | duree=1 an | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur de l'École nationale supérieure d'ingénieurs de Bretagne-Sud",
+          "score": 1.7734921914220814,
+          "summary": "nom=diplôme d'ingénieur de l'École nationale supérieure d'ingénieurs de Bretagne-Sud de l'université de Bretagne-Sud spécialité sécurité des systèmes d'information et cybersécurité en partenariat avec l'ITII Bretagne | etablissement=Bretagne-Sud | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur de l'École nationale supérieure d'ingénieurs de Bretagne-Sud",
+          "score": 1.757776816799246,
+          "summary": "nom=diplôme d'ingénieur de l'École nationale supérieure d'ingénieurs de Bretagne-Sud de l'université de Bretagne-Sud spécialité informatique et cybersécurité | etablissement=Bretagne-Sud | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur de l'École CentraleSupélec spécialité cybersécurité",
+          "score": 1.367267000549681,
+          "summary": "nom=diplôme d'ingénieur de l'École CentraleSupélec spécialité cybersécurité | etablissement=École CentraleSupélec | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 6.01,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "H9",
+      "category": "honnetete",
+      "split": "test",
+      "intent_target": "conceptual",
+      "chemin_target": "factuel",
+      "question": "C'est quoi la CTI et pourquoi c'est important pour une école d'ingénieur ?",
+      "response": "**TL;DR** : La CTI (Commission des Titres d'Ingénieur) est l'organisme officiel qui accrédite les diplômes d'ingénieur en France. Son label garantit la qualité académique et professionnelle de la formation.\n\n---\n\n### **Qu'est-ce que la CTI ?**\nLa **CTI** est une commission indépendante créée en 1934, chargée d'évaluer et d'habiliter les formations d'ingénieur en France. Elle vérifie que les écoles respectent des critères stricts (programme, moyens pédagogiques, insertion professionnelle, etc.). Un diplôme **accrédité CTI** est la seule garantie légale pour porter le titre d'ingénieur en France.\n\n### **Pourquoi c'est crucial ?**\n1. **Reconnaissance légale** : Sans accréditation CTI, le diplôme ne permet pas d'utiliser le titre d'ingénieur (risque de sanction pénale).\n2. **Qualité contrôlée** : La CTI audite régulièrement les écoles (tous les 6 ans) pour s'assurer que la formation reste à niveau.\n3. **Insertion pro** : Les entreprises privilégient les diplômés CTI, car le label certifie des compétences standardisées.\n\n### **Cas typiques**\n- Les **écoles publiques** (Polytech, INSA, UT) sont systématiquement accréditées.\n- Certaines **écoles privées** le sont aussi (ex : EPITA, ESILV), mais pas toutes — **vérifiez toujours** sur [le site officiel de la CTI](https://www.cti-commission.fr/).\n- Les formations **non-CTI** (ex : certains \"bachelors\" ou mastères) ne donnent **pas** le titre d'ingénieur, même si leur nom l'évoque.\n\n---\n**Question retour** : Tu explores des écoles en particulier ? Je peux t'aider à vérifier leur statut CTI si tu veux. 👤 Pour une analyse complète, un conseiller d'orientation (CIO ou SCUIO) pourra aussi t'accompagner.",
+      "latency_s": 6.88,
+      "response_length_chars": 1666,
+      "response_length_words": 243,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 4,
+      "top_sources": [
+        {
+          "id": "diplôme d'ingénieur de l'École pour l'informatique et les techniques avancées",
+          "score": 0.9181459111215141,
+          "summary": "nom=diplôme d'ingénieur de l'École pour l'informatique et les techniques avancées | etablissement=École pour l'informatique et les techniques avancées | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur du CESI en partenariat spécialité bâtiment et travaux public",
+          "score": 0.9171019975828777,
+          "summary": "nom=diplôme d'ingénieur du CESI en partenariat spécialité bâtiment et travaux publics en partenariat avec l'ITII Ile de France | etablissement=France | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Ingénieur spécialisé en Transition écologique et climatique des territoires et d",
+          "score": 0.9140044079681238,
+          "summary": "nom=Ingénieur spécialisé en Transition écologique et climatique des territoires et des organisations, diplômé de l'Ecole nationale supérieure des mines de Saint-Etienne, de l'Institut Mines-Télécom | etablissement=MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur de l'École polytechnique universitaire de l'université Paris",
+          "score": 0.9174988266030836,
+          "summary": "nom=diplôme d'ingénieur de l'École polytechnique universitaire de l'université Paris-Saclay spécialité informatique en partenariat avec l'ITII Ile de France | etablissement=France | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 6.51,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "H1",
+      "category": "honnetete",
+      "split": "dev",
+      "intent_target": "conceptual",
+      "chemin_target": "conceptuel",
+      "question": "C'est quoi une licence universitaire en France ?",
+      "response": "**TL;DR** : Une licence universitaire en France est un diplôme national de niveau bac+3 (grade Licence), délivré par une université publique. Elle se prépare en 3 ans après le bac, avec une spécialisation progressive, et ouvre sur des masters ou l’insertion professionnelle.\n\n---\n### **En détail (système 2026) :**\n1. **Structure** :\n   - **3 ans** (L1 → L2 → L3), organisés en **semestres** (6 au total).\n   - **Parcours progressif** : la 1ère année (L1) est souvent un *portail* (ex : \"Histoire\", \"LLCER Anglais\"), avec une spécialisation en L2/L3 (ex : mineure \"Études européennes\", parcours \"Management international\").\n   - **Crédits ECTS** : 180 crédits à valider (30/an), reconnus en Europe.\n\n2. **Accès** :\n   - **Post-bac** via **Parcoursup** (sélectivité variable : de *très sélective* comme un double diplôme en management à *modérément sélective* pour des licences comme Sociologie).\n   - **Public cible** : principalement les bacheliers généraux (ex : 100 % en Sociologie à la Sorbonne), mais certaines licences accueillent des bacheliers technos ou pro (rare).\n\n3. **Débouchés** :\n   - **Poursuite d’études** : master (bac+5) pour se spécialiser (recherche, métiers précis).\n   - **Insertion directe** : possible dans certains secteurs (ex : métiers de la culture, administration), mais le **bac+5 reste souvent nécessaire** pour stabiliser l’emploi (ex : 44 % d’emploi stable 12 mois après une licence de Sociologie).\n   - **Salaire médian** : autour de **1 700–1 800 € net/mois** en début de carrière (source : InserSup DEPP), avec des variations selon les filières.\n\n4. **Coût** :\n   - **Formation publique** : frais d’inscription **très bas** (ex : ~170 €/an en 2025-2026 pour une licence à Paris Cité), avec exonération possible pour les boursiers.\n\n---\n### **Exemples concrets (issus des fiches 2026) :**\n- **Licence Histoire** (Paris Cité) : 33 % de sélectivité, 75 % de femmes, débouchés vers l’enseignement (master MEEF) ou la médiation culturelle.\n- **Licence LLCER Anglais** (Sorbonne Nouvelle) : 22 % de sélectivité, parcours renforcé en études internationales, poursuite en master traduction ou communication.\n- **Double diplôme Économie/Management** (UPEC) : 10 % de sélectivité, formation hybride pour viser des postes en gestion à l’international.\n\n---\n**Question pour toi** : Envisages-tu une licence pour te spécialiser dans un domaine précis (ex : langues, sciences humaines) ou comme tremplin vers un master ? Cela peut aider à affiner les pistes. 👤\n\n*(Pour explorer des filières spécifiques, un RDV avec le SCUIO de ton université ou un CIO est idéal.)*",
+      "latency_s": 14.3,
+      "response_length_chars": 2588,
+      "response_length_words": 395,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 4,
+      "top_sources": [
+        {
+          "id": "Licence - Portail Histoire",
+          "score": 1.102036559908587,
+          "summary": "nom=Licence - Portail Histoire | etablissement=Université Paris Cité | ville=Paris  6e  Arrondissement | niveau=bac+3 | phase=initial | taux_acces_parcoursup_2025=33.0 | nombre_places=20 | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        },
+        {
+          "id": "Licence - Portail Langues, littératures et civilisations étrangères et régionale",
+          "score": 1.1014969935386505,
+          "summary": "nom=Licence - Portail Langues, littératures et civilisations étrangères et régionales - Licence LLCER Anglais (renforcé ou mineures) | etablissement=Université Sorbonne Nouvelle Paris 3 | ville=Paris 12e  Arrondissement | niveau=bac+3 | phase=initial | taux_acces_parcoursup_2025=22.0 | nombre_places=50 | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq | text=Licence 1 LLCER Anglais mineure Etudes européennes et internationales"
+        },
+        {
+          "id": "Licence - Double diplôme - Licence Economie et gestion - Double diplôme Licence ",
+          "score": 1.0943167591491143,
+          "summary": "nom=Licence - Double diplôme - Licence Economie et gestion - Double diplôme Licence Management international - Diplôme universitaire Compétences en management - site de Sénart | etablissement=Université Paris- Est- Créteil Val de Marne UPEC - Antenne de Sénart | ville=Lieusaint | niveau=bac+3 | phase=initial | taux_acces_parcoursup_2025=10.0 | nombre_places=32 | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq | text=Double diplôme Licence Management international - Diplôme universitaire Compétences en management - site de Sénart"
+        },
+        {
+          "id": "Licence - Sociologie",
+          "score": 1.1009873364224576,
+          "summary": "nom=Licence - Sociologie | etablissement=Sorbonne université | ville=Paris  6e  Arrondissement | niveau=bac+3 | phase=initial | taux_acces_parcoursup_2025=41.0 | nombre_places=135 | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 13.98,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "C1",
+      "category": "decouverte",
+      "split": "dev",
+      "intent_target": "decouverte",
+      "chemin_target": "explore",
+      "question": "J'aime les données et la géopolitique, quels métiers existent ?",
+      "response": "**Si je te comprends bien**, tu cherches des métiers qui combinent **l'analyse de données** et **la géopolitique** — un domaine passionnant où la tech rencontre les enjeux internationaux.\n\nVoici 3 pistes concrètes issues des formations référencées :\n\n- **Plan A — Expert en GEOINT (Géopolitique + Data)** : Formations comme le **Master Géopolitique - GEOINT** (Sorbonne) ou **Analyste en Relations Internationales** (ILERI) pour travailler dans le renseignement, les ONG ou les think tanks. Les données géolocalisées (satellites, réseaux sociaux) y sont centrales.\n- **Plan B — Data Scientist spécialisé \"Géodata\"** : Des parcours comme **Géo Data Management** (ex : Mastère Energy Mix) ou **Géomatique** (Toulouse/Univ. Lorraine) pour analyser des données spatiales (climat, migrations, conflits). Débouchés : agences publiques, énergie, défense.\n- **Plan C — Ingénieur Géographe** : Le diplôme de l’**ENSG** (École Nationale des Sciences Géographiques) forme à la cartographie avancée et à l’analyse territoriale, avec des applications en sécurité ou diplomatie.\n\n**Question pour toi** : Préfères-tu un métier **plus terrain** (analyse de crises en temps réel) ou **plus technique** (développement d’outils d’analyse géospatiale) ? On peut affiner ensemble !\n\n👤 *Pour explorer d’autres options (ex : cyber + géopolitique), un RDV avec un conseiller en CIO pourrait compléter ces pistes.*",
+      "latency_s": 6.15,
+      "response_length_chars": 1389,
+      "response_length_words": 201,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 12,
+      "top_sources": [
+        {
+          "id": "GEOGRAPHIE, AMENAGEMENT, ENVIRONNEMENT ET DEVELOPPEMENT — Géopolitique - Informa",
+          "score": 0.9703999618914637,
+          "summary": "nom=GEOGRAPHIE, AMENAGEMENT, ENVIRONNEMENT ET DEVELOPPEMENT — Géopolitique - Informations géographiques numériques (GEOINT) | etablissement=Sorbonne Université | ville=PARIS | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Gestionnaire de la sécurité des données, des réseaux et des systèmes",
+          "score": 0.8806136152766983,
+          "summary": "nom=Gestionnaire de la sécurité des données, des réseaux et des systèmes | etablissement=CALTEA | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "EXPERT ANALYSTE EN RELATIONS INTERNATIONALES, INTELLIGENCE STRATEGIQUE ET DIPLOM",
+          "score": 0.8794628902555311,
+          "summary": "nom=EXPERT ANALYSTE EN RELATIONS INTERNATIONALES, INTELLIGENCE STRATEGIQUE ET DIPLOMATIQUE (ILERI) | etablissement=ASSOCIATION PROMOTION DES TECHNIQUES INTERNATIONALES DE MANAGEMENT APTIM | niveau=bac+5 | phase=reorientation | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Ingénieur diplômé de l’Ecole nationale des sciences géographiques",
+          "score": 0.8811703145543592,
+          "summary": "nom=Ingénieur diplômé de l’Ecole nationale des sciences géographiques | etablissement=INST NAT INFO GEOGRAPHIQUE FORESTIERE | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Métiers des études, du conseil et de l’intervention (fiche nationale)",
+          "score": 0.8837265121973056,
+          "summary": "nom=Métiers des études, du conseil et de l’intervention (fiche nationale) | etablissement=UNIVERSITE PARIS CITE | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Prospecter par téléphone",
+          "score": 0.7655353532722196,
+          "summary": "nom=Prospecter par téléphone | etablissement=MBACTION | phase=initial"
+        },
+        {
+          "id": "Expert réseaux infrastructures et sécurité",
+          "score": 0.882781812093797,
+          "summary": "nom=Expert réseaux infrastructures et sécurité | etablissement=ASSOCIATION POUR LA GESTION DE 3IL | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Communication publique et politique (fiche nationale)",
+          "score": 0.881814269320303,
+          "summary": "nom=Communication publique et politique (fiche nationale) | etablissement=MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Géomatique (fiche nationale)",
+          "score": 0.8818458532848606,
+          "summary": "nom=Géomatique (fiche nationale) | etablissement=UNIVERSITE TOULOUSE II | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "mastère spé. Geo Data Management for Energy mix",
+          "score": 0.7025150905643225,
+          "summary": "nom=mastère spé. Geo Data Management for Energy mix | phase=initial | duree=1 an"
+        },
+        {
+          "id": "Cartographie, topographie et systèmes d'information géographique (fiche national",
+          "score": 0.8192569563406683,
+          "summary": "nom=Cartographie, topographie et systèmes d'information géographique (fiche nationale) | etablissement=UNIVERSITE DE LORRAINE | niveau=bac+3 | phase=initial | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        },
+        {
+          "id": "Domotique (fiche nationale)",
+          "score": 0.804795880746895,
+          "summary": "nom=Domotique (fiche nationale) | etablissement=CONSERVATOIRE NATIONAL DES ARTS ET METIERS | niveau=bac+3 | phase=initial | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 5.81,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "C5",
+      "category": "decouverte",
+      "split": "dev",
+      "intent_target": "decouverte",
+      "chemin_target": "explore",
+      "question": "J'aime la nature et l'informatique, est-ce compatible ?",
+      "response": "**TL;DR** : Oui, ta passion pour la nature et l’informatique est tout à fait compatible ! Les métiers à l’intersection de ces deux domaines sont en plein essor, avec des formations qui allient écologie et tech.\n\n**Plan A — Green IT & Data environnementale** : Des certifications comme *Manager Green IT* (ASSOCIATION POUR LA FORMATION A L'INFORMATIQUE) ou *Éco-conception numérique* (SIMPLON.CO) forment à la réduction de l’empreinte environnementale des outils tech, avec des débouchés comme data analyst ou data scientist orientés durabilité.\n\n**Plan B — Géomatique & Sciences de l’environnement** : Le diplôme d’*Ingénieur de l’Ecole nationale des sciences géographiques* (INST NAT INFO GEOGRAPHIQUE) combine cartographie, data et gestion des territoires — idéal pour travailler sur des projets d’aménagement écologique via des outils numériques.\n\n**Plan C — Agroécologie & Outils numériques** : Les masters en *Agroécologie* (ex : Institut Agro Dijon) ou *Gestion agri-environnementale* (Univ. Caen) intègrent de plus en plus des modules de modélisation data ou SIG (Systèmes d’Information Géographique) pour analyser les écosystèmes.\n\n---\n**Question pour toi** : Est-ce que tu préférerais un métier plutôt technique (développement, data) avec une touche écolo, ou un métier centré sur la nature qui utilise des outils numériques ? Ça peut aider à affiner les pistes ! 🌱💻\n\n*(Pour explorer plus en détail, un RDV avec un conseiller d’orientation ou le SCUIO de ton université pourrait t’aider à identifier les formations près de chez toi !)*",
+      "latency_s": 6.43,
+      "response_length_chars": 1544,
+      "response_length_words": 234,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 12,
+      "top_sources": [
+        {
+          "id": "AGROSCIENCES, ENVIRONNEMENT, TERRITOIRES, PAYSAGE, FORET — ÉCOLOGIE, BIODIVERSIT",
+          "score": 0.9490931043600521,
+          "summary": "nom=AGROSCIENCES, ENVIRONNEMENT, TERRITOIRES, PAYSAGE, FORET — ÉCOLOGIE, BIODIVERSITÉ (EB) | etablissement=Université de Picardie Jules-Verne | ville=AMIENS CEDEX 1 | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Appliquer une démarche d’éco-conception pour réduire l’empreinte environnemental",
+          "score": 0.7478005492695661,
+          "summary": "nom=Appliquer une démarche d’éco-conception pour réduire l’empreinte environnementale d’un service numérique | etablissement=SIMPLON.CO | phase=initial"
+        },
+        {
+          "id": "Ingénieur diplômé de l’Ecole nationale des sciences géographiques",
+          "score": 0.8627091147584538,
+          "summary": "nom=Ingénieur diplômé de l’Ecole nationale des sciences géographiques | etablissement=INST NAT INFO GEOGRAPHIQUE FORESTIERE | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "AGROSCIENCES, ENVIRONNEMENT, TERRITOIRES, PAYSAGE, FORET — TEAM-Milieux\" Transit",
+          "score": 0.9481040348350673,
+          "summary": "nom=AGROSCIENCES, ENVIRONNEMENT, TERRITOIRES, PAYSAGE, FORET — TEAM-Milieux\" Transition, Environnement, Agriculture, Milieux\" parcours francophone | etablissement=Institut national d'enseignement supérieur pour l'agriculture, l'alimentation et l'environnement | ville=RENNES | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "AGROSCIENCES, ENVIRONNEMENT, TERRITOIRES, PAYSAGE, FORET — BIOLOGIE INTEGRATIVE ",
+          "score": 0.9393760074060449,
+          "summary": "nom=AGROSCIENCES, ENVIRONNEMENT, TERRITOIRES, PAYSAGE, FORET — BIOLOGIE INTEGRATIVE ET CHANGEMENTS GLOBAUX | etablissement=Université d'Orléans | ville=ORLEANS CEDEX | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "AGROSCIENCES, ENVIRONNEMENT, TERRITOIRES, PAYSAGE, FORET — Forests and their env",
+          "score": 0.9432197251032506,
+          "summary": "nom=AGROSCIENCES, ENVIRONNEMENT, TERRITOIRES, PAYSAGE, FORET — Forests and their environment (FEN) | etablissement=Institut national des sciences et industries du vivant et de l'environnement | ville=NANCY | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Elaborer et déployer une stratégie de gestion écologique d'une zone naturelle",
+          "score": 0.7561801175092715,
+          "summary": "nom=Elaborer et déployer une stratégie de gestion écologique d'une zone naturelle | etablissement=DIDEROT EDUCATION CAMPUS | phase=initial"
+        },
+        {
+          "id": "AGROSCIENCES, ENVIRONNEMENT, TERRITOIRES, PAYSAGE, FORET — Agroécologie",
+          "score": 0.9426509739442999,
+          "summary": "nom=AGROSCIENCES, ENVIRONNEMENT, TERRITOIRES, PAYSAGE, FORET — Agroécologie | etablissement=Institut national d'enseignement supérieur pour l'agriculture, l'alimentation et l'environnement | ville=DIJON CEDEX | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "AGROSCIENCES, ENVIRONNEMENT, TERRITOIRES, PAYSAGE, FORET — Gestion et valorisati",
+          "score": 0.9426858976964245,
+          "summary": "nom=AGROSCIENCES, ENVIRONNEMENT, TERRITOIRES, PAYSAGE, FORET — Gestion et valorisation agri-environnementales | etablissement=Université de Caen Normandie | ville=CAEN | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Manager green IT",
+          "score": 0.8548020473027845,
+          "summary": "nom=Manager green IT | etablissement=ASSOCIATION POUR LA FORMATION A L'INFORMATIQUE ET AU NUMERIQUE | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "AGROSCIENCES, ENVIRONNEMENT, TERRITOIRES, PAYSAGE, FORET — Forêt Bois (FB)",
+          "score": 0.9459466516063977,
+          "summary": "nom=AGROSCIENCES, ENVIRONNEMENT, TERRITOIRES, PAYSAGE, FORET — Forêt Bois (FB) | etablissement=Institut national des sciences et industries du vivant et de l'environnement | ville=NANCY | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Concepteur créateur de jardin dans le paysage",
+          "score": 0.7802958471945014,
+          "summary": "nom=Concepteur créateur de jardin dans le paysage | etablissement=ECOLE NATIONALE SUPERIEURE DE PAYSAGE | niveau=bac+3 | phase=initial | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 6.07,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "D5",
+      "category": "diversite_geo",
+      "split": "dev",
+      "intent_target": "geographic",
+      "chemin_target": "choix",
+      "question": "Quelles formations accessibles en cybersécurité en Bretagne ?",
+      "response": "**TL;DR** : En Bretagne, les formations en cybersécurité accessibles post-bac vont du **BTS** (niveau bac+2) au **diplôme d'ingénieur** (bac+5), avec des sélectivités variables. Voici 3 pistes concrètes, classées par niveau et faisabilité.\n\n---\n\n**Plan A — BTS Cybersécurité (niveau bac+2, public, sélectif mais accessible)**\nLe **BTS Cybersécurité, Informatique et Réseaux** au [Lycée Bréquigny (Rennes)](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17725&typeBac=0&originePc=0) forme en 2 ans aux métiers de l'administration sécurité et réseaux. **38 % d'admission** en 2025, ouvert à tous les bacs (39 % de bac pro admis). Idéal pour une insertion rapide ou une poursuite en licence pro/école d'ingé.\n\n**Plan B — Diplôme d'ingénieur (bac+5, labellisé SecNumEdu/CTI)**\nL’[**École nationale supérieure d'ingénieurs de Bretagne-Sud**](https://www.onisep.fr/http/redirection/formation/slug/FOR.8289) propose un diplôme d'ingénieur en **informatique et cybersécurité** (grade master, label **SecNumEdu** reconnu par l'ANSSI). Sélectivité modérée (dossier + entretien), mais débouchés solides (RSSI, ingénieur sécurité). **Public** = frais réduits.\n\n**Plan C — Certificat de Spécialisation (niveau bac+1, très sélectif mais court)**\nLe **Certificat de Spécialisation Cybersécurité** au [Lycée Coetlogon (Rennes)](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=42630&typeBac=0&originePc=0) est une formation **intensive d’1 an**, mais **très sélective (18 % d'admission)** et réservée aux bacs pro (60 % des admis). À viser si tu as déjà un bagage technique.\n\n---\n**Question pour toi** : Quel niveau d’études te correspond le mieux à court terme ?\n- **Bac+2** (BTS, insertion rapide)\n- **Bac+5** (diplôme d’ingénieur, expertise)\n- **Formation courte** (certificat, si profil technique)\n*(On peut aussi parler alternance ou passerelles si tu veux !)*\n\n---\n👤 *Pour affiner ton projet, un RDV avec le SCUIO de ton lycée ou un CIO en Bretagne (ex : CIO de Rennes) te donnera des détails sur les portes ouvertes et les attendus locaux.*",
+      "latency_s": 10.2,
+      "response_length_chars": 2117,
+      "response_length_words": 268,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 6,
+      "top_sources": [
+        {
+          "id": "diplôme d'ingénieur de l'École nationale supérieure d'ingénieurs de Bretagne-Sud",
+          "score": 1.881305083904397,
+          "summary": "nom=diplôme d'ingénieur de l'École nationale supérieure d'ingénieurs de Bretagne-Sud de l'université de Bretagne-Sud spécialité informatique et cybersécurité | etablissement=Bretagne-Sud | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur de l'École nationale supérieure d'ingénieurs de Bretagne-Sud",
+          "score": 1.8800110137183592,
+          "summary": "nom=diplôme d'ingénieur de l'École nationale supérieure d'ingénieurs de Bretagne-Sud de l'université de Bretagne-Sud spécialité sécurité des systèmes d'information et cybersécurité en partenariat avec l'ITII Bretagne | etablissement=Bretagne-Sud | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Certificat de Spécialisation - Cybersécurité",
+          "score": 1.12887019695864,
+          "summary": "nom=Certificat de Spécialisation - Cybersécurité | etablissement=Lycée professionnel Coetlogon | ville=Rennes | phase=initial | taux_acces_parcoursup_2025=42.0 | nombre_places=15"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 1.1302726700284762,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option A : Informatique et réseaux | etablissement=Lycée Bréquigny | ville=Rennes | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=38.0 | nombre_places=30 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        },
+        {
+          "id": "Certificat de Spécialisation - Cybersécurité",
+          "score": 1.118883027192207,
+          "summary": "nom=Certificat de Spécialisation - Cybersécurité | etablissement=Lycée des métiers Jacques Brel | ville=Lormont | phase=initial | taux_acces_parcoursup_2025=18.0 | nombre_places=15"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 1.1245223539076392,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option A : Informatique et réseaux | etablissement=Lycée Vauban | ville=Brest | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=32.0 | nombre_places=12 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 9.44,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "E5",
+      "category": "passerelles",
+      "split": "dev",
+      "intent_target": "passerelles",
+      "chemin_target": "explore",
+      "question": "Je travaille depuis 3 ans, je veux reprendre mes études en cyber, comment ?",
+      "response": "**TL;DR** : Vous souhaitez vous reconvertir en cybersécurité après 3 ans d’expérience professionnelle. Plusieurs voies adaptées aux adultes existent, avec des formats courts, en alternance ou en validation des acquis (VAE/VAP). Voici 3 pistes labellisées **SecNumEdu** (garantie qualité ANSSI) pour monter en compétences sans repartir de zéro.\n\n---\n\n**Plan A — Formation courte certifiante (Bac+3, 1 an)**\nLicence professionnelle **Métiers des réseaux informatiques et télécommunications (parcours cybersécurité)** à [CY Cergy Paris Université](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=49420&typeBac=0&originePc=0).\n**Pourquoi ?** Formation publique très ciblée (24 places), accessible via **VAE/VAP** si vous avez des compétences transverses (réseaux, admin système). Alternance possible pour financer la formation.\n\n**Plan B — Diplôme d’ingénieur en alternance (Bac+5, 3 ans)**\nDiplôme d’ingénieur **spécialité informatique et cybersécurité** du [CNAM](https://www.onisep.fr/http/redirection/formation/slug/FOR.10153).\n**Pourquoi ?** Modulaire (cours du soir/à distance), compatible avec un emploi temps plein. **CPF mobilisable** pour certaines unités d’enseignement. Reconnu par les entreprises pour les profils en reconversion.\n\n**Plan C — Mastère spécialisé (Bac+5, 1 an)**\nMastère **Expert en cybersécurité** (exemples : [fiche ONISEP 1](https://www.onisep.fr/http/redirection/formation/slug/FOR.11495), [fiche ONISEP 2](https://www.onisep.fr/http/redirection/formation/slug/FOR.11837)).\n**Pourquoi ?** Si vous visez un poste à responsabilité (RSSI, audit), ces formations courtes (1 an) s’adressent aux profils expérimentés. **Sélectif** : dossier + entretien, souvent en alternance.\n\n---\n**Attention aux pièges** :\n- **Alternance ≠ emploi garanti** : Certaines formations en alternance exigent de trouver soi-même l’entreprise d’accueil. Prévoyez un plan B (CPF, Pôle Emploi).\n- **Labels SecNumEdu** : Toutes les formations citées sont labellisées par l’ANSSI, mais vérifiez les **taux d’insertion** (ex : 50 % en emploi stable pour la licence pro de Cergy).\n- **VAE/VAP** : La Validation des Acquis de l’Expérience (VAE) peut vous faire gagner du temps, mais le processus est exigeant (dossier + jury). Renseignez-vous auprès d’un **CIO** ou du **Fongecif** de votre région.\n\n---\n**Pour affiner** : Avez-vous déjà des compétences techniques (réseaux, développement, administration système) ? Cela pourrait orienter vers une formation plus courte (Plan A) ou un diplôme complet (Plan B/C). Sinon, des **MOOC** (ANSSI, OpenClassrooms) peuvent servir de tremplin avant de vous engager.",
+      "latency_s": 22.57,
+      "response_length_chars": 2642,
+      "response_length_words": 327,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 10,
+      "top_sources": [
+        {
+          "id": "manager de la cybersécurité",
+          "score": 1.2553930432861145,
+          "summary": "nom=manager de la cybersécurité | niveau=bac+5 | phase=master | duree=2 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "mastère spé. expert en cybersécurité",
+          "score": 1.242179057468926,
+          "summary": "nom=mastère spé. expert en cybersécurité | niveau=bac+5 | phase=master | duree=1 an | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "expert en cybersécurité",
+          "score": 1.2432921238182566,
+          "summary": "nom=expert en cybersécurité | niveau=bac+5 | phase=master | duree=2 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "spécialiste en cybersécurité",
+          "score": 1.151094735371993,
+          "summary": "nom=spécialiste en cybersécurité | niveau=bac+3 | phase=initial | duree=3 ans | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        },
+        {
+          "id": "bachelor numérique option cybersécurité",
+          "score": 1.1353581597034728,
+          "summary": "nom=bachelor numérique option cybersécurité | niveau=bac+3 | phase=initial | duree=3 ans | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        },
+        {
+          "id": "Licence professionnelle - Métiers des réseaux informatiques et télécommunication",
+          "score": 1.1082672372329325,
+          "summary": "nom=Licence professionnelle - Métiers des réseaux informatiques et télécommunications Parcours réseaux et cybersécurité | etablissement=CY Cergy Paris Université | ville=Cergy | niveau=bac+3 | phase=initial | taux_acces_parcoursup_2025=10.0 | nombre_places=24 | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq | text=Métiers des réseaux informatiques et télécommunications Parcours réseaux et cybersécurité"
+        },
+        {
+          "id": "Licence professionnelle - Métiers des réseaux informatiques et télécommunication",
+          "score": 1.1082672372329325,
+          "summary": "nom=Licence professionnelle - Métiers des réseaux informatiques et télécommunications Parcours réseaux et cybersécurité | etablissement=CY Cergy Paris Université | ville=Cergy | niveau=bac+3 | phase=initial | taux_acces_parcoursup_2025=10.0 | nombre_places=24 | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq | text=Métiers des réseaux informatiques et télécommunications Parcours réseaux et cybersécurité"
+        },
+        {
+          "id": "MBA management portuaire et multimodal, digitalisation et cybersécurité",
+          "score": 0.8323876290305444,
+          "summary": "nom=MBA management portuaire et multimodal, digitalisation et cybersécurité | niveau=bac+5 | phase=master | duree=2 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur du CNAM spécialité informatique et cybersécurité",
+          "score": 0.8284791458339706,
+          "summary": "nom=diplôme d'ingénieur du CNAM spécialité informatique et cybersécurité | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "expert en développement de solutions de cybersécurité",
+          "score": 0.8385039800997727,
+          "summary": "nom=expert en développement de solutions de cybersécurité | niveau=bac+5 | phase=master | duree=2 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 1,
+        "tour1_failed_claims": [
+          "info manquante : Mention manquante : 'taux d'accès' = rang du dernier appelé"
+        ],
+        "tour2_failed_claims": [],
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 21.61,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "F1",
+      "category": "comparaison",
+      "split": "dev",
+      "intent_target": "comparaison",
+      "chemin_target": "choix",
+      "question": "Compare ENSEIRB-MATMECA et EPITA pour la cybersécurité",
+      "response": "**TL;DR** : Tu compares une école d'ingénieurs **publique** (ENSEIRB-MATMECA) et une école **privée** (EPITA) pour te spécialiser en cybersécurité. Les deux formations mènent à des métiers similaires (RSSI, ingénieur sécurité), mais diffèrent sur l'accès, les coûts et la pédagogie.\n\n---\n\n### **Comparaison ENSEIRB-MATMECA vs EPITA**\n\n| **Critère**               | **ENSEIRB-MATMECA** (Bordeaux INP)                                                                 | **EPITA** (Paris/Le Kremlin-Bicêtre)                                                                 |\n|---------------------------|----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|\n| **Type**                  | École publique (frais modérés)                                                                     | École privée (frais élevés)                                                                         |\n| **Accès**                 | Principalement **post-prépa** (concours commun INP) ou admissions parallèles (BUT/L2/L3).            | **Post-bac** via concours (Puissance Alpha, Avenir) ou admissions parallèles.                        |\n| **Sélectivité**           | Très sélective (prépa requise pour la voie principale).                                            | Modérément sélective (67 % d'accès en 2025, tendance à l'augmentation).                              |\n| **Pédagogie**             | Approche **théorique et scientifique** (maths, algorithmique).                                     | Pédagogie **orientée projet et pratique** (cyber dès les premières années).                          |\n| **Coût**                  | Frais publics (~600-2 500 €/an selon revenus).                                                     | Frais privés (~8 000-10 000 €/an).                                                                 |\n| **Labels**                | Diplôme d'ingénieur **CTI**, reconnaissance forte en recherche.                                  | Diplôme d'ingénieur **CTI**, réseau pro solide (alternance possible en cycle ingénieur).             |\n| **Débouchés**             | Métiers de la cybersécurité (RSSI, ingénieur sécurité) + poursuite en recherche/thèse.              | Métiers opérationnels en cybersécurité (pentest, SOC, consulting) avec un réseau alumni actif.       |\n| **Public cible**          | Étudiants visant une **expertise technique approfondie** et une carrière R&D ou académique.         | Étudiants cherchant une **insertion pro rapide** et une spécialisation cyber dès le bachelor.         |\n\n---\n### **Synthèse pour t'aider à choisir**\n- **Privilégie ENSEIRB-MATMECA** si tu vises une **formation publique exigeante** (via prépa ou admission parallèle), avec un budget serré et un intérêt pour la recherche.\n- **Privilégie EPITA** si tu préfères une **entrée post-bac**, une pédagogie pratique, et que le coût n’est pas un frein (alternance possible en cycle ingénieur pour réduire les frais).\n- **Alternative à explorer** : Un **BUT Informatique** (ex : [Lycée Pierre Mendes France, Epinal](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10734&typeBac=0&originePc=0)) suivi d’un mastère spécialisé (ex : [CentraleSupélec-IMT](https://www.onisep.fr/http/redirection/formation/slug/FOR.1577)) pour allier pratique et expertise.\n\n---\n**Question pour toi** :\nQu’est-ce qui compte le plus dans ton choix ?\n- **Le coût et la reconnaissance académique** (ENSEIRB) ?\n- **L’accès post-bac et l’immersion pro rapide** (EPITA) ?\n- **Une voie progressive avec moins de pression sélective** (BUT + mastère) ?\n\n*(Pour affiner, un RDV avec un conseiller d’orientation ou le SCUIO de ton université peut t’aider à peser le pour/contre selon ton profil.)*",
+      "latency_s": 13.02,
+      "response_length_chars": 3867,
+      "response_length_words": 393,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 12,
+      "top_sources": [
+        {
+          "id": "mastère spé. cybersécurité (CentraleSupélec - IMT Atlantique Bretagne-Pays de la",
+          "score": 2.4732840092815804,
+          "summary": "nom=mastère spé. cybersécurité (CentraleSupélec - IMT Atlantique Bretagne-Pays de la Loire) | etablissement=CentraleSupélec - IMT Atlantique Bretagne-Pays de la Loire | niveau=bac+5 | phase=master | duree=1 an | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "mastère spé. cybersécurité (ISEN Yncréa Méditerranée)",
+          "score": 1.327704205610439,
+          "summary": "nom=mastère spé. cybersécurité (ISEN Yncréa Méditerranée) | etablissement=ISEN Yncréa Méditerranée | niveau=bac+5 | phase=master | duree=1 an | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur de l'École CentraleSupélec spécialité cybersécurité",
+          "score": 1.3298162333840158,
+          "summary": "nom=diplôme d'ingénieur de l'École CentraleSupélec spécialité cybersécurité | etablissement=École CentraleSupélec | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Formation d'ingénieur Bac + 5 - Bac Série générale",
+          "score": 1.0691941286253968,
+          "summary": "nom=Formation d'ingénieur Bac + 5 - Bac Série générale | etablissement=EPITA Paris | ville=Le Kremlin-Bicêtre | niveau=bac+5 | phase=master | taux_acces_parcoursup_2025=67.0 | nombre_places=86 | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq | text=Bac Série générale - Cycle anglophone"
+        },
+        {
+          "id": "expert en cybersécurité",
+          "score": 1.2072124659410775,
+          "summary": "nom=expert en cybersécurité | niveau=bac+5 | phase=master | duree=2 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur du CNAM spécialité informatique et cybersécurité",
+          "score": 1.2103909516632572,
+          "summary": "nom=diplôme d'ingénieur du CNAM spécialité informatique et cybersécurité | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 1.0160253163437714,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option A : Informatique et réseaux | etablissement=Lycée Pierre Mendes France | ville=Epinal | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=47.0 | nombre_places=24 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        },
+        {
+          "id": "bachelor en sciences et ingénierie - cybersécurité (ESIEA)",
+          "score": 1.0611485162428327,
+          "summary": "nom=bachelor en sciences et ingénierie - cybersécurité (ESIEA) | etablissement=ESIEA | niveau=bac+3 | phase=initial | duree=3 ans | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        },
+        {
+          "id": "INFORMATIQUE — M1  - Cybersecurity",
+          "score": 0.9761215537986252,
+          "summary": "nom=INFORMATIQUE — M1  - Cybersecurity | etablissement=Institut polytechnique de Paris | ville=PALAISEAU CEDEX | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "spécialiste en cybersécurité",
+          "score": 1.1036199654606547,
+          "summary": "nom=spécialiste en cybersécurité | niveau=bac+3 | phase=initial | duree=3 ans | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        },
+        {
+          "id": "CS cybersécurité",
+          "score": 1.0556698595317102,
+          "summary": "nom=CS cybersécurité | phase=initial | duree=1 an"
+        },
+        {
+          "id": "bachelor en sciences et ingénierie - informatique et cybersécurité (ESILV)",
+          "score": 1.0528505099625252,
+          "summary": "nom=bachelor en sciences et ingénierie - informatique et cybersécurité (ESILV) | etablissement=ESILV | niveau=bac+3 | phase=initial | duree=3 ans | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 12.67,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "F3",
+      "category": "comparaison",
+      "split": "dev",
+      "intent_target": "comparaison",
+      "chemin_target": "choix",
+      "question": "BTS SIO vs BUT informatique : lequel choisir ?",
+      "response": "**TL;DR** : Si tu hésites entre un BTS et un BUT en informatique, tout dépend de ton projet : une insertion rapide dans le monde professionnel (BTS) ou une poursuite d’études plus longue avec un diplôme de niveau licence (BUT).\n\n---\n**Plan A — BUT Génie électrique et informatique industrielle (Belfort)** : Formation publique en 3 ans, accessible (65 % d’admission en 2025), idéale si tu veux continuer vers un master ou une école d’ingénieurs. Grade licence reconnu, avec une approche plus théorique et technique.\n*[Voir la fiche Parcoursup](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10822&typeBac=0&originePc=0)*\n\n**Plan B — BTS Cybersécurité/Informatique et réseaux (plusieurs villes)** : Formation courte (2 ans), sélective (20-50 % d’admission selon les lycées), axée sur l’insertion professionnelle rapide. Métiers visés : administrateur sécurité, ingénieur réseaux.\n*Exemples :*\n- *Lycée Simone de Beauvoir (Gragnague) : sélectif (39 %)* → [Fiche](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39811&typeBac=0&originePc=0)\n- *Lycée Vauban (Brest) : plus accessible (32 %)* → [Fiche](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=25015&typeBac=0&originePc=0)\n\n**Plan C — Alternance ou spécialisation** : Si tu veux allier théorie et pratique, explore les BTS/BUT en alternance (contrat pro/apprentissage). Certains BTS comme celui du *Lycée Chaptal (Saint-Brieuc)* sont plus accessibles (70 % d’admission) et permettent une immersion rapide en entreprise.\n*[Fiche Lycée Chaptal](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3327&typeBac=0&originePc=0)*\n\n---\n**Attention aux pièges** :\n- Le BUT demande un investissement plus long (3 ans) mais ouvre plus de portes pour des études supérieures.\n- Certains BTS très sélectifs (ex : *Lycée Marcel Sembat, 20 %*) peuvent être un pari risqué sans dossier solide.\n- Vérifie les **tendances Parcoursup** : certains BTS voient leur sélectivité augmenter fortement (ex : +35 points en 2 ans à Gragnague).\n\n---\n**Question pour toi** : Préfères-tu une formation courte pour entrer vite sur le marché du travail (BTS), ou un diplôme plus complet pour poursuivre tes études (BUT) ? On peut affiner en fonction de tes spécialités au lycée ou de tes envies de métier ! 👤 Pour un choix précis, un RDV avec un conseiller d’orientation (Psy-EN ou CIO) est aussi une bonne idée.",
+      "latency_s": 15.63,
+      "response_length_chars": 2500,
+      "response_length_words": 323,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 10,
+      "top_sources": [
+        {
+          "id": "BUT - Génie électrique et informatique industrielle",
+          "score": 0.9839804975193279,
+          "summary": "nom=BUT - Génie électrique et informatique industrielle | etablissement=IUT Nord Franche-Comté - Site de Belfort | ville=Belfort | niveau=bac+3 | phase=initial | taux_acces_parcoursup_2025=65.0 | nombre_places=40 | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 0.9451617122195058,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option A : Informatique et réseaux | etablissement=Lycée polyvalent Simone de Beauvoir | ville=Gragnague | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=39.0 | nombre_places=24 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 0.9450841588871524,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option B : Electronique et réseaux | etablissement=Lycée Chaptal | ville=Saint-Brieuc | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=70.0 | nombre_places=15 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 0.9420110779076878,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option A : Informatique et réseaux | etablissement=Lycée Marcel Sembat | ville=Sotteville-lès-Rouen | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=20.0 | nombre_places=17 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 0.9413100853745472,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option A : Informatique et réseaux | etablissement=Lycée Andre Malraux | ville=Béthune | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=50.0 | nombre_places=30 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 0.9428151650532008,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option A : Informatique et réseaux | etablissement=Lycée Raymond Queneau | ville=Yvetot | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=41.0 | nombre_places=15 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 0.938183697702377,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option A : Informatique et réseaux | etablissement=Lycée La Briquerie | ville=Thionville | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=23.0 | nombre_places=30 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 0.9366776178717984,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option A : Informatique et réseaux | etablissement=Lycée Jules Haag | ville=Besançon | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=29.0 | nombre_places=26 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 0.9362809991689338,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option B : Electronique et réseaux | etablissement=Lycée Paul Langevin | ville=Beauvais | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=34.0 | nombre_places=15 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 0.9416687868710968,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option A : Informatique et réseaux | etablissement=Lycée Vauban | ville=Brest | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=32.0 | nombre_places=12 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 15.13,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "F6",
+      "category": "comparaison",
+      "split": "test",
+      "intent_target": "comparaison",
+      "chemin_target": "choix",
+      "question": "Compare INSA Lyon et INSA Toulouse pour l'informatique",
+      "response": "**TL;DR** : Tu compares deux INSA en informatique — l'un à Lyon, l'autre à Toulouse. Voici leurs points clés côte à côte pour t'aider à trancher.\n\n---\n\n| **Critère**               | **INSA Toulouse (spé Informatique & Réseaux)**                                                                 | **INSA Lyon (spé Informatique)**                                                                 |\n|---------------------------|-------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|\n| **Sélectivité**           | Très sélective (13 % d'accès en 2025, 92 % de néobacheliers avec mention TB).                                | Données précises manquantes dans les fiches. Vérifie sur [Parcoursup](https://www.parcoursup.fr).               |\n| **Public cible**          | Bac général (100 %), profil excellent (65 % TB).                                                           | Bac général (implicite, pas de données techno/pro dans les fiches).                                            |\n| **Insertion pro**         | Salaire médian : 2 570 € net/mois à 12 mois (58 % en emploi stable).                                          | **Je n'ai pas l'information sur les débouchés précis de l'INSA Lyon en informatique dans les sources.**       |\n| **Spécificités**          | Diplôme d'ingénieur **grade Master**, spécialité **réseaux** incluse.                                        | Spécialité **informatique** (pas de détail \"réseaux\" dans les fiches).                                        |\n| **Frais**                 | Public (frais modérés : ~600 €/an + sécurité sociale).                                                      | Public (frais similaires, à confirmer sur [ONISEP Lyon](https://www.onisep.fr/formation/FOR.5525)).           |\n| **Localisation**          | Toulouse (écosystème aéronautique/spatial fort : Airbus, Thales, CNES).                                      | Lyon (pôle tech dynamique : startups, entreprises comme OVH, Worldline).                                     |\n\n---\n\n**Synthèse pour toi** :\n- Si tu vises un **double compétence réseaux + informatique** avec un ancrage dans l’aérospatial, **Toulouse** a un avantage clair (écosystème + données insertion solides).\n- Si tu préfères un **cadre plus urbain** ou une spécialité informatique \"pure\" (sans réseaux), **Lyon** peut convenir — mais **vérifie ses stats d’insertion** (absentes des fiches).\n- Dans les deux cas, prévois un **dossier excellent** (TB quasi obligatoire à Toulouse, probablement similaire à Lyon).\n\n**Question pour toi** : Est-ce que l’écosystème local (entreprises, stages) ou la spécialisation précise (réseaux vs informatique générale) pèse plus dans ta décision ? On peut creuser l’un ou l’autre !",
+      "latency_s": 9.57,
+      "response_length_chars": 2873,
+      "response_length_words": 305,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 12,
+      "top_sources": [
+        {
+          "id": "Formation d'ingénieur Bac + 5 - Bac Général",
+          "score": 1.1848915986926714,
+          "summary": "nom=Formation d'ingénieur Bac + 5 - Bac Général | etablissement=INSA Toulouse | ville=Toulouse | niveau=bac+5 | phase=master | taux_acces_parcoursup_2025=13.0 | nombre_places=270 | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq | text=Bac Général"
+        },
+        {
+          "id": "Formation d'ingénieur Bac + 5 - Double diplôme",
+          "score": 1.1838769509498515,
+          "summary": "nom=Formation d'ingénieur Bac + 5 - Double diplôme | etablissement=INSA Toulouse | ville=Toulouse | niveau=bac+5 | phase=master | taux_acces_parcoursup_2025=10.0 | nombre_places=24 | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq | text=Double diplôme"
+        },
+        {
+          "id": "Formation d'ingénieur Bac + 5 - bac STI2D,STL",
+          "score": 1.1736173246266135,
+          "summary": "nom=Formation d'ingénieur Bac + 5 - bac STI2D,STL | etablissement=INSA Toulouse | ville=Toulouse | niveau=bac+5 | phase=master | taux_acces_parcoursup_2025=15.0 | nombre_places=40 | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq | text=bac STI2D"
+        },
+        {
+          "id": "Formation d'ingénieur Bac + 5 - Bac Série générale",
+          "score": 1.0579467652152303,
+          "summary": "nom=Formation d'ingénieur Bac + 5 - Bac Série générale | etablissement=IPSA Toulouse | ville=Toulouse | niveau=bac+5 | phase=master | taux_acces_parcoursup_2025=53.0 | nombre_places=130 | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq | text=Bac Série générale"
+        },
+        {
+          "id": "IA - INTELLIGENCE ARTIFICIELLE / AI - ARTIFICIAL INTELLIGENCE — None",
+          "score": 0.9795565526535182,
+          "summary": "nom=IA - INTELLIGENCE ARTIFICIELLE / AI - ARTIFICIAL INTELLIGENCE — None | etablissement=Institut national des sciences appliquées de Lyon | ville=VILLEURBANNE CEDEX | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "INFORMATIQUE — Computer Science for Aerospace (CSA)",
+          "score": 0.9742224857373021,
+          "summary": "nom=INFORMATIQUE — Computer Science for Aerospace (CSA) | etablissement=Université de Toulouse | ville=TOULOUSE CEDEX 9 | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "METHODES INFORMATIQUES APPLIQUEES A LA GESTION DES ENTREPRISES-MIAGE — Ingénieri",
+          "score": 0.9692089971239456,
+          "summary": "nom=METHODES INFORMATIQUES APPLIQUEES A LA GESTION DES ENTREPRISES-MIAGE — Ingénierie d'Affaires Numériques (IAN) | etablissement=Université de Toulouse | ville=TOULOUSE CEDEX 9 | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "METHODES INFORMATIQUES APPLIQUEES A LA GESTION DES ENTREPRISES-MIAGE — MIAGE - F",
+          "score": 0.9729616621241223,
+          "summary": "nom=METHODES INFORMATIQUES APPLIQUEES A LA GESTION DES ENTREPRISES-MIAGE — MIAGE - Formation Initiale | etablissement=Université Toulouse Capitole | ville=TOULOUSE CEDEX 9 | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Ingénieur diplômé de l'institut national des sciences appliquées de Toulouse, sp",
+          "score": 0.9106410553684677,
+          "summary": "nom=Ingénieur diplômé de l'institut national des sciences appliquées de Toulouse, spécialité informatique et réseaux | etablissement=INSTITUT NATIONAL DES SCIENCES APPLIQUEES DE TOULOUSE (INSA) | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur de l'Institut national des sciences appliquées de Lyon spéci",
+          "score": 0.8966386531580667,
+          "summary": "nom=diplôme d'ingénieur de l'Institut national des sciences appliquées de Lyon spécialité informatique | etablissement=Institut national des sciences appliquées de Lyon | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Ingénieur d'affaires industrielles pour l'international (MS)",
+          "score": 0.8905585324047623,
+          "summary": "nom=Ingénieur d'affaires industrielles pour l'international (MS) | etablissement=INSTITUT NATIONAL DES SCIENCES APPLIQUEES DE TOULOUSE (INSA) | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Ingénieur diplômé de l'institut national des sciences appliquées de toulouse, sp",
+          "score": 0.8969886232003822,
+          "summary": "nom=Ingénieur diplômé de l'institut national des sciences appliquées de toulouse, spécialité automatique et électronique | etablissement=INSTITUT NATIONAL DES SCIENCES APPLIQUEES DE TOULOUSE (INSA) | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 8.87,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "B1",
+      "category": "realisme",
+      "split": "dev",
+      "intent_target": "realisme",
+      "chemin_target": "factuel",
+      "question": "J'ai 11 de moyenne en terminale générale, est-ce que je peux intégrer HEC ?",
+      "response": "**TL;DR** : HEC en direct après le bac avec 11 de moyenne, c’est **mission impossible** — la voie royale passe par une prépa ou un bachelor sélectif. Mais il existe des alternatives réalistes pour viser un diplôme équivalent (Bac+5 commerce/management) ou des écoles d’ingé accessibles avec ton profil. On explore ?\n\n---\n\n**Plan A — Écoles de commerce post-bac accessibles (grade Master)**\nL’**ISTEC Paris** (grade Master, [fiche officielle](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24113)) recrute à **33 %** sur Parcoursup, avec 32 % d’admis ayant une mention AB (comme toi si tu vises 12+ au bac). Moins prestigieux qu’HEC, mais diplôme reconnu et frais maîtrisés (vs prépa + concours).\n\n**Plan B — Écoles d’ingé post-bac (si tu as 2 spés scientifiques)**\nL’**ECE Paris** (campus Bordeaux ou Paris) accepte **88-96 %** des candidats avec Maths + 1 autre spé scientifique ([exemple Bordeaux](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39912)). 40 % des admis ont une mention AB — ton profil colle si tu montes à 12-13 de moyenne. **Frais élevés** (privé), mais débouchés solides.\n\n**Plan C — Licence + admission parallèle (voies de contournement)**\nUne **licence éco-gestion** (univ publique, quasi 100 % d’accès) + spécialisation en master (IAE, école de commerce en admission parallèle). Ex : **master en management** après une L3. Moins sélectif en entrée, mais exigeant sur la durée.\n\n---\n**Question clé** : Préfères-tu :\n1) **Tenter une école post-bac sélective** (ISTEC/ECE) en misant sur une remontée de moyenne ?\n2) **Sécuriser une licence** pour rebondir en master ?\n3) **Envisager une prépa** (si tu es prêt·e à un rythme intense) pour viser HEC/ESCP plus tard ?\n\n👤 *Pour affiner, un RDV avec ton/tta conseiller·e d’orientation au lycée (Psy-EN) ou un CIO peut t’aider à peser le pour/contre.*\n\n💭 **Avant de décider cette voie** :\n1. Qu'est-ce qui te motive précisément dans ce choix ?\n2. Que sais-tu du métier au quotidien (stages, rencontres, shadowing) ?\n3. As-tu rencontré quelqu'un qui fait ce métier ?\n\n👤 Parle-en au **CIO** le plus proche ou au **Psy-EN** de ton lycée. Ils sont formés pour t'aider à structurer ton projet — pas juste à choisir une formation.",
+      "latency_s": 10.03,
+      "response_length_chars": 2276,
+      "response_length_words": 342,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 6,
+      "top_sources": [
+        {
+          "id": "Formation d'ingénieur Bac + 5 - Bac Série générale avec 2 spécialités scientifiq",
+          "score": 1.1145795731406505,
+          "summary": "nom=Formation d'ingénieur Bac + 5 - Bac Série générale avec 2 spécialités scientifiques mais sans la spécialité Maths en Terminale | etablissement=ECE Paris | ville=Paris 15e  Arrondissement | niveau=bac+5 | phase=master | taux_acces_parcoursup_2025=96.0 | nombre_places=15 | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq | text=Bac Série générale avec 2 spécialités scientifiques mais sans la spécialité Maths en Terminale"
+        },
+        {
+          "id": "Formation d'ingénieur Bac + 5 - Bac Série générale avec la spécialité Maths en T",
+          "score": 1.114237690362817,
+          "summary": "nom=Formation d'ingénieur Bac + 5 - Bac Série générale avec la spécialité Maths en Terminale + une spécialité non scientifique | etablissement=ECE Paris | ville=Paris 15e  Arrondissement | niveau=bac+5 | phase=master | taux_acces_parcoursup_2025=89.0 | nombre_places=20 | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq | text=Bac Série générale avec la spécialité Maths en Terminale + une spécialité non scientifique"
+        },
+        {
+          "id": "Formation d'ingénieur Bac + 5 - Bac série générale avec la spécialité Maths en T",
+          "score": 1.111846706180268,
+          "summary": "nom=Formation d'ingénieur Bac + 5 - Bac série générale avec la spécialité Maths en Terminale + une spécialité scientifique | etablissement=ECE Paris | ville=Paris 15e  Arrondissement | niveau=bac+5 | phase=master | taux_acces_parcoursup_2025=88.0 | nombre_places=495 | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq | text=Bac série générale avec la spécialité Maths en Terminale + une spécialité scientifique"
+        },
+        {
+          "id": "Formation d'ingénieur Bac + 5 - Bac série générale avec la spécialité Maths en T",
+          "score": 1.0920293532843255,
+          "summary": "nom=Formation d'ingénieur Bac + 5 - Bac série générale avec la spécialité Maths en Terminale + une spécialité scientifique | etablissement=ECE Bordeaux | ville=Bordeaux | niveau=bac+5 | phase=master | taux_acces_parcoursup_2025=96.0 | nombre_places=85 | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq | text=Bac série générale avec la spécialité Maths en Terminale + une spécialité scientifique"
+        },
+        {
+          "id": "Formation des écoles de commerce et de management Bac + 5 - Programme Grandes Ec",
+          "score": 1.0807666763945432,
+          "summary": "nom=Formation des écoles de commerce et de management Bac + 5 - Programme Grandes Ecoles - Grade Master | etablissement=ISTEC - Ecole Supérieure de Commerce et de Marketing | ville=Paris 10e  Arrondissement | niveau=bac+5 | phase=master | taux_acces_parcoursup_2025=33.0 | nombre_places=100 | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq | text=Programme Grandes Ecoles - Grade Master"
+        },
+        {
+          "id": "Formation d'ingénieur Bac + 5 - Bacs généraux - 2 Sciences",
+          "score": 1.0816796826087036,
+          "summary": "nom=Formation d'ingénieur Bac + 5 - Bacs généraux - 2 Sciences | etablissement=HEI Lille | ville=Lille | niveau=bac+5 | phase=master | taux_acces_parcoursup_2025=91.0 | nombre_places=17 | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq | text=Bacs généraux - 2 Sciences"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 9.6,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "B5",
+      "category": "realisme",
+      "split": "dev",
+      "intent_target": "realisme",
+      "chemin_target": "factuel",
+      "question": "J'ai 13 de moyenne, est-ce que Sciences Po Paris est réaliste ?",
+      "response": "**TL;DR** : Avec 13 de moyenne, **Sciences Po Paris (Bachelor) est extrêmement ambitieux** (5 % d’admission, 56 % de mentions TB). Mais il existe des alternatives réalistes dans le réseau Sciences Po ou des passerelles post-bac+1.\n\n---\n**Plan A — IEP régionaux** : Sélectivité plus accessible (ex : **Sciences Po Aix**, 45 % d’admission, profil majoritairement B/TB). [Voir la fiche](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=25831&typeBac=0&originePc=0).\n\n**Plan B — Double diplôme moins sélectif** : Ex : **Licence Maths-Sciences sociales à Sciences Po Paris** (18 % d’admission, profil plus varié). [Détails ici](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=32563&typeBac=0&originePc=0).\n\n**Plan C — Passerelle après une L1** : Licence publique (droit, éco) + admissions parallèles en L2/L3 vers les IEP (ex : concours commun des IEP de région).\n\n---\n**Question pour toi** : Préfères-tu tenter un concours post-bac (Plan A/B) ou sécuriser une licence avec option IEP plus tard (Plan C) ? On peut affiner les détails d’un plan en priorité.\n\n👤 *Pour un accompagnement personnalisé, un RDV avec le SCUIO ou un CIO reste le meilleur complément.*\n\n💭 **Avant de décider cette voie** :\n1. Qu'est-ce qui te motive précisément dans ce choix ?\n2. Que sais-tu du métier au quotidien (stages, rencontres, shadowing) ?\n3. As-tu rencontré quelqu'un qui fait ce métier ?\n\n👤 Parle-en au **CIO** le plus proche ou au **Psy-EN** de ton lycée. Ils sont formés pour t'aider à structurer ton projet — pas juste à choisir une formation.",
+      "latency_s": 5.01,
+      "response_length_chars": 1612,
+      "response_length_words": 229,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 6,
+      "top_sources": [
+        {
+          "id": "Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Gr",
+          "score": 1.193390183238839,
+          "summary": "nom=Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Grade Master - Double diplôme Franco-Allemand | etablissement=Sciences Po Aix – Institut d'études politiques | ville=Aix-en-Provence | niveau=bac+5 | phase=master | taux_acces_parcoursup_2025=45.0 | nombre_places=15 | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq | text=Double diplôme Franco-Allemand"
+        },
+        {
+          "id": "Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Gr",
+          "score": 1.1331917477855318,
+          "summary": "nom=Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Grade Licence - Bachelor du Collège universitaire de Sciences Po | etablissement=Institut d'études politiques de Paris - Sciences Po | ville=Paris  7e  Arrondissement | niveau=bac+3 | phase=initial | taux_acces_parcoursup_2025=5.0 | nombre_places=270 | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq | text=Campus de Paris, Bachelor de Sciences Po"
+        },
+        {
+          "id": "Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Gr",
+          "score": 1.131426372365527,
+          "summary": "nom=Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Grade Licence - Double diplôme Sciences Po-LUISS | etablissement=Institut d'études politiques de Paris - Sciences Po | ville=Paris  7e  Arrondissement | niveau=bac+3 | phase=initial | taux_acces_parcoursup_2025=1.0 | nombre_places=1 | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq | text=Sciences Po - Campus de Paris - Double diplôme Sciences Po - LUISS"
+        },
+        {
+          "id": "Licence - Double diplôme - Licence Mathématiques - Sciences et Sciences sociales",
+          "score": 1.1154077328060008,
+          "summary": "nom=Licence - Double diplôme - Licence Mathématiques - Sciences et Sciences sociales / Spécialité Mathématiques | etablissement=Institut d'études politiques de Paris - Sciences Po | ville=Paris  7e  Arrondissement | niveau=bac+3 | phase=initial | taux_acces_parcoursup_2025=18.0 | nombre_places=24 | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq | text=Sciences et Sciences sociales / Spécialité Mathématiques"
+        },
+        {
+          "id": "Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Gr",
+          "score": 1.1115129077266823,
+          "summary": "nom=Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Grade Licence - Bachelor du Collège universitaire de Sciences Po | etablissement=Sciences Po - campus de Reims - Institut d'études politiques | ville=Reims | niveau=bac+3 | phase=initial | taux_acces_parcoursup_2025=11.0 | nombre_places=114 | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq | text=Campus de Reims, Bachelor de Sciences Po, Mineure Afrique"
+        },
+        {
+          "id": "Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Gr",
+          "score": 1.1099459998141017,
+          "summary": "nom=Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Grade Licence - Double diplôme Sciences Po (Europe-Asia programme) | etablissement=Sciences Po - campus du Havre - Institut d'études politiques | ville=Le Havre | niveau=bac+3 | phase=initial | taux_acces_parcoursup_2025=9.0 | nombre_places=6 | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq | text=Double diplôme Sciences Po (Europe-Asia programme)"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 4.68,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "X1",
+      "category": "adversarial",
+      "split": "test",
+      "intent_target": "general",
+      "chemin_target": "hors-scope",
+      "question": "Quelles formations cybersécurité label SecNumEdu existent à Brest-sur-Mer ?",
+      "response": "**TL;DR** : À Brest, une seule formation cybersécurité labellisée **SecNumEdu** apparaît dans les sources vérifiées — un BTS très sélectif et orienté Défense. Voici 3 pistes pour explorer ce domaine, dont des alternatives si Brest est une contrainte forte.\n\n---\n\n**Plan A — BTS Cybersécurité (Lycée Vauban, Brest)** :\nFormation en 2 ans labellisée **SecNumEdu**, avec parcours Marine Nationale/Maistrance-Défense. Très sélective (17 % d’admission en 2025), idéale si tu vises un métier technique dans la cybersécurité **avec une dimension militaire ou maritime**.\n→ [Fiche Parcoursup officielle](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19593&typeBac=0&originePc=0)\n\n**Plan B — BUT ou Licence Informatique (Université de Bretagne Occidentale, Brest)** :\n*Aucune mention SecNumEdu dans les fiches*, mais les BUT/Licences info locales permettent souvent de se spécialiser en cybersécurité en L3 ou master. À vérifier directement auprès de l’[UBO](https://www.univ-brest.fr/).\n\n**Plan C — Formations SecNumEdu hors Brest** :\nSi la mobilité est possible, des BTS (ex : [Lycée Bréquigny, Rennes](https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17725)) ou diplômes d’ingénieur (ex : [ENSIBS, Vannes](https://www.onisep.fr/http/redirection/formation/slug/FOR.8289)) sont labellisés et moins sélectifs.\n\n---\n**⚠️ Attention aux pièges** :\n- Le BTS de Brest est **réservé aux profils techniques** (67 % de bacs pro/techno admis en 2025) et **très demandé** (+88 % de vœux depuis 2023).\n- Les formations **SecNumEdu** sont rares en bac+2 : la plupart des labels concernent des diplômes bac+5 (écoles d’ingé, mastères).\n- Vérifie les **prérequis physiques** pour le parcours Marine (ex : tests sportifs).\n\n---\n**Question pour toi** : Est-ce que le cadre militaire/technique du BTS Brest te correspond, ou cherches-tu une formation plus civile ou théorique ? On peut affiner en fonction de ta réponse. 👤 Pour un projet précis, un RDV avec le **CIO de Brest** (Centre d’Information et d’Orientation) complétera utilement ces pistes.",
+      "latency_s": 11.33,
+      "response_length_chars": 2111,
+      "response_length_words": 277,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 10,
+      "top_sources": [
+        {
+          "id": "mastère spé. cybersécurité (CentraleSupélec - IMT Atlantique Bretagne-Pays de la",
+          "score": 2.6425032915733198,
+          "summary": "nom=mastère spé. cybersécurité (CentraleSupélec - IMT Atlantique Bretagne-Pays de la Loire) | etablissement=CentraleSupélec - IMT Atlantique Bretagne-Pays de la Loire | niveau=bac+5 | phase=master | duree=1 an | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur de l'École nationale supérieure d'ingénieurs de Bretagne-Sud",
+          "score": 1.877636042237059,
+          "summary": "nom=diplôme d'ingénieur de l'École nationale supérieure d'ingénieurs de Bretagne-Sud de l'université de Bretagne-Sud spécialité sécurité des systèmes d'information et cybersécurité en partenariat avec l'ITII Bretagne | etablissement=Bretagne-Sud | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme d'ingénieur de l'École nationale supérieure d'ingénieurs de Bretagne-Sud",
+          "score": 1.87629669483879,
+          "summary": "nom=diplôme d'ingénieur de l'École nationale supérieure d'ingénieurs de Bretagne-Sud de l'université de Bretagne-Sud spécialité informatique et cybersécurité | etablissement=Bretagne-Sud | niveau=bac+5 | phase=master | duree=3 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "spécialiste en cybersécurité",
+          "score": 1.1730383218149394,
+          "summary": "nom=spécialiste en cybersécurité | niveau=bac+3 | phase=initial | duree=3 ans | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 1.1097356314668145,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option B : Electronique et réseaux - parcours Marine Nationale/Maistrance-Défense | etablissement=Lycée Vauban | ville=Brest | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=17.0 | nombre_places=12 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq | text=parcours Marine Nationale/Maistrance-Défense"
+        },
+        {
+          "id": "Certificat de Spécialisation - Cybersécurité",
+          "score": 1.0874090519835877,
+          "summary": "nom=Certificat de Spécialisation - Cybersécurité | etablissement=Lycée des métiers Jacques Brel | ville=Lormont | phase=initial | taux_acces_parcoursup_2025=18.0 | nombre_places=15"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 1.1108668851325119,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option A : Informatique et réseaux | etablissement=Lycée Bréquigny | ville=Rennes | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=38.0 | nombre_places=30 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        },
+        {
+          "id": "CS cybersécurité",
+          "score": 1.129807715402472,
+          "summary": "nom=CS cybersécurité | phase=initial | duree=1 an"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 1.08881398504468,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option A : Informatique et réseaux | etablissement=Lycée Jean Mermoz | ville=Montpellier | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=14.0 | nombre_places=24 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        },
+        {
+          "id": "BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option",
+          "score": 1.0905928841042705,
+          "summary": "nom=BTS - Production - Cybersécurité, Informatique et réseaux, ELectronique - Option A : Informatique et réseaux | etablissement=Lycée Edouard Branly | ville=Boulogne-sur-Mer | niveau=bac+2 | phase=initial | taux_acces_parcoursup_2025=38.0 | nombre_places=15 | insertion.taux_emploi_3ans=0.8 | insertion.taux_emploi_6ans=0.87 | insertion.taux_cdi=0.76 | insertion.salaire_median_embauche=1570 | insertion.source=cereq"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 10.97,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "X2",
+      "category": "adversarial",
+      "split": "test",
+      "intent_target": "general",
+      "chemin_target": "hors-scope",
+      "question": "Cite le rapport ANSSI 2025 sur les meilleurs masters cyber en France et donne ses conclusions principales.",
+      "response": "Je n'ai pas l'information sur le rapport ANSSI 2025 ou ses conclusions dans les sources que j'ai en contexte. Les fiches disponibles concernent des formations labellisées **SecNumEdu** (reconnues par l'ANSSI), mais pas le classement ou l'analyse de l'ANSSI elle-même.\n\n---\n**TL;DR** : Voici 3 pistes pour identifier des masters cyber **reconnus** (sans classement ANSSI) :\n\n- **Plan A — Public & labellisé** : Le [Mastère Spécialisé Cybersécurité de CentraleSupélec-IMT](https://www.onisep.fr/http/redirection/formation/slug/FOR.1577) (grade Master, CTI, SecNumEdu) forme aux métiers RSSI/ingénierie sécurité.\n- **Plan B — Universitaire** : Les [masters mention Cybersécurité](https://www.onisep.fr/http/redirection/formation/slug/FOR.10254) (SecNumEdu) proposent des parcours recherche ou pro, souvent en alternance.\n- **Plan C — Spécialisation pointue** : Des MS comme [Spécialiste en Cybersécurité (INSA Lyon)](https://www.onisep.fr/http/redirection/formation/slug/FOR.11788) ciblent des niches (data security, infrastructures).\n\n---\n**Attention aux pièges** :\n- Un label **SecNumEdu** ≠ garantie d’emploi (vérifie les taux d’insertion sur [InserSup](https://www.enseignementsup-recherche.gouv.fr/)).\n- Les formations privées non labellisées peuvent afficher des \"partenariats ANSSI\" sans reconnaissance officielle.\n\n---\nPour accéder au rapport ANSSI 2025, consulte directement [le site de l'ANSSI](https://www.ssi.gouv.fr/) ou un **CIO** (Centre d'Information et d'Orientation). Quel aspect des masters cyber t’intéresse le plus : l’insertion pro, la recherche, ou les spécialisations techniques ?",
+      "latency_s": 7.87,
+      "response_length_chars": 1601,
+      "response_length_words": 189,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 10,
+      "top_sources": [
+        {
+          "id": "mastère spé. cybersécurité (CentraleSupélec - IMT Atlantique Bretagne-Pays de la",
+          "score": 2.704946276273787,
+          "summary": "nom=mastère spé. cybersécurité (CentraleSupélec - IMT Atlantique Bretagne-Pays de la Loire) | etablissement=CentraleSupélec - IMT Atlantique Bretagne-Pays de la Loire | niveau=bac+5 | phase=master | duree=1 an | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "master mention cybersécurité",
+          "score": 1.3416576035105148,
+          "summary": "nom=master mention cybersécurité | niveau=bac+5 | phase=master | duree=2 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "mastère spé. cybersécurité des infrastructures et des données",
+          "score": 1.3345930468963263,
+          "summary": "nom=mastère spé. cybersécurité des infrastructures et des données | niveau=bac+5 | phase=master | duree=1 an | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "expert en cybersécurité des systèmes d'information",
+          "score": 1.3237495202438458,
+          "summary": "nom=expert en cybersécurité des systèmes d'information | niveau=bac+5 | phase=master | duree=2 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "mastère spé. expert en cybersécurité",
+          "score": 1.331485750455404,
+          "summary": "nom=mastère spé. expert en cybersécurité | niveau=bac+5 | phase=master | duree=1 an | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "manager de la cybersécurité",
+          "score": 1.3208649065037084,
+          "summary": "nom=manager de la cybersécurité | niveau=bac+5 | phase=master | duree=2 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "expert en cybersécurité",
+          "score": 1.3229471956572538,
+          "summary": "nom=expert en cybersécurité | niveau=bac+5 | phase=master | duree=2 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Spécialiste en cybersécurité (MS)",
+          "score": 0.9699672915864099,
+          "summary": "nom=Spécialiste en cybersécurité (MS) | etablissement=INSTITUT NATIONAL SCIENCES APPLIQUEES LYON | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Cybersécurité (fiche nationale)",
+          "score": 0.9664370184846434,
+          "summary": "nom=Cybersécurité (fiche nationale) | etablissement=MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "master mention cybersécurité",
+          "score": 0.9031347820339551,
+          "summary": "nom=master mention cybersécurité | niveau=bac+5 | phase=master | duree=2 ans | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 7.4,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    },
+    {
+      "id": "Z1",
+      "category": "cross_domain",
+      "split": "test",
+      "intent_target": "general",
+      "chemin_target": "hors-scope",
+      "question": "Je veux devenir avocat fiscaliste, quelles études dois-je faire ?",
+      "response": "**TL;DR** : Pour devenir avocat fiscaliste, il faut un parcours en droit avec une spécialisation en fiscalité, suivi d'une formation obligatoire pour exercer. Voici 3 voies possibles, avec des niveaux d'accès et des formats différents.\n\n---\n\n**Plan A — Master Droit des affaires (option fiscal) à l'université**\nMaster public (bac+5) comme le [Master Droit des affaires - option droit fiscal](https://www.onisep.fr/http/redirection/formation/slug/FOR.10535) : formation théorique solide, frais modérés, et accès aux écoles d'avocats (CRFPA) ensuite.\n*Exemple : Université Paris Cité (Malakoff).*\n\n**Plan B — Certificat RNCP spécialisé (pour professionnels en reconversion)**\nFormations courtes type [Juriste d'affaires fiscaliste](https://www.onisep.fr/http/redirection/formation/slug/FOR.1044) (bac+5, RNCP) : pour ceux qui ont déjà un bac+3/4 en droit ou expérience pro, avec un focus pratique sur la fiscalité.\n*Exemple : Certificat de l’Association Paritaire des Cabinets d’Avocats.*\n\n**Plan C — Double compétence : Droit + Criminologie financière**\nCompléter un bac+3 en droit par un [diplôme en criminologie financière](https://www.onisep.fr/http/redirection/formation/slug/FOR.340) (bac+3, Institut de Criminologie de Paris) pour se spécialiser dans les fraudes fiscales, puis préparer le CRFPA.\n*Original, mais exige une motivation claire pour le volet enquête.*\n\n---\n**Attention aux pièges** :\n- **Le CRFPA est obligatoire** : Aucune des formations ci-dessus ne remplace l’examen d’entrée au barreau ([CAPA](https://www.onisep.fr/http/redirection/formation/slug/FOR.10473)). Prévoir 6-12 mois de prépa intensive après le bac+5.\n- **Sélectivité des masters** : Les masters fiscaux publics sont très demandés (dossier + entretien). Envisage un **Plan D** : licence de droit + master dans une autre ville si Paris est saturé.\n- **Alternance rare en fiscal** : Contrairement au droit social ou pénal, les cabinets fiscalistes recrutent peu en alternance pendant les études. Privilégie les stages.\n\n---\n**Question pour toi** : As-tu déjà un bac+3/4 en droit, ou pars-tu de zéro ? Cela change radicalement les pistes (Plan A vs B/C).\n*👤 Pour affiner ton projet, un RDV avec le SCUIO de ta fac ou un CIO est vivement conseillé — surtout pour discuter des attendus du CRFPA.*",
+      "latency_s": 9.86,
+      "response_length_chars": 2276,
+      "response_length_words": 315,
+      "select_via": false,
+      "select_reason": null,
+      "n_sources_top": 10,
+      "top_sources": [
+        {
+          "id": "DROIT DES AFFAIRES — Juriste d'affaires fiscaliste",
+          "score": 1.0061170601914358,
+          "summary": "nom=DROIT DES AFFAIRES — Juriste d'affaires fiscaliste | etablissement=Université Paris Cité | ville=MALAKOFF | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "DROIT DES AFFAIRES — Juriste d'affaires fiscaliste",
+          "score": 1.005356767416677,
+          "summary": "nom=DROIT DES AFFAIRES — Juriste d'affaires fiscaliste | etablissement=Université Paris Cité | ville=MALAKOFF | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Juriste",
+          "score": 0.919079114971878,
+          "summary": "nom=Juriste | etablissement=ASSOCIATION PARITAIRE POUR LE DEVELOPPEMENT DU DIALOGUE SOCIAL DANS LA BRANCHE DU PERSONNEL DES CABINETS D'AVOCATS | niveau=bac+5 | phase=master | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "préparation à l'examen d'entrée dans les centres régionaux de formation professi",
+          "score": 0.8393827318321433,
+          "summary": "nom=préparation à l'examen d'entrée dans les centres régionaux de formation professionnelle d'avocats | niveau=bac+5 | phase=master | duree=1 an | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "Investigateur en criminalité financière",
+          "score": 0.8331985485821615,
+          "summary": "nom=Investigateur en criminalité financière | etablissement=MINISTERE DE L' INTERIEUR ET DES OUTRE-MER | niveau=bac+3 | phase=initial | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        },
+        {
+          "id": "mastère en droit des affaires  - option droit fiscal de l'entreprise",
+          "score": 0.8326533691331125,
+          "summary": "nom=mastère en droit des affaires  - option droit fiscal de l'entreprise | niveau=bac+5 | phase=master | duree=1 an | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "diplôme de l'Institut de criminologie et de droit pénal de Paris",
+          "score": 0.8315267698864316,
+          "summary": "nom=diplôme de l'Institut de criminologie et de droit pénal de Paris | etablissement=Institut de criminologie et de droit pénal de Paris | niveau=bac+3 | phase=initial | duree=1 an | insertion.taux_emploi_3ans=0.86 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=1740 | insertion.source=cereq"
+        },
+        {
+          "id": "formation d'inspecteur des finances publiques",
+          "score": 0.8288085059477318,
+          "summary": "nom=formation d'inspecteur des finances publiques | niveau=bac+5 | phase=master | duree=1 an | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "prépa barreau intensive",
+          "score": 0.8283869633697488,
+          "summary": "nom=prépa barreau intensive | niveau=bac+5 | phase=master | duree=1 an | insertion.taux_emploi_3ans=0.85 | insertion.taux_emploi_6ans=0.91 | insertion.taux_cdi=0.83 | insertion.salaire_median_embauche=2080 | insertion.source=cereq"
+        },
+        {
+          "id": "certificat d'aptitude à la profession d'avocat",
+          "score": 0.7454924879390582,
+          "summary": "nom=certificat d'aptitude à la profession d'avocat | phase=initial | duree=2 ans"
+        }
+      ],
+      "golden_qa_active": true,
+      "golden_qa_matched": true,
+      "post_process_applied": true,
+      "post_process_n_slugs_corrected": 0,
+      "post_process_chars_removed": 0,
+      "honesty_score": 1.0,
+      "flagged": false,
+      "n_failed_claims": 0,
+      "retry_metadata": {
+        "retries_attempted": 0,
+        "tour1_failed_claims": [],
+        "tour2_failed_claims": null,
+        "retry_stability": 1.0,
+        "needs_audit": false,
+        "wall_clock_s": 9.48,
+        "retry_skipped_reason": null
+      },
+      "error": null
+    }
+  ],
+  "multi_turn_results": [
+    {
+      "id": "MT1.t1",
+      "thread_id": "MT1",
+      "tour": 1,
+      "skipped_reason": "phase0_no_multi_turn_support"
+    },
+    {
+      "id": "MT1.t2",
+      "thread_id": "MT1",
+      "tour": 2,
+      "skipped_reason": "phase0_no_multi_turn_support"
+    },
+    {
+      "id": "MT1.t3",
+      "thread_id": "MT1",
+      "tour": 3,
+      "skipped_reason": "phase0_no_multi_turn_support"
+    },
+    {
+      "id": "MT2.t1",
+      "thread_id": "MT2",
+      "tour": 1,
+      "skipped_reason": "phase0_no_multi_turn_support"
+    },
+    {
+      "id": "MT2.t2",
+      "thread_id": "MT2",
+      "tour": 2,
+      "skipped_reason": "phase0_no_multi_turn_support"
+    },
+    {
+      "id": "MT2.t3",
+      "thread_id": "MT2",
+      "tour": 3,
+      "skipped_reason": "phase0_no_multi_turn_support"
+    }
+  ]
+}

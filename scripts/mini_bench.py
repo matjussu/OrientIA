@@ -99,8 +99,15 @@ def run_question(
     pipeline: OrientIAPipeline,
     validator: Validator,
     q: dict,
+    store_sources: bool = False,
 ) -> dict:
-    """Génère + mesure une question unimodale. Retourne le record JSON-able."""
+    """Génère + mesure une question unimodale. Retourne le record JSON-able.
+
+    Args:
+        store_sources: si True, sérialise top_sources retrievées dans le record
+            (pour audit data Phase A — type A/B/C hallu vs corpus). Bloate le
+            JSON (~30-50 KB / question), donc opt-in.
+    """
     qid = q["id"]
     text = q["text"]
 
@@ -118,6 +125,7 @@ def run_question(
         "select_via": None,
         "select_reason": None,
         "n_sources_top": None,
+        "top_sources": None,
         "golden_qa_active": None,
         "golden_qa_matched": None,
         "post_process_applied": None,
@@ -138,6 +146,40 @@ def run_question(
         record["response_length_chars"] = len(response)
         record["response_length_words"] = len(response.split())
         record["n_sources_top"] = len(top_sources)
+        if store_sources:
+            # Sérialise un excerpt par source (texte clé, score, id stable) pour
+            # audit data — type A/B/C hallu (info dans corpus vs absente).
+            record["top_sources"] = []
+            for s in top_sources:
+                fiche = s.get("fiche") if "fiche" in s else s
+                if not isinstance(fiche, dict):
+                    continue
+                # Construire un texte représentatif de la fiche (nom + détails)
+                parts = []
+                for key in ("nom", "etablissement", "ville", "niveau", "phase", "domain"):
+                    v = fiche.get(key)
+                    if v:
+                        parts.append(f"{key}={v}")
+                # Stats clés si présentes
+                for stat_key in ("taux_acces_parcoursup_2025", "nombre_places", "duree", "frais_annuels"):
+                    v = fiche.get(stat_key)
+                    if v is not None:
+                        parts.append(f"{stat_key}={v}")
+                # Insertion pro
+                ip = fiche.get("insertion_pro")
+                if isinstance(ip, dict):
+                    for ik, iv in list(ip.items())[:5]:
+                        if iv is not None:
+                            parts.append(f"insertion.{ik}={iv}")
+                # Texte libre (cells multi-corpus) ou détail (formations)
+                free_text = fiche.get("text") or fiche.get("detail") or ""
+                if free_text:
+                    parts.append(f"text={free_text[:400]}")
+                record["top_sources"].append({
+                    "id": str(fiche.get("id") or fiche.get("numero_fiche") or fiche.get("nom", "?"))[:80],
+                    "score": float(s.get("score", 0)) if isinstance(s, dict) else 0.0,
+                    "summary": " | ".join(parts)[:1200],
+                })
         # Marqueurs pipeline
         sel = pipeline.last_select_result
         if sel is not None:
@@ -242,6 +284,12 @@ def main() -> None:
              "production = via factory (validator + golden_qa + post_process). "
              "Default: baseline (Phase 0 reproductible).",
     )
+    parser.add_argument(
+        "--store-sources",
+        action="store_true",
+        help="Sérialise top_sources retrievées dans le JSON (pour audit data "
+             "Phase A : type A/B/C hallu vs corpus). Bloate le JSON.",
+    )
     args = parser.parse_args()
 
     print(f"[mini_bench] phase={args.phase}")
@@ -284,7 +332,7 @@ def main() -> None:
     unimodal_results = []
     for i, q in enumerate(unimodal, 1):
         print(f"  [{i}/{len(unimodal)}] {q['id']}: {q['text'][:60]}...")
-        rec = run_question(pipeline, validator, q)
+        rec = run_question(pipeline, validator, q, store_sources=args.store_sources)
         unimodal_results.append(rec)
         if rec.get("error"):
             print(f"    ✗ {rec['error']}")
