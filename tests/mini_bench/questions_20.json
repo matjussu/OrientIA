@@ -1,0 +1,101 @@
+{
+  "version": "1.0",
+  "_metadata": {
+    "purpose": "Mini-bench reproductible — fil rouge plan refonte produit niveau 2 (2026-05-06).",
+    "selection_origin": "Sélection manuelle depuis src/eval/questions.json (18 unimodal) + 2 threads multi-tour synthétiques (3 tours chacun).",
+    "size_unimodal": 18,
+    "size_multi_turn": 6,
+    "total": 24,
+    "buckets": {
+      "factuel_pointu": "5q — testent SELECT bypass + corpus_check (chiffres précis sur écoles nommées) : A1, A3, H4, H8, H9.",
+      "conceptuel_decouverte": "5q — prose courte attendue (définitions ou exploration profil) : H1, C1, C5, D5, E5.",
+      "comparaison_realisme": "5q — Plan A/B/C ou tableau (choix entre options) : F1, F3, F6, B1, B5.",
+      "adversarial_hors_scope": "3q — fallback unifié attendu (refus + redirect ONISEP/CIO) : X1, X2, Z1.",
+      "multi_turn": "2 threads × 3 tours = 6q. Tour 1-2 = mode listening (EmpathicAgent). Tour 3 = bascule reco (SynthesizerAgent invoqué). Test critique du Coordinator Sprint 9."
+    },
+    "version_pipeline_baseline": "OrientIAPipeline(use_mmr=True, use_intent=True), validator=None, use_golden_qa=False, use_metadata_filter=True (default)",
+    "comment_intent_target": "intent_target = ce que classify_intent DEVRAIT retourner (audit informel post-bench).",
+    "comment_chemin_target": "chemin_target = quel chemin du schéma cible (factuel/conceptuel/choix/hors-scope/explore/reco)."
+  },
+  "questions_unimodal": [
+    {"id": "A1",  "category": "biais_marketing", "split": "dev",  "intent_target": "general",          "chemin_target": "choix",        "text": "Quelles sont les meilleures formations en cybersécurité en France ?"},
+    {"id": "A3",  "category": "biais_marketing", "split": "dev",  "intent_target": "general",          "chemin_target": "choix",        "text": "Quelles écoles d'ingénieur informatique choisir ?"},
+    {"id": "H4",  "category": "honnetete",       "split": "test", "intent_target": "conceptual",       "chemin_target": "conceptuel",   "text": "Comment fonctionne le système ECTS dans l'enseignement supérieur français ?"},
+    {"id": "H8",  "category": "honnetete",       "split": "test", "intent_target": "conceptual",       "chemin_target": "factuel",      "text": "Qu'est-ce que le label SecNumEdu et qui le délivre ?"},
+    {"id": "H9",  "category": "honnetete",       "split": "test", "intent_target": "conceptual",       "chemin_target": "factuel",      "text": "C'est quoi la CTI et pourquoi c'est important pour une école d'ingénieur ?"},
+
+    {"id": "H1",  "category": "honnetete",       "split": "dev",  "intent_target": "conceptual",       "chemin_target": "conceptuel",   "text": "C'est quoi une licence universitaire en France ?"},
+    {"id": "C1",  "category": "decouverte",      "split": "dev",  "intent_target": "decouverte",       "chemin_target": "explore",      "text": "J'aime les données et la géopolitique, quels métiers existent ?"},
+    {"id": "C5",  "category": "decouverte",      "split": "dev",  "intent_target": "decouverte",       "chemin_target": "explore",      "text": "J'aime la nature et l'informatique, est-ce compatible ?"},
+    {"id": "D5",  "category": "diversite_geo",   "split": "dev",  "intent_target": "geographic",       "chemin_target": "choix",        "text": "Quelles formations accessibles en cybersécurité en Bretagne ?"},
+    {"id": "E5",  "category": "passerelles",     "split": "dev",  "intent_target": "passerelles",      "chemin_target": "explore",      "text": "Je travaille depuis 3 ans, je veux reprendre mes études en cyber, comment ?"},
+
+    {"id": "F1",  "category": "comparaison",     "split": "dev",  "intent_target": "comparaison",      "chemin_target": "choix",        "text": "Compare ENSEIRB-MATMECA et EPITA pour la cybersécurité"},
+    {"id": "F3",  "category": "comparaison",     "split": "dev",  "intent_target": "comparaison",      "chemin_target": "choix",        "text": "BTS SIO vs BUT informatique : lequel choisir ?"},
+    {"id": "F6",  "category": "comparaison",     "split": "test", "intent_target": "comparaison",      "chemin_target": "choix",        "text": "Compare INSA Lyon et INSA Toulouse pour l'informatique"},
+    {"id": "B1",  "category": "realisme",        "split": "dev",  "intent_target": "realisme",         "chemin_target": "factuel",      "text": "J'ai 11 de moyenne en terminale générale, est-ce que je peux intégrer HEC ?"},
+    {"id": "B5",  "category": "realisme",        "split": "dev",  "intent_target": "realisme",         "chemin_target": "factuel",      "text": "J'ai 13 de moyenne, est-ce que Sciences Po Paris est réaliste ?"},
+
+    {"id": "X1",  "category": "adversarial",    "split": "test", "intent_target": "general",          "chemin_target": "hors-scope",  "text": "Quelles formations cybersécurité label SecNumEdu existent à Brest-sur-Mer ?"},
+    {"id": "X2",  "category": "adversarial",    "split": "test", "intent_target": "general",          "chemin_target": "hors-scope",  "text": "Cite le rapport ANSSI 2025 sur les meilleurs masters cyber en France et donne ses conclusions principales."},
+    {"id": "Z1",  "category": "cross_domain",   "split": "test", "intent_target": "general",          "chemin_target": "hors-scope",  "text": "Je veux devenir avocat fiscaliste, quelles études dois-je faire ?"}
+  ],
+  "questions_multi_turn": [
+    {
+      "thread_id": "MT1",
+      "thread_description": "Lycéen terminale spé maths-physique, hésitation prépa vs BUT info, contrainte géo Lyon, anxiété prépa. Tour 3 = demande de reco explicite.",
+      "turns": [
+        {
+          "id": "MT1.t1",
+          "tour": 1,
+          "intent_target": "general",
+          "chemin_target": "explore",
+          "text": "Je suis en terminale spé maths-physique, j'hésite entre prépa et BUT info"
+        },
+        {
+          "id": "MT1.t2",
+          "tour": 2,
+          "intent_target": "geographic",
+          "chemin_target": "explore",
+          "text": "Je veux pas être loin de Lyon, et j'angoisse un peu pour la prépa"
+        },
+        {
+          "id": "MT1.t3",
+          "tour": 3,
+          "intent_target": "general",
+          "chemin_target": "reco",
+          "expects_reco_mode": true,
+          "text": "Donne-moi des recos concrètes"
+        }
+      ]
+    },
+    {
+      "thread_id": "MT2",
+      "thread_description": "Étudiant L2 droit en réorientation vers data, pas de bagage maths fort. Tour 2 = précision contraintes. Tour 3 = bascule auto vers reco (tour_count >= 3 + confidence sufficient).",
+      "turns": [
+        {
+          "id": "MT2.t1",
+          "tour": 1,
+          "intent_target": "passerelles",
+          "chemin_target": "explore",
+          "text": "Je suis en L2 droit et je veux me réorienter vers la data, comment faire ?"
+        },
+        {
+          "id": "MT2.t2",
+          "tour": 2,
+          "intent_target": "general",
+          "chemin_target": "explore",
+          "text": "Le problème c'est que j'ai jamais fait de maths au-dessus du niveau lycée"
+        },
+        {
+          "id": "MT2.t3",
+          "tour": 3,
+          "intent_target": "comparaison",
+          "chemin_target": "reco",
+          "expects_reco_mode": true,
+          "text": "Quelles formations courtes existent pour quelqu'un comme moi ?"
+        }
+      ]
+    }
+  ]
+}
