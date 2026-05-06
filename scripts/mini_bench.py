@@ -33,6 +33,7 @@ from mistralai.client import Mistral  # noqa: E402
 
 from src.config import load_config  # noqa: E402
 from src.rag.pipeline import OrientIAPipeline  # noqa: E402
+from src.rag.factory import make_production_pipeline, golden_qa_artifacts_present  # noqa: E402
 from src.validator import Validator  # noqa: E402
 
 
@@ -51,15 +52,38 @@ def make_baseline_pipeline(client: Mistral, fiches: list[dict]) -> OrientIAPipel
         use_mmr=True,
         use_intent=True,
     )
+    _load_index_or_fail(pipeline)
+    return pipeline
+
+
+def make_phase2_pipeline(client: Mistral, fiches: list[dict]) -> OrientIAPipeline:
+    """Phase 2 production — pipeline via factory canonique avec validator
+    + golden_qa + post_process actifs (layer3 OFF par défaut, coût)."""
+    if not golden_qa_artifacts_present():
+        print(
+            "[mini_bench] WARNING: Golden QA artifacts absents — few-shot "
+            "désactivé pour ce run (fallback gracieux)."
+        )
+    pipeline = make_production_pipeline(
+        client, fiches,
+        enable_validator=True,
+        enable_layer3=False,  # off pour mesure cost/latency contrôlée
+        enable_golden_qa=True,
+        enable_post_process=True,
+    )
+    _load_index_or_fail(pipeline)
+    return pipeline
+
+
+def _load_index_or_fail(pipeline: OrientIAPipeline) -> None:
+    """Charge l'index FAISS depuis INDEX_PATH ou raise (build coûteux refusé)."""
     if INDEX_PATH.exists():
         pipeline.load_index_from(str(INDEX_PATH))
     else:
-        # Fail-fast — pas de raison qu'on construise l'index ici (cher).
         raise FileNotFoundError(
             f"FAISS index manquant : {INDEX_PATH}. Lance d'abord la pipeline "
             "officielle pour le construire (cf README ou run_real_full.py)."
         )
-    return pipeline
 
 
 def make_validator(fiches: list[dict]) -> Validator:
@@ -96,6 +120,9 @@ def run_question(
         "n_sources_top": None,
         "golden_qa_active": None,
         "golden_qa_matched": None,
+        "post_process_applied": None,
+        "post_process_n_slugs_corrected": None,
+        "post_process_chars_removed": None,
         "honesty_score": None,
         "flagged": None,
         "n_failed_claims": None,
@@ -125,6 +152,14 @@ def run_question(
         else:
             record["golden_qa_active"] = False
             record["golden_qa_matched"] = False
+        # Phase 2 : post-process stats (None si feature désactivée)
+        pp = pipeline.last_post_process_stats
+        if pp is not None:
+            record["post_process_applied"] = pp.get("applied")
+            record["post_process_n_slugs_corrected"] = pp.get("n_onisep_slugs_corrected")
+            record["post_process_chars_removed"] = pp.get("chars_removed")
+        else:
+            record["post_process_applied"] = False
         record["retry_metadata"] = pipeline.last_retry_metadata
         # Validation standalone (pour métrique honesty même quand pipeline n'a pas de validator)
         vr = validator.validate(response)
@@ -198,6 +233,15 @@ def main() -> None:
         action="store_true",
         help="Include multi-turn threads (Phase 4.1+ only — Phase 0 baseline skips them)",
     )
+    parser.add_argument(
+        "--config",
+        type=str,
+        choices=["baseline", "production"],
+        default="baseline",
+        help="baseline = pipeline run_real_full (use_mmr+use_intent only). "
+             "production = via factory (validator + golden_qa + post_process). "
+             "Default: baseline (Phase 0 reproductible).",
+    )
     args = parser.parse_args()
 
     print(f"[mini_bench] phase={args.phase}")
@@ -212,9 +256,18 @@ def main() -> None:
     fiches = json.loads(FICHES_PATH.read_text(encoding="utf-8"))
     print(f"[mini_bench] loaded {len(fiches)} fiches")
 
-    pipeline = make_baseline_pipeline(client, fiches)
+    if args.config == "production":
+        pipeline = make_phase2_pipeline(client, fiches)
+    else:
+        pipeline = make_baseline_pipeline(client, fiches)
     validator = make_validator(fiches)
-    print(f"[mini_bench] pipeline ready (use_mmr={pipeline.use_mmr}, use_intent={pipeline.use_intent})")
+    print(
+        f"[mini_bench] pipeline ready (config={args.config}, "
+        f"use_mmr={pipeline.use_mmr}, use_intent={pipeline.use_intent}, "
+        f"validator={pipeline.validator is not None}, "
+        f"use_golden_qa={pipeline.use_golden_qa}, "
+        f"enable_post_process={pipeline.enable_post_process})"
+    )
 
     # Load questions
     qdata = json.loads(args.questions.read_text(encoding="utf-8"))
@@ -280,6 +333,7 @@ def main() -> None:
     out_payload = {
         "metadata": {
             "phase": args.phase,
+            "config": args.config,
             "timestamp_utc": datetime.now(timezone.utc).isoformat(),
             "questions_path": str(args.questions),
             "pipeline_config": {
@@ -288,6 +342,7 @@ def main() -> None:
                 "use_metadata_filter": pipeline.use_metadata_filter,
                 "use_golden_qa": pipeline.use_golden_qa,
                 "validator_attached_to_pipeline": pipeline.validator is not None,
+                "enable_post_process": pipeline.enable_post_process,
                 "model": pipeline.model,
             },
             "n_unimodal_processed": len(unimodal_results),

@@ -23,6 +23,7 @@ from src.rag.metadata_filter import (
     FilterCriteria,
     apply_metadata_filter,
 )
+from src.rag.post_process import post_process_answer
 from src.validator import (
     Validator,
     ValidatorResult,
@@ -81,6 +82,7 @@ class OrientIAPipeline:
         use_golden_qa: bool = False,
         golden_qa_index_path: str | None = None,
         golden_qa_meta_path: str | None = None,
+        enable_post_process: bool = False,
     ):
         self.client = client
         self.fiches = fiches
@@ -156,6 +158,12 @@ class OrientIAPipeline:
         #     "retry_skipped_reason": str|None ("timeout" | "no_validator" | None),
         #   }
         self.last_retry_metadata: dict | None = None
+        # Phase 2 refonte (2026-05-06) — post-process déterministe (zéro LLM)
+        # Sprint 8 Wave 1 : strip_invented_urls + fix_broken_markdown_tables +
+        # validate_onisep_slugs. Appliqué post-validator/policy, pré-phase_projet.
+        # Stats du dernier appel exposées via `last_post_process_stats`.
+        self.enable_post_process = enable_post_process
+        self.last_post_process_stats: dict | None = None
 
     def build_index(self) -> None:
         texts = [fiche_to_text(f) for f in self.fiches]
@@ -291,6 +299,15 @@ class OrientIAPipeline:
             # V4 phase projet minimal : append 3 Q réflexion + redirect CIO
             # si la question touche un enjeu fort (HEC/PASS/kiné/etc.).
             answer_text, _ = append_phase_projet(answer_text, question)
+        # Phase 2 refonte — post-process déterministe (URLs hallu, slugs ONISEP,
+        # tableaux markdown cassés). Off par défaut (backward compat). Appliqué
+        # APRÈS validator/policy car ces fixes sont silently corrective et
+        # n'invalident pas les claims validés (juste cleanup UX).
+        if self.enable_post_process:
+            answer_text, pp_stats = post_process_answer(answer_text, top)
+            self.last_post_process_stats = pp_stats
+        else:
+            self.last_post_process_stats = None
         return answer_text, top
 
     def _generate_with_retry(
