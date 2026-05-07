@@ -54,6 +54,8 @@ data/processed/formations_multi_corpus_phaseC_blocs.json
 data/processed/france_comp_blocs_corpus.json
 data/processed/inserjeunes_lycee_pro.json
 data/processed/insersup_insertion.json
+# Phase A.2 — ROME 4.0 corpus (12 MB, régénérable via `python -m src.collect.build_rome_corpus`)
+data/processed/rome_metier_corpus.json
 
 # Runtime logs
 logs/

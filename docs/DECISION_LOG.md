@@ -2974,3 +2974,536 @@ Mistral Large.
 - Audits Phase 2.5 + A : commits `583be08` et `bacb940`
 - Mini-bench artefacts : `results/mini_bench/phase_b{1,2,3}_*.json`
 - Side-by-side spot-check : `results/mini_bench/comparaison_v3_2_vs_v4_FINAL.md`
+
+---
+
+## ADR-054 — Purge des chiffres d'insertion agrégés Cereq (2026-05-07)
+
+### Context
+
+L'audit data Phase 0 (`docs/AUDIT_PHASE_0.md`, finding #1) a révélé que
+`src/collect/cereq.py:attach_cereq_insertion()` colle les statistiques
+d'insertion agrégées par niveau de diplôme à toutes les fiches du même
+niveau dans `formations.json`. Mesure brutale :
+
+- 32 704 fiches (66,9% du corpus) ont les 4 mêmes champs `(salaire_median_embauche,
+  taux_emploi_3ans, taux_emploi_6ans, taux_cdi)` parmi seulement **6 tuples
+  uniques**, un par niveau (cap-bep, bac, bac+2, bac+3, bac+5, bac+8)
+- Une fiche "BTS Cyber Marine Nationale" a les mêmes 4 chiffres qu'une
+  fiche "BTS Pâtisserie"
+- Le system prompt R1 impose "uniquement valeurs présentes dans `chiffres`"
+  mais ne distingue pas spécifique vs agrégat
+- Cas concret : bench Z1 (avocat fiscaliste) — LLM cite "salaire 2080€"
+  qui est l'agrégat bac+5 toutes filières, pas le salaire d'avocat
+  fiscaliste (réalité 2500-4000€). Layer3 (OFF) avait flag, ADR-053
+  l'avait classé "biais judge" — finding actuel suggère que c'est la
+  data qui ment
+
+Le narratif produit "100% sourcé officiel + spécifique" est mis en cause
+pour 67% du corpus. Le `honesty_score=1.0` du mini-bench v4.1 cache cette
+hallu data-borne.
+
+### Decision
+
+**Purge totale (Option A)** des chiffres d'insertion Cereq agrégés du
+corpus de production :
+
+1. Le bloc `insertion_pro` de schéma Céreq (`taux_emploi_3ans`,
+   `taux_emploi_6ans`, `taux_cdi`, `salaire_median_embauche` issus de
+   `cereq.py:attach_cereq_insertion`) est **retiré** des 32 704 fiches
+   concernées dans le futur corpus de référence (cf ADR-057).
+2. `src/collect/cereq.py` reste dans `src/collect/` pour archive
+   historique mais n'est plus appelé par le merger v2 nouveau (cf ADR-057).
+3. Pour les fiches qui n'ont pas d'autre chiffre d'insertion (ni
+   Parcoursup admission ni Inserjeunes spécifique), le bloc
+   `insertion_pro` devient `null` ou absent → la FactCard expose
+   `chiffres.taux_emploi_3ans: null` etc. → R1 du SYSTEM_PROMPT_V4_STRICT
+   force le LLM à écrire *"information non disponible dans mes sources"*.
+4. Pour les fiches MonMaster/Licence universitaires qui matchent une
+   entrée InserSup (niveau + discipline + région), les chiffres
+   InserSup spécifiques sont injectés à la place (cf §Liens). Le bloc
+   `insertion_pro` porte alors `provenance: "insersup_mesr"` et la
+   granularité réelle (ex : "Master Droit Sciences Politiques en
+   Auvergne-Rhône-Alpes, cohorte 2024").
+
+### Rationale
+
+1. **Cereq agrégats apporte plus de bruit que de signal** : 6 valeurs
+   uniques copiées sur 32 704 fiches ne véhiculent aucune information
+   spécifique à la formation — seulement le niveau du diplôme, déjà
+   présent dans le champ `niveau`. Le coût hallu data-borne dépasse
+   le gain "indicatif niveau".
+2. **Cohérence narratif INRIA** : "souveraineté + données officielles
+   spécifiques" doit tenir littéralement. Présenter un agrégat niveau
+   comme un chiffre par formation n'est pas tenable face à un reviewer
+   académique.
+3. **R1 force le bon comportement** : la mécanique strict v4 (FactCard
+   `chiffres.X = null` → "info non disponible") existe déjà. Il suffit
+   de ne plus coller des chiffres trompeurs pour qu'elle s'applique.
+4. **InserSup couvre 20-25% du corpus** (Masters + Licences universitaires
+   + écoles d'ingé publiques) avec une granularité supérieure
+   (discipline × région). Pour ces fiches, le remplacement Cereq →
+   InserSup donne de vrais chiffres spécifiques sans changer le contrat.
+5. **Pas de perte qualitative pour le user** : les questions du genre
+   "salaire après bac+5 en moyenne" peuvent être servies par les fiches
+   INSEE Salaires PCS (cf ADR-057, intégration multi-corpus) avec
+   provenance explicite "agrégat niveau toutes filières", au lieu d'être
+   collées à chaque formation comme spécifique.
+
+### Alternatives considérées
+
+1. **Option B — Tagger les chiffres Cereq comme agrégat** (préserver
+   `insertion_pro` + ajouter `provenance: "cereq_aggregat_niveau_bacX"`
+   et que le LLM cite avec marqueur) : rejetée. Préservation
+   théorique, complexité prompt augmentée (LLM doit gérer 2 types de
+   citations), risque que le marqueur soit oublié dans la génération,
+   et le user reste avec un chiffre qu'il pourrait croire spécifique
+   malgré le tag. R6 max 250 mots compromis par les marqueurs allongés.
+2. **Option C — Mix tag + remplacement InserSup quand match** : variante
+   intermédiaire jugée plus complexe que nécessaire. La purge totale
+   force la discipline du contrat strict v4 sans demi-mesure ;
+   l'enrichissement InserSup est une amélioration positive et ciblée,
+   pas une compensation à un agrégat conservé.
+3. **Garder Cereq actuel (status quo)** : rejetée, c'est le fond du
+   finding #1 de l'audit Phase 0.
+
+### Impact mesurable attendu
+
+- Densité chiffres exploitables médian : actuel ~3,5 (gonflé par Cereq)
+  → cible mesurée sur fiches restantes uniquement
+- Mini-bench v4.1 : taux refus honnête "info non disponible" sur les
+  questions salaire/emploi par formation va augmenter (souhaitable)
+- Mini-bench v4.1 : `honesty_score` doit rester à 1.0
+- Bench Z1 (avocat fiscaliste) : le LLM ne citera plus "salaire 2080€"
+  agrégat. Vérifier qu'il dit honnêtement "info non disponible" et
+  redirige vers Conseil de l'Ordre / sites cabinets.
+
+### Liens
+
+- Audit Phase 0 finding #1 : `docs/AUDIT_PHASE_0.md` §1.3
+- Code Cereq actuel : `src/collect/cereq.py`
+- Source InserSup (à intégrer) : `data/processed/insersup_insertion.json`
+  (48 230 records bruts) + `data/processed/insersup_corpus.json`
+  (368 entrées agrégées prêtes RAG)
+- Architecture WHAT/HOW : ADR-053 (FactCard + R1 contrat strict)
+- Implémentation : Phase 1 grand ménage (à venir)
+
+---
+
+## ADR-055 — Liste blanche des sources autorisées par tier (2026-05-07)
+
+### Context
+
+L'audit Phase 0 a montré qu'OrientIA agrège ~25 sources data sans
+politique formelle de provenance. Pour assurer le narratif INRIA
+"souveraineté + données officielles" et préparer Phase 3 (enrichissement
+ciblé), une liste blanche explicite est nécessaire avant tout nouvel
+ingestion :
+
+- Distinguer sources autorisées par niveau de confiance
+- Acter ce qui est exclu pour éviter scope creep (forums, sites tiers)
+- Fournir un guide de référence pour les futures ingestions Phase 3
+  (calendriers Parcoursup, aides étudiantes, coûts privés, etc.)
+- Préparer un argument défensif face à un reviewer académique :
+  "ces sources et seulement celles-ci"
+
+### Decision
+
+OrientIA n'intègre des données que depuis les sources de la liste
+blanche suivante, classées en 3 tiers de confiance :
+
+#### Tier 1 — Officiel État (autorité maximale)
+
+Plateformes État :
+- `data.gouv.fr` (catalogue public)
+- `Etalab` (licence ouverte 2.0)
+
+Orientation :
+- ONISEP (Office National d'Information Sur les Enseignements et les Professions)
+- Parcoursup (plateforme officielle vœux post-bac)
+- MonMaster (plateforme officielle candidatures master)
+
+Statistique publique :
+- INSEE (Institut National de la Statistique et des Études Économiques)
+- DARES (Direction de l'Animation de la Recherche, des Études et des Statistiques)
+- DREES (Direction de la Recherche, des Études, de l'Évaluation et des Statistiques)
+- France Stratégie
+
+Insertion / formation :
+- Cereq (Centre d'études et de recherches sur les qualifications) — agrégats
+  par niveau, **non utilisé pour citation par formation** suite ADR-054
+- InserSup (MESR, Ministère Enseignement Supérieur Recherche)
+- Inserjeunes (DEPP, Ministère Éducation Nationale)
+
+Marché du travail :
+- France Travail (offres + ROME 4.0 + statistiques)
+
+Compétences et certifications :
+- France Compétences (RNCP + RS)
+
+Vie étudiante :
+- CROUS / CNOUS
+- aides.gouv.fr
+- mes-aides.gouv.fr
+- 1jeune1solution.gouv.fr
+
+Territoires ultramarins :
+- LADOM
+- Préfectures DROM-COM (sites .gouv.fr)
+
+#### Tier 2 — Paritaire / agence officielle (autorité forte)
+
+- APEC (Association Pour l'Emploi des Cadres) — paritaire, conventions État
+- AGEFIPH (handicap au travail) + FIPHFP (fonction publique handicap)
+- ANSSI (label SecNumEdu, État)
+- CGE (Conférence des Grandes Écoles)
+- CTI (Commission des Titres d'Ingénieur)
+- FESIC (Fédération des Établissements d'Enseignement Supérieur d'Intérêt Collectif)
+- Conseils de l'Ordre (avocat, médecin, architecte, expert-comptable)
+- Chambres consulaires (CCI, CMA, CA)
+
+#### Tier 3 — Sites officiels d'établissements (info pratique uniquement)
+
+Les sites officiels des établissements (`hec.edu`, `epita.fr`, etc.)
+sont autorisés **uniquement** pour les données factuelles
+non-polémiques :
+- Coût annuel de scolarité
+- Calendriers d'admission / dates limites
+- Modalités d'inscription
+- Adresse / coordonnées campus
+
+Sont **interdits** pour citation depuis ces sites :
+- Statistiques d'insertion publiées par l'école elle-même (utiliser
+  InserSup ou Inserjeunes à la place)
+- Taux d'admission / sélectivité (utiliser Parcoursup ou MonMaster)
+- Témoignages d'anciens (cf ADR-056)
+- Classements internes
+
+Marquer `provenance.source: "site_etablissement_<slug>"` et
+`provenance.tier: 3` pour exposition explicite côté FactCard.
+
+#### Sources EXCLUES (jamais)
+
+Aucune ingestion ni citation depuis :
+- Agrégateurs privés : Studyrama, l'Etudiant.fr, Diplomeo, MeilleureEcole,
+  Major-Prepa
+- Sites d'avis : Glassdoor, TrustPilot, GoEtudier
+- Forums : Reddit, JeuxVideo.com forum, Hardware.fr, etc.
+- Réseaux sociaux : LinkedIn, Twitter, Instagram
+- Classements internationaux non-vérifiables : QS Stars, Shanghai
+  (re-discutables au cas par cas en ADR ultérieur si besoin)
+- Wikipedia, Wikidata (utilisés uniquement comme pointeur, pas comme source de chiffres)
+
+### Rationale
+
+1. **Tier explicite défensif INRIA** : un reviewer demandant "d'où
+   viennent vos chiffres ?" reçoit une réponse opérationnelle et
+   complète. Les exclusions explicites sont un argument fort.
+2. **Cohérence avec contrat strict v4 R3** : chaque chiffre cité a
+   un `[source SX]` — la source SX est elle-même de tier 1, 2 ou 3
+   identifié.
+3. **Granularité tier 3 nécessaire en pratique** : le coût de HEC
+   ou EPITA n'existe sur aucune source État. Refuser leur site
+   officiel pour ces infos pratiques empêcherait OrientIA de répondre
+   à la question "combien coûte EPITA ?". Le périmètre tier 3
+   (info pratique uniquement, pas de stats) limite le risque.
+4. **Exclusions explicites évitent le scope creep** : le projet a
+   accumulé sans politique formelle. Cette ADR est le frein.
+5. **Compatible avec le pipeline existant** : la FactCard supporte
+   déjà un champ `provenance` ; il suffit de lui ajouter `tier`.
+
+### Alternatives considérées
+
+1. **Pas de liste blanche, jugement au cas par cas** : rejetée. Sans
+   politique formelle, chaque PR data-source devient un débat. Coût
+   maintenance élevé.
+2. **2 tiers seulement (officiel / non-officiel)** : rejetée. Le tier 3
+   "site école pour info pratique" est nécessaire pour combler le
+   gap data ouverte sur les coûts privés.
+3. **Inclure des avis subjectifs marqués "non vérifié"** : tranché
+   en ADR-056 (rejet).
+
+### Liens
+
+- Audit Phase 0 §3 : `docs/AUDIT_PHASE_0.md`
+- ADR-056 : politique avis subjectifs (rejet)
+- Implémentation : champ `provenance.tier` dans FactCard, à ajouter
+  Phase 1.A (`src/rag/fact_card.py`)
+- Validation à venir : audit de provenance sur chaque source actuelle
+  pour vérifier alignement (Phase 1)
+
+---
+
+## ADR-056 — Pas d'avis subjectifs dans le corpus (2026-05-07)
+
+### Context
+
+Discussion 2026-05-07 sur l'enrichissement Phase 3. Question soulevée
+par Matteo : intégrer des avis d'anciens étudiants / salariés (Glassdoor,
+forums étudiants, sites d'avis) pour enrichir la dimension qualitative
+des réponses ?
+
+Le narratif produit OrientIA est "souveraineté + données officielles
+publiques + zéro hallu". Les avis subjectifs sont **par nature non
+officiels** et leur intégration crée une tension :
+
+- Soit on les intègre sans marqueur → on dilue le narratif, un reviewer
+  dira "vous citez TrustPilot comme source ?"
+- Soit on les intègre avec marqueur "non vérifié" → l'utilité diminue
+  fortement (un avis avec disclaimer est moins percutant) et la
+  cohérence du contrat strict v4 R3 est cassée (`[source SX]` mêle
+  officiel et UGC)
+- Soit on ne les intègre pas → on perd la dimension qualitative
+
+### Decision
+
+Aucun avis subjectif n'est intégré au corpus OrientIA. Périmètre :
+
+- Pas d'ingestion depuis Glassdoor, TrustPilot, GoEtudier
+- Pas d'ingestion depuis les forums (Reddit, JV, Hardware.fr, etc.)
+- Pas d'ingestion depuis les réseaux sociaux (LinkedIn, Twitter, Instagram)
+- Pas d'ingestion depuis les sites d'agrégateurs privés (Studyrama,
+  l'Etudiant.fr, Diplomeo)
+
+À la place, lorsqu'une question utilisateur réclame du qualitatif vécu
+("c'est comment vraiment HEC ?", "comment se passe la prépa ?", etc.),
+le système répond honnêtement avec ses sources officielles disponibles
+(débouchés ROME, taux d'insertion InserSup, conditions ANSSI/CTI), puis
+**redirige explicitement** vers les ressources externes appropriées :
+
+- Forums étudiants (sans en citer un en particulier)
+- LinkedIn (réseau professionnel pour contacts d'anciens)
+- Journées portes ouvertes officielles
+- CIO et Psy-EN du lycée
+- Stages et immersions terrain
+
+Format de redirection inspiré du bloc Phase Projet existant
+(`src/validator/phase_projet.py`).
+
+### Rationale
+
+1. **Narratif INRIA cohérent** : "100% sourcé officiel" doit être
+   tenu littéralement. Aucun compromis tactique sur la liste blanche
+   (cf ADR-055).
+2. **Risque légal et éthique** : scraper Glassdoor / forums sans
+   accord est juridiquement gris (CGU, RGPD). On évite le risque.
+3. **Qualité variable des avis** : un avis Glassdoor n'a pas de
+   garantie de représentativité, vérifiabilité, ni d'absence
+   d'astroturfing. Pour un système d'orientation qui plaide la
+   rigueur, c'est rédhibitoire.
+4. **Pas notre métier** : OrientIA est un système de chiffres
+   officiels + posture conseillère, pas un agrégateur d'avis.
+   Glassdoor / forums existent et font le job. On les recommande,
+   on ne les copie pas.
+5. **Compatible R5 du contrat strict v4** : la posture empathique
+   inclut déjà la redirection ("Parle-en au CIO", "rencontre des
+   anciens"). Cette ADR formalise et étend.
+
+### Alternatives considérées
+
+1. **Intégrer avec marqueur "non vérifié"** : rejetée. Crée une
+   ambiguïté dans le contrat R3 (`[source SX]` mêle officiel et UGC).
+   Risque que le LLM oublie le marqueur. Perte de net force de la
+   réponse pour gain qualitatif marginal.
+2. **Intégrer uniquement les avis "vérifiés" type Trustpilot pro
+   payants** : rejetée. La vérification est faite par Trustpilot,
+   pas par une autorité publique. Pas conforme tier 1/2/3.
+3. **Position "officiel pour les chiffres + Wikipedia pour le
+   qualitatif"** : Wikipedia exclu de la liste blanche (cf ADR-055).
+   Wikipedia peut être pointé comme ressource externe en redirection,
+   pas cité comme source dans une réponse.
+
+### Liens
+
+- ADR-055 : liste blanche sources autorisées (concrétise l'exclusion)
+- ADR-053 : architecture WHAT/HOW (R5 posture empathique)
+- Implémentation redirection : Phase 1+ via enrichissement `phase_projet.py`
+  ou nouveau module `external_resources.py`
+
+---
+
+## ADR-057 — Corpus de référence v5 unifié multi-corpus (2026-05-07)
+
+### Context
+
+L'audit Phase 0 a révélé un découplage majeur entre l'architecture
+pipeline et la data réellement servie en production :
+
+- **22 corpora annexes collectés** dans `data/processed/` (DARES, APEC,
+  CROUS, INSEE, IDEO fiches métiers, ONISEP métiers, France Compétences
+  blocs, InserSup, Inserjeunes lycée pro, DROM-COM, voie pré-bac,
+  parcours bacheliers, doctorat IP, financement, corrections factuelles,
+  ROME 4.0 fiches brutes, etc.)
+- **0 de ces corpora intégrés** dans `formations.json` de production
+  (mesure : 100% des 48 914 fiches ont `domain = __no_domain__`)
+- Le `RerankConfig` configure des `domain_boost_*` pour 12 domaines
+  (`apec_region`, `crous`, `metier`, `metier_prospective`,
+  `competences_certif`, `insertion_pro`, `insee_salaire`,
+  `formation_insertion`, `financement_etudes`, `territoire_drom`,
+  `voie_pre_bac`, `parcours_bacheliers`) — aucun ne se déclenche
+- L'`intent.classify_domain_hint()` détecte 12 domaines distincts mais
+  le retrieval n'a aucune fiche du bon domaine à booster
+
+3 versions parallèles de `formations*.json` cohabitent :
+- `formations.json` (48 914 fiches, mono-corpus, prod actuel)
+- `formations_unified.json` (55 606 fiches, mono-corpus enrichi)
+- `formations_golden_pipeline.json` (61 657 fiches, intègre DARES + RNCP
+  blocs uniquement, 9,8% de domaines annexes — orphelin, jamais promu)
+
+Combinés à ADR-054 (purge Cereq) et ADR-055 (liste blanche), une
+refonte unifiée du corpus de production est nécessaire.
+
+### Decision
+
+Construire un **nouveau corpus de référence `formations_v5.json`** qui :
+
+1. **Intègre les 22 corpora annexes** dans le retrieval principal via
+   le champ `domain` (architecture multi-corpus de l'ADR-049 enfin
+   active). Chaque fiche annexe garde son schéma natif + un champ
+   `domain` qui matche les `DOMAIN_HINT_*` du `intent.py`.
+2. **Applique ADR-054** (purge totale des chiffres d'insertion Cereq
+   agrégés). Remplacement par chiffres InserSup spécifiques quand match
+   discipline × région × niveau.
+3. **Applique ADR-055** (liste blanche tier 1/2/3) avec ajout d'un
+   champ `provenance.tier` dans la FactCard de chaque fiche.
+4. **Déduplique** les fiches sur `(nom + établissement + ville)` —
+   suppression des 13 858 doublons identifiés par l'audit Phase 0.
+5. **Supprime les fiches sans aucun chiffre exploitable** — les 6 233
+   fiches vides (notamment 31% d'`inserjeunes_cfa` et 27% d'`onisep`).
+6. **Normalise les régions** (24 régions distinctes → 18 régions
+   métropolitaines + DROM-COM standardisées).
+7. **Recalibre ou retire les boosts du `RerankConfig`** dont les
+   signaux sont absents (notamment `secnumedu_boost=1.5` et
+   `cti_boost=1.3` qui ciblent 23 fiches sur 48 914).
+8. **Re-construit l'index FAISS** dédié `formations_v5.index` (avec
+   re-embed Mistral, coût ~5-10$).
+9. **Archive** les versions précédentes (`formations.json`,
+   `formations_unified.json`, `formations_golden_pipeline.json`,
+   `formations_dedupe.json`, `formations_multi_corpus_phase*.json`)
+   dans `data/archive/` et conserve uniquement `formations_v5.json`
+   en production.
+
+Le mécanisme d'intégration multi-corpus suit ce pattern :
+
+```
+formations_v5.json = (
+    fiches_principales  # Parcoursup, MonMaster, ONISEP fiches, RNCP, LBA
+                        # (sans Cereq agrégat, sans doublons, sans vides)
+    + InserSup spécifique (quand match)
+    + IDEO fiches métiers (1 075 fiches, domain=metier)
+    + ONISEP métiers (1 518 fiches, domain=metier)
+    + ROME 4.0 fiches métiers brutes (1 584 fiches, domain=metier_detail)
+    + DARES Métiers 2030 (1 160 fiches, domain=metier_prospective)
+    + APEC régions (13 fiches, domain=apec_region)
+    + CROUS corpus (39 fiches, domain=crous)
+    + INSEE salaires PCS (59 fiches, domain=insee_salaire)
+    + France Compétences blocs (4 891 fiches, domain=competences_certif)
+    + Inserjeunes lycée pro (2 693 fiches, domain=formation_insertion)
+    + Parcours bacheliers (151 fiches, domain=parcours_bacheliers)
+    + Doctorat IP (240 fiches, domain=insertion_pro)
+    + DROM-COM (16 fiches, domain=territoire_drom)
+    + Voie pré-bac (20 fiches, domain=voie_pre_bac)
+    + Financement (28 fiches, domain=financement_etudes)
+    + Corrections factuelles (5 fiches, domain=correction)
+)
+```
+
+Volume estimé après ménage : **~30-35 000 fiches denses** (vs 48 914
+gonflées actuellement) + **~12 700 fiches annexes** (= 18 corpora) = **~45 000
+fiches au total**, dont 28% d'annexes (le pipeline devient vraiment
+multi-corpus).
+
+### Rationale
+
+1. **Aligner code et data** : le pipeline a 12 `domain_hint`, le
+   reranker a 12 `domain_boost`, l'intent classifier détecte 12
+   domaines. Sans intégration multi-corpus, l'architecture ADR-048 +
+   ADR-049 reste **fictive**. Le corpus v5 la rend réelle.
+2. **Couvrir le scope produit "vie jeune adulte"** : les questions
+   CROUS, bourses, calendriers, métiers, insertion par discipline ne
+   peuvent pas être servies par un corpus mono-formation.
+3. **Densité > Volume** : un corpus de 45 000 fiches denses (chacune
+   avec ≥3 chiffres spécifiques + provenance tier identifiée) est
+   structurellement plus utile qu'un corpus de 48 914 fiches dont 67%
+   ont des chiffres agrégés trompeurs et 28% sont des doublons.
+4. **Réduit la dette stockage** : `data/processed/` passe de 1,14 GB
+   à ~0,5 GB après archivage des versions parallèles.
+   `data/embeddings/` passe de 2,02 GB à ~0,4 GB après suppression
+   des index orphelins (multi_corpus_phaseB/C/D/E + pre_*).
+5. **Preuve de bonne foi pour soumission INRIA** : le corpus v5 est
+   reproductible (script de build documenté), traçable (provenance par
+   fiche), et défendable (politique liste blanche + ADR par décision).
+6. **Activation des collectors dormants** : `scripts/ingest_rome_fiches.py`
+   a déjà téléchargé les 1 584 fiches ROME 4.0 (status "done", 2026-04-23).
+   Elles attendent leur transformation en corpus RAG pour intégration v5.
+
+### Métriques de succès
+
+Mesurables avant promotion v5 → production :
+
+| Métrique | Actuel (v3.2 prod) | Cible v5 |
+|---|---|---|
+| Doublons (nom+etab+ville) | 28% (13 858 fiches) | 0% |
+| Fiches vides (0 chiffre) | 12,7% (6 233 fiches) | 0% |
+| Chiffres Cereq agrégés sans tag | 67% (32 704 fiches) | 0% (purgés) |
+| Fiches avec `domain` annexe | 0 (0,0%) | ~12 700 (28%) |
+| Fiches avec URL vérifiable | 10,0% | ≥60% |
+| Fiches sans région | 37,2% (18 175) | ≤10% |
+| Fiches sans niveau | 33,1% (16 210) | ≤15% |
+| Densité chiffres exploitables médian | ~3,5 (gonflé) | ≥3 (réel) |
+| Stockage data/ total | 3,16 GB | ≤1 GB |
+| Mini-bench v4.1 honesty_score | 1.0 | 1.0 (préservé) |
+| Mini-bench v4.1 latency moyen | 7,26 s | ≤9 s |
+
+### Alternatives considérées
+
+1. **Chemin 1 — Garder `formations.json` actuel mono-corpus** :
+   rejetée. Coupe 100% des annexes du retrieval. L'architecture
+   pipeline ADR-048/049 reste fictive. Produit niveau 2 (refonte
+   2026-05-06) ne peut pas servir les questions vie étudiante.
+2. **Chemin 2 — Promouvoir `formations_golden_pipeline.json`
+   (gain tactique)** : rejetée. Intègre seulement 2 corpora annexes
+   (DARES + RNCP blocs). Laisse 19 corpora dormants. Ne corrige ni
+   Cereq ni les doublons. Coup partiel qui retarde la refonte
+   structurelle.
+3. **Construire des index FAISS séparés par domain** : variante
+   architecturale envisageable mais non retenue à ce stade. Le
+   reranker domain-aware (ADR-049) suffit pour router au sein d'un
+   index unifié, et un seul index simplifie le déploiement et le
+   monitoring. À reconsidérer en Phase 4 si le retrieval mixte sature.
+
+### Plan d'implémentation (Phase 1 + Phase 2)
+
+1. **Phase 1.A** — Acter ADR-054, 055, 056, 057 (cette ADR) → fait
+2. **Phase 1.B** — Refonte du merger (`src/collect/run_merge_v3.py` à
+   créer en remplacement de `run_merge_v2.py`) :
+   - Supprime appel à `cereq.attach_cereq_insertion`
+   - Ajoute `attach_insersup_v2` (matching discipline × région × niveau)
+   - Déduplique `(nom + établissement + ville)`
+   - Supprime fiches sans chiffre exploitable
+   - Normalise régions
+   - Ajoute `provenance.tier` selon ADR-055
+3. **Phase 1.C** — Construction des fiches annexes pour chaque corpus
+   (transformer les 22 fichiers `*_corpus.json` en fiches avec
+   `domain`, `text`, `provenance` adaptés à la FactCard) :
+   - ROME 4.0 fiches : transformer `data/raw/rome_api/fiches_metiers/*.json`
+     (1 584 fiches déjà téléchargées) en `domain=metier_detail`
+   - Métiers IDEO + ONISEP : agréger en `domain=metier`
+   - Tous les autres `*_corpus.json` : injection directe avec `domain`
+4. **Phase 1.D** — Build `formations_v5.json` + re-embed FAISS
+   (`formations_v5.index`)
+5. **Phase 1.E** — Archive des versions précédentes dans `data/archive/`
+6. **Phase 1.F** — Mini-bench v4.1 sur v5 vs v3.2 actuel pour mesurer
+   préservation honesty + amélioration couverture
+7. **Phase 1.G** — Promotion v5 → production via `make_production_pipeline`
+
+Effort estimé : 2-3 semaines pour Phase 1.B → 1.G.
+
+### Liens
+
+- Audit Phase 0 : `docs/AUDIT_PHASE_0.md`
+- ADR liés : 048 (multi-corpus retrievable), 049 (reranker domain-aware),
+  054 (purge Cereq), 055 (liste blanche), 056 (pas d'avis)
+- Pipeline cible : `src/rag/factory.py:make_production_pipeline`
+- Code à refondre : `src/collect/run_merge_v2.py` → `run_merge_v3.py`
+- Implémentation : Phase 1 grand ménage (à venir)

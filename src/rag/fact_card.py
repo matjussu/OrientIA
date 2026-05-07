@@ -60,6 +60,163 @@ from dataclasses import dataclass, field, asdict
 from typing import Any
 
 
+# ─────────────── ADR-055 — Liste blanche tier 1/2/3 ───────────────
+#
+# Mapping source → tier de confiance pour exposer dans la provenance.
+# Voir docs/DECISION_LOG.md ADR-055 pour le périmètre complet.
+#
+# - tier_1 : officiel État (Parcoursup, ONISEP, INSEE, DARES, France Travail, etc.)
+# - tier_2 : paritaire / agence officielle (APEC, AGEFIPH, ANSSI, CTI, CGE, FESIC)
+# - tier_3 : sites officiels d'établissements pour info pratique uniquement
+#            (préfixe `site_etablissement_<slug>` dans le champ source)
+
+SOURCE_TO_TIER: dict[str, str] = {
+    # ── Tier 1 — Officiel État ──
+    # Plateformes Parcoursup / MonMaster / ONISEP
+    "parcoursup": "tier_1",
+    "parcoursup_extended": "tier_1",
+    "monmaster": "tier_1",
+    "onisep": "tier_1",
+    "onisep_extended": "tier_1",
+    "onisep_formations_extended": "tier_1",
+    "onisep_metiers": "tier_1",
+    "ideo_onisep": "tier_1",
+    "onisep_ideo_fiches": "tier_1",
+    # Certifications RNCP / France Compétences
+    "rncp": "tier_1",
+    "rncp_blocs": "tier_1",
+    "france_competences": "tier_1",
+    # France Travail / ROME 4.0
+    "rome_api_v4": "tier_1",
+    "france_travail": "tier_1",
+    "ft_marche": "tier_1",
+    "ft_offres": "tier_1",
+    "ft_sortants": "tier_1",
+    # Insertion / formation (MESR + DEPP + Cereq)
+    "insersup": "tier_1",
+    "insersup_mesr": "tier_1",
+    "cereq": "tier_1",  # collectée mais non utilisée pour citation par formation (ADR-054)
+    "dares": "tier_1",
+    "dares_metiers_2030": "tier_1",
+    "drees": "tier_1",
+    "france_strategie": "tier_1",
+    "inserjeunes": "tier_1",
+    "inserjeunes_cfa": "tier_1",
+    "inserjeunes_depp": "tier_1",
+    "inserjeunes_lycee_pro": "tier_1",
+    "ip_doc_doctorat": "tier_1",
+    "mesri_parcours_bacheliers_licence": "tier_1",
+    "parcours_bacheliers": "tier_1",
+    # La Bonne Alternance / France Travail
+    "labonnealternance": "tier_1",
+    "lba": "tier_1",
+    # Vie étudiante / CROUS
+    "crous": "tier_1",
+    "crous_combine_logements_restos": "tier_1",
+    # INSEE
+    "insee": "tier_1",
+    "insee_salaan": "tier_1",
+    "insee_salaan_2023": "tier_1",
+    # Ultramarins
+    "ladom": "tier_1",
+    "domtom_curated": "tier_1",  # curated à partir de sources officielles DROM
+    # Curated officiels (sources État aggregées par OrientIA)
+    "financement_dispositifs_curated": "tier_1",
+    "corrections_factuelles_curated": "tier_1",  # corrections factuelles curées par audit user-test
+    # ── Tier 2 — Paritaire / agence officielle ──
+    "apec": "tier_2",
+    "apec_observatoire_emploi_cadre_2026": "tier_2",
+    "agefiph": "tier_2",
+    "fiphfp": "tier_2",
+    "anssi": "tier_2",
+    "secnumedu": "tier_2",
+    "cge": "tier_2",
+    "cti": "tier_2",
+    "fesic": "tier_2",
+}
+
+# Libellés humains pour `provenance.source_label` (exposés au LLM dans le JSON).
+SOURCE_LABEL_MAP: dict[str, str] = {
+    "parcoursup": "Parcoursup",
+    "parcoursup_extended": "Parcoursup (étendu)",
+    "monmaster": "MonMaster",
+    "onisep": "ONISEP",
+    "onisep_extended": "ONISEP (étendu)",
+    "onisep_formations_extended": "ONISEP — formations étendues",
+    "onisep_metiers": "ONISEP — métiers",
+    "ideo_onisep": "ONISEP IDEO",
+    "onisep_ideo_fiches": "ONISEP IDEO — fiches métiers",
+    "rncp": "RNCP",
+    "rncp_blocs": "France Compétences — blocs RNCP",
+    "france_competences": "France Compétences",
+    "rome_api_v4": "France Travail ROME 4.0",
+    "france_travail": "France Travail",
+    "ft_marche": "France Travail — marché du travail",
+    "ft_offres": "France Travail — offres d'emploi",
+    "ft_sortants": "France Travail — sortants de formation",
+    "insersup": "InserSup MESR",
+    "insersup_mesr": "InserSup MESR",
+    "cereq": "Cereq Enquête Génération",
+    "dares": "DARES",
+    "dares_metiers_2030": "DARES Métiers 2030",
+    "drees": "DREES",
+    "france_strategie": "France Stratégie",
+    "inserjeunes": "Inserjeunes DEPP",
+    "inserjeunes_cfa": "Inserjeunes DEPP — CFA",
+    "inserjeunes_depp": "Inserjeunes DEPP",
+    "inserjeunes_lycee_pro": "Inserjeunes DEPP — lycée pro",
+    "labonnealternance": "La Bonne Alternance",
+    "lba": "La Bonne Alternance",
+    "crous": "CROUS / CNOUS",
+    "crous_combine_logements_restos": "CROUS — logements + restos U",
+    "insee": "INSEE",
+    "insee_salaan": "INSEE — salaires PCS",
+    "insee_salaan_2023": "INSEE Salaan 2023",
+    "ladom": "LADOM",
+    "domtom_curated": "Curated DROM-COM (sources État)",
+    "ip_doc_doctorat": "MESR — insertion doctorat",
+    "parcours_bacheliers": "MESR — parcours bacheliers",
+    "mesri_parcours_bacheliers_licence": "MESR — parcours bacheliers en licence",
+    "financement_dispositifs_curated": "Curated dispositifs financement (sources État)",
+    "corrections_factuelles_curated": "Corrections factuelles curées (audit user-test)",
+    "apec": "APEC",
+    "apec_observatoire_emploi_cadre_2026": "APEC Observatoire emploi cadre 2026",
+    "agefiph": "AGEFIPH",
+    "fiphfp": "FIPHFP",
+    "anssi": "ANSSI",
+    "secnumedu": "ANSSI label SecNumEdu",
+    "cge": "Conférence des Grandes Écoles",
+    "cti": "Commission des Titres d'Ingénieur",
+    "fesic": "FESIC",
+}
+
+
+@dataclass
+class FactProvenance:
+    """Provenance d'une fiche selon ADR-055 (liste blanche tier 1/2/3).
+
+    Exposée dans le JSON LLM pour traçabilité côté reviewer / utilisateur :
+    chaque source a un tier explicite et un libellé humain. Les sites
+    établissements (tier 3) portent un préfixe `site_etablissement_<slug>`
+    dans `source` côté fiche brute.
+    """
+    tier: str  # "tier_1" | "tier_2" | "tier_3"
+    source_label: str | None = None  # ex: "Parcoursup", "DARES Métiers 2030"
+    source_url: str | None = None  # URL canonique de la source officielle (datasets, fiches)
+    last_updated: str | None = None  # date YYYY-MM-DD si disponible
+
+    def to_dict(self) -> dict[str, Any]:
+        """Sérialise sans les champs None pour limiter le bruit JSON."""
+        d = {"tier": self.tier}
+        if self.source_label:
+            d["source_label"] = self.source_label
+        if self.source_url:
+            d["source_url"] = self.source_url
+        if self.last_updated:
+            d["last_updated"] = self.last_updated
+        return d
+
+
 @dataclass
 class FactChiffres:
     """Sous-bloc 'chiffres' de la FactCard. Tous les champs sont None par
@@ -74,6 +231,15 @@ class FactChiffres:
     salaire_median_embauche: int | None = None
     pct_acceptes_debut_pp: float | None = None
     propositions_totales: int | None = None
+    # ADR-054 — granularité du matching InserSup pour transparence.
+    # Populé par src/collect/insersup_attach.py (Phase A.3) :
+    #   "etablissement_x_discipline" (best, score 1.0)
+    #   "discipline_region"          (score 0.7)
+    #   "discipline_nationale"       (score 0.4, last resort)
+    #   None                         (pas de match — `insertion_pro` absent)
+    insertion_pro_granularite: str | None = None
+    # Taille échantillon InserSup (transparence statistique).
+    nombre_sortants: int | None = None
 
 
 @dataclass
@@ -99,6 +265,9 @@ class FactCard:
     annee_donnees: int | None = None  # session Parcoursup ex 2025
     text_libre: str | None = None  # detail / text pour fiches non-Parcoursup
     domain: str | None = None  # "formation" | "metier" | "apec_region" | etc.
+    # ADR-055 — provenance avec tier de confiance, exposée au LLM via JSON.
+    # None si la source de la fiche est inconnue ou hors liste blanche.
+    provenance: FactProvenance | None = None
 
     def to_dict(self) -> dict[str, Any]:
         """Sérialise pour injection dans le user prompt LLM."""
@@ -107,6 +276,12 @@ class FactCard:
         # MAIS conserve `chiffres` même si tous null (le LLM doit voir
         # explicitement quels chiffres sont absents → "info non disponible").
         d_clean = {k: v for k, v in d.items() if k == "chiffres" or v not in (None, "", [])}
+        # Sérialisation custom de provenance (omet sub-fields None pour propreté).
+        if self.provenance is not None:
+            d_clean["provenance"] = self.provenance.to_dict()
+        elif "provenance" in d_clean:
+            # asdict aurait pu produire un dict avec `tier=None` par mégarde.
+            del d_clean["provenance"]
         return d_clean
 
 
@@ -199,6 +374,147 @@ def _pick_text_libre(fiche: dict, max_chars: int = 400) -> str | None:
     return None
 
 
+def _pick_formation_name(fiche: dict) -> str:
+    """Cascade pour récupérer le nom à exposer dans `FactCard.formation`.
+
+    Schémas supportés (ordre de priorité) :
+
+    **1. Champs nom directs** (formations classiques + métiers + blocs) :
+    - `nom` : formations classiques (Parcoursup, MonMaster, ONISEP, RNCP, LBA)
+    - `libelle_metier` : ROME 4.0 (build_rome_corpus.py, domain="metier_detail")
+    - `nom_metier` : IDEO ONISEP (build_metiers_corpus.py, domain="metier")
+    - `libelle` : ONISEP métiers (build via onisep_metiers.py)
+    - `intitule` : France Compétences blocs (build_france_comp_blocs_corpus.py)
+    - `libelle_diplome`, `libelle_formation` : autres corpora annexes
+    - `fap_libelle` : DARES Métiers 2030 (Famille Activité Professionnelle)
+    - `subject` : Corrections factuelles curées
+
+    **2. Composition contextuelle** (pour les corpora discipline-based) :
+    - `type_diplome` + `discipline` : InserSup ("Master LMD en Droit, sciences politiques")
+    - `type_diplome` + `domaine` : Voie pré-bac ("BAC PRO en agriculture")
+    - `grande_discipline` + `bac` + `mention` : Parcours bacheliers
+      ("Parcours licence en Droit — bac ES mention Assez bien")
+
+    **3. Fallback id-based** (pour APEC, CROUS, INSEE — pas d'identité formation) :
+    - Extrait la partie significative de `id` (après le dernier `:`), formate.
+
+    Fallback `(formation sans nom)` uniquement si vraiment rien n'est trouvé.
+    """
+    # Étape 1 — cascade champs nom directs
+    for key in ("nom", "libelle_metier", "nom_metier", "libelle",
+                "intitule", "libelle_diplome", "libelle_formation",
+                "fap_libelle", "subject"):
+        candidate = _safe_str(fiche.get(key))
+        if candidate:
+            return candidate
+
+    # Étape 1.5 — fallback établissement (Inserjeunes CFA, autres stats par étab)
+    # Quand un record n'a pas de nom de formation propre mais représente une
+    # stat aggregée pour un établissement, on expose l'étab comme identifiant.
+    # Le merger v3 attache typiquement ces records via UAI à des fiches existantes,
+    # donc ce fallback n'est utilisé que si le record reste autonome.
+    etab = _safe_str(fiche.get("etablissement"))
+    if etab and not _safe_str(fiche.get("type_diplome")) and not _safe_str(fiche.get("discipline")):
+        # Étab seul (pas de discipline ni type_diplome) → cas Inserjeunes CFA
+        return etab
+
+    # Étape 2 — compositions contextuelles
+    type_dip = _safe_str(fiche.get("type_diplome"))
+    discipline = _safe_str(fiche.get("discipline"))
+    grande_discipline = _safe_str(fiche.get("grande_discipline"))
+    domaine = _safe_str(fiche.get("domaine"))
+    bac = _safe_str(fiche.get("bac"))
+    mention = _safe_str(fiche.get("mention"))
+
+    # Parcours bacheliers : "Parcours licence en {grande_discipline} — bac {bac} mention {mention}"
+    if grande_discipline and bac:
+        composed = f"Parcours licence en {grande_discipline} — bac {bac}"
+        if mention:
+            composed = f"{composed} mention {mention}"
+        return composed
+
+    # InserSup : "{type_diplome} en {discipline}"
+    if type_dip and discipline:
+        return f"{type_dip} en {discipline}"
+
+    # Voie pré-bac : "{type_diplome} en {domaine}"
+    if type_dip and domaine:
+        return f"{type_dip} en {domaine}"
+
+    # Discipline ou type_diplome seul
+    if discipline:
+        return discipline
+    if type_dip:
+        return type_dip
+
+    # Étape 3 — fallback id-based (APEC, CROUS, INSEE, autres corpora identifiés par id)
+    id_val = _safe_str(fiche.get("id"))
+    if id_val:
+        # Extrait la queue après le dernier ':' (ex "apec_region:auvergne-rhone-alpes" → "auvergne-rhone-alpes")
+        tail = id_val.rsplit(":", 1)[-1] if ":" in id_val else id_val
+        # Format : "auvergne-rhone-alpes" → "Auvergne Rhone Alpes"
+        formatted = tail.replace("-", " ").replace("_", " ").strip()
+        if formatted:
+            return formatted
+
+    return "(formation sans nom)"
+
+
+def _infer_provenance(fiche: dict) -> FactProvenance | None:
+    """Infère la provenance (tier + label) selon ADR-055.
+
+    Stratégie :
+      1. Si la fiche contient un dict `provenance` explicite avec `tier` valide,
+         utilise-le (le merger v3 / les builders peuvent populer ce champ).
+      2. Sinon, regarde `fiche['source']` et lookup dans SOURCE_TO_TIER.
+         Cas spécial : préfixe `site_etablissement_<slug>` → tier_3.
+      3. Si source absente/inconnue → None (la provenance ne sera pas exposée
+         au LLM, choix conservatif pour éviter de mentir sur le tier).
+    """
+    # 1) Bloc provenance explicite déjà dans la fiche
+    explicit = fiche.get("provenance")
+    if isinstance(explicit, dict):
+        tier = _safe_str(explicit.get("tier"))
+        if tier in ("tier_1", "tier_2", "tier_3"):
+            return FactProvenance(
+                tier=tier,
+                source_label=_safe_str(explicit.get("source_label")),
+                source_url=_safe_str(explicit.get("source_url")),
+                last_updated=_safe_str(explicit.get("last_updated")),
+            )
+
+    # 2) Inférence depuis fiche['source']
+    raw_source = fiche.get("source")
+    if not isinstance(raw_source, str):
+        return None
+    source = raw_source.lower().strip()
+    if not source:
+        return None
+
+    # 2.a) Tier 3 — sites d'établissements (préfixe explicite)
+    if source.startswith("site_etablissement_"):
+        slug = source[len("site_etablissement_"):]
+        label = SOURCE_LABEL_MAP.get(source) or slug.replace("_", " ").title()
+        return FactProvenance(
+            tier="tier_3",
+            source_label=label,
+            source_url=None,
+            last_updated=None,
+        )
+
+    # 2.b) Tier 1 / 2 lookup
+    tier = SOURCE_TO_TIER.get(source)
+    if tier is None:
+        return None
+
+    return FactProvenance(
+        tier=tier,
+        source_label=SOURCE_LABEL_MAP.get(source),
+        source_url=None,
+        last_updated=None,
+    )
+
+
 def fiche_to_fact_card(fiche: dict, fact_id: str) -> FactCard:
     """Mappe une fiche corpus (dict JSON) vers une FactCard structurée.
 
@@ -211,7 +527,7 @@ def fiche_to_fact_card(fiche: dict, fact_id: str) -> FactCard:
         peuvent être None — le contrat v4 dit au LLM "si None, info non
         disponible".
     """
-    nom = _safe_str(fiche.get("nom")) or "(formation sans nom)"
+    nom = _pick_formation_name(fiche)
 
     # CHIFFRES PARCOURSUP (sous-corpus 21.5%)
     chiffres = FactChiffres(
@@ -246,6 +562,7 @@ def fiche_to_fact_card(fiche: dict, fact_id: str) -> FactCard:
         annee_donnees=_pick_annee(fiche),
         text_libre=_pick_text_libre(fiche),
         domain=_safe_str(fiche.get("domain")) or _safe_str(fiche.get("domaine")),
+        provenance=_infer_provenance(fiche),
     )
 
 
