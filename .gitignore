@@ -56,6 +56,11 @@ data/processed/inserjeunes_lycee_pro.json
 data/processed/insersup_insertion.json
 # Phase A.2 — ROME 4.0 corpus (12 MB, régénérable via `python -m src.collect.build_rome_corpus`)
 data/processed/rome_metier_corpus.json
+# Phase B finalisation — corpora annexes régénérables
+data/processed/onisep_metiers_corpus.json
+data/processed/doctorat_corpus.json
+# Phase B output — corpus v5 (régénérable via `python -m src.collect.run_merge_v3`)
+data/processed/formations_v5.json
 
 # Runtime logs
 logs/

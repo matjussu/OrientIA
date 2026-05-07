@@ -92,6 +92,7 @@ DEFAULT_OUT_PATH = DATA_PROCESSED / "formations_v5.json"
 ANNEX_CORPORA: list[tuple[str, Path, str, str | None]] = [
     ("ROME 4.0 métiers", DATA_PROCESSED / "rome_metier_corpus.json", "metier_detail", None),
     ("Métiers IDEO ONISEP", DATA_PROCESSED / "metiers_corpus.json", "metier", None),
+    ("ONISEP métiers (catalogue)", DATA_PROCESSED / "onisep_metiers_corpus.json", "metier", None),
     ("DARES Métiers 2030", DATA_PROCESSED / "dares_corpus.json", "metier_prospective", None),
     ("APEC régions", DATA_PROCESSED / "apec_regions_corpus.json", "apec_region", None),
     ("CROUS corpus", DATA_PROCESSED / "crous_corpus.json", "crous", None),
@@ -99,6 +100,7 @@ ANNEX_CORPORA: list[tuple[str, Path, str, str | None]] = [
     ("France Compétences blocs", DATA_PROCESSED / "france_comp_blocs_corpus.json", "competences_certif", None),
     ("Inserjeunes lycée pro", DATA_PROCESSED / "inserjeunes_lycee_pro_corpus.json", "formation_insertion", None),
     ("InserSup corpus agrégé", DATA_PROCESSED / "insersup_corpus.json", "insertion_pro", None),
+    ("Doctorat IP MESR", DATA_PROCESSED / "doctorat_corpus.json", "insertion_pro", None),
     ("Parcours bacheliers", DATA_PROCESSED / "parcours_bacheliers_corpus.json", "parcours_bacheliers", None),
     ("DROM-COM territoires", DATA_PROCESSED / "domtom_corpus.json", "territoire_drom", None),
     ("Voie pré-bac", DATA_PROCESSED / "voie_pre_bac_corpus.json", "voie_pre_bac", None),
@@ -157,6 +159,135 @@ def _canonicalize_region(region: Any) -> str | None:
         return None
     norm = _norm_text(region)
     return _REGION_CANONICAL.get(norm) or (str(region).strip() if region else None)
+
+
+# Mapping ville → région pour combler les régions manquantes.
+# Top ~150 villes françaises principales + préfectures de département.
+# Source : INSEE communes (open data), curated à la main pour les villes
+# les plus fréquentes du corpus OrientIA. Les villes non-listées laissent
+# `region=None` (Phase 3.x — élargir le référentiel via INSEE complet).
+_VILLE_TO_REGION: dict[str, str] = {
+    # Île-de-France
+    **{v: "Île-de-France" for v in [
+        "paris", "boulogne-billancourt", "saint-denis", "argenteuil", "montreuil",
+        "nanterre", "vitry-sur-seine", "creteil", "asnieres-sur-seine", "courbevoie",
+        "versailles", "colombes", "aulnay-sous-bois", "rueil-malmaison", "champigny-sur-marne",
+        "saint-maur-des-fosses", "drancy", "issy-les-moulineaux", "noisy-le-grand", "levallois-perret",
+        "neuilly-sur-seine", "antony", "ivry-sur-seine", "cergy", "evry", "evry-courcouronnes",
+        "clichy", "pantin", "sarcelles", "le blanc-mesnil", "epinay-sur-seine",
+        "sevres", "puteaux", "meudon", "malakoff", "vincennes", "fontainebleau",
+        "bobigny", "le kremlin-bicetre", "villejuif", "saint-cloud", "saint-quentin-en-yvelines",
+        "marne-la-vallee", "saclay", "palaiseau", "orsay",
+    ]},
+    # Auvergne-Rhône-Alpes
+    **{v: "Auvergne-Rhône-Alpes" for v in [
+        "lyon", "saint-etienne", "grenoble", "villeurbanne", "clermont-ferrand",
+        "annecy", "chambery", "valence", "bourg-en-bresse", "roanne",
+        "vienne", "annonay", "aurillac", "moulins", "le puy-en-velay",
+        "vaulx-en-velin", "venissieux", "caluire-et-cuire", "bron", "ecully",
+    ]},
+    # Provence-Alpes-Côte d'Azur
+    **{v: "Provence-Alpes-Côte d'Azur" for v in [
+        "marseille", "nice", "toulon", "aix-en-provence", "avignon",
+        "antibes", "cannes", "la seyne-sur-mer", "hyeres", "arles",
+        "frejus", "grasse", "martigues", "aubagne", "salon-de-provence",
+        "gap", "digne-les-bains", "draguignan",
+    ]},
+    # Occitanie
+    **{v: "Occitanie" for v in [
+        "toulouse", "montpellier", "nimes", "perpignan", "beziers", "narbonne",
+        "albi", "carcassonne", "tarbes", "rodez", "auch", "cahors",
+        "mende", "foix", "montauban", "alby",
+    ]},
+    # Hauts-de-France
+    **{v: "Hauts-de-France" for v in [
+        "lille", "amiens", "roubaix", "tourcoing", "dunkerque", "calais",
+        "valenciennes", "boulogne-sur-mer", "arras", "saint-quentin",
+        "douai", "beauvais", "compiegne", "soissons", "lens", "maubeuge",
+        "wattrelos", "villeneuve-d'ascq", "cambrai", "loos",
+    ]},
+    # Nouvelle-Aquitaine
+    **{v: "Nouvelle-Aquitaine" for v in [
+        "bordeaux", "limoges", "poitiers", "pau", "la rochelle", "agen",
+        "perigueux", "angouleme", "niort", "merignac", "pessac", "talence",
+        "bayonne", "biarritz", "anglet", "bressuire", "dax", "tarbes",
+        "saintes", "rochefort",
+    ]},
+    # Grand Est
+    **{v: "Grand Est" for v in [
+        "strasbourg", "reims", "metz", "nancy", "mulhouse", "colmar",
+        "troyes", "chalons-en-champagne", "epinal", "haguenau", "schiltigheim",
+        "thionville", "charleville-mezieres", "saint-dizier", "verdun",
+        "bar-le-duc", "chaumont", "sedan", "vandoeuvre-les-nancy",
+    ]},
+    # Bretagne
+    **{v: "Bretagne" for v in [
+        "rennes", "brest", "quimper", "lorient", "vannes", "saint-malo",
+        "saint-brieuc", "concarneau", "lannion", "fougeres", "morlaix",
+        "pontivy",
+    ]},
+    # Pays de la Loire
+    **{v: "Pays de la Loire" for v in [
+        "nantes", "angers", "le mans", "saint-nazaire", "cholet", "la roche-sur-yon",
+        "laval", "saumur", "rezé", "saint-herblain", "saint-sebastien-sur-loire",
+    ]},
+    # Normandie
+    **{v: "Normandie" for v in [
+        "rouen", "le havre", "caen", "cherbourg-en-cotentin", "evreux",
+        "saint-lo", "alencon", "vire", "lisieux", "dieppe", "fécamp",
+        "saint-etienne-du-rouvray", "mont-saint-aignan",
+    ]},
+    # Bourgogne-Franche-Comté
+    **{v: "Bourgogne-Franche-Comté" for v in [
+        "dijon", "besancon", "belfort", "chalon-sur-saone", "auxerre",
+        "nevers", "macon", "sens", "vesoul", "lons-le-saunier", "montbeliard",
+        "le creusot", "beaune",
+    ]},
+    # Centre-Val de Loire
+    **{v: "Centre-Val de Loire" for v in [
+        "tours", "orleans", "bourges", "blois", "chartres", "chateauroux",
+        "joue-les-tours", "saint-jean-de-braye", "fleury-les-aubrais",
+        "olivet", "vendome", "issoudun",
+    ]},
+    # Corse
+    **{v: "Corse" for v in [
+        "ajaccio", "bastia", "porto-vecchio", "calvi", "corte",
+    ]},
+    # DROM-COM
+    **{v: "Guadeloupe" for v in ["pointe-a-pitre", "basse-terre", "les abymes", "baie-mahault"]},
+    **{v: "Martinique" for v in ["fort-de-france", "le lamentin", "schoelcher", "saint-joseph"]},
+    **{v: "Guyane" for v in ["cayenne", "saint-laurent-du-maroni", "kourou", "matoury"]},
+    **{v: "La Réunion" for v in [
+        "saint-denis-de-la-reunion", "saint-paul", "saint-pierre", "le tampon",
+        "saint-andre", "saint-louis", "le port",
+    ]},
+    **{v: "Mayotte" for v in ["mamoudzou", "koungou", "dembeni"]},
+}
+
+
+def _infer_region_from_ville(ville: Any) -> str | None:
+    """Devine la région française depuis le nom de ville (~250 villes mappées).
+
+    Retourne None si la ville n'est pas dans le référentiel — le merger garde
+    `region=None` plutôt que d'inventer.
+    """
+    if not ville:
+        return None
+    norm = _norm_text(ville)
+    if not norm:
+        return None
+    # Match exact prioritaire
+    if norm in _VILLE_TO_REGION:
+        return _VILLE_TO_REGION[norm]
+    # Match sans tirets (ex: "saint denis" vs "saint-denis")
+    norm_no_dash = norm.replace("-", " ")
+    if norm_no_dash in _VILLE_TO_REGION:
+        return _VILLE_TO_REGION[norm_no_dash]
+    # Match avec tirets (cas inverse)
+    norm_dashed = norm.replace(" ", "-")
+    if norm_dashed in _VILLE_TO_REGION:
+        return _VILLE_TO_REGION[norm_dashed]
+    return None
 
 
 # Niveaux canoniques (cohérent avec les enums du pipeline)
@@ -370,8 +501,15 @@ def stage_drop_empty(fiches: list[dict[str, Any]]) -> tuple[list[dict[str, Any]]
 
 
 def stage_normalize(fiches: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], dict[str, int]]:
-    """Normalise région / niveau / statut sur place. Idempotent."""
+    """Normalise région / niveau / statut sur place. Idempotent.
+
+    Étapes par fiche :
+      1. Canonise région existante (casse, accents)
+      2. Si région absente : tente d'inférer depuis `ville` (mapping ~250 villes)
+      3. Canonise niveau et statut
+    """
     n_region_canonized = 0
+    n_region_inferred_from_ville = 0
     n_niveau_canonized = 0
     n_statut_canonized = 0
     for fiche in fiches:
@@ -382,6 +520,12 @@ def stage_normalize(fiches: list[dict[str, Any]]) -> tuple[list[dict[str, Any]],
         if canonical_region != original_region and canonical_region:
             fiche["region"] = canonical_region
             n_region_canonized += 1
+        # Si région toujours absente, tenter via ville
+        if not fiche.get("region"):
+            inferred = _infer_region_from_ville(fiche.get("ville"))
+            if inferred:
+                fiche["region"] = inferred
+                n_region_inferred_from_ville += 1
         original_niveau = fiche.get("niveau")
         canonical_niveau = _canonicalize_niveau(original_niveau)
         if canonical_niveau != original_niveau and canonical_niveau:
@@ -394,6 +538,7 @@ def stage_normalize(fiches: list[dict[str, Any]]) -> tuple[list[dict[str, Any]],
             n_statut_canonized += 1
     stats = {
         "n_region_canonized": n_region_canonized,
+        "n_region_inferred_from_ville": n_region_inferred_from_ville,
         "n_niveau_canonized": n_niveau_canonized,
         "n_statut_canonized": n_statut_canonized,
     }
