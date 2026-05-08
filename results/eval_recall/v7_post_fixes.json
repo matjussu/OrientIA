@@ -1,0 +1,2141 @@
+{
+  "metadata": {
+    "timestamp": "2026-05-08T15:57:32.287048+00:00",
+    "corpus_path": "data/processed/formations_v7.json",
+    "index_path": "data/embeddings/formations_v7.index",
+    "golden_path": "/home/matteo_linux/projets/OrientIA/data/golden_eval/golden_50.json",
+    "n_questions": 50
+  },
+  "global": {
+    "n_total": 50,
+    "n_errors": 0,
+    "n_ok": 50,
+    "recall_at_1": 0.48,
+    "recall_at_5": 0.8,
+    "recall_at_10": 0.84,
+    "mrr": 0.584,
+    "answer_kw_match": 0.84,
+    "avg_latency_s": 5.34
+  },
+  "by_category": {
+    "calendaire": {
+      "n": 5,
+      "recall_at_1": 1.0,
+      "recall_at_5": 1.0,
+      "recall_at_10": 1.0,
+      "mrr": 1.0,
+      "answer_kw_match": 1.0,
+      "avg_latency_s": 3.85
+    },
+    "geographique": {
+      "n": 10,
+      "recall_at_1": 0.4,
+      "recall_at_5": 0.8,
+      "recall_at_10": 1.0,
+      "mrr": 0.531,
+      "answer_kw_match": 0.9,
+      "avg_latency_s": 5.82
+    },
+    "lyceen_parcoursup": {
+      "n": 10,
+      "recall_at_1": 0.0,
+      "recall_at_5": 0.8,
+      "recall_at_10": 0.8,
+      "mrr": 0.22,
+      "answer_kw_match": 0.8,
+      "avg_latency_s": 5.18
+    },
+    "metier": {
+      "n": 10,
+      "recall_at_1": 0.6,
+      "recall_at_5": 0.6,
+      "recall_at_10": 0.6,
+      "mrr": 0.6,
+      "answer_kw_match": 0.9,
+      "avg_latency_s": 5.92
+    },
+    "reorientation": {
+      "n": 10,
+      "recall_at_1": 0.7,
+      "recall_at_5": 0.8,
+      "recall_at_10": 0.8,
+      "mrr": 0.72,
+      "answer_kw_match": 0.6,
+      "avg_latency_s": 5.79
+    },
+    "vie_etudiante": {
+      "n": 5,
+      "recall_at_1": 0.4,
+      "recall_at_5": 1.0,
+      "recall_at_10": 1.0,
+      "mrr": 0.7,
+      "answer_kw_match": 1.0,
+      "avg_latency_s": 4.17
+    }
+  },
+  "results": [
+    {
+      "id": "G01",
+      "category": "lyceen_parcoursup",
+      "question": "Quel est le taux d'accès du Bachelor Cyber EFREI Bordeaux ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 0,
+      "recall_at_10": 0,
+      "mrr": 0.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 0.9,
+      "top_5_summary": [],
+      "answer_excerpt": "Je n'ai pas l'information sur taux d'accès Parcoursup 2025 pour la formation que tu décris dans mes sources vérifiées.\n\nJe n'ai pas trouvé de formation correspondant suffisamment précisément à « cyber"
+    },
+    {
+      "id": "G02",
+      "category": "lyceen_parcoursup",
+      "question": "Combien de places en BUT Informatique à Lyon ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 0,
+      "recall_at_10": 0,
+      "mrr": 0.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 0.48,
+      "top_5_summary": [],
+      "answer_excerpt": "Je n'ai pas l'information sur nombre de places pour la formation que tu décris dans mes sources vérifiées.\n\nJe n'ai pas trouvé de formation correspondant suffisamment précisément à « informatique lyon"
+    },
+    {
+      "id": "G03",
+      "category": "lyceen_parcoursup",
+      "question": "Quels sont les profils admis en CPGE MPSI Lycée du Parc Lyon ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.25,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 7.07,
+      "top_5_summary": [
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.366"
+        },
+        {
+          "domain": "calendrier",
+          "source": "monmaster_calendrier_officiel",
+          "nom": "calendrier:monmaster-2026:phase-admission"
+        },
+        {
+          "domain": "calendrier",
+          "source": "parcoursup_calendrier_officiel",
+          "nom": "calendrier:parcoursup-2026:phase-admission"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Gr"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "BTS - Production - Assistance technique d'ingénieur"
+        }
+      ],
+      "answer_excerpt": "Je n’ai pas de données dans mes sources sur les profils admis en CPGE MPSI au Lycée du Parc à Lyon.\n\nEn revanche, voici quelques éléments sur des formations sélectives post-bac en Auvergne-Rhône-Alpes"
+    },
+    {
+      "id": "G04",
+      "category": "lyceen_parcoursup",
+      "question": "Sélectivité PASS Sorbonne ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.5,
+      "answer_kw_match": 0,
+      "missing_keywords": [
+        "Sorbonne"
+      ],
+      "latency_s": 7.24,
+      "top_5_summary": [
+        {
+          "domain": "correction_factuelle",
+          "source": "corrections_factuelles_curated",
+          "nom": "correction:medecine_bac_s_supprime_2021"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Parcours d'Accès Spécifique Santé (PASS)"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Double diplôme - Licence Gestion - Collège de Management de la Sorbonn"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Parcours d'Accès Spécifique Santé (PASS)"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Double diplôme - Licence Droit - Collège de Droit de la Sorbonne"
+        }
+      ],
+      "answer_excerpt": "Je préfère ne pas répondre sur ce point de manière détaillée, car ma réponse contiendrait des imprécisions factuelles importantes qui pourraient t'induire en erreur.\n\nDétails :\n• Formation citée non p"
+    },
+    {
+      "id": "G05",
+      "category": "lyceen_parcoursup",
+      "question": "BTS Comptabilité-Gestion Paris taux d'accès ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.25,
+      "answer_kw_match": 0,
+      "missing_keywords": [
+        "Paris"
+      ],
+      "latency_s": 8.51,
+      "top_5_summary": [
+        {
+          "domain": "formation_insertion",
+          "source": "inserjeunes_lycee_pro",
+          "nom": "inserjeunes_formation_region:bts:comptabilite-et-gestion:bretagne"
+        },
+        {
+          "domain": "formation_insertion",
+          "source": "inserjeunes_lycee_pro",
+          "nom": "inserjeunes_formation_region:bts:comptabilite-et-gestion:martinique"
+        },
+        {
+          "domain": "formation_insertion",
+          "source": "inserjeunes_lycee_pro",
+          "nom": "inserjeunes_formation_region:bts:comptabilite-et-gestion:normandie"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "BTS - Services - Comptabilité et gestion"
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "COMPTABILITE-CONTROLE-AUDIT — Comptabilité, Contrôle, Audit (M1 & M2)"
+        }
+      ],
+      "answer_excerpt": "Tu cherches des infos sur l’accès au BTS Comptabilité-Gestion en Île-de-France. Voici ce que je peux te partager :\n\n• **BTS Comptabilité-Gestion au Lycée Parc de Vilgenis (Massy, 91)**\nTaux d’accès su"
+    },
+    {
+      "id": "G06",
+      "category": "lyceen_parcoursup",
+      "question": "Licence Droit Université Panthéon-Assas profils admis ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.25,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 4.58,
+      "top_5_summary": [
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.8095"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.742"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.806"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Droit"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Double diplôme - Licence Droit - Droits français et suisse"
+        }
+      ],
+      "answer_excerpt": "Tu veux savoir quel type de profil est admis en licence de droit à l’Université Panthéon-Assas. Voici les données disponibles sur Parcoursup pour 2025 :\n\n- **Licence Droit classique** : 11 % des candi"
+    },
+    {
+      "id": "G07",
+      "category": "lyceen_parcoursup",
+      "question": "École d'ingénieur Centrale Lille admission ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.25,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 5.17,
+      "top_5_summary": [
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP40730"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP40814"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP41021"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Portail Mathématiques Physique Chimie Sciences de l'Ingénieur"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Formation Bac + 3 - Bachelor en sciences et ingénierie - ingénierie généraliste"
+        }
+      ],
+      "answer_excerpt": "Tu explores les admissions à Centrale Lille, une école d’ingénieur réputée. Voici ce que mes sources indiquent sur les formations **diplômantes** (bac+5) proposées par l’institut, sans données sur les"
+    },
+    {
+      "id": "G08",
+      "category": "lyceen_parcoursup",
+      "question": "Licence STAPS Nantes taux d'accès 2025 ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.2,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 3.83,
+      "top_5_summary": [
+        {
+          "domain": "insertion_pro",
+          "source": "insersup_mesr",
+          "nom": "insersup:licence-generale:staps:pays-de-la-loire"
+        },
+        {
+          "domain": "insertion_pro",
+          "source": "insersup_mesr",
+          "nom": "insersup:licence-generale:staps:normandie"
+        },
+        {
+          "domain": "insertion_pro",
+          "source": "insersup_mesr",
+          "nom": "insersup:licence-generale:staps:bretagne"
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "STAPS:ACTIVITE PHYSIQUE ADAPTEE ET SANTE — EValuation Et REadaptation des SysTèm"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Sciences pour l'ingénieur -  Accès Santé"
+        }
+      ],
+      "answer_excerpt": "Tu veux savoir quel est le taux d'accès en 2025 pour la **Licence STAPS à Nantes** via Parcoursup.\n\nPour cette formation précise, **je n’ai pas de données disponibles dans mes sources** sur le taux d’"
+    },
+    {
+      "id": "G09",
+      "category": "lyceen_parcoursup",
+      "question": "BUT Génie Civil Construction Durable Lyon ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.25,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 10.5,
+      "top_5_summary": [
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP40042"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP42029"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP41912"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "BUT - Génie civil - Construction durable"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "C.M.I - Cursus Master en Ingénierie - Géographie et aménagement - Cursus Master "
+        }
+      ],
+      "answer_excerpt": "Tu t’intéresses au **BUT Génie Civil – Construction Durable** à l’**IUT Lyon1 (Villeurbanne)**, une formation publique sélective en 3 ans. Voici les éléments clés pour t’aider à y voir plus clair :\n\n-"
+    },
+    {
+      "id": "G10",
+      "category": "lyceen_parcoursup",
+      "question": "Quels mentions au bac sont attendues pour entrer en BUT info à Grenoble ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.25,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 3.54,
+      "top_5_summary": [
+        {
+          "domain": "metier",
+          "source": "onisep_ideo_fiches",
+          "nom": "conseiller/ère énergie"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.611"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.665"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Portail Sciences pour l'ingénieur"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Portail Lettres - option Journalisme mentions : Lettres - Langues, lit"
+        }
+      ],
+      "answer_excerpt": "Je comprends que tu cherches des précisions sur les mentions au bac pour intégrer un BUT informatique à Grenoble. Malheureusement, **je n’ai pas de formation \"BUT informatique\" ni de données sur les m"
+    },
+    {
+      "id": "G11",
+      "category": "reorientation",
+      "question": "Quel salaire après un Master Droit en région PACA ?",
+      "expected_domain": "insertion_pro",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 0,
+      "missing_keywords": [
+        "salaire"
+      ],
+      "latency_s": 4.73,
+      "top_5_summary": [
+        {
+          "domain": "insertion_pro",
+          "source": "insersup_mesr",
+          "nom": "insersup:master-lmd:droit-sciences-politiques:pays-de-la-loire"
+        },
+        {
+          "domain": "insertion_pro",
+          "source": "insersup_mesr",
+          "nom": "insersup:master-lmd:droit-sciences-politiques:grand-est"
+        },
+        {
+          "domain": "insertion_pro",
+          "source": "insersup_mesr",
+          "nom": "insersup:master-lmd:droit-sciences-politiques:normandie"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Double diplôme  Sciences Po Lyon (Grade Master) - Licence  (Université Jean Monn"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Portail Droit"
+        }
+      ],
+      "answer_excerpt": "Ton projet en droit dans le Sud te motive, mais les données salariales **spécifiques à la région PACA** pour un master droit ne sont malheureusement pas disponibles dans mes sources.\n\nVoici ce que je "
+    },
+    {
+      "id": "G12",
+      "category": "reorientation",
+      "question": "Master Sciences fondamentales à Aix-Marseille débouchés ?",
+      "expected_domain": null,
+      "expected_source": "monmaster",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.2,
+      "answer_kw_match": 0,
+      "missing_keywords": [
+        "sciences",
+        "Aix-Marseille"
+      ],
+      "latency_s": 7.16,
+      "top_5_summary": [
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP38319"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP38320"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP38321"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "C.M.I - Cursus Master en Ingénierie - Sciences de la vie - Immunologie Cursus Ma"
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "INFORMATIQUE — Géométrie et informatique graphique (GIG)"
+        }
+      ],
+      "answer_excerpt": "Je préfère ne pas répondre sur ce point de manière détaillée, car ma réponse contiendrait des imprécisions factuelles importantes qui pourraient t'induire en erreur.\n\nDétails :\n• Formation citée non p"
+    },
+    {
+      "id": "G13",
+      "category": "reorientation",
+      "question": "Comment passer de L1 Droit à un BUT ?",
+      "expected_domain": "parcours_bacheliers",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 7.08,
+      "top_5_summary": [
+        {
+          "domain": "parcours_bacheliers",
+          "source": "mesri_parcours_bacheliers_licence",
+          "nom": "parcours:droit_gestion_économie_aes|bac_professionnel|inconnue"
+        },
+        {
+          "domain": "parcours_bacheliers",
+          "source": "mesri_parcours_bacheliers_licence",
+          "nom": "parcours:droit_gestion_économie_aes|bac_s|bien"
+        },
+        {
+          "domain": "parcours_bacheliers",
+          "source": "mesri_parcours_bacheliers_licence",
+          "nom": "parcours:droit_gestion_économie_aes|bac_professionnel|assez_bien"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Science politique - Parcours Droit ou Sciences politiques - Cycle Univ"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "BUT - Carrières juridiques"
+        }
+      ],
+      "answer_excerpt": "Tu envisages une réorientation depuis une L1 Droit vers un BUT, et c’est une démarche réfléchie : les BUT offrent une approche plus professionnelle et encadrée, idéale si la fac te semble trop théoriq"
+    },
+    {
+      "id": "G14",
+      "category": "reorientation",
+      "question": "Taux de réussite L1 STAPS pour un bac S mention bien ?",
+      "expected_domain": "parcours_bacheliers",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 0,
+      "missing_keywords": [
+        "STAPS",
+        "L1"
+      ],
+      "latency_s": 3.69,
+      "top_5_summary": [
+        {
+          "domain": "parcours_bacheliers",
+          "source": "mesri_parcours_bacheliers_licence",
+          "nom": "parcours:staps|bac_professionnel|très_bien"
+        },
+        {
+          "domain": "parcours_bacheliers",
+          "source": "mesri_parcours_bacheliers_licence",
+          "nom": "parcours:staps|bac_l|bien"
+        },
+        {
+          "domain": "parcours_bacheliers",
+          "source": "mesri_parcours_bacheliers_licence",
+          "nom": "parcours:staps|bac_s|bien"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Double diplôme - Licence STAPS, Sciences pour l'ingénieur - Licence Do"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours"
+        }
+      ],
+      "answer_excerpt": "Je préfère ne pas répondre sur ce point de manière détaillée, car ma réponse contiendrait des imprécisions factuelles importantes qui pourraient t'induire en erreur.\n\nDétails :\n• Le 'bac S' a été supp"
+    },
+    {
+      "id": "G15",
+      "category": "reorientation",
+      "question": "Quel salaire après un Master Sciences éco-gestion à Lyon ?",
+      "expected_domain": "insertion_pro",
+      "expected_source": null,
+      "recall_at_1": 0,
+      "recall_at_5": 0,
+      "recall_at_10": 0,
+      "mrr": 0.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 4.33,
+      "top_5_summary": [
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP35567"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP35568"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP35584"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Double diplôme  Sciences Po Lyon (Grade Master) - Licence  (Université Jean Monn"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Gestion"
+        }
+      ],
+      "answer_excerpt": "Je comprends que tu cherches à évaluer les perspectives salariales après un master en sciences économiques et gestion à Lyon.\n\nMalheureusement, **je n’ai pas de données sur les salaires** pour cette f"
+    },
+    {
+      "id": "G16",
+      "category": "reorientation",
+      "question": "Insertion après un Master Lettres et arts à Toulouse ?",
+      "expected_domain": "insertion_pro",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 6.63,
+      "top_5_summary": [
+        {
+          "domain": "insertion_pro",
+          "source": "insersup_mesr",
+          "nom": "insersup:master-lmd:lettres-sciences-du-langage-arts:occitanie"
+        },
+        {
+          "domain": "insertion_pro",
+          "source": "insersup_mesr",
+          "nom": "insersup:master-lmd:lettres-sciences-du-langage-arts:bretagne"
+        },
+        {
+          "domain": "insertion_pro",
+          "source": "insersup_mesr",
+          "nom": "insersup:master-lmd:lettres-sciences-du-langage-arts:grand-est"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Lettres - Parcours Lettres modernes"
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "CINEMA ET AUDIOVISUEL — Recherche Expérimentation (REX)"
+        }
+      ],
+      "answer_excerpt": "Ton inquiétude sur l’insertion après un master en Lettres et arts est tout à fait légitime, surtout quand on entend souvent que ces filières \"ne mènent à rien\". Pourtant, les chiffres montrent qu’il y"
+    },
+    {
+      "id": "G17",
+      "category": "reorientation",
+      "question": "Master MEEF débouchés enseignement ?",
+      "expected_domain": "insertion_pro",
+      "expected_source": null,
+      "recall_at_1": 0,
+      "recall_at_5": 0,
+      "recall_at_10": 0,
+      "mrr": 0.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 5.46,
+      "top_5_summary": [
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP35567"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP35568"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP35584"
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 1ER DEGRE —"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Mathématiques et informatique appliquées aux sciences humaines et soci"
+        }
+      ],
+      "answer_excerpt": "Ton intérêt pour le master MEEF (Métiers de l'Enseignement, de l'Éducation et de la Formation) est tout à fait pertinent si tu envisages une carrière dans l’enseignement. Voici ce que je peux te dire "
+    },
+    {
+      "id": "G18",
+      "category": "reorientation",
+      "question": "Réorientation après L1 médecine vers une autre licence ?",
+      "expected_domain": null,
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 0,
+      "missing_keywords": [
+        "L1",
+        "médecine",
+        "réorientation"
+      ],
+      "latency_s": 6.2,
+      "top_5_summary": [
+        {
+          "domain": "parcours_bacheliers",
+          "source": "mesri_parcours_bacheliers_licence",
+          "nom": "parcours:santé|bac_s|bien"
+        },
+        {
+          "domain": "parcours_bacheliers",
+          "source": "mesri_parcours_bacheliers_licence",
+          "nom": "parcours:staps|bac_l|inconnue"
+        },
+        {
+          "domain": "parcours_bacheliers",
+          "source": "mesri_parcours_bacheliers_licence",
+          "nom": "parcours:santé|bac_s|passable_premier_groupe"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Double diplôme - Licence Sciences et Techniques des Activités Physique"
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "BIOLOGIE-SANTE — Graduate Programme OHNU - Oncologie, Hématologie et Médecine Nu"
+        }
+      ],
+      "answer_excerpt": "Je préfère ne pas répondre sur ce point de manière détaillée, car ma réponse contiendrait des imprécisions factuelles importantes qui pourraient t'induire en erreur.\n\nDétails :\n• Le 'bac S' a été supp"
+    },
+    {
+      "id": "G19",
+      "category": "reorientation",
+      "question": "Quelle insertion après un doctorat en chimie ?",
+      "expected_domain": "insertion_pro",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 6.05,
+      "top_5_summary": [
+        {
+          "domain": "insertion_pro",
+          "source": "ip_doc_doctorat",
+          "nom": "doctorat:chimie-et-sciences-des-materiaux:2014:hommes:36-mois-apres-le-diplome"
+        },
+        {
+          "domain": "insertion_pro",
+          "source": "ip_doc_doctorat",
+          "nom": "doctorat:chimie-et-sciences-des-materiaux:2014:hommes:12-mois-apres-le-diplome"
+        },
+        {
+          "domain": "insertion_pro",
+          "source": "ip_doc_doctorat",
+          "nom": "doctorat:chimie-et-sciences-des-materiaux:2016:hommes:36-mois-apres-le-diplome"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Portail Chimie - Physique Sciences pour l'Ingénieur - Chimie"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Double diplôme - Licence Chimie -  Chimie - Cursus intégré franco-alle"
+        }
+      ],
+      "answer_excerpt": "Tu t’interroges sur les débouchés concrets après un doctorat en chimie, et c’est normal : 8 ans d’études, c’est un engagement qui mérite des réponses claires sur l’insertion.\n\nVoici ce que montrent le"
+    },
+    {
+      "id": "G20",
+      "category": "reorientation",
+      "question": "Passerelle BTS vers BUT en informatique ?",
+      "expected_domain": null,
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 6.53,
+      "top_5_summary": [
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP40473"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_ideo_fiches",
+          "nom": "technicien/ne de maintenance en informatique"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP40688"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "BUT - Génie électrique et informatique industrielle"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Sciences et Techniques des Activités Physiques et Sportives - Parcours"
+        }
+      ],
+      "answer_excerpt": "Tu envisages une passerelle entre un BTS et un **BUT en informatique** pour poursuivre vers un bac+3. Voici ce que je peux te partager à partir des données disponibles.\n\n- **BUT Génie électrique et in"
+    },
+    {
+      "id": "G21",
+      "category": "metier",
+      "question": "Que fait un actuaire au quotidien ?",
+      "expected_domain": "metier_detail",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 6.36,
+      "top_5_summary": [
+        {
+          "domain": "metier_detail",
+          "source": "rome_api_v4",
+          "nom": "Actuaire"
+        },
+        {
+          "domain": "metier_detail",
+          "source": "rome_api_v4",
+          "nom": "Professeur / Professeure d'enseignement général pour déficients sensoriels"
+        },
+        {
+          "domain": "metier_detail",
+          "source": "rome_api_v4",
+          "nom": "Standardiste"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Double licence - Mathématiques / Economie - DOUBLE licence Économie - Mathématiq"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence professionnelle - Assurance, banque, finance : chargé de clientèle - Par"
+        }
+      ],
+      "answer_excerpt": "Ton intérêt pour le métier d’actuaire est compréhensible : c’est un rôle à la croisée des maths, de la stratégie et de l’humain. Voici ce qui rythme son quotidien, d’après les compétences clés identif"
+    },
+    {
+      "id": "G22",
+      "category": "metier",
+      "question": "Quelles compétences pour devenir développeur cybersécurité ?",
+      "expected_domain": "metier_detail",
+      "expected_source": null,
+      "recall_at_1": 0,
+      "recall_at_5": 0,
+      "recall_at_10": 0,
+      "mrr": 0.0,
+      "answer_kw_match": 0,
+      "missing_keywords": [
+        "développeur"
+      ],
+      "latency_s": 6.49,
+      "top_5_summary": [
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP38463"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP41165"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP37726"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence professionnelle - Métiers des réseaux informatiques et télécommunication"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Double diplôme - Licence Economie et gestion - Double diplôme Licence "
+        }
+      ],
+      "answer_excerpt": "Tu veux te diriger vers le développement en cybersécurité et tu cherches à cerner les compétences clés attendues. Voici ce que couvrent les formations certifiantes dans ce domaine, selon les référence"
+    },
+    {
+      "id": "G23",
+      "category": "metier",
+      "question": "Quels métiers vont recruter en Occitanie en 2030 ?",
+      "expected_domain": "metier_prospective",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 7.51,
+      "top_5_summary": [
+        {
+          "domain": "metier_prospective",
+          "source": "dares_metiers_2030",
+          "nom": "dares_fap_region:L6Z:occitanie"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Formation d'ingénieur Bac + 5 - Bac général"
+        },
+        {
+          "domain": "metier_prospective",
+          "source": "dares_metiers_2030",
+          "nom": "dares_fap_region:W0Z:occitanie"
+        },
+        {
+          "domain": "metier_prospective",
+          "source": "dares_metiers_2030",
+          "nom": "dares_fap_region:W1Z:occitanie"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Langues, littératures et civilisations étrangères et régionales - Parc"
+        }
+      ],
+      "answer_excerpt": "En Occitanie, certains métiers devraient offrir des opportunités d’ici 2030, avec des besoins liés aux départs en retraite et à la croissance sectorielle.\n\n• **Enseignement** : 33 961 postes à pourvoi"
+    },
+    {
+      "id": "G24",
+      "category": "metier",
+      "question": "C'est quoi le métier d'ingénieur en aéronautique ?",
+      "expected_domain": "metier_detail",
+      "expected_source": null,
+      "recall_at_1": 0,
+      "recall_at_5": 0,
+      "recall_at_10": 0,
+      "mrr": 0.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 6.46,
+      "top_5_summary": [
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP38957"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP39307"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP40532"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "C.M.I - Cursus Master en Ingénierie - Sciences pour l'ingénieur - Cursus Master "
+        }
+      ],
+      "answer_excerpt": "Tu veux comprendre concrètement ce que fait un·e ingénieur·e en aéronautique et quels métiers s’offrent à toi dans ce domaine. Voici ce que couvrent les formations référencées dans mes sources :\n\n• **"
+    },
+    {
+      "id": "G25",
+      "category": "metier",
+      "question": "Comment devenir infirmier en France ?",
+      "expected_domain": "metier",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 8.82,
+      "top_5_summary": [
+        {
+          "domain": "metier",
+          "source": "onisep_ideo_fiches",
+          "nom": "infirmier/ère"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_ideo_fiches",
+          "nom": "infirmier/ère coordinateur/trice"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_ideo_fiches",
+          "nom": "infirmier/ère scolaire"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "D.E Infirmier"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "D.E Infirmier"
+        }
+      ],
+      "answer_excerpt": "Tu veux te lancer dans le métier d’infirmier·ère, un secteur où les débouchés sont variés et les missions essentielles. Voici les éléments clés pour y parvenir, basés sur les données disponibles.\n\n• *"
+    },
+    {
+      "id": "G26",
+      "category": "metier",
+      "question": "Que fait un consultant en organisation et management ?",
+      "expected_domain": "metier_detail",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 5.09,
+      "top_5_summary": [
+        {
+          "domain": "metier_detail",
+          "source": "rome_api_v4",
+          "nom": "Consultant / Consultante en ingénierie pédagogique"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.945"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.218"
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "MANAGEMENT — Hommes Organisation Management et Risques (HOMER)"
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "SCIENCES DE L'EDUCATION ET DE LA FORMATION — Conseiller, consultant, responsable"
+        }
+      ],
+      "answer_excerpt": "Tu t’intéresses au métier de consultant en organisation et management, un domaine qui allie analyse stratégique et accompagnement des entreprises. Voici ce que j’ai pu identifier dans mes sources :\n\n-"
+    },
+    {
+      "id": "G27",
+      "category": "metier",
+      "question": "Quelles perspectives pour les cadres de la banque-assurance en 2030 ?",
+      "expected_domain": "metier_prospective",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 4.62,
+      "top_5_summary": [
+        {
+          "domain": "metier_prospective",
+          "source": "dares_metiers_2030",
+          "nom": "dares_fap_region:Q2Z:normandie"
+        },
+        {
+          "domain": "metier_prospective",
+          "source": "dares_metiers_2030",
+          "nom": "dares_fap_region:Q2Z:grand-est"
+        },
+        {
+          "domain": "metier_prospective",
+          "source": "dares_metiers_2030",
+          "nom": "dares_fap:Q2Z"
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "MONNAIE, BANQUE, FINANCE, ASSURANCE — Monnaie, banque, finance, assurance"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence professionnelle - Assurance, banque, finance : chargé de clientèle - Par"
+        }
+      ],
+      "answer_excerpt": "Tu t’interroges sur les perspectives d’emploi pour les cadres de la banque et des assurances d’ici 2030. Voici les tendances régionales et nationales basées sur les projections disponibles :\n\n• **En N"
+    },
+    {
+      "id": "G28",
+      "category": "metier",
+      "question": "Métier de data scientist au quotidien ?",
+      "expected_domain": "metier_detail",
+      "expected_source": null,
+      "recall_at_1": 0,
+      "recall_at_5": 0,
+      "recall_at_10": 0,
+      "mrr": 0.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 5.06,
+      "top_5_summary": [
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.512"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP39590"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_ideo_fiches",
+          "nom": "data scientist (experte en mégadonnées)"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Diplôme d'Etablissement - Bachelor Intelligence artificielle - Bac +3"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Economie et gestion - Parcours Cursus master en ingénierie (CMI) : Dat"
+        }
+      ],
+      "answer_excerpt": "Le métier de data scientist allie analyse technique et vision stratégique pour exploiter les données d’une entreprise. Voici ce qui caractérise son quotidien selon mes sources :\n\n- **Un rôle hybride**"
+    },
+    {
+      "id": "G29",
+      "category": "metier",
+      "question": "Quel salaire moyen pour un cadre supérieur PCS 37 ?",
+      "expected_domain": "insee_salaire",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 3.93,
+      "top_5_summary": [
+        {
+          "domain": "insee_salaire",
+          "source": "insee_salaan_2023",
+          "nom": "insee_salaan:cs:37"
+        },
+        {
+          "domain": "insee_salaire",
+          "source": "insee_salaan_2023",
+          "nom": "insee_salaan:cs:34"
+        },
+        {
+          "domain": "insee_salaire",
+          "source": "insee_salaan_2023",
+          "nom": "insee_salaan:cs:33"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Formation d'ingénieur Bac + 5 - Bac général"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Formation d'ingénieur Bac + 5 - bac général"
+        }
+      ],
+      "answer_excerpt": "Tu t’intéresses au salaire moyen des cadres supérieurs classés dans la PCS 37 (cadres administratifs et commerciaux d’entreprises).\n\nD’après les dernières données INSEE :\n- **Salaire net médian annuel"
+    },
+    {
+      "id": "G30",
+      "category": "metier",
+      "question": "Marché de l'emploi cadres en Bretagne ?",
+      "expected_domain": "apec_region",
+      "expected_source": null,
+      "recall_at_1": 0,
+      "recall_at_5": 0,
+      "recall_at_10": 0,
+      "mrr": 0.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 4.81,
+      "top_5_summary": [
+        {
+          "domain": "metier_prospective",
+          "source": "dares_metiers_2030",
+          "nom": "dares_fap_region:P2Z:bretagne"
+        },
+        {
+          "domain": "metier_prospective",
+          "source": "dares_metiers_2030",
+          "nom": "dares_fap_region:A2Z:bretagne"
+        },
+        {
+          "domain": "metier_prospective",
+          "source": "dares_metiers_2030",
+          "nom": "dares_fap_region:Q2Z:bretagne"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Portail Economie et management"
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "LANGUES, LITTERATURES ET CIVILISATIONS ETRANGERES ET REGIONALES — Breton et Celt"
+        }
+      ],
+      "answer_excerpt": "Tu t’intéresses aux perspectives d’emploi pour les cadres en Bretagne. Voici quelques éléments clés tirés des projections DARES pour 2030, spécifiques à la région.\n\n- **Fonction publique** : 7 117 pos"
+    },
+    {
+      "id": "G31",
+      "category": "calendaire",
+      "question": "Quand commencent les vœux Parcoursup 2026 ?",
+      "expected_domain": "calendrier",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 3.39,
+      "top_5_summary": [
+        {
+          "domain": "calendrier",
+          "source": "parcoursup_calendrier_officiel",
+          "nom": "calendrier:parcoursup-2026:vue-ensemble-2026"
+        },
+        {
+          "domain": "calendrier",
+          "source": "parcoursup_calendrier_officiel",
+          "nom": "calendrier:parcoursup-2026:phase-complementaire"
+        },
+        {
+          "domain": "calendrier",
+          "source": "parcoursup_calendrier_officiel",
+          "nom": "calendrier:parcoursup-2026:consultation-offre"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Bicursus Architecture Ingénieur - EIVP"
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "ERGONOMIE — Expérience utilisateur (UX)"
+        }
+      ],
+      "answer_excerpt": "Tu veux connaître les dates clés pour formuler tes vœux sur Parcoursup 2026. Voici les étapes à retenir :\n\n• **Consultation de l’offre** : dès le **17 décembre 2025**, tu peux explorer les ~22 000 for"
+    },
+    {
+      "id": "G32",
+      "category": "calendaire",
+      "question": "Date limite pour finaliser ses vœux Parcoursup ?",
+      "expected_domain": "calendrier",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 3.14,
+      "top_5_summary": [
+        {
+          "domain": "calendrier",
+          "source": "parcoursup_calendrier_officiel",
+          "nom": "calendrier:parcoursup-2026:vue-ensemble-2026"
+        },
+        {
+          "domain": "calendrier",
+          "source": "parcoursup_calendrier_officiel",
+          "nom": "calendrier:parcoursup-2026:phase-admission"
+        },
+        {
+          "domain": "calendrier",
+          "source": "parcoursup_calendrier_officiel",
+          "nom": "calendrier:parcoursup-2026:consultation-offre"
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "ERGONOMIE — Expérience utilisateur (UX)"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Gr"
+        }
+      ],
+      "answer_excerpt": "Tu veux t’assurer de ne pas rater les échéances clés pour tes vœux Parcoursup 2026. Voici les dates à retenir :\n\n- **Consultation de l’offre** : dès le 17 décembre 2025, pour explorer les formations e"
+    },
+    {
+      "id": "G33",
+      "category": "calendaire",
+      "question": "Quand a lieu la phase complémentaire Parcoursup ?",
+      "expected_domain": "calendrier",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 5.26,
+      "top_5_summary": [
+        {
+          "domain": "calendrier",
+          "source": "parcoursup_calendrier_officiel",
+          "nom": "calendrier:parcoursup-2026:vue-ensemble-2026"
+        },
+        {
+          "domain": "calendrier",
+          "source": "parcoursup_calendrier_officiel",
+          "nom": "calendrier:parcoursup-2026:ouverture-voeux"
+        },
+        {
+          "domain": "calendrier",
+          "source": "parcoursup_calendrier_officiel",
+          "nom": "calendrier:parcoursup-2026:phase-admission"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Formation d'ingénieur Bac + 5 - bac général"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Langues, littératures et civilisations étrangères et régionales - Parc"
+        }
+      ],
+      "answer_excerpt": "La phase complémentaire Parcoursup 2026 est une période clé pour les candidats qui n’ont pas encore trouvé de formation.\n\nElle se déroule **du 11 juin au 10 septembre 2026** [source S1].\n\nCette phase "
+    },
+    {
+      "id": "G34",
+      "category": "calendaire",
+      "question": "Calendrier MonMaster 2026 candidatures ?",
+      "expected_domain": "calendrier",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 3.79,
+      "top_5_summary": [
+        {
+          "domain": "calendrier",
+          "source": "monmaster_calendrier_officiel",
+          "nom": "calendrier:monmaster-2026:vue-ensemble-2026"
+        },
+        {
+          "domain": "calendrier",
+          "source": "monmaster_calendrier_officiel",
+          "nom": "calendrier:monmaster-2026:phase-complementaire"
+        },
+        {
+          "domain": "calendrier",
+          "source": "monmaster_calendrier_officiel",
+          "nom": "calendrier:monmaster-2026:ouverture-inscription"
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), 2E DEGRE — "
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "METIERS DE L'ENSEIGNEMENT, DE L'EDUCATION ET DE LA FORMATION (MEEF), PRATIQUES E"
+        }
+      ],
+      "answer_excerpt": "Tu veux connaître les dates clés pour candidater sur MonMaster en 2026. Voici les étapes essentielles :\n\n- **Ouverture de la plateforme** : dès le **2 février 2026**, tu pourras créer ton compte et re"
+    },
+    {
+      "id": "G35",
+      "category": "calendaire",
+      "question": "Quand sont publiés les résultats d'admission Parcoursup ?",
+      "expected_domain": "calendrier",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 3.68,
+      "top_5_summary": [
+        {
+          "domain": "calendrier",
+          "source": "parcoursup_calendrier_officiel",
+          "nom": "calendrier:parcoursup-2026:fin-phase-complementaire"
+        },
+        {
+          "domain": "calendrier",
+          "source": "parcoursup_calendrier_officiel",
+          "nom": "calendrier:parcoursup-2026:date-limite-confirmation"
+        },
+        {
+          "domain": "calendrier",
+          "source": "parcoursup_calendrier_officiel",
+          "nom": "calendrier:parcoursup-2026:inscription-administrative"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Formation d'ingénieur Bac + 5 - CapECL - cycle préparatoire d'admission aux form"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Langues, littératures et civilisations étrangères et régionales - Parc"
+        }
+      ],
+      "answer_excerpt": "D’après les informations disponibles, je n’ai pas de date précise sur la publication des résultats d’admission Parcoursup 2026 dans mes sources.\n\nEn revanche, voici les échéances clés du calendrier qu"
+    },
+    {
+      "id": "G36",
+      "category": "geographique",
+      "question": "Quelles formations en Guadeloupe ?",
+      "expected_domain": "territoire_drom",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 0,
+      "missing_keywords": [
+        "Guadeloupe"
+      ],
+      "latency_s": 4.8,
+      "top_5_summary": [
+        {
+          "domain": "territoire_drom",
+          "source": "domtom_curated",
+          "nom": "domtom_dispositif:drom_formations_universite_antilles"
+        },
+        {
+          "domain": "territoire_drom",
+          "source": "domtom_curated",
+          "nom": "Guadeloupe"
+        },
+        {
+          "domain": "territoire_drom",
+          "source": "domtom_curated",
+          "nom": "Martinique"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Humanités - Parcours Histoire et sciences sociales (option préparation"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Diplôme de Comptabilité et de Gestion"
+        }
+      ],
+      "answer_excerpt": "Je préfère ne pas répondre sur ce point de manière détaillée, car ma réponse contiendrait des imprécisions factuelles importantes qui pourraient t'induire en erreur.\n\nDétails :\n• Formation citée non p"
+    },
+    {
+      "id": "G37",
+      "category": "geographique",
+      "question": "Études en Martinique ?",
+      "expected_domain": "territoire_drom",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 5.8,
+      "top_5_summary": [
+        {
+          "domain": "territoire_drom",
+          "source": "domtom_curated",
+          "nom": "Martinique"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP35567"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP35568"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Portail Economie et gestion - Comptabilité, Contrôle, Audit / Manageme"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "BTS - Production - Assistance technique d'ingénieur"
+        }
+      ],
+      "answer_excerpt": "Tu explores des pistes d’études en Martinique, et c’est une région avec des spécificités en termes d’offre de formation et de contexte économique. Voici ce que je peux te partager à partir de mes sour"
+    },
+    {
+      "id": "G38",
+      "category": "geographique",
+      "question": "Master à Strasbourg ?",
+      "expected_domain": null,
+      "expected_source": "monmaster",
+      "recall_at_1": 0,
+      "recall_at_5": 0,
+      "recall_at_10": 1,
+      "mrr": 0.1,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 5.07,
+      "top_5_summary": [
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP35567"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP35568"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP35584"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Gr"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "C.M.I - Cursus Master en Ingénierie - Informatique - Cursus Master Ingénierie : "
+        }
+      ],
+      "answer_excerpt": "Tu explores les masters à Strasbourg — voici deux formations bac+5 **sélectives** dans des domaines distincts, avec des profils d’admission très différents.\n\n- **Sciences Po Strasbourg (cursus général"
+    },
+    {
+      "id": "G39",
+      "category": "geographique",
+      "question": "Formations en Corse ?",
+      "expected_domain": null,
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 5.19,
+      "top_5_summary": [
+        {
+          "domain": "metier_prospective",
+          "source": "dares_metiers_2030",
+          "nom": "dares_fap_region:T2B:corse"
+        },
+        {
+          "domain": "metier_prospective",
+          "source": "dares_metiers_2030",
+          "nom": "dares_fap_region:T0Z:corse"
+        },
+        {
+          "domain": "metier_prospective",
+          "source": "dares_metiers_2030",
+          "nom": "dares_fap_region:T6Z:corse"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "CPGE - Lettres"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Portail Sciences et Techniques des Activités Physiques et Sportives - "
+        }
+      ],
+      "answer_excerpt": "Tu explores les formations disponibles en Corse, mais mes sources sont limitées sur ce territoire. Voici ce que je peux te partager :\n\n• **CPGE Lettres** au **Lycée Giocante De Casabianca (Bastia)** :"
+    },
+    {
+      "id": "G40",
+      "category": "geographique",
+      "question": "BUT Réseaux et Télécommunications à Lille ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.25,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 4.38,
+      "top_5_summary": [
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP41381"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP41153"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP39053"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "BUT - Réseaux et télécommunications"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Portail ISI - Informatique et Sciences pour l'ingénieur en Electroniqu"
+        }
+      ],
+      "answer_excerpt": "Je vois que tu t’intéresses au **BUT Réseaux et Télécommunications** dans la région lilloise. Voici ce que je peux te dire sur la base des données disponibles :\n\n• **À Béthune** (Hauts-de-France, proc"
+    },
+    {
+      "id": "G41",
+      "category": "geographique",
+      "question": "Études d'ingénieur à Toulouse ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.25,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 4.14,
+      "top_5_summary": [
+        {
+          "domain": "metier",
+          "source": "onisep_ideo_fiches",
+          "nom": "chargé/e d'études en valorisation agricole des déchets"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.231"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_ideo_fiches",
+          "nom": "ingénieur/e essais"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Sciences Po / Instituts d'études politiques - Sciences Humaines et Sociales - Gr"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Langues, littératures et civilisations étrangères et régionales - Parc"
+        }
+      ],
+      "answer_excerpt": "Tu cherches des formations d’ingénieur à Toulouse, mais mes sources ne listent **aucune école ou cursus d’ingénieur** dans cette ville.\n\nEn revanche, voici deux autres voies toulousaines sélectives ou"
+    },
+    {
+      "id": "G42",
+      "category": "geographique",
+      "question": "Licence à Rennes pour étudier la psychologie ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.25,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 11.75,
+      "top_5_summary": [
+        {
+          "domain": "metier",
+          "source": "onisep_ideo_fiches",
+          "nom": "psychologue"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.279"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.361"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Lettres - Parcours Français pour le professorat des écoles"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Psychologie"
+        }
+      ],
+      "answer_excerpt": "Je comprends que tu explores les options pour étudier la psychologie à Rennes. Voici ce que je peux te dire à partir des données disponibles :\n\n- **Pas de licence de psychologie à Rennes dans mes sour"
+    },
+    {
+      "id": "G43",
+      "category": "geographique",
+      "question": "Master Cybersécurité en Île-de-France ?",
+      "expected_domain": null,
+      "expected_source": "monmaster",
+      "recall_at_1": 0,
+      "recall_at_5": 0,
+      "recall_at_10": 1,
+      "mrr": 0.125,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 4.97,
+      "top_5_summary": [
+        {
+          "domain": "voie_pre_bac",
+          "source": "onisep_formations_extended",
+          "nom": "voie_pre_bac:bac-pro:cyber"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_ideo_fiches",
+          "nom": "expert/e en sécurité informatique"
+        },
+        {
+          "domain": "insertion_pro",
+          "source": "insersup_mesr",
+          "nom": "insersup:diplome-vise-niveau-bac-5-grade-master:droit-sciences-politiques:ile-de"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "C.M.I - Cursus Master en Ingénierie - Sciences de la terre - Cursus Master en In"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "C.M.I - Cursus Master en Ingénierie - Mécanique - Cursus Master en Ingénierie (C"
+        }
+      ],
+      "answer_excerpt": "Je vois que tu cherches un **master en cybersécurité en Île-de-France**, mais mes sources ne référencent **aucune formation de ce type** dans cette région.\n\nEn revanche, voici ce que je peux te partag"
+    },
+    {
+      "id": "G44",
+      "category": "geographique",
+      "question": "Formations en La Réunion ?",
+      "expected_domain": "territoire_drom",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 6.79,
+      "top_5_summary": [
+        {
+          "domain": "territoire_drom",
+          "source": "domtom_curated",
+          "nom": "domtom_dispositif:drom_formations_universite_reunion"
+        },
+        {
+          "domain": "territoire_drom",
+          "source": "domtom_curated",
+          "nom": "La Réunion"
+        },
+        {
+          "domain": "formation_insertion",
+          "source": "inserjeunes_lycee_pro",
+          "nom": "inserjeunes_formation_region:bac-pro:accompagnement-soins-et-services-a-la-perso"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Formation d'ingénieur Bac + 5 - bac STI2D"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Histoire"
+        }
+      ],
+      "answer_excerpt": "Tu explores les formations disponibles à La Réunion : voici deux options concrètes issues de mes sources, avec leurs spécificités locales.\n\n- **Formation d’ingénieur Bac+5 (ESIROI, Saint-Pierre)** — A"
+    },
+    {
+      "id": "G45",
+      "category": "geographique",
+      "question": "École de commerce à Lyon ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.333,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 5.28,
+      "top_5_summary": [
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.826"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.8086"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Formation d'ingénieur Bac + 5 - CapECL - cycle préparatoire d'admission aux form"
+        },
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.8065"
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "HISTOIRE — De la Renaissance aux révolutions (DRR)"
+        }
+      ],
+      "answer_excerpt": "Je vois que tu explores les formations post-bac à Lyon avec une orientation commerce. Mes sources ne mentionnent **aucune école de commerce** dans cette ville, mais voici deux pistes connexes en Auver"
+    },
+    {
+      "id": "G46",
+      "category": "vie_etudiante",
+      "question": "Combien coûte le logement étudiant CROUS à Lyon ?",
+      "expected_domain": "crous",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 3.54,
+      "top_5_summary": [
+        {
+          "domain": "crous",
+          "source": "crous_combine_logements_restos",
+          "nom": "crous_region:lyon"
+        },
+        {
+          "domain": "crous",
+          "source": "crous_combine_logements_restos",
+          "nom": "crous_region:strasbourg"
+        },
+        {
+          "domain": "crous",
+          "source": "crous_combine_logements_restos",
+          "nom": "crous_region:bordeaux"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Double diplôme  Sciences Po Lyon (Grade Master) - Licence  (Université Jean Monn"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "BUT - Génie civil - Construction durable"
+        }
+      ],
+      "answer_excerpt": "Tu te renseignes sur les coûts de logement étudiant CROUS à Lyon pour anticiper ton budget.\n\nD’après mes sources, **je n’ai pas d’information disponible sur les tarifs précis des logements CROUS à Lyo"
+    },
+    {
+      "id": "G47",
+      "category": "vie_etudiante",
+      "question": "Quelles aides financières pour les étudiants boursiers ?",
+      "expected_domain": "financement_etudes",
+      "expected_source": null,
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.5,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 3.54,
+      "top_5_summary": [
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP38500"
+        },
+        {
+          "domain": "financement_etudes",
+          "source": "financement_dispositifs_curated",
+          "nom": "Bourse sur critères sociaux CROUS — enseignement supérieur"
+        },
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP40662"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Double licence - Mathématiques / Economie - DOUBLE licence Économie - Mathématiq"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Langues étrangères appliquées - Parcours LEA Anglais-Français pour étu"
+        }
+      ],
+      "answer_excerpt": "Tu te demandes quelles aides financières existent pour les étudiants boursiers, et c’est une question essentielle pour aborder sereinement tes études.\n\nVoici ce que je peux te partager depuis mes sour"
+    },
+    {
+      "id": "G48",
+      "category": "vie_etudiante",
+      "question": "Comment obtenir le logement CROUS à Paris ?",
+      "expected_domain": "crous",
+      "expected_source": null,
+      "recall_at_1": 1,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 1.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 4.6,
+      "top_5_summary": [
+        {
+          "domain": "crous",
+          "source": "crous_combine_logements_restos",
+          "nom": "crous_region:strasbourg"
+        },
+        {
+          "domain": "crous",
+          "source": "crous_combine_logements_restos",
+          "nom": "crous_region:paris"
+        },
+        {
+          "domain": "crous",
+          "source": "crous_combine_logements_restos",
+          "nom": "crous_region:bordeaux"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Bicursus Architecture Ingénieur"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Langues étrangères appliquées - Parcours LEA (Langues Etrangères Appli"
+        }
+      ],
+      "answer_excerpt": "Tu cherches à comprendre comment accéder à un logement CROUS à Paris. Voici les éléments clés pour t’orienter :\n\n- **Offre disponible** : Paris compte **68 résidences universitaires** et **76 lieux de"
+    },
+    {
+      "id": "G49",
+      "category": "vie_etudiante",
+      "question": "Montant de la bourse échelon 5 ?",
+      "expected_domain": "financement_etudes",
+      "expected_source": null,
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.5,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 3.25,
+      "top_5_summary": [
+        {
+          "domain": "competences_certif",
+          "source": "rncp_blocs",
+          "nom": "rncp_blocs:RNCP38178"
+        },
+        {
+          "domain": "financement_etudes",
+          "source": "financement_dispositifs_curated",
+          "nom": "Bourse de lycée (collégiens et lycéens)"
+        },
+        {
+          "domain": "financement_etudes",
+          "source": "financement_dispositifs_curated",
+          "nom": "Aide à la mobilité Master"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Formation d'ingénieur Bac + 5 - Cycle préparatoire"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Double diplôme - Licence Economie et gestion - Collège d'économie fili"
+        }
+      ],
+      "answer_excerpt": "Tu cherches à connaître le montant précis de l’échelon 5 des bourses lycéennes pour anticiper ton budget.\n\nD’après les données disponibles, les montants annuels approximatifs pour 2025-2026 varient en"
+    },
+    {
+      "id": "G50",
+      "category": "vie_etudiante",
+      "question": "Aides pour étudiants en situation de handicap ?",
+      "expected_domain": "financement_etudes",
+      "expected_source": null,
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.5,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 5.9,
+      "top_5_summary": [
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.8192"
+        },
+        {
+          "domain": "financement_etudes",
+          "source": "financement_dispositifs_curated",
+          "nom": "FIPHFP — Fonds pour l'insertion des personnes handicapées dans la fonction publi"
+        },
+        {
+          "domain": "financement_etudes",
+          "source": "financement_dispositifs_curated",
+          "nom": "financement_voie:handicap"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Langues étrangères appliquées - Parcours LEA Anglais-Français pour étu"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Sciences pour la santé - Rééducation Réadaptation -  Accès Santé"
+        }
+      ],
+      "answer_excerpt": "Tu cherches des dispositifs pour faciliter ton parcours d’études en situation de handicap. Voici les pistes **officielles** identifiées dans mes sources, avec leurs publics cibles :\n\n- **AGEFIPH** : A"
+    }
+  ]
+}

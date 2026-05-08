@@ -336,11 +336,22 @@ def _pick_url(fiche: dict) -> str | None:
     """Sélectionne l'URL la plus authoritative.
 
     Priorité : Parcoursup (lien direct fiche officielle) > ONISEP > url générique.
+
+    Vague 3.8 fix (2026-05-08) — fallback sur `url_canonical` qui contient
+    soit l'URL native soit un fallback ONISEP search construit par le merger
+    Stage 5 NORMALIZE (cf `_resolve_fiche_url` dans run_merge_v3.py). Sans ce
+    fallback, 21 946 fiches sans URL native (MonMaster 7 573, RNCP 5 181,
+    inserjeunes_cfa 4 065, LBA 4 008, etc.) étaient invisibles côté LLM.
+    Couverture URL côté user-facing : 33% → ~79%.
     """
     for key in ("lien_form_psup", "url_onisep", "url"):
         url = _safe_str(fiche.get(key))
         if url and url.startswith(("http://", "https://")):
             return url
+    # Fallback Vague 3.8 — url_canonical (potentiellement ONISEP search fallback)
+    url_canonical = _safe_str(fiche.get("url_canonical"))
+    if url_canonical and url_canonical.startswith(("http://", "https://")):
+        return url_canonical
     return None
 
 

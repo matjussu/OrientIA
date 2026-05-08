@@ -107,6 +107,9 @@ ANNEX_CORPORA: list[tuple[str, Path, str, str | None]] = [
     ("Voie pré-bac", DATA_PROCESSED / "voie_pre_bac_corpus.json", "voie_pre_bac", None),
     ("Financement", DATA_PROCESSED / "financement_corpus.json", "financement_etudes", None),
     ("Corrections factuelles", DATA_PROCESSED / "corrections_factuelles_corpus.json", "correction_factuelle", None),
+    # Vague 3.4 (2026-05-08) — Calendriers Parcoursup + MonMaster
+    # Comble le gap mesuré ground-truth 50q (recall@5 catégorie calendaire = 0%).
+    ("Calendrier Parcoursup/MonMaster", DATA_PROCESSED / "calendrier_corpus.json", "calendrier", None),
 ]
 
 
@@ -402,6 +405,61 @@ def _safe_str_field(fiche: dict, key: str) -> str:
     return str(val).strip() if val else ""
 
 
+# ─────────────── Vague 3.8 — URL fallback ONISEP search ───────────────
+#
+# Audit Phase 0 v5 : couverture URL vérifiable 33% (15 594 / 47 193 fiches).
+# Sources avec URL native : parcoursup (lien_form_psup 99,8%), onisep
+# (url_onisep 100%), rome_api_v4 (url 100%), onisep_metiers (url 100%).
+# Sources sans URL : monmaster (0%), rncp (0%), inserjeunes_cfa, lba, dares,
+# inserjeunes_lycee_pro, etc. → 31 599 fiches sans URL.
+#
+# Stratégie : pour les fiches sans URL native mais avec un nom identifiant,
+# générer un fallback `url_fallback = https://www.onisep.fr/recherche?q=<nom>`.
+# L'utilisateur peut cliquer pour faire la recherche ONISEP officielle.
+# Différenciateur démo INRIA : "100% des fiches sont vérifiables côté source".
+#
+# Champ `url_type` exposé : "direct_*" pour URLs natives, "fallback_search"
+# pour les URLs générées. Le LLM peut adapter son discours.
+#
+# Couverture mesurée potentielle : 33% → ~80% post-build v7.
+
+import urllib.parse
+
+
+def _build_url_fallback(fiche: dict[str, Any]) -> str | None:
+    """Construit une URL ONISEP search depuis le `nom` de la fiche.
+
+    Returns None si pas de nom ou nom trop court (<3 chars utiles).
+    """
+    nom = fiche.get("nom") or fiche.get("libelle_metier") or fiche.get("libelle")
+    if not nom or len(str(nom).strip()) < 3:
+        return None
+    query = urllib.parse.quote(str(nom).strip())
+    return f"https://www.onisep.fr/recherche?q={query}"
+
+
+def _resolve_fiche_url(fiche: dict[str, Any]) -> tuple[str | None, str]:
+    """Détermine l'URL canonique + type pour une fiche.
+
+    Vague 3.8 — cascade de priorité :
+    1. lien_form_psup (Parcoursup)         → "direct_parcoursup"
+    2. url_onisep                          → "direct_onisep"
+    3. url (générique : ROME, INSEE, etc.) → "direct_other"
+    4. fallback ONISEP search depuis nom   → "fallback_search"
+    5. None                                → "none"
+    """
+    if fiche.get("lien_form_psup"):
+        return str(fiche["lien_form_psup"]), "direct_parcoursup"
+    if fiche.get("url_onisep"):
+        return str(fiche["url_onisep"]), "direct_onisep"
+    if fiche.get("url"):
+        return str(fiche["url"]), "direct_other"
+    fb = _build_url_fallback(fiche)
+    if fb:
+        return fb, "fallback_search"
+    return None, "none"
+
+
 # ─────────────── Helpers loading ───────────────
 
 
@@ -587,6 +645,8 @@ def stage_normalize(fiches: list[dict[str, Any]]) -> tuple[list[dict[str, Any]],
     n_niveau_canonized = 0
     n_statut_canonized = 0
     n_retrieval_ineligible = 0
+    url_type_counts = {"direct_parcoursup": 0, "direct_onisep": 0,
+                       "direct_other": 0, "fallback_search": 0, "none": 0}
     for fiche in fiches:
         if not isinstance(fiche, dict):
             continue
@@ -616,12 +676,24 @@ def stage_normalize(fiches: list[dict[str, Any]]) -> tuple[list[dict[str, Any]],
         fiche["retrieval_eligible"] = eligible
         if not eligible:
             n_retrieval_ineligible += 1
+        # Vague 3.8 — URL canonique + type (fallback ONISEP search si pas d'URL native).
+        # Idempotent : recalculé à chaque run. Différenciateur démo INRIA
+        # ("100% des fiches sont vérifiables côté source").
+        url_canonical, url_type = _resolve_fiche_url(fiche)
+        if url_canonical:
+            fiche["url_canonical"] = url_canonical
+        elif "url_canonical" in fiche:
+            # Reset si fiche modifiée a perdu son URL — préserve idempotence
+            del fiche["url_canonical"]
+        fiche["url_type"] = url_type
+        url_type_counts[url_type] = url_type_counts.get(url_type, 0) + 1
     stats = {
         "n_region_canonized": n_region_canonized,
         "n_region_inferred_from_ville": n_region_inferred_from_ville,
         "n_niveau_canonized": n_niveau_canonized,
         "n_statut_canonized": n_statut_canonized,
         "n_retrieval_ineligible": n_retrieval_ineligible,
+        "url_type_distribution": url_type_counts,
     }
     return fiches, stats
 
