@@ -11,6 +11,7 @@ from src.rag.index import build_index, save_index, load_index
 from src.rag.retriever import retrieve_top_k
 from src.rag.reranker import RerankConfig, rerank
 from src.rag.mmr import mmr_select, DEFAULT_LAMBDA
+from src.rag.bm25_index import reciprocal_rank_fusion
 from src.rag.intent import (
     classify_intent,
     classify_domain_hint,
@@ -783,11 +784,31 @@ class OrientIAPipeline:
         # RNCP, PCS) que dense rate.
         bm25_results = self._retrieve_with_bm25(question, k=BM25_TOP_K)
 
+        # Vraie fusion Reciprocal Rank Fusion (Cormack et al. 2009) — calcule
+        # un score unifié à travers les 3 rankings (dense main + dense annex
+        # + BM25). Le score RRF est ensuite utilisé pour les fiches BM25-only
+        # non vues par dense (au lieu d'un placeholder constant qui perdait
+        # l'information du rang BM25). Vague 0 fix — bug RRF nominal Phase C.
+        fused = reciprocal_rank_fusion(
+            [main_pool, annex_pool, bm25_results],
+            k_rrf=RRF_K,
+            id_key="_orig_index",
+        )
+        rrf_score_by_fiche_id: dict[int, float] = {}
+        for item in fused:
+            f = item.get("fiche")
+            if f is not None:
+                rrf_score_by_fiche_id[id(f)] = item["score_rrf"]
+
         # Si BM25 ramène des fiches non-vues par dense, les ajouter au pool
         # approprié (main ou annex selon `domain`)
         seen_ids: set[int] = set()
         for r in main_pool + annex_pool:
-            seen_ids.add(id(r.get("fiche")))
+            f = r.get("fiche")
+            seen_ids.add(id(f))
+            # Annoter les pools dense avec leur score RRF (audit + downstream)
+            if f is not None:
+                r["score_rrf"] = rrf_score_by_fiche_id.get(id(f), 0.0)
         for bm in bm25_results:
             if id(bm.get("fiche")) in seen_ids:
                 continue
@@ -806,12 +827,19 @@ class OrientIAPipeline:
                 # Fallback : embedding zéros (MMR appliquera diversité minimale
                 # sur cette fiche, mais elle reste retournée par le retrieval)
                 embedding = np.zeros(self.index.d if self.index else 1024, dtype="float32")
+            # Score basé sur la VRAIE fusion RRF (vs placeholder 0.55).
+            # RRF scores typiques : ~0.016 (rank 1 dans un seul ranking) à
+            # ~0.05 (rank 1 dans plusieurs rankings). Mapping vers échelle
+            # dense [0.4, 0.8] pour permettre rerank multiplicatif cohérent.
+            rrf_score = rrf_score_by_fiche_id.get(id(fiche), 0.0)
+            bm25_score_normalized = min(0.4 + (rrf_score * 30.0), 0.8)
             converted = {
                 "fiche": fiche,
-                "score": 0.55,  # placeholder — le RRF est le vrai signal
-                "base_score": 0.55,
+                "score": bm25_score_normalized,
+                "base_score": bm25_score_normalized,
                 "embedding": embedding,
                 "score_bm25": bm.get("score_bm25", 0.0),
+                "score_rrf": rrf_score,
                 "rank_bm25": bm.get("rank_bm25"),
                 "_orig_index": orig_idx,
             }
