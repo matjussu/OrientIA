@@ -3,10 +3,22 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class RerankConfig:
-    # Label boosts — the primary INRIA-thesis innovation
-    secnumedu_boost: float = 1.5
-    cti_boost: float = 1.3
-    grade_master_boost: float = 1.3
+    # Label boosts — historiquement décrits comme la "primary INRIA-thesis
+    # innovation". Vague 0.5 (2026-05-08) — neutralisés à 1.0 par défaut.
+    # Audit Phase 0 v5 a mesuré la couverture effective :
+    #   SecNumEdu : 21 fiches sur 47 193 = 0.04%
+    #   CTI : 7 fiches = 0.01%
+    #   Grade Master : 1 fiche = 0.002%
+    # Total signal mort à 0.06% — les boosts ×1.5/×1.3 étaient appliqués sur
+    # un signal quasi-inexistant. Neutralisation honnête en attendant une
+    # ré-extraction depuis ANSSI/CTI/CGE/FESIC référentiels (Vague 1+ ou
+    # post-démo). Réactivable simplement en passant la valeur > 1.0 au
+    # constructeur quand la data sera enrichie.
+    # public_boost reste à 1.1 car couverture statut="Public" mesurée à
+    # 41.5% (audit Phase 0 v5) — signal significatif.
+    secnumedu_boost: float = 1.0
+    cti_boost: float = 1.0
+    grade_master_boost: float = 1.0
     public_boost: float = 1.1
     # Niveau boosts — secondary correction for BTS dominance in Parcoursup data
     # Intentionally kept below label boosts so they don't dominate.
