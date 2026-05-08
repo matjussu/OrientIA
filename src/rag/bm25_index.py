@@ -132,8 +132,16 @@ class BM25Index:
         self._fiches = fiches
         self._tokenized_corpus: list[list[str]] = []
         # Tokenize chaque fiche, garantir au moins 1 token (placeholder
-        # pour les fiches vides — évite ZeroDivisionError dans BM25Okapi)
+        # pour les fiches vides — évite ZeroDivisionError dans BM25Okapi).
+        # Vague 1.C — fiches retrieval_eligible=false reçoivent un token
+        # placeholder unique (`__retrieval_excluded__`) jamais utilisé en
+        # query → score BM25 toujours ~0 → jamais dans top-K. Préserve
+        # l'invariant `len(_fiches) == len(_tokenized_corpus)` aligné avec
+        # l'index FAISS unifié.
         for f in fiches:
+            if isinstance(f, dict) and f.get("retrieval_eligible") is False:
+                self._tokenized_corpus.append(["__retrieval_excluded__"])
+                continue
             tokens = _tokenize(_fiche_to_search_text(f))
             if not tokens:
                 tokens = ["__empty__"]

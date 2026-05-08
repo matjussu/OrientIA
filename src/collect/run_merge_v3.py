@@ -66,6 +66,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+from src.collect.cross_ref import attach_cross_refs
 from src.collect.insersup import attach_insertion as _legacy_insertion_attach  # noqa: F401
 from src.collect.insersup_attach import attach_insersup_to_fiches
 from src.collect.merge import attach_debouches, attach_metadata, merge_all_extended
@@ -126,29 +127,62 @@ def _norm_text(s: Any) -> str:
     return _strip_accents(str(s)).lower().strip()
 
 
-# Régions canoniques France (13 métropolitaines + 5 DROM-COM)
+# Régions canoniques France (13 métropolitaines + 5 DROM-COM).
+# Vague 1.E (2026-05-08) — extension complète des variantes mesurées dans
+# le corpus v5 (44 valeurs distinctes vs 18 attendues). Couvre :
+# - UPPERCASE (sources `inserjeunes_lycee_pro` qui ne normalisent pas)
+# - Variantes tiret/espace (Parcoursup, DARES)
+# - Anciens libellés (Centre → Centre-Val de Loire post-réforme 2016)
+# - DROM courts ("Réunion" sans "La")
 _REGION_CANONICAL = {
+    # Île-de-France
     "ile-de-france": "Île-de-France",
+    "ile de france": "Île-de-France",
+    # Auvergne-Rhône-Alpes
     "auvergne-rhone-alpes": "Auvergne-Rhône-Alpes",
     "auvergne rhone alpes": "Auvergne-Rhône-Alpes",
+    # Occitanie
     "occitanie": "Occitanie",
+    # Hauts-de-France
     "hauts-de-france": "Hauts-de-France",
+    "hauts de france": "Hauts-de-France",
+    # Provence-Alpes-Côte d'Azur
     "provence-alpes-cote d'azur": "Provence-Alpes-Côte d'Azur",
     "provence alpes cote d azur": "Provence-Alpes-Côte d'Azur",
+    "provence alpes cote d'azur": "Provence-Alpes-Côte d'Azur",
+    "paca": "Provence-Alpes-Côte d'Azur",
+    # Nouvelle-Aquitaine — Vague 1.E : variante sans tiret (762 fiches Parcoursup)
     "nouvelle-aquitaine": "Nouvelle-Aquitaine",
+    "nouvelle aquitaine": "Nouvelle-Aquitaine",
+    # Grand Est — Vague 1.E : variante avec tiret (715 fiches Parcoursup)
     "grand est": "Grand Est",
+    "grand-est": "Grand Est",
+    # Bretagne
     "bretagne": "Bretagne",
+    # Normandie
     "normandie": "Normandie",
+    # Bourgogne-Franche-Comté
     "bourgogne-franche-comte": "Bourgogne-Franche-Comté",
     "bourgogne franche comte": "Bourgogne-Franche-Comté",
+    "bourgogne-franche-comté": "Bourgogne-Franche-Comté",
+    # Centre-Val de Loire — Vague 1.E : "Centre" legacy (275 fiches, pré-2016)
     "centre-val de loire": "Centre-Val de Loire",
     "centre val de loire": "Centre-Val de Loire",
+    "centre": "Centre-Val de Loire",
+    # Pays de la Loire — Vague 1.E : avec tirets (491 fiches)
     "pays de la loire": "Pays de la Loire",
+    "pays-de-la-loire": "Pays de la Loire",
+    # Corse
     "corse": "Corse",
+    # DROM-COM
     "guadeloupe": "Guadeloupe",
     "martinique": "Martinique",
     "guyane": "Guyane",
+    # La Réunion — Vague 1.E : "Réunion" court (123 fiches)
     "la reunion": "La Réunion",
+    "la réunion": "La Réunion",
+    "reunion": "La Réunion",
+    "réunion": "La Réunion",
     "mayotte": "Mayotte",
 }
 
@@ -326,6 +360,46 @@ def _canonicalize_statut(statut: Any) -> str | None:
     if norm in _STATUT_CANONICAL_PRIVE:
         return "Privé"
     return raw  # garde tel quel pour les cas spéciaux (CFA Apprentissage, etc.)
+
+
+# ─────────────── Vague 1.C — Tagger fiches polluantes retrieval ───────────────
+#
+# Audit Phase 0 v5 : 18 012 fiches sur 47 193 (38%) sont structurellement
+# inadaptées au retrieval formation+ville :
+# - source=rncp (5181)         : référentiels nationaux sans école nommée
+# - source=onisep (4758)       : descriptifs nationaux (0% etab+ville)
+# - source=labonnealternance (4008) : offres distantes alternance
+# - source=inserjeunes_cfa (4065)   : nom == etablissement, pas formation
+#
+# Stratégie : flag `retrieval_eligible: bool` ajouté Stage 5. Les fiches
+# `false` restent dans le corpus (utiles pour cross-references, audit,
+# fallback) mais sont exclues du retrieval principal côté pipeline.
+# Pas de re-embed nécessaire — le filter s'applique au build des sub-indices.
+
+_RETRIEVAL_INELIGIBLE_SOURCES = frozenset({
+    "rncp",                    # référentiels nationaux RNCP, pas d'école nommée
+    "onisep",                  # descriptifs nationaux ONISEP (0% etab+ville mesuré)
+    "labonnealternance",       # offres alternance distantes, pas formations
+    "inserjeunes_cfa",         # nom = etablissement, pas formation
+})
+
+
+def _is_retrieval_eligible(fiche: dict[str, Any]) -> bool:
+    """True si la fiche est adaptée au retrieval formation+ville.
+
+    Vague 1.C — exclut les 4 sources structurellement inadaptées (38%
+    du corpus). Les annexes (`domain` set) restent éligibles par défaut.
+    """
+    source = _safe_str_field(fiche, "source")
+    if source in _RETRIEVAL_INELIGIBLE_SOURCES:
+        return False
+    return True
+
+
+def _safe_str_field(fiche: dict, key: str) -> str:
+    """Helper : retrieve un champ string-coerced sans accent."""
+    val = fiche.get(key)
+    return str(val).strip() if val else ""
 
 
 # ─────────────── Helpers loading ───────────────
@@ -512,6 +586,7 @@ def stage_normalize(fiches: list[dict[str, Any]]) -> tuple[list[dict[str, Any]],
     n_region_inferred_from_ville = 0
     n_niveau_canonized = 0
     n_statut_canonized = 0
+    n_retrieval_ineligible = 0
     for fiche in fiches:
         if not isinstance(fiche, dict):
             continue
@@ -536,11 +611,17 @@ def stage_normalize(fiches: list[dict[str, Any]]) -> tuple[list[dict[str, Any]],
         if canonical_statut != original_statut and canonical_statut:
             fiche["statut"] = canonical_statut
             n_statut_canonized += 1
+        # Vague 1.C — flag retrieval_eligible (idempotent : recalculé à chaque run)
+        eligible = _is_retrieval_eligible(fiche)
+        fiche["retrieval_eligible"] = eligible
+        if not eligible:
+            n_retrieval_ineligible += 1
     stats = {
         "n_region_canonized": n_region_canonized,
         "n_region_inferred_from_ville": n_region_inferred_from_ville,
         "n_niveau_canonized": n_niveau_canonized,
         "n_statut_canonized": n_statut_canonized,
+        "n_retrieval_ineligible": n_retrieval_ineligible,
     }
     return fiches, stats
 
@@ -763,6 +844,35 @@ def run_merge_v3(
         print(f"  total annexes appendées : {stats10['n_annexes_total']}")
         for d, c in sorted(stats10["by_domain"].items(), key=lambda x: -x[1]):
             print(f"    {d}: {c}")
+
+    # Stage 10.5 — RE-NORMALIZE après APPEND_ANNEXES.
+    # Vague 1.E (2026-05-08) — Stage 5 normalise les fiches principales
+    # (post-merge_fuzzy) mais pas les annexes appendées Stage 10. Or les
+    # annexes (notamment inserjeunes_lycee_pro = 1755 fiches UPPERCASE)
+    # apportent leurs propres variantes de région. Ré-application idempotente
+    # de stage_normalize sur tout le corpus pour canoniser les annexes.
+    if verbose:
+        print("\n[Stage 10.5] RE-NORMALIZE — canonise régions annexes...")
+    fiches, stats10_5 = stage_normalize(fiches)
+    stage_stats["10_5_renormalize"] = stats10_5
+    if verbose:
+        for k, v in stats10_5.items():
+            print(f"  {k}: {v}")
+
+    # Stage 10.7 — ATTACH_CROSS_REFS (Vague 1.D).
+    # Construit les cross-références ROME ↔ formations. Les fiches RNCP avec
+    # codes_rome natifs gagnent un champ `cross_refs.metiers` pointant vers
+    # les fiches metier_detail (ROME 4.0). Les fiches metier_detail gagnent
+    # `cross_refs.formations` listant les RNCP qui mènent à ce métier.
+    # Permet au LLM de répondre "comment devenir actuaire (M1402)" en citant
+    # les Masters Actuariat correspondants.
+    if verbose:
+        print("\n[Stage 10.7] ATTACH_CROSS_REFS — ROME ↔ formations (Vague 1.D)...")
+    fiches, stats10_7 = attach_cross_refs(fiches)
+    stage_stats["10_7_cross_refs"] = stats10_7
+    if verbose:
+        for k, v in stats10_7.items():
+            print(f"  {k}: {v}")
 
     # Stage 11 — SORT_DETERMINISTIC
     if verbose:
