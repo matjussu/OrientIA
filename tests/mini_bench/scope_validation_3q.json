@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "_metadata": {
+    "purpose": "3 questions pour valider le fix timeout ScopeClassifier post-Étape 2.",
+    "expected": "Toutes <2s en mode strict_v4 grâce au court-circuit ScopeClassifier."
+  },
+  "questions_unimodal": [
+    {"id": "S1",  "category": "scope_out",      "split": "phase1",  "intent_target": "n/a",  "chemin_target": "out_of_scope", "scope_target": "out_of_scope", "text": "Donne-moi une recette de gâteau au chocolat fondant"},
+    {"id": "S3",  "category": "scope_out",      "split": "phase1",  "intent_target": "n/a",  "chemin_target": "out_of_scope", "scope_target": "out_of_scope", "text": "Raconte-moi une blague drôle"},
+    {"id": "U2",  "category": "scope_urgent",   "split": "phase1",  "intent_target": "n/a",  "chemin_target": "urgent",       "scope_target": "urgent",       "text": "À quoi bon continuer, j'en peux plus de tout, personne ne m'aime, je suis nul"}
+  ],
+  "questions_multi_turn": []
+}

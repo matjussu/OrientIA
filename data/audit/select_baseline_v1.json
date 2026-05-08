@@ -1,0 +1,168 @@
+{
+  "_meta": {
+    "purpose": "Mini-bench SELECT-ciblé pour mesurer le vrai taux d'activation du SELECT déterministe (chantier 2). Le bench hallu_baseline contenait majoritairement des questions conversationnelles non-SELECT-target, donc 0/15 activation était attendu (pas un bug). Ici on teste explicitement les questions factuelles pointues sur formation nommée + champ structuré demandé.",
+    "created": "2026-05-05",
+    "total": 20,
+    "categories": {
+      "entity_based_existing_school": "claim sur école présente dans corpus, devrait via_select=True",
+      "entity_based_absent_school": "claim sur école absente du corpus, devrait fallback select_no_match",
+      "ambiguous_multi_match": "entité ambigue, devrait fallback select_ambiguous",
+      "new_pattern_coverage": "patterns ajoutés Sprint refonte 2026-05-05",
+      "stale_data": "test garde anti-stale (fiche > 18 mois)"
+    }
+  },
+  "questions": [
+    {
+      "id": "S1",
+      "category": "entity_based_existing_school",
+      "text": "Quel est le taux d'accès Parcoursup 2025 d'EFREI Bordeaux Bachelor Cybersécurité ?",
+      "expected_via_select": true,
+      "expected_field": "taux_acces_parcoursup_2025"
+    },
+    {
+      "id": "S2",
+      "category": "entity_based_existing_school",
+      "text": "Combien de places en BUT MMI à Bordeaux ?",
+      "expected_via_select": true,
+      "expected_field": "nombre_places"
+    },
+    {
+      "id": "S3",
+      "category": "entity_based_existing_school",
+      "text": "Quelle est la sélectivité de Sciences Po Paris ?",
+      "expected_via_select": true,
+      "expected_field": "taux_acces_parcoursup_2025"
+    },
+    {
+      "id": "S4",
+      "category": "entity_based_existing_school",
+      "text": "Combien de places en EPF Montpellier ?",
+      "expected_via_select": true,
+      "expected_field": "nombre_places"
+    },
+    {
+      "id": "S5",
+      "category": "entity_based_existing_school",
+      "text": "Quel taux d'emploi à 3 ans pour Master Informatique Université de Bordeaux ?",
+      "expected_via_select": true,
+      "expected_field": "insertion_pro.taux_emploi_3ans"
+    },
+    {
+      "id": "S6",
+      "category": "entity_based_existing_school",
+      "text": "Quel salaire après le BTS NDRC à Lyon ?",
+      "expected_via_select": true,
+      "expected_field": "insertion_pro.salaire_median_embauche"
+    },
+    {
+      "id": "S7",
+      "category": "entity_based_existing_school",
+      "text": "Combien coûte EFREI Paris ?",
+      "expected_via_select": false,
+      "expected_reason": "select_invalid_value",
+      "comment": "Field frais_annuels rare/absent, donc fallback unifié attendu — défendable jury vs hallu RAG"
+    },
+    {
+      "id": "S8",
+      "category": "entity_based_existing_school",
+      "text": "Quel est le taux de CDI après EPITA Paris ?",
+      "expected_via_select": true,
+      "expected_field": "insertion_pro.taux_cdi"
+    },
+    {
+      "id": "S9",
+      "category": "entity_based_absent_school",
+      "text": "Quel est le taux d'accès Parcoursup d'Assas Master Droit International ?",
+      "expected_via_select": false,
+      "expected_reason": "select_no_match",
+      "comment": "Assas pas dans corpus formations.json (Sprint 12 Audit B confirmé)"
+    },
+    {
+      "id": "S10",
+      "category": "entity_based_absent_school",
+      "text": "Combien coûte HEC Paris en programme grande école ?",
+      "expected_via_select": false,
+      "expected_reason": "select_no_match",
+      "comment": "HEC pas dans corpus (post-bac vs PGE bac+5)"
+    },
+    {
+      "id": "S11",
+      "category": "entity_based_absent_school",
+      "text": "Quel est le taux d'admission de Polytechnique X ?",
+      "expected_via_select": false,
+      "expected_reason": "select_no_match",
+      "comment": "Polytechnique X pas dans corpus (sélection sur concours, pas Parcoursup)"
+    },
+    {
+      "id": "S12",
+      "category": "entity_based_absent_school",
+      "text": "Quel est le salaire après Mines ParisTech ?",
+      "expected_via_select": false,
+      "expected_reason": "select_no_match",
+      "comment": "Mines ParisTech pas dans corpus"
+    },
+    {
+      "id": "S13",
+      "category": "ambiguous_multi_match",
+      "text": "Quelle est la sélectivité du Bachelor Cybersécurité ?",
+      "expected_via_select": false,
+      "expected_reason": "select_ambiguous",
+      "comment": "Bachelor cyber existe à plusieurs écoles, devrait demander précision"
+    },
+    {
+      "id": "S14",
+      "category": "ambiguous_multi_match",
+      "text": "Combien coûte la Licence Informatique ?",
+      "expected_via_select": false,
+      "expected_reason": "select_ambiguous",
+      "comment": "Licence Informatique = N universités françaises"
+    },
+    {
+      "id": "S15",
+      "category": "ambiguous_multi_match",
+      "text": "Quel est le taux d'accès du Master Droit ?",
+      "expected_via_select": false,
+      "expected_reason": "select_ambiguous",
+      "comment": "Master Droit = N universités, sans précision"
+    },
+    {
+      "id": "S16",
+      "category": "ambiguous_multi_match",
+      "text": "Combien de places en BUT Informatique ?",
+      "expected_via_select": false,
+      "expected_reason": "select_ambiguous",
+      "comment": "BUT Info = 30+ établissements"
+    },
+    {
+      "id": "S17",
+      "category": "new_pattern_coverage",
+      "text": "Quel est le taux d'insertion à 18 mois pour BUT Informatique IUT Paris ?",
+      "expected_via_select": true,
+      "expected_field": "insertion_pro.taux_emploi_18m",
+      "comment": "Pattern 'insertion 18 mois' ajouté Sprint refonte 2026-05-05"
+    },
+    {
+      "id": "S18",
+      "category": "new_pattern_coverage",
+      "text": "Combien de candidats ont postulé en Bachelor Cybersécurité EFREI Bordeaux ?",
+      "expected_via_select": true,
+      "expected_field": "admission.volumes.voeux_totaux",
+      "comment": "Pattern voeux/candidats ajouté Sprint refonte 2026-05-05"
+    },
+    {
+      "id": "S19",
+      "category": "new_pattern_coverage",
+      "text": "Quel taux d'insertion à 6 mois pour BTS NDRC ?",
+      "expected_via_select": false,
+      "expected_reason": "select_ambiguous",
+      "comment": "Pattern 6 mois ajouté + ambigu sans ville/établissement"
+    },
+    {
+      "id": "S20",
+      "category": "new_pattern_coverage",
+      "text": "Nombre de vœux pour BUT MMI Bordeaux 2025 ?",
+      "expected_via_select": true,
+      "expected_field": "admission.volumes.voeux_totaux"
+    }
+  ]
+}

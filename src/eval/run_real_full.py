@@ -87,6 +87,11 @@ def make_seven_systems(
     # Build our_rag pipeline with Phase F.3 method extensions enabled:
     #   - use_mmr=True       → diversifies top-k against near-duplicates
     #   - use_intent=True    → per-question top_k and λ via classify_intent
+    #
+    # Note (refonte 2026-05-06) : pour le mode produit (validator + golden_qa
+    # + post_process), utiliser `src.rag.factory.make_production_pipeline()`.
+    # Ici on garde l'instantiation directe pour préserver la reproductibilité
+    # exacte de Run F+G historique (pipeline non-validator, pas de golden_qa).
     fiches = json.loads(Path(FICHES_PATH).read_text(encoding="utf-8"))
     pipeline = OrientIAPipeline(
         mistral_client, fiches, use_mmr=True, use_intent=True,

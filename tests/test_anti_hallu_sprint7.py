@@ -1,9 +1,13 @@
 """Tests pour l'anti-hallucination Sprint 7 Action 3 :
-- `src/prompt/system_strict.py` (levier 1 : prompt v3.3 strict)
-- `src/rag/critic_loop.py` (levier 2 : critic loop 2-pass)
+- `src/experimental/system_strict.py` (levier 1 : prompt v3.3 strict)
+- `src/experimental/critic_loop.py` (levier 2 : critic loop 2-pass)
 
 Levier 3 (structured output JSON {claim, source} citations inline) en
 backlog Sprint 8 (modifs structurelles trop lourdes).
+
+Modules déplacés en src/experimental/ le 2026-05-06 (refonte produit
+niveau 2 — Phase 1 tri sec). Pas en prod, mais conservés pour A/B et
+décision Phase 3 du plan.
 """
 from __future__ import annotations
 
@@ -11,11 +15,11 @@ import json
 from unittest.mock import MagicMock
 
 from src.prompt.system import SYSTEM_PROMPT
-from src.prompt.system_strict import (
+from src.experimental.system_strict import (
     ANTI_HALLU_STRICT_APPENDIX,
     SYSTEM_PROMPT_V33_STRICT,
 )
-from src.rag.critic_loop import (
+from src.experimental.critic_loop import (
     CRITIC_LOOP_MODEL,
     CRITIC_LOOP_PROMPT,
     CriticLoop,

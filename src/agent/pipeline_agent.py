@@ -121,7 +121,7 @@ class AgentPipeline:
     # Sprint 7 Action 3 — anti-hallu LLM
     system_prompt_override: str | None = None  # None = SYSTEM_PROMPT v3.2 (default)
     # Pour activer v3.3 strict (R1-R6) : passer SYSTEM_PROMPT_V33_STRICT
-    # depuis src.prompt.system_strict.
+    # depuis src.experimental.system_strict.
     # Sprint 8 Wave 1 — post-process anti-hallu (bugs P0 user_test_v3)
     enable_post_process: bool = True  # default ON : fix Bugs Q8, Q9, Q10
     # Désactivable pour bench apples-to-apples Sprint 5/6/7 si besoin.

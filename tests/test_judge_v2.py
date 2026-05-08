@@ -8,7 +8,7 @@ list (for baselines), and the full dataset, and post-weights the
 This is the core trick: it makes the methodological reform cost $0
 instead of $1.15, because fact-checking is pure Python.
 """
-from src.eval.judge_v2 import (
+from src.experimental.judge_v2.judge_v2 import (
     reweight_v1_scores,
     apply_fact_check_to_blind,
 )

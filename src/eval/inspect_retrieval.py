@@ -111,10 +111,29 @@ def _format_block(question: dict, base: list[dict], extended: list[dict]) -> str
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--first", type=int, default=0,
-                        help="Limit to first N dev questions")
+                        help="Limit to first N questions")
     parser.add_argument("--category", default="",
                         help="Filter to one category (e.g. comparaison)")
     parser.add_argument("--out", default=OUT_PATH)
+    parser.add_argument(
+        "--questions",
+        default=QUESTIONS_PATH,
+        help=(
+            "Path to a custom questions JSON. Format attendu : "
+            "{'questions': [{'id', 'text', 'category', ...}]}. "
+            "Default: src/eval/questions.json (dev split). "
+            "Pour l'audit hallu chantier 1.B : "
+            "data/audit/hallu_questions_baseline.json"
+        ),
+    )
+    parser.add_argument(
+        "--no-split-filter",
+        action="store_true",
+        help=(
+            "Désactive le filter split=='dev' (utile pour les fichiers custom "
+            "comme data/audit/hallu_questions_baseline.json où split n'existe pas)."
+        ),
+    )
     args = parser.parse_args()
 
     cfg = load_config()
@@ -124,12 +143,18 @@ def main() -> None:
     base = _build_pipeline(client, fiches)
     extended = _build_pipeline(client, fiches, use_mmr=True, use_intent=True)
 
-    questions = json.loads(Path(QUESTIONS_PATH).read_text(encoding="utf-8"))[
+    questions_path = Path(args.questions)
+    print(f"Loading questions from {questions_path}")
+    questions = json.loads(questions_path.read_text(encoding="utf-8"))[
         "questions"
     ]
-    dev_questions = [q for q in questions if q.get("split") == "dev"]
+    if args.no_split_filter or args.questions != QUESTIONS_PATH:
+        # Custom file ou demande explicite : pas de filter split
+        dev_questions = list(questions)
+    else:
+        dev_questions = [q for q in questions if q.get("split") == "dev"]
     if args.category:
-        dev_questions = [q for q in dev_questions if q["category"] == args.category]
+        dev_questions = [q for q in dev_questions if q.get("category") == args.category]
     if args.first > 0:
         dev_questions = dev_questions[: args.first]
 

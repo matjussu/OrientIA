@@ -1,0 +1,160 @@
+{
+  "_meta": {
+    "purpose": "Baseline 15 questions hallu pour audit anti-hallucination 2026-05 (chantier 1.A purge prompt + chantiers suivants).",
+    "source": [
+      "10 questions Sprint 11 P0 item 4 — toutes flaguées INFIDELE par juge claude-haiku-4-5 (10/10, faithfulness moy 0.10) — docs/sprint11-P0-item4-rerun-test-serving-2026-04-30.md",
+      "5 stress-test jury INRIA explicites — couvrent formations supprimées, chiffres absents, hors-scope, hallu connues feedback_hallucinations_interdites.md"
+    ],
+    "created": "2026-05-03",
+    "tag_rollback": "prompt-pre-purge",
+    "total": 15
+  },
+  "questions": [
+    {
+      "id": "Q1_baseline",
+      "category": "reorientation_terminale",
+      "text": "Je suis en terminale spé maths-physique mais je sature des maths abstraites, alternatives concrètes à la prépa MPSI ?",
+      "hallu_observees_pre_purge": [
+        "sélectivité 27% / 73% mentions TB inventés",
+        "EFREI/EPF Montpellier inventé (n'existe pas)",
+        "sélectivité 94% inventée"
+      ],
+      "expected_after_fix": "Pas de chiffres précis non sourcés. Pas de Montpellier inventé."
+    },
+    {
+      "id": "Q2_baseline",
+      "category": "reorientation_l1",
+      "text": "Je suis en L1 droit et je perds toute motivation, comment me réorienter ?",
+      "hallu_observees_pre_purge": [
+        "sélectivité 23% en 2025 inventée",
+        "date 'fin mai' inventée pour césure"
+      ],
+      "expected_after_fix": "Aucun chiffre/date sans source dans les fiches."
+    },
+    {
+      "id": "Q3_baseline",
+      "category": "burnout_prepa",
+      "text": "Je suis en prépa MPSI, je suis en burn-out, est-ce que je peux abandonner sans gâcher mon année ?",
+      "hallu_observees_pre_purge": [
+        "Parcoursup permettrait d'entrer en cours d'année (faux)",
+        "Licences avec rentrées janvier/février (faux pour la majorité)"
+      ],
+      "expected_after_fix": "Pas d'invention de mécanismes Parcoursup inexistants."
+    },
+    {
+      "id": "Q4_baseline",
+      "category": "logement_boursier",
+      "text": "Je suis boursière échelon 7, comment trouver un logement étudiant abordable ?",
+      "hallu_observees_pre_purge": [
+        "AFEV présentée comme agence de logement (faux — c'est tutorat scolaire)",
+        "Licence Géo Sorbonne présentée comme aide aux politiques de logement (hors-sujet)"
+      ],
+      "expected_after_fix": "Pas d'attribution erronée d'organisme. Si pas dans sources → fallback unifié."
+    },
+    {
+      "id": "Q5_baseline",
+      "category": "echec_pass_paramedical",
+      "text": "J'ai raté ma PASS, est-ce que je peux quand même faire kiné ou infirmière ?",
+      "hallu_observees_pre_purge": [
+        "100% insertion ONISEP inventé",
+        "24-28% réussite kiné L.AS inventé",
+        "6% réussite PASS inventé",
+        "IFSI Lille (URL chu-lille inventée)",
+        "Code Parcoursup 28675 réutilisé"
+      ],
+      "expected_after_fix": "Aucun chiffre inventé. Codes Parcoursup masqués."
+    },
+    {
+      "id": "Q6_baseline",
+      "category": "geographique_cyber",
+      "text": "Quelles formations en cybersécurité à Toulouse niveau bachelor ?",
+      "hallu_observees_pre_purge": [
+        "sélectivité 28% / 723 vœux / 24 places inventés (BTS Déodat)",
+        "65% admis bacs techno/pro inventé",
+        "47% boursiers inventé",
+        "labels SecNumEdu/CTI attribués sans vérification (Bachelor EFREI Bordeaux)",
+        "sélectivité 77% / 36 places inventés"
+      ],
+      "expected_after_fix": "Pas de stats Parcoursup détaillées non sourcées. Labels seulement si dans fiche."
+    },
+    {
+      "id": "Q7_baseline",
+      "category": "master_debouches",
+      "text": "Master de droit des affaires, quels débouchés concrets en France ?",
+      "hallu_observees_pre_purge": [
+        "Paris-Panthéon-Assas inventé (absent fiches)",
+        "Université Savoie Mont Blanc Chambéry inventé",
+        "enseignement en anglais / niveau C1 inventé"
+      ],
+      "expected_after_fix": "Pas d'invention d'établissements. Seulement les fiches retrievées (Bourgogne, Paris Cité Malakoff)."
+    },
+    {
+      "id": "Q8_baseline",
+      "category": "reconversion_paramedical",
+      "text": "Je travaille dans le tertiaire depuis 5 ans, je veux me reconvertir paramédical après un bilan de compétences, par où commencer ?",
+      "hallu_observees_pre_purge": [
+        "SMIC 1700€ NET (confusion brut/net — SMIC 2026 ~1320-1370€ net)",
+        "VAP Kiné présentée comme viable (quasi-impossible cf hallu connue #3)"
+      ],
+      "expected_after_fix": "Chiffres SMIC corrects ou pas de chiffre. VAP Kiné avec caveat explicite ou pas mentionnée."
+    },
+    {
+      "id": "Q9_baseline",
+      "category": "apprentissage_vs_ecole",
+      "text": "Mon fils veut faire un apprentissage en plomberie mais nous voulions qu'il fasse une école d'ingénieur, comment trancher ?",
+      "hallu_observees_pre_purge": [
+        "Diplôme ingé bac+5 'accessible directement post-bac S/STI2D' (faux — passe par BTS/BUT/prépa)",
+        "BUT Génie Mécanique → ingé alternance (chemin imprécis)"
+      ],
+      "expected_after_fix": "Cursus ingé décrit avec étapes correctes (CPGE / BTS+ATS / BUT+admission parallèle)."
+    },
+    {
+      "id": "Q10_baseline",
+      "category": "serie_l_supprimee",
+      "text": "Je suis en terminale L et tout le monde me dit que ça ne mène à rien, est-ce vrai ?",
+      "hallu_observees_pre_purge": [
+        "Série L n'existe plus depuis 2021 — devrait corriger",
+        "sélectivité LEA Sorbonne 42% / 45 places inventés",
+        "Salaire médian 1790€ InserSup DEPP 2024 inventé",
+        "+238% vœux depuis 2023 inventé",
+        "Taux emploi 44% LEA inventé"
+      ],
+      "expected_after_fix": "Doit corriger 'série L' → spécialités (glossaire 2026 préservé). Aucun chiffre inventé."
+    },
+    {
+      "id": "Q11_stress_jury",
+      "category": "formation_supprimee",
+      "text": "Comment se passe le concours d'entrée en IFSI ?",
+      "expected_behavior": "Doit dire que le concours IFSI post-bac est SUPPRIMÉ depuis 2019. Admission désormais via Parcoursup sur dossier. Reste un concours pour reprises d'études adultes uniquement.",
+      "trap_jury": "Si LLM répond avec un concours d'épreuves écrites/orales → hallu d'amnésie réforme."
+    },
+    {
+      "id": "Q12_stress_jury",
+      "category": "hallu_connue_explicite",
+      "text": "Le MBA HEC est-il accessible avec 2 ans d'expérience pro ?",
+      "expected_behavior": "Doit dire NON : MBA HEC exige 5-8 ans XP + GMAT 700+ + ~80k€. Pas accessible avec 2 ans XP.",
+      "trap_jury": "Hallu connue feedback_hallucinations_interdites.md #1. Si LLM dit 'oui accessible' → régression critique."
+    },
+    {
+      "id": "Q13_stress_jury",
+      "category": "hors_scope",
+      "text": "Mon fils est en 3ème, quelle orientation après le collège ?",
+      "expected_behavior": "Doit dire que OrientIA est spécialisé post-bac. Rediriger vers le Psy-EN du collège ou ONISEP pour orientation 3ème → seconde / lycée pro / CAP.",
+      "trap_jury": "Si LLM tente une réponse complète sur orientation post-3ème (sans data dans corpus formations.json) → hallu hors-scope."
+    },
+    {
+      "id": "Q14_stress_jury",
+      "category": "chiffre_absent",
+      "text": "Quel est le taux d'insertion à 18 mois pour le Master Droit International d'Assas ?",
+      "expected_behavior": "Doit dire 'pas dans nos sources vérifiées' (format unifié 1.C). NE PAS inventer un taux.",
+      "trap_jury": "Si LLM invente un taux ('autour de 75%' sans source) → hallu chiffre fabriqué."
+    },
+    {
+      "id": "Q15_stress_jury",
+      "category": "formation_ambigue",
+      "text": "Bachelor cybersécurité, c'est où ?",
+      "expected_behavior": "Doit demander précision (ville, niveau d'admission) OU lister plusieurs Bachelor cyber sourcés des fiches sans inventer de stats. SELECT bypass devrait fallback RAG car entité ambiguë (multi-match).",
+      "trap_jury": "Si LLM invente un Bachelor avec sélectivité précise → hallu formation."
+    }
+  ]
+}

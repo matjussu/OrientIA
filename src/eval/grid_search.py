@@ -21,7 +21,7 @@ from anthropic import Anthropic
 from src.config import load_config
 from src.rag.reranker import RerankConfig
 from src.rag.pipeline import OrientIAPipeline
-from src.eval.systems import OurRagSystem, MistralRawSystem, ChatGPTRecordedSystem
+from src.eval.systems import OurRagSystem, MistralRawSystem
 from src.eval.runner import run_benchmark
 from src.eval.judge import judge_all
 from src.eval.analyze import unblind_scores, aggregate_by_system
@@ -80,7 +80,6 @@ def main():
         systems = {
             "our_rag": OurRagSystem(pipeline),
             "mistral_raw": MistralRawSystem(mistral),
-            "chatgpt_recorded": ChatGPTRecordedSystem("data/chatgpt_recorded.json"),
         }
 
         out_dir = Path(f"results/grid/cell_{i}")
@@ -110,14 +109,13 @@ def main():
     )
 
     print("\n=== GRID SEARCH RESULTS ===")
-    print(f"{'boost':<8} {'our_rag total':<15} {'mistral_raw':<15} {'chatgpt':<15}")
+    print(f"{'boost':<8} {'our_rag total':<15} {'mistral_raw':<15}")
     for cell in grid_results:
         boost = cell["config"]["secnumedu_boost"]
         summary = cell["summary"]
         our = summary.get("our_rag", {}).get("total", 0)
         raw = summary.get("mistral_raw", {}).get("total", 0)
-        gpt = summary.get("chatgpt_recorded", {}).get("total", 0)
-        print(f"{boost:<8.1f} {our:<15.2f} {raw:<15.2f} {gpt:<15.2f}")
+        print(f"{boost:<8.1f} {our:<15.2f} {raw:<15.2f}")
 
 
 if __name__ == "__main__":

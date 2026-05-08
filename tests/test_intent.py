@@ -59,11 +59,26 @@ def test_classify_geographic(q):
 @pytest.mark.parametrize("q", [
     "J'ai 11 de moyenne en terminale générale, est-ce que je peux intégrer HEC ?",
     "Avec 13 de moyenne, ai-je une chance pour Sciences Po ?",
-    "Quel taux d'admission pour Polytechnique ?",
+    # NOTE Chantier 2 (2026-05-03) : « Quel taux d'admission pour Polytechnique ? »
+    # est désormais classé INTENT_FACTUAL_POINTED (priorité haute) et déclenche
+    # le SELECT bypass. Cf test_factual_pointed_priority ci-dessous.
     "Suis-je accepté à l'INSA avec un dossier moyen ?",
 ])
 def test_classify_realisme(q):
     assert classify_intent(q) == INTENT_REALISME
+
+
+@pytest.mark.parametrize("q", [
+    "Quel taux d'admission pour Polytechnique ?",
+    "Quel est le taux d'accès du Bachelor EFREI Bordeaux ?",
+    "Combien de places à l'INSA Lyon ?",
+    "Quel salaire médian après LEA Sorbonne ?",
+    "C'est quoi la sélectivité de Sciences Po ?",
+])
+def test_classify_factual_pointed(q):
+    """Chantier 2 : questions factuelles pointues → SELECT bypass."""
+    from src.rag.intent import INTENT_FACTUAL_POINTED
+    assert classify_intent(q) == INTENT_FACTUAL_POINTED
 
 
 @pytest.mark.parametrize("q", [

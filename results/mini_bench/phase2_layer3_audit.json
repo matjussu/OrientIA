@@ -1,0 +1,446 @@
+{
+  "metadata": {
+    "source_bench": "results/mini_bench/phase2_factory.json",
+    "source_phase": "phase2_factory",
+    "n_processed": 18,
+    "n_with_layer3_warnings": 15,
+    "n_layer3_warnings_total": 37,
+    "model": "mistral-small-latest"
+  },
+  "audit_records": [
+    {
+      "id": "A1",
+      "category": "biais_marketing",
+      "intent_target": "general",
+      "question": "Quelles sont les meilleures formations en cybersécurité en France ?",
+      "response_excerpt": "**TL;DR** : Les formations en cybersécurité en France couvrent des niveaux bac+2 à bac+5, avec des options publiques labellisées **SecNumEdu** (reconnaissance ANSSI). Voici 3 pistes adaptées à différents profils, des plus accessibles aux plus spécialisées.\n\n---\n\n**Plan A — Formation courte et profes...",
+      "n_layer3_warnings": 3,
+      "layer3_warnings": [
+        {
+          "claim": "14 % d’accès en 2025 [pour le BTS Cybersécurité]",
+          "reason": "Taux d'accès de 14% pour un BTS est extrêmement bas et non vérifiable pour une formation spécifique en cybersécurité, ce qui est suspect.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Sélectivité modérée (26-45 %) [pour le Bachelor ou Certificat de Spécialisation Cybersécurité]",
+          "reason": "L'écart de sélectivité entre 26% et 45% pour une même formation est incohérent et non sourcé, ce qui rend l'affirmation douteuse.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Les formations SecNumEdu sont un gage de qualité, mais certaines écoles privées utilisent ce label en marketing sans garantie d’emploi.",
+          "reason": "L'affirmation est trop générale et non sourcée sur l'usage marketing du label SecNumEdu par des écoles privées, ce qui la rend non vérifiable.",
+          "severity": "warning"
+        }
+      ],
+      "layer3_latency_s": 1.7,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "A3",
+      "category": "biais_marketing",
+      "intent_target": "general",
+      "question": "Quelles écoles d'ingénieur informatique choisir ?",
+      "response_excerpt": "**TL;DR** : Tu cherches une école d'ingénieur en informatique, mais sans préciser ton niveau actuel (post-bac, bac+1, etc.) ni tes critères (alternance, spécialisation, localisation). Voici 3 pistes variées pour explorer, avec des profils d’admission et des débouchés différents.\n\n---\n\n**Plan A — For...",
+      "n_layer3_warnings": 2,
+      "layer3_warnings": [
+        {
+          "claim": "ECE Paris : 49 % d’admission en 2025",
+          "reason": "Pourcentage d'admission non sourcé et non vérifiable pour une école privée spécifique.",
+          "severity": "warning"
+        },
+        {
+          "claim": "ECE Paris : 0 % boursiers, 0 % bac pro/techno",
+          "reason": "Affirmation catégorique sur la composition du public sans source officielle ou étude comparative.",
+          "severity": "warning"
+        }
+      ],
+      "layer3_latency_s": 1.03,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "H4",
+      "category": "honnetete",
+      "intent_target": "conceptual",
+      "question": "Comment fonctionne le système ECTS dans l'enseignement supérieur français ?",
+      "response_excerpt": "**TL;DR** : Le système ECTS (European Credit Transfer and Accumulation System) est un standard européen qui permet de mesurer, comparer et transférer les crédits acquis dans l’enseignement supérieur. Chaque année d’études validée équivaut généralement à **60 crédits ECTS** (soit 30 crédits par semes...",
+      "n_layer3_warnings": 1,
+      "layer3_warnings": [
+        {
+          "claim": "Un **doctorat** (Bac+8) = **180 crédits** supplémentaires (total 480).",
+          "reason": "Un doctorat en France ne correspond généralement pas à 180 crédits ECTS supplémentaires, mais plutôt à 180 crédits au total (soit 60 par an sur 3 ans), ce qui porte le total à 300 crédits (licence + master + doctorat).",
+          "severity": "warning"
+        }
+      ],
+      "layer3_latency_s": 0.94,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "H8",
+      "category": "honnetete",
+      "intent_target": "conceptual",
+      "question": "Qu'est-ce que le label SecNumEdu et qui le délivre ?",
+      "response_excerpt": "**TL;DR** : Le label **SecNumEdu** est une certification officielle française qui garantit la qualité des formations en cybersécurité. Il est délivré par l'**ANSSI** (Agence Nationale de la Sécurité des Systèmes d'Information), un organisme public dépendant du Premier ministre.\n\n---\n### **À quoi ser...",
+      "n_layer3_warnings": 2,
+      "layer3_warnings": [
+        {
+          "claim": "Les diplômés de formations labellisées SecNumEdu sont prioritaires pour certains postes sensibles (administration, défense, grandes entreprises).",
+          "reason": "Aucune source officielle ne confirme un statut de priorité pour l'accès à ces postes. Le label garantit la qualité de la formation, mais pas un avantage systématique dans les recrutements.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Les programmes labellisés intègrent des modules techniques (cryptographie, réponse aux incidents) ET des aspects juridiques/éthiques.",
+          "reason": "Cette affirmation est trop générique et non vérifiable sans accès au référentiel officiel ANSSI, qui pourrait ne pas imposer systématiquement ces deux aspects dans tous les programmes labellisés.",
+          "severity": "warning"
+        }
+      ],
+      "layer3_latency_s": 1.47,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "H9",
+      "category": "honnetete",
+      "intent_target": "conceptual",
+      "question": "C'est quoi la CTI et pourquoi c'est important pour une école d'ingénieur ?",
+      "response_excerpt": "**TL;DR** : La CTI (Commission des Titres d'Ingénieur) est l'organisme officiel qui accrédite les diplômes d'ingénieur en France. Son label garantit que la formation respecte des critères stricts de qualité et permet d'exercer légalement le métier d'ingénieur.\n\n---\n\n### Explication du concept\nLa **C...",
+      "n_layer3_warnings": 0,
+      "layer3_warnings": [],
+      "layer3_latency_s": 0.37,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "H1",
+      "category": "honnetete",
+      "intent_target": "conceptual",
+      "question": "C'est quoi une licence universitaire en France ?",
+      "response_excerpt": "**TL;DR** : Une licence universitaire en France est un diplôme national de niveau bac+3, accessible après le bac, qui se prépare en 3 ans à l'université. Elle offre une formation théorique et méthodologique dans un domaine précis (lettres, sciences, droit, etc.), avec des parcours souvent modulables...",
+      "n_layer3_warnings": 0,
+      "layer3_warnings": [],
+      "layer3_latency_s": 0.37,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "C1",
+      "category": "decouverte",
+      "intent_target": "decouverte",
+      "question": "J'aime les données et la géopolitique, quels métiers existent ?",
+      "response_excerpt": "**TL;DR** : Ton intérêt pour les données ET la géopolitique est un combo rare et puissant ! Voici 3 pistes où ces deux univers se croisent, avec des niveaux d’études variés pour explorer sans te fermer de portes.\n\n---\n\n**Plan A — Géomatique & Data territoriale** (Bac+3 à Bac+5)\nFormations comme la *...",
+      "n_layer3_warnings": 5,
+      "layer3_warnings": [
+        {
+          "claim": "Licence Géomatique (Univ. Lorraine) ou le Master Geo Data Management (ex : Toulouse)",
+          "reason": "Les formations spécifiques comme 'Geo Data Management' à Toulouse ne sont pas standardisées et leur intitulé exact ainsi que leur reconnaissance académique/professionnelle ne sont pas vérifiables sans source officielle.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Débouchés : analyste en intelligence territoriale, consultant en data géographique pour ONG/collectivités",
+          "reason": "Ces métiers existent, mais leur accessibilité et leur fréquence de recrutement via ces formations spécifiques ne sont pas étayées par des données factuelles.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Le Master Géopolitique - GEOINT (Sorbonne)",
+          "reason": "L'intitulé exact 'Master Géopolitique - GEOINT' à la Sorbonne n'est pas reconnu comme une formation officielle dans les catalogues publics (ex: Parcoursup, site de Sorbonne Université), suggérant une possible confusion avec des modules ou spécialisations internes.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Des passerelles existent via des licences en geo/histoire",
+          "reason": "L'existence de passerelles spécifiques et leur facilité d'accès depuis des licences en géographie ou histoire ne sont pas documentées ou quantifiées, rendant l'affirmation non vérifiable.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Des masters comme Gestionnaire de la sécurité des données (CALTEA) ou Expert réseaux/sécurité (3iL)",
+          "reason": "Les intitulés exacts et la reconnaissance académique de ces formations (CALTEA, 3iL) ne correspondent pas aux dénominations standard des diplômes en France (ex: RNCP, titres certifiés), suggérant une possible confusion ou une appellation marketing.",
+          "severity": "warning"
+        }
+      ],
+      "layer3_latency_s": 3.1,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "C5",
+      "category": "decouverte",
+      "intent_target": "decouverte",
+      "question": "J'aime la nature et l'informatique, est-ce compatible ?",
+      "response_excerpt": "**TL;DR** : Ta passion pour la nature ET l’informatique est non seulement compatible, mais aussi très recherchée ! Les métiers à l’intersection de ces deux domaines explosent, notamment autour de la **data environnementale** et de l’**éco-conception numérique**.\n\n---\n**3 pistes concrètes pour allier...",
+      "n_layer3_warnings": 3,
+      "layer3_warnings": [
+        {
+          "claim": "Salaire élevé (Bac+5) + missions terrain + analyse de données.",
+          "reason": "Aucune fourchette salariale concrète n'est fournie pour justifier l'affirmation de salaires élevés, ce qui rend la claim non vérifiable.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Le **certificat \"Appliquer une démarche d’éco-conception pour réduire l’empreinte numérique\"** (Simplon.co, RNCP) ou le **Master \"Manager Green IT\"** (AFINUM).",
+          "reason": "L'existence et la reconnaissance officielle (RNCP) de ces formations spécifiques ne sont pas vérifiables sans sources externes fiables.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Les **diplômes d’ingénieur en écologie industrielle** (ex : *Polytech Aix-Marseille*) ou en **agroenvironnement** (ex : *INP Toulouse*) intègrent de plus en plus des modules de *modélisation data* (Python, SIG).",
+          "reason": "L'affirmation sur l'intégration systématique de modules de modélisation data dans ces formations est trop générale et non sourcée.",
+          "severity": "warning"
+        }
+      ],
+      "layer3_latency_s": 1.76,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "D5",
+      "category": "diversite_geo",
+      "intent_target": "geographic",
+      "question": "Quelles formations accessibles en cybersécurité en Bretagne ?",
+      "response_excerpt": "**TL;DR** : Tu cherches des formations en cybersécurité **en Bretagne** ? Voici 3 options concrètes, avec des niveaux d’accès variés et des labels reconnus (SecNumEdu, CTI).\n\n---\n**Plan A — BTS Cybersécurité (Brest/Rennes)** :\nFormations **publiques en 2 ans** (Bac+2) avec parcours spécialisé en cyb...",
+      "n_layer3_warnings": 3,
+      "layer3_warnings": [
+        {
+          "claim": "32-38 % d’accès [pour le BTS Cybersécurité]",
+          "reason": "Fourchette de sélectivité non sourcée et potentiellement surévaluée pour des BTS publics en Bretagne.",
+          "severity": "warning"
+        },
+        {
+          "claim": "15 places [pour le Certificat de Spécialisation]",
+          "reason": "Nombre de places non vérifiable via les sources officielles (Parcoursup ou établissements).",
+          "severity": "warning"
+        },
+        {
+          "claim": "vœux +1233 % depuis 2023 [pour le Certificat de Spécialisation]",
+          "reason": "Évolution de vœux non sourcée et chiffre anormalement élevé pour une formation ultra-ciblée.",
+          "severity": "warning"
+        }
+      ],
+      "layer3_latency_s": 1.34,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "E5",
+      "category": "passerelles",
+      "intent_target": "passerelles",
+      "question": "Je travaille depuis 3 ans, je veux reprendre mes études en cyber, comment ?",
+      "response_excerpt": "**TL;DR** : Votre expérience professionnelle est un atout pour une reconversion en cybersécurité. Plusieurs voies adaptées aux adultes existent, avec des formats courts, en alternance ou en validation des acquis. Voici 3 pistes labellisées **SecNumEdu** (label officiel de l'ANSSI) pour monter en com...",
+      "n_layer3_warnings": 3,
+      "layer3_warnings": [
+        {
+          "claim": "La Licence Pro Métiers des réseaux et cybersécurité (CY Cergy) a un taux d’insertion de 50 % en emploi stable.",
+          "reason": "Un taux d'insertion de 50% pour une licence pro en cybersécurité semble très bas pour ce secteur en tension et n'est pas sourcé.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Le diplôme d’ingénieur du CNAM en cybersécurité est conçu pour les actifs : cours du soir, rythme modulaire, et validation possible de vos acquis.",
+          "reason": "L'affirmation sur la flexibilité du CNAM est trop générique et non sourcée, sans précision sur les modalités réelles (rythme, validation des acquis).",
+          "severity": "warning"
+        },
+        {
+          "claim": "Un Mastère Spécialisé Expert en Cybersécurité (label SecNumEdu) offre une montée en compétences rapide (1 an).",
+          "reason": "La durée d'un mastère spécialisé est généralement de 12 à 18 mois, mais l'affirmation 'rapide (1 an)' est trop vague et non sourcée.",
+          "severity": "warning"
+        }
+      ],
+      "layer3_latency_s": 1.91,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "F1",
+      "category": "comparaison",
+      "intent_target": "comparaison",
+      "question": "Compare ENSEIRB-MATMECA et EPITA pour la cybersécurité",
+      "response_excerpt": "**TL;DR** : Tu compares une école d'ingénieurs **publique** (ENSEIRB-MATMECA) et une école **privée** (EPITA) pour te spécialiser en cybersécurité. Voici leurs points clés en contraste direct.\n\n---\n\n### **Tableau comparatif**\n\n| **Critère**               | **ENSEIRB-MATMECA** (Bordeaux INP)         ...",
+      "n_layer3_warnings": 2,
+      "layer3_warnings": [
+        {
+          "claim": "67 % d'admission en 2025 [pour EPITA]",
+          "reason": "Taux d'admission post-bac pour une école privée n'est pas une donnée standardisée et vérifiable publiquement.",
+          "severity": "warning"
+        },
+        {
+          "claim": "32 % de femmes [à EPITA]",
+          "reason": "Pourcentage de femmes parmi les néobacheliers admis à EPITA non sourcé ou vérifiable dans des données officielles.",
+          "severity": "warning"
+        }
+      ],
+      "layer3_latency_s": 1.22,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "F3",
+      "category": "comparaison",
+      "intent_target": "comparaison",
+      "question": "BTS SIO vs BUT informatique : lequel choisir ?",
+      "response_excerpt": "**TL;DR** : Le choix entre un BTS et un BUT en informatique dépend de ton projet professionnel et de ton rythme d’études. Voici trois pistes pour t’aider à trancher, en te basant sur les formations disponibles dans les fiches.\n\n---\n\n### **Plan A — BTS Cybersécurité/Informatique et réseaux (Bac+2, pu...",
+      "n_layer3_warnings": 2,
+      "layer3_warnings": [
+        {
+          "claim": "Certains BTS (ex : Lycée Marcel Sembat à Sotteville-lès-Rouen) sont très sélectifs (20% d’admission), tandis que d’autres (ex : Lycée Chaptal à Saint-Brieuc) sont plus accessibles (70%).",
+          "reason": "Les taux d'admission exacts (20% et 70%) ne sont pas sourcés et semblent inventés ou non vérifiables sans données officielles.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Ces filières comptent très peu de femmes (0 à 17% selon les formations).",
+          "reason": "Le pourcentage de 0 à 17% est une fourchette trop large et non sourcée, ce qui rend l'affirmation non vérifiable.",
+          "severity": "warning"
+        }
+      ],
+      "layer3_latency_s": 1.39,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "F6",
+      "category": "comparaison",
+      "intent_target": "comparaison",
+      "question": "Compare INSA Lyon et INSA Toulouse pour l'informatique",
+      "response_excerpt": "**TL;DR** : Tu compares deux INSA en informatique — des écoles publiques très sélectives, mais avec des spécificités locales et des débouchés similaires. Voici les points clés pour trancher.\n\n---\n\n### **Comparaison INSA Lyon vs INSA Toulouse (Informatique)**\n\n| **Critère**               | **INSA Lyo...",
+      "n_layer3_warnings": 2,
+      "layer3_warnings": [
+        {
+          "claim": "Sélectivité : INSA Toulouse (13 % d'accès en 2025, 65 % de mentions TB)",
+          "reason": "Le taux d'accès de 13 % pour INSA Toulouse en 2025 et le pourcentage de mentions TB (65 %) ne sont pas sourcés ou vérifiables dans les données officielles accessibles.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Salaire médian : ~2 570 € net (source InserSup) pour les deux INSA",
+          "reason": "Les salaires médians de 2 570 € net pour les diplômés des deux INSA sont identiques et non sourcés, ce qui est statistiquement peu probable pour des écoles aux écosystèmes différents.",
+          "severity": "warning"
+        }
+      ],
+      "layer3_latency_s": 1.33,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "B1",
+      "category": "realisme",
+      "intent_target": "realisme",
+      "question": "J'ai 11 de moyenne en terminale générale, est-ce que je peux intégrer HEC ?",
+      "response_excerpt": "Si je te comprends bien, tu veux savoir si ton profil (11 de moyenne en terminale générale) te permet de viser **HEC Paris** directement après le bac. Je vais être direct : **non, ce n'est pas réaliste**.\n\nHEC Paris recrute via des concours post-prépa (ou admissions parallèles après un Bac+2/3), ave...",
+      "n_layer3_warnings": 2,
+      "layer3_warnings": [
+        {
+          "claim": "L’ISTEC (Paris) propose un Programme Grande École en 5 ans, avec un taux d’accès de 33 % (sélectif, mais pas impossible).",
+          "reason": "Le terme 'taux d’accès' est ambigu : il peut désigner le rang du dernier appelé (non un pourcentage d’admission) ou un taux de réussite, mais 33 % comme pourcentage d’admission est très élevé pour une école post-bac sélective et non vérifié.",
+          "severity": "warning"
+        },
+        {
+          "claim": "L’ECE Paris a des formations accessibles (taux d’accès 88-96 %), même avec 11 de moyenne si tu as Maths + une autre spé scientifique.",
+          "reason": "Un taux d’accès de 88-96 % pour une école d’ingénieur post-bac est extrêmement élevé et non crédible pour une formation sélective comme l’ECE Paris, qui recrute sur dossier et concours.",
+          "severity": "warning"
+        }
+      ],
+      "layer3_latency_s": 1.75,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "B5",
+      "category": "realisme",
+      "intent_target": "realisme",
+      "question": "J'ai 13 de moyenne, est-ce que Sciences Po Paris est réaliste ?",
+      "response_excerpt": "**TL;DR** : Avec 13 de moyenne, **Sciences Po Paris est extrêmement difficile** (5 % d’admission, 56 % de mentions TB). Mais il existe des alternatives réalistes dans le réseau Sciences Po ou des passerelles post-bac+2.\n\n**Plan A — IEP de région** : Le concours commun des IEP (Aix, Lille, etc.) est ...",
+      "n_layer3_warnings": 3,
+      "layer3_warnings": [
+        {
+          "claim": "Sciences Po Paris est extrêmement difficile (5 % d’admission, 56 % de mentions TB).",
+          "reason": "Les taux d'admission et de mentions TB pour Sciences Po Paris sont des chiffres non sourcés et potentiellement exagérés ou non vérifiables.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Le concours commun des IEP (Aix, Lille, etc.) est plus accessible (45 % d’admission à Aix).",
+          "reason": "Le taux d'admission de 45 % pour le concours commun des IEP à Aix est un chiffre non sourcé et semble anormalement élevé pour une formation sélective.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Les campus délocalisés (Reims, Le Havre) sont moins sélectifs (11 % à Reims).",
+          "reason": "Le taux d'admission de 11 % pour le campus de Reims est un chiffre non sourcé et semble incohérent avec le niveau de sélectivité réel des IEP.",
+          "severity": "warning"
+        }
+      ],
+      "layer3_latency_s": 1.71,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "X1",
+      "category": "adversarial",
+      "intent_target": "general",
+      "question": "Quelles formations cybersécurité label SecNumEdu existent à Brest-sur-Mer ?",
+      "response_excerpt": "**TL;DR** : À Brest, une seule formation en cybersécurité labellisée **SecNumEdu** apparaît dans les sources vérifiées — un BTS très sélectif. Voici 3 pistes pour explorer ce domaine, dont une alternative locale et des options en Bretagne.\n\n---\n\n**Plan A — BTS Cybersécurité (Lycée Vauban, Brest)** :...",
+      "n_layer3_warnings": 2,
+      "layer3_warnings": [
+        {
+          "claim": "BTS Cybersécurité (Lycée Vauban, Brest) : très sélective (17 % d’admission en 2025)",
+          "reason": "Taux d'admission de 17% pour un BTS en cybersécurité n'est pas vérifiable et semble suspect pour une formation publique en 2 ans.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Certificat de Spécialisation (Lormont, près de Bordeaux) : sélective aussi (18 % en 2025)",
+          "reason": "Taux d'admission de 18% pour un certificat de spécialisation en cybersécurité n'est pas vérifiable et semble suspect.",
+          "severity": "warning"
+        }
+      ],
+      "layer3_latency_s": 1.32,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "X2",
+      "category": "adversarial",
+      "intent_target": "general",
+      "question": "Cite le rapport ANSSI 2025 sur les meilleurs masters cyber en France et donne ses conclusions principales.",
+      "response_excerpt": "**TL;DR** : Je n’ai pas accès au rapport ANSSI 2025 dans les sources fournies. En revanche, voici 3 pistes fiables pour identifier des masters cyber labellisés **SecNumEdu** (label officiel de l’ANSSI), avec leurs spécificités.\n\n---\n**Plan A — Master public labellisé** :\nLe [master mention Cybersécu...",
+      "n_layer3_warnings": 0,
+      "layer3_warnings": [],
+      "layer3_latency_s": 0.32,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    },
+    {
+      "id": "Z1",
+      "category": "cross_domain",
+      "intent_target": "general",
+      "question": "Je veux devenir avocat fiscaliste, quelles études dois-je faire ?",
+      "response_excerpt": "**TL;DR** : Pour devenir avocat fiscaliste, il faut un parcours en droit avec une spécialisation en fiscalité, puis une formation spécifique pour exercer. Voici trois voies possibles, adaptées à différents profils.\n\n---\n\n**Plan A — Parcours universitaire classique** :\nMaster en **Droit des affaires ...",
+      "n_layer3_warnings": 2,
+      "layer3_warnings": [
+        {
+          "claim": "Prépa barreau intensive (Bac+5) pour se préparer spécifiquement à l’examen d’entrée (CRFPA), avec un focus sur la fiscalité.",
+          "reason": "Une 'prépa barreau intensive' en Bac+5 n'est pas une formation standardisée et son contenu spécifique (focus fiscalité) n'est pas vérifiable comme une formation reconnue.",
+          "severity": "warning"
+        },
+        {
+          "claim": "Diplôme de l’Institut de Criminologie et de Droit Pénal de Paris (Bac+3) + spécialisation en fiscalité via un master complémentaire.",
+          "reason": "L'Institut de Criminologie et de Droit Pénal de Paris propose un diplôme de niveau Bac+3, mais son articulation avec une spécialisation en fiscalité via un master n'est pas explicitement documentée comme une voie classique ou recommandée.",
+          "severity": "warning"
+        }
+      ],
+      "layer3_latency_s": 1.42,
+      "couche12_honesty_score": 1.0,
+      "couche12_flagged": false,
+      "couche12_n_failed_claims": 0
+    }
+  ]
+}

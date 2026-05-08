@@ -105,7 +105,7 @@ def run_analysis(
     if not blind_scores_path.exists():
         raise RuntimeError(f"{blind_scores_path} not found")
     if not mapping_path.exists():
-        raise RuntimeError(f"{mapping_path} not found — run `python -m src.eval.run_real` first")
+        raise RuntimeError(f"{mapping_path} not found — run `python -m src.eval.run_real_full` first")
 
     blind_scores = json.loads(blind_scores_path.read_text(encoding="utf-8"))
     mapping = json.loads(mapping_path.read_text(encoding="utf-8"))

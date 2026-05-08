@@ -14,7 +14,23 @@ from __future__ import annotations
 
 import re
 
+import pytest
+
 from src.prompt.system import SYSTEM_PROMPT
+
+
+# Sprint refonte 2026-05-05 — les règles UX Tier 2 (T2.1 brévité 150-300,
+# T2.2 pyramide inversée, T2.4 ATTENTION AUX PIÈGES, T2.6 budget emoji)
+# ont été RETIRÉES du SYSTEM_PROMPT (purge agressive contradictions
+# résiduelles + retours user "on avait décidé de retirer ces règles").
+# Les tests qui asserent leur présence sont marqués obsolètes et skippés.
+# Les tests T2.3 (tendances), T2.5 (tag connaissance générale révoqué),
+# T2.7 (varie question), T2.8/T2.9 (signaux user prompt) restent valides
+# car ces règles sont préservées (sous d'autres noms ou compactées).
+_TIER2_RETIRED = pytest.mark.skip(
+    reason="Tier 2 UX rules retirées du SYSTEM_PROMPT le 2026-05-05 "
+           "(purge agressive corps prompt 605→~440 lignes)."
+)
 
 
 def _flat(s: str) -> str:
@@ -24,6 +40,7 @@ def _flat(s: str) -> str:
 # --- T2.1 : brevity target 150-300 ---
 
 
+@_TIER2_RETIRED
 def test_t2_1_brevity_target_is_150_300():
     """The new target is 150-300 mots (down from α 300-500).
 
@@ -37,6 +54,7 @@ def test_t2_1_brevity_target_is_150_300():
     )
 
 
+@_TIER2_RETIRED
 def test_t2_1_brevity_explicitly_overrides_alpha():
     """Tier 2 must mark itself as taking precedence over the α 300-500
     target. Without an explicit priority statement, a LLM can hesitate
@@ -54,6 +72,7 @@ def test_t2_1_brevity_explicitly_overrides_alpha():
 # --- T2.2 : inverted pyramid with TL;DR ---
 
 
+@_TIER2_RETIRED
 def test_t2_2_inverted_pyramid_required():
     """Each response must start with a TL;DR block (3 lines max) that
     answers cash in the first seconds of reading."""
@@ -94,6 +113,7 @@ def test_t2_3_trends_only_when_changing_advice():
 # --- T2.4 : "Attention aux pièges" on choix / comparaison ---
 
 
+@_TIER2_RETIRED
 def test_t2_4_attention_aux_pieges_required_on_choice():
     """The Q8 "Attention aux pièges" format was unanimously praised.
     Tier 2 makes it systematic for choix (Plan A/B/C) and comparaison
@@ -144,6 +164,7 @@ def test_t2_5_connaissance_generale_tag_restricted():
 # --- T2.6 : emoji budget max 2 ---
 
 
+@_TIER2_RETIRED
 def test_t2_6_emoji_budget_limit():
     """Léo: trop d'emojis icônes (📍 💡 🔀 🔹 📌) = slide PowerPoint.
     Max 2 par réponse."""

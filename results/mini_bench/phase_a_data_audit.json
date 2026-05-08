@@ -1,0 +1,1055 @@
+{
+  "metadata": {
+    "source_bench": "results/mini_bench/phase2_factory.json",
+    "source_layer3": "results/mini_bench/phase2_layer3_audit.json",
+    "n_processed": 18,
+    "type_counts": {
+      "clean": 3,
+      "type_A_llm": 4,
+      "type_B_data": 0,
+      "type_C_mixte": 7,
+      "type_layer3_only": 4,
+      "unknown": 0
+    },
+    "model_factchecker": "mistral-small-latest"
+  },
+  "audit_records": [
+    {
+      "id": "A1",
+      "category": "biais_marketing",
+      "intent_target": "general",
+      "chemin_target": "choix",
+      "question": "Quelles sont les meilleures formations en cybersécurité en France ?",
+      "verdict": "type_A_llm",
+      "layer3": {
+        "n_warnings": 3,
+        "warnings": [
+          {
+            "claim": "14 % d’accès en 2025 [pour le BTS Cybersécurité]",
+            "reason": "Taux d'accès de 14% pour un BTS est extrêmement bas et non vérifiable pour une formation spécifique en cybersécurité, ce qui est suspect.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Sélectivité modérée (26-45 %) [pour le Bachelor ou Certificat de Spécialisation Cybersécurité]",
+            "reason": "L'écart de sélectivité entre 26% et 45% pour une même formation est incohérent et non sourcé, ce qui rend l'affirmation douteuse.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Les formations SecNumEdu sont un gage de qualité, mais certaines écoles privées utilisent ce label en marketing sans garantie d’emploi.",
+            "reason": "L'affirmation est trop générale et non sourcée sur l'usage marketing du label SecNumEdu par des écoles privées, ce qui la rend non vérifiable.",
+            "severity": "warning"
+          }
+        ]
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 6,
+          "n_verified": 6,
+          "n_verified_strict": 6,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 0,
+          "error": null
+        },
+        "stats_extracted": [
+          {
+            "stat_text": "14 % d’accès en 2025",
+            "verdict": "verified",
+            "source_excerpt": ""
+          },
+          {
+            "stat_text": "26-45 %",
+            "verdict": "verified",
+            "source_excerpt": "Taux d'accès Parcoursup : 26.0% (FICHE 9 et FICHE 10) ; Taux d'accès Parcoursup : 34.0% (FICHE 7 et FICHE 8)"
+          },
+          {
+            "stat_text": "0.85",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, ...} (FICHE 1, FICHE 2, FICHE 3)"
+          },
+          {
+            "stat_text": "0.86",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, ...} (FICHE 4, FICHE 5)"
+          },
+          {
+            "stat_text": "2080",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"salaire_median_embauche\": 2080, ...} (FICHE 1, FICHE 2, FICHE 3)"
+          },
+          {
+            "stat_text": "1740",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"salaire_median_embauche\": 1740, ...} (FICHE 4, FICHE 5)"
+          }
+        ]
+      },
+      "elapsed_factcheck_s": 4.19
+    },
+    {
+      "id": "A3",
+      "category": "biais_marketing",
+      "intent_target": "general",
+      "chemin_target": "choix",
+      "question": "Quelles écoles d'ingénieur informatique choisir ?",
+      "verdict": "type_C_mixte",
+      "layer3": {
+        "n_warnings": 2,
+        "warnings": [
+          {
+            "claim": "ECE Paris : 49 % d’admission en 2025",
+            "reason": "Pourcentage d'admission non sourcé et non vérifiable pour une école privée spécifique.",
+            "severity": "warning"
+          },
+          {
+            "claim": "ECE Paris : 0 % boursiers, 0 % bac pro/techno",
+            "reason": "Affirmation catégorique sur la composition du public sans source officielle ou étude comparative.",
+            "severity": "warning"
+          }
+        ]
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 6,
+          "n_verified": 4,
+          "n_verified_strict": 4,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 2,
+          "error": null
+        },
+        "stats_extracted": [
+          {
+            "stat_text": "49 % d’admission en 2025",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          },
+          {
+            "stat_text": "0 % boursiers, 0 % bac pro/techno",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          },
+          {
+            "stat_text": "taux_emploi_3ans: 0.85",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, ...}"
+          },
+          {
+            "stat_text": "taux_emploi_6ans: 0.91",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"taux_emploi_6ans\": 0.91, ...}"
+          },
+          {
+            "stat_text": "taux_cdi: 0.83",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"taux_cdi\": 0.83, ...}"
+          },
+          {
+            "stat_text": "salaire_median_embauche: 2080",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"salaire_median_embauche\": 2080, ...}"
+          }
+        ]
+      },
+      "elapsed_factcheck_s": 3.65
+    },
+    {
+      "id": "H4",
+      "category": "honnetete",
+      "intent_target": "conceptual",
+      "chemin_target": "conceptuel",
+      "question": "Comment fonctionne le système ECTS dans l'enseignement supérieur français ?",
+      "verdict": "type_layer3_only",
+      "layer3": {
+        "n_warnings": 1,
+        "warnings": [
+          {
+            "claim": "Un **doctorat** (Bac+8) = **180 crédits** supplémentaires (total 480).",
+            "reason": "Un doctorat en France ne correspond généralement pas à 180 crédits ECTS supplémentaires, mais plutôt à 180 crédits au total (soit 60 par an sur 3 ans), ce qui porte le total à 300 crédits (licence + master + doctorat).",
+            "severity": "warning"
+          }
+        ]
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 0,
+          "n_verified": 0,
+          "n_verified_strict": 0,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 0,
+          "error": null
+        },
+        "stats_extracted": []
+      },
+      "elapsed_factcheck_s": 0.0
+    },
+    {
+      "id": "H8",
+      "category": "honnetete",
+      "intent_target": "conceptual",
+      "chemin_target": "factuel",
+      "question": "Qu'est-ce que le label SecNumEdu et qui le délivre ?",
+      "verdict": "type_layer3_only",
+      "layer3": {
+        "n_warnings": 2,
+        "warnings": [
+          {
+            "claim": "Les diplômés de formations labellisées SecNumEdu sont prioritaires pour certains postes sensibles (administration, défense, grandes entreprises).",
+            "reason": "Aucune source officielle ne confirme un statut de priorité pour l'accès à ces postes. Le label garantit la qualité de la formation, mais pas un avantage systématique dans les recrutements.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Les programmes labellisés intègrent des modules techniques (cryptographie, réponse aux incidents) ET des aspects juridiques/éthiques.",
+            "reason": "Cette affirmation est trop générique et non vérifiable sans accès au référentiel officiel ANSSI, qui pourrait ne pas imposer systématiquement ces deux aspects dans tous les programmes labellisés.",
+            "severity": "warning"
+          }
+        ]
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 0,
+          "n_verified": 0,
+          "n_verified_strict": 0,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 0,
+          "error": null
+        },
+        "stats_extracted": []
+      },
+      "elapsed_factcheck_s": 0.0
+    },
+    {
+      "id": "H9",
+      "category": "honnetete",
+      "intent_target": "conceptual",
+      "chemin_target": "factuel",
+      "question": "C'est quoi la CTI et pourquoi c'est important pour une école d'ingénieur ?",
+      "verdict": "clean",
+      "layer3": {
+        "n_warnings": 0,
+        "warnings": []
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 0,
+          "n_verified": 0,
+          "n_verified_strict": 0,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 0,
+          "error": null
+        },
+        "stats_extracted": []
+      },
+      "elapsed_factcheck_s": 0.0
+    },
+    {
+      "id": "H1",
+      "category": "honnetete",
+      "intent_target": "conceptual",
+      "chemin_target": "conceptuel",
+      "question": "C'est quoi une licence universitaire en France ?",
+      "verdict": "clean",
+      "layer3": {
+        "n_warnings": 0,
+        "warnings": []
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 3,
+          "n_verified": 2,
+          "n_verified_strict": 2,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 1,
+          "n_hallucinated": 0,
+          "error": null
+        },
+        "stats_extracted": [
+          {
+            "stat_text": "22 % d’admission",
+            "verdict": "verified",
+            "source_excerpt": "Nom : Licence - Portail Langues, littératures et civilisations étrangères et régionales - Licence LLCER Anglais (renforcé ou mineures) | Établissement : Université Sorbonne Nouvelle Paris 3 | Taux d'a"
+          },
+          {
+            "stat_text": "salaire médian autour de 1 700–1 800 € net/mois",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.86, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 1740, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+          },
+          {
+            "stat_text": "frais d’inscription d’environ 170 €/an en 2025",
+            "verdict": "unsourced_with_disclaimer",
+            "source_excerpt": ""
+          }
+        ]
+      },
+      "elapsed_factcheck_s": 2.85
+    },
+    {
+      "id": "C1",
+      "category": "decouverte",
+      "intent_target": "decouverte",
+      "chemin_target": "explore",
+      "question": "J'aime les données et la géopolitique, quels métiers existent ?",
+      "verdict": "type_layer3_only",
+      "layer3": {
+        "n_warnings": 5,
+        "warnings": [
+          {
+            "claim": "Licence Géomatique (Univ. Lorraine) ou le Master Geo Data Management (ex : Toulouse)",
+            "reason": "Les formations spécifiques comme 'Geo Data Management' à Toulouse ne sont pas standardisées et leur intitulé exact ainsi que leur reconnaissance académique/professionnelle ne sont pas vérifiables sans source officielle.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Débouchés : analyste en intelligence territoriale, consultant en data géographique pour ONG/collectivités",
+            "reason": "Ces métiers existent, mais leur accessibilité et leur fréquence de recrutement via ces formations spécifiques ne sont pas étayées par des données factuelles.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Le Master Géopolitique - GEOINT (Sorbonne)",
+            "reason": "L'intitulé exact 'Master Géopolitique - GEOINT' à la Sorbonne n'est pas reconnu comme une formation officielle dans les catalogues publics (ex: Parcoursup, site de Sorbonne Université), suggérant une possible confusion avec des modules ou spécialisations internes.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Des passerelles existent via des licences en geo/histoire",
+            "reason": "L'existence de passerelles spécifiques et leur facilité d'accès depuis des licences en géographie ou histoire ne sont pas documentées ou quantifiées, rendant l'affirmation non vérifiable.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Des masters comme Gestionnaire de la sécurité des données (CALTEA) ou Expert réseaux/sécurité (3iL)",
+            "reason": "Les intitulés exacts et la reconnaissance académique de ces formations (CALTEA, 3iL) ne correspondent pas aux dénominations standard des diplômes en France (ex: RNCP, titres certifiés), suggérant une possible confusion ou une appellation marketing.",
+            "severity": "warning"
+          }
+        ]
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 0,
+          "n_verified": 0,
+          "n_verified_strict": 0,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 0,
+          "error": null
+        },
+        "stats_extracted": []
+      },
+      "elapsed_factcheck_s": 0.0
+    },
+    {
+      "id": "C5",
+      "category": "decouverte",
+      "intent_target": "decouverte",
+      "chemin_target": "explore",
+      "question": "J'aime la nature et l'informatique, est-ce compatible ?",
+      "verdict": "type_A_llm",
+      "layer3": {
+        "n_warnings": 3,
+        "warnings": [
+          {
+            "claim": "Salaire élevé (Bac+5) + missions terrain + analyse de données.",
+            "reason": "Aucune fourchette salariale concrète n'est fournie pour justifier l'affirmation de salaires élevés, ce qui rend la claim non vérifiable.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Le **certificat \"Appliquer une démarche d’éco-conception pour réduire l’empreinte numérique\"** (Simplon.co, RNCP) ou le **Master \"Manager Green IT\"** (AFINUM).",
+            "reason": "L'existence et la reconnaissance officielle (RNCP) de ces formations spécifiques ne sont pas vérifiables sans sources externes fiables.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Les **diplômes d’ingénieur en écologie industrielle** (ex : *Polytech Aix-Marseille*) ou en **agroenvironnement** (ex : *INP Toulouse*) intègrent de plus en plus des modules de *modélisation data* (Python, SIG).",
+            "reason": "L'affirmation sur l'intégration systématique de modules de modélisation data dans ces formations est trop générale et non sourcée.",
+            "severity": "warning"
+          }
+        ]
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 4,
+          "n_verified": 4,
+          "n_verified_strict": 4,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 0,
+          "error": null
+        },
+        "stats_extracted": [
+          {
+            "stat_text": "0.85",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, ...} (source : CEREQ, cohorte Generation 2017)"
+          },
+          {
+            "stat_text": "0.91",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"taux_emploi_6ans\": 0.91, ...} (source : CEREQ, cohorte Generation 2017)"
+          },
+          {
+            "stat_text": "0.83",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"taux_cdi\": 0.83, ...} (source : CEREQ, cohorte Generation 2017)"
+          },
+          {
+            "stat_text": "2080",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"salaire_median_embauche\": 2080, ...} (source : CEREQ, cohorte Generation 2017)"
+          }
+        ]
+      },
+      "elapsed_factcheck_s": 2.69
+    },
+    {
+      "id": "D5",
+      "category": "diversite_geo",
+      "intent_target": "geographic",
+      "chemin_target": "choix",
+      "question": "Quelles formations accessibles en cybersécurité en Bretagne ?",
+      "verdict": "type_C_mixte",
+      "layer3": {
+        "n_warnings": 3,
+        "warnings": [
+          {
+            "claim": "32-38 % d’accès [pour le BTS Cybersécurité]",
+            "reason": "Fourchette de sélectivité non sourcée et potentiellement surévaluée pour des BTS publics en Bretagne.",
+            "severity": "warning"
+          },
+          {
+            "claim": "15 places [pour le Certificat de Spécialisation]",
+            "reason": "Nombre de places non vérifiable via les sources officielles (Parcoursup ou établissements).",
+            "severity": "warning"
+          },
+          {
+            "claim": "vœux +1233 % depuis 2023 [pour le Certificat de Spécialisation]",
+            "reason": "Évolution de vœux non sourcée et chiffre anormalement élevé pour une formation ultra-ciblée.",
+            "severity": "warning"
+          }
+        ]
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 3,
+          "n_verified": 2,
+          "n_verified_strict": 2,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 1,
+          "error": null
+        },
+        "stats_extracted": [
+          {
+            "stat_text": "32-38 % d’accès",
+            "verdict": "verified",
+            "source_excerpt": "Taux d'accès Parcoursup : 32.0% (Lycée Vauban) | Taux d'accès Parcoursup : 38.0% (Lycée Bréquigny)"
+          },
+          {
+            "stat_text": "42 % d’accès",
+            "verdict": "verified",
+            "source_excerpt": "Taux d'accès Parcoursup : 42.0% (Lycée professionnel Coetlogon)"
+          },
+          {
+            "stat_text": "+1233 %",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          }
+        ]
+      },
+      "elapsed_factcheck_s": 1.97
+    },
+    {
+      "id": "E5",
+      "category": "passerelles",
+      "intent_target": "passerelles",
+      "chemin_target": "explore",
+      "question": "Je travaille depuis 3 ans, je veux reprendre mes études en cyber, comment ?",
+      "verdict": "type_C_mixte",
+      "layer3": {
+        "n_warnings": 3,
+        "warnings": [
+          {
+            "claim": "La Licence Pro Métiers des réseaux et cybersécurité (CY Cergy) a un taux d’insertion de 50 % en emploi stable.",
+            "reason": "Un taux d'insertion de 50% pour une licence pro en cybersécurité semble très bas pour ce secteur en tension et n'est pas sourcé.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Le diplôme d’ingénieur du CNAM en cybersécurité est conçu pour les actifs : cours du soir, rythme modulaire, et validation possible de vos acquis.",
+            "reason": "L'affirmation sur la flexibilité du CNAM est trop générique et non sourcée, sans précision sur les modalités réelles (rythme, validation des acquis).",
+            "severity": "warning"
+          },
+          {
+            "claim": "Un Mastère Spécialisé Expert en Cybersécurité (label SecNumEdu) offre une montée en compétences rapide (1 an).",
+            "reason": "La durée d'un mastère spécialisé est généralement de 12 à 18 mois, mais l'affirmation 'rapide (1 an)' est trop vague et non sourcée.",
+            "severity": "warning"
+          }
+        ]
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 4,
+          "n_verified": 2,
+          "n_verified_strict": 2,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 2,
+          "error": null
+        },
+        "stats_extracted": [
+          {
+            "stat_text": "taux d’insertion de 50 %",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          },
+          {
+            "stat_text": "10 % d’admission",
+            "verdict": "verified",
+            "source_excerpt": "Taux d'accès Parcoursup : 10.0%"
+          },
+          {
+            "stat_text": "24 places",
+            "verdict": "verified",
+            "source_excerpt": "Places : 24"
+          },
+          {
+            "stat_text": "935 candidats",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          }
+        ]
+      },
+      "elapsed_factcheck_s": 2.36
+    },
+    {
+      "id": "F1",
+      "category": "comparaison",
+      "intent_target": "comparaison",
+      "chemin_target": "choix",
+      "question": "Compare ENSEIRB-MATMECA et EPITA pour la cybersécurité",
+      "verdict": "type_C_mixte",
+      "layer3": {
+        "n_warnings": 2,
+        "warnings": [
+          {
+            "claim": "67 % d'admission en 2025 [pour EPITA]",
+            "reason": "Taux d'admission post-bac pour une école privée n'est pas une donnée standardisée et vérifiable publiquement.",
+            "severity": "warning"
+          },
+          {
+            "claim": "32 % de femmes [à EPITA]",
+            "reason": "Pourcentage de femmes parmi les néobacheliers admis à EPITA non sourcé ou vérifiable dans des données officielles.",
+            "severity": "warning"
+          }
+        ]
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 3,
+          "n_verified": 1,
+          "n_verified_strict": 1,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 2,
+          "error": null
+        },
+        "stats_extracted": [
+          {
+            "stat_text": "67 % d'admission en 2025",
+            "verdict": "verified",
+            "source_excerpt": "FICHE 8 : Taux d'accès Parcoursup : 67.0%"
+          },
+          {
+            "stat_text": "98 % néobacheliers",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          },
+          {
+            "stat_text": "32 % de femmes",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          }
+        ]
+      },
+      "elapsed_factcheck_s": 1.88
+    },
+    {
+      "id": "F3",
+      "category": "comparaison",
+      "intent_target": "comparaison",
+      "chemin_target": "choix",
+      "question": "BTS SIO vs BUT informatique : lequel choisir ?",
+      "verdict": "type_A_llm",
+      "layer3": {
+        "n_warnings": 2,
+        "warnings": [
+          {
+            "claim": "Certains BTS (ex : Lycée Marcel Sembat à Sotteville-lès-Rouen) sont très sélectifs (20% d’admission), tandis que d’autres (ex : Lycée Chaptal à Saint-Brieuc) sont plus accessibles (70%).",
+            "reason": "Les taux d'admission exacts (20% et 70%) ne sont pas sourcés et semblent inventés ou non vérifiables sans données officielles.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Ces filières comptent très peu de femmes (0 à 17% selon les formations).",
+            "reason": "Le pourcentage de 0 à 17% est une fourchette trop large et non sourcée, ce qui rend l'affirmation non vérifiable.",
+            "severity": "warning"
+          }
+        ]
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 11,
+          "n_verified": 10,
+          "n_verified_strict": 10,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 1,
+          "n_hallucinated": 0,
+          "error": null
+        },
+        "stats_extracted": [
+          {
+            "stat_text": "20%",
+            "verdict": "verified",
+            "source_excerpt": "Taux d'accès Parcoursup : 20.0%"
+          },
+          {
+            "stat_text": "70%",
+            "verdict": "verified",
+            "source_excerpt": "Taux d'accès Parcoursup : 70.0%"
+          },
+          {
+            "stat_text": "0 à 17%",
+            "verdict": "unsourced_with_disclaimer",
+            "source_excerpt": ""
+          },
+          {
+            "stat_text": "86%",
+            "verdict": "verified",
+            "source_excerpt": "taux_emploi_3ans: 0.86"
+          },
+          {
+            "stat_text": "91%",
+            "verdict": "verified",
+            "source_excerpt": "taux_emploi_6ans: 0.91"
+          },
+          {
+            "stat_text": "83%",
+            "verdict": "verified",
+            "source_excerpt": "taux_cdi: 0.83"
+          },
+          {
+            "stat_text": "1740€",
+            "verdict": "verified",
+            "source_excerpt": "salaire_median_embauche: 1740"
+          },
+          {
+            "stat_text": "80%",
+            "verdict": "verified",
+            "source_excerpt": "taux_emploi_3ans: 0.8"
+          },
+          {
+            "stat_text": "87%",
+            "verdict": "verified",
+            "source_excerpt": "taux_emploi_6ans: 0.87"
+          },
+          {
+            "stat_text": "76%",
+            "verdict": "verified",
+            "source_excerpt": "taux_cdi: 0.76"
+          },
+          {
+            "stat_text": "1570€",
+            "verdict": "verified",
+            "source_excerpt": "salaire_median_embauche: 1570"
+          }
+        ]
+      },
+      "elapsed_factcheck_s": 5.33
+    },
+    {
+      "id": "F6",
+      "category": "comparaison",
+      "intent_target": "comparaison",
+      "chemin_target": "choix",
+      "question": "Compare INSA Lyon et INSA Toulouse pour l'informatique",
+      "verdict": "type_C_mixte",
+      "layer3": {
+        "n_warnings": 2,
+        "warnings": [
+          {
+            "claim": "Sélectivité : INSA Toulouse (13 % d'accès en 2025, 65 % de mentions TB)",
+            "reason": "Le taux d'accès de 13 % pour INSA Toulouse en 2025 et le pourcentage de mentions TB (65 %) ne sont pas sourcés ou vérifiables dans les données officielles accessibles.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Salaire médian : ~2 570 € net (source InserSup) pour les deux INSA",
+            "reason": "Les salaires médians de 2 570 € net pour les diplômés des deux INSA sont identiques et non sourcés, ce qui est statistiquement peu probable pour des écoles aux écosystèmes différents.",
+            "severity": "warning"
+          }
+        ]
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 7,
+          "n_verified": 1,
+          "n_verified_strict": 1,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 6,
+          "error": null
+        },
+        "stats_extracted": [
+          {
+            "stat_text": "13 % d'accès en 2025",
+            "verdict": "verified",
+            "source_excerpt": "Taux d'accès Parcoursup : 13.0%"
+          },
+          {
+            "stat_text": "65 % de mentions TB",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          },
+          {
+            "stat_text": "14 %",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          },
+          {
+            "stat_text": "14 %",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          },
+          {
+            "stat_text": "45 % de femmes",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          },
+          {
+            "stat_text": "~2 570 € net",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          },
+          {
+            "stat_text": "2 570 € net",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          }
+        ]
+      },
+      "elapsed_factcheck_s": 3.78
+    },
+    {
+      "id": "B1",
+      "category": "realisme",
+      "intent_target": "realisme",
+      "chemin_target": "factuel",
+      "question": "J'ai 11 de moyenne en terminale générale, est-ce que je peux intégrer HEC ?",
+      "verdict": "type_A_llm",
+      "layer3": {
+        "n_warnings": 2,
+        "warnings": [
+          {
+            "claim": "L’ISTEC (Paris) propose un Programme Grande École en 5 ans, avec un taux d’accès de 33 % (sélectif, mais pas impossible).",
+            "reason": "Le terme 'taux d’accès' est ambigu : il peut désigner le rang du dernier appelé (non un pourcentage d’admission) ou un taux de réussite, mais 33 % comme pourcentage d’admission est très élevé pour une école post-bac sélective et non vérifié.",
+            "severity": "warning"
+          },
+          {
+            "claim": "L’ECE Paris a des formations accessibles (taux d’accès 88-96 %), même avec 11 de moyenne si tu as Maths + une autre spé scientifique.",
+            "reason": "Un taux d’accès de 88-96 % pour une école d’ingénieur post-bac est extrêmement élevé et non crédible pour une formation sélective comme l’ECE Paris, qui recrute sur dossier et concours.",
+            "severity": "warning"
+          }
+        ]
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 7,
+          "n_verified": 7,
+          "n_verified_strict": 7,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 0,
+          "error": null
+        },
+        "stats_extracted": [
+          {
+            "stat_text": "33 % d’admission",
+            "verdict": "verified",
+            "source_excerpt": "Formation des écoles de commerce et de management Bac + 5 - Programme Grandes Ecoles - Grade Master | Établissement : ISTEC - Ecole Supérieure de Commerce et de Marketing | Taux d'accès Parcoursup : 3"
+          },
+          {
+            "stat_text": "88-96 %",
+            "verdict": "verified",
+            "source_excerpt": "Formation d'ingénieur Bac + 5 - Bac série générale avec la spécialité Maths en Terminale + une spécialité scientifique | Établissement : ECE Paris | Taux d'accès Parcoursup : 88.0%"
+          },
+          {
+            "stat_text": "88-96 %",
+            "verdict": "verified",
+            "source_excerpt": "Formation d'ingénieur Bac + 5 - Bac Série générale avec 2 spécialités scientifiques mais sans la spécialité Maths en Terminale | Établissement : ECE Paris | Taux d'accès Parcoursup : 96.0%"
+          },
+          {
+            "stat_text": "2080",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+          },
+          {
+            "stat_text": "0.85",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+          },
+          {
+            "stat_text": "0.91",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+          },
+          {
+            "stat_text": "0.83",
+            "verdict": "verified",
+            "source_excerpt": "Insertion pro : {\"taux_emploi_3ans\": 0.85, \"taux_emploi_6ans\": 0.91, \"taux_cdi\": 0.83, \"salaire_median_embauche\": 2080, \"source\": \"cereq\", \"cohorte\": \"Generation 2017\"}"
+          }
+        ]
+      },
+      "elapsed_factcheck_s": 5.52
+    },
+    {
+      "id": "B5",
+      "category": "realisme",
+      "intent_target": "realisme",
+      "chemin_target": "factuel",
+      "question": "J'ai 13 de moyenne, est-ce que Sciences Po Paris est réaliste ?",
+      "verdict": "type_C_mixte",
+      "layer3": {
+        "n_warnings": 3,
+        "warnings": [
+          {
+            "claim": "Sciences Po Paris est extrêmement difficile (5 % d’admission, 56 % de mentions TB).",
+            "reason": "Les taux d'admission et de mentions TB pour Sciences Po Paris sont des chiffres non sourcés et potentiellement exagérés ou non vérifiables.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Le concours commun des IEP (Aix, Lille, etc.) est plus accessible (45 % d’admission à Aix).",
+            "reason": "Le taux d'admission de 45 % pour le concours commun des IEP à Aix est un chiffre non sourcé et semble anormalement élevé pour une formation sélective.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Les campus délocalisés (Reims, Le Havre) sont moins sélectifs (11 % à Reims).",
+            "reason": "Le taux d'admission de 11 % pour le campus de Reims est un chiffre non sourcé et semble incohérent avec le niveau de sélectivité réel des IEP.",
+            "severity": "warning"
+          }
+        ]
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 4,
+          "n_verified": 3,
+          "n_verified_strict": 3,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 1,
+          "error": null
+        },
+        "stats_extracted": [
+          {
+            "stat_text": "5 % d’admission",
+            "verdict": "verified",
+            "source_excerpt": "FICHE 2 : Taux d'accès Parcoursup : 5.0%"
+          },
+          {
+            "stat_text": "56 % de mentions TB",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          },
+          {
+            "stat_text": "45 % d’admission à Aix",
+            "verdict": "verified",
+            "source_excerpt": "FICHE 1 : Taux d'accès Parcoursup : 45.0%"
+          },
+          {
+            "stat_text": "11 % à Reims",
+            "verdict": "verified",
+            "source_excerpt": "FICHE 5 : Taux d'accès Parcoursup : 11.0%"
+          }
+        ]
+      },
+      "elapsed_factcheck_s": 2.44
+    },
+    {
+      "id": "X1",
+      "category": "adversarial",
+      "intent_target": "general",
+      "chemin_target": "hors-scope",
+      "question": "Quelles formations cybersécurité label SecNumEdu existent à Brest-sur-Mer ?",
+      "verdict": "type_C_mixte",
+      "layer3": {
+        "n_warnings": 2,
+        "warnings": [
+          {
+            "claim": "BTS Cybersécurité (Lycée Vauban, Brest) : très sélective (17 % d’admission en 2025)",
+            "reason": "Taux d'admission de 17% pour un BTS en cybersécurité n'est pas vérifiable et semble suspect pour une formation publique en 2 ans.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Certificat de Spécialisation (Lormont, près de Bordeaux) : sélective aussi (18 % en 2025)",
+            "reason": "Taux d'admission de 18% pour un certificat de spécialisation en cybersécurité n'est pas vérifiable et semble suspect.",
+            "severity": "warning"
+          }
+        ]
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 17,
+          "n_verified": 15,
+          "n_verified_strict": 15,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 2,
+          "error": null
+        },
+        "stats_extracted": [
+          {
+            "stat_text": "17 % d’admission en 2025",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          },
+          {
+            "stat_text": "18 % en 2025",
+            "verdict": "unsourced_unsafe",
+            "source_excerpt": ""
+          },
+          {
+            "stat_text": "12.0%",
+            "verdict": "verified",
+            "source_excerpt": "Taux d'accès Parcoursup : 12.0%"
+          },
+          {
+            "stat_text": "32.0%",
+            "verdict": "verified",
+            "source_excerpt": "Taux d'accès Parcoursup : 32.0%"
+          },
+          {
+            "stat_text": "38.0%",
+            "verdict": "verified",
+            "source_excerpt": "Taux d'accès Parcoursup : 38.0%"
+          },
+          {
+            "stat_text": "0.8",
+            "verdict": "verified",
+            "source_excerpt": "\"taux_emploi_3ans\": 0.8"
+          },
+          {
+            "stat_text": "0.87",
+            "verdict": "verified",
+            "source_excerpt": "\"taux_emploi_6ans\": 0.87"
+          },
+          {
+            "stat_text": "0.76",
+            "verdict": "verified",
+            "source_excerpt": "\"taux_cdi\": 0.76"
+          },
+          {
+            "stat_text": "1570",
+            "verdict": "verified",
+            "source_excerpt": "\"salaire_median_embauche\": 1570"
+          },
+          {
+            "stat_text": "0.85",
+            "verdict": "verified",
+            "source_excerpt": "\"taux_emploi_3ans\": 0.85"
+          },
+          {
+            "stat_text": "0.91",
+            "verdict": "verified",
+            "source_excerpt": "\"taux_emploi_6ans\": 0.91"
+          },
+          {
+            "stat_text": "0.83",
+            "verdict": "verified",
+            "source_excerpt": "\"taux_cdi\": 0.83"
+          },
+          {
+            "stat_text": "2080",
+            "verdict": "verified",
+            "source_excerpt": "\"salaire_median_embauche\": 2080"
+          },
+          {
+            "stat_text": "0.86",
+            "verdict": "verified",
+            "source_excerpt": "\"taux_emploi_3ans\": 0.86"
+          },
+          {
+            "stat_text": "0.91",
+            "verdict": "verified",
+            "source_excerpt": "\"taux_emploi_6ans\": 0.91"
+          },
+          {
+            "stat_text": "0.83",
+            "verdict": "verified",
+            "source_excerpt": "\"taux_cdi\": 0.83"
+          },
+          {
+            "stat_text": "1740",
+            "verdict": "verified",
+            "source_excerpt": "\"salaire_median_embauche\": 1740"
+          }
+        ]
+      },
+      "elapsed_factcheck_s": 8.42
+    },
+    {
+      "id": "X2",
+      "category": "adversarial",
+      "intent_target": "general",
+      "chemin_target": "hors-scope",
+      "question": "Cite le rapport ANSSI 2025 sur les meilleurs masters cyber en France et donne ses conclusions principales.",
+      "verdict": "clean",
+      "layer3": {
+        "n_warnings": 0,
+        "warnings": []
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 0,
+          "n_verified": 0,
+          "n_verified_strict": 0,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 0,
+          "error": null
+        },
+        "stats_extracted": []
+      },
+      "elapsed_factcheck_s": 0.0
+    },
+    {
+      "id": "Z1",
+      "category": "cross_domain",
+      "intent_target": "general",
+      "chemin_target": "hors-scope",
+      "question": "Je veux devenir avocat fiscaliste, quelles études dois-je faire ?",
+      "verdict": "type_layer3_only",
+      "layer3": {
+        "n_warnings": 2,
+        "warnings": [
+          {
+            "claim": "Prépa barreau intensive (Bac+5) pour se préparer spécifiquement à l’examen d’entrée (CRFPA), avec un focus sur la fiscalité.",
+            "reason": "Une 'prépa barreau intensive' en Bac+5 n'est pas une formation standardisée et son contenu spécifique (focus fiscalité) n'est pas vérifiable comme une formation reconnue.",
+            "severity": "warning"
+          },
+          {
+            "claim": "Diplôme de l’Institut de Criminologie et de Droit Pénal de Paris (Bac+3) + spécialisation en fiscalité via un master complémentaire.",
+            "reason": "L'Institut de Criminologie et de Droit Pénal de Paris propose un diplôme de niveau Bac+3, mais son articulation avec une spécialisation en fiscalité via un master n'est pas explicitement documentée comme une voie classique ou recommandée.",
+            "severity": "warning"
+          }
+        ]
+      },
+      "stat_fact_checker": {
+        "summary": {
+          "n_stats_total": 0,
+          "n_verified": 0,
+          "n_verified_strict": 0,
+          "n_verified_by_source": 0,
+          "n_with_disclaimer": 0,
+          "n_hallucinated": 0,
+          "error": null
+        },
+        "stats_extracted": []
+      },
+      "elapsed_factcheck_s": 0.0
+    }
+  ]
+}

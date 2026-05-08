@@ -1,10 +1,78 @@
 # OrientIA — Session Handoff
 
-**Last updated:** 2026-04-16 (Run F+G COMPLETE — triple-layer analysis ready for paper)
+**Last updated:** 2026-05-06 (Refonte produit niveau 2 — Étapes 1+2 livrées, v4 strict mesuré)
 
 This document is the **single source of truth for project state**. Any fresh
 session (Claude Code or human) must read this FIRST. Updated whenever the
 project's state changes materially.
+
+---
+
+## 0. Pivot stratégique 2026-05-06 — Refonte produit niveau 2
+
+**Décision Matteo** (validée par 4 sessions de discussion) : pivot du focus
+"bench INRIA pur" vers **conseiller multi-tour utilisable**. Le bench reste
+notre fil rouge mesurable mais n'est plus l'objectif final.
+
+### Plan de refonte (5-7 jours)
+
+Plan figé : `~/.claude/plans/niveau-d-ambition-2-oui-glowing-alpaca.md`
+
+5 phases initiales (Phases 0-4) puis pivot mid-course vers stratégie WHAT/HOW :
+
+| Phase / Étape | Statut | Output mesurable |
+|---|---|---|
+| Phase 0 — mini-bench 20q baseline | ✅ Commit `dd347da` | `baseline_phase0.json` |
+| Phase 1 — tri sec + experimental/ | ✅ Commit `91d129b` | -5 tests morts, 5 modules archivés |
+| Phase 2 — production factory | ✅ Commit `5cd3643` | `phase2_factory.json`, validator/golden_qa/post_process branchés |
+| Phase 3 — décision critic_loop (ADR-052) | ✅ Commit `462b043` | Conservé en `experimental/` |
+| Phase 2.5 — Layer3 audit honnêteté | ✅ Commit `583be08` | 37 hallu Layer3 sur 18 réponses v3.2 → "avg honesty=1.0" était trompeur |
+| Phase A — audit data type A/B/C | ✅ Commit `583be08` | 0 type_B (data manquante), 4 type_A (bug LLM), 7 type_C |
+| Audit retrieval quality | ✅ Commit `bacb940` | 9/18 ok, 7/18 too_generic, 2/18 off_topic |
+| **Pivot stratégie WHAT/HOW** (ADR-053) | ✅ Validé Matteo | Demande explicite Matteo : séparation faits/style |
+| Étape 1 — ScopeClassifier amont | ✅ Commit `2c8999d` | 22/23 verdicts scope corrects, S1/S2/S3 court-circuités <1s |
+| Étape 2 — FactCard + prompt strict v4 | ✅ Commit `e0845f7` | v4 strict câblé, mesurable via factory |
+| Étape 2 itération — Large + scope++ | ✅ Commit `[HEAD]` | Mistral Large rejeté, ScopeClassifier amélioré conservé |
+| **Étape B — v4.1 (R6 max 250 mots)** | ⏳ Prochain | Coupe verbosité +82%, gain latency attendu |
+| **Étape D — v4.2 (skip retry mode v4)** | ⏳ Conditionnel | -20-30% latency si v4.1 OK |
+| **Étape F — spot-check humain GO/NO-GO** | ⏳ Final | Décision produit niveau 2 |
+| Phase 4 — multi-tour conversationnel | 🔜 Reportée post-honnêteté | Sprint 9 hierarchical à brancher |
+
+### Configurations actuellement disponibles
+
+`make_production_pipeline()` (`src/rag/factory.py`) supporte 4 configs via flags :
+
+```python
+make_production_pipeline(client, fiches,
+    enable_validator=True,           # rules + corpus_check + presence
+    enable_layer3=False,             # Mistral Small LLM-judge (opt-in)
+    enable_golden_qa=True,           # few-shot top-1 Q&A référence ton
+    enable_post_process=True,        # strip URLs hallu + slugs ONISEP
+    enable_scope_classifier=True,    # gate amont in_scope/out_of_scope/urgent
+    enable_strict_v4=False,          # contrat WHAT/HOW (FactCard JSON + v4 prompt)
+    model="mistral-medium-latest",   # Large rejeté (cf ADR-053)
+)
+```
+
+`scripts/mini_bench.py --config {baseline|production|strict_v4|strict_v4_large}`
+
+### Verdict honnêteté actuel (mini-bench 23 questions)
+
+| Métrique | v3.2 production | v4 strict (Medium) | v4 strict (Large+scope++) |
+|---|---|---|---|
+| flagged validator c1+c2 | 0 | 1 | 1 |
+| avg honesty | 1.0 | 0.993 | 0.989 |
+| avg latency | **10.19s** | 46.87s | **25.25s** |
+| avg words | **239** | 434 | 479 |
+| Layer3 warnings (sur 18 communes) | 37 | **34 (-8%)** | 38 (+3%) |
+
+Cf ADR-053 pour le détail et le rationale.
+
+### Trois leviers restants pour produit niveau 2
+
+1. **R6 max 250 mots** dans v4.1 — coupe la verbosité (probablement le plus gros gain UX)
+2. **Skip retry-with-hint** en mode v4.2 — gain latency 20-30%
+3. **Phase 4 multi-tour** — Sprint 9 hierarchical à brancher (post-honnêteté)
 
 ---
 

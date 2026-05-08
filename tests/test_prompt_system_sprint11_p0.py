@@ -17,6 +17,7 @@ from src.prompt.system import (
     SYSTEM_PROMPT,
     SYSTEM_PROMPT_SPRINT11_P0_PREFIX,
     SYSTEM_PROMPT_V32_PHASE_F,
+    SYSTEM_PROMPT_V5_CORPS_PURGE,
     build_user_prompt,
 )
 
@@ -173,14 +174,26 @@ class TestBackwardCompatV32:
         assert "RÉALISME" in SYSTEM_PROMPT_V32_PHASE_F
         assert "AGENTIVITÉ" in SYSTEM_PROMPT_V32_PHASE_F
 
-    def test_default_system_prompt_includes_prefix_then_v32(self):
-        """SYSTEM_PROMPT default = préfixe Sprint 11 P0 + corps v3.2."""
+    def test_default_system_prompt_includes_prefix_then_corps_purge(self):
+        """SYSTEM_PROMPT default = préfixe Sprint 11 P0 + corps PURGÉ.
+
+        Chantier 1.A 2026-05-03 : le corps V32_PHASE_F historique a été
+        remplacé par SYSTEM_PROMPT_V5_CORPS_PURGE pour éliminer les
+        contradictions qui causaient le recency-bias hallucinations
+        (ANTI-CONFESSION qui pousse à inventer + autorisations
+        connaissance générale qui écrasaient le préfixe strict).
+
+        V32_PHASE_F reste accessible comme constante archivée pour
+        reproducibilité Run F+G via system_prompt_override explicit.
+        """
         assert SYSTEM_PROMPT.startswith(SYSTEM_PROMPT_SPRINT11_P0_PREFIX)
-        assert SYSTEM_PROMPT_V32_PHASE_F in SYSTEM_PROMPT
-        # Préfixe avant corps
+        assert SYSTEM_PROMPT_V5_CORPS_PURGE in SYSTEM_PROMPT
+        # V32 NE DOIT PLUS être inclus dans le prompt par défaut
+        assert SYSTEM_PROMPT_V32_PHASE_F not in SYSTEM_PROMPT
+        # Préfixe avant corps purgé
         idx_prefix = SYSTEM_PROMPT.find(SYSTEM_PROMPT_SPRINT11_P0_PREFIX)
-        idx_v32 = SYSTEM_PROMPT.find(SYSTEM_PROMPT_V32_PHASE_F)
-        assert idx_prefix < idx_v32
+        idx_corps = SYSTEM_PROMPT.find(SYSTEM_PROMPT_V5_CORPS_PURGE)
+        assert idx_prefix < idx_corps
 
 
 # ──────────────────── (e) build_user_prompt révisé ────────────────────

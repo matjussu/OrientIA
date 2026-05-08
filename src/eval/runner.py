@@ -35,8 +35,7 @@ def _call_with_retry(fn, *args, max_retries: int = 5, **kwargs):
       recoveries take longer than transient network blips)
 
     Non-transient exceptions (auth, KeyError, ValueError) bubble up
-    immediately. The ChatGPTRecordedSystem is file-local so this is
-    effectively a no-op for it.
+    immediately.
     """
     last_exc = None
     for attempt in range(max_retries + 1):

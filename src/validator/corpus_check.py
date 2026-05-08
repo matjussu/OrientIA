@@ -59,7 +59,7 @@ _ETAB_END_LOOKAHEAD = (
 )
 
 _CLAIM_PATTERNS = [
-    # "[Type] X à [Université|École|IUT|Fac|IFSI|...]"
+    # Pattern 1 — "[Type] X à [Université|École|IUT|Fac|IFSI|...]"
     # Etab s'arrête à un séparateur syntaxique (ou/et/pour/...) ou ponctuation.
     re.compile(
         _DIPLOMA_TYPE
@@ -68,6 +68,32 @@ _CLAIM_PATTERNS = [
         + r"(?P<etab>(?:Université|IUT|École|Institut|Faculté|Fac|IFSI|ENS|INSA|"
         + r"Polytech|Télécom|Centrale|EPITA|EFREI|ESIEE|ESGI|Epitech|Supinfo|"
         + r"ENSIBS|ISEN|ISEP|[A-ZÀ-Ÿ])[\wÀ-ÿ\s\-'/&]{1,60}?)"
+        + _ETAB_END_LOOKAHEAD,
+        re.UNICODE,
+    ),
+    # Pattern 2 — Forme parenthétique : "[Type] X (Ville)" ou "[Type] X (Etablissement)".
+    # Sprint refonte 2026-05-05 : forme massivement utilisée par le LLM,
+    # historiquement skippée par le pattern 1 (cf forensic Q1
+    # "Licence Maths-Physique Appliquées (Strasbourg) 42% admission" — 0 fiche
+    # match, 0 warning car claim non extrait). La parenthèse peut contenir une
+    # ville, un campus, ou un établissement court — on les normalise tous en
+    # `etab` pour la similarité (matching sur ville+etablissement de la fiche
+    # via check_formation_exists).
+    re.compile(
+        _DIPLOMA_TYPE
+        + r"\s+(?P<name>[A-ZÀ-Ÿ][\wÀ-ÿ\s\-'/&,]{2,80}?)"
+        + r"\s*\((?P<etab>[A-ZÀ-Ÿ][\wÀ-ÿ\s\-'/&,]{2,60}?)\)",
+        re.UNICODE,
+    ),
+    # Pattern 3 — Forme avec tiret cadratin/em-dash : "[Type] X — [Etab]".
+    # Style courant dans les TL;DR Plan A/B/C ("Plan A — Licence X — Toulouse").
+    re.compile(
+        _DIPLOMA_TYPE
+        + r"\s+(?P<name>[A-ZÀ-Ÿ][\wÀ-ÿ\s\-'/&,]{2,80}?)"
+        + r"\s*[—–-]\s+"
+        + r"(?P<etab>(?:Université|IUT|École|Institut|Faculté|Fac|IFSI|ENS|INSA|"
+        + r"Polytech|Télécom|Centrale|EPITA|EFREI|ESIEE|ESGI|Epitech|"
+        + r"[A-ZÀ-Ÿ])[\wÀ-ÿ\s\-'/&]{1,60}?)"
         + _ETAB_END_LOOKAHEAD,
         re.UNICODE,
     ),
@@ -140,11 +166,65 @@ def check_formation_exists(
     # Pondération 0.85 nom / 0.15 etab — on veut que le nom domine la
     # décision (le nom d'une formation est plus discriminant que l'école
     # qui peut légitimement héberger plusieurs cursus).
-    for f in fiches:
+    # Sprint refonte 2026-05-05 : approche en 2 phases pour éviter les
+    # faux positifs type "Licence Maths-Physique (Strasbourg) → Licence
+    # Physique — Tours" (composite 0.647) :
+    #   Phase 1 : filtrer les candidats dont l'etab/ville matche le claim
+    #     (sim_etab ≥ ETAB_FILTER_THRESHOLD).
+    #   Phase 2 : best parmi candidats etab-compatibles. Si aucun
+    #     candidat → fallback best général sans garde (signal de non-match).
+    # L'`et` peut venir d'une parenthèse ("Licence X (Strasbourg)")
+    # contenant une ville, ou d'une forme "à Université de X" contenant
+    # un établissement. On compare à max(sim(et, etab), sim(et, ville))
+    # pour couvrir les deux cas.
+    # Compatibilité etab acceptée si :
+    #   - similarité fuzzy ≥ 0.6 (variations orthographiques type
+    #     "Saint-Étienne" / "Saint Etienne", "EFREI Paris" / "EFREI Paris-Cachan")
+    #   OR
+    #   - substring match (et ⊂ f_etab/f_ville ou inversement) — couvre les
+    #     acronymes courts ("EFREI" ⊂ "EFREI Paris", "Sciences Po" ⊂
+    #     "Institut d'études politiques de Paris - Sciences Po"). SequenceMatcher
+    #     est artificiellement haut sur strings courts (Strasbourg vs Tours = 0.53).
+    ETAB_FUZZY_THRESHOLD = 0.6
+
+    def _etab_compatible(f_etab: str, f_ville: str) -> tuple[bool, float]:
+        sim_etab = max(_similarity(et, f_etab), _similarity(et, f_ville) if f_ville else 0.0)
+        if sim_etab >= ETAB_FUZZY_THRESHOLD:
+            return True, sim_etab
+        if f_etab and (et in f_etab or f_etab in et):
+            return True, max(sim_etab, 0.7)
+        if f_ville and (et in f_ville or f_ville in et):
+            return True, max(sim_etab, 0.7)
+        return False, sim_etab
+
+    # Phase 1 : pré-filtrer par compatibilité etab (si claim spécifie etab)
+    if et:
+        candidats = []
+        for f in fiches:
+            f_etab = (f.get("etablissement") or "").lower().strip()
+            f_ville = (f.get("ville") or "").lower().strip()
+            ok, sim_etab = _etab_compatible(f_etab, f_ville)
+            if ok:
+                candidats.append((f, sim_etab))
+        # Aucun candidat etab-compatible → claim suspect par construction.
+        # On retourne quand même un best général pour le contexte du warning.
+        if not candidats:
+            for f in fiches:
+                f_nom = (f.get("nom") or "").lower().strip()
+                sim_nom = _similarity(fn, f_nom)
+                composite = 0.85 * sim_nom  # sim_etab = 0
+                if composite > best_sim:
+                    best_sim = composite
+                    best_label = f"{f.get('nom')} — {f.get('etablissement')}"
+            return (False, best_label, best_sim)
+    else:
+        # Pas d'etab dans le claim : ancien comportement (tous candidats)
+        candidats = [(f, 0.5) for f in fiches]
+
+    # Phase 2 : best parmi candidats etab-compatibles
+    for f, sim_etab in candidats:
         f_nom = (f.get("nom") or "").lower().strip()
-        f_etab = (f.get("etablissement") or "").lower().strip()
         sim_nom = _similarity(fn, f_nom)
-        sim_etab = _similarity(et, f_etab) if et else 0.5
         composite = 0.85 * sim_nom + 0.15 * sim_etab
         if composite > best_sim:
             best_sim = composite
