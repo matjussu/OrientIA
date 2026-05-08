@@ -39,6 +39,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+import numpy as np
 from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -227,6 +228,73 @@ _INJECTION_PATTERNS = [
 _MISTRAL_CONTROL_TOKENS = re.compile(r"\[/?INST\]|<\/?s>|<<SYS>>|<</SYS>>", re.IGNORECASE)
 
 
+def _to_jsonable(obj: Any) -> Any:
+    """Recursively coerce numpy types to JSON-serializable Python natives.
+
+    Le pipeline retourne parfois des fiches avec des `numpy.ndarray` (scores,
+    agrégats stat) que Pydantic v2 ne sait pas sérialiser. Cette fonction
+    marche sur les dict / list / scalars et convertit en place.
+    """
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+    if isinstance(obj, (np.integer,)):
+        return int(obj)
+    if isinstance(obj, (np.floating,)):
+        return float(obj)
+    if isinstance(obj, np.bool_):
+        return bool(obj)
+    if isinstance(obj, dict):
+        return {k: _to_jsonable(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [_to_jsonable(v) for v in obj]
+    return obj
+
+
+# Champs internes du retriever à exposer comme métadonnées de score (préfixés
+# `_` pour signaler à la plateforme que c'est du sidecar non-fonctionnel).
+_RETRIEVER_SCORE_FIELDS = ("score", "score_rrf", "score_bm25", "base_score")
+# Champs internes du retriever à toujours dropper (volumineux ou non utilisables UI).
+_RETRIEVER_DROP_FIELDS = ("embedding", "_orig_index", "_quota_boosted", "rank_bm25")
+
+
+def _extract_source_fiche(retrieved: dict[str, Any]) -> dict[str, Any]:
+    """Déballe la fiche brute depuis la structure retriever-internal.
+
+    Le pipeline retourne `pipeline.answer(...)[1]` sous forme de
+    `[{fiche: {...}, score, score_rrf, embedding, ...}, ...]`. La plateforme
+    attend la fiche brute directement (`{source, nom, etablissement, ville,
+    ...}`). On déballe + on ajoute en sidecar les scores utiles préfixés `_`
+    (que la plateforme peut afficher en debug ou trier dans le futur).
+
+    Ce déballage n'est PAS un mapping créatif (on n'invente aucun champ) —
+    c'est juste l'opération minimale pour passer du modèle retriever-interne
+    au modèle "fiche brute" exposé dans le contrat HTTP.
+    """
+    if "fiche" not in retrieved or not isinstance(retrieved["fiche"], dict):
+        # Fallback safe : si la structure n'est pas celle attendue, on filtre
+        # juste les champs lourds et on retourne tel quel.
+        return {k: v for k, v in retrieved.items() if k not in _RETRIEVER_DROP_FIELDS}
+
+    fiche = dict(retrieved["fiche"])  # copy défensive
+
+    # Alias minimal : certains corpora (rncp_blocs, certains référentiels
+    # RNCP) utilisent `intitule` plutôt que `nom`. Le contrat plateforme
+    # exige `nom`. On promote sans muter l'original (la clé `intitule`
+    # reste disponible côté UI si besoin).
+    if "nom" not in fiche and "intitule" in fiche:
+        fiche["nom"] = fiche["intitule"]
+
+    # Sidecar metadata : les scores du retriever, préfixés `_` pour signaler
+    # que c'est de la métadonnée (pas du contenu de fiche)
+    sidecar = {
+        f"_{name}": retrieved[name]
+        for name in _RETRIEVER_SCORE_FIELDS
+        if name in retrieved
+    }
+    fiche.update(sidecar)
+    return fiche
+
+
 def _sanitize_question(question: str) -> str:
     """Refuse les tentatives évidentes de prompt-injection, strip control tokens."""
     if any(p.search(question) for p in _INJECTION_PATTERNS):
@@ -331,9 +399,13 @@ async def answer(request: AnswerRequest, http_request: Request) -> AnswerRespons
         score = float(last_validation.honesty_score)
         verdict = "INFIDELE" if last_validation.flagged else "FIDELE"
 
+    # 1. Déballe la fiche brute depuis chaque structure retriever-internal
+    # 2. Coerce les types numpy en Python natifs JSON-safe
+    sources_clean = [_to_jsonable(_extract_source_fiche(s)) for s in sources_raw]
+
     response = AnswerResponse(
         answer=answer_text,
-        sources=sources_raw,  # passthrough pur, dict brut tel quel
+        sources=sources_clean,
         faithfulness_score=score,
         faithfulness_verdict=verdict,
         latency_ms=latency_ms,
