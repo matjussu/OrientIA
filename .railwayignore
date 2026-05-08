@@ -1,0 +1,83 @@
+# Railway tarball ignore — utilisé avec `railway up --no-gitignore` pour
+# embarquer `data/processed/formations.json` (gitignored mais nécessaire au
+# runtime) tout en filtrant les gros artefacts qui blow up le payload upload.
+#
+# Limite Cloudflare : ~100 MB body. Sans cet ignore, le tarball fait 2.7 GB.
+# Avec : on cible ~600 MB (formations.json 104 MB + src/ + requirements.lock +
+# deps Docker layers downloaded à part).
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Data raw / embeddings / annexes — pas runtime-needed (ou montés en volume)
+data/raw/
+data/embeddings/
+data/golden_qa/
+data/processed/formations_v6.json
+data/processed/formations_v7.json
+data/processed/formations_unified.pre_d5_backup.json
+data/processed/formations_golden_pipeline.json
+data/processed/formations_unified.json
+data/processed/formations_dedupe.json
+data/processed/formations_multi_corpus.json
+data/processed/formations_multi_corpus_dedupe.json
+data/processed/formations.json.pre_dedup
+data/processed/calendrier_corpus.json
+data/processed/apec_*.json
+data/processed/cereq_*.json
+data/processed/dares_*.json
+data/processed/crous_*.json
+data/processed/insee_*.json
+data/processed/financement_*.json
+data/processed/onisep_*.json
+data/processed/parcoursup_*.json
+data/processed/inserjeunes_*.json
+data/processed/monmaster_*.json
+data/processed/rncp_*.json
+data/processed/rome_*.json
+data/processed/labonnealternance_*.json
+data/processed/manuel_*.json
+data/processed/anotea_*.json
+data/processed/insertion_*.json
+data/processed/corrections_*.json
+data/processed/quality_*.json
+
+# Outputs benchmarks / experiments — pas runtime
+results/
+experiments/
+logs/
+mini_bench/
+_archive_*/
+
+# Tests pas en runtime image
+tests/
+
+# Repo metadata
+.git/
+.github/
+.claude/
+
+# Docs pas en runtime
+docs/
+*.md
+LICENSE
+
+# Secrets
+.env
+.env.local
+.env.*
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Scripts dev — pas en runtime API
+scripts/
