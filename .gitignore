@@ -61,6 +61,8 @@ data/processed/onisep_metiers_corpus.json
 data/processed/doctorat_corpus.json
 # Phase B output — corpus v5 (régénérable via `python -m src.collect.run_merge_v3`)
 data/processed/formations_v5.json
+# Phase D archive — snapshots binaires des promotions corpus (v3.2, v5, v6...)
+data/archive/
 
 # Runtime logs
 logs/

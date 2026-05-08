@@ -3666,3 +3666,105 @@ obligatoire en Phase 3 si :
 - Plan corpus v5 : `~/.claude/plans/parfait-pour-les-adr-quiet-pebble.md`
 - Investigation embedding : spot-check 2026-05-08 + analyse expert IA
 - Vraie fix V2 : Phase 3 re-rédaction textes annexes via Mistral
+
+---
+
+## ADR-059 — Promotion v5 → production (Phase D, 2026-05-08)
+
+### Context
+
+Phase C du plan corpus v5 (ADR-057) terminée. Triple-gate validation :
+- **Gate 1** (audit Phase 0 v5) : 4 vertes / 3 orange / 1 rouge structurelle
+  documentée (régions absentes RNCP/ONISEP nationales sans implantation
+  géographique). Verdict : ⚠ acceptable.
+- **Gate 2** (mini-bench v4.1 strict_v4) : 23 questions formations classiques.
+  1 flagged sur 23 (Q B1 HEC 11 moyenne — BM25 ramène fiches Le Havre via
+  match lexical "11 moyenne" → réponse subtilement différente).
+  avg_honesty 0.987 (vs 1.0 baseline), avg_latency 8.56s (vs 7.26s, sous
+  cible 9s). Verdict : ⚠ régression mineure sous le seuil NO-GO (<2 questions).
+- **Gate 3** (spot-check 13 questions corpora annexes) : **8/13 (62%)** vs
+  4/13 baseline (+100% gain). Reste 5 ratés sur corpora très petits (INSEE 59
+  entrées, doctorat 240, APEC 13, voie_pre_bac 20) — limite structurelle
+  pré-processing texte (vraie fix Phase 3 V2).
+
+Verdict global triple-gate : **GO conditionnel**. Le gain corpora annexes
+(+4 questions) est significatif et la régression formations (1 flagged) est
+limitée. Phase 3 V2 (re-rédaction textes annexes) résoudra à la fois les
+5 ratés Gate 3 et affinera le retrieval pour réduire la pollution Q B1.
+
+### Decision
+
+**Promotion v5 → production effective le 2026-05-08** :
+
+1. Archive snapshot v3.2 dans `data/archive/2026-05-08/` (gitignored) :
+   - `formations_v3.2.json` (94 MB, 48 914 fiches mono-corpus)
+   - `formations_v3.2.index` (192 MB)
+2. Promotion :
+   - `cp data/processed/formations_v5.json data/processed/formations.json`
+   - `cp data/embeddings/formations_v5.index data/embeddings/formations.index`
+3. Cleanup orphans dans `data/embeddings/` → `data/archive/2026-05-08/embeddings_orphans/` :
+   - 5 fichiers `.pre_*` (snapshots historiques pre-vagues)
+   - 5 fichiers `formations_multi_corpus_phase*.index` (versions intermédiaires
+     Phase B avant le merger v3)
+   - 1 fichier `formations_golden_pipeline.index` (version orpheline pré-Phase B)
+   - **1.5 GB libérés** sur `data/embeddings/` (2.7 GB → 1.2 GB)
+4. `.gitignore` étendu : `data/archive/` (les binaires archivés ne sont pas
+   trackés par git, juste les ADR documentent les snapshots)
+5. Pas de modification de `src/rag/factory.py` : le path par défaut
+   `data/processed/formations.json` est inchangé, c'est le contenu qui a été
+   remplacé par le v5.
+
+### Métriques de succès post-promotion (mesurées smoke test)
+
+| Métrique | Avant promotion (v3.2) | Après promotion (v5) |
+|---|---|---|
+| Total fiches | 48 914 | **47 193** |
+| Domain coverage | 0% (mono-corpus) | **28,4%** (16 corpora annexes) |
+| 0 Cereq résiduel | non (67% agrégats) | **0** ✓ ADR-054 |
+| Doublons (nom+etab+ville) | 28% (13 858) | **0%** |
+| URL vérifiable | 10% | **31,6%** |
+| Pipeline charge sans erreur | ✓ | ✓ |
+
+### Rationale
+
+1. **Triple-gate validé** dans la limite des seuils définis par le plan
+   corpus v5 (régression Gate 2 < 2 questions).
+2. **Gain mesuré +100% spot-check** sur les questions corpora annexes —
+   passage de 4/13 à 8/13 questions correctement servies.
+3. **Démo INRIA imminente** — la promotion v5 permet d'avoir le système
+   multi-corpus opérationnel pour la démo, avec ADR-058 actant que la
+   vraie fix (re-rédaction textes annexes) suivra en Phase 3 V2.
+4. **Rollback simple** : si régression imprévue en prod, restaurer v3.2
+   depuis l'archive en <30s :
+   ```bash
+   cp data/archive/2026-05-08/formations_v3.2.json data/processed/formations.json
+   cp data/archive/2026-05-08/formations_v3.2.index data/embeddings/formations.index
+   ```
+
+### Alternatives considérées
+
+1. **NO-GO sur Q B1 régression** (attendre fix avant promotion) : rejetée.
+   La régression est limitée (1/23 = 4%), expliquée structurellement par le
+   workaround BM25, et la Phase 3 V2 résoudra naturellement ce point en
+   améliorant l'embedding des fiches annexes (réduit la place que prennent
+   les fiches Le Havre / autres dans le top-K).
+2. **Attendre Phase 3 V2 avant promotion** (~2 jours supplémentaires) :
+   rejetée. Démo INRIA prioritaire, Phase 3 V2 peut tourner en parallèle
+   après la promotion v5.
+
+### Phase 3 V2 — vraie fix programmée
+
+Handoff complet rédigé pour une autre instance Claude Code dans
+`docs/HANDOFF_REWRITE_ANNEX_TEXTS.md` :
+- Re-rédaction des `text` des 13 417 fiches annexes via Claude Haiku 4.5
+  Batch API (~$2.5)
+- Garde-fous obligatoires (préservation chiffres, anti-hallu, length cap)
+- Triple-gate validation v6 avant promotion (≥11/13 spot-check requis)
+- Coût total Phase 3 V2 : ~$7.5 + 1.5 jour dev actif
+
+### Liens
+
+- ADR-057 : Corpus de référence v5 (parent)
+- ADR-058 : Retrieval hybride workaround Phase C
+- Handoff Phase 3 V2 : `docs/HANDOFF_REWRITE_ANNEX_TEXTS.md`
+- Snapshot v3.2 archivé : `data/archive/2026-05-08/formations_v3.2.{json,index}`
