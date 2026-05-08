@@ -1,7 +1,8 @@
-"""Évaluation systémique recall@k + MRR sur ground-truth 50q.
+"""Évaluation systémique recall@k + MRR + nDCG@10 + refusal sur ground-truth.
 
 Sortir du N=13 spot-check pour avoir un set d'évaluation propre permettant
-de prioriser Vague 3 (calendriers, URLs, aides) selon le gain réel par axe.
+de prioriser les vagues selon le gain réel par axe et de mesurer la
+robustesse adversariale (Phase C2 du plan verrouillage-bench-multi-tour).
 
 ## Métriques mesurées
 
@@ -11,9 +12,16 @@ Pour chaque question :
   catégorie et global.
 - **MRR (Mean Reciprocal Rank)** : 1/rang de la première fiche matchante
   dans le top-10. 0 si aucune.
+- **nDCG@10** : Normalized Discounted Cumulative Gain (relevance binaire,
+  log2 discount). Métrique académique standard pour ranking.
 - **answer_keyword_match** : 1 si tous les `expected_keywords_in_answer`
   apparaissent dans la réponse (case-insensitive). Mesure de pertinence
   user-facing complémentaire au retrieval.
+- **refusal_correctness** (golden v2+ uniquement) : pour les questions
+  marquées `expected_refusal=true` (adversarial, cross_domain), 1 si la
+  réponse contient au moins un marqueur de refus défini dans
+  `refusal_markers_default` du dataset. 0 sinon. None pour les questions
+  non-adversarial.
 
 ## Aggregation
 
@@ -59,8 +67,31 @@ from src.config import load_config
 from src.rag.factory import make_production_pipeline
 
 
-DEFAULT_GOLDEN_PATH = PROJECT_ROOT / "data/golden_eval/golden_50.json"
+DEFAULT_GOLDEN_PATH = PROJECT_ROOT / "data/golden_eval/golden_60.json"
 DEFAULT_OUT_DIR = PROJECT_ROOT / "results/eval_recall"
+
+# Marqueurs de refus génériques utilisés si le dataset golden ne fournit
+# pas son propre `refusal_markers_default` (backward compat v1).
+_FALLBACK_REFUSAL_MARKERS = (
+    "aucune formation",
+    "n'apparaît pas dans mes sources",
+    "pas dans mes sources",
+    "introuvable",
+    "pas de données",
+    "n'existe pas",
+    "ne figure pas",
+    "non référencé",
+    "non référencée",
+    "ne fait pas partie",
+    "hors de mon périmètre",
+    "hors scope",
+    "je ne dispose pas",
+    "je n'ai pas",
+    "scuio",
+    "cio",
+    "psy-en",
+    "psy en",
+)
 
 
 def _matches_expected(fiche: dict, expected_domain: str | None, expected_source: str | None) -> bool:
@@ -101,6 +132,51 @@ def _compute_mrr_for_question(top_sources: list[dict], expected_domain: str | No
     return 0.0
 
 
+def _compute_ndcg_at_k(
+    top_sources: list[dict],
+    k: int,
+    expected_domain: str | None,
+    expected_source: str | None,
+) -> float:
+    """nDCG@k avec pertinence binaire (0/1) et discount log2(i+1).
+
+    DCG@k  = sum_{i=1..k} rel_i / log2(i+1)
+    IDCG@k = sum_{i=1..min(R, k)} 1 / log2(i+1)  où R = nombre de relevants dans top-k
+    nDCG@k = DCG@k / IDCG@k (0 si IDCG=0)
+
+    Convention : pas de cible → 1.0 (placeholder neutre, comme MRR).
+    """
+    if not expected_domain and not expected_source:
+        return 1.0
+    import math
+
+    rels: list[int] = []
+    for src in top_sources[:k]:
+        fiche = src.get("fiche") if "fiche" in src else src
+        rels.append(1 if _matches_expected(fiche, expected_domain, expected_source) else 0)
+
+    dcg = sum(rel / math.log2(i + 2) for i, rel in enumerate(rels))
+    n_relevant = sum(rels)
+    if n_relevant == 0:
+        return 0.0
+    idcg = sum(1 / math.log2(i + 2) for i in range(n_relevant))
+    return dcg / idcg if idcg > 0 else 0.0
+
+
+def _check_refusal(answer: str, refusal_markers: tuple[str, ...] | list[str]) -> tuple[bool, list[str]]:
+    """Vérifie si la réponse contient au moins un marqueur de refus.
+
+    Returns (refused, matched_markers).
+    Case-insensitive, normalisation accents-stripping minimale (les marqueurs
+    sont déjà en français normal sans diacritiques sensibles).
+    """
+    if not refusal_markers:
+        return False, []
+    answer_lower = (answer or "").lower()
+    matched = [m for m in refusal_markers if m.lower() in answer_lower]
+    return (len(matched) > 0, matched)
+
+
 def evaluate(
     golden_path: Path,
     out_path: Path,
@@ -133,9 +209,11 @@ def evaluate(
         golden = json.load(f)
 
     questions = golden["questions"]
+    refusal_markers = tuple(golden.get("refusal_markers_default") or _FALLBACK_REFUSAL_MARKERS)
     if sample:
         questions = questions[:sample]
     print(f"N questions : {len(questions)}")
+    print(f"Refusal markers : {len(refusal_markers)} entries")
 
     # Build pipeline (production config)
     client = Mistral(api_key=cfg.mistral_api_key, timeout_ms=120000)
@@ -179,7 +257,18 @@ def evaluate(
             recall_at[k] = int(matched)
 
         mrr = _compute_mrr_for_question(top_sources, expected_domain, expected_source)
+        ndcg_at_10 = _compute_ndcg_at_k(top_sources, 10, expected_domain, expected_source)
         kw_match, missing_kw = _check_keywords(answer, expected_keywords)
+
+        # Refusal check : applicable uniquement aux questions adversarial/cross_domain
+        # marquées `expected_refusal=true`. Pour les autres, None (exclu des moyennes).
+        is_refusal_q = bool(q.get("expected_refusal"))
+        if is_refusal_q:
+            refused, matched_markers = _check_refusal(answer, refusal_markers)
+            refusal_correctness: int | None = int(refused)
+        else:
+            refusal_correctness = None
+            matched_markers = []
 
         # Top-K domains pour debug
         top_5_summary = []
@@ -197,19 +286,24 @@ def evaluate(
             "question": question_text,
             "expected_domain": expected_domain,
             "expected_source": expected_source,
+            "expected_refusal": is_refusal_q,
             "recall_at_1": recall_at[1],
             "recall_at_5": recall_at[5],
             "recall_at_10": recall_at[10],
             "mrr": round(mrr, 3),
+            "ndcg_at_10": round(ndcg_at_10, 3),
             "answer_kw_match": int(kw_match),
             "missing_keywords": missing_kw,
+            "refusal_correctness": refusal_correctness,
+            "refusal_markers_matched": matched_markers,
             "latency_s": round(latency, 2),
             "top_5_summary": top_5_summary,
             "answer_excerpt": (answer or "")[:200],
         }
         results.append(result)
 
-        print(f"  recall@1={recall_at[1]} @5={recall_at[5]} @10={recall_at[10]} MRR={mrr:.2f} kw_match={int(kw_match)} latency={latency:.1f}s")
+        ref_str = f" refusal={refusal_correctness}" if is_refusal_q else ""
+        print(f"  recall@1={recall_at[1]} @5={recall_at[5]} @10={recall_at[10]} MRR={mrr:.2f} nDCG={ndcg_at_10:.2f} kw={int(kw_match)}{ref_str} lat={latency:.1f}s")
 
     # Aggregation par catégorie + global
     categories = sorted(set(q["category"] for q in questions))
@@ -219,20 +313,31 @@ def evaluate(
         if not cat_results:
             continue
         n = len(cat_results)
+        # refusal_correctness uniquement pour les questions où expected_refusal=true
+        refusal_results = [r for r in cat_results if r.get("refusal_correctness") is not None]
+        n_refusal = len(refusal_results)
         summary_by_cat[cat] = {
             "n": n,
             "recall_at_1": round(sum(r["recall_at_1"] for r in cat_results) / n, 3),
             "recall_at_5": round(sum(r["recall_at_5"] for r in cat_results) / n, 3),
             "recall_at_10": round(sum(r["recall_at_10"] for r in cat_results) / n, 3),
             "mrr": round(sum(r["mrr"] for r in cat_results) / n, 3),
+            "ndcg_at_10": round(sum(r["ndcg_at_10"] for r in cat_results) / n, 3),
             "answer_kw_match": round(sum(r["answer_kw_match"] for r in cat_results) / n, 3),
             "avg_latency_s": round(sum(r["latency_s"] for r in cat_results) / n, 2),
+            "refusal_correctness": (
+                round(sum(r["refusal_correctness"] for r in refusal_results) / n_refusal, 3)
+                if n_refusal > 0 else None
+            ),
+            "n_refusal_questions": n_refusal,
         }
 
     n_ok = len([r for r in results if "error" not in r])
     n_err = len(results) - n_ok
     if n_ok > 0:
         ok_results = [r for r in results if "error" not in r]
+        refusal_global = [r for r in ok_results if r.get("refusal_correctness") is not None]
+        n_refusal_g = len(refusal_global)
         global_summary = {
             "n_total": len(results),
             "n_errors": n_err,
@@ -241,8 +346,14 @@ def evaluate(
             "recall_at_5": round(sum(r["recall_at_5"] for r in ok_results) / n_ok, 3),
             "recall_at_10": round(sum(r["recall_at_10"] for r in ok_results) / n_ok, 3),
             "mrr": round(sum(r["mrr"] for r in ok_results) / n_ok, 3),
+            "ndcg_at_10": round(sum(r["ndcg_at_10"] for r in ok_results) / n_ok, 3),
             "answer_kw_match": round(sum(r["answer_kw_match"] for r in ok_results) / n_ok, 3),
             "avg_latency_s": round(sum(r["latency_s"] for r in ok_results) / n_ok, 2),
+            "refusal_correctness": (
+                round(sum(r["refusal_correctness"] for r in refusal_global) / n_refusal_g, 3)
+                if n_refusal_g > 0 else None
+            ),
+            "n_refusal_questions": n_refusal_g,
         }
     else:
         global_summary = {"n_total": len(results), "n_errors": n_err, "n_ok": 0}
@@ -273,7 +384,12 @@ def evaluate(
         print(f"Recall@5           : {global_summary['recall_at_5']:.1%}")
         print(f"Recall@10          : {global_summary['recall_at_10']:.1%}")
         print(f"MRR                : {global_summary['mrr']:.3f}")
+        print(f"nDCG@10            : {global_summary['ndcg_at_10']:.3f}")
         print(f"Answer keyword match : {global_summary['answer_kw_match']:.1%}")
+        rc = global_summary.get("refusal_correctness")
+        n_ref = global_summary.get("n_refusal_questions", 0)
+        if rc is not None:
+            print(f"Refusal correctness : {rc:.1%} (sur {n_ref} adversarial/cross_domain)")
         print(f"Avg latency        : {global_summary['avg_latency_s']:.1f}s")
     print(f"\nPar catégorie (recall@5):")
     for cat in categories:
