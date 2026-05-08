@@ -168,7 +168,9 @@ class TestRerankerConfigSprint7Boosts:
         assert cfg.domain_boost_metier == 1.3
         assert cfg.domain_boost_metier_prospective == 1.0  # tuné à 1.0 le 2026-04-26
         assert cfg.domain_boost_competences_certif == 1.5
-        assert cfg.secnumedu_boost == 1.5
+        # Vague 0.5 (2026-05-08) : secnumedu_boost neutralisé 1.5 → 1.0
+        # (couverture 0.04% mesurée audit Phase 0 v5, signal mort).
+        assert cfg.secnumedu_boost == 1.0
 
     def test_as_dict_includes_new_boosts(self):
         cfg = RerankConfig()
