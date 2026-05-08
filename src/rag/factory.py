@@ -64,7 +64,14 @@ def make_production_pipeline(
     # Validator (couches 1+2 par défaut, +layer3 LLM en opt-in)
     enable_validator: bool = True,
     enable_layer3: bool = False,
-    corpus_sim_threshold: float = 0.30,
+    # Vague 0.5 (2026-05-08) : threshold aligné 0.30 → 0.55 cohérent avec le
+    # design de corpus_check (poids 0.85 nom + 0.15 etab, seuil empirique
+    # 0.55 où une paraphrase réaliste d'une fiche du corpus dépasse). Les
+    # docstrings factory et corpus_check étaient incohérentes ; le 0.55 est
+    # le seuil designé. Plus strict = catch plus de hallucinations
+    # (compromis : risque léger de faux positifs sur paraphrases légitimes,
+    # accepté pour démo INRIA cible "catch hallu" prioritaire).
+    corpus_sim_threshold: float = 0.55,
     # Golden QA few-shot (Sprint 10 chantier D)
     enable_golden_qa: bool = True,
     golden_qa_index_path: str | None = None,
@@ -95,8 +102,10 @@ def make_production_pipeline(
             + presence) attaché au pipeline. Default True (production).
         enable_layer3: si True (et enable_validator True), ajoute la couche 3
             LLM Mistral Small. Coût ~$0.001/q + 2-4s latency. Default False.
-        corpus_sim_threshold: seuil similarité pour corpus_check (0.30 = très
-            permissif, faux positifs rares mais faux négatifs probables).
+        corpus_sim_threshold: seuil similarité pour corpus_check. Default 0.55
+            (Vague 0.5 — aligné avec design corpus_check, où une paraphrase
+            réaliste d'une fiche du corpus dépasse 0.55 sur poids 0.85 nom
+            + 0.15 etab). 0.30 = legacy permissif (faux négatifs probables).
         enable_golden_qa: si True, active le few-shot Q&A Golden retrieve top-1
             injecté en préfixe utilisateur. Default True (production). Files
             par défaut sur DEFAULT_GOLDEN_QA_INDEX/META.
