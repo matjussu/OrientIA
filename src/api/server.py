@@ -91,26 +91,49 @@ async def lifespan(_app: FastAPI):
     logger.info(f"Loading OrientIA pipeline (v={_VERSION})...")
     client = Mistral(api_key=api_key)
 
+    # Mode dégradé : si fiches.json ou formations.index manquent (Railway
+    # volume pas encore bootstrapé), le serveur démarre quand même mais
+    # /answer retournera 503 jusqu'à ce que les fichiers soient en place.
+    # Ça évite le crash-loop empêchant railway ssh pendant le bootstrap.
     if not _FICHES_PATH.exists():
-        raise RuntimeError(
+        logger.warning(
             f"Fiches file not found: {_FICHES_PATH}. "
-            "Mount the persistent volume on Railway, or run from repo root."
+            "Booting in DEGRADED mode — /health=ok, /answer=503."
         )
+        yield
+        return
 
     fiches = json.loads(_FICHES_PATH.read_text())
     _index_size = len(fiches)
+
+    if not Path(_INDEX_PATH).exists():
+        logger.warning(
+            f"FAISS index not found: {_INDEX_PATH}. "
+            "Bootstrap the persistent volume with formations.index (185 MB). "
+            "Booting in DEGRADED mode — /health=ok, /answer=503."
+        )
+        yield
+        return
 
     # Defaults are correct as of 2026-05-08 :
     # enable_strict_v4=True (v4.1 ≤250 mots), enable_validator=True,
     # enable_scope_classifier=True, enable_golden_qa=True, enable_post_process=True.
     pipeline = make_production_pipeline(client, fiches)
-
-    if not Path(_INDEX_PATH).exists():
-        raise RuntimeError(
-            f"FAISS index not found: {_INDEX_PATH}. "
-            "Bootstrap the persistent volume with formations.index (185 MB)."
-        )
     pipeline.load_index_from(_INDEX_PATH)
+
+    # Warmup retrieval indices : sans ça, le 1er /answer paie ~30s pour
+    # builder les sub-indices double-corpus (Vague 1.C) + ~5-10s pour
+    # builder le BM25 lexical (ADR-058). Critique pour démo INRIA p95.
+    logger.info("Warming up retrieval indices (double-subindex + BM25)...")
+    t_warmup = time.perf_counter()
+    pipeline._build_double_subindices()
+    pipeline._retrieve_with_bm25("orientation", k=1)
+    logger.info(
+        "Retrieval indices warm in %.1fs (double_index_built=%s, bm25_built=%s)",
+        time.perf_counter() - t_warmup,
+        pipeline._double_index_built,
+        pipeline._bm25_built,
+    )
 
     _pipeline = pipeline
     logger.info(f"Pipeline ready, {_index_size} fiches indexed")
