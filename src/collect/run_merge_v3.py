@@ -66,6 +66,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+from src.collect.cross_ref import attach_cross_refs
 from src.collect.insersup import attach_insertion as _legacy_insertion_attach  # noqa: F401
 from src.collect.insersup_attach import attach_insersup_to_fiches
 from src.collect.merge import attach_debouches, attach_metadata, merge_all_extended
@@ -856,6 +857,21 @@ def run_merge_v3(
     stage_stats["10_5_renormalize"] = stats10_5
     if verbose:
         for k, v in stats10_5.items():
+            print(f"  {k}: {v}")
+
+    # Stage 10.7 — ATTACH_CROSS_REFS (Vague 1.D).
+    # Construit les cross-références ROME ↔ formations. Les fiches RNCP avec
+    # codes_rome natifs gagnent un champ `cross_refs.metiers` pointant vers
+    # les fiches metier_detail (ROME 4.0). Les fiches metier_detail gagnent
+    # `cross_refs.formations` listant les RNCP qui mènent à ce métier.
+    # Permet au LLM de répondre "comment devenir actuaire (M1402)" en citant
+    # les Masters Actuariat correspondants.
+    if verbose:
+        print("\n[Stage 10.7] ATTACH_CROSS_REFS — ROME ↔ formations (Vague 1.D)...")
+    fiches, stats10_7 = attach_cross_refs(fiches)
+    stage_stats["10_7_cross_refs"] = stats10_7
+    if verbose:
+        for k, v in stats10_7.items():
             print(f"  {k}: {v}")
 
     # Stage 11 — SORT_DETERMINISTIC
