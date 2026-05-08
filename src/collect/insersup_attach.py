@@ -115,6 +115,48 @@ NIVEAU_TO_DEFAULT_TYPE: dict[str, str] = {
     # Les BTS ne sont pas dans InserSup. → no fallback.
 }
 
+# ─────────────── Mappings Parcoursup spécifiques (Vague 1.A) ────────────────
+#
+# Les fiches `source=parcoursup` n'ont ni `discipline` ni `type_diplome` natifs
+# (ces champs sont MonMaster/InserSup only). Sans matching → 0% insertion_pro
+# malgré 100% UAI valide. Vague 1.A — bug audit data le plus impactant.
+#
+# Stratégie : inférer ces 2 champs depuis `domaine` (Parcoursup classification
+# en 15 codes : eco_gestion, sciences_fondamentales, etc.) et `fili_code`
+# (BTS/Licence/BUT/Ecole d'Ingénieur/etc.).
+
+# `domaine` Parcoursup (codes courts) → `discipline` InserSup (libellés MESR).
+# Mapping curé manuellement à partir de l'inspection corpus v5 (top 13
+# disciplines InserSup + 15 domaines Parcoursup).
+PARCOURSUP_DOMAINE_TO_INSERSUP_DISCIPLINE: dict[str, str] = {
+    "eco_gestion": "Sciences économiques, gestion",
+    "ingenierie_industrielle": "Sciences fondamentales et applications",
+    "langues": "Langues",
+    "sciences_fondamentales": "Sciences fondamentales et applications",
+    "sante": "Sciences de la vie, de la terre et de l'univers",
+    "lettres_arts": "Lettres, sciences du langage, arts",
+    "sciences_humaines": "Sciences humaines et sociales",
+    "droit": "Droit, sciences politiques",
+    "cyber": "Sciences fondamentales et applications",
+    "communication": "Sciences humaines et sociales",
+    "tourisme_hotellerie": "Sciences économiques, gestion",
+    "sport": "STAPS",
+    "agriculture": "Sciences de la vie, de la terre et de l'univers",
+    "education": "Sciences humaines et sociales",
+    "data_ia": "Sciences fondamentales et applications",
+}
+
+# `fili_code` Parcoursup → `type_diplome` InserSup. Hors-scope InserSup
+# (BTS, IFSI, CPGE, PASS, Licence_Las, Autre formation) absents du mapping
+# → pas de match insertion_pro pour ces fiches (limite structurelle InserSup
+# qui ne couvre que bac+3+, documenté dans LIMITATIONS.md).
+PARCOURSUP_FILI_TO_INSERSUP_TYPE: dict[str, str] = {
+    "Licence": "Licence générale",
+    "BUT": "Bachelor universitaire de technologie",
+    "Ecole d'Ingénieur": "Diplôme d'ingénieurs",
+    "Ecole de Commerce": "Diplôme gradé ou visé management niveau bac+5",
+}
+
 
 # ─────────────── Helpers ────────────────
 
@@ -251,8 +293,11 @@ def _build_national_index(
 def _infer_insersup_type(fiche: dict[str, Any]) -> str | None:
     """Détermine le libellé InserSup `type_diplome` cible pour une fiche.
 
-    Priorité : champ `type_diplome` explicite mappé via PARCOURSUP_TO_INSERSUP_TYPE,
-    sinon fallback sur `niveau`.
+    Priorité (Vague 1.A) :
+    1. Champ `type_diplome` explicite mappé via PARCOURSUP_TO_INSERSUP_TYPE
+       (MonMaster/ONISEP/secnumedu)
+    2. Fallback Parcoursup : `fili_code` → type_diplome (4 catégories scope)
+    3. Fallback `niveau` (bac+5/bac+3 default)
     """
     raw_type = _safe_str(fiche.get("type_diplome"))
     if raw_type:
@@ -263,8 +308,37 @@ def _infer_insersup_type(fiche: dict[str, Any]) -> str | None:
         for key, val in PARCOURSUP_TO_INSERSUP_TYPE.items():
             if key.lower() == raw_type.lower():
                 return val
+    # Vague 1.A — fallback Parcoursup via fili_code (Licence, BUT, Ingé, Commerce)
+    if fiche.get("source") == "parcoursup":
+        fili = _safe_str(fiche.get("fili_code"))
+        if fili in PARCOURSUP_FILI_TO_INSERSUP_TYPE:
+            return PARCOURSUP_FILI_TO_INSERSUP_TYPE[fili]
+        # BTS/IFSI/CPGE/PASS/Licence_Las/Autre formation : hors-scope InserSup
+        # → pas de fallback niveau pour eux (renvoie None), évite faux match
+        return None
     niveau = _safe_str(fiche.get("niveau"))
     return NIVEAU_TO_DEFAULT_TYPE.get(niveau)
+
+
+def _infer_insersup_discipline(fiche: dict[str, Any]) -> str:
+    """Détermine la `discipline` InserSup cible pour une fiche (Vague 1.A).
+
+    Priorité :
+    1. Champ `discipline` explicite (MonMaster natif, 100% couverture)
+    2. Mapping Parcoursup `domaine` → discipline (15 codes mappés)
+    3. Vide (pas de matching possible)
+
+    Returns:
+        String discipline (peut être vide). Le caller normalise via _norm_key.
+    """
+    explicit = _safe_str(fiche.get("discipline"))
+    if explicit:
+        return explicit
+    if fiche.get("source") == "parcoursup":
+        domaine = _safe_str(fiche.get("domaine"))
+        if domaine:
+            return PARCOURSUP_DOMAINE_TO_INSERSUP_DISCIPLINE.get(domaine, "")
+    return ""
 
 
 def _fiche_uai_key(fiche: dict[str, Any]) -> str:
@@ -452,7 +526,11 @@ def attach_insersup_to_fiches(
             continue
 
         target_type_norm = _norm_key(target_type)
-        discipline_norm = _norm_key(fiche.get("discipline"))
+        # Vague 1.A — _infer_insersup_discipline ajoute fallback Parcoursup
+        # via mapping `domaine` → discipline. Avant Vague 1.A, Parcoursup
+        # était à 0% insertion_pro car `discipline` toujours absent.
+        target_discipline = _infer_insersup_discipline(fiche)
+        discipline_norm = _norm_key(target_discipline)
         if not discipline_norm:
             # Sans discipline, aucun matching possible (même niveau 3)
             stats["n_no_match"] += 1
