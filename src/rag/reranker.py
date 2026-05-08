@@ -31,6 +31,16 @@ class RerankConfig:
     # exploité uniquement quand l'intent multi-domain le justifie.
     domain_boost_apec_region: float = 1.5
     domain_boost_metier: float = 1.3
+    # Vague 0.5 (2026-05-08) — ROME 4.0 metier_detail boost. Sans ce boost
+    # dédié, les fiches `metier` (ONISEP IDEO, 2150 fiches) écrasaient
+    # systématiquement les fiches `metier_detail` (ROME 4.0, 1584 fiches)
+    # au top-K même pour les questions conceptuelles métier (cas spot-check
+    # Q5 "Que fait un actuaire au quotidien ?" : top-5 sans aucune fiche
+    # ROME 4.0 actuaire). Boost 1.4 priorise légèrement ROME 4.0 (compétences
+    # structurées + code ROME) sur ONISEP IDEO (description conversationnelle)
+    # pour rééquilibrer le retrieval. Quand domain_hint=metier, les 2 corpus
+    # sont boostés (cf rerank() ci-dessous).
+    domain_boost_metier_detail: float = 1.4
     domain_boost_parcours_bacheliers: float = 1.3
     # Phase B (ordre 2026-04-25-1442) — 3 nouveaux corpora aggrégés
     domain_boost_crous: float = 1.4
@@ -70,6 +80,7 @@ class RerankConfig:
             "parcoursup_rich_boost": self.parcoursup_rich_boost,
             "domain_boost_apec_region": self.domain_boost_apec_region,
             "domain_boost_metier": self.domain_boost_metier,
+            "domain_boost_metier_detail": self.domain_boost_metier_detail,
             "domain_boost_parcours_bacheliers": self.domain_boost_parcours_bacheliers,
             "domain_boost_crous": self.domain_boost_crous,
             "domain_boost_insee_salaire": self.domain_boost_insee_salaire,
@@ -88,6 +99,7 @@ class RerankConfig:
 _DOMAIN_BOOST_FIELDS = {
     "apec_region": "domain_boost_apec_region",
     "metier": "domain_boost_metier",
+    "metier_detail": "domain_boost_metier_detail",
     "parcours_bacheliers": "domain_boost_parcours_bacheliers",
     "crous": "domain_boost_crous",
     "insee_salaire": "domain_boost_insee_salaire",
@@ -99,6 +111,18 @@ _DOMAIN_BOOST_FIELDS = {
     "financement_etudes": "domain_boost_financement_etudes",
     "territoire_drom": "domain_boost_territoire_drom",
     "voie_pre_bac": "domain_boost_voie_pre_bac",
+}
+
+# Vague 0.5 — Mapping cross-domain : un domain_hint peut booster plusieurs
+# domains de fiche pour rééquilibrer la couverture top-K. Cas concret :
+# `domain_hint="metier"` (classifié sur "Que fait un actuaire ?") doit booster
+# à la fois les fiches `metier` (ONISEP IDEO, descriptions naturelles) ET
+# `metier_detail` (ROME 4.0, compétences structurées) avec une légère priorité
+# pour ROME 4.0 (1.4 vs 1.3) sur les questions conceptuelles métier.
+# Si une entrée n'est pas dans ce dict, comportement par défaut : boost
+# uniquement le domain qui matche strictement le hint (cf rerank()).
+_DOMAIN_HINT_CROSS_BOOSTS: dict[str, list[str]] = {
+    "metier": ["metier", "metier_detail"],
 }
 
 
@@ -119,9 +143,18 @@ def rerank(
     `fiche["domain"]` correspond au hint. Les fiches d'autres domains ne
     sont PAS pénalisées (score multiplié par 1.0 implicite).
     """
-    domain_boost = 1.0
-    if domain_hint and domain_hint in _DOMAIN_BOOST_FIELDS:
-        domain_boost = getattr(config, _DOMAIN_BOOST_FIELDS[domain_hint])
+    # Vague 0.5 — calcul des domain qui doivent recevoir un boost pour ce hint.
+    # Cas standard : un seul domain (= hint). Cas étendu via _DOMAIN_HINT_CROSS_BOOSTS :
+    # plusieurs domains peuvent être boostés (ex hint="metier" → metier + metier_detail).
+    boosted_domains: dict[str, float] = {}
+    if domain_hint:
+        targets = _DOMAIN_HINT_CROSS_BOOSTS.get(domain_hint, [domain_hint])
+        for target_domain in targets:
+            attr = _DOMAIN_BOOST_FIELDS.get(target_domain)
+            if attr:
+                boost = getattr(config, attr)
+                if boost != 1.0:
+                    boosted_domains[target_domain] = boost
 
     reranked = []
     for r in results:
@@ -157,13 +190,13 @@ def rerank(
         if _is_parcoursup_rich(fiche):
             score *= config.parcoursup_rich_boost
 
-        # Stage E (ADR-049): domain-aware boost — applied ONLY to fiches
-        # whose `domain` matches the query's `domain_hint`. No-op for
-        # fiches in other domains (multiplier 1.0 implicite). Le pivot
-        # multi-corpus est ainsi activé sélectivement quand l'intent le
-        # justifie, évitant la dilution top-K du formation-centric pur.
-        if domain_boost != 1.0 and fiche.get("domain") == domain_hint:
-            score *= domain_boost
+        # Stage E (ADR-049 + Vague 0.5): domain-aware boost — applied to fiches
+        # whose `domain` est dans la liste des domains boostables pour ce hint
+        # (1 par défaut, ou plusieurs via _DOMAIN_HINT_CROSS_BOOSTS).
+        # No-op pour fiches d'autres domains (pas de pénalité).
+        fiche_domain = fiche.get("domain")
+        if fiche_domain in boosted_domains:
+            score *= boosted_domains[fiche_domain]
 
         new = dict(r)
         new["score"] = score
