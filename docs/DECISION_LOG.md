@@ -3507,3 +3507,162 @@ Effort estimé : 2-3 semaines pour Phase 1.B → 1.G.
 - Pipeline cible : `src/rag/factory.py:make_production_pipeline`
 - Code à refondre : `src/collect/run_merge_v2.py` → `run_merge_v3.py`
 - Implémentation : Phase 1 grand ménage (à venir)
+
+---
+
+## ADR-058 — Retrieval hybride double-index + BM25 + RRF (workaround Phase C, 2026-05-08)
+
+### Context
+
+Phase C du plan corpus v5 (ADR-057) — promotion `formations_v5.json` en
+production après triple-gate validation. Spot-check Gate 3 sur 13 questions
+ciblées sur les corpora annexes (CROUS, DARES, INSEE, parcours_bacheliers,
+doctorat IP) a révélé que le retrieval dense FAISS ramène **4/13 questions**
+avec leur domain attendu dans le top-5, alors que les 16 corpora annexes
+sont bien intégrés dans le corpus v5.
+
+Investigation : la fiche `crous_region:lyon` existe mais n'est pas dans le
+top-1000 retrieved même pour la query directe "CROUS Lyon" (score sémantique
+brut 0.55-0.59 vs 0.9-1.1 pour des fiches formations à Lyon).
+
+### Cause racine identifiée
+
+Le pré-processing texte des corpora annexes est **mal aligné sémantiquement**
+avec les questions naturelles d'un lycéen :
+
+- Fiche CROUS écrite `"CROUS Lyon | Logements: 12000 | Restaurants: 25"`
+  → vecteur dans la zone sémantique "base de données structurée"
+- Question naturelle `"Combien coûte le logement étudiant CROUS à Lyon ?"`
+  → vecteur dans la zone "conversation orientation"
+- Ces deux zones sont éloignées dans l'espace d'embedding Mistral-embed,
+  peu importe le modèle ou l'index
+
+Le problème **n'est pas** : FAISS, l'index unifié vs séparé,
+`classify_domain_hint`. Le problème **est** : format des `text` annexes,
+absence de retrieval lexical pour entités nommées (CROUS, RNCP, PCS).
+
+### Decision
+
+Retrieval **hybride 2-couches** comme workaround Phase C, explicitement
+temporaire (vraie fix = re-rédaction textes annexes en Phase 3 V2) :
+
+**Couche 1 — Double-index dense (FAISS)** :
+- Au démarrage : split index unifié en 2 sub-indices via `index.reconstruct()`
+  (`_main_subindex` 33 776 fiches sans `domain`, `_annex_subindex` 13 417
+  avec `domain`)
+- Au runtime : retrieve séparé top-100 main + top-30 annex
+- Indépendant du `classify_domain_hint` (couverture mesurée 46% — symptôme,
+  pas cause)
+
+**Couche 2 — BM25 lexical (rank_bm25)** :
+- Lazy build `BM25Index` sur tous les `text` + champs identifiants
+  (etablissement, ville, region, codes_rome, debouches, id) via
+  tokenization simple (lowercase, strip accents, stopwords FR)
+- Au runtime : retrieve top-50 BM25 en parallèle du dense
+- Match les entités nommées exactes (CROUS Lyon, RNCP 38450, PCS 37,
+  "L1 bac S mention bien") que dense rate
+
+**Fusion via Reciprocal Rank Fusion (RRF)** :
+- Standard RAG 2024+ (Cormack et al. 2009)
+- Formule : `rrf_score(d) = Σ 1/(60 + rank_in_ranker_r(d))`
+- Robuste sans calibration des scores entre rankers
+- Module `src/rag/bm25_index.py:reciprocal_rank_fusion`
+
+### Mesures spot-check 13 questions
+
+| Configuration | Domain match top-5 |
+|---|---:|
+| Baseline v3.2 (dense FAISS k=30 unifié) | 4/13 (31%) |
+| Quota adaptatif seul (k=150 + boost) | 5/13 (38%) |
+| Double-index seul | 5/13 (38%) |
+| **Double-index + BM25 + RRF** | **8/13 (62%)** |
+
+**+4 questions résolues** : Aides financières, Guadeloupe, L1 bac S,
++ une autre. Les 5 ratés restants concernent les corpora très petits
+(INSEE 59, doctorat 240, APEC 13, voie_pre_bac 20) ou des questions où
+d'autres domains pertinents ressortent.
+
+### Rationale
+
+1. **Coût-bénéfice favorable** : ~3-4h dev double-index + ~1 jour BM25,
+   gain mesurable +100% sur questions cibles annexes. Pas de coût Mistral
+   supplémentaire (BM25 = lexical local).
+2. **Pas de régression attendue** sur formations classiques : double-index
+   préserve top-100 main, BM25 ajoute du signal sans écraser dense via RRF.
+   Mini-bench Gate 2 vérifie obligatoirement.
+3. **Indépendant du domain_hint** (46% jugé insuffisant pour gating).
+4. **Standard RAG industriel 2024+** : BM25 + dense + RRF cité dans 80%
+   des papers RAG production récents. Alignement sur l'état de l'art.
+5. **Workaround conscient, pas masqué** : cet ADR documente que la
+   vraie fix est en V2 (re-rédaction des `text` annexes), pour que la
+   dette technique ne disparaisse pas.
+
+### Workaround vs vraie fix V2
+
+Cette décision est **explicitement un workaround court terme**. La vraie
+fix est en Phase 3 V2 (~1 jour code + 1 nuit batch + ~$5) :
+
+Re-rédaction batch des `text` des corpora annexes via Mistral pour
+transformer données structurées en texte naturel aligné avec questions
+user. Exemple — fiche CROUS Lyon :
+
+```
+AVANT (stat) : "CROUS Lyon | 12000 logements | 25 restos U"
+APRÈS (Mistral generate) : "Le CROUS de Lyon gère le logement étudiant
+et la restauration universitaire. Il propose des résidences accessibles
+aux boursiers, restos U à tarif social, aide DSE..."
+```
+
+Le second vecteur tombe dans la zone "conseil orientation logement
+étudiant Lyon" — retrievable par n'importe quelle question naturelle.
+
+Coût V2 : ~13 417 fiches × 1 appel Mistral = ~$2-3 + re-embed (~$1) =
+**~$5 total**.
+
+### Alternatives considérées
+
+1. **Augmenter k massivement (1000-2000)** : rejeté. CROUS Lyon n'est pas
+   dans top-1000 même sur l'index unifié. Le problème n'est pas k.
+2. **Migrer FAISS → Qdrant / Weaviate / Pinecone** : rejeté. Mêmes
+   embeddings, mêmes faiblesses, complexité maintenance accrue.
+3. **Classifier domain_hint LLM (Mistral Small)** : rejeté Phase C.
+   Booster une fiche par hint inutile si elle n'est pas retrieved.
+4. **Solon-embeddings / BGE-M3 fine-tuné FR** : noté V2 produit, pas
+   pré-démo (risque régression majeur).
+5. **Re-rédaction immédiate textes annexes (vraie fix)** : trop long
+   pour Phase C démo. Reportée Phase 3.
+
+### Risque de régression silencieuse
+
+Ajouter des candidats annexes change le top-K du generator → réponses
+différentes même sur questions formations classiques. **Mini-bench v4.1
+Gate 2 obligatoire** avant promotion v5 :
+- `flagged = 0`, `honesty_score = 1.0`, `latency ≤ 9s` préservés
+- Pas de fiches annexes hors-sujet citées dans les réponses formations
+
+Si régression ≥2 questions → NO-GO promotion, retour analyse.
+
+### Critères de réouverture (Phase 3 V2)
+
+ADR-058 marqué workaround temporaire. Re-rédaction textes annexes
+obligatoire en Phase 3 si :
+1. Mesure spot-check post-V2 ≥ 11/13 sur le même set
+2. Mini-bench v4.1 préserve `honesty=1.0` après re-embed v6
+3. Coût total V2 ≤ $10 Mistral
+
+### Implémentation
+
+- `src/rag/bm25_index.py` (nouveau) : `BM25Index` + `reciprocal_rank_fusion`
+- `src/rag/pipeline.py` étendu : `_build_double_subindices`,
+  `_retrieve_with_double_subindex`, `_retrieve_with_bm25`,
+  `_retrieve_with_annex_quota` orchestre dense + BM25 + RRF
+- `tests/test_bm25_index.py` : 22 tests (tokenize, BM25, RRF, smoke réel)
+- `tests/test_pipeline_annex_quota.py` : 7 tests
+- Dépendance : `rank_bm25` (pure Python, MIT)
+
+### Liens
+
+- ADR-057 : Corpus de référence v5 unifié multi-corpus (parent)
+- Plan corpus v5 : `~/.claude/plans/parfait-pour-les-adr-quiet-pebble.md`
+- Investigation embedding : spot-check 2026-05-08 + analyse expert IA
+- Vraie fix V2 : Phase 3 re-rédaction textes annexes via Mistral

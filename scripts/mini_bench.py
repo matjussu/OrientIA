@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import time
 import traceback
@@ -40,8 +41,15 @@ from src.validator import Validator  # noqa: E402
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_QUESTIONS = REPO_ROOT / "tests" / "mini_bench" / "questions_20.json"
 DEFAULT_OUT = REPO_ROOT / "results" / "mini_bench" / "baseline_phase0.json"
-FICHES_PATH = REPO_ROOT / "data" / "processed" / "formations.json"
-INDEX_PATH = REPO_ROOT / "data" / "embeddings" / "formations.index"
+# Overrides via env vars (Phase C — bench v5 sans toucher v3.2)
+FICHES_PATH = Path(os.environ.get(
+    "ORIENTIA_CORPUS_PATH",
+    str(REPO_ROOT / "data" / "processed" / "formations.json"),
+))
+INDEX_PATH = Path(os.environ.get(
+    "ORIENTIA_INDEX_PATH",
+    str(REPO_ROOT / "data" / "embeddings" / "formations.index"),
+))
 
 
 def make_baseline_pipeline(client: Mistral, fiches: list[dict]) -> OrientIAPipeline:

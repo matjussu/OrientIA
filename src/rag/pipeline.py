@@ -44,6 +44,48 @@ _logger = logging.getLogger(__name__)
 INITIAL_K_MULTIPLIER = 3   # k_eff = k × 3 par défaut
 MAX_K_MULTIPLIER = 10      # cap absolu (ratio max sur k passé en arg)
 
+# Phase C corpus v5 — Option C v6 : retrieval indépendant du domain_hint.
+#
+# Problème (spot-check Phase C.5 2026-05-08) : les corpora annexes (DARES,
+# CROUS, France Comp blocs, etc.) ne remontent jamais dans le top-K parce
+# que (1) FAISS les classe bas (texte court vs formations longues),
+# (2) le boost domain-aware (×1.4) ne s'applique que si classify_domain_hint
+# retourne un hint correct (couverture mesurée à 46% sur 13 questions cibles).
+#
+# Solution Option C v6 : retrieve large + séparation pool main/annexe +
+# quota adaptatif basé sur score brut. Indépendant du hint.
+#
+# Mécanique :
+# 1. k_initial passe de 30 à 150 (élargit le pool brut)
+# 2. Séparation pool main (formations sans `domain`) vs annex (avec `domain`)
+# 3. Reranker boosts existants appliqués indépendamment sur chaque pool
+# 4. Quota top-K final : si max_score(annex) ≥ seuil → garantir N annexes
+#    dans le top-K, sinon top-K = full main (pas de pollution)
+#
+# Tradeoff : +70-80ms latency pour k=150 (négligeable vs 7-12s pipeline).
+# Pollution top-K mitigée par seuil de score (0.6 = similarité raisonnable).
+ANNEX_QUOTA_K_INITIAL = 150            # k retrieve sur l'index unifié (main + annex)
+                                       # Conservé pour cas où sub-indices non-buildables
+ANNEX_QUOTA_MIN_SCORE = 0.6            # seuil score pour éligibilité quota
+ANNEX_QUOTA_MAX_PER_TOPK = 3           # max d'annexes boostées dans le top-K final
+# Phase C++ — Double-index : retrieve séparé sur sous-corpus main + annex.
+# Workaround pour pré-processing texte annexes mal aligné sémantique
+# (cause racine — fix V2 = re-rédaction textes annexes via Mistral).
+# ADR-058 acte la dette technique.
+DOUBLE_INDEX_K_MAIN = 100              # top-100 sur sub-index main (33k formations)
+DOUBLE_INDEX_K_ANNEX = 30              # top-30 sur sub-index annex (13k corpora)
+# Phase C ADR-058 — BM25 hybride lexical + RRF fusion.
+# Complémente le retrieval dense (qui peine sur les fiches courtes/stat)
+# par un score BM25 lexical exact. Match les entités nommées (CROUS Lyon,
+# RNCP 38450, PCS 37) que dense rate. Standard RAG 2024+.
+BM25_TOP_K = 50                        # top-50 BM25 fusionnés avec dense
+RRF_K = 60                             # paramètre standard RRF (Cormack et al. 2009)
+# Boost score appliqué aux top annexes éligibles au quota — forcer leur
+# entrée dans le top-K final via tri par score (+ MMR aval). Le boost est
+# additif sur le score reranked. Une annexe à 0.5 boostée à 1.5 dépasse
+# n'importe quelle formation sans hint domain (max ~1.10).
+ANNEX_QUOTA_SCORE_BOOST = 1.0
+
 
 # Chantier 1.B (2026-05-03) — retry-with-hint loop anti-hallucination
 # Cap dur à 1 retry au démarrage (cf plan voici-le-retour-de-lively-yao.md) :
@@ -178,6 +220,19 @@ class OrientIAPipeline:
         # tabulaire <sources> via FactCard au lieu de la prose libre v3.2.
         # False par défaut = backward compat (v3.2 + retry-with-hint préservés).
         self.use_strict_v4 = use_strict_v4
+        # Phase C++ — Double-index lazy cache. Construits au 1er appel de
+        # `_retrieve_with_annex_quota` via `index.reconstruct()`. Workaround
+        # pour pré-processing texte annexes mal aligné sémantique
+        # (cf ADR-058). Désactive si <2 fiches dans un pool (no-op fallback
+        # vers le retrieve unifié).
+        self._main_subindex: faiss.IndexFlatL2 | None = None
+        self._annex_subindex: faiss.IndexFlatL2 | None = None
+        self._main_subindex_orig_indices: list[int] | None = None
+        self._annex_subindex_orig_indices: list[int] | None = None
+        self._double_index_built: bool = False
+        # Phase C ADR-058 — BM25 hybride lexical + RRF fusion (cf src/rag/bm25_index.py)
+        self._bm25_index = None  # Lazy build au 1er appel
+        self._bm25_built: bool = False
 
     def build_index(self) -> None:
         texts = [fiche_to_text(f) for f in self.fiches]
@@ -512,20 +567,10 @@ class OrientIAPipeline:
         Toujours retourne reranked candidates (même format que v1).
         Stats stockées dans self.last_filter_stats pour audit F+G.
         """
-        # Path backward compat : pas de filter activé → comportement v1 strict
+        # Path par défaut (no metadata filter) : Option C v6 — retrieval indépendant
+        # du domain_hint avec quota adaptatif d'annexes basé sur score brut.
         if not self.use_metadata_filter or criteria is None or criteria.is_empty():
-            retrieved = retrieve_top_k(self.client, self.index, self.fiches, question, k=k)
-            reranked = rerank(retrieved, self.rerank_config, domain_hint=domain_hint)
-            self.last_filter_stats = {
-                "filter_active": False,
-                "criteria_empty": criteria is None or criteria.is_empty(),
-                "k_initial": k,
-                "k_final": k,
-                "n_retrieved": len(retrieved),
-                "n_after_filter": len(reranked),
-                "expansions": 0,
-            }
-            return reranked
+            return self._retrieve_with_annex_quota(question, k, target, domain_hint)
 
         # Path filter actif : retrieve avec k_eff = k × INITIAL, expand si nécessaire
         k_eff = k * INITIAL_K_MULTIPLIER
@@ -565,6 +610,273 @@ class OrientIAPipeline:
             "hit_max": k_eff >= max_k and len(filtered) < target,
         }
         return filtered
+
+    def _build_double_subindices(self) -> bool:
+        """Lazy-build des 2 sub-indices FAISS (main + annex) via reconstruct().
+
+        Construit `_main_subindex` (formations sans `domain`) et
+        `_annex_subindex` (corpora annexes avec `domain`) une seule fois.
+        Workaround Phase C++ (ADR-058) : retrieve séparé pour ne pas
+        dépendre du score sémantique des fiches annexes courtes/stat
+        face aux formations longues.
+
+        Returns True si les 2 sub-indices ont au moins 1 vecteur, False
+        sinon (fallback vers retrieve unifié).
+        """
+        if self._double_index_built:
+            return self._main_subindex is not None and self._annex_subindex is not None
+        if self.index is None or not self.fiches:
+            self._double_index_built = True
+            return False
+
+        main_indices: list[int] = []
+        annex_indices: list[int] = []
+        for i, f in enumerate(self.fiches):
+            if isinstance(f, dict) and f.get("domain"):
+                annex_indices.append(i)
+            else:
+                main_indices.append(i)
+
+        if len(main_indices) < 2 or len(annex_indices) < 2:
+            # Pas assez de fiches dans un pool — fallback retrieve unifié
+            _logger.info(
+                "[double-index] skip — pas assez de fiches (main=%d, annex=%d)",
+                len(main_indices), len(annex_indices),
+            )
+            self._double_index_built = True
+            return False
+
+        # Build sub-indices via reconstruct (pas de re-embed Mistral, just
+        # extraction des vecteurs depuis l'index unifié). Coût ~30s pour
+        # 47k vecteurs, fait une seule fois au premier appel.
+        try:
+            d = self.index.d
+            main_embs = np.array(
+                [self.index.reconstruct(int(i)) for i in main_indices],
+                dtype="float32",
+            )
+            annex_embs = np.array(
+                [self.index.reconstruct(int(i)) for i in annex_indices],
+                dtype="float32",
+            )
+            main_idx = faiss.IndexFlatL2(d)
+            main_idx.add(main_embs)
+            annex_idx = faiss.IndexFlatL2(d)
+            annex_idx.add(annex_embs)
+            self._main_subindex = main_idx
+            self._annex_subindex = annex_idx
+            self._main_subindex_orig_indices = main_indices
+            self._annex_subindex_orig_indices = annex_indices
+            _logger.info(
+                "[double-index] built — main=%d annex=%d",
+                len(main_indices), len(annex_indices),
+            )
+            self._double_index_built = True
+            return True
+        except (RuntimeError, ValueError) as e:
+            _logger.warning("[double-index] build failed (%s) — fallback unifié", e)
+            self._double_index_built = True
+            return False
+
+    def _retrieve_with_bm25(self, question: str, k: int = 50) -> list[dict]:
+        """Phase C ADR-058 — retrieve BM25 lexical pour entités nommées.
+
+        Lazy-build au 1er appel (~5-10s pour 47k fiches, fait une fois).
+        Returns top-k results avec scores BM25.
+        """
+        if not self._bm25_built:
+            try:
+                from src.rag.bm25_index import BM25Index
+                _logger.info("[bm25] Building lexical index for %d fiches...", len(self.fiches))
+                self._bm25_index = BM25Index(self.fiches)
+                _logger.info("[bm25] Index built (n_fiches=%d)", self._bm25_index.n_fiches)
+            except (ImportError, RuntimeError) as e:
+                _logger.warning("[bm25] build failed (%s) — fallback no BM25", e)
+                self._bm25_index = None
+            self._bm25_built = True
+        if self._bm25_index is None:
+            return []
+        return self._bm25_index.search(question, k=k)
+
+    def _retrieve_with_double_subindex(
+        self,
+        question: str,
+    ) -> tuple[list[dict], list[dict]]:
+        """Phase C++ — retrieve séparé sur sub-indices main + annex.
+
+        Renvoie (main_results, annex_results) avec format `retrieve_top_k`
+        standard ({fiche, score, base_score, embedding}).
+        """
+        if not self._build_double_subindices():
+            # Fallback : retrieve unifié et split post-FAISS (mode dégradé)
+            retrieved = retrieve_top_k(
+                self.client, self.index, self.fiches, question,
+                k=ANNEX_QUOTA_K_INITIAL,
+            )
+            main = [r for r in retrieved if not (r.get("fiche") or {}).get("domain")]
+            annex = [r for r in retrieved if (r.get("fiche") or {}).get("domain")]
+            return main, annex
+
+        # Embedding question (1 fois pour les 2 sub-indices)
+        from src.rag.embeddings import embed_texts
+        q_emb = embed_texts(self.client, [question])[0]
+        q_arr = np.array([q_emb], dtype="float32")
+
+        def _search_subindex(sub_idx, orig_indices, k):
+            distances, idx_in_sub = sub_idx.search(q_arr, k)
+            results = []
+            for rank in range(len(idx_in_sub[0])):
+                isub = int(idx_in_sub[0][rank])
+                if isub < 0 or isub >= len(orig_indices):
+                    continue
+                orig_idx = orig_indices[isub]
+                dist = float(distances[0][rank])
+                score = 1.0 / (1.0 + dist)
+                # Reconstruct embedding pour MMR aval
+                emb = sub_idx.reconstruct(isub)
+                results.append({
+                    "fiche": self.fiches[orig_idx],
+                    "score": score,
+                    "base_score": score,
+                    "embedding": np.asarray(emb, dtype="float32"),
+                })
+            return results
+
+        main_results = _search_subindex(
+            self._main_subindex,
+            self._main_subindex_orig_indices,
+            DOUBLE_INDEX_K_MAIN,
+        )
+        annex_results = _search_subindex(
+            self._annex_subindex,
+            self._annex_subindex_orig_indices,
+            DOUBLE_INDEX_K_ANNEX,
+        )
+        return main_results, annex_results
+
+    def _retrieve_with_annex_quota(
+        self,
+        question: str,
+        k: int,
+        target: int,
+        domain_hint: str | None,
+    ) -> list[dict]:
+        """Option C v6 + Double-index — retrieve séparé main/annex + quota adaptatif.
+
+        Phase C corpus v5 (2026-05-08, ADR-058 workaround).
+
+        Mécanique :
+        1. **Double-index** : retrieve séparé top-100 main + top-30 annex
+           via sub-indices construits par `_build_double_subindices`. Indépendant
+           du score sémantique des fiches annexes courtes face aux formations.
+        2. Reranker chaque pool indépendamment (boosts existants conservés)
+        3. Si meilleure annexe ≥ seuil → boost top-3 annexes pour entrer top-K
+           Sinon → top-K = main only (pas de pollution)
+
+        Stats stockées dans last_filter_stats pour audit.
+        """
+        # Phase C++ — retrieve double-index (main 100 + annex 30)
+        main_pool, annex_pool = self._retrieve_with_double_subindex(question)
+
+        # Phase C ADR-058 — BM25 hybride : retrieve lexical en parallèle,
+        # fusion via RRF. Indispensable pour entités nommées (CROUS Lyon,
+        # RNCP, PCS) que dense rate.
+        bm25_results = self._retrieve_with_bm25(question, k=BM25_TOP_K)
+
+        # Si BM25 ramène des fiches non-vues par dense, les ajouter au pool
+        # approprié (main ou annex selon `domain`)
+        seen_ids: set[int] = set()
+        for r in main_pool + annex_pool:
+            seen_ids.add(id(r.get("fiche")))
+        for bm in bm25_results:
+            if id(bm.get("fiche")) in seen_ids:
+                continue
+            # Convertir au format result complet : reconstruct l'embedding
+            # depuis l'index unifié (nécessaire pour MMR aval).
+            fiche = bm.get("fiche") or {}
+            orig_idx = bm.get("_orig_index")
+            embedding: np.ndarray | None = None
+            if orig_idx is not None and self.index is not None:
+                try:
+                    emb = self.index.reconstruct(int(orig_idx))
+                    embedding = np.asarray(emb, dtype="float32")
+                except (RuntimeError, ValueError):
+                    embedding = None
+            if embedding is None:
+                # Fallback : embedding zéros (MMR appliquera diversité minimale
+                # sur cette fiche, mais elle reste retournée par le retrieval)
+                embedding = np.zeros(self.index.d if self.index else 1024, dtype="float32")
+            converted = {
+                "fiche": fiche,
+                "score": 0.55,  # placeholder — le RRF est le vrai signal
+                "base_score": 0.55,
+                "embedding": embedding,
+                "score_bm25": bm.get("score_bm25", 0.0),
+                "rank_bm25": bm.get("rank_bm25"),
+                "_orig_index": orig_idx,
+            }
+            if fiche.get("domain"):
+                annex_pool.append(converted)
+            else:
+                main_pool.append(converted)
+
+        # k_eff conservé pour stats backward-compat
+        k_eff = DOUBLE_INDEX_K_MAIN + DOUBLE_INDEX_K_ANNEX + BM25_TOP_K
+
+        # Reranker indépendamment sur chaque pool (boosts existants)
+        main_reranked = rerank(main_pool, self.rerank_config, domain_hint=domain_hint)
+        annex_reranked = rerank(annex_pool, self.rerank_config, domain_hint=domain_hint)
+
+        # Quota adaptatif : si la meilleure annexe a un score raisonnable,
+        # boost les top annexes pour forcer leur entrée dans le top-K final.
+        # Important : on retourne la liste complète des reranked (pas tronquée
+        # à `target`) pour que le MMR appliqué en aval (pipeline.answer) ait
+        # de quoi diversifier — le slicing à `target` se fait dans le MMR.
+        annex_top_score = annex_reranked[0].get("score", 0.0) if annex_reranked else 0.0
+        quota_active = annex_top_score >= ANNEX_QUOTA_MIN_SCORE
+        n_annex_above_threshold = sum(
+            1 for r in annex_reranked
+            if r.get("score", 0.0) >= ANNEX_QUOTA_MIN_SCORE
+        )
+
+        if quota_active:
+            # Booster les top-K annexes éligibles pour qu'elles passent au top
+            # via le tri par score. Le boost est additif (vs multiplicatif) pour
+            # garantir que même les annexes à score bas (0.6) dépassent les
+            # formations à score haut (1.10) après boost (0.6 + 1.0 = 1.6).
+            n_annex_quota = min(ANNEX_QUOTA_MAX_PER_TOPK, n_annex_above_threshold)
+            annex_with_boost: list[dict] = []
+            for r in annex_reranked[:n_annex_quota]:
+                boosted = dict(r)
+                boosted["score"] = r.get("score", 0.0) + ANNEX_QUOTA_SCORE_BOOST
+                boosted["_quota_boosted"] = True
+                annex_with_boost.append(boosted)
+            # Concat main complet + annexes boostées, tri global par score
+            combined = main_reranked + annex_with_boost
+            combined.sort(key=lambda x: x.get("score", 0.0), reverse=True)
+        else:
+            # Pas de quota — retourne main complet (MMR slicera à target)
+            combined = main_reranked
+
+        # Stats audit
+        self.last_filter_stats = {
+            "filter_active": False,
+            "criteria_empty": True,
+            "annex_quota_strategy": "v6_double_index_score_threshold",
+            "k_initial": k,
+            "k_final": k_eff,
+            "n_retrieved": len(main_pool) + len(annex_pool),
+            "n_main_pool": len(main_pool),
+            "n_annex_pool": len(annex_pool),
+            "annex_top_score": round(annex_top_score, 3),
+            "annex_quota_active": quota_active,
+            "n_annex_above_threshold": n_annex_above_threshold,
+            "n_annex_boosted": min(ANNEX_QUOTA_MAX_PER_TOPK, n_annex_above_threshold) if quota_active else 0,
+            "n_returned": len(combined),
+            "expansions": 0,
+            "double_index_active": self._double_index_built and self._main_subindex is not None,
+        }
+        return combined
 
     # ─────────────── Sprint 10 chantier D — Q&A Golden Dynamic Few-Shot ───────
 
