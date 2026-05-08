@@ -91,3 +91,22 @@ class TestSelectBypassIntegration:
         assert p.last_retry_metadata["retry_skipped_reason"] == "select_bypass"
         assert p.last_retry_metadata["retries_attempted"] == 0
         mock_gen.assert_not_called()
+
+    def test_factual_with_annex_domain_uses_rag(self):
+        """Vague 0 fix Q9 — question chiffres avec domain annexe pertinent
+        (PCS → insee_salaire) doit utiliser le RAG normal pour ramener
+        le corpus annexe, pas court-circuiter avec un fallback unifié."""
+        fiches = [{"nom": "Master Droit", "etablissement": "Sorbonne", "ville": "Paris"}]
+        p = _pipeline_with_intent(fiches)
+        with patch("src.rag.pipeline.generate", return_value="rag answer with PCS data") as mock_gen:
+            with patch.object(p, "_retrieve_and_filter", return_value=[{"fiche": {"nom": "X"}}]):
+                with patch.object(p, "_maybe_build_golden_qa_prefix", return_value=None):
+                    answer, top = p.answer("Salaire moyen d'un cadre supérieur (PCS 37) ?")
+
+        # generate() doit être appelé : le domain_hint=insee_salaire empêche
+        # le bypass SELECT (le RAG peut ramener la fiche annexe insee_salaire).
+        mock_gen.assert_called_once()
+        assert answer == "rag answer with PCS data"
+        # last_select_result conservé pour traçabilité (SELECT a tenté lookup)
+        assert p.last_select_result is not None
+        assert p.last_select_result.via_select is False

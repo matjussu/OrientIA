@@ -327,13 +327,36 @@ class OrientIAPipeline:
         # contient déjà un fallback unifié — on le retourne aussi.
         # Si try_select_or_none retourne None (pas une question factual),
         # on continue le pipeline RAG normal.
+        # ADR-049 : domain-aware reranker (no-op si hint=None, formation-centric par défaut)
+        # Vague 0 — déplacé AVANT le SELECT bypass pour gating intelligent
+        # (cf logique ci-dessous : si la question concerne un corpus annexe,
+        # on ne bypass pas même si SELECT n'a pas de match formation).
+        domain_hint = classify_domain_hint(question)
+
         if intent_label == INTENT_FACTUAL_POINTED:
             select_result = try_select_or_none(question, self.fiches)
             self.last_select_result = select_result
-            if select_result is not None:
-                # SELECT a tenté quelque chose (succès OU fallback contrôlé) —
-                # on retourne sans appel LLM (zero hallu garanti par construction).
-                # `top` est vide car bypass — backward compat tuple shape préservée.
+            # Vague 0 fix Q9 (PCS 37 retrieval vide).
+            # Bypass RAG dans 2 cas seulement :
+            # 1. SELECT vrai succès (via_select=True) → zero hallu garanti
+            # 2. SELECT échec MAIS sans domain_hint annexe pertinent
+            #    (le RAG ne ramènerait pas mieux que le fallback unifié)
+            # On NE bypass PAS si :
+            # - select_no_entity : pas une question SELECT (pas de formation
+            #   nommée) → continuer en RAG
+            # - domain_hint annexe détecté (insee_salaire, dares, crous,
+            #   apec_region, etc.) : le RAG peut ramener la fiche annexe.
+            #   Cas Q9 PCS 37 → domain_hint=insee_salaire → continue RAG.
+            should_bypass = select_result is not None and (
+                select_result.via_select
+                or (
+                    select_result.reason != "select_no_entity"
+                    and not domain_hint
+                )
+            )
+            if should_bypass:
+                # SELECT a tenté quelque chose d'utile — on retourne sans appel LLM
+                # (zero hallu garanti par construction). `top` est vide car bypass.
                 self.last_retry_metadata = {
                     "retries_attempted": 0,
                     "tour1_failed_claims": [],
@@ -344,11 +367,10 @@ class OrientIAPipeline:
                     "retry_skipped_reason": "select_bypass",
                 }
                 return select_result.text, []
+            # Sinon (None, no_entity, ou domain annexe pertinent) : continuer
+            # le RAG normal. last_select_result conservé pour traçabilité.
         else:
             self.last_select_result = None
-
-        # ADR-049 : domain-aware reranker (no-op si hint=None, formation-centric par défaut)
-        domain_hint = classify_domain_hint(question)
 
         # Sprint 10 §8.3-§8.4 : retrieve avec auto-expansion si filter activé
         reranked = self._retrieve_and_filter(
