@@ -223,15 +223,19 @@ class TestRerankWithDomainHint:
         assert abs(out[0]["score"] - expected) < 1e-6
 
     def test_existing_label_boosts_unaffected_by_hint(self):
-        """Régression : boosts SecNumEdu / CTI restent intacts post-ADR-049."""
+        """Régression : boosts SecNumEdu / CTI restent intacts post-ADR-049
+        QUAND ils sont activés. Vague 0.5 (2026-05-08) : default 1.0 (label
+        couverture 0.04% mort), test passe explicitement 1.5 pour vérifier
+        que le design d'orthogonalité label vs domain_hint est préservé."""
         formation = {
             "nom": "EFREI Cyber",
             "labels": ["SecNumEdu"],
             "etablissement": "EFREI",
         }
         results = [_mk_result(formation, 0.5)]
-        out_no_hint = rerank(results, RerankConfig(), domain_hint=None)
-        out_with_hint = rerank(results, RerankConfig(), domain_hint="metier")
+        cfg = RerankConfig(secnumedu_boost=1.5)  # boost réactivé pour ce test
+        out_no_hint = rerank(results, cfg, domain_hint=None)
+        out_with_hint = rerank(results, cfg, domain_hint="metier")
         # Sans hint OU avec hint metier (formation n'a pas domain=metier),
         # le score doit être identique (= 0.5 × 1.5 [SecNumEdu] × 1.1 [etab named])
         assert out_no_hint[0]["score"] == out_with_hint[0]["score"]
