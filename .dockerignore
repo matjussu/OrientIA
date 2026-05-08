@@ -1,0 +1,55 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Data — montés via volume Railway au runtime, pas dans l'image
+data/raw/
+data/embeddings/
+data/golden_qa/
+
+# Backups & WIP locaux
+data/processed/formations_unified.pre_d5_backup.json
+data/processed/formations_v6.json
+data/processed/formations_golden_pipeline.json
+data/processed/formations_unified.json
+
+# Outputs benchmarks / experiments — jamais nécessaires en runtime API
+results/
+experiments/
+logs/
+mini_bench/
+
+# Archives pivots
+_archive_*/
+
+# Repo metadata
+.git/
+.github/
+.claude/
+
+# Tests pas en runtime
+tests/
+
+# Docs pas en runtime
+docs/
+*.md
+LICENSE
+
+# Secrets
+.env
+.env.local
+.env.*
+
+# Scripts dev (bootstrap depuis local, pas en image)
+scripts/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
