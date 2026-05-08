@@ -126,29 +126,62 @@ def _norm_text(s: Any) -> str:
     return _strip_accents(str(s)).lower().strip()
 
 
-# Régions canoniques France (13 métropolitaines + 5 DROM-COM)
+# Régions canoniques France (13 métropolitaines + 5 DROM-COM).
+# Vague 1.E (2026-05-08) — extension complète des variantes mesurées dans
+# le corpus v5 (44 valeurs distinctes vs 18 attendues). Couvre :
+# - UPPERCASE (sources `inserjeunes_lycee_pro` qui ne normalisent pas)
+# - Variantes tiret/espace (Parcoursup, DARES)
+# - Anciens libellés (Centre → Centre-Val de Loire post-réforme 2016)
+# - DROM courts ("Réunion" sans "La")
 _REGION_CANONICAL = {
+    # Île-de-France
     "ile-de-france": "Île-de-France",
+    "ile de france": "Île-de-France",
+    # Auvergne-Rhône-Alpes
     "auvergne-rhone-alpes": "Auvergne-Rhône-Alpes",
     "auvergne rhone alpes": "Auvergne-Rhône-Alpes",
+    # Occitanie
     "occitanie": "Occitanie",
+    # Hauts-de-France
     "hauts-de-france": "Hauts-de-France",
+    "hauts de france": "Hauts-de-France",
+    # Provence-Alpes-Côte d'Azur
     "provence-alpes-cote d'azur": "Provence-Alpes-Côte d'Azur",
     "provence alpes cote d azur": "Provence-Alpes-Côte d'Azur",
+    "provence alpes cote d'azur": "Provence-Alpes-Côte d'Azur",
+    "paca": "Provence-Alpes-Côte d'Azur",
+    # Nouvelle-Aquitaine — Vague 1.E : variante sans tiret (762 fiches Parcoursup)
     "nouvelle-aquitaine": "Nouvelle-Aquitaine",
+    "nouvelle aquitaine": "Nouvelle-Aquitaine",
+    # Grand Est — Vague 1.E : variante avec tiret (715 fiches Parcoursup)
     "grand est": "Grand Est",
+    "grand-est": "Grand Est",
+    # Bretagne
     "bretagne": "Bretagne",
+    # Normandie
     "normandie": "Normandie",
+    # Bourgogne-Franche-Comté
     "bourgogne-franche-comte": "Bourgogne-Franche-Comté",
     "bourgogne franche comte": "Bourgogne-Franche-Comté",
+    "bourgogne-franche-comté": "Bourgogne-Franche-Comté",
+    # Centre-Val de Loire — Vague 1.E : "Centre" legacy (275 fiches, pré-2016)
     "centre-val de loire": "Centre-Val de Loire",
     "centre val de loire": "Centre-Val de Loire",
+    "centre": "Centre-Val de Loire",
+    # Pays de la Loire — Vague 1.E : avec tirets (491 fiches)
     "pays de la loire": "Pays de la Loire",
+    "pays-de-la-loire": "Pays de la Loire",
+    # Corse
     "corse": "Corse",
+    # DROM-COM
     "guadeloupe": "Guadeloupe",
     "martinique": "Martinique",
     "guyane": "Guyane",
+    # La Réunion — Vague 1.E : "Réunion" court (123 fiches)
     "la reunion": "La Réunion",
+    "la réunion": "La Réunion",
+    "reunion": "La Réunion",
+    "réunion": "La Réunion",
     "mayotte": "Mayotte",
 }
 
@@ -763,6 +796,20 @@ def run_merge_v3(
         print(f"  total annexes appendées : {stats10['n_annexes_total']}")
         for d, c in sorted(stats10["by_domain"].items(), key=lambda x: -x[1]):
             print(f"    {d}: {c}")
+
+    # Stage 10.5 — RE-NORMALIZE après APPEND_ANNEXES.
+    # Vague 1.E (2026-05-08) — Stage 5 normalise les fiches principales
+    # (post-merge_fuzzy) mais pas les annexes appendées Stage 10. Or les
+    # annexes (notamment inserjeunes_lycee_pro = 1755 fiches UPPERCASE)
+    # apportent leurs propres variantes de région. Ré-application idempotente
+    # de stage_normalize sur tout le corpus pour canoniser les annexes.
+    if verbose:
+        print("\n[Stage 10.5] RE-NORMALIZE — canonise régions annexes...")
+    fiches, stats10_5 = stage_normalize(fiches)
+    stage_stats["10_5_renormalize"] = stats10_5
+    if verbose:
+        for k, v in stats10_5.items():
+            print(f"  {k}: {v}")
 
     # Stage 11 — SORT_DETERMINISTIC
     if verbose:

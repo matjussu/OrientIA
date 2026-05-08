@@ -429,14 +429,24 @@ def normalize_formation_record(record: dict[str, Any], idx: int) -> dict[str, An
     out = dict(record)  # shallow copy preservation
     source = record.get("source") or "unknown"
 
-    # ID composite — préfère les identifiants stables existants
-    original_id = (
-        record.get("cod_aff_form")
-        or record.get("rncp")
-        or record.get("uai")
-        or f"idx{idx}"
-    )
-    out["id"] = f"{source}-{original_id}"
+    # ID composite — préfère les identifiants stables existants.
+    # Vague 1.E (2026-05-08) — fix bug doublons IDs CFA. Les fiches
+    # `inserjeunes_cfa` peuvent partager le même UAI sur plusieurs lignes
+    # (établissement multi-cohorte / multi-niveau). Fallback sur idx
+    # garantit l'unicité, au prix d'une stabilité ID dépendante de l'ordre
+    # — acceptable car les CFA n'ont pas de cod_aff_form/rncp stable.
+    if source == "inserjeunes_cfa":
+        # Pour CFA, toujours suffixer idx (UAI seul n'est pas unique)
+        uai_part = record.get("uai") or "no_uai"
+        out["id"] = f"{source}-{uai_part}-{idx}"
+    else:
+        original_id = (
+            record.get("cod_aff_form")
+            or record.get("rncp")
+            or record.get("uai")
+            or f"idx{idx}"
+        )
+        out["id"] = f"{source}-{original_id}"
     out["source"] = source
 
     # Région : direct → canonique, sinon dept→region lookup
