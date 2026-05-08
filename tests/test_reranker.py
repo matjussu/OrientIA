@@ -147,8 +147,11 @@ def test_rerank_etab_named_boost_lifts_named_over_empty():
 
 
 def test_rerank_etab_named_boost_does_not_dominate_labels():
-    """A labeled generic diploma must still beat an unlabeled named school.
-    Default etab_named (1.1) < default secnumedu (1.5)."""
+    """A labeled generic diploma must still beat an unlabeled named school
+    QUAND le label boost est activé. Vague 0.5 (2026-05-08) : secnumedu_boost
+    par défaut neutralisé à 1.0 (couverture 0.04% mort), donc le test passe
+    explicitement la valeur 1.5 historique pour vérifier la garantie design
+    en cas de réactivation post ré-extraction labels (Vague 1+)."""
     results = [
         {"fiche": {"labels": ["SecNumEdu"], "statut": "Inconnu", "niveau": "bac+5",
                    "etablissement": ""},
@@ -157,7 +160,7 @@ def test_rerank_etab_named_boost_does_not_dominate_labels():
                    "etablissement": "EPITA"},
          "score": 0.50, "base_score": 0.50},
     ]
-    cfg = RerankConfig()  # defaults: secnumedu=1.5, etab_named=1.1
+    cfg = RerankConfig(secnumedu_boost=1.5)  # boost réactivé pour ce test
     reranked = rerank(results, cfg)
     # 0.5 * 1.5 * 1.15 = 0.8625 (labeled generic)
     # 0.5 * 1.1 * 1.15 = 0.63375 (unlabeled EPITA)
@@ -250,8 +253,10 @@ def test_rerank_parcoursup_rich_requires_non_zero_profil():
 
 
 def test_rerank_parcoursup_rich_does_not_dominate_secnumedu():
-    """SecNumEdu (default 1.5) must still dominate parcoursup_rich (default 1.2)
-    — the INRIA label thesis is preserved."""
+    """SecNumEdu boost (1.5 explicite) must still dominate parcoursup_rich (1.2)
+    — the INRIA label thesis is preserved QUAND le boost est activé.
+    Vague 0.5 (2026-05-08) : default 1.0 (couverture 0.04% mort), test passe
+    explicitement 1.5 pour vérifier le design en cas de réactivation."""
     rich = _rich_fiche()
     secnumedu_but_poor = {
         "labels": ["SecNumEdu"], "statut": "Inconnu", "niveau": "bac+3",
@@ -262,7 +267,7 @@ def test_rerank_parcoursup_rich_does_not_dominate_secnumedu():
         {"fiche": rich, "score": 0.50, "base_score": 0.50},
         {"fiche": secnumedu_but_poor, "score": 0.50, "base_score": 0.50},
     ]
-    cfg = RerankConfig()  # defaults: secnumedu=1.5, parcoursup_rich=1.2, etab=1.1
+    cfg = RerankConfig(secnumedu_boost=1.5)  # boost réactivé pour ce test
     reranked = rerank(results, cfg)
     # 0.5 * 1.5 * 1.1 * 1.05 = 0.866 (secnumedu + etab + bac+3)
     # 0.5 * 1.2 * 1.1 * 1.05 = 0.693 (rich + etab + bac+3)
