@@ -664,13 +664,30 @@ class OrientIAPipeline:
             self._double_index_built = True
             return False
 
+        # Vague 1.C — exclure les fiches retrieval_eligible=False des sub-indices.
+        # 18 012 fiches RNCP/ONISEP/LBA/CFA ne sont pas adaptées au retrieval
+        # formation+ville (audit Phase 0 v5). Ne pas les indexer = top-K plus
+        # net + plus de place pour annexes pertinentes.
+        # Backward compat : fiches sans flag retrieval_eligible sont
+        # considérées éligibles par défaut (corpus v5 pre-Vague 1).
         main_indices: list[int] = []
         annex_indices: list[int] = []
+        n_excluded_ineligible = 0
         for i, f in enumerate(self.fiches):
-            if isinstance(f, dict) and f.get("domain"):
+            if not isinstance(f, dict):
+                continue
+            if f.get("retrieval_eligible") is False:
+                n_excluded_ineligible += 1
+                continue
+            if f.get("domain"):
                 annex_indices.append(i)
             else:
                 main_indices.append(i)
+        if n_excluded_ineligible > 0:
+            _logger.info(
+                "[double-index] excluded %d fiches retrieval_eligible=false (Vague 1.C)",
+                n_excluded_ineligible,
+            )
 
         if len(main_indices) < 2 or len(annex_indices) < 2:
             # Pas assez de fiches dans un pool — fallback retrieve unifié

@@ -217,10 +217,34 @@ class TestStageNormalize:
         assert out[0]["statut"] == "Public"
 
     def test_no_op_when_already_canonical(self):
+        """Stage 5 idempotent sur les champs canoniques (region/niveau/statut).
+        Vague 1.C (2026-05-08) — Stage 5 ajoute en plus le flag
+        `retrieval_eligible` (recalculé à chaque run, donc déterministe).
+        Le test vérifie l'idempotence des champs originaux + présence du flag."""
         fiche = fiche_parcoursup_sample()  # tout canonique
-        original = json.dumps(fiche, sort_keys=True)
         out, _ = stage_normalize([fiche])
-        assert json.dumps(out[0], sort_keys=True) == original
+        # Champs canoniques inchangés
+        assert out[0]["region"] == fiche["region"]
+        assert out[0]["niveau"] == fiche["niveau"]
+        assert out[0]["statut"] == fiche["statut"]
+        # Flag retrieval_eligible ajouté (Parcoursup = True par défaut)
+        assert out[0]["retrieval_eligible"] is True
+
+    def test_retrieval_eligible_false_for_excluded_sources(self):
+        """Vague 1.C — sources structurellement inadaptées sont taggées false."""
+        for excluded_source in ("rncp", "onisep", "labonnealternance", "inserjeunes_cfa"):
+            fiche = {"source": excluded_source, "nom": "test"}
+            out, _ = stage_normalize([fiche])
+            assert out[0]["retrieval_eligible"] is False, \
+                f"{excluded_source} doit être retrieval_eligible=false"
+
+    def test_retrieval_eligible_true_for_default_sources(self):
+        """Vague 1.C — sources core (Parcoursup, MonMaster) éligibles par défaut."""
+        for ok_source in ("parcoursup", "monmaster", "secnumedu"):
+            fiche = {"source": ok_source, "nom": "test"}
+            out, _ = stage_normalize([fiche])
+            assert out[0]["retrieval_eligible"] is True, \
+                f"{ok_source} doit être retrieval_eligible=true"
 
 
 # ─────────────── Stage 10 — APPEND_ANNEXES ───────────────

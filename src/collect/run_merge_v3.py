@@ -361,6 +361,46 @@ def _canonicalize_statut(statut: Any) -> str | None:
     return raw  # garde tel quel pour les cas spéciaux (CFA Apprentissage, etc.)
 
 
+# ─────────────── Vague 1.C — Tagger fiches polluantes retrieval ───────────────
+#
+# Audit Phase 0 v5 : 18 012 fiches sur 47 193 (38%) sont structurellement
+# inadaptées au retrieval formation+ville :
+# - source=rncp (5181)         : référentiels nationaux sans école nommée
+# - source=onisep (4758)       : descriptifs nationaux (0% etab+ville)
+# - source=labonnealternance (4008) : offres distantes alternance
+# - source=inserjeunes_cfa (4065)   : nom == etablissement, pas formation
+#
+# Stratégie : flag `retrieval_eligible: bool` ajouté Stage 5. Les fiches
+# `false` restent dans le corpus (utiles pour cross-references, audit,
+# fallback) mais sont exclues du retrieval principal côté pipeline.
+# Pas de re-embed nécessaire — le filter s'applique au build des sub-indices.
+
+_RETRIEVAL_INELIGIBLE_SOURCES = frozenset({
+    "rncp",                    # référentiels nationaux RNCP, pas d'école nommée
+    "onisep",                  # descriptifs nationaux ONISEP (0% etab+ville mesuré)
+    "labonnealternance",       # offres alternance distantes, pas formations
+    "inserjeunes_cfa",         # nom = etablissement, pas formation
+})
+
+
+def _is_retrieval_eligible(fiche: dict[str, Any]) -> bool:
+    """True si la fiche est adaptée au retrieval formation+ville.
+
+    Vague 1.C — exclut les 4 sources structurellement inadaptées (38%
+    du corpus). Les annexes (`domain` set) restent éligibles par défaut.
+    """
+    source = _safe_str_field(fiche, "source")
+    if source in _RETRIEVAL_INELIGIBLE_SOURCES:
+        return False
+    return True
+
+
+def _safe_str_field(fiche: dict, key: str) -> str:
+    """Helper : retrieve un champ string-coerced sans accent."""
+    val = fiche.get(key)
+    return str(val).strip() if val else ""
+
+
 # ─────────────── Helpers loading ───────────────
 
 
@@ -545,6 +585,7 @@ def stage_normalize(fiches: list[dict[str, Any]]) -> tuple[list[dict[str, Any]],
     n_region_inferred_from_ville = 0
     n_niveau_canonized = 0
     n_statut_canonized = 0
+    n_retrieval_ineligible = 0
     for fiche in fiches:
         if not isinstance(fiche, dict):
             continue
@@ -569,11 +610,17 @@ def stage_normalize(fiches: list[dict[str, Any]]) -> tuple[list[dict[str, Any]],
         if canonical_statut != original_statut and canonical_statut:
             fiche["statut"] = canonical_statut
             n_statut_canonized += 1
+        # Vague 1.C — flag retrieval_eligible (idempotent : recalculé à chaque run)
+        eligible = _is_retrieval_eligible(fiche)
+        fiche["retrieval_eligible"] = eligible
+        if not eligible:
+            n_retrieval_ineligible += 1
     stats = {
         "n_region_canonized": n_region_canonized,
         "n_region_inferred_from_ville": n_region_inferred_from_ville,
         "n_niveau_canonized": n_niveau_canonized,
         "n_statut_canonized": n_statut_canonized,
+        "n_retrieval_ineligible": n_retrieval_ineligible,
     }
     return fiches, stats
 
