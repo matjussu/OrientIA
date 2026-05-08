@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "timestamp": "2026-05-08T14:31:22.606356+00:00",
+    "corpus_path": "data/processed/formations.json",
+    "index_path": "data/embeddings/formations.index",
+    "golden_path": "/home/matteo_linux/projets/OrientIA/data/golden_eval/golden_50.json",
+    "n_questions": 5
+  },
+  "global": {
+    "n_total": 5,
+    "n_errors": 0,
+    "n_ok": 5,
+    "recall_at_1": 0.0,
+    "recall_at_5": 0.6,
+    "recall_at_10": 0.6,
+    "mrr": 0.2,
+    "answer_kw_match": 1.0,
+    "avg_latency_s": 5.04
+  },
+  "by_category": {
+    "lyceen_parcoursup": {
+      "n": 5,
+      "recall_at_1": 0.0,
+      "recall_at_5": 0.6,
+      "recall_at_10": 0.6,
+      "mrr": 0.2,
+      "answer_kw_match": 1.0,
+      "avg_latency_s": 5.04
+    }
+  },
+  "results": [
+    {
+      "id": "G01",
+      "category": "lyceen_parcoursup",
+      "question": "Quel est le taux d'accès du Bachelor Cyber EFREI Bordeaux ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 0,
+      "recall_at_10": 0,
+      "mrr": 0.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 0.93,
+      "top_5_summary": [],
+      "answer_excerpt": "Je n'ai pas l'information sur taux d'accès Parcoursup 2025 pour la formation que tu décris dans mes sources vérifiées.\n\nJe n'ai pas trouvé de formation correspondant suffisamment précisément à « cyber"
+    },
+    {
+      "id": "G02",
+      "category": "lyceen_parcoursup",
+      "question": "Combien de places en BUT Informatique à Lyon ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 0,
+      "recall_at_10": 0,
+      "mrr": 0.0,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 0.59,
+      "top_5_summary": [],
+      "answer_excerpt": "Je n'ai pas l'information sur nombre de places pour la formation que tu décris dans mes sources vérifiées.\n\nJe n'ai pas trouvé de formation correspondant suffisamment précisément à « informatique lyon"
+    },
+    {
+      "id": "G03",
+      "category": "lyceen_parcoursup",
+      "question": "Quels sont les profils admis en CPGE MPSI Lycée du Parc Lyon ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.25,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 14.15,
+      "top_5_summary": [
+        {
+          "domain": "metier",
+          "source": "onisep_metiers",
+          "nom": "onisep_metier:MET.366"
+        },
+        {
+          "domain": "formation_insertion",
+          "source": "inserjeunes_lycee_pro",
+          "nom": "inserjeunes_formation:bp:agent-technique-de-prevention-et-de-securite"
+        },
+        {
+          "domain": "formation_insertion",
+          "source": "inserjeunes_lycee_pro",
+          "nom": "inserjeunes_formation:bp:agent-technique-de-securite-dans-les-transports"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "CPGE - Lettres"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Portail Licence - physique/chimie/sciences de l'ingénieur (PCSI)"
+        }
+      ],
+      "answer_excerpt": "Je n’ai pas de données dans mes sources sur les profils admis en **CPGE MPSI au Lycée du Parc (Lyon)**.\n\nEn revanche, pour te donner un point de comparaison, voici les chiffres 2025 d’une autre CPGE ("
+    },
+    {
+      "id": "G04",
+      "category": "lyceen_parcoursup",
+      "question": "Sélectivité PASS Sorbonne ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.5,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 4.97,
+      "top_5_summary": [
+        {
+          "domain": "correction_factuelle",
+          "source": "corrections_factuelles_curated",
+          "nom": "correction:medecine_bac_s_supprime_2021"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Parcours d'Accès Spécifique Santé (PASS)"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Double diplôme - Licence Gestion - Collège de Management de la Sorbonn"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Parcours d'Accès Spécifique Santé (PASS)"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "Licence - Double diplôme - Licence Droit - Collège de Droit de la Sorbonne"
+        }
+      ],
+      "answer_excerpt": "Tu veux savoir à quel point le PASS à la Sorbonne est sélectif. Voici les données disponibles pour des formations proches (attention, la Sorbonne ne propose pas de PASS, mais des doubles licences séle"
+    },
+    {
+      "id": "G05",
+      "category": "lyceen_parcoursup",
+      "question": "BTS Comptabilité-Gestion Paris taux d'accès ?",
+      "expected_domain": null,
+      "expected_source": "parcoursup",
+      "recall_at_1": 0,
+      "recall_at_5": 1,
+      "recall_at_10": 1,
+      "mrr": 0.25,
+      "answer_kw_match": 1,
+      "missing_keywords": [],
+      "latency_s": 4.54,
+      "top_5_summary": [
+        {
+          "domain": "formation_insertion",
+          "source": "inserjeunes_lycee_pro",
+          "nom": "inserjeunes_formation_region:bts:comptabilite-et-gestion:grand-est"
+        },
+        {
+          "domain": "formation_insertion",
+          "source": "inserjeunes_lycee_pro",
+          "nom": "inserjeunes_formation_region:bts:comptabilite-et-gestion:la-reunion"
+        },
+        {
+          "domain": "formation_insertion",
+          "source": "inserjeunes_lycee_pro",
+          "nom": "inserjeunes_formation_region:bts:comptabilite-et-gestion:normandie"
+        },
+        {
+          "domain": null,
+          "source": "parcoursup",
+          "nom": "BTS - Services - Comptabilité et gestion"
+        },
+        {
+          "domain": null,
+          "source": "monmaster",
+          "nom": "COMPTABILITE-CONTROLE-AUDIT — Comptabilité, Contrôle, Audit (M1 & M2)"
+        }
+      ],
+      "answer_excerpt": "Tu cherches à connaître les chances d’accès au **BTS Comptabilité-Gestion** en Île-de-France. Voici les données disponibles pour une formation précise :\n\n• **BTS Services Comptabilité et Gestion au Ly"
+    }
+  ]
+}
