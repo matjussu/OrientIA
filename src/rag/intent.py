@@ -53,6 +53,8 @@ DOMAIN_HINT_FORMATION_INSERTION = "formation_insertion"  # Inserjeunes lycée pr
 DOMAIN_HINT_FINANCEMENT_ETUDES = "financement_etudes"  # Financement curé (axe 4)
 DOMAIN_HINT_TERRITOIRE_DROM = "territoire_drom"  # DROM-COM territorial (axe 2)
 DOMAIN_HINT_VOIE_PRE_BAC = "voie_pre_bac"  # BAC PRO + CAP catalogue (axe 3a)
+# Vague 3.4 (2026-05-08) — Calendrier Parcoursup/MonMaster (gap mesuré recall@5=0%)
+DOMAIN_HINT_CALENDRIER = "calendrier"
 
 
 @dataclass(frozen=True)
@@ -226,6 +228,34 @@ _PATTERNS_DOMAIN_METIER = [
     re.compile(r"\bjob\s+(?:de|d['e]\s*)"),
     re.compile(r"\bworking?\s+with\s+my\s+hands\b"),
     re.compile(r"\btravailler\s+(?:de\s+mes\s+|de\s+ses\s+)?mains\b"),
+]
+
+
+# Vague 3.4 (2026-05-08) — Calendrier Parcoursup/MonMaster.
+# Patterns ciblant les questions calendaires : "quand", "date", "phase",
+# "calendrier", "ouverture", "fermeture vœux", etc. Combiné avec les
+# plateformes Parcoursup/MonMaster pour discriminer.
+_PATTERNS_DOMAIN_CALENDRIER = [
+    # Question "quand" + plateforme
+    re.compile(r"\bquand\s+.*?(parcoursup|monmaster|master|voeux|admission|inscription|phase)\b"),
+    re.compile(r"\b(?:parcoursup|monmaster).*?(quand|date|calendrier|phase)\b"),
+    # Date limite / deadline
+    re.compile(r"\bdate\s+(?:limite|de\s+(?:cloture|fin))\b"),
+    re.compile(r"\bderniere\s+(?:date|echeance|deadline)\b"),
+    re.compile(r"\bechean[cs]e[sx]?\b"),
+    # Phases Parcoursup
+    re.compile(r"\bphase\s+(?:complementaire|principale|admission|reception)\b"),
+    re.compile(r"\b(?:ouverture|fermeture)\s+(?:de\s+)?(?:la\s+)?(?:plateforme|inscriptions?|voeux)\b"),
+    # Calendrier explicite
+    re.compile(r"\bcalendrier\s+(?:parcoursup|monmaster|master|admission|voeux|2026)\b"),
+    # Voeux + temporel
+    re.compile(r"\b(?:formuler|saisir|valider|confirmer)\s+(?:les?\s+)?voeux\b"),
+    # Résultats / réponses Parcoursup
+    re.compile(r"\bresultat[sx]?\s+(?:parcoursup|admission|monmaster)\b"),
+    re.compile(r"\breponse[sx]?\s+(?:parcoursup|formation[sx]?|admission)\b"),
+    # MonMaster spécifique
+    re.compile(r"\bmonmaster\b.*?(date|calendrier|phase|candidature[sx]?)"),
+    re.compile(r"\bcandidatures?\s+master[sx]?\b"),
 ]
 
 
@@ -403,6 +433,11 @@ def classify_domain_hint(question: str) -> str | None:
         return None
 
     norm = _strip_accents(question.lower())
+
+    # Vague 3.4 — Calendrier Parcoursup/MonMaster (priorité haute : signaux
+    # très spécifiques "quand/date/phase/voeux" combinés à la plateforme)
+    if any(p.search(norm) for p in _PATTERNS_DOMAIN_CALENDRIER):
+        return DOMAIN_HINT_CALENDRIER
 
     if any(p.search(norm) for p in _PATTERNS_DOMAIN_APEC):
         return DOMAIN_HINT_APEC

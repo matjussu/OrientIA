@@ -79,6 +79,11 @@ class RerankConfig:
     domain_boost_financement_etudes: float = 1.5  # Financement curated (axe 4 muet → unmute)
     domain_boost_territoire_drom: float = 1.5  # DROM territorial (axe 2 non-mesuré)
     domain_boost_voie_pre_bac: float = 1.4  # BAC PRO + CAP catalogue (axe 3a rare)
+    # Vague 3.4 (2026-05-08) — Calendrier Parcoursup/MonMaster
+    # Boost élevé (1.5) car corpus de niche (15 entrées seulement) qui doit
+    # impérativement remonter sur les questions calendaires. Mesure ground-truth
+    # 50q v6 baseline : recall@5 calendaire = 0% (gap absolu).
+    domain_boost_calendrier: float = 1.5
 
     def as_dict(self) -> dict:
         return {
@@ -104,6 +109,7 @@ class RerankConfig:
             "domain_boost_financement_etudes": self.domain_boost_financement_etudes,
             "domain_boost_territoire_drom": self.domain_boost_territoire_drom,
             "domain_boost_voie_pre_bac": self.domain_boost_voie_pre_bac,
+            "domain_boost_calendrier": self.domain_boost_calendrier,
         }
 
 
@@ -123,6 +129,7 @@ _DOMAIN_BOOST_FIELDS = {
     "financement_etudes": "domain_boost_financement_etudes",
     "territoire_drom": "domain_boost_territoire_drom",
     "voie_pre_bac": "domain_boost_voie_pre_bac",
+    "calendrier": "domain_boost_calendrier",
 }
 
 # Vague 0.5 — Mapping cross-domain : un domain_hint peut booster plusieurs
