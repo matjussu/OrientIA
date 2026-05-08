@@ -488,11 +488,23 @@ class OrientIAPipeline:
             meta["wall_clock_s"] = round(time.time() - wall_t0, 2)
             return tour1_answer, meta
 
-        # Tour 2 avec hint réinjecté
-        # Note (Étape 2 refonte) : en mode strict_v4, le hint_block est ignoré
-        # par generate() car le contrat v4 a sa propre logique de refus honnête.
-        # Le retry tour 2 reste utile pour donner au LLM une 2e chance après
-        # validator feedback (mais il n'y a pas de hint injecté en v4).
+        # Vague 0 fix — skip retry tour 2 en mode strict_v4. Le `hint_block`
+        # est ignoré par generate() en v4 (cf SYSTEM_PROMPT_V4_STRICT R1-R5
+        # qui n'utilise pas le hint), donc le tour 2 ne fait que regénérer
+        # avec un prompt quasi-identique (température 0.3, variance pure).
+        # La policy aval (α/β/γ) gère déjà les claims problématiques.
+        # Économie : ~7-10s par question flaggée, gain UX direct cible démo.
+        if self.use_strict_v4:
+            _logger.info(
+                "Retry skipped (strict_v4 mode — hint_block ignored by generate). "
+                "Tour 1 kept with %d failed_claims, policy will handle.",
+                len(tour1_failed),
+            )
+            meta["retry_skipped_reason"] = "strict_v4_hint_ignored"
+            meta["wall_clock_s"] = round(time.time() - wall_t0, 2)
+            return tour1_answer, meta
+
+        # Tour 2 avec hint réinjecté (mode legacy v3.2 uniquement)
         meta["retries_attempted"] = 1
         hint_block = format_hint_block(tour1_failed)
         tour2_answer = generate(
