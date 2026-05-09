@@ -230,21 +230,62 @@ class TestStageNormalize:
         # Flag retrieval_eligible ajouté (Parcoursup = True par défaut)
         assert out[0]["retrieval_eligible"] is True
 
-    def test_retrieval_eligible_false_for_excluded_sources(self):
-        """Vague 1.C — sources structurellement inadaptées sont taggées false."""
-        for excluded_source in ("rncp", "onisep", "labonnealternance", "inserjeunes_cfa"):
-            fiche = {"source": excluded_source, "nom": "test"}
-            out, _ = stage_normalize([fiche])
-            assert out[0]["retrieval_eligible"] is False, \
-                f"{excluded_source} doit être retrieval_eligible=false"
+    def test_retrieval_eligible_false_for_lba_only(self):
+        """Step 11.7 — politique granulaire : seul `labonnealternance` reste
+        exclu en bloc (offres alternance distantes ≠ formations identifiables).
+        Les autres sources (rncp/onisep/cfa) sont éligibles si AU MOINS UN
+        signal d'identité (etablissement, nom, ville, region) est populé."""
+        fiche_lba = {"source": "labonnealternance", "nom": "test", "etablissement": "test"}
+        out, _ = stage_normalize([fiche_lba])
+        assert out[0]["retrieval_eligible"] is False, \
+            "labonnealternance reste exclu même avec etablissement populé"
 
     def test_retrieval_eligible_true_for_default_sources(self):
-        """Vague 1.C — sources core (Parcoursup, MonMaster) éligibles par défaut."""
+        """Sources core (Parcoursup, MonMaster) éligibles par défaut."""
         for ok_source in ("parcoursup", "monmaster", "secnumedu"):
             fiche = {"source": ok_source, "nom": "test"}
             out, _ = stage_normalize([fiche])
             assert out[0]["retrieval_eligible"] is True, \
                 f"{ok_source} doit être retrieval_eligible=true"
+
+    def test_retrieval_eligible_step11_7_recovers_onisep_prestigious(self):
+        """Step 11.7 anti-régression — les écoles prestigieuses ONISEP
+        (HEC, CentraleSupélec, IMT, INSA) doivent être éligibles. Bug
+        identifié 2026-05-09 par audit Matteo : la politique v1 blacklist
+        excluait `source=onisep` en bloc, rendant ces écoles invisibles
+        au retrieve."""
+        # Cas réels du corpus v7 (vérifiés empiriquement)
+        prestigious = [
+            {"source": "onisep", "nom": "diplôme d'ingénieur de l'École CentraleSupélec",
+             "etablissement": "École CentraleSupélec"},
+            {"source": "onisep", "nom": "premier cycle INSA post bac général",
+             "etablissement": "INSA Rennes - filière classique"},
+            {"source": "onisep", "nom": "mastère spé. cybersécurité",
+             "etablissement": "CentraleSupélec - IMT Atlantique Bretagne"},
+        ]
+        for fiche in prestigious:
+            out, _ = stage_normalize([fiche])
+            assert out[0]["retrieval_eligible"] is True, (
+                f"École prestigieuse {fiche['etablissement']} doit être éligible "
+                f"post-step-11.7. Si False, la politique granulaire est cassée."
+            )
+
+    def test_retrieval_eligible_excludes_truly_empty_fiches(self):
+        """Step 11.7 — fiche sans aucun signal d'identité reste exclue.
+        Garde-fou : la nouvelle politique granulaire n'inclut pas tout
+        aveuglément."""
+        # Fiche sans etab/nom/ville/region/domain → exclue
+        empty_fiche = {"source": "rncp"}
+        out, _ = stage_normalize([empty_fiche])
+        assert out[0]["retrieval_eligible"] is False
+
+    def test_retrieval_eligible_includes_annex_with_domain(self):
+        """Step 11.7 — fiches annexes typées (domain set) éligibles même
+        sans etablissement/ville (CROUS, INSEE, DARES, etc.)."""
+        # Cas typique CROUS : pas d'etablissement précis mais domain set
+        crous_fiche = {"source": "crous_curated", "domain": "crous", "nom": ""}
+        out, _ = stage_normalize([crous_fiche])
+        assert out[0]["retrieval_eligible"] is True
 
 
 # ─────────────── Stage 10 — APPEND_ANNEXES ───────────────
