@@ -303,6 +303,28 @@ def test_hardlock_block_both_region_and_domain() -> None:
     assert "crous" in block.lower()
 
 
+def test_hardlock_block_empty_when_strict_flag_without_data() -> None:
+    """Edge case (audit step 7 → 8) : hardlock_region_strict=True mais
+    criteria.region absent → header sans bullet → on retourne "" plutôt
+    qu'un anchor vide '## CONTRAINTES HARDLOCK (R7)\\n'."""
+    rd = RouteDecision(
+        sub_indexes=["formations"],
+        hardlock_region_strict=True,
+        criteria=None,  # ← incohérent avec le flag, mais le code doit résister
+        confidence=0.7,
+    )
+    assert rd.hardlock_block_for_prompt() == ""
+
+    # Inverse : domain_strict sans domain_lock
+    rd2 = RouteDecision(
+        sub_indexes=["aides_territoires"],
+        hardlock_domain_strict=True,
+        domain_lock=None,
+        confidence=0.7,
+    )
+    assert rd2.hardlock_block_for_prompt() == ""
+
+
 # ────────────────────────── ROUTE_DECISION_TOOL ──────────────────────────
 
 

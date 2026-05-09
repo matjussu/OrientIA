@@ -248,6 +248,14 @@ class RouteDecision:
                 f"- Domaine(s) imposé(s) : **{', '.join(self.domain_lock)}**. "
                 "Tu ne mélanges PAS avec d'autres types de fiches."
             )
+        # Garde edge case (audit Matteo step 7 → 8) : si l'outer-check passe
+        # (un flag hardlock=True) mais qu'aucun bullet inner ne matche
+        # (criteria.region absent malgré hardlock_region_strict, ou domain_lock
+        # vide malgré hardlock_domain_strict), on retournerait juste le header
+        # sans bullets — le LLM verrait un anchor vide. Mieux vaut "" que
+        # signaler une contrainte sans la décrire.
+        if len(lines) == 1:
+            return ""
         return "\n".join(lines) + "\n"
 
 
