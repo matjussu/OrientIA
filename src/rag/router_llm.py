@@ -10,18 +10,17 @@ Pattern : Mistral Small + `tool_choice="any"` + 1 seul tool
 `decide_route` (single-call mode), calqué sur AnalystAgent
 (`src/agents/hierarchical/analyst_agent.py:121-181`).
 
-Étape 1 du plan : ce module contient pour l'instant les dataclasses,
-les params du tool, le system prompt et le ROUTE_DECISION_TOOL. L'appel
-LLM `RouterLLM.route()` viendra à l'étape 3 (avec fallback déterministe
-gracieux pattern AnalystAgent ligne 177-180).
-
 Cf docs/ADR-064-router-llm-leger.md, docs/ADR-065-quad-subindexes-partition.md.
 """
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass, field
 from typing import Any
 
+from mistralai.client import Mistral
+
+from src.agent.retry import call_with_retry
 from src.agent.tool import Tool
 from src.rag.metadata_filter import FilterCriteria
 
@@ -450,3 +449,93 @@ PAS de réponse narrative.
 - "Quelles écoles d'ingé cyber en Bretagne" → sub_indexes=["formations"], region="bretagne", secteur=["informatique", "securite"], hardlock_region_strict=true, top_k_override=12, confidence=0.9
 - "Comment soigner une angine" → refusal_reason="cross_domain", confidence=1.0
 """
+
+
+# ────────────────────────── RouterLLM (appel Mistral Small) ──────────────────────────
+
+
+@dataclass
+class RouterLLM:
+    """Routeur LLM léger — 1 appel Mistral Small + tool_choice="any".
+
+    Usage :
+        router = RouterLLM(client=mistral_client)
+        decision = router.route(question, history=history)
+        # decision est TOUJOURS un RouteDecision valide (jamais None,
+        # jamais une exception non-rattrapée). Si LLM fail, fallback
+        # déterministe gracieux via router_fallback.deterministic_route.
+
+    Latence typique : 500-800 ms (Mistral Small + 1 tool call). Peut
+    grimper à 1.5-2 s en cas de retry sur 429.
+
+    Coût : ~$0.0001 par question (Mistral Small pricing 2026 + tool call).
+    """
+
+    client: Mistral
+    model: str = "mistral-small-latest"
+    max_retries: int = 2
+    initial_backoff: float = 1.5
+
+    def route(
+        self,
+        question: str,
+        history: list[dict[str, str]] | None = None,
+    ) -> RouteDecision:
+        """Décide le routing pour `question`. Toujours non-bloquant.
+
+        Args:
+            question: question utilisateur brute.
+            history: tours précédents (Mistral format `[{"role", "content"}]`).
+                Permet au LLM de contextualiser (ex: tour 2 réfère à
+                "la 2e formation que tu as citée"). Cap à 12 messages
+                (6 tours) pour limiter latence/contexte.
+
+        Returns:
+            RouteDecision validé. is_fallback=True si fallback déterministe
+            a été utilisé (LLM down, JSON invalide, exception, etc.).
+        """
+        # Lazy import pour éviter cycle router_fallback ↔ router_llm
+        from src.rag.router_fallback import deterministic_route
+
+        if not question or not question.strip():
+            return deterministic_route(question)
+
+        messages: list[dict[str, str]] = [
+            {"role": "system", "content": ROUTER_SYSTEM_PROMPT}
+        ]
+        if history:
+            messages.extend(history[-12:])
+        messages.append({"role": "user", "content": question})
+
+        try:
+            response = call_with_retry(
+                lambda: self.client.chat.complete(
+                    model=self.model,
+                    messages=messages,
+                    tools=[ROUTE_DECISION_TOOL.to_mistral_schema()],
+                    tool_choice="any",
+                ),
+                max_retries=self.max_retries,
+                initial_backoff=self.initial_backoff,
+            )
+        except Exception:
+            # Pattern non-bloquant calqué sur analyst_agent.py:177-180.
+            # 429/5xx/Cloudflare/timeout après retry → fallback déterministe.
+            return deterministic_route(question)
+
+        try:
+            msg = response.choices[0].message
+            if not msg.tool_calls:
+                return deterministic_route(question)
+            tc = msg.tool_calls[0]
+            if tc.function.name != ROUTE_DECISION_TOOL.name:
+                return deterministic_route(question)
+            args = json.loads(tc.function.arguments)
+            normalized = ROUTE_DECISION_TOOL.call(**args)
+            if "error" in normalized:
+                # Tool.call a retourné une erreur (missing required, etc.)
+                return deterministic_route(question)
+            return RouteDecision.from_tool_payload(normalized)
+        except (json.JSONDecodeError, ValueError, AttributeError, KeyError, IndexError):
+            # JSON cassé, schema invalide, LLM hallucine sub_index inconnu, etc.
+            return deterministic_route(question)

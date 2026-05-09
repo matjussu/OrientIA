@@ -1,18 +1,24 @@
-"""Tests unitaires RouterLLM — étape 1 : dataclasses + tool params + prompts.
+"""Tests unitaires RouterLLM.
 
-Cette étape ne teste PAS l'appel LLM (qui sera implémenté étape 3 + testé
-avec mocks là). Ici on valide :
+Étapes 1+3 du plan. Sans appel LLM live (tout mocké) :
 - RouteDecision construction, validation, post_init
 - RouteDecision.from_tool_payload tolère les clés manquantes
 - RouteDecision.hardlock_block_for_prompt formatte correctement
 - ROUTE_DECISION_TOOL.to_mistral_schema() retourne le bon format
 - _route_decision_tool_func normalise correctement
 - ROUTER_SYSTEM_PROMPT contient les éléments critiques (sub_indexes nommés)
+- RouterLLM.route() : succès canonique, history pris en compte,
+  fallback gracieux sur exception / JSON invalide / tool_calls vide
+
+Pour le test live (sans mock, sur 10 questions golden_60), voir
+scripts/validate_router_llm_live.py (run manuel, hors pytest).
 """
 from __future__ import annotations
 
 import json
 from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import MagicMock
 
 import pytest
 
@@ -24,6 +30,7 @@ from src.rag.router_llm import (
     ROUTE_DECISION_TOOL_PARAMS,
     ROUTER_SYSTEM_PROMPT,
     RouteDecision,
+    RouterLLM,
     SUB_INDEX_NAMES,
     _route_decision_tool_func,
 )
@@ -366,3 +373,238 @@ def test_authoritative_schema_sub_indexes_match() -> None:
     schema = json.loads(schema_path.read_text(encoding="utf-8"))
     enum_values = schema["properties"]["sub_indexes"]["items"]["enum"]
     assert set(enum_values) == set(SUB_INDEX_NAMES)
+
+
+# ────────────────────────── RouterLLM.route() avec mocks ──────────────────────────
+
+
+def _mock_mistral_response(tool_payload: dict | None, tool_name: str = "decide_route") -> SimpleNamespace:
+    """Construit un faux response Mistral avec tool_calls."""
+    if tool_payload is None:
+        # Pas de tool_calls
+        return SimpleNamespace(
+            choices=[SimpleNamespace(message=SimpleNamespace(tool_calls=None))]
+        )
+    tc = SimpleNamespace(
+        function=SimpleNamespace(name=tool_name, arguments=json.dumps(tool_payload))
+    )
+    return SimpleNamespace(
+        choices=[SimpleNamespace(message=SimpleNamespace(tool_calls=[tc]))]
+    )
+
+
+def test_router_llm_route_canonical_crous() -> None:
+    """Cas live #1 : 'logement CROUS Lyon' → aides_territoires + criteria + hardlock."""
+    payload = {
+        "sub_indexes": ["aides_territoires"],
+        "region": "auvergne-rhône-alpes",
+        "domain_lock": ["crous"],
+        "hardlock_region_strict": True,
+        "hardlock_domain_strict": True,
+        "top_k_override": 10,
+        "confidence": 0.9,
+    }
+    client = MagicMock()
+    client.chat.complete.return_value = _mock_mistral_response(payload)
+
+    router = RouterLLM(client=client)
+    rd = router.route("Combien coûte le logement CROUS à Lyon ?")
+
+    assert rd.sub_indexes == ["aides_territoires"]
+    assert rd.criteria is not None
+    assert rd.criteria.region == "auvergne-rhône-alpes"
+    assert rd.domain_lock == ["crous"]
+    assert rd.hardlock_region_strict is True
+    assert rd.top_k_override == 10
+    assert rd.confidence == 0.9
+    assert rd.is_fallback is False  # LLM a réussi
+    client.chat.complete.assert_called_once()
+
+
+def test_router_llm_route_superlative_refusal() -> None:
+    """LLM détecte superlatif → refusal_reason + pre_written_response auto."""
+    payload = {
+        "sub_indexes": ["formations"],
+        "refusal_reason": "superlative_no_data",
+        "confidence": 0.95,
+    }
+    client = MagicMock()
+    client.chat.complete.return_value = _mock_mistral_response(payload)
+
+    router = RouterLLM(client=client)
+    rd = router.route("Quelle est la meilleure école de commerce ?")
+
+    assert rd.refusal_reason == "superlative_no_data"
+    assert rd.pre_written_response is not None
+    assert rd.is_fallback is False
+
+
+def test_router_llm_route_passes_history() -> None:
+    """history est inclus dans messages envoyés au LLM (cap à 12)."""
+    payload = {"sub_indexes": ["formations"], "confidence": 0.7}
+    client = MagicMock()
+    client.chat.complete.return_value = _mock_mistral_response(payload)
+
+    router = RouterLLM(client=client)
+    history = [
+        {"role": "user", "content": "Question 1"},
+        {"role": "assistant", "content": "Réponse 1"},
+        {"role": "user", "content": "Question 2"},
+        {"role": "assistant", "content": "Réponse 2"},
+    ]
+    router.route("Question actuelle", history=history)
+
+    call_kwargs = client.chat.complete.call_args.kwargs
+    messages = call_kwargs["messages"]
+    # system + 4 history + 1 user = 6 messages
+    assert len(messages) == 6
+    assert messages[0]["role"] == "system"
+    assert messages[-1]["content"] == "Question actuelle"
+
+
+def test_router_llm_history_capped_at_12() -> None:
+    """Si history > 12, seulement les 12 derniers sont passés."""
+    payload = {"sub_indexes": ["formations"], "confidence": 0.7}
+    client = MagicMock()
+    client.chat.complete.return_value = _mock_mistral_response(payload)
+
+    router = RouterLLM(client=client)
+    history = [{"role": "user", "content": f"q{i}"} for i in range(20)]
+    router.route("now", history=history)
+
+    messages = client.chat.complete.call_args.kwargs["messages"]
+    # system + 12 history + 1 user = 14 messages
+    assert len(messages) == 14
+
+
+def test_router_llm_falls_back_on_no_tool_calls() -> None:
+    """LLM répond sans tool_calls → fallback déterministe."""
+    client = MagicMock()
+    client.chat.complete.return_value = _mock_mistral_response(None)
+
+    router = RouterLLM(client=client)
+    rd = router.route("Quelles formations en Bretagne ?")
+
+    assert rd.is_fallback is True
+    # Le fallback déterministe doit avoir attrapé Bretagne
+    assert rd.criteria is not None
+    assert rd.criteria.region == "bretagne"
+
+
+def test_router_llm_falls_back_on_invalid_json() -> None:
+    """LLM retourne JSON invalide → fallback déterministe."""
+    tc = SimpleNamespace(
+        function=SimpleNamespace(name="decide_route", arguments="{not valid json")
+    )
+    response = SimpleNamespace(
+        choices=[SimpleNamespace(message=SimpleNamespace(tool_calls=[tc]))]
+    )
+    client = MagicMock()
+    client.chat.complete.return_value = response
+
+    router = RouterLLM(client=client)
+    rd = router.route("meilleure école commerce")
+
+    assert rd.is_fallback is True
+    # Fallback détecte le superlatif
+    assert rd.refusal_reason == "superlative_no_data"
+
+
+def test_router_llm_falls_back_on_wrong_tool_name() -> None:
+    """LLM appelle un autre tool (hallucine) → fallback déterministe."""
+    payload = {"foo": "bar"}
+    client = MagicMock()
+    client.chat.complete.return_value = _mock_mistral_response(
+        payload, tool_name="hallucinated_tool"
+    )
+
+    router = RouterLLM(client=client)
+    rd = router.route("Que fait un actuaire ?")
+
+    assert rd.is_fallback is True
+
+
+def test_router_llm_falls_back_on_exception() -> None:
+    """LLM lève une exception (timeout, 5xx) → fallback gracieux."""
+    client = MagicMock()
+    # Exception non-retryable propage immédiatement (TypeError n'est pas
+    # dans RETRYABLE_INDICATORS de retry.py). On utilise un type d'erreur
+    # qui ressemble à un fail réel.
+    client.chat.complete.side_effect = RuntimeError("Generic LLM error")
+
+    router = RouterLLM(client=client)
+    rd = router.route("Que fait un actuaire ?")
+
+    # Fallback gracieux
+    assert rd.is_fallback is True
+    # Domain hint matché par les patterns existants
+    assert "metiers" in rd.sub_indexes
+
+
+def test_router_llm_falls_back_on_invalid_sub_index() -> None:
+    """LLM retourne un sub_index hors enum → fallback (validation post_init)."""
+    payload = {
+        "sub_indexes": ["formations", "hallucinated_index"],
+        "confidence": 0.8,
+    }
+    client = MagicMock()
+    client.chat.complete.return_value = _mock_mistral_response(payload)
+
+    router = RouterLLM(client=client)
+    rd = router.route("Question test")
+
+    # Tomber en fallback car RouteDecision __post_init__ raise ValueError
+    assert rd.is_fallback is True
+
+
+def test_router_llm_falls_back_on_empty_question() -> None:
+    """Question vide → fallback direct sans appeler le LLM (économie)."""
+    client = MagicMock()
+    router = RouterLLM(client=client)
+    rd = router.route("")
+
+    assert rd.is_fallback is True
+    # Pas d'appel LLM
+    client.chat.complete.assert_not_called()
+
+
+def test_router_llm_falls_back_on_tool_call_validation_error() -> None:
+    """LLM retourne payload sans 'sub_indexes' (manque required) → fallback."""
+    # Payload sans sub_indexes ni confidence (les 2 required)
+    tc = SimpleNamespace(
+        function=SimpleNamespace(name="decide_route", arguments="{}")
+    )
+    response = SimpleNamespace(
+        choices=[SimpleNamespace(message=SimpleNamespace(tool_calls=[tc]))]
+    )
+    client = MagicMock()
+    client.chat.complete.return_value = response
+
+    router = RouterLLM(client=client)
+    rd = router.route("logement CROUS Lyon")
+
+    # Tool.call retourne {"error": "missing_required"} → fallback
+    assert rd.is_fallback is True
+    # Le fallback rattrape via classify_domain_hint
+    assert "aides_territoires" in rd.sub_indexes
+
+
+def test_router_llm_uses_default_model_mistral_small() -> None:
+    """Par défaut, RouterLLM utilise mistral-small-latest (souverain léger)."""
+    router = RouterLLM(client=MagicMock())
+    assert router.model == "mistral-small-latest"
+
+
+def test_router_llm_passes_tool_choice_any() -> None:
+    """Le call Mistral utilise tool_choice='any' (force tool call)."""
+    payload = {"sub_indexes": ["formations"], "confidence": 0.8}
+    client = MagicMock()
+    client.chat.complete.return_value = _mock_mistral_response(payload)
+
+    router = RouterLLM(client=client)
+    router.route("Question test")
+
+    kwargs = client.chat.complete.call_args.kwargs
+    assert kwargs["tool_choice"] == "any"
+    assert len(kwargs["tools"]) == 1
+    assert kwargs["tools"][0]["function"]["name"] == "decide_route"
