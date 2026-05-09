@@ -554,6 +554,11 @@ class RouterLLM:
                     messages=messages,
                     tools=[ROUTE_DECISION_TOOL.to_mistral_schema()],
                     tool_choice="any",
+                    # Step 11 (2026-05-09) : temperature=0 pour déterminisme
+                    # + stabiliser variance latence (cf audit step 10 outliers
+                    # 1.83-2.37s post-prompt-hardening). Le routing doit être
+                    # reproductible : même question → même décision.
+                    temperature=0,
                 ),
                 max_retries=self.max_retries,
                 initial_backoff=self.initial_backoff,
