@@ -315,14 +315,24 @@ class TestApplyMetadataFilterSingleCriterion:
         assert len(result) == 1
         assert result[0]["fiche"]["secteur"] == "informatique"
 
-    def test_secteur_strict_excludes_unknown(self):
-        fiches = _wrap([{"secteur": None}, {}, {"secteur": "informatique"}])
+    def test_secteur_defensive_passes_unknown(self):
+        """Step 11 fix (2026-05-09) : bascule strict → defensive pour aligner
+        avec _match_region. Cause : RouterLLM populate `secteur` opportunistiquement
+        + 0/15 764 fiches `formations` ont secteur populé dans le corpus v7
+        → l'ancien strict excluait 100% des fiches dès que router posait
+        secteur=['informatique']. Cohérent avec le pattern defensive de
+        _match_region pour les champs faiblement populés."""
+        fiches = _wrap([{"secteur": None}, {}, {"secteur": "informatique"}, {"secteur": "droit"}])
         result = apply_metadata_filter(
             fiches, FilterCriteria(secteur=["informatique"])
         )
-        # Asymétrie stricte : fiches sans secteur exclues
-        assert len(result) == 1
-        assert result[0]["fiche"]["secteur"] == "informatique"
+        # Defensive : sans secteur → passe ; secteur=informatique → passe ;
+        # secteur=droit → exclu (mismatch explicite)
+        assert len(result) == 3
+        secteurs = [r["fiche"].get("secteur") for r in result]
+        assert None in secteurs  # fiche.secteur=None passe
+        assert "informatique" in secteurs
+        assert "droit" not in secteurs
 
     def test_secteur_list_in_fiche(self):
         # fiche peut avoir une liste de secteurs (pluri-disciplinaire)

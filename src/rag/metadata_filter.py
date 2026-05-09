@@ -296,17 +296,43 @@ def _match_budget(fiche_budget: Any, c_max: int | None) -> bool:
 
 
 def _match_secteur(fiche_secteur: Any, c_secteurs: list[str] | None) -> bool:
-    """`$in` secteur. Asymétrie : fiche sans secteur → exclue (contrainte stricte)."""
+    """`$in` secteur. Defensive : fiche sans secteur → passe (pass-through).
+
+    Étape 11 fix critique (2026-05-09, audit Matteo mini-bench A/B) :
+    bascule de la sémantique stricte (Sprint 10 design) → defensive
+    (cohérent avec `_match_region`).
+
+    Pourquoi : le RouterLLM (étape 6) populate `criteria.secteur` opportunistiquement
+    pour toute question évoquant un domaine professionnel (informatique, droit, etc.).
+    Or 0 / 15 764 fiches `formations` ont `secteur` populé dans le corpus v7
+    (mesure 2026-05-09). Le filter strict `fiche_secteur is None → False`
+    excluait donc 100 % des fiches `formations` dès que le router posait
+    secteur=["informatique"], ce qui produisait des "Je n'ai pas de
+    formation pertinente" sur 10/23 questions du mini-bench step 11
+    (cf summary.md → 'ON refuse, OFF répond').
+
+    Sémantique nouvelle : si la fiche n'a pas le champ `secteur`, on
+    suppose qu'elle est compatible avec n'importe quel secteur demandé
+    (defensive). Les fiches qui ont `secteur` populé continuent d'être
+    matchées strictement. Cohérent avec `_match_region` qui a la même
+    logique pour la région ('national' ou None → passe).
+
+    Risque V2 : si Vague 4+ enrichit massivement `secteur`, le filter
+    pourra à nouveau être strict via un flag opt-in `secteur_strict=True`
+    sur FilterCriteria. Hors scope step 11.
+    """
     if not c_secteurs:
         return True
     if fiche_secteur is None:
-        return False
+        # Defensive pass-through (fix step 11 — voir docstring)
+        return True
     if isinstance(fiche_secteur, str):
         return fiche_secteur.strip().lower() in [s.strip().lower() for s in c_secteurs]
     if isinstance(fiche_secteur, (list, tuple, set)):
         fs_lower = [str(s).strip().lower() for s in fiche_secteur]
         c_lower = [s.strip().lower() for s in c_secteurs]
         return any(f in c_lower for f in fs_lower)
+    # Type inattendu (int, dict, etc.) : conservateur, exclure
     return False
 
 

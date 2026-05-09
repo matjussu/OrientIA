@@ -11,6 +11,7 @@ from src.rag.metadata_filter import (
     FilterCriteria,
     _match_domain,
     _match_region,
+    _match_secteur,
     _norm_region,
     apply_metadata_filter,
 )
@@ -175,3 +176,63 @@ def test_apply_metadata_filter_region_with_accents_in_fiche() -> None:
     filtered = apply_metadata_filter(items, criteria)
     assert len(filtered) == 1
     assert filtered[0]["fiche"]["nom"] == "BUT Lyon"
+
+
+# ────────────────────────── Step 11 anti-régression — secteur defensive ──────────────────────────
+
+
+def test_match_secteur_defensive_for_unpopulated_corpus() -> None:
+    """Anti-régression mini-bench step 11 (2026-05-09).
+
+    Bug observé : 10/23 questions du mini-bench passaient à 'pas de
+    formation pertinente' alors que router=OFF répondait substantiellement.
+    Cause racine : 0/15 764 fiches `formations` ont `secteur` populé +
+    RouterLLM populate `criteria.secteur=['informatique']` opportunistiquement
+    + ancien `_match_secteur` strict (None → False) → 100% des fiches
+    excluses.
+
+    Fix step 11 : passage defensive (None → True), cohérent avec
+    `_match_region`. Risque V2 si Vague 4+ enrichit secteur : opt-in
+    `secteur_strict=True` dans FilterCriteria.
+    """
+    # Cas 1 : fiche sans secteur passe quand criteria pose un secteur
+    assert _match_secteur(None, ["informatique"]) is True
+
+    # Cas 2 : fiche avec secteur matchant passe
+    assert _match_secteur("informatique", ["informatique"]) is True
+
+    # Cas 3 : fiche avec secteur différent reste exclue
+    assert _match_secteur("droit", ["informatique"]) is False
+
+    # Cas 4 : fiche avec secteur en liste matchant
+    assert _match_secteur(["informatique", "data_science"], ["informatique"]) is True
+
+    # Cas 5 : fiche avec secteur en liste sans match
+    assert _match_secteur(["droit", "lettres"], ["informatique"]) is False
+
+
+def test_apply_metadata_filter_router_secteur_does_not_empty_corpus() -> None:
+    """Test e2e du bug step 11 : RouterLLM populate criteria.secteur,
+    on simule un corpus type `formations` (sans secteur) + une fiche
+    avec secteur populé → toutes les fiches sans secteur doivent passer.
+    """
+    # Mini-corpus représentatif : 5 fiches sans secteur, 1 avec
+    items = [
+        {"fiche": {"nom": "BUT Info Lyon", "ville": "Lyon"}, "score": 0.95},
+        {"fiche": {"nom": "Master Data Sci", "ville": "Paris"}, "score": 0.94},
+        {"fiche": {"nom": "Licence MIASHS", "ville": "Marseille"}, "score": 0.93},
+        {"fiche": {"nom": "École 42", "ville": "Paris"}, "score": 0.92},
+        {"fiche": {"nom": "EFREI", "ville": "Villejuif"}, "score": 0.91},
+        {"fiche": {"nom": "Formation taggée", "ville": "Test", "secteur": "droit"}, "score": 0.90},
+    ]
+    # Router populate secteur=informatique pour question type "BUT info"
+    criteria = FilterCriteria(secteur=["informatique"])
+    filtered = apply_metadata_filter(items, criteria)
+    # AVANT fix : len=0 (toutes excluses car None != informatique)
+    # APRÈS fix : 5/6 (les 5 sans secteur passent en defensive,
+    # celle avec secteur="droit" est exclue car mismatch explicite)
+    assert len(filtered) == 5
+    # La fiche "Formation taggée" (secteur=droit) doit être exclue
+    noms = [it["fiche"]["nom"] for it in filtered]
+    assert "Formation taggée" not in noms
+    assert "BUT Info Lyon" in noms  # passe en defensive
