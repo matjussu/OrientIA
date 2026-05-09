@@ -83,17 +83,18 @@ def test_match_domain_no_match() -> None:
     assert _match_domain("formation_insertion", ["crous"]) is False
 
 
-def test_match_domain_excludes_no_domain_fiches_by_default() -> None:
-    """Sémantique stricte : fiche sans domain (= formation pure) EXCLUE
-    si on demande explicitement un domain (ex CROUS).
-    Différent de _match_region asymmetric defensive."""
-    assert _match_domain(None, ["crous"]) is False
+def test_match_domain_defensive_passes_no_domain_fiches() -> None:
+    """Step 11.7 fix (2026-05-10) : politique defensive — fiche sans
+    domain (= formation pure) passe TOUJOURS, peu importe c_domains.
 
-
-def test_match_domain_accepts_no_domain_when_formations_in_list() -> None:
-    """Cas spécial : 'formations' dans c_domains accepte les fiches sans
-    domain (cohérent avec build_quad_subindexes mapping no-domain →
-    formations group)."""
+    AVANT : strict, excluait sauf si 'formations' dans c_domains.
+    APRÈS : pass-through (cohérent avec _match_region + _match_secteur).
+    Bug observé : RouterLLM hallucine `domain_lock=['metier']` sur des
+    questions HEC → n_after_filter=0 → fallback "pas pertinent" alors
+    que HEC est dans le corpus."""
+    # Fiche sans domain (= formation) passe peu importe c_domains
+    assert _match_domain(None, ["crous"]) is True
+    assert _match_domain(None, ["metier"]) is True
     assert _match_domain(None, ["formations"]) is True
     assert _match_domain(None, ["formations", "metier"]) is True
 
@@ -123,7 +124,12 @@ def test_filter_criteria_with_domain_not_empty() -> None:
 
 
 def test_apply_metadata_filter_domain_lock_only() -> None:
-    """Filtrage par domain seul : exclut les fiches d'autres domaines."""
+    """Step 11.7 (2026-05-10) — politique defensive : domain_lock=['crous']
+    accepte les fiches CROUS ET les fiches sans domain (= formations pures
+    sauvées du filtrage abusif). Exclut les fiches avec domain=metier.
+
+    Le routing via sub_indexes (étape 5) reste le mécanisme principal
+    pour cibler le bon corpus. Le filter post-rerank reste defensive."""
     items = [
         {"fiche": {"domain": "crous", "nom": "Logement Lyon"}, "score": 0.9},
         {"fiche": {"domain": "metier", "nom": "Actuaire"}, "score": 0.85},
@@ -132,8 +138,11 @@ def test_apply_metadata_filter_domain_lock_only() -> None:
     ]
     criteria = FilterCriteria(domain=["crous"])
     filtered = apply_metadata_filter(items, criteria)
-    assert len(filtered) == 2
-    assert all(it["fiche"]["domain"] == "crous" for it in filtered)
+    # 3 passent : 2 crous + 1 sans domain (defensive). 1 exclu : metier.
+    assert len(filtered) == 3
+    noms = [it["fiche"]["nom"] for it in filtered]
+    assert "Actuaire" not in noms  # metier exclu (mismatch explicite)
+    assert "Master Truc" in noms  # no domain → defensive pass
 
 
 def test_apply_metadata_filter_domain_lock_with_formations_pseudo() -> None:

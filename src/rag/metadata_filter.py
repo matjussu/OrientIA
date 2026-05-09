@@ -339,20 +339,32 @@ def _match_secteur(fiche_secteur: Any, c_secteurs: list[str] | None) -> bool:
 def _match_domain(fiche_domain: Any, c_domains: list[str] | None) -> bool:
     """`$in` domain (router-driven, étape 6).
 
-    Sémantique stricte (différente de _match_region asymmetric defensive) :
-    si le router demande `domain in ['crous']`, on EXCLUT toute fiche dont
-    le domain ne matche pas — y compris les fiches sans domain (formations
-    pures). Le verrouillage domain est une contrainte forte voulue.
+    Step 11.7 (2026-05-10) — politique defensive corrigée.
 
-    Exception : `c_domains` contient 'formations' (le pseudo-domain pour
-    fiches sans champ `domain`) → on accepte les fiches dont domain est None.
-    Cohérent avec build_quad_subindexes qui mappe (no domain) → 'formations'.
+    Bug observé via dump intermédiaire post-chantiers 1+2+4 (B1 "HEC 11/20") :
+    le RouterLLM hallucine parfois `domain_lock=['metier']` sur des questions
+    qui cherchent clairement une formation (HEC, Sciences Po, école...).
+    L'ancien comportement strict (fiche.domain=None → exclu si 'formations'
+    pas dans c_domains) faisait alors n_after_filter=0 → pipeline retourne
+    fallback "pas de formation pertinente" alors que les fiches sont là.
+
+    Politique step 11.7 : pass-through defensive si fiche.domain is None
+    (cohérent avec _match_region step 11.7 et _match_secteur step 11
+    fix précédent). Une fiche sans domain (= formation pure) passe TOUJOURS
+    le filter, indépendamment de c_domains.
+
+    Une fiche avec domain populé reste matchée strictement (mismatch
+    explicite = exclusion). Pour une vraie restriction "uniquement domain X",
+    le routing via sub_indexes (étape 5) donne déjà la sélection ciblée
+    en amont — pas besoin que le filter aval soit strict.
     """
     if not c_domains:
         return True
-    accepts_no_domain = "formations" in [d.strip().lower() for d in c_domains]
     if fiche_domain is None:
-        return accepts_no_domain
+        # Defensive pass-through (fix step 11.7 — voir docstring) :
+        # fiche sans domain (= formation pure dans build_quad_subindexes)
+        # passe TOUJOURS, peu importe c_domains.
+        return True
     if not isinstance(fiche_domain, str):
         return False
     fd = fiche_domain.strip().lower()
