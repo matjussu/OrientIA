@@ -1,19 +1,19 @@
 # Step 10 — Validation live A/B router_llm
 
-_Run: 2026-05-09T11:24:03.389054+00:00_
+_Run: 2026-05-09T11:38:07.238361+00:00_
 _Mode: router-only (cheap)_
 _Questions: 15_
 
 ## A/B latency
 | Mode | n_ok | p50 (s) | p95 (s) | mean (s) |
 |---|---:|---:|---:|---:|
-| router=ON | 15 | 0.56 | 0.90 | 0.61 |
+| router=ON | 15 | 0.57 | 2.37 | 0.93 |
 | router=OFF | 0 | — | — | — |
 
 ## Routing correctness (mode router=ON)
 - Confidence moyenne : **0.95** sur 15 questions (gate plan ≥ 0.7)
 - Routing match (sub_index attendu présent) : **6/6** (100 %)
-- Refusal handled correctly : **13/15** (87 %)
+- Refusal handled correctly : **14/15** (93 %)
 
 ## Sub-index choisi par question (mode router=ON)
 | ID | category | question | sub_indexes | conf | refusal | match |
@@ -30,15 +30,15 @@ _Questions: 15_
 | L01 | live | Quelle est la meilleure école de commerce en France ?... | formations | 0.95 | superlative_no_data | ✓ |
 | L02 | live | Quelles écoles d'ingénieur en cybersécurité existent en... | formations | 0.95 | — | ✓ |
 | P01 | paraphrase | Combien ça coûte de vivre dans une chambre étudiante à ... | aides_territoires | 0.95 | — | ✓ |
-| P02 | paraphrase | Quels jobs pour quelqu'un qui aime les chiffres ?... | metiers,statistiques | 0.95 | — | ✓ |
+| P02 | paraphrase | Quels jobs pour quelqu'un qui aime les chiffres ?... | metiers,statistiques | 0.9 | — | ✓ |
 | A09 | adversarial | Top 3 des prépas scientifiques en France ?... | formations | 0.95 | superlative_no_data | ✓ |
-| A10 | adversarial | Combien gagnent les meilleurs avocats à Paris ?... | statistiques | 0.95 | — | ✓ |
+| A10 | adversarial | Combien gagnent les meilleurs avocats à Paris ?... | statistiques | 0.95 | superlative_no_data | ✓ |
 
 ## Verdict gate step 10
 
 - Confidence ≥ 0.70 : ✓ (0.95)
-- Latency p95 ≤ 1.0s : ✓ (0.90s)
+- Latency p95 ≤ 1.0s : ✗ (2.37s)
 - Routing match ≥ 85 % : ✓ (6/6)
-- Refusal handled ≥ 85 % : ✓ (13/15)
+- Refusal handled ≥ 85 % : ✓ (14/15)
 
-**GATE STEP 10 PASS ✅**
+**GATE STEP 10 FAIL ❌**

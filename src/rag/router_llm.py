@@ -437,8 +437,9 @@ RNCP/ONISEP/LBA/CFA non-adaptées au retrieve formation+ville. Total indexé
 6. **refusal_reason** :
    - **superlative_no_data** : la question utilise un superlatif sur des
      objets sans classement dans le corpus. Patterns : "meilleur·e·s",
-     "top", "classement", "best", "le meilleur", "le top". Le corpus N'A
-     PAS de classement officiel des écoles/formations.
+     "top", "classement", "best", "le meilleur", "le top", "palmarès",
+     "n°1", "numéro un". Le corpus N'A PAS de classement officiel des
+     écoles/formations/métiers/professionnels.
    - **cross_domain** : sujet totalement hors-orientation. Médecine clinique,
      célébrités, cuisine, programmation détaillée, météo, sport, politique
      non-orientation, etc. À distinguer de "métier de cuisinier" qui reste
@@ -447,6 +448,21 @@ RNCP/ONISEP/LBA/CFA non-adaptées au retrieve formation+ville. Total indexé
      corpus pertinente (ex: frais d'inscription école privée X non répertoriée,
      classement Shanghai, témoignages anciens élèves).
    - Null si la question peut être traitée normalement.
+
+   **PRIORITÉ ABSOLUE — règle de tie-break** : si tu détectes un superlatif
+   ("meilleur(s/e/es)", "top N", "classement", "palmarès", "best", "le top",
+   "n°1", "numéro un") DANS LA QUESTION — peu importe le sujet —, tu DOIS
+   set `refusal_reason="superlative_no_data"`. Le superlatif domine TOUJOURS
+   le routing thématique. Exemples qui pourraient piéger :
+   - "Combien gagnent les **meilleurs** avocats à Paris ?" → refusal=superlative_no_data
+     (NE PAS router 'statistiques' juste parce que 'salaire' est mentionné)
+   - "Quels sont les **top** chercheurs IA en France ?" → refusal=superlative_no_data
+     (NE PAS router 'metiers' juste parce que 'chercheur' est un métier)
+   - "**Palmarès** des écoles d'ingé cyber Bretagne ?" → refusal=superlative_no_data
+     (NE PAS router 'formations' avec region=bretagne — le superlatif tue)
+   Une question avec un superlatif ne doit JAMAIS recevoir une réponse routée
+   thématiquement, même si tous les autres signaux pointent vers un sub-index
+   précis.
 
 7. **hardlock_region_strict** : True si la question IMPOSE une région ET il
    est critique que la réponse ne propose pas hors-région sans le signaler
@@ -467,6 +483,8 @@ RNCP/ONISEP/LBA/CFA non-adaptées au retrieve formation+ville. Total indexé
 
 - "Logement CROUS à Lyon" → sub_indexes=["aides_territoires"], region="auvergne-rhône-alpes" si certain de la ville→région, domain_lock=["crous"], hardlock_domain_strict=true, confidence=0.9
 - "Meilleure école de commerce" → refusal_reason="superlative_no_data", sub_indexes=["formations"] (ne sera pas utilisé), confidence=0.95
+- "Combien gagnent les meilleurs avocats à Paris ?" → refusal_reason="superlative_no_data", sub_indexes=["statistiques"] (ne sera pas utilisé), confidence=0.95 (PRIORITÉ : le superlatif domine la sémantique 'salaire')
+- "Top 3 prépas scientifiques" → refusal_reason="superlative_no_data", sub_indexes=["formations"] (ne sera pas utilisé), confidence=0.95
 - "Salaire d'un actuaire" → sub_indexes=["metiers", "statistiques"], domain_lock=["metier", "metier_detail", "insee_salaire"], confidence=0.85
 - "Quelles écoles d'ingé cyber en Bretagne" → sub_indexes=["formations"], region="bretagne", secteur=["informatique", "securite"], hardlock_region_strict=true, top_k_override=12, confidence=0.9
 - "Comment soigner une angine" → refusal_reason="cross_domain", confidence=1.0
