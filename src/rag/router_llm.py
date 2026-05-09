@@ -1,0 +1,452 @@
+"""RouterLLM — Routing décisionnel léger Mistral Small JSON-tool.
+
+Décide en amont du retrieve : (a) quel(s) sub-index FAISS interroger,
+(b) quelles FilterCriteria appliquer, (c) si la question doit être
+court-circuitée par un refus structuré (superlatif, cross-domain),
+(d) quelles contraintes hardlock injecter dans le prompt v4.1 strict
+via R7, (e) un override de top_k_sources.
+
+Pattern : Mistral Small + `tool_choice="any"` + 1 seul tool
+`decide_route` (single-call mode), calqué sur AnalystAgent
+(`src/agents/hierarchical/analyst_agent.py:121-181`).
+
+Étape 1 du plan : ce module contient pour l'instant les dataclasses,
+les params du tool, le system prompt et le ROUTE_DECISION_TOOL. L'appel
+LLM `RouterLLM.route()` viendra à l'étape 3 (avec fallback déterministe
+gracieux pattern AnalystAgent ligne 177-180).
+
+Cf docs/ADR-064-router-llm-leger.md, docs/ADR-065-quad-subindexes-partition.md.
+"""
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from typing import Any
+
+from src.agent.tool import Tool
+from src.rag.metadata_filter import FilterCriteria
+
+
+# ────────────────────────── Constantes routing ──────────────────────────
+
+
+SUB_INDEX_NAMES: tuple[str, ...] = (
+    "formations",
+    "metiers",
+    "statistiques",
+    "aides_territoires",
+)
+
+REFUSAL_REASONS: tuple[str, ...] = (
+    "superlative_no_data",
+    "cross_domain",
+    "out_of_scope_specific",
+)
+
+# Réponses pré-écrites par refusal_reason. Le pipeline les retourne
+# directement sans appel LLM (court-circuit comme ScopeClassifier).
+REFUSAL_TEMPLATES: dict[str, str] = {
+    "superlative_no_data": (
+        "Je n'ai pas de classement ou comparatif officiel des « meilleures » "
+        "formations dans mes sources — ce type de hiérarchie n'est pas dans "
+        "le corpus public que j'utilise (Parcoursup, ONISEP, France Compétences).\n\n"
+        "Pour des classements, je te renvoie vers :\n"
+        "- **Onisep** pour les fiches officielles : https://www.onisep.fr\n"
+        "- **L'Étudiant** ou **Le Figaro Étudiant** pour les palmarès non-officiels\n"
+        "- **Le SCUIO** de ton université ou un **CIO** pour un avis personnalisé\n\n"
+        "Si tu veux, je peux te montrer les formations de ce domaine dans mes "
+        "sources avec leurs critères concrets (places, taux d'accès, profils admis). "
+        "Lesquels t'intéressent ?"
+    ),
+    "cross_domain": (
+        "Cette question sort du périmètre d'OrientIA — je suis spécialisé sur "
+        "l'orientation post-bac française (formations, métiers, admission, "
+        "insertion). Pour ce sujet, mieux vaut consulter une source dédiée.\n\n"
+        "Si ta question concerne **une orientation professionnelle** liée à "
+        "ce domaine, reformule : par exemple « comment devenir [métier] ? » "
+        "ou « quelles formations pour travailler dans [secteur] ? »."
+    ),
+    "out_of_scope_specific": (
+        "Je n'ai pas d'information fiable dans mes sources pour répondre à "
+        "cette question précise. Pour ne pas inventer, je préfère te rediriger :\n\n"
+        "- **Onisep** : https://www.onisep.fr — fiches formations + métiers officielles\n"
+        "- **Parcoursup** : https://www.parcoursup.fr — procédures, taux d'accès\n"
+        "- **SCUIO** ou **CIO** — conseiller·ère d'orientation\n\n"
+        "Tu peux aussi reformuler ou préciser ta question (région, niveau, "
+        "secteur) et je ferai de mon mieux dans les limites de mes données."
+    ),
+}
+
+
+# ────────────────────────── Dataclass RouteDecision ──────────────────────────
+
+
+@dataclass
+class RouteDecision:
+    """Décision de routing produite par RouterLLM en amont du retrieve.
+
+    Champs :
+        sub_indexes: list des sub-index FAISS à interroger (1 à 4).
+            Multi-index = fusion RRF post-retrieve.
+        criteria: FilterCriteria à appliquer post-retrieve. None = pas
+            de filtre (équiv backward compat).
+        domain_lock: liste de `domain` exacts à verrouiller (ex ['crous']).
+            None ou [] = pas de verrouillage. Mappé sur FilterCriteria
+            étendu en étape 6.
+        refusal_reason: si non-null, court-circuit pré-pipeline avec
+            `pre_written_response`. Voir REFUSAL_REASONS.
+        pre_written_response: réponse texte si refusal. Populé via
+            REFUSAL_TEMPLATES si non fourni explicitement.
+        hardlock_region_strict: si True, R7 contraint le générateur à ne
+            PAS proposer d'alternative hors-région sans signaler le vide.
+        hardlock_domain_strict: si True, R7 contraint le générateur à ne
+            PAS mélanger plusieurs domaines.
+        top_k_override: force top_k_sources servies au LLM. Utile pour
+            multi-critères (cas BTS Rennes/BUT Brest rang 6).
+        confidence: 0-1, signal au pipeline. <0.6 → fallback union
+            sub-indexes (filet de sécurité contre router qui se trompe).
+        is_fallback: True si construit par router_fallback (déterministe)
+            au lieu de RouterLLM. Utile pour observabilité/debug.
+    """
+
+    sub_indexes: list[str] = field(default_factory=lambda: list(SUB_INDEX_NAMES))
+    criteria: FilterCriteria | None = None
+    domain_lock: list[str] | None = None
+    refusal_reason: str | None = None
+    pre_written_response: str | None = None
+    hardlock_region_strict: bool = False
+    hardlock_domain_strict: bool = False
+    top_k_override: int | None = None
+    confidence: float = 0.0
+    is_fallback: bool = False
+
+    def __post_init__(self) -> None:
+        # Validation sub_indexes : tous dans SUB_INDEX_NAMES, au moins 1
+        if not self.sub_indexes:
+            self.sub_indexes = list(SUB_INDEX_NAMES)
+        invalid = [s for s in self.sub_indexes if s not in SUB_INDEX_NAMES]
+        if invalid:
+            raise ValueError(
+                f"sub_indexes contient des valeurs invalides {invalid}. "
+                f"Attendu un sous-ensemble de {list(SUB_INDEX_NAMES)}."
+            )
+        # Dédupe en préservant l'ordre
+        seen: set[str] = set()
+        deduped: list[str] = []
+        for s in self.sub_indexes:
+            if s not in seen:
+                seen.add(s)
+                deduped.append(s)
+        self.sub_indexes = deduped
+
+        # Validation refusal_reason
+        if self.refusal_reason is not None and self.refusal_reason not in REFUSAL_REASONS:
+            raise ValueError(
+                f"refusal_reason invalide : {self.refusal_reason!r}. "
+                f"Attendu null ou {list(REFUSAL_REASONS)}."
+            )
+
+        # Auto-population pre_written_response depuis template si refusal
+        # mais aucune réponse fournie (cas standard LLM qui pose juste la raison)
+        if self.refusal_reason is not None and not self.pre_written_response:
+            self.pre_written_response = REFUSAL_TEMPLATES.get(
+                self.refusal_reason, REFUSAL_TEMPLATES["out_of_scope_specific"]
+            )
+
+        # Confidence clampée [0, 1]
+        self.confidence = max(0.0, min(1.0, float(self.confidence)))
+
+    @classmethod
+    def from_tool_payload(cls, payload: dict[str, Any]) -> "RouteDecision":
+        """Construit un RouteDecision depuis le payload retourné par le tool LLM.
+
+        Tolère les clés manquantes (defaults safes), parse les sous-objets
+        (region/niveau/secteur → FilterCriteria), valide les enums via
+        __post_init__.
+
+        Args:
+            payload: dict produit par `_route_decision_tool_func` (ou
+                directement par le LLM via tool_call).
+
+        Returns:
+            RouteDecision validé. ValueError si payload invalide.
+        """
+        sub_indexes = payload.get("sub_indexes") or list(SUB_INDEX_NAMES)
+        if not isinstance(sub_indexes, list):
+            sub_indexes = list(SUB_INDEX_NAMES)
+
+        # Construction FilterCriteria si au moins un champ pertinent
+        region = payload.get("region")
+        niveau_min = payload.get("niveau_min")
+        niveau_max = payload.get("niveau_max")
+        secteur = payload.get("secteur")
+        criteria: FilterCriteria | None = None
+        if any(v is not None for v in (region, niveau_min, niveau_max, secteur)):
+            criteria = FilterCriteria(
+                region=region.strip().lower() if isinstance(region, str) and region.strip() else None,
+                niveau_min=niveau_min if isinstance(niveau_min, int) else None,
+                niveau_max=niveau_max if isinstance(niveau_max, int) else None,
+                secteur=list(secteur) if isinstance(secteur, list) and secteur else None,
+            )
+
+        domain_lock = payload.get("domain_lock")
+        if isinstance(domain_lock, list) and domain_lock:
+            domain_lock_clean: list[str] | None = [str(d).strip().lower() for d in domain_lock if d]
+            if not domain_lock_clean:
+                domain_lock_clean = None
+        else:
+            domain_lock_clean = None
+
+        top_k = payload.get("top_k_override")
+        top_k_override = int(top_k) if isinstance(top_k, int) and 5 <= top_k <= 20 else None
+
+        return cls(
+            sub_indexes=[str(s) for s in sub_indexes],
+            criteria=criteria,
+            domain_lock=domain_lock_clean,
+            refusal_reason=payload.get("refusal_reason"),
+            pre_written_response=payload.get("pre_written_response"),
+            hardlock_region_strict=bool(payload.get("hardlock_region_strict", False)),
+            hardlock_domain_strict=bool(payload.get("hardlock_domain_strict", False)),
+            top_k_override=top_k_override,
+            confidence=float(payload.get("confidence", 0.0)),
+            is_fallback=bool(payload.get("is_fallback", False)),
+        )
+
+    def hardlock_block_for_prompt(self) -> str:
+        """Formate les contraintes hardlock en bloc texte pour injection R7.
+
+        Vide si aucune contrainte hardlock. Sinon retourne un bloc Markdown
+        à insérer en début de system prompt v4.1 strict (slot
+        {HARDLOCK_BLOCK} en étape 7).
+        """
+        if not (
+            self.hardlock_region_strict
+            or self.hardlock_domain_strict
+            or (self.criteria and self.criteria.region)
+            or self.domain_lock
+        ):
+            return ""
+
+        lines = ["## CONTRAINTES HARDLOCK (R7)"]
+        if self.hardlock_region_strict and self.criteria and self.criteria.region:
+            lines.append(
+                f"- Région imposée : **{self.criteria.region}**. "
+                "Tu ne PROPOSES PAS d'alternative hors-région sans dire "
+                "EXPLICITEMENT que la région est vide dans nos sources."
+            )
+        if self.hardlock_domain_strict and self.domain_lock:
+            lines.append(
+                f"- Domaine(s) imposé(s) : **{', '.join(self.domain_lock)}**. "
+                "Tu ne mélanges PAS avec d'autres types de fiches."
+            )
+        return "\n".join(lines) + "\n"
+
+
+# ────────────────────────── Tool params (JSON Schema Mistral) ──────────────────────────
+
+
+ROUTE_DECISION_TOOL_PARAMS: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "sub_indexes": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": list(SUB_INDEX_NAMES),
+            },
+            "minItems": 1,
+            "description": (
+                "Sous-index FAISS à interroger. AU MOINS 1. "
+                "'formations' (formations académiques, BUT, BTS, écoles, "
+                "voies pré-bac, insertion post-formation), "
+                "'metiers' (fiches métier ROME, projections d'emploi DARES), "
+                "'statistiques' (INSEE salaires PCS, insertion bac+5, "
+                "parcours bacheliers L1, marché cadres APEC), "
+                "'aides_territoires' (CROUS logement, aides financières, "
+                "DROM, blocs RNCP France Compétences, calendriers Parcoursup)."
+            ),
+        },
+        "region": {
+            "type": ["string", "null"],
+            "description": "Région française canonique mentionnée (ex 'bretagne', 'occitanie', 'provence-alpes-côte d'azur', 'guadeloupe'). Null si non mentionnée.",
+        },
+        "niveau_min": {
+            "type": ["integer", "null"],
+            "description": "Niveau bac+N minimum si la question impose une contrainte (ex 'master' → 5). Null sinon.",
+        },
+        "niveau_max": {
+            "type": ["integer", "null"],
+            "description": "Niveau bac+N maximum si la question impose une contrainte. Null sinon.",
+        },
+        "secteur": {
+            "type": ["array", "null"],
+            "items": {"type": "string"},
+            "description": "Secteurs candidats détectés (ex ['informatique', 'numerique'] pour cybersécurité). Null si pas de contrainte.",
+        },
+        "domain_lock": {
+            "type": ["array", "null"],
+            "items": {"type": "string"},
+            "description": "Domaines `domain` à verrouiller exclusivement (ex ['crous'] pour question logement étudiant). Null si pas de verrouillage. À utiliser quand la question est explicitement sur un type d'objet précis (CROUS, RNCP code, salaire INSEE).",
+        },
+        "refusal_reason": {
+            "type": ["string", "null"],
+            "enum": ["superlative_no_data", "cross_domain", "out_of_scope_specific", None],
+            "description": (
+                "Si la question doit être REFUSÉE structurellement, indique la raison. "
+                "'superlative_no_data' = superlatif type 'meilleure école de X' sans classement dans le corpus. "
+                "'cross_domain' = sujet totalement hors-orientation (médecine, célébrité, cuisine, programmation détaillée). "
+                "'out_of_scope_specific' = dans le scope orientation mais aucune donnée corpus pertinente. "
+                "Null si la question peut être traitée normalement."
+            ),
+        },
+        "hardlock_region_strict": {
+            "type": "boolean",
+            "description": "True si la question impose une contrainte régionale dure ET il est critique de NE PAS proposer hors-région. Force R7 dans le prompt.",
+        },
+        "hardlock_domain_strict": {
+            "type": "boolean",
+            "description": "True si la question impose un type d'objet précis ET il est critique de NE PAS mélanger d'autres types. Force R7 dans le prompt.",
+        },
+        "top_k_override": {
+            "type": ["integer", "null"],
+            "description": "5-20. Augmente top_k si la question est multi-critères (région+métier+niveau) où le rang 6+ peut être pertinent. Null sinon.",
+        },
+        "confidence": {
+            "type": "number",
+            "description": "0.0-1.0, ta confiance sur cette décision de routing. <0.6 si tu hésites entre plusieurs sub_indexes.",
+        },
+    },
+    "required": ["sub_indexes", "confidence"],
+}
+
+
+def _route_decision_tool_func(**kwargs: Any) -> dict[str, Any]:
+    """Validation passthrough du payload tool. Retourne le dict normalisé.
+
+    Calqué sur `analyst_agent.py:_profile_update_tool_func`. La validation
+    sémantique (enum sub_indexes, refusal_reason) est faite par
+    `RouteDecision.from_tool_payload` via `__post_init__`.
+    """
+    return {
+        "sub_indexes": kwargs.get("sub_indexes") or list(SUB_INDEX_NAMES),
+        "region": kwargs.get("region"),
+        "niveau_min": kwargs.get("niveau_min"),
+        "niveau_max": kwargs.get("niveau_max"),
+        "secteur": kwargs.get("secteur"),
+        "domain_lock": kwargs.get("domain_lock"),
+        "refusal_reason": kwargs.get("refusal_reason"),
+        "hardlock_region_strict": bool(kwargs.get("hardlock_region_strict", False)),
+        "hardlock_domain_strict": bool(kwargs.get("hardlock_domain_strict", False)),
+        "top_k_override": kwargs.get("top_k_override"),
+        "confidence": float(kwargs.get("confidence", 0.0)),
+    }
+
+
+ROUTE_DECISION_TOOL = Tool(
+    name="decide_route",
+    description=(
+        "Décide comment router la question utilisateur dans le pipeline RAG : "
+        "quel(s) sous-index FAISS interroger, quelles contraintes appliquer, "
+        "et si la question doit être refusée structurellement. "
+        "Tu DOIS toujours invoquer cet outil exactement une fois."
+    ),
+    parameters=ROUTE_DECISION_TOOL_PARAMS,
+    func=_route_decision_tool_func,
+)
+
+
+# ────────────────────────── System prompt RouterLLM ──────────────────────────
+
+
+ROUTER_SYSTEM_PROMPT = """Tu es RouterLLM d'OrientIA. Ta seule mission est d'analyser la question
+utilisateur et de décider comment la router dans le pipeline RAG.
+
+Tu invoques l'outil `decide_route` UNE SEULE FOIS avec ta décision. Tu n'écris
+PAS de réponse narrative.
+
+## Les 4 sous-index FAISS disponibles
+
+- **formations** (36 489 fiches, 77.3% du corpus) : formations académiques
+  (licence, master, BUT, BTS, CPGE, écoles d'ingé/commerce), voies pré-bac
+  (CAP, bac pro/techno/général), insertion post-formation. À utiliser pour
+  toutes les questions qui cherchent UNE formation à suivre.
+
+- **metiers** (4 894 fiches) : fiches métier ROME 4.0 (description, missions,
+  compétences requises), métiers détaillés ONISEP, projections d'emploi DARES
+  par région à 2030. À utiliser pour "que fait un X ?", "quels métiers
+  recrutent ?", "métier de Y ?".
+
+- **statistiques** (831 fiches) : INSEE salaires par PCS (37, 35, 31, 23...),
+  insertion pro post-Bac+5 par discipline×région (InserSup), parcours
+  bacheliers en L1 (taux réussite par bac), marché des cadres APEC par
+  région. À utiliser pour "salaire de X ?", "taux d'insertion master Y ?",
+  "réussite L1 avec bac Z ?", "marché cadres en région W ?".
+
+- **aides_territoires** (5 000 fiches) : CROUS (logement résidences
+  universitaires, restauration), aides financières (bourses, APL, dispositifs
+  premiers pas), DROM-COM (Guadeloupe, Martinique, Guyane, Réunion, Mayotte),
+  blocs de compétences RNCP (codes France Compétences), calendriers
+  Parcoursup. À utiliser pour "logement étudiant ?", "aides financières ?",
+  "RNCP <code> ?", "formations en Guadeloupe ?", "calendrier Parcoursup ?".
+
+## Règles de décision
+
+1. **Choisis 1-2 sub_indexes en priorité.** 3-4 uniquement si la question est
+   vraiment multi-axes (ex: "métiers cyber Bretagne + insertion 6m" =
+   formations + statistiques).
+
+2. **Extrais la région si mentionnée**, en libellé canonique
+   (bretagne, occitanie, provence-alpes-côte d'azur, île-de-france, etc.).
+   Inclus DROM (guadeloupe, martinique, guyane, la réunion, mayotte).
+
+3. **Niveau** : extrait niveau_min/max si imposé (ex "master" → 5/5,
+   "BUT" → 2/3, "bac pro" → niveau pré-bac → 0/0). Null si non précisé.
+
+4. **Secteur** : si la question évoque un domaine professionnel
+   (informatique, sante, droit, commerce, art...), liste les secteurs
+   candidats. Null sinon.
+
+5. **domain_lock** : si la question est EXPLICITEMENT sur un type d'objet
+   précis (CROUS pour logement, RNCP pour blocs de compétences, métier pour
+   "que fait un X"), verrouille avec le `domain` exact. Liste des domaines
+   reconnus : crous, financement_etudes, territoire_drom, competences_certif,
+   calendrier, metier, metier_detail, metier_prospective, insee_salaire,
+   insertion_pro, parcours_bacheliers, apec_region.
+
+6. **refusal_reason** :
+   - **superlative_no_data** : la question utilise un superlatif sur des
+     objets sans classement dans le corpus. Patterns : "meilleur·e·s",
+     "top", "classement", "best", "le meilleur", "le top". Le corpus N'A
+     PAS de classement officiel des écoles/formations.
+   - **cross_domain** : sujet totalement hors-orientation. Médecine clinique,
+     célébrités, cuisine, programmation détaillée, météo, sport, politique
+     non-orientation, etc. À distinguer de "métier de cuisinier" qui reste
+     orientation.
+   - **out_of_scope_specific** : dans le scope orientation mais aucune donnée
+     corpus pertinente (ex: frais d'inscription école privée X non répertoriée,
+     classement Shanghai, témoignages anciens élèves).
+   - Null si la question peut être traitée normalement.
+
+7. **hardlock_region_strict** : True si la question IMPOSE une région ET il
+   est critique que la réponse ne propose pas hors-région sans le signaler
+   (ex: "ingé cyber en Bretagne" → True ; "formations cyber" → False).
+
+8. **hardlock_domain_strict** : True si la question IMPOSE un type d'objet ET
+   il est critique de ne pas mélanger (ex: "logement CROUS Lyon" → True
+   avec domain_lock=['crous'] ; "formations à Lyon" → False).
+
+9. **top_k_override** : 12-15 si la question est multi-critères (région+
+   métier+niveau, ou domaine annexe peu fréquent). Évite que des fiches
+   pertinentes au rang 6+ soient ignorées. Null si question simple.
+
+10. **confidence** : 0.9+ si la décision est nette, 0.6-0.8 si ambigu,
+    <0.6 si tu hésites vraiment (le pipeline élargira en filet de sécurité).
+
+## Exemples
+
+- "Logement CROUS à Lyon" → sub_indexes=["aides_territoires"], region="auvergne-rhône-alpes" si certain de la ville→région, domain_lock=["crous"], hardlock_domain_strict=true, confidence=0.9
+- "Meilleure école de commerce" → refusal_reason="superlative_no_data", sub_indexes=["formations"] (ne sera pas utilisé), confidence=0.95
+- "Salaire d'un actuaire" → sub_indexes=["metiers", "statistiques"], domain_lock=["metier", "metier_detail", "insee_salaire"], confidence=0.85
+- "Quelles écoles d'ingé cyber en Bretagne" → sub_indexes=["formations"], region="bretagne", secteur=["informatique", "securite"], hardlock_region_strict=true, top_k_override=12, confidence=0.9
+- "Comment soigner une angine" → refusal_reason="cross_domain", confidence=1.0
+"""
