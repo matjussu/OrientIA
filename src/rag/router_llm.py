@@ -22,6 +22,7 @@ from mistralai.client import Mistral
 
 from src.agent.retry import call_with_retry
 from src.agent.tool import Tool
+from src.rag.intent import _strip_accents
 from src.rag.metadata_filter import FilterCriteria
 
 
@@ -173,15 +174,24 @@ class RouteDecision:
         if not isinstance(sub_indexes, list):
             sub_indexes = list(SUB_INDEX_NAMES)
 
-        # Construction FilterCriteria si au moins un champ pertinent
+        # Construction FilterCriteria si au moins un champ pertinent.
+        # Normalisation accents sur `region` pour cohérence avec
+        # router_fallback._detect_region (qui utilise _strip_accents) et
+        # avec apply_metadata_filter (matching insensible aux accents).
+        # Sans ça, le LLM-routed path renverrait "auvergne-rhône-alpes"
+        # alors que le fallback renvoie "auvergne-rhone-alpes" → mismatch
+        # silencieux du filtre métadonnées.
         region = payload.get("region")
         niveau_min = payload.get("niveau_min")
         niveau_max = payload.get("niveau_max")
         secteur = payload.get("secteur")
         criteria: FilterCriteria | None = None
         if any(v is not None for v in (region, niveau_min, niveau_max, secteur)):
+            region_norm: str | None = None
+            if isinstance(region, str) and region.strip():
+                region_norm = _strip_accents(region.strip().lower())
             criteria = FilterCriteria(
-                region=region.strip().lower() if isinstance(region, str) and region.strip() else None,
+                region=region_norm,
                 niveau_min=niveau_min if isinstance(niveau_min, int) else None,
                 niveau_max=niveau_max if isinstance(niveau_max, int) else None,
                 secteur=list(secteur) if isinstance(secteur, list) and secteur else None,
@@ -365,10 +375,14 @@ PAS de réponse narrative.
 
 ## Les 4 sous-index FAISS disponibles
 
-- **formations** (36 489 fiches, 77.3% du corpus) : formations académiques
-  (licence, master, BUT, BTS, CPGE, écoles d'ingé/commerce), voies pré-bac
-  (CAP, bac pro/techno/général), insertion post-formation. À utiliser pour
-  toutes les questions qui cherchent UNE formation à suivre.
+(Comptes après filtrage `retrieval_eligible` — Vague 1.C exclut 18 012 fiches
+RNCP/ONISEP/LBA/CFA non-adaptées au retrieve formation+ville. Total indexé
+29 202 fiches sur 47 214 corpus.)
+
+- **formations** (18 477 fiches, 63.3% des indexées) : formations
+  académiques (licence, master, BUT, BTS, CPGE, écoles d'ingé/commerce),
+  voies pré-bac (CAP, bac pro/techno/général), insertion post-formation.
+  À utiliser pour toutes les questions qui cherchent UNE formation à suivre.
 
 - **metiers** (4 894 fiches) : fiches métier ROME 4.0 (description, missions,
   compétences requises), métiers détaillés ONISEP, projections d'emploi DARES

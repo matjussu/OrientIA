@@ -152,13 +152,29 @@ def test_from_tool_payload_canonical() -> None:
     rd = RouteDecision.from_tool_payload(payload)
     assert rd.sub_indexes == ["aides_territoires"]
     assert rd.criteria is not None
-    assert rd.criteria.region == "bretagne"  # normalize_region lowercases
+    # lowercase + strip_accents (post-fix audit step 6)
+    assert rd.criteria.region == "bretagne"
     assert rd.criteria.secteur == ["informatique"]
     assert rd.domain_lock == ["crous"]
     assert rd.hardlock_region_strict is True
     assert rd.hardlock_domain_strict is True
     assert rd.top_k_override == 12
     assert rd.confidence == 0.9
+
+
+def test_from_tool_payload_normalizes_accents_in_region() -> None:
+    """Audit fix step 6 : region avec accents → strip_accents + lowercase
+    pour cohérence avec router_fallback (qui passe par _strip_accents)."""
+    payload = {
+        "sub_indexes": ["formations"],
+        "region": "Provence-Alpes-Côte d'Azur",
+        "confidence": 0.9,
+    }
+    rd = RouteDecision.from_tool_payload(payload)
+    assert rd.criteria is not None
+    # Ni accents, ni majuscules — alignement strict avec _detect_region
+    # du fallback (utilisé par apply_metadata_filter aval).
+    assert rd.criteria.region == "provence-alpes-cote d'azur"
 
 
 def test_from_tool_payload_minimal_missing_keys() -> None:
@@ -412,7 +428,8 @@ def test_router_llm_route_canonical_crous() -> None:
 
     assert rd.sub_indexes == ["aides_territoires"]
     assert rd.criteria is not None
-    assert rd.criteria.region == "auvergne-rhône-alpes"
+    # Normalisation accents (post-fix audit step 6) — cohérent avec fallback
+    assert rd.criteria.region == "auvergne-rhone-alpes"
     assert rd.domain_lock == ["crous"]
     assert rd.hardlock_region_strict is True
     assert rd.top_k_override == 10

@@ -189,28 +189,27 @@ def test_build_quad_subindices_loads_from_disk_when_manifest_present(tmp_path: P
 # ────────────────────────── _retrieve_from_sub_indexes ──────────────────────────
 
 
-def _patch_embed(pipeline: OrientIAPipeline, q_emb: np.ndarray) -> None:
+def _patch_embed(monkeypatch: pytest.MonkeyPatch, q_emb: np.ndarray) -> None:
     """Patch embed_texts pour retourner un embedding fixe (déterministe).
-    Évite d'appeler le client Mistral (mock)."""
+    Utilise monkeypatch pour restauration automatique après le test —
+    évite la pollution des tests suivants (effet de bord détecté en step 6
+    quand `test_pipeline.py` tournait après et utilisait le mock).
+    """
     def _fake_embed(client, texts, **kwargs):
         return [q_emb for _ in texts]
 
-    # Le pipeline.py importe embed_texts en haut, donc on patche le module
-    import src.rag.pipeline as pipeline_mod  # noqa: F401
-    # En fait `_retrieve_from_sub_indexes` fait `from src.rag.embeddings
-    # import embed_texts` localement (lazy) → on patche l'origine.
     import src.rag.embeddings as embeddings_mod
-    embeddings_mod.embed_texts = _fake_embed  # type: ignore[assignment]
+    monkeypatch.setattr(embeddings_mod, "embed_texts", _fake_embed)
 
 
-def test_retrieve_from_sub_indexes_single() -> None:
+def test_retrieve_from_sub_indexes_single(monkeypatch: pytest.MonkeyPatch) -> None:
     """Single sub-index → retrieve standard, results triés par score desc."""
     pipeline = _make_pipeline_with_index()
     pipeline._build_quad_subindices(manifest_path=Path("/tmp/nope.json"))
 
     np.random.seed(7)
     q_emb = np.random.randn(1024).astype("float32")
-    _patch_embed(pipeline, q_emb)
+    _patch_embed(monkeypatch, q_emb)
 
     results = pipeline._retrieve_from_sub_indexes(
         question="test", sub_index_names=["metiers"], k_per_sub=10
@@ -229,14 +228,14 @@ def test_retrieve_from_sub_indexes_single() -> None:
         assert r["score"] == r["base_score"]
 
 
-def test_retrieve_from_sub_indexes_multi_rrf() -> None:
+def test_retrieve_from_sub_indexes_multi_rrf(monkeypatch: pytest.MonkeyPatch) -> None:
     """Multi sub-indexes → fusion RRF, fiches uniques préservées."""
     pipeline = _make_pipeline_with_index()
     pipeline._build_quad_subindices(manifest_path=Path("/tmp/nope.json"))
 
     np.random.seed(11)
     q_emb = np.random.randn(1024).astype("float32")
-    _patch_embed(pipeline, q_emb)
+    _patch_embed(monkeypatch, q_emb)
 
     results = pipeline._retrieve_from_sub_indexes(
         question="test", sub_index_names=["metiers", "statistiques"], k_per_sub=10
@@ -258,14 +257,14 @@ def test_retrieve_from_sub_indexes_empty_list() -> None:
     assert results == []
 
 
-def test_retrieve_from_sub_indexes_invalid_name_filtered() -> None:
+def test_retrieve_from_sub_indexes_invalid_name_filtered(monkeypatch: pytest.MonkeyPatch) -> None:
     """Un nom de sub-index invalide est silencieusement filtré (pas d'exception)."""
     pipeline = _make_pipeline_with_index()
     pipeline._build_quad_subindices(manifest_path=Path("/tmp/nope.json"))
 
     np.random.seed(13)
     q_emb = np.random.randn(1024).astype("float32")
-    _patch_embed(pipeline, q_emb)
+    _patch_embed(monkeypatch, q_emb)
 
     # 'hallucinated' inconnu, 'metiers' valide
     results = pipeline._retrieve_from_sub_indexes(

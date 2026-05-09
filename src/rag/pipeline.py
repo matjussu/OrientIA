@@ -1,3 +1,4 @@
+import dataclasses
 import json
 import logging
 import time
@@ -25,6 +26,7 @@ from src.rag.metadata_filter import (
     apply_metadata_filter,
 )
 from src.rag.post_process import post_process_answer
+from src.rag.router_llm import RouteDecision, RouterLLM, SUB_INDEX_NAMES
 from src.rag.scope_classifier import ScopeClassifier, ScopeResult
 from src.validator import (
     Validator,
@@ -137,6 +139,7 @@ class OrientIAPipeline:
         enable_post_process: bool = False,
         scope_classifier: ScopeClassifier | None = None,
         use_strict_v4: bool = False,
+        router_llm: RouterLLM | None = None,
     ):
         self.client = client
         self.fiches = fiches
@@ -248,6 +251,16 @@ class OrientIAPipeline:
         self._quad_indices: dict[str, faiss.IndexFlatL2] | None = None
         self._quad_indices_orig: dict[str, list[int]] | None = None
         self._quad_indices_built: bool = False
+        # Étape 6 refonte (2026-05-09) — RouterLLM léger Mistral Small.
+        # Si fourni, populate `route_decision` au début d'`answer()` avec :
+        # - sub_indexes ciblés (pilote `_retrieve_from_sub_indexes`)
+        # - criteria (region, secteur, niveau, domain_lock)
+        # - refusal_reason (court-circuit pré-pipeline si superlatif/etc.)
+        # - top_k_override (cas ingé cyber Bretagne avec rang 6 pertinent)
+        # - hardlock_constraints (R7 du prompt v4.1 strict, étape 7)
+        # None par défaut = backward compat strict.
+        self.router_llm = router_llm
+        self.last_router_result: RouteDecision | None = None
         # Phase C ADR-058 — BM25 hybride lexical + RRF fusion (cf src/rag/bm25_index.py)
         self._bm25_index = None  # Lazy build au 1er appel
         self._bm25_built: bool = False
@@ -327,6 +340,51 @@ class OrientIAPipeline:
         else:
             self.last_scope_result = None
 
+        # Étape 6 refonte (2026-05-09) — RouterLLM léger en amont du retrieve.
+        # Décide (a) sub-indexes ciblés, (b) FilterCriteria, (c) refus structurés,
+        # (d) hardlock R7, (e) top_k_override. Toujours non-bloquant : le
+        # router fallback déterministe rattrape sur LLM fail / JSON invalide.
+        # Sans router fourni à l'init, comportement v1 strict préservé.
+        route_decision: RouteDecision | None = None
+        if self.router_llm is not None:
+            route_decision = self.router_llm.route(question, history=history)
+            self.last_router_result = route_decision
+            # Court-circuit pré-pipeline si refus structuré (analogue ScopeClassifier)
+            if route_decision.refusal_reason is not None:
+                self.last_select_result = None
+                self.last_validation = None
+                self.last_policy_result = None
+                self.last_retry_metadata = {
+                    "retries_attempted": 0,
+                    "tour1_failed_claims": [],
+                    "tour2_failed_claims": None,
+                    "retry_stability": 1.0,
+                    "needs_audit": False,
+                    "wall_clock_s": 0.0,
+                    "retry_skipped_reason": f"router_{route_decision.refusal_reason}",
+                }
+                self.last_filter_stats = None
+                self.last_golden_qa = None
+                self.last_post_process_stats = None
+                return route_decision.pre_written_response or "", []
+            # Override criteria si pas déjà fourni par l'appelant
+            if criteria is None and route_decision.criteria is not None:
+                criteria = route_decision.criteria
+            # Domain lock : merge dans criteria (créer si nécessaire)
+            if route_decision.domain_lock:
+                if criteria is None:
+                    criteria = FilterCriteria(domain=route_decision.domain_lock)
+                elif criteria.domain is None:
+                    criteria = dataclasses.replace(criteria, domain=route_decision.domain_lock)
+                # Si criteria.domain déjà fourni par appelant, on ne l'écrase pas
+            # Top_k override : élargit si la décision route le demande
+            # (ne réduit jamais — utilise max pour préserver les overrides
+            # de l'appelant qui peut vouloir plus).
+            if route_decision.top_k_override:
+                top_k_sources = max(top_k_sources, route_decision.top_k_override)
+        else:
+            self.last_router_result = None
+
         effective_top_k = top_k_sources
         effective_lambda = self.mmr_lambda
         intent_label = classify_intent(question) if self.use_intent else None
@@ -389,13 +447,17 @@ class OrientIAPipeline:
         else:
             self.last_select_result = None
 
-        # Sprint 10 §8.3-§8.4 : retrieve avec auto-expansion si filter activé
+        # Sprint 10 §8.3-§8.4 : retrieve avec auto-expansion si filter activé.
+        # Étape 6 (2026-05-09) : route_decision optionnel pilote le path
+        # retrieve quad-subindex quand le router a fait un vrai routing
+        # (sub-set strict des 4 sub-indexes).
         reranked = self._retrieve_and_filter(
             question=question,
             k=k,
             domain_hint=domain_hint,
             target=effective_top_k,
             criteria=criteria,
+            route_decision=route_decision,
         )
 
         if self.use_mmr:
@@ -611,14 +673,66 @@ class OrientIAPipeline:
         domain_hint: str | None,
         target: int,
         criteria: FilterCriteria | None,
+        route_decision: RouteDecision | None = None,
     ) -> list[dict]:
         """Retrieve + rerank, avec auto-expansion §8.4 si filter actif.
 
-        Sans filter actif (ou criteria empty) : comportement v1 (1 retrieve k).
+        Étape 6 (2026-05-09) : si route_decision pointe sur un sous-ensemble
+        strict des 4 sub-indexes (= router a fait un vrai routing), utilise
+        `_retrieve_from_sub_indexes` (quad-subindex) au lieu du retrieve
+        unifié. Avec apply_metadata_filter aval pour respecter criteria.
+
+        Sans router_decision (ou sub_indexes = tous les 4) : comportement v1
+        préservé strict (Option C v6 ou auto-expand selon criteria).
+
+        Sans filter actif (ou criteria empty) : Option C v6 (quota adaptatif).
         Avec filter : retrieve k×INITIAL_K_MULTIPLIER, filter, expand si <target.
         Toujours retourne reranked candidates (même format que v1).
         Stats stockées dans self.last_filter_stats pour audit F+G.
         """
+        # Étape 6 path quad-subindex : actif uniquement si router_llm a routé
+        # vers un sous-ensemble strict (sub_indexes ≠ tous les 4).
+        # Si router a renvoyé tous les sub_indexes (filet de sécurité confidence
+        # basse ou fallback ultime), on retombe sur le path v1 (full corpus).
+        router_active = (
+            route_decision is not None
+            and route_decision.sub_indexes
+            and len(route_decision.sub_indexes) < len(SUB_INDEX_NAMES)
+        )
+        if router_active:
+            assert route_decision is not None  # type narrowing pour mypy
+            raw = self._retrieve_from_sub_indexes(
+                question=question,
+                sub_index_names=route_decision.sub_indexes,
+                k_per_sub=QUAD_INDEX_K_PER_SUB,
+            )
+            if not raw:
+                # Sub-index ciblé vide ou indisponible → fallback path v1
+                # (préserve le contrat "answer ne plante jamais").
+                _logger.info(
+                    "[router-quad] sub_indexes %s vides — fallback path v1",
+                    route_decision.sub_indexes,
+                )
+            else:
+                reranked = rerank(raw, self.rerank_config, domain_hint=domain_hint)
+                if (
+                    self.use_metadata_filter
+                    and criteria is not None
+                    and not criteria.is_empty()
+                ):
+                    reranked = apply_metadata_filter(reranked, criteria)
+                self.last_filter_stats = {
+                    "filter_active": criteria is not None and not criteria.is_empty(),
+                    "router_active": True,
+                    "router_sub_indexes": list(route_decision.sub_indexes),
+                    "router_confidence": route_decision.confidence,
+                    "router_is_fallback": route_decision.is_fallback,
+                    "n_retrieved_router": len(raw),
+                    "n_after_filter": len(reranked),
+                    "expansions": 0,  # quad path n'expand pas
+                }
+                return reranked
+
         # Path par défaut (no metadata filter) : Option C v6 — retrieval indépendant
         # du domain_hint avec quota adaptatif d'annexes basé sur score brut.
         if not self.use_metadata_filter or criteria is None or criteria.is_empty():
@@ -842,6 +956,18 @@ class OrientIAPipeline:
             manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, OSError) as e:
             _logger.warning("[quad-index] manifest illisible (%s) — fallback rebuild", e)
+            return False
+
+        # Garde de cohérence : le manifest doit décrire EXACTEMENT le corpus
+        # courant. Sinon orig_indices référerait des fiches inexistantes
+        # (cas typique : tests avec mini-corpus + manifest production présent).
+        manifest_total = manifest.get("total_fiches_in_source")
+        if manifest_total is not None and manifest_total != len(self.fiches):
+            _logger.info(
+                "[quad-index] manifest désaligné (%d fiches manifest vs %d courantes) "
+                "— rebuild en mémoire",
+                manifest_total, len(self.fiches),
+            )
             return False
 
         groups: dict[str, faiss.IndexFlatL2] = {}

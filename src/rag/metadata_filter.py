@@ -13,8 +13,26 @@ from __future__ import annotations
 
 import dataclasses
 import re
+import unicodedata
 from dataclasses import dataclass
 from typing import Any
+
+
+def _norm_region(s: Any) -> str:
+    """Normalise un libellé région : strip + lowercase + sans accents.
+
+    Utilisé pour matcher des libellés produits par sources hétérogènes
+    (Parcoursup avec accents 'Provence-Alpes-Côte d'Azur', RouterLLM
+    avec accents stripped 'provence-alpes-cote d'azur', etc.).
+    Étape 6 refonte router (2026-05-09) — fix audit Matteo écart 2.
+    """
+    if s is None:
+        return ""
+    s_str = str(s).strip().lower()
+    return "".join(
+        c for c in unicodedata.normalize("NFKD", s_str)
+        if not unicodedata.combining(c)
+    )
 
 
 # ────────────────────────── Lookup tables ──────────────────────────
@@ -89,7 +107,13 @@ NIVEAU_PATTERNS: list[tuple[re.Pattern[str], tuple[int, int]]] = [
 
 @dataclass
 class FilterCriteria:
-    """Critères filtre v1 — tous optionnels (None = pas de filtre)."""
+    """Critères filtre v1+v2 — tous optionnels (None = pas de filtre).
+
+    Étape 6 refonte router (2026-05-09) : ajout du champ `domain` pour
+    permettre au RouterLLM de verrouiller un sous-ensemble de domaines
+    (ex `["crous"]` quand la question est explicitement sur le logement
+    étudiant). Cf docs/ADR-064-router-llm-leger.md.
+    """
 
     region: str | None = None
     niveau_min: int | None = None
@@ -97,6 +121,10 @@ class FilterCriteria:
     alternance: bool | None = None
     budget_max: int | None = None  # €/an
     secteur: list[str] | None = None  # liste OR
+    # Étape 6 — domain lock (router-driven). Liste OR sur la valeur du
+    # champ `domain` de chaque fiche (ex ['crous'], ['metier','metier_detail']).
+    # None = pas de verrouillage par domaine (backward compat strict).
+    domain: list[str] | None = None
 
     def is_empty(self) -> bool:
         """True si tous critères None (équivaut à pas de filtre)."""
@@ -209,15 +237,21 @@ def _match_region(fiche_region: Any, c_region: str | None) -> bool:
 
     Asymétrie defensive (§5.2 design) : fiche sans région → on prend
     (formations nationales + manque d'info ≠ exclusion automatique).
+
+    Étape 6 (2026-05-09) : matching insensible aux accents via
+    _norm_region (fix audit Matteo écart 2). RouterLLM normalise les
+    accents en sortie ('auvergne-rhone-alpes'), mais les libellés Parcoursup
+    contiennent des accents ('Auvergne-Rhône-Alpes') → mismatch silencieux
+    sans cette normalisation.
     """
     if c_region is None:
         return True
     if fiche_region is None:
         return True
-    fr = str(fiche_region).strip().lower()
+    fr = _norm_region(fiche_region)
     if fr == "" or fr == "national":
         return True
-    return fr == c_region.strip().lower()
+    return fr == _norm_region(c_region)
 
 
 def _match_niveau(
@@ -276,14 +310,39 @@ def _match_secteur(fiche_secteur: Any, c_secteurs: list[str] | None) -> bool:
     return False
 
 
+def _match_domain(fiche_domain: Any, c_domains: list[str] | None) -> bool:
+    """`$in` domain (router-driven, étape 6).
+
+    Sémantique stricte (différente de _match_region asymmetric defensive) :
+    si le router demande `domain in ['crous']`, on EXCLUT toute fiche dont
+    le domain ne matche pas — y compris les fiches sans domain (formations
+    pures). Le verrouillage domain est une contrainte forte voulue.
+
+    Exception : `c_domains` contient 'formations' (le pseudo-domain pour
+    fiches sans champ `domain`) → on accepte les fiches dont domain est None.
+    Cohérent avec build_quad_subindexes qui mappe (no domain) → 'formations'.
+    """
+    if not c_domains:
+        return True
+    accepts_no_domain = "formations" in [d.strip().lower() for d in c_domains]
+    if fiche_domain is None:
+        return accepts_no_domain
+    if not isinstance(fiche_domain, str):
+        return False
+    fd = fiche_domain.strip().lower()
+    return fd in [d.strip().lower() for d in c_domains]
+
+
 def _matches(fiche: dict[str, Any], c: FilterCriteria) -> bool:
-    """Composite AND sur les 5 critères."""
+    """Composite AND sur les 6 critères (region, niveau, alternance, budget,
+    secteur, domain)."""
     return (
         _match_region(fiche.get("region"), c.region)
         and _match_niveau(fiche.get("niveau"), c.niveau_min, c.niveau_max)
         and _match_alternance(fiche.get("alternance"), c.alternance)
         and _match_budget(fiche.get("budget"), c.budget_max)
         and _match_secteur(fiche.get("secteur"), c.secteur)
+        and _match_domain(fiche.get("domain"), c.domain)
     )
 
 
