@@ -75,6 +75,14 @@ ANNEX_QUOTA_MAX_PER_TOPK = 3           # max d'annexes boostées dans le top-K f
 # ADR-058 acte la dette technique.
 DOUBLE_INDEX_K_MAIN = 100              # top-100 sur sub-index main (33k formations)
 DOUBLE_INDEX_K_ANNEX = 30              # top-30 sur sub-index annex (13k corpora)
+# Étape 5 refonte (2026-05-09) — Quad sub-index par groupes de domaines.
+# Partition fine de l'index unifié en 4 groupes (formations/metiers/
+# statistiques/aides_territoires) pour routing piloté par RouterLLM.
+# Cf scripts/build_quad_subindexes.py + ADR-065 (à créer).
+# Utilisé UNIQUEMENT quand RouteDecision.sub_indexes est fourni à answer().
+# Sinon, fallback complet vers _build_double_subindices (préservé).
+QUAD_INDEX_K_PER_SUB = 50              # top-50 par sub-index, fusionné via RRF si multi
+QUAD_MANIFEST_DEFAULT_PATH = "data/embeddings/formations_partition_manifest.json"
 # Phase C ADR-058 — BM25 hybride lexical + RRF fusion.
 # Complémente le retrieval dense (qui peine sur les fiches courtes/stat)
 # par un score BM25 lexical exact. Match les entités nommées (CROUS Lyon,
@@ -231,6 +239,15 @@ class OrientIAPipeline:
         self._main_subindex_orig_indices: list[int] | None = None
         self._annex_subindex_orig_indices: list[int] | None = None
         self._double_index_built: bool = False
+        # Étape 5 refonte (2026-05-09) — Quad sub-index par groupes de domaines.
+        # Lazy-build au 1er appel de `_build_quad_subindices`. Charge depuis
+        # disque si manifest présent (build via scripts/build_quad_subindexes.py),
+        # sinon rebuild en mémoire via `index.reconstruct()` (extension du pattern
+        # `_build_double_subindices`). Utilisé uniquement quand le RouterLLM
+        # produit une RouteDecision.sub_indexes — sinon fallback préservé.
+        self._quad_indices: dict[str, faiss.IndexFlatL2] | None = None
+        self._quad_indices_orig: dict[str, list[int]] | None = None
+        self._quad_indices_built: bool = False
         # Phase C ADR-058 — BM25 hybride lexical + RRF fusion (cf src/rag/bm25_index.py)
         self._bm25_index = None  # Lazy build au 1er appel
         self._bm25_built: bool = False
@@ -805,6 +822,251 @@ class OrientIAPipeline:
             DOUBLE_INDEX_K_ANNEX,
         )
         return main_results, annex_results
+
+    # ────────────────────── Quad sub-indexes (étape 5 refonte) ──────────────────────
+
+    def _load_quad_indices_from_disk(self, manifest_path: Path) -> bool:
+        """Charge les 4 sub-indexes FAISS depuis le manifest JSON.
+
+        Pré-requis : `scripts/build_quad_subindexes.py` a été exécuté pour
+        produire les 4 fichiers `formations_v7_<group>.index` + le manifest.
+
+        Returns:
+            True si tous les sub-indexes ont été chargés avec succès,
+            False si manifest absent ou un fichier manque (caller fera
+            le rebuild en mémoire à partir de l'index unifié).
+        """
+        if not manifest_path.exists():
+            return False
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError) as e:
+            _logger.warning("[quad-index] manifest illisible (%s) — fallback rebuild", e)
+            return False
+
+        groups: dict[str, faiss.IndexFlatL2] = {}
+        groups_orig: dict[str, list[int]] = {}
+        manifest_root = manifest_path.parent.parent.parent  # data/embeddings/X.json → repo root
+        for name, info in manifest.get("groups", {}).items():
+            sub_path_str = info.get("path")
+            if not sub_path_str:
+                _logger.warning("[quad-index] manifest group %s sans `path`", name)
+                return False
+            sub_path = manifest_root / sub_path_str
+            if not sub_path.exists():
+                _logger.warning("[quad-index] sub-index absent : %s", sub_path)
+                return False
+            try:
+                groups[name] = faiss.read_index(str(sub_path))
+            except RuntimeError as e:
+                _logger.warning("[quad-index] read %s failed (%s)", sub_path, e)
+                return False
+            groups_orig[name] = [int(i) for i in info.get("orig_indices", [])]
+
+        self._quad_indices = groups
+        self._quad_indices_orig = groups_orig
+        _logger.info(
+            "[quad-index] loaded from disk : %s",
+            {name: idx.ntotal for name, idx in groups.items()},
+        )
+        return True
+
+    def _build_quad_subindices(
+        self,
+        manifest_path: str | Path | None = None,
+    ) -> bool:
+        """Lazy-build des 4 sub-indexes FAISS par groupes de domaines.
+
+        Stratégie :
+        1. Si manifest présent sur disque (scripts/build_quad_subindexes.py
+           a été run) → charge tel quel (pas de re-extraction des vecteurs).
+        2. Sinon → rebuild en mémoire via `index.reconstruct()` (extension
+           du pattern `_build_double_subindices`).
+
+        Returns True si les 4 sub-indexes sont prêts (au moins 1 contient
+        ≥1 vecteur), False sinon (caller fera fallback vers retrieve unifié
+        ou _retrieve_with_double_subindex).
+        """
+        if self._quad_indices_built:
+            return self._quad_indices is not None
+        if self.index is None or not self.fiches:
+            self._quad_indices_built = True
+            return False
+
+        # Path du manifest (default = data/embeddings/formations_partition_manifest.json)
+        if manifest_path is None:
+            manifest_path = Path(__file__).resolve().parents[2] / QUAD_MANIFEST_DEFAULT_PATH
+        else:
+            manifest_path = Path(manifest_path)
+
+        # Tentative 1 : load depuis disque
+        if self._load_quad_indices_from_disk(manifest_path):
+            self._quad_indices_built = True
+            return True
+
+        # Tentative 2 : rebuild en mémoire (lazy partition + reconstruct)
+        # Réutilise le mapping domain → group du build script.
+        try:
+            from build_quad_subindexes import (  # type: ignore[import-not-found]
+                partition_indices,
+                build_subindex,
+            )
+        except ImportError:
+            # scripts/ pas dans PYTHONPATH → import direct via path
+            import importlib.util
+            scripts_dir = Path(__file__).resolve().parents[2] / "scripts"
+            spec = importlib.util.spec_from_file_location(
+                "build_quad_subindexes", scripts_dir / "build_quad_subindexes.py"
+            )
+            if spec is None or spec.loader is None:
+                _logger.warning("[quad-index] build_quad_subindexes module introuvable")
+                self._quad_indices_built = True
+                return False
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            partition_indices = module.partition_indices
+            build_subindex = module.build_subindex
+
+        try:
+            group_to_orig, _excluded, _unknown = partition_indices(self.fiches)
+            quad: dict[str, faiss.IndexFlatL2] = {}
+            quad_orig: dict[str, list[int]] = {}
+            for name, orig_indices in group_to_orig.items():
+                if not orig_indices:
+                    quad[name] = faiss.IndexFlatL2(self.index.d)
+                    quad_orig[name] = []
+                    continue
+                quad[name] = build_subindex(self.index, orig_indices)
+                quad_orig[name] = orig_indices
+            self._quad_indices = quad
+            self._quad_indices_orig = quad_orig
+            _logger.info(
+                "[quad-index] built in-memory : %s",
+                {name: idx.ntotal for name, idx in quad.items()},
+            )
+            self._quad_indices_built = True
+            return True
+        except (RuntimeError, ValueError) as e:
+            _logger.warning("[quad-index] in-memory build failed (%s) — fallback", e)
+            self._quad_indices_built = True
+            return False
+
+    def _retrieve_from_sub_indexes(
+        self,
+        question: str,
+        sub_index_names: list[str],
+        k_per_sub: int = QUAD_INDEX_K_PER_SUB,
+    ) -> list[dict]:
+        """Retrieve depuis 1 ou plusieurs sub-indexes ciblés (étape 5).
+
+        Si `sub_index_names` contient 1 seul nom : retrieve standard sur ce
+        sub-index uniquement (résultats triés par score desc).
+        Si 2+ noms : retrieve séparé sur chaque + fusion RRF (preserve la
+        diversité inter-domaines).
+
+        Args:
+            question: requête utilisateur.
+            sub_index_names: liste de noms parmi
+                ['formations', 'metiers', 'statistiques', 'aides_territoires'].
+            k_per_sub: top-k retrieve par sub-index avant fusion.
+
+        Returns:
+            Liste de dicts {fiche, score, base_score, embedding} compatibles
+            avec rerank/MMR aval. Vide si quad-index non-buildable ou
+            tous sub-indexes vides.
+        """
+        if not sub_index_names:
+            return []
+        if not self._build_quad_subindices():
+            return []
+        assert self._quad_indices is not None and self._quad_indices_orig is not None
+
+        valid_names = [
+            n for n in sub_index_names
+            if n in self._quad_indices and self._quad_indices[n].ntotal > 0
+        ]
+        if not valid_names:
+            return []
+
+        # Embedding de la question (1 fois pour tous les sub-indexes)
+        from src.rag.embeddings import embed_texts
+        q_emb = embed_texts(self.client, [question])[0]
+        q_arr = np.array([q_emb], dtype="float32")
+
+        def _search_one(name: str) -> list[dict]:
+            sub_idx = self._quad_indices[name]
+            orig = self._quad_indices_orig[name]
+            k = min(k_per_sub, sub_idx.ntotal)
+            distances, idx_in_sub = sub_idx.search(q_arr, k)
+            results: list[dict] = []
+            for rank in range(len(idx_in_sub[0])):
+                isub = int(idx_in_sub[0][rank])
+                if isub < 0 or isub >= len(orig):
+                    continue
+                orig_idx = orig[isub]
+                dist = float(distances[0][rank])
+                score = 1.0 / (1.0 + dist)
+                emb = sub_idx.reconstruct(isub)
+                results.append({
+                    "fiche": self.fiches[orig_idx],
+                    "score": score,
+                    "base_score": score,
+                    "embedding": np.asarray(emb, dtype="float32"),
+                    "_sub_index": name,
+                })
+            return results
+
+        if len(valid_names) == 1:
+            return _search_one(valid_names[0])
+
+        # Multi-sub-index → fusion RRF.
+        # `reciprocal_rank_fusion` (bm25_index.py:197-255) accepte une liste
+        # de pools rangés et fusionne par RRF (Cormack 2009, k_rrf=60).
+        # On utilise une clé d'identification stable : (fiche.id ou ix).
+        per_pool: list[list[dict]] = [_search_one(name) for name in valid_names]
+        # Filter pools vides
+        per_pool = [p for p in per_pool if p]
+        if not per_pool:
+            return []
+        if len(per_pool) == 1:
+            return per_pool[0]
+
+        # RRF utilise par défaut id_key="fiche_id" qu'on n'a pas forcément
+        # toujours. On crée une clé stable orig_idx pour chaque résultat.
+        emb_lookup: dict = {}
+        for pool in per_pool:
+            for r in pool:
+                f = r.get("fiche") or {}
+                # Préfère f["id"] si présent, sinon fallback sur position
+                # objet (id() Python — stable au sein d'un appel pipeline).
+                quad_id = f.get("id") or id(f)
+                r["_quad_id"] = quad_id
+                # Préserver l'embedding de la 1re occurrence pour MMR aval
+                if quad_id not in emb_lookup:
+                    emb_lookup[quad_id] = r.get("embedding")
+
+        fused_rrf = reciprocal_rank_fusion(per_pool, k_rrf=60, id_key="_quad_id")
+        # `reciprocal_rank_fusion` retourne {fiche, score_rrf, score_dense,
+        # score_bm25, ranks}. On reconstruit le format standard
+        # {fiche, score, base_score, embedding} attendu par rerank/MMR aval,
+        # en réinjectant l'embedding lookup par fiche.
+        normalized: list[dict] = []
+        for entry in fused_rrf:
+            fiche = entry.get("fiche") or {}
+            quad_id = fiche.get("id") or id(fiche)
+            score = float(entry.get("score_rrf", 0.0))
+            normalized.append({
+                "fiche": fiche,
+                "score": score,
+                "base_score": score,
+                "embedding": emb_lookup.get(quad_id),
+            })
+        # Cleanup _quad_id sur les pools pour ne pas polluer si les pools
+        # sont consultés ensuite par d'autres callers.
+        for pool in per_pool:
+            for r in pool:
+                r.pop("_quad_id", None)
+        return normalized
 
     def _retrieve_with_annex_quota(
         self,
