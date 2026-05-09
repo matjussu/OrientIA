@@ -72,11 +72,22 @@ def test_cross_domain_does_NOT_catch_legit_orientation() -> None:
 
 
 def test_superlative_meilleure() -> None:
-    """Cas live #1 : 'meilleure école de commerce' doit être refusée."""
+    """Cas live #1 : 'meilleure école de commerce' doit être refusée.
+
+    Step 11.7 chantier 4 : 3 variants de pre_written_response selon hash(question).
+    On vérifie que la réponse contient AU MOINS UN signal de redirection
+    officielle (Onisep/Parcoursup/CIO/SCUIO/ONISEP) — peu importe le variant
+    sélectionné.
+    """
     rd = deterministic_route("Quelle est la meilleure école de commerce en France ?")
     assert rd.refusal_reason == "superlative_no_data"
     assert rd.confidence == 0.9
-    assert "Onisep" in rd.pre_written_response
+    response_lower = rd.pre_written_response.lower()
+    redirect_signals = ["onisep", "parcoursup", "cio", "scuio"]
+    assert any(s in response_lower for s in redirect_signals), (
+        f"Aucun signal de redirection ({redirect_signals}) dans la réponse "
+        f"refusal — variants step 11.7 cassés ?"
+    )
 
 
 def test_superlative_top_n() -> None:

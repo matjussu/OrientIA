@@ -321,21 +321,28 @@ def deterministic_route(question: str) -> RouteDecision:
 
     # Cas 2 : cross-domain manifeste
     if _detect_cross_domain(norm):
-        return RouteDecision(
+        from src.rag.router_llm import select_refusal_template
+        rd = RouteDecision(
             sub_indexes=list(SUB_INDEX_NAMES),  # ignoré côté pipeline (refus)
             refusal_reason="cross_domain",
             confidence=0.9,
             is_fallback=True,
         )
+        # Step 11.7 chantier 4 : variant template hash-selected
+        rd.pre_written_response = select_refusal_template("cross_domain", question)
+        return rd
 
     # Cas 3 : superlatif → refus structuré
     if _detect_superlative(norm):
-        return RouteDecision(
+        from src.rag.router_llm import select_refusal_template
+        rd = RouteDecision(
             sub_indexes=list(SUB_INDEX_NAMES),  # ignoré côté pipeline (refus)
             refusal_reason="superlative_no_data",
             confidence=0.9,
             is_fallback=True,
         )
+        rd.pre_written_response = select_refusal_template("superlative_no_data", question)
+        return rd
 
     # Cas 4 : domain_hint matché par les patterns existants intent.py
     domain_hint = classify_domain_hint(question)

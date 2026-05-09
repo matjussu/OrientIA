@@ -44,8 +44,18 @@ REFUSAL_REASONS: tuple[str, ...] = (
 
 # Réponses pré-écrites par refusal_reason. Le pipeline les retourne
 # directement sans appel LLM (court-circuit comme ScopeClassifier).
-REFUSAL_TEMPLATES: dict[str, str] = {
-    "superlative_no_data": (
+#
+# Step 11.7 chantier 4 (2026-05-09) : 3 variants par refusal_reason au lieu
+# d'un template unique. Le user a observé sur le dump step 11.5 que
+# 3 questions différentes (L01, A1, A3) recevaient EXACTEMENT la même
+# réponse mot-pour-mot — placebo très visible. Avec 3 variants
+# hash-selected sur la question, deux questions distinctes auront
+# probablement des formulations différentes (gardent le même fond mais
+# varient le ton). Sélection déterministe (reproductible) via
+# hash(question) % len(variants).
+REFUSAL_TEMPLATE_VARIANTS: dict[str, list[str]] = {
+    "superlative_no_data": [
+        # Variant 1 — explicite + détaillé (l'historique)
         "Je n'ai pas de classement ou comparatif officiel des « meilleures » "
         "formations dans mes sources — ce type de hiérarchie n'est pas dans "
         "le corpus public que j'utilise (Parcoursup, ONISEP, France Compétences).\n\n"
@@ -55,26 +65,121 @@ REFUSAL_TEMPLATES: dict[str, str] = {
         "- **Le SCUIO** de ton université ou un **CIO** pour un avis personnalisé\n\n"
         "Si tu veux, je peux te montrer les formations de ce domaine dans mes "
         "sources avec leurs critères concrets (places, taux d'accès, profils admis). "
-        "Lesquels t'intéressent ?"
-    ),
-    "cross_domain": (
+        "Lesquels t'intéressent ?",
+        # Variant 2 — direct + actionnable
+        "Pas de palmarès officiel dans mes sources : Parcoursup et ONISEP "
+        "publient des fiches formation par formation, mais pas de top 5 ou "
+        "top 10. Les classements existants (L'Étudiant, Le Figaro Étudiant, "
+        "QS, Shanghai) viennent de méthodologies privées que je ne reproduis pas.\n\n"
+        "Ce que je peux faire à la place : te lister les formations de ce "
+        "domaine avec leurs **critères concrets** (sélectivité, places, "
+        "taux d'accès, profils admis). C'est souvent plus utile pour décider "
+        "qu'un classement.\n\n"
+        "Quelles caractéristiques comptent le plus pour toi ? "
+        "(Sélectivité, ville, type de diplôme, taux d'insertion…)",
+        # Variant 3 — pédagogique + interrogatif
+        "Bonne question, mais elle se heurte à une limite réelle : il n'existe "
+        "pas de classement universel et officiel des formations en France. "
+        "Les rankings que tu vois (L'Étudiant, Le Figaro, QS World) sont "
+        "produits par des médias avec leurs propres critères, et mes sources "
+        "(Parcoursup, ONISEP, France Compétences) n'en font pas.\n\n"
+        "Du coup, le « meilleur » dépend de **ce que tu valorises** : "
+        "réputation, sélectivité, prox' géo, alternance possible, taux "
+        "d'insertion ? Si tu me précises ton angle, je peux te sortir les "
+        "formations qui matchent ces critères dans mes sources. Sinon, "
+        "consulte le **CIO** ou ton **SCUIO** — ils sont formés pour "
+        "ce genre d'arbitrage.",
+    ],
+    "cross_domain": [
+        # Variant 1 — l'historique
         "Cette question sort du périmètre d'OrientIA — je suis spécialisé sur "
         "l'orientation post-bac française (formations, métiers, admission, "
         "insertion). Pour ce sujet, mieux vaut consulter une source dédiée.\n\n"
         "Si ta question concerne **une orientation professionnelle** liée à "
         "ce domaine, reformule : par exemple « comment devenir [métier] ? » "
-        "ou « quelles formations pour travailler dans [secteur] ? »."
-    ),
-    "out_of_scope_specific": (
+        "ou « quelles formations pour travailler dans [secteur] ? ».",
+        # Variant 2 — plus chaleureux
+        "Je peux pas vraiment t'aider sur ce sujet — mon périmètre c'est "
+        "l'orientation post-bac française : formations, métiers, admission, "
+        "passerelles, insertion pro. Pour cette question, cherche du côté "
+        "d'une ressource spécialisée.\n\n"
+        "Par contre, si tu veux explorer un **métier ou une formation lié·e** "
+        "à ce sujet, dis-le moi et je creuse. Exemples : « quelles études "
+        "pour devenir [X] ? », « quels parcours mènent à [secteur] ? ».",
+        # Variant 3 — direct et bref
+        "Désolé, ce n'est pas mon domaine — je suis OrientIA, conseiller "
+        "d'orientation post-bac. Pour les questions médicales, juridiques, "
+        "actualités, etc., consulte une source spécialisée.\n\n"
+        "Si tu cherches **une formation ou un métier** dans ce thème, "
+        "reformule en ce sens : par exemple « quelles études en santé pour "
+        "travailler avec des enfants ? » et je peux t'aider.",
+    ],
+    "out_of_scope_specific": [
+        # Variant 1 — l'historique
         "Je n'ai pas d'information fiable dans mes sources pour répondre à "
         "cette question précise. Pour ne pas inventer, je préfère te rediriger :\n\n"
         "- **Onisep** : https://www.onisep.fr — fiches formations + métiers officielles\n"
         "- **Parcoursup** : https://www.parcoursup.fr — procédures, taux d'accès\n"
         "- **SCUIO** ou **CIO** — conseiller·ère d'orientation\n\n"
         "Tu peux aussi reformuler ou préciser ta question (région, niveau, "
-        "secteur) et je ferai de mon mieux dans les limites de mes données."
-    ),
+        "secteur) et je ferai de mon mieux dans les limites de mes données.",
+        # Variant 2 — invite à reformuler
+        "Pas trouvé d'info précise sur ta question dans mes sources. "
+        "Plutôt que d'inventer, je te propose deux pistes :\n\n"
+        "1. **Reformule** en précisant région, niveau (bac+N), secteur, "
+        "type de diplôme — souvent le détail qui fait la différence.\n"
+        "2. **Source officielle** : Onisep (https://www.onisep.fr), "
+        "Parcoursup (https://www.parcoursup.fr), ou ton CIO/SCUIO local.\n\n"
+        "Sur quoi veux-tu que je creuse en priorité ?",
+        # Variant 3 — court et orienté action
+        "Cette question dépasse ce que mes sources couvrent précisément. "
+        "Pour ne pas te donner une info partielle ou inventée, je préfère "
+        "te rediriger :\n\n"
+        "- **Onisep** : https://www.onisep.fr (fiches officielles)\n"
+        "- **Parcoursup** : https://www.parcoursup.fr (procédures)\n"
+        "- **CIO** / **Psy-EN** : conseil personnalisé sur ton parcours\n\n"
+        "Sinon, reformule avec un angle plus précis et je retente.",
+    ],
 }
+
+# Fallback compat : REFUSAL_TEMPLATES = variant[0] de chaque reason.
+# Préserve l'API publique pour les tests existants et toute consommation
+# qui aurait pris le 1er template tel quel.
+REFUSAL_TEMPLATES: dict[str, str] = {
+    reason: variants[0] for reason, variants in REFUSAL_TEMPLATE_VARIANTS.items()
+}
+
+
+def select_refusal_template(reason: str, question: str | None = None) -> str:
+    """Sélectionne déterministiquement un variant de template REFUSAL.
+
+    Stratégie : hash(question) % len(variants). Reproductible (même
+    question → même variant) mais différentes questions ont
+    statistiquement 1/3 de chance de tomber sur le même variant.
+
+    Si `question` est None ou vide, retourne variant[0] (compat).
+    Si `reason` est inconnu, retourne le template `out_of_scope_specific`
+    (fallback gracieux).
+
+    Step 11.7 chantier 4 — résout le bug "L01/A1/A3 réponse mot-pour-mot
+    identique" identifié par lecture qualitative du dump step 11.5.
+    """
+    variants = REFUSAL_TEMPLATE_VARIANTS.get(reason)
+    if variants is None:
+        # Reason inconnu → fallback générique
+        variants = REFUSAL_TEMPLATE_VARIANTS["out_of_scope_specific"]
+    if not question:
+        return variants[0]
+    # hash() Python a un seed aléatoire par session par défaut. Pour
+    # reproductibilité cross-session (bench), on utilise MD5 (déterministe
+    # et bien distribué — sum(ord) collisionne facilement sur des questions
+    # similaires comme "Quelle est la meilleure école de X ?" où les
+    # variations syntaxiques mineures donnent souvent la même somme
+    # modulo 3).
+    import hashlib
+    digest = hashlib.md5(question.encode("utf-8")).hexdigest()
+    seed = int(digest[:8], 16)  # 32 bits suffisent largement
+    return variants[seed % len(variants)]
 
 
 # ────────────────────────── Dataclass RouteDecision ──────────────────────────
@@ -580,7 +685,16 @@ class RouterLLM:
             if "error" in normalized:
                 # Tool.call a retourné une erreur (missing required, etc.)
                 return deterministic_route(question)
-            return RouteDecision.from_tool_payload(normalized)
+            decision = RouteDecision.from_tool_payload(normalized)
+            # Step 11.7 chantier 4 : si refusal, sélectionner le variant
+            # template basé sur hash(question) au lieu du variant[0]
+            # auto-populé par __post_init__. Évite "même réponse mot-pour-mot"
+            # sur 3 questions différentes.
+            if decision.refusal_reason is not None:
+                decision.pre_written_response = select_refusal_template(
+                    decision.refusal_reason, question,
+                )
+            return decision
         except (json.JSONDecodeError, ValueError, AttributeError, KeyError, IndexError):
             # JSON cassé, schema invalide, LLM hallucine sub_index inconnu, etc.
             return deterministic_route(question)
