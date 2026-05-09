@@ -52,7 +52,7 @@ OPENAI_RPM = 12
 _openai_limiter = RateLimiter(max_per_minute=OPENAI_RPM)
 from src.prompt.system import SYSTEM_PROMPT  # = v3.2 (current)
 from src.eval.runner import run_benchmark
-from src.rag.pipeline import OrientIAPipeline
+from src.rag.factory import make_production_pipeline
 
 
 FICHES_PATH = "data/processed/formations.json"
@@ -88,13 +88,41 @@ def make_seven_systems(
     #   - use_mmr=True       → diversifies top-k against near-duplicates
     #   - use_intent=True    → per-question top_k and λ via classify_intent
     #
-    # Note (refonte 2026-05-06) : pour le mode produit (validator + golden_qa
-    # + post_process), utiliser `src.rag.factory.make_production_pipeline()`.
-    # Ici on garde l'instantiation directe pour préserver la reproductibilité
-    # exacte de Run F+G historique (pipeline non-validator, pas de golden_qa).
+    # Step 11.6 fix critical (2026-05-09) : bascule de `OrientIAPipeline(...)`
+    # direct vers `make_production_pipeline(...)` pour que le bench Phase D
+    # mesure le pipeline produit COMPLET de la refonte (steps 1-11) :
+    #   - RouterLLM (step 6)              : routing LLM-driven quad sub-index
+    #   - R7 hardlock prompt (step 7)     : contraintes région/domaine au LLM
+    #   - Validator + Layer3 OFF (cost)   : honesty + flagged
+    #   - Golden QA few-shot (lazy)       : Q&A référence dans le system prompt
+    #   - Post-process déterministe       : strip URLs hallu, slugs ONISEP
+    #   - Strict v4                       : FactCard JSON tabulaire
+    #   - Fix _match_secteur defensive    : 10/10 cas du mini-bench sauvés
+    #   - temperature=0 router            : déterminisme A/B
+    #
+    # AVANT step 11.6 : le bench Phase D mesurait le pipeline Run F+G
+    # historique (nu : use_mmr + use_intent uniquement). 15 commits de la
+    # refonte étaient INVISIBLES dans le bench → bench raté à $25-30.
+    # Comparabilité longitudinale Run F+G : artefacts archivés dans
+    # results/run_F_robust/, comparaison post-mortem possible si nécessaire.
     fiches = json.loads(Path(FICHES_PATH).read_text(encoding="utf-8"))
-    pipeline = OrientIAPipeline(
-        mistral_client, fiches, use_mmr=True, use_intent=True,
+    pipeline = make_production_pipeline(
+        client=mistral_client,
+        fiches=fiches,
+        # Refonte router (step 6+7+8) — flags par défaut prod
+        enable_router_llm=True,
+        # Validator multi-couches + post-process (Sprint 7+8)
+        enable_validator=True,
+        enable_layer3=False,  # off pour cost (cf factory.py:104)
+        enable_golden_qa=True,
+        enable_post_process=True,
+        # Strict v4 (refonte 2026-05-06 step 2 — défaut prod)
+        enable_strict_v4=True,
+        enable_scope_classifier=True,
+        # Phase F.3 method extensions
+        use_mmr=True,
+        use_intent=True,
+        use_metadata_filter=True,
     )
     if Path(INDEX_PATH).exists():
         print(f"Loading cached FAISS index from {INDEX_PATH}...")
@@ -103,6 +131,28 @@ def make_seven_systems(
         print(f"Building index for {len(fiches)} fiches...")
         pipeline.build_index()
         pipeline.save_index_to(INDEX_PATH)
+    # Garde-fou anti-régression : verifier post-instanciation que les
+    # composants critiques de la refonte sont bien actifs avant de lancer
+    # un bench coûteux ($25-30 sinon gâchés sur un pipeline nu).
+    assert pipeline.router_llm is not None, (
+        "BUG : pipeline.router_llm est None — le bench Phase D mesurera "
+        "l'ancien Run F+G au lieu de la refonte. Vérifie make_production_pipeline."
+    )
+    assert pipeline.validator is not None, (
+        "BUG : pipeline.validator est None — Validator devrait être actif."
+    )
+    assert pipeline.use_strict_v4 is True, (
+        "BUG : pipeline.use_strict_v4 est False — strict v4 (FactCard JSON) absent."
+    )
+    print(
+        f"[run_real_full] our_rag pipeline ready (refonte step 11.6) : "
+        f"router_llm={pipeline.router_llm is not None}, "
+        f"validator={pipeline.validator is not None}, "
+        f"strict_v4={pipeline.use_strict_v4}, "
+        f"golden_qa={pipeline.use_golden_qa}, "
+        f"post_process={pipeline.enable_post_process}, "
+        f"scope_classifier={pipeline.scope_classifier is not None}"
+    )
 
     # Note: insertion order is preserved in dict — the runner shuffles
     # the labels per question, so the order here doesn't bias anything.

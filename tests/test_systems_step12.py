@@ -96,3 +96,52 @@ def test_our_rag_system_unchanged() -> None:
     result = system.answer("Q1", "Test")
     assert isinstance(result, str)
     pipeline.answer.assert_called_once_with("Test")
+
+
+# ────────────────────────── Anti-régression run_real_full step 11.6 ──────────────────────────
+
+
+def test_run_real_full_uses_make_production_pipeline() -> None:
+    """Anti-régression step 11.6 fix critical (2026-05-09).
+
+    AVANT step 11.6 : run_real_full.py:96-98 instanciait `our_rag` via
+      OrientIAPipeline(client, fiches, use_mmr=True, use_intent=True)
+    PAS via make_production_pipeline → bench Phase D mesurait Run F+G
+    historique (nu : use_mmr + use_intent uniquement). 15 commits de la
+    refonte router/strict_v4/validator/etc. INVISIBLES dans le bench.
+
+    APRÈS step 11.6 : doit utiliser make_production_pipeline avec
+    enable_router_llm=True + enable_validator=True + enable_strict_v4=True.
+
+    Ce test bloque toute régression vers OrientIAPipeline direct.
+    """
+    import inspect
+    from src.eval import run_real_full as rrf
+
+    # 1. L'import OrientIAPipeline ne doit PLUS être au top-level
+    src = inspect.getsource(rrf)
+    # Tolère mention dans un commentaire mais pas d'import direct
+    assert "from src.rag.pipeline import OrientIAPipeline" not in src, (
+        "REGRESSION step 11.6 : run_real_full.py importe encore OrientIAPipeline "
+        "directement. Doit utiliser make_production_pipeline (cf step 11.6 fix)."
+    )
+
+    # 2. make_production_pipeline doit être importé
+    assert "from src.rag.factory import make_production_pipeline" in src, (
+        "REGRESSION step 11.6 : run_real_full.py n'importe pas "
+        "make_production_pipeline. Le bench Phase D mesurera l'ancien pipeline."
+    )
+
+    # 3. make_seven_systems doit appeler make_production_pipeline avec
+    # enable_router_llm=True (bench mesure la refonte)
+    assert "enable_router_llm=True" in src, (
+        "REGRESSION step 11.6 : enable_router_llm n'est pas explicitement True. "
+        "Le bench Phase D ne testera pas le RouterLLM (refonte step 6)."
+    )
+
+    # 4. Garde-fou assert pipeline.router_llm is not None doit être présent
+    assert "pipeline.router_llm is not None" in src, (
+        "REGRESSION step 11.6 : le garde-fou post-build pipeline manque. "
+        "Le bench peut silencieusement basculer sur ancien pipeline si le "
+        "défaut factory change un jour."
+    )
