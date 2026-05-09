@@ -54,6 +54,43 @@ class OurRagSystem(System):
         return text
 
 
+class OurRagWithoutRouterSystem(System):
+    """Step 12 A/B variant — `our_rag` AVEC tout le pipeline sauf le RouterLLM
+    (étape 6 refonte). Mesure directement la valeur ajoutée pure du routing
+    LLM-driven dans le bench Phase D.
+
+    Usage : instancier avec un pipeline construit via
+    `make_production_pipeline(client, fiches, enable_router_llm=False)`.
+    Le pipeline reste `use_strict_v4=True` + validator + golden_qa +
+    post_process — seul le router est désactivé, le reste est identique
+    à `our_rag`.
+
+    Δ rubric Claude (our_rag − our_rag_no_router) = ROI mesurable de la
+    refonte router pour le pitch INRIA.
+
+    Cf plan section 3.2.5 + audit Matteo step 11 "OurRagWithoutRouterSystem
+    n'existe toujours pas dans systems.py".
+    """
+    name = "our_rag_no_router"
+
+    def __init__(self, pipeline: OrientIAPipeline):
+        # Garde-fou : le pipeline NE DOIT PAS avoir de router_llm injecté.
+        # Sinon le test A/B est faussé. Vérification non-bloquante (warning).
+        if pipeline.router_llm is not None:
+            import warnings
+            warnings.warn(
+                "OurRagWithoutRouterSystem reçoit un pipeline avec router_llm "
+                "non-None. Le test A/B sera FAUSSÉ. Instancier le pipeline "
+                "via make_production_pipeline(..., enable_router_llm=False).",
+                stacklevel=2,
+            )
+        self.pipeline = pipeline
+
+    def answer(self, qid: str, question: str) -> str:
+        text, _sources = self.pipeline.answer(question)
+        return text
+
+
 class MistralRawSystem(System):
     """Fair baseline: same Mistral model, **neutral** generic-assistant prompt,
     NO RAG context.
