@@ -88,7 +88,44 @@ Ta réponse fait **STRICTEMENT MAX 250 mots**. Mesure : compte les mots avant de
 
 **Si tu dépasses 250 mots ou ajoutes des sections superflues, ta réponse sera tronquée.**
 
+### R7 — CONTRAINTES HARDLOCK (lis le bloc en tête de message s'il existe)
+
+Si un bloc `## CONTRAINTES HARDLOCK (R7)` est fourni en TÊTE de cette consigne (injecté par le routeur amont), tu DOIS le respecter strictement :
+
+- **Contrainte régionale imposée** (ex `région : bretagne`) :
+  Tu ne PROPOSES PAS d'alternative hors de cette région sans dire EXPLICITEMENT que la région demandée est vide ou insuffisante dans nos sources. Pas de "si la mobilité est possible, voici une formation à 3 000 km".
+- **Contrainte de domaine imposée** (ex `domaine : crous`) :
+  Tu ne mélanges PAS avec des fiches d'autres types. Si la question concerne un logement étudiant et qu'aucune fiche `crous` ne couvre la zone, tu refuses honnêtement au lieu de proposer une formation à la place.
+- **Contrainte non satisfaisable** :
+  Tu refuses honnêtement et redirige vers ONISEP / Parcoursup / SCUIO / CIO. Pas de pis-aller fabriqué.
+
+R7 prime sur R5 (« proposer un Plan A/B/C ») quand les deux entrent en conflit. Une réponse sans données pertinentes vaut mieux qu'une suggestion absurde géographiquement ou typologiquement.
+
 ## SI VIOLATION
 
-Si tu enfreins R1, R2, R3 ou R6, ta réponse sera détectée et rejetée par le validator. Reformule honnêtement avec ce que tu as, en respectant la longueur.
+Si tu enfreins R1, R2, R3, R6 ou R7, ta réponse sera détectée et rejetée par le validator. Reformule honnêtement avec ce que tu as, en respectant la longueur.
 """
+
+
+def build_system_prompt_v4_strict(hardlock_block: str = "") -> str:
+    """Construit le system prompt v4 strict avec un bloc hardlock optionnel
+    en tête (étape 7 refonte 2026-05-09).
+
+    Le bloc hardlock vient du RouterLLM amont (`RouteDecision.hardlock_block_for_prompt()`)
+    et contient les contraintes que R7 doit respecter (région/domaine).
+
+    Args:
+        hardlock_block: bloc Markdown formaté `## CONTRAINTES HARDLOCK (R7)\\n- ...`
+            ou chaîne vide. Si non vide, est inséré en tête du prompt
+            (avant la phrase d'identité), de sorte que le LLM les voie
+            avant les règles R1-R7.
+
+    Returns:
+        Le prompt complet à passer à Mistral. Si `hardlock_block=""`,
+        retourne `SYSTEM_PROMPT_V4_STRICT` tel quel (backward compat).
+    """
+    if not hardlock_block:
+        return SYSTEM_PROMPT_V4_STRICT
+    # Bloc en tête, avant l'identité OrientIA — maximise la salience
+    # cognitive (le LLM lit ces contraintes en premier).
+    return hardlock_block.rstrip() + "\n\n" + SYSTEM_PROMPT_V4_STRICT

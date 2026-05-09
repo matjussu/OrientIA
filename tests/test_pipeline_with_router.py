@@ -221,9 +221,27 @@ def test_top_k_override_respected(monkeypatch: pytest.MonkeyPatch) -> None:
 
     pipeline.answer("Quelles formations en Bretagne ?", top_k_sources=5)
 
-    # Le top_k effectif est max(5, 12) = 12 (mais limité par disponibilité)
+    # Audit Matteo step 6 : durcir l'assert. top_k_override=12 doit être
+    # appliqué via max(5, 12)=12. Avec 5 fiches Bretagne dans le corpus
+    # test, le top servi au générateur sera donc exactement min(12, len(filter))
+    # sources disponibles. On asserte ≥ 12 si le corpus le permet, sinon
+    # on vérifie que c'est >= top_k_override (pas seulement >= top_k_sources).
     assert captured_top_k, "generate not called"
-    assert captured_top_k[0] >= 5  # au moins le top_k initial (12 si fiches dispo)
+    # CRUCIAL : sans le `max(top_k_sources, route.top_k_override)`, on aurait
+    # juste 5. Avec, on est ≥ min(12, len(retrieved)).
+    n_top = captured_top_k[0]
+    # Soit on a 12 (corpus suffisant), soit on a au moins le top_k_override
+    # plafonné par les fiches disponibles dans sub-index "formations".
+    assert n_top >= 5, f"top_k {n_top} < 5 (top_k_sources de base)"
+    # L'assertion stricte qui détecte un bug max(): top doit être > 5 si
+    # le corpus a ≥ 6 fiches dans le sub-index visé.
+    # Ici sub_index='formations' contient 10 fiches (5 Bretagne + 5 Occitanie).
+    # Donc on doit avoir n_top ≥ min(12, 10) = 10.
+    assert n_top >= 10, (
+        f"top_k_override=12 n'a pas été appliqué : top_k effectif = {n_top}, "
+        f"attendu ≥ 10 (min(12, 10 fiches formations dispo)). "
+        f"Le `max(top_k_sources, route.top_k_override)` est probablement cassé."
+    )
 
 
 def test_no_router_preserves_v1_behavior(monkeypatch: pytest.MonkeyPatch) -> None:

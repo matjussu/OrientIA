@@ -359,6 +359,7 @@ def generate(
     history: list[dict] | None = None,
     hint_block: str = "",
     use_strict_v4: bool = False,
+    hardlock_block: str = "",
 ) -> str:
     """Generate an answer via Mistral.
 
@@ -399,12 +400,17 @@ def generate(
         # Branche v4 strict : pas de prose retrieved, JSON tabulaire seul.
         # v4.1 (2026-05-06) : top-5 sources au lieu de top-10 (réduit input
         # tokens + force le LLM à se concentrer sur les sources pertinentes).
-        from src.prompt.system_v4_strict import SYSTEM_PROMPT_V4_STRICT
+        # Étape 7 refonte (2026-05-09) : si `hardlock_block` est fourni
+        # (= RouterLLM a détecté une contrainte région/domaine forte),
+        # on utilise `build_system_prompt_v4_strict(hardlock_block)` pour
+        # injecter le bloc en tête. Sans hardlock_block, comportement v4.1
+        # historique préservé strict.
+        from src.prompt.system_v4_strict import build_system_prompt_v4_strict
         sources_json = format_sources_for_llm(retrieved, max_sources=5)
         user_prompt = _build_user_prompt_strict_v4(
             sources_json, question, golden_qa_prefix=golden_qa_prefix,
         )
-        sys_prompt = SYSTEM_PROMPT_V4_STRICT
+        sys_prompt = build_system_prompt_v4_strict(hardlock_block=hardlock_block)
         # Pas de golden_qa_prefix sur le system (on l'a injecté côté user pour
         # que le LLM le voie ATTACHÉ au contexte fact). Pas de hint_block en v4
         # (le contrat strict n'utilise pas le retry-with-hint pattern v3.2).

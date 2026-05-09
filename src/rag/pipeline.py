@@ -548,6 +548,16 @@ class OrientIAPipeline:
             "retry_skipped_reason": None,
         }
 
+        # Étape 7 refonte (2026-05-09) — Hardlock block injecté en tête du
+        # system prompt v4 strict si le RouterLLM a détecté une contrainte
+        # forte (région stricte, domaine verrouillé). Vide sinon = comportement
+        # v4.1 historique préservé.
+        hardlock_block = (
+            self.last_router_result.hardlock_block_for_prompt()
+            if self.last_router_result is not None
+            else ""
+        )
+
         # Tour 1 — génération initiale
         tour1_answer = generate(
             self.client, top, question,
@@ -556,6 +566,7 @@ class OrientIAPipeline:
             history=history,
             temperature=temperature,
             use_strict_v4=self.use_strict_v4,
+            hardlock_block=hardlock_block,
         )
 
         # Sans validator : pas de retry (no-op transparent)
@@ -616,6 +627,7 @@ class OrientIAPipeline:
             temperature=temperature,
             hint_block=hint_block,
             use_strict_v4=self.use_strict_v4,
+            hardlock_block=hardlock_block,
         )
         tour2_validation = self.validator.validate(tour2_answer, intent=intent)
         tour2_failed = extract_failed_claims(tour2_validation)
