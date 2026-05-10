@@ -26,6 +26,8 @@ COPY data/processed/golden_qa_meta.json ./data/processed/golden_qa_meta.json
 ENV PYTHONPATH=/app \
     PYTHONUNBUFFERED=1
 
+COPY scripts/build_quad_subindexes.py ./scripts/build_quad_subindexes.py
+
 EXPOSE 8000
 
 # --workers 1 OBLIGATOIRE : `_pipeline.last_validation` est mutable + global.
