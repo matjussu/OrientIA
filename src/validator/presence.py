@@ -10,7 +10,10 @@ Cas d'usage (ordre V4 du 2026-04-22-1751) :
 - PASS → doit contenir "arrêté 2019" OU "redoublement interdit" OU "une seule chance"
 - HEC → doit contenir "AST" (Admission sur Titres)
 - kiné → doit contenir "IFMK" + "concours"
-- "taux d'accès Parcoursup" → doit contenir "rang du dernier appelé" OU similaire
+
+Note : la règle "taux d'accès Parcoursup" a été retirée 2026-05-10 — terme
+officiel Parcoursup parfaitement compris, l'imposer dans chaque réponse +
+afficher le footer redondant créait du bruit UX sans gain pédagogique.
 
 Le flag produit un `PresenceWarning` (severity WARNING) qui contribue
 au footer β Warn sans déclencher BLOCK/MODIFY.
@@ -83,24 +86,8 @@ PRESENCE_RULES: list[dict] = [
         ),
         "missing_label": "Mention manquante : IFMK + concours pour kiné",
     },
-    {
-        "topic_id": "parcoursup_taux_info",
-        # Détecte une mention de taux d'accès sans explication
-        "topic_pattern": r"taux\s+d['’]acc[èe]s\s+(?:Parcoursup|en\s+Parcoursup|Parcoursup\s+de)?",
-        "required_any_of": [
-            r"rang\s+du\s+dernier\s+appel[eé]",
-            r"dernier\s+(?:candidat|appelé)\s+appel[eé]",
-            r"pas\s+le\s+taux\s+d['’]admission",
-            r"\(et\s+non\s+le\s+taux",
-            r"ne\s+signifie\s+pas\s+(?:un\s+)?taux\s+d['’]admission",
-        ],
-        "message": (
-            "La réponse cite un 'taux d'accès Parcoursup' sans préciser que "
-            "c'est le rang du dernier candidat appelé (pas le taux d'admission). "
-            "Nuance critique pour un lycéen."
-        ),
-        "missing_label": "Mention manquante : 'taux d'accès' = rang du dernier appelé",
-    },
+    # parcoursup_taux_info retiré 2026-05-10 — terme officiel Parcoursup connu,
+    # créait du bruit UX (footer répétitif) sans gain pédagogique réel.
 ]
 
 

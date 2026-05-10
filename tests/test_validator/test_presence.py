@@ -57,17 +57,10 @@ def test_kine_with_IFMK_ok():
     assert not any(w.topic == "kine_IFMK_info" for w in warnings)
 
 
-def test_parcoursup_taux_without_nuance_flagged():
+def test_parcoursup_taux_no_longer_flagged():
+    """Règle parcoursup_taux_info retirée 2026-05-10 — terme officiel
+    Parcoursup connu, footer redondant inutile (cf decision Matteo)."""
     txt = "Taux d'accès Parcoursup de 46% pour cette formation."
-    warnings = check_presence(txt)
-    assert any(w.topic == "parcoursup_taux_info" for w in warnings)
-
-
-def test_parcoursup_taux_with_rang_dernier_ok():
-    txt = (
-        "Taux d'accès Parcoursup 46% — rang du dernier candidat appelé, "
-        "pas le taux d'admission stricto sensu."
-    )
     warnings = check_presence(txt)
     assert not any(w.topic == "parcoursup_taux_info" for w in warnings)
 
@@ -81,7 +74,6 @@ def test_registry_has_expected_topics():
         "PASS_redoublement_info",
         "HEC_admission_info",
         "kine_IFMK_info",
-        "parcoursup_taux_info",
     }
 
 
