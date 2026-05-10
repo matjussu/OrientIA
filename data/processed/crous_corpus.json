@@ -783,6 +783,60 @@
     "text": "Vie étudiante CROUS CROUS Versailles (logement + restauration universitaire) | Restaurants universitaires : 66 lieux totaux | Types principaux : Cafétéria (38), Restaurant (24), Brasserie (4) | Zones principales : ESSONNE, HAUTS DE SEINE, VAL D'OISE | Résidences universitaires : 27 logements répertoriés dans la région | Services principaux : Laverie, Internet / Wifi, Surveillance / Sécurité, Salle de travail, Parking | Exemples résidences : Résidence Les Châteaux St-Sylvère (VAL D'OISE); Résidence Les Chênes d’Or (VAL D'OISE); Résidence Le Dragueur (ESSONNE); Résidence Les Aunettes (ESSONNE); Résidence Jacqueline de Romilly (YVELINES) | Exemples restaurants : RU Les États-Unis (YVELINES, Restaurant); Cafétéria Descartes (YVELINES, Cafétéria); RU Vauban (YVELINES, Restaurant); RU Les Aviateurs (YVELINES, Restaurant); Cafétéria Le Tropical (ESSONNE, Cafétéria)"
   },
   {
+    "id": "crous_ville:paris",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "n_residences": 82,
+    "services_principaux": [
+      "Internet / Wifi",
+      "Surveillance / Sécurité",
+      "Interphone",
+      "Garage à vélos",
+      "Kitchenette individuelle",
+      "Accessible PMR",
+      "Laverie"
+    ],
+    "text": "Logements étudiants CROUS à Paris | Région : Île-de-France | Nombre de résidences : 82 | Services principaux : Internet / Wifi, Surveillance / Sécurité, Interphone, Garage à vélos, Kitchenette individuelle, Accessible PMR, Laverie | Exemples résidences : Résidence les Carmes; Résidence Mazet; Résidence Dareau; Résidence Saint-Jacques; Résidence Tombe Issoire"
+  },
+  {
+    "id": "crous_ville:lyon",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Lyon",
+    "region": "Auvergne-Rhône-Alpes",
+    "n_residences": 36,
+    "services_principaux": [
+      "Internet / Wifi",
+      "Laverie",
+      "Distribution protections périodiques",
+      "Accessible PMR",
+      "Ascenseur",
+      "Garage à vélos",
+      "Kitchenette individuelle"
+    ],
+    "text": "Logements étudiants CROUS à Lyon | Région : Auvergne-Rhône-Alpes | Nombre de résidences : 36 | Services principaux : Internet / Wifi, Laverie, Distribution protections périodiques, Accessible PMR, Ascenseur, Garage à vélos, Kitchenette individuelle | Exemples résidences : Résidence Arches d'Agrippa; Résidence Les Antonins; Résidence Archimède; Résidence Commandant Charcot; Résidence Françoise Barré-Sinoussi"
+  },
+  {
+    "id": "crous_ville:toulouse",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Toulouse",
+    "region": "Occitanie",
+    "n_residences": 33,
+    "services_principaux": [
+      "Internet / Wifi",
+      "Garage à vélos",
+      "Laverie",
+      "Carte/badge d’accès",
+      "Kitchenette individuelle",
+      "Accès sécurisé",
+      "Ascenseur"
+    ],
+    "text": "Logements étudiants CROUS à Toulouse | Région : Occitanie | Nombre de résidences : 33 | Services principaux : Internet / Wifi, Garage à vélos, Laverie, Carte/badge d’accès, Kitchenette individuelle, Accès sécurisé, Ascenseur | Exemples résidences : Résidence Les Jardins de l'Université; Résidence Paul Voivenel 2; Résidence Parc Bellevue; Résidence Jacqueline Auriol; Résidence L'Aérophile"
+  },
+  {
     "id": "crous_ville:montpellier",
     "domain": "crous",
     "source": "crous_combine_logements_restos",
@@ -799,6 +853,60 @@
       "Distributeur boissons confiseries"
     ],
     "text": "Logements étudiants CROUS à Montpellier | Région : Occitanie | Nombre de résidences : 29 | Services principaux : Internet / Wifi, Laverie, Accessible PMR, Distribution protections périodiques, Surveillance / Sécurité, Logement adaptable, Distributeur boissons confiseries | Exemples résidences : Vert-Bois (Cité universitaire); Occitanie (Résidence universitaire); Boutonnet (Cité universitaire); Triolet (Cité universitaire); Les Arceaux (Résidence universitaire)"
+  },
+  {
+    "id": "crous_ville:grenoble",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Grenoble",
+    "region": "Auvergne-Rhône-Alpes",
+    "n_residences": 28,
+    "services_principaux": [
+      "Internet / Wifi",
+      "Distribution protections périodiques",
+      "Ascenseur",
+      "Accessible PMR",
+      "Logement adaptable",
+      "Garage à vélos",
+      "Laverie"
+    ],
+    "text": "Logements étudiants CROUS à Grenoble | Région : Auvergne-Rhône-Alpes | Nombre de résidences : 28 | Services principaux : Internet / Wifi, Distribution protections périodiques, Ascenseur, Accessible PMR, Logement adaptable, Garage à vélos, Laverie | Exemples résidences : Résidence Carmagnole Liberté; Résidence Berlioz; Résidence Maison des Etudiants; Résidence Terralis; Résidence Geneviève Jourdain"
+  },
+  {
+    "id": "crous_ville:bordeaux",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Bordeaux",
+    "region": "Nouvelle-Aquitaine",
+    "n_residences": 26,
+    "services_principaux": [
+      "Surveillance / Sécurité",
+      "Laverie",
+      "Garage à vélos",
+      "Accessible PMR",
+      "Parking",
+      "Restauration sur place",
+      "Salle de travail"
+    ],
+    "text": "Logements étudiants CROUS à Bordeaux | Région : Nouvelle-Aquitaine | Nombre de résidences : 26 | Services principaux : Surveillance / Sécurité, Laverie, Garage à vélos, Accessible PMR, Parking, Restauration sur place, Salle de travail | Exemples résidences : Résidence Clairefontaine 1; Le Général; Les Lumières; Jean Anouilh; Léo Drouyn"
+  },
+  {
+    "id": "crous_ville:lille",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Lille",
+    "region": "Hauts-de-France",
+    "n_residences": 22,
+    "services_principaux": [
+      "Internet / Wifi",
+      "Distribution protections périodiques",
+      "Kitchenette individuelle",
+      "Garage à vélos",
+      "Parking",
+      "Laverie",
+      "Salle de travail"
+    ],
+    "text": "Logements étudiants CROUS à Lille | Région : Hauts-de-France | Nombre de résidences : 22 | Services principaux : Internet / Wifi, Distribution protections périodiques, Kitchenette individuelle, Garage à vélos, Parking, Laverie, Salle de travail | Exemples résidences : Résidence Courmont; Résidence Hélène Boucher; Résidence Jean Zay; Résidence Kromos'Home; Résidence Albert Châtelet"
   },
   {
     "id": "crous_ville:nantes",
@@ -819,22 +927,22 @@
     "text": "Logements étudiants CROUS à NANTES | Région : Pays de la Loire | Nombre de résidences : 21 | Services principaux : Internet / Wifi, Garage à vélos, Laverie, Kitchenette individuelle, Accessible PMR, Surveillance / Sécurité, Parking | Exemples résidences : Cité U' Casterneau; Résidence de la réussite Wangari Maathaï; Résidence U' Les Landes; Résidence U' Central Green; Cité U' La Bourgeonnière"
   },
   {
-    "id": "crous_ville:paris-18",
+    "id": "crous_ville:rennes",
     "domain": "crous",
     "source": "crous_combine_logements_restos",
-    "ville": "Paris 18",
-    "region": "Île-de-France",
-    "n_residences": 19,
+    "ville": "Rennes",
+    "region": "Bretagne",
+    "n_residences": 21,
     "services_principaux": [
+      "Accessible PMR",
+      "Ascenseur",
       "Internet / Wifi",
       "Surveillance / Sécurité",
-      "Interphone",
-      "Accessible PMR",
       "Garage à vélos",
-      "Kitchenette individuelle",
-      "Ascenseur"
+      "Laverie",
+      "Salle de travail"
     ],
-    "text": "Logements étudiants CROUS à Paris 18 | Région : Île-de-France | Nombre de résidences : 19 | Services principaux : Internet / Wifi, Surveillance / Sécurité, Interphone, Accessible PMR, Garage à vélos, Kitchenette individuelle, Ascenseur | Exemples résidences : Résidence Pajol 1; Résidence Francis de Croisset; Résidence Philippe de Girard 2; Résidence Pajol 2; Résidence Philippe de Girard 3"
+    "text": "Logements étudiants CROUS à Rennes | Région : Bretagne | Nombre de résidences : 21 | Services principaux : Accessible PMR, Ascenseur, Internet / Wifi, Surveillance / Sécurité, Garage à vélos, Laverie, Salle de travail | Exemples résidences : VILLEJEAN OUEST; LA HARPE; LANGUEDOC; MICHEL DENIS; SAINT-HELIER"
   },
   {
     "id": "crous_ville:angers",
@@ -853,24 +961,6 @@
       "Parking PMR"
     ],
     "text": "Logements étudiants CROUS à ANGERS | Région : Pays de la Loire | Nombre de résidences : 17 | Services principaux : Internet / Wifi, Garage à vélos, Accessible PMR, Distribution protections périodiques, Kitchenette individuelle, Laverie, Parking PMR | Exemples résidences : Résidence U' La Madeleine; Résidence U' Flora Tristan; Cité U' Couffon Pavot; Cité U' Belle Beille; Résidence U' La Dauversière 2"
-  },
-  {
-    "id": "crous_ville:toulouse-sud-est",
-    "domain": "crous",
-    "source": "crous_combine_logements_restos",
-    "ville": "Toulouse sud-est",
-    "region": "Occitanie",
-    "n_residences": 17,
-    "services_principaux": [
-      "Garage à vélos",
-      "Internet / Wifi",
-      "Carte/badge d’accès",
-      "Veilleurs de nuit",
-      "Parking",
-      "Ascenseur",
-      "Laverie"
-    ],
-    "text": "Logements étudiants CROUS à Toulouse sud-est | Région : Occitanie | Nombre de résidences : 17 | Services principaux : Garage à vélos, Internet / Wifi, Carte/badge d’accès, Veilleurs de nuit, Parking, Ascenseur, Laverie | Exemples résidences : Résidence Paul Voivenel 2; Résidence Parc Bellevue; Résidence Jacqueline Auriol; Résidence Clément Ader; Résidence At'ome"
   },
   {
     "id": "crous_ville:marseille",
@@ -909,24 +999,6 @@
     "text": "Logements étudiants CROUS à Aix-en-Provence | Région : Provence-Alpes-Côte d'Azur | Nombre de résidences : 15 | Services principaux : Parking, Surveillance / Sécurité, Accessible PMR, Parking PMR, Laverie, Salle de travail, Restauration sur place | Exemples résidences : Résidence Li Passeroun; Résidence Les Fenouillères; Résidence Les Abeilles; Cité U Arc de Meyran; Résidence La Verdière"
   },
   {
-    "id": "crous_ville:paris-13",
-    "domain": "crous",
-    "source": "crous_combine_logements_restos",
-    "ville": "Paris 13",
-    "region": "Île-de-France",
-    "n_residences": 14,
-    "services_principaux": [
-      "Internet / Wifi",
-      "Accessible PMR",
-      "Surveillance / Sécurité",
-      "Garage à vélos",
-      "Laverie",
-      "Salle de détente",
-      "Interphone"
-    ],
-    "text": "Logements étudiants CROUS à Paris 13 | Région : Île-de-France | Nombre de résidences : 14 | Services principaux : Internet / Wifi, Accessible PMR, Surveillance / Sécurité, Garage à vélos, Laverie, Salle de détente, Interphone | Exemples résidences : Résidence Nicole Reine Lepaute; Résidence Pitié-Salpêtrière; Résidence Chevaleret; Résidence Daviel; Résidence Amiral Mouchez"
-  },
-  {
     "id": "crous_ville:strasbourg",
     "domain": "crous",
     "source": "crous_combine_logements_restos",
@@ -945,41 +1017,6 @@
     "text": "Logements étudiants CROUS à Strasbourg | Région : Grand Est | Nombre de résidences : 13 | Services principaux : Internet / Wifi, Garage à vélos, Laverie, Salle de détente, Salle polyvalente, Salle de travail, Salle de sport | Exemples résidences : Résidence Les Héliotropes; Cité U' Robertsau; Résidence Alfred Weiss 1; Résidence Les Cattleyas; Résidence du Bruckhof"
   },
   {
-    "id": "crous_ville:bordeaux",
-    "domain": "crous",
-    "source": "crous_combine_logements_restos",
-    "ville": "Bordeaux",
-    "region": "Nouvelle-Aquitaine",
-    "n_residences": 13,
-    "services_principaux": [
-      "Surveillance / Sécurité",
-      "Garage à vélos",
-      "Laverie",
-      "Accessible PMR",
-      "Salle de travail",
-      "Parking"
-    ],
-    "text": "Logements étudiants CROUS à Bordeaux | Région : Nouvelle-Aquitaine | Nombre de résidences : 13 | Services principaux : Surveillance / Sécurité, Garage à vélos, Laverie, Accessible PMR, Salle de travail, Parking | Exemples résidences : Résidence Clairefontaine 1; Le Général; Jean Anouilh; Léo Drouyn; Tauzin"
-  },
-  {
-    "id": "crous_ville:pessac",
-    "domain": "crous",
-    "source": "crous_combine_logements_restos",
-    "ville": "Pessac",
-    "region": "Nouvelle-Aquitaine",
-    "n_residences": 13,
-    "services_principaux": [
-      "Laverie",
-      "Surveillance / Sécurité",
-      "Accessible PMR",
-      "Restauration sur place",
-      "Garage à vélos",
-      "Salle de détente",
-      "Parking"
-    ],
-    "text": "Logements étudiants CROUS à Pessac | Région : Nouvelle-Aquitaine | Nombre de résidences : 13 | Services principaux : Laverie, Surveillance / Sécurité, Accessible PMR, Restauration sur place, Garage à vélos, Salle de détente, Parking | Exemples résidences : Les Lumières; Pierre-Gilles de Gennes; Village n°3; Village n°2 rénové; Village n°5 rénové"
-  },
-  {
     "id": "crous_ville:tours",
     "domain": "crous",
     "source": "crous_combine_logements_restos",
@@ -996,5 +1033,77 @@
       "Salle TV"
     ],
     "text": "Logements étudiants CROUS à Tours | Région : Centre-Val de Loire | Nombre de résidences : 12 | Services principaux : Internet / Wifi, Laverie, Garage à vélos, Surveillance / Sécurité, Salle de travail, Accessible PMR, Salle TV | Exemples résidences : Christophe Colomb; Tonnellé; Rabelais; Sanitas; Grandmont"
+  },
+  {
+    "id": "crous_ville:essonne",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "ESSONNE",
+    "region": "Île-de-France",
+    "n_residences": 12,
+    "services_principaux": [
+      "Laverie",
+      "Internet / Wifi",
+      "Surveillance / Sécurité",
+      "Salle de travail",
+      "Salle de détente",
+      "Parking",
+      "Garage à vélos"
+    ],
+    "text": "Logements étudiants CROUS à ESSONNE | Région : Île-de-France | Nombre de résidences : 12 | Services principaux : Laverie, Internet / Wifi, Surveillance / Sécurité, Salle de travail, Salle de détente, Parking, Garage à vélos | Exemples résidences : Résidence Le Dragueur; Résidence Les Aunettes; Résidence Flora Tristan; Résidence Jean d'Ormesson; Résidence Les Rives de L'Yvette"
+  },
+  {
+    "id": "crous_ville:nice",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Nice",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "n_residences": 11,
+    "services_principaux": [
+      "Garage à vélos",
+      "Internet / Wifi",
+      "Parking",
+      "Laverie",
+      "Surveillance / Sécurité",
+      "Kitchenette individuelle",
+      "Distribution protections périodiques"
+    ],
+    "text": "Logements étudiants CROUS à Nice | Région : Provence-Alpes-Côte d'Azur | Nombre de résidences : 11 | Services principaux : Garage à vélos, Internet / Wifi, Parking, Laverie, Surveillance / Sécurité, Kitchenette individuelle, Distribution protections périodiques | Exemples résidences : La Madeleine; Montebello; Romain Gary; Saint Antoine; Olivier Chesneau"
+  },
+  {
+    "id": "crous_ville:orleans",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "Orléans",
+    "region": "Centre-Val de Loire",
+    "n_residences": 11,
+    "services_principaux": [
+      "Internet / Wifi",
+      "Laverie",
+      "Accessible PMR",
+      "Garage à vélos",
+      "Parking",
+      "Salle de travail",
+      "Surveillance / Sécurité"
+    ],
+    "text": "Logements étudiants CROUS à Orléans | Région : Centre-Val de Loire | Nombre de résidences : 11 | Services principaux : Internet / Wifi, Laverie, Accessible PMR, Garage à vélos, Parking, Salle de travail, Surveillance / Sécurité | Exemples résidences : Les Hêtres; Les Châtaigniers; Aristote; Les Charmes; Les Magnolias"
+  },
+  {
+    "id": "crous_ville:hauts-de-seine",
+    "domain": "crous",
+    "source": "crous_combine_logements_restos",
+    "ville": "HAUTS-DE-SEINE",
+    "region": "Île-de-France",
+    "n_residences": 11,
+    "services_principaux": [
+      "Internet / Wifi",
+      "Salle de travail",
+      "Surveillance / Sécurité",
+      "Laverie",
+      "Salle de détente",
+      "Garage à vélos",
+      "Parking"
+    ],
+    "text": "Logements étudiants CROUS à HAUTS-DE-SEINE | Région : Île-de-France | Nombre de résidences : 11 | Services principaux : Internet / Wifi, Salle de travail, Surveillance / Sécurité, Laverie, Salle de détente, Garage à vélos, Parking | Exemples résidences : Résidence Olympe de Gouges; Résidence Jean Zay; Résidence Les Bas Longchamps; Résidence Clichy; Résidence Saints-Sauveurs"
   }
 ]

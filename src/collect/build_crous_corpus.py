@@ -167,13 +167,69 @@ def _aggregate_by_region(
     return out
 
 
-def _aggregate_by_grande_ville(logements: list[dict], top_n: int = 12) -> list[dict]:
-    """1 cell par grande ville étudiante (top par nb logements)."""
+def _canonical_city(zone: str) -> str:
+    """Normalise zones avec arrondissements/sous-zones vers une ville canonique.
+
+    Ex : "Lyon 5ème" → "Lyon", "Lyon 7ème" → "Lyon", "Villeurbanne" → "Lyon",
+    "Paris 18" → "Paris", "Toulouse sud-est" → "Toulouse",
+    "Campus Saint-Martin-d'Hères" → "Grenoble" (banlieue universitaire),
+    "Rennes ouest-Villejean" → "Rennes".
+
+    Permet aux résidences fragmentées en sous-zones d'apparaître dans le top
+    par ville canonique (Lyon = 27 résidences agrégées, vs Lyon 5ème = 5
+    résidences sous-zone qui n'atteint pas le top).
+    """
+    import re
+    z = (zone or "").strip()
+    if not z:
+        return ""
+    # Lyon variants : Lyon 1er/5ème/7ème/8ème/9ème/Villeurbanne
+    if re.search(r"\blyon\b", z, re.IGNORECASE) or z.lower() == "villeurbanne":
+        return "Lyon"
+    # Paris arrondissements : Paris 13/18/19/20…
+    m = re.match(r"^paris\b", z, re.IGNORECASE)
+    if m:
+        return "Paris"
+    # Marseille arrondissements (rares dans CROUS mais par cohérence)
+    if re.match(r"^marseille\b", z, re.IGNORECASE):
+        return "Marseille"
+    # Grenoble : "Campus Saint-Martin-d'Hères", "Grenoble - En ville", etc.
+    if re.search(r"\bgrenoble\b|saint-martin-d'h[èe]res", z, re.IGNORECASE):
+        return "Grenoble"
+    # Rennes : "Rennes ouest-Villejean", "Rennes centre"
+    if re.match(r"^rennes\b", z, re.IGNORECASE):
+        return "Rennes"
+    # Toulouse : "Toulouse Centre", "Toulouse sud-est"
+    if re.match(r"^toulouse\b", z, re.IGNORECASE):
+        return "Toulouse"
+    # Lille : "Villeneuve d'Ascq" + variants
+    if re.search(r"\blille\b|villeneuve d['’]ascq", z, re.IGNORECASE):
+        return "Lille"
+    # Bordeaux : "Pessac" est universitaire bordelais
+    if re.match(r"^bordeaux\b", z, re.IGNORECASE) or z.lower() == "pessac":
+        return "Bordeaux"
+    # Aix-Marseille : "Aix-en-Provence" + "Marseille" partagent Aix-Marseille Université
+    # On garde séparés (les CROUS sont distincts), pas de regroupement.
+    return z  # Pas de canonisation → zone telle quelle
+
+
+def _aggregate_by_grande_ville(logements: list[dict], top_n: int = 18) -> list[dict]:
+    """1 cell par grande ville étudiante (top par nb logements).
+
+    2026-05-10 fix : agrégation par ville canonique (`_canonical_city`) au
+    lieu de zone brute. Évite que Lyon (fragmenté en Lyon 5ème + Lyon 7ème
+    + Villeurbanne, chacun <10 résidences) soit éliminé du top alors qu'il
+    cumule ~37 résidences. Top N relevé de 12 → 18 pour conserver les
+    grandes villes secondaires (Dijon, Clermont-Ferrand, Avignon, etc.).
+    """
     by_zone: dict[str, list[dict]] = defaultdict(list)
     for l in logements:
         zone = (l.get("zone") or "").strip()
-        if zone:
-            by_zone[zone].append(l)
+        if not zone:
+            continue
+        canonical = _canonical_city(zone)
+        if canonical:
+            by_zone[canonical].append(l)
     # Top N par nb logements
     sorted_zones = sorted(by_zone.items(), key=lambda kv: -len(kv[1]))[:top_n]
     out: list[dict] = []
