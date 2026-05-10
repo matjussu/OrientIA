@@ -228,6 +228,29 @@ idéations négatives, isolement émotionnel, expressions de désespoir, même \
 indirectes), classe **urgent**. **AUCUNE EXCEPTION** : un signal détresse \
 prime sur tout autre indice. Mieux flagger en trop que rater.
 
+## CONTEXTE CONVERSATIONNEL
+
+Si des messages précédents (`role: "user"` ou `"assistant"`) te sont fournis \
+AVANT la question courante, ils représentent l'historique d'une conversation \
+en cours. Tu dois en tenir compte pour juger si la question courante est in_scope.
+
+**Règle clé** : un follow-up court qui dépend du contexte précédent (ex: \
+"et à Lyon ?", "développe ce point", "celle-ci ?", "explique") est **in_scope** \
+si le tour précédent était in_scope (orientation post-bac, formations, métiers, \
+CROUS, financement, etc.). N'évalue PAS le follow-up isolément — c'est la \
+combinaison contexte + question qui compte.
+
+**Exemples** :
+- Tour 1 user : "Y a-t-il des logements CROUS à Paris ?"
+- Tour 1 assistant : "Oui, voici les résidences disponibles…"
+- Tour 2 user : "et à Lyon ?" → **in_scope** (suite logique de la question CROUS)
+
+- Tour 1 user : "Compare ENSEIRB-MATMECA et EPITA pour la cybersécurité"
+- Tour 2 user : "et l'INSA Lyon ?" → **in_scope** (suite comparaison écoles)
+
+- Tour 1 user : "Quel est le métier de data scientist ?"
+- Tour 2 user : "raconte-moi une blague" → **out_of_scope** (changement de sujet net)
+
 ## DÉFINITIONS
 
 ### `urgent` — Détresse psychologique (PRIORITÉ ABSOLUE)
@@ -358,8 +381,22 @@ class ScopeClassifier:
         self.model = model
         self.timeout_ms = timeout_ms
 
-    def classify(self, question: str) -> ScopeResult:
-        """Classifie une question en {in_scope, out_of_scope, urgent}."""
+    def classify(
+        self,
+        question: str,
+        history: list[dict] | None = None,
+    ) -> ScopeResult:
+        """Classifie une question en {in_scope, out_of_scope, urgent, identity, greeting}.
+
+        Args:
+            question: requête utilisateur courante.
+            history: historique conversationnel optionnel (`[{role, content}]`).
+                Quand fourni, le LLM classifier voit le contexte des messages
+                précédents pour mieux juger les follow-ups type "et à Lyon ?",
+                "développe ce point", qui isolément paraissent out_of_scope
+                mais qui sont des suites légitimes d'une conversation
+                in_scope. Default `None` = comportement stateless v1.
+        """
         if not question or not question.strip():
             return ScopeResult(
                 label="out_of_scope",
@@ -423,13 +460,28 @@ class ScopeClassifier:
             # U2 distress indirect 129s observés en Étape 2 bench).
             # Cap à 5s : si l'API met plus, on dégrade en in_scope (le pipeline
             # gère honnêtement). Mistral Small répond normalement <2s.
+            # Construction messages array : system → history (si fourni) → question.
+            # Le LLM voit le contexte de la conversation précédente pour juger
+            # correctement les follow-ups ("et à Lyon ?" après une question
+            # CROUS Paris est in_scope, pas out_of_scope).
+            classifier_messages: list[dict] = [
+                {"role": "system", "content": _CLASSIFIER_SYSTEM_PROMPT}
+            ]
+            if history:
+                # Cap à 4 derniers messages pour borner les tokens (le scope
+                # classifier n'a pas besoin de toute la conversation pour
+                # détecter le contexte général). Filtre les messages mal formés.
+                for msg in history[-4:]:
+                    role = msg.get("role")
+                    content = msg.get("content")
+                    if role in ("user", "assistant") and isinstance(content, str) and content:
+                        classifier_messages.append({"role": role, "content": content})
+            classifier_messages.append({"role": "user", "content": question})
+
             resp = self.client.chat.complete(
                 model=self.model,
                 max_tokens=200,
-                messages=[
-                    {"role": "system", "content": _CLASSIFIER_SYSTEM_PROMPT},
-                    {"role": "user", "content": question},
-                ],
+                messages=classifier_messages,
                 response_format={"type": "json_object"},
                 timeout_ms=self.timeout_ms,
             )

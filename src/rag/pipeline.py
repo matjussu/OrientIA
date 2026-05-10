@@ -317,7 +317,11 @@ class OrientIAPipeline:
         # Court-circuit avec réponse pré-écrite si question hors-scope ou urgent.
         # Cette gate est PRÉ-pipeline : aucun appel retrieve/generate si non in_scope.
         if self.scope_classifier is not None:
-            scope_res = self.scope_classifier.classify(question)
+            # 2026-05-10 fix multi-tour : passe `history` au scope classifier
+            # pour qu'il juge les follow-ups dans leur contexte (ex: "et à
+            # Lyon ?" après une question CROUS Paris est in_scope, pas
+            # out_of_scope).
+            scope_res = self.scope_classifier.classify(question, history=history)
             self.last_scope_result = scope_res
             if scope_res.label != "in_scope":
                 # Reset les marqueurs pipeline (backward compat consumers)
