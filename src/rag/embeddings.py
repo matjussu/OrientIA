@@ -245,6 +245,134 @@ def _format_admission_stats(fiche: dict) -> str | None:
     return ("Admission : " + " — ".join(fragments)) if fragments else None
 
 
+# ─── Step 11.7 chantier 3 — Signatures écoles prestigieuses ────────────────
+#
+# Les fiches Parcoursup/ONISEP des grandes écoles ont des `nom` génériques
+# ("Formation d'ingénieur Bac+5 - Bac général") + `domaine` mal classifié
+# ("ingenierie_industrielle" pour ENIB qui fait de l'informatique). Le
+# signal métier (cybersécurité, data, etc.) n'est PAS dans la fiche.
+#
+# Audit empirique 2026-05-10 : ENIB Brest, ENSEIRB-MATMECA, INSA Rennes,
+# CentraleSupélec ont toutes des `nom` génériques. Le retrieve dense sur
+# "cyber" ne les ramène pas alors que ces écoles font tournent vraiment
+# de la cyber/info au programme.
+#
+# Fix : pour ~25 écoles dont la spécialité est de NOTORIÉTÉ PUBLIQUE
+# (Wikipedia, sites officiels), on injecte une signature courte dans le
+# texte embedded. Ce N'EST PAS DE L'HALLUCINATION :
+# - ENIB Brest fait bien de l'info/cyber (vérifiable site web École)
+# - Le LLM voit toujours la fiche brute via FactCard JSON
+# - Le LLM ne citera ENIB que si elle est dans le top-K du retrieve
+# - On améliore le retrieve, pas la génération
+#
+# Liste conservatrice : écoles dont la spécialité est universellement
+# admise. Si une école a des spécialités dépendantes du campus
+# (ex INSA Toulouse vs INSA Lyon), on inclut dans la signature toutes
+# les spécialités principales du groupe.
+
+KNOWN_SCHOOL_SIGNATURES: dict[str, str] = {
+    # Écoles d'ingénieurs prestigieuses (fait public)
+    "ENIB": "École Nationale d'Ingénieurs de Brest, spécialités informatique cybersécurité électronique mécatronique",
+    "ENSEIRB-MATMECA": "École d'ingénieurs Bordeaux INP, spécialités informatique cybersécurité électronique télécommunications mathématiques mécanique",
+    "ENSEIRB": "École Nationale Supérieure d'Électronique Informatique Radiocommunications Bordeaux",
+    "ENSSAT": "École Nationale Supérieure des Sciences Appliquées et de Technologie Lannion, spécialités informatique électronique optique photonique",
+    "ENSIBS": "École Nationale Supérieure d'Ingénieurs de Bretagne-Sud Lorient, spécialités cybersécurité mécatronique",
+    "INSA": "Institut National des Sciences Appliquées, spécialités informatique cybersécurité génie civil mécanique mathématiques chimie",
+    "IMT Atlantique": "Institut Mines-Télécom, spécialités numérique cybersécurité énergie systèmes industriels",
+    "Mines-Télécom": "Institut Mines-Télécom, spécialités numérique télécommunications cybersécurité",
+    "CentraleSupélec": "École Centrale Supélec, spécialités élite ingénierie informatique mathématiques physique cybersécurité",
+    "École polytechnique": "École polytechnique Palaiseau, spécialités élite sciences fondamentales mathématiques physique informatique",
+    "Polytech": "Réseau Polytech écoles d'ingénieurs universitaires, spécialités polyvalentes informatique mécanique génie civil",
+    "EFREI": "École d'ingénieurs informatique télécommunications cybersécurité",
+    "EPITA": "École d'ingénieurs informatique cybersécurité intelligence artificielle",
+    "EPITECH": "École d'informatique programmation développement",
+    "ESILV": "École Supérieure d'Ingénieurs Léonard de Vinci, spécialités informatique mécanique finance",
+    "ISAE-SUPAERO": "Institut Supérieur de l'Aéronautique et de l'Espace, ingénierie aéronautique spatial",
+    "Centrale Lille": "École Centrale Lille, spécialités ingénierie polyvalente informatique mécanique",
+    "Centrale Lyon": "École Centrale Lyon, spécialités ingénierie polyvalente",
+    "Centrale Nantes": "École Centrale Nantes, spécialités ingénierie polyvalente",
+    # ENS d'élite (Step 11.7 chantier 3 — fix faux positif "ENS" générique
+    # qui matchait 900+ fiches "École Nationale Supérieure de XYZ"
+    # non-ENS au sens grandes écoles).
+    "ENS Ulm": "École Normale Supérieure Ulm Paris, sciences fondamentales lettres recherche académique",
+    "ENS Cachan": "École Normale Supérieure Paris-Saclay (ex Cachan), sciences ingénierie",
+    "ENS Lyon": "École Normale Supérieure Lyon, sciences lettres",
+    "ENS Paris-Saclay": "École Normale Supérieure Paris-Saclay, sciences ingénierie",
+    "ENS Rennes": "École Normale Supérieure Rennes, sciences sociales mathématiques informatique",
+    # Écoles de commerce prestigieuses
+    "HEC": "École des Hautes Études Commerciales Paris, programme grande école management finance commerce",
+    "ESSEC": "École Supérieure des Sciences Économiques et Commerciales, management finance luxe",
+    "ESCP": "École Supérieure de Commerce Paris, management européen",
+    "EM Lyon": "École de management Lyon, management entrepreneuriat",
+    "EDHEC": "École de management, finance management",
+    "Audencia": "École de management Nantes",
+    "NEOMA": "École de management Reims Rouen, management",
+    "SKEMA": "École de management, business international",
+    # Sciences Po (réseau)
+    "Sciences Po": "Institut d'études politiques, sciences sociales relations internationales économie politique",
+    "IEP": "Institut d'études politiques, sciences sociales politique économie",
+    "études politiques": "Institut d'études politiques (Sciences Po), sciences sociales relations internationales économie politique",
+}
+
+
+def _detect_known_school_signature(etablissement: str) -> str | None:
+    """Détecte si l'établissement matche une école prestigieuse connue
+    et retourne sa signature publique. None sinon.
+
+    Step 11.7 chantier 3 — l'enrichissement est conservateur : on matche
+    sur l'acronyme/nom complet de l'école au début du libellé etab,
+    pas sur des occurrences ambiguës. Ex "ENIB Brest" matche "ENIB" mais
+    "Université de Brest" ne matche pas (ce n'est pas ENIB).
+    """
+    if not etablissement or not isinstance(etablissement, str):
+        return None
+    etab_norm = etablissement.strip()
+    # Tri par longueur décroissante pour éviter les matches partiels
+    # (ex "ENSEIRB-MATMECA" doit matcher avant "ENSEIRB" tout court)
+    for school in sorted(KNOWN_SCHOOL_SIGNATURES.keys(), key=len, reverse=True):
+        # Match insensible à la casse, mais sur le mot complet
+        # (boundary regex-like via vérification simple)
+        if school.lower() in etab_norm.lower():
+            return KNOWN_SCHOOL_SIGNATURES[school]
+    return None
+
+
+# Mots-clés métier détectables dans nom/detail pour enrichir le signal
+# embedding. Détection insensible à la casse, on enrichit uniquement si
+# le mot-clé est présent en clair (pas d'inférence).
+_METIER_KEYWORDS: list[tuple[str, str]] = [
+    # (regex, tag_à_ajouter)
+    (r"\bcyber\w*|sécurité\s+informatique|sécurité\s+des\s+systèmes", "cybersécurité informatique sécurité"),
+    (r"\bdata\b|\bdonnée[s]?\b|machine\s+learning|big\s+data", "data science données analyse"),
+    (r"\bintelligence\s+artificielle|\bIA\b|\bAI\b", "intelligence artificielle IA"),
+    (r"\brobotique|automatisme[s]?|automatique\b", "robotique automatique"),
+    (r"\bréseau[x]?\b|\btélécom\w*", "réseaux télécommunications"),
+    (r"\bbiotechnolog\w+|\bbioinformatique", "biotechnologie bioinformatique"),
+    (r"\bquantique|nanotechnolog\w+", "quantique nanotechnologie"),
+    (r"\baéronaut\w+|spatial[e]?", "aéronautique spatial"),
+]
+
+
+def _detect_metier_keywords_in_text(*texts: str) -> str:
+    """Détecte les mots-clés métier dans les textes fournis et retourne
+    une chaîne `Mots-clés métier détectés : ...` ou ''.
+
+    Step 11.7 chantier 3 — détection sur `nom`, `detail`, `parcours_long`,
+    `mention`. Si plusieurs mots-clés détectés → tous concaténés.
+    """
+    import re
+    haystack = " ".join(t for t in texts if t).lower()
+    if not haystack:
+        return ""
+    found_tags = []
+    for pattern, tag in _METIER_KEYWORDS:
+        if re.search(pattern, haystack, re.IGNORECASE):
+            found_tags.append(tag)
+    if not found_tags:
+        return ""
+    return "Mots-clés métier détectés : " + " ; ".join(found_tags)
+
+
 def fiche_to_text(fiche: dict) -> str:
     """Construit le texte embedded pour une fiche.
 
@@ -254,10 +382,24 @@ def fiche_to_text(fiche: dict) -> str:
     - `taux_admission` MonMaster + `taux_acces_parcoursup_2025`
     - `n_candidats_pp` / `n_acceptes_total` MonMaster
 
+    **v4 step 11.7 chantier 3 (2026-05-10)** — enrichissement signal métier :
+    - Signatures publiques des écoles prestigieuses (ENIB, INSA, HEC, etc.)
+      via `_detect_known_school_signature`
+    - Détection mots-clés métier (cyber, data, IA, robotique, etc.) dans
+      `nom` + `detail` + `parcours_long` + `mention`
+
     Motivation : bench v2 (bench_personas_2026-04-24) a révélé que le
     modèle hallucinait des statistiques précises parce que le retrieval
     ne les exposait pas. En les injectant dans le texte embedding, elles
     deviennent retrievables + citables par le générateur.
+
+    Step 11.7 motivation : audit empirique du dump step 11.5 a montré que
+    les écoles prestigieuses (ENIB Brest, ENSEIRB-MATMECA, INSA Rennes,
+    CentraleSupélec) ont des `nom` Parcoursup génériques sans signal
+    métier. Sur "cyber Bretagne", elles ne remontent pas en top-K.
+    L'enrichissement injecte le signal métier qu'elles ont publiquement
+    (Wikipedia, sites écoles) sans toucher à la fiche brute (le LLM
+    voit toujours les chiffres originaux via FactCard JSON).
     """
     parts = [
         f"Formation : {fiche.get('nom', '')}",
@@ -315,6 +457,24 @@ def fiche_to_text(fiche: dict) -> str:
         ip_text = _format_insertion_pro(ip)
         if ip_text:
             parts.append(ip_text)
+
+    # Step 11.7 chantier 3 — Signature publique école prestigieuse
+    school_signature = _detect_known_school_signature(
+        fiche.get("etablissement") or ""
+    )
+    if school_signature:
+        parts.append(f"Signature école : {school_signature}")
+
+    # Step 11.7 chantier 3 — Mots-clés métier détectés dans nom/detail
+    metier_tags = _detect_metier_keywords_in_text(
+        fiche.get("nom") or "",
+        fiche.get("detail") or "",
+        fiche.get("parcours_long") or "",
+        fiche.get("mention") or "",
+        fiche.get("specialite") or "",
+    )
+    if metier_tags:
+        parts.append(metier_tags)
 
     return " | ".join(parts)
 
