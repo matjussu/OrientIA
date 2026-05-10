@@ -148,6 +148,10 @@ def _aggregate_by_region(
             )
             parts.append(f"Exemples restaurants : {samples}")
 
+        # URL régionale : mappe la 1ère zone principale (généralement la
+        # ville-centre du CROUS régional) à son site officiel.
+        top_zone = zones_restos.most_common(1)[0][0] if zones_restos else ""
+        regional_url = _CROUS_REGIONAL_URLS.get(top_zone) or _CROUS_NATIONAL_URL
         record = {
             "id": slug_id,
             "domain": "crous",
@@ -161,10 +165,63 @@ def _aggregate_by_region(
             "services_logements_principaux": [
                 s for s, _ in services_logements.most_common(5)
             ],
+            "url": regional_url,
+            "url_canonical": regional_url,
             "text": " | ".join(parts),
         }
         out.append(record)
     return out
+
+
+# Mapping ville canonique → URL officielle du CROUS régional
+# (consulté 2026-05-10). Permet aux fiches CROUS d'afficher un lien
+# direct vers le bon site régional au lieu du portail générique.
+_CROUS_REGIONAL_URLS: dict[str, str] = {
+    "Paris": "https://www.crous-paris.fr",
+    "ESSONNE": "https://www.crous-versailles.fr",
+    "HAUTS-DE-SEINE": "https://www.crous-versailles.fr",
+    "Versailles": "https://www.crous-versailles.fr",
+    "Créteil": "https://www.crous-creteil.fr",
+    "Lyon": "https://www.crous-lyon.fr",
+    "Grenoble": "https://www.crous-grenoble.fr",
+    "Marseille": "https://www.crous-aix-marseille.fr",
+    "Aix-en-Provence": "https://www.crous-aix-marseille.fr",
+    "Avignon": "https://www.crous-aix-marseille.fr",
+    "Nice": "https://www.crous-nice.fr",
+    "Toulouse": "https://www.crous-toulouse.fr",
+    "Montpellier": "https://www.crous-montpellier.fr",
+    "Bordeaux": "https://www.crous-bordeaux.fr",
+    "Pessac": "https://www.crous-bordeaux.fr",
+    "Lille": "https://www.crous-lille.fr",
+    "AMIENS CENTRE": "https://www.crous-amiens.fr",
+    "Amiens": "https://www.crous-amiens.fr",
+    "Rennes": "https://www.crous-rennes.fr",
+    "NANTES": "https://www.crous-nantes.fr",
+    "ANGERS": "https://www.crous-nantes.fr",
+    "Le Havre": "https://www.crous-normandie.fr",
+    "Caen": "https://www.crous-normandie.fr",
+    "Rouen": "https://www.crous-normandie.fr",
+    "Strasbourg": "https://www.crous-strasbourg.fr",
+    "Nancy": "https://www.crous-lorraine.fr",
+    "Metz": "https://www.crous-lorraine.fr",
+    "Reims": "https://www.crous-reims.fr",
+    "Dijon": "https://www.crous-bfc.fr",
+    "Besançon": "https://www.crous-bfc.fr",
+    "Clermont-Ferrand": "https://www.crous-clermont.fr",
+    "Limoges": "https://www.crous-limoges.fr",
+    "Poitiers": "https://www.crous-poitiers.fr",
+    "Orléans": "https://www.crous-orleans-tours.fr",
+    "Tours": "https://www.crous-orleans-tours.fr",
+    "La Réunion": "https://www.crous-reunion.fr",
+    "Guadeloupe": "https://www.crous-antillesguyane.fr",
+    "Martinique": "https://www.crous-antillesguyane.fr",
+    "Guyane": "https://www.crous-antillesguyane.fr",
+    "Mayotte": "https://www.crous-mayotte.fr",
+    "Corse": "https://www.crous-corse.fr",
+}
+
+# Fallback portail national pour la recherche logement
+_CROUS_NATIONAL_URL = "https://trouverunlogement.lescrous.fr/"
 
 
 def _canonical_city(zone: str) -> str:
@@ -257,6 +314,10 @@ def _aggregate_by_grande_ville(logements: list[dict], top_n: int = 18) -> list[d
         )
         parts.append(f"Exemples résidences : {sample_names}")
 
+        # URL spécifique au CROUS régional (fix 2026-05-10) : permet
+        # d'afficher un lien direct vers le site officiel du CROUS de la
+        # ville au lieu du portail national générique.
+        regional_url = _CROUS_REGIONAL_URLS.get(zone, _CROUS_NATIONAL_URL)
         out.append({
             "id": f"crous_ville:{_slug(zone)}",
             "domain": "crous",
@@ -265,6 +326,8 @@ def _aggregate_by_grande_ville(logements: list[dict], top_n: int = 18) -> list[d
             "region": region_dom,
             "n_residences": n,
             "services_principaux": [s for s, _ in services_count.most_common(7)],
+            "url": regional_url,
+            "url_canonical": regional_url,
             "text": " | ".join(parts),
         })
     return out
@@ -299,6 +362,8 @@ def _aggregate_france(logements: list[dict], restos: list[dict]) -> dict:
         "n_logements_total": n_log,
         "n_restos_total": n_res,
         "regions_principales": [r for r, _ in regions.most_common(5)],
+        "url": _CROUS_NATIONAL_URL,
+        "url_canonical": _CROUS_NATIONAL_URL,
         "text": " | ".join(parts),
     }
 
