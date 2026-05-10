@@ -15,11 +15,13 @@ from unittest.mock import MagicMock
 import pytest
 
 from src.rag.scope_classifier import (
+    GREETING_RESPONSE,
     IDENTITY_RESPONSE,
     OUT_OF_SCOPE_RESPONSE,
     URGENT_RESPONSE,
     ScopeClassifier,
     ScopeResult,
+    detect_greeting_signals_regex,
     detect_identity_signals_regex,
     detect_urgent_signals_regex,
 )
@@ -189,6 +191,16 @@ class TestRegexIdentity:
         assert detect_identity_signals_regex("Qui es-tu ?")
         assert detect_identity_signals_regex("qui es tu")
 
+    def test_qui_est_tu_typo_matched(self):
+        """Typo fréquente "qui est tu" (au lieu de "qui es tu") doit matcher."""
+        assert detect_identity_signals_regex("Qui est tu ?")
+        assert detect_identity_signals_regex("qui est-tu")
+
+    def test_identity_with_greeting_prefix_matched(self):
+        """"Salut ! Qui est tu ?" doit matcher identity (pas greeting seul)."""
+        assert detect_identity_signals_regex("Salut ! Qui est tu ?")
+        assert detect_identity_signals_regex("Bonjour, qui es-tu ?")
+
     def test_es_tu_une_ia_matched(self):
         assert detect_identity_signals_regex("Es-tu une IA ?")
         assert detect_identity_signals_regex("es tu une IA")
@@ -237,3 +249,64 @@ class TestIdentityShortCircuit:
         """L'identité doit citer les sources publiques."""
         assert "Parcoursup" in IDENTITY_RESPONSE
         assert "ONISEP" in IDENTITY_RESPONSE
+
+    def test_identity_response_does_not_start_with_oui(self):
+        """Une question ouverte ("Qui es-tu ?") ne doit pas se voir répondre
+        par "Oui, …" — la réponse doit fonctionner pour les deux types
+        (oui/non type "Es-tu une IA ?" ET ouvert type "Qui es-tu ?")."""
+        assert not IDENTITY_RESPONSE.lstrip().lower().startswith("oui,")
+        assert not IDENTITY_RESPONSE.lstrip().lower().startswith("**oui,")
+
+
+# ─────────────── Greeting (bonjour, salut, hey…) ───────────────
+
+
+class TestRegexGreeting:
+    def test_bonjour_matched(self):
+        assert detect_greeting_signals_regex("Bonjour !")
+        assert detect_greeting_signals_regex("bonjour")
+        assert detect_greeting_signals_regex("Bonjour")
+
+    def test_salut_matched(self):
+        assert detect_greeting_signals_regex("Salut !")
+        assert detect_greeting_signals_regex("salut")
+        assert detect_greeting_signals_regex("Slt")
+
+    def test_hello_hey_matched(self):
+        assert detect_greeting_signals_regex("Hello")
+        assert detect_greeting_signals_regex("Hey !")
+        assert detect_greeting_signals_regex("Hi")
+        assert detect_greeting_signals_regex("Coucou")
+
+    def test_greeting_with_smalltalk_matched(self):
+        """Greeting + small talk ("ça va", "comment vas-tu") doit matcher."""
+        assert detect_greeting_signals_regex("Bonjour, ça va ?")
+        assert detect_greeting_signals_regex("Salut comment vas-tu ?")
+        assert detect_greeting_signals_regex("Hey, tout va bien ?")
+
+    def test_greeting_followed_by_real_question_not_matched(self):
+        """"Salut, je suis en terminale…" ne doit PAS matcher (vraie question
+        derrière, on traite la question normalement)."""
+        assert not detect_greeting_signals_regex("Salut, je suis en terminale, j'hésite")
+        assert not detect_greeting_signals_regex("Bonjour, quelles écoles cyber ?")
+
+    def test_orientation_question_not_matched(self):
+        """Pas de faux positif sur les questions d'orientation."""
+        assert not detect_greeting_signals_regex("Quelles écoles cyber en Bretagne ?")
+        assert not detect_greeting_signals_regex("C'est quoi un BUT informatique ?")
+
+
+class TestGreetingShortCircuit:
+    def test_bonjour_short_circuits(self):
+        clf = ScopeClassifier(client=None)
+        result = clf.classify("Bonjour !")
+        assert result.label == "greeting"
+        assert result.via == "regex_greeting"
+        assert result.pre_written_response == GREETING_RESPONSE
+
+    def test_greeting_response_invites_question(self):
+        """La réponse greeting doit inviter à poser une question d'orientation."""
+        assert "OrientAI" in GREETING_RESPONSE
+        assert "orientation" in GREETING_RESPONSE.lower()
+        # Au moins un exemple concret pour aider l'utilisateur
+        assert "«" in GREETING_RESPONSE

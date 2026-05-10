@@ -43,7 +43,7 @@ import unicodedata
 from dataclasses import dataclass
 from typing import Literal
 
-ScopeLabel = Literal["in_scope", "out_of_scope", "urgent", "identity"]
+ScopeLabel = Literal["in_scope", "out_of_scope", "urgent", "identity", "greeting"]
 
 
 # ─────────────── Regex pré-filter URGENCE (signaux forts uniquement) ───────────────
@@ -94,7 +94,8 @@ def detect_urgent_signals_regex(question: str) -> list[str]:
 # pire, déclenchent un retrieval RAG inutile.
 _IDENTITY_PATTERNS = [
     re.compile(r"\b(?:tu\s+es|t['’]es)\s+qui\b", re.IGNORECASE),
-    re.compile(r"\bqui\s+es[-\s]?tu\b", re.IGNORECASE),
+    # `qui es-tu` / `qui es tu` / `qui estu` / `qui est tu` (typo "est" courante)
+    re.compile(r"\bqui\s+(?:es|est)[-\s]?tu\b", re.IGNORECASE),
     re.compile(r"\b(?:tu\s+es|t['’]es)\s+quoi\b", re.IGNORECASE),
     re.compile(r"\bqu['’]es[-\s]tu\b", re.IGNORECASE),
     re.compile(r"\bqu['’]est[-\s]ce\s+que\s+tu\s+es\b", re.IGNORECASE),
@@ -105,6 +106,39 @@ _IDENTITY_PATTERNS = [
     re.compile(r"\b(?:c['’]est\s+quoi|quel\s+est)\s+ton\s+nom\b", re.IGNORECASE),
     re.compile(r"\btu\s+(?:es|t['’]appelles)\s+orient", re.IGNORECASE),
 ]
+
+
+# ─────────────── Regex pré-filter SALUTATION (bonjour, salut, hey…) ───────────────
+
+# Salutations isolées sans question d'orientation derrière. Court-circuit avec
+# une réponse chaleureuse qui invite à poser une question d'orientation.
+# Évite que "Bonjour !" tombe en out_of_scope avec un message sec/froid.
+#
+# Les patterns matchent une question ENTIÈREMENT composée d'une salutation
+# (avec éventuellement ponctuation et "ça va ?", "comment vas-tu ?"). Si
+# la salutation est suivie d'une vraie question (ex : "Salut, je suis en
+# terminale…"), on n'aura PAS de match strict et le pipeline traitera la
+# vraie question normalement.
+_GREETING_PATTERNS = [
+    # Greeting word + optional ponctuation + optional small talk
+    # ^(salut|hey|hello|bonjour|...)\W*(\W*ça va|comment vas-tu)?\W*$
+    re.compile(
+        r"^[\s\W]*(?:salut|hey|hello|bonjour|bonsoir|coucou|yo|hi|hola|"
+        r"slt|cc|bjr|bsr)"
+        r"(?:[\s,!.?]+(?:ça\s+va|comment\s+vas[-\s]?tu|comment\s+ça\s+va|tout\s+va\s+bien))?"
+        r"[\s\W]*$",
+        re.IGNORECASE,
+    ),
+]
+
+
+def detect_greeting_signals_regex(question: str) -> list[str]:
+    """Retourne la liste des patterns salutation matchés (vide si aucun)."""
+    matched = []
+    for pattern in _GREETING_PATTERNS:
+        if pattern.search(question):
+            matched.append(pattern.pattern)
+    return matched
 
 
 def detect_identity_signals_regex(question: str) -> list[str]:
@@ -133,7 +167,7 @@ OUT_OF_SCOPE_RESPONSE = (
 
 
 IDENTITY_RESPONSE = (
-    "**Oui, je suis OrientAI** — une intelligence artificielle dédiée à "
+    "Je suis **OrientAI** — une intelligence artificielle dédiée à "
     "l'**orientation académique et professionnelle française post-bac**.\n\n"
     "Je m'appuie **uniquement sur des données publiques officielles** : "
     "Parcoursup, ONISEP, le référentiel ROME des métiers, et les statistiques "
@@ -143,6 +177,20 @@ IDENTITY_RESPONSE = (
     "comprendre des métiers et leurs débouchés, identifier des passerelles "
     "ou des financements.\n\n"
     "Quelle est ta question d'orientation ?"
+)
+
+
+GREETING_RESPONSE = (
+    "Salut ! 👋 Je suis **OrientAI**, ton assistant d'orientation académique "
+    "et professionnelle post-bac.\n\n"
+    "Je peux t'aider à explorer des **formations** (licence, BUT, BTS, "
+    "écoles d'ingé/co, masters), comparer des **métiers**, comprendre des "
+    "**parcours** ou trouver des **financements** d'études.\n\n"
+    "Quelle est ta question d'orientation ?\n\n"
+    "Quelques exemples si tu veux t'inspirer :\n"
+    "- *« Je suis en terminale, j'hésite entre prépa et BUT info »*\n"
+    "- *« Quelles écoles de cybersécurité en Bretagne ? »*\n"
+    "- *« Comment se réorienter après une L2 de droit ? »*"
 )
 
 
@@ -264,7 +312,7 @@ Tu réponds UNIQUEMENT par ce JSON, sans markdown, sans texte autour :
 class ScopeResult:
     label: ScopeLabel
     reason: str
-    via: Literal["regex_urgent", "regex_identity", "llm", "fallback_in_scope"]
+    via: Literal["regex_urgent", "regex_identity", "regex_greeting", "llm", "fallback_in_scope"]
     pre_written_response: str | None = None  # texte à retourner si != in_scope
 
 
@@ -331,6 +379,19 @@ class ScopeClassifier:
                 reason=f"regex identity matched: {identity_matches[0]}",
                 via="regex_identity",
                 pre_written_response=IDENTITY_RESPONSE,
+            )
+
+        # Étape 0ter : pré-filter regex SALUTATION ("bonjour", "salut !", "hey")
+        # Court-circuit avec réponse chaleureuse + bridge vers orientation.
+        # Évite le message "Cette question sort du cadre…" sec et froid.
+        # Placé avant urgent : un "bonjour" seul n'est pas un signal détresse.
+        greeting_matches = detect_greeting_signals_regex(question)
+        if greeting_matches:
+            return ScopeResult(
+                label="greeting",
+                reason=f"regex greeting matched: {greeting_matches[0][:60]}",
+                via="regex_greeting",
+                pre_written_response=GREETING_RESPONSE,
             )
 
         # Étape 1 : pré-filter regex URGENT (signaux forts non-ambigus)
