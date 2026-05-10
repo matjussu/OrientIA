@@ -43,7 +43,7 @@ import unicodedata
 from dataclasses import dataclass
 from typing import Literal
 
-ScopeLabel = Literal["in_scope", "out_of_scope", "urgent"]
+ScopeLabel = Literal["in_scope", "out_of_scope", "urgent", "identity"]
 
 
 # ─────────────── Regex pré-filter URGENCE (signaux forts uniquement) ───────────────
@@ -86,6 +86,36 @@ def detect_urgent_signals_regex(question: str) -> list[str]:
     return matched
 
 
+# ─────────────── Regex pré-filter IDENTITÉ (qui es-tu / es-tu une IA) ───────────────
+
+# Questions méta sur l'identité du système. Court-circuit gratuit (pas d'appel
+# LLM) avec une réponse stable. Evite que ces questions classiques retombent
+# dans `out_of_scope` (UX dégradée : "Cette question sort du cadre…") ou
+# pire, déclenchent un retrieval RAG inutile.
+_IDENTITY_PATTERNS = [
+    re.compile(r"\b(?:tu\s+es|t['’]es)\s+qui\b", re.IGNORECASE),
+    re.compile(r"\bqui\s+es[-\s]?tu\b", re.IGNORECASE),
+    re.compile(r"\b(?:tu\s+es|t['’]es)\s+quoi\b", re.IGNORECASE),
+    re.compile(r"\bqu['’]es[-\s]tu\b", re.IGNORECASE),
+    re.compile(r"\bqu['’]est[-\s]ce\s+que\s+tu\s+es\b", re.IGNORECASE),
+    re.compile(r"\bes[-\s]tu\s+(?:une?\s+)?(?:IA|I\.A\.|intelligence\s+artificielle|robot|bot|chatbot|humain|une\s+personne)\b", re.IGNORECASE),
+    re.compile(r"\b(?:tu\s+es|t['’]es)\s+(?:une?\s+)?(?:IA|I\.A\.|intelligence\s+artificielle|robot|bot|chatbot|humain|une\s+personne)\b", re.IGNORECASE),
+    re.compile(r"\bpr[ée]sente[-\s]toi\b", re.IGNORECASE),
+    re.compile(r"\bcomment\s+(?:tu\s+t['’]appelles|t['’]appelles[-\s]tu)\b", re.IGNORECASE),
+    re.compile(r"\b(?:c['’]est\s+quoi|quel\s+est)\s+ton\s+nom\b", re.IGNORECASE),
+    re.compile(r"\btu\s+(?:es|t['’]appelles)\s+orient", re.IGNORECASE),
+]
+
+
+def detect_identity_signals_regex(question: str) -> list[str]:
+    """Retourne la liste des patterns identité matchés (vide si aucun)."""
+    matched = []
+    for pattern in _IDENTITY_PATTERNS:
+        if pattern.search(question):
+            matched.append(pattern.pattern)
+    return matched
+
+
 # ─────────────── Réponses pré-écrites ───────────────
 
 OUT_OF_SCOPE_RESPONSE = (
@@ -99,6 +129,20 @@ OUT_OF_SCOPE_RESPONSE = (
     "- *« Quelles écoles d'ingénieur en cybersécurité existent en Bretagne ? »*\n\n"
     "Pour toute autre question, je te suggère de t'adresser à la ressource "
     "appropriée (enseignant, ami, autre outil)."
+)
+
+
+IDENTITY_RESPONSE = (
+    "**Oui, je suis OrientIA** — une intelligence artificielle dédiée à "
+    "l'**orientation académique et professionnelle française post-bac**.\n\n"
+    "Je m'appuie **uniquement sur des données publiques officielles** : "
+    "Parcoursup, ONISEP, le référentiel ROME des métiers, et les statistiques "
+    "d'insertion InsertSup. Pas de données privées, pas de classements "
+    "marketing — chaque chiffre que je cite est traçable à sa source.\n\n"
+    "Je peux t'aider à explorer des formations, comparer des écoles, "
+    "comprendre des métiers et leurs débouchés, identifier des passerelles "
+    "ou des financements.\n\n"
+    "Quelle est ta question d'orientation ?"
 )
 
 
@@ -220,7 +264,7 @@ Tu réponds UNIQUEMENT par ce JSON, sans markdown, sans texte autour :
 class ScopeResult:
     label: ScopeLabel
     reason: str
-    via: Literal["regex_urgent", "llm", "fallback_in_scope"]
+    via: Literal["regex_urgent", "regex_identity", "llm", "fallback_in_scope"]
     pre_written_response: str | None = None  # texte à retourner si != in_scope
 
 
@@ -274,6 +318,19 @@ class ScopeClassifier:
                 reason="empty question",
                 via="fallback_in_scope",
                 pre_written_response=OUT_OF_SCOPE_RESPONSE,
+            )
+
+        # Étape 0bis : pré-filter regex IDENTITÉ ("qui es-tu", "es-tu une IA"…)
+        # Court-circuit gratuit avec réponse stable. Placé avant urgent car
+        # signal très spécifique et non-ambigu (un "qui es-tu" ne peut pas
+        # être de la détresse).
+        identity_matches = detect_identity_signals_regex(question)
+        if identity_matches:
+            return ScopeResult(
+                label="identity",
+                reason=f"regex identity matched: {identity_matches[0]}",
+                via="regex_identity",
+                pre_written_response=IDENTITY_RESPONSE,
             )
 
         # Étape 1 : pré-filter regex URGENT (signaux forts non-ambigus)

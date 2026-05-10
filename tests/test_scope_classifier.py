@@ -15,10 +15,12 @@ from unittest.mock import MagicMock
 import pytest
 
 from src.rag.scope_classifier import (
+    IDENTITY_RESPONSE,
     OUT_OF_SCOPE_RESPONSE,
     URGENT_RESPONSE,
     ScopeClassifier,
     ScopeResult,
+    detect_identity_signals_regex,
     detect_urgent_signals_regex,
 )
 
@@ -174,3 +176,64 @@ class TestPreWrittenResponses:
     def test_out_of_scope_gives_examples(self):
         """Pour aider l'utilisateur à reformuler, on donne 3 exemples concrets."""
         assert OUT_OF_SCOPE_RESPONSE.count("«") >= 3
+
+
+# ─────────────── Identité ("qui es-tu", "es-tu une IA") ───────────────
+
+
+class TestRegexIdentity:
+    def test_tu_es_qui_matched(self):
+        assert detect_identity_signals_regex("Tu es qui ?")
+
+    def test_qui_es_tu_matched(self):
+        assert detect_identity_signals_regex("Qui es-tu ?")
+        assert detect_identity_signals_regex("qui es tu")
+
+    def test_es_tu_une_ia_matched(self):
+        assert detect_identity_signals_regex("Es-tu une IA ?")
+        assert detect_identity_signals_regex("es tu une IA")
+        assert detect_identity_signals_regex("Tu es une intelligence artificielle ?")
+
+    def test_es_tu_humain_matched(self):
+        assert detect_identity_signals_regex("Es-tu un humain ?")
+        assert detect_identity_signals_regex("Es-tu un robot ?")
+        assert detect_identity_signals_regex("Tu es un chatbot ?")
+
+    def test_presente_toi_matched(self):
+        assert detect_identity_signals_regex("Présente-toi")
+        assert detect_identity_signals_regex("présente toi")
+
+    def test_ton_nom_matched(self):
+        assert detect_identity_signals_regex("Comment tu t'appelles ?")
+        assert detect_identity_signals_regex("C'est quoi ton nom ?")
+
+    def test_normal_orientation_question_not_matched(self):
+        """Pas de faux positif sur des questions d'orientation."""
+        assert not detect_identity_signals_regex("Quelles écoles d'ingénieur en cyber ?")
+        assert not detect_identity_signals_regex("Je suis en terminale, j'hésite")
+        assert not detect_identity_signals_regex("C'est quoi un BUT informatique ?")
+
+
+class TestIdentityShortCircuit:
+    def test_identity_short_circuits_before_urgent(self):
+        """'qui es-tu' ne doit pas tomber dans urgent malgré tout."""
+        clf = ScopeClassifier(client=None)
+        result = clf.classify("Qui es-tu ?")
+        assert result.label == "identity"
+        assert result.via == "regex_identity"
+        assert result.pre_written_response == IDENTITY_RESPONSE
+
+    def test_identity_works_without_llm(self):
+        """Le pré-filter regex marche sans LLM (gratuit, déterministe)."""
+        clf = ScopeClassifier(client=None)
+        for q in ["Tu es qui ?", "Es-tu une IA ?", "Présente-toi"]:
+            result = clf.classify(q)
+            assert result.label == "identity", f"Failed for: {q}"
+
+    def test_identity_response_mentions_orientia(self):
+        assert "OrientIA" in IDENTITY_RESPONSE
+
+    def test_identity_response_mentions_data_sources(self):
+        """L'identité doit citer les sources publiques."""
+        assert "Parcoursup" in IDENTITY_RESPONSE
+        assert "ONISEP" in IDENTITY_RESPONSE
