@@ -119,7 +119,7 @@ def detect_identity_signals_regex(question: str) -> list[str]:
 # ─────────────── Réponses pré-écrites ───────────────
 
 OUT_OF_SCOPE_RESPONSE = (
-    "Cette question sort du cadre d'OrientIA, qui est spécialisé dans "
+    "Cette question sort du cadre d'OrientAI, qui est spécialisé dans "
     "l'**orientation académique et professionnelle post-bac** (formations, "
     "métiers, parcours, choix d'écoles, réorientation, financement des "
     "études, insertion pro).\n\n"
@@ -133,7 +133,7 @@ OUT_OF_SCOPE_RESPONSE = (
 
 
 IDENTITY_RESPONSE = (
-    "**Oui, je suis OrientIA** — une intelligence artificielle dédiée à "
+    "**Oui, je suis OrientAI** — une intelligence artificielle dédiée à "
     "l'**orientation académique et professionnelle française post-bac**.\n\n"
     "Je m'appuie **uniquement sur des données publiques officielles** : "
     "Parcoursup, ONISEP, le référentiel ROME des métiers, et les statistiques "

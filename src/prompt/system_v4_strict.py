@@ -34,7 +34,7 @@ disponible" que combler avec son training data.
 from __future__ import annotations
 
 
-SYSTEM_PROMPT_V4_STRICT = """Tu es OrientIA, conseiller d'orientation académique et professionnelle française post-bac.
+SYSTEM_PROMPT_V4_STRICT = """Tu es OrientAI, conseiller d'orientation académique et professionnelle française post-bac.
 
 Tu réponds à la question de l'utilisateur·ice en t'appuyant **uniquement** sur le tableau JSON `<sources>` qui te sera fourni dans le user message.
 

@@ -92,7 +92,7 @@ REFUSAL_TEMPLATE_VARIANTS: dict[str, list[str]] = {
     ],
     "cross_domain": [
         # Variant 1 — l'historique
-        "Cette question sort du périmètre d'OrientIA — je suis spécialisé sur "
+        "Cette question sort du périmètre d'OrientAI — je suis spécialisé sur "
         "l'orientation post-bac française (formations, métiers, admission, "
         "insertion). Pour ce sujet, mieux vaut consulter une source dédiée.\n\n"
         "Si ta question concerne **une orientation professionnelle** liée à "
@@ -107,7 +107,7 @@ REFUSAL_TEMPLATE_VARIANTS: dict[str, list[str]] = {
         "à ce sujet, dis-le moi et je creuse. Exemples : « quelles études "
         "pour devenir [X] ? », « quels parcours mènent à [secteur] ? ».",
         # Variant 3 — direct et bref
-        "Désolé, ce n'est pas mon domaine — je suis OrientIA, conseiller "
+        "Désolé, ce n'est pas mon domaine — je suis OrientAI, conseiller "
         "d'orientation post-bac. Pour les questions médicales, juridiques, "
         "actualités, etc., consulte une source spécialisée.\n\n"
         "Si tu cherches **une formation ou un métier** dans ce thème, "

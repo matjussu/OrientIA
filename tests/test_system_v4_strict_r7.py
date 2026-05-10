@@ -73,7 +73,7 @@ def test_build_with_hardlock_prepends_block() -> None:
     assert result.startswith("## CONTRAINTES HARDLOCK")
     assert "Région imposée : bretagne" in result
     # Le prompt R1-R7 reste présent après le bloc
-    assert "Tu es OrientIA" in result
+    assert "Tu es OrientAI" in result
     assert "R7 — CONTRAINTES HARDLOCK" in result
 
 
@@ -82,7 +82,7 @@ def test_build_with_hardlock_no_double_newline_at_end() -> None:
     block = "## CONTRAINTES HARDLOCK (R7)\n- truc\n\n\n"  # trailing newlines
     result = build_system_prompt_v4_strict(hardlock_block=block)
     # Pas de triple newline avant l'identité
-    assert "\n\n\nTu es OrientIA" not in result
+    assert "\n\n\nTu es OrientAI" not in result
 
 
 # ────────────────────────── Generator propage hardlock_block ──────────────────────────

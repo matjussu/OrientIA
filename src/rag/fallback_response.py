@@ -96,7 +96,7 @@ def format_out_of_scope_response(
         String formatée — clean, redirige vers Psy-EN / ONISEP collège.
     """
     return (
-        f"OrientIA est spécialisé dans l'orientation **{detected_scope}** "
+        f"OrientAI est spécialisé dans l'orientation **{detected_scope}** "
         f"(formations supérieures et insertion professionnelle).\n\n"
         f"Pour une orientation en collège ou pré-bac (3ème → seconde, "
         f"voie pro, CAP, etc.), je te recommande :\n"

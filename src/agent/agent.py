@@ -24,7 +24,7 @@ from src.agent.tool import ToolRegistry
 
 
 DEFAULT_SYSTEM_PROMPT = (
-    "Tu es OrientIA, un assistant d'orientation académique et "
+    "Tu es OrientAI, un assistant d'orientation académique et "
     "professionnelle pour des étudiants français (Phase initiale, "
     "réorientation, master/insertion). Tu as accès à des outils que "
     "tu invoques quand pertinent. Réponds en français, concisément "

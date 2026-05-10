@@ -231,7 +231,7 @@ class TestIdentityShortCircuit:
             assert result.label == "identity", f"Failed for: {q}"
 
     def test_identity_response_mentions_orientia(self):
-        assert "OrientIA" in IDENTITY_RESPONSE
+        assert "OrientAI" in IDENTITY_RESPONSE
 
     def test_identity_response_mentions_data_sources(self):
         """L'identité doit citer les sources publiques."""
