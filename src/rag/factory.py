@@ -45,6 +45,7 @@ from pathlib import Path
 from mistralai.client import Mistral
 
 from src.rag.pipeline import OrientIAPipeline
+from src.rag.router_llm import RouterLLM
 from src.rag.scope_classifier import ScopeClassifier
 from src.validator import Validator
 from src.validator.layer3 import Layer3Validator
@@ -55,6 +56,14 @@ from src.validator.layer3 import Layer3Validator
 # pour que use_golden_qa=True soit effectif (sinon fallback gracieux + warning).
 DEFAULT_GOLDEN_QA_INDEX = "data/embeddings/golden_qa.index"
 DEFAULT_GOLDEN_QA_META = "data/processed/golden_qa_meta.json"
+
+# Paths par défaut pour les 4 sub-indexes FAISS du RouterLLM (étape 4 refonte).
+# Le manifest authoritative + 4 fichiers `.index` sont produits par
+# `scripts/build_quad_subindexes.py`. Lazy-loadés au 1er answer() qui passe
+# par le quad-path. Si manifest absent, le pipeline rebuild en mémoire au
+# boot (graceful fallback, +30s première req).
+DEFAULT_QUAD_MANIFEST = "data/embeddings/formations_partition_manifest.json"
+DEFAULT_QUAD_GROUP_NAMES = ("formations", "metiers", "statistiques", "aides_territoires")
 
 
 def make_production_pipeline(
@@ -86,6 +95,14 @@ def make_production_pipeline(
     # (-23%), 0 flagged, honesty 1.0. Layer3 +8% (biais visibilité chiffres
     # sourcés, cf ADR-053). Bascule défaut True à partir de v4.1.
     enable_strict_v4: bool = True,
+    # Étape 6 refonte 2026-05-09 — RouterLLM léger (Mistral Small JSON-tool).
+    # Default True : production avec routing LLM-driven sur quad sub-indexes
+    # + FilterCriteria + R7 hardlock. False : préserve baseline Run F+G strict
+    # (utile pour A/B mesurer le delta router on/off en Phase D bench).
+    enable_router_llm: bool = True,
+    # Modèle utilisé pour le routing (séparé du modèle de génération).
+    # mistral-small-latest = ~$0.0001/q + 500-800 ms latence.
+    router_model: str = "mistral-small-latest",
     # Retrieval / generation tuning (rarement override)
     use_mmr: bool = True,
     use_intent: bool = True,
@@ -137,6 +154,14 @@ def make_production_pipeline(
     if enable_scope_classifier:
         scope_classifier = ScopeClassifier(client=client)
 
+    # Étape 8 refonte (2026-05-09) — RouterLLM léger en amont du retrieve.
+    # Réutilise EXACTEMENT le même client Mistral que le reste du pipeline
+    # (point de vigilance audit step 7 → 8 : un seul client par session).
+    # Le RouterLLM appelle Mistral Small en interne (model param overridable).
+    router_llm: RouterLLM | None = None
+    if enable_router_llm:
+        router_llm = RouterLLM(client=client, model=router_model)
+
     # Résolution paths Golden QA : si flag activé mais paths non fournis,
     # utiliser les défauts. Le pipeline lazy-loadera au 1er .answer() — si
     # les fichiers n'existent pas, fallback gracieux (warning + skip few-shot).
@@ -160,6 +185,7 @@ def make_production_pipeline(
         enable_post_process=enable_post_process,
         scope_classifier=scope_classifier,
         use_strict_v4=enable_strict_v4,
+        router_llm=router_llm,
     )
 
 
@@ -174,3 +200,46 @@ def golden_qa_artifacts_present(
     Golden QA ou si on log un warning explicite.
     """
     return Path(index_path).exists() and Path(meta_path).exists()
+
+
+def router_llm_artifacts_present(
+    manifest_path: str = DEFAULT_QUAD_MANIFEST,
+    group_names: tuple[str, ...] = DEFAULT_QUAD_GROUP_NAMES,
+) -> bool:
+    """Helper diagnostic — retourne True si tous les artefacts du quad-subindex
+    sont présents sur disque (manifest + 4 fichiers FAISS), sinon False.
+
+    Utile en démarrage API/serving pour décider entre :
+    - True : router peut consommer les sub-indexes pré-buildés depuis disque
+      (load rapide, pas de rebuild en mémoire)
+    - False : log warning + le pipeline rebuild en mémoire au 1er answer()
+      (graceful, +30s première req mais fonctionnel)
+
+    Args:
+        manifest_path: chemin du manifest JSON (default formations_partition_manifest.json)
+        group_names: tuple des 4 groupes attendus (cohérent avec
+            scripts/build_quad_subindexes.py)
+
+    Returns:
+        True ssi le manifest ET les 4 fichiers FAISS référencés sont présents.
+    """
+    manifest_p = Path(manifest_path)
+    if not manifest_p.exists():
+        return False
+    try:
+        import json
+        manifest = json.loads(manifest_p.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return False
+    groups = manifest.get("groups", {})
+    if set(groups.keys()) != set(group_names):
+        return False
+    manifest_root = manifest_p.parent.parent.parent  # data/embeddings/X.json → repo root
+    for name in group_names:
+        info = groups.get(name, {})
+        sub_path_str = info.get("path")
+        if not sub_path_str:
+            return False
+        if not (manifest_root / sub_path_str).exists():
+            return False
+    return True

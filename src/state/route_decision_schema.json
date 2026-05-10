@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orientia.fr/schemas/route_decision.v1.json",
+  "title": "RouteDecision",
+  "description": "Décision de routing produite par RouterLLM en amont du retrieve. Pilote (a) le choix des sub-indexes FAISS interrogés, (b) les contraintes FilterCriteria, (c) un éventuel refus structuré (court-circuit pré-pipeline), (d) les contraintes hardlock injectées dans le prompt v4.1 strict via R7, (e) un override de top_k_sources. Cf ADR-064 et ADR-065.",
+  "type": "object",
+  "properties": {
+    "sub_indexes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["formations", "metiers", "statistiques", "aides_territoires"]
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "Sous-index FAISS à interroger. Au moins 1, jusqu'à 4 (toutes). Multi-index = fusion RRF post-retrieve."
+    },
+    "region": {
+      "type": ["string", "null"],
+      "description": "Région française canonique mentionnée (libellé INSEE). Null si non mentionnée."
+    },
+    "niveau_min": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 8,
+      "description": "Niveau minimum bac+N attendu. Null si pas de contrainte."
+    },
+    "niveau_max": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 8,
+      "description": "Niveau maximum bac+N attendu. Null si pas de contrainte."
+    },
+    "secteur": {
+      "type": ["array", "null"],
+      "items": {"type": "string"},
+      "description": "Secteurs candidats (informatique, sante, droit, etc.). Null si pas de contrainte."
+    },
+    "domain_lock": {
+      "type": ["array", "null"],
+      "items": {"type": "string"},
+      "description": "Domaines `domain` exacts à verrouiller dans le filtre (ex ['crous'] pour interdire toute fiche hors-CROUS). Null si pas de verrouillage. Utilisé pour R7 hardlock."
+    },
+    "refusal_reason": {
+      "type": ["string", "null"],
+      "enum": ["superlative_no_data", "cross_domain", "out_of_scope_specific", null],
+      "description": "Si non-null, court-circuit pré-pipeline avec réponse pré-écrite. superlative_no_data = 'meilleure école de X' sans classement corpus. cross_domain = sujet totalement hors-orientation (médecine, célébrité, cuisine). out_of_scope_specific = scope orientation mais aucune donnée corpus pertinente."
+    },
+    "hardlock_region_strict": {
+      "type": "boolean",
+      "description": "Si true, le générateur ne PEUT PAS proposer d'alternative hors-région sans signaler explicitement que la région demandée est vide. Injecté dans R7."
+    },
+    "hardlock_domain_strict": {
+      "type": "boolean",
+      "description": "Si true, le générateur ne PEUT PAS mélanger plusieurs domaines (ex: répondre par formations à une question CROUS). Injecté dans R7."
+    },
+    "top_k_override": {
+      "type": ["integer", "null"],
+      "minimum": 5,
+      "maximum": 20,
+      "description": "Si non-null, force le top_k_sources servies au LLM. Utile pour les questions multi-critères où le rang 6+ est pertinent (cas ingé cyber Bretagne)."
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Confidence du router sur la décision. Si <0.6, le pipeline peut élargir la recherche à plusieurs sub-indexes (filet de sécurité)."
+    }
+  },
+  "required": ["sub_indexes", "confidence"],
+  "additionalProperties": false
+}

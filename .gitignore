@@ -59,8 +59,14 @@ data/processed/rome_metier_corpus.json
 # Phase B finalisation — corpora annexes régénérables
 data/processed/onisep_metiers_corpus.json
 data/processed/doctorat_corpus.json
-# Phase B output — corpus v5 (régénérable via `python -m src.collect.run_merge_v3`)
+# Phase B output — corpus v5/v6/v7 (régénérables via `python -m src.collect.run_merge_v3`)
 data/processed/formations_v5.json
+data/processed/formations_v6.json
+data/processed/formations_v7.json
+# Backups intermédiaires (orphans pre-d5 et pipeline golden test)
+data/processed/formations_golden_pipeline.json
+data/processed/formations_unified.json
+data/processed/formations_unified.pre_d5_backup.json
 # Phase D archive — snapshots binaires des promotions corpus (v3.2, v5, v6...)
 data/archive/
 

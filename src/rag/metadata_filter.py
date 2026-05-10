@@ -13,8 +13,26 @@ from __future__ import annotations
 
 import dataclasses
 import re
+import unicodedata
 from dataclasses import dataclass
 from typing import Any
+
+
+def _norm_region(s: Any) -> str:
+    """Normalise un libellé région : strip + lowercase + sans accents.
+
+    Utilisé pour matcher des libellés produits par sources hétérogènes
+    (Parcoursup avec accents 'Provence-Alpes-Côte d'Azur', RouterLLM
+    avec accents stripped 'provence-alpes-cote d'azur', etc.).
+    Étape 6 refonte router (2026-05-09) — fix audit Matteo écart 2.
+    """
+    if s is None:
+        return ""
+    s_str = str(s).strip().lower()
+    return "".join(
+        c for c in unicodedata.normalize("NFKD", s_str)
+        if not unicodedata.combining(c)
+    )
 
 
 # ────────────────────────── Lookup tables ──────────────────────────
@@ -89,7 +107,13 @@ NIVEAU_PATTERNS: list[tuple[re.Pattern[str], tuple[int, int]]] = [
 
 @dataclass
 class FilterCriteria:
-    """Critères filtre v1 — tous optionnels (None = pas de filtre)."""
+    """Critères filtre v1+v2 — tous optionnels (None = pas de filtre).
+
+    Étape 6 refonte router (2026-05-09) : ajout du champ `domain` pour
+    permettre au RouterLLM de verrouiller un sous-ensemble de domaines
+    (ex `["crous"]` quand la question est explicitement sur le logement
+    étudiant). Cf docs/ADR-064-router-llm-leger.md.
+    """
 
     region: str | None = None
     niveau_min: int | None = None
@@ -97,6 +121,10 @@ class FilterCriteria:
     alternance: bool | None = None
     budget_max: int | None = None  # €/an
     secteur: list[str] | None = None  # liste OR
+    # Étape 6 — domain lock (router-driven). Liste OR sur la valeur du
+    # champ `domain` de chaque fiche (ex ['crous'], ['metier','metier_detail']).
+    # None = pas de verrouillage par domaine (backward compat strict).
+    domain: list[str] | None = None
 
     def is_empty(self) -> bool:
         """True si tous critères None (équivaut à pas de filtre)."""
@@ -209,15 +237,21 @@ def _match_region(fiche_region: Any, c_region: str | None) -> bool:
 
     Asymétrie defensive (§5.2 design) : fiche sans région → on prend
     (formations nationales + manque d'info ≠ exclusion automatique).
+
+    Étape 6 (2026-05-09) : matching insensible aux accents via
+    _norm_region (fix audit Matteo écart 2). RouterLLM normalise les
+    accents en sortie ('auvergne-rhone-alpes'), mais les libellés Parcoursup
+    contiennent des accents ('Auvergne-Rhône-Alpes') → mismatch silencieux
+    sans cette normalisation.
     """
     if c_region is None:
         return True
     if fiche_region is None:
         return True
-    fr = str(fiche_region).strip().lower()
+    fr = _norm_region(fiche_region)
     if fr == "" or fr == "national":
         return True
-    return fr == c_region.strip().lower()
+    return fr == _norm_region(c_region)
 
 
 def _match_niveau(
@@ -262,28 +296,91 @@ def _match_budget(fiche_budget: Any, c_max: int | None) -> bool:
 
 
 def _match_secteur(fiche_secteur: Any, c_secteurs: list[str] | None) -> bool:
-    """`$in` secteur. Asymétrie : fiche sans secteur → exclue (contrainte stricte)."""
+    """`$in` secteur. Defensive : fiche sans secteur → passe (pass-through).
+
+    Étape 11 fix critique (2026-05-09, audit Matteo mini-bench A/B) :
+    bascule de la sémantique stricte (Sprint 10 design) → defensive
+    (cohérent avec `_match_region`).
+
+    Pourquoi : le RouterLLM (étape 6) populate `criteria.secteur` opportunistiquement
+    pour toute question évoquant un domaine professionnel (informatique, droit, etc.).
+    Or 0 / 15 764 fiches `formations` ont `secteur` populé dans le corpus v7
+    (mesure 2026-05-09). Le filter strict `fiche_secteur is None → False`
+    excluait donc 100 % des fiches `formations` dès que le router posait
+    secteur=["informatique"], ce qui produisait des "Je n'ai pas de
+    formation pertinente" sur 10/23 questions du mini-bench step 11
+    (cf summary.md → 'ON refuse, OFF répond').
+
+    Sémantique nouvelle : si la fiche n'a pas le champ `secteur`, on
+    suppose qu'elle est compatible avec n'importe quel secteur demandé
+    (defensive). Les fiches qui ont `secteur` populé continuent d'être
+    matchées strictement. Cohérent avec `_match_region` qui a la même
+    logique pour la région ('national' ou None → passe).
+
+    Risque V2 : si Vague 4+ enrichit massivement `secteur`, le filter
+    pourra à nouveau être strict via un flag opt-in `secteur_strict=True`
+    sur FilterCriteria. Hors scope step 11.
+    """
     if not c_secteurs:
         return True
     if fiche_secteur is None:
-        return False
+        # Defensive pass-through (fix step 11 — voir docstring)
+        return True
     if isinstance(fiche_secteur, str):
         return fiche_secteur.strip().lower() in [s.strip().lower() for s in c_secteurs]
     if isinstance(fiche_secteur, (list, tuple, set)):
         fs_lower = [str(s).strip().lower() for s in fiche_secteur]
         c_lower = [s.strip().lower() for s in c_secteurs]
         return any(f in c_lower for f in fs_lower)
+    # Type inattendu (int, dict, etc.) : conservateur, exclure
     return False
 
 
+def _match_domain(fiche_domain: Any, c_domains: list[str] | None) -> bool:
+    """`$in` domain (router-driven, étape 6).
+
+    Step 11.7 (2026-05-10) — politique defensive corrigée.
+
+    Bug observé via dump intermédiaire post-chantiers 1+2+4 (B1 "HEC 11/20") :
+    le RouterLLM hallucine parfois `domain_lock=['metier']` sur des questions
+    qui cherchent clairement une formation (HEC, Sciences Po, école...).
+    L'ancien comportement strict (fiche.domain=None → exclu si 'formations'
+    pas dans c_domains) faisait alors n_after_filter=0 → pipeline retourne
+    fallback "pas de formation pertinente" alors que les fiches sont là.
+
+    Politique step 11.7 : pass-through defensive si fiche.domain is None
+    (cohérent avec _match_region step 11.7 et _match_secteur step 11
+    fix précédent). Une fiche sans domain (= formation pure) passe TOUJOURS
+    le filter, indépendamment de c_domains.
+
+    Une fiche avec domain populé reste matchée strictement (mismatch
+    explicite = exclusion). Pour une vraie restriction "uniquement domain X",
+    le routing via sub_indexes (étape 5) donne déjà la sélection ciblée
+    en amont — pas besoin que le filter aval soit strict.
+    """
+    if not c_domains:
+        return True
+    if fiche_domain is None:
+        # Defensive pass-through (fix step 11.7 — voir docstring) :
+        # fiche sans domain (= formation pure dans build_quad_subindexes)
+        # passe TOUJOURS, peu importe c_domains.
+        return True
+    if not isinstance(fiche_domain, str):
+        return False
+    fd = fiche_domain.strip().lower()
+    return fd in [d.strip().lower() for d in c_domains]
+
+
 def _matches(fiche: dict[str, Any], c: FilterCriteria) -> bool:
-    """Composite AND sur les 5 critères."""
+    """Composite AND sur les 6 critères (region, niveau, alternance, budget,
+    secteur, domain)."""
     return (
         _match_region(fiche.get("region"), c.region)
         and _match_niveau(fiche.get("niveau"), c.niveau_min, c.niveau_max)
         and _match_alternance(fiche.get("alternance"), c.alternance)
         and _match_budget(fiche.get("budget"), c.budget_max)
         and _match_secteur(fiche.get("secteur"), c.secteur)
+        and _match_domain(fiche.get("domain"), c.domain)
     )
 
 

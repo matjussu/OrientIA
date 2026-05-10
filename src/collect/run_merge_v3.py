@@ -367,36 +367,79 @@ def _canonicalize_statut(statut: Any) -> str | None:
 
 # ─────────────── Vague 1.C — Tagger fiches polluantes retrieval ───────────────
 #
-# Audit Phase 0 v5 : 18 012 fiches sur 47 193 (38%) sont structurellement
-# inadaptées au retrieval formation+ville :
+# Audit Phase 0 v5 (politique v1, archivée) : 18 012 fiches sur 47 193 (38%)
+# inadaptées au retrieval via blacklist source :
 # - source=rncp (5181)         : référentiels nationaux sans école nommée
-# - source=onisep (4758)       : descriptifs nationaux (0% etab+ville)
+# - source=onisep (4758)       : descriptifs nationaux (0% etab+ville mesuré)
 # - source=labonnealternance (4008) : offres distantes alternance
 # - source=inserjeunes_cfa (4065)   : nom == etablissement, pas formation
 #
-# Stratégie : flag `retrieval_eligible: bool` ajouté Stage 5. Les fiches
-# `false` restent dans le corpus (utiles pour cross-references, audit,
-# fallback) mais sont exclues du retrieval principal côté pipeline.
-# Pas de re-embed nécessaire — le filter s'applique au build des sub-indices.
+# Step 11.7 (2026-05-09) — politique v2 GRANULAIRE :
+# La politique blacklist était trop violente. Audit empirique 2026-05-09
+# (lecture des 10 .md du dump qualitatif step 11.5) a révélé que
+# `source=onisep` exclut HEC (32 fiches), CentraleSupélec (20),
+# IMT Atlantique (5), INSA Rennes (5), HEI Lille, ENS Paris, etc. — toutes
+# des écoles prestigieuses indexées en "descriptif national ONISEP" mais
+# **avec un `etablissement` parfaitement populé** ("École CentraleSupélec",
+# "INSA Rennes - filière classique"). La justification "0% etab+ville"
+# était inexacte — la mesure portait sur `ville` strict, pas sur l'identité.
+#
+# Conséquence pré-fix : dans 4 questions du dump (B1 "HEC 11/20",
+# L02 "écoles ingé cyber Bretagne", F1 "ENSEIRB vs EPITA", D5 "cyber
+# Bretagne"), le système refuse de répondre faute de retrouver des
+# écoles QUI SONT DANS LE CORPUS mais exclues du retrieve.
+#
+# Politique v2 : on garde si AU MOINS UN signal d'identité fort est
+# populé — etablissement OR nom OR ville OR region. Seule LBA reste
+# exclue (offres alternance distantes ≠ formations identifiables).
+#
+# Risque résiduel : récupère ~10-15k fiches dont quelques RNCP/CFA
+# pollueurs. Mitigation amont : le RouterLLM + sub-indexes par domaine
+# (steps 5-8) filtrent déjà via routing intent → sub-index ciblé.
+# Mitigation aval : metadata_filter peut exclure post-rerank si besoin.
 
 _RETRIEVAL_INELIGIBLE_SOURCES = frozenset({
-    "rncp",                    # référentiels nationaux RNCP, pas d'école nommée
-    "onisep",                  # descriptifs nationaux ONISEP (0% etab+ville mesuré)
-    "labonnealternance",       # offres alternance distantes, pas formations
-    "inserjeunes_cfa",         # nom = etablissement, pas formation
+    "labonnealternance",  # offres alternance distantes ≠ formation identifiable
 })
 
 
 def _is_retrieval_eligible(fiche: dict[str, Any]) -> bool:
     """True si la fiche est adaptée au retrieval formation+ville.
 
-    Vague 1.C — exclut les 4 sources structurellement inadaptées (38%
-    du corpus). Les annexes (`domain` set) restent éligibles par défaut.
+    Step 11.7 (2026-05-09) — politique granulaire.
+
+    Critère : exclure UNIQUEMENT `source=labonnealternance` (offres
+    alternance distantes, pas des formations identifiables). Pour les
+    autres sources (parcoursup, monmaster, onisep, rncp, inserjeunes_cfa,
+    etc.), on inclut si au moins un signal d'identité fort est populé :
+    etablissement OR nom non-générique OR ville OR region.
+
+    Cette politique remplace la blacklist source v1 (Vague 1.C originale)
+    qui excluait 31 000 fiches dont les écoles prestigieuses ONISEP
+    (HEC, CentraleSupélec, IMT, INSA, etc.) — bug confirmé empiriquement
+    par le dump qualitatif step 11.5 (audit Matteo 2026-05-09).
     """
     source = _safe_str_field(fiche, "source")
     if source in _RETRIEVAL_INELIGIBLE_SOURCES:
         return False
-    return True
+
+    # Critère d'inclusion granulaire : au moins UN signal d'identité fort.
+    etab = _safe_str_field(fiche, "etablissement")
+    nom = _safe_str_field(fiche, "nom")
+    ville = _safe_str_field(fiche, "ville")
+    region = _safe_str_field(fiche, "region")
+
+    # Annexes typées (domain set) — toujours éligibles (CROUS, INSEE,
+    # DARES, etc. n'ont pas tous de ville/etablissement mais sont
+    # légitimement retrievables sur leur domaine).
+    if _safe_str_field(fiche, "domain"):
+        return True
+
+    # Au moins un signal d'identité parmi etab/nom/ville/region.
+    if etab or nom or ville or region:
+        return True
+
+    return False
 
 
 def _safe_str_field(fiche: dict, key: str) -> str:
