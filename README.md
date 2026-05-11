@@ -253,7 +253,7 @@ preserved as historical reference in
 ## 7. Setup / run locally
 
 ```bash
-git clone https://github.com/matjussu/OrientIA.git
+git clone https://github.com/matjussu/OrientAI.git
 cd OrientIA
 
 # Python 3.12 virtual env
