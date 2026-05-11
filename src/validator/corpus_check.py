@@ -94,11 +94,19 @@ _CLAIM_PATTERNS = [
     ),
     # Pattern 3 — Forme avec tiret cadratin/em-dash : "[Type] X — [Etab]".
     # Style courant dans les TL;DR Plan A/B/C ("Plan A — Licence X — Toulouse").
+    # 2026-05-12 fix : exclut les segments qui commencent par
+    # Option/Parcours/Spé(cialité)/Mention/Voie/Filière — ce sont des variantes
+    # de formation, pas des établissements (cf bug live "Licence Droit —
+    # Parcours multilingue" où etab=Parcours multilingue → 0% match corpus →
+    # BLOCK injustifié alors que les sources Bretagne/Issy étaient pertinentes).
+    # Aligné sur le fix pattern 2 (2026-05-11, commit cedd6e1).
     re.compile(
         _DIPLOMA_TYPE
         + r"\s+(?P<name>[A-ZÀ-Ÿ][\wÀ-ÿ\s\-'/&,]{2,80}?)"
         + r"\s*[—–-]\s+"
-        + r"(?P<etab>(?:Université|IUT|École|Institut|Faculté|Fac|IFSI|ENS|INSA|"
+        + r"(?P<etab>(?!Option\s|Parcours\s|Spé(?:cialit[eé])?\s|Mention\s|"
+        + r"Voie\s|Filière\s|option\s|parcours\s)"
+        + r"(?:Université|IUT|École|Institut|Faculté|Fac|IFSI|ENS|INSA|"
         + r"Polytech|Télécom|Centrale|EPITA|EFREI|ESIEE|ESGI|Epitech|"
         + r"[A-ZÀ-Ÿ])[\wÀ-ÿ\s\-'/&]{1,60}?)"
         + _ETAB_END_LOOKAHEAD,

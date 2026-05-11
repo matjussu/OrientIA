@@ -737,17 +737,39 @@ class OrientIAPipeline:
                     and not criteria.is_empty()
                 ):
                     reranked = apply_metadata_filter(reranked, criteria)
-                self.last_filter_stats = {
-                    "filter_active": criteria is not None and not criteria.is_empty(),
-                    "router_active": True,
-                    "router_sub_indexes": list(route_decision.sub_indexes),
-                    "router_confidence": route_decision.confidence,
-                    "router_is_fallback": route_decision.is_fallback,
-                    "n_retrieved_router": len(raw),
-                    "n_after_filter": len(reranked),
-                    "expansions": 0,  # quad path n'expand pas
-                }
-                return reranked
+                # 2026-05-12 fix : si le quad retrieve+filter retourne 0,
+                # fallback au path v1 (full corpus + auto-expansion).
+                # Bug live : "quelles sont les crous à Paris ?" — le sub-index
+                # aides_territoires (4979 fiches dont 4891 competences_certif)
+                # noie les 18 fiches CROUS dans le bruit, top-50 FAISS retourne
+                # 0 CROUS → filter avec domain_lock=['crous'] → n_after_filter=0
+                # → pipeline retourne "pas d'info" alors que la fiche CROUS
+                # Paris (region='Île-de-France', text riche) existe en corpus.
+                # Le path v1 avec retrieve sur 47k fiches a une probabilité
+                # bien plus haute de capturer la bonne fiche en top, puis
+                # apply_metadata_filter garde les CROUS qui matchent region.
+                if len(reranked) == 0:
+                    _logger.info(
+                        "[router-quad] n_after_filter=0 sur sub_indexes=%s "
+                        "(raw=%d, filter domain=%s, region=%s) — fallback path v1.",
+                        route_decision.sub_indexes,
+                        len(raw),
+                        criteria.domain if criteria else None,
+                        criteria.region if criteria else None,
+                    )
+                    # Fall through au path v1 (ne pas return).
+                else:
+                    self.last_filter_stats = {
+                        "filter_active": criteria is not None and not criteria.is_empty(),
+                        "router_active": True,
+                        "router_sub_indexes": list(route_decision.sub_indexes),
+                        "router_confidence": route_decision.confidence,
+                        "router_is_fallback": route_decision.is_fallback,
+                        "n_retrieved_router": len(raw),
+                        "n_after_filter": len(reranked),
+                        "expansions": 0,  # quad path n'expand pas
+                    }
+                    return reranked
 
         # Path par défaut (no metadata filter) : Option C v6 — retrieval indépendant
         # du domain_hint avec quota adaptatif d'annexes basé sur score brut.

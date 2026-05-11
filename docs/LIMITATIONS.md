@@ -196,3 +196,37 @@ Le jury INRIA pourra interroger ces choix — réponses préparées :
 ---
 
 *À actualiser après chaque session de promotion corpus, chaque Vague livrée, et après le verdict beta test.*
+
+---
+
+## 11. Bugs résiduels identifiés en runtime live (2026-05-12)
+
+Diagnostic depuis trois questions live posées via la passerelle plateforme `orientai-platform.fr` au matin du 2026-05-12 :
+
+### 11.1 Validator `corpus_check` paraphrases (FIXÉ — commit du 12 mai)
+
+**Symptôme observé** : sur une question type *"Quelles écoles de cybersécurité en Bretagne ?"* ou *"Comment se réorienter après une L2 de droit ?"*, le pipeline produit une réponse correcte avec sources pertinentes, puis le validator `corpus_check` flag à tort *"Formation non présente dans la base"* sur des paraphrases comme *"Licence Droit – Parcours multilingue"*, déclenchant un BLOCK injustifié.
+
+**Cause racine** : le `Pattern 3` (tiret cadratin) de `src/validator/corpus_check.py` capturait les segments après le tiret comme `etab` sans exclure les variantes de formation (`Parcours X`, `Option X`, `Spé X`, `Mention X`, `Voie X`, `Filière X`). Le `Pattern 2` (parenthétique) avait déjà reçu le fix par le commit `cedd6e1` (2026-05-11) ; le `Pattern 3` était resté en dehors.
+
+**Fix appliqué** : negative lookahead aligné sur `Pattern 2` (Option/Parcours/Spé(cialité)/Mention/Voie/Filière). Validé sur 13 cas (8 *should skip* + 5 *should extract*), 235 tests pytest verts (vs 233 avant). Note : la plateforme prod doit redéployer le commit pour que le fix soit visible côté utilisateur.
+
+### 11.2 Sub-index `aides_territoires` mal proportionné (LIMITATION DOCUMENTÉE, fix v2 post-rendu)
+
+**Symptôme observé** : sur *"quelles sont les crous à Paris ?"*, le pipeline retourne *"Je n'ai pas de formation ni d'information sur les CROUS à Paris dans mes sources"* alors que la fiche CROUS Paris (`region='Île-de-France'`, `ville='Paris'`, text contenant *"Logements étudiants CROUS à Paris | Région : Île-de-France | Nombre de résidences : 82"*) **existe dans le corpus** avec `retrieval_eligible=True`.
+
+**Cause racine** : le sub-index FAISS `aides_territoires` (4 979 vecteurs) est composé à 98 % de fiches `competences_certif` (4 891 fiches RNCP de compétences). Les 18 fiches CROUS sont **noyées dans le bruit dense embedding** — le top-50 FAISS du sub-index pour cette requête retourne 47 `competences_certif` + 3 `financement_etudes`, **zéro fiche CROUS**. Par ailleurs, sur l'index global (47 220 vecteurs), la fiche CROUS Paris n'est pas dans le top-300 dense — son `text` (360 caractères, focal sur les services pratiques) a une faible similarité cosinus avec une query généraliste type *"quelles sont les crous à Paris"*, dominée par des fiches métier/financement_etudes plus longues et plus génériques.
+
+**Atténuation appliquée** (commit du 12 mai) : ajout d'un fallback `quad path → v1 path` quand `n_after_filter == 0`. Améliore le cas (le pipeline ne renvoie plus 0 sources) mais ne résout pas complètement : le `v1 path` retourne des formations parisiennes plutôt que des résidences CROUS, le LLM refuse honnêtement.
+
+**Fix structurel (post-rendu)** :
+
+- **Rebalance du sub-index `aides_territoires`** : sortir `competences_certif` (4 891 fiches RNCP de compétences professionnelles) vers un sous-index dédié `competences` ou les rattacher à `formations`. Le sub-index aides_territoires retrouve son équilibre (CROUS, financement, calendrier, DROM, ≈ 70 fiches).
+- **Rebuild des embeddings CROUS avec un text plus dense** : ajouter explicitement le nom des résidences, services, tarifs moyens, contacts dans le text indexé pour augmenter la couverture lexicale.
+- **Activation du BM25 hybride sur le path filter-actif** : actuellement le path v1 utilise uniquement FAISS dense pour le retrieve filtré ; le BM25 (déjà disponible via `bm25_index.py`) capturerait littéralement le mot *"crous"* et garantirait que les 18 fiches remontent au top.
+
+Aucune de ces trois actions n'est triviale à conduire le soir avant un rendu : rebuild de sub-index + re-embedding = ~10 min de calcul + validation sur le mini-bench. Documenté ici pour traçabilité, planifié post-soumission INRIA.
+
+### 11.3 Désynchronisation potentielle plateforme `orientai-platform.fr`
+
+La conversation live partagée le 2026-05-12 montre encore le bug `Pattern 2` (BTS Cybersécurité Option B) flag-é à tort, alors que `cedd6e1` du 2026-05-11 a déjà corrigé ce cas. Hypothèse : **le déploiement de la plateforme accuse un retard sur `main`** (continuous deployment non immédiat). Action : vérifier le commit déployé côté Claudette / passerelle.
