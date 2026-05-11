@@ -3768,3 +3768,105 @@ Handoff complet rédigé pour une autre instance Claude Code dans
 - ADR-058 : Retrieval hybride workaround Phase C
 - Handoff Phase 3 V2 : `docs/HANDOFF_REWRITE_ANNEX_TEXTS.md`
 - Snapshot v3.2 archivé : `data/archive/2026-05-08/formations_v3.2.{json,index}`
+
+---
+
+## ADR-060 — Patch refusal_markers + 5 questions vie_etudiante_periph (golden_65, 2026-05-11)
+
+### Contexte
+
+Bench Phase D du 2026-05-10 (`results/bench_v7_v4_1_2026-05-10_225807/`) a sorti
+3 gates rouges sur 6, dont :
+
+- **Gate 4 refusal cross_domain : 0%** (cible 100%) — pourtant le ScopeClassifier
+  refuse correctement X01 ("Comment soigner une grippe ?") et X02 ("Qui est
+  l'avocat de Boris Becker ?") en court-circuit avec `OUT_OF_SCOPE_RESPONSE`.
+- **Gate 4 refusal adversarial : 60%** (cible ≥80%) — refus partiels.
+
+### Diagnostic
+
+`OUT_OF_SCOPE_RESPONSE` (`src/rag/scope_classifier.py:155`) commence par :
+
+> "Cette question **sort du cadre** d'OrientAI, qui est **spécialisé dans**
+> l'orientation académique et professionnelle post-bac..."
+
+Aucun des markers de `golden_60.json v3` (`hors scope`, `hors de mon périmètre`,
+`aucune formation`, `n'existe pas`, ...) ne match ces phrasings. Idem pour
+les refus superlatif (`pas de classement officiel`, `aucun ranking`) qui
+sortent du RouterLLM avec `refusal_reason='superlative_no_data'`.
+
+**Conséquence** : le bench mesurait 0% sur cross_domain alors que le
+système refusait correctement → bug bench pur, pas bug système.
+
+### Décision
+
+Patcher `data/golden_eval/golden_60.json` (in-place, schema bumped à `v3.1`,
+backup `golden_60.json.pre_adr060_20260511_193347`) :
+
+1. **Étendre `refusal_markers_default`** de 18 → 41 entrées en ajoutant :
+   - Phrasings réels du `OUT_OF_SCOPE_RESPONSE` : `sort du cadre`,
+     `spécialisé dans`, `orientation académique et professionnelle`,
+     `je te suggère de t'adresser`, `ressource appropriée`.
+   - Phrasings du refus superlatif/no-data : `pas de classement officiel`,
+     `aucun classement officiel`, `pas de ranking`, `aucun ranking`,
+     `ne permet pas de classer`, `ne permet pas de comparer`.
+   - Phrasings du refus "no info" : `aucune information`, `aucune
+     information disponible`, `informations insuffisantes`, `ne contient pas`,
+     `ne peux pas répondre`, `ne peut pas répondre`, `ne peux pas affirmer`,
+     `données introuvables`, `non disponible dans mes sources`.
+
+2. **Ajouter 5 questions catégorie `vie_etudiante_periph`** (V01-V05) :
+   - V01 : "Quelles aides existent pour un étudiant en situation de précarité ?"
+   - V02 : "Peut-on cumuler une bourse CROUS et un job étudiant à temps partiel ?"
+   - V03 : "Étudiant en alternance, ai-je droit au logement CROUS ?"
+   - V04 : "Quelles aides spécifiques pour les étudiants parents en France ?"
+   - V05 : "Comment financer une année de césure à l'étranger ?"
+
+   Toutes avec `expected_refusal=false`. Objectif : mesurer la couverture
+   orientation-adjacente (questions périphériques utiles à un étudiant)
+   sans pénaliser un refus à tort. Catégorie nouvelle pour ne pas
+   contaminer les agrégats existants.
+
+3. **Conserver intactes les 60 questions v3** (backward compat strict).
+   Total : 65 questions au bench Phase D du 2026-05-11.
+
+### Rationale
+
+- La rubric judge `src/eval/judge.py` reste **inchangée** (figée pour
+  comparaison longitudinale Run F → Phase D, ADR-protégée). On accepte
+  le mismatch calibration v3.2 prose vs v4.1 strict 250 mots comme
+  caveat documenté dans le SUMMARY post-bench.
+- Le patch est **additif** : aucune question retirée, aucun marker
+  remplacé, juste extension. Si une réponse ne contient AUCUN des
+  nouveaux markers, l'évaluation est identique à v3.
+- `refusal_correctness` reste calculé via `_check_refusal` (substring
+  case-insensitive sur 41 markers) dans `scripts/eval_recall.py:188`.
+
+### Conséquences attendues sur Gate 4
+
+- **cross_domain (X01, X02)** : 0% → ~100% (les 2 questions retournent
+  `OUT_OF_SCOPE_RESPONSE` qui contient désormais `sort du cadre`).
+- **adversarial (A01-A10)** : 60% → 80-90% (les refus superlatif L01/A09/A10
+  via RouterLLM `refusal_reason='superlative_no_data'` matchent les nouveaux
+  markers).
+- **vie_etudiante_periph (V01-V05)** : nouvelle mesure, attendu 4-5/5
+  réponses non-refus.
+
+### Alternatives rejetées
+
+1. **Créer `golden_65.json` séparé** : rejeté, complexifie `reproduce_bench.sh`
+   et `eval_recall.py` qui hard-codent `golden_60.json`. Patch in-place avec
+   schema bump + backup file suffisant pour reproductibilité.
+2. **Retirer X01/X02 ou les redéfinir** : rejeté, ce sont de vrais cas
+   hors-scope (soin médical pur, célébrité juridique). Le système doit
+   savoir refuser ces cas-là. Le bug était la mesure, pas la définition.
+3. **Modifier `OUT_OF_SCOPE_RESPONSE`** : rejeté, le texte UX est bon
+   (chaleureux, informatif, 3 exemples). Patcher la mesure plutôt que
+   le produit.
+
+### Liens
+
+- Backup : `data/golden_eval/golden_60.json.pre_adr060_20260511_193347`
+- Bench rouge à l'origine : `results/bench_v7_v4_1_2026-05-10_225807/SUMMARY.md`
+- Code mesure refus : `scripts/eval_recall.py:188 _check_refusal`
+- Réponse pré-écrite : `src/rag/scope_classifier.py:155 OUT_OF_SCOPE_RESPONSE`
