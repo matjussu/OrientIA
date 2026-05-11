@@ -184,11 +184,27 @@ def _eval_gate4_adversarial(eval_recall: dict | None, factcheck: dict | None) ->
 
 
 def _eval_gate5_rubric(judges_dir: Path) -> tuple[bool | None, list[str]]:
-    """Gate 5 : our_rag rubric ≥12/18 Claude+GPT-4o, κ ≥0.4, our_rag ≥ baselines."""
+    """Gate 5 : our_rag rubric ≥12/18 Claude+GPT-4o, κ ≥0.4, our_rag ≥ baselines.
+
+    2026-05-11 fix : démappe les labels blind A/B/C → noms de systèmes via
+    `label_mapping.json` (par question). Sans ce démap, le synthesizer ne
+    trouvait que les labels A/B/C/D/E/F/G et déclarait "pas de système
+    our_rag trouvé" — Gate 5 inexploitable.
+    """
     claude_path = judges_dir / "scores_claude.json"
     gpt_path = judges_dir / "scores_gpt4o.json"
     if not (claude_path.exists() or gpt_path.exists()):
         return None, ["Gate 5 — judges skippés ou absents"]
+
+    # Charge label_mapping (par question : {id: {label: system_name}}).
+    # generation/label_mapping.json est le sibling de judges/.
+    label_mapping_path = judges_dir.parent / "generation" / "label_mapping.json"
+    label_mapping: dict[str, dict[str, str]] = {}
+    if label_mapping_path.exists():
+        try:
+            label_mapping = json.loads(label_mapping_path.read_text(encoding="utf-8"))
+        except Exception:
+            pass
 
     lines = []
     checks = []
@@ -202,10 +218,16 @@ def _eval_gate5_rubric(judges_dir: Path) -> tuple[bool | None, list[str]]:
         if not isinstance(scores, list) or not scores:
             lines.append(f"{judge_name} : format inattendu, skip parse")
             continue
-        # Aggrégation par système
+        # Aggrégation par système — démap A/B/C → noms via label_mapping
         sys_totals: dict[str, list[float]] = {}
         for entry in scores:
-            for sys_name, sys_scores in (entry.get("scores") or {}).items():
+            q_id = entry.get("id")
+            q_mapping = label_mapping.get(q_id, {})
+            for label, sys_scores in (entry.get("scores") or {}).items():
+                # Si on a un mapping pour cette question, on démappe le label
+                # vers le nom de système. Sinon on garde le label brut
+                # (fallback gracieux pour les anciens runs sans mapping).
+                sys_name = q_mapping.get(label, label)
                 tot = sys_scores.get("total")
                 if isinstance(tot, (int, float)):
                     sys_totals.setdefault(sys_name, []).append(float(tot))

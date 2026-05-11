@@ -82,7 +82,14 @@ _CLAIM_PATTERNS = [
     re.compile(
         _DIPLOMA_TYPE
         + r"\s+(?P<name>[A-ZÀ-Ÿ][\wÀ-ÿ\s\-'/&,]{2,80}?)"
-        + r"\s*\((?P<etab>[A-ZÀ-Ÿ][\wÀ-ÿ\s\-'/&,]{2,60}?)\)",
+        # 2026-05-11 fix : exclut les parenthèses qui contiennent une OPTION
+        # / un PARCOURS / une SPÉCIALITÉ / une MENTION — ce sont des variantes
+        # de formation, pas des établissements. Sans ce filtre, le claim
+        # "BTS Cybersécurité (Option B)" était extrait avec etab=Option B,
+        # match 0% contre le corpus → BLOCK injustifié.
+        + r"\s*\((?P<etab>(?!Option\s|Parcours\s|Spé(?:cialit[eé])?\s|Mention\s|"
+        + r"Voie\s|Filière\s|option\s|parcours\s)"
+        + r"[A-ZÀ-Ÿ][\wÀ-ÿ\s\-'/&,]{2,60}?)\)",
         re.UNICODE,
     ),
     # Pattern 3 — Forme avec tiret cadratin/em-dash : "[Type] X — [Etab]".
