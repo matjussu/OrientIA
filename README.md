@@ -1,9 +1,11 @@
 # OrientAI : A Specialized RAG System for French Educational Guidance
 
-**OrientAI** (codebase historical name: *OrientIA*) is a Retrieval-Augmented
+**OrientAI**  is a Retrieval-Augmented
 Generation (RAG) system specialised in French academic and vocational
 guidance, post-baccalauréat. It is the submission of *Matteo Lepietre*
 to the **INRIA AI Grand Challenge** (2026).
+
+you can try the LLM here : https://orientai-platform.fr/
 
 The system pairs an LLM (Mistral) with a French-only, publicly-sourced
 corpus of **47 214 program/career records** and a multi-stage pipeline
