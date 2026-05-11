@@ -1,4 +1,29 @@
-# OrientIA — Methodology
+# OrientIA — Methodology (v1, historical reference)
+
+> ⚠️ **This document captures the Phase F / Run F+G methodology** (April 2026,
+> 100q dev/test split, 7-system ablation, v3.2 prompt, 443 fiches corpus).
+> It is **preserved as a historical reference** for the original
+> publishable methodology and for cross-run reproducibility.
+>
+> **The system has evolved significantly since.** Current evaluation
+> (Phase D, 2026-05-11, system v4.1) uses:
+> - **65–71 questions** in [`data/golden_eval/golden_60.json`](../data/golden_eval/golden_60.json)
+>   (v3.1 schema with adversarial + cross_domain + paraphrase + live + vie_etudiante_periph).
+> - **47 214 fiches** in the production corpus (v7, multi-source, 4 sub-indexes:
+>   formations / metiers / statistiques / aides_territoires).
+> - **A new pipeline**: `ScopeClassifier` → `RouterLLM` → hybrid retrieval
+>   (FAISS dense + BM25 lexical + RRF fusion) → reranker + MMR → generator
+>   with system prompt v4.1 strict (FactCard JSON, ≤250 words, citations
+>   `[source SX]` mandatory) → multi-layer validator → UX policy + post-process.
+> - **6 GO/NO-GO gates** defined in [`BENCH_GATES.md`](BENCH_GATES.md).
+> - **System architecture details**: see [`ARCHITECTURE_EXPLICATIVE.md`](ARCHITECTURE_EXPLICATIVE.md)
+>   and the in-repo `src/rag/` source.
+>
+> The original Phase F methodology (below) remains the foundation: the
+> ablation logic, judge rubric (Claude Sonnet 4.5 + GPT-4o, 6 criteria × /3 = /18),
+> blinding seed-protocol, dev/test split, and inter-judge κ metric are still
+> applied in Phase D — only the dataset size, the prompt version, and the
+> pipeline layers have evolved.
 
 **Purpose:** permanent reference for the evaluation methodology. Everything
 in this file must be precise enough that an outside reader (reviewer or
@@ -6,6 +31,7 @@ future-us) can reproduce the experiment from scratch. No rationale
 questions here — see `DECISION_LOG.md` for "why did we choose X".
 
 **Last updated:** 2026-04-15 (Phase F.4, Run F generation in progress).
+**Updated banner:** 2026-05-11 (ADR-060, golden_60 → 65–71q v3.1).
 
 ---
 

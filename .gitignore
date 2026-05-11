@@ -91,3 +91,19 @@ frontend/.vite/
 # Local-only docs (kept locally, not published)
 V1.md
 INRIA_AI_ORIENTATION_PROJECT.md
+# Audit interne pipeline v4.1 — détaillé, pas pour évaluateurs externes
+LLM_Final.md
+# Carnet projet personnel (instructions Matteo + Claudette + Jarvis)
+CLAUDE.md
+
+# Backups intermédiaires (snapshots avant migration / phase) — pattern global
+**/*.pre_*
+
+# Textualized corpus — 47k+ fichiers Markdown régénérables via
+# `python scripts/textualize_formations.py` (artefact de build, pas une source).
+data/textualized/
+data/textualized/*
+
+# NB : `_archive_rewrite_phase3v2_pre_pivot/` est délibérément TRACKÉ
+# (traçabilité du pivot 2026-05-08 vers v4.1 strict, cf
+# `docs/SESSION_HANDOFF_2026-05-08_VERROUILLAGE.md` Phase A4). Ne pas l'ignorer.
