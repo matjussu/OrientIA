@@ -1,4 +1,4 @@
-# OrientAI — A Specialized RAG System for French Educational Guidance
+# OrientAI : A Specialized RAG System for French Educational Guidance
 
 **OrientAI** (codebase historical name: *OrientIA*) is a Retrieval-Augmented
 Generation (RAG) system specialised in French academic and vocational
@@ -24,11 +24,11 @@ APEC, DARES, France Compétences, …).
 
 Three properties matter:
 
-1. **Honesty over fluency** — the system *refuses* requests it cannot
+1. **Honesty over fluency** : the system *refuses* requests it cannot
    ground in its corpus (ranking superlatives, fictional schools, pure
    medical advice, celebrity questions). Honesty is measured: see Gate 4
    in [`docs/BENCH_GATES.md`](docs/BENCH_GATES.md).
-2. **Public-data sovereignty** — every numeric claim is traceable to an
+2. **Public-data sovereignty** : every numeric claim is traceable to an
    official open dataset. No private rankings, no SEO-boosted private
    schools, no scraped LinkedIn salary data.
 3. **Production discipline** — single FastAPI endpoint, deterministic
@@ -37,7 +37,7 @@ Three properties matter:
 
 ---
 
-## 2. System v4.1 — pipeline at a glance
+## 2. System v4.1 : pipeline at a glance
 
 A single endpoint, `POST /answer` (`src/api/server.py:386`), runs the
 following stages for every user question. All stages are deterministic
@@ -125,14 +125,14 @@ For the full step-by-step description see
 
 ---
 
-## 3. Corpus — what powers the answers
+## 3. Corpus : what powers the answers
 
 The retrieval corpus (`data/processed/formations_v7.json`,
 [aliased](docs/SESSION_HANDOFF_2026-05-08_VERROUILLAGE.md) as
 `formations.json`, ~89 MB) contains **47 214 records** consolidated from
 multiple open French datasets, of which **43 185 (91.5%) are
 retrieval-eligible** (the remainder are excluded by the Vague 1.C
-granular policy — non-named records that pollute results).
+granular policy : non-named records that pollute results).
 
 Major sources (top 12 by record count):
 
@@ -169,7 +169,7 @@ disk, gitignored (rebuilt from corpus + script).
 
 ---
 
-## 4. System prompt v4.1 strict — non-negotiable contract
+## 4. System prompt v4.1 strict : non-negotiable contract
 
 The generation prompt is intentionally short and enforces seven rules
 ("R1–R7") on top of a JSON FactCard structure for sources. See
@@ -195,7 +195,7 @@ The generation prompt is intentionally short and enforces seven rules
 
 ---
 
-## 5. Evaluation — Phase D
+## 5. Evaluation : Phase D
 
 Evaluation runs are reproduced end-to-end by
 [`scripts/reproduce_bench.sh`](scripts/reproduce_bench.sh) (eight
