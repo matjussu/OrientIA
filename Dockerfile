@@ -19,7 +19,7 @@ COPY src/ ./src/
 # Corpus principal (95 MB) embarqué dans l'image — simple, pas de bootstrap volume
 # nécessaire. Pour les ~185 MB de FAISS index : voir volume Railway monté sur
 # /app/data/embeddings/ (ne pas COPY l'index dans l'image, trop lourd).
-COPY data/processed/formations.json ./data/processed/formations.json
+COPY data/processed/formations_v7.json ./data/processed/formations_v7.json
 COPY data/processed/golden_qa_meta.json ./data/processed/golden_qa_meta.json
 
 # Railway injecte $PORT automatiquement
