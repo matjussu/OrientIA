@@ -21,7 +21,6 @@ data/raw/
 data/embeddings/
 data/golden_qa/
 data/processed/formations_v6.json
-data/processed/formations_v7.json
 data/processed/formations_unified.pre_d5_backup.json
 data/processed/formations_golden_pipeline.json
 data/processed/formations_unified.json
@@ -79,5 +78,9 @@ LICENSE
 .idea/
 .DS_Store
 
-# Scripts dev — pas en runtime API
-scripts/
+# Scripts dev — pas en runtime API (sauf build_quad_subindexes.py utilisé par RouterLLM)
+# Note : `scripts/*` (glob fichiers) au lieu de `scripts/` (dir) pour que la
+# négation `!scripts/build_quad_subindexes.py` soit honorée (gitignore-style
+# n'autorise pas la ré-inclusion d'un fichier dont le parent dir est exclu).
+scripts/*
+!scripts/build_quad_subindexes.py
