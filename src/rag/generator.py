@@ -447,15 +447,22 @@ def generate(
 
     # v4.1 (2026-05-06) : cap dur output tokens en mode strict v4 pour faire
     # respecter R6 max 250 mots. 250 mots ≈ 350-400 tokens en français.
-    # On met 400 pour laisser une marge sans laisser le LLM s'étaler. En v3.2
-    # legacy, pas de cap pour préserver le comportement historique.
+    # Cap initial 400 = égal au "soft target" R6, ce qui tronquait la long-tail
+    # des réponses qui citent 3-5 sources avec URLs Markdown + chiffres
+    # (avg observée 184 mots / 280 tokens — mais p90 ~250 mots / ~450 tokens).
+    # 2026-05-12 (ordre Jarvis 2026-05-12-1445) : bump 400→800 pour permettre
+    # à ces réponses long-tail de FINIR proprement leur dernière phrase /
+    # URL Markdown. Le cap reste un filet de sécurité ; R6 ≤250 mots demeure
+    # le soft target via SYSTEM_PROMPT_V4_STRICT, donc drift avg attendu
+    # léger (+30-40 mots). Coût marginal +$0.0005/query, latence p50 +5-10%.
+    # En v3.2 legacy, pas de cap pour préserver le comportement historique.
     api_kwargs: dict = {
         "model": model,
         "temperature": temperature,
         "messages": messages,
     }
     if use_strict_v4:
-        api_kwargs["max_tokens"] = 400
+        api_kwargs["max_tokens"] = 800
     response = client.chat.complete(**api_kwargs)
     content = response.choices[0].message.content
     # Sprint 11 P1.1 v5 — strip brouillon XML balises si détectées.
