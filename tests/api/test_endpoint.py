@@ -120,6 +120,41 @@ def test_answer_rejects_too_much_history(client):
     assert r.status_code == 422  # max 6 (durci par rapport au contrat plateforme 20)
 
 
+def test_answer_accepts_history_content_up_to_3000_chars(client):
+    """Régression H1 (audit 2026-05-13) : une réponse Mistral long-tail
+    (~2200-2400 chars post bump max_tokens=800) revenue dans
+    `history.content` au tour suivant ne doit PAS être rejetée en 422.
+
+    Avant fix : max_length=2000 → 422 silencieux côté plateforme
+    (3 retries → ORIENTIA_UNAVAILABLE). Depuis fix : max_length=3000.
+    """
+    long_assistant_response = "x" * 2500
+    r = client.post(
+        "/answer",
+        json={
+            "question": "Tour 2 après réponse long-tail",
+            "history": [
+                {"role": "user", "content": "Tour 1"},
+                {"role": "assistant", "content": long_assistant_response},
+            ],
+        },
+    )
+    assert r.status_code == 200
+
+
+def test_answer_rejects_history_content_above_3000_chars(client):
+    """Borne supérieure préservée — un content >3000 chars reste 422."""
+    too_long_content = "x" * 3500
+    r = client.post(
+        "/answer",
+        json={
+            "question": "Tour 2",
+            "history": [{"role": "assistant", "content": too_long_content}],
+        },
+    )
+    assert r.status_code == 422
+
+
 # ─────────────────────────── Pipeline crash ─────────────────────────────────
 
 
