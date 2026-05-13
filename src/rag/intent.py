@@ -384,6 +384,12 @@ _PATTERNS_DOMAIN_VOIE_PRE_BAC = [
     # des cas de transition individuelle "je suis en CAP, je veux passer en bac pro"
     # qui restent formation-centric (None).
     re.compile(r"\b(?:specialite|filiere)[sx]?\s+(?:de\s+)?(?:bac\s+pro|cap|bp|mc)\b"),
+    # Spot-check V5 2026-05-14 Phase 1.4 — Q11 régression : la formulation
+    # naturelle "spécialités possibles en bac pro agriculture" n'était pas
+    # capturée car le pattern ci-dessus exige "specialites (de) bac pro"
+    # directement collés. Variant : autoriser 1 mot intermédiaire (possibles
+    # / disponibles / offertes...) + préposition élargie (en/dans/du/d').
+    re.compile(r"\b(?:specialite|filiere)[sx]?\s+\w+\s+(?:de\s+|en\s+|dans\s+|du\s+|d['e]?\s+)?(?:bac\s+pro|cap|bp|mc)\b"),
     re.compile(r"\b(?:liste|catalogue|toutes?\s+les?|quelle[sx]?)\s+(?:specialite[sx]?|formations?)\s+(?:bac\s+pro|cap|de\s+bac\s+pro)\b"),
     re.compile(r"\b(?:choisir|orientation)\s+(?:apres|post)\s+(?:la\s+)?(?:troisieme|3eme)\b"),
     re.compile(r"\bcatalogue\s+(?:bac\s+pro|cap)\b"),
