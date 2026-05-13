@@ -2,12 +2,14 @@
 from __future__ import annotations
 
 from src.rag.post_process import (
+    BROKEN_LINK_FALLBACK_REGEX,
     INVENTED_URL_DOMAINS,
     INVENTED_URL_REGEX,
     INVENTED_MARKDOWN_LINK_REGEX,
     ONISEP_SLUG_REGEX,
     TABLE_WITH_BULLETS_REGEX,
     fix_broken_markdown_tables,
+    neutralize_broken_link_fallback,
     post_process_answer,
     strip_invented_urls,
     validate_onisep_slugs,
@@ -266,3 +268,97 @@ class TestConstantsAndRegex:
     def test_onisep_slug_regex_does_not_match_other(self):
         for txt in ("FOR.AB", "for.123", "FOR.12"):  # last is too short
             assert not ONISEP_SLUG_REGEX.search(txt), f"False positive on: {txt}"
+
+
+# -------- Régression spot-check 2026-05-13 — link cassé sur URL manquante --------
+
+
+class TestNeutralizeBrokenLinkFallbackSpotCheck20260513:
+    """Spot-check 2026-05-13 Q4 + Q13 : LLM produit `[texte](information non
+    disponible dans mes sources)` quand SYSTEM_PROMPT_SPRINT11_P0 demande un
+    lien sur une formation mais que l'URL est absente des sources. Pattern
+    régressif vs spot-check 2026-05-11. Fix neutralise en **texte** gras.
+    """
+
+    def test_q4_pattern_master_droit_paca(self):
+        """Pattern exact du spot-check 2026-05-13 Q4 — Master Droit PACA."""
+        response = (
+            "Les masters comme le **[DROIT — Droit public et carrières publiques "
+            "à Aix-Marseille Université](information non disponible dans mes sources)** "
+            "ou le **[DROIT INTERNATIONAL — Droit et pratique du commerce international "
+            "à Université Côte d'Azur](information non disponible dans mes sources)** "
+            "ne précisent pas ces données."
+        )
+        out = neutralize_broken_link_fallback(response)
+        assert "(information non disponible" not in out
+        assert "**DROIT — Droit public et carrières publiques à Aix-Marseille Université**" in out
+        assert "**DROIT INTERNATIONAL — Droit et pratique du commerce international à Université Côte d'Azur**" in out
+
+    def test_q13_pattern_doctorat_chimie(self):
+        """Pattern exact du spot-check 2026-05-13 Q13 — doctorat chimie."""
+        response = (
+            "Les masters proposés couvrent des spécialités variées (ex : "
+            "[CHIMIE — Chimie Analytique et Qualité à l'Université de Poitiers]"
+            "(information non disponible dans mes sources), "
+            "[CHIMIE — Integrated research for advanced chemistry and materials "
+            "à l'Université de Lille](information non disponible dans mes sources))."
+        )
+        out = neutralize_broken_link_fallback(response)
+        assert "(information non disponible" not in out
+        assert "**CHIMIE — Chimie Analytique et Qualité à l'Université de Poitiers**" in out
+
+    def test_variations_phrases_non_disponible(self):
+        """Couvre les variations linguistiques observables."""
+        cases = [
+            ("[fiche](non disponible)", "**fiche**"),
+            ("[X](pas disponible)", "**X**"),
+            ("[Y](données non disponibles)", "**Y**"),
+            ("[Z](donnée non disponible)", "**Z**"),
+            ("[W](information manquante)", "**W**"),
+            ("[V](aucune URL)", "**V**"),
+            ("[U](source manquante)", "**U**"),
+        ]
+        for inp, expected in cases:
+            out = neutralize_broken_link_fallback(inp)
+            assert expected in out, f"Failed for input: {inp} → {out}"
+
+    def test_case_insensitive(self):
+        response = "[X](Information Non Disponible Dans Mes Sources)"
+        out = neutralize_broken_link_fallback(response)
+        assert "**X**" in out
+
+    def test_does_not_touch_legitimate_links(self):
+        """Non-régression : les liens valides restent intacts."""
+        response = (
+            "Voir [fiche ONISEP](https://www.onisep.fr/FOR.123) et "
+            "[Parcoursup](https://www.parcoursup.fr/) pour plus de détails."
+        )
+        out = neutralize_broken_link_fallback(response)
+        assert "https://www.onisep.fr/FOR.123" in out
+        assert "https://www.parcoursup.fr/" in out
+        assert "[fiche ONISEP]" in out
+
+    def test_regex_does_not_match_legitimate(self):
+        legit_examples = [
+            "[ONISEP](https://onisep.fr/)",
+            "[Parcoursup formation #FR_RNE0410834W](https://parcoursup.fr/)",
+            "[CIO](https://orientation.education.fr/)",
+        ]
+        for ex in legit_examples:
+            assert not BROKEN_LINK_FALLBACK_REGEX.search(ex), f"False positive on: {ex}"
+
+    def test_integration_via_post_process_answer(self):
+        """Le branchement dans post_process_answer marche end-to-end."""
+        response = (
+            "Le [Master Droit](information non disponible dans mes sources) "
+            "n'a pas de chiffres."
+        )
+        cleaned, stats = post_process_answer(response, sources=[])
+        assert stats["had_broken_link_fallback"] is True
+        assert "(information non disponible" not in cleaned
+        assert "**Master Droit**" in cleaned
+
+    def test_stats_false_when_no_broken_link(self):
+        response = "Aucun pattern cassé ici, [valid](https://onisep.fr/) tout va bien."
+        cleaned, stats = post_process_answer(response, sources=[])
+        assert stats["had_broken_link_fallback"] is False
