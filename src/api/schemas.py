@@ -20,10 +20,18 @@ from pydantic import BaseModel, ConfigDict, Field
 
 
 class HistoryMessage(BaseModel):
-    """Un tour de conversation (Mistral compliant)."""
+    """Un tour de conversation (Mistral compliant).
+
+    `content.max_length=3000` absorbe les réponses long-tail Mistral
+    (max_tokens=800 produit ~2200-2400 chars worst-case) qu'un client peut
+    remettre dans `history.content` au tour suivant. Avant 3000, le backend
+    rejetait en 422 les long-tails revenus dans l'historique alors que côté
+    plateforme Zod ne contraint plus la length depuis PR Zod #24.
+    Cf. audit-pont-orientia-platform-2026-05-13 §H1.
+    """
 
     role: Literal["user", "assistant"]
-    content: str = Field(min_length=1, max_length=2000)
+    content: str = Field(min_length=1, max_length=3000)
 
 
 class AnswerRequest(BaseModel):
