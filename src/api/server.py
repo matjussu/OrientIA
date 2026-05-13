@@ -38,12 +38,12 @@ from collections import defaultdict, deque
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, AsyncGenerator
 
 import numpy as np
 from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, StreamingResponse
 from mistralai.client import Mistral
 
 from src.api.schemas import (
@@ -497,3 +497,226 @@ async def answer(request: AnswerRequest, http_request: Request) -> AnswerRespons
     )
 
     return response
+
+
+# ───────────────────────────── /answer/stream (SSE Phase 1) ─────────────────
+
+# Cf docs/integration/02-http-contract.md §5 Streaming SSE.
+# Coté front : OrientAI_Platform/src/lib/orientia-stream-client.ts:171-228.
+# Contrat events : StreamEventSchema discriminated union (token/sources/
+# faithfulness/done/error) — `src/lib/api/schemas.ts:96-119`.
+
+# Heartbeat SSE : envoyé toutes les 15s en commentaire (`: keepalive\n\n`,
+# ignoré par le parser client cf `extractEventPayload` line 154). Évite que
+# les proxies (Vercel, Cloudflare, Railway) ferment la connection inactive.
+_SSE_HEARTBEAT_INTERVAL_S = 15.0
+
+# Timeout total côté backend : 55s. Sous le 60s client (cf `DEFAULT_TIMEOUT_MS`
+# orientia-stream-client.ts:40) pour qu'on remonte un event `error` propre
+# avant que le client AbortController fire. Au-dessus du 25s Mistral SDK +
+# overhead retrieve/MMR + heartbeat — laisse marge réaliste.
+_STREAM_TOTAL_TIMEOUT_S = float(os.environ.get("ORIENTIA_STREAM_TIMEOUT_S", "55.0"))
+
+
+def _format_sse_event(payload: dict) -> bytes:
+    """Sérialise un dict en frame SSE `data: <JSON>\\n\\n`.
+
+    Le client parse via `data:` line + double newline separator (cf
+    `parseSSEChunks` côté frontend). Pas de champ `event:` — le `type`
+    discriminator est dans le JSON payload (StreamEventSchema).
+    """
+    return f"data: {json.dumps(payload)}\n\n".encode("utf-8")
+
+
+_SSE_HEARTBEAT_FRAME = b": keepalive\n\n"
+
+
+async def _stream_events_with_heartbeat(
+    event_gen,  # AsyncGenerator[dict, None]
+    request_id: str,
+    started_ns: int,
+) -> "AsyncGenerator[bytes, None]":
+    """Wraps the pipeline event generator with :
+    - JSON SSE framing (data: <JSON>\\n\\n)
+    - source extraction + numpy coercion sur les events `sources`
+    - heartbeat keepalive `: keepalive\\n\\n` toutes 15s en parallèle
+    - timeout total `_STREAM_TOTAL_TIMEOUT_S` (55s) émettant un event
+      `error` final si dépassé
+    - cancellation propagation propre (CancelledError remonte au caller
+      qui ferme la connection httpx upstream Mistral)
+    """
+    import asyncio as _asyncio
+
+    queue: _asyncio.Queue = _asyncio.Queue()
+    SENTINEL_DONE = object()
+    SENTINEL_ERROR = object()
+
+    async def producer():
+        """Consomme `event_gen` et push les frames SSE dans la queue."""
+        try:
+            async for ev in event_gen:
+                # Sources : déballer la fiche brute + coerce numpy (mêmes
+                # opérations que dans `/answer` non-streaming pour préserver
+                # le contrat shape `Source` côté Zod).
+                if ev.get("type") == "sources":
+                    ev = {
+                        "type": "sources",
+                        "sources": [
+                            _to_jsonable(_extract_source_fiche(s))
+                            for s in ev.get("sources", [])
+                        ],
+                    }
+                await queue.put(_format_sse_event(ev))
+                if ev.get("type") in ("done", "error"):
+                    break
+            await queue.put(SENTINEL_DONE)
+        except _asyncio.CancelledError:
+            # Cancellation depuis le caller — propager sans push d'event
+            # `error` (client déjà déconnecté ne recevrait rien).
+            await queue.put(SENTINEL_DONE)
+            raise
+        except Exception as exc:  # noqa: BLE001
+            logger.exception(f"answer_stream producer crashed for {request_id}")
+            await queue.put(_format_sse_event({
+                "type": "error",
+                "error": str(exc)[:200],
+                "code": "INTERNAL",
+            }))
+            await queue.put(SENTINEL_ERROR)
+
+    async def heartbeat():
+        """Push un keepalive comment toutes les 15s."""
+        try:
+            while True:
+                await _asyncio.sleep(_SSE_HEARTBEAT_INTERVAL_S)
+                await queue.put(_SSE_HEARTBEAT_FRAME)
+        except _asyncio.CancelledError:
+            return
+
+    producer_task = _asyncio.create_task(producer())
+    heartbeat_task = _asyncio.create_task(heartbeat())
+
+    try:
+        # Timeout global via wait_for sur queue.get()
+        deadline = _asyncio.get_event_loop().time() + _STREAM_TOTAL_TIMEOUT_S
+        while True:
+            remaining = deadline - _asyncio.get_event_loop().time()
+            if remaining <= 0:
+                # Timeout total dépassé — émettre event error final
+                yield _format_sse_event({
+                    "type": "error",
+                    "error": f"Stream exceeded {_STREAM_TOTAL_TIMEOUT_S}s total budget.",
+                    "code": "ORIENTIA_TIMEOUT",
+                })
+                return
+            try:
+                frame = await _asyncio.wait_for(queue.get(), timeout=remaining)
+            except _asyncio.TimeoutError:
+                yield _format_sse_event({
+                    "type": "error",
+                    "error": f"Stream exceeded {_STREAM_TOTAL_TIMEOUT_S}s total budget.",
+                    "code": "ORIENTIA_TIMEOUT",
+                })
+                return
+
+            if frame is SENTINEL_DONE or frame is SENTINEL_ERROR:
+                return
+            yield frame
+    except _asyncio.CancelledError:
+        elapsed_ms = (time.perf_counter_ns() - started_ns) / 1_000_000.0
+        logger.info(
+            json.dumps({
+                "level": "info",
+                "request_id": request_id,
+                "route": "/answer/stream",
+                "event": "client_disconnect",
+                "elapsed_ms": round(elapsed_ms, 2),
+            })
+        )
+        raise
+    finally:
+        # Cleanup : cancel les tasks background. Producer doit terminer pour
+        # libérer la connection httpx upstream (Mistral SDK). Heartbeat est
+        # un loop sans cleanup spécifique.
+        if not producer_task.done():
+            producer_task.cancel()
+        if not heartbeat_task.done():
+            heartbeat_task.cancel()
+        # Wait briefly for graceful cancellation (don't block forever)
+        try:
+            await _asyncio.wait_for(
+                _asyncio.gather(producer_task, heartbeat_task, return_exceptions=True),
+                timeout=1.0,
+            )
+        except _asyncio.TimeoutError:
+            pass
+
+
+@app.post(
+    "/answer/stream",
+    dependencies=[Depends(verify_bearer)],
+    responses={
+        400: {"model": ErrorResponse},
+        401: {"model": ErrorResponse},
+        422: {"model": ErrorResponse},
+        429: {"model": ErrorResponse},
+        503: {"model": ErrorResponse},
+    },
+)
+async def answer_stream(request: AnswerRequest, http_request: Request):
+    """SSE Phase 1 endpoint — vrai streaming Mistral via `chat.stream_async()`.
+
+    Erreurs **pre-streaming** (validation Pydantic 422, auth Bearer 401,
+    rate limit 429, pipeline non-chargé 503, prompt-injection 400, scope LLM
+    crash dans `_prepare_for_generation`) retournées en HTTP standard avec
+    `ErrorResponse` JSON (cohérent `/answer`).
+
+    Erreurs **in-stream** (Mistral crash, validator crash, timeout) émises
+    en event SSE `{"type": "error", ...}` final + fin du stream.
+
+    Cf contrat HTTP : OrientAI_Platform/docs/integration/02-http-contract.md §5.
+    Cf client SSE : OrientAI_Platform/src/lib/orientia-stream-client.ts:171.
+    """
+    _check_rate_limit(http_request)
+
+    if _pipeline is None:
+        raise HTTPException(status_code=503, detail="Pipeline not loaded")
+
+    request_id = http_request.headers.get("x-request-id") or str(uuid.uuid4())
+    http_request.state.request_id = request_id
+
+    sanitized = _sanitize_question(request.question)
+    history_dicts = (
+        [m.model_dump() for m in request.history] if request.history else None
+    )
+
+    started_ns = time.perf_counter_ns()
+    logger.info(
+        json.dumps({
+            "level": "info",
+            "request_id": request_id,
+            "route": "/answer/stream",
+            "event": "stream_start",
+            "question_len": len(sanitized),
+            "history_len": len(request.history) if request.history else 0,
+        })
+    )
+
+    event_gen = _pipeline.answer_stream(
+        sanitized,
+        history=history_dicts,
+    )
+    framed = _stream_events_with_heartbeat(event_gen, request_id, started_ns)
+
+    return StreamingResponse(
+        framed,
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache, no-transform",
+            # X-Accel-Buffering: anti-buffering pour nginx/Vercel/Cloudflare —
+            # garantit que les chunks SSE arrivent au client en temps réel.
+            "X-Accel-Buffering": "no",
+            # Connection keep-alive est implicite mais explicite pour clarté
+            "Connection": "keep-alive",
+        },
+    )

@@ -1,8 +1,11 @@
+import asyncio
 import dataclasses
 import json
 import logging
 import time
+from dataclasses import dataclass
 from pathlib import Path
+from typing import AsyncGenerator
 
 import numpy as np
 import faiss
@@ -19,7 +22,7 @@ from src.rag.intent import (
     intent_to_config,
     INTENT_FACTUAL_POINTED,
 )
-from src.rag.generator import generate
+from src.rag.generator import generate, generate_stream
 from src.lookup.structured_select import try_select_or_none, SelectResult
 from src.rag.metadata_filter import (
     FilterCriteria,
@@ -119,6 +122,66 @@ RETRY_RESERVE_S = 5.0
 # une fois et on l'oublie — ces seuils déclenchent un signal automatique.
 RETRY_STABILITY_WARN_THRESHOLD = 0.7    # >30% claims perdus → log warning
 RETRY_STABILITY_AUDIT_THRESHOLD = 0.5   # >50% claims perdus → flag needs_audit
+
+
+# ─────────────────────────── SSE Phase 1 (2026-05-13) ───────────────────────
+# Résultats internes de `_prepare_for_generation()` extraits depuis `answer()`
+# pour permettre `answer_stream()` de réutiliser la même séquence pré-LLM
+# (scope/router/SELECT/intent/retrieve/MMR/golden_qa) sans duplication.
+
+
+@dataclass
+class _PreparedGenContext:
+    """État pipeline post-pré-LLM, prêt pour génération (sync ou stream)."""
+    top: list[dict]
+    effective_top_k: int
+    golden_qa_prefix: str | None
+    intent_label: str | None
+    hardlock_block: str
+    criteria: FilterCriteria | None
+    route_decision: RouteDecision | None
+
+
+@dataclass
+class _ShortCircuitResult:
+    """Court-circuit pré-LLM : scope hors-scope/urgent, router refusal, SELECT bypass.
+
+    `text` contient la réponse pré-écrite à retourner / streamer directement.
+    `reason` sert pour le log structuré et le marker `last_retry_metadata`.
+    """
+    text: str
+    reason: str
+
+
+def _chunk_text_into_tokens(text: str) -> list[str]:
+    """Split ``text`` en tokens "mots + ponctuation + whitespace" pour le
+    fake streaming sur les courts-circuits (pas d'appel Mistral, on simule
+    le pacing humain ~25 tokens/s).
+
+    Cohérent avec ``chunkIntoTokens`` côté frontend
+    (``OrientAI_Platform/src/lib/orientia-stream-client.ts:102-121``) : blocs
+    de whitespace préservant les newlines, sinon mots/ponctuation contigus.
+    """
+    if not text:
+        return []
+    tokens: list[str] = []
+    i = 0
+    n = len(text)
+    while i < n:
+        ch = text[i]
+        if ch.isspace():
+            j = i
+            while j < n and text[j].isspace():
+                j += 1
+            tokens.append(text[i:j])
+            i = j
+        else:
+            j = i
+            while j < n and not text[j].isspace():
+                j += 1
+            tokens.append(text[i:j])
+            i = j
+    return tokens
 
 
 class OrientIAPipeline:
@@ -313,18 +376,74 @@ class OrientIAPipeline:
         if self.index is None:
             raise RuntimeError("Pipeline not built — call build_index() or load_index_from() first.")
 
+        # Phase 1 SSE refacto 2026-05-13 — délégué à `_prepare_for_generation()`
+        # pour permettre réutilisation côté `answer_stream()`. Extraction mécanique
+        # sans changement de comportement (tests pipeline valident).
+        prepared = self._prepare_for_generation(question, k, top_k_sources, criteria, history)
+        if isinstance(prepared, _ShortCircuitResult):
+            return prepared.text, []
+        # Variables locales attendues par le reste de `answer()` (post-LLM)
+        top = prepared.top
+        effective_top_k = prepared.effective_top_k  # noqa: F841 (kept for retro-compat lecture)
+        golden_qa_prefix = prepared.golden_qa_prefix
+        intent_label = prepared.intent_label
+
+        # Chantier 1.B (2026-05-03) — Retry-with-hint loop anti-hallucination.
+        wall_t0 = time.time()
+        answer_text, retry_meta = self._generate_with_retry(
+            top=top,
+            question=question,
+            golden_qa_prefix=golden_qa_prefix,
+            history=history,
+            temperature=temperature,
+            wall_t0=wall_t0,
+            intent=intent_label,
+        )
+
+        # Validator v1 + UX Policy
+        self.last_retry_metadata = retry_meta
+        if self.validator is not None:
+            self.last_policy_result = apply_policy(answer_text, self.last_validation)
+            answer_text = self.last_policy_result.final_answer
+            answer_text, _ = append_phase_projet(answer_text, question)
+        if self.enable_post_process:
+            answer_text, pp_stats = post_process_answer(answer_text, top)
+            self.last_post_process_stats = pp_stats
+        else:
+            self.last_post_process_stats = None
+        return answer_text, top
+
+    def _prepare_for_generation(
+        self,
+        question: str,
+        k: int,
+        top_k_sources: int,
+        criteria: FilterCriteria | None,
+        history: list[dict] | None,
+    ) -> "_PreparedGenContext | _ShortCircuitResult":
+        """Extrait depuis `answer()` (Phase 1 SSE refacto 2026-05-13).
+
+        Exécute toute la séquence pré-LLM : scope check, router check,
+        SELECT bypass, intent/domain hint, retrieve+filter+MMR,
+        golden_qa_prefix. Comportement identique à pré-extraction —
+        tests pipeline valident.
+
+        Returns:
+            - `_PreparedGenContext` si prêt pour la génération LLM normale
+            - `_ShortCircuitResult` si une branche court-circuit a produit
+              un texte pré-écrit (scope_out, scope_urgent, router_refusal,
+              select_bypass). Le caller (sync ou stream) retourne / yield
+              ce texte directement.
+
+        Side-effects : set `self.last_scope_result`, `self.last_router_result`,
+        `self.last_select_result`, et reset les autres `last_*` markers
+        en cas de short-circuit (backward-compat consumers).
+        """
         # Étape 1 refonte (2026-05-06) — Scope classification AMONT.
-        # Court-circuit avec réponse pré-écrite si question hors-scope ou urgent.
-        # Cette gate est PRÉ-pipeline : aucun appel retrieve/generate si non in_scope.
         if self.scope_classifier is not None:
-            # 2026-05-10 fix multi-tour : passe `history` au scope classifier
-            # pour qu'il juge les follow-ups dans leur contexte (ex: "et à
-            # Lyon ?" après une question CROUS Paris est in_scope, pas
-            # out_of_scope).
             scope_res = self.scope_classifier.classify(question, history=history)
             self.last_scope_result = scope_res
             if scope_res.label != "in_scope":
-                # Reset les marqueurs pipeline (backward compat consumers)
                 self.last_select_result = None
                 self.last_validation = None
                 self.last_policy_result = None
@@ -340,7 +459,10 @@ class OrientIAPipeline:
                 self.last_filter_stats = None
                 self.last_golden_qa = None
                 self.last_post_process_stats = None
-                return scope_res.pre_written_response or "", []
+                return _ShortCircuitResult(
+                    text=scope_res.pre_written_response or "",
+                    reason=f"scope_{scope_res.label}",
+                )
         else:
             self.last_scope_result = None
 
@@ -370,7 +492,10 @@ class OrientIAPipeline:
                 self.last_filter_stats = None
                 self.last_golden_qa = None
                 self.last_post_process_stats = None
-                return route_decision.pre_written_response or "", []
+                return _ShortCircuitResult(
+                    text=route_decision.pre_written_response or "",
+                    reason=f"router_{route_decision.refusal_reason}",
+                )
             # Override criteria si pas déjà fourni par l'appelant
             if criteria is None and route_decision.criteria is not None:
                 criteria = route_decision.criteria
@@ -445,7 +570,7 @@ class OrientIAPipeline:
                     "wall_clock_s": 0.0,
                     "retry_skipped_reason": "select_bypass",
                 }
-                return select_result.text, []
+                return _ShortCircuitResult(text=select_result.text, reason="select_bypass")
             # Sinon (None, no_entity, ou domain annexe pertinent) : continuer
             # le RAG normal. last_select_result conservé pour traçabilité.
         else:
@@ -472,46 +597,180 @@ class OrientIAPipeline:
         # Sprint 10 chantier D — Q&A Golden few-shot prefix (opt-in)
         golden_qa_prefix = self._maybe_build_golden_qa_prefix(question)
 
-        # Chantier 1.B (2026-05-03) — Retry-with-hint loop anti-hallucination.
-        # Pattern : tour 1 generate → validate → si failed_claims non vide ET
-        # temps restant suffisant → tour 2 avec hint réinjecté → validate →
-        # garder le meilleur. Cap dur MAX_RETRIES_WITH_HINT=1, timeout 30s.
-        # Sans validator : pas de retry possible (no-op transparent, comportement v1).
-        wall_t0 = time.time()
-        answer_text, retry_meta = self._generate_with_retry(
-            top=top,
-            question=question,
-            golden_qa_prefix=golden_qa_prefix,
-            history=history,
-            temperature=temperature,
-            wall_t0=wall_t0,
-            intent=intent_label,
+        # Étape 7 refonte (2026-05-09) — Hardlock block injecté en tête du
+        # system prompt v4 strict si le RouterLLM a détecté une contrainte
+        # forte. Vide sinon = comportement v4.1 historique préservé.
+        hardlock_block = (
+            route_decision.hardlock_block_for_prompt()
+            if route_decision is not None
+            else ""
         )
 
-        # Validator v1 + UX Policy (Gate J+6) : si un validator est fourni,
-        # on valide puis on applique la policy hybride α+β. La signature
-        # .answer() reste (answer, top) pour backward-compat, mais l'answer
-        # retourné EST l'answer post-policy (remplacé en cas de Block).
-        # Accès à la validation brute via .last_validation, policy via
-        # .last_policy_result, retry stats via .last_retry_metadata.
-        self.last_retry_metadata = retry_meta
-        if self.validator is not None:
-            # last_validation est déjà set par _generate_with_retry (dernier tour).
-            self.last_policy_result = apply_policy(answer_text, self.last_validation)
-            answer_text = self.last_policy_result.final_answer
-            # V4 phase projet minimal : append 3 Q réflexion + redirect CIO
-            # si la question touche un enjeu fort (HEC/PASS/kiné/etc.).
-            answer_text, _ = append_phase_projet(answer_text, question)
-        # Phase 2 refonte — post-process déterministe (URLs hallu, slugs ONISEP,
-        # tableaux markdown cassés). Off par défaut (backward compat). Appliqué
-        # APRÈS validator/policy car ces fixes sont silently corrective et
-        # n'invalident pas les claims validés (juste cleanup UX).
-        if self.enable_post_process:
-            answer_text, pp_stats = post_process_answer(answer_text, top)
-            self.last_post_process_stats = pp_stats
-        else:
-            self.last_post_process_stats = None
-        return answer_text, top
+        return _PreparedGenContext(
+            top=top,
+            effective_top_k=effective_top_k,
+            golden_qa_prefix=golden_qa_prefix,
+            intent_label=intent_label,
+            hardlock_block=hardlock_block,
+            criteria=criteria,
+            route_decision=route_decision,
+        )
+
+    async def answer_stream(
+        self,
+        question: str,
+        k: int = 30,
+        top_k_sources: int = 10,
+        criteria: FilterCriteria | None = None,
+        history: list[dict] | None = None,
+        temperature: float = 0.3,
+        *,
+        short_circuit_pace_s: float = 0.04,
+    ) -> AsyncGenerator[dict, None]:
+        """Async generator yieldant des StreamEvent typed (Phase 1 SSE, 2026-05-13).
+
+        Ordre des events :
+            ``sources`` → ``token`` (×N) → ``faithfulness`` → ``done``
+        OU ``error`` à tout moment terminal.
+
+        **Path streaming Mistral** (happy path, ~95% des questions in-scope) :
+        Délègue la séquence pré-LLM à ``_prepare_for_generation()`` (via
+        ``asyncio.to_thread`` pour libérer l'event loop), yield les sources
+        bruts du retriever, puis stream tokens via ``generate_stream()``
+        utilisant ``client.chat.stream_async()``. Validator + policy + post-process
+        appliqués sur le texte accumulé pour produire le score/verdict
+        faithfulness — note que les tokens originaux ont déjà été stream
+        avant ces étapes (D2 ordre Jarvis 2026-05-13 : pas de retry-with-hint
+        en streaming, dégradation ~3-5% cas flagged acceptée MVP).
+
+        **Path court-circuit** (scope_out, router_refusal, SELECT bypass) :
+        Pas de génération LLM — on yield ``sources: []``, fake-stream le
+        texte pré-écrit avec un pacing ``short_circuit_pace_s`` (cohérent
+        visuel avec le path Mistral stream), puis faithfulness 1.0/FIDELE.
+
+        **Cancellation** : Si le client ferme la connection HTTP, FastAPI
+        propage ``asyncio.CancelledError`` qui :
+        - Court-circuite ``async for`` dans ``generate_stream()``
+        - Ferme la connection httpx upstream → tokens Mistral non consommés
+        - Loggé en JSON structuré ``{"event": "cancelled", ...}``
+        - Re-raise (pas de yield d'event ``error`` — client déconnecté ne
+          recevrait rien)
+
+        Args:
+            Identiques à ``answer()``.
+            short_circuit_pace_s: pacing entre tokens sur les courts-circuits
+                (40ms ≈ 25 tokens/s, lecture humaine rapide). Ignoré sur le
+                path Mistral stream qui pace selon le débit upstream réel.
+
+        Yields:
+            Dicts conformes à ``StreamEventSchema`` côté plateforme
+            (``OrientAI_Platform/src/lib/api/schemas.ts:96-119``).
+        """
+        if self.index is None:
+            raise RuntimeError(
+                "Pipeline not built — call build_index() or load_index_from() first."
+            )
+
+        started_ns = time.perf_counter_ns()
+        try:
+            # Pré-LLM via to_thread (libère l'event loop pendant retrieve/MMR ~150-300ms)
+            prepared = await asyncio.to_thread(
+                self._prepare_for_generation,
+                question, k, top_k_sources, criteria, history,
+            )
+
+            if isinstance(prepared, _ShortCircuitResult):
+                # Path court-circuit : pas de génération LLM, fake-stream le pré-écrit
+                yield {"type": "sources", "sources": []}
+                for token in _chunk_text_into_tokens(prepared.text):
+                    yield {"type": "token", "content": token}
+                    if short_circuit_pace_s > 0:
+                        await asyncio.sleep(short_circuit_pace_s)
+                yield {"type": "faithfulness", "score": 1.0, "verdict": "FIDELE"}
+                latency_ms = (time.perf_counter_ns() - started_ns) / 1_000_000.0
+                yield {"type": "done", "latency_ms": latency_ms}
+                return
+
+            # Path happy : vrai stream Mistral
+            yield {"type": "sources", "sources": prepared.top}
+
+            full_text_parts: list[str] = []
+            async for chunk in generate_stream(
+                self.client, prepared.top, question,
+                model=self.model,
+                temperature=temperature,
+                golden_qa_prefix=prepared.golden_qa_prefix,
+                history=history,
+                hardlock_block=prepared.hardlock_block,
+                use_strict_v4=self.use_strict_v4,
+            ):
+                full_text_parts.append(chunk)
+                yield {"type": "token", "content": chunk}
+
+            full_text = "".join(full_text_parts)
+
+            # Post-LLM (validator + policy + post-process) via to_thread —
+            # ces étapes sont sync. Note : on n'a PAS le retry-with-hint
+            # (D2 ordre Jarvis). Si validator flag → verdict INFIDELE émis,
+            # mais pas de 2e génération (le streaming est uni-directionnel).
+            score, verdict = await asyncio.to_thread(
+                self._validate_for_stream, full_text, prepared.intent_label,
+            )
+            if score is not None:
+                event: dict = {"type": "faithfulness", "score": score}
+                if verdict is not None:
+                    event["verdict"] = verdict
+                yield event
+
+            latency_ms = (time.perf_counter_ns() - started_ns) / 1_000_000.0
+            yield {"type": "done", "latency_ms": latency_ms}
+
+        except asyncio.CancelledError:
+            # Cancellation naturelle (client disconnect / unmount / nav / stop button).
+            # Pas de yield d'event `error` : le client a déjà fermé la connection,
+            # il ne recevrait rien. On log structuré pour observabilité, puis on
+            # re-raise pour propager la cancellation au httpx upstream et libérer
+            # les ressources Mistral SDK (tokens non consommés).
+            elapsed_ms = (time.perf_counter_ns() - started_ns) / 1_000_000.0
+            _logger.info(
+                json.dumps({
+                    "level": "info",
+                    "route": "answer_stream",
+                    "event": "stream_cancelled",
+                    "elapsed_ms": round(elapsed_ms, 2),
+                })
+            )
+            raise
+
+        except Exception as exc:
+            _logger.exception("answer_stream failed")
+            yield {
+                "type": "error",
+                "error": str(exc)[:200],
+                "code": "PIPELINE_ERROR",
+            }
+
+    def _validate_for_stream(
+        self,
+        full_text: str,
+        intent_label: str | None,
+    ) -> tuple[float | None, str | None]:
+        """Run validator + score mapping pour le path streaming.
+
+        Pas de retry-with-hint (D2 ordre Jarvis 2026-05-13), pas de policy
+        replacement (les tokens originaux sont déjà streamés), pas de
+        post_process (cosmétique cleanup non visible en streaming).
+
+        Returns (score, verdict) cohérents avec ``AnswerResponse.faithfulness_*``
+        côté ``/answer`` sync.
+        """
+        if self.validator is None:
+            return None, None
+        validation = self.validator.validate(full_text, intent=intent_label)
+        self.last_validation = validation
+        score = float(validation.honesty_score)
+        verdict = "INFIDELE" if validation.flagged else "FIDELE"
+        return score, verdict
 
     def _generate_with_retry(
         self,

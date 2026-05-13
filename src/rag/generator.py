@@ -1,4 +1,5 @@
 import re
+from typing import AsyncGenerator
 
 from mistralai.client import Mistral
 from src.prompt.system import SYSTEM_PROMPT, build_user_prompt
@@ -347,54 +348,26 @@ def _build_user_prompt_strict_v4(
     return "\n".join(parts)
 
 
-def generate(
-    client: Mistral,
+def _build_chat_kwargs(
     retrieved: list[dict],
     question: str,
-    model: str = "mistral-medium-latest",
-    temperature: float = 0.3,
-    inject_user_level: bool = True,
-    system_prompt_override: str | None = None,
-    golden_qa_prefix: str | None = None,
-    history: list[dict] | None = None,
-    hint_block: str = "",
-    use_strict_v4: bool = False,
-    hardlock_block: str = "",
-) -> str:
-    """Generate an answer via Mistral.
+    *,
+    model: str,
+    temperature: float,
+    inject_user_level: bool,
+    system_prompt_override: str | None,
+    golden_qa_prefix: str | None,
+    history: list[dict] | None,
+    hint_block: str,
+    use_strict_v4: bool,
+    hardlock_block: str,
+) -> dict:
+    """Build the ``client.chat.complete`` / ``stream_async`` kwargs.
 
-    `inject_user_level` (Tier 2.2, 2026-04-18) adds a "Profil détecté"
-    guidance prefix derived from rule-based classification of the
-    question. Disable only for A/B comparisons of the feature itself
-    in benchmark harnesses — production should keep it on.
-
-    `system_prompt_override` (Sprint 7, 2026-04-27) optional override
-    of the system prompt. Default `None` = utilise `SYSTEM_PROMPT` v3.2
-    (non-régression Sprint 5/6 stricte). Pour activer v3.3 strict
-    (Sprint 7 Action 3), passer `SYSTEM_PROMPT_V33_STRICT` depuis
-    `src.experimental.system_strict`.
-
-    `golden_qa_prefix` (Sprint 10 chantier D, 2026-04-29) optional
-    Q&A Golden Dynamic Few-Shot prefix avec **séparation stricte
-    Comment/Quoi** (cf `OrientIAPipeline._build_few_shot_prefix`).
-    Quand fourni, append au system prompt — la Q&A devient référence
-    comportementale, les fiches du retrieved restent seules sources
-    factuelles autorisées. Default `None` = backward compat strict.
-
-    `history` (Sprint 11 P0 Item 2, 2026-04-29) optional buffer de la
-    conversation précédente pour permettre le suivi de tiroir
-    ("Oui Plan A" → développe ce qui a été dit). Format Mistral compliant :
-    `[{"role": "user"|"assistant", "content": str}, ...]`. Injecté
-    entre system prompt et user current. Default `None`/empty = no-op
-    (backward compat strict pour Run F+G + serving stateless).
-
-    `use_strict_v4` (Étape 2 refonte 2026-05-06) bascule sur le contrat
-    v4 strict : SYSTEM_PROMPT_V4_STRICT + user prompt JSON `<sources>`
-    typé via FactCard. Coupe la prose libre, force le LLM à n'utiliser
-    que les chiffres explicitement listés. Default `False` = comportement
-    v3.2 historique préservé. Quand `True`, `system_prompt_override`,
-    `inject_user_level` et `hint_block` sont IGNORÉS (le contrat v4 a
-    sa propre orchestration).
+    Extrait depuis ``generate()`` pour permettre une seconde fonction
+    ``generate_stream()`` async (SSE Phase 1) sans dupliquer la
+    construction des messages. Comportement identique à pré-extraction —
+    couvert par ``tests/test_generator.py`` + ``tests/test_system_v4_strict_r7.py``.
     """
     if use_strict_v4:
         # Branche v4 strict : pas de prose retrieved, JSON tabulaire seul.
@@ -463,16 +436,214 @@ def generate(
     }
     if use_strict_v4:
         api_kwargs["max_tokens"] = 800
+    return api_kwargs
+
+
+def _strip_brouillon_xml(content: str) -> str:
+    """Strip ``<brouillon>...</brouillon><reponse_finale>...</reponse_finale>``
+    si présents et retourne juste le contenu de ``<reponse_finale>``.
+
+    Tolérant : si Mistral n'utilise pas les balises (Q simple, fallback,
+    consigne ignorée), retourne le content brut tel quel. Extrait depuis
+    ``generate()`` pour être réutilisé par ``generate_stream()``.
+    """
+    m = _RE_REPONSE_FINALE.search(content)
+    if m:
+        return m.group(1).strip()
+    return content
+
+
+def generate(
+    client: Mistral,
+    retrieved: list[dict],
+    question: str,
+    model: str = "mistral-medium-latest",
+    temperature: float = 0.3,
+    inject_user_level: bool = True,
+    system_prompt_override: str | None = None,
+    golden_qa_prefix: str | None = None,
+    history: list[dict] | None = None,
+    hint_block: str = "",
+    use_strict_v4: bool = False,
+    hardlock_block: str = "",
+) -> str:
+    """Generate an answer via Mistral.
+
+    `inject_user_level` (Tier 2.2, 2026-04-18) adds a "Profil détecté"
+    guidance prefix derived from rule-based classification of the
+    question. Disable only for A/B comparisons of the feature itself
+    in benchmark harnesses — production should keep it on.
+
+    `system_prompt_override` (Sprint 7, 2026-04-27) optional override
+    of the system prompt. Default `None` = utilise `SYSTEM_PROMPT` v3.2
+    (non-régression Sprint 5/6 stricte). Pour activer v3.3 strict
+    (Sprint 7 Action 3), passer `SYSTEM_PROMPT_V33_STRICT` depuis
+    `src.experimental.system_strict`.
+
+    `golden_qa_prefix` (Sprint 10 chantier D, 2026-04-29) optional
+    Q&A Golden Dynamic Few-Shot prefix avec **séparation stricte
+    Comment/Quoi** (cf `OrientIAPipeline._build_few_shot_prefix`).
+    Quand fourni, append au system prompt — la Q&A devient référence
+    comportementale, les fiches du retrieved restent seules sources
+    factuelles autorisées. Default `None` = backward compat strict.
+
+    `history` (Sprint 11 P0 Item 2, 2026-04-29) optional buffer de la
+    conversation précédente pour permettre le suivi de tiroir
+    ("Oui Plan A" → développe ce qui a été dit). Format Mistral compliant :
+    `[{"role": "user"|"assistant", "content": str}, ...]`. Injecté
+    entre system prompt et user current. Default `None`/empty = no-op
+    (backward compat strict pour Run F+G + serving stateless).
+
+    `use_strict_v4` (Étape 2 refonte 2026-05-06) bascule sur le contrat
+    v4 strict : SYSTEM_PROMPT_V4_STRICT + user prompt JSON `<sources>`
+    typé via FactCard. Coupe la prose libre, force le LLM à n'utiliser
+    que les chiffres explicitement listés. Default `False` = comportement
+    v3.2 historique préservé. Quand `True`, `system_prompt_override`,
+    `inject_user_level` et `hint_block` sont IGNORÉS (le contrat v4 a
+    sa propre orchestration).
+    """
+    api_kwargs = _build_chat_kwargs(
+        retrieved, question,
+        model=model,
+        temperature=temperature,
+        inject_user_level=inject_user_level,
+        system_prompt_override=system_prompt_override,
+        golden_qa_prefix=golden_qa_prefix,
+        history=history,
+        hint_block=hint_block,
+        use_strict_v4=use_strict_v4,
+        hardlock_block=hardlock_block,
+    )
     response = client.chat.complete(**api_kwargs)
     content = response.choices[0].message.content
     # Sprint 11 P1.1 v5 — strip brouillon XML balises si détectées.
     # Format attendu : <brouillon>...</brouillon>\n<reponse_finale>...</reponse_finale>
     # Tolérant : si Mistral n'utilise pas les balises (Q simple, fallback,
     # consigne ignorée), retourne le content brut.
-    m = _RE_REPONSE_FINALE.search(content)
-    if m:
-        return m.group(1).strip()
-    return content
+    return _strip_brouillon_xml(content)
+
+
+# Seuil de flush du buffer pre-streaming : si on a accumulé plus de N caractères
+# sans voir `<brouillon>` ou `<reponse_finale>`, on considère que Mistral n'a
+# pas utilisé les balises XML (cas tolérant de `_strip_brouillon_xml`) et on
+# flush directement en mode stream pour ne pas faire attendre l'utilisateur.
+_STREAM_FLUSH_THRESHOLD_CHARS = 80
+
+_OPEN_TAG = "<reponse_finale>"
+_CLOSE_TAG = "</reponse_finale>"
+
+
+async def generate_stream(
+    client: Mistral,
+    retrieved: list[dict],
+    question: str,
+    *,
+    model: str = "mistral-medium-latest",
+    temperature: float = 0.3,
+    inject_user_level: bool = True,
+    system_prompt_override: str | None = None,
+    golden_qa_prefix: str | None = None,
+    history: list[dict] | None = None,
+    hint_block: str = "",
+    use_strict_v4: bool = False,
+    hardlock_block: str = "",
+) -> AsyncGenerator[str, None]:
+    """Variante streaming async de :func:`generate`.
+
+    Reuse la même construction de messages que ``generate()`` via
+    ``_build_chat_kwargs()``. Utilise ``client.chat.stream_async()`` pour
+    yieldé les chunks de tokens au fil de l'eau.
+
+    **Strip brouillon en streaming** :
+    Si le modèle wrappe sa sortie en ``<brouillon>...</brouillon><reponse_finale>...</reponse_finale>``,
+    on buffer les premiers chunks jusqu'à détection du tag d'ouverture
+    ``<reponse_finale>`` puis on stream le contenu jusqu'au tag de fermeture.
+    Si après ``_STREAM_FLUSH_THRESHOLD_CHARS`` caractères on n'a vu aucune
+    balise (cas tolérant : Q simple où Mistral skip les balises), on flush
+    le buffer accumulé et on continue à streamer tel quel.
+
+    **Cancellation** : ``async for`` propage ``asyncio.CancelledError``
+    naturellement quand le consumer (FastAPI handler) est cancelled.
+    Le ``async with`` ferme proprement l'EventStreamAsync, qui ferme la
+    connection httpx upstream et signale à l'API Mistral d'arrêter la
+    génération — tokens non consommés.
+
+    Args:
+        Identiques à ``generate()``.
+
+    Yields:
+        Chunks de texte (str) au fur et à mesure de la génération.
+    """
+    api_kwargs = _build_chat_kwargs(
+        retrieved, question,
+        model=model,
+        temperature=temperature,
+        inject_user_level=inject_user_level,
+        system_prompt_override=system_prompt_override,
+        golden_qa_prefix=golden_qa_prefix,
+        history=history,
+        hint_block=hint_block,
+        use_strict_v4=use_strict_v4,
+        hardlock_block=hardlock_block,
+    )
+
+    pending: str = ""
+    in_response_phase: bool = False
+
+    async with await client.chat.stream_async(**api_kwargs) as stream:
+        async for event in stream:
+            # event.data.choices[0].delta.content — chunk de texte (peut être None / vide)
+            try:
+                chunk = event.data.choices[0].delta.content
+            except (AttributeError, IndexError):
+                continue
+            if not isinstance(chunk, str) or not chunk:
+                continue
+
+            if in_response_phase:
+                # On stream directement, en surveillant le tag de fermeture.
+                close_idx = chunk.find(_CLOSE_TAG)
+                if close_idx >= 0:
+                    if close_idx > 0:
+                        yield chunk[:close_idx]
+                    return
+                yield chunk
+                continue
+
+            # Phase d'accumulation : on cherche `<reponse_finale>` ou on décide
+            # que Mistral n'utilise pas les balises XML.
+            pending += chunk
+            open_idx = pending.find(_OPEN_TAG)
+            if open_idx >= 0:
+                # Trouvé le tag d'ouverture — on commence à streamer après lui.
+                after = pending[open_idx + len(_OPEN_TAG):]
+                close_idx = after.find(_CLOSE_TAG)
+                if close_idx >= 0:
+                    # Cas dégénéré : tag fermant déjà dans le buffer.
+                    if close_idx > 0:
+                        yield after[:close_idx]
+                    return
+                if after:
+                    yield after
+                pending = ""
+                in_response_phase = True
+                continue
+
+            # Pas (encore) de tag d'ouverture. Si on a passé le seuil ET qu'on
+            # n'a vu aucune balise (ni `<brouillon>`, ni `<reponse_finale>`),
+            # on considère que Mistral ne wrappe pas → flush et stream.
+            if len(pending) >= _STREAM_FLUSH_THRESHOLD_CHARS:
+                lowered = pending.lower()
+                if "<brouillon" not in lowered and "<reponse_finale" not in lowered:
+                    yield pending
+                    pending = ""
+                    in_response_phase = True
+
+    # Fin de stream sans avoir trouvé `<reponse_finale>`. Si on a encore du
+    # contenu dans pending (cas court qui n'a pas dépassé le seuil), on flush
+    # via le strip tolérant (même comportement que `generate()` sync).
+    if not in_response_phase and pending:
+        yield _strip_brouillon_xml(pending)
 
 
 _RE_REPONSE_FINALE = re.compile(

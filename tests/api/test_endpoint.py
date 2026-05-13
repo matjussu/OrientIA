@@ -278,3 +278,155 @@ def test_rate_limit_blocks_after_threshold(client):
     assert r11.status_code == 429
     body = r11.json()
     assert body["code"] == "RATE_LIMITED"
+
+
+# ─────────────────────────── /answer/stream (SSE Phase 1) ───────────────────
+
+
+def _parse_sse_events(body: str) -> list[dict]:
+    """Parse une réponse SSE en liste de payloads dict (filtre heartbeats)."""
+    import json
+    events: list[dict] = []
+    for frame in body.split("\n\n"):
+        data_lines = [
+            line[len("data:"):].strip()
+            for line in frame.split("\n")
+            if line.startswith("data:")
+        ]
+        if not data_lines:
+            # Heartbeat `: keepalive` ou frame vide — ignored
+            continue
+        data_str = "\n".join(data_lines)
+        if not data_str:
+            continue
+        events.append(json.loads(data_str))
+    return events
+
+
+def _install_fake_answer_stream(mock_pipeline, events: list[dict]):
+    """Remplace `mock_pipeline.answer_stream` par un async gen yieldant ``events``."""
+
+    async def fake_stream(question, **kwargs):
+        for ev in events:
+            yield ev
+
+    mock_pipeline.answer_stream = fake_stream
+
+
+def test_answer_stream_returns_sse_content_type(client, mock_pipeline):
+    """Le endpoint /answer/stream doit retourner Content-Type text/event-stream
+    + les headers anti-buffering (X-Accel-Buffering, Cache-Control)."""
+    _install_fake_answer_stream(mock_pipeline, [
+        {"type": "sources", "sources": []},
+        {"type": "done", "latency_ms": 100.0},
+    ])
+
+    with client.stream("POST", "/answer/stream", json={"question": "Test SSE"}) as r:
+        assert r.status_code == 200
+        assert r.headers["content-type"].startswith("text/event-stream")
+        assert r.headers.get("cache-control") == "no-cache, no-transform"
+        assert r.headers.get("x-accel-buffering") == "no"
+        # Consume le body pour clore proprement la connection
+        _ = b"".join(r.iter_bytes())
+
+
+def test_answer_stream_yields_events_in_order(client, mock_pipeline):
+    """Régression contrat SSE : ordre serveur sources → tokens → faithfulness → done.
+
+    Cohérent avec docs/integration/02-http-contract.md §Ordre garanti.
+    """
+    _install_fake_answer_stream(mock_pipeline, [
+        {"type": "sources", "sources": [{"source": "parcoursup", "nom": "Foo"}]},
+        {"type": "token", "content": "Hello"},
+        {"type": "token", "content": " world"},
+        {"type": "faithfulness", "score": 0.9, "verdict": "FIDELE"},
+        {"type": "done", "latency_ms": 250.0},
+    ])
+
+    with client.stream("POST", "/answer/stream", json={"question": "Test ordering"}) as r:
+        assert r.status_code == 200
+        body = b"".join(r.iter_bytes()).decode("utf-8")
+
+    events = _parse_sse_events(body)
+    types = [e["type"] for e in events]
+    assert types == ["sources", "token", "token", "faithfulness", "done"]
+    # Sources : extract_source_fiche conserve les clés brutes
+    assert events[0]["sources"][0]["nom"] == "Foo"
+    # Tokens concaténés reconstruisent le texte
+    full_text = "".join(e["content"] for e in events if e["type"] == "token")
+    assert full_text == "Hello world"
+    # Faithfulness
+    assert events[3]["score"] == 0.9
+    assert events[3]["verdict"] == "FIDELE"
+
+
+def test_answer_stream_emits_error_event_on_pipeline_crash(client, mock_pipeline):
+    """Si le generator pipeline crash mid-stream, le wrapper émet un event
+    `error` final avec code `INTERNAL` (pas une 500 HTTP — le stream a
+    déjà commencé)."""
+
+    async def crashing_stream(question, **kwargs):
+        yield {"type": "sources", "sources": []}
+        raise RuntimeError("simulated pipeline crash")
+
+    mock_pipeline.answer_stream = crashing_stream
+
+    with client.stream("POST", "/answer/stream", json={"question": "Test crash"}) as r:
+        assert r.status_code == 200  # stream already started, 200 even if crash mid
+        body = b"".join(r.iter_bytes()).decode("utf-8")
+
+    events = _parse_sse_events(body)
+    assert events[-1]["type"] == "error"
+    assert events[-1]["code"] == "INTERNAL"
+    assert "crash" in events[-1]["error"].lower()
+
+
+def test_answer_stream_rejects_invalid_input(client):
+    """Validation Pydantic (question trop courte) → 422 HTTP pré-streaming,
+    pas d'event SSE (Frontia parse le body JSON comme error standard)."""
+    r = client.post("/answer/stream", json={"question": "ok"})
+    assert r.status_code == 422
+
+
+def test_answer_stream_rate_limit(client):
+    """11ᵉ requête sur /answer/stream → 429 (rate limit partagé avec /answer)."""
+
+    async def trivial_stream(question, **kwargs):
+        yield {"type": "sources", "sources": []}
+        yield {"type": "done", "latency_ms": 0.0}
+
+    # Patch via mock fixture
+    from src.api import server
+    server._rate_buckets.clear()  # reset après tests précédents
+    server._pipeline.answer_stream = trivial_stream
+
+    for i in range(10):
+        with client.stream("POST", "/answer/stream", json={"question": f"Q {i}"}) as r:
+            assert r.status_code == 200
+            _ = b"".join(r.iter_bytes())
+
+    r11 = client.post("/answer/stream", json={"question": "Une de trop"})
+    assert r11.status_code == 429
+    assert r11.json()["code"] == "RATE_LIMITED"
+
+
+def test_answer_stream_503_when_pipeline_not_loaded(client, monkeypatch):
+    """Mode dégradé : si `_pipeline` est None → 503 SERVICE_UNAVAILABLE
+    pre-streaming, pas d'event SSE."""
+    from src.api import server
+    monkeypatch.setattr(server, "_pipeline", None)
+
+    r = client.post("/answer/stream", json={"question": "Test degraded"})
+    assert r.status_code == 503
+    assert r.json()["code"] == "SERVICE_UNAVAILABLE"
+
+
+def test_answer_sync_endpoint_still_works_after_sse_addition(client, mock_pipeline):
+    """Régression /answer non-streaming : zéro dégradation après ajout SSE."""
+    r = client.post("/answer", json={"question": "Régression check"})
+    assert r.status_code == 200
+    body = r.json()
+    assert body["answer"] == "Réponse mock pour test."
+    assert body["faithfulness_score"] == 0.92
+    assert body["faithfulness_verdict"] == "FIDELE"
+    assert len(body["sources"]) == 2
