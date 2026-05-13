@@ -26,6 +26,7 @@ Sécurité MVP propre :
 """
 from __future__ import annotations
 
+import asyncio
 import hmac
 import json
 import logging
@@ -73,6 +74,18 @@ _INDEX_PATH = os.environ.get("ORIENTIA_INDEX_PATH", "data/embeddings/formations.
 _pipeline: Any = None
 _index_size: int | None = None
 
+# Timeouts H2 (audit-pont-orientia-platform-2026-05-13 §H2)
+# - Mistral SDK : 25s — borne basse, le SDK lui-même fail proprement à 25s
+#   plutôt que d'attendre le kill Railway 30-60s sans 504 propre.
+# - Pipeline wrap (asyncio.wait_for) : 30s — borne haute côté FastAPI, laisse
+#   5s de marge au-dessus de Mistral pour que le SDK ait le temps de remonter
+#   son propre timeout. Au-delà, le wait_for court-circuite et retourne 504
+#   `ORIENTIA_TIMEOUT` à la plateforme (cohérent avec son timeout client 30s).
+# - Configurable via env var `ORIENTIA_PIPELINE_TIMEOUT_S` pour les tests
+#   (le test E2E le monkeypatch à 0.5s pour éviter une suite qui prend 30s).
+_MISTRAL_TIMEOUT_MS = 25_000
+_PIPELINE_TIMEOUT_S = float(os.environ.get("ORIENTIA_PIPELINE_TIMEOUT_S", "30.0"))
+
 # ───────────────────────────── Lifespan ─────────────────────────────────────
 
 
@@ -89,7 +102,10 @@ async def lifespan(_app: FastAPI):
         )
 
     logger.info(f"Loading OrientIA pipeline (v={_VERSION})...")
-    client = Mistral(api_key=api_key)
+    # `timeout_ms=25_000` cap les appels Mistral à 25s, en dessous du
+    # `_PIPELINE_TIMEOUT_S=30s` côté wrap FastAPI. Sans ce timeout, un hang
+    # Mistral bloquerait jusqu'au kill Railway (30-60s) sans 504 propre.
+    client = Mistral(api_key=api_key, timeout_ms=_MISTRAL_TIMEOUT_MS)
 
     # Mode dégradé : si fiches.json ou formations.index manquent (Railway
     # volume pas encore bootstrapé), le serveur démarre quand même mais
@@ -345,6 +361,7 @@ async def http_exception_handler(request: Request, exc: HTTPException):
         429: "RATE_LIMITED",
         500: "INTERNAL",
         503: "SERVICE_UNAVAILABLE",
+        504: "ORIENTIA_TIMEOUT",
     }
     return JSONResponse(
         status_code=exc.status_code,
@@ -381,6 +398,7 @@ async def health() -> HealthResponse:
         429: {"model": ErrorResponse},
         500: {"model": ErrorResponse},
         503: {"model": ErrorResponse},
+        504: {"model": ErrorResponse},
     },
 )
 async def answer(request: AnswerRequest, http_request: Request) -> AnswerResponse:
@@ -400,10 +418,38 @@ async def answer(request: AnswerRequest, http_request: Request) -> AnswerRespons
         history_dicts = (
             [m.model_dump() for m in request.history] if request.history else None
         )
-        answer_text, sources_raw = _pipeline.answer(
-            sanitized,
-            history=history_dicts,
+        # `pipeline.answer()` est SYNC et bloquerait l'event loop FastAPI.
+        # `asyncio.to_thread` le déporte dans un thread pool worker, ce qui
+        # (a) libère l'event loop pour les autres requêtes pendant Mistral,
+        # (b) permet à `asyncio.wait_for` d'effectivement appliquer le timeout
+        #     30s côté FastAPI (sans to_thread, wait_for n'aurait rien à
+        #     attendre car la sync bloque jusqu'à completion).
+        # Note : si timeout fire, le thread continue en arrière-plan jusqu'à
+        # ce que le Mistral SDK timeout 25s lui-même remonte. Le user récupère
+        # un 504 propre en ~30s sans attendre le kill Railway 30-60s.
+        answer_text, sources_raw = await asyncio.wait_for(
+            asyncio.to_thread(_pipeline.answer, sanitized, history=history_dicts),
+            timeout=_PIPELINE_TIMEOUT_S,
         )
+    except asyncio.TimeoutError:
+        logger.warning(
+            json.dumps(
+                {
+                    "level": "warning",
+                    "request_id": request_id,
+                    "route": "/answer",
+                    "error_type": "pipeline_timeout",
+                    "timeout_s": _PIPELINE_TIMEOUT_S,
+                }
+            )
+        )
+        raise HTTPException(
+            status_code=504,
+            detail=(
+                f"OrientIA pipeline exceeded {_PIPELINE_TIMEOUT_S}s budget. "
+                "Upstream LLM probably slow — réessaie dans un instant."
+            ),
+        ) from None
     except HTTPException:
         raise
     except Exception as exc:  # noqa: BLE001 (top-level catch is intentional)
