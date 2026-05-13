@@ -166,6 +166,50 @@ def test_answer_pipeline_crash_returns_500(client, mock_pipeline):
     assert body["code"] == "INTERNAL"
 
 
+# ─────────────────────────── Pipeline timeout (H2) ──────────────────────────
+
+
+def test_answer_504_when_pipeline_exceeds_timeout(client, mock_pipeline, monkeypatch):
+    """Régression H2 (audit 2026-05-13) : si `pipeline.answer()` excède le
+    budget `_PIPELINE_TIMEOUT_S` (30s prod, monkeypatch 0.3s ici), le wrapper
+    doit retourner 504 propre `ORIENTIA_TIMEOUT` au lieu de laisser bloquer
+    jusqu'au kill Railway 30-60s.
+
+    Le timeout est appliqué via `asyncio.wait_for(asyncio.to_thread(...))` qui
+    court-circuite la coroutine FastAPI dès que le délai est dépassé, même si
+    le thread sous-jacent continue (Python threads non-cancellable — le Mistral
+    SDK timeout 25s remonte ensuite et libère le thread en prod réel).
+
+    Note timing : TestClient (sync httpx wrapper) sérialise via anyio et attend
+    la fin du thread orphelin avant de rendre le contrôle. Le 504 est bien
+    retourné rapidement côté HTTP en prod (Uvicorn async), mais le test mesure
+    le total fire-and-wait. On vérifie donc juste que le test n'attend pas le
+    timeout par défaut 30s (anti-hang sanity check, marge généreuse 3s).
+    """
+    import time as _time
+
+    from src.api import server
+
+    monkeypatch.setattr(server, "_PIPELINE_TIMEOUT_S", 0.3)
+
+    def slow_answer(*args, **kwargs):
+        _time.sleep(0.6)  # > 0.3s timeout monkeypatché, < marge anti-hang 3s
+        return ("never reached", [])
+
+    mock_pipeline.answer.side_effect = slow_answer
+
+    started = _time.perf_counter()
+    r = client.post("/answer", json={"question": "Test timeout pipeline"})
+    elapsed = _time.perf_counter() - started
+
+    assert r.status_code == 504
+    body = r.json()
+    assert body["code"] == "ORIENTIA_TIMEOUT"
+    # Anti-hang : si on tombait dans le default 30s, on attendrait ~30s
+    # avant cet assert. Marge 3s couvre le sleep 0.6s + overhead.
+    assert elapsed < 3.0, f"Anti-hang check: expected <3s, got {elapsed:.2f}s"
+
+
 # ─────────────────────────── Auth Bearer ────────────────────────────────────
 
 
