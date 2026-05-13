@@ -245,3 +245,143 @@ def test_format_profil_admis_sous_champ_invalid_skip_silently():
     assert out is not None
     assert "type de bac admis" in out
     assert "mentions au bac" not in out
+
+
+# -------- Chantier C+ 2026-05-13 — Exploitation champ `text` pour fiches annexes --------
+
+
+class TestFicheToTextAnnexesChantierCPlus:
+    """Chantier C+ (2026-05-13) : fiches `domain != none` avec champ `text`
+    substantiel doivent utiliser un préfixe [domain] + Region + métier/sujet,
+    puis le contenu du champ `text` directement. Aucun changement pour les
+    fiches Parcoursup (`domain` absent), qui conservent le format v4 éprouvé.
+    """
+
+    def test_dares_metier_prospective_uses_text_field(self):
+        """Fiche DARES Métiers 2030 : embed inclut fap_libelle + text."""
+        from src.rag.embeddings import fiche_to_text
+        fiche = {
+            "domain": "metier_prospective",
+            "fap_libelle": "Maraîchers, jardiniers, viticulteurs",
+            "region": "Occitanie",
+            "text": (
+                "Métier 2030 (DARES) — Maraîchers, jardiniers, viticulteurs en "
+                "Occitanie (FAP A1Z) | Effectifs 2019 : 40.9k | Postes à pourvoir "
+                "à l'horizon 2030 : 9.8k | Tension marché 2019 : niveau 2."
+            ),
+        }
+        out = fiche_to_text(fiche)
+        assert out.startswith("[metier_prospective]")
+        assert "Région : Occitanie" in out
+        assert "Métier : Maraîchers, jardiniers, viticulteurs" in out
+        assert "DARES" in out
+        assert "Postes à pourvoir" in out
+        assert len(out) >= 200
+
+    def test_crous_fiche_uses_text_field(self):
+        from src.rag.embeddings import fiche_to_text
+        fiche = {
+            "domain": "crous",
+            "subject": "Résidences universitaires Lyon",
+            "text": (
+                "CROUS Lyon — Résidences universitaires : Studios T1 entre 380€ et "
+                "450€/mois CC. Chambres en cité U entre 180€ et 240€/mois CC. "
+                "12 résidences gérées par CROUS Lyon."
+            ),
+        }
+        out = fiche_to_text(fiche)
+        assert out.startswith("[crous]")
+        assert "Sujet : Résidences universitaires Lyon" in out
+        assert "Studios T1" in out
+        assert "CROUS Lyon" in out
+
+    def test_insee_salaire_uses_text_field(self):
+        from src.rag.embeddings import fiche_to_text
+        fiche = {
+            "domain": "insee_salaire",
+            "text": (
+                "Salaires PCS 37 : Cadres administratifs et commerciaux d'entreprises "
+                "(France 2023) | Effectif : 1.2M | Salaire net médian annuel : 45 200 € "
+                "| Médian mensuel : 3 767 €."
+            ),
+        }
+        out = fiche_to_text(fiche)
+        assert out.startswith("[insee_salaire]")
+        assert "PCS 37" in out
+        assert "45 200" in out or "45200" in out
+
+    def test_rome_metier_detail_uses_text_field(self):
+        from src.rag.embeddings import fiche_to_text
+        fiche = {
+            "domain": "metier_detail",
+            "libelle_metier": "Actuaire",
+            "text": (
+                "Métier ROME C1107 : Actuaire | Compétences : modélisation, "
+                "statistiques, analyse de risques, assurance, finance. "
+                "Niveau d'études : bac+5 minimum."
+            ),
+        }
+        out = fiche_to_text(fiche)
+        assert out.startswith("[metier_detail]")
+        assert "Métier : Actuaire" in out
+        assert "modélisation" in out
+
+    def test_parcoursup_fiche_unchanged_no_domain(self):
+        """Critique : les fiches Parcoursup (domain absent) restent au format v4
+        exact. Aucune régression possible sur le cœur de production éprouvé."""
+        from src.rag.embeddings import fiche_to_text
+        fiche = {
+            "nom": "Master MIAGE",
+            "etablissement": "Université de Tours",
+            "ville": "Tours",
+            "region": "Centre-Val de Loire",
+            "niveau": "bac+5",
+            "type_diplome": "Master",
+        }
+        out = fiche_to_text(fiche)
+        assert out.startswith("Formation : Master MIAGE")
+        assert "Établissement : Université de Tours" in out
+        assert "Ville : Tours" in out
+        assert "Région : Centre-Val de Loire" in out
+        assert not out.startswith("[")
+
+    def test_annexe_without_text_field_fallback_v4(self):
+        """Edge case : fiche annexe sans champ `text` ou `text` trop court →
+        bascule sur comportement v4 (parts joinés). Ne casse pas si data
+        incomplète."""
+        from src.rag.embeddings import fiche_to_text
+        fiche = {
+            "domain": "metier_prospective",
+            "region": "Bretagne",
+            # pas de text field
+        }
+        out = fiche_to_text(fiche)
+        # Doit basculer sur fallback v4 (Formation : | Établissement : | ...)
+        assert "Région : Bretagne" in out
+
+    def test_annexe_with_too_short_text_fallback_v4(self):
+        from src.rag.embeddings import fiche_to_text
+        fiche = {
+            "domain": "metier_prospective",
+            "region": "Bretagne",
+            "text": "Trop court",  # < 60 chars
+        }
+        out = fiche_to_text(fiche)
+        # `Trop court` ne doit pas être utilisé tel quel comme embed principal
+        assert not out.startswith("[metier_prospective]")
+
+    def test_text_field_truncated_at_1500_chars(self):
+        """Le champ `text` est tronqué à 1500 chars pour éviter dilution."""
+        from src.rag.embeddings import fiche_to_text
+        long_text = "x" * 3000  # 3000 chars
+        fiche = {
+            "domain": "metier_detail",
+            "libelle_metier": "Test",
+            "text": long_text,
+        }
+        out = fiche_to_text(fiche)
+        # Le préfixe ajoute ~50 chars, mais le `text` est cappé à 1500
+        # Donc total <= ~1600 chars
+        assert len(out) <= 1600
+        # Les 1500 premiers chars du text doivent être présents
+        assert "x" * 1500 in out
