@@ -241,9 +241,14 @@ def build_code_graph(modules: list[dict]) -> dict[str, Any]:
 
     - Nodes : 1 par module, taille ∝ degré entrant, couleur par dossier
     - Edges : imports cross-module (du module qui importe → module importé)
+
+    Filtrage : un edge n'est créé que si source ET target existent dans la
+    liste des modules indexés. Évite les références orphelines à des
+    packages (`src.agents.hierarchical` sans suffixe désigne le package,
+    pas un fichier — pas de node correspondant).
     """
-    # Index module → info
-    by_module = {m["module"]: m for m in modules}
+    # Set des module IDs valides (existent comme nodes)
+    valid_modules = {m["module"] for m in modules}
 
     # Compter degré entrant (combien d'autres modules m'importent)
     in_degree: Counter = Counter()
@@ -251,10 +256,11 @@ def build_code_graph(modules: list[dict]) -> dict[str, Any]:
     for m in modules:
         src = m["module"]
         for imp in m["imports"]:
-            # Imports normalisés vers le module qui existe dans by_module
-            # (un import "src.rag.pipeline" peut pointer vers ce module exact)
             target = imp
             if target == src:
+                continue
+            # Skip si target n'est pas un module indexé (package, etc.)
+            if target not in valid_modules:
                 continue
             in_degree[target] += 1
             edges.append({"data": {"source": src, "target": target, "id": f"{src}__{target}"}})
@@ -406,11 +412,21 @@ def build_data_lineage(data_files: dict, modules: list[dict]) -> dict[str, Any]:
     nodes.append({"data": {"id": "gold_qa_v1", "label": "golden_qa_v1.jsonl (4.3 MB)", "type": "raw", "color": "#cbd5e1"}})
     edges.append({"data": {"source": "gold_qa_v1", "target": "embed_golden", "id": "gold__embed"}})
 
-    # Indexes FAISS (top 5)
-    for f in data_files["embeddings"][:7]:
+    # Indexes FAISS — top 7 par taille MAIS garantir inclusion des hubs
+    # même si petits (golden_qa.index = 2.7 MB est critique pour le pipeline)
+    HUB_INDEXES = {"formations.index", "formations_v5.index", "formations_v7.index", "golden_qa.index"}
+    top_by_size = data_files["embeddings"][:7]
+    hub_set = {f["name"] for f in top_by_size}
+    # Ajouter les hubs manquants
+    for f in data_files["embeddings"]:
+        if f["name"] in HUB_INDEXES and f["name"] not in hub_set:
+            top_by_size.append(f)
+            hub_set.add(f["name"])
+
+    for f in top_by_size:
         name = f["name"]
         nid = f"idx_{name.replace('.', '_').replace('-', '_')}"
-        is_hub = name in ("formations.index", "formations_v5.index", "formations_v7.index", "golden_qa.index")
+        is_hub = name in HUB_INDEXES
         nodes.append({
             "data": {
                 "id": nid,
@@ -451,6 +467,11 @@ def build_data_lineage(data_files: dict, modules: list[dict]) -> dict[str, Any]:
     edges.append({"data": {"source": "idx_formations_v5_index", "target": "consumer_pipeline", "id": "v5__pipe"}})
     edges.append({"data": {"source": "idx_golden_qa_index", "target": "consumer_pipeline", "id": "gqa__pipe"}})
     edges.append({"data": {"source": "idx_formations_v5_index", "target": "consumer_bench", "id": "v5__bench"}})
+
+    # Filtrage défensif : retirer tout edge dont source ou target n'a pas de node
+    valid_ids = {n["data"]["id"] for n in nodes}
+    edges = [e for e in edges
+             if e["data"]["source"] in valid_ids and e["data"]["target"] in valid_ids]
 
     return {"nodes": nodes, "edges": edges}
 
@@ -936,6 +957,27 @@ mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: {
   lineColor: '#64748b', secondaryColor: '#334155', tertiaryColor: '#0f172a'
 }});
 
+// ─────── Cytoscape : enregistrement des plugins de layout ───────
+// Les CDN unpkg exposent des globales (cytoscapeDagre, cytoscapeCoseBilkent)
+// qu'il faut explicitement enregistrer auprès de Cytoscape avant usage.
+// Sans ces appels, layout: 'cose-bilkent' déclenche 'Cannot read layoutBase'.
+function registerCytoscapePlugins() {
+  if (typeof cytoscapeDagre !== 'undefined') {
+    cytoscape.use(cytoscapeDagre);
+  }
+  if (typeof cytoscapeCoseBilkent !== 'undefined') {
+    cytoscape.use(cytoscapeCoseBilkent);
+  }
+}
+
+// Fallback layout si cose-bilkent indisponible
+function safeLayoutName(preferred) {
+  const extensions = cytoscape.layouts || {};
+  // Cytoscape n'expose pas une liste publique des layouts ; on tente le
+  // layout demandé et on retombe sur 'cose' (natif Cytoscape) si erreur.
+  return preferred;
+}
+
 // ─────── Cytoscape Code Graph ───────
 let cyCode;
 function initCodeGraph() {
@@ -1071,8 +1113,26 @@ function initDataLineage() {
 
 // ─────── Init when DOM ready ───────
 document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(initCodeGraph, 500);
-  setTimeout(initDataLineage, 1000);
+  // Enregistrer les plugins AVANT toute init Cytoscape
+  registerCytoscapePlugins();
+  // Délai pour laisser les CDN se charger complètement
+  setTimeout(() => {
+    try { initCodeGraph(); }
+    catch (e) {
+      console.error('initCodeGraph failed:', e);
+      document.getElementById('cyCode').innerHTML =
+        '<div style="padding:40px;color:#ef4444;text-align:center">Erreur init code graph : ' + e.message +
+        '<br><small style="color:#94a3b8">Vérifier que les CDN Cytoscape sont accessibles (Internet requis au 1er load).</small></div>';
+    }
+  }, 600);
+  setTimeout(() => {
+    try { initDataLineage(); }
+    catch (e) {
+      console.error('initDataLineage failed:', e);
+      document.getElementById('cyData').innerHTML =
+        '<div style="padding:40px;color:#ef4444;text-align:center">Erreur init data lineage : ' + e.message + '</div>';
+    }
+  }, 1100);
 });
 </script>
 
