@@ -583,6 +583,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <title>OrientIA — Codebase Reference</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<!-- dagre lib (peer dep de cytoscape-dagre, contient graphlib) -->
+<script src="https://unpkg.com/dagre@0.8.5/dist/dagre.min.js"></script>
 <script src="https://unpkg.com/cytoscape-dagre@2.5.0/cytoscape-dagre.js"></script>
 <script src="https://unpkg.com/cytoscape-cose-bilkent@4.1.0/cytoscape-cose-bilkent.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
@@ -789,26 +791,25 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
   <pre class="mermaid">
 flowchart TD
-    Q["Question utilisateur"] --> S1["1. ScopeClassifier"]
-    S1 -->|in_scope| S2["2. Intent + DomainHint"]
-    S1 -->|urgent / identity / out| OUT["Réponse pré-écrite"]
-    S2 --> S3["3. RouterLLM + Retrieval FAISS+BM25"]
-    S3 --> S4["4. Reranking boosts"]
-    S4 --> S5["5. MMR diversification"]
-    S5 --> S6["6. Golden QA few-shot"]
-    S6 --> S7["7. Generation Mistral"]
-    S7 --> S8["8. Validator L1+L2+L3"]
-    S8 -->|flagged + budget OK| S9["9. Retry conditionnel max 1"]
-    S8 -->|ok| S10["10. Post-process"]
+    Q[Question utilisateur] --> S1[1 ScopeClassifier]
+    S1 -- in scope --> S2[2 Intent et DomainHint]
+    S1 -- hors scope --> OUT[Reponse pre-ecrite]
+    S2 --> S3[3 RouterLLM et Retrieval]
+    S3 --> S4[4 Reranking boosts]
+    S4 --> S5[5 MMR diversification]
+    S5 --> S6[6 Golden QA few-shot]
+    S6 --> S7[7 Generation Mistral]
+    S7 --> S8[8 Validator L1 L2 L3]
+    S8 -- flagged --> S9[9 Retry conditionnel max 1]
+    S8 -- ok --> S10[10 Post-process]
     S9 --> S10
-    S10 --> A["Réponse + sources + honesty_score"]
-
-    classDef step fill:#1e293b,stroke:#3b82f6,color:#e2e8f0;
-    classDef out fill:#7c2d12,stroke:#f97316,color:#fed7aa;
-    classDef finalc fill:#064e3b,stroke:#10b981,color:#a7f3d0;
-    class S1,S2,S3,S4,S5,S6,S7,S8,S9,S10 step;
-    class OUT out;
-    class A finalc;
+    S10 --> A[Reponse plus sources plus honesty_score]
+    classDef step fill:#1e293b,stroke:#3b82f6,color:#e2e8f0
+    classDef out fill:#7c2d12,stroke:#f97316,color:#fed7aa
+    classDef finalc fill:#064e3b,stroke:#10b981,color:#a7f3d0
+    class S1,S2,S3,S4,S5,S6,S7,S8,S9,S10 step
+    class OUT out
+    class A finalc
   </pre>
 
   <h2>Détail par étape</h2>
