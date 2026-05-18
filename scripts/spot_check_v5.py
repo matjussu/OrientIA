@@ -158,8 +158,13 @@ def run_spot_check(corpus_path: Path, index_path: Path, max_top_k: int = 5) -> d
         n_expected = sum(1 for d in domains_in_top if d == expected_domain)
 
         # Compter les citations [source SX] dans la réponse
+        # Supporte format simple `[source S3]` et combiné `[source S3/S4/S5]`
+        # ou `[source S3, S4]` — observé Q11 spot-check 2026-05-13.
         import re
-        n_citations = len(re.findall(r"\[source S\d+\]", answer))
+        n_citations = 0
+        for tag in re.findall(r"\[source\s+([^\]]+)\]", answer):
+            ids = re.findall(r"S\d+", tag)
+            n_citations += len(ids)
 
         results.append({
             "question": question,

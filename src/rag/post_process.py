@@ -93,6 +93,38 @@ def strip_invented_urls(response: str) -> str:
     return cleaned
 
 
+# Bug spot-check 2026-05-13 Q4+Q13 — link cassé sur URL manquante.
+# Le LLM met "information non disponible…" dans la position URL du markdown link
+# `[texte](information non disponible dans mes sources)`. Pattern systémique
+# quand SYSTEM_PROMPT_SPRINT11_P0 demande un lien et que l'URL est absente
+# des sources. Régression visible sur Q4 (Master Droit PACA) et Q13 (doctorat
+# chimie) au spot-check 2026-05-13. Solution : neutraliser en **texte** gras.
+BROKEN_LINK_FALLBACK_REGEX = re.compile(
+    r"\[([^\]]+)\]\("
+    r"[^)]*"
+    r"(?:non\s+disponible|pas\s+disponible|donn[ée]es?\s+non\s+disponibles?|"
+    r"information\s+manquante|aucune\s+url|url\s+absente|source\s+manquante)"
+    r"[^)]*\)",
+    re.IGNORECASE,
+)
+
+
+def neutralize_broken_link_fallback(response: str) -> str:
+    """Neutralise `[texte](information non disponible dans mes sources)`.
+
+    Pattern régressif spot-check 2026-05-13 Q4+Q13 : le LLM produit un
+    markdown link mal formé en mettant la phrase de fallback dans la
+    position URL. Pas une URL hallu (covered by `strip_invented_urls`),
+    pas un slug ONISEP cassé (covered by `validate_onisep_slugs`).
+
+    Stratégie : convertir `[texte](non disponible…)` → `**texte**`
+    (préserve l'emphase, retire le lien cassé).
+    """
+    if not response:
+        return response
+    return BROKEN_LINK_FALLBACK_REGEX.sub(r"**\1**", response)
+
+
 # Bug Q9 — Tableau markdown malformé
 # Pattern : ligne contenant `|` mais contenant aussi `\n- ` (puces)
 # = puce qui s'invite dans une cellule de tableau
@@ -254,10 +286,13 @@ def post_process_answer(
         "had_invented_url": bool(INVENTED_URL_REGEX.search(response) or
                                   INVENTED_MARKDOWN_LINK_REGEX.search(response)),
         "had_broken_table": bool(TABLE_WITH_BULLETS_REGEX.search(response)),
+        "had_broken_link_fallback": bool(BROKEN_LINK_FALLBACK_REGEX.search(response)),
     }
 
     # Bug Q8
     cleaned = strip_invented_urls(response)
+    # Bug spot-check 2026-05-13 Q4+Q13 (avant fix_tables pour ne pas confondre)
+    cleaned = neutralize_broken_link_fallback(cleaned)
     # Bug Q9
     cleaned = fix_broken_markdown_tables(cleaned)
     # Bug Q10
