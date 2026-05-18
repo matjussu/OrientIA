@@ -388,6 +388,24 @@ def fiche_to_text(fiche: dict) -> str:
     - Détection mots-clés métier (cyber, data, IA, robotique, etc.) dans
       `nom` + `detail` + `parcours_long` + `mention`
 
+    **v5 Chantier C+ (2026-05-13)** — exploitation du champ `text` pour les
+    fiches annexes (`domain != none`). Audit du 2026-05-13 a révélé que
+    13 412 fiches annexes (DARES Métiers 2030, CROUS résidences, INSEE
+    salaires PCS, Inserjeunes lycée pro, MESR parcours bacheliers, ROME
+    fiches détaillées, RNCP blocs de compétences, financement, APEC
+    régions, voie pré-bac, DROM-COM) étaient embed avec un signal
+    quasi-vide (~42-124 chars) alors que leur champ `text` contient
+    298-1807 chars de contenu sémantique exploitable.
+
+    Conséquence empirique : sur Q1 du spot-check V5 ("métiers Occitanie
+    2030"), 0 fiche `metier_prospective` (DARES) dans le top-50 brut
+    alors que 1 160 disponibles dans le corpus.
+
+    Fix additif strict : si `domain` non vide ET `text` substantiel
+    (>=60 chars), on utilise un préfixe domain/région/métier + le champ
+    `text` directement. Aucun changement pour les fiches Parcoursup
+    (`domain` absent), qui restent le cœur production éprouvé Run F+G.
+
     Motivation : bench v2 (bench_personas_2026-04-24) a révélé que le
     modèle hallucinait des statistiques précises parce que le retrieval
     ne les exposait pas. En les injectant dans le texte embedding, elles
@@ -401,6 +419,30 @@ def fiche_to_text(fiche: dict) -> str:
     (Wikipedia, sites écoles) sans toucher à la fiche brute (le LLM
     voit toujours les chiffres originaux via FactCard JSON).
     """
+    # Chantier C+ — fiches annexes (domain != none) avec champ `text` substantiel
+    # Préfixe court [domain] + Région + métier/sujet, puis contenu sémantique
+    domain = fiche.get("domain")
+    if domain:
+        text_field = (fiche.get("text") or "").strip()
+        if text_field and len(text_field) >= 60:
+            prefix_parts = [f"[{domain}]"]
+            if fiche.get("region"):
+                prefix_parts.append(f"Région : {fiche['region']}")
+            # Signaux métier/sujet par sous-corpus
+            if fiche.get("fap_libelle"):  # DARES Métiers 2030
+                prefix_parts.append(f"Métier : {fiche['fap_libelle']}")
+            elif fiche.get("libelle_metier"):  # ROME métiers
+                prefix_parts.append(f"Métier : {fiche['libelle_metier']}")
+            elif fiche.get("libelle"):  # divers (financement, etc.)
+                prefix_parts.append(f"Libellé : {fiche['libelle']}")
+            elif fiche.get("subject"):  # CROUS, etc.
+                prefix_parts.append(f"Sujet : {fiche['subject']}")
+            # Tronquer text_field à 1500 chars pour éviter dilution
+            # (test empirique : >1500 fait baisser la précision du retrieve)
+            embed_text = f"{' | '.join(prefix_parts)} | {text_field[:1500]}"
+            return embed_text
+
+    # Comportement v4 inchangé pour fiches Parcoursup (domain absent)
     parts = [
         f"Formation : {fiche.get('nom', '')}",
         f"Établissement : {fiche.get('etablissement', '')}",
