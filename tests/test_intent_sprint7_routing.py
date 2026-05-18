@@ -92,9 +92,37 @@ class TestRoutingVoiePreBac:
         "Bac pro métiers de l'électricité contenu programme",
         "Choisir orientation après la troisième : bac pro ou seconde générale",
         "Toutes les spécialités bac pro industrie",
+        # Spot-check V5 Phase 1.4 (2026-05-14) — formulations naturelles
+        # avec mot intermédiaire entre "spécialités" et "bac pro" qui
+        # n'étaient pas captées par le pattern initial.
+        "Quelles sont les spécialités possibles en BAC PRO agriculture ?",
+        "Spécialités disponibles en bac pro industrie",
+        "Quelles spécialités offertes en bac pro tourisme ?",
     ])
     def test_voie_pre_bac_questions_route_correctly(self, question):
         assert classify_domain_hint(question) == DOMAIN_HINT_VOIE_PRE_BAC
+
+
+class TestRoutingVoiePreBacFalsePositiveGuards:
+    """Phase 1.4 (2026-05-14) — garde contre les faux positifs sur le
+    nouveau pattern élastique. Une question sur l'insertion ou le salaire
+    après bac pro ne doit PAS être routée vers voie_pre_bac (qui est un
+    catalogue de spécialités, pas un index d'insertion)."""
+
+    @pytest.mark.parametrize("question,expected_not", [
+        # Q10 du spot-check V5 : insertion après bac pro → formation_insertion (pas voie_pre_bac)
+        ("Insertion à 3 ans après un Bac pro Industrie ?", "voie_pre_bac"),
+        # Salaire après bac pro → insertion_pro ou formation_insertion (pas voie_pre_bac)
+        ("Quel salaire après bac pro maintenance industrielle ?", "voie_pre_bac"),
+        # Transition individuelle → pas un catalogue
+        ("Je suis en CAP et je veux passer en bac pro", "voie_pre_bac"),
+        ("Je veux passer en bac pro après ma seconde", "voie_pre_bac"),
+    ])
+    def test_voie_pre_bac_does_not_match_insertion_or_transition(self, question, expected_not):
+        result = classify_domain_hint(question)
+        assert result != expected_not, (
+            f"Faux positif voie_pre_bac sur question d'insertion/transition : {question}"
+        )
 
 
 class TestRoutingFormationInsertion:
